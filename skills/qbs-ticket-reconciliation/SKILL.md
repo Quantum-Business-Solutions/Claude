@@ -57,6 +57,10 @@ not style preferences.
 4. **Identify clients by ASSOCIATED COMPANY, not subject prefix.** Subjects
    get mis-prefixed or unprefixed (Spectrum's WBS block had no `SPT -` prefix).
    Pull the ticket→company association to know the true client.
+   The client roster itself is DERIVED live each run — never from a
+   hand-maintained table (see `references/client-discovery.md`). New clients
+   are picked up automatically; unknown or ambiguous codes are surfaced, not
+   guessed.
 5. **Credentials: never ask the user to paste a raw PAT into chat.** Verify
    client portals through Client Command's audited tools
    (`check_client_credential`, then `call_hubspot_as_client` with a mandatory,
@@ -136,6 +140,9 @@ the reasons, and approves. Only then does Close mode touch
 - `references/portal_queries.md` — per-ticket-type verification queries
   against a client portal.
 - `references/qbs_seats.md` — QBS staff seat/owner IDs and how to refresh them.
+- `references/client-discovery.md` — deriving the active client list and
+  3-letter codes live from ticket associations (no roster file). Read at the
+  start of any pass that spans clients or names a client you haven't resolved.
 
 ## Related skills (route away, don't absorb)
 

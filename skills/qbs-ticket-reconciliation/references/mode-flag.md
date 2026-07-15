@@ -6,10 +6,11 @@ HubSpot. Writes flags ONLY — never stage, dates, billing, or hours.
 
 ## Procedure
 
-1. **Resolve the client's real ticket set** by associated company (resolve
-   the company ID from a sibling ticket or `qbs-hubspot-ticketing`'s client
-   table). Pull all open tickets for the target owner (default Marko,
-   `466155664`) associated to that company. Look up pipeline stages by label
+1. **Resolve the client's real ticket set** by associated company — resolve
+   the company live per `references/client-discovery.md` (search companies by
+   name, confirm via ticket associations; never trust a static roster or a
+   subject prefix). Pull all open tickets for the target owner (default
+   Marko, `466155664`) associated to that company. Look up pipeline stages by label
    first (doctrine #2); exclude internal pipelines and closed stages.
 2. **Split** into work tickets vs. meeting shells, and target-owner vs.
    other-owner (set the latter aside in a list for the human — never flag
