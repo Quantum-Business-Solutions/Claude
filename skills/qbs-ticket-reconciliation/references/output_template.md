@@ -44,8 +44,8 @@ For each:
 **Artifact createdAt:** [timestamp] — within engagement window ✓
 **Meeting origin:** [Meeting title, date] — "[direct quote from transcript where work was requested]"
 **Proposed close:**
-- `hs_pipeline_stage`: 4
-- `closed_date`: [today]
+- `hs_pipeline_stage`: [this ticket's pipeline's closed stage — looked up by label, see mode-close.md]
+- `closed_date`: [intended date at 12:00 UTC]
 - `hs_resolution`: Work Completed
 - `fulfillment_hours_`: [hours if applicable]
 - `content` addendum: [proposed close note with createdById, artifact timestamp]

@@ -43,7 +43,7 @@ A decision tree for bucketing every QBS ticket found on a client's company recor
 
 **Signals:**
 - Subject references internal work: "Time tracking", "BackOffice", "Hours review", "Weekly hours"
-- `hs_ticket_category`: `BackOffice` or similar internal category
+- `hs_ticket_category`: `Quantum Internal Operations` (the canonical internal category — subjects say "BackOffice" but the category value does not)
 - `billable_`: Non-Billable
 - No direct connection to a client deliverable
 

@@ -1,10 +1,13 @@
 # QBS Seat IDs
 
-These are the HubSpot user IDs that map to QBS staff. Use these for attribution checks in Phase 3.
+How to resolve QBS staff identity for attribution checks.
 
-## Known QBS seats
+## Two different ID systems — don't mix them
 
-Note: `createdById` on portal artifacts (properties, lists, workflows, records) uses the HubSpot user ID. This is NOT the same as the owner ID — user IDs come back from the API as the `createdById` on creation metadata.
+- **Owner IDs** (table below) identify staff on QBS's OWN portal (20682069) — use them for `hubspot_owner_id` scoping on QBS tickets.
+- **`createdById`** on a CLIENT portal's artifacts is that portal's own user ID for the person — it will NOT match the QBS owner IDs below. Always resolve client-portal user IDs per engagement (next section) before making an attribution call. Never present a QBS owner ID as client-portal attribution evidence.
+
+## Known QBS seats (QBS portal 20682069 — snapshot, refresh via the API pattern at the bottom)
 
 | QBS Staff Member | Owner ID (QBS portal 20682069) | Role |
 |---|---|---|
@@ -52,7 +55,7 @@ Never close a ticket on an uncertain attribution — these need a human decision
 
 ## Future: Teams
 
-If QBS adds more staff (or loses some), update this file. The skill should never hardcode specific IDs — always pull the current owner list from the QBS portal and match by email domain.
+If QBS adds more staff (or loses some), refresh via the API below and update this file (it is a convenience snapshot, not the source of truth). When exactness matters, pull the current owner list from the QBS portal and match by email domain.
 
 Simplest refresh pattern:
 

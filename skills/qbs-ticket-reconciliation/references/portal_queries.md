@@ -4,14 +4,21 @@ How to verify each ticket type against a live client HubSpot portal. Use these p
 
 ## Authentication
 
-All queries use the client's Private App Token (PAT):
+Preferred: Client Command's `call_hubspot_as_client` — pass the portal UUID,
+the API `path`, and a truthful `reason` (audit-logged, mandatory). It uses the
+client's stored credential without exposing it.
+
+Fallback: a client PAT already present in the `CLIENT_HUBSPOT_TOKEN` env var:
 
 ```bash
-export HS_TOKEN='pat-na1-...'
-curl -H "Authorization: Bearer $HS_TOKEN" "https://api.hubapi.com/..."
+curl -H "Authorization: Bearer $CLIENT_HUBSPOT_TOKEN" "https://api.hubapi.com/..."
 ```
 
-Use direct API calls — don't use the HubSpot MCP tool for the client's portal, since that's connected to QBS's portal (20682069). The MCP is only for updating QBS-side tickets.
+Never ask the user to paste a raw PAT into chat, and never use the HubSpot MCP
+connector for a client's portal — it's bound to QBS's portal (20682069) and is
+only for QBS-side ticket reads/writes. The curl examples below show the
+fallback form; when going through Client Command, use the same paths via
+`call_hubspot_as_client`.
 
 ## Verification patterns by ticket type
 
@@ -20,7 +27,7 @@ Use direct API calls — don't use the HubSpot MCP tool for the client's portal,
 **Query:**
 ```bash
 # Check existence
-curl -H "Authorization: Bearer $HS_TOKEN" \
+curl -H "Authorization: Bearer $CLIENT_HUBSPOT_TOKEN" \
   "https://api.hubapi.com/crm/v3/properties/{objectType}/{property_name}"
 ```
 
@@ -43,7 +50,7 @@ curl -H "Authorization: Bearer $HS_TOKEN" \
 **Query:**
 ```bash
 # List workflows and filter
-curl -H "Authorization: Bearer $HS_TOKEN" \
+curl -H "Authorization: Bearer $CLIENT_HUBSPOT_TOKEN" \
   "https://api.hubapi.com/automation/v3/workflows" | jq '.workflows[] | select(.name | contains("X"))'
 ```
 
@@ -62,13 +69,13 @@ Include the workflow ID in evidence so it's traceable.
 **Query:**
 ```bash
 # Search by name
-curl -H "Authorization: Bearer $HS_TOKEN" \
+curl -H "Authorization: Bearer $CLIENT_HUBSPOT_TOKEN" \
   "https://api.hubapi.com/crm/v3/lists/search" \
   -H "Content-Type: application/json" \
   -d '{"count":10,"query":"X"}'
 
 # Get size + filter details
-curl -H "Authorization: Bearer $HS_TOKEN" \
+curl -H "Authorization: Bearer $CLIENT_HUBSPOT_TOKEN" \
   "https://api.hubapi.com/crm/v3/lists/{listId}?includeFilters=true"
 ```
 
@@ -84,7 +91,7 @@ curl -H "Authorization: Bearer $HS_TOKEN" \
 For QuickBooks integration:
 ```bash
 # Are deal records actually getting QBO IDs?
-curl -H "Authorization: Bearer $HS_TOKEN" \
+curl -H "Authorization: Bearer $CLIENT_HUBSPOT_TOKEN" \
   "https://api.hubapi.com/crm/v3/objects/deals/search" \
   -H "Content-Type: application/json" \
   -d '{"filterGroups":[{"filters":[{"propertyName":"qbo_invoice_id","operator":"HAS_PROPERTY"}]}],"limit":1}'
@@ -120,24 +127,25 @@ Conversational tickets. These are "done" when the conversation happened and was 
 Run these once at the start of Phase 3 to avoid repeating:
 
 ```bash
-# Total record counts
-curl -H "Authorization: Bearer $HS_TOKEN" \
-  "https://api.hubapi.com/crm/v3/objects/companies?limit=1&archived=false" \
-  -w "Total: %{header.total}"  # Note: actual total may need separate endpoint
+# Total record counts (search endpoint returns "total"; plain list GETs do not)
+curl -H "Authorization: Bearer $CLIENT_HUBSPOT_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"limit":1}' \
+  "https://api.hubapi.com/crm/v3/objects/companies/search" | jq '.total' 
 
 # All custom properties created during engagement window
-curl -H "Authorization: Bearer $HS_TOKEN" \
+curl -H "Authorization: Bearer $CLIENT_HUBSPOT_TOKEN" \
   "https://api.hubapi.com/crm/v3/properties/companies?archived=false" | \
-  jq '.results[] | select(.createdAt > "2026-02-26") | {name, label, createdAt}'
+  jq '.results[] | select(.createdAt > "<ENGAGEMENT_START_DATE>") | {name, label, createdAt}'
 
 # All custom lists
-curl -H "Authorization: Bearer $HS_TOKEN" \
+curl -H "Authorization: Bearer $CLIENT_HUBSPOT_TOKEN" \
   "https://api.hubapi.com/crm/v3/lists/search" \
   -H "Content-Type: application/json" \
   -d '{"count":200}' | jq '.lists[] | {listId, name, objectTypeId, size}'
 ```
 
-Cache these results in the workspace (`/home/claude/<client>/`) so multiple ticket verifications don't re-query.
+Cache these results in the working directory so multiple ticket verifications don't re-query.
 
 ## Rate limiting
 

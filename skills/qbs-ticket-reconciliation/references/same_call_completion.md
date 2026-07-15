@@ -22,7 +22,7 @@ This pattern is most common on:
 A same-call completion requires three signals aligned:
 
 1. **Transcript language** suggesting in-call completion (phrase library below)
-2. **Portal artifact** matching the ticket subject, created within a ± 1 day window around the meeting
+2. **Portal artifact** matching the ticket subject, created within the canonical window (meeting start to meeting end + 24h)
 3. **QBS-seat attribution** on that artifact
 
 If any one is missing, don't promote to `🟢 DONE-ON-CALL` — flag as ambiguous instead.
@@ -127,8 +127,11 @@ Transcript snippet (min 23–25):
   Jesse: "Good."
   Marko: "Done, that's saved."
 
-Portal evidence: 47 products marked inactive in QuickBooks on 4/15 2:47 PM
-(within meeting window: 2:00–2:30 PM + 24h)
+External-system evidence: 47 products marked inactive in QuickBooks on 4/15
+2:47 PM (within meeting window: 2:00–2:30 PM + 24h). NOTE: QuickBooks state
+is not verifiable via the HubSpot PAT — evidence like this must come from a
+system you can actually read (integration logs, QBO API, screenshot from the
+call). If you can't verify it yourself, this is Needs Review, not a close.
 Attribution: Marko Ajder seat (createdById 466155664)
 
 Status: 🟢 DONE-ON-CALL — recommend close with 0.25 hr fulfillment
