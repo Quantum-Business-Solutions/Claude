@@ -65,7 +65,7 @@ Occasionally a "weekly meeting" ticket gets repurposed — Marko logs actual bui
 
 ### The zombie ticket
 
-A ticket created months ago, no hours logged, no meeting note reference, owner has left the company or rolled off the account. These accumulate and pollute open counts. Flag for archival/reassignment, don't try to verify.
+A ticket created months ago, no hours logged, no meeting note reference, owner has left the company or rolled off the account. These accumulate and pollute open counts. Flag `Needs Review` — "no evidence trail; human archive/reassign decision" — don't try to verify, and never auto-close.
 
 ## Output of this phase
 

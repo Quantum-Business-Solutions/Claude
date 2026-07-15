@@ -1,6 +1,8 @@
 # Portal Verification Queries
 
-How to verify each ticket type against a live client HubSpot portal. Use these patterns when running Phase 3 of the reconciliation.
+How to verify each ticket type against a live client HubSpot portal. Load
+during portal verification (Flag step 5 for build-verb tickets, Full
+Reconciliation Phase 3).
 
 ## Authentication
 
@@ -13,6 +15,11 @@ Fallback: a client PAT already present in the `CLIENT_HUBSPOT_TOKEN` env var:
 ```bash
 curl -H "Authorization: Bearer $CLIENT_HUBSPOT_TOKEN" "https://api.hubapi.com/..."
 ```
+
+Before trusting any fallback-token evidence, verify which portal the token
+actually reaches: `GET /account-info/v3/details`. A mismatch means stop —
+evidence from the wrong portal is corruption, not degradation
+(`references/failure-modes.md`).
 
 Never ask the user to paste a raw PAT into chat, and never use the HubSpot MCP
 connector for a client's portal — it's bound to QBS's portal (20682069) and is
@@ -149,7 +156,7 @@ Cache these results in the working directory so multiple ticket verifications do
 
 ## Rate limiting
 
-HubSpot PAT-based rate limit is typically 100 req/10s. On a reconciliation with 20+ tickets, add `sleep 1` between verification calls or batch-search for multiple properties at once. A failed 429 response will not be retried automatically — catch and wait.
+HubSpot PAT-based rate limit is typically 100 req/10s. On a reconciliation with 20+ tickets, add `sleep 1` between verification calls or batch-search for multiple properties at once. A failed 429 response will not be retried automatically — catch and wait. A query dropped to a 429 must never be recorded as "not found" — either it completes or its ticket goes to "could not verify" (`references/failure-modes.md`).
 
 ## Common gotchas
 

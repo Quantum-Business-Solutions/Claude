@@ -1,9 +1,10 @@
 # Mode: Queue Cleanup
 
 A flag pass scoped to one owner's ENTIRE open queue (all clients), tuned to
-the recurring patterns that clog it. Default owner: Marko Ajder
-(`466155664`); works for any owner by swapping the ID. Output is a proposal
-report + flags — execution goes through Close mode per bucket.
+the recurring patterns that clog it. Default owner: Marko Ajder (confirm the
+ID live — `references/qbs-facts.md`); works for any owner by swapping the ID.
+Output is a proposal report + flags — execution goes through Close mode per
+bucket.
 
 ## Setup
 
@@ -14,6 +15,9 @@ report + flags — execution goes through Close mode per bucket.
 3. Exclude pipelines whose label contains "internal" — time-tracking and
    meeting-hour shells there are working as designed.
 4. Staleness comes from `createdate` (workflows churn `hs_lastmodifieddate`).
+5. Load the latest snapshot + decision log for this scope
+   (`references/memory.md`) and the calibration readback
+   (`references/calibration.md`).
 
 ## The five buckets
 
@@ -32,8 +36,8 @@ Bucket checks that matter:
   engagements to the keeper (7 of 49 Sierra dupes had calls attached).
 - **Future-dated meeting shells are not cleanup candidates** — they close
   naturally as meetings occur.
-- Dedup rule is doctrine #3: FULL subject + same associated company. Never
-  prefix-stripped.
+- Dedup rule is SKILL.md doctrine: FULL subject + same associated company.
+  Never prefix-stripped.
 
 ## Present the proposal
 
@@ -42,21 +46,21 @@ few example subjects so the human can sanity-check. Then ask **per bucket**
 whether to proceed — never "execute everything?". Bucket D is never executed
 by this skill; it goes to the owner as a review list.
 
-Write the four flag properties on every evaluated ticket as you go, so the
-proposal is also filterable in HubSpot.
+Write the four flag properties on every evaluated ticket as you go (rules and
+payload: `references/mode-flag.md`), so the proposal is also filterable in
+HubSpot. End with the State of the Queue deltas and a snapshot note
+(`references/memory.md`).
 
-## Weekly cadence mode
+## Weekly cadence
 
-When asked for "anything new this week," limit to tickets created since the
-last pass and flag only: new extractor duplicates (bucket C — most common
-after Sunday-night Client Command syncs), new shells that already have a
-closed counterpart, and new tickets matching a looks-completed pattern.
-Monday morning is the right cadence. Keep a dated summary so week-over-week
-deltas are visible.
+The Monday weekly pass is this mode run shallow (new tickets since the last
+snapshot, fresh extractor dupes, aging alerts, pattern flags only). Its
+checklist, review budget, and catch-up protocol live in
+`references/cadences.md` — load that file when running on cadence.
 
 ## Executing
 
-After per-bucket approval, follow `references/mode-close.md`. Reminders that
-have burned us: close to each ticket's OWN pipeline's closed stage (by
-label); closed-as-duplicate notes must name the keeper ticket ID; nothing is
-ever deleted by this skill.
+After per-bucket approval, follow `references/mode-close.md` (arm step,
+blast-radius cap, canary, verification). Reminders that have burned us: close
+to each ticket's OWN pipeline's closed stage (by label); closed-as-duplicate
+notes must name the keeper ticket ID; nothing is ever deleted by this skill.

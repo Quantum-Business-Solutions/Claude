@@ -2,6 +2,11 @@
 
 Many QBS tickets get resolved during the meeting where they were raised, but never get marked closed because the implementer (usually Marko) is still live on the call. Finding these is the single highest-yield part of reconciliation — they're hours that should already be banked but are silently sitting in "open."
 
+Load this file during the same-call hunt (Flag step 5, Full Reconciliation
+Phase 3.5). The promotion test (three signals) and the canonical artifact
+time window are defined in `references/evidence-standards.md` — this file is
+the phrase library and the false-positive guards.
+
 ## Why this happens
 
 - Marko shares screen, builds the property/list/workflow live during the call
@@ -19,11 +24,12 @@ This pattern is most common on:
 
 ## Detection approach
 
-A same-call completion requires three signals aligned:
+A same-call completion requires three signals aligned (full rules and the
+window definition: `references/evidence-standards.md`):
 
 1. **Transcript language** suggesting in-call completion (phrase library below)
-2. **Portal artifact** matching the ticket subject, created within the canonical window (meeting start to meeting end + 24h)
-3. **QBS-seat attribution** on that artifact
+2. **Portal artifact** matching the ticket subject, created within the canonical same-call window
+3. **QBS-seat attribution** on that artifact (resolved in the client portal's own user list)
 
 If any one is missing, don't promote to `🟢 DONE-ON-CALL` — flag as ambiguous instead.
 
@@ -90,9 +96,9 @@ When a match hits:
 
 1. Extract the full exchange (usually 3–6 lines around the match, enough to get the context)
 2. Note the timestamp or time offset within the meeting
-3. Check the portal for an artifact created within [meeting_start, meeting_end + 24h]
+3. Check the portal for an artifact created within the canonical same-call window (`references/evidence-standards.md`)
 4. Compare artifact subject/name against ticket subject for similarity
-5. If all three align → `🟢 DONE-ON-CALL`
+5. If all three signals align → `🟢 DONE-ON-CALL`
 
 ## False-positive guardrails
 
@@ -110,8 +116,8 @@ When in doubt, don't promote. Flag as ambiguous and let the user decide.
 If a transcript shows completion language but no portal artifact matches, flag for review with the specific quote. Don't guess. Possible explanations:
 
 - **Marko said he'd build it but didn't** — this is real. Surface to Shawn for follow-up.
-- **Marko built it but outside the expected time window** — maybe he got distracted, built it the next day. Widen the search window to ± 7 days and retry.
-- **Marko built it in a system this skill isn't checking** — e.g., the work is in n8n or Zapier, not HubSpot. Note as "check other systems."
+- **Marko built it but outside the expected time window** — maybe he got distracted, built it days later. Apply the one-time widened-window retry defined in `references/evidence-standards.md` (and note it in the reason).
+- **Marko built it in a system this skill isn't checking** — e.g., the work is in n8n or Zapier, not HubSpot. Evidence must come from a system you can actually read (integration logs, an API you have access to); if you can't verify it yourself, note as "check other systems" → `Needs Review`.
 - **Completion phrase was about something else entirely** — false positive, move on.
 
 ## Output example
@@ -119,20 +125,20 @@ If a transcript shows completion language but no portal artifact matches, flag f
 Good same-call detection output for the report:
 
 ```
-Ticket 44462734161 — Reconcile QuickBooks product library
-Meeting: 4/15/2026 SMP Weekly (ID ec47913d...)
+Ticket 44462734161 — Create dropdown call outcome properties
+Meeting: 4/15/2026 SMP Weekly (Zoom meeting ID ec47913d...)
 Transcript snippet (min 23–25):
-  Marko: "Let me pull up the QBO product list and flag the stale ones."
-  Marko: "Okay, I've got it. I'll mark these as inactive right now."
-  Jesse: "Good."
+  Marko: "Let me add the call outcome dropdown right now while we're here."
+  Jesse: "Great."
   Marko: "Done, that's saved."
 
-External-system evidence: 47 products marked inactive in QuickBooks on 4/15
-2:47 PM (within meeting window: 2:00–2:30 PM + 24h). NOTE: QuickBooks state
-is not verifiable via the HubSpot PAT — evidence like this must come from a
-system you can actually read (integration logs, QBO API, screenshot from the
-call). If you can't verify it yourself, this is Needs Review, not a close.
-Attribution: Marko Ajder seat (createdById 466155664)
+Portal evidence: property `call_outcome` (enumeration, 6 options) exists in
+client portal 243570690, createdAt 2026-04-15 14:47 — inside the canonical
+same-call window for the 2:00–2:30 PM meeting.
+Attribution: createdById 12048713 in the client portal → resolved via that
+portal's /crm/v3/owners to marko@thequantumleap.business — QBS seat ✓
+(client-portal user IDs are resolved per engagement; never quote a QBS-portal
+owner ID as client-portal attribution — see qbs-facts.md)
 
 Status: 🟢 DONE-ON-CALL — recommend close with 0.25 hr fulfillment
 ```
