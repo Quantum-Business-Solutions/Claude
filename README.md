@@ -19,7 +19,11 @@ skills/
     assets/             <- optional: templates, images, fonts
 scripts/
   package_skill.py      <- zips a skill folder into dist/<name>.skill
+templates/SKILL.md      <- starting point for brand-new skills
 dist/                   <- packaged .skill files (not committed)
+.claude/skills          <- symlink to skills/, so Claude Code sessions on this
+                           repo load every skill automatically (always current)
+.github/workflows/      <- CI that packages .skill files on every change
 ```
 
 ## The update loop
@@ -37,6 +41,19 @@ dist/                   <- packaged .skill files (not committed)
    the existing skill instead of creating a duplicate. (If the UI won't
    replace in place, delete the old one first — the repo is the backup.)
 4. **Commit and push** so the repo stays in sync with what's deployed.
+
+## Where each surface gets its skills
+
+- **claude.ai chats (web/desktop/mobile)**: uses the copies uploaded in
+  Settings → Capabilities → Skills. This is the only surface that needs the
+  manual upload step — there is currently no API to push skills into a
+  claude.ai account.
+- **Claude Code sessions on this repo**: load skills straight from this repo
+  via the `.claude/skills` symlink. Always current, zero uploads.
+- **CI**: on every push to `main` that touches `skills/`, GitHub Actions
+  packages all skills and refreshes the `skills-latest` release, so the
+  newest `.skill` files are always one download away at
+  Releases → skills-latest.
 
 ## Getting an existing claude.ai skill into this repo
 

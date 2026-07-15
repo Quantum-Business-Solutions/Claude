@@ -1,0 +1,43 @@
+name: Package skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "scripts/package_skill.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package every skill
+        run: |
+          for d in skills/*/; do
+            name=$(basename "$d")
+            [ "$name" = "_template" ] && continue
+            python3 scripts/package_skill.py "$d"
+          done
+          ls -la dist/
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: skill-files
+          path: dist/*.skill
+
+      - name: Refresh the skills-latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view skills-latest >/dev/null 2>&1 || \
+            gh release create skills-latest \
+              --title "Latest packaged skills" \
+              --notes "Auto-built on every skills change. Download the .skill file(s) you updated and upload at claude.ai -> Settings -> Capabilities -> Skills."
+          gh release upload skills-latest dist/*.skill --clobber
