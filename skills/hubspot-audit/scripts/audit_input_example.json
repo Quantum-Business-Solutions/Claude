@@ -1,0 +1,473 @@
+{
+  "client_name": "SMP Security",
+  "audit_date": "April 23, 2026",
+  "audited_by": "Quantum Business Solutions",
+
+  "overall_health_score": 30,
+  "overall_health_band": "Poor",
+  "overall_health_limiting_dimension": "Adoption",
+
+  "revefficiency_overall_score": 41,
+  "revefficiency_limiting_tier": "CONVERT",
+
+  "dimension_scores": {
+    "data_health": 41,
+    "architecture": 78,
+    "adoption": 30,
+    "automation": 72,
+    "integrations": 55,
+    "reporting": null
+  },
+
+  "dimension_narratives": {
+    "data_health": "Email and lifecycle stage fill at 100%, but phone 27% and job title 24% are both critical to your existing persona framework. The auto-critical trigger is zero buying-role coverage on open deals. Zero duplicates across 2,000-contact sample.",
+    "architecture": "Property counts disciplined. 9-stage pipeline with explicit Stalled Deal stage. 47 dynamic lists with intentional naming conventions. No custom objects — notable for a security business.",
+    "adoption": "Limiting dimension. Pipeline on one user, 1 call logged in 30 days, 27 sequences built with zero current enrollments, forecast tool unused, meeting scheduler unused despite 233 meetings in 90 days.",
+    "automation": "27 workflows, 17 active. Multiple workflows key off AI Fit Score and Engagement Score. Cleanup warranted: duplicate workflows, unnamed 2023 workflow, QBO integration workflows disabled three weeks ago.",
+    "integrations": "Breeze Prospecting Agent active, AI scoring workflows running. No ad accounts, no social channels, no conversation intelligence tool — primary gaps.",
+    "reporting": "Not audited in this pass. Will be added in a subsequent phase or on request."
+  },
+
+  "executive_summary": {
+    "portal_profile": "SMP Security operates a HubSpot Standard portal with 2,661 contacts, 632 companies, 1,268 deals, and 2 tickets. The portal has been in active use for several years and continues to see active development.",
+    "narrative": "Your foundational architecture is strong. Your strategic infrastructure (persona framework, AI scoring, cross-sell segmentation, Target Accounts) is ahead of peer portals. The gap is concentrated in two areas: operational discipline (calling, deal ownership, activity capture) and the CONVERT tier's list-and-workflow infrastructure.",
+    "top_risks": [
+      {
+        "title": "Single-owner pipeline concentration",
+        "detail": "99 of 100 open deals are owned by one user. Business continuity risk on $667K+ of tracked pipeline."
+      },
+      {
+        "title": "Activity capture blind spot",
+        "detail": "One logged call in 30 days across 11 owners. Calls happen off-platform; coaching and pipeline analysis impossible."
+      },
+      {
+        "title": "CONVERT tier execution gap",
+        "detail": "11 of 17 required CONVERT lists missing. No stalled deal alert workflow. No lead reassignment automation. No MQL-to-SQL handoff. This is where warm opportunities currently die."
+      }
+    ],
+    "top_opportunities": [
+      {
+        "title": "Activate the 27 sequences already built",
+        "detail": "Your portal has 27 sequences in place. None currently have enrollments. The infrastructure is waiting for the operational discipline to use it."
+      },
+      {
+        "title": "Deploy CONVERT-tier lists and workflows",
+        "detail": "Populating the 11 missing CONVERT lists and the four missing workflows produces immediate pipeline visibility. This is Quantum's Q2 core package territory."
+      },
+      {
+        "title": "Bring calls into the platform",
+        "detail": "Call capture closes the single largest data gap in the portal. Once active, AI scoring (which you already have) becomes predictive instead of descriptive."
+      }
+    ],
+    "next_step": "A targeted cleanup engagement, not a rebuild. Week 1 focuses on quick wins that resolve the critical findings. Month 1 tackles the strategic enablers. Quarter 1 scopes the larger investments. Total early-engagement scope: roughly 80 to 100 hours."
+  },
+
+  "maturity": {
+    "overall_stage": 1,
+    "overall_label": "Ad Hoc",
+    "overall_narrative": "Limited by Technology & Integration Coverage and People & Adoption. Your strategic infrastructure is built to support a higher operational stage than your current discipline layer can execute.",
+    "stages": [
+      { "capability": "Process & Operating Rhythm", "stage": 2, "observation": "Pipeline stages well-designed; deal progression discipline gaps and no documented buying centers." },
+      { "capability": "Data Architecture & Hygiene", "stage": 3, "observation": "Property governance visible, lists well-structured, naming conventions used." },
+      { "capability": "Technology & Integration Coverage", "stage": 1, "observation": "Activity capture major gap; calls, conversation intelligence, ad/social not flowing." },
+      { "capability": "People & Adoption", "stage": 1, "observation": "Ownership concentration and inactive seats drive this; 27 sequences built but unused." },
+      { "capability": "Strategy, Measurement & Optimization", "stage": 3, "observation": "AI scoring, persona framework, cross-sell motion all present and thoughtfully designed." }
+    ]
+  },
+
+  "findings_by_dimension": {
+    "data_health": [
+      {
+        "severity": "CRITICAL",
+        "title": "1.1 Deal amount missing on 77 of 100 open deals",
+        "evidence": "Of 100 open deals, only 23 have a populated amount field.",
+        "impact": "Pipeline forecasting cannot function without deal amounts. Revenue planning, capacity modeling, and resource allocation all depend on a pipeline that shows expected value.",
+        "recommendation": "Enforce amount as required at Site Visited/Needs Assessment stage via blocking workflow. Backfill existing open deals through owner assessment session.",
+        "effort_tier": "2-4 hours workflow; 4-8 hours backfill."
+      },
+      {
+        "severity": "CRITICAL",
+        "title": "1.2 No buying roles identified on any open deal",
+        "evidence": "All 100 open deals examined: zero Decision Makers, 87 single-threaded with one associated contact.",
+        "impact": "Buying role documentation is the foundation of modern B2B forecast accuracy.",
+        "recommendation": "Add buying role fields to Deal record sidebar. Require Decision Maker before Proposal Sent stage. Build weekly review for deals missing roles.",
+        "effort_tier": "4-6 hours initial configuration."
+      },
+      {
+        "severity": "CRITICAL",
+        "title": "1.3 Historical deal ownership on deactivated or unknown user",
+        "evidence": "Owner ID 62088901 not in active owners list, associated with 464 historical deals — 37% of total deals ever created.",
+        "impact": "Historical deal reporting, rep-level analysis, and any ownership-over-time analytics include orphaned/misattributed records.",
+        "recommendation": "Identify the phantom owner. Bulk-reassign to Archive owner.",
+        "effort_tier": "2-4 hours investigation plus 1 hour reassignment."
+      },
+      {
+        "severity": "HIGH",
+        "title": "1.4 Phone number populated on only 27% of contacts",
+        "evidence": "500-contact sample: phone fill 27%.",
+        "impact": "Security services business with phone as primary channel; outbound motion cannot operate against majority of database.",
+        "recommendation": "Deploy enrichment service (ZoomInfo, Apollo). Enforce capture on new contacts via workflow.",
+        "effort_tier": "8-16 hours enrichment."
+      },
+      {
+        "severity": "HIGH",
+        "title": "1.5 Job title populated on only 24% of contacts",
+        "evidence": "Sample: 24% job title fill. Persona trigger lists (C-Suite, Facilities, HR/Safety, IT, Ops) require job title.",
+        "impact": "Persona framework cannot operate on 76% of contacts.",
+        "recommendation": "Enrich in parallel with phone. Enforce on form submissions.",
+        "effort_tier": "Combined with 1.4: 8-16 hours."
+      },
+      {
+        "severity": "HIGH",
+        "title": "1.6 Close-lost reason captured on only 51% of lost deals",
+        "evidence": "61 closed-lost deals in 365d; 31 have closed_lost_reason populated.",
+        "impact": "Win-loss analysis operates on less than half available signal. 72% win rate means understanding the other 28% is a competitive intelligence gap.",
+        "recommendation": "Make closed_lost_reason required on stage change to Closed Lost. Backfill recent losses. Quarterly win-loss review.",
+        "effort_tier": "2-4 hours configuration."
+      }
+    ],
+    "architecture": [
+      {
+        "severity": "MEDIUM",
+        "title": "2.1 Consider custom objects for Systems and Monitoring Contracts",
+        "evidence": "Portal has no custom objects. Two industry-standard candidates for security integration businesses: Installed Systems and Monitoring Contracts.",
+        "impact": "Without these, equipment lifecycles not visible in CRM; monitoring contract renewals cannot be automated; recurring revenue compounded onto Deal rather than separately tracked.",
+        "recommendation": "Scope custom object architecture engagement with Company associations, lifecycle fields, renewal tracking. Unlocks the renewal motion your contract-ending lists already anticipate.",
+        "effort_tier": "2-4 weeks. Ops Hub Pro recommended."
+      }
+    ],
+    "adoption": [
+      {
+        "severity": "CRITICAL",
+        "title": "3.1 Pipeline ownership concentrated on a single user",
+        "evidence": "99 of 100 open deals owned by one user. Two other SMP owners own zero open deals.",
+        "impact": "Operational continuity at risk on $667K+ tracked pipeline. Coaching and rep-level comparison impossible.",
+        "recommendation": "Deal coverage/reassignment policy discussion. Evaluate territory or industry segmentation.",
+        "effort_tier": "4-8 hours process plus 4-8 hours configuration."
+      },
+      {
+        "severity": "CRITICAL",
+        "title": "3.2 Severe call logging gap",
+        "evidence": "1 call logged in 30d across 11 owners. Against 95 emails and 100+ meetings.",
+        "impact": "Calls happening off-platform; coaching impossible; pipeline analysis unreliable.",
+        "recommendation": "Deploy call capture. HubSpot Calling (fastest) or third-party dialer with auto-log.",
+        "effort_tier": "1-2 weeks including training."
+      },
+      {
+        "severity": "HIGH",
+        "title": "3.3 Five of eleven owner seats show zero activity",
+        "evidence": "Inactive seats: Mary Vogel, three Accelant users, one gmail.com account.",
+        "impact": "Each category (unused capacity, stale access, passive role) warrants different response.",
+        "recommendation": "Audit each seat. Deactivate unused. Migrate gmail to corporate or deactivate.",
+        "effort_tier": "1-2 hours review plus conversations."
+      },
+      {
+        "severity": "HIGH",
+        "title": "3.4 Sequences infrastructure built but unused",
+        "evidence": "27 sequences detected in portal. Zero contacts currently enrolled. Sequences were built but are not in active use.",
+        "impact": "Represents significant prior investment (infrastructure and content creation time) producing zero current return. Also a risk: if the sequence content is stale, activating them without review could damage deliverability.",
+        "recommendation": "Review sequences for current accuracy. Select 3-5 highest-value sequences to reactivate. Pair with sales rep training on enrollment workflow.",
+        "effort_tier": "4-8 hours sequence review plus 2-4 hours training."
+      }
+    ],
+    "automation": [
+      {
+        "severity": "HIGH",
+        "title": "4.1 QuickBooks Online integration workflows recently disabled",
+        "evidence": "QBO integration workflows turned off April 3, 2026 — three weeks before audit.",
+        "impact": "If unintentional, revenue-to-invoice flow may be broken.",
+        "recommendation": "Determine why workflows were disabled. Reactivate or replace.",
+        "effort_tier": "30 min investigation; 2-8 hours remediation."
+      }
+    ],
+    "integrations": [
+      {
+        "severity": "HIGH",
+        "title": "5.1 Breeze AI adoption is ahead of peer portals",
+        "evidence": "Breeze Prospecting Agent, Chat Assistant, and AI Fit Score / Engagement Score workflows all active.",
+        "impact": "Strength to preserve. Most portals at this maturity level have not deployed these.",
+        "recommendation": "Continue. Quarterly review to evaluate new Breeze capabilities. Validate Fit Score correlation with win rate.",
+        "effort_tier": "Ongoing 2-4 hours per quarter."
+      },
+      {
+        "severity": "HIGH",
+        "title": "5.2 No ad accounts or social channels connected",
+        "evidence": "Marketing Hub Pro includes ad/social account connections — none connected.",
+        "impact": "Marketing attribution impossible across paid and social. Campaign ROI cannot be measured.",
+        "recommendation": "Evaluate paid marketing strategy. If active, connect relevant accounts.",
+        "effort_tier": "4-8 hours per channel."
+      },
+      {
+        "severity": "HIGH",
+        "title": "5.3 No conversation intelligence tool detected",
+        "evidence": "No Gong, Chorus, Fireflies, or equivalent CI tool signals detected in workflows or integrations.",
+        "impact": "Once call capture is activated (Finding 3.2), CI is the highest-ROI AI investment available for a sales team. Team currently has no recording, coaching, or insight extraction capability.",
+        "recommendation": "Evaluate CI options after call capture is stable. Gong is most comprehensive; Fireflies is lightest weight.",
+        "effort_tier": "2-3 weeks deployment; subscription cost varies by team size."
+      }
+    ],
+    "reporting": []
+  },
+
+  "feature_matrix": {
+    "sales": [
+      { "id": "SH-01", "name": "HubSpot Calling (native)", "in_tier": true, "configured": "unknown", "actively_used": "partial", "used_well": "no", "notes": "1 call logged in 30d; 1 of 11 owners logged any call" },
+      { "id": "SH-02", "name": "Dialer integration (3rd-party)", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "No dialer detected (Aircall/RingCentral/Kixie/etc.)" },
+      { "id": "SH-03", "name": "Deal pipelines and stage design", "in_tier": true, "configured": "yes", "actively_used": "yes", "used_well": "yes", "notes": "1 pipeline with 9 well-designed stages including explicit Stalled stage" },
+      { "id": "SH-04", "name": "Buying roles on deal-contact associations", "in_tier": true, "configured": "yes", "actively_used": "no", "used_well": "no", "notes": "0 of 100 open deals have any buying role set" },
+      { "id": "SH-05", "name": "Sequences", "in_tier": true, "configured": "yes", "actively_used": "no", "used_well": "partial", "notes": "27 sequences built; zero current enrollments — infrastructure waiting for adoption" },
+      { "id": "SH-06", "name": "Playbooks", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "0 playbooks created" },
+      { "id": "SH-07", "name": "Meeting scheduler / meeting links", "in_tier": true, "configured": "no", "actively_used": "partial", "used_well": "partial", "notes": "0 native scheduler links; 233 meetings in last 90d (scheduled via external tools)" },
+      { "id": "SH-08", "name": "Forecast tool", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "No forecast submissions detected — tool unused" },
+      { "id": "SH-09", "name": "Call coaching / playlists", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "Requires active calling (see SH-01/02) — not currently feasible" },
+      { "id": "SH-10", "name": "Deal priority / deal score", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "hs_priority fill rate: 0%" },
+      { "id": "SH-11", "name": "Email templates", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "0 email templates created" },
+      { "id": "SH-12", "name": "Snippets", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "0 snippets created" },
+      { "id": "SH-14", "name": "Quotes", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "0 quotes created in last 90d" }
+    ],
+    "marketing": [
+      { "id": "MH-01", "name": "Marketing emails", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "0 marketing emails published" },
+      { "id": "MH-02", "name": "Forms", "in_tier": true, "configured": "yes", "actively_used": "partial", "used_well": "partial", "notes": "4 forms in portal (2 templates, Contact Us, On-Site Assessment)" },
+      { "id": "MH-03", "name": "Landing pages", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "0 landing pages detected" },
+      { "id": "MH-04", "name": "Workflows", "in_tier": true, "configured": "yes", "actively_used": "yes", "used_well": "partial", "notes": "27 total, 17 active. Some cleanup candidates." },
+      { "id": "MH-05", "name": "Lists", "in_tier": true, "configured": "yes", "actively_used": "yes", "used_well": "yes", "notes": "49 lists, 47 dynamic, intentional naming conventions" },
+      { "id": "MH-06", "name": "Campaigns tool", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "0 campaigns created" },
+      { "id": "MH-07", "name": "Attribution reports", "in_tier": true, "configured": "unknown", "actively_used": "unknown", "used_well": "unknown", "notes": "Requires reports API — manual check recommended" },
+      { "id": "MH-08", "name": "Ad accounts (Google, LinkedIn, Meta)", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "No ad accounts connected" },
+      { "id": "MH-09", "name": "Social accounts", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "No social channels connected" },
+      { "id": "MH-10", "name": "Marketing contacts configuration", "in_tier": true, "configured": "yes", "actively_used": "yes", "used_well": "yes", "notes": "187 marketing contacts, below concerning thresholds" }
+    ],
+    "service": [
+      { "id": "SVH-01", "name": "Tickets and ticket pipelines", "in_tier": true, "configured": "yes", "actively_used": "no", "used_well": "no", "notes": "Only 2 tickets — Service Hub present but unused" },
+      { "id": "SVH-03", "name": "Knowledge base", "in_tier": false, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "0 articles; Service Pro required" }
+    ],
+    "ai_breeze": [
+      { "id": "BR-01", "name": "Breeze Copilot", "in_tier": true, "configured": "yes", "actively_used": "unknown", "used_well": "unknown", "notes": "Chat Assistant properties present in data model" },
+      { "id": "BR-02", "name": "Breeze Prospecting Agent", "in_tier": true, "configured": "yes", "actively_used": "yes", "used_well": "unknown", "notes": "Prospecting agent properties active on Company records" },
+      { "id": "BR-03", "name": "Breeze Content Agent", "in_tier": true, "configured": "unknown", "actively_used": "unknown", "used_well": "unknown", "notes": "Requires marketing email metadata scan — manual check" },
+      { "id": "BR-05", "name": "AI Fit Score", "in_tier": true, "configured": "yes", "actively_used": "yes", "used_well": "unknown", "notes": "2 workflows keyed off Fit Score Threshold >75 and 50-75" },
+      { "id": "BR-06", "name": "AI Engagement Score", "in_tier": true, "configured": "yes", "actively_used": "yes", "used_well": "unknown", "notes": "2 workflows keyed off Engagement Score >70 and >50" },
+      { "id": "BR-07", "name": "Predictive Lead Scoring", "in_tier": false, "configured": "partial", "actively_used": "unknown", "used_well": "unknown", "notes": "4 predictive properties present; full Predictive Scoring requires Enterprise" }
+    ],
+    "third_party_ai": [
+      { "id": "AI-01", "name": "Claude connector (MCP / Anthropic)", "in_tier": true, "configured": "unknown", "actively_used": "unknown", "used_well": "unknown", "notes": "Detection requires OAuth grants / installed apps inspection" },
+      { "id": "AI-02", "name": "OpenAI / ChatGPT integration", "in_tier": true, "configured": "unknown", "actively_used": "unknown", "used_well": "unknown", "notes": "Detection requires installed apps API" }
+    ],
+    "conversation_intel": [
+      { "id": "CI-01", "name": "Gong (conversation intelligence)", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "No Gong signals in workflows or integrations" },
+      { "id": "CI-02", "name": "Chorus / Fireflies / Otter / Grain / Read.ai", "in_tier": true, "configured": "no", "actively_used": "no", "used_well": "no", "notes": "No CI tool signals detected" },
+      { "id": "CI-04", "name": "Zoom AI Companion", "in_tier": true, "configured": "unknown", "actively_used": "unknown", "used_well": "unknown", "notes": "Detection requires meeting body analysis" }
+    ]
+  },
+
+  "feature_matrix_headlines": {
+    "sales": "Sales Hub headline: Pipeline design (SH-03) is genuinely strong, but 9 of 13 audited features score No or Partial. The standout finding — 27 sequences built with zero current enrollments — indicates the infrastructure is waiting on operational adoption. Activating Calling and Sequences is the single highest-ROI Sales Hub intervention available.",
+    "marketing": "Marketing Hub headline: list architecture and persona segmentation are strong. Marketing emails, landing pages, campaigns, ad accounts, and social channels are all completely unused — the inbound and paid marketing motion is essentially dormant. If inbound is a strategic priority, this is the area with the most unrealized capacity.",
+    "service": "Service Hub is present but dormant (2 tickets). For a security business with recurring customer relationships, tickets, SLAs, and knowledge base are a natural fit that could support renewal conversations and customer self-service. Knowledge base requires Service Pro upgrade.",
+    "ai_breeze": "AI feature adoption is ahead of peer portals. Breeze Prospecting Agent, Chat Assistant, and AI Fit/Engagement scoring are all active, with workflows keying off the scores. This is a strength to preserve and extend. A Predictive Lead Scoring upgrade (Enterprise tier) would extend what is already an ahead-of-peer AI adoption posture.",
+    "third_party_ai": "Detection for third-party AI (Claude, ChatGPT) requires OAuth and installed-apps inspection not available through the standard audit. A brief direct check in HubSpot Settings > Integrations can confirm what is connected.",
+    "conversation_intel": "Conversation intelligence is the single most impactful AI investment for a sales team actively on phones. Given the current call-capture gap, deploying any CI tool (Gong, Chorus, Fireflies) depends on first activating call capture per the Adoption findings."
+  },
+
+  "revefficiency": {
+    "overall_score": 41,
+    "limiting_tier": "CONVERT",
+    "interpretation": "Interpretation: your KEEP, GROW, MULTIPLY, and EXPAND tiers are all functionally ready. The CONVERT tier — typically the largest revenue recovery opportunity in any portal — is where the gap concentrates. This is also where Quantum's Q2 core packages produce the highest marginal value.",
+    "tier_scores": { "KEEP": 89, "GROW": 97, "MULTIPLY": 89, "CONVERT": 41, "EXPAND": 81 },
+    "tier_observations": {
+      "KEEP": "Retention infrastructure solid. Minor gap: QBR tracking not formalized.",
+      "GROW": "Cross-sell and upsell segmentation lists present and well-organized.",
+      "MULTIPLY": "Referral program structure not formalized; LinkedIn integration signals not visible.",
+      "CONVERT": "Limiting tier. 11 of 17 required CONVERT lists missing; no MQL/SQL handoff workflow; no stalled deal alerts.",
+      "EXPAND": "ICP property exists but 0% fill rate. Target Accounts property exists but 0 companies flagged. ZoomInfo intent/scoops not detected."
+    },
+    "tier_narratives": {
+      "KEEP": {
+        "heading": "Retain current clients",
+        "summary": "Score: 89 (Good). Two structural gaps, neither critical.",
+        "paragraphs": [
+          { "body": "Gaps identified: QBR tracking (−8 High, no properties or lists for quarterly business reviews), dormant customer detection (−3 Medium, no dedicated list for customers with no activity in 90+ days). For a security services business with recurring customer relationships, adding a QBR cadence property and dormant customer list is low-effort and high-visibility." }
+        ]
+      },
+      "GROW": {
+        "heading": "Expand inside accounts",
+        "summary": "Score: 97 (Good). One minor gap.",
+        "paragraphs": [
+          { "body": "Gaps identified: Re-sell / expansion tracking (−3 Medium). Cross-sell and upsell lists detected — healthy signal." }
+        ]
+      },
+      "MULTIPLY": {
+        "heading": "Referrals and networks",
+        "summary": "Score: 89 (Good). Two structural gaps.",
+        "paragraphs": [
+          { "body": "Gaps identified: Referral program structure (−8 High, no referral lists or workflows), LinkedIn integration signals (−3 Medium, no LinkedIn Sales Navigator indicators). A systematic referral program is a meaningful retention multiplier for security services businesses with high trust requirements." }
+        ]
+      },
+      "CONVERT": {
+        "heading": "Re-engage warm/missed opportunities",
+        "summary": "Score: 41 (Poor). The limiting tier. Five structural gaps including one auto-critical trigger.",
+        "paragraphs": [
+          { "subheading": "Missing required lists", "body": "The Sales Blitz playbook identifies 17 required lists for systematic CONVERT execution. 11 of these are missing from your portal: Past Meetings - No Deal; Lost Deals segmentation; MQLs; SQLs; Form Submissions 30/60/90; Open Deals active-review; No-follow-up 30/60/90; Website visitor leads; Follow-up tasks view; No-shows; Trade show attendees. The auto-critical trigger is the missing Leads-not-contacted-in-30/60/90 list. Your stalled-deal list is present (your pipeline has an explicit Stalled Deal stage), so deal velocity is partially trackable — but without the leads-not-contacted list, top-of-funnel attrition is invisible." },
+          { "subheading": "Missing required workflows", "body": "Three workflow gaps identified: MQL-to-SQL handoff automation, lead reassignment on no-response, stalled deal alert. Each of these is a −8 High deduction." },
+          { "subheading": "Why CONVERT matters most", "body": "In Quantum's experience auditing more than 55 HubSpot portals, the CONVERT tier is consistently where the most revenue leaks occur. Every opportunity already paid for through marketing spend, events, or prior sales effort sits in the CONVERT tier. A portal that executes CONVERT well recovers significantly more of its own CAC; a portal that does not execute CONVERT well pays for the same leads twice." }
+        ]
+      },
+      "EXPAND": {
+        "heading": "Net-new clients",
+        "summary": "Score: 81 (Good). Three structural gaps, none critical.",
+        "paragraphs": [
+          { "body": "Gaps identified: ICP property exists but 0% fill rate on active customers (−8 High), Target Accounts property exists but 0 companies flagged (−8 High), no ZoomInfo intent or scoops signals in lists or workflows (−3 Medium). Your strategic infrastructure is present; it just isn't populated. Populating ICP on your top 100 active customers alone would close this gap." }
+        ]
+      }
+    },
+    "q2_overlay": {
+      "intro": "For clients who deploy the Q2 framework, the following Q2 packages directly address the RevEfficiency gaps identified above:",
+      "packages": [
+        { "name": "Sales Activity Hygiene Package (Core)", "addresses": "Closes the No Activity 30/60/90 gap, Never Contacted gap, Deal Pipeline Health inventory — addresses most of the CONVERT tier missing lists." },
+        { "name": "Deal Pipeline Health Package (Core)", "addresses": "Stalled Deals, Past Due Close Date, Missing Amount, Win/Loss dashboards — directly addresses the CONVERT auto-critical plus the Reporting dimension gap." },
+        { "name": "Lead Quality & Intent Package (Standard)", "addresses": "Lead scoring tiers, returning visitors, intent segmentation — addresses the EXPAND tier ICP and intent gaps." },
+        { "name": "Customer Lifecycle Package (Core)", "addresses": "Dormant Customer detection, Customer with/without Open Deal — addresses the KEEP tier dormant gap." }
+      ]
+    }
+  },
+
+  "roadmap": {
+    "week_1": [
+      ["Add buying roles to Deal sidebar; require Decision Maker past Proposal Sent", "4-6 hrs", "Critical", "Current tier"],
+      ["Require deal amount for progression past Needs Assessment", "2-4 hrs", "Critical", "Current tier"],
+      ["Reassign 464 ghost-owned deals to Archive owner", "2-4 hrs", "Critical", "Current tier"],
+      ["Audit 27 sequences and identify 3-5 to reactivate", "4-8 hrs", "High", "Current tier"],
+      ["Investigate QBO integration workflow disablement", "2-8 hrs", "High", "Depends on cause"],
+      ["Deactivate or migrate gmail-based owner account", "1 hr", "High", "Current tier"],
+      ["Require close-lost reason for Closed Lost transitions", "2-4 hrs", "High", "Current tier"]
+    ],
+    "month_1": [
+      ["Deploy call capture (HubSpot Calling or dialer integration) + training", "1-2 weeks", "Critical", "Current tier + call minutes"],
+      ["Deploy Q2 Sales Activity Hygiene Package (No Activity 30/60/90 lists etc)", "1 week", "Critical", "Q2 engagement"],
+      ["Deploy Q2 Deal Pipeline Health Package (Stalled Deals, Past Due, Missing Amount)", "1 week", "Critical", "Q2 engagement"],
+      ["Enrich phone and job title on active customer/prospect companies", "1-2 weeks", "High", "Enrichment service"],
+      ["Deal ownership redistribution across SMP owners", "1-2 weeks", "Critical", "Process + config"],
+      ["Deploy MQL/SQL handoff workflow and lead reassignment workflows", "1 week", "High", "Current tier"],
+      ["Deploy Stalled Deal alert workflow", "2-4 hrs", "High", "Current tier"],
+      ["Populate ICP on top 100 active customers", "1 week", "High", "Current tier + time"],
+      ["Reactivate 3-5 selected sequences with content refresh", "1 week", "High", "Current tier"]
+    ],
+    "quarter_1": [
+      ["Custom objects: Installed Systems, Monitoring Contracts + renewal workflows", "3-4 weeks", "High", "Ops Hub Pro recommended"],
+      ["Deploy conversation intelligence tool (Gong/Chorus/Fireflies)", "2-3 weeks", "High", "Separate licensing"],
+      ["Build renewal motion against Monitoring Contracts", "2-3 weeks", "High", "Depends on objects"],
+      ["Establish win-loss review cadence and quarterly insight report", "1 week setup", "Medium", "Current tier"],
+      ["Shared tenancy governance review with Accelant", "2-4 weeks", "High", "Discussion + config"],
+      ["Connect ad/social accounts + Campaigns tool activation (if priority)", "2-3 weeks", "Medium", "Current tier"]
+    ]
+  },
+
+  "appendix_a": {
+    "overview": "Audit performed April 23, 2026 via read-only Private App token with CRM, automation, forms, lists, owners, settings read scopes.",
+    "audited": "Portal profile, owners (11), workflows (27), lists (49), pipelines/stages, custom objects (0), property inventory and fill rates (500-sample), duplicate detection (2,000-sample), open deals (100), buying role coverage, engagement activity per owner (30d), closed deals (365d), recent build activity (30/90d), and extended feature detection across sequences, playbooks, forecast, meeting scheduler, templates, snippets, quotes, marketing emails, landing pages, knowledge base, social posts, ad campaigns, plus AI/Breeze features and conversation intelligence tools.",
+    "not_audited": "Reporting dimension (dashboards, custom reports). Sequence performance beyond inventory. Third-party AI integration deep inspection. Audit log (Enterprise). Workflow action-level detail.",
+    "revefficiency_note": "For each of the 5 tiers (KEEP, GROW, MULTIPLY, CONVERT, EXPAND), the audit checks the presence of required structural elements: lists, properties, workflows, and integrations as defined in Quantum's RevEfficiency Model reference. Each missing element produces a deduction from a starting score of 100. Overall RevEfficiency = minimum of the five tier scores."
+  },
+
+  "appendix_d": {
+    "dimension_deductions": {
+      "data_health": [
+        { "source": "Finding 1.1", "reason": "Deal amount missing on 77 of 100 open deals", "amount": -15 },
+        { "source": "Finding 1.2", "reason": "No buying roles on any open deal (auto-critical trigger)", "amount": -15 },
+        { "source": "Finding 1.3", "reason": "37% historical deal ownership on deactivated/unknown user", "amount": -8 },
+        { "source": "Finding 1.4", "reason": "Phone fill rate at 27%", "amount": -8 },
+        { "source": "Finding 1.5", "reason": "Job title fill rate at 24%", "amount": -8 },
+        { "source": "Finding 1.6", "reason": "Close-lost reason captured on 51% of lost deals", "amount": -3 },
+        { "source": "Feature MH-02", "reason": "Forms in-tier but partially used (4 forms, thin footprint)", "amount": -2 }
+      ],
+      "architecture": [
+        { "source": "Finding 2.1", "reason": "No custom objects — opportunity not used", "amount": -5 },
+        { "source": "Observation", "reason": "Shared tenancy with Accelant (governance not formalized)", "amount": -8 },
+        { "source": "Observation", "reason": "Methodology structure not formally embedded", "amount": -5 },
+        { "source": "Observation", "reason": "Two 2017 CSV import lists still present", "amount": -2 },
+        { "source": "Observation", "reason": "Property naming minor inconsistencies", "amount": -2 }
+      ],
+      "adoption": [
+        { "source": "Finding 3.1", "reason": "Pipeline concentration >90% one-user (auto-critical)", "amount": -15 },
+        { "source": "Finding 3.2", "reason": "Call black hole — 1 call / 30d across 11 owners (auto-critical)", "amount": -15 },
+        { "source": "Finding 3.3", "reason": "5 of 11 owner seats show zero activity in 30 days", "amount": -8 },
+        { "source": "Finding 3.4", "reason": "27 sequences built with zero current enrollments", "amount": -8 },
+        { "source": "Feature SH-06", "reason": "Playbooks in-tier but not configured (0)", "amount": -3 },
+        { "source": "Feature SH-07", "reason": "Meeting scheduler not configured despite 233 meetings via external tools", "amount": -5 },
+        { "source": "Feature SH-08", "reason": "Forecast tool in-tier but unused", "amount": -5 },
+        { "source": "Feature SH-10", "reason": "Deal priority in-tier but 0% fill", "amount": -2 },
+        { "source": "Feature SH-11/12", "reason": "Templates and Snippets in-tier but empty", "amount": -2 },
+        { "source": "Feature SVH-01", "reason": "Tickets partially used (only 2 tickets)", "amount": -1 }
+      ],
+      "automation": [
+        { "source": "Finding 4.1", "reason": "QBO integration workflows recently disabled", "amount": -8 },
+        { "source": "Observation", "reason": "Two duplicate 'Assign new web leads' workflows", "amount": -3 },
+        { "source": "Observation", "reason": "Unnamed workflow from 2023 present", "amount": -3 },
+        { "source": "Observation", "reason": "No explicit data hygiene workflows detected", "amount": -8 },
+        { "source": "Observation", "reason": "No deal progression safety nets (stalled deal workflow)", "amount": -3 },
+        { "source": "Observation", "reason": "No lead follow-up cadence automation verified", "amount": -3 }
+      ],
+      "integrations": [
+        { "source": "Finding 5.2", "reason": "Ad accounts not connected despite Marketing Pro", "amount": -5 },
+        { "source": "Finding 5.2", "reason": "Social accounts not connected despite Marketing Pro", "amount": -5 },
+        { "source": "Finding 5.3", "reason": "No conversation intelligence tool present", "amount": -12 },
+        { "source": "Observation", "reason": "Calendar sync coverage unknown per user", "amount": -8 },
+        { "source": "Observation", "reason": "Inbox (Gmail/Outlook) coverage unknown per user", "amount": -10 },
+        { "source": "Observation", "reason": "Call capture integration not present", "amount": -5 }
+      ]
+    },
+    "tier_deductions": {
+      "KEEP": [
+        { "source": "Element", "reason": "QBR tracking (no properties or lists for quarterly reviews)", "amount": -8 },
+        { "source": "Element", "reason": "Dormant customer detection (no dedicated list)", "amount": -3 }
+      ],
+      "GROW": [
+        { "source": "Element", "reason": "Re-sell / expansion tracking (no dedicated structure)", "amount": -3 }
+      ],
+      "MULTIPLY": [
+        { "source": "Element", "reason": "Referral program structure (no lists or workflows)", "amount": -8 },
+        { "source": "Element", "reason": "LinkedIn Sales Navigator integration signals absent", "amount": -3 }
+      ],
+      "CONVERT": [
+        { "source": "Element", "reason": "Leads not contacted 30/60/90 list missing (auto-critical)", "amount": -15 },
+        { "source": "Element", "reason": "11 other required CONVERT lists missing (capped)", "amount": -20 },
+        { "source": "Element", "reason": "MQL → SQL handoff workflow missing", "amount": -8 },
+        { "source": "Element", "reason": "Lead reassignment on no-response missing", "amount": -8 },
+        { "source": "Element", "reason": "Stalled deal alert workflow missing", "amount": -8 }
+      ],
+      "EXPAND": [
+        { "source": "Element", "reason": "ICP property exists but 0% fill rate on companies", "amount": -8 },
+        { "source": "Element", "reason": "Target Accounts configured but 0 companies flagged", "amount": -8 },
+        { "source": "Element", "reason": "No ZoomInfo intent / scoops signals detected", "amount": -3 }
+      ]
+    }
+  },
+
+  "appendix_e": {
+    "groups": [
+      {
+        "title": "Service Hub upgrades",
+        "rows": [
+          ["Service Hub Professional", "$500/mo (approx)", "SLAs on tickets, knowledge base, customer portal, feedback surveys (CSAT/CES), help desk workspace, service playbooks"],
+          ["Service Hub Enterprise", "Custom pricing", "Advanced routing, AI customer agent (Breeze), playbook automation, hierarchical teams for service, advanced reporting"]
+        ]
+      },
+      {
+        "title": "Operations Hub",
+        "rows": [
+          ["Ops Hub Starter", "$50/mo", "Two-way data sync with Salesforce, NetSuite, Mailchimp; basic data quality automation"],
+          ["Ops Hub Professional", "$800/mo (approx)", "Programmable automation (custom code actions), advanced data quality, webhooks, field-level permissions"],
+          ["Ops Hub Enterprise", "Custom pricing", "Datasets for cross-object reporting, advanced HubL mapping, governance controls, audit log access"]
+        ]
+      },
+      {
+        "title": "Sales / Marketing Hub Enterprise upgrades",
+        "rows": [
+          ["Sales Hub Enterprise", "Custom pricing", "Predictive lead scoring (AI), advanced coaching with call review, sales intelligence, custom objects at scale, hierarchical teams, enterprise forecasting"],
+          ["Marketing Hub Enterprise", "Custom pricing", "Custom events, advanced predictive scoring, hierarchical teams, multi-touch attribution reports, sandbox environments"]
+        ]
+      }
+    ],
+    "footer_note": "Pricing figures are approximate and subject to HubSpot's current retail rates. Your HubSpot account manager can provide exact pricing."
+  }
+}
