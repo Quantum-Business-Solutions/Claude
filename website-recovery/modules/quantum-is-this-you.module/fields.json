@@ -1,0 +1,119 @@
+[
+ {
+  "id": "eyebrow",
+  "name": "eyebrow",
+  "label": "Eyebrow",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Is This You?"
+ },
+ {
+  "id": "heading",
+  "name": "heading",
+  "label": "Heading (em allowed)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Check every one that <em>sounds familiar</em>"
+ },
+ {
+  "id": "intro",
+  "name": "intro",
+  "label": "Intro",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The more that land, the more we can help. Be honest \u2014 this is just for you."
+ },
+ {
+  "id": "items",
+  "name": "items",
+  "label": "Checklist items",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 1,
+   "max": 10,
+   "sorting_label_field": null,
+   "default": 6
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "q",
+    "name": "q",
+    "label": "Statement",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "q": "Leads slip through the cracks between marketing and sales"
+   },
+   {
+    "q": "We can't trace marketing spend to actual revenue"
+   },
+   {
+    "q": "Our reps spend more time on admin than selling"
+   },
+   {
+    "q": "Our tools don't talk to each other"
+   },
+   {
+    "q": "Outbound is inconsistent \u2014 feast or famine"
+   },
+   {
+    "q": "We're not showing up in AI search or answer engines"
+   }
+  ]
+ },
+ {
+  "id": "banner_text",
+  "name": "banner_text",
+  "label": "Banner text (use {n} and {t})",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "{n} of {t} sound familiar. Start checking the ones that hit home."
+ },
+ {
+  "id": "cta_label",
+  "name": "cta_label",
+  "label": "CTA label",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Book a call"
+ },
+ {
+  "id": "cta_url",
+  "name": "cta_url",
+  "label": "CTA URL",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "https://meetings.hubspot.com/shawn-peterson"
+ }
+]

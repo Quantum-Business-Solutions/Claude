@@ -1,0 +1,95 @@
+[
+ {
+  "id": "eyebrow",
+  "name": "eyebrow",
+  "label": "Eyebrow",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Myth vs. Reality"
+ },
+ {
+  "id": "heading",
+  "name": "heading",
+  "label": "Heading (em allowed)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "What most people think \u2014 <em>and what's actually true</em>"
+ },
+ {
+  "id": "intro",
+  "name": "intro",
+  "label": "Intro",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The assumptions that keep teams stuck, and the reality that changes the math."
+ },
+ {
+  "id": "pairs",
+  "name": "pairs",
+  "label": "Myth/Reality pairs",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 1,
+   "max": 8,
+   "sorting_label_field": null,
+   "default": 4
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "myth",
+    "name": "myth",
+    "label": "Myth",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   },
+   {
+    "id": "reality",
+    "name": "reality",
+    "label": "Reality",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "myth": "Agencies just sell you more tools you won't use.",
+    "reality": "We start with outcomes and use the stack you already own \u2014 new tools only when they pay for themselves."
+   },
+   {
+    "myth": "We need more leads to grow.",
+    "reality": "Most teams don't have a lead problem \u2014 they have a system problem. Connecting what you have unlocks pipeline you're already paying for."
+   },
+   {
+    "myth": "AI and automation are too complex for our team.",
+    "reality": "We build the workflows and hand you a system your team actually runs \u2014 with humans in the loop where it matters."
+   },
+   {
+    "myth": "This will take a year to show results.",
+    "reality": "We build in weeks, not quarters \u2014 typically with qualified pipeline lift inside 90 days and quick wins in the first few weeks."
+   }
+  ]
+ }
+]

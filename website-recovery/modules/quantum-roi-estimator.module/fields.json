@@ -1,0 +1,90 @@
+[
+ {
+  "id": "eyebrow",
+  "name": "eyebrow",
+  "label": "Eyebrow",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "ROI Estimator"
+ },
+ {
+  "id": "heading",
+  "name": "heading",
+  "label": "Heading (em allowed)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "See what a <em>connected system</em> is worth to you"
+ },
+ {
+  "id": "intro",
+  "name": "intro",
+  "label": "Intro",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Adjust the sliders to your business. The model estimates what a modest lift on your current engine is worth \u2014 assumptions below."
+ },
+ {
+  "id": "uplift_pct",
+  "name": "uplift_pct",
+  "label": "Modeled lift % (e.g. 25)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "25"
+ },
+ {
+  "id": "investment",
+  "name": "investment",
+  "label": "Reference investment $ (e.g. 14950)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "14950"
+ },
+ {
+  "id": "cta_label",
+  "name": "cta_label",
+  "label": "CTA label",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Get my custom plan"
+ },
+ {
+  "id": "cta_url",
+  "name": "cta_url",
+  "label": "CTA URL",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "https://meetings.hubspot.com/shawn-peterson"
+ },
+ {
+  "id": "footnote",
+  "name": "footnote",
+  "label": "Assumptions footnote",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Illustrative model: applies the lift % to your current annual closed revenue (leads \u00d7 12 \u00d7 close rate \u00d7 deal size). Your actual plan gets real numbers from your data."
+ }
+]

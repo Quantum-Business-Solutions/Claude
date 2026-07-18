@@ -83,3 +83,21 @@ Numeric IDs per theme discoverable via `GET /content/api/v4/custom_widgets?name_
 - SalesChain migration guide published (by Shawn via UI):
   /blog/migrating-from-saleschain-to-hubspot-dealer-guide
 - Menu tie-in for the five new pages: pending page publish.
+
+## 2026-07-18 (later) — Overview page, pain-bridge + 7 conversion modules
+
+- **/quantum-overview** (LP `217439944331`, live): hero, pain-bridge module, stats band
+  (module defaults = blessed numbers), interactive service-wheel SVG (5 segments matching
+  mega-menu columns), 3 entry doors, Joe B quote, CTA. "Solutions" nav item now links here.
+- **quantum-pain-bridge** module in all 9 themes (Void id `217438712167`).
+  Gotchas learned: fields.json group fields need exact roadmap-shape (type:group, tab,
+  expanded, group_occurrence_meta); child ids must be GLOBALLY unique per file; avoid
+  reserved child ids (label/value) — use short ids (v/k/p/s).
+- **7 new modules** in all 9 themes (from Claude Design concepts): quantum-two-futures,
+  quantum-cost-of-inaction, quantum-before-after (defaults neutral — real numbers only!),
+  quantum-roi-estimator (interactive, honest math + assumptions footnote),
+  quantum-is-this-you (checklist qualifier), quantum-myth-reality, quantum-why-now.
+  Source in `modules/`. Themes now at 56 modules each (Void 59).
+- Master pricing page: new sections #audit #hubspot-training #revops #fractional + chips.
+- 5 solution pages live + in nav + 10/10 upgrades (pain bridges, paths, who-for,
+  fractional rebuild w/ triggers + comparison + definitions, testimonials).

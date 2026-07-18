@@ -1,0 +1,247 @@
+[
+ {
+  "id": "eyebrow",
+  "name": "eyebrow",
+  "label": "Eyebrow",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The Transformation"
+ },
+ {
+  "id": "heading",
+  "name": "heading",
+  "label": "Heading (HTML em allowed)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "From scattered effort to a <em>system that compounds</em>"
+ },
+ {
+  "id": "intro",
+  "name": "intro",
+  "label": "Intro",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Most teams don't have a lead problem \u2014 they have a system problem. Here's what changes when your revenue engine actually connects."
+ },
+ {
+  "id": "pain_label",
+  "name": "pain_label",
+  "label": "Pain chip",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The Pain"
+ },
+ {
+  "id": "pain_title",
+  "name": "pain_title",
+  "label": "Pain title",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Today, without a connected system"
+ },
+ {
+  "id": "pain_items",
+  "name": "pain_items",
+  "label": "Pain bullets",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 1,
+   "max": 8,
+   "sorting_label_field": null,
+   "default": 4
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "p",
+    "name": "p",
+    "label": "Bullet",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "p": "Leads slip through the cracks between marketing, sales, and service"
+   },
+   {
+    "p": "Reps burn hours on manual data entry and cold, untargeted lists"
+   },
+   {
+    "p": "No clear line of sight from spend to pipeline to revenue"
+   },
+   {
+    "p": "Every tool tells a different story about the same customer"
+   }
+  ]
+ },
+ {
+  "id": "sys_label",
+  "name": "sys_label",
+  "label": "System chip",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The Quantum System"
+ },
+ {
+  "id": "sys_title",
+  "name": "sys_title",
+  "label": "System title",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "One connected revenue engine"
+ },
+ {
+  "id": "sys_items",
+  "name": "sys_items",
+  "label": "System bullets",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 1,
+   "max": 8,
+   "sorting_label_field": null,
+   "default": 4
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "s",
+    "name": "s",
+    "label": "Bullet",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "s": "HubSpot as the single source of truth, wired to every channel"
+   },
+   {
+    "s": "Enrichment and automation that route the right work to the right person"
+   },
+   {
+    "s": "Outbound that turns lists into live conversations"
+   },
+   {
+    "s": "A cadence of reporting and accountability that keeps it running"
+   }
+  ]
+ },
+ {
+  "id": "out_label",
+  "name": "out_label",
+  "label": "Outcome chip",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The Outcome"
+ },
+ {
+  "id": "out_title",
+  "name": "out_title",
+  "label": "Outcome title",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Predictable, measurable growth"
+ },
+ {
+  "id": "outcomes",
+  "name": "outcomes",
+  "label": "Outcome stats",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 1,
+   "max": 5,
+   "sorting_label_field": null,
+   "default": 3
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "v",
+    "name": "v",
+    "label": "Value (e.g. $47M+)",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   },
+   {
+    "id": "k",
+    "name": "k",
+    "label": "Label",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "v": "$47M+",
+    "k": "revenue influenced across client engagements"
+   },
+   {
+    "v": "500+",
+    "k": "companies supported"
+   },
+   {
+    "v": "94%",
+    "k": "client retention"
+   }
+  ]
+ }
+]

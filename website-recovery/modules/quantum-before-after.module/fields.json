@@ -1,0 +1,130 @@
+[
+ {
+  "id": "eyebrow",
+  "name": "eyebrow",
+  "label": "Eyebrow",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "By the Numbers"
+ },
+ {
+  "id": "heading",
+  "name": "heading",
+  "label": "Heading (em allowed)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Before Quantum, and <em>after</em>"
+ },
+ {
+  "id": "intro",
+  "name": "intro",
+  "label": "Intro",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The metrics that move when your revenue engine finally connects."
+ },
+ {
+  "id": "rows",
+  "name": "rows",
+  "label": "Metric rows (use real, verifiable numbers only)",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 1,
+   "max": 8,
+   "sorting_label_field": null,
+   "default": 3
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "metric",
+    "name": "metric",
+    "label": "Metric",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   },
+   {
+    "id": "bv",
+    "name": "bv",
+    "label": "Before",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   },
+   {
+    "id": "av",
+    "name": "av",
+    "label": "After",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   },
+   {
+    "id": "delta",
+    "name": "delta",
+    "label": "Change",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "metric": "Your metric",
+    "bv": "\u2014",
+    "av": "\u2014",
+    "delta": ""
+   },
+   {
+    "metric": "Your metric",
+    "bv": "\u2014",
+    "av": "\u2014",
+    "delta": ""
+   },
+   {
+    "metric": "Your metric",
+    "bv": "\u2014",
+    "av": "\u2014",
+    "delta": ""
+   }
+  ]
+ },
+ {
+  "id": "footnote",
+  "name": "footnote",
+  "label": "Footnote / source line",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Results from client engagements; individual outcomes vary."
+ }
+]

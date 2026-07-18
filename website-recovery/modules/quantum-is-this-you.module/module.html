@@ -1,0 +1,24 @@
+<section class="q-section"><div class="q-container"><div style="text-align:center;max-width:760px;margin:0 auto 30px">{% if module.eyebrow %}<div class="q-eyebrow" style="justify-content:center"><span class="q-eyebrow-rule"></span>{{ module.eyebrow }}</div>{% endif %}<h2 style="margin:14px 0 12px">{{ module.heading }}</h2>{% if module.intro %}<p style="color:var(--fg-muted)">{{ module.intro }}</p>{% endif %}</div><style>
+.q-ity{max-width:760px;margin:0 auto}
+.q-ity-i{display:flex;gap:14px;align-items:flex-start;border:1px solid rgba(138,143,155,.25);border-radius:12px;padding:16px 18px;margin-bottom:12px;cursor:pointer;background:var(--bg-alt,#101725);transition:border-color .15s}
+.q-ity-i:hover{border-color:rgba(196,164,74,.5)}
+.q-ity-i.on{border-color:var(--q-gold,#c4a44a);background:linear-gradient(90deg,rgba(196,164,74,.08),rgba(196,164,74,.02))}
+.q-ity-b{width:20px;height:20px;flex:0 0 20px;border:1.5px solid rgba(138,143,155,.6);border-radius:5px;margin-top:1px;position:relative}
+.q-ity-i.on .q-ity-b{border-color:var(--q-gold,#c4a44a);background:var(--q-gold,#c4a44a)}
+.q-ity-i.on .q-ity-b:after{content:"\2713";position:absolute;inset:0;color:#080b12;font-size:14px;text-align:center;line-height:20px}
+.q-ity-band{margin-top:22px;border:1px solid rgba(196,164,74,.45);border-radius:12px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;background:linear-gradient(90deg,rgba(196,164,74,.1),rgba(196,164,74,.03))}
+.q-ity-btn{border:1px solid var(--q-gold,#c4a44a);color:var(--q-gold,#c4a44a);padding:11px 26px;border-radius:999px;font-weight:600;text-decoration:none;white-space:nowrap}
+.q-ity-btn:hover{background:var(--q-gold,#c4a44a);color:#080b12}
+</style>
+<div class="q-ity" data-banner="{{ module.banner_text }}">
+{% for i in module.items %}<div class="q-ity-i"><span class="q-ity-b"></span><span style="color:var(--fg);font-size:15px">{{ i.q }}</span></div>{% endfor %}
+<div class="q-ity-band"><span class="q-ity-msg" style="font-family:var(--q-serif,Georgia),serif;font-size:19px;color:var(--fg)"></span><a class="q-ity-btn" href="{{ module.cta_url }}">{{ module.cta_label }}</a></div>
+</div>
+<script>
+(function(){document.querySelectorAll('.q-ity').forEach(function(w){
+ var items=w.querySelectorAll('.q-ity-i'),msg=w.querySelector('.q-ity-msg'),tpl=w.dataset.banner;
+ function go(){var n=w.querySelectorAll('.q-ity-i.on').length;
+  msg.textContent=tpl.replace('{n}',n).replace('{t}',items.length);}
+ items.forEach(function(i){i.addEventListener('click',function(){i.classList.toggle('on');go()})}); go();
+});})();
+</script></div></section>

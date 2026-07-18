@@ -1,0 +1,124 @@
+[
+ {
+  "id": "eyebrow",
+  "name": "eyebrow",
+  "label": "Eyebrow",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Why Now"
+ },
+ {
+  "id": "heading",
+  "name": "heading",
+  "label": "Heading (em allowed)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The window is open \u2014 <em>but not for long</em>"
+ },
+ {
+  "id": "intro",
+  "name": "intro",
+  "label": "Intro",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Three shifts are happening at once. The teams that move now compound the advantage; the ones that wait spend years catching up."
+ },
+ {
+  "id": "cards",
+  "name": "cards",
+  "label": "Reason cards",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 1,
+   "max": 6,
+   "sorting_label_field": null,
+   "default": 3
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "ct",
+    "name": "ct",
+    "label": "Title",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   },
+   {
+    "id": "cd",
+    "name": "cd",
+    "label": "Description",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "ct": "Buyers now ask AI first",
+    "cd": "Prospects research through ChatGPT, Perplexity, and AI overviews before they ever hit your site. If you're not the cited answer, you're not in the deal."
+   },
+   {
+    "ct": "The tooling finally works",
+    "cd": "What used to take a data team and six months now ships in weeks \u2014 the stack matured, and connected systems are a build decision, not a science project."
+   },
+   {
+    "ct": "Early movers compound",
+    "cd": "Systems get smarter with data and time. The team that starts this quarter is a year of learning ahead of the one that starts next year."
+   }
+  ]
+ },
+ {
+  "id": "banner_text",
+  "name": "banner_text",
+  "label": "Banner text",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Every quarter you wait, competitors who moved first are training their system on data you don't have yet."
+ },
+ {
+  "id": "cta_label",
+  "name": "cta_label",
+  "label": "CTA label",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Start now"
+ },
+ {
+  "id": "cta_url",
+  "name": "cta_url",
+  "label": "CTA URL",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "https://meetings.hubspot.com/shawn-peterson"
+ }
+]

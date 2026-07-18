@@ -1,0 +1,160 @@
+[
+ {
+  "id": "eyebrow",
+  "name": "eyebrow",
+  "label": "Eyebrow",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The Cost of Waiting"
+ },
+ {
+  "id": "heading",
+  "name": "heading",
+  "label": "Heading (em allowed)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Doing nothing <em>isn't free</em>"
+ },
+ {
+  "id": "intro",
+  "name": "intro",
+  "label": "Intro",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Every quarter without a connected system, the gap widens \u2014 wasted spend, decaying pipeline, and competitors compounding ahead of you."
+ },
+ {
+  "id": "milestones",
+  "name": "milestones",
+  "label": "Timeline milestones",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 1,
+   "max": 6,
+   "sorting_label_field": null,
+   "default": 3
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "chip",
+    "name": "chip",
+    "label": "Month chip (e.g. Month 3)",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   },
+   {
+    "id": "delta",
+    "name": "delta",
+    "label": "Big delta (e.g. -22%)",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   },
+   {
+    "id": "mdesc",
+    "name": "mdesc",
+    "label": "Description",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "chip": "Month 3",
+    "delta": "",
+    "mdesc": "Small cracks, ignored: leads sit un-worked in inboxes, reps grow numb to the CRM, no baseline to improve against."
+   },
+   {
+    "chip": "Month 6",
+    "delta": "",
+    "mdesc": "Momentum stalls: pipeline coverage slips below target, cost per opportunity climbs, best rep frustrated by manual work."
+   },
+   {
+    "chip": "Month 12",
+    "delta": "",
+    "mdesc": "Competitors pull ahead: deals lost to faster-moving rivals, forecasts unreliable, board loses trust in the numbers."
+   }
+  ]
+ },
+ {
+  "id": "total_value",
+  "name": "total_value",
+  "label": "Total banner value (set per page \u2014 leave blank to hide)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": ""
+ },
+ {
+  "id": "total_label",
+  "name": "total_label",
+  "label": "Total banner label",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "estimated 12-month cost of inaction"
+ },
+ {
+  "id": "cta_label",
+  "name": "cta_label",
+  "label": "CTA label",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Stop the bleed"
+ },
+ {
+  "id": "cta_url",
+  "name": "cta_url",
+  "label": "CTA URL",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "https://meetings.hubspot.com/shawn-peterson"
+ },
+ {
+  "id": "footnote",
+  "name": "footnote",
+  "label": "Footnote / assumptions",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": ""
+ }
+]

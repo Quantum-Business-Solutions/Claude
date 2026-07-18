@@ -1,0 +1,158 @@
+[
+ {
+  "id": "eyebrow",
+  "name": "eyebrow",
+  "label": "Eyebrow",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Two Futures"
+ },
+ {
+  "id": "heading",
+  "name": "heading",
+  "label": "Heading (em allowed)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Same starting point. <em>Very different endings.</em>"
+ },
+ {
+  "id": "intro",
+  "name": "intro",
+  "label": "Intro",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The decision you make this quarter compounds for years. Here's where each path leads."
+ },
+ {
+  "id": "left_label",
+  "name": "left_label",
+  "label": "Left chip",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "The Status Quo"
+ },
+ {
+  "id": "left_items",
+  "name": "left_items",
+  "label": "Status-quo bullets",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 1,
+   "max": 8,
+   "sorting_label_field": null,
+   "default": 4
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "a",
+    "name": "a",
+    "label": "Bullet",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "a": "Flat pipeline, quarter after quarter"
+   },
+   {
+    "a": "Spend that can't be tied to revenue"
+   },
+   {
+    "a": "Reps buried in manual work, not selling"
+   },
+   {
+    "a": "A system that gets heavier every year"
+   }
+  ]
+ },
+ {
+  "id": "right_label",
+  "name": "right_label",
+  "label": "Right chip",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "With Quantum"
+ },
+ {
+  "id": "right_items",
+  "name": "right_items",
+  "label": "With-Quantum bullets",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 1,
+   "max": 8,
+   "sorting_label_field": null,
+   "default": 4
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "b",
+    "name": "b",
+    "label": "Bullet",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "b": "Compounding, predictable pipeline growth"
+   },
+   {
+    "b": "Every dollar traced from spend to closed revenue"
+   },
+   {
+    "b": "Reps focused on live conversations, not admin"
+   },
+   {
+    "b": "A system that gets smarter and faster over time"
+   }
+  ]
+ },
+ {
+  "id": "footnote",
+  "name": "footnote",
+  "label": "Footnote",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": ""
+ }
+]
