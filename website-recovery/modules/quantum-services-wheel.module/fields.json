@@ -1,0 +1,121 @@
+[
+ {
+  "id": "eyebrow",
+  "name": "eyebrow",
+  "label": "Eyebrow",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "What We Do"
+ },
+ {
+  "id": "heading",
+  "name": "heading",
+  "label": "Heading (em allowed)",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Everything we do, <em>one wheel</em>"
+ },
+ {
+  "id": "intro",
+  "name": "intro",
+  "label": "Intro",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Five practice areas, one connected revenue engine. Click a segment to explore."
+ },
+ {
+  "id": "segments",
+  "name": "segments",
+  "label": "Wheel segments (exactly 5 rendered)",
+  "required": false,
+  "locked": false,
+  "occurrence": {
+   "min": 5,
+   "max": 5,
+   "sorting_label_field": null,
+   "default": 5
+  },
+  "tab": "CONTENT",
+  "expanded": false,
+  "group_occurrence_meta": null,
+  "type": "group",
+  "display_width": null,
+  "children": [
+   {
+    "id": "wl",
+    "name": "wl",
+    "label": "Label (short!)",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   },
+   {
+    "id": "wu",
+    "name": "wu",
+    "label": "URL",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+   }
+  ],
+  "default": [
+   {
+    "wl": "Q2 Platform",
+    "wu": "/q2-revenue-machine"
+   },
+   {
+    "wl": "HubSpot",
+    "wu": "/hubspot-build"
+   },
+   {
+    "wl": "Sales",
+    "wu": "/outbound-sales"
+   },
+   {
+    "wl": "AI",
+    "wu": "/ai-solutions"
+   },
+   {
+    "wl": "Marketing",
+    "wu": "/marketing-services"
+   }
+  ]
+ },
+ {
+  "id": "cl",
+  "name": "cl",
+  "label": "Center letter",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "Q"
+ },
+ {
+  "id": "cc",
+  "name": "cc",
+  "label": "Center caption",
+  "required": false,
+  "locked": false,
+  "allow_new_line": false,
+  "type": "text",
+  "display_width": null,
+  "default": "ONE REVENUE ENGINE"
+ }
+]

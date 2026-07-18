@@ -1,0 +1,326 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Marko Ajder",
+ "categoryId": 1,
+ "contentTypeCategory": 1,
+ "createdAt": "2026-07-18T15:15:01.593Z",
+ "createdById": "52613719",
+ "currentState": "PUBLISHED",
+ "domain": "",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "htmlTitle": "Quantum Business Solutions \u2014 The One-Page Overview",
+ "id": "217439944331",
+ "layoutSections": {
+  "main": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "label": "Main content",
+   "name": "main",
+   "params": {},
+   "rowMetaData": [],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_ov_hero",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-hero",
+         "name": "ov_hero",
+         "params": {
+          "bg_art": {
+           "alt": "",
+           "src": "https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/quantum-theme/art/hero-signal.svg"
+          },
+          "css_class": "dnd-module",
+          "eyebrow": "Quantum Business Solutions",
+          "heading": "We Build <em>Revenue Machines</em>",
+          "layout": "centered",
+          "module_id": 217248524134,
+          "primary_label": "Book a Call",
+          "secondary_label": "See Pricing",
+          "secondary_url": {
+           "href": "/pricing",
+           "type": "EXTERNAL"
+          },
+          "subhead": "Strategy, HubSpot, outbound, AI, and marketing \u2014 engineered into one connected system by people who run them every day. This page is the whole company on one screen."
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_ov_bridge",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "Quantum Pain Bridge (pain / system / outcome)",
+         "name": "ov_bridge",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 217438712167
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_ov_stats",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-stats-band",
+         "name": "ov_stats",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 217248524205
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_ov_wheel",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "ov_wheel",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">Everything we do, <em>one wheel</em></h2><p style=\"text-align:center;max-width:700px;margin:0 auto 10px\">Five practice areas, one connected revenue engine. Click a segment \u2014 or start anywhere and we meet you there.</p><style>.qw-seg{fill:#101725;stroke:rgba(196,164,74,.45);stroke-width:1.2;transition:fill .18s}a:hover .qw-seg{fill:rgba(196,164,74,.22)}.qw-lb{fill:#e2e5eb;font-size:19px;font-weight:600;font-family:inherit;pointer-events:none}</style><svg viewBox=\"0 0 600 600\" style=\"max-width:560px;width:100%;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Quantum services wheel\"><a href=\"/q2-revenue-machine\"><path class=\"qw-seg\" d=\"M306.4,70.1 A230,230 0 0 1 516.7,222.8 L424.4,255.7 A132,132 0 0 0 303.7,168.1 Z\"></path><text x=\"406.4\" y=\"145.6\" text-anchor=\"middle\" class=\"qw-lb\">Q2</text><text x=\"406.4\" y=\"165.6\" text-anchor=\"middle\" class=\"qw-lb\">Platform</text></a><a href=\"/hubspot-build\"><path class=\"qw-seg\" d=\"M520.6,235.1 A230,230 0 0 1 440.3,482.2 L380.5,404.6 A132,132 0 0 0 426.6,262.7 Z\"></path><text x=\"472.1\" y=\"360.9\" text-anchor=\"middle\" class=\"qw-lb\">HubSpot</text></a><a href=\"/outbound-sales\"><path class=\"qw-seg\" d=\"M429.9,489.8 A230,230 0 0 1 170.1,489.8 L225.4,408.9 A132,132 0 0 0 374.6,408.9 Z\"></path><text x=\"300.0\" y=\"473.0\" text-anchor=\"middle\" class=\"qw-lb\">Sales</text><text x=\"300.0\" y=\"493.0\" text-anchor=\"middle\" class=\"qw-lb\">& Outbound</text></a><a href=\"/ai-solutions\"><path class=\"qw-seg\" d=\"M159.7,482.2 A230,230 0 0 1 79.4,235.1 L173.4,262.7 A132,132 0 0 0 219.5,404.6 Z\"></path><text x=\"127.9\" y=\"360.9\" text-anchor=\"middle\" class=\"qw-lb\">AI</text></a><a href=\"/marketing-services\"><path class=\"qw-seg\" d=\"M83.3,222.8 A230,230 0 0 1 293.6,70.1 L296.3,168.1 A132,132 0 0 0 175.6,255.7 Z\"></path><text x=\"193.6\" y=\"158.6\" text-anchor=\"middle\" class=\"qw-lb\">Marketing</text></a><circle cx=\"300\" cy=\"300\" r=\"112\" fill=\"#0d1320\" stroke=\"#c4a44a\" stroke-width=\"1.4\"/><text x=\"300\" y=\"290\" text-anchor=\"middle\" style=\"font-family:var(--q-serif,Georgia),serif;font-size:64px;fill:#c4a44a\">Q</text><text x=\"300\" y=\"330\" text-anchor=\"middle\" style=\"fill:#8a8f9b;font-size:13px;letter-spacing:3px\">ONE REVENUE ENGINE</text></svg><div class=q-cards style=\"margin-top:34px\"><div class=q-card><h4><a href=\"/q2-revenue-machine\" style=\"color:var(--q-gold);text-decoration:none\">Q2 Platform</a></h4><a href=\"/q2-revenue-machine\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Q2: The Revenue Machine</a><a href=\"/q2-revenue-machine\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Command Apps</a><a href=\"/blog/migrating-from-saleschain-to-hubspot-dealer-guide\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Migration guides</a></div><div class=q-card><h4><a href=\"/hubspot-build\" style=\"color:var(--q-gold);text-decoration:none\">HubSpot</a></h4><a href=\"/hubspot-build\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Implementation & Build</a><a href=\"/services/onboarding\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Onboarding</a><a href=\"/services/hubspot-admin-as-a-services\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Admin as a Service</a><a href=\"/hubspot-portal-audit\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Portal Audit</a><a href=\"/hubspot-training\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Training</a><a href=\"/revops-services\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">RevOps</a><a href=\"/services/migration\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Migrations</a></div><div class=q-card><h4><a href=\"/outbound-sales\" style=\"color:var(--q-gold);text-decoration:none\">Sales & Outbound</a></h4><a href=\"/outbound-sales\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Outbound Sales</a><a href=\"/sales-blitz-as-a-service\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Sales Blitz as a Service</a><a href=\"/b2b-sales-training\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Sales Training</a><a href=\"/connect-and-sell\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">ConnectAndSell</a><a href=\"/services/go-to-market-program\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">GTM Program</a><a href=\"/zoominfo-as-a-service\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">ZoomInfo Consulting</a><a href=\"/fractional-leadership\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Fractional CRO/CMO/CSO</a></div><div class=q-card><h4><a href=\"/ai-solutions\" style=\"color:var(--q-gold);text-decoration:none\">AI</a></h4><a href=\"/ai-solutions\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">AI Solutions</a><a href=\"/ai-readiness-assessment\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">AI Readiness Assessment (Free)</a><a href=\"/ai-workforce-assessment\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">AI Workforce Assessment</a></div><div class=q-card><h4><a href=\"/marketing-services\" style=\"color:var(--q-gold);text-decoration:none\">Marketing & Creative</a></h4><a href=\"/marketing-services\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Marketing Services</a><a href=\"/seo-aeo-services\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">SEO & AEO Services</a><a href=\"/website-services\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">Website Design</a><a href=\"/tech-stack\" style=\"display:block;padding:4px 0;color:var(--fg-muted);text-decoration:none;font-size:14px\">The Quantum Tech Stack</a></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_ov_doors",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "ov_doors",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">Three easy ways to <em>start</em></h2><div class=q-cards><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:12px\">FREE</span><h4>AEO Health Check</h4><p>Is AI citing your company? Five-dimension audit with a report in minutes.</p><p><a href=\"/en/aeo-health-check\">Run it free &rarr;</a></p></div><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:12px\">$1,497</span><h4>HubSpot Assessment</h4><p>A focused portal review with prioritized findings \u2014 know exactly where you stand.</p><p><a href=\"/hubspot-portal-audit\">See the audit &rarr;</a></p></div><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:12px\">$2,500</span><h4>GTM Assessment</h4><p>Your go-to-market strategy audited: ICP, messaging, channels, and competitive position.</p><p><a href=\"/services/go-to-market-program\">See the program &rarr;</a></p></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_ov_quote",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "ov_quote",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<div style=\"max-width:760px;margin:0 auto;text-align:center;padding:10px 0\"><div style=\"width:44px;height:2px;background:var(--q-gold);margin:0 auto 26px\"></div><p style=\"font-family:var(--q-serif);font-size:26px;line-height:1.45;color:var(--fg);margin:0 0 18px\">&ldquo;Our experience has been wonderful. Quantum is a well-run company from top to bottom&hellip; A pleasure to work with.&rdquo;</p><p style=\"color:var(--q-gold);margin:0;font-weight:600\">Joe Blatchford</p><p style=\"color:var(--fg-muted);margin:4px 0 0;font-size:14px\">QBS client</p></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_ov_cta",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-cta-band",
+         "name": "ov_cta",
+         "params": {
+          "css_class": "dnd-module",
+          "cta_label": "Book with Shawn",
+          "heading": "One call. The whole machine.",
+          "module_id": 217248524161,
+          "subhead": "Thirty minutes with Shawn \u2014 we'll find the highest-leverage place to start."
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "w": 0,
+   "x": 0
+  }
+ },
+ "metaDescription": "Everything Quantum does on one page: the Q2 platform, HubSpot services, sales & outbound, AI, and marketing \u2014 one connected revenue engine, with three easy ways to start.",
+ "name": "Quantum Overview",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "2026-07-18T15:15:32Z",
+ "publishImmediately": false,
+ "published": true,
+ "slug": "quantum-overview",
+ "state": "PUBLISHED_OR_SCHEDULED",
+ "subcategory": "landing_page",
+ "templatePath": "Quantum Void/templates/mv-shell.html",
+ "translations": {},
+ "updatedAt": "2026-07-18T15:15:03.110Z",
+ "updatedById": "52613719",
+ "url": "https://www.thequantumleap.business/quantum-overview",
+ "useFeaturedImage": false,
+ "widgetContainers": {},
+ "widgets": {}
+}

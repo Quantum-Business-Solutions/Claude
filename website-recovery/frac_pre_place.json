@@ -1,0 +1,507 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Marko Ajder",
+ "categoryId": 1,
+ "contentTypeCategory": 1,
+ "createdAt": "2026-07-18T14:40:52.966Z",
+ "createdById": "52613719",
+ "currentState": "PUBLISHED",
+ "domain": "",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "headHtml": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is a fractional CRO?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A fractional CRO (Chief Revenue Officer) is an experienced revenue executive who leads your marketing, sales, and customer revenue strategy part-time \\u2014 owning the pipeline, the forecast, and the leadership cadence at a fraction of a full-time executive's cost.\"}}, {\"@type\": \"Question\", \"name\": \"What does a fractional executive actually do?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Everything a full-time CRO, CMO, or CSO does \\u2014 strategy, team leadership, pipeline accountability, board-level reporting \\u2014 for a fraction of the cost, on a schedule matched to your stage.\"}}, {\"@type\": \"Question\", \"name\": \"How is this different from consulting?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A consultant hands you recommendations. A fractional executive owns outcomes: they run the meetings, manage the numbers, coach the team, and answer for the result.\"}}, {\"@type\": \"Question\", \"name\": \"CRO vs. CMO vs. CSO \\u2014 which one do we need?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A CRO owns the whole revenue engine across marketing, sales, and service. A CMO owns demand: brand, content, campaigns, and pipeline creation. A CSO owns the sales organization: process, hiring, coaching, and quota. The 30-Day Assessment usually makes the answer obvious.\"}}, {\"@type\": \"Question\", \"name\": \"How do engagements start?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Most start with the 30-Day CRO Assessment: a full teardown of your revenue engine that ends with a prioritized plan. From there you pick the level \\u2014 we tell you what to do, we work alongside your team, or we run it.\"}}, {\"@type\": \"Question\", \"name\": \"How much of their time do we get?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Engagements are scoped to your stage \\u2014 typically a fixed weekly rhythm of leadership meetings, pipeline reviews, and working sessions, plus async access in between.\"}}]}</script>",
+ "htmlTitle": "Fractional CRO, CMO & CSO Services | Quantum Business Solutions",
+ "id": "217438044214",
+ "layoutSections": {
+  "main": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "label": "Main content",
+   "name": "main",
+   "params": {},
+   "rowMetaData": [],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_hero",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-hero",
+         "name": "frc_hero",
+         "params": {
+          "bg_art": {
+           "alt": "",
+           "src": "https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/quantum-theme/art/hero-signal.svg"
+          },
+          "css_class": "dnd-module",
+          "eyebrow": "Fractional CRO \u00b7 CMO \u00b7 CSO",
+          "heading": "C-Suite Revenue Leadership. <em>Fractional</em> Cost.",
+          "layout": "centered",
+          "module_id": 217248524134,
+          "primary_label": "Book a Leadership Call",
+          "secondary_label": "See Pricing",
+          "secondary_url": {
+           "href": "#fractional-pricing",
+           "type": "EXTERNAL"
+          },
+          "subhead": "You need executive-level revenue leadership \u2014 the strategy, the accountability, the experience of someone who's done it before. You don't need the $300K salary. Fractional CRO, CMO, and CSO engagements scoped to your stage."
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_bridge",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "frc_bridge",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">When revenue has no <em>owner</em></h2><div class=q-cards><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:14px\">THE PAIN</span><p style=\"margin:0\">Revenue is a collection of heroic individual efforts. No system, no reliable forecast, and no one below the CEO truly owning the number.</p></div><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:14px\">THE BRIDGE</span><p style=\"margin:0\">An experienced revenue executive installed in weeks \u2014 carrying the playbook from hundreds of engagements instead of one company\u2019s history.</p></div><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:14px\">THE OUTCOME</span><p style=\"margin:0\">A revenue organization with cadence, accountability, and a forecast you can defend to anyone.</p></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_triggers",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "frc_triggers",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">The moments this <em>call</em> happens</h2><div class=\"q-cards q-cards-2\"><div class=q-card><h4>\u201cOur VP of Sales just left.\u201d</h4><p>The pipeline is orphaned mid-quarter and a replacement search takes six months. A fractional CSO stabilizes the team in weeks and keeps deals moving while you hire right instead of fast.</p></div><div class=q-card><h4>\u201cFounder-led sales hit its ceiling.\u201d</h4><p>You\u2019re the best rep in the company \u2014 and the bottleneck. A fractional CRO builds the machine that scales past you: process, people, and pipeline that don\u2019t need you in every deal.</p></div><div class=q-card><h4>\u201cWe spend on marketing. Where\u2019s the pipeline?\u201d</h4><p>Activity everywhere, revenue nowhere. A fractional CMO ties every dollar and every campaign to pipeline you can count.</p></div><div class=q-card><h4>\u201cThe board wants a forecast I can\u2019t produce.\u201d</h4><p>A fractional CRO installs forecast discipline \u2014 stages that mean something, reviews that catch slippage, a number you\u2019ll stand behind.</p></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_roles",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "frc_roles",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">Three seats, <em>defined</em> \u2014 what each one owns and does</h2><div class=q-cards><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:14px\">FRACTIONAL CRO</span><h4>Owns the whole revenue number</h4><p><strong style=\"color:var(--fg)\">What they do:</strong> run the weekly revenue leadership cadence, own pipeline and forecast, align marketing-to-sales handoffs, set KPIs and comp plans, report to the founder and board.</p><p><strong style=\"color:var(--fg)\">How they help:</strong> replaces gut-feel growth with a system. The usual first move when founder-led sales stops scaling or marketing, sales, and service each optimize their own silo.</p></div><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:14px\">FRACTIONAL CMO</span><h4>Owns demand and the brand</h4><p><strong style=\"color:var(--fg)\">What they do:</strong> set positioning and strategy, run the campaign calendar, manage the team and vendors, own lead quality end-to-end, and report marketing\u2019s actual pipeline contribution.</p><p><strong style=\"color:var(--fg)\">How they help:</strong> ends random acts of marketing. Every dollar of spend gets a line of sight to pipeline \u2014 and the reporting to prove it.</p></div><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:14px\">FRACTIONAL CSO</span><h4>Owns the sales organization</h4><p><strong style=\"color:var(--fg)\">What they do:</strong> design the sales process, define hiring profiles, run onboarding and coaching cadences, lead deal reviews, and build comp plans that drive the right behavior.</p><p><strong style=\"color:var(--fg)\">How they help:</strong> turns a group of reps into a system that forecasts \u2014 process, accountability, and coaching instead of hero-ball.</p></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_compare",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "frc_compare",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">Full-time hire vs. <em>fractional</em></h2><div style=\"overflow-x:auto\"><table style=\"width:100%;max-width:880px;margin:0 auto;border-collapse:collapse;font-size:15px\"><tr><th style=\"text-align:left;padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.35);color:var(--fg-muted);font-weight:600\"></th><th style=\"text-align:left;padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.35);color:var(--fg-muted)\">Full-time executive</th><th style=\"text-align:left;padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.35);color:var(--q-gold)\">Fractional with Quantum</th></tr><tr><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg);font-weight:600\">Time to start</td><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg-muted)\">6+ month search, then ramp</td><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg)\">Weeks \u2014 assessment starts immediately</td></tr><tr><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg);font-weight:600\">Annual cost</td><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg-muted)\">$300K+ salary, plus bonus and equity</td><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg)\">A fraction \u2014 scoped to the leadership you need</td></tr><tr><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg);font-weight:600\">Commitment</td><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg-muted)\">Multi-year, severance risk</td><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg)\">Engagement-based \u2014 scale up, down, or convert to a full-time hire</td></tr><tr><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg);font-weight:600\">Experience</td><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg-muted)\">One career\u2019s playbook</td><td style=\"padding:14px 16px;border-bottom:1px solid rgba(196,164,74,.14);color:var(--fg)\">Patterns from hundreds of client engagements across industries</td></tr><tr><td style=\"padding:14px 16px;color:var(--fg);font-weight:600\">If it\u2019s not working</td><td style=\"padding:14px 16px;color:var(--fg-muted)\">A mis-hire costs a year</td><td style=\"padding:14px 16px;color:var(--fg)\">Adjust the engagement in a conversation</td></tr></table></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_road",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "Process roadmap",
+         "name": "frc_road",
+         "params": {
+          "axis_labels": "Day 1,Day 30,Day 90,Quarter 2+",
+          "css_class": "dnd-module",
+          "eyebrow": "The Proven Process",
+          "heading": "From assessment to a number you own",
+          "intro": "Every engagement starts with evidence, not a retainer.",
+          "module_id": 217324784732,
+          "steps": [
+           {
+            "chip": "Days 1-30",
+            "desc": "Full teardown of team, process, pipeline, and tooling \u2014 ending in a prioritized revenue plan.",
+            "title": "30-Day Assessment"
+           },
+           {
+            "chip": "Days 30-45",
+            "desc": "Tell Me (you execute), Help Me (we execute together), or Do It (we own the number).",
+            "title": "Choose the Level"
+           },
+           {
+            "chip": "Days 45-90",
+            "desc": "Weekly leadership cadence, pipeline reviews, forecast discipline, coaching \u2014 the operating system goes in.",
+            "title": "Install the Rhythm"
+           },
+           {
+            "chip": "Quarter 2+",
+            "desc": "Quarterly targets and hiring plans \u2014 including hiring your full-time executive when it\u2019s time, with a system already running.",
+            "title": "Compound or Hand Off"
+           }
+          ]
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_price",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "frc_price",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<div id=\"fractional-pricing\" style=\"position:relative;top:-90px\"></div><h2 style=\"text-align:center\">Transparent <em>pricing</em></h2><div><a href=\"/pricing\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">CRO 30-Day Assessment</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">A full teardown of your revenue engine \u2014 team, process, pipeline, and tooling \u2014 ending in a prioritized plan.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$4,000</span></a><a href=\"/pricing\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">CRO Services \u2014 Tell Me</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">We assess, diagnose, and hand you the playbook. Your team executes.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$3,997</span></a><a href=\"/pricing\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">CRO Services \u2014 Help Me</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">We build the plan and work alongside your team to execute it.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$5,997</span></a><a href=\"/pricing\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">CRO Services \u2014 Do It</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">We run it: your fractional revenue leader owns the plan, the meetings, and the number.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$8,997</span></a><a href=\"/pricing\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">Fractional CMO</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">Executive-level marketing leadership on a monthly fractional basis.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$7,500/mo</span></a><a href=\"/pricing\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">Fractional CSO</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">Sales organization leadership scoped to your team size and stage.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">Custom</span></a><a href=\"/services/go-to-market-program\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">GTM Strategic Advisors</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">Weekly strategy sessions, pipeline reviews, and execution coaching \u2014 the lighter-weight advisory tier.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$3,495/mo</span></a></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_who",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "frc_who",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">Is this <em>you?</em></h2><div class=\"q-cards q-cards-2\"><div class=q-card><h4 style=\"color:var(--q-gold)\">Fractional leadership is for you if\u2026</h4><ul style=\"margin:0;padding-left:20px\"><li>Founder-led sales is scaling past the founder\u2019s calendar</li><li>You\u2019re between revenue leaders and can\u2019t afford a six-month gap</li><li>The board or your investors expect forecast discipline you don\u2019t have yet</li><li>You need the strategy and the system before you can justify the full-time hire</li></ul></div><div class=q-card><h4 style=\"color:var(--fg-muted)\">It\u2019s not for you if\u2026</h4><ul style=\"margin:0;padding-left:20px;color:var(--fg-muted)\"><li>You need a full-time operator on the floor five days a week \u2014 we\u2019ll tell you, and help you hire them</li><li>You want a silver bullet without changing how the team operates</li><li>The gap is execution capacity, not leadership \u2014 that\u2019s <a href=\"/outbound-sales\">Sales as a Service</a> or a <a href=\"/sales-blitz-as-a-service\">Sales Blitz</a></li></ul></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_quote",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "frc_quote",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<div style=\"max-width:760px;margin:0 auto;text-align:center;padding:10px 0\"><div style=\"width:44px;height:2px;background:var(--q-gold);margin:0 auto 26px\"></div><p style=\"font-family:var(--q-serif);font-size:26px;line-height:1.45;color:var(--fg);margin:0 0 18px\">&ldquo;Our experience has been wonderful. Quantum is a well-run company from top to bottom\u2026 A pleasure to work with.&rdquo;</p><p style=\"color:var(--q-gold);margin:0;font-weight:600\">Joe Blatchford</p><p style=\"color:var(--fg-muted);margin:4px 0 0;font-size:14px\">QBS client</p></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_faq",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "frc_faq",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "wide",
+          "module_id": 217248524682,
+          "prose": "<h2>Frequently Asked Questions</h2><div class=\"q-faq\"><details class=\"q-faq-item\"><summary>What is a fractional CRO?</summary><div class=\"q-faq-a\">A fractional CRO (Chief Revenue Officer) is an experienced revenue executive who leads your marketing, sales, and customer revenue strategy part-time \u2014 owning the pipeline, the forecast, and the leadership cadence at a fraction of a full-time executive\u2019s cost. Fractional CMOs and CSOs work the same way for marketing and sales leadership specifically.</div></details><details class=\"q-faq-item\"><summary>What does a fractional executive actually do?</summary><div class=\"q-faq-a\">Everything a full-time CRO, CMO, or CSO does \u2014 strategy, team leadership, pipeline accountability, board-level reporting \u2014 for a fraction of the cost, on a schedule matched to your stage. You get the experience without the $300K+ salary and equity.</div></details><details class=\"q-faq-item\"><summary>How is this different from consulting?</summary><div class=\"q-faq-a\">A consultant hands you recommendations. A fractional executive owns outcomes: they run the meetings, manage the numbers, coach the team, and answer for the result. It's a seat at your leadership table, not a report.</div></details><details class=\"q-faq-item\"><summary>CRO vs. CMO vs. CSO \u2014 which one do we need?</summary><div class=\"q-faq-a\">A CRO owns the whole revenue engine across marketing, sales, and service. A CMO owns demand: brand, content, campaigns, and pipeline creation. A CSO owns the sales organization: process, hiring, coaching, and quota. The 30-Day Assessment usually makes the answer obvious.</div></details><details class=\"q-faq-item\"><summary>How do engagements start?</summary><div class=\"q-faq-a\">Most start with the 30-Day CRO Assessment: a full teardown of your revenue engine that ends with a prioritized plan. From there you pick the level \u2014 we tell you what to do, we work alongside your team, or we run it.</div></details><details class=\"q-faq-item\"><summary>How much of their time do we get?</summary><div class=\"q-faq-a\">Engagements are scoped to your stage \u2014 typically a fixed weekly rhythm of leadership meetings, pipeline reviews, and working sessions, plus async access in between. We define the cadence together before we start.</div></details></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_frc_cta",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-cta-band",
+         "name": "frc_cta",
+         "params": {
+          "css_class": "dnd-module",
+          "cta_label": "Book a call",
+          "heading": "Get the executive. Skip the executive search.",
+          "module_id": 217248524161,
+          "subhead": "Book a call \u2014 we'll figure out which seat your revenue engine is missing and what filling it looks like."
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "w": 0,
+   "x": 0
+  }
+ },
+ "metaDescription": "Executive revenue leadership without the executive salary: fractional CRO, CMO, and CSO engagements \u2014 from a 30-day assessment to a leader who owns the number.",
+ "name": "Fractional CRO, CMO & CSO",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "2026-07-18T14:52:00Z",
+ "publishImmediately": false,
+ "published": true,
+ "slug": "fractional-leadership",
+ "state": "PUBLISHED_OR_SCHEDULED",
+ "subcategory": "landing_page",
+ "templatePath": "Quantum Void/templates/mv-shell.html",
+ "translations": {},
+ "updatedAt": "2026-07-18T15:03:29.399Z",
+ "updatedById": "52613719",
+ "url": "https://www.thequantumleap.business/fractional-leadership",
+ "useFeaturedImage": false,
+ "widgetContainers": {},
+ "widgets": {}
+}

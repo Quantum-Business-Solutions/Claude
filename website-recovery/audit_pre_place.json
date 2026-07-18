@@ -1,0 +1,431 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Marko Ajder",
+ "categoryId": 1,
+ "contentTypeCategory": 1,
+ "createdAt": "2026-07-18T14:40:50.070Z",
+ "createdById": "52613719",
+ "currentState": "PUBLISHED",
+ "domain": "",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "headHtml": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What does the HubSpot audit cover?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Everything that makes a portal produce revenue: data quality and duplicates, workflows and automation, reporting and attribution, integrations, pipeline configuration, team adoption, and permissions. You get a prioritized findings report and a remediation roadmap.\"}}, {\"@type\": \"Question\", \"name\": \"How long does an audit take?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"The focused Assessment typically wraps in about a week. The deep-dive Audit usually runs about two weeks from access to readout, depending on portal size.\"}}, {\"@type\": \"Question\", \"name\": \"What do you need from us?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Admin access to the portal (view-only works for most of the audit) and a short kickoff call so we understand how your team actually uses HubSpot. That's it \\u2014 your team keeps working while we dig.\"}}, {\"@type\": \"Question\", \"name\": \"What's the difference between the Assessment and the Audit?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"The Assessment is a focused portal review with prioritized findings \\u2014 the fast way to know where you stand. The deep-dive Audit is a full-portal teardown across data, automation, reporting, integrations, and adoption, with a step-by-step remediation roadmap.\"}}, {\"@type\": \"Question\", \"name\": \"What happens after the audit?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"You own the roadmap. Your team can execute it, or we can fix it for you with discounted blocks of expert hours or ongoing Admin-as-a-Service. Either way, the findings are written so they're actionable, not academic.\"}}]}</script>",
+ "htmlTitle": "HubSpot Portal Audit \u2014 Find the Revenue Leaks | Quantum Business Solutions",
+ "id": "217438044208",
+ "layoutSections": {
+  "main": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "label": "Main content",
+   "name": "main",
+   "params": {},
+   "rowMetaData": [],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aud_hero",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-hero",
+         "name": "aud_hero",
+         "params": {
+          "bg_art": {
+           "alt": "",
+           "src": "https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/quantum-theme/art/hero-signal.svg"
+          },
+          "css_class": "dnd-module",
+          "eyebrow": "HubSpot Portal Audit",
+          "heading": "You're Paying for HubSpot. Is HubSpot <em>Paying You Back?</em>",
+          "layout": "centered",
+          "module_id": 217248524134,
+          "primary_label": "Book an Audit Call",
+          "secondary_label": "See Pricing",
+          "secondary_url": {
+           "href": "#audit-pricing",
+           "type": "EXTERNAL"
+          },
+          "subhead": "Most portals we open have the same leaks: dirty data, dead workflows, reports nobody trusts, and licenses nobody uses. We manage HubSpot portals every single day \u2014 an audit tells you exactly where yours is leaking revenue, and how to fix it."
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aud_bridge",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aud_bridge",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">The portal problem nobody <em>owns</em></h2><div class=q-cards><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:14px\">THE PAIN</span><p style=\"margin:0\">You're paying for Professional or Enterprise, but reports contradict each other, automation misfires, and nobody fully trusts what's in the CRM. Everyone works around it; nobody owns it.</p></div><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:14px\">THE BRIDGE</span><p style=\"margin:0\">A structured teardown by a team that runs HubSpot portals every single day \u2014 every workflow, report, integration, and data set inspected and ranked by revenue impact.</p></div><div class=q-card><span style=\"display:inline-block;border:1px solid rgba(196,164,74,.5);border-radius:999px;padding:4px 14px;font-size:11px;letter-spacing:2px;color:var(--q-gold);margin-bottom:14px\">THE OUTCOME</span><p style=\"margin:0\">A portal your team actually trusts, and a prioritized roadmap that turns HubSpot from a line item back into an asset.</p></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aud_dims",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aud_dims",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">What we tear down \u2014 <em>six dimensions</em></h2><div class=q-cards><div class=q-card><h4>Data Quality</h4><p>Duplicates, dead contacts, broken properties, and lifecycle stages that don\u2019t mean anything. Your CRM is only as good as the data your team trusts.</p></div><div class=q-card><h4>Workflows & Automation</h4><p>Every active workflow reviewed: what\u2019s firing, what\u2019s broken, what\u2019s silently emailing prospects from a rep who left in 2023.</p></div><div class=q-card><h4>Reporting & Attribution</h4><p>Do your dashboards answer the questions leadership actually asks? We rebuild the reporting layer around decisions, not vanity metrics.</p></div><div class=q-card><h4>Integrations</h4><p>ZoomInfo, ConnectAndSell, ERP, billing \u2014 every connection checked for sync errors, field mismatches, and duplicate-generating loops.</p></div><div class=q-card><h4>Pipeline & Process</h4><p>Deal stages, required fields, handoffs, and forecast hygiene \u2014 does the pipeline reflect reality, or what reps remember to type?</p></div><div class=q-card><h4>Adoption & Permissions</h4><p>Who actually logs in, what seats you\u2019re paying for, and whether your permission sets protect the data or just annoy the team.</p></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aud_finds",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aud_finds",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">The classics we find <em>over and over</em></h2><div class=q-cards><div class=q-card><h4>Ghost automation</h4><p>Workflows still emailing prospects on behalf of reps who left the company \u2014 sometimes years ago.</p></div><div class=q-card><h4>Lifecycle chaos</h4><p>Lifecycle stages and lead statuses nobody ever agreed definitions for \u2014 so every report built on them is fiction.</p></div><div class=q-card><h4>Paying for duplicates</h4><p>Duplicate and dead contacts silently inflating your marketing contact tier \u2014 you\u2019re paying HubSpot to store noise.</p></div><div class=q-card><h4>Double-counted revenue</h4><p>Dashboards that count the same deal twice \u2014 and a leadership team making decisions on the inflated number.</p></div><div class=q-card><h4>Integration loops</h4><p>Two systems syncing the same records into duplicates faster than anyone can merge them.</p></div><div class=q-card><h4>Seats nobody uses</h4><p>Paid seats that haven\u2019t logged in for a quarter \u2014 budget that should be funding the fixes.</p></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aud_road",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "Process roadmap",
+         "name": "aud_road",
+         "params": {
+          "axis_labels": "Day 1,Day 5,Day 10,Day 14",
+          "css_class": "dnd-module",
+          "eyebrow": "The Process",
+          "heading": "From access to action plan in two weeks",
+          "intro": "No workshops, no 40-page PDF nobody reads. A teardown, a readout, and a roadmap your team can execute Monday morning.",
+          "module_id": 217324784732,
+          "steps": [
+           {
+            "chip": "Day 1",
+            "desc": "A short call on how your team uses HubSpot today, then view-only admin access. Your team keeps working.",
+            "title": "Kickoff & Access"
+           },
+           {
+            "chip": "Days 2-8",
+            "desc": "We work through all six dimensions \u2014 every workflow, report, integration, and data set.",
+            "title": "Portal Teardown"
+           },
+           {
+            "chip": "Day 10",
+            "desc": "Live walkthrough of what we found, ranked by revenue impact \u2014 not alphabetical order.",
+            "title": "Findings Readout"
+           },
+           {
+            "chip": "Days 10-14",
+            "desc": "A prioritized, step-by-step plan. Your team executes it, or we do it for you.",
+            "title": "Remediation Roadmap"
+           }
+          ]
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aud_price",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aud_price",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<div id=\"audit-pricing\" style=\"position:relative;top:-90px\"></div><h2 style=\"text-align:center\">Transparent <em>pricing</em></h2><div><a href=\"/pricing\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">HubSpot Assessment</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">A focused assess-and-audit engagement: portal review with prioritized findings \u2014 the fast way to know where you stand.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$1,497</span></a><a href=\"/pricing\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">HubSpot Audit (Deep-Dive)</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">Full-portal teardown across data, automation, reporting, integrations, pipeline, and adoption \u2014 with a prioritized remediation roadmap.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$7,500</span></a><a href=\"/pricing\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">Remediation Hour Blocks</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">Discounted blocks of expert HubSpot hours (10 to 80 hrs) to fix what the audit finds \u2014 or hand the roadmap to your team.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">from $3,500</span></a></div><p style=\"text-align:center;color:var(--fg-muted);margin-top:18px\">Already know something\u2019s broken? Skip the audit and go straight to <a href=\"/services/hubspot-admin-as-a-services\">HubSpot Admin as a Service</a>.</p>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aud_who",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aud_who",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">Is this <em>you?</em></h2><div class=\"q-cards q-cards-2\"><div class=q-card><h4 style=\"color:var(--q-gold)\">The audit is for you if\u2026</h4><ul style=\"margin:0;padding-left:20px\"><li>You\u2019ve been on HubSpot a year or more and suspect you\u2019re using a fraction of it</li><li>You inherited a portal someone else built and nobody documented</li><li>Leadership doesn\u2019t trust the reports \u2014 so decisions happen on gut feel</li><li>You\u2019re about to upgrade tiers and want to fix the foundation first</li></ul></div><div class=q-card><h4 style=\"color:var(--fg-muted)\">It\u2019s not for you if\u2026</h4><ul style=\"margin:0;padding-left:20px;color:var(--fg-muted)\"><li>Your portal is brand new \u2014 start with <a href=\"/services/onboarding\">onboarding</a> instead</li><li>You\u2019re actively migrating off HubSpot</li><li>You want a rubber stamp that everything\u2019s fine \u2014 we will find things</li></ul></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aud_faq",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aud_faq",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "wide",
+          "module_id": 217248524682,
+          "prose": "<h2>Frequently Asked Questions</h2><div class=\"q-faq\"><details class=\"q-faq-item\"><summary>What does the HubSpot audit cover?</summary><div class=\"q-faq-a\">Everything that makes a portal produce revenue: data quality and duplicates, workflows and automation, reporting and attribution, integrations, pipeline configuration, team adoption, and permissions. You get a prioritized findings report and a remediation roadmap.</div></details><details class=\"q-faq-item\"><summary>How long does an audit take?</summary><div class=\"q-faq-a\">The focused Assessment typically wraps in about a week. The deep-dive Audit usually runs about two weeks from access to readout, depending on portal size.</div></details><details class=\"q-faq-item\"><summary>What do you need from us?</summary><div class=\"q-faq-a\">Admin access to the portal (view-only works for most of the audit) and a short kickoff call so we understand how your team actually uses HubSpot. That's it \u2014 your team keeps working while we dig.</div></details><details class=\"q-faq-item\"><summary>What's the difference between the Assessment and the Audit?</summary><div class=\"q-faq-a\">The Assessment is a focused portal review with prioritized findings \u2014 the fast way to know where you stand. The deep-dive Audit is a full-portal teardown across data, automation, reporting, integrations, and adoption, with a step-by-step remediation roadmap.</div></details><details class=\"q-faq-item\"><summary>What happens after the audit?</summary><div class=\"q-faq-a\">You own the roadmap. Your team can execute it, or we can fix it for you with discounted blocks of expert hours or ongoing Admin-as-a-Service. Either way, the findings are written so they're actionable, not academic.</div></details></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aud_cta",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-cta-band",
+         "name": "aud_cta",
+         "params": {
+          "css_class": "dnd-module",
+          "cta_label": "Book a call",
+          "heading": "Find the leaks before your competitors do.",
+          "module_id": 217248524161,
+          "subhead": "Book a call \u2014 we'll scope the right audit for your portal size and walk you through exactly what you'll get back."
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "w": 0,
+   "x": 0
+  }
+ },
+ "metaDescription": "A full HubSpot portal audit from a team that manages portals daily: data quality, workflows, reporting, integrations, and adoption \u2014 with a prioritized fix-it roadmap.",
+ "name": "HubSpot Portal Audit",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "2026-07-18T14:52:00Z",
+ "publishImmediately": false,
+ "published": true,
+ "slug": "hubspot-portal-audit",
+ "state": "PUBLISHED_OR_SCHEDULED",
+ "subcategory": "landing_page",
+ "templatePath": "Quantum Void/templates/mv-shell.html",
+ "translations": {},
+ "updatedAt": "2026-07-18T15:03:27.014Z",
+ "updatedById": "52613719",
+ "url": "https://www.thequantumleap.business/hubspot-portal-audit",
+ "useFeaturedImage": false,
+ "widgetContainers": {},
+ "widgets": {}
+}

@@ -1,0 +1,507 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Marko Ajder",
+ "categoryId": 1,
+ "contentTypeCategory": 1,
+ "createdAt": "2026-07-18T14:11:46.866Z",
+ "createdById": "52613719",
+ "currentState": "PUBLISHED",
+ "domain": "",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "headHtml": "<script type=\"application/ld+json\">\n{\n \"@context\": \"https://schema.org\",\n \"@type\": \"FAQPage\",\n \"mainEntity\": [\n  {\n   \"@type\": \"Question\",\n   \"name\": \"What is AEO (Answer Engine Optimization)?\",\n   \"acceptedAnswer\": {\n    \"@type\": \"Answer\",\n    \"text\": \"AEO is the practice of making your company findable and citable by AI answer engines like ChatGPT, Perplexity, and Claude \\u2014 schema markup, llms.txt, content structure, and trust signals that let AI engines find, understand, and cite you.\"\n   }\n  },\n  {\n   \"@type\": \"Question\",\n   \"name\": \"How is AEO different from SEO?\",\n   \"acceptedAnswer\": {\n    \"@type\": \"Answer\",\n    \"text\": \"SEO earns you rankings on Google's results page. AEO earns you citations inside AI-generated answers. They share foundations \\u2014 authority, structure, content quality \\u2014 but AI engines read different signals, like llms.txt and schema. We optimize for both at once.\"\n   }\n  },\n  {\n   \"@type\": \"Question\",\n   \"name\": \"How do I know where I stand today?\",\n   \"acceptedAnswer\": {\n    \"@type\": \"Answer\",\n    \"text\": \"Run our free AEO Health Check. It analyzes your schema, llms.txt, content quality signals, SEO authority, and live citation rates across Perplexity, OpenAI, and Anthropic \\u2014 report in minutes.\"\n   }\n  },\n  {\n   \"@type\": \"Question\",\n   \"name\": \"How long until results?\",\n   \"acceptedAnswer\": {\n    \"@type\": \"Answer\",\n    \"text\": \"Foundation fixes ship in a 2-4 week sprint. Companies that implement the top recommendations typically see citation lift within the first 60 days of AEO work; authority compounds from there.\"\n   }\n  },\n  {\n   \"@type\": \"Question\",\n   \"name\": \"Do you guarantee AI engines will cite us?\",\n   \"acceptedAnswer\": {\n    \"@type\": \"Answer\",\n    \"text\": \"No \\u2014 and be wary of anyone who does. Shipping the recommendations dramatically improves the odds, but no AEO tactic guarantees citations. What we guarantee is the complete foundation and honest measurement.\"\n   }\n  },\n  {\n   \"@type\": \"Question\",\n   \"name\": \"What does it cost?\",\n   \"acceptedAnswer\": {\n    \"@type\": \"Answer\",\n    \"text\": \"The SEO/AEO Audit is $2,500 (applied toward any package). The AEO Foundation sprint is $4,995 one-time. Retainers run $1,995 to $4,995 per month depending on hours.\"\n   }\n  }\n ]\n}\n</script>",
+ "htmlTitle": "SEO & AEO Services \u2014 Get Cited by AI | Quantum Business",
+ "id": "217437850443",
+ "layoutSections": {
+  "main": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "label": "Main content",
+   "name": "main",
+   "params": {},
+   "rowMetaData": [],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_hero",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-hero",
+         "name": "aeo_hero",
+         "params": {
+          "bg_art": {
+           "alt": "",
+           "src": "https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/quantum-theme/art/hero-signal.svg"
+          },
+          "css_class": "dnd-module",
+          "eyebrow": "SEO & AEO Services",
+          "heading": "Get Found by Google. Get <em>Cited</em> by AI.",
+          "layout": "centered",
+          "module_id": 217248524134,
+          "primary_label": "Book a Strategy Call",
+          "secondary_label": "Run the Free AEO Health Check",
+          "secondary_url": {
+           "href": "https://www.thequantumleap.business/en/aeo-health-check",
+           "type": "EXTERNAL"
+          },
+          "subhead": "Your prospects ask ChatGPT, Perplexity, and Claude before they ever talk to sales. On AEO-optimized sites, 8-30% of B2B inbound traffic already comes from AI engines. We make sure the answer they get is you."
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_split",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aeo_split",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">Search is splitting in <em>two</em></h2><div class=\"q-cards q-cards-2\"><div class=q-card><h4>Traditional SEO</h4><p>Rankings, authority, and technical health on Google. Still where most buyers verify you exist \u2014 and still the foundation AI engines learn from.</p></div><div class=q-card><h4>AEO \u2014 Answer Engine Optimization</h4><p>Schema markup, llms.txt, content structure, and trust signals that make AI engines find, understand, and cite you when your prospects ask.</p></div></div><p style=\"text-align:center;margin-top:18px\">Most B2B sites have never been audited for AEO readiness \u2014 schema missing, llms.txt nonexistent, AI crawlers silently blocked. The companies winning citations started 18 months ago.</p>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_qmap",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aeo_qmap",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">How AEO works \u2014 <em>layering questions</em> into answers AI can cite</h2><p style=\"text-align:center;max-width:760px;margin:0 auto 8px\">One buyer intent branches into the real questions people ask \u2014 each mapped to a structured answer block on your site, marked up so ChatGPT, Perplexity, and Google AI pull <em>your</em> content as the answer.</p><div style=\"text-align:center;padding:16px 0 0\"><img src=\"https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/quantum-theme/art/aeo-question-map.svg\" alt=\"AEO question map: a seed topic branches into a primary question and follow-ups, each mapped to structured answer blocks with schema\" style=\"max-width:1000px;width:100%\"></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_insights",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aeo_insights",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">The numbers behind the <em>shift</em></h2><div class=q-cards><div class=q-card><p style=\"font-family:var(--q-serif);font-size:40px;color:#c4a44a;margin:0\">8-30%</p><h4>of B2B inbound traffic</h4><p>on AEO-optimized sites already comes from AI engines \u2014 prospects ask ChatGPT, Perplexity, and Claude before they ever talk to sales.</p></div><div class=q-card><p style=\"font-family:var(--q-serif);font-size:40px;color:#c4a44a;margin:0\">~30 min</p><h4>the highest-leverage fix</h4><p>Most B2B websites have no llms.txt at all \u2014 making it the single highest-leverage AEO move, and it takes about half an hour to ship.</p></div><div class=q-card><p style=\"font-family:var(--q-serif);font-size:40px;color:#c4a44a;margin:0\">60 days</p><h4>to citation lift</h4><p>Companies that ship the top recommendations typically see AI citation lift within the first 60 days \u2014 and authority compounds from there.</p></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_tools",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aeo_tools",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">Start with the free diagnostics</h2><div class=\"q-cards q-cards-2\"><div class=q-card><h4>AEO Health Check</h4><p>Five-dimension audit: schema, llms.txt, content quality signals, SEO authority, and live citation checks across Perplexity, OpenAI, and Anthropic. Report in minutes, free.</p><p><a href=\"/en/aeo-health-check\">Run the AEO Health Check &rarr;</a></p></div><div class=q-card><h4>Website Grader</h4><p>Performance, SEO fundamentals, and Core Web Vitals \u2014 see how your site scores in seconds.</p><p><a href=\"/website-grader\">Grade your website &rarr;</a></p></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_dimensions",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aeo_dimensions",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">What we audit and build \u2014 the <em>six dimensions</em></h2><div class=q-cards><div class=q-card><h4>AEO Infrastructure</h4><p>llms.txt, sitemap, robots configuration, and the schema types AI engines read first. The 30% weight in your score.</p></div><div class=q-card><h4>Schema Markup</h4><p>Organization, Service, FAQPage, HowTo, and breadcrumb structured data \u2014 complete, valid, and on every page that earns it.</p></div><div class=q-card><h4>Content Quality Signals</h4><p>Author bylines, freshness, depth, and the answer-shaped structure that gets pulled into AI responses.</p></div><div class=q-card><h4>SEO Authority</h4><p>The classic foundation \u2014 rankings, backlinks, technical health \u2014 that AI engines still learn trust from.</p></div><div class=q-card><h4>Live Citation Testing</h4><p>We query Perplexity, OpenAI, and Anthropic engines directly: does AI mention you today? Not theory \u2014 measurement.</p></div><div class=q-card><h4>Competitor Gap</h4><p>Who is being cited in your category instead of you, and the specific gaps between you and them.</p></div></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_roadmap",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "Process roadmap",
+         "name": "aeo_roadmap",
+         "params": {
+          "axis_labels": "Day 1,Day 30,Day 60,Day 90",
+          "css_class": "dnd-module",
+          "eyebrow": "The Proven Process",
+          "heading": "From invisible to cited in 90 days",
+          "intro": "Audit first, foundation second, then the compounding work of authority.",
+          "module_id": 217324784732,
+          "steps": [
+           {
+            "chip": "Days 1-14",
+            "desc": "Full visibility teardown across schema, llms.txt, content signals, authority, and live AI citations.",
+            "title": "SEO/AEO Audit"
+           },
+           {
+            "chip": "Days 10-40",
+            "desc": "Full schema stack, llms.txt, and content restructured so AI engines cite you.",
+            "title": "Foundation Sprint"
+           },
+           {
+            "chip": "Days 30-60",
+            "desc": "Trust signals, topic clusters, and the answers AI engines pull from.",
+            "title": "Content & Clusters"
+           },
+           {
+            "chip": "Days 55-90",
+            "desc": "Citation tracking, rankings, and iteration \u2014 authority compounds from here.",
+            "title": "Measure & Compound"
+           }
+          ]
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_learn",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aeo_learn",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<h2 style=\"text-align:center\">Go deeper: the AEO knowledge base</h2><div class=\"q-cards q-cards-2\"><div class=q-card><h4>What Is AEO? The 2026 B2B Guide</h4><p>Our 6,000-word deep dive: the four pillars, the engines, the scoring, and the roadmap \u2014 the definitive reference we wrote for B2B teams.</p><p><a href=\"/blog/what-is-aeo-answer-engine-optimization-guide\">Read the complete guide &rarr;</a></p></div><div class=q-card><h4>The Resource Library</h4><p>How-to articles, playbooks, and marketing guides \u2014 organized by topic, knowledge-base style, and growing weekly.</p><p><a href=\"/resources\">Browse the Resource Library &rarr;</a></p></div></div><div style=\"text-align:center;padding:28px 0 0\"><img src=\"https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/quantum-theme/art/feat-ai-console.svg\" alt=\"AI answer console citing Quantum Business Solutions\" style=\"max-width:680px;width:100%\"></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_pricing",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aeo_pricing",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "full",
+          "module_id": 217248524682,
+          "prose": "<div id=\"aeo-pricing\" style=\"position:relative;top:-90px\"></div><h2 style=\"text-align:center\">Transparent <em>pricing</em></h2><div><a href=\"/pricing#aeo\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">SEO/AEO Audit</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">A full visibility teardown. The fee applies toward any package.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$2,500</span></a><a href=\"/pricing#aeo\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">AEO Foundation (one-time sprint)</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">Full schema stack and content restructured so AI engines cite you.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$4,995</span></a><a href=\"/pricing#aeo\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">AEO + SEO Retainer</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">Ongoing optimization with up to 10 support hours a month.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$1,995 / month</span></a><a href=\"/pricing#aeo\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">AEO + SEO Retainer Plus</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">Up to 20 hours plus quarterly strategy reviews.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$3,495 / month</span></a><a href=\"/pricing#aeo\" style=\"display:grid;grid-template-columns:1fr auto;gap:8px 40px;align-items:baseline;padding:16px 6px;border-top:1px solid rgba(196,164,74,.14);text-decoration:none;\"><span><strong style=\"color:var(--fg);font-size:16px\">AEO + SEO Retainer Pro</strong><span style=\"display:block;margin-top:4px;color:var(--fg-muted);font-size:14px;max-width:640px\">Up to 30 hours with priority access to the team.</span></span><span style=\"font-family:var(--q-serif);font-size:19px;color:var(--q-gold);white-space:nowrap\">$4,995 / month</span></a></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_faq",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-rich-text",
+         "name": "aeo_faq",
+         "params": {
+          "css_class": "dnd-module",
+          "maxw": "wide",
+          "module_id": 217248524682,
+          "prose": "<h2>Frequently Asked Questions</h2><div class=\"q-faq\"><details class=\"q-faq-item\"><summary>What is AEO (Answer Engine Optimization)?</summary><div class=\"q-faq-a\">AEO is the practice of making your company findable and citable by AI answer engines like ChatGPT, Perplexity, and Claude \u2014 schema markup, llms.txt, content structure, and trust signals that let AI engines find, understand, and cite you.</div></details><details class=\"q-faq-item\"><summary>How is AEO different from SEO?</summary><div class=\"q-faq-a\">SEO earns you rankings on Google's results page. AEO earns you citations inside AI-generated answers. They share foundations \u2014 authority, structure, content quality \u2014 but AI engines read different signals, like llms.txt and schema. We optimize for both at once.</div></details><details class=\"q-faq-item\"><summary>How do I know where I stand today?</summary><div class=\"q-faq-a\">Run our free AEO Health Check. It analyzes your schema, llms.txt, content quality signals, SEO authority, and live citation rates across Perplexity, OpenAI, and Anthropic \u2014 report in minutes.</div></details><details class=\"q-faq-item\"><summary>How long until results?</summary><div class=\"q-faq-a\">Foundation fixes ship in a 2-4 week sprint. Companies that implement the top recommendations typically see citation lift within the first 60 days of AEO work; authority compounds from there.</div></details><details class=\"q-faq-item\"><summary>Do you guarantee AI engines will cite us?</summary><div class=\"q-faq-a\">No \u2014 and be wary of anyone who does. Shipping the recommendations dramatically improves the odds, but no AEO tactic guarantees citations. What we guarantee is the complete foundation and honest measurement.</div></details><details class=\"q-faq-item\"><summary>What does it cost?</summary><div class=\"q-faq-a\">The SEO/AEO Audit is $2,500 (applied toward any package). The AEO Foundation sprint is $4,995 one-time. Retainers run $1,995 to $4,995 per month depending on hours.</div></details></div>"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "c_aeo_cta",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "quantum-cta-band",
+         "name": "aeo_cta",
+         "params": {
+          "css_class": "dnd-module",
+          "cta_label": "Book a call",
+          "heading": "Ready to be the answer?",
+          "module_id": 217248524161,
+          "subhead": "Run the free Health Check, then book a call \u2014 we'll walk your report and map the fastest path to citations."
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "w": 0,
+   "x": 0
+  }
+ },
+ "metaDescription": "SEO and Answer Engine Optimization services: schema, llms.txt, content structure, and citation tracking so Google ranks you and AI engines cite you. From $1,995/month.",
+ "name": "SEO & AEO Services",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "2026-07-18T14:12:47Z",
+ "publishImmediately": false,
+ "published": true,
+ "slug": "seo-aeo-services",
+ "state": "PUBLISHED_OR_SCHEDULED",
+ "subcategory": "landing_page",
+ "templatePath": "Quantum Void/templates/mv-shell.html",
+ "translations": {},
+ "updatedAt": "2026-07-18T14:50:57.116Z",
+ "updatedById": "52613719",
+ "url": "https://www.thequantumleap.business/seo-aeo-services",
+ "useFeaturedImage": false,
+ "widgetContainers": {},
+ "widgets": {}
+}
