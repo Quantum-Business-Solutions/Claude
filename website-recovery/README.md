@@ -69,3 +69,17 @@ Numeric IDs per theme discoverable via `GET /content/api/v4/custom_widgets?name_
 - Blog listing page entity `66867919382` — HubSpot UI only (Content → Blog → Blog Listing Pages).
 - Optional: full audit of remaining HubSpot-services pages vs Atlas originals.
 - Shawn to rotate the HubSpot private app token shared during this session.
+
+## 2026-07-18 — New solution landing pages (drafts) + AEO visual
+
+- Five new Void landing pages built as **drafts** (publish pending approval/classifier):
+  hubspot-portal-audit `217438044208`, hubspot-training `217438044210`,
+  revops-services `217438141499`, fractional-leadership `217438044214`,
+  tech-stack `217438044216` (partner/affiliate links page — swap in PartnerStack URLs).
+  Generator: `build_solution_pages.py`. All pricing from Client Command service catalog.
+- SEO/AEO page `217437850443`: added "How AEO works" question-map section
+  (`aeo-question-map.svg`, uploaded to /quantum-theme/art) and pushed live.
+  Pre-edit draft backup: `aeo_page_pre_qmap.json`.
+- SalesChain migration guide published (by Shawn via UI):
+  /blog/migrating-from-saleschain-to-hubspot-dealer-guide
+- Menu tie-in for the five new pages: pending page publish.

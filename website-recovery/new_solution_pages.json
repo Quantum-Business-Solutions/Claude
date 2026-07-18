@@ -1,0 +1,27 @@
+[
+ {
+  "slug": "hubspot-portal-audit",
+  "id": "217438044208",
+  "patched": true
+ },
+ {
+  "slug": "hubspot-training",
+  "id": "217438044210",
+  "patched": true
+ },
+ {
+  "slug": "revops-services",
+  "id": "217438141499",
+  "patched": true
+ },
+ {
+  "slug": "fractional-leadership",
+  "id": "217438044214",
+  "patched": true
+ },
+ {
+  "slug": "tech-stack",
+  "id": "217438044216",
+  "patched": true
+ }
+]

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 660" font-family="'DM Sans','Segoe UI',Arial,sans-serif">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1320"/>
+      <stop offset="1" stop-color="#080b12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#c4a44a" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#c4a44a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wire" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c4a44a" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#c4a44a" stop-opacity="0.95"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="1.2" fill="rgba(226,229,235,0.05)"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c4a44a"/>
+    </marker>
+    <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="660" rx="18" fill="url(#panel)" stroke="rgba(196,164,74,0.22)"/>
+  <rect width="1280" height="660" rx="18" fill="url(#dots)"/>
+  <ellipse cx="150" cy="333" rx="260" ry="220" fill="url(#glow)"/>
+
+  <!-- layer column tints -->
+  <rect x="360" y="34" width="410" height="592" rx="14" fill="rgba(226,229,235,0.016)"/>
+  <rect x="860" y="34" width="386" height="592" rx="14" fill="rgba(196,164,74,0.028)"/>
+
+  <!-- layer headers with numbered chips -->
+  <g font-size="12.5" letter-spacing="2.6">
+    <rect x="96" y="46" width="26" height="20" rx="10" fill="none" stroke="rgba(196,164,74,0.5)"/>
+    <text x="109" y="60.5" text-anchor="middle" fill="#c4a44a" letter-spacing="0">01</text>
+    <text x="134" y="60.5" fill="#8a8f9b">INTENT</text>
+    <rect x="428" y="46" width="26" height="20" rx="10" fill="none" stroke="rgba(196,164,74,0.5)"/>
+    <text x="441" y="60.5" text-anchor="middle" fill="#c4a44a" letter-spacing="0">02</text>
+    <text x="466" y="60.5" fill="#8a8f9b">QUESTION MAP</text>
+    <rect x="928" y="46" width="26" height="20" rx="10" fill="none" stroke="rgba(196,164,74,0.5)"/>
+    <text x="941" y="60.5" text-anchor="middle" fill="#c4a44a" letter-spacing="0">03</text>
+    <text x="966" y="60.5" fill="#8a8f9b">ANSWER BLOCKS</text>
+  </g>
+
+  <!-- Layer 1: seed topic -->
+  <g filter="url(#cardshadow)">
+    <rect x="52" y="288" width="196" height="90" rx="14" fill="#101725" stroke="#c4a44a" stroke-width="1.5"/>
+    <text x="150" y="320" text-anchor="middle" fill="#c4a44a" font-size="11" letter-spacing="2.4">SEED TOPIC</text>
+    <text x="150" y="350" text-anchor="middle" fill="#e2e5eb" font-size="19" font-weight="700">HubSpot Migration</text>
+  </g>
+
+  <!-- Layer 2: primary question -->
+  <g filter="url(#cardshadow)">
+    <rect x="398" y="276" width="296" height="114" rx="14" fill="#101725" stroke="rgba(196,164,74,0.55)" stroke-width="1.3"/>
+    <text x="420" y="306" fill="#c4a44a" font-size="10.5" letter-spacing="2.2">PRIMARY QUESTION</text>
+    <text x="420" y="333" fill="#e2e5eb" font-size="16.5" font-weight="600">"Who's the best HubSpot</text>
+    <text x="420" y="355" fill="#e2e5eb" font-size="16.5" font-weight="600">partner for my industry?"</text>
+    <text x="420" y="376" fill="#8a8f9b" font-size="12">One buyer intent · one structured answer</text>
+  </g>
+
+  <!-- Layer 2: follow-ups -->
+  <g filter="url(#cardshadow)">
+    <rect x="428" y="98" width="296" height="90" rx="14" fill="#0f1524" stroke="rgba(138,143,155,0.32)"/>
+    <text x="450" y="126" fill="#8a8f9b" font-size="10.5" letter-spacing="2.2">FOLLOW-UP</text>
+    <text x="450" y="150" fill="#e2e5eb" font-size="15">"How much does a HubSpot</text>
+    <text x="450" y="170" fill="#e2e5eb" font-size="15">implementation cost?"</text>
+  </g>
+  <g filter="url(#cardshadow)">
+    <rect x="428" y="452" width="296" height="90" rx="14" fill="#0f1524" stroke="rgba(138,143,155,0.32)"/>
+    <text x="450" y="480" fill="#8a8f9b" font-size="10.5" letter-spacing="2.2">FOLLOW-UP</text>
+    <text x="450" y="504" fill="#e2e5eb" font-size="15">"Can you migrate our data from</text>
+    <text x="450" y="524" fill="#e2e5eb" font-size="15">SalesChain or Compass Sherpa?"</text>
+  </g>
+
+  <!-- Layer 3: answer blocks with schema chips -->
+  <g filter="url(#cardshadow)">
+    <rect x="884" y="96" width="330" height="94" rx="14" fill="#0f1626" stroke="#c4a44a" stroke-width="1.3"/>
+    <text x="906" y="125" fill="#c4a44a" font-size="10.5" letter-spacing="2.2">ANSWER · PRICING</text>
+    <text x="906" y="150" fill="#e2e5eb" font-size="15.5" font-weight="700">Pricing FAQ block</text>
+    <rect x="906" y="160" width="76" height="19" rx="6" fill="rgba(196,164,74,0.12)" stroke="rgba(196,164,74,0.4)"/>
+    <text x="944" y="173.5" text-anchor="middle" fill="#d4ba6a" font-size="11" font-family="'Consolas','SF Mono',monospace">FAQPage</text>
+    <text x="994" y="173.5" fill="#8a8f9b" font-size="11.5">cited on cost questions</text>
+  </g>
+  <g filter="url(#cardshadow)">
+    <rect x="884" y="284" width="330" height="98" rx="14" fill="#0f1626" stroke="#c4a44a" stroke-width="1.3"/>
+    <text x="906" y="313" fill="#c4a44a" font-size="10.5" letter-spacing="2.2">ANSWER · SERVICE PAGE</text>
+    <text x="906" y="338" fill="#e2e5eb" font-size="15.5" font-weight="700">Service page + proof</text>
+    <rect x="906" y="348" width="70" height="19" rx="6" fill="rgba(196,164,74,0.12)" stroke="rgba(196,164,74,0.4)"/>
+    <text x="941" y="361.5" text-anchor="middle" fill="#d4ba6a" font-size="11" font-family="'Consolas','SF Mono',monospace">Service</text>
+    <text x="988" y="361.5" fill="#8a8f9b" font-size="11.5">who it's for · cost · why you</text>
+  </g>
+  <g filter="url(#cardshadow)">
+    <rect x="884" y="452" width="330" height="94" rx="14" fill="#0f1626" stroke="#c4a44a" stroke-width="1.3"/>
+    <text x="906" y="481" fill="#c4a44a" font-size="10.5" letter-spacing="2.2">ANSWER · GUIDE</text>
+    <text x="906" y="506" fill="#e2e5eb" font-size="15.5" font-weight="700">Migration guide article</text>
+    <rect x="906" y="516" width="58" height="19" rx="6" fill="rgba(196,164,74,0.12)" stroke="rgba(196,164,74,0.4)"/>
+    <text x="935" y="529.5" text-anchor="middle" fill="#d4ba6a" font-size="11" font-family="'Consolas','SF Mono',monospace">HowTo</text>
+    <text x="976" y="529.5" fill="#8a8f9b" font-size="11.5">deep answer content</text>
+  </g>
+
+  <!-- connectors: curved, gradient -->
+  <g fill="none" stroke-width="1.6">
+    <path d="M248,333 C310,333 340,333 398,333" stroke="url(#wire)" marker-end="url(#arrow)"/>
+    <path d="M546,276 C546,230 546,210 546,192" stroke="#c4a44a" stroke-opacity="0.55" stroke-dasharray="5 6" marker-end="url(#arrow)"/>
+    <path d="M546,390 C546,425 546,435 546,448" stroke="#c4a44a" stroke-opacity="0.55" stroke-dasharray="5 6" marker-end="url(#arrow)"/>
+    <path d="M724,143 C790,143 810,143 880,143" stroke="url(#wire)" marker-end="url(#arrow)"/>
+    <path d="M694,333 C770,333 800,333 880,333" stroke="url(#wire)" marker-end="url(#arrow)"/>
+    <path d="M724,497 C790,497 810,497 880,497" stroke="url(#wire)" marker-end="url(#arrow)"/>
+  </g>
+  <!-- node dots at connection origins -->
+  <g fill="#c4a44a">
+    <circle cx="248" cy="333" r="3"/>
+    <circle cx="694" cy="333" r="3"/>
+    <circle cx="724" cy="143" r="3"/>
+    <circle cx="724" cy="497" r="3"/>
+  </g>
+
+  <text x="640" y="622" text-anchor="middle" fill="#8a8f9b" font-size="13">Every buyer question becomes a structured answer block — mapped, marked up, and citable on ChatGPT, Perplexity, and Google AI.</text>
+</svg>
