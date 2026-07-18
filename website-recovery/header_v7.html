@@ -1,0 +1,88 @@
+<!--
+  templateType: "global_partial"
+  label: "Quantum Header"
+  isAvailableForNewContent: false
+-->
+<div class="q-topbar">
+  <a href="/en/aeo-health-check">Are AI engines citing your company? <strong>Get your free AEO score</strong> <span class="q-topbar-arrow">&rarr;</span></a>
+</div>
+<style>
+.q-topbar{background:linear-gradient(90deg,rgba(196,164,74,.12),rgba(196,164,74,.04));border-bottom:1px solid rgba(196,164,74,.18);text-align:center;padding:9px 16px;font-size:13.5px;}
+.q-topbar a{color:var(--fg);text-decoration:none;letter-spacing:.01em;}
+.q-topbar strong{color:var(--q-gold);font-weight:700;}
+.q-topbar a:hover strong{text-decoration:underline;}
+.q-topbar-arrow{color:var(--q-gold);}
+</style>
+<!--
+  templateType: global_partial
+  label: Quantum Header
+-->
+<style>
+.q-nav{display:flex;align-items:center;gap:28px;font-size:14.5px;font-weight:500;}
+.q-nav > a, .q-nav-item > a{color:var(--fg);text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:28px 0;}
+.q-nav > a:hover, .q-nav-item > a:hover{color:var(--q-gold);}
+.q-nav-item{position:relative;}
+.q-nav-item .q-caret{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);}
+.q-subnav{visibility:hidden;opacity:0;transition:opacity .18s ease,transform .18s ease;transform:translate(-50%,6px);
+  position:absolute;top:100%;left:50%;min-width:250px;background:#101725;border:1px solid rgba(196,164,74,0.18);
+  border-radius:10px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,0.5);z-index:60;}
+.q-nav-item:hover .q-subnav, .q-nav-item:focus-within .q-subnav{visibility:visible;opacity:1;transform:translate(-50%,0);}
+.q-subnav a{display:block;padding:9px 22px;color:#e2e5eb;text-decoration:none;font-size:14px;white-space:nowrap;}
+.q-subnav a:hover{color:var(--q-gold);background:rgba(196,164,74,0.08);}
+.q-subnav.q-mega{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px 30px;width:min(980px,92vw);padding:24px 28px;}
+.q-mega-col{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.q-mega-h{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--q-gold);margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid rgba(196,164,74,.18);}
+.q-subnav.q-mega a{padding:8px 10px;border-radius:6px;white-space:normal;}
+@media(max-width:900px){.q-subnav.q-mega{grid-template-columns:1fr;width:92vw;}}
+.q-booknow{border:1px solid var(--q-gold);color:var(--q-gold)!important;padding:11px 26px!important;border-radius:999px;font-weight:600;letter-spacing:0.01em;}
+.q-booknow:hover{background:var(--q-gold);color:var(--cta-fg)!important;}
+@media(max-width:1024px){.q-nav{gap:18px;font-size:13.5px;}.q-nav .q-nav-optional{display:none;}}
+</style>
+<header style="border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;">
+  <div class="q-container" style="height:80px;display:flex;align-items:center;justify-content:space-between;gap:32px;">
+    <a href="/" style="display:flex;align-items:center;flex:0 0 auto;">
+      <img class="only-dark" src="https://www.thequantumleap.business/hubfs/quantum_new.png" alt="Quantum Business Solutions" style="height:40px;width:auto;">
+      <img class="only-light" src="https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/quantum-theme/brand/quantum-light.png" alt="Quantum Business Solutions" style="height:40px;width:auto;">
+    </a>
+    <nav class="q-nav" aria-label="Main navigation">
+      {% set main_nav = menu(184144186499) %}
+      {% for item in main_nav.children %}
+        {% if item.label != 'Help Center' %}
+          {% if item.children %}
+            <div class="q-nav-item">
+              <a href="{{ item.url or '#' }}" aria-haspopup="true">{{ item.label }}<span class="q-caret" aria-hidden="true"></span></a>
+              <div class="q-subnav{% if item.children | selectattr('children') | list %} q-mega{% endif %}">
+                {% for sub in item.children %}{% if sub.children %}<div class="q-mega-col"><div class="q-mega-h">{{ sub.label }}</div>{% for s in sub.children %}<a href="{{ s.url }}">{{ s.label }}</a>{% endfor %}</div>{% else %}{% unless item.label == 'Tech' and sub.label == 'Integrations' %}{% set sub_url = sub.url %}{% if sub_url == 'https://www.thequantumleap.business/blog/tag/webinar' or sub_url == 'https://www.thequantumleap.business/blog/tag/podcast' %}{% set sub_url = '/blog/tag/webinars-podcasts' %}{% elif sub_url == 'https://www.thequantumleap.business/blog/tag/ebook' %}{% set sub_url = '/blog/tag/ebooks-playbooks' %}{% elif sub_url == 'https://www.thequantumleap.business/blog/' %}{% set sub_url = '/blog' %}{% endif %}<a href="{{ sub_url }}">{{ sub.label }}</a>{% endunless %}{% endif %}{% endfor %}
+                {% if item.label == 'Resources' %}
+                  <a href="/common-integrations-with-hubspot">Integrations with HubSpot</a>
+                  <a href="/en/aeo-health-check">AEO Health Check</a>
+                  <a href="/case-studies">Case Studies</a>
+                  <a href="/en/prospecting-playbook">Prospecting Playbook</a>
+                  <a href="/sales-sequences-playbook">Sales Sequences Playbook</a>
+                  <a href="/sales-hiring-playbook">Sales Hiring Playbook</a>
+                  <a href="https://webservices.lightspeedvt.net/regform/register.aspx?linkid=B36EEFE3C48B02587B912B814114415A">Enroll in Quantum Academy</a>
+                  <a href="https://clientsuccess.thequantumleap.business/knowledge">Knowledge Base</a>
+                {% endif %}
+              </div>
+            </div>
+          {% elif item.label == 'About Us' %}
+            <div class="q-nav-item">
+              <a href="{{ item.url }}" aria-haspopup="true">About Us<span class="q-caret" aria-hidden="true"></span></a>
+              <div class="q-subnav">
+                <a href="/about-us">Our Team</a>
+                <a href="/case-studies">Case Studies</a>
+                <a href="/contact-us">Contact</a>
+              </div>
+            </div>
+          {% elif item.label == 'Client Success' %}
+            <a href="https://clientcommand.thequantumleap.business">Client Success</a>
+          {% else %}
+            <a href="{{ item.url }}">{{ item.label }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      <a class="q-nav-optional" href="https://chatgpt.com/g/g-68b8777de60c8191a05e4b978cafb5d5-quantum-knowledge-base">QuantumGPT</a>
+      <a class="q-booknow" href="https://meetings.hubspot.com/shawn-peterson">Book Now</a>
+    </nav>
+  </div>
+</header>
