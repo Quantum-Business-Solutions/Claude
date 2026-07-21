@@ -220,4 +220,73 @@ Each built as: **direct answer up top (snippet-ready) → detail → FAQPage sch
 - [ ] Confirm content owner and cadence with Shawn Peterson
 - [ ] Review priorities on the **Friday XSE call**
 
-*Data pulled via Semrush US database on 2026-07-21. Traffic and position figures are Semrush estimates and will differ from Google Search Console actuals.*
+---
+
+## 9. Deep-dive addendum (v2)
+
+This round added a site crawl, live answer-engine testing, authority data, and a competitor keyword-gap pull — moving the analysis from Semrush estimates to verified ground truth.
+
+### 9.1 On-page / technical crawl (Firecrawl)
+
+| Check | Homepage | /doc-scanners |
+|---|---|---|
+| Structured data (schema.org) | **None** | **None** |
+| `<title>` | **Empty** | "Document Scanners – Aztec Office" |
+| Meta description | **Empty** | Present (promises a guide) |
+| H1 | "A to Z in Technology" (no keyword/entity value) | "Document Scanners" |
+| FAQ / Q&A content | No | No |
+| Content style | — | **Product grid, ~150 words** |
+
+Two critical findings:
+- **Zero structured data anywhere.** No Organization, LocalBusiness, Product or FAQ schema on the pages checked. This is the biggest technical AEO blocker — there is no machine-readable entity or answer markup for engines to lift.
+- **The /doc-scanners page is a mirage.** Its `og:title` is "Best Document Scanners 2026 – Fast, Reliable, Affordable" and the meta promises a buyer's guide, but the body is a **~150-word product grid with no FAQ and no reviews.** It ranks page-one *despite* being thin — so turning it into a genuine reviewed guide (Flow 2) is the single highest-ROI page fix on the site.
+- *Platform note:* the site runs on ECI **EvolutionX** (`evocdn.io`, `evo_*` meta). Schema/title fixes are template-level — one fix propagates site-wide, which is good for scale but may be constrained by the platform.
+
+### 9.2 Answer-engine / citation testing — the AEO ground truth
+
+Tested the real buyer questions and recorded which sources the engines surface:
+
+| Query | Top answer sources | Aztec cited? |
+|---|---|---|
+| best document scanner with ADF | PCMag, NYT Wirecutter, TechGearLab, PopularMechanics, Reddit, YouTube | **No** |
+| best multifunction printer (small business) | RTINGS, PCMag, CNET, TechRadar, + dealer blogs *uptownprinters*, *geeksonsite* | **No** |
+| how to change toner in a Brother printer | Brother support, YouTube, *tonerbuzz.com* (toner retailer blog) | **No** |
+
+**Aztec Office is cited in zero answer sets.** The decisive pattern: engines cite **editorial review guides and how-to content** — and, tellingly, *other dealers'* blogs (uptownprinters, tonerbuzz) get cited. Aztec's equivalent pages are product listings, so they're invisible to answer engines. This is the whole thesis, now evidenced: **product-listing pages don't get cited; answer content does.**
+
+### 9.3 Authority / backlinks (Semrush)
+
+| Metric | Aztec Office | scanstore.com (content leader) |
+|---|---|---|
+| Authority Score | 15 | 27 |
+| Referring domains | 190 | 1,318 |
+| Backlinks | 1,695 | 15,142 |
+
+scanstore has ~7× the referring domains and nearly double the authority — which is *why* it's answer-citable and Aztec isn't. Authority is a long game (Flow 4 + digital PR); near-term, content quality + schema is the faster lever.
+
+### 9.4 Entity collision (expanded)
+
+Beyond the civilization / learning-software / schools confusion, there is a same-name competitor — **Aztec Office of Florida** (aztecofficefl.com, Jacksonville, its own showroom and phone). Aztec Office (founded in Connecticut) and Aztec Office of Florida collide in results. Flow 4 (distinct branding, explicit service area, `sameAs`, GBP) is required to separate the entities for answer engines.
+
+### 9.5 Keyword-gap backlog (vs. scanstore.com)
+
+High-value terms the content leader ranks for and Aztec is missing (volume ≥100, sorted by opportunity):
+
+| Missing keyword | Volume | KD |
+|---|---|---|
+| document scanner | 9,900 | 52 |
+| flatbed scanners | 2,900 | 46 |
+| document scanning service | 1,600 | **23** |
+| canon scanners | 1,300 | **30** |
+| duplex scanner | 1,300 | **27** |
+| document scanners | 1,600 | 50 |
+
+The low-KD terms (23–30) are realistic near-term wins and feed straight into Flows 2, 3 and 6.
+
+### 9.6 Reusable output
+
+These findings were generalized into **`playbooks/aeo-flows.md`** — seven parameterized AEO flows (question harvest, best-of guide, consumables how-to, entity/schema hygiene, citation monitoring, keyword-gap backlog, local AEO) that transfer to QBS's other office-equipment-dealer clients by swapping inputs.
+
+---
+
+*Data pulled via Semrush (US database) and Firecrawl on 2026-07-21. Semrush traffic/position figures are estimates and will differ from Google Search Console actuals; answer-source results reflect live web results at time of testing.*
