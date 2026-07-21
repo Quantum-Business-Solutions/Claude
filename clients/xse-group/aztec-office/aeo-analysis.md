@@ -6,7 +6,7 @@
 | **Brand** | Aztec Office |
 | **Domain** | https://www.aztecoffice.com/ |
 | **Prepared for** | Friday XSE Client Success call |
-| **Analyst** | Justin Hilbert |
+| **Analyst** | Shawn Peterson |
 | **Data source** | Semrush — US database |
 | **Date** | 2026-07-21 |
 
@@ -39,7 +39,7 @@ AEO is won with (a) **question-answering content** structured so a machine can l
 
 **Methodology this pass:** Semrush US database — domain overview (`domain_rank`), organic keywords (`domain_organic`, 75 rows), organic competitors, top pages, and question-keyword universe (`phrase_questions` for "document scanner" and "printer toner") plus a head-term batch.
 
-**Limitation to close in phase 2:** the Semrush API returned default columns on this pass, so per-keyword SERP-feature flags (which queries already trigger an AI Overview / featured snippet / PAA) were not captured. Recommend a targeted SERP-feature pull + manual AI-Overview spot-checks on the priority keywords before content is written.
+**SERP-feature pull (completed):** the per-keyword SERP-feature data has now been captured — see §3.5. Recommended remaining step: manual **AI-Overview spot-checks** on the priority keywords (Semrush's feature flags don't yet cleanly isolate AI Overviews for every query) before content is written.
 
 ---
 
@@ -101,6 +101,29 @@ The domain ranks for a jumble of unrelated "Aztec" meanings that dilute the bran
 - Misc — "aztec schools", "aztec appliance", "offtech of maine", "copy tec"
 
 For AEO this matters more than for classic SEO: answer engines resolve a query to an **entity** before choosing a source. Aztec Office's entity is muddy, so it rarely gets picked as "the office-equipment dealer."
+
+### 3.5 SERP-feature capture — what's *available* vs. what they *own*
+
+Semrush reports two things per keyword: which rich features appear on that SERP, and which of them the domain actually occupies. The gap between the two **is** the AEO opportunity.
+
+**Finding: on non-branded queries, Aztec Office occupies essentially zero SERP features.** The only keyword where they hold a feature is the branded "aztec office supplies" (sitelinks). Every commercial and informational query below shows a feature-rich SERP that Aztec is absent from.
+
+**People Also Ask (feature 21) is present on nearly every target SERP** — best document scanners, best scanner for documents, desktop scanner, printer toner, where to get printer ink, best desktop scanners, and more. PAA boxes are the single most winnable AEO surface here, and Aztec captures none of them.
+
+| Target keyword | Features available on the SERP | Aztec owns |
+|---|---|---|
+| best document scanners | Sitelinks, Video, **PAA**, + reviews/related | none |
+| best scanner for documents | Image pack, Video, **PAA**, + more | none |
+| desktop scanner | Image pack, Video, Video carousel, **PAA** | none |
+| printer toner | Video, Video carousel, **PAA**, + more | none |
+| where to get printer ink | Local pack, Video, **PAA** | none |
+| best desktop scanners | Sitelinks, Video, Image, Video carousel, **PAA** | none |
+
+*Feature codes confidently identified: 3 = Local pack, 5 = Image pack, 6 = Sitelinks, 7 = Reviews, 9 = Video, 13 = Image, 14/15 = Ads, 20 = Video carousel, 21 = People Also Ask. Several newer high-numbered codes (34, 36, 45, 52) recur on these commercial SERPs and likely include Related searches / Popular products / AI Overview — to be confirmed in the manual AI-Overview spot-check.*
+
+**Two AEO implications:**
+- **PAA is the beachhead.** Structured FAQ answers on the scanner, toner and ink pages target boxes that already exist on these SERPs.
+- **Video keeps appearing** (Video + Video carousel on most SERPs). Short product/how-to video is a second, under-used answer surface for this catalog.
 
 ---
 
@@ -191,9 +214,10 @@ Each built as: **direct answer up top (snippet-ready) → detail → FAQPage sch
 
 ## 8. Next steps
 
-- [ ] Phase-2 Semrush pull for **SERP-feature flags + AI-Overview presence** on priority keywords (closes the limitation in §2)
-- [ ] Confirm content owner and cadence with Justin Hilbert
+- [x] Semrush SERP-feature pull complete (§3.5)
+- [x] Engagement logged in HubSpot — ticket **47081286763**, owner Shawn Peterson, associated to XSE Group + Aztec Office, category Client – Marketing, due 2026-07-24
+- [ ] Manual **AI-Overview spot-checks** on priority keywords (remaining phase-2 step)
+- [ ] Confirm content owner and cadence with Shawn Peterson
 - [ ] Review priorities on the **Friday XSE call**
-- [ ] Log the engagement as a ticket under XSE Group / Aztec Office in HubSpot (pending — HubSpot owner/company lookup was erroring at time of writing)
 
 *Data pulled via Semrush US database on 2026-07-21. Traffic and position figures are Semrush estimates and will differ from Google Search Console actuals.*
