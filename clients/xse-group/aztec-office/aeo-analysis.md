@@ -289,4 +289,22 @@ These findings were generalized into **`playbooks/aeo-flows.md`** — seven para
 
 ---
 
-*Data pulled via Semrush (US database) and Firecrawl on 2026-07-21. Semrush traffic/position figures are estimates and will differ from Google Search Console actuals; answer-source results reflect live web results at time of testing.*
+---
+
+## 10. Strategic reframe (Brand Command)
+
+Brand Command surfaced the fact that reframes the whole engagement: **Aztec Office is a Managed Print Services provider** (Jacksonville FL, ICDA Group member), selling fleet optimization, IT relief, print security and workflow modernization to **IT Directors, CFOs, and Office/Operations Managers at 25–500-employee firms**. Their content pillars are cost control, IT relief, security/compliance, workflow modernization, and local/vendor education — and they already publish sharp MPS thought-leadership (vendor consolidation, "15 hours of IT time reclaimed," a "3-question test" for nationwide service).
+
+**The gap:** their search/AEO footprint is 100% transactional product terms ("best document scanner," "hp414a toner"). None of it speaks to the buyer who signs an MPS contract. So the earlier analysis — accurate but product-centric — was only half the picture. The depth is here:
+
+- **Build AEO for the MPS buyer journey, not just the product catalog.** The high-value answers are "What is managed print services?", "How do we reduce office printing costs?", "Are office printers a security risk?", "How do I choose an MPS provider?" — questions their target buyer asks AI engines, where **no local competitor owns the answer.**
+- **Keep the transactional layer** (scanners, toner) as top-of-funnel capture and conversion, since it already ranks.
+- **Their published posts are question-tree seeds.** The house content style (myth → reframe → framework → question) already maps to answer-engine structure — it just needs to live on indexable, schema-marked pages, not only LinkedIn.
+
+This reframe is expressed as six **AEO question trees** in `aeo-question-trees.md`, organized by their own content pillars and mapped to buyer, funnel stage, answer asset, schema, and the producing Flow.
+
+*Brand Command note: the SEO snapshot tracks 10 keywords (still transactional/product); blog audits are empty; the knowledge-base search errored server-side, so the canonical Quantum "question tree" template couldn't be retrieved this pass.*
+
+---
+
+*Data pulled via Semrush (US database), Firecrawl, and Brand Command on 2026-07-21. Semrush traffic/position figures are estimates and will differ from Google Search Console actuals; answer-source results reflect live web results at time of testing.*
