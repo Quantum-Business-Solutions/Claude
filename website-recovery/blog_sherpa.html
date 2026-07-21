@@ -1,0 +1,179 @@
+<article style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #222222; max-width: 1000px; margin: 0 auto;">
+
+<div style="background-color: #f8f8f8; border-left: 4px solid #e94560; padding: 25px 30px; margin: 20px 0 35px; border-radius: 4px;">
+<h2 style="color: #1a1a2e; margin-top: 0; font-size: 22px;">Key Takeaways</h2>
+<ul style="margin-bottom: 0;">
+<li style="margin-bottom: 10px;"><strong>Compass Sherpa (now part of White Cup) served dealers well for years</strong> — but it was built for a copier-first world, and most dealerships now sell managed IT, software, and services that Sherpa's data model strains to represent.</li>
+<li style="margin-bottom: 10px;"><strong>You don't have to abandon e-automate to leave Sherpa.</strong> The ERP stays; the CRM layer is what changes. Modern middleware keeps equipment, service, and billing data flowing into HubSpot.</li>
+<li style="margin-bottom: 10px;"><strong>The migration is a data-mapping project first and a software project second.</strong> Accounts, contacts, open opportunities, machines-in-field, and lease expirations each need an explicit destination before anything moves.</li>
+<li style="margin-bottom: 10px;"><strong>Legacy labels are the silent killer.</strong> Dealers who lift-and-shift years of Sherpa records usually import years of inconsistent equipment labels and stage definitions with them. Clean at the source, not after go-live.</li>
+<li style="margin-bottom: 10px;"><strong>Plan for a phased cutover, not a big bang</strong> — run Sherpa read-only alongside HubSpot for one full sales cycle so reps never lose deal history mid-quarter.</li>
+<li style="margin-bottom: 10px;"><strong>Budget in weeks, not quarters.</strong> A typical dealer migration runs 4–8 weeks depending on data volume, integrations, and how much process redesign you take on at the same time.</li>
+</ul>
+</div>
+
+<!--more-->
+
+<p style="margin-bottom: 20px;">In the office technology world, your CRM decision has never really been a free choice. It came bundled with your ERP, your quoting tool, and two decades of habit. Compass Sherpa earned its place in thousands of dealerships because it spoke the industry's language — machines in field, cost-per-copy, lease expirations — at a time when mainstream CRMs simply didn't.</p>
+
+<p style="margin-bottom: 20px;">But the industry Sherpa was built for is not the industry you sell into today. Dealers now run managed IT practices, sell software subscriptions, and market to buyers who research online long before a rep calls. Roughly 1,100 copier dealers operate in the US, and about 95% of them run on one of four systems — Agent Dealer, Compass Sherpa, SalesChain, or HubSpot. The movement between those four is accelerating, and it's overwhelmingly moving in one direction: toward platforms that connect sales, marketing, and service in one place.</p>
+
+<p style="margin-bottom: 20px;">This guide walks through the entire Sherpa-to-HubSpot migration: what actually changes, what to map before you move a single record, how to handle the e-automate question, the step-by-step plan, and the pitfalls that quietly wreck timelines. It's the companion to our <a href="https://www.thequantumleap.business/blog/migrating-from-saleschain-to-hubspot-dealer-guide" style="color: #e94560;">SalesChain-to-HubSpot migration guide</a> — same discipline, different starting system.</p>
+
+<div style="background-color: #f9f9f9; padding: 25px 30px; margin: 30px 0; border-radius: 8px;">
+<h3 style="color: #1a1a2e; margin-top: 0; font-size: 18px;">Table of Contents</h3>
+<ul style="margin-bottom: 0;">
+<li style="margin-bottom: 8px;"><a href="#why-dealers-move" style="color: #e94560;">Why Dealers Are Rethinking Sherpa</a></li>
+<li style="margin-bottom: 8px;"><a href="#what-changes" style="color: #e94560;">Sherpa vs. HubSpot: What Actually Changes</a></li>
+<li style="margin-bottom: 8px;"><a href="#data-mapping" style="color: #e94560;">The Data Map: What to Inventory Before You Move Anything</a></li>
+<li style="margin-bottom: 8px;"><a href="#e-automate" style="color: #e94560;">The e-automate Question</a></li>
+<li style="margin-bottom: 8px;"><a href="#migration-plan" style="color: #e94560;">The Step-by-Step Migration Plan</a></li>
+<li style="margin-bottom: 8px;"><a href="#pitfalls" style="color: #e94560;">Six Pitfalls That Wreck Sherpa Migrations</a></li>
+<li style="margin-bottom: 8px;"><a href="#timeline-cost" style="color: #e94560;">Timeline, Cost, and What "Done" Looks Like</a></li>
+<li style="margin-bottom: 8px;"><a href="#conclusion" style="color: #e94560;">The Bottom Line</a></li>
+<li style="margin-bottom: 0;"><a href="#faq" style="color: #e94560;">Frequently Asked Questions</a></li>
+</ul>
+</div>
+
+<h2 id="why-dealers-move" style="color: #1a1a2e; font-size: 28px; margin-top: 45px; margin-bottom: 20px;">Why Dealers Are Rethinking Sherpa</h2>
+
+<p style="margin-bottom: 20px;">Let's give credit where it's due: Compass Sherpa was purpose-built for copier dealers, and for a long stretch it was arguably the best tool for the job. It understood the dealer sales motion — the fleet walkthrough, the lease-expiration calendar, the TCO proposal — in a way that generic CRMs never bothered to. When White Cup brought Sherpa into its portfolio alongside its BI and pricing tools, plenty of dealers reasonably stayed put.</p>
+
+<p style="margin-bottom: 20px;">So why are so many now looking at the door? In the conversations we have with dealers every week, the same themes come up again and again:</p>
+
+<p style="margin-bottom: 20px;"><strong>The business outgrew the data model.</strong> Sherpa is organized around equipment deals. But look at your own revenue mix: managed IT contracts, VoIP seats, software subscriptions, professional services. Dealers tell us they end up wedging these into equipment-shaped records — or worse, tracking them in spreadsheets outside the CRM entirely. Once a meaningful share of revenue lives outside the system, the forecast is fiction.</p>
+
+<p style="margin-bottom: 20px;"><strong>Marketing lives somewhere else.</strong> Sherpa is a sales database, not a demand engine. There's no meaningful email marketing, no landing pages, no lead scoring, no attribution. Every dealer we meet who runs Sherpa also runs a separate marketing tool (or none at all), which means the single most important handoff in the business — marketing to sales — happens over email and memory.</p>
+
+<p style="margin-bottom: 20px;"><strong>Multi-CRM sprawl.</strong> Acquisitive dealers feel this hardest. Buy two dealerships and you can inherit three CRMs — one running Sherpa tied to e-automate, one on something else, one on spreadsheets. We've watched dealer groups burn years operating parallel systems because consolidating felt too risky. Every month of delay compounds the eventual cleanup.</p>
+
+<p style="margin-bottom: 20px;"><strong>The rep experience costs you adoption.</strong> Your youngest reps grew up on consumer-grade software. When logging a call takes six clicks and the mobile experience fights back, they stop logging. And a CRM your reps don't update isn't a system of record — it's a liability with a monthly invoice.</p>
+
+<p style="margin-bottom: 20px;">None of this means Sherpa "failed." It means the job description changed. The question is whether to keep patching around a sales database, or move to a revenue platform and wire your dealer-specific data into it. That second path is what the rest of this guide covers.</p>
+
+<h2 id="what-changes" style="color: #1a1a2e; font-size: 28px; margin-top: 45px; margin-bottom: 20px;">Sherpa vs. HubSpot: What Actually Changes</h2>
+
+<p style="margin-bottom: 20px;">The honest framing isn't "Sherpa bad, HubSpot good." They're different categories of software, and understanding the difference is what makes the migration plan obvious.</p>
+
+<p style="margin-bottom: 20px;"><strong>Sherpa is a dealer sales database.</strong> Its strength is industry-specific structure: it knows what a machine in field is, it tracks lease expirations natively, and it was designed to sit next to e-automate. Its ceiling is everything around the sale — marketing, service ticketing for non-equipment lines, automation, reporting across the whole customer lifecycle.</p>
+
+<p style="margin-bottom: 20px;"><strong>HubSpot is a revenue platform.</strong> Contacts, companies, deals, tickets, marketing, automation, and reporting share one database. The trade-off: out of the box, HubSpot knows nothing about copiers. It has no native concept of machines-in-field or cost-per-copy. That dealer-specific layer has to be built — custom objects for equipment, lease-expiration properties and workflows, TCO quoting patterns.</p>
+
+<p style="margin-bottom: 20px;">This is exactly why we productized that layer. <a href="https://www.thequantumleap.business/q2-revenue-machine" style="color: #e94560;">Q2: The Revenue Machine</a> is our pre-built HubSpot architecture for office technology dealers — the equipment data model, the dealer dashboards, the lease-expiration engine, and the e-automate integration patterns, installed rather than invented from scratch. Whether you use Q2 or build custom, the point is the same: HubSpot's dealer-readiness is a build decision, and it's a solved problem.</p>
+
+<p style="margin-bottom: 20px;">Day to day, here's what your team actually gains after the move:</p>
+
+<ul style="margin-bottom: 20px;">
+<li style="margin-bottom: 10px;"><strong>One customer record</strong> — the account, its equipment, its open deals, its service tickets, its email history, and its website activity on one screen.</li>
+<li style="margin-bottom: 10px;"><strong>Marketing that feeds sales</strong> — campaigns, lead scoring, and lifecycle stages that hand reps warm, contextual leads instead of cold lists.</li>
+<li style="margin-bottom: 10px;"><strong>Automation with teeth</strong> — lease-expiration plays that trigger themselves, follow-up sequences that don't depend on memory, routing that puts the right account in front of the right rep.</li>
+<li style="margin-bottom: 10px;"><strong>A forecast leadership can defend</strong> — pipeline built on agreed stage definitions, with reporting that doesn't require an analyst to reconcile three exports.</li>
+</ul>
+
+<h2 id="data-mapping" style="color: #1a1a2e; font-size: 28px; margin-top: 45px; margin-bottom: 20px;">The Data Map: What to Inventory Before You Move Anything</h2>
+
+<p style="margin-bottom: 20px;">Every failed CRM migration we've been called in to rescue failed the same way: someone exported everything and imported everything, and sorted out the mess later. "Later" never comes. The fix is a data map — a one-page inventory of what lives in Sherpa, what it becomes in HubSpot, and what doesn't make the trip.</p>
+
+<p style="margin-bottom: 20px;"><strong>Accounts and contacts.</strong> The straightforward part — Sherpa accounts become HubSpot companies, contacts become contacts. The work is deduplication (Sherpa databases that have lived through a dealership acquisition almost always carry duplicate accounts) and deciding the matching key against e-automate customer records so the ERP link survives the move.</p>
+
+<p style="margin-bottom: 20px;"><strong>Open opportunities.</strong> Map Sherpa's stages to a HubSpot pipeline you actually want — this is the moment to fix stage definitions, not replicate them. Every open opportunity moves with its amount, close date, owner, and stage. Historical closed deals are a judgment call: most dealers bring 12–24 months for reporting continuity and archive the rest.</p>
+
+<p style="margin-bottom: 20px;"><strong>Machines in field.</strong> The dealer-specific crown jewels. In HubSpot these live as custom-object records (Q2 ships this pre-built) associated to the company: model, serial, install date, lease terms, expiration. This is the data that powers the single most profitable workflow in the dealer playbook — the lease-expiration pipeline that surfaces upgrade conversations before the competition ever hears about them.</p>
+
+<p style="margin-bottom: 20px;"><strong>Activity history.</strong> Notes, calls, and emails carry institutional memory. Bring what's operationally useful (typically 12 months, plus everything attached to open deals) rather than everything since 2011 — imported noise buries the signal reps actually need.</p>
+
+<p style="margin-bottom: 20px;"><strong>The "doesn't make the trip" column.</strong> Just as important as the rest. Dead contacts with no activity in years, abandoned pipelines from a rep who left, custom fields nobody has populated since the last admin quit — every migration is a once-a-decade chance to leave the debt behind.</p>
+
+<h2 id="e-automate" style="color: #1a1a2e; font-size: 28px; margin-top: 45px; margin-bottom: 20px;">The e-automate Question</h2>
+
+<p style="margin-bottom: 20px;">This is the question that stalls more Sherpa migrations than any other, so let's be direct: <strong>leaving Sherpa does not mean leaving e-automate.</strong> Your ERP keeps running service, contracts, and billing exactly as it does today. What changes is the CRM layer that sits beside it.</p>
+
+<p style="margin-bottom: 20px;">Sherpa's historical advantage was proximity — it grew up in the ECI ecosystem next to e-automate, and that native adjacency was a genuine reason to stay. (It's also worth knowing that ECI has been consolidating its own CRM story on the quoting-and-CRM side of the ecosystem, which is one more reason dealers are re-evaluating where their long-term CRM bet belongs.)</p>
+
+<p style="margin-bottom: 20px;">Today, the integration gap has closed. Dealer-focused middleware and integration platforms sync e-automate customers, equipment, contracts, and service data into HubSpot on a schedule or in near-real-time. In practice, the pattern we implement looks like this:</p>
+
+<ul style="margin-bottom: 20px;">
+<li style="margin-bottom: 10px;"><strong>e-automate remains the system of record</strong> for service, contracts, meters, and billing.</li>
+<li style="margin-bottom: 10px;"><strong>HubSpot becomes the system of record</strong> for accounts, contacts, pipeline, marketing, and the customer-facing motion.</li>
+<li style="margin-bottom: 10px;"><strong>A one-way-by-default sync</strong> pushes customer and equipment data from e-automate into HubSpot, so reps see fleet and contract reality without touching the ERP — and without the duplicate-generating two-way loops that plague careless integrations.</li>
+</ul>
+
+<p style="margin-bottom: 20px;">We've also seen dealers run hybrid patterns during transition — keeping a legacy dealer CRM alive for a narrow operational function while HubSpot takes over the revenue motion. It works as a bridge, but treat it as scaffolding with a removal date, not a destination. Two systems of record is one too many. (Our <a href="https://www.thequantumleap.business/revops-services" style="color: #e94560;">RevOps practice</a> exists in large part to design and run exactly these integration patterns.)</p>
+
+<h2 id="migration-plan" style="color: #1a1a2e; font-size: 28px; margin-top: 45px; margin-bottom: 20px;">The Step-by-Step Migration Plan</h2>
+
+<p style="margin-bottom: 20px;">Here's the sequence we run. The phases matter more than the exact dates — each one de-risks the next.</p>
+
+<p style="margin-bottom: 20px;"><strong>Phase 1: Audit and map (Week 1).</strong> Export Sherpa's full schema and record counts. Build the data map above. Define the HubSpot pipeline stages, lifecycle stages, and the equipment custom-object model. Decide the e-automate matching key. Nothing moves yet — this week is what makes every later week boring, in the good way.</p>
+
+<p style="margin-bottom: 20px;"><strong>Phase 2: Build the destination (Weeks 1–3).</strong> Stand up the HubSpot portal: properties, pipelines, equipment objects, lease-expiration workflows, dashboards, and the e-automate integration in a sandbox state. With <a href="https://www.thequantumleap.business/q2-revenue-machine" style="color: #e94560;">Q2</a> this phase is dramatically compressed because the dealer architecture is pre-built; with a custom build, this is where a <a href="https://www.thequantumleap.business/hubspot-build" style="color: #e94560;">HubSpot Implementation &amp; Build</a> engagement earns its keep.</p>
+
+<p style="margin-bottom: 20px;"><strong>Phase 3: Trial migration (Week 3–4).</strong> Migrate a copy of the data into the portal and let sales leadership beat on it. Are the machine counts right? Do the top 50 accounts look correct? Does the pipeline total match Sherpa's? Fix mapping issues here, where they're cheap.</p>
+
+<p style="margin-bottom: 20px;"><strong>Phase 4: Cutover (Week 4–6).</strong> Freeze Sherpa edits, run the final migration, reconcile counts, and flip reps to HubSpot on a Monday morning with training already done (do the training the week before — never on cutover day). Keep Sherpa read-only for a full sales cycle as the safety net nobody should ever need to use.</p>
+
+<p style="margin-bottom: 20px;"><strong>Phase 5: Adoption and tuning (Weeks 6–8 and ongoing).</strong> Watch what reps actually do. Tighten workflows, fix the report nobody trusts, retire the safety net. This is also when the marketing side comes alive — the first lease-expiration campaign, the first scored-lead handoff. If you don't have an internal admin, this is what <a href="https://www.thequantumleap.business/services/hubspot-admin-as-a-services" style="color: #e94560;">HubSpot Admin as a Service</a> is for.</p>
+
+<h2 id="pitfalls" style="color: #1a1a2e; font-size: 28px; margin-top: 45px; margin-bottom: 20px;">Six Pitfalls That Wreck Sherpa Migrations</h2>
+
+<p style="margin-bottom: 20px;"><strong>1. Importing legacy labels as truth.</strong> The classic: equipment and product labels that drifted for a decade in the source system get imported verbatim, and suddenly your shiny new CRM reports on categories like "MISC" and "OLD-CANON-DO-NOT-USE." We've seen dealers still fighting labeling conventions inherited from a legacy Sherpa database years after leaving it. Normalize labels in the mapping phase — it's a spreadsheet exercise before migration and an archaeology project after.</p>
+
+<p style="margin-bottom: 20px;"><strong>2. Replicating the old pipeline instead of designing the new one.</strong> If you copy Sherpa's stages verbatim, you copy every definition argument that came with them. Migration is the one moment you get stage definitions everyone agrees to — spend the hour.</p>
+
+<p style="margin-bottom: 20px;"><strong>3. Two-way sync on day one.</strong> Bidirectional e-automate sync sounds ideal and creates duplicate loops in practice. Start one-way (ERP → CRM), earn trust in the data, then open write-backs deliberately and narrowly.</p>
+
+<p style="margin-bottom: 20px;"><strong>4. Big-bang cutover with no read-only period.</strong> The first time a rep can't find a deal from last quarter, confidence in the whole project craters. The read-only Sherpa window costs little and buys enormous psychological safety.</p>
+
+<p style="margin-bottom: 20px;"><strong>5. Treating training as an email.</strong> Reps don't adopt systems from a PDF. Role-based, in-portal training the week before cutover — sales sees their pipeline, service sees their views, leadership sees their dashboards. (This is literally why we run <a href="https://www.thequantumleap.business/hubspot-training" style="color: #e94560;">HubSpot Training</a> as its own practice.)</p>
+
+<p style="margin-bottom: 20px;"><strong>6. Nobody owns the system after go-live.</strong> A migration delivers a working system; only ownership keeps it working. Name the admin — internal or fractional — before cutover, not after the first workflow breaks.</p>
+
+<h2 id="timeline-cost" style="color: #1a1a2e; font-size: 28px; margin-top: 45px; margin-bottom: 20px;">Timeline, Cost, and What "Done" Looks Like</h2>
+
+<p style="margin-bottom: 20px;"><strong>Timeline:</strong> for a typical single-location dealer, plan 4–8 weeks from kickoff to cutover. Data volume, the number of source systems (multi-CRM dealer groups sit at the long end), and how much process redesign you bundle in are the variables that move it.</p>
+
+<p style="margin-bottom: 20px;"><strong>Cost:</strong> we publish our pricing. A Q2 installation — the full dealer-ready HubSpot architecture with the migration baked in — runs <strong>$14,950 for dealerships up to 10 reps</strong> and <strong>$29,950 for larger teams</strong>, with ongoing maintenance plans after. Custom implementation and migration work is scoped on the <a href="https://www.thequantumleap.business/pricing" style="color: #e94560;">pricing page</a>. HubSpot license costs come on top and depend on the hubs and seats you choose — we'll model that with you honestly, including where you don't need the expensive tier.</p>
+
+<p style="margin-bottom: 20px;"><strong>"Done" looks like this:</strong> every rep working out of HubSpot daily; account, fleet, and contract data visible on one screen; the lease-expiration pipeline generating conversations on schedule; marketing feeding scored leads into the same system sales works in; and a forecast meeting that argues about deals, not data. If any of those is missing 90 days after cutover, the migration isn't finished — it's just moved.</p>
+
+<h2 id="conclusion" style="color: #1a1a2e; font-size: 28px; margin-top: 45px; margin-bottom: 20px;">The Bottom Line</h2>
+
+<p style="margin-bottom: 20px;">Compass Sherpa carried a generation of dealers through a copier-first era, and it deserves respect for that. But if your dealership's growth now runs through managed IT, services, and a marketing motion Sherpa was never built to power, the platform question is really a timing question — and every quarter on the fence is a quarter of pipeline your connected competitors are compounding.</p>
+
+<p style="margin-bottom: 20px;">The migration itself is a solved problem: map the data, build the dealer layer (or install <a href="https://www.thequantumleap.business/q2-revenue-machine" style="color: #e94560;">Q2</a> and skip the invention), keep e-automate exactly where it is, cut over in phases, and put an owner on the system. We've run this play enough times that the surprises are rare and the pitfalls above are avoidable on purpose.</p>
+
+<p style="margin-bottom: 20px;">If you're weighing the move, start with a conversation — we'll look at your Sherpa data, your e-automate setup, and your revenue mix, and give you a straight answer on scope, timeline, and cost. <a href="https://meetings.hubspot.com/shawn-peterson" style="color: #e94560;"><strong>Book a call with our team</strong></a>, or browse the <a href="https://www.thequantumleap.business/resources" style="color: #e94560;">Resource Library</a> for more dealer playbooks.</p>
+
+<h2 id="faq" style="color: #1a1a2e; font-size: 28px; margin-top: 45px; margin-bottom: 20px;">Frequently Asked Questions</h2>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+<h3 style="color: #1a1a2e; margin-top: 0; font-size: 18px;">Can I keep e-automate if I move from Sherpa to HubSpot?</h3>
+<p style="margin-bottom: 0;">Yes — and you should. e-automate remains your system of record for service, contracts, meters, and billing. Integration middleware syncs customers, equipment, and contract data into HubSpot so reps see fleet reality without touching the ERP. Leaving Sherpa changes your CRM layer, not your ERP.</p>
+</div>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+<h3 style="color: #1a1a2e; margin-top: 0; font-size: 18px;">How long does a Sherpa-to-HubSpot migration take?</h3>
+<p style="margin-bottom: 0;">Typically 4–8 weeks from kickoff to cutover for a single-location dealer: one week of auditing and data mapping, two to three weeks building the HubSpot destination and integrations, a trial migration, then a phased cutover with Sherpa kept read-only for a full sales cycle as a safety net.</p>
+</div>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+<h3 style="color: #1a1a2e; margin-top: 0; font-size: 18px;">How does HubSpot handle machines in field and lease expirations?</h3>
+<p style="margin-bottom: 0;">Through custom objects and workflows. Each machine becomes a record — model, serial, install date, lease terms, expiration — associated to the customer account, and workflows surface upgrade conversations automatically as expirations approach. Our Q2 platform ships this entire dealer data model pre-built.</p>
+</div>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+<h3 style="color: #1a1a2e; margin-top: 0; font-size: 18px;">What does the migration cost?</h3>
+<p style="margin-bottom: 0;">A Q2 installation — the dealer-ready HubSpot architecture with migration included — is $14,950 for up to 10 reps and $29,950 for larger teams. Custom migration and implementation work is scoped individually; all our pricing is published on our pricing page. HubSpot license costs are separate and depend on hubs and seats.</p>
+</div>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+<h3 style="color: #1a1a2e; margin-top: 0; font-size: 18px;">Should we bring all our historical Sherpa data into HubSpot?</h3>
+<p style="margin-bottom: 0;">Almost never all of it. Bring open opportunities with full history, 12–24 months of closed deals for reporting continuity, activity attached to active accounts, and the complete machines-in-field dataset. Archive the rest. Migration is a once-a-decade chance to leave dead contacts, abandoned fields, and drifted labels behind.</p>
+</div>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+<h3 style="color: #1a1a2e; margin-top: 0; font-size: 18px;">We run Sherpa in one office and a different CRM in another. Can we consolidate in one move?</h3>
+<p style="margin-bottom: 0;">Yes — multi-CRM consolidation is one of the most common reasons dealer groups migrate, especially after acquisitions. Each source system gets its own data map and matching keys, and everything lands in one HubSpot portal with one pipeline standard. It adds mapping work up front but ends the parallel-systems tax permanently.</p>
+</div>
+
+</article>
