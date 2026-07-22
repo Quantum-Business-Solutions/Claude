@@ -1,0 +1,181 @@
+<!--
+  templateType: "global_partial"
+  label: "Quantum Header"
+  isAvailableForNewContent: false
+-->
+<div class="q-topbar">
+  <a href="/en/aeo-health-check">Are AI engines citing your company? <strong>Get your free AEO score</strong> <span class="q-topbar-arrow">&rarr;</span></a>
+</div>
+<style>
+.q-topbar{background:linear-gradient(90deg,rgba(196,164,74,.12),rgba(196,164,74,.04));border-bottom:1px solid rgba(196,164,74,.18);text-align:center;padding:9px 16px;font-size:13.5px;}
+.q-topbar a{color:var(--fg);text-decoration:none;letter-spacing:.01em;}
+.q-topbar strong{color:var(--q-gold);font-weight:700;}
+.q-topbar a:hover strong{text-decoration:underline;}
+.q-topbar-arrow{color:var(--q-gold);}
+</style>
+<!--
+  templateType: global_partial
+  label: Quantum Header
+-->
+<style>
+.q-nav{display:flex;align-items:center;gap:28px;font-size:14.5px;font-weight:500;}
+.q-nav > a, .q-nav-item > a{color:var(--fg);text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:28px 0;}
+.q-nav > a:hover, .q-nav-item > a:hover{color:var(--q-gold);}
+.q-nav-item{position:relative;}
+.q-nav-item .q-caret{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);}
+.q-subnav{visibility:hidden;opacity:0;transition:opacity .18s ease,transform .18s ease;transform:translate(-50%,6px);
+  position:absolute;top:100%;left:50%;min-width:250px;background:#101725;border:1px solid rgba(196,164,74,0.18);
+  border-radius:10px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,0.5);z-index:60;}
+.q-nav-item:hover .q-subnav, .q-nav-item:focus-within .q-subnav{visibility:visible;opacity:1;transform:translate(-50%,0);}
+.q-subnav a{display:block;padding:9px 22px;color:#e2e5eb;text-decoration:none;font-size:14px;white-space:nowrap;}
+.q-subnav a:hover{color:var(--q-gold);background:rgba(196,164,74,0.08);}
+.q-meganav{visibility:hidden;opacity:0;transition:opacity .18s ease,transform .18s ease;transform:translate(-50%,6px);
+  position:absolute;top:100%;left:50%;display:flex;flex-wrap:nowrap;gap:4px 30px;width:max-content;max-width:94vw;overflow-x:auto;
+  background:#101725;border:1px solid rgba(196,164,74,0.18);border-radius:12px;padding:22px 26px;box-shadow:0 14px 40px rgba(0,0,0,0.5);z-index:60;}
+.q-nav-item:hover .q-meganav, .q-nav-item:focus-within .q-meganav{visibility:visible;opacity:1;transform:translate(-50%,0);}
+.q-megacol{min-width:150px;flex:1 1 150px;padding:4px 0;}
+.q-megacol .q-megahead{display:block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--q-gold);padding:6px 0 4px;text-decoration:none;}
+.q-megacol a.q-megahead:hover{text-decoration:underline;}
+.q-megacol a:not(.q-megahead){display:block;padding:7px 0;color:#e2e5eb;text-decoration:none;font-size:13.5px;white-space:nowrap;}
+.q-megacol a:not(.q-megahead):hover{color:var(--q-gold);}
+.q-booknow{border:1px solid var(--q-gold);color:var(--q-gold)!important;padding:11px 26px!important;border-radius:999px;font-weight:600;letter-spacing:0.01em;}
+.q-booknow:hover{background:var(--q-gold);color:var(--cta-fg)!important;}
+.q-mnav{display:none;}
+@media(max-width:1024px){
+  .q-nav{display:none;}
+  .q-mnav{display:block;}
+  .q-mnav > summary{list-style:none;cursor:pointer;width:46px;height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border:1px solid rgba(196,164,74,.4);border-radius:10px;}
+  .q-mnav > summary::-webkit-details-marker{display:none;}
+  .q-mnav > summary span{display:block;width:20px;height:2px;background:var(--q-gold);border-radius:2px;transition:transform .2s ease,opacity .2s ease;}
+  .q-mnav[open] > summary span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .q-mnav[open] > summary span:nth-child(2){opacity:0;}
+  .q-mnav[open] > summary span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .q-mnav-panel{position:absolute;top:100%;left:0;right:0;max-height:calc(100vh - 80px);overflow:auto;-webkit-overflow-scrolling:touch;
+    background:#0b111d;border-top:1px solid rgba(196,164,74,.22);box-shadow:0 30px 60px rgba(0,0,0,.6);padding:10px 22px 34px;z-index:70;}
+  .q-mnav-panel > a, .q-msub > summary{display:flex;align-items:center;justify-content:space-between;padding:15px 2px;color:var(--fg);
+    text-decoration:none;font-size:16px;font-weight:500;border-bottom:1px solid rgba(226,229,235,.07);}
+  .q-msub{border-bottom:1px solid rgba(226,229,235,.07);}
+  .q-msub > summary{border-bottom:none;list-style:none;cursor:pointer;}
+  .q-msub > summary::-webkit-details-marker{display:none;}
+  .q-msub .q-caret{width:8px;height:8px;border-right:1.5px solid var(--q-gold);border-bottom:1.5px solid var(--q-gold);transform:rotate(45deg);transition:transform .18s ease;}
+  .q-msub[open] > summary .q-caret{transform:rotate(-135deg);}
+  .q-msub-links{padding:2px 0 12px;}
+  .q-msub-links a{display:block;padding:10px 14px;color:#aeb4c0;text-decoration:none;font-size:15px;}
+  .q-msub-links a:active, .q-msub-links a:hover{color:var(--q-gold);}
+  .q-mgroup{padding-bottom:6px;}
+  .q-mgroup-label{display:block;padding:14px 14px 4px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--q-gold);text-decoration:none;}
+  .q-mgroup a:not(.q-mgroup-label){padding-left:26px;}
+  .q-mnav-cta{display:block;text-align:center;margin-top:22px;border:1px solid var(--q-gold);color:var(--q-gold);
+    padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px;}
+  .q-mnav-panel > a.q-mnav-cta{justify-content:center;border-bottom:none;}
+}
+</style>
+<header style="border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;">
+  <div class="q-container" style="height:80px;display:flex;align-items:center;justify-content:space-between;gap:32px;">
+    <a href="/" style="display:flex;align-items:center;flex:0 0 auto;">
+      <img class="only-dark" src="https://www.thequantumleap.business/hubfs/quantum_new.png" alt="Quantum Business Solutions" style="height:40px;width:auto;">
+      <img class="only-light" src="https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/quantum-theme/brand/quantum-light.png" alt="Quantum Business Solutions" style="height:40px;width:auto;">
+    </a>
+    <nav class="q-nav" aria-label="Main navigation">
+      {% set main_nav = menu(184144186499) %}
+      {% for item in main_nav.children %}
+        {% if item.label != 'Help Center' %}
+          {% if item.label == 'Solutions' and item.children %}
+            <div class="q-nav-item">
+              <a href="{{ item.url or '#' }}" aria-haspopup="true">{{ item.label }}<span class="q-caret" aria-hidden="true"></span></a>
+              <div class="q-meganav">
+                {% for sub in item.children %}
+                  <div class="q-megacol">
+                    {% if sub.url %}<a class="q-megahead" href="{{ sub.url }}">{{ sub.label }}</a>{% else %}<span class="q-megahead">{{ sub.label }}</span>{% endif %}
+                    {% for s3 in sub.children %}{% if s3.url %}<a href="{{ s3.url }}">{{ s3.label }}</a>{% endif %}{% endfor %}
+                    
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% elif item.children %}
+            <div class="q-nav-item">
+              <a href="{{ item.url or '#' }}" aria-haspopup="true">{{ item.label }}<span class="q-caret" aria-hidden="true"></span></a>
+              <div class="q-subnav">
+                {% for sub in item.children %}{% unless item.label == 'Tech' and sub.label == 'Integrations' %}{% set sub_url = sub.url %}{% if sub_url == 'https://www.thequantumleap.business/blog/tag/webinar' or sub_url == 'https://www.thequantumleap.business/blog/tag/podcast' %}{% set sub_url = '/blog/tag/webinars-podcasts' %}{% elif sub_url == 'https://www.thequantumleap.business/blog/tag/ebook' %}{% set sub_url = '/blog/tag/ebooks-playbooks' %}{% elif sub_url == 'https://www.thequantumleap.business/blog/' %}{% set sub_url = '/blog' %}{% endif %}<a href="{{ sub_url }}">{{ sub.label }}</a>{% endunless %}{% endfor %}
+                {% if item.label == 'Solutions' %}
+                  <a href="/marketing-services">Marketing Services</a>
+                {% endif %}
+                {% if item.label == 'Resources' %}
+                  <a href="/common-integrations-with-hubspot">Integrations with HubSpot</a>
+                  <a href="/en/aeo-health-check">AEO Health Check</a>
+                  <a href="/case-studies">Case Studies</a>
+                  <a href="/en/prospecting-playbook">Prospecting Playbook</a>
+                  <a href="/sales-sequences-playbook">Sales Sequences Playbook</a>
+                  <a href="/sales-hiring-playbook">Sales Hiring Playbook</a>
+                  <a href="https://webservices.lightspeedvt.net/regform/register.aspx?linkid=B36EEFE3C48B02587B912B814114415A">Enroll in Quantum Academy</a>
+                  <a href="https://clientsuccess.thequantumleap.business/knowledge">Knowledge Base</a>
+                {% endif %}
+              </div>
+            </div>
+          {% elif item.label == 'About Us' %}
+            <div class="q-nav-item">
+              <a href="{{ item.url }}" aria-haspopup="true">About Us<span class="q-caret" aria-hidden="true"></span></a>
+              <div class="q-subnav">
+                <a href="/about-us">Our Team</a>
+                <a href="/case-studies">Case Studies</a>
+                <a href="/contact-us">Contact</a>
+              </div>
+            </div>
+          {% elif item.label == 'Client Success' %}
+            <a href="https://clientcommand.thequantumleap.business">Client Success</a>
+          {% else %}
+            <a href="{{ item.url }}">{{ item.label }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      <a class="q-nav-optional" href="https://chatgpt.com/g/g-68b8777de60c8191a05e4b978cafb5d5-quantum-knowledge-base">QuantumGPT</a>
+      <a class="q-booknow" href="https://meetings.hubspot.com/shawn-peterson">Book Now</a>
+    </nav>
+    <details class="q-mnav">
+      <summary aria-label="Open menu"><span></span><span></span><span></span></summary>
+      <div class="q-mnav-panel">
+        {% set m_nav = menu(184144186499) %}
+        {% for item in m_nav.children %}
+          {% if item.label != 'Help Center' %}
+            {% if item.children %}
+              <details class="q-msub">
+                <summary>{{ item.label }}<span class="q-caret" aria-hidden="true"></span></summary>
+                <div class="q-msub-links">
+                  {% for sub in item.children %}{% unless item.label == 'Tech' and sub.label == 'Integrations' %}{% if sub.children %}<div class="q-mgroup">{% if sub.url %}<a class="q-mgroup-label" href="{{ sub.url }}">{{ sub.label }}</a>{% else %}<span class="q-mgroup-label">{{ sub.label }}</span>{% endif %}{% for s3 in sub.children %}{% if s3.url %}<a href="{{ s3.url }}">{{ s3.label }}</a>{% endif %}{% endfor %}</div>{% else %}{% set sub_url = sub.url %}{% if sub_url == 'https://www.thequantumleap.business/blog/tag/webinar' or sub_url == 'https://www.thequantumleap.business/blog/tag/podcast' %}{% set sub_url = '/blog/tag/webinars-podcasts' %}{% elif sub_url == 'https://www.thequantumleap.business/blog/tag/ebook' %}{% set sub_url = '/blog/tag/ebooks-playbooks' %}{% elif sub_url == 'https://www.thequantumleap.business/blog/' %}{% set sub_url = '/blog' %}{% endif %}<a href="{{ sub_url }}">{{ sub.label }}</a>{% endif %}{% endunless %}{% endfor %}
+                  {% if item.label == 'Solutions' %}
+                    <a href="/marketing-services">Marketing Services</a>
+                  {% endif %}
+                  {% if item.label == 'Resources' %}
+                    <a href="/common-integrations-with-hubspot">Integrations with HubSpot</a>
+                    <a href="/en/aeo-health-check">AEO Health Check</a>
+                    <a href="/case-studies">Case Studies</a>
+                    <a href="/en/prospecting-playbook">Prospecting Playbook</a>
+                    <a href="/sales-sequences-playbook">Sales Sequences Playbook</a>
+                    <a href="/sales-hiring-playbook">Sales Hiring Playbook</a>
+                    <a href="https://webservices.lightspeedvt.net/regform/register.aspx?linkid=B36EEFE3C48B02587B912B814114415A">Enroll in Quantum Academy</a>
+                    <a href="https://clientsuccess.thequantumleap.business/knowledge">Knowledge Base</a>
+                  {% endif %}
+                </div>
+              </details>
+            {% elif item.label == 'About Us' %}
+              <details class="q-msub">
+                <summary>About Us<span class="q-caret" aria-hidden="true"></span></summary>
+                <div class="q-msub-links">
+                  <a href="/about-us">Our Team</a>
+                  <a href="/case-studies">Case Studies</a>
+                  <a href="/contact-us">Contact</a>
+                </div>
+              </details>
+            {% elif item.label == 'Client Success' %}
+              <a href="https://clientcommand.thequantumleap.business">Client Success</a>
+            {% else %}
+              <a href="{{ item.url }}">{{ item.label }}</a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <a class="q-mnav-cta" href="https://meetings.hubspot.com/shawn-peterson">Book Now</a>
+      </div>
+    </details>
+  </div>
+</header>
