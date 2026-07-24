@@ -1,0 +1,17 @@
+{
+  "name": "taste-library-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server exposing the taste library (data/references.json) to Claude Code as tools.",
+  "type": "module",
+  "bin": {
+    "taste-library-mcp": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.0",
+    "zod": "^3.23.8"
+  }
+}

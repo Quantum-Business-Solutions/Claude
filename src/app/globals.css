@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f7f6f3;
+  color: #12121a;
+}
+
+.chip {
+  @apply inline-flex items-center rounded-full border border-black/10 bg-white px-2.5 py-1 text-xs font-medium text-ink/80;
+}
+
+.card {
+  @apply rounded-2xl border border-black/10 bg-white shadow-sm;
+}
