@@ -15,6 +15,7 @@ export function StyleGuidePanel({ guide }: { guide: StyleGuide }) {
       <div>
         <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink/50">
           Top tags · {guide.referenceCount} references
+          {guide.liveSiteCount > 0 && `, ${guide.liveSiteCount} measured`}
         </h2>
         <div className="flex flex-wrap gap-1.5">
           {guide.topTags.map(({ tag, count }) => (
@@ -48,6 +49,31 @@ export function StyleGuidePanel({ guide }: { guide: StyleGuide }) {
           </div>
         </div>
       )}
+      {guide.measured.fontFamilies.length > 0 && (
+        <div>
+          <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink/50">
+            Measured type &amp; spacing
+          </h2>
+          <div className="flex flex-wrap gap-1.5">
+            {guide.measured.fontFamilies.map(({ family, count }) => (
+              <span key={family} className="chip">
+                {family} <span className="ml-1 text-ink/40">{count}</span>
+              </span>
+            ))}
+            {guide.measured.borderRadii.map(({ value }) => (
+              <span key={value} className="chip font-mono">
+                {value} radius
+              </span>
+            ))}
+            {guide.measured.baseUnits.map(({ value }) => (
+              <span key={value} className="chip font-mono">
+                {value}px unit
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
       {guide.guardrails.length > 0 && (
         <div>
           <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink/50">

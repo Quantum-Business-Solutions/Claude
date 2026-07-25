@@ -1,6 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 import { DesignReference, NewDesignReferenceInput, StyleGuide } from "./types";
+import { deriveVocabulary } from "./branding";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const DATA_FILE = path.join(DATA_DIR, "references.json");
@@ -68,6 +69,8 @@ export async function getReference(id: string): Promise<DesignReference | undefi
 export async function createReference(input: NewDesignReferenceInput): Promise<DesignReference> {
   const refs = await readAll();
   const now = new Date().toISOString();
+  // Keep prose vocabulary in step with measured tokens regardless of caller.
+  const derived = input.tokens ? deriveVocabulary(input.tokens) : null;
   const ref: DesignReference = {
     id: cryptoRandomId(),
     createdAt: now,
@@ -75,15 +78,22 @@ export async function createReference(input: NewDesignReferenceInput): Promise<D
     title: input.title,
     sourceUrl: input.sourceUrl,
     imagePath: input.imagePath,
+    sourceKind: input.sourceKind ?? "screenshot",
     project: input.project,
     notes: input.notes,
     category: input.category,
     tags: input.tags ?? [],
-    colors: [],
-    typography: [],
-    layoutNotes: [],
-    guardrails: [],
-    analysis: { status: input.imagePath ? "pending" : "skipped" },
+    colors: input.colors ?? derived?.colors ?? [],
+    typography: input.typography ?? derived?.typography ?? [],
+    layoutNotes: input.layoutNotes ?? derived?.layoutNotes ?? [],
+    guardrails: input.guardrails ?? [],
+    tokens: input.tokens,
+    analysis: {
+      // A live-site ingest already carries measured values, so there is
+      // nothing for the vision pass to add.
+      status: input.tokens ? "done" : input.imagePath ? "pending" : "skipped",
+      analyzedAt: input.tokens ? now : undefined,
+    },
   };
   refs.push(ref);
   await writeAll(refs);
@@ -119,24 +129,54 @@ export async function getStyleGuide(filter: ListFilter = {}): Promise<StyleGuide
   const typographyCounts = new Map<string, number>();
   const guardrails = new Set<string>();
 
+  // Measured values, tracked separately so a guessed color never gets
+  // presented with the same authority as one read off a live stylesheet.
+  const fontFamilyCounts = new Map<string, number>();
+  const radiusCounts = new Map<string, number>();
+  const baseUnitCounts = new Map<number, number>();
+  const accentColors = new Set<string>();
+  let liveSiteCount = 0;
+
   for (const r of refs) {
     for (const t of r.tags) tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
     if (r.category) categoryCounts.set(r.category, (categoryCounts.get(r.category) ?? 0) + 1);
     for (const c of r.colors) colorCounts.set(c, (colorCounts.get(c) ?? 0) + 1);
     for (const t of r.typography) typographyCounts.set(t, (typographyCounts.get(t) ?? 0) + 1);
     for (const g of r.guardrails) guardrails.add(g);
+
+    if (r.sourceKind === "live-site") liveSiteCount++;
+    if (r.tokens) {
+      for (const f of r.tokens.fonts ?? []) {
+        fontFamilyCounts.set(f.family, (fontFamilyCounts.get(f.family) ?? 0) + 1);
+      }
+      const radius = r.tokens.spacing?.borderRadius;
+      if (radius) radiusCounts.set(radius, (radiusCounts.get(radius) ?? 0) + 1);
+      const unit = r.tokens.spacing?.baseUnit;
+      if (unit) baseUnitCounts.set(unit, (baseUnitCounts.get(unit) ?? 0) + 1);
+      for (const key of ["accent", "link", "secondary"] as const) {
+        const hex = r.tokens.colors?.[key];
+        if (hex) accentColors.add(hex);
+      }
+    }
   }
 
-  const topN = (m: Map<string, number>, n: number) =>
+  const topN = <K>(m: Map<K, number>, n: number) =>
     [...m.entries()].sort((a, b) => b[1] - a[1]).slice(0, n);
 
   return {
     referenceCount: refs.length,
+    liveSiteCount,
     topTags: topN(tagCounts, 15).map(([tag, count]) => ({ tag, count })),
     topCategories: topN(categoryCounts, 10).map(([category, count]) => ({ category, count })),
     commonColors: topN(colorCounts, 12).map(([color]) => color),
     commonTypography: topN(typographyCounts, 10).map(([t]) => t),
     guardrails: [...guardrails],
+    measured: {
+      fontFamilies: topN(fontFamilyCounts, 10).map(([family, count]) => ({ family, count })),
+      borderRadii: topN(radiusCounts, 6).map(([value, count]) => ({ value, count })),
+      baseUnits: topN(baseUnitCounts, 4).map(([value, count]) => ({ value, count })),
+      accentColors: [...accentColors].slice(0, 12),
+    },
   };
 }
 

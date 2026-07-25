@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getReference } from "@/lib/db";
 import { ReferenceActions } from "@/components/ReferenceActions";
+import { TokenPanel } from "@/components/TokenPanel";
 
 export const dynamic = "force-dynamic";
 
@@ -37,9 +38,10 @@ export default async function ReferenceDetailPage({ params }: { params: { id: st
 
       <div className="flex flex-col gap-5">
         <div>
-          <div className="mb-1 flex items-center gap-2">
+          <div className="mb-1 flex flex-wrap items-center gap-2">
             <h1 className="text-xl font-semibold">{ref.title}</h1>
             <span className="chip capitalize">{ref.project}</span>
+            {ref.sourceKind === "live-site" && <span className="chip">live site</span>}
           </div>
           {ref.category && <p className="text-sm text-ink/60">{ref.category}</p>}
           {ref.sourceUrl && (
@@ -71,9 +73,15 @@ export default async function ReferenceDetailPage({ params }: { params: { id: st
           </div>
         )}
 
-        <VocabList label="Colors" items={ref.colors} />
-        <VocabList label="Typography" items={ref.typography} />
-        <VocabList label="Layout notes" items={ref.layoutNotes} />
+        {ref.tokens ? (
+          <TokenPanel tokens={ref.tokens} />
+        ) : (
+          <>
+            <VocabList label="Colors" items={ref.colors} />
+            <VocabList label="Typography" items={ref.typography} />
+            <VocabList label="Layout notes" items={ref.layoutNotes} />
+          </>
+        )}
         <VocabList label="Guardrails" items={ref.guardrails} />
 
         {ref.analysis.status === "pending" && (

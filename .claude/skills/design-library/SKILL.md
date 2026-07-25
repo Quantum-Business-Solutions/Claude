@@ -33,15 +33,41 @@ professionalized taste instead of one-shot guesses.
 
 ## When the user likes something / wants to save a reference
 
-Call `add_design_reference` with:
-- `title`, `sourceUrl` if there is one, `notes` capturing *why* it's good (specific, not vibes)
-- `project`: `"qbs"`, `"personal"`, or `"both"`
-- `localImagePath` if a screenshot is already saved on disk (it gets copied into
-  `public/uploads/` and registered)
-- Fill `tags`/`colors`/`typography`/`layoutNotes`/`guardrails` directly if you can already see and
-  describe the image yourself — that skips needing an `ANTHROPIC_API_KEY`-backed auto-analysis
-  pass. Otherwise leave them empty; the web app will auto-analyze on next visit if the key is
-  configured, or a human can fill them in via the upload/detail pages.
+**Prefer analyzing a live site over saving a picture.** A screenshot only supports guessed
+vocabulary ("looks like a large serif headline"); a live site yields measured tokens — exact hexes
+with roles, real font stacks, actual `px` sizes, border radii, and per-component background/text/
+radius/shadow values. Those port straight into a Tailwind config; guesses don't.
+
+For a reachable live site:
+1. Scrape it with Firecrawl using the `branding` format (`firecrawl_scrape` with
+   `formats: ["branding"]`, optionally plus `screenshot`).
+2. Call `add_design_reference` with `sourceKind: "live-site"`, `sourceUrl`, and the extracted
+   values in `tokens`. Also set `guardrails` from what the user actually said they want to avoid.
+
+Or, if the app is running with a `FIRECRAWL_API_KEY` configured, `POST /api/ingest` with
+`{ url, project, category, tags, notes, guardrails }` does both steps in one call.
+
+For anything not a reachable live site (a print piece, a concept shot, an app UI), fall back to
+`localImagePath` with `sourceKind: "screenshot"` and fill `colors`/`typography`/`layoutNotes`
+yourself if you can see the image; otherwise leave them for the app's vision pass.
+
+Either way, `notes` should capture *why* it's good — specific, not vibes.
+
+## Dribbble, Pinterest, and other galleries
+
+Use them the way a designer does: browse to **discover** work. Do not build or run an automated
+pipeline that pulls their content into this library.
+
+- Dribbble's API cannot do it anyway — every read endpoint is scoped to the authenticated user's
+  own shots; there is no search, browse, or likes endpoint.
+- Dribbble's API terms are explicit: *"The only Dribbble data you may use in your product or
+  application is that which is exposed via our API. Scraping, copying, saving, or storing our data
+  is strictly prohibited."* This library is used for commercial client work, so treat that as
+  binding.
+
+The right move when a Dribbble shot is great: find the designer's or product's **actual live site**
+and ingest that instead. It's permitted, it yields real tokens, and it's better evidence — a
+shipped site has survived real content and responsive breakpoints, which concept art hasn't.
 
 ## Don't
 

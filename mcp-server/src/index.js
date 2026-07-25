@@ -81,12 +81,13 @@ server.registerTool(
   {
     title: "Save a new design reference",
     description:
-      "Save a new design you or the user like into the taste library, so future website/design work can draw on it. If localImagePath points to an image file already on disk, it will be copied into the library's uploads folder. Style vocabulary (colors/typography/layout/guardrails) can be passed directly if already known (e.g. from having looked at the image), otherwise leave them empty and analyze later via the web app.",
+      "Save a new design into the taste library. PREFERRED: for a reachable live site, first read its real design tokens (e.g. a Firecrawl scrape with the 'branding' format), then pass them as `tokens` with sourceKind 'live-site' — measured values beat vocabulary guessed from a picture. Use localImagePath + inferred colors/typography only when the design is not a live site you can read. Note: do not store scraped Dribbble content here; browse Dribbble to discover work, then save the designer's actual live site.",
     inputSchema: {
       title: z.string(),
       notes: z.string().optional().describe("Why this was saved / what's good about it"),
       sourceUrl: z.string().optional(),
       localImagePath: z.string().optional().describe("Absolute path to an image file already on disk to copy in"),
+      sourceKind: z.enum(["live-site", "screenshot"]).optional(),
       project: z.enum(["qbs", "personal", "both"]).optional(),
       category: z.string().optional(),
       tags: z.array(z.string()).optional(),
@@ -94,6 +95,31 @@ server.registerTool(
       typography: z.array(z.string()).optional(),
       layoutNotes: z.array(z.string()).optional(),
       guardrails: z.array(z.string()).optional(),
+      tokens: z
+        .object({
+          colorScheme: z.string().optional(),
+          colors: z.record(z.string()).optional(),
+          fonts: z.array(z.object({ family: z.string(), role: z.string().optional() })).optional(),
+          fontStacks: z.record(z.array(z.string())).optional(),
+          fontSizes: z.record(z.string()).optional(),
+          spacing: z
+            .object({ baseUnit: z.number().optional(), borderRadius: z.string().optional() })
+            .optional(),
+          components: z.record(z.record(z.string().nullable())).optional(),
+          personality: z
+            .object({
+              tone: z.string().optional(),
+              energy: z.string().optional(),
+              targetAudience: z.string().optional(),
+            })
+            .optional(),
+          designSystem: z
+            .object({ framework: z.string().optional(), componentLibrary: z.string().optional() })
+            .optional(),
+          confidence: z.record(z.number()).optional(),
+        })
+        .optional()
+        .describe("Real measured design tokens read off a live site"),
     },
   },
   async (input) => {

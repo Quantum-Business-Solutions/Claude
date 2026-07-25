@@ -24,16 +24,46 @@ of references → extract the design vocabulary behind each one → use it on ev
 
 ```bash
 npm install
-cp .env.example .env.local   # optional — only needed for auto-analysis, see below
+cp .env.example .env.local   # add FIRECRAWL_API_KEY for live-site ingest
 npm run dev                  # http://localhost:3000
+node mcp-server/src/seed.mjs # optional: 3 real measured references to start from
 ```
 
-### Auto-analysis (optional)
+## Two ways in — prefer the first
 
-Set `ANTHROPIC_API_KEY` in `.env.local` to have Claude automatically look at each uploaded
-screenshot and extract its category, tags, colors, typography notes, layout notes, and guardrails.
-Without a key, references are still saved — just add the vocabulary by hand from the detail page,
-or fill it in via `add_design_reference` if you're adding it through the MCP server / Claude Code.
+### 1. Analyze a live URL (preferred)
+
+Paste a site URL and the app reads its **real computed design tokens** — exact hexes by role, font
+families and stacks, actual `px` type sizes, spacing base unit, border radius, and per-component
+background/text/radius/shadow values. Those port straight into a Tailwind config.
+
+Needs `FIRECRAWL_API_KEY` in `.env.local`. Also available as `POST /api/ingest` with
+`{ url, project, category, tags, notes, guardrails }`.
+
+### 2. Upload a screenshot (fallback)
+
+For designs that aren't a reachable live site. Vocabulary here is *inferred* from the image rather
+than measured, so it's softer evidence. Set `ANTHROPIC_API_KEY` to have Claude infer category,
+tags, colors, typography, layout notes, and guardrails automatically; otherwise fill them in by
+hand from the detail page.
+
+The style guide keeps these separate — measured values are reported apart from inferred ones, so a
+guessed color never carries the same authority as one read off a live stylesheet.
+
+## A note on Dribbble and other galleries
+
+Use them to **discover** work, then ingest the designer's or product's actual live site. Don't wire
+up an automated Dribbble pipeline:
+
+- Their API can't do it — every read endpoint is scoped to the authenticated user's *own* shots.
+  There is no search, browse, popular, or likes endpoint.
+- Their API terms are explicit: *"The only Dribbble data you may use in your product or application
+  is that which is exposed via our API. Scraping, copying, saving, or storing our data is strictly
+  prohibited."*
+
+Ingesting the live site is permitted, yields real tokens instead of guesses, and is better evidence
+anyway — a shipped site has survived real content and responsive breakpoints; a concept shot
+hasn't.
 
 ### Registering the MCP server with Claude Code
 
@@ -60,7 +90,14 @@ Once registered, Claude Code can call `list_design_references`, `search_design_r
 
 ## Data model
 
-Each reference (`data/references.json`) has: `title`, `sourceUrl`, `imagePath`, `project`
-(`qbs` / `personal` / `both`), `notes` (why it was saved), `category`, `tags`, `colors`,
-`typography`, `layoutNotes`, `guardrails`, and an `analysis` status. Nothing here is QBS- or
-client-specific by structure — `project` just lets the style guide be scoped when it matters.
+Each reference (`data/references.json`) has: `title`, `sourceUrl`, `imagePath`, `sourceKind`
+(`live-site` / `screenshot`), `project` (`qbs` / `personal` / `both`), `notes` (why it was saved),
+`category`, `tags`, `colors`, `typography`, `layoutNotes`, `guardrails`, an `analysis` status, and
+— for live-site references — a `tokens` object holding the measured values.
+
+The prose vocabulary (`colors` / `typography` / `layoutNotes`) is derived automatically from
+`tokens` when tokens are present, so the gallery and style guide read consistently no matter which
+path created the reference: web ingest, MCP tool, or seed script.
+
+Nothing here is QBS- or client-specific by structure — `project` just lets the style guide be
+scoped when it matters.
