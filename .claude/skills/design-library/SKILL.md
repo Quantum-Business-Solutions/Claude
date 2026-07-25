@@ -1,76 +1,63 @@
 ---
 name: design-library
-description: Use this skill whenever doing website, landing page, proposal, or product design work — for QBS client work or personal projects — to ground the output in the taste library instead of guessing. Also use it whenever the user shares a design they like ("save this", "I like this style", a screenshot, a Dribbble/Pinterest/site link) so it gets captured for future work. Trigger on "design inspiration", "taste library", "style guide", "what do we like", "design references", or before generating any new UI/website/landing-page design.
+description: Use this skill whenever doing website, landing page, proposal, or product design work — for QBS client work or personal projects — to ground the output in the saved design library instead of guessing. Also use it whenever the user shares a design they like ("save this", "I like this style", a screenshot, a Dribbble/Pinterest/site link) so it gets captured for future work. Trigger on "design inspiration", "taste library", "style guide", "what do we like", "design references", "guardrails", or before generating any new UI/website/landing-page design.
 ---
 
-# Design library (taste library)
+# Design library
 
-This repo hosts a small app + MCP server for saving designs we like and turning them into a
-reusable style vocabulary, so QBS website/proposal/product design work is grounded in an actual,
-professionalized taste instead of one-shot guesses.
+Flat files in `design/`. No app, no server, no database — read them directly with Read/Glob/Grep.
 
-- Web app: Next.js app at the repo root (`npm run dev`, default `http://localhost:3000`) — gallery,
-  upload form, and per-reference detail view.
-- Data: `data/references.json` (one record per saved design) + images in `public/uploads/`.
-- MCP server: `mcp-server/` exposes the same library as tools (`list_design_references`,
-  `search_design_references`, `get_design_reference`, `get_style_guide`, `add_design_reference`) so
-  Claude Code can query and add to it directly, without the web UI. Register it once per
-  `docs/DESIGN_LIBRARY.md` ("Registering the MCP server"), then use `ToolSearch` for
-  `mcp__taste-library__*` tools.
+| File | What it is |
+|---|---|
+| `design/guardrails.md` | The always/never list. **Read before generating any design work.** |
+| `design/references.md` | The reference entries — url, tags, category, and why each is here. |
+| `design/tokens/<slug>.json` | Values **measured** off a live page. Only measured; never hand-written. |
+| `design/inbox.md` | Drop zone for URLs awaiting ingest. |
+| `design/SCHEMA.md` | The ingest contract — slug rule, file shapes, failure rule. |
 
-## Before starting design/website work
+## Before generating design work
 
-1. Call `get_style_guide` (optionally scoped to `project: "qbs"` or `"personal"`) to pull the
-   current common tags, categories, recurring colors, and — most important — the accumulated
-   **guardrails** (explicit "never do X" rules from past references).
-2. If the work maps to a specific style (e.g. "pricing page", "SaaS landing hero"), also call
-   `search_design_references` or `list_design_references` with a matching category/tag to pull
-   concrete examples, not just the aggregate guide.
-3. Apply the guardrails as hard constraints, and lean toward the recurring tags/colors/type
-   patterns unless the user directs otherwise for this specific piece of work.
-4. If the library has nothing relevant yet, say so plainly rather than inventing a "typical" style
-   — this is meant to replace guessing, not launder it.
+1. Read `design/guardrails.md`. Treat it as hard constraints, not suggestions — it encodes decisions
+   already made, and re-litigating them per project is how a house style fails to accumulate.
+2. Read `design/references.md`. If the task maps to a category or tag present there (pricing page,
+   professional services, dark product marketing…), read that entry's `design/tokens/*.json` too —
+   the measured values are the point, and they port directly into a Tailwind config or CSS custom
+   properties.
+3. Distinguish measured from judged when you use it. A hex from `design/tokens/` is fact; the prose
+   in `references.md` is opinion. Don't quote the second with the confidence of the first, and check
+   `measuredAt` — a token file over a year old may describe a site that has since been redesigned.
+4. If nothing in the library is relevant, **say so plainly** rather than inventing a "typical" style
+   for the category. The library exists to replace guessing, not to launder it.
 
-## When the user likes something / wants to save a reference
+Pair this with the `impeccable` and `design-taste-frontend` skills, which handle craft and
+anti-slop execution. This skill supplies the specific taste those two should be executing against.
 
-**Prefer analyzing a live site over saving a picture.** A screenshot only supports guessed
-vocabulary ("looks like a large serif headline"); a live site yields measured tokens — exact hexes
-with roles, real font stacks, actual `px` sizes, border radii, and per-component background/text/
-radius/shadow values. Those port straight into a Tailwind config; guesses don't.
+## Adding references
 
-For a reachable live site:
-1. Scrape it with Firecrawl using the `branding` format (`firecrawl_scrape` with
-   `formats: ["branding"]`, optionally plus `screenshot`).
-2. Call `add_design_reference` with `sourceKind: "live-site"`, `sourceUrl`, and the extracted
-   values in `tokens`. Also set `guardrails` from what the user actually said they want to avoid.
+Structured, repeatable, batchable — that's the whole design of it:
 
-Or, if the app is running with a `FIRECRAWL_API_KEY` configured, `POST /api/ingest` with
-`{ url, project, category, tags, notes, guardrails }` does both steps in one call.
+- **Capture:** append URLs to `design/inbox.md`, one per line, optionally `<url> | why`.
+- **Process:** run `/design-ingest`. It measures each URL via Firecrawl's `branding` extractor in
+  parallel, writes token files and reference entries per `design/SCHEMA.md`, updates guardrails, and
+  clears the queue. Same command for one URL or forty.
+- **Direct:** `/design-ingest <url>` skips the inbox for a one-off.
 
-For anything not a reachable live site (a print piece, a concept shot, an app UI), fall back to
-`localImagePath` with `sourceKind: "screenshot"` and fill `colors`/`typography`/`layoutNotes`
-yourself if you can see the image; otherwise leave them for the app's vision pass.
+When the user shows you something they like mid-conversation, add it to the inbox (or ingest it
+directly) rather than only replying about it. Capture is the point.
 
-Either way, `notes` should capture *why* it's good — specific, not vibes.
+## Sourcing rules
 
-## Dribbble, Pinterest, and other galleries
+Ingest **live sites**, not gallery images — a shipped site has survived real content and responsive
+breakpoints; a concept shot hasn't.
 
-Use them the way a designer does: browse to **discover** work. Do not build or run an automated
-pipeline that pulls their content into this library.
-
-- Dribbble's API cannot do it anyway — every read endpoint is scoped to the authenticated user's
-  own shots; there is no search, browse, or likes endpoint.
-- Dribbble's API terms are explicit: *"The only Dribbble data you may use in your product or
-  application is that which is exposed via our API. Scraping, copying, saving, or storing our data
-  is strictly prohibited."* This library is used for commercial client work, so treat that as
-  binding.
-
-The right move when a Dribbble shot is great: find the designer's or product's **actual live site**
-and ingest that instead. It's permitted, it yields real tokens, and it's better evidence — a
-shipped site has survived real content and responsive breakpoints, which concept art hasn't.
+Do not store scraped Dribbble content in this repo. Their API cannot serve it (every read endpoint is
+scoped to the authenticated user's own shots — no search, browse, or likes), and their terms are
+explicit: *"Scraping, copying, saving, or storing our data is strictly prohibited."* This library
+backs commercial client work, so treat that as binding. Browse galleries to **discover**; ingest the
+designer's or product's actual live site.
 
 ## Don't
 
-- Don't fabricate colors/typography/guardrails for a reference you haven't actually looked at.
-- Don't skip checking the style guide before generating new design work when this skill is in play
-  — that's the entire point of having captured it.
+- Don't hand-write values into `design/tokens/` — that directory is the measured/guessed boundary.
+- Don't skip the guardrails read because a task looks small. That's when slop gets in.
+- Don't silently drop a failed ingest. Leave it in the inbox with a reason, per the schema.

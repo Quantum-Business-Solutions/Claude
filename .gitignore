@@ -1,14 +1,6 @@
+# Skill installers pull dependencies in; nothing here is built from source.
 node_modules/
-.next/
-out/
-build/
-dist/
-*.tsbuildinfo
+
 .env
 .env.local
 .DS_Store
-npm-debug.log*
-
-# uploaded reference images (kept locally / in your own storage, not committed)
-public/uploads/*
-!public/uploads/.gitkeep

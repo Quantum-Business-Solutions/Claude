@@ -1,103 +1,75 @@
-# Taste Library
+# Design library
 
-A small app for saving designs we like — website UI, layouts, whole pages — and turning them into
-a reusable **style vocabulary** (colors, typography, layout patterns, and "never do this"
-guardrails), so QBS website builds and client deliverables draw on an actual, professionalized
-taste instead of one-shot guesses.
+Design references for QBS website and client work — the taste that Claude Code builds against, so
+output is grounded in decisions we've actually made rather than in whatever's average.
 
-Inspired by [this workflow](https://www.youtube.com/watch?v=7FU98O0JLHs): build a "taste library"
-of references → extract the design vocabulary behind each one → use it on every new design task.
+There is no app, server, or database. Everything is flat files, hand-editable, read directly by
+Claude. That's deliberate: the value is in the references and rules, and every layer between them
+and Claude was overhead.
 
-## What's here
+## Layout
 
-- **Web app** (`src/`) — a Next.js app: a gallery of saved references, an upload form, and a
-  per-reference detail view showing the extracted vocabulary.
-- **Data** (`data/references.json` + `public/uploads/`) — flat-file storage, no database required.
-  Images are not committed to git (see `.gitignore`) since they're mostly screenshots of other
-  people's work saved for personal reference, not assets we own.
-- **MCP server** (`mcp-server/`) — exposes the same library to Claude Code as tools, so it can
-  check the style guide and add references directly during a session.
-- **Claude Code skill** (`.claude/skills/design-library/SKILL.md`) — tells Claude when to consult
-  the library before doing design/website work, and how to save new references it's shown.
+| Path | What it is |
+|---|---|
+| `design/guardrails.md` | The always/never list. Read before generating any design work. |
+| `design/references.md` | Reference entries — url, tags, category, and why each one is here. |
+| `design/tokens/<slug>.json` | Values **measured** off a live page. Only measured, never hand-written. |
+| `design/inbox.md` | Drop zone for URLs awaiting ingest. |
+| `design/SCHEMA.md` | The ingest contract — slug rule, file shapes, failure handling. |
 
-## Setup
+## Adding references
+
+The intake is the point: structured, repeatable, batched.
+
+1. **Capture.** Append a URL to `design/inbox.md`, one per line — optionally `<url> | why`. That's
+   the whole gesture. Editable from a phone via the GitHub app.
+2. **Process.** Run `/design-ingest`. It measures every queued URL in parallel via Firecrawl's
+   `branding` extractor, writes token files and reference entries conforming to `design/SCHEMA.md`,
+   adds any generalizable rules to the guardrails, and clears the queue. One URL or forty — same
+   command, roughly the same wall time.
+3. **One-off.** `/design-ingest <url>` skips the inbox.
+
+Failed URLs stay in the inbox annotated with the reason. No partial token files, no invented values.
+
+### Why measured tokens
+
+`branding` reads the rendered page: exact hexes by role, font families, real `px` type sizes,
+spacing base unit, border radius, per-component background/text/radius. Those port straight into a
+Tailwind config. Vocabulary inferred from a screenshot ("looks like a large serif headline") does
+not, which is why `design/tokens/` holds only measured values and everything judged lives in prose.
+
+Measured doesn't mean infallible — extractors mislabel state colors as base colors and report
+browser-computed artifacts. See the "Reading measured tokens" section of `design/guardrails.md`, and
+check `measuredAt`: a token file over a year old may describe a site since redesigned.
+
+## Sourcing
+
+Ingest **live sites**, not gallery images. A shipped site has survived real content, long copy, and
+responsive breakpoints; a concept shot hasn't.
+
+Don't store scraped Dribbble content here. Their API can't serve it — every read endpoint is scoped
+to the authenticated user's own shots, with no search or browse — and their terms are explicit:
+*"Scraping, copying, saving, or storing our data is strictly prohibited."* This library backs
+commercial client work, so treat that as binding. Browse galleries to **discover**, then ingest the
+real site.
+
+## Skills
+
+Three skills work together, installed in this repo:
+
+- **`design-library`** (`.claude/skills/`) — this library: when to read it, how to add to it.
+- **`impeccable`** ([pbakaus/impeccable](https://github.com/pbakaus/impeccable), submodule at
+  `.impeccable`) — 23 commands for craft and anti-slop critique: `/impeccable critique`, `bolder`,
+  `quieter`, `polish`, `audit`, and a live browser tweak mode.
+- **`design-taste-frontend`** ([Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)) —
+  reads the brief, states a design read, steers away from LLM default aesthetics.
+
+The split: the two installed skills supply craft and anti-slop discipline; this library supplies the
+*specific* taste they should be executing against.
+
+Updating them:
 
 ```bash
-npm install
-cp .env.example .env.local   # add FIRECRAWL_API_KEY for live-site ingest
-npm run dev                  # http://localhost:3000
-node mcp-server/src/seed.mjs # optional: 3 real measured references to start from
+git submodule update --remote .impeccable      # then re-run: npx impeccable link --source=.impeccable --providers=claude,cursor
+npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"
 ```
-
-## Two ways in — prefer the first
-
-### 1. Analyze a live URL (preferred)
-
-Paste a site URL and the app reads its **real computed design tokens** — exact hexes by role, font
-families and stacks, actual `px` type sizes, spacing base unit, border radius, and per-component
-background/text/radius/shadow values. Those port straight into a Tailwind config.
-
-Needs `FIRECRAWL_API_KEY` in `.env.local`. Also available as `POST /api/ingest` with
-`{ url, project, category, tags, notes, guardrails }`.
-
-### 2. Upload a screenshot (fallback)
-
-For designs that aren't a reachable live site. Vocabulary here is *inferred* from the image rather
-than measured, so it's softer evidence. Set `ANTHROPIC_API_KEY` to have Claude infer category,
-tags, colors, typography, layout notes, and guardrails automatically; otherwise fill them in by
-hand from the detail page.
-
-The style guide keeps these separate — measured values are reported apart from inferred ones, so a
-guessed color never carries the same authority as one read off a live stylesheet.
-
-## A note on Dribbble and other galleries
-
-Use them to **discover** work, then ingest the designer's or product's actual live site. Don't wire
-up an automated Dribbble pipeline:
-
-- Their API can't do it — every read endpoint is scoped to the authenticated user's *own* shots.
-  There is no search, browse, popular, or likes endpoint.
-- Their API terms are explicit: *"The only Dribbble data you may use in your product or application
-  is that which is exposed via our API. Scraping, copying, saving, or storing our data is strictly
-  prohibited."*
-
-Ingesting the live site is permitted, yields real tokens instead of guesses, and is better evidence
-anyway — a shipped site has survived real content and responsive breakpoints; a concept shot
-hasn't.
-
-### Registering the MCP server with Claude Code
-
-```bash
-cd mcp-server && npm install
-```
-
-Then add it to your Claude Code MCP config (e.g. `claude mcp add` or your `mcp_servers.json`):
-
-```json
-{
-  "mcpServers": {
-    "taste-library": {
-      "command": "node",
-      "args": ["/absolute/path/to/this/repo/mcp-server/src/index.js"]
-    }
-  }
-}
-```
-
-Once registered, Claude Code can call `list_design_references`, `search_design_references`,
-`get_design_reference`, `get_style_guide`, and `add_design_reference` directly — see
-`.claude/skills/design-library/SKILL.md` for how it's expected to use them.
-
-## Data model
-
-Each reference (`data/references.json`) has: `title`, `sourceUrl`, `imagePath`, `sourceKind`
-(`live-site` / `screenshot`), `project` (`qbs` / `personal` / `both`), `notes` (why it was saved),
-`category`, `tags`, `colors`, `typography`, `layoutNotes`, `guardrails`, an `analysis` status, and
-— for live-site references — a `tokens` object holding the measured values.
-
-The prose vocabulary (`colors` / `typography` / `layoutNotes`) is derived automatically from
-`tokens` when tokens are present, so the gallery and style guide read consistently no matter which
-path created the reference: web ingest, MCP tool, or seed script.
-
-Nothing here is QBS- or client-specific by structure — `project` just lets the style guide be
-scoped when it matters.

@@ -1,0 +1,32 @@
+{
+  "url": "https://stripe.com",
+  "measuredAt": "2026-07-25",
+  "extractor": "firecrawl/branding",
+  "confidence": 0.925,
+  "colorScheme": "light",
+  "colors": {
+    "primary": "#061B31",
+    "secondary": "#FFE0D1",
+    "accent": "#533AFD",
+    "background": "#FFFFFF",
+    "textPrimary": "#533AFD",
+    "link": "#533AFD"
+  },
+  "fonts": [
+    { "family": "Sohne", "role": "body" },
+    { "family": "SF Pro Display", "role": "heading" }
+  ],
+  "fontSizes": { "h1": "48px", "h2": "32px", "body": "32px" },
+  "spacing": { "baseUnit": 8, "borderRadius": "0px" },
+  "components": {
+    "buttonPrimary": { "background": "#533AFD", "textColor": "#FFFFFF", "borderRadius": "4px" },
+    "buttonSecondary": {
+      "background": "#FFFFFF",
+      "textColor": "#533AFD",
+      "borderColor": "#B9B9F9",
+      "borderRadius": "4px"
+    }
+  },
+  "personality": { "tone": "professional", "energy": "medium", "targetAudience": "businesses and developers" },
+  "framework": "custom"
+}

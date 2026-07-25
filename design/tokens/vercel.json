@@ -1,0 +1,27 @@
+{
+  "url": "https://vercel.com",
+  "measuredAt": "2026-07-25",
+  "extractor": "firecrawl/branding",
+  "confidence": 0.925,
+  "colorScheme": "light",
+  "colors": {
+    "primary": "#0072F5",
+    "secondary": "#BEF4EB",
+    "accent": "#171717",
+    "background": "#FAFAFA",
+    "textPrimary": "#171717",
+    "link": "#9A050F"
+  },
+  "fonts": [
+    { "family": "GeistSans", "role": "body" },
+    { "family": "Geist Mono", "role": "monospace" }
+  ],
+  "fontSizes": { "h1": "64px", "h2": "56px", "body": "16px" },
+  "spacing": { "baseUnit": 4, "borderRadius": "6px" },
+  "components": {
+    "buttonPrimary": { "background": "#171717", "textColor": "#FFFFFF", "borderRadius": "33554400px" },
+    "buttonSecondary": { "background": "#FFFFFF", "textColor": "#171717", "borderRadius": "33554400px" }
+  },
+  "personality": { "tone": "modern", "energy": "high", "targetAudience": "developers and tech companies" },
+  "framework": "tailwind"
+}

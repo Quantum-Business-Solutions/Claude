@@ -1,0 +1,28 @@
+{
+  "url": "https://linear.app",
+  "measuredAt": "2026-07-25",
+  "extractor": "firecrawl/branding",
+  "confidence": 0.925,
+  "colorScheme": "dark",
+  "colors": {
+    "primary": "#D0D6E0",
+    "secondary": "#E4F222",
+    "accent": "#E5E5E6",
+    "background": "#08090A",
+    "textPrimary": "#08090A",
+    "link": "#5E6AD2"
+  },
+  "fonts": [
+    { "family": "Inter", "role": "body" },
+    { "family": "SF Pro Display", "role": "heading" }
+  ],
+  "fontSizes": { "h1": "64px", "h2": "48px", "body": "15px" },
+  "spacing": { "baseUnit": 8, "borderRadius": "2px" },
+  "components": {
+    "buttonPrimary": { "background": "#E5E5E6", "textColor": "#08090A", "borderRadius": "9999px" },
+    "buttonSecondary": { "background": "#141516", "textColor": "#F7F8F8", "borderRadius": "9999px" },
+    "input": { "background": "transparent", "textColor": "#F7F8F8", "borderRadius": "0px" }
+  },
+  "personality": { "tone": "modern", "energy": "medium", "targetAudience": "tech-savvy professionals" },
+  "framework": "custom"
+}

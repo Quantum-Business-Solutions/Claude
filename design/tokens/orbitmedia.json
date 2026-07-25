@@ -1,0 +1,32 @@
+{
+  "url": "https://www.orbitmedia.com",
+  "measuredAt": "2026-07-25",
+  "extractor": "firecrawl/branding",
+  "confidence": 0.925,
+  "colorScheme": "light",
+  "colors": {
+    "primary": "#BF472D",
+    "secondary": "#607382",
+    "accent": "#D85B41",
+    "background": "#FFFFFF",
+    "textPrimary": "#1A1A1A",
+    "link": "#D85B41"
+  },
+  "fonts": [
+    { "family": "Proxima Nova", "role": "body" },
+    { "family": "Proxima Nova Condensed", "role": "heading" }
+  ],
+  "fontSizes": { "h1": "64px", "h2": "56px", "body": "15px" },
+  "spacing": { "baseUnit": 4, "borderRadius": "5px" },
+  "components": {
+    "buttonPrimary": { "background": "#BF472D", "textColor": "#FFFFFF", "borderRadius": "5px" },
+    "buttonSecondary": { "background": "#1A1A1A", "textColor": "#FFFFFF", "borderRadius": "5px" },
+    "input": { "background": "#F9F9FA", "textColor": "#1A1A1A", "borderRadius": "5px" }
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "businesses seeking web design and digital marketing services"
+  },
+  "framework": "custom"
+}

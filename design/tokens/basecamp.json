@@ -1,0 +1,28 @@
+{
+  "url": "https://basecamp.com",
+  "measuredAt": "2026-07-25",
+  "extractor": "firecrawl/branding",
+  "confidence": 0.925,
+  "colorScheme": "light",
+  "colors": {
+    "primary": "#2377D2",
+    "secondary": "#19874D",
+    "accent": "#2377D2",
+    "background": "#F5F9FF",
+    "textPrimary": "#29353C",
+    "link": "#29353C"
+  },
+  "fonts": [{ "family": "Graphik", "role": "body" }],
+  "fontSizes": { "h1": "55.8739px", "h2": "50.7936px", "body": "20.3174px" },
+  "spacing": { "baseUnit": 4, "borderRadius": "0px" },
+  "components": {
+    "buttonPrimary": { "background": "#2377D2", "textColor": "#FFFFFF", "borderRadius": "11.4288px" },
+    "buttonSecondary": { "background": "#19874D", "textColor": "#FFFFFF", "borderRadius": "7.61904px" }
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "business professionals and teams"
+  },
+  "framework": "custom"
+}
