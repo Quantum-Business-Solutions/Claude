@@ -41,6 +41,18 @@ one reference stays in that entry's prose in `design/references.md`.
   zero radius, maximum contrast, one unmistakable action — and most "sophisticated" styling is
   optional there.
 
+## Matching the medium to the reference
+
+- **Don't approximate a render.** If a reference's quality comes from 3D rendering — soft shadows,
+  ambient occlusion, beveled edges, material response — flat SVG or CSS polygons will not get close.
+  They produce SmartArt: flat slabs, dead flat-fill "metal", and a diagram look. Either use a medium
+  that can actually light a surface (WebGL, or a real Blender/Spline render) or pick a different
+  concept. A footnote admitting the output is flat does not make shipping it acceptable.
+- Corollary: decide the medium *before* building, from what the reference depends on. Getting this
+  wrong wastes the whole build, not just the finish.
+- Arbitrary decoration is a tell. If a mark can't answer "what does this represent," cut it — small
+  accent dots and rings sprinkled on surfaces read as filler, because they are.
+
 ## Reading measured tokens
 
 - A radius like `33554400px` means "fully rounded" (browser-computed), not a literal value. Read it
