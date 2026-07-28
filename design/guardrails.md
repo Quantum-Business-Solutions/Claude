@@ -50,6 +50,13 @@ one reference stays in that entry's prose in `design/references.md`.
   concept. A footnote admitting the output is flat does not make shipping it acceptable.
 - Corollary: decide the medium *before* building, from what the reference depends on. Getting this
   wrong wastes the whole build, not just the finish.
+- **A hand-written shader is not a render pipeline.** Upgrading flat SVG to a raymarched SDF fixed
+  the geometry and still produced a butter-stick core and soap-bar segments — because the gap was
+  never bevels or shadows, it was materials, HDRI lighting, global illumination, and art direction.
+  Those are craft disciplines, not parameters to tune.
+- **Stop after two failed attempts and switch to briefing.** If two honest passes at an asset both
+  miss, further iteration is burning the reviewer's patience, not converging. Write the
+  art-direction brief for someone who owns the medium — that's the deliverable at that point.
 - Arbitrary decoration is a tell. If a mark can't answer "what does this represent," cut it — small
   accent dots and rings sprinkled on surfaces read as filler, because they are.
 
