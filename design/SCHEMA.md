@@ -79,6 +79,15 @@ Appended in ingest order, using exactly this shape:
 "One accent reserved for links and the primary CTA" is usable; "clean and modern" is not.>
 ```
 
+## Technique references
+
+Some references are a visual technique, not a site — an illustration style, a motion pattern, a
+composition. These live under the `# Technique references` heading in `references.md`, carry a
+`source:` line instead of `url:`, and **omit `tokens:` entirely**: the extractor reads CSS and has
+nothing to say about a 3D render. The prose carries the whole reference, so it has to be specific
+enough to brief or build against — and it should say plainly if the technique has no shipped
+examples, since that's a cost signal.
+
 ## `design/guardrails.md`
 
 Rules accumulate here, deduplicated, as plain imperative bullets. A guardrail belongs here only if

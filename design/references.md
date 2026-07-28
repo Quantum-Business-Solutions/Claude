@@ -93,6 +93,46 @@ link color.
 
 ---
 
+# Technique references
+
+Visual techniques rather than site designs — illustration style, motion, composition. These carry no
+`tokens:` line: the `branding` extractor reads CSS, so it has nothing to say about a 3D render. The
+prose *is* the reference here, which means it has to be specific enough to brief or build against.
+
+## Isometric modular ring — "connection" made literal
+
+- **source:** Dribbble concept shot, "Tikit Connect 3D Illustrations" — Tarik Parwizi / Wig Thing
+  Limited. Credited, not stored; see the sourcing rules in `design/guardrails.md`.
+- **tokens:** none — illustration technique, nothing measurable
+- **tags:** isometric-3d, modular, connection-metaphor, dimensional-render
+- **category:** Hero illustration / brand metaphor
+
+Chunky isometric blocks arranged in a closed ring, each face carrying a mark or label, rendered with
+soft studio lighting and real material weight — matte dark surfaces, subtle bevels, contact shadows
+between modules. The whole point is that the *composition* argues the message: discrete parts that
+only make sense interlocked. It diagrams connection instead of illustrating it.
+
+Two honest caveats:
+
+- **Nothing ships this.** Searching for a live site using it turns up only galleries and stock. Tikit
+  itself was absorbed into OneAdvanced, so even this concept likely never shipped. A style with no
+  production examples is either expensive to execute at quality or doesn't survive real page
+  constraints — budget for a real 3D render, not a CSS approximation.
+- **Technique vs. copy.** Isometric modular composition is common visual language and fair to work
+  in. Reproducing *this specific* arrangement, palette, and render treatment for a paid client
+  deliverable is a different thing. Take the structural idea; don't rebuild the frame.
+
+### Applied idea: Nexus
+
+Logged because it's the reason this got saved and the idea shouldn't evaporate. Nexus positions as
+*"one idea, one plan: Nexus is the connection"* — so a ring of interlocking modules with **their
+service lines on the outer faces** makes the positioning literally visible: separate offerings, one
+connected system, nothing detachable without breaking the ring. Strong fit for the hero, and it
+gives the "not just another MSP" line something structural to stand on rather than asserting it in
+copy alone.
+
+---
+
 ## Candidates not yet adopted
 
 Two review boards were assembled earlier and never approved into this list — 18 references by page
