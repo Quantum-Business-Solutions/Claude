@@ -120,45 +120,76 @@ spending a dynamic list slot:
 Keep lists 39/40 for what they are good at on stage: a visible, countable
 audience. Let the workflow trigger off the property.
 
-### Blocked on scope
+### API is blocked on scopes (rechecked 2026-07-29, twice, minutes apart)
 
-`GET /automation/v4/flows` returns:
+The PAT carries CRM + lists only. Every marketing/automation scope is absent:
 
-```
-403 MISSING_SCOPES — requiredGranularScopes: ["automation"]
-```
+| Endpoint | HTTP | Scope HubSpot reports as required |
+|---|---|---|
+| `/automation/v4/flows` | 403 | `automation` |
+| `/marketing/v3/emails` | 403 | `marketing.email.read`, `marketing.email.write`, `content` |
+| `/marketing/v3/campaigns` | 403 | `marketing.campaigns.read` |
+| `/marketing/v3/forms` | 403 | `forms` |
+| `/crm/v3/objects/contacts` *(control)* | **200** | — |
+| `/crm/v3/lists/39` *(control)* | **200** | — |
 
-**Fix:** Settings → Integrations → Private Apps → app → Scopes →
-**Automation → Workflows** (Read + Write) → **Commit changes**.
-The existing PAT keeps working; no regeneration needed.
+Controls passing proves the token is valid and hitting portal 5234298 — it simply
+holds no marketing or automation scope. Token introspection is unavailable for
+private-app tokens (`/oauth/v2/private-apps/get/access-token-info` → 404,
+`/oauth/v1/access-tokens/{token}` → 400 bad format), so scopes cannot be
+enumerated via API; the 403 payloads are the authoritative signal.
+
+**Three causes, most likely first:**
+
+1. **Ticked but not committed.** HubSpot requires **Commit changes** (top-right)
+   after checking scope boxes. Navigating away discards them.
+2. **Wrong private app edited.** The portal may host several. The correct app is
+   whichever issued the token starting `pat-na2-b825…` — verify by matching the
+   token prefix, not the app name.
+3. **Tier gate.** If the **Workflows** checkbox under Automation is greyed out or
+   absent, the portal lacks Marketing Hub Pro+ / Ops Hub and toggling cannot fix
+   it.
+
+**Five-second tier test:** check the HubSpot left nav. If **Automation →
+Workflows** and **Marketing → Email** are missing or show an upgrade prompt, this
+demo cannot run in this portal and needs replanning.
 
 Do **not** chase the legacy `/automation/v3/workflows` endpoint — it requires
 `workflows-access-public-api`, which is not grantable to private apps. v4 is the
-only path.
+only API path.
 
-> If the `automation` toggle is not present in the scope list, the portal lacks
-> the tier for workflows (Marketing Hub Pro+ / Ops Hub). The 10-dynamic-list cap
-> is a low-tier signal. **Confirm in Settings → Account & Billing →
-> Subscriptions before building the demo around this.**
+**If API access is wanted anyway,** add at Settings → Integrations → Private Apps
+→ the app → Scopes: `automation`, `marketing.email.read`,
+`marketing.email.write`, `content` → **Commit changes**. The existing PAT keeps
+working; no regeneration needed. The UI build path below does not need any of
+this.
 
-### Step-1 action requirements
+### Step-1 action: DECIDED — send marketing email
 
-| Action | Requires | Gotcha |
-|---|---|---|
-| Enroll in sequence | Sales Hub **Pro/Enterprise** | Needs a designated sender with a paid seat **and** connected inbox. Commonly unset in demo portals. |
-| Send marketing email | Marketing Hub **Pro+** | Email must be created as type **Automated** or it will not appear as a workflow action. |
+Requires Marketing Hub **Pro+**. The email must be created as type **Automated**
+or it will not appear as a workflow action.
 
-### UI click path (fallback if scope stays blocked)
+(Sequence enrollment was the alternative; it needs Sales Hub Pro/Enterprise plus
+a designated sender with a paid seat and connected inbox. Not being used.)
 
-1. Automation → Workflows → **Create workflow** → *From scratch* →
-   **Contact-based** → Blank workflow
-2. **Set enrollment triggers** → *Contact properties* →
+### UI build path — RECOMMENDED, needs no API scope
+
+This is the primary path. It works today and is the safer choice for a live
+webinar.
+
+1. **Marketing → Email → Create email → Automated**
+   (must be *Automated*, not Regular, or step 6 cannot select it)
+2. Build and **save** it — publishing is not required
+3. **Automation → Workflows → Create workflow → From scratch →
+   Contact-based → Blank**
+4. **Set enrollment triggers → Contact properties →**
    `Intent - Person Level` → **is known** (or **is equal to** `High`)
-3. Leave re-enrollment **off** for a clean demo
-4. **+** → choose either:
-   - *Enroll in a sequence* → pick sequence → set sender
-   - *Send email* → pick the **Automated** marketing email
-5. **Review and publish**
+5. Leave re-enrollment **off** for a clean demo
+6. **+ → Send email →** pick the Automated email from step 1
+7. **Review and publish**
+
+Lists 39 and 40 populate on the data push, so the audience can be shown building
+alongside the workflow firing.
 
 ---
 
@@ -173,11 +204,14 @@ Verified against portal 5234298.
 | Pipelines, Owners, Schemas | OK |
 | Lists (read + write + delete) | OK |
 | **Workflows / Automation** | **403 — needs `automation`** |
-| Forms | 403 MISSING_SCOPES |
+| **Marketing email** | **403 — needs `marketing.email.read` / `.write` / `content`** |
+| Campaigns | 403 — needs `marketing.campaigns.read` |
+| Forms | 403 — needs `forms` |
 | Landing pages / Site pages / Blog | 403 MISSING_SCOPES |
-| Campaigns | 403 MISSING_SCOPES |
-| Marketing email | 403 MISSING_SCOPES |
 | Tickets | 403 — scope not available for public use |
+
+Rechecked twice on 2026-07-29, several minutes apart — unchanged both times, so
+this is not propagation lag.
 
 ## 6. Live ZoomInfo MCP
 
@@ -190,9 +224,29 @@ and July 2026 update dates.
 
 ## 7. Open items before the webinar
 
-- [ ] Add `automation` scope to the private app, or confirm the tier blocks it
-- [ ] Decide step 1: **sequence** vs **marketing email**
+**Blocking:**
+
+- [ ] **Tier check** — confirm HubSpot left nav shows *Automation → Workflows*
+      and *Marketing → Email*. If either is missing or prompts an upgrade, this
+      demo cannot run in this portal.
 - [ ] Confirm the exact literal values being pushed to `intent__person_level`
-      (or convert the property to a dropdown)
-- [ ] Confirm hub subscriptions support workflows and sequences
+      (or convert the property to a High/Medium/Low dropdown). A case mismatch
+      makes list 40 read empty on stage.
+
+**Build:**
+
+- [ ] Create the **Automated** marketing email
+- [ ] Build the workflow via the UI path in section 4
+
+**Resolved:**
+
+- [x] Property `intent__person_level` created
+- [x] List 39 `Intent - Person Level (Known)` created and verified
+- [x] List 40 `Intent - Person Level = High` created and verified
+- [x] Step-1 action decided: **marketing email**
+
+**Optional / cleanup:**
+
+- [ ] Add marketing + automation scopes if API access is wanted (not required
+      for the UI build path)
 - [ ] Rotate the PAT after the webinar — it was shared in chat
