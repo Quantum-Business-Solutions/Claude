@@ -18,11 +18,8 @@ matters because provisioning genuinely does fail partway — HubSpot returned a 
 one property create and a read timeout on a delete during the first live run.
 
 WHAT THIS DELIBERATELY DOES NOT DO
-  - Associations. 40 e-automate fields are foreign keys to other entities, and those
-    belong in HubSpot's association model, not in integer columns. Wiring them is a
-    separate pass.
-  - Lookup resolution. 18 more point at code tables; they should sync as the label
-    ("Net 10"), not the id (1), which needs the lookup fetched first.
+  - Lookup resolution. 18 e-automate fields point at code tables; they should sync as
+    the label ("Net 10"), not the id (1), which needs the lookup fetched first.
   - Phase 2. 381 further properties are specified and deliberately not created:
     two dozen e-automate columns on a deal buries the handful a rep reads.
 """
@@ -412,6 +409,184 @@ def load_sample(hs: HubSpot, ids: dict, limit: int = 25) -> None:
         print(f"    service calls: {len(calls)}")
 
 
+def wire_associations(hs: HubSpot, ids: dict) -> None:
+    """Link the records to each other.
+
+    WHY THIS IS NOT OPTIONAL. Loading the objects without this leaves every record an
+    orphan: forty pieces of equipment that belong to nobody, meters attached to no
+    machine. The data is present and useless — a company record shows none of it, which
+    is the one view that makes the integration look like it worked.
+
+    The edges come from e-automate's own foreign keys, which is exactly the point made
+    elsewhere about `customerId` being a relationship rather than a column: read as an
+    integer it is a dead number, read as an edge it is the Equipment→Company link.
+
+    Association type ids are DISCOVERED, never hardcoded. They differ per portal, and
+    an existing Equipment object may already carry labelled variants (this portal had
+    'Customer', 'Company' and 'Location' alongside the unlabelled default). The
+    unlabelled type is used because it is the plain association; a labelled one may
+    carry meaning in the portal's existing setup that we would be borrowing wrongly.
+    """
+    sys.path.insert(0, os.getcwd())
+    from ceojuice import CeoJuiceClient, CeoJuiceError
+
+    cj = CeoJuiceClient()
+    seg = lambda v: urllib.parse.quote(str(v), safe="")
+
+    def default_type(frm: str, to: str) -> int | None:
+        s, d = hs.call("GET", f"/crm/v4/associations/{frm}/{to}/labels")
+        if s != 200:
+            return None
+        rows = d.get("results", [])
+        # Prefer the unlabelled type; fall back to the first available.
+        plain = [r for r in rows if not r.get("label")]
+        return (plain or rows)[0]["typeId"] if (plain or rows) else None
+
+    def index(ot: str, key: str) -> dict[str, str]:
+        out, after = {}, None
+        while True:
+            body = {"filterGroups": [{"filters": [{"propertyName": key,
+                                                   "operator": "HAS_PROPERTY"}]}],
+                    "properties": [key], "limit": 100}
+            if after:
+                body["after"] = after
+            s, d = hs.call("POST", f"/crm/v3/objects/{ot}/search", body)
+            if s != 200:
+                return out
+            for r in d.get("results", []):
+                v = r["properties"].get(key)
+                if v:
+                    out[str(v)] = r["id"]
+            after = (d.get("paging") or {}).get("next", {}).get("after")
+            if not after:
+                return out
+
+    def link(frm: str, to: str, pairs: list[tuple[str, str]], label: str) -> None:
+        if not pairs:
+            print(f"    {label}: nothing to link")
+            return
+        type_id = default_type(frm, to)
+        if type_id is None:
+            print(f"    {label}: no association type between these objects — skipped")
+            return
+        made = 0
+        for i in range(0, len(pairs), 100):
+            inputs = [{"from": {"id": a}, "to": {"id": b},
+                       "types": [{"associationCategory": "USER_DEFINED",
+                                  "associationTypeId": type_id}]}
+                      for a, b in pairs[i:i + 100]]
+            s, d = hs.call("POST", f"/crm/v4/associations/{frm}/{to}/batch/create",
+                           {"inputs": inputs})
+            made += len(d.get("results", []))
+            if s not in (200, 201):
+                print(f"      ! {label} HTTP {s} {str(d.get('message'))[:120]}")
+        print(f"    {label}: {made}/{len(pairs)} linked (type {type_id})")
+
+    print("\n== associations ==")
+    companies = index("companies", "ea_customer_number")
+    equipment = index(ids["equipment"], "ea_equipment_number") if ids.get("equipment") else {}
+    meters = index(ids["ea_meter"], "ea_meter_key") if ids.get("ea_meter") else {}
+    calls = index(ids["ea_service_call"], "ea_call_number") if ids.get("ea_service_call") else {}
+    contracts = index(ids["contract"], "ea_contract_number") if ids.get("contract") else {}
+
+    custs = list(itertools.islice(cj.customers(page_size=100), 400))
+    num_by_id = {c["customerId"]: c["customerNumber"] for c in custs}
+
+    eq_owner: dict[str, str] = {}
+    if equipment:
+        pairs = []
+        for e in itertools.islice(cj.active_equipment(page_size=100), 400):
+            number = str(e.get("equipmentNumber") or "")
+            owner = num_by_id.get(e.get("customerId"))
+            eq_owner[number] = owner or ""
+            if number in equipment and owner in companies:
+                pairs.append((equipment[number], companies[owner]))
+        link(ids["equipment"], "companies", pairs, "Equipment -> Company")
+
+    if meters and equipment:
+        # Meter keys are <equipmentNumber>|<meterTypeCode>, so the parent is in the key.
+        link(ids["ea_meter"], ids["equipment"],
+             [(mid, equipment[k.split("|")[0]]) for k, mid in meters.items()
+              if k.split("|")[0] in equipment],
+             "Meter -> Equipment")
+        link(ids["ea_meter"], "companies",
+             [(mid, companies[eq_owner.get(k.split("|")[0], "")])
+              for k, mid in meters.items()
+              if eq_owner.get(k.split("|")[0]) in companies],
+             "Meter -> Company")
+
+    if calls:
+        link(ids["ea_service_call"], "companies",
+             [(calls[str(c["callNumber"]).strip()], companies[num_by_id[c["customerId"]]])
+              for c in itertools.islice(cj.open_service_calls(page_size=100), 200)
+              if str(c.get("callNumber") or "").strip() in calls
+              and num_by_id.get(c.get("customerId")) in companies],
+             "Service Call -> Company")
+
+    if contracts:
+        pairs = []
+        for c in itertools.islice(cj.active_contracts(page_size=100), 300):
+            key = str(c.get("contractNumber") or c.get("contractId"))
+            owner = num_by_id.get(c.get("customerId"))
+            if key in contracts and owner in companies:
+                pairs.append((contracts[key], companies[owner]))
+        link(ids["contract"], "companies", pairs, "Contract -> Company")
+
+
+def roll_up_meters(hs: HubSpot, ids: dict) -> None:
+    """Put the three volumes a rep filters on onto Equipment.
+
+    Detail belongs on the Meter object — 69% of machines carry more than one meter, so
+    it cannot live in flat columns. But nobody filters a child object, so B/W, Colour
+    and Total roll up here.
+
+    The fallback to mfgSuggestedMonthlyVolume is deliberate. The rolling averages read
+    0.0 wherever e-automate has no reading history, and rendering that 0 as a volume
+    says the machine prints nothing — which is wrong in the expensive direction when
+    sizing a fleet. The manufacturer's rated volume is at least a real number.
+    """
+    if not (ids.get("equipment") and ids.get("ea_meter")):
+        return
+    sys.path.insert(0, os.getcwd())
+    from ceojuice import CeoJuiceClient, CeoJuiceError
+
+    cj = CeoJuiceClient()
+    seg = lambda v: urllib.parse.quote(str(v), safe="")
+    s, d = hs.call("POST", f"/crm/v3/objects/{ids['equipment']}/search",
+                   {"filterGroups": [{"filters": [{"propertyName": "ea_equipment_number",
+                                                   "operator": "HAS_PROPERTY"}]}],
+                    "properties": ["ea_equipment_number"], "limit": 100})
+    numbers = [r["properties"]["ea_equipment_number"] for r in d.get("results", [])]
+
+    rows = []
+    for number in numbers:
+        try:
+            meters = cj.get(
+                f"/api/MeterReadings/EquipmentMetersByEqNo/{seg(number)}") or []
+        except CeoJuiceError:
+            continue
+        if not meters:
+            continue
+        value = lambda m: (m.get("avgMonthlyVolume12Mo")
+                           or m.get("mfgSuggestedMonthlyVolume") or 0)
+        pick = lambda code: next((value(m) for m in meters
+                                  if (m.get("meterType") or {}).get("meterTypeCode") == code), 0)
+        rows.append({"idProperty": "ea_equipment_number", "id": number, "properties": {
+            "ea_equipment_number": number,
+            "ea_meter_count": len(meters),
+            "ea_bw_avg_monthly_volume12_mo": pick("B\\W"),
+            "ea_color_avg_monthly_volume12_mo": pick("Color"),
+            # Total Count is e-automate's own all-clicks meter and equals the sum of the
+            # others where present; fall back to summing when the machine has no such meter.
+            "ea_total_avg_monthly_volume12_mo": pick("Total Count") or sum(value(m) for m in meters),
+        }})
+    for i in range(0, len(rows), 100):
+        hs.call("POST", f"/crm/v3/objects/{ids['equipment']}/batch/upsert",
+                {"inputs": rows[i:i + 100]})
+    nonzero = sum(1 for r in rows if r["properties"]["ea_total_avg_monthly_volume12_mo"])
+    print(f"    meter rollups: {len(rows)} machines, {nonzero} with a non-zero volume")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     g = ap.add_mutually_exclusive_group(required=True)
@@ -438,9 +613,12 @@ def main() -> int:
             print("\n! --load needs CEOJUICE_USERNAME / CEOJUICE_PASSWORD", file=sys.stderr)
             return 2
         load_sample(hs, ids, args.limit)
+        # Records without edges are orphans, so this is part of loading, not a nicety.
+        wire_associations(hs, ids)
+        roll_up_meters(hs, ids)
 
-    print("\nDone. Not built here, on purpose: associations (40 fields), lookup "
-          "resolution (18), and phase 2 (381 properties).")
+    print("\nDone. Not built here, on purpose: lookup resolution (18 code-table "
+          "fields should sync as a label, not an id) and phase 2 (381 properties).")
     return 0
 
 
