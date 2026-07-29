@@ -1,0 +1,30 @@
+{
+ "portal": "47404459",
+ "eaProperties": 66,
+ "matchKeys": [
+  {
+   "object": "Company",
+   "property": "ea_customer_number"
+  },
+  {
+   "object": "Deal",
+   "property": "ea_so_number"
+  },
+  {
+   "object": "Ticket",
+   "property": "ea_call_number"
+  },
+  {
+   "object": "Equipment",
+   "property": "ea_equipment_number"
+  },
+  {
+   "object": "Contract",
+   "property": "ea_contract_number"
+  },
+  {
+   "object": "e-Auto Invoice",
+   "property": "ea_invoice_number"
+  }
+ ]
+}
