@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -71,6 +72,7 @@ class CeoJuiceClient:
         password: str | None = None,
         base_url: str | None = None,
         timeout: int = 60,
+        max_retries: int = 4,
     ):
         self.username = username or os.environ.get("CEOJUICE_USERNAME") or ""
         self.password = password or os.environ.get("CEOJUICE_PASSWORD") or ""
@@ -78,6 +80,7 @@ class CeoJuiceClient:
             base_url or os.environ.get("CEOJUICE_BASE_URL") or DEFAULT_BASE_URL
         ).rstrip("/")
         self.timeout = timeout
+        self.max_retries = max_retries
         if not self.username or not self.password:
             raise ValueError(
                 "Set CEOJUICE_USERNAME and CEOJUICE_PASSWORD (or pass them in)."
@@ -137,12 +140,28 @@ class CeoJuiceClient:
             headers["Content-Type"] = "application/json"
 
         req = urllib.request.Request(url, data=encoded, headers=headers, method=method)
-        try:
-            with urllib.request.urlopen(req, timeout=self.timeout) as resp:
-                text = resp.read().decode("utf-8", "replace")
-        except urllib.error.HTTPError as exc:
-            detail = exc.read().decode("utf-8", "replace")
-            raise CeoJuiceError(exc.code, method, path, detail) from None
+
+        # The host resets connections under sustained sequential load, and a
+        # bulk pull walks hundreds of pages, so transient faults are expected
+        # rather than exceptional. 5xx and 429 are retried the same way; 4xx is
+        # a real answer about the request and surfaces immediately.
+        text = None
+        for attempt in range(self.max_retries + 1):
+            try:
+                with urllib.request.urlopen(req, timeout=self.timeout) as resp:
+                    text = resp.read().decode("utf-8", "replace")
+                break
+            except urllib.error.HTTPError as exc:
+                detail = exc.read().decode("utf-8", "replace")
+                retryable = exc.code == 429 or exc.code >= 500
+                if not retryable or attempt == self.max_retries:
+                    raise CeoJuiceError(exc.code, method, path, detail) from None
+            except (urllib.error.URLError, ConnectionError, TimeoutError) as exc:
+                if attempt == self.max_retries:
+                    raise CeoJuiceError(0, method, path, f"network error: {exc}") from None
+            time.sleep(2**attempt)
+
+        assert text is not None
         if not text.strip():
             return None
         try:
@@ -236,6 +255,51 @@ class CeoJuiceClient:
 
     def invoice(self, invoice_number: str) -> dict:
         return self.get(f"/api/Invoice/byInvoiceNumber/{_seg(invoice_number)}")
+
+    # -- volumes ------------------------------------------------------------
+
+    def equipment_meters(
+        self, equipment_number: str | None = None, serial_number: str | None = None
+    ) -> list[dict]:
+        """Meter definitions for one machine, including its average volumes.
+
+        Each meter carries avgMonthlyVolume3Mo / 6Mo / 12Mo / Install plus
+        targetMonthlyVolume and mfgSuggestedMonthlyVolume, so e-automate
+        computes the rolling averages for you -- but only where reading history
+        exists to compute them from. Where it does not, they are 0.0, and this
+        API exposes no reading-history route to derive them yourself.
+        """
+        if equipment_number:
+            return self.get(
+                f"/api/MeterReadings/EquipmentMetersByEqNo/{_seg(equipment_number)}"
+            )
+        if serial_number:
+            return self.get(
+                f"/api/MeterReadings/EquipmentMetersBySerial/{_seg(serial_number)}"
+            )
+        raise ValueError("Pass equipment_number or serial_number.")
+
+    def printreleaf_customers(self) -> list[dict]:
+        return self.get("/api/PrintReleaf/customers")
+
+    def page_volumes(
+        self, customer_id: int, start: datetime, end: datetime, is_billed: bool | None = None
+    ) -> list[dict]:
+        """Paper consumption for a customer over a window.
+
+        Returns blackAndWhitePages / colorPages / duplexCount / totalPages.
+        The window genuinely filters -- it reports pages produced within the
+        range, not a lifetime counter -- which makes this the one route that
+        yields real period volume. Periods with no data come back as an empty
+        list rather than zeros.
+        """
+        params = {
+            "startDate": start.strftime("%Y-%m-%d"),
+            "endDate": end.strftime("%Y-%m-%d"),
+        }
+        if is_billed is not None:
+            params["isBilled"] = str(is_billed).lower()
+        return self.get(f"/api/PrintReleaf/customers/{_seg(customer_id)}", **params)
 
     # -- delta sync ---------------------------------------------------------
 

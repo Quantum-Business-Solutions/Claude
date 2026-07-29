@@ -1,0 +1,5678 @@
+{
+  "Customer": {
+    "schema": "Customer",
+    "route": "/api/Customer",
+    "sampled": 160,
+    "note": "",
+    "field_count": 53,
+    "fields": [
+      {
+        "field": "customerId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "billtoId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "locationId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "customerNumber",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "BANKOFAMER"
+      },
+      {
+        "field": "customerName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Bank of America"
+      },
+      {
+        "field": "attn",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 38,
+        "example": "Lisa Beal"
+      },
+      {
+        "field": "address",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 92,
+        "example": "14511 Falling Creek #103"
+      },
+      {
+        "field": "city",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 92,
+        "example": "Houston"
+      },
+      {
+        "field": "state",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 89,
+        "example": "TX"
+      },
+      {
+        "field": "zip",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 86,
+        "example": "77014"
+      },
+      {
+        "field": "country",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 8,
+        "example": "USA"
+      },
+      {
+        "field": "county",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 11,
+        "example": "Montgomery"
+      },
+      {
+        "field": "longitude",
+        "type": "decimal",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "latitude",
+        "type": "decimal",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "phone1",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 82,
+        "example": "(281) 397-4325"
+      },
+      {
+        "field": "phone2",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 71,
+        "example": "713-234-8765"
+      },
+      {
+        "field": "fax",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 75,
+        "example": "713-292-7654"
+      },
+      {
+        "field": "email",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 22,
+        "example": "sample@customer.com"
+      },
+      {
+        "field": "webSite",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 31,
+        "example": "www.bankofamerica.com"
+      },
+      {
+        "field": "prospect",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "salesRepId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 81,
+        "example": 2
+      },
+      {
+        "field": "priceLevelId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 2
+      },
+      {
+        "field": "customerTypeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 86,
+        "example": 1
+      },
+      {
+        "field": "blanketPO",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 8,
+        "example": "54321"
+      },
+      {
+        "field": "hold",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 13,
+        "example": "Notes for Bank of America main location "
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "shipTo",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "branchId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "lastUpdate",
+        "type": "datetime",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "2025-10-22T11:13:27.947"
+      },
+      {
+        "field": "technicianId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 71,
+        "example": 1
+      },
+      {
+        "field": "territoryId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 70,
+        "example": 2
+      },
+      {
+        "field": "companyCustomer",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "requirePONum",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "allowAutoMeterRequests",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "taxable",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "onHoldCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 3,
+        "example": 1
+      },
+      {
+        "field": "timeZoneCodeID",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 42,
+        "example": 9
+      },
+      {
+        "field": "billToAttn",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "billToAddress",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 1,
+        "example": "P.O. Box 686"
+      },
+      {
+        "field": "billToCity",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 1,
+        "example": "Dubai"
+      },
+      {
+        "field": "billToCounty",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 1,
+        "example": "United Arab Emirates"
+      },
+      {
+        "field": "billToState",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "billToZip",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "billToCountry",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "mapAddress",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "mapCity",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "mapState",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "mapZip",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "mapCountry",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "miles",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "noteCount",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "slaCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 17,
+        "example": 4
+      }
+    ]
+  },
+  "Contact": {
+    "schema": "Contact",
+    "route": "/api/Contact",
+    "sampled": 137,
+    "note": "",
+    "field_count": 26,
+    "fields": [
+      {
+        "field": "contactId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "contactNumber",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "lastName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "firstName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "middleName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "prefName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "prefFullName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "address",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "city",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "state",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "zip",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "country",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "phone1",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "phone2",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "fax",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "email",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "allEmails",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "attn",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "salesRepId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "preferedContactMethodId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "emailType",
+        "type": "boolean",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "sendShippingConfirmations",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "noteCount",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "lastUpdate",
+        "type": "datetime",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      }
+    ]
+  },
+  "Contract": {
+    "schema": "Contract",
+    "route": "/api/Contract/active",
+    "sampled": 200,
+    "note": "",
+    "field_count": 117,
+    "fields": [
+      {
+        "field": "contractId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 8
+      },
+      {
+        "field": "contractNumber",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "109-01"
+      },
+      {
+        "field": "contractMajor",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "109"
+      },
+      {
+        "field": "contractMinor",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "01"
+      },
+      {
+        "field": "customerId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 2
+      },
+      {
+        "field": "contact",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 61,
+        "example": "Judy Smith"
+      },
+      {
+        "field": "phone",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 52,
+        "example": "936-271-9034"
+      },
+      {
+        "field": "fax",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 47,
+        "example": "936-271-9001"
+      },
+      {
+        "field": "billToId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 2
+      },
+      {
+        "field": "contractCodeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 4
+      },
+      {
+        "field": "billCodeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 7
+      },
+      {
+        "field": "billGroupId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 5,
+        "example": 4
+      },
+      {
+        "field": "startdate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2001-03-01T00:00:00"
+      },
+      {
+        "field": "expDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2002-03-01T00:00:00"
+      },
+      {
+        "field": "expCopies",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": 10000
+      },
+      {
+        "field": "baseNextBillingDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 84,
+        "example": "2005-09-09T00:00:00"
+      },
+      {
+        "field": "baseLastBillingDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 84,
+        "example": "2004-09-09T00:00:00"
+      },
+      {
+        "field": "baseBillingCycleId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 84,
+        "example": 2
+      },
+      {
+        "field": "baseArrears",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "sumIndividualBaseRates",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "baseRate",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "baseRatePeriod",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 12
+      },
+      {
+        "field": "overageNextBillingDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 69,
+        "example": "2005-03-19T00:00:00"
+      },
+      {
+        "field": "overageLastBillingDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 83,
+        "example": "2001-03-01T00:00:00"
+      },
+      {
+        "field": "overageBillingCycleId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 28,
+        "example": 1
+      },
+      {
+        "field": "bsaBillForServices",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "bsaLaborDiscount",
+        "type": "decimal",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": 0
+      },
+      {
+        "field": "bsaMaterialsDiscount",
+        "type": "decimal",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": 0
+      },
+      {
+        "field": "bsaMinimumBalance",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 500.0
+      },
+      {
+        "field": "bsaMinimumBilling",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1000.0
+      },
+      {
+        "field": "coveredCopies",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "groupInvoices",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "poNumber",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 28,
+        "example": "54321"
+      },
+      {
+        "field": "miscChargeAmount",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "miscChargeTaxFlag",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "miscChargeDescription",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 11,
+        "example": "\"24-7\""
+      },
+      {
+        "field": "miscContinuous",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": "Notes for contract 131-02 go here"
+      },
+      {
+        "field": "unearnedBalance",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 796.11
+      },
+      {
+        "field": "bill",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "activated",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2001-03-01T15:13:30"
+      },
+      {
+        "field": "terminated",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "renewed",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2007-01-22T00:00:00"
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "lastUpdate",
+        "type": "datetime",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "2007-01-22T15:08:19.107"
+      },
+      {
+        "field": "leaseSchedule",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 4,
+        "example": "12-345678"
+      },
+      {
+        "field": "taxCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 99,
+        "example": 7
+      },
+      {
+        "field": "branchId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "contractLeaseId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": 14
+      },
+      {
+        "field": "useLeaseOnAllEquipment",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "remarksInternal",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": "note here"
+      },
+      {
+        "field": "termId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": 3
+      },
+      {
+        "field": "salesRepId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 94,
+        "example": 10
+      },
+      {
+        "field": "jobId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": 2
+      },
+      {
+        "field": "accumCopies",
+        "type": "decimal",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "expCopyExpDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "contactId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 47,
+        "example": 14
+      },
+      {
+        "field": "billToAttn",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 48,
+        "example": "Sharon Masters"
+      },
+      {
+        "field": "billToAddress",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 98,
+        "example": "415 North Frazier"
+      },
+      {
+        "field": "billToCity",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 98,
+        "example": "Conroe"
+      },
+      {
+        "field": "billToState",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 96,
+        "example": "TX"
+      },
+      {
+        "field": "billToZip",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 96,
+        "example": "77301"
+      },
+      {
+        "field": "billToCountry",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 14,
+        "example": "USA"
+      },
+      {
+        "field": "baseBilledThruDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 80,
+        "example": "2004-09-08T00:00:00"
+      },
+      {
+        "field": "overageBilledThruDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 35,
+        "example": "2005-02-18T00:00:00"
+      },
+      {
+        "field": "baseAccruedThruDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 66,
+        "example": "2004-09-08T00:00:00"
+      },
+      {
+        "field": "renewable",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "baseRateScheduleStartDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 78,
+        "example": "2002-06-19T00:00:00"
+      },
+      {
+        "field": "ovgRateScheduleStartDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 78,
+        "example": "2002-06-19T00:00:00"
+      },
+      {
+        "field": "renewalCycleId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 27,
+        "example": 1
+      },
+      {
+        "field": "nextBaseIncreaseDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 1,
+        "example": "2013-07-01T00:00:00"
+      },
+      {
+        "field": "nextOvgIncreaseDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "taxable",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "baseBillingStartDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 75,
+        "example": "2005-07-13T00:00:00"
+      },
+      {
+        "field": "overageBillingStartDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 22,
+        "example": "2004-05-20T00:00:00"
+      },
+      {
+        "field": "useAlternateOvgBillTo",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "ovgBillToId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 1,
+        "example": 62
+      },
+      {
+        "field": "ovgBillToAttn",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "ovgBillToAddress",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "ovgBillToCity",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "ovgBillToState",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "ovgBillToZip",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "ovgBillToCountry",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "ovgBillToTermId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "contractAdjCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 25,
+        "example": 2
+      },
+      {
+        "field": "useIndividualTaxCodes",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "terminationCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "contractStatusId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 6
+      },
+      {
+        "field": "oneTimeRemark",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 1,
+        "example": "Notes 11111111111111111111111"
+      },
+      {
+        "field": "printOneTimeRemark",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "ovgBillToTaxable",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "ovgBillToTaxCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 50,
+        "example": 7
+      },
+      {
+        "field": "ovgBillToUseIndividualTaxCodes",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "allowMeterEstimation",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "expCopiesBase",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "expAdjCopies",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "expCopiesActualExpDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": "2009-02-01T00:00:00"
+      },
+      {
+        "field": "expDateInitial",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 99,
+        "example": "2002-03-01T00:00:00"
+      },
+      {
+        "field": "cppMinimumPages",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "cppRate",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "cppHardwareAmount",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "cppServiceRate",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "combineLeaseAndBase",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "timeBlockBased",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "noteCount",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "baseRatePeriodType",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "unearnedInterestBalance",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "unearnedLeaseBalance",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "unearnedLeasePostTermBalance",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "message",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "messReqAcknowledgment",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "taxExemptCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "ovgBillToTaxExemptCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "slaCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 6,
+        "example": 4
+      },
+      {
+        "field": "customer",
+        "type": "Customer",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "billTo",
+        "type": "Customer",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "details",
+        "type": "ContractDetail[]",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "<list>"
+      }
+    ]
+  },
+  "ContractDetail": {
+    "schema": "ContractDetail",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 67,
+    "fields": [
+      {
+        "field": "contractDetailId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "contractId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "equipmentId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "locationId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "baseRate",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "billCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "useContractLease",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "startDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "endDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "baseBilledThruDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "overageBilledThruDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "baseAccruedThruDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "prorateStart",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "prorateStartAmount",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "prorateStartBillNow",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "prorateEnd",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "prorateEndAmount",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "prorateEndBillNow",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "address",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "city",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "state",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "zip",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "country",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "nextBaseIncreaseDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "unEarnedBalance",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "prorateStartAutoCalc",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "prorateEndAutoCalc",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "startMeterReadingDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "endMeterReadingDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "baseRateScheduleStartDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "taxCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "terminationCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "quantity",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "unitBaseRate",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "noteCount",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "billStartDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "billEndDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "parentContractDetailId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "contractDetailTypeId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "subLeaseNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "subLeaseMajor",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "subLeaseMinor",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "leaseTerm",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "leasePaymentStartDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "leasePaymentEndDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "leaseRate",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "leaseRateFactor",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "leaseInterestRate",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "leaseFinancedAmount",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "leasePaymentAmount",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "leasePrincipalBalance",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "combineWithParentBaseAmount",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "unearnedInterestBalance",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "unearnedLeaseBalance",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "unearnedLeasePostTermBalance",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "leaseTerminationCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "assetNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "taxExemptCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "taxable",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "overrideTaxable",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "itemId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "locationRemarks",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "slaCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "equipment",
+        "type": "Equipment",
+        "nullable": false
+      },
+      {
+        "field": "location",
+        "type": "Customer",
+        "nullable": false
+      },
+      {
+        "field": "slaCode",
+        "type": "SLACode",
+        "nullable": false
+      }
+    ]
+  },
+  "Equipment": {
+    "schema": "Equipment",
+    "route": "/api/Equipment/AllActive",
+    "sampled": 200,
+    "note": "",
+    "field_count": 68,
+    "fields": [
+      {
+        "field": "equipmentId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "equipmentNumber",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "12345"
+      },
+      {
+        "field": "itemId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 4
+      },
+      {
+        "field": "serialNumber",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 96,
+        "example": "27V02385"
+      },
+      {
+        "field": "customerId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "billtoId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 2
+      },
+      {
+        "field": "locationId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 98,
+        "example": 1
+      },
+      {
+        "field": "address",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 98,
+        "example": "14511 Falling Creek #103"
+      },
+      {
+        "field": "city",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Houston"
+      },
+      {
+        "field": "state",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "TX"
+      },
+      {
+        "field": "zip",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "77014"
+      },
+      {
+        "field": "country",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 32,
+        "example": "USA"
+      },
+      {
+        "field": "locationDescription",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 12,
+        "example": "Copy room on 4th floor"
+      },
+      {
+        "field": "officeOpen",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 14,
+        "example": "2025-10-16T08:00:00"
+      },
+      {
+        "field": "officeClose",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 14,
+        "example": "2025-10-16T17:00:00"
+      },
+      {
+        "field": "installDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 12,
+        "example": "2000-01-01T00:00:00"
+      },
+      {
+        "field": "contact",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 18,
+        "example": "Mark Watthuber"
+      },
+      {
+        "field": "contactPhone",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 12,
+        "example": "915-421-9876"
+      },
+      {
+        "field": "contactFax",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 7,
+        "example": "915-421-9426"
+      },
+      {
+        "field": "decisionMaker",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 14,
+        "example": "Jim Smith"
+      },
+      {
+        "field": "decisionMakerPhone",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 13,
+        "example": "480-569-4899"
+      },
+      {
+        "field": "decisionMakerFax",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 5,
+        "example": "847-549-1545"
+      },
+      {
+        "field": "territoryId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 2
+      },
+      {
+        "field": "technicianId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 2
+      },
+      {
+        "field": "warrantyDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 12,
+        "example": "2000-04-20T00:00:00"
+      },
+      {
+        "field": "warrantyMeter",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 54,
+        "example": 50000
+      },
+      {
+        "field": "pmMeterInterval",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 53,
+        "example": 10000
+      },
+      {
+        "field": "pmMeterDue",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 53,
+        "example": 70000
+      },
+      {
+        "field": "pmDateInterval",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 8,
+        "example": 180
+      },
+      {
+        "field": "pmDateDue",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 8,
+        "example": "2005-07-10T00:00:00"
+      },
+      {
+        "field": "pmUseMeter",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "pmUseDate",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 4,
+        "example": "Notes for this specific machine can go h"
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "lastUpdate",
+        "type": "datetime",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "2025-10-16T16:49:38.577"
+      },
+      {
+        "field": "statusId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 57,
+        "example": 1002
+      },
+      {
+        "field": "conditionId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 22,
+        "example": 3
+      },
+      {
+        "field": "branchId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "parentId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 1,
+        "example": 22
+      },
+      {
+        "field": "hosting",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "attached",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "leaseId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 4,
+        "example": 2
+      },
+      {
+        "field": "leaseEquipmentNumber",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "modelId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "isMetered",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "requireMeteronServiceCalls",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "mostRecentDefaultMeterReadingDisplay",
+        "type": "decimal",
+        "nullable": true,
+        "fill_pct": 16,
+        "example": 87000.0
+      },
+      {
+        "field": "mostRecentDefaultMeterReadingDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 16,
+        "example": "2024-12-12T00:00:00"
+      },
+      {
+        "field": "priorityId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 12,
+        "example": 1
+      },
+      {
+        "field": "equipmentContactId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 10,
+        "example": 1
+      },
+      {
+        "field": "decisionContactId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 10,
+        "example": 4
+      },
+      {
+        "field": "allowAutoMeterRequests",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "nextMeterReading",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "lastMeterRequest",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": "2008-02-05T11:06:48.857"
+      },
+      {
+        "field": "timeZoneCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "expireByUsage",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "warrantyEndMeter",
+        "type": "decimal",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "meterContactId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 10,
+        "example": 1
+      },
+      {
+        "field": "assetId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "ipAddress",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "macAddress",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "noteCount",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "slaCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": 2
+      },
+      {
+        "field": "model",
+        "type": "Model",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "customer",
+        "type": "Customer",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "location",
+        "type": "Customer",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "billTo",
+        "type": "Customer",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "slaCode",
+        "type": "SLACode",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      }
+    ]
+  },
+  "ServiceCall": {
+    "schema": "ServiceCall",
+    "route": "/api/ServiceCall/AllOpen",
+    "sampled": 200,
+    "note": "",
+    "field_count": 24,
+    "fields": [
+      {
+        "field": "callId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1043
+      },
+      {
+        "field": "callNumber",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "1140"
+      },
+      {
+        "field": "customerId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 32
+      },
+      {
+        "field": "status",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "P"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 92,
+        "example": "Note here"
+      },
+      {
+        "field": "notes",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 62,
+        "example": "test"
+      },
+      {
+        "field": "date",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2018-02-05T14:55:00"
+      },
+      {
+        "field": "reqDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2018-02-05T14:55:00"
+      },
+      {
+        "field": "estStartDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2019-03-11T12:00:00"
+      },
+      {
+        "field": "closeDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": "2024-07-18T11:32:00"
+      },
+      {
+        "field": "creatorId",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Mark"
+      },
+      {
+        "field": "createDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2011-08-09T14:56:55.577"
+      },
+      {
+        "field": "updatorId",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Mark"
+      },
+      {
+        "field": "lastUpdate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2019-03-11T13:35:42.743"
+      },
+      {
+        "field": "equipment",
+        "type": "Equipment",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "technician",
+        "type": "Agent",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "addressStreet",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "1430-K Village Way"
+      },
+      {
+        "field": "addressCity",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Santa Ana"
+      },
+      {
+        "field": "addressState",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "CA"
+      },
+      {
+        "field": "addressZip",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "92705"
+      },
+      {
+        "field": "addressCountry",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 6,
+        "example": "USA"
+      },
+      {
+        "field": "caller",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 98,
+        "example": "714-547-9500"
+      },
+      {
+        "field": "trackingKey",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "externalId",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      }
+    ]
+  },
+  "SalesOrder": {
+    "schema": "SalesOrder",
+    "route": "/api/SalesOrder/AllOpen",
+    "sampled": 200,
+    "note": "",
+    "field_count": 77,
+    "fields": [
+      {
+        "field": "soId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 8
+      },
+      {
+        "field": "soNumber",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "108"
+      },
+      {
+        "field": "customerId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 5
+      },
+      {
+        "field": "billToId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 5
+      },
+      {
+        "field": "locationId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 84,
+        "example": 16
+      },
+      {
+        "field": "date",
+        "type": "datetime",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "2000-03-29T00:00:00"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 12,
+        "example": "HP 3150 Printer"
+      },
+      {
+        "field": "poNumber",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 46,
+        "example": "1234"
+      },
+      {
+        "field": "reqDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2000-04-28T00:00:00"
+      },
+      {
+        "field": "termId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 99,
+        "example": 1
+      },
+      {
+        "field": "termDiscountRate",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "termDiscountDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 5,
+        "example": "2008-04-16T00:00:00"
+      },
+      {
+        "field": "dueDate",
+        "type": "datetime",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "2000-04-28T00:00:00"
+      },
+      {
+        "field": "shipMethodId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": 3
+      },
+      {
+        "field": "jobId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 1,
+        "example": 1
+      },
+      {
+        "field": "salesRepId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 97,
+        "example": 1
+      },
+      {
+        "field": "mailToAttn",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 45,
+        "example": "Mike Dixon"
+      },
+      {
+        "field": "mailToName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Wells Fargo Bank"
+      },
+      {
+        "field": "mailToAddress",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 98,
+        "example": "89 Main Street"
+      },
+      {
+        "field": "mailToCity",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 98,
+        "example": "The Woodlands"
+      },
+      {
+        "field": "mailToState",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 98,
+        "example": "TX"
+      },
+      {
+        "field": "mailToZip",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 98,
+        "example": "77381"
+      },
+      {
+        "field": "mailToCountry",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 30,
+        "example": "USA"
+      },
+      {
+        "field": "shipToName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Wells Fargo Bank"
+      },
+      {
+        "field": "shipToAttn",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 49,
+        "example": "Susan Jenson"
+      },
+      {
+        "field": "shipToAddress",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 94,
+        "example": "89 Main Street"
+      },
+      {
+        "field": "shipToCity",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 94,
+        "example": "The Woodlands"
+      },
+      {
+        "field": "shipToState",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 94,
+        "example": "TX"
+      },
+      {
+        "field": "shipToZip",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 94,
+        "example": "77381"
+      },
+      {
+        "field": "shipToCountry",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 28,
+        "example": "USA"
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 4,
+        "example": "Notes...."
+      },
+      {
+        "field": "discountRate",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "discount",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "freight",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "taxCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 94,
+        "example": 10
+      },
+      {
+        "field": "tax",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 14.5
+      },
+      {
+        "field": "total",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 214.5
+      },
+      {
+        "field": "approvedById",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 4,
+        "example": 1
+      },
+      {
+        "field": "onHold",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "onHoldCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 18,
+        "example": 1
+      },
+      {
+        "field": "onHoldReleaseDate",
+        "type": "datetime",
+        "nullable": true,
+        "fill_pct": 11,
+        "example": "2003-03-05T09:19:55"
+      },
+      {
+        "field": "onHoldReleaserId",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 11,
+        "example": "Admin"
+      },
+      {
+        "field": "branchId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "chargeMethodId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 19,
+        "example": 3
+      },
+      {
+        "field": "taxable",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "amountTotal",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 200.0
+      },
+      {
+        "field": "amountPicketed",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 200.0
+      },
+      {
+        "field": "amountShipped",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "amountFulFilled",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "amountBilled",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "quantityTotal",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1.0
+      },
+      {
+        "field": "quantityShipped",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "quantityFulfilled",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "quantityBilled",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "billedFreight",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "orderTypeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 2
+      },
+      {
+        "field": "warehouseId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 30,
+        "example": 1
+      },
+      {
+        "field": "amountBackOrdered",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "quantityBackOrdered",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.0
+      },
+      {
+        "field": "statusId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "returnCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": 3
+      },
+      {
+        "field": "origInvoiceId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": 177
+      },
+      {
+        "field": "returnMethodId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": 3
+      },
+      {
+        "field": "orderedByContactId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": 31
+      },
+      {
+        "field": "quoteId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 4,
+        "example": 90
+      },
+      {
+        "field": "quoteOriginatorEmail",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 4,
+        "example": "mwatthuber@sbcglobal.net"
+      },
+      {
+        "field": "noteCount",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "sendShippingNotifications",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "sendShippingNotificationToOrderByContact",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "shippingNotificationAdditionalEmails",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "taxExemptCodeId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "salesRep",
+        "type": "Agent",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "customer",
+        "type": "Customer",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "billTo",
+        "type": "Customer",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "orderType",
+        "type": "SOOrderType",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "status",
+        "type": "SoStatus",
+        "nullable": false,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "details",
+        "type": "SOOrderDetail[]",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "<list>"
+      }
+    ]
+  },
+  "SOOrderDetail": {
+    "schema": "SOOrderDetail",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 38,
+    "fields": [
+      {
+        "field": "soId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "detailId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "itemId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "quantity",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "um",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "price",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "equipmentId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "contractId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "bill",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "discount",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "stocked",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "amount",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "backOrdered",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "picketed",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "shipped",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "canceled",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "billed",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "workOrderId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "returnCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "returnRemarks",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "fulfilled",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "isReturn",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "isRMAReturn",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "trackingNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "earliestDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "latestDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "notes",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToContactId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "lineNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "displayPrice",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "displayAmount",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "displayDiscount",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "contractDetailId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "branchId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "item",
+        "type": "Item",
+        "nullable": false
+      },
+      {
+        "field": "equipment",
+        "type": "Equipment",
+        "nullable": false
+      }
+    ]
+  },
+  "Invoice": {
+    "schema": "Invoice",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 77,
+    "fields": [
+      {
+        "field": "invoiceId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "invoiceNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "customerId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "billToId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "applyToId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "masterInvoiceId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "locationId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "date",
+        "type": "datetime",
+        "nullable": false
+      },
+      {
+        "field": "datePeriod",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "period",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "poNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "termId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "termDiscountRate",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "termDiscountDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "termDiscount",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "dueDate",
+        "type": "datetime",
+        "nullable": false
+      },
+      {
+        "field": "salesRepId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "mailToAttn",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToAddress",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToCity",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToState",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToZip",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToCountry",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToAttn",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToAddress",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToCity",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToState",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToZip",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToCountry",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "discountRate",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "discount",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "freight",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "taxCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "tax",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "total",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "adjTotal",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "due",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "voidId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "module",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "source",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "reference",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "creatorId",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "updatorId",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "createDate",
+        "type": "datetime",
+        "nullable": false
+      },
+      {
+        "field": "lastUpdate",
+        "type": "datetime",
+        "nullable": false
+      },
+      {
+        "field": "transactionTypeId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "chargeMethodId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "chargeAccountInfo",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "taxable",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "freightDeptId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "discountDeptId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "consolidate",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "consolidatedBillingId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "billingNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "isVoid",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "sent",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "noteId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "noteFlag",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "orderedByContactId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "sendContactId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "sendMethodId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "receivablePayableId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "primaryReportDefinitionId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "noteCount",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "extReferenceNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "commissionRepId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "taxExemptCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "freightTaxFlag",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "freightTaxFlagId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "customer",
+        "type": "Customer",
+        "nullable": false
+      },
+      {
+        "field": "billTo",
+        "type": "Customer",
+        "nullable": false
+      },
+      {
+        "field": "details",
+        "type": "InvoiceDetail[]",
+        "nullable": true
+      }
+    ]
+  },
+  "InvoiceDetail": {
+    "schema": "InvoiceDetail",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 15,
+    "fields": [
+      {
+        "field": "invoiceId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "detailId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "amount",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "taxFlag",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "cost",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "creatorId",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "updatorId",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "createDate",
+        "type": "datetime",
+        "nullable": false
+      },
+      {
+        "field": "lastUpdate",
+        "type": "datetime",
+        "nullable": false
+      },
+      {
+        "field": "taxCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "lineNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "taxable",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "taxExemptCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "taxFlagId",
+        "type": "int",
+        "nullable": false
+      }
+    ]
+  },
+  "ModelMeters": {
+    "schema": "ModelMeters",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 23,
+    "fields": [
+      {
+        "field": "modelMeterId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "modelId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "meterTypeId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "meterDigits",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "requireReading",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "warrantyClicks",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "doPMByClicks",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "pmIntervalClicks",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "pmDueClicks",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "meterFormula",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "isDefault",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "interfaceName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "avgMonthlyVolume3Mo",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "avgMonthlyVolume6Mo",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "avgMonthlyVolume12Mo",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "avgMonthlyVolumeInstall",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "mfgSuggestedMonthlyVolume",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "targetMonthlyVolume",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "includeInMeterRequests",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "sequentialMeter",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "meterType",
+        "type": "MeterType",
+        "nullable": false
+      }
+    ]
+  },
+  "PrintReleafUsageRecord": {
+    "schema": "PrintReleafUsageRecord",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 9,
+    "fields": [
+      {
+        "field": "customerId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "customerNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "customerName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "periodStart",
+        "type": "datetime",
+        "nullable": false
+      },
+      {
+        "field": "periodEnd",
+        "type": "datetime",
+        "nullable": false
+      },
+      {
+        "field": "blackAndWhitePages",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "colorPages",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "duplexCount",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "totalPages",
+        "type": "int",
+        "nullable": false
+      }
+    ]
+  },
+  "Item": {
+    "schema": "Item",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 10,
+    "fields": [
+      {
+        "field": "itemId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "itemNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "onHandQty",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "field": "prefMfgNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "modelId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "model",
+        "type": "Model",
+        "nullable": false
+      },
+      {
+        "field": "defaultPrice",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "customerPrice",
+        "type": "decimal",
+        "nullable": true
+      }
+    ]
+  },
+  "Make": {
+    "schema": "Make",
+    "route": "/api/Item/Makes",
+    "sampled": 59,
+    "note": "",
+    "field_count": 15,
+    "fields": [
+      {
+        "field": "makeID",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 50
+      },
+      {
+        "field": "name",
+        "type": "string",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "Altronic"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Altronic"
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": "This is a generic make for all new model"
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "locks",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "creatorID",
+        "type": "string",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "Mark"
+      },
+      {
+        "field": "updatorID",
+        "type": "string",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "Mark"
+      },
+      {
+        "field": "createDate",
+        "type": "datetime",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "2016-06-02T13:50:43.897"
+      },
+      {
+        "field": "lastUpdate",
+        "type": "datetime",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "2016-06-02T13:50:43.897"
+      },
+      {
+        "field": "timestamp",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "AAAAAACBupw="
+      },
+      {
+        "field": "shTrackingConfigID",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 14,
+        "example": 18
+      },
+      {
+        "field": "noteID",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 2,
+        "example": 1
+      },
+      {
+        "field": "noteFlag",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "noteCount",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      }
+    ]
+  },
+  "Model": {
+    "schema": "Model",
+    "route": "/api/Item/Models",
+    "sampled": 200,
+    "note": "",
+    "field_count": 8,
+    "fields": [
+      {
+        "field": "modelID",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 2
+      },
+      {
+        "field": "name",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "\"Model Number Here\""
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "\"Model Description Here\""
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "make",
+        "type": "Make",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "<dict>"
+      },
+      {
+        "field": "modelCategory",
+        "type": "ModelCategory",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": "<dict>"
+      },
+      {
+        "field": "priorityId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 59,
+        "example": 1
+      },
+      {
+        "field": "meters",
+        "type": "ModelMeters[]",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "<list>"
+      }
+    ]
+  },
+  "CallType": {
+    "schema": "CallType",
+    "route": "/api/ServiceCall/CallTypes",
+    "sampled": 26,
+    "note": "",
+    "field_count": 10,
+    "fields": [
+      {
+        "field": "callTypeID",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 5
+      },
+      {
+        "field": "callTypeCode",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "CS"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Carrier Stuck"
+      },
+      {
+        "field": "estDuration",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 60
+      },
+      {
+        "field": "category",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "CM"
+      },
+      {
+        "field": "priorityID",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": 3
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "icon",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 88,
+        "example": "CirBlue"
+      },
+      {
+        "field": "escalate",
+        "type": "boolean",
+        "nullable": true,
+        "fill_pct": 96,
+        "example": false
+      },
+      {
+        "field": "activityCodeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 3
+      }
+    ]
+  },
+  "State": {
+    "schema": "State",
+    "route": "/api/Customer/States",
+    "sampled": 70,
+    "note": "",
+    "field_count": 5,
+    "fields": [
+      {
+        "field": "stateId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 58
+      },
+      {
+        "field": "code",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "AB"
+      },
+      {
+        "field": "stateName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "ALBERTA"
+      },
+      {
+        "field": "type",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": 3
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      }
+    ]
+  },
+  "Term": {
+    "schema": "Term",
+    "route": "/api/Customer/Terms",
+    "sampled": 6,
+    "note": "",
+    "field_count": 10,
+    "fields": [
+      {
+        "field": "termId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 4
+      },
+      {
+        "field": "code",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2% Net 10"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "2% Net 10"
+      },
+      {
+        "field": "discountRate",
+        "type": "decimal",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0.02
+      },
+      {
+        "field": "discountPeriod",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 10
+      },
+      {
+        "field": "duePeriod",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 10
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "dueDay",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "dueMonths",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "dueMinPeriod",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      }
+    ]
+  },
+  "PriceLevel": {
+    "schema": "PriceLevel",
+    "route": "/api/Customer/PriceLevels",
+    "sampled": 28,
+    "note": "",
+    "field_count": 10,
+    "fields": [
+      {
+        "field": "priceLevelId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 4
+      },
+      {
+        "field": "priceLevelName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Bronze"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Bronze"
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "customerId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 57,
+        "example": 1
+      },
+      {
+        "field": "defPrice",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "basePriceLevelId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 11,
+        "example": 1
+      },
+      {
+        "field": "masterBasePriceLevelId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 96,
+        "example": 4
+      },
+      {
+        "field": "hierarchyLevel",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 0
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 14,
+        "example": "test"
+      }
+    ]
+  },
+  "SOOrderType": {
+    "schema": "SOOrderType",
+    "route": "/api/SalesOrder/OrderTypes",
+    "sampled": 12,
+    "note": "",
+    "field_count": 9,
+    "fields": [
+      {
+        "field": "orderTypeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "orderType",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Other"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Other Order"
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "allowFulfilling",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "orderTypeCategoryId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "isSystemType",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "baseTypeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "allowPrebilling",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      }
+    ]
+  },
+  "Priority": {
+    "schema": "Priority",
+    "route": "/api/ServiceCall/Priorities",
+    "sampled": 5,
+    "note": "",
+    "field_count": 7,
+    "fields": [
+      {
+        "field": "priorityID",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 3
+      },
+      {
+        "field": "name",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "High"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "High"
+      },
+      {
+        "field": "rank",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 2
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "color",
+        "type": "decimal",
+        "nullable": true,
+        "fill_pct": 80,
+        "example": 255
+      },
+      {
+        "field": "rankOrder",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": 1
+      }
+    ]
+  },
+  "ProblemCode": {
+    "schema": "ProblemCode",
+    "route": "/api/ServiceCall/ProblemCodes",
+    "sampled": 4,
+    "note": "",
+    "field_count": 5,
+    "fields": [
+      {
+        "field": "problemCodeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 3
+      },
+      {
+        "field": "code",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Damaged"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Damaged by Customer"
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "bypassMeterReadingRequirement",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      }
+    ]
+  },
+  "RepairCode": {
+    "schema": "RepairCode",
+    "route": "/api/ServiceCall/RepairCodes",
+    "sampled": 6,
+    "note": "",
+    "field_count": 4,
+    "fields": [
+      {
+        "field": "repairCodeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 4
+      },
+      {
+        "field": "code",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Adjusted"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Adjusted"
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      }
+    ]
+  },
+  "SLACode": {
+    "schema": "SLACode",
+    "route": "/api/ServiceCall/SLACodes",
+    "sampled": 6,
+    "note": "",
+    "field_count": 7,
+    "fields": [
+      {
+        "field": "slaCodeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 3
+      },
+      {
+        "field": "slaCodeName",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "3 Day"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "3 Day Response"
+      },
+      {
+        "field": "serviceHourCodeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "responseTime",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": 1440
+      },
+      {
+        "field": "resolutionTime",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 50,
+        "example": 0
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      }
+    ]
+  },
+  "NoteType": {
+    "schema": "NoteType",
+    "route": "/api/ServiceCall/NoteTypes",
+    "sampled": 11,
+    "note": "",
+    "field_count": 7,
+    "fields": [
+      {
+        "field": "noteTypeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 3
+      },
+      {
+        "field": "name",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "DTC"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "DeskTech Communications"
+      },
+      {
+        "field": "isEditable",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "isSelectable",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "isSystemType",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      }
+    ]
+  },
+  "OnHoldCode": {
+    "schema": "OnHoldCode",
+    "route": "/api/ServiceCall/OnHoldCodes",
+    "sampled": 13,
+    "note": "",
+    "field_count": 15,
+    "fields": [
+      {
+        "field": "onHoldCodeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 4
+      },
+      {
+        "field": "code",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "BadSync"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Bad Data From Remote Client"
+      },
+      {
+        "field": "useReleaseTimeForResponseCalc",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "requireSecurity",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "typeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "categoryId",
+        "type": "int",
+        "nullable": true,
+        "fill_pct": 0,
+        "example": null
+      },
+      {
+        "field": "systemCode",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      },
+      {
+        "field": "allowTechAssign",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "allowTechRelease",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "stampColor",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 16711680
+      },
+      {
+        "field": "includeDescriptionInStamp",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "excludeFromResolutionTime",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": false
+      },
+      {
+        "field": "trackHolds",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      }
+    ]
+  },
+  "CancelCode": {
+    "schema": "CancelCode",
+    "route": "/api/ServiceCall/CancelCodes",
+    "sampled": 3,
+    "note": "",
+    "field_count": 4,
+    "fields": [
+      {
+        "field": "cancelCodeId",
+        "type": "int",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": 1
+      },
+      {
+        "field": "code",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Customer Request"
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true,
+        "fill_pct": 100,
+        "example": "Customer Request"
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false,
+        "fill_pct": 100,
+        "example": true
+      }
+    ]
+  },
+  "NewServiceCallDto": {
+    "schema": "NewServiceCallDto",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 13,
+    "fields": [
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "callDate",
+        "type": "datetime",
+        "nullable": false
+      },
+      {
+        "field": "serialNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "equipmentNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "customerNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "referenceCallIdentifier",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "contact",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "contactName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "contactPhone",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "contactEmail",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "notes",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "callType",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "trackingKey",
+        "type": "string",
+        "nullable": true
+      }
+    ]
+  },
+  "ImpSalesOrderDetailDto": {
+    "schema": "ImpSalesOrderDetailDto",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 103,
+    "fields": [
+      {
+        "field": "impSONumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "impInvNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "impCustomerNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "impShipToCustomerNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "impBillToCustomerNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "soDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "salesRepNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "branchNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "poNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "item",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "detailDesc",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "qty",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "unitPrice",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "lineExtTotal",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "glAcctNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "glDeptNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "taxFlag",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "batch",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "detailID",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "equipmentNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "contractNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "notes",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "warehouseNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "binNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "outCost",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "parentID",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "soNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "quoteNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "quoteID",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "quoteDetailID",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "mailtoAttn",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToAddress",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToCity",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToState",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToZip",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "mailToCountry",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToAttn",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToAddress",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToCity",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToState",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToZip",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToCountry",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "onHoldCode",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "orderType",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "shipToTypeID",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "contactNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "reqDate",
+        "type": "datetime",
+        "nullable": true
+      },
+      {
+        "field": "shipMethod",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "itemTemplate",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "vendor",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "vendorItem",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "vendorCost",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "vendorExternalLinkedPO",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "uom",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "defaultPrice",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "vendorNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "detailParentID",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "priceBookName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "isDevice",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "field": "shipToContactNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "orgSONumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "targEAOrderStatus",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "deliveryRemarks",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "jobNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "hiddenLine",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "rollUpPrice",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "configParentShipID",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "lineNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "sortOrder",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "depth",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "taxCode",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "termsCode",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "approver",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "message",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "orderBreak",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "freight",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "dealNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "altSalesRepNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "altSalesRepNumber2",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "altSalesRepNumber3",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "isLease",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "field": "orderedByEmail",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "orderedByFirstName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "orderedByLastName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "orderedByPhone",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "group1",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "group2",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "group3",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "qtyBackOrder",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "soBranchNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "sfadDealnumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "impDiscount",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "impDiscountPrct",
+        "type": "decimal",
+        "nullable": true
+      },
+      {
+        "field": "salesCategory",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "impDetailID",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "targEAOrderDetailStatus",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "hideOnPackingList",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "field": "hideOnPickingList",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "field": "soWarehouseNumber",
+        "type": "string",
+        "nullable": true
+      }
+    ]
+  },
+  "CreateCustomerRequest": {
+    "schema": "CreateCustomerRequest",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 31,
+    "fields": [
+      {
+        "field": "customerName",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "field": "attn",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "address",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "city",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "state",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "zip",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "country",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "phone1",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "phone2",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "fax",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "email",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "website",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "ein",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "taxNumber",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "taxCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "blanketPO",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "branchId",
+        "type": "int",
+        "nullable": false
+      },
+      {
+        "field": "parentCustomerId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "billToCustomerId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "priceLevelId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "termId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "shipMethodId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "creditLimit",
+        "type": "decimal",
+        "nullable": false
+      },
+      {
+        "field": "doFinCharges",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "prospect",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "hold",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "onHoldCodeId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "salesRepId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "county",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "customerNumber",
+        "type": "string",
+        "nullable": true
+      }
+    ]
+  },
+  "CreateContactRequest": {
+    "schema": "CreateContactRequest",
+    "route": null,
+    "sampled": 0,
+    "note": "no list route \u2014 shape from spec only",
+    "field_count": 20,
+    "fields": [
+      {
+        "field": "lastName",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "field": "firstName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "middleName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "prefName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "prefFullName",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "address",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "city",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "state",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "zip",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "country",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "phone1",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "phone2",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "fax",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "email",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "remarks",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "field": "salesRepId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "active",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "preferredContactMethodId",
+        "type": "int",
+        "nullable": true
+      },
+      {
+        "field": "emailType",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "field": "customerNumber",
+        "type": "string",
+        "nullable": true
+      }
+    ]
+  }
+}
