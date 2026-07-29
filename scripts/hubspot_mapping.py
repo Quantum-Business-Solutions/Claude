@@ -90,17 +90,125 @@ HUBSPOT_PREFIX = "ea_"
 
 
 def hubspot_name(cj_field: str) -> str:
-    """The property name the generated spec would use for a CEO Juice field."""
-    return HUBSPOT_PREFIX + norm(cj_field)
+    """The property name the generated spec uses for a CEO Juice field.
 
-# Foreign keys point at rows we often cannot even read -- /api/User/* and /api/Branch
-# are 403 -- so they arrive as unresolvable integers. Primary keys are kept: they are
-# the immutable anchor a sync can fall back to.
+    DELIBERATELY NOT norm(). `norm` collapses synonyms (number->num, description->desc)
+    because that widens MATCHING, which is what it exists for. Generating a name is the
+    opposite job: it has to reproduce the spec exactly. Routing this through norm gave
+    `ea_equipment_num` where the spec says `ea_equipment_number` — a one-token
+    divergence that creates a duplicate property and stops the auto-mapper suggesting,
+    without anything visibly failing.
+    """
+    s = re.sub(r"(?<!^)(?=[A-Z])", "_", str(cj_field)).lower()
+    return HUBSPOT_PREFIX + re.sub(r"[^a-z0-9]+", "_", s).strip("_")
+
+# ---------------------------------------------------------------------------
+# FIELD ROLES. Four different things wear an `Id` suffix in e-automate, and a sync
+# that treats them alike gets all four wrong.
+#
+#   match_key    The business key a sync matches on. Carries hasUniqueValue in
+#                HubSpot. Verified unique against real data — see MATCH_KEYS.
+#   primary_key  e-automate's own surrogate PK. Kept as an immutable anchor for
+#                tie-breaking, never as the match key: the number is what every
+#                other system and every human actually references.
+#   association  A foreign key pointing at another ENTITY we also sync.
+#                THIS IS THE ONE THAT MATTERS. `customerId` on Equipment is not a
+#                property — it is the Equipment→Company relationship. Written as an
+#                integer column it is a dead number a rep cannot click, and the
+#                association HubSpot exists to model never gets made.
+#   lookup       A foreign key pointing at a CODE TABLE (terms, ship methods,
+#                priorities). Resolvable to a label through a domain route, so it
+#                should sync as the label, not the id. `termId: 1` means nothing on
+#                a deal record; "Net 10" means something.
+#   unresolvable A foreign key whose lookup route answers 403 for every key this API
+#                issues — /api/User/* and /api/Branch. Skipped, and the reason is
+#                reported rather than silently dropped, because it is a claim request
+#                waiting to be made, not a modelling decision.
+#   data         An ordinary value.
+# ---------------------------------------------------------------------------
+
+# Verified unique against live data before being trusted as a match key.
+# ServiceCall.callNumber: 226 records, 0 blank, 0 duplicates.
+# Equipment: equipmentNumber 600/600 distinct; serialNumber has 35 duplicated values
+# and 8 blanks, which is why it is NOT here despite being the intuitive choice.
+MATCH_KEYS = {
+    "Customer": "customerNumber",
+    "Equipment": "equipmentNumber",
+    "Contract": "contractNumber",
+    "SalesOrder": "soNumber",
+    "ServiceCall": "callNumber",
+    "Invoice": "invoiceNumber",
+    "Item": "itemNumber",
+}
+
 PRIMARY_KEYS = {
     "customerId", "equipmentId", "contractId", "soId", "callId", "invoiceId",
     "itemId", "contactId", "modelMeterId",
 }
-AUDIT = {"lastupdate", "createdate", "creatorid", "updatorid", "notecount"}
+
+# Entity foreign key -> the object it should ASSOCIATE to.
+ASSOCIATIONS = {
+    "customerId": "Customer", "billtoId": "Customer", "billToId": "Customer",
+    "ovgBillToId": "Customer", "locationId": "Customer", "parentId": "Equipment",
+    "contractId": "Contract", "contractLeaseId": "Contract", "leaseId": "Contract",
+    "itemId": "Item", "modelId": "Item", "equipmentId": "Equipment",
+    "quoteId": "SalesOrder", "origInvoiceId": "Invoice", "soId": "SalesOrder",
+    "contactId": "Contact", "equipmentContactId": "Contact",
+    "decisionContactId": "Contact", "meterContactId": "Contact",
+    "orderedByContactId": "Contact",
+}
+
+# Code-table foreign key -> the lookup name get_list() resolves (all of these answer;
+# the /api/ListsAndCodes/* family does not, so the domain routes are used).
+LOOKUPS = {
+    "termId": "Terms", "ovgBillToTermId": "Terms",
+    "shipMethodId": "ShipMethods", "orderTypeId": "OrderTypes",
+    "statusId": "OrderStatuses", "contractStatusId": "OrderStatuses",
+    "priorityId": "Priorities", "slaCodeId": "SLACodes",
+    "onHoldCodeId": "OnHoldCodes", "priceLevelId": "PriceLevels",
+    "meterTypeId": "MeterTypes", "callTypeId": "CallTypes",
+    "problemCodeId": "ProblemCodes", "repairCodeId": "RepairCodes",
+    "cancelCodeId": "CancelCodes", "noteTypeId": "NoteTypes",
+    "modelCategoryId": "ModelCategories", "makeId": "Makes",
+}
+
+# Lookup route is 403 for every key this API issues, so the id cannot be resolved to
+# anything a human reads. Worth requesting the claims for.
+UNRESOLVABLE = {
+    "technicianId": "/api/User/Technicians (403)",
+    "salesRepId": "/api/User/SalesReps (403)",
+    "altSalesRepNumber": "/api/User/SalesReps (403)",
+    "branchId": "/api/Branch (403)",
+    "soBranchNumber": "/api/Branch (403)",
+    "creatorId": "audit user (/api/User/Users 403)",
+    "updatorId": "audit user (/api/User/Users 403)",
+    "approvedById": "/api/User/Users (403)",
+    "onHoldReleaserId": "/api/User/Users (403)",
+}
+
+AUDIT = {"lastupdate", "createdate", "notecount"}
+
+
+def field_role(obj: str, name: str) -> tuple[str, str | None]:
+    """(role, target) for one field. See the role table above."""
+    if MATCH_KEYS.get(obj) == name:
+        return "match_key", None
+    if name in UNRESOLVABLE:
+        return "unresolvable", UNRESOLVABLE[name]
+    if name in LOOKUPS:
+        return "lookup", LOOKUPS[name]
+    # An object's own PK is an anchor; the same name on another object is a relationship.
+    if name in PRIMARY_KEYS and norm(name).removesuffix("_id") == norm(obj):
+        return "primary_key", None
+    if name in ASSOCIATIONS:
+        return "association", ASSOCIATIONS[name]
+    if name.lower() in AUDIT:
+        return "data", None
+    if re.search(r"(Id|GUID)$", name):
+        # An unrecognised *Id is still a pointer. Flagged rather than mapped, because
+        # syncing an integer nobody can resolve is worse than leaving it out.
+        return "unresolvable", "unclassified foreign key"
+    return "data", None
 
 # Applied to both sides before comparing, so bwVolume and bw_volume match.
 SYNONYMS = [
@@ -139,14 +247,25 @@ def hubspot_properties(object_type: str, token: str) -> dict[str, tuple[str, str
 def classify(field: dict, obj: str, sampled: int, pool: dict) -> tuple[str, str | None]:
     name = field["field"]
     low = name.lower()
+    role, _ = field_role(obj, name)
 
-    # Foreign keys and audit columns are noise; primary keys are not.
     if low in AUDIT:
         return "skip", None
-    if re.search(r"(id|guid)$", name) and name not in PRIMARY_KEYS:
+    # A relationship, a resolvable code and a dead integer each need their own
+    # treatment, and none of them is "create a property and copy the number".
+    if role == "association":
+        return "associate", None
+    if role == "lookup":
+        return "lookup", None
+    if role == "unresolvable":
         return "skip", None
     if field["type"] not in ("string", "int", "decimal", "boolean", "datetime"):
         return "skip", None  # nested object or array
+    # The match key must exist even where sampling is thin — it is the identity.
+    if role == "match_key":
+        key = norm(name)
+        hit = pool.get(key)
+        return ("map", hit[0]) if hit else ("build", None)
 
     # EMPTY BEATS MATCHED, and the order matters. Checking the name first reported
     # Contact as nine mappable properties: the names line up with HubSpot's contact
@@ -196,7 +315,8 @@ def main() -> int:
         print(f"  {target}: {len(pools[target])} properties", file=sys.stderr)
 
     report = {}
-    print(f"\n{'CJ object':<24}{'target':<16}{'props':>6}{'map':>5}{'build':>7}{'skip':>6}")
+    print(f"\n{'CJ object':<24}{'target':<16}{'props':>6}{'map':>5}{'build':>7}"
+          f"{'assoc':>7}{'lookup':>7}{'skip':>6}")
     totals = [0, 0, 0, 0]
     for obj, target in targets.items():
         if obj not in cj:
@@ -206,24 +326,30 @@ def main() -> int:
         rows = []
         for f in info["fields"]:
             verdict, match = classify(f, obj, info["sampled"], pool)
+            role, role_target = field_role(obj, f["field"])
             rows.append({
                 "field": f["field"], "type": f["type"], "fill": f.get("fill_pct"),
                 "verdict": verdict, "hubspot": match,
-                "unique": UNIQUE_KEYS.get(obj) == f["field"],
+                "role": role, "roleTarget": role_target,
+                "propose": hubspot_name(f["field"]) if verdict == "build" else match,
+                "unique": MATCH_KEYS.get(obj) == f["field"],
             })
-        counts = {v: sum(1 for r in rows if r["verdict"] == v) for v in ("map", "build", "skip")}
+        counts = {v: sum(1 for r in rows if r["verdict"] == v)
+                  for v in ("map", "build", "skip", "associate", "lookup")}
         report[obj] = {"target": target, "sampled": info["sampled"], "rows": rows,
-                       "counts": counts, "uniqueKey": UNIQUE_KEYS.get(obj)}
+                       "counts": counts, "matchKey": MATCH_KEYS.get(obj),
+                       "matchKeyProperty": hubspot_name(MATCH_KEYS[obj]) if obj in MATCH_KEYS else None}
         print(f"{obj:<24}{str(target or '(none)'):<16}{len(rows):>6}"
-              f"{counts['map']:>5}{counts['build']:>7}{counts['skip']:>6}")
+              f"{counts['map']:>5}{counts['build']:>7}{counts['associate']:>7}"
+              f"{counts['lookup']:>7}{counts['skip']:>6}")
         totals = [totals[0] + len(rows), totals[1] + counts["map"],
                   totals[2] + counts["build"], totals[3] + counts["skip"]]
     print("-" * 64)
     print(f"{'TOTAL':<40}{totals[0]:>6}{totals[1]:>5}{totals[2]:>7}{totals[3]:>6}")
 
-    print("\nUnique keys to create with hasUniqueValue: true")
-    for obj, key in UNIQUE_KEYS.items():
-        print(f"  {obj:<16}{key}")
+    print("\nMATCH KEYS — create these with hasUniqueValue: true")
+    for obj, key in MATCH_KEYS.items():
+        print(f"  {obj:<16}{key:<20}-> {hubspot_name(key)}")
     print("  (serialNumber excluded on purpose — 35 duplicates / 8 blanks in 600 records)")
 
     if args.json:

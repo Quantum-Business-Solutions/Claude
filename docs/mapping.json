@@ -9,22 +9,31 @@
     "fill": 100,
     "verdict": "map",
     "hubspot": "e_automate_customer_id",
+    "role": "primary_key",
+    "roleTarget": null,
+    "propose": "e_automate_customer_id",
     "unique": false
    },
    {
     "field": "billtoId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
     "field": "locationId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
@@ -33,6 +42,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "match_key",
+    "roleTarget": null,
+    "propose": "ea_customer_number",
     "unique": true
    },
    {
@@ -41,6 +53,9 @@
     "fill": 100,
     "verdict": "map",
     "hubspot": "name",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "name",
     "unique": false
    },
    {
@@ -49,6 +64,9 @@
     "fill": 38,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_attn",
     "unique": false
    },
    {
@@ -57,6 +75,9 @@
     "fill": 92,
     "verdict": "map",
     "hubspot": "address",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "address",
     "unique": false
    },
    {
@@ -65,6 +86,9 @@
     "fill": 92,
     "verdict": "map",
     "hubspot": "city",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "city",
     "unique": false
    },
    {
@@ -73,6 +97,9 @@
     "fill": 89,
     "verdict": "map",
     "hubspot": "state",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "state",
     "unique": false
    },
    {
@@ -81,6 +108,9 @@
     "fill": 86,
     "verdict": "map",
     "hubspot": "zip",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "zip",
     "unique": false
    },
    {
@@ -89,6 +119,9 @@
     "fill": 8,
     "verdict": "map",
     "hubspot": "country",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "country",
     "unique": false
    },
    {
@@ -97,6 +130,9 @@
     "fill": 11,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_county",
     "unique": false
    },
    {
@@ -105,6 +141,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -113,6 +152,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -121,6 +163,9 @@
     "fill": 82,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_phone1",
     "unique": false
    },
    {
@@ -129,6 +174,9 @@
     "fill": 71,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_phone2",
     "unique": false
    },
    {
@@ -137,6 +185,9 @@
     "fill": 75,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_fax",
     "unique": false
    },
    {
@@ -145,6 +196,9 @@
     "fill": 22,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_email",
     "unique": false
    },
    {
@@ -153,6 +207,9 @@
     "fill": 31,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_web_site",
     "unique": false
    },
    {
@@ -161,30 +218,42 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_prospect",
     "unique": false
    },
    {
     "field": "salesRepId",
     "type": "int",
     "fill": 81,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/User/SalesReps (403)",
+    "propose": null,
     "unique": false
    },
    {
     "field": "priceLevelId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "PriceLevels",
+    "propose": null,
     "unique": false
    },
    {
     "field": "customerTypeId",
     "type": "int",
     "fill": 86,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -193,6 +262,9 @@
     "fill": 8,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_blanket_p_o",
     "unique": false
    },
    {
@@ -201,6 +273,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_hold",
     "unique": false
    },
    {
@@ -209,6 +284,9 @@
     "fill": 13,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_remarks",
     "unique": false
    },
    {
@@ -217,6 +295,9 @@
     "fill": 100,
     "verdict": "map",
     "hubspot": "certified_company_active",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "certified_company_active",
     "unique": false
    },
    {
@@ -225,14 +306,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to",
     "unique": false
    },
    {
     "field": "branchId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/Branch (403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -241,22 +328,31 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
     "field": "technicianId",
     "type": "int",
     "fill": 71,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/User/Technicians (403)",
+    "propose": null,
     "unique": false
    },
    {
     "field": "territoryId",
     "type": "int",
     "fill": 70,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -265,6 +361,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_company_customer",
     "unique": false
    },
    {
@@ -273,6 +372,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_require_p_o_num",
     "unique": false
    },
    {
@@ -281,6 +383,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_allow_auto_meter_requests",
     "unique": false
    },
    {
@@ -289,14 +394,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_taxable",
     "unique": false
    },
    {
     "field": "onHoldCodeId",
     "type": "int",
     "fill": 3,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "OnHoldCodes",
+    "propose": null,
     "unique": false
    },
    {
@@ -305,6 +416,9 @@
     "fill": 42,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_time_zone_code_i_d",
     "unique": false
    },
    {
@@ -313,6 +427,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -321,6 +438,9 @@
     "fill": 1,
     "verdict": "map",
     "hubspot": "address",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "address",
     "unique": false
    },
    {
@@ -329,6 +449,9 @@
     "fill": 1,
     "verdict": "map",
     "hubspot": "city",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "city",
     "unique": false
    },
    {
@@ -337,6 +460,9 @@
     "fill": 1,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill_to_county",
     "unique": false
    },
    {
@@ -345,6 +471,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -353,6 +482,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -361,6 +493,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -369,6 +504,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -377,6 +515,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -385,6 +526,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -393,6 +537,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -401,6 +548,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -409,6 +559,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_miles",
     "unique": false
    },
    {
@@ -417,23 +570,32 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
     "field": "slaCodeId",
     "type": "int",
     "fill": 17,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "SLACodes",
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
    "map": 10,
-   "build": 30,
-   "skip": 13
+   "build": 20,
+   "skip": 18,
+   "associate": 2,
+   "lookup": 3
   },
-  "uniqueKey": "customerNumber"
+  "matchKey": "customerNumber",
+  "matchKeyProperty": "ea_customer_number"
  },
  "Contact": {
   "target": "contacts",
@@ -445,6 +607,9 @@
     "fill": 100,
     "verdict": "map",
     "hubspot": "contact_id",
+    "role": "primary_key",
+    "roleTarget": null,
+    "propose": "contact_id",
     "unique": false
    },
    {
@@ -453,6 +618,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -461,6 +629,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -469,6 +640,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -477,6 +651,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -485,6 +662,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -493,6 +673,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -501,6 +684,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -509,6 +695,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -517,6 +706,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -525,6 +717,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -533,6 +728,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -541,6 +739,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -549,6 +750,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -557,6 +761,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -565,6 +772,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -573,6 +783,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -581,6 +794,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -589,6 +805,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -597,6 +816,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -605,6 +827,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/User/SalesReps (403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -613,6 +838,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -621,6 +849,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -629,6 +860,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -637,6 +871,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -645,15 +882,21 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
    "map": 1,
    "build": 0,
-   "skip": 25
+   "skip": 25,
+   "associate": 0,
+   "lookup": 0
   },
-  "uniqueKey": null
+  "matchKey": null,
+  "matchKeyProperty": null
  },
  "SalesOrder": {
   "target": "deals",
@@ -663,8 +906,11 @@
     "field": "soId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "SalesOrder",
+    "propose": null,
     "unique": false
    },
    {
@@ -673,30 +919,42 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "match_key",
+    "roleTarget": null,
+    "propose": "ea_so_number",
     "unique": true
    },
    {
     "field": "customerId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
     "field": "billToId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
     "field": "locationId",
     "type": "int",
     "fill": 84,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
@@ -705,6 +963,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_date",
     "unique": false
    },
    {
@@ -713,6 +974,9 @@
     "fill": 12,
     "verdict": "map",
     "hubspot": "description",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "description",
     "unique": false
    },
    {
@@ -721,6 +985,9 @@
     "fill": 46,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_po_number",
     "unique": false
    },
    {
@@ -729,14 +996,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_req_date",
     "unique": false
    },
    {
     "field": "termId",
     "type": "int",
     "fill": 99,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "Terms",
+    "propose": null,
     "unique": false
    },
    {
@@ -745,6 +1018,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_term_discount_rate",
     "unique": false
    },
    {
@@ -753,6 +1029,9 @@
     "fill": 5,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_term_discount_date",
     "unique": false
    },
    {
@@ -761,30 +1040,42 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_due_date",
     "unique": false
    },
    {
     "field": "shipMethodId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "ShipMethods",
+    "propose": null,
     "unique": false
    },
    {
     "field": "jobId",
     "type": "int",
     "fill": 1,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "salesRepId",
     "type": "int",
     "fill": 97,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/User/SalesReps (403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -793,6 +1084,9 @@
     "fill": 45,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_attn",
     "unique": false
    },
    {
@@ -801,6 +1095,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_name",
     "unique": false
    },
    {
@@ -809,6 +1106,9 @@
     "fill": 98,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_address",
     "unique": false
    },
    {
@@ -817,6 +1117,9 @@
     "fill": 98,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_city",
     "unique": false
    },
    {
@@ -825,6 +1128,9 @@
     "fill": 98,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_state",
     "unique": false
    },
    {
@@ -833,6 +1139,9 @@
     "fill": 98,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_zip",
     "unique": false
    },
    {
@@ -841,6 +1150,9 @@
     "fill": 30,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_country",
     "unique": false
    },
    {
@@ -849,6 +1161,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_name",
     "unique": false
    },
    {
@@ -857,6 +1172,9 @@
     "fill": 49,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_attn",
     "unique": false
    },
    {
@@ -865,6 +1183,9 @@
     "fill": 94,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_address",
     "unique": false
    },
    {
@@ -873,6 +1194,9 @@
     "fill": 94,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_city",
     "unique": false
    },
    {
@@ -881,6 +1205,9 @@
     "fill": 94,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_state",
     "unique": false
    },
    {
@@ -889,6 +1216,9 @@
     "fill": 94,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_zip",
     "unique": false
    },
    {
@@ -897,6 +1227,9 @@
     "fill": 28,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_country",
     "unique": false
    },
    {
@@ -905,6 +1238,9 @@
     "fill": 4,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_remarks",
     "unique": false
    },
    {
@@ -913,6 +1249,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_discount_rate",
     "unique": false
    },
    {
@@ -921,6 +1260,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_discount",
     "unique": false
    },
    {
@@ -929,14 +1271,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_freight",
     "unique": false
    },
    {
     "field": "taxCodeId",
     "type": "int",
     "fill": 94,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -945,6 +1293,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_tax",
     "unique": false
    },
    {
@@ -953,14 +1304,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_total",
     "unique": false
    },
    {
     "field": "approvedById",
     "type": "int",
     "fill": 4,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/User/Users (403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -969,14 +1326,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_on_hold",
     "unique": false
    },
    {
     "field": "onHoldCodeId",
     "type": "int",
     "fill": 18,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "OnHoldCodes",
+    "propose": null,
     "unique": false
    },
    {
@@ -985,30 +1348,42 @@
     "fill": 11,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_on_hold_release_date",
     "unique": false
    },
    {
     "field": "onHoldReleaserId",
     "type": "string",
     "fill": 11,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/User/Users (403)",
+    "propose": null,
     "unique": false
    },
    {
     "field": "branchId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/Branch (403)",
+    "propose": null,
     "unique": false
    },
    {
     "field": "chargeMethodId",
     "type": "int",
     "fill": 19,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -1017,6 +1392,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_taxable",
     "unique": false
    },
    {
@@ -1025,6 +1403,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_amount_total",
     "unique": false
    },
    {
@@ -1033,6 +1414,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_amount_picketed",
     "unique": false
    },
    {
@@ -1041,6 +1425,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_amount_shipped",
     "unique": false
    },
    {
@@ -1049,6 +1436,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_amount_ful_filled",
     "unique": false
    },
    {
@@ -1057,6 +1447,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_amount_billed",
     "unique": false
    },
    {
@@ -1065,6 +1458,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_quantity_total",
     "unique": false
    },
    {
@@ -1073,6 +1469,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_quantity_shipped",
     "unique": false
    },
    {
@@ -1081,6 +1480,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_quantity_fulfilled",
     "unique": false
    },
    {
@@ -1089,6 +1491,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_quantity_billed",
     "unique": false
    },
    {
@@ -1097,22 +1502,31 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_billed_freight",
     "unique": false
    },
    {
     "field": "orderTypeId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "OrderTypes",
+    "propose": null,
     "unique": false
    },
    {
     "field": "warehouseId",
     "type": "int",
     "fill": 30,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -1121,6 +1535,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_amount_back_ordered",
     "unique": false
    },
    {
@@ -1129,54 +1546,75 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_quantity_back_ordered",
     "unique": false
    },
    {
     "field": "statusId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "OrderStatuses",
+    "propose": null,
     "unique": false
    },
    {
     "field": "returnCodeId",
     "type": "int",
     "fill": 2,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "origInvoiceId",
     "type": "int",
     "fill": 0,
-    "verdict": "skip",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Invoice",
+    "propose": null,
     "unique": false
    },
    {
     "field": "returnMethodId",
     "type": "int",
     "fill": 2,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "orderedByContactId",
     "type": "int",
     "fill": 2,
-    "verdict": "map",
-    "hubspot": "contact_id",
+    "verdict": "associate",
+    "hubspot": null,
+    "role": "association",
+    "roleTarget": "Contact",
+    "propose": null,
     "unique": false
    },
    {
     "field": "quoteId",
     "type": "int",
     "fill": 4,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "SalesOrder",
+    "propose": null,
     "unique": false
    },
    {
@@ -1185,6 +1623,9 @@
     "fill": 4,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_quote_originator_email",
     "unique": false
    },
    {
@@ -1193,6 +1634,9 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1201,6 +1645,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_send_shipping_notifications",
     "unique": false
    },
    {
@@ -1209,6 +1656,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_send_shipping_notification_to_order_by_contact",
     "unique": false
    },
    {
@@ -1217,6 +1667,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1225,6 +1678,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -1233,6 +1689,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1241,6 +1700,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1249,6 +1711,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1257,6 +1722,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1265,6 +1733,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1273,15 +1744,21 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
-   "map": 2,
-   "build": 65,
-   "skip": 10
+   "map": 1,
+   "build": 45,
+   "skip": 19,
+   "associate": 7,
+   "lookup": 5
   },
-  "uniqueKey": "soNumber"
+  "matchKey": "soNumber",
+  "matchKeyProperty": "ea_so_number"
  },
  "ServiceCall": {
   "target": "tickets",
@@ -1291,8 +1768,11 @@
     "field": "callId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -1301,14 +1781,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "match_key",
+    "roleTarget": null,
+    "propose": "ea_call_number",
     "unique": true
    },
    {
     "field": "customerId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
@@ -1317,6 +1803,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_status",
     "unique": false
    },
    {
@@ -1325,6 +1814,9 @@
     "fill": 92,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_description",
     "unique": false
    },
    {
@@ -1333,6 +1825,9 @@
     "fill": 62,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_notes",
     "unique": false
    },
    {
@@ -1341,6 +1836,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_date",
     "unique": false
    },
    {
@@ -1349,6 +1847,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_req_date",
     "unique": false
    },
    {
@@ -1357,6 +1858,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_est_start_date",
     "unique": false
    },
    {
@@ -1365,6 +1869,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1373,6 +1880,9 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "audit user (/api/User/Users 403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -1381,6 +1891,9 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1389,6 +1902,9 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "audit user (/api/User/Users 403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -1397,6 +1913,9 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1405,6 +1924,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1413,6 +1935,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1421,6 +1946,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_address_street",
     "unique": false
    },
    {
@@ -1429,6 +1957,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_address_city",
     "unique": false
    },
    {
@@ -1437,6 +1968,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_address_state",
     "unique": false
    },
    {
@@ -1445,6 +1979,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_address_zip",
     "unique": false
    },
    {
@@ -1453,6 +1990,9 @@
     "fill": 6,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_address_country",
     "unique": false
    },
    {
@@ -1461,6 +2001,9 @@
     "fill": 98,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_caller",
     "unique": false
    },
    {
@@ -1469,6 +2012,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1477,15 +2023,21 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
    "map": 0,
-   "build": 15,
-   "skip": 9
+   "build": 13,
+   "skip": 10,
+   "associate": 1,
+   "lookup": 0
   },
-  "uniqueKey": "callNumber"
+  "matchKey": "callNumber",
+  "matchKeyProperty": "ea_call_number"
  },
  "Item": {
   "target": "products",
@@ -1497,6 +2049,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "primary_key",
+    "roleTarget": null,
+    "propose": "ea_item_id",
     "unique": false
    },
    {
@@ -1505,7 +2060,10 @@
     "fill": null,
     "verdict": "map",
     "hubspot": "item_number",
-    "unique": false
+    "role": "match_key",
+    "roleTarget": null,
+    "propose": "item_number",
+    "unique": true
    },
    {
     "field": "description",
@@ -1513,6 +2071,9 @@
     "fill": null,
     "verdict": "map",
     "hubspot": "description",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "description",
     "unique": false
    },
    {
@@ -1521,6 +2082,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_on_hand_qty",
     "unique": false
    },
    {
@@ -1529,6 +2093,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_active",
     "unique": false
    },
    {
@@ -1537,14 +2104,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_pref_mfg_number",
     "unique": false
    },
    {
     "field": "modelId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Item",
+    "propose": null,
     "unique": false
    },
    {
@@ -1553,6 +2126,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -1561,6 +2137,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_default_price",
     "unique": false
    },
    {
@@ -1569,15 +2148,21 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_customer_price",
     "unique": false
    }
   ],
   "counts": {
    "map": 2,
-   "build": 7,
-   "skip": 1
+   "build": 6,
+   "skip": 1,
+   "associate": 1,
+   "lookup": 0
   },
-  "uniqueKey": null
+  "matchKey": "itemNumber",
+  "matchKeyProperty": "ea_item_number"
  },
  "PrintReleafUsageRecord": {
   "target": "companies",
@@ -1587,8 +2172,11 @@
     "field": "customerId",
     "type": "int",
     "fill": null,
-    "verdict": "map",
-    "hubspot": "e_automate_customer_id",
+    "verdict": "associate",
+    "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
@@ -1597,6 +2185,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_customer_number",
     "unique": false
    },
    {
@@ -1605,6 +2196,9 @@
     "fill": null,
     "verdict": "map",
     "hubspot": "name",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "name",
     "unique": false
    },
    {
@@ -1613,6 +2207,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_period_start",
     "unique": false
    },
    {
@@ -1621,6 +2218,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_period_end",
     "unique": false
    },
    {
@@ -1629,6 +2229,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_black_and_white_pages",
     "unique": false
    },
    {
@@ -1637,6 +2240,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_color_pages",
     "unique": false
    },
    {
@@ -1645,6 +2251,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_duplex_count",
     "unique": false
    },
    {
@@ -1653,15 +2262,21 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_total_pages",
     "unique": false
    }
   ],
   "counts": {
-   "map": 2,
+   "map": 1,
    "build": 7,
-   "skip": 0
+   "skip": 0,
+   "associate": 1,
+   "lookup": 0
   },
-  "uniqueKey": null
+  "matchKey": null,
+  "matchKeyProperty": null
  },
  "Equipment": {
   "target": "2-50535052",
@@ -1673,6 +2288,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "primary_key",
+    "roleTarget": null,
+    "propose": "ea_equipment_id",
     "unique": false
    },
    {
@@ -1681,14 +2299,20 @@
     "fill": 100,
     "verdict": "map",
     "hubspot": "equipment_number",
+    "role": "match_key",
+    "roleTarget": null,
+    "propose": "equipment_number",
     "unique": true
    },
    {
     "field": "itemId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Item",
+    "propose": null,
     "unique": false
    },
    {
@@ -1697,30 +2321,42 @@
     "fill": 96,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_serial_number",
     "unique": false
    },
    {
     "field": "customerId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
     "field": "billtoId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
     "field": "locationId",
     "type": "int",
     "fill": 98,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
@@ -1729,6 +2365,9 @@
     "fill": 98,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_address",
     "unique": false
    },
    {
@@ -1737,6 +2376,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_city",
     "unique": false
    },
    {
@@ -1745,6 +2387,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_state",
     "unique": false
    },
    {
@@ -1753,6 +2398,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_zip",
     "unique": false
    },
    {
@@ -1761,6 +2409,9 @@
     "fill": 32,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_country",
     "unique": false
    },
    {
@@ -1769,6 +2420,9 @@
     "fill": 12,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_location_description",
     "unique": false
    },
    {
@@ -1777,6 +2431,9 @@
     "fill": 14,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_office_open",
     "unique": false
    },
    {
@@ -1785,6 +2442,9 @@
     "fill": 14,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_office_close",
     "unique": false
    },
    {
@@ -1793,6 +2453,9 @@
     "fill": 12,
     "verdict": "map",
     "hubspot": "install_date",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "install_date",
     "unique": false
    },
    {
@@ -1801,6 +2464,9 @@
     "fill": 18,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_contact",
     "unique": false
    },
    {
@@ -1809,6 +2475,9 @@
     "fill": 12,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_contact_phone",
     "unique": false
    },
    {
@@ -1817,6 +2486,9 @@
     "fill": 7,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_contact_fax",
     "unique": false
    },
    {
@@ -1825,6 +2497,9 @@
     "fill": 14,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_decision_maker",
     "unique": false
    },
    {
@@ -1833,6 +2508,9 @@
     "fill": 13,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_decision_maker_phone",
     "unique": false
    },
    {
@@ -1841,22 +2519,31 @@
     "fill": 5,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_decision_maker_fax",
     "unique": false
    },
    {
     "field": "territoryId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "technicianId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/User/Technicians (403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -1865,6 +2552,9 @@
     "fill": 12,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_warranty_date",
     "unique": false
    },
    {
@@ -1873,6 +2563,9 @@
     "fill": 54,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_warranty_meter",
     "unique": false
    },
    {
@@ -1881,6 +2574,9 @@
     "fill": 53,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_pm_meter_interval",
     "unique": false
    },
    {
@@ -1889,6 +2585,9 @@
     "fill": 53,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_pm_meter_due",
     "unique": false
    },
    {
@@ -1897,6 +2596,9 @@
     "fill": 8,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_pm_date_interval",
     "unique": false
    },
    {
@@ -1905,6 +2607,9 @@
     "fill": 8,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_pm_date_due",
     "unique": false
    },
    {
@@ -1913,6 +2618,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_pm_use_meter",
     "unique": false
    },
    {
@@ -1921,6 +2629,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_pm_use_date",
     "unique": false
    },
    {
@@ -1929,6 +2640,9 @@
     "fill": 4,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_remarks",
     "unique": false
    },
    {
@@ -1937,6 +2651,9 @@
     "fill": 100,
     "verdict": "map",
     "hubspot": "active",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "active",
     "unique": false
    },
    {
@@ -1945,38 +2662,53 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
     "field": "statusId",
     "type": "int",
     "fill": 57,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "OrderStatuses",
+    "propose": null,
     "unique": false
    },
    {
     "field": "conditionId",
     "type": "int",
     "fill": 22,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "branchId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/Branch (403)",
+    "propose": null,
     "unique": false
    },
    {
     "field": "parentId",
     "type": "int",
     "fill": 1,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Equipment",
+    "propose": null,
     "unique": false
    },
    {
@@ -1985,6 +2717,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_hosting",
     "unique": false
    },
    {
@@ -1993,14 +2728,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_attached",
     "unique": false
    },
    {
     "field": "leaseId",
     "type": "int",
     "fill": 4,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Contract",
+    "propose": null,
     "unique": false
    },
    {
@@ -2009,14 +2750,20 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
     "field": "modelId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Item",
+    "propose": null,
     "unique": false
    },
    {
@@ -2025,6 +2772,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_is_metered",
     "unique": false
    },
    {
@@ -2033,6 +2783,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_require_meteron_service_calls",
     "unique": false
    },
    {
@@ -2041,6 +2794,9 @@
     "fill": 16,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_most_recent_default_meter_reading_display",
     "unique": false
    },
    {
@@ -2049,30 +2805,42 @@
     "fill": 16,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_most_recent_default_meter_reading_date",
     "unique": false
    },
    {
     "field": "priorityId",
     "type": "int",
     "fill": 12,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "Priorities",
+    "propose": null,
     "unique": false
    },
    {
     "field": "equipmentContactId",
     "type": "int",
     "fill": 10,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Contact",
+    "propose": null,
     "unique": false
    },
    {
     "field": "decisionContactId",
     "type": "int",
     "fill": 10,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Contact",
+    "propose": null,
     "unique": false
    },
    {
@@ -2081,6 +2849,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_allow_auto_meter_requests",
     "unique": false
    },
    {
@@ -2089,6 +2860,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2097,6 +2871,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2105,6 +2882,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -2113,6 +2893,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_expire_by_usage",
     "unique": false
    },
    {
@@ -2121,14 +2904,20 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
     "field": "meterContactId",
     "type": "int",
     "fill": 10,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Contact",
+    "propose": null,
     "unique": false
    },
    {
@@ -2137,6 +2926,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -2145,6 +2937,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2153,6 +2948,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2161,14 +2959,20 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
     "field": "slaCodeId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "SLACodes",
+    "propose": null,
     "unique": false
    },
    {
@@ -2177,6 +2981,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2185,6 +2992,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2193,6 +3003,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2201,6 +3014,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2209,15 +3025,21 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
    "map": 3,
-   "build": 50,
-   "skip": 15
+   "build": 33,
+   "skip": 19,
+   "associate": 10,
+   "lookup": 3
   },
-  "uniqueKey": "equipmentNumber"
+  "matchKey": "equipmentNumber",
+  "matchKeyProperty": "ea_equipment_number"
  },
  "ModelMeters": {
   "target": "2-50535052",
@@ -2227,24 +3049,33 @@
     "field": "modelMeterId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "modelId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Item",
+    "propose": null,
     "unique": false
    },
    {
     "field": "meterTypeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "MeterTypes",
+    "propose": null,
     "unique": false
    },
    {
@@ -2253,6 +3084,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_description",
     "unique": false
    },
    {
@@ -2261,6 +3095,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_meter_digits",
     "unique": false
    },
    {
@@ -2269,6 +3106,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_require_reading",
     "unique": false
    },
    {
@@ -2277,6 +3117,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_warranty_clicks",
     "unique": false
    },
    {
@@ -2285,6 +3128,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_do_p_m_by_clicks",
     "unique": false
    },
    {
@@ -2293,6 +3139,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_pm_interval_clicks",
     "unique": false
    },
    {
@@ -2301,6 +3150,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_pm_due_clicks",
     "unique": false
    },
    {
@@ -2309,6 +3161,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_meter_formula",
     "unique": false
    },
    {
@@ -2317,6 +3172,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_is_default",
     "unique": false
    },
    {
@@ -2325,6 +3183,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_interface_name",
     "unique": false
    },
    {
@@ -2333,6 +3194,9 @@
     "fill": null,
     "verdict": "map",
     "hubspot": "active",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "active",
     "unique": false
    },
    {
@@ -2341,6 +3205,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_avg_monthly_volume3_mo",
     "unique": false
    },
    {
@@ -2349,6 +3216,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_avg_monthly_volume6_mo",
     "unique": false
    },
    {
@@ -2357,6 +3227,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_avg_monthly_volume12_mo",
     "unique": false
    },
    {
@@ -2365,6 +3238,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_avg_monthly_volume_install",
     "unique": false
    },
    {
@@ -2373,6 +3249,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mfg_suggested_monthly_volume",
     "unique": false
    },
    {
@@ -2381,6 +3260,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_target_monthly_volume",
     "unique": false
    },
    {
@@ -2389,6 +3271,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_include_in_meter_requests",
     "unique": false
    },
    {
@@ -2397,6 +3282,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_sequential_meter",
     "unique": false
    },
    {
@@ -2405,15 +3293,21 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
    "map": 1,
-   "build": 21,
-   "skip": 1
+   "build": 18,
+   "skip": 2,
+   "associate": 1,
+   "lookup": 1
   },
-  "uniqueKey": null
+  "matchKey": null,
+  "matchKeyProperty": null
  },
  "Contract": {
   "target": "2-36237359",
@@ -2425,6 +3319,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "primary_key",
+    "roleTarget": null,
+    "propose": "ea_contract_id",
     "unique": false
    },
    {
@@ -2433,6 +3330,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "match_key",
+    "roleTarget": null,
+    "propose": "ea_contract_number",
     "unique": true
    },
    {
@@ -2441,6 +3341,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_contract_major",
     "unique": false
    },
    {
@@ -2449,14 +3352,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_contract_minor",
     "unique": false
    },
    {
     "field": "customerId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
@@ -2465,6 +3374,9 @@
     "fill": 61,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_contact",
     "unique": false
    },
    {
@@ -2473,6 +3385,9 @@
     "fill": 52,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_phone",
     "unique": false
    },
    {
@@ -2481,38 +3396,53 @@
     "fill": 47,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_fax",
     "unique": false
    },
    {
     "field": "billToId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
     "field": "contractCodeId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "billCodeId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "billGroupId",
     "type": "int",
     "fill": 5,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -2521,6 +3451,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_startdate",
     "unique": false
    },
    {
@@ -2529,6 +3462,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_exp_date",
     "unique": false
    },
    {
@@ -2537,6 +3473,9 @@
     "fill": 2,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_exp_copies",
     "unique": false
    },
    {
@@ -2545,6 +3484,9 @@
     "fill": 84,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_next_billing_date",
     "unique": false
    },
    {
@@ -2553,14 +3495,20 @@
     "fill": 84,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_last_billing_date",
     "unique": false
    },
    {
     "field": "baseBillingCycleId",
     "type": "int",
     "fill": 84,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -2569,6 +3517,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_arrears",
     "unique": false
    },
    {
@@ -2577,6 +3528,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_sum_individual_base_rates",
     "unique": false
    },
    {
@@ -2585,6 +3539,9 @@
     "fill": 100,
     "verdict": "map",
     "hubspot": "base_rate",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "base_rate",
     "unique": false
    },
    {
@@ -2593,6 +3550,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_rate_period",
     "unique": false
    },
    {
@@ -2601,6 +3561,9 @@
     "fill": 69,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_overage_next_billing_date",
     "unique": false
    },
    {
@@ -2609,14 +3572,20 @@
     "fill": 83,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_overage_last_billing_date",
     "unique": false
    },
    {
     "field": "overageBillingCycleId",
     "type": "int",
     "fill": 28,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -2625,6 +3594,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bsa_bill_for_services",
     "unique": false
    },
    {
@@ -2633,6 +3605,9 @@
     "fill": 2,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bsa_labor_discount",
     "unique": false
    },
    {
@@ -2641,6 +3616,9 @@
     "fill": 2,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bsa_materials_discount",
     "unique": false
    },
    {
@@ -2649,6 +3627,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bsa_minimum_balance",
     "unique": false
    },
    {
@@ -2657,6 +3638,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bsa_minimum_billing",
     "unique": false
    },
    {
@@ -2665,6 +3649,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2673,6 +3660,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_group_invoices",
     "unique": false
    },
    {
@@ -2681,6 +3671,9 @@
     "fill": 28,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_po_number",
     "unique": false
    },
    {
@@ -2689,6 +3682,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_misc_charge_amount",
     "unique": false
    },
    {
@@ -2697,6 +3693,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_misc_charge_tax_flag",
     "unique": false
    },
    {
@@ -2705,6 +3704,9 @@
     "fill": 11,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_misc_charge_description",
     "unique": false
    },
    {
@@ -2713,6 +3715,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_misc_continuous",
     "unique": false
    },
    {
@@ -2721,6 +3726,9 @@
     "fill": 2,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_remarks",
     "unique": false
    },
    {
@@ -2729,6 +3737,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_unearned_balance",
     "unique": false
    },
    {
@@ -2737,6 +3748,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill",
     "unique": false
    },
    {
@@ -2745,6 +3759,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_activated",
     "unique": false
    },
    {
@@ -2753,6 +3770,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2761,6 +3781,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_renewed",
     "unique": false
    },
    {
@@ -2769,6 +3792,9 @@
     "fill": 100,
     "verdict": "map",
     "hubspot": "active",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "active",
     "unique": false
    },
    {
@@ -2777,6 +3803,9 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2785,30 +3814,42 @@
     "fill": 4,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_lease_schedule",
     "unique": false
    },
    {
     "field": "taxCodeId",
     "type": "int",
     "fill": 99,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "branchId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/Branch (403)",
+    "propose": null,
     "unique": false
    },
    {
     "field": "contractLeaseId",
     "type": "int",
     "fill": 2,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Contract",
+    "propose": null,
     "unique": false
    },
    {
@@ -2817,6 +3858,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_use_lease_on_all_equipment",
     "unique": false
    },
    {
@@ -2825,30 +3869,42 @@
     "fill": 2,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_remarks_internal",
     "unique": false
    },
    {
     "field": "termId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "Terms",
+    "propose": null,
     "unique": false
    },
    {
     "field": "salesRepId",
     "type": "int",
     "fill": 94,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/User/SalesReps (403)",
+    "propose": null,
     "unique": false
    },
    {
     "field": "jobId",
     "type": "int",
     "fill": 2,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -2857,6 +3913,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -2865,14 +3924,20 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
     "field": "contactId",
     "type": "int",
     "fill": 47,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Contact",
+    "propose": null,
     "unique": false
    },
    {
@@ -2881,6 +3946,9 @@
     "fill": 48,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill_to_attn",
     "unique": false
    },
    {
@@ -2889,6 +3957,9 @@
     "fill": 98,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill_to_address",
     "unique": false
    },
    {
@@ -2897,6 +3968,9 @@
     "fill": 98,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill_to_city",
     "unique": false
    },
    {
@@ -2905,6 +3979,9 @@
     "fill": 96,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill_to_state",
     "unique": false
    },
    {
@@ -2913,6 +3990,9 @@
     "fill": 96,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill_to_zip",
     "unique": false
    },
    {
@@ -2921,6 +4001,9 @@
     "fill": 14,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill_to_country",
     "unique": false
    },
    {
@@ -2929,6 +4012,9 @@
     "fill": 80,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_billed_thru_date",
     "unique": false
    },
    {
@@ -2937,6 +4023,9 @@
     "fill": 35,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_overage_billed_thru_date",
     "unique": false
    },
    {
@@ -2945,6 +4034,9 @@
     "fill": 66,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_accrued_thru_date",
     "unique": false
    },
    {
@@ -2953,6 +4045,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_renewable",
     "unique": false
    },
    {
@@ -2961,6 +4056,9 @@
     "fill": 78,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_rate_schedule_start_date",
     "unique": false
    },
    {
@@ -2969,14 +4067,20 @@
     "fill": 78,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ovg_rate_schedule_start_date",
     "unique": false
    },
    {
     "field": "renewalCycleId",
     "type": "int",
     "fill": 27,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -2985,6 +4089,9 @@
     "fill": 1,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_next_base_increase_date",
     "unique": false
    },
    {
@@ -2993,6 +4100,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3001,6 +4111,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_taxable",
     "unique": false
    },
    {
@@ -3009,6 +4122,9 @@
     "fill": 75,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_billing_start_date",
     "unique": false
    },
    {
@@ -3017,6 +4133,9 @@
     "fill": 22,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_overage_billing_start_date",
     "unique": false
    },
    {
@@ -3025,14 +4144,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_use_alternate_ovg_bill_to",
     "unique": false
    },
    {
     "field": "ovgBillToId",
     "type": "int",
     "fill": 1,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
@@ -3041,6 +4166,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3049,6 +4177,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3057,6 +4188,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3065,6 +4199,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3073,6 +4210,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3081,22 +4221,31 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
     "field": "ovgBillToTermId",
     "type": "int",
     "fill": 0,
-    "verdict": "skip",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "Terms",
+    "propose": null,
     "unique": false
    },
    {
     "field": "contractAdjCodeId",
     "type": "int",
     "fill": 25,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -3105,6 +4254,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_use_individual_tax_codes",
     "unique": false
    },
    {
@@ -3113,14 +4265,20 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "contractStatusId",
     "type": "int",
     "fill": 100,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "OrderStatuses",
+    "propose": null,
     "unique": false
    },
    {
@@ -3129,6 +4287,9 @@
     "fill": 1,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_one_time_remark",
     "unique": false
    },
    {
@@ -3137,6 +4298,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_print_one_time_remark",
     "unique": false
    },
    {
@@ -3145,14 +4309,20 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ovg_bill_to_taxable",
     "unique": false
    },
    {
     "field": "ovgBillToTaxCodeId",
     "type": "int",
     "fill": 50,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -3161,6 +4331,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ovg_bill_to_use_individual_tax_codes",
     "unique": false
    },
    {
@@ -3169,6 +4342,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_allow_meter_estimation",
     "unique": false
    },
    {
@@ -3177,6 +4353,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_exp_copies_base",
     "unique": false
    },
    {
@@ -3185,6 +4364,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_exp_adj_copies",
     "unique": false
    },
    {
@@ -3193,6 +4375,9 @@
     "fill": 2,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_exp_copies_actual_exp_date",
     "unique": false
    },
    {
@@ -3201,6 +4386,9 @@
     "fill": 99,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_exp_date_initial",
     "unique": false
    },
    {
@@ -3209,6 +4397,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_cpp_minimum_pages",
     "unique": false
    },
    {
@@ -3217,6 +4408,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_cpp_rate",
     "unique": false
    },
    {
@@ -3225,6 +4419,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_cpp_hardware_amount",
     "unique": false
    },
    {
@@ -3233,6 +4430,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_cpp_service_rate",
     "unique": false
    },
    {
@@ -3241,6 +4441,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_combine_lease_and_base",
     "unique": false
    },
    {
@@ -3249,6 +4452,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_time_block_based",
     "unique": false
    },
    {
@@ -3257,6 +4463,9 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3265,6 +4474,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_rate_period_type",
     "unique": false
    },
    {
@@ -3273,6 +4485,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_unearned_interest_balance",
     "unique": false
    },
    {
@@ -3281,6 +4496,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_unearned_lease_balance",
     "unique": false
    },
    {
@@ -3289,6 +4507,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_unearned_lease_post_term_balance",
     "unique": false
    },
    {
@@ -3297,6 +4518,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3305,6 +4529,9 @@
     "fill": 100,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mess_req_acknowledgment",
     "unique": false
    },
    {
@@ -3313,6 +4540,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -3321,14 +4551,20 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "slaCodeId",
     "type": "int",
     "fill": 6,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "SLACodes",
+    "propose": null,
     "unique": false
    },
    {
@@ -3337,6 +4573,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3345,6 +4584,9 @@
     "fill": 0,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3353,15 +4595,21 @@
     "fill": 100,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
    "map": 2,
-   "build": 94,
-   "skip": 21
+   "build": 74,
+   "skip": 32,
+   "associate": 5,
+   "lookup": 4
   },
-  "uniqueKey": "contractNumber"
+  "matchKey": "contractNumber",
+  "matchKeyProperty": "ea_contract_number"
  },
  "ContractDetail": {
   "target": "2-36237359",
@@ -3371,32 +4619,44 @@
     "field": "contractDetailId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "contractId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Contract",
+    "propose": null,
     "unique": false
    },
    {
     "field": "equipmentId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Equipment",
+    "propose": null,
     "unique": false
    },
    {
     "field": "locationId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
@@ -3405,14 +4665,20 @@
     "fill": null,
     "verdict": "map",
     "hubspot": "base_rate",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "base_rate",
     "unique": false
    },
    {
     "field": "billCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -3421,6 +4687,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_use_contract_lease",
     "unique": false
    },
    {
@@ -3429,6 +4698,9 @@
     "fill": null,
     "verdict": "map",
     "hubspot": "start_date",
+    "role": "data",
+    "roleTarget": null,
+    "propose": "start_date",
     "unique": false
    },
    {
@@ -3437,6 +4709,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_end_date",
     "unique": false
    },
    {
@@ -3445,6 +4720,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_billed_thru_date",
     "unique": false
    },
    {
@@ -3453,6 +4731,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_overage_billed_thru_date",
     "unique": false
    },
    {
@@ -3461,6 +4742,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_accrued_thru_date",
     "unique": false
    },
    {
@@ -3469,6 +4753,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_prorate_start",
     "unique": false
    },
    {
@@ -3477,6 +4764,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_prorate_start_amount",
     "unique": false
    },
    {
@@ -3485,6 +4775,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_prorate_start_bill_now",
     "unique": false
    },
    {
@@ -3493,6 +4786,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_prorate_end",
     "unique": false
    },
    {
@@ -3501,6 +4797,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_prorate_end_amount",
     "unique": false
    },
    {
@@ -3509,6 +4808,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_prorate_end_bill_now",
     "unique": false
    },
    {
@@ -3517,6 +4819,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_address",
     "unique": false
    },
    {
@@ -3525,6 +4830,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_city",
     "unique": false
    },
    {
@@ -3533,6 +4841,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_state",
     "unique": false
    },
    {
@@ -3541,6 +4852,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_zip",
     "unique": false
    },
    {
@@ -3549,6 +4863,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_country",
     "unique": false
    },
    {
@@ -3557,6 +4874,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_next_base_increase_date",
     "unique": false
    },
    {
@@ -3565,6 +4885,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_un_earned_balance",
     "unique": false
    },
    {
@@ -3573,6 +4896,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_prorate_start_auto_calc",
     "unique": false
    },
    {
@@ -3581,6 +4907,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_prorate_end_auto_calc",
     "unique": false
    },
    {
@@ -3589,6 +4918,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_start_meter_reading_date",
     "unique": false
    },
    {
@@ -3597,6 +4929,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_end_meter_reading_date",
     "unique": false
    },
    {
@@ -3605,22 +4940,31 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_base_rate_schedule_start_date",
     "unique": false
    },
    {
     "field": "taxCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "terminationCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -3629,6 +4973,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_quantity",
     "unique": false
    },
    {
@@ -3637,6 +4984,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_unit_base_rate",
     "unique": false
    },
    {
@@ -3645,6 +4995,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3653,6 +5006,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill_start_date",
     "unique": false
    },
    {
@@ -3661,22 +5017,31 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill_end_date",
     "unique": false
    },
    {
     "field": "parentContractDetailId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "contractDetailTypeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -3685,6 +5050,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_sub_lease_number",
     "unique": false
    },
    {
@@ -3693,6 +5061,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_sub_lease_major",
     "unique": false
    },
    {
@@ -3701,6 +5072,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_sub_lease_minor",
     "unique": false
    },
    {
@@ -3709,6 +5083,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_lease_term",
     "unique": false
    },
    {
@@ -3717,6 +5094,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_lease_payment_start_date",
     "unique": false
    },
    {
@@ -3725,6 +5105,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_lease_payment_end_date",
     "unique": false
    },
    {
@@ -3733,6 +5116,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_lease_rate",
     "unique": false
    },
    {
@@ -3741,6 +5127,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_lease_rate_factor",
     "unique": false
    },
    {
@@ -3749,6 +5138,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_lease_interest_rate",
     "unique": false
    },
    {
@@ -3757,6 +5149,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_lease_financed_amount",
     "unique": false
    },
    {
@@ -3765,6 +5160,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_lease_payment_amount",
     "unique": false
    },
    {
@@ -3773,6 +5171,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_lease_principal_balance",
     "unique": false
    },
    {
@@ -3781,6 +5182,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_combine_with_parent_base_amount",
     "unique": false
    },
    {
@@ -3789,6 +5193,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_unearned_interest_balance",
     "unique": false
    },
    {
@@ -3797,6 +5204,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_unearned_lease_balance",
     "unique": false
    },
    {
@@ -3805,14 +5215,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_unearned_lease_post_term_balance",
     "unique": false
    },
    {
     "field": "leaseTerminationCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -3821,14 +5237,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_asset_number",
     "unique": false
    },
    {
     "field": "taxExemptCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -3837,6 +5259,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_taxable",
     "unique": false
    },
    {
@@ -3845,14 +5270,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_override_taxable",
     "unique": false
    },
    {
     "field": "itemId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Item",
+    "propose": null,
     "unique": false
    },
    {
@@ -3861,6 +5292,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_description",
     "unique": false
    },
    {
@@ -3869,14 +5303,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_location_remarks",
     "unique": false
    },
    {
     "field": "slaCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "SLACodes",
+    "propose": null,
     "unique": false
    },
    {
@@ -3885,6 +5325,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3893,6 +5336,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -3901,15 +5347,21 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
    "map": 2,
-   "build": 61,
-   "skip": 4
+   "build": 48,
+   "skip": 12,
+   "associate": 4,
+   "lookup": 1
   },
-  "uniqueKey": null
+  "matchKey": null,
+  "matchKeyProperty": null
  },
  "Invoice": {
   "target": null,
@@ -3921,6 +5373,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "primary_key",
+    "roleTarget": null,
+    "propose": "ea_invoice_id",
     "unique": false
    },
    {
@@ -3929,7 +5384,10 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
-    "unique": false
+    "role": "match_key",
+    "roleTarget": null,
+    "propose": "ea_invoice_number",
+    "unique": true
    },
    {
     "field": "type",
@@ -3937,46 +5395,64 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_type",
     "unique": false
    },
    {
     "field": "customerId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
     "field": "billToId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
     "field": "applyToId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "masterInvoiceId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "locationId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Customer",
+    "propose": null,
     "unique": false
    },
    {
@@ -3985,6 +5461,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_date",
     "unique": false
    },
    {
@@ -3993,6 +5472,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_date_period",
     "unique": false
    },
    {
@@ -4001,6 +5483,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_period",
     "unique": false
    },
    {
@@ -4009,6 +5494,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_description",
     "unique": false
    },
    {
@@ -4017,14 +5505,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_po_number",
     "unique": false
    },
    {
     "field": "termId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "lookup",
     "hubspot": null,
+    "role": "lookup",
+    "roleTarget": "Terms",
+    "propose": null,
     "unique": false
    },
    {
@@ -4033,6 +5527,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_term_discount_rate",
     "unique": false
    },
    {
@@ -4041,6 +5538,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_term_discount_date",
     "unique": false
    },
    {
@@ -4049,6 +5549,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_term_discount",
     "unique": false
    },
    {
@@ -4057,14 +5560,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_due_date",
     "unique": false
    },
    {
     "field": "salesRepId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/User/SalesReps (403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -4073,6 +5582,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_attn",
     "unique": false
    },
    {
@@ -4081,6 +5593,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_name",
     "unique": false
    },
    {
@@ -4089,6 +5604,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_address",
     "unique": false
    },
    {
@@ -4097,6 +5615,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_city",
     "unique": false
    },
    {
@@ -4105,6 +5626,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_state",
     "unique": false
    },
    {
@@ -4113,6 +5637,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_zip",
     "unique": false
    },
    {
@@ -4121,6 +5648,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_mail_to_country",
     "unique": false
    },
    {
@@ -4129,6 +5659,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_attn",
     "unique": false
    },
    {
@@ -4137,6 +5670,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_name",
     "unique": false
    },
    {
@@ -4145,6 +5681,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_address",
     "unique": false
    },
    {
@@ -4153,6 +5692,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_city",
     "unique": false
    },
    {
@@ -4161,6 +5703,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_state",
     "unique": false
    },
    {
@@ -4169,6 +5714,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_zip",
     "unique": false
    },
    {
@@ -4177,6 +5725,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ship_to_country",
     "unique": false
    },
    {
@@ -4185,6 +5736,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_remarks",
     "unique": false
    },
    {
@@ -4193,6 +5747,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_discount_rate",
     "unique": false
    },
    {
@@ -4201,6 +5758,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_discount",
     "unique": false
    },
    {
@@ -4209,14 +5769,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_freight",
     "unique": false
    },
    {
     "field": "taxCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4225,6 +5791,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_tax",
     "unique": false
    },
    {
@@ -4233,6 +5802,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_total",
     "unique": false
    },
    {
@@ -4241,6 +5813,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_adj_total",
     "unique": false
    },
    {
@@ -4249,14 +5824,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_due",
     "unique": false
    },
    {
     "field": "voidId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4265,6 +5846,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_module",
     "unique": false
    },
    {
@@ -4273,6 +5857,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_source",
     "unique": false
    },
    {
@@ -4281,6 +5868,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_reference",
     "unique": false
    },
    {
@@ -4289,6 +5879,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "audit user (/api/User/Users 403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -4297,6 +5890,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "audit user (/api/User/Users 403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -4305,6 +5901,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -4313,22 +5912,31 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
     "field": "transactionTypeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "chargeMethodId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4337,6 +5945,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_charge_account_info",
     "unique": false
    },
    {
@@ -4345,22 +5956,31 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_taxable",
     "unique": false
    },
    {
     "field": "freightDeptId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "discountDeptId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4369,14 +5989,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_consolidate",
     "unique": false
    },
    {
     "field": "consolidatedBillingId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4385,14 +6011,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_billing_number",
     "unique": false
    },
    {
     "field": "isVoid",
     "type": "boolean",
     "fill": null,
-    "verdict": "skip",
+    "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_is_void",
     "unique": false
    },
    {
@@ -4401,14 +6033,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_sent",
     "unique": false
    },
    {
     "field": "noteId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4417,46 +6055,64 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_note_flag",
     "unique": false
    },
    {
     "field": "orderedByContactId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Contact",
+    "propose": null,
     "unique": false
    },
    {
     "field": "sendContactId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "sendMethodId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "receivablePayableId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "primaryReportDefinitionId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4465,6 +6121,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -4473,22 +6132,31 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_ext_reference_number",
     "unique": false
    },
    {
     "field": "commissionRepId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "taxExemptCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4497,14 +6165,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_freight_tax_flag",
     "unique": false
    },
    {
     "field": "freightTaxFlagId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4513,6 +6187,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -4521,6 +6198,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -4529,15 +6209,21 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
    "map": 0,
-   "build": 68,
-   "skip": 9
+   "build": 46,
+   "skip": 26,
+   "associate": 4,
+   "lookup": 1
   },
-  "uniqueKey": null
+  "matchKey": "invoiceNumber",
+  "matchKeyProperty": "ea_invoice_number"
  },
  "InvoiceDetail": {
   "target": null,
@@ -4547,16 +6233,22 @@
     "field": "invoiceId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "detailId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4565,6 +6257,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_description",
     "unique": false
    },
    {
@@ -4573,6 +6268,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_amount",
     "unique": false
    },
    {
@@ -4581,6 +6279,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_tax_flag",
     "unique": false
    },
    {
@@ -4589,6 +6290,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_cost",
     "unique": false
    },
    {
@@ -4597,6 +6301,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "audit user (/api/User/Users 403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -4605,6 +6312,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "audit user (/api/User/Users 403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -4613,6 +6323,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -4621,14 +6334,20 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
     "field": "taxCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4637,6 +6356,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_line_number",
     "unique": false
    },
    {
@@ -4645,31 +6367,43 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_taxable",
     "unique": false
    },
    {
     "field": "taxExemptCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "taxFlagId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
    "map": 0,
-   "build": 11,
-   "skip": 4
+   "build": 6,
+   "skip": 9,
+   "associate": 0,
+   "lookup": 0
   },
-  "uniqueKey": null
+  "matchKey": null,
+  "matchKeyProperty": null
  },
  "SOOrderDetail": {
   "target": null,
@@ -4679,24 +6413,33 @@
     "field": "soId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "SalesOrder",
+    "propose": null,
     "unique": false
    },
    {
     "field": "detailId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "itemId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Item",
+    "propose": null,
     "unique": false
    },
    {
@@ -4705,6 +6448,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_description",
     "unique": false
    },
    {
@@ -4713,6 +6459,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_quantity",
     "unique": false
    },
    {
@@ -4721,6 +6470,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_um",
     "unique": false
    },
    {
@@ -4729,22 +6481,31 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_price",
     "unique": false
    },
    {
     "field": "equipmentId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Equipment",
+    "propose": null,
     "unique": false
    },
    {
     "field": "contractId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "associate",
     "hubspot": null,
+    "role": "association",
+    "roleTarget": "Contract",
+    "propose": null,
     "unique": false
    },
    {
@@ -4753,6 +6514,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_bill",
     "unique": false
    },
    {
@@ -4761,6 +6525,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_discount",
     "unique": false
    },
    {
@@ -4769,6 +6536,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_stocked",
     "unique": false
    },
    {
@@ -4777,6 +6547,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_amount",
     "unique": false
    },
    {
@@ -4785,6 +6558,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_back_ordered",
     "unique": false
    },
    {
@@ -4793,6 +6569,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_picketed",
     "unique": false
    },
    {
@@ -4801,6 +6580,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_shipped",
     "unique": false
    },
    {
@@ -4809,6 +6591,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_canceled",
     "unique": false
    },
    {
@@ -4817,22 +6602,31 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_billed",
     "unique": false
    },
    {
     "field": "workOrderId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "returnCodeId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4841,6 +6635,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_return_remarks",
     "unique": false
    },
    {
@@ -4849,6 +6646,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_fulfilled",
     "unique": false
    },
    {
@@ -4857,6 +6657,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_remarks",
     "unique": false
    },
    {
@@ -4865,6 +6668,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_is_return",
     "unique": false
    },
    {
@@ -4873,6 +6679,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_is_r_m_a_return",
     "unique": false
    },
    {
@@ -4881,6 +6690,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_tracking_number",
     "unique": false
    },
    {
@@ -4889,6 +6701,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_earliest_date",
     "unique": false
    },
    {
@@ -4897,6 +6712,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_latest_date",
     "unique": false
    },
    {
@@ -4905,14 +6723,20 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_notes",
     "unique": false
    },
    {
     "field": "shipToContactId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
@@ -4921,6 +6745,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_line_number",
     "unique": false
    },
    {
@@ -4929,6 +6756,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_display_price",
     "unique": false
    },
    {
@@ -4937,6 +6767,9 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_display_amount",
     "unique": false
    },
    {
@@ -4945,22 +6778,31 @@
     "fill": null,
     "verdict": "build",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": "ea_display_discount",
     "unique": false
    },
    {
     "field": "contractDetailId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "unclassified foreign key",
+    "propose": null,
     "unique": false
    },
    {
     "field": "branchId",
     "type": "int",
     "fill": null,
-    "verdict": "build",
+    "verdict": "skip",
     "hubspot": null,
+    "role": "unresolvable",
+    "roleTarget": "/api/Branch (403)",
+    "propose": null,
     "unique": false
    },
    {
@@ -4969,6 +6811,9 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    },
    {
@@ -4977,14 +6822,20 @@
     "fill": null,
     "verdict": "skip",
     "hubspot": null,
+    "role": "data",
+    "roleTarget": null,
+    "propose": null,
     "unique": false
    }
   ],
   "counts": {
    "map": 0,
-   "build": 36,
-   "skip": 2
+   "build": 26,
+   "skip": 8,
+   "associate": 4,
+   "lookup": 0
   },
-  "uniqueKey": null
+  "matchKey": null,
+  "matchKeyProperty": null
  }
 }
