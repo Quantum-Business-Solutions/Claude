@@ -1,0 +1,1373 @@
+[
+ {
+  "id": "57105689954",
+  "props": {
+   "city": "Canary Wharf",
+   "createdate": "2026-07-29T18:43:38.179Z",
+   "ea_customer_number": "Bank",
+   "ea_fleet_color_pct": "39.0",
+   "ea_fleet_contract_count": "8",
+   "ea_fleet_lease_count": "16",
+   "ea_fleet_lifetime_pages": "10896097",
+   "ea_fleet_machine_count": "2",
+   "ea_fleet_meter_count": "0",
+   "ea_fleet_monthly_spend": "800.0",
+   "ea_fleet_monthly_volume": "143964",
+   "ea_fleet_next_expiry": "2017-01-01",
+   "ea_fleet_open_calls": "2",
+   "ea_fleet_summary_updated": "2026-07-29",
+   "ea_fleet_volume_basis": "printreleaf_historic",
+   "ea_fleet_volume_period": "2021",
+   "hs_lastmodifieddate": "2026-07-29T19:41:57.956Z",
+   "hs_object_id": "57105689954",
+   "name": "HSBC - Canary Wharf",
+   "state": "London"
+  },
+  "children": {
+   "equipment": [
+    {
+     "ea_city": "Canary Wharf",
+     "ea_equipment_number": "EQ100832",
+     "ea_location_description": null,
+     "ea_serial_number": "20130722",
+     "ea_state": "London",
+     "ea_warranty_date": null,
+     "hs_createdate": "2026-07-29T18:43:42.106Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:12.257Z",
+     "hs_object_id": "59503455817",
+     "install_date": null
+    },
+    {
+     "ea_city": "Canary Wharf",
+     "ea_equipment_number": "EQ100833",
+     "ea_location_description": null,
+     "ea_serial_number": "20130722",
+     "ea_state": "London",
+     "ea_warranty_date": null,
+     "hs_createdate": "2026-07-29T18:43:42.106Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:12.257Z",
+     "hs_object_id": "59503455818",
+     "install_date": null
+    }
+   ],
+   "contract": [
+    {
+     "base_rate": "100",
+     "contract_type": "223",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "223-07",
+     "ea_exp_date": "2020-01-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.929Z",
+     "hs_object_id": "59505088006",
+     "start_date": "2019-01-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "223",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "223-04",
+     "ea_exp_date": "2017-01-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.929Z",
+     "hs_object_id": "59505088003",
+     "start_date": "2016-01-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "223",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "223-08",
+     "ea_exp_date": "2021-01-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.930Z",
+     "hs_object_id": "59505088007",
+     "start_date": "2020-01-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "223",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "223-09",
+     "ea_exp_date": "2022-01-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.929Z",
+     "hs_object_id": "59505088008",
+     "start_date": "2021-01-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "223",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "223-06",
+     "ea_exp_date": "2019-01-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.930Z",
+     "hs_object_id": "59505088005",
+     "start_date": "2018-01-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "223",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "223-10",
+     "ea_exp_date": "2023-01-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:17.766Z",
+     "hs_object_id": "59505088009",
+     "start_date": "2022-01-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "223",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "223-11",
+     "ea_exp_date": "2024-01-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:17.766Z",
+     "hs_object_id": "59505088010",
+     "start_date": "2023-01-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "223",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "223-05",
+     "ea_exp_date": "2018-01-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.930Z",
+     "hs_object_id": "59505088004",
+     "start_date": "2017-01-01"
+    }
+   ],
+   "lease": [
+    {
+     "ea_contract_detail_id": "2668",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.365Z",
+     "hs_object_id": "59504787064"
+    },
+    {
+     "ea_contract_detail_id": "2274",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.357Z",
+     "hs_object_id": "59504787060"
+    },
+    {
+     "ea_contract_detail_id": "2072",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.316Z",
+     "hs_object_id": "59504787055"
+    },
+    {
+     "ea_contract_detail_id": "3432",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.391Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.013Z",
+     "hs_object_id": "59504787078"
+    },
+    {
+     "ea_contract_detail_id": "2953",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:54.974Z",
+     "hs_object_id": "59504787072"
+    },
+    {
+     "ea_contract_detail_id": "3286",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.391Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.316Z",
+     "hs_object_id": "59504787075"
+    },
+    {
+     "ea_contract_detail_id": "2667",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.397Z",
+     "hs_object_id": "59504787063"
+    },
+    {
+     "ea_contract_detail_id": "2273",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.357Z",
+     "hs_object_id": "59504787059"
+    },
+    {
+     "ea_contract_detail_id": "2466",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.357Z",
+     "hs_object_id": "59504787062"
+    },
+    {
+     "ea_contract_detail_id": "2465",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.101Z",
+     "hs_object_id": "59504787061"
+    },
+    {
+     "ea_contract_detail_id": "1894",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.101Z",
+     "hs_object_id": "59504787049"
+    },
+    {
+     "ea_contract_detail_id": "3433",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.391Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.464Z",
+     "hs_object_id": "59504787079"
+    },
+    {
+     "ea_contract_detail_id": "2952",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:54.974Z",
+     "hs_object_id": "59504787071"
+    },
+    {
+     "ea_contract_detail_id": "1895",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.039Z",
+     "hs_object_id": "59504787050"
+    },
+    {
+     "ea_contract_detail_id": "2073",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.768Z",
+     "hs_object_id": "59504787056"
+    },
+    {
+     "ea_contract_detail_id": "3285",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.391Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.316Z",
+     "hs_object_id": "59504787074"
+    }
+   ],
+   "meter": [],
+   "service_call": [
+    {
+     "ea_call_number": "1997",
+     "ea_close_date": null,
+     "ea_date": "2024-04-04",
+     "ea_description": null,
+     "ea_equipment_number": "123456",
+     "ea_status": "H",
+     "hs_createdate": "2026-07-29T16:55:02.808Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.377Z",
+     "hs_object_id": "59502195477"
+    },
+    {
+     "ea_call_number": "1907",
+     "ea_close_date": null,
+     "ea_date": "2021-04-19",
+     "ea_description": "Jamming",
+     "ea_equipment_number": "123456",
+     "ea_status": "P",
+     "hs_createdate": "2026-07-29T16:55:02.808Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.377Z",
+     "hs_object_id": "59502195469"
+    }
+   ]
+  }
+ },
+ {
+  "id": "57105689958",
+  "props": {
+   "city": "Townson",
+   "createdate": "2026-07-29T18:43:38.179Z",
+   "ea_customer_number": "BCPS",
+   "ea_fleet_color_pct": "20.0",
+   "ea_fleet_contract_count": "5",
+   "ea_fleet_lease_count": "5",
+   "ea_fleet_lifetime_pages": "667524",
+   "ea_fleet_machine_count": "1",
+   "ea_fleet_meter_count": "0",
+   "ea_fleet_monthly_spend": "250.0",
+   "ea_fleet_monthly_volume": "41979",
+   "ea_fleet_next_expiry": "2013-07-01",
+   "ea_fleet_open_calls": "0",
+   "ea_fleet_summary_updated": "2026-07-29",
+   "ea_fleet_volume_basis": "printreleaf_historic",
+   "ea_fleet_volume_period": "2011",
+   "hs_lastmodifieddate": "2026-07-29T19:41:57.955Z",
+   "hs_object_id": "57105689958",
+   "name": "Baltimore County Public School",
+   "state": "MD"
+  },
+  "children": {
+   "equipment": [
+    {
+     "ea_city": "Townson",
+     "ea_equipment_number": "EQ100776",
+     "ea_location_description": null,
+     "ea_serial_number": "20100815-1",
+     "ea_state": "MD",
+     "ea_warranty_date": null,
+     "hs_createdate": "2026-07-29T18:43:42.106Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:12.257Z",
+     "hs_object_id": "59503455816",
+     "install_date": null
+    }
+   ],
+   "contract": [
+    {
+     "base_rate": "50",
+     "contract_type": "202",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "202-05",
+     "ea_exp_date": "2025-07-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:17.766Z",
+     "hs_object_id": "59505088002",
+     "start_date": "2022-07-01"
+    },
+    {
+     "base_rate": "50",
+     "contract_type": "202",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "202-02",
+     "ea_exp_date": "2016-07-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:10:53.965Z",
+     "hs_object_id": "59505087929",
+     "start_date": "2013-07-01"
+    },
+    {
+     "base_rate": "50",
+     "contract_type": "202",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "202-04",
+     "ea_exp_date": "2022-07-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.929Z",
+     "hs_object_id": "59505088001",
+     "start_date": "2019-07-01"
+    },
+    {
+     "base_rate": "50",
+     "contract_type": "202",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "202-03",
+     "ea_exp_date": "2019-07-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.699Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.929Z",
+     "hs_object_id": "59505088000",
+     "start_date": "2016-07-01"
+    },
+    {
+     "base_rate": "50",
+     "contract_type": "202",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "202-01",
+     "ea_exp_date": "2013-07-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.698Z",
+     "hs_lastmodifieddate": "2026-07-29T19:10:53.965Z",
+     "hs_object_id": "59505087928",
+     "start_date": "2010-07-01"
+    }
+   ],
+   "lease": [
+    {
+     "ea_contract_detail_id": "744",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.316Z",
+     "hs_object_id": "59504787038"
+    },
+    {
+     "ea_contract_detail_id": "2791",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.101Z",
+     "hs_object_id": "59504787067"
+    },
+    {
+     "ea_contract_detail_id": "1916",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.464Z",
+     "hs_object_id": "59504787054"
+    },
+    {
+     "ea_contract_detail_id": "3332",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.391Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.101Z",
+     "hs_object_id": "59504787077"
+    },
+    {
+     "ea_contract_detail_id": "1255",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.122Z",
+     "hs_object_id": "59504787046"
+    }
+   ],
+   "meter": [],
+   "service_call": []
+  }
+ },
+ {
+  "id": "57115385187",
+  "props": {
+   "city": "Houston",
+   "createdate": "2026-07-29T16:54:54.544Z",
+   "ea_customer_number": "BANKOFAMER",
+   "ea_fleet_color_pct": "47.9",
+   "ea_fleet_contract_count": "1",
+   "ea_fleet_lease_count": "0",
+   "ea_fleet_lifetime_pages": "2932596",
+   "ea_fleet_machine_count": "5",
+   "ea_fleet_meter_count": "13",
+   "ea_fleet_monthly_spend": "200.0",
+   "ea_fleet_monthly_volume": "13917",
+   "ea_fleet_next_expiry": "2005-02-19",
+   "ea_fleet_open_calls": "8",
+   "ea_fleet_summary_updated": "2026-07-29",
+   "ea_fleet_volume_basis": "printreleaf_historic",
+   "ea_fleet_volume_period": "2024",
+   "hs_lastmodifieddate": "2026-07-29T19:41:57.954Z",
+   "hs_object_id": "57115385187",
+   "name": "Bank of America",
+   "state": "TX"
+  },
+  "children": {
+   "equipment": [
+    {
+     "ea_city": "Houston",
+     "ea_equipment_number": "12346",
+     "ea_location_description": null,
+     "ea_serial_number": "PCRA002821",
+     "ea_state": "TX",
+     "ea_warranty_date": null,
+     "hs_createdate": "2026-07-29T16:54:57.219Z",
+     "hs_lastmodifieddate": "2026-07-29T17:51:13.316Z",
+     "hs_object_id": "59502222643",
+     "install_date": "2000-01-01"
+    },
+    {
+     "ea_city": "Houston",
+     "ea_equipment_number": "K1234",
+     "ea_location_description": null,
+     "ea_serial_number": "4GJ02242",
+     "ea_state": "TX",
+     "ea_warranty_date": "2002-05-11",
+     "hs_createdate": "2026-07-29T16:54:57.219Z",
+     "hs_lastmodifieddate": "2026-07-29T17:51:13.316Z",
+     "hs_object_id": "59502222659",
+     "install_date": "2001-04-18"
+    },
+    {
+     "ea_city": "Houston",
+     "ea_equipment_number": "54321A",
+     "ea_location_description": null,
+     "ea_serial_number": "4MC09941",
+     "ea_state": "TX",
+     "ea_warranty_date": "2001-09-20",
+     "hs_createdate": "2026-07-29T16:54:57.219Z",
+     "hs_lastmodifieddate": "2026-07-29T17:51:13.316Z",
+     "hs_object_id": "59502222662",
+     "install_date": null
+    },
+    {
+     "ea_city": "Houston",
+     "ea_equipment_number": "061801",
+     "ea_location_description": null,
+     "ea_serial_number": "PFXA002581",
+     "ea_state": "TX",
+     "ea_warranty_date": "2001-09-18",
+     "hs_createdate": "2026-07-29T16:54:57.219Z",
+     "hs_lastmodifieddate": "2026-07-29T17:51:13.316Z",
+     "hs_object_id": "59502222660",
+     "install_date": "2001-06-18"
+    },
+    {
+     "ea_city": "Houston",
+     "ea_equipment_number": "12345",
+     "ea_location_description": "Copy room on 4th floor",
+     "ea_serial_number": "27V02385",
+     "ea_state": "TX",
+     "ea_warranty_date": "2000-04-20",
+     "hs_createdate": "2026-07-29T16:54:57.219Z",
+     "hs_lastmodifieddate": "2026-07-29T17:51:13.316Z",
+     "hs_object_id": "59502222642",
+     "install_date": "2000-01-01"
+    }
+   ],
+   "contract": [
+    {
+     "base_rate": "200",
+     "contract_type": "118",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "118-01",
+     "ea_exp_date": "2005-02-19",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T16:55:43.375Z",
+     "hs_lastmodifieddate": "2026-07-29T19:10:53.965Z",
+     "hs_object_id": "59501999702",
+     "start_date": "2004-02-19"
+    }
+   ],
+   "lease": [],
+   "meter": [
+    {
+     "ea_equipment_number": "EQ100102",
+     "ea_is_default": "true",
+     "ea_meter_digits": "5",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:56:30.522Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.517Z",
+     "hs_object_id": "59502089764"
+    },
+    {
+     "ea_equipment_number": "EQ100099",
+     "ea_is_default": "false",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "Color",
+     "hs_createdate": "2026-07-29T16:56:30.522Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.369Z",
+     "hs_object_id": "59502089762"
+    },
+    {
+     "ea_equipment_number": "12346",
+     "ea_is_default": "true",
+     "ea_meter_digits": "5",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:55:01.553Z",
+     "hs_lastmodifieddate": "2026-07-29T16:55:01.995Z",
+     "hs_object_id": "59501390120"
+    },
+    {
+     "ea_equipment_number": "EQ100155",
+     "ea_is_default": "true",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "Total Count",
+     "hs_createdate": "2026-07-29T16:56:31.172Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.728Z",
+     "hs_object_id": "59501684067"
+    },
+    {
+     "ea_equipment_number": "EQ100099",
+     "ea_is_default": "false",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "Total Count",
+     "hs_createdate": "2026-07-29T16:56:30.522Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.476Z",
+     "hs_object_id": "59502089763"
+    },
+    {
+     "ea_equipment_number": "EQ100099",
+     "ea_is_default": "true",
+     "ea_meter_digits": "9",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:56:30.522Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.135Z",
+     "hs_object_id": "59502089761"
+    },
+    {
+     "ea_equipment_number": "EQ100155",
+     "ea_is_default": "false",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "Color",
+     "hs_createdate": "2026-07-29T16:56:31.172Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:32.111Z",
+     "hs_object_id": "59501684068"
+    },
+    {
+     "ea_equipment_number": "061801",
+     "ea_is_default": "true",
+     "ea_meter_digits": "5",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:55:01.553Z",
+     "hs_lastmodifieddate": "2026-07-29T16:55:02.395Z",
+     "hs_object_id": "59501390127"
+    },
+    {
+     "ea_equipment_number": "EQ100109",
+     "ea_is_default": "true",
+     "ea_meter_digits": "5",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:56:30.522Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.517Z",
+     "hs_object_id": "59502089767"
+    },
+    {
+     "ea_equipment_number": "EQ100155",
+     "ea_is_default": "false",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:56:31.172Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.728Z",
+     "hs_object_id": "59501684069"
+    },
+    {
+     "ea_equipment_number": "12345",
+     "ea_is_default": "true",
+     "ea_meter_digits": "5",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:55:01.553Z",
+     "hs_lastmodifieddate": "2026-07-29T16:55:02.418Z",
+     "hs_object_id": "59501390119"
+    },
+    {
+     "ea_equipment_number": "EQ100156",
+     "ea_is_default": "true",
+     "ea_meter_digits": "5",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:56:31.172Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:32.193Z",
+     "hs_object_id": "59501684070"
+    },
+    {
+     "ea_equipment_number": "54321A",
+     "ea_is_default": "true",
+     "ea_meter_digits": "5",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:56:30.521Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.369Z",
+     "hs_object_id": "59502089626"
+    }
+   ],
+   "service_call": [
+    {
+     "ea_call_number": "2461",
+     "ea_close_date": null,
+     "ea_date": "2025-11-17",
+     "ea_description": "Reference: 5225AH44940 customer reports reoccurring issue. see 5225AG65460. per customer advise same clicking noise happens on the machine. requests for tech onsite.",
+     "ea_equipment_number": "12345",
+     "ea_status": "P",
+     "hs_createdate": "2026-07-29T19:10:58.188Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.885Z",
+     "hs_object_id": "59505628821"
+    },
+    {
+     "ea_call_number": "2532",
+     "ea_close_date": null,
+     "ea_date": "2026-07-29",
+     "ea_description": "Reference: QC-TEST-001 QC connectivity test - please ignore",
+     "ea_equipment_number": "12345",
+     "ea_status": "P",
+     "hs_createdate": "2026-07-29T19:10:58.188Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.885Z",
+     "hs_object_id": "59505628825"
+    },
+    {
+     "ea_call_number": "2481",
+     "ea_close_date": null,
+     "ea_date": "2025-11-17",
+     "ea_description": "Reference: 5225AG61850 Installation for CE00085413",
+     "ea_equipment_number": "54321A",
+     "ea_status": "P",
+     "hs_createdate": "2026-07-29T19:10:58.188Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.885Z",
+     "hs_object_id": "59505628823"
+    },
+    {
+     "ea_call_number": "2478",
+     "ea_close_date": null,
+     "ea_date": "2025-11-17",
+     "ea_description": "Reference: 5225AG82310 Installation for CE00085420",
+     "ea_equipment_number": "K1234",
+     "ea_status": "P",
+     "hs_createdate": "2026-07-29T19:10:58.188Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:44.538Z",
+     "hs_object_id": "59505628852"
+    },
+    {
+     "ea_call_number": "2479",
+     "ea_close_date": null,
+     "ea_date": "2025-11-17",
+     "ea_description": "Reference: 5225AG82300 Installation for CE00085406",
+     "ea_equipment_number": "061801",
+     "ea_status": "P",
+     "hs_createdate": "2026-07-29T19:10:58.188Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.885Z",
+     "hs_object_id": "59505628822"
+    },
+    {
+     "ea_call_number": "1901",
+     "ea_close_date": null,
+     "ea_date": "2021-03-30",
+     "ea_description": null,
+     "ea_equipment_number": "12345",
+     "ea_status": "H",
+     "hs_createdate": "2026-07-29T16:55:02.808Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.377Z",
+     "hs_object_id": "59502195468"
+    },
+    {
+     "ea_call_number": "1883",
+     "ea_close_date": null,
+     "ea_date": "2021-01-29",
+     "ea_description": null,
+     "ea_equipment_number": "12345",
+     "ea_status": "H",
+     "hs_createdate": "2026-07-29T16:55:02.808Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.377Z",
+     "hs_object_id": "59502195466"
+    },
+    {
+     "ea_call_number": "2462",
+     "ea_close_date": null,
+     "ea_date": "2025-11-17",
+     "ea_description": "Reference: 5225AH26100 Installation for CE00085449",
+     "ea_equipment_number": "12346",
+     "ea_status": "P",
+     "hs_createdate": "2026-07-29T19:10:58.188Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.885Z",
+     "hs_object_id": "59505628784"
+    }
+   ]
+  }
+ },
+ {
+  "id": "57115385192",
+  "props": {
+   "city": "Houston",
+   "createdate": "2026-07-29T16:54:54.544Z",
+   "ea_customer_number": "BANKONE",
+   "ea_fleet_color_pct": "0.0",
+   "ea_fleet_contract_count": "0",
+   "ea_fleet_lease_count": "0",
+   "ea_fleet_lifetime_pages": "171000",
+   "ea_fleet_machine_count": "1",
+   "ea_fleet_meter_count": "9",
+   "ea_fleet_monthly_spend": "0.0",
+   "ea_fleet_monthly_volume": "10917",
+   "ea_fleet_next_expiry": null,
+   "ea_fleet_open_calls": "1",
+   "ea_fleet_summary_updated": "2026-07-29",
+   "ea_fleet_volume_basis": "printreleaf_historic",
+   "ea_fleet_volume_period": "2004",
+   "hs_lastmodifieddate": "2026-07-29T19:41:57.954Z",
+   "hs_object_id": "57115385192",
+   "name": "Bank One",
+   "state": "TX"
+  },
+  "children": {
+   "equipment": [
+    {
+     "ea_city": "Houston",
+     "ea_equipment_number": "EQ100011",
+     "ea_location_description": null,
+     "ea_serial_number": "35E35690",
+     "ea_state": "TX",
+     "ea_warranty_date": null,
+     "hs_createdate": "2026-07-29T16:54:57.219Z",
+     "hs_lastmodifieddate": "2026-07-29T17:51:13.316Z",
+     "hs_object_id": "59502222672",
+     "install_date": null
+    }
+   ],
+   "contract": [],
+   "lease": [],
+   "meter": [
+    {
+     "ea_equipment_number": "EQ100060",
+     "ea_is_default": "true",
+     "ea_meter_digits": "9",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:56:30.521Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.722Z",
+     "hs_object_id": "59502089740"
+    },
+    {
+     "ea_equipment_number": "EQ100055",
+     "ea_is_default": "false",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "Color",
+     "hs_createdate": "2026-07-29T16:56:30.521Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.187Z",
+     "hs_object_id": "59502089728"
+    },
+    {
+     "ea_equipment_number": "EQ100055",
+     "ea_is_default": "false",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "Total Count",
+     "hs_createdate": "2026-07-29T16:56:30.521Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.369Z",
+     "hs_object_id": "59502089729"
+    },
+    {
+     "ea_equipment_number": "EQ100055",
+     "ea_is_default": "true",
+     "ea_meter_digits": "9",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:56:30.521Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.369Z",
+     "hs_object_id": "59502089657"
+    },
+    {
+     "ea_equipment_number": "EQ100060",
+     "ea_is_default": "false",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "Total Count",
+     "hs_createdate": "2026-07-29T16:56:30.521Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.476Z",
+     "hs_object_id": "59502089742"
+    },
+    {
+     "ea_equipment_number": "EQ100057",
+     "ea_is_default": "true",
+     "ea_meter_digits": "9",
+     "ea_meter_type_code": "B\\W",
+     "hs_createdate": "2026-07-29T16:56:30.521Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.369Z",
+     "hs_object_id": "59502089731"
+    },
+    {
+     "ea_equipment_number": "EQ100057",
+     "ea_is_default": "false",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "Color",
+     "hs_createdate": "2026-07-29T16:56:30.521Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.174Z",
+     "hs_object_id": "59502089732"
+    },
+    {
+     "ea_equipment_number": "EQ100060",
+     "ea_is_default": "false",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "Color",
+     "hs_createdate": "2026-07-29T16:56:30.521Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.369Z",
+     "hs_object_id": "59502089741"
+    },
+    {
+     "ea_equipment_number": "EQ100057",
+     "ea_is_default": "false",
+     "ea_meter_digits": "0",
+     "ea_meter_type_code": "Total Count",
+     "hs_createdate": "2026-07-29T16:56:30.521Z",
+     "hs_lastmodifieddate": "2026-07-29T16:56:31.135Z",
+     "hs_object_id": "59502089733"
+    }
+   ],
+   "service_call": [
+    {
+     "ea_call_number": "2492",
+     "ea_close_date": null,
+     "ea_date": "2025-11-17",
+     "ea_description": "Reference: 5225AG33430 PO BC0021523, EMETER, Steven Francken - 02 4784 4600 - sfrancken@baptistcare.org.au, Trade In: Canon MF746CX/2QH22894",
+     "ea_equipment_number": "EQ100011",
+     "ea_status": "D",
+     "hs_createdate": "2026-07-29T19:10:58.188Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.885Z",
+     "hs_object_id": "59505628801"
+    }
+   ]
+  }
+ },
+ {
+  "id": "57105689955",
+  "props": {
+   "city": "Houston",
+   "createdate": "2026-07-29T18:43:38.179Z",
+   "ea_customer_number": "PE",
+   "ea_fleet_color_pct": "33.3",
+   "ea_fleet_contract_count": "4",
+   "ea_fleet_lease_count": "8",
+   "ea_fleet_lifetime_pages": "3195457",
+   "ea_fleet_machine_count": "2",
+   "ea_fleet_meter_count": "0",
+   "ea_fleet_monthly_spend": "800.0",
+   "ea_fleet_monthly_volume": "7625",
+   "ea_fleet_next_expiry": "2013-08-01",
+   "ea_fleet_open_calls": "0",
+   "ea_fleet_summary_updated": "2026-07-29",
+   "ea_fleet_volume_basis": "printreleaf_historic",
+   "ea_fleet_volume_period": "2021",
+   "hs_lastmodifieddate": "2026-07-29T19:41:57.956Z",
+   "hs_object_id": "57105689955",
+   "name": "Plains Exploration & Production Company",
+   "state": "TX"
+  },
+  "children": {
+   "equipment": [
+    {
+     "ea_city": "Houston",
+     "ea_equipment_number": "EQ100538",
+     "ea_location_description": "Copy Room",
+     "ea_serial_number": "20071022-1",
+     "ea_state": "TX",
+     "ea_warranty_date": null,
+     "hs_createdate": "2026-07-29T18:43:42.106Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:12.257Z",
+     "hs_object_id": "59503455812",
+     "install_date": "2007-10-22"
+    },
+    {
+     "ea_city": "Houston",
+     "ea_equipment_number": "EQ100537",
+     "ea_location_description": "Copy room",
+     "ea_serial_number": "20071019-abc",
+     "ea_state": "TX",
+     "ea_warranty_date": null,
+     "hs_createdate": "2026-07-29T18:43:42.106Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:12.257Z",
+     "hs_object_id": "59503455811",
+     "install_date": null
+    }
+   ],
+   "contract": [
+    {
+     "base_rate": "200",
+     "contract_type": "152",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "152-05",
+     "ea_exp_date": "2022-08-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.698Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.929Z",
+     "hs_object_id": "59505087917",
+     "start_date": "2019-08-01"
+    },
+    {
+     "base_rate": "200",
+     "contract_type": "152",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "152-03",
+     "ea_exp_date": "2016-08-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.698Z",
+     "hs_lastmodifieddate": "2026-07-29T19:10:53.965Z",
+     "hs_object_id": "59505087915",
+     "start_date": "2013-08-01"
+    },
+    {
+     "base_rate": "200",
+     "contract_type": "152",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "152-02",
+     "ea_exp_date": "2013-08-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.698Z",
+     "hs_lastmodifieddate": "2026-07-29T19:10:53.965Z",
+     "hs_object_id": "59505087914",
+     "start_date": "2010-08-01"
+    },
+    {
+     "base_rate": "200",
+     "contract_type": "152",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "152-04",
+     "ea_exp_date": "2019-08-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.698Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.929Z",
+     "hs_object_id": "59505087916",
+     "start_date": "2016-08-01"
+    }
+   ],
+   "lease": [
+    {
+     "ea_contract_detail_id": "797",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:54.955Z",
+     "hs_object_id": "59504787039"
+    },
+    {
+     "ea_contract_detail_id": "2806",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.485Z",
+     "hs_object_id": "59504787069"
+    },
+    {
+     "ea_contract_detail_id": "1252",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.397Z",
+     "hs_object_id": "59504787043"
+    },
+    {
+     "ea_contract_detail_id": "1253",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:54.955Z",
+     "hs_object_id": "59504787044"
+    },
+    {
+     "ea_contract_detail_id": "1910",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:54.955Z",
+     "hs_object_id": "59504787052"
+    },
+    {
+     "ea_contract_detail_id": "2807",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.101Z",
+     "hs_object_id": "59504787070"
+    },
+    {
+     "ea_contract_detail_id": "1909",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:54.955Z",
+     "hs_object_id": "59504787051"
+    },
+    {
+     "ea_contract_detail_id": "798",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.485Z",
+     "hs_object_id": "59504787040"
+    }
+   ],
+   "meter": [],
+   "service_call": []
+  }
+ },
+ {
+  "id": "57105689957",
+  "props": {
+   "city": "Houston",
+   "createdate": "2026-07-29T18:43:38.179Z",
+   "ea_customer_number": "slh",
+   "ea_fleet_color_pct": "20.0",
+   "ea_fleet_contract_count": "5",
+   "ea_fleet_lease_count": "5",
+   "ea_fleet_lifetime_pages": "1434480",
+   "ea_fleet_machine_count": "1",
+   "ea_fleet_meter_count": "0",
+   "ea_fleet_monthly_spend": "500.0",
+   "ea_fleet_monthly_volume": "4792",
+   "ea_fleet_next_expiry": "2013-06-01",
+   "ea_fleet_open_calls": "1",
+   "ea_fleet_summary_updated": "2026-07-29",
+   "ea_fleet_volume_basis": "printreleaf_historic",
+   "ea_fleet_volume_period": "2013",
+   "hs_lastmodifieddate": "2026-07-29T19:41:57.955Z",
+   "hs_object_id": "57105689957",
+   "name": "St. Luke's Hospital",
+   "state": "TX"
+  },
+  "children": {
+   "equipment": [
+    {
+     "ea_city": "Houston",
+     "ea_equipment_number": "EQ100774",
+     "ea_location_description": null,
+     "ea_serial_number": "20100712",
+     "ea_state": "TX",
+     "ea_warranty_date": null,
+     "hs_createdate": "2026-07-29T18:43:42.106Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:12.257Z",
+     "hs_object_id": "59503455815",
+     "install_date": null
+    }
+   ],
+   "contract": [
+    {
+     "base_rate": "100",
+     "contract_type": "200",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "200-05",
+     "ea_exp_date": "2025-06-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.698Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:17.766Z",
+     "hs_object_id": "59505087927",
+     "start_date": "2022-06-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "200",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "200-01",
+     "ea_exp_date": "2013-06-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.698Z",
+     "hs_lastmodifieddate": "2026-07-29T19:10:53.965Z",
+     "hs_object_id": "59505087923",
+     "start_date": "2010-06-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "200",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "200-02",
+     "ea_exp_date": "2016-06-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.698Z",
+     "hs_lastmodifieddate": "2026-07-29T19:10:53.965Z",
+     "hs_object_id": "59505087924",
+     "start_date": "2013-06-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "200",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "200-03",
+     "ea_exp_date": "2019-06-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.698Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.930Z",
+     "hs_object_id": "59505087925",
+     "start_date": "2016-06-01"
+    },
+    {
+     "base_rate": "100",
+     "contract_type": "200",
+     "ea_base_rate_period": "1",
+     "ea_contract_number": "200-04",
+     "ea_exp_date": "2022-06-01",
+     "ea_renewable": "true",
+     "hs_createdate": "2026-07-29T18:43:42.698Z",
+     "hs_lastmodifieddate": "2026-07-29T19:11:08.930Z",
+     "hs_object_id": "59505087926",
+     "start_date": "2019-06-01"
+    }
+   ],
+   "lease": [
+    {
+     "ea_contract_detail_id": "739",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:54.974Z",
+     "hs_object_id": "59504787037"
+    },
+    {
+     "ea_contract_detail_id": "1254",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.397Z",
+     "hs_object_id": "59504787045"
+    },
+    {
+     "ea_contract_detail_id": "2792",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:54.955Z",
+     "hs_object_id": "59504787068"
+    },
+    {
+     "ea_contract_detail_id": "1914",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.390Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.101Z",
+     "hs_object_id": "59504787053"
+    },
+    {
+     "ea_contract_detail_id": "3331",
+     "ea_lease_payment_amount": null,
+     "ea_lease_payment_end_date": null,
+     "ea_lease_principal_balance": null,
+     "ea_lease_rate_factor": null,
+     "ea_lease_schedule": null,
+     "ea_lease_term": null,
+     "hs_createdate": "2026-07-29T18:42:54.391Z",
+     "hs_lastmodifieddate": "2026-07-29T18:42:55.365Z",
+     "hs_object_id": "59504787076"
+    }
+   ],
+   "meter": [],
+   "service_call": [
+    {
+     "ea_call_number": "1491",
+     "ea_close_date": null,
+     "ea_date": "2018-02-05",
+     "ea_description": "Not working at all",
+     "ea_equipment_number": "EQ100774",
+     "ea_status": "P",
+     "hs_createdate": "2026-07-29T16:55:02.807Z",
+     "hs_lastmodifieddate": "2026-07-29T19:16:43.377Z",
+     "hs_object_id": "59502195382"
+    }
+   ]
+  }
+ }
+]

@@ -1,0 +1,363 @@
+<title>Account overview on a HubSpot company record</title>
+<style>
+:root{
+  --ground:#f6f7f6; --raise:#ffffff; --sink:#eceeec;
+  --ink:#131a1b; --ink-2:#47534f; --ink-3:#79857f;
+  --line:#dbe0dc; --line-2:#c6cec8;
+  --accent:#0e6b63; --accent-soft:#e2efec;
+  --good:#3f6b3a; --warn:#8a4a1c; --bad:#7d2b2b; --colour:#a8681c;
+  --measured:#0e6b63; --derived:#4a6b8a; --rated:#8a4a1c; --empty:#8b938e;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#0f1416; --raise:#161d1f; --sink:#1c2426;
+    --ink:#e8edea; --ink-2:#a3b0ab; --ink-3:#77837e;
+    --line:#252f31; --line-2:#33403f;
+    --accent:#4fbfae; --accent-soft:#15302d;
+    --good:#7fb173; --warn:#d1904f; --bad:#d4736c; --colour:#d8a252;
+    --measured:#4fbfae; --derived:#8fb2d4; --rated:#d1904f; --empty:#77837e;
+  }
+}
+:root[data-theme="light"]{
+  --ground:#f6f7f6; --raise:#ffffff; --sink:#eceeec;
+  --ink:#131a1b; --ink-2:#47534f; --ink-3:#79857f;
+  --line:#dbe0dc; --line-2:#c6cec8;
+  --accent:#0e6b63; --accent-soft:#e2efec;
+  --good:#3f6b3a; --warn:#8a4a1c; --bad:#7d2b2b; --colour:#a8681c;
+  --measured:#0e6b63; --derived:#4a6b8a; --rated:#8a4a1c; --empty:#8b938e;
+}
+:root[data-theme="dark"]{
+  --ground:#0f1416; --raise:#161d1f; --sink:#1c2426;
+  --ink:#e8edea; --ink-2:#a3b0ab; --ink-3:#77837e;
+  --line:#252f31; --line-2:#33403f;
+  --accent:#4fbfae; --accent-soft:#15302d;
+  --good:#7fb173; --warn:#d1904f; --bad:#d4736c; --colour:#d8a252;
+  --measured:#4fbfae; --derived:#8fb2d4; --rated:#d1904f; --empty:#77837e;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 22px 80px}
+
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:9px;
+  align-items:center}
+.eyebrow b{color:var(--accent);font-weight:600}
+h1{font-size:clamp(27px,4.1vw,40px);line-height:1.08;letter-spacing:-.023em;
+  font-weight:760;margin:13px 0 10px;text-wrap:balance;max-width:23ch}
+.lede{color:var(--ink-2);max-width:66ch;margin:0}
+.lede code{font-family:var(--mono);font-size:.88em;background:var(--sink);
+  padding:1px 5px;border-radius:3px}
+
+/* account switcher */
+.picker{display:flex;flex-wrap:wrap;gap:7px;margin:26px 0 22px;
+  border-top:1px solid var(--line);padding-top:20px}
+.pick{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;
+  background:var(--raise);color:var(--ink-2);border:1px solid var(--line);
+  padding:7px 11px;border-radius:2px;cursor:pointer;text-align:left;
+  transition:border-color .13s,color .13s}
+.pick:hover{border-color:var(--line-2);color:var(--ink)}
+.pick[aria-pressed="true"]{border-color:var(--accent);color:var(--ink);
+  background:var(--accent-soft);box-shadow:inset 2px 0 0 var(--accent)}
+.pick:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.pick .n{display:block;font-family:var(--sans);font-size:13px;font-weight:600;
+  letter-spacing:0;margin-bottom:1px}
+
+/* record shell */
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr);gap:20px;
+  align-items:start}
+@media (max-width:900px){.shell{grid-template-columns:minmax(0,1fr)}}
+
+.card{background:var(--raise);border:1px solid var(--line);border-radius:3px}
+.card>h3{margin:0;padding:11px 14px;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:600;
+  display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.card>h3 .cnt{color:var(--accent)}
+
+/* left rail summary */
+.rail{display:flex;flex-direction:column;gap:14px;position:sticky;top:18px}
+@media (max-width:900px){.rail{position:static}}
+.who{padding:14px}
+.who .nm{font-size:19px;font-weight:680;letter-spacing:-.014em;line-height:1.2}
+.who .loc{color:var(--ink-3);font-size:13px;margin-top:2px}
+.who .cust{font-family:var(--mono);font-size:11px;color:var(--accent);
+  margin-top:8px;letter-spacing:.03em}
+
+.hero-fig{padding:14px;border-bottom:1px solid var(--line)}
+.hero-fig .v{font-family:var(--mono);font-size:31px;font-weight:600;
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.hero-fig .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-3);margin-top:5px}
+
+dl.props{margin:0;padding:4px 0}
+dl.props>div{display:flex;justify-content:space-between;gap:12px;align-items:baseline;
+  padding:6px 14px}
+dl.props dt{color:var(--ink-2);font-size:13px;margin:0}
+dl.props dd{margin:0;font-family:var(--mono);font-size:13px;font-weight:600;
+  font-variant-numeric:tabular-nums;text-align:right}
+dl.props dd.blank{color:var(--empty);font-weight:400}
+
+/* provenance chip */
+.chip{display:inline-flex;align-items:center;gap:4px;font-family:var(--mono);
+  font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
+  padding:2px 5px;border-radius:2px;border:1px solid currentColor;
+  font-weight:600;white-space:nowrap}
+.chip.measured{color:var(--measured)}
+.chip.derived{color:var(--derived)}
+.chip.rated{color:var(--rated)}
+.chip.empty{color:var(--empty)}
+.provline{padding:10px 14px;border-top:1px solid var(--line);
+  color:var(--ink-3);font-size:12px;line-height:1.45}
+
+/* tables */
+.tables{display:flex;flex-direction:column;gap:20px;min-width:0}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:600;text-align:left;padding:8px 11px;
+  border-bottom:1px solid var(--line);white-space:nowrap;background:var(--raise)}
+td{padding:8px 11px;border-bottom:1px solid var(--line);white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--sink)}
+td.id{font-family:var(--mono);font-weight:600;letter-spacing:.01em}
+td.num{font-family:var(--mono);text-align:right}
+td.mono{font-family:var(--mono);color:var(--ink-2)}
+td.blank{color:var(--empty)}
+td.blank::after{content:"—"}
+
+.state{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:600;
+  letter-spacing:.07em;text-transform:uppercase;padding:1px 6px;border-radius:2px}
+.state.good{color:var(--good);box-shadow:inset 0 0 0 1px currentColor}
+.state.warn{color:var(--warn);box-shadow:inset 0 0 0 1px currentColor}
+.state.bad{color:var(--bad);box-shadow:inset 0 0 0 1px currentColor}
+
+.empty-note{padding:16px 14px;color:var(--ink-3);font-size:13px;line-height:1.5}
+.empty-note b{color:var(--ink-2);font-weight:600}
+
+/* colour split bar */
+.split{display:flex;height:5px;border-radius:3px;overflow:hidden;margin:9px 14px 4px;
+  background:var(--sink)}
+.split i{display:block;height:100%}
+.split-key{display:flex;gap:13px;padding:0 14px 11px;font-family:var(--mono);
+  font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.split-key span{display:flex;align-items:center;gap:4px}
+.split-key i{width:8px;height:8px;border-radius:1px;display:block}
+
+footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);
+  color:var(--ink-3);font-size:12.5px;line-height:1.6;max-width:74ch}
+footer b{color:var(--ink-2)}
+footer code{font-family:var(--mono);font-size:.9em}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<div class="wrap">
+  <p class="eyebrow"><b>Live portal 47404459</b><span>&middot;</span>
+    <span>6 accounts</span><span>&middot;</span>
+    <span>223,194 pages/month across them</span><span>&middot;</span>
+    <span>read 2026-07-29</span></p>
+
+  <h1>What the account overview looks like on the record</h1>
+  <p class="lede">The left rail is the <code>e-Automate Fleet Summary</code> property
+  group, live on all 160 companies in the portal right now &mdash; open a company,
+  <em>View all properties</em>, and it is there. The tables on the right are the
+  association cards. Every figure carries where it came from, because a counted page
+  and a rated duty cycle are the same number in a box and a very different quote.</p>
+
+  <div class="picker"><button class="pick" type="button" data-i="0" aria-pressed="true"><span class="n">HSBC - Canary Wharf</span>143,964 pg/mo &middot; 2 mach &middot; 8 ctr</button><button class="pick" type="button" data-i="1" aria-pressed="false"><span class="n">Baltimore County Public School</span>41,979 pg/mo &middot; 1 mach &middot; 5 ctr</button><button class="pick" type="button" data-i="2" aria-pressed="false"><span class="n">Bank of America</span>13,917 pg/mo &middot; 5 mach &middot; 1 ctr</button><button class="pick" type="button" data-i="3" aria-pressed="false"><span class="n">Bank One</span>10,917 pg/mo &middot; 1 mach &middot; 0 ctr</button><button class="pick" type="button" data-i="4" aria-pressed="false"><span class="n">Plains Exploration &amp; Production Company</span>7,625 pg/mo &middot; 2 mach &middot; 4 ctr</button><button class="pick" type="button" data-i="5" aria-pressed="false"><span class="n">St. Luke&#x27;s Hospital</span>4,792 pg/mo &middot; 1 mach &middot; 5 ctr</button></div>
+  <div class="shell" data-panel="0">
+<div class="rail">
+  <div class="card">
+    <div class="who">
+      <div class="nm">HSBC - Canary Wharf</div>
+      <div class="loc">Canary Wharf, London</div>
+      <div class="cust">Bank</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>e-Automate Fleet Summary</h3>
+    <div class="hero-fig">
+      <div class="v">143,964</div>
+      <div class="u">pages / month</div>
+      <div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">
+        <span class="chip measured">Counted</span><span class="chip measured">2021</span>
+      </div>
+    </div>
+    <div class="split"><i style="width:61.0%;background:var(--ink-3)"></i><i style="width:39.0%;background:var(--colour)"></i></div><div class="split-key"><span><i style="background:var(--ink-3)"></i>mono 61%</span><span><i style="background:var(--colour)"></i>colour 39%</span></div>
+    <dl class="props"><div><dt>Machines</dt><dd>2</dd></div><div><dt>Meters</dt><dd>0</dd></div><div><dt>Contracts</dt><dd>8</dd></div><div><dt>Leases</dt><dd>16</dd></div><div><dt>Open service calls</dt><dd>2</dd></div><div><dt>Spend / month</dt><dd>$800</dd></div><div><dt>Lifetime pages</dt><dd>10,896,097</dd></div></dl>
+    <div class="provline"><b>Next expiry</b>
+      &nbsp;<span style="font-family:var(--mono)">2017-01-01</span>
+      &nbsp;<span class="state bad">expired</span>
+    </div>
+    <div class="provline">Pages actually produced, but in the period shown -- a historical rate, not a current one.</div>
+  </div>
+</div><div class="tables"><section class="card"><h3>Equipment<span class="cnt">2</span></h3><div class="scroll"><table><thead><tr><th>Equipment #</th><th>Serial</th><th>Location</th><th>Description</th><th>Installed</th><th>Warranty</th></tr></thead><tbody><tr><td class="id">EQ100832</td><td class="mono">20130722</td><td class="mono">Canary Wharf, London</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">EQ100833</td><td class="mono">20130722</td><td class="mono">Canary Wharf, London</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr></tbody></table></div><div class="empty-note">Install date and description are blank because e-automate has them blank, not because they were not mapped.</div></section><section class="card"><h3>Contracts<span class="cnt">8</span></h3><div class="scroll"><table><thead><tr><th>Contract #</th><th>Start</th><th>Expires</th><th>State</th><th>Base rate</th><th>Renewable</th></tr></thead><tbody><tr><td class="id">223-04</td><td class="mono">2016-01-01</td><td class="mono">2017-01-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">223-05</td><td class="mono">2017-01-01</td><td class="mono">2018-01-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">223-06</td><td class="mono">2018-01-01</td><td class="mono">2019-01-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">223-07</td><td class="mono">2019-01-01</td><td class="mono">2020-01-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">223-08</td><td class="mono">2020-01-01</td><td class="mono">2021-01-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">223-09</td><td class="mono">2021-01-01</td><td class="mono">2022-01-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">223-10</td><td class="mono">2022-01-01</td><td class="mono">2023-01-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">223-11</td><td class="mono">2023-01-01</td><td class="mono">2024-01-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr></tbody></table></div></section><section class="card"><h3>Leases<span class="cnt">16</span></h3><div class="scroll"><table><thead><tr><th>Detail ID</th><th>Schedule</th><th>Term</th><th>Payment</th><th>Ends</th><th>Principal</th></tr></thead><tbody><tr><td class="id">2668</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2274</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2072</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">3432</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2953</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">3286</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2667</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2273</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2466</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2465</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1894</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">3433</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2952</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1895</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2073</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">3285</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr></tbody></table></div><div class="empty-note"><b>This is the honest state of the lease side.</b> The records and the associations are correct, and every term is blank: of 2,981 contract lines in the sandbox only 45 are leases and only one carries actual terms. The columns are built and waiting for a dealer whose lease data is filled in.</div></section><section class="card"><h3>Service Calls<span class="cnt">2</span></h3><div class="scroll"><table><thead><tr><th>Call #</th><th>Opened</th><th>Equipment #</th><th>Status</th><th>Description</th><th>Closed</th></tr></thead><tbody><tr><td class="id">1997</td><td class="mono">2024-04-04</td><td class="mono">123456</td><td><span class="state warn">H</span></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1907</td><td class="mono">2021-04-19</td><td class="mono">123456</td><td><span class="state warn">P</span></td><td class="mono">Jamming</td><td class="blank"></td></tr></tbody></table></div><div class="empty-note">Equipment # here was blank on every record until the call was re-read from <code>ByCallNumber</code> -- the list route returns it as null.</div></section><section class="card"><h3>Meters<span class="cnt">0</span></h3><div class="empty-note">No volume columns, deliberately: every average on every meter in this sandbox reads 0. The fleet volume above comes from PrintReleaf, which counts pages actually produced.</div></section></div></div><div class="shell" data-panel="1" hidden>
+<div class="rail">
+  <div class="card">
+    <div class="who">
+      <div class="nm">Baltimore County Public School</div>
+      <div class="loc">Townson, MD</div>
+      <div class="cust">BCPS</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>e-Automate Fleet Summary</h3>
+    <div class="hero-fig">
+      <div class="v">41,979</div>
+      <div class="u">pages / month</div>
+      <div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">
+        <span class="chip measured">Counted</span><span class="chip measured">2011</span>
+      </div>
+    </div>
+    <div class="split"><i style="width:80.0%;background:var(--ink-3)"></i><i style="width:20.0%;background:var(--colour)"></i></div><div class="split-key"><span><i style="background:var(--ink-3)"></i>mono 80%</span><span><i style="background:var(--colour)"></i>colour 20%</span></div>
+    <dl class="props"><div><dt>Machines</dt><dd>1</dd></div><div><dt>Meters</dt><dd>0</dd></div><div><dt>Contracts</dt><dd>5</dd></div><div><dt>Leases</dt><dd>5</dd></div><div><dt>Open service calls</dt><dd>0</dd></div><div><dt>Spend / month</dt><dd>$250</dd></div><div><dt>Lifetime pages</dt><dd>667,524</dd></div></dl>
+    <div class="provline"><b>Next expiry</b>
+      &nbsp;<span style="font-family:var(--mono)">2013-07-01</span>
+      &nbsp;<span class="state bad">expired</span>
+    </div>
+    <div class="provline">Pages actually produced, but in the period shown -- a historical rate, not a current one.</div>
+  </div>
+</div><div class="tables"><section class="card"><h3>Equipment<span class="cnt">1</span></h3><div class="scroll"><table><thead><tr><th>Equipment #</th><th>Serial</th><th>Location</th><th>Description</th><th>Installed</th><th>Warranty</th></tr></thead><tbody><tr><td class="id">EQ100776</td><td class="mono">20100815-1</td><td class="mono">Townson, MD</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr></tbody></table></div><div class="empty-note">Install date and description are blank because e-automate has them blank, not because they were not mapped.</div></section><section class="card"><h3>Contracts<span class="cnt">5</span></h3><div class="scroll"><table><thead><tr><th>Contract #</th><th>Start</th><th>Expires</th><th>State</th><th>Base rate</th><th>Renewable</th></tr></thead><tbody><tr><td class="id">202-01</td><td class="mono">2010-07-01</td><td class="mono">2013-07-01</td><td><span class="state bad">expired</span></td><td class="num">$50</td><td class="mono">Yes</td></tr><tr><td class="id">202-02</td><td class="mono">2013-07-01</td><td class="mono">2016-07-01</td><td><span class="state bad">expired</span></td><td class="num">$50</td><td class="mono">Yes</td></tr><tr><td class="id">202-03</td><td class="mono">2016-07-01</td><td class="mono">2019-07-01</td><td><span class="state bad">expired</span></td><td class="num">$50</td><td class="mono">Yes</td></tr><tr><td class="id">202-04</td><td class="mono">2019-07-01</td><td class="mono">2022-07-01</td><td><span class="state bad">expired</span></td><td class="num">$50</td><td class="mono">Yes</td></tr><tr><td class="id">202-05</td><td class="mono">2022-07-01</td><td class="mono">2025-07-01</td><td><span class="state bad">expired</span></td><td class="num">$50</td><td class="mono">Yes</td></tr></tbody></table></div></section><section class="card"><h3>Leases<span class="cnt">5</span></h3><div class="scroll"><table><thead><tr><th>Detail ID</th><th>Schedule</th><th>Term</th><th>Payment</th><th>Ends</th><th>Principal</th></tr></thead><tbody><tr><td class="id">744</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2791</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1916</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">3332</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1255</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr></tbody></table></div><div class="empty-note"><b>This is the honest state of the lease side.</b> The records and the associations are correct, and every term is blank: of 2,981 contract lines in the sandbox only 45 are leases and only one carries actual terms. The columns are built and waiting for a dealer whose lease data is filled in.</div></section><section class="card"><h3>Service Calls<span class="cnt">0</span></h3><div class="empty-note">Equipment # here was blank on every record until the call was re-read from <code>ByCallNumber</code> -- the list route returns it as null.</div></section><section class="card"><h3>Meters<span class="cnt">0</span></h3><div class="empty-note">No volume columns, deliberately: every average on every meter in this sandbox reads 0. The fleet volume above comes from PrintReleaf, which counts pages actually produced.</div></section></div></div><div class="shell" data-panel="2" hidden>
+<div class="rail">
+  <div class="card">
+    <div class="who">
+      <div class="nm">Bank of America</div>
+      <div class="loc">Houston, TX</div>
+      <div class="cust">BANKOFAMER</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>e-Automate Fleet Summary</h3>
+    <div class="hero-fig">
+      <div class="v">13,917</div>
+      <div class="u">pages / month</div>
+      <div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">
+        <span class="chip measured">Counted</span><span class="chip measured">2024</span>
+      </div>
+    </div>
+    <div class="split"><i style="width:52.1%;background:var(--ink-3)"></i><i style="width:47.9%;background:var(--colour)"></i></div><div class="split-key"><span><i style="background:var(--ink-3)"></i>mono 52%</span><span><i style="background:var(--colour)"></i>colour 48%</span></div>
+    <dl class="props"><div><dt>Machines</dt><dd>5</dd></div><div><dt>Meters</dt><dd>13</dd></div><div><dt>Contracts</dt><dd>1</dd></div><div><dt>Leases</dt><dd>0</dd></div><div><dt>Open service calls</dt><dd>8</dd></div><div><dt>Spend / month</dt><dd>$200</dd></div><div><dt>Lifetime pages</dt><dd>2,932,596</dd></div></dl>
+    <div class="provline"><b>Next expiry</b>
+      &nbsp;<span style="font-family:var(--mono)">2005-02-19</span>
+      &nbsp;<span class="state bad">expired</span>
+    </div>
+    <div class="provline">Pages actually produced, but in the period shown -- a historical rate, not a current one.</div>
+  </div>
+</div><div class="tables"><section class="card"><h3>Equipment<span class="cnt">5</span></h3><div class="scroll"><table><thead><tr><th>Equipment #</th><th>Serial</th><th>Location</th><th>Description</th><th>Installed</th><th>Warranty</th></tr></thead><tbody><tr><td class="id">061801</td><td class="mono">PFXA002581</td><td class="mono">Houston, TX</td><td class="blank"></td><td class="mono">2001-06-18</td><td class="mono">2001-09-18</td></tr><tr><td class="id">12345</td><td class="mono">27V02385</td><td class="mono">Houston, TX</td><td class="mono">Copy room on 4th floor</td><td class="mono">2000-01-01</td><td class="mono">2000-04-20</td></tr><tr><td class="id">12346</td><td class="mono">PCRA002821</td><td class="mono">Houston, TX</td><td class="blank"></td><td class="mono">2000-01-01</td><td class="blank"></td></tr><tr><td class="id">54321A</td><td class="mono">4MC09941</td><td class="mono">Houston, TX</td><td class="blank"></td><td class="blank"></td><td class="mono">2001-09-20</td></tr><tr><td class="id">K1234</td><td class="mono">4GJ02242</td><td class="mono">Houston, TX</td><td class="blank"></td><td class="mono">2001-04-18</td><td class="mono">2002-05-11</td></tr></tbody></table></div><div class="empty-note">Install date and description are blank because e-automate has them blank, not because they were not mapped.</div></section><section class="card"><h3>Contracts<span class="cnt">1</span></h3><div class="scroll"><table><thead><tr><th>Contract #</th><th>Start</th><th>Expires</th><th>State</th><th>Base rate</th><th>Renewable</th></tr></thead><tbody><tr><td class="id">118-01</td><td class="mono">2004-02-19</td><td class="mono">2005-02-19</td><td><span class="state bad">expired</span></td><td class="num">$200</td><td class="mono">Yes</td></tr></tbody></table></div></section><section class="card"><h3>Leases<span class="cnt">0</span></h3><div class="empty-note"><b>This is the honest state of the lease side.</b> The records and the associations are correct, and every term is blank: of 2,981 contract lines in the sandbox only 45 are leases and only one carries actual terms. The columns are built and waiting for a dealer whose lease data is filled in.</div></section><section class="card"><h3>Service Calls<span class="cnt">8</span></h3><div class="scroll"><table><thead><tr><th>Call #</th><th>Opened</th><th>Equipment #</th><th>Status</th><th>Description</th><th>Closed</th></tr></thead><tbody><tr><td class="id">2532</td><td class="mono">2026-07-29</td><td class="mono">12345</td><td><span class="state warn">P</span></td><td class="mono">Reference: QC-TEST-001 QC connectivity test - please ignore</td><td class="blank"></td></tr><tr><td class="id">2461</td><td class="mono">2025-11-17</td><td class="mono">12345</td><td><span class="state warn">P</span></td><td class="mono">Reference: 5225AH44940 customer reports reoccurring issue. see 5225AG65460. per customer advise same clicking noise happens on the machine. requests for tech onsite.</td><td class="blank"></td></tr><tr><td class="id">2481</td><td class="mono">2025-11-17</td><td class="mono">54321A</td><td><span class="state warn">P</span></td><td class="mono">Reference: 5225AG61850 Installation for CE00085413</td><td class="blank"></td></tr><tr><td class="id">2478</td><td class="mono">2025-11-17</td><td class="mono">K1234</td><td><span class="state warn">P</span></td><td class="mono">Reference: 5225AG82310 Installation for CE00085420</td><td class="blank"></td></tr><tr><td class="id">2479</td><td class="mono">2025-11-17</td><td class="mono">061801</td><td><span class="state warn">P</span></td><td class="mono">Reference: 5225AG82300 Installation for CE00085406</td><td class="blank"></td></tr><tr><td class="id">2462</td><td class="mono">2025-11-17</td><td class="mono">12346</td><td><span class="state warn">P</span></td><td class="mono">Reference: 5225AH26100 Installation for CE00085449</td><td class="blank"></td></tr><tr><td class="id">1901</td><td class="mono">2021-03-30</td><td class="mono">12345</td><td><span class="state warn">H</span></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1883</td><td class="mono">2021-01-29</td><td class="mono">12345</td><td><span class="state warn">H</span></td><td class="blank"></td><td class="blank"></td></tr></tbody></table></div><div class="empty-note">Equipment # here was blank on every record until the call was re-read from <code>ByCallNumber</code> -- the list route returns it as null.</div></section><section class="card"><h3>Meters<span class="cnt">13</span></h3><div class="scroll"><table><thead><tr><th>Equipment #</th><th>Type</th><th>Default</th><th>Digits</th></tr></thead><tbody><tr><td class="id">061801</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">5</td></tr><tr><td class="id">12345</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">5</td></tr><tr><td class="id">12346</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">5</td></tr><tr><td class="id">54321A</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">5</td></tr><tr><td class="id">EQ100099</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">9</td></tr><tr><td class="id">EQ100099</td><td class="mono">Color</td><td class="mono">—</td><td class="mono">0</td></tr><tr><td class="id">EQ100099</td><td class="mono">Total Count</td><td class="mono">—</td><td class="mono">0</td></tr><tr><td class="id">EQ100102</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">5</td></tr><tr><td class="id">EQ100109</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">5</td></tr><tr><td class="id">EQ100155</td><td class="mono">B\W</td><td class="mono">—</td><td class="mono">0</td></tr><tr><td class="id">EQ100155</td><td class="mono">Color</td><td class="mono">—</td><td class="mono">0</td></tr><tr><td class="id">EQ100155</td><td class="mono">Total Count</td><td class="mono">Default</td><td class="mono">0</td></tr><tr><td class="id">EQ100156</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">5</td></tr></tbody></table></div><div class="empty-note">No volume columns, deliberately: every average on every meter in this sandbox reads 0. The fleet volume above comes from PrintReleaf, which counts pages actually produced.</div></section></div></div><div class="shell" data-panel="3" hidden>
+<div class="rail">
+  <div class="card">
+    <div class="who">
+      <div class="nm">Bank One</div>
+      <div class="loc">Houston, TX</div>
+      <div class="cust">BANKONE</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>e-Automate Fleet Summary</h3>
+    <div class="hero-fig">
+      <div class="v">10,917</div>
+      <div class="u">pages / month</div>
+      <div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">
+        <span class="chip measured">Counted</span><span class="chip measured">2004</span>
+      </div>
+    </div>
+    <div class="split"><i style="width:100.0%;background:var(--ink-3)"></i><i style="width:0.0%;background:var(--colour)"></i></div><div class="split-key"><span><i style="background:var(--ink-3)"></i>mono 100%</span><span><i style="background:var(--colour)"></i>colour 0%</span></div>
+    <dl class="props"><div><dt>Machines</dt><dd>1</dd></div><div><dt>Meters</dt><dd>9</dd></div><div><dt>Contracts</dt><dd>0</dd></div><div><dt>Leases</dt><dd>0</dd></div><div><dt>Open service calls</dt><dd>1</dd></div><div><dt>Spend / month</dt><dd>$0</dd></div><div><dt>Lifetime pages</dt><dd>171,000</dd></div></dl>
+    <div class="provline"><b>Next expiry</b>
+      &nbsp;<span style="font-family:var(--mono)">—</span>
+      
+    </div>
+    <div class="provline">Pages actually produced, but in the period shown -- a historical rate, not a current one.</div>
+  </div>
+</div><div class="tables"><section class="card"><h3>Equipment<span class="cnt">1</span></h3><div class="scroll"><table><thead><tr><th>Equipment #</th><th>Serial</th><th>Location</th><th>Description</th><th>Installed</th><th>Warranty</th></tr></thead><tbody><tr><td class="id">EQ100011</td><td class="mono">35E35690</td><td class="mono">Houston, TX</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr></tbody></table></div><div class="empty-note">Install date and description are blank because e-automate has them blank, not because they were not mapped.</div></section><section class="card"><h3>Contracts<span class="cnt">0</span></h3><div class="empty-note">Nothing associated.</div></section><section class="card"><h3>Leases<span class="cnt">0</span></h3><div class="empty-note"><b>This is the honest state of the lease side.</b> The records and the associations are correct, and every term is blank: of 2,981 contract lines in the sandbox only 45 are leases and only one carries actual terms. The columns are built and waiting for a dealer whose lease data is filled in.</div></section><section class="card"><h3>Service Calls<span class="cnt">1</span></h3><div class="scroll"><table><thead><tr><th>Call #</th><th>Opened</th><th>Equipment #</th><th>Status</th><th>Description</th><th>Closed</th></tr></thead><tbody><tr><td class="id">2492</td><td class="mono">2025-11-17</td><td class="mono">EQ100011</td><td><span class="state warn">D</span></td><td class="mono">Reference: 5225AG33430 PO BC0021523, EMETER, Steven Francken - 02 4784 4600 - sfrancken@baptistcare.org.au, Trade In: Canon MF746CX/2QH22894</td><td class="blank"></td></tr></tbody></table></div><div class="empty-note">Equipment # here was blank on every record until the call was re-read from <code>ByCallNumber</code> -- the list route returns it as null.</div></section><section class="card"><h3>Meters<span class="cnt">9</span></h3><div class="scroll"><table><thead><tr><th>Equipment #</th><th>Type</th><th>Default</th><th>Digits</th></tr></thead><tbody><tr><td class="id">EQ100055</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">9</td></tr><tr><td class="id">EQ100055</td><td class="mono">Color</td><td class="mono">—</td><td class="mono">0</td></tr><tr><td class="id">EQ100055</td><td class="mono">Total Count</td><td class="mono">—</td><td class="mono">0</td></tr><tr><td class="id">EQ100057</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">9</td></tr><tr><td class="id">EQ100057</td><td class="mono">Color</td><td class="mono">—</td><td class="mono">0</td></tr><tr><td class="id">EQ100057</td><td class="mono">Total Count</td><td class="mono">—</td><td class="mono">0</td></tr><tr><td class="id">EQ100060</td><td class="mono">B\W</td><td class="mono">Default</td><td class="mono">9</td></tr><tr><td class="id">EQ100060</td><td class="mono">Color</td><td class="mono">—</td><td class="mono">0</td></tr><tr><td class="id">EQ100060</td><td class="mono">Total Count</td><td class="mono">—</td><td class="mono">0</td></tr></tbody></table></div><div class="empty-note">No volume columns, deliberately: every average on every meter in this sandbox reads 0. The fleet volume above comes from PrintReleaf, which counts pages actually produced.</div></section></div></div><div class="shell" data-panel="4" hidden>
+<div class="rail">
+  <div class="card">
+    <div class="who">
+      <div class="nm">Plains Exploration &amp; Production Company</div>
+      <div class="loc">Houston, TX</div>
+      <div class="cust">PE</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>e-Automate Fleet Summary</h3>
+    <div class="hero-fig">
+      <div class="v">7,625</div>
+      <div class="u">pages / month</div>
+      <div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">
+        <span class="chip measured">Counted</span><span class="chip measured">2021</span>
+      </div>
+    </div>
+    <div class="split"><i style="width:66.7%;background:var(--ink-3)"></i><i style="width:33.3%;background:var(--colour)"></i></div><div class="split-key"><span><i style="background:var(--ink-3)"></i>mono 67%</span><span><i style="background:var(--colour)"></i>colour 33%</span></div>
+    <dl class="props"><div><dt>Machines</dt><dd>2</dd></div><div><dt>Meters</dt><dd>0</dd></div><div><dt>Contracts</dt><dd>4</dd></div><div><dt>Leases</dt><dd>8</dd></div><div><dt>Open service calls</dt><dd>0</dd></div><div><dt>Spend / month</dt><dd>$800</dd></div><div><dt>Lifetime pages</dt><dd>3,195,457</dd></div></dl>
+    <div class="provline"><b>Next expiry</b>
+      &nbsp;<span style="font-family:var(--mono)">2013-08-01</span>
+      &nbsp;<span class="state bad">expired</span>
+    </div>
+    <div class="provline">Pages actually produced, but in the period shown -- a historical rate, not a current one.</div>
+  </div>
+</div><div class="tables"><section class="card"><h3>Equipment<span class="cnt">2</span></h3><div class="scroll"><table><thead><tr><th>Equipment #</th><th>Serial</th><th>Location</th><th>Description</th><th>Installed</th><th>Warranty</th></tr></thead><tbody><tr><td class="id">EQ100537</td><td class="mono">20071019-abc</td><td class="mono">Houston, TX</td><td class="mono">Copy room</td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">EQ100538</td><td class="mono">20071022-1</td><td class="mono">Houston, TX</td><td class="mono">Copy Room</td><td class="mono">2007-10-22</td><td class="blank"></td></tr></tbody></table></div><div class="empty-note">Install date and description are blank because e-automate has them blank, not because they were not mapped.</div></section><section class="card"><h3>Contracts<span class="cnt">4</span></h3><div class="scroll"><table><thead><tr><th>Contract #</th><th>Start</th><th>Expires</th><th>State</th><th>Base rate</th><th>Renewable</th></tr></thead><tbody><tr><td class="id">152-02</td><td class="mono">2010-08-01</td><td class="mono">2013-08-01</td><td><span class="state bad">expired</span></td><td class="num">$200</td><td class="mono">Yes</td></tr><tr><td class="id">152-03</td><td class="mono">2013-08-01</td><td class="mono">2016-08-01</td><td><span class="state bad">expired</span></td><td class="num">$200</td><td class="mono">Yes</td></tr><tr><td class="id">152-04</td><td class="mono">2016-08-01</td><td class="mono">2019-08-01</td><td><span class="state bad">expired</span></td><td class="num">$200</td><td class="mono">Yes</td></tr><tr><td class="id">152-05</td><td class="mono">2019-08-01</td><td class="mono">2022-08-01</td><td><span class="state bad">expired</span></td><td class="num">$200</td><td class="mono">Yes</td></tr></tbody></table></div></section><section class="card"><h3>Leases<span class="cnt">8</span></h3><div class="scroll"><table><thead><tr><th>Detail ID</th><th>Schedule</th><th>Term</th><th>Payment</th><th>Ends</th><th>Principal</th></tr></thead><tbody><tr><td class="id">797</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2806</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1252</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1253</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1910</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2807</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1909</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">798</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr></tbody></table></div><div class="empty-note"><b>This is the honest state of the lease side.</b> The records and the associations are correct, and every term is blank: of 2,981 contract lines in the sandbox only 45 are leases and only one carries actual terms. The columns are built and waiting for a dealer whose lease data is filled in.</div></section><section class="card"><h3>Service Calls<span class="cnt">0</span></h3><div class="empty-note">Equipment # here was blank on every record until the call was re-read from <code>ByCallNumber</code> -- the list route returns it as null.</div></section><section class="card"><h3>Meters<span class="cnt">0</span></h3><div class="empty-note">No volume columns, deliberately: every average on every meter in this sandbox reads 0. The fleet volume above comes from PrintReleaf, which counts pages actually produced.</div></section></div></div><div class="shell" data-panel="5" hidden>
+<div class="rail">
+  <div class="card">
+    <div class="who">
+      <div class="nm">St. Luke&#x27;s Hospital</div>
+      <div class="loc">Houston, TX</div>
+      <div class="cust">slh</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>e-Automate Fleet Summary</h3>
+    <div class="hero-fig">
+      <div class="v">4,792</div>
+      <div class="u">pages / month</div>
+      <div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">
+        <span class="chip measured">Counted</span><span class="chip measured">2013</span>
+      </div>
+    </div>
+    <div class="split"><i style="width:80.0%;background:var(--ink-3)"></i><i style="width:20.0%;background:var(--colour)"></i></div><div class="split-key"><span><i style="background:var(--ink-3)"></i>mono 80%</span><span><i style="background:var(--colour)"></i>colour 20%</span></div>
+    <dl class="props"><div><dt>Machines</dt><dd>1</dd></div><div><dt>Meters</dt><dd>0</dd></div><div><dt>Contracts</dt><dd>5</dd></div><div><dt>Leases</dt><dd>5</dd></div><div><dt>Open service calls</dt><dd>1</dd></div><div><dt>Spend / month</dt><dd>$500</dd></div><div><dt>Lifetime pages</dt><dd>1,434,480</dd></div></dl>
+    <div class="provline"><b>Next expiry</b>
+      &nbsp;<span style="font-family:var(--mono)">2013-06-01</span>
+      &nbsp;<span class="state bad">expired</span>
+    </div>
+    <div class="provline">Pages actually produced, but in the period shown -- a historical rate, not a current one.</div>
+  </div>
+</div><div class="tables"><section class="card"><h3>Equipment<span class="cnt">1</span></h3><div class="scroll"><table><thead><tr><th>Equipment #</th><th>Serial</th><th>Location</th><th>Description</th><th>Installed</th><th>Warranty</th></tr></thead><tbody><tr><td class="id">EQ100774</td><td class="mono">20100712</td><td class="mono">Houston, TX</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr></tbody></table></div><div class="empty-note">Install date and description are blank because e-automate has them blank, not because they were not mapped.</div></section><section class="card"><h3>Contracts<span class="cnt">5</span></h3><div class="scroll"><table><thead><tr><th>Contract #</th><th>Start</th><th>Expires</th><th>State</th><th>Base rate</th><th>Renewable</th></tr></thead><tbody><tr><td class="id">200-01</td><td class="mono">2010-06-01</td><td class="mono">2013-06-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">200-02</td><td class="mono">2013-06-01</td><td class="mono">2016-06-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">200-03</td><td class="mono">2016-06-01</td><td class="mono">2019-06-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">200-04</td><td class="mono">2019-06-01</td><td class="mono">2022-06-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr><tr><td class="id">200-05</td><td class="mono">2022-06-01</td><td class="mono">2025-06-01</td><td><span class="state bad">expired</span></td><td class="num">$100</td><td class="mono">Yes</td></tr></tbody></table></div></section><section class="card"><h3>Leases<span class="cnt">5</span></h3><div class="scroll"><table><thead><tr><th>Detail ID</th><th>Schedule</th><th>Term</th><th>Payment</th><th>Ends</th><th>Principal</th></tr></thead><tbody><tr><td class="id">739</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1254</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">2792</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">1914</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr><tr><td class="id">3331</td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr></tbody></table></div><div class="empty-note"><b>This is the honest state of the lease side.</b> The records and the associations are correct, and every term is blank: of 2,981 contract lines in the sandbox only 45 are leases and only one carries actual terms. The columns are built and waiting for a dealer whose lease data is filled in.</div></section><section class="card"><h3>Service Calls<span class="cnt">1</span></h3><div class="scroll"><table><thead><tr><th>Call #</th><th>Opened</th><th>Equipment #</th><th>Status</th><th>Description</th><th>Closed</th></tr></thead><tbody><tr><td class="id">1491</td><td class="mono">2018-02-05</td><td class="mono">EQ100774</td><td><span class="state warn">P</span></td><td class="mono">Not working at all</td><td class="blank"></td></tr></tbody></table></div><div class="empty-note">Equipment # here was blank on every record until the call was re-read from <code>ByCallNumber</code> -- the list route returns it as null.</div></section><section class="card"><h3>Meters<span class="cnt">0</span></h3><div class="empty-note">No volume columns, deliberately: every average on every meter in this sandbox reads 0. The fleet volume above comes from PrintReleaf, which counts pages actually produced.</div></section></div></div>
+
+  <footer>
+    <p><b>What is real and what is not.</b> Every number here was read out of HubSpot,
+    which had it from CEO Juice. The blanks are real too &mdash; lease terms, install
+    dates and meter volumes are empty in the source, and showing them empty is the
+    point. The one thing on this page that is a mock-up is the arrangement: HubSpot
+    puts the property group behind <em>View all properties</em> until somebody pins it
+    to the sidebar in <b>Settings &rarr; Objects &rarr; Companies &rarr; Record
+    customization</b>, which is a UI-only setting with no API behind it.</p>
+    <p><b>Volume does not come from meters.</b> All 84 meters reachable across 120
+    machines report 0 for every average, including the manufacturer rating. The figure
+    above is from <code>/api/PrintReleaf/customers/{id}</code>, which counts pages
+    produced inside a window you specify &mdash; so the period is shown next to it. A
+    trailing-twelve-month query returns nothing here because this sandbox's data
+    largely stops years ago; that is a property of the sandbox, not of the route.</p>
+  </footer>
+</div>
+<script>
+(function(){
+  var picks=[].slice.call(document.querySelectorAll('.pick'));
+  var panels=[].slice.call(document.querySelectorAll('[data-panel]'));
+  picks.forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-i');
+      picks.forEach(function(o){o.setAttribute('aria-pressed',o===b?'true':'false');});
+      panels.forEach(function(p){p.hidden=p.getAttribute('data-panel')!==i;});
+    });
+  });
+})();
+</script>
