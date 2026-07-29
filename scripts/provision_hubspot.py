@@ -173,8 +173,13 @@ class HubSpot:
         self.token = token
         self.dry = dry
 
-    def call(self, method: str, path: str, body=None, tries: int = 4):
-        if self.dry and method != "GET":
+    def call(self, method: str, path: str, body=None, tries: int = 4,
+             read_only: bool = False):
+        # read_only lets a POST through in plan mode. HubSpot's search endpoint is a
+        # POST that reads, and stubbing it makes --plan unable to compute the fill
+        # counts it needs -- so the plan declines to act and reports a decision it
+        # would not actually make. A plan that cannot see is worse than no plan.
+        if self.dry and method != "GET" and not read_only:
             print(f"    [plan] {method} {path}")
             return 0, {}
         data = json.dumps(body).encode() if body is not None else None
@@ -247,6 +252,72 @@ class HubSpot:
                            "source data. hasUniqueValue cannot be added later — a PATCH "
                            "returns 200 and silently leaves it false."})
         print(f"    key {name}: HTTP {s} unique={d.get('hasUniqueValue')}")
+
+    def fill_count(self, ot: str, prop: str) -> int | None:
+        s, d = self.call("POST", f"/crm/v3/objects/{urllib.parse.quote(ot)}/search",
+                         {"limit": 1, "properties": ["hs_object_id"],
+                          "filterGroups": [{"filters": [
+                              {"propertyName": prop, "operator": "HAS_PROPERTY"}]}]},
+                         read_only=True)
+        return d.get("total") if s < 300 else None
+
+    def ensure_display_property(self, ot: str, key: str, secondaries: list[str],
+                                label: str) -> None:
+        """Point the record NAME at the property that actually holds a value.
+
+        An object we created names itself correctly. An object that was already in the
+        portal does not: its primaryDisplayProperty is whatever the portal owner picked
+        years ago, and a synced record leaves that property empty, so the record renders
+        with NO NAME AT ALL.
+
+        Measured in the demo portal: 1,109 of 1,259 Equipment records were nameless.
+        primaryDisplayProperty was `equipment_number`, populated on exactly the 150
+        records that predated the integration; the 1,109 synced machines carry
+        `ea_equipment_number`. The two sets were precisely disjoint -- which is why it
+        went unnoticed, because every record anyone had opened by hand looked fine.
+
+        So the decision is made on fill counts rather than on names, and the incumbent
+        property is demoted to a secondary rather than dropped, so the pre-existing
+        records degrade to a subtitle instead of vanishing in their turn.
+
+        A 200 here does not mean it applied; the schema is read back.
+        """
+        s, d = self.call("GET", f"/crm/v3/schemas/{urllib.parse.quote(ot)}")
+        if s >= 300:
+            print(f"    {label}: cannot read schema (HTTP {s})")
+            return
+        current = d.get("primaryDisplayProperty")
+        if current == key:
+            print(f"    {label}: display already {key}")
+            return
+
+        mine = self.fill_count(ot, key)
+        theirs = self.fill_count(ot, current) if current else 0
+        if mine is None:
+            print(f"    {label}: cannot count {key}, leaving display as {current}")
+            return
+        if not mine:
+            print(f"    {label}: {key} empty ({mine}), leaving display as {current}")
+            return
+        if theirs is not None and theirs >= mine:
+            print(f"    {label}: leaving display as {current} "
+                  f"({theirs} filled vs {mine} on {key})")
+            return
+
+        keep = [p for p in ([*secondaries, current] if current else secondaries)
+                if p and p != key]
+        if self.dry:
+            print(f"    {label}: WOULD set display {current} -> {key} "
+                  f"({mine} filled vs {theirs}), secondary {keep}")
+            return
+        s, _ = self.call("PATCH", f"/crm/v3/schemas/{urllib.parse.quote(ot)}",
+                         {"primaryDisplayProperty": key,
+                          "secondaryDisplayProperties": keep[:2]})
+        s2, d2 = self.call("GET", f"/crm/v3/schemas/{urllib.parse.quote(ot)}")
+        landed = d2.get("primaryDisplayProperty") if s2 < 300 else None
+        ok = "ok" if landed == key else f"DID NOT APPLY (still {landed})"
+        print(f"    {label}: display {current} -> {key} "
+              f"({mine} filled vs {theirs}) HTTP {s} {ok}")
 
     def regroup(self, ot: str) -> int:
         s, d = self.call("GET", f"/crm/v3/properties/{ot}")
@@ -616,6 +687,22 @@ def main() -> int:
         # Records without edges are orphans, so this is part of loading, not a nicety.
         wire_associations(hs, ids)
         roll_up_meters(hs, ids)
+
+    # Last, because it decides on fill counts and those are only meaningful once records
+    # exist. Safe to run against an empty object: it declines to repoint a display
+    # property at something nothing is filling.
+    print("\n== record display names ==")
+    eq, ct = hs.schemas().get("equipment"), hs.schemas().get("contract")
+    for ot, key, secondaries, label in (
+            (eq, "ea_equipment_number", ["ea_serial_number"], "Equipment"),
+            (ct, "ea_contract_number", ["ea_exp_date"], "Contract"),
+            (hs.schemas().get("lease"), "ea_contract_number",
+             ["ea_contract_detail_id"], "Lease"),
+            (ids.get("ea_service_call"), "ea_call_number", ["ea_status"], "Service Call"),
+            (ids.get("ea_meter"), "ea_meter_key", ["ea_meter_type_code"], "Meter"),
+            (ids.get("ea_invoice"), "ea_invoice_number", [], "Invoice")):
+        if ot:
+            hs.ensure_display_property(ot, key, secondaries, label)
 
     print("\nDone. Not built here, on purpose: lookup resolution (18 code-table "
           "fields should sync as a label, not an id) and phase 2 (381 properties).")
