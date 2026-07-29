@@ -1,0 +1,310 @@
+<title>CEO Juice → HubSpot Object Map</title>
+<style>
+:root{
+  --ink:#11151C;--ink2:#3C4553;--ink3:#6B7585;--ink4:#9AA3B2;
+  --ground:#FBFBFC;--panel:#FFF;--rule:#E3E7ED;--rule2:#EFF2F6;
+  --accent:#0E6E7D;--accent-soft:#E4F1F3;
+  --build:#C2410C;--build-soft:#FBEAE2;
+  --map:#15803D;--map-soft:#E6F4EA;
+  --new:#7C3AED;--new-soft:#F1EAFE;
+  --blocked:#B91C1C;--blocked-soft:#FCEAEA;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;}
+@media (prefers-color-scheme:dark){:root{
+  --ink:#E8ECF2;--ink2:#B4BDCA;--ink3:#8791A0;--ink4:#5D6675;
+  --ground:#0C1016;--panel:#131923;--rule:#242C3A;--rule2:#1B2230;
+  --accent:#4CB8C8;--accent-soft:#122A30;--build:#F0845A;--build-soft:#2E1A12;
+  --map:#4ADE80;--map-soft:#12281A;--new:#A78BFA;--new-soft:#1E1830;
+  --blocked:#F87171;--blocked-soft:#2A1414;}}
+:root[data-theme="dark"]{
+  --ink:#E8ECF2;--ink2:#B4BDCA;--ink3:#8791A0;--ink4:#5D6675;
+  --ground:#0C1016;--panel:#131923;--rule:#242C3A;--rule2:#1B2230;
+  --accent:#4CB8C8;--accent-soft:#122A30;--build:#F0845A;--build-soft:#2E1A12;
+  --map:#4ADE80;--map-soft:#12281A;--new:#A78BFA;--new-soft:#1E1830;
+  --blocked:#F87171;--blocked-soft:#2A1414;}
+:root[data-theme="light"]{
+  --ink:#11151C;--ink2:#3C4553;--ink3:#6B7585;--ink4:#9AA3B2;
+  --ground:#FBFBFC;--panel:#FFF;--rule:#E3E7ED;--rule2:#EFF2F6;
+  --accent:#0E6E7D;--accent-soft:#E4F1F3;--build:#C2410C;--build-soft:#FBEAE2;
+  --map:#15803D;--map-soft:#E6F4EA;--new:#7C3AED;--new-soft:#F1EAFE;
+  --blocked:#B91C1C;--blocked-soft:#FCEAEA;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px 90px}
+.mast{padding:48px 0 26px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink3);margin:0 0 13px}
+h1{font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:-.025em;font-weight:660;
+  margin:0 0 15px;text-wrap:balance;max-width:24ch}
+.lede{font-size:17px;color:var(--ink2);max-width:64ch;margin:0}
+.counts{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin:30px 0 0}
+.cell{background:var(--panel);padding:15px 17px}
+.cell .n{font-family:var(--mono);font-size:25px;font-weight:600;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;display:block;line-height:1.1}
+.cell.g .n{color:var(--map)}.cell.b .n{color:var(--build)}.cell.p .n{color:var(--new)}
+.cell .k{font-size:11.5px;color:var(--ink3);letter-spacing:.04em;text-transform:uppercase;
+  margin-top:5px;display:block}
+section{padding-top:48px}
+h2{font-size:23px;letter-spacing:-.02em;font-weight:640;margin:0 0 6px}
+h2 .num{font-family:var(--mono);font-size:12px;color:var(--ink4);font-weight:400;
+  letter-spacing:.06em;margin-right:11px;vertical-align:3px}
+.sub{color:var(--ink2);max-width:70ch;margin:0 0 22px}
+p{max-width:70ch}
+code{font-family:var(--mono);font-size:.885em;background:var(--rule2);padding:1.5px 5px;border-radius:3px}
+.note{border:1px solid var(--rule);border-left:2px solid var(--accent);background:var(--panel);
+  padding:15px 18px;margin:20px 0;max-width:74ch}
+.note.warn{border-left-color:var(--build)}.note.stop{border-left-color:var(--blocked)}
+.note .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:7px}
+.note.warn .lbl{color:var(--build)}.note.stop .lbl{color:var(--blocked)}
+.note p{margin:0;font-size:14.2px;color:var(--ink2);max-width:none}
+.note p+p{margin-top:9px}
+.tag{font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:2px;
+  text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.t-std{background:var(--map-soft);color:var(--map)}
+.t-exists{background:var(--accent-soft);color:var(--accent)}
+.t-new{background:var(--new-soft);color:var(--new)}
+.t-blocked{background:var(--blocked-soft);color:var(--blocked)}
+.t-build{background:var(--build-soft);color:var(--build)}
+.t-map{background:var(--map-soft);color:var(--map)}
+
+/* accordion rows */
+.acc{border:1px solid var(--rule);background:var(--panel);margin:0 0 -1px}
+details>summary{list-style:none;cursor:pointer;padding:14px 16px;display:grid;
+  grid-template-columns:38px 1fr auto;gap:14px;align-items:center}
+details>summary::-webkit-details-marker{display:none}
+details>summary:hover{background:var(--rule2)}
+details>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.rank{font-family:var(--mono);font-size:15px;font-weight:600;color:var(--ink4);
+  font-variant-numeric:tabular-nums;text-align:right}
+.flow{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+.flow .src{font-family:var(--mono);font-size:13.5px;color:var(--ink)}
+.flow .arr{color:var(--ink4)}
+.flow .dst{font-family:var(--mono);font-size:13.5px;font-weight:600;color:var(--accent)}
+.flow .oid{font-family:var(--mono);font-size:10.5px;color:var(--ink4)}
+.why{grid-column:2;font-size:12.8px;color:var(--ink3);margin:3px 0 0;max-width:70ch}
+.rt{display:flex;gap:7px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.cnt{font-family:var(--mono);font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums}
+details[open]>summary{border-bottom:1px solid var(--rule);background:var(--rule2)}
+.panel{padding:4px 16px 16px}
+.scroll{overflow-x:auto}
+table.f{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12.2px}
+table.f th{text-align:left;font-weight:600;font-size:10.2px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink3);padding:8px 9px;
+  border-bottom:1px solid var(--rule);white-space:nowrap}
+table.f td{padding:5.5px 9px;border-bottom:1px solid var(--rule2);vertical-align:top}
+table.f tr:hover td{background:var(--rule2)}
+table.f tr.hide{display:none}
+.src-obj{color:var(--ink4);font-size:11px;white-space:nowrap}
+.fn{white-space:nowrap}.ft{color:var(--ink3);font-size:11.3px;white-space:nowrap}
+.fh{color:var(--map);font-size:11.3px;white-space:nowrap}
+.fill{text-align:right;width:52px;color:var(--ink3);font-variant-numeric:tabular-nums}
+.dim{color:var(--ink4)}
+.cutline{display:flex;align-items:center;gap:12px;margin:22px 0 6px}
+.cutline .bar{flex:1;height:1px;background:var(--blocked)}
+.cutline .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blocked)}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 16px}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.seg button{font-family:var(--mono);font-size:11.5px;padding:8px 13px;background:var(--panel);
+  color:var(--ink2);border:0;cursor:pointer;border-right:1px solid var(--rule)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+#q{flex:1 1 220px;min-width:170px;font-family:var(--mono);font-size:13px;padding:9px 12px;
+  border:1px solid var(--rule);background:var(--panel);color:var(--ink);border-radius:3px}
+#q:focus{outline:2px solid var(--accent);outline-offset:-1px}
+footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--rule);
+  font-size:12.8px;color:var(--ink3)}
+footer p{max-width:74ch;margin:0 0 8px}
+@media (max-width:640px){
+  .wrap{padding:0 16px 60px}.mast{padding:30px 0 20px}
+  details>summary{grid-template-columns:28px 1fr;gap:10px}
+  .rt{grid-column:2;justify-content:flex-start;margin-top:6px}}
+</style>
+
+<div class="wrap">
+<header class="mast">
+  <p class="eyebrow">e-automate → HubSpot · portal 47404459 · repeatable build order</p>
+  <h1>Object map, ranked by what a client can't do without</h1>
+  <p class="lede">Twelve CEO Juice objects mapped to their HubSpot homes, numbered so a
+  portal capped on custom objects knows what to keep. Open a row for its properties and
+  whether each one already exists.</p>
+  <div class="counts">
+    <div class="cell g"><span class="n">5</span><span class="k">standard · free</span></div>
+    <div class="cell"><span class="n">3</span><span class="k">custom · exist</span></div>
+    <div class="cell p"><span class="n">3</span><span class="k">custom · to create</span></div>
+    <div class="cell b"><span class="n">465</span><span class="k">properties to build</span></div>
+    <div class="cell"><span class="n">25</span><span class="k">already map</span></div>
+  </div>
+</header>
+
+<section>
+  <h2><span class="num">01</span>You need six custom-object slots, not twelve</h2>
+  <p class="sub">The custom-object budget was the worry. It shouldn't be — five of the
+  twelve map to <strong>standard</strong> HubSpot objects that cost nothing against the
+  cap, and three of the remaining six already exist in this portal.</p>
+  <div class="note">
+    <span class="lbl">The arithmetic</span>
+    <p><strong>Free:</strong> Customer→Company, SalesOrder→Deal, ServiceCall→Ticket,
+    Item→Product, PrintReleaf→Company. Standard objects, no slot consumed.</p>
+    <p><strong>Already built:</strong> Equipment <code>2-50535052</code>, Contract
+    <code>2-36237359</code>, Lease <code>2-50535055</code>.</p>
+    <p><strong>To create: three.</strong> Order Line, Invoice, Invoice Line — and all
+    three are rank 9 or lower, so a constrained portal can simply not have them.</p>
+    <p>On this <code>DEVELOPER_TEST</code> portal the cap isn't 10 anyway: it already
+    holds 10 and an eleventh created fine (HTTP 201, deleted straight after). Verify
+    against the production tier before relying on that.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">02</span>The map</h2>
+  <p class="sub">Ranked by dependency and reporting value. Everything above the cut line
+  is buildable on standard and existing objects — no new custom objects at all.</p>
+  <div class="tools">
+    <input id="q" type="search" placeholder="filter properties across all objects — rate, meter, volume, tax, ship" aria-label="Filter properties">
+    <span class="seg" role="group" aria-label="Verdict filter">
+      <button data-v="all" aria-pressed="true">all</button>
+      <button data-v="build" aria-pressed="false">build</button>
+      <button data-v="map" aria-pressed="false">map</button>
+    </span>
+    <button id="expand" class="seg" style="border:1px solid var(--rule);border-radius:3px;font-family:var(--mono);font-size:11.5px;padding:8px 13px;background:var(--panel);color:var(--ink2);cursor:pointer">expand all</button>
+  </div>
+  <div id="rows"></div>
+</section>
+
+<section>
+  <h2><span class="num">03</span>Three things that change the scope</h2>
+  <div class="note stop">
+    <span class="lbl">Contact sync cannot be built — rank 12 is blocked, not deferred</span>
+    <p>All four Contact routes return <code>CustomerContact</code>, a join record, with
+    the nested <code>contact</code> object <strong>null</strong>. You learn which contact
+    links to which customer and nothing more — no name, email or phone.
+    <code>Claims_Contacts_Read</code> is true, so it isn't permissions.</p>
+    <p>Do not put contact sync in a statement of work until CEO Juice explains why the
+    nested objects aren't hydrated.</p>
+  </div>
+  <div class="note warn">
+    <span class="lbl">A human must create the e-automate account before a push</span>
+    <p><code>PUT /api/Customer</code> and <code>PUT /api/Contact/Create</code> both
+    return <strong>500</strong>, even with only their one required field. ID634 validates
+    against an <em>existing</em> customer and holds the order otherwise. So the account
+    has to exist in e-automate before a quote can be pushed, and we can't put it there.
+    Design the flow around that.</p>
+  </div>
+  <div class="note warn">
+    <span class="lbl">Measured volume doesn't exist; rated volume does</span>
+    <p><code>avgMonthlyVolume3Mo/6Mo/12Mo/Install</code> read <strong>0.0 on all 179
+    meter definitions</strong> — no exceptions — and there's no reading-history route to
+    recompute them from. But <code>mfgSuggestedMonthlyVolume</code> and
+    <code>targetMonthlyVolume</code> are populated on 32, across ABC Company, XYZ Company
+    and Chase Bank - Houston.</p>
+    <p>So size fleets from rated capacity and configured target, and never render a zero
+    average as "no printing".</p>
+  </div>
+</section>
+
+<footer>
+  <p>CEO Juice properties and fill rates measured against the live sandbox API; HubSpot
+  properties read from portal 47404459 on 29 July 2026. Verdicts come from normalised
+  name matching — <em>build</em> means no match was found, not proof no equivalent exists
+  among the 561 properties already on Company. Eyeball before creating.</p>
+  <p>Rerun with <code>scripts/field_reference.py</code> (CEO Juice side) against a fresh
+  <code>/crm/v3/properties</code> pull to regenerate this for another portal.</p>
+</footer>
+</div>
+
+<script>
+const PLAN = [{"rank":1,"cj":["Customer"],"hs":"Company","kind":"standard","oid":null,"why":"Every other record hangs off the account. Nothing works without it.","rows":[["Customer","customerId","int",100,"map","e_automate_customer_id",false],["Customer","billtoId","int",100,"build",null,false],["Customer","locationId","int",100,"build",null,false],["Customer","customerNumber","string",100,"build",null,true],["Customer","customerName","string",100,"map","name",false],["Customer","attn","string",38,"build",null,false],["Customer","address","string",92,"map","address",false],["Customer","city","string",92,"map","city",false],["Customer","state","string",89,"map","state",false],["Customer","zip","string",86,"map","zip",false],["Customer","country","string",8,"map","country",false],["Customer","county","string",11,"build",null,false],["Customer","longitude","decimal",0,"skip",null,false],["Customer","latitude","decimal",0,"skip",null,false],["Customer","phone1","string",82,"build",null,false],["Customer","phone2","string",71,"build",null,false],["Customer","fax","string",75,"build",null,false],["Customer","email","string",22,"build",null,false],["Customer","webSite","string",31,"build",null,false],["Customer","prospect","boolean",100,"build",null,false],["Customer","salesRepId","int",81,"build",null,false],["Customer","priceLevelId","int",100,"build",null,false],["Customer","customerTypeId","int",86,"build",null,false],["Customer","blanketPO","string",8,"build",null,false],["Customer","hold","boolean",100,"build",null,false],["Customer","remarks","string",13,"build",null,false],["Customer","active","boolean",100,"map","certified_company_active",false],["Customer","shipTo","boolean",100,"build",null,false],["Customer","branchId","int",100,"build",null,false],["Customer","lastUpdate","datetime",100,"skip",null,false],["Customer","technicianId","int",71,"build",null,false],["Customer","territoryId","int",70,"build",null,false],["Customer","companyCustomer","boolean",100,"build",null,false],["Customer","requirePONum","boolean",100,"build",null,false],["Customer","allowAutoMeterRequests","boolean",100,"build",null,false],["Customer","taxable","boolean",100,"build",null,false],["Customer","onHoldCodeId","int",3,"build",null,false],["Customer","timeZoneCodeID","int",42,"build",null,false],["Customer","billToAttn","string",0,"skip",null,false],["Customer","billToAddress","string",1,"map","address",false],["Customer","billToCity","string",1,"map","city",false],["Customer","billToCounty","string",1,"build",null,false],["Customer","billToState","string",0,"skip",null,false],["Customer","billToZip","string",0,"skip",null,false],["Customer","billToCountry","string",0,"skip",null,false],["Customer","mapAddress","string",0,"skip",null,false],["Customer","mapCity","string",0,"skip",null,false],["Customer","mapState","string",0,"skip",null,false],["Customer","mapZip","string",0,"skip",null,false],["Customer","mapCountry","string",0,"skip",null,false],["Customer","miles","decimal",100,"build",null,false],["Customer","noteCount","int",100,"skip",null,false],["Customer","slaCodeId","int",17,"build",null,false]],"build":30,"map":10},{"rank":2,"cj":["Equipment","ModelMeters"],"hs":"Equipment","kind":"exists","oid":"2-50535052","why":"The installed fleet with its meters and rated volumes. Where an assessment starts.","rows":[["Equipment","equipmentId","int",100,"build",null,false],["Equipment","equipmentNumber","string",100,"map","equipment_number",true],["Equipment","itemId","int",100,"build",null,false],["Equipment","serialNumber","string",96,"build",null,false],["Equipment","customerId","int",100,"build",null,false],["Equipment","billtoId","int",100,"build",null,false],["Equipment","locationId","int",98,"build",null,false],["Equipment","address","string",98,"build",null,false],["Equipment","city","string",100,"build",null,false],["Equipment","state","string",100,"build",null,false],["Equipment","zip","string",100,"build",null,false],["Equipment","country","string",32,"build",null,false],["Equipment","locationDescription","string",12,"build",null,false],["Equipment","officeOpen","datetime",14,"build",null,false],["Equipment","officeClose","datetime",14,"build",null,false],["Equipment","installDate","datetime",12,"map","install_date",false],["Equipment","contact","string",18,"build",null,false],["Equipment","contactPhone","string",12,"build",null,false],["Equipment","contactFax","string",7,"build",null,false],["Equipment","decisionMaker","string",14,"build",null,false],["Equipment","decisionMakerPhone","string",13,"build",null,false],["Equipment","decisionMakerFax","string",5,"build",null,false],["Equipment","territoryId","int",100,"build",null,false],["Equipment","technicianId","int",100,"build",null,false],["Equipment","warrantyDate","datetime",12,"build",null,false],["Equipment","warrantyMeter","int",54,"build",null,false],["Equipment","pmMeterInterval","int",53,"build",null,false],["Equipment","pmMeterDue","int",53,"build",null,false],["Equipment","pmDateInterval","int",8,"build",null,false],["Equipment","pmDateDue","datetime",8,"build",null,false],["Equipment","pmUseMeter","boolean",100,"build",null,false],["Equipment","pmUseDate","boolean",100,"build",null,false],["Equipment","remarks","string",4,"build",null,false],["Equipment","active","boolean",100,"map","active",false],["Equipment","lastUpdate","datetime",100,"skip",null,false],["Equipment","statusId","int",57,"build",null,false],["Equipment","conditionId","int",22,"build",null,false],["Equipment","branchId","int",100,"build",null,false],["Equipment","parentId","int",1,"build",null,false],["Equipment","hosting","boolean",100,"build",null,false],["Equipment","attached","boolean",100,"build",null,false],["Equipment","leaseId","int",4,"build",null,false],["Equipment","leaseEquipmentNumber","string",0,"skip",null,false],["Equipment","modelId","int",100,"build",null,false],["Equipment","isMetered","boolean",100,"build",null,false],["Equipment","requireMeteronServiceCalls","boolean",100,"build",null,false],["Equipment","mostRecentDefaultMeterReadingDisplay","decimal",16,"build",null,false],["Equipment","mostRecentDefaultMeterReadingDate","datetime",16,"build",null,false],["Equipment","priorityId","int",12,"build",null,false],["Equipment","equipmentContactId","int",10,"build",null,false],["Equipment","decisionContactId","int",10,"build",null,false],["Equipment","allowAutoMeterRequests","boolean",100,"build",null,false],["Equipment","nextMeterReading","datetime",0,"skip",null,false],["Equipment","lastMeterRequest","datetime",0,"skip",null,false],["Equipment","timeZoneCodeId","int",0,"skip",null,false],["Equipment","expireByUsage","boolean",100,"build",null,false],["Equipment","warrantyEndMeter","decimal",0,"skip",null,false],["Equipment","meterContactId","int",10,"build",null,false],["Equipment","assetId","int",0,"skip",null,false],["Equipment","ipAddress","string",0,"skip",null,false],["Equipment","macAddress","string",0,"skip",null,false],["Equipment","noteCount","int",100,"skip",null,false],["Equipment","slaCodeId","int",100,"build",null,false],["Equipment","model","Model",0,"skip",null,false],["Equipment","customer","Customer",0,"skip",null,false],["Equipment","location","Customer",0,"skip",null,false],["Equipment","billTo","Customer",0,"skip",null,false],["Equipment","slaCode","SLACode",0,"skip",null,false],["ModelMeters","modelMeterId","int",null,"build",null,false],["ModelMeters","modelId","int",null,"build",null,false],["ModelMeters","meterTypeId","int",null,"build",null,false],["ModelMeters","description","string",null,"build",null,false],["ModelMeters","meterDigits","int",null,"build",null,false],["ModelMeters","requireReading","boolean",null,"build",null,false],["ModelMeters","warrantyClicks","decimal",null,"build",null,false],["ModelMeters","doPMByClicks","boolean",null,"build",null,false],["ModelMeters","pmIntervalClicks","decimal",null,"build",null,false],["ModelMeters","pmDueClicks","decimal",null,"build",null,false],["ModelMeters","meterFormula","string",null,"build",null,false],["ModelMeters","isDefault","boolean",null,"build",null,false],["ModelMeters","interfaceName","string",null,"build",null,false],["ModelMeters","active","boolean",null,"map","active",false],["ModelMeters","avgMonthlyVolume3Mo","decimal",null,"build",null,false],["ModelMeters","avgMonthlyVolume6Mo","decimal",null,"build",null,false],["ModelMeters","avgMonthlyVolume12Mo","decimal",null,"build",null,false],["ModelMeters","avgMonthlyVolumeInstall","decimal",null,"build",null,false],["ModelMeters","mfgSuggestedMonthlyVolume","decimal",null,"build",null,false],["ModelMeters","targetMonthlyVolume","decimal",null,"build",null,false],["ModelMeters","includeInMeterRequests","boolean",null,"build",null,false],["ModelMeters","sequentialMeter","boolean",null,"build",null,false],["ModelMeters","meterType","MeterType",null,"skip",null,false]],"build":71,"map":4},{"rank":3,"cj":["Contract","ContractDetail"],"hs":"Contract","kind":"exists","oid":"2-36237359","why":"Base and overage billing, CPP rates, lease factors. What a renewal is about.","rows":[["Contract","contractId","int",100,"build",null,false],["Contract","contractNumber","string",100,"build",null,true],["Contract","contractMajor","string",100,"build",null,false],["Contract","contractMinor","string",100,"build",null,false],["Contract","customerId","int",100,"build",null,false],["Contract","contact","string",61,"build",null,false],["Contract","phone","string",52,"build",null,false],["Contract","fax","string",47,"build",null,false],["Contract","billToId","int",100,"build",null,false],["Contract","contractCodeId","int",100,"build",null,false],["Contract","billCodeId","int",100,"build",null,false],["Contract","billGroupId","int",5,"build",null,false],["Contract","startdate","datetime",100,"build",null,false],["Contract","expDate","datetime",100,"build",null,false],["Contract","expCopies","int",2,"build",null,false],["Contract","baseNextBillingDate","datetime",84,"build",null,false],["Contract","baseLastBillingDate","datetime",84,"build",null,false],["Contract","baseBillingCycleId","int",84,"build",null,false],["Contract","baseArrears","boolean",100,"build",null,false],["Contract","sumIndividualBaseRates","boolean",100,"build",null,false],["Contract","baseRate","decimal",100,"map","base_rate",false],["Contract","baseRatePeriod","int",100,"build",null,false],["Contract","overageNextBillingDate","datetime",69,"build",null,false],["Contract","overageLastBillingDate","datetime",83,"build",null,false],["Contract","overageBillingCycleId","int",28,"build",null,false],["Contract","bsaBillForServices","boolean",100,"build",null,false],["Contract","bsaLaborDiscount","decimal",2,"build",null,false],["Contract","bsaMaterialsDiscount","decimal",2,"build",null,false],["Contract","bsaMinimumBalance","decimal",100,"build",null,false],["Contract","bsaMinimumBilling","decimal",100,"build",null,false],["Contract","coveredCopies","int",0,"skip",null,false],["Contract","groupInvoices","boolean",100,"build",null,false],["Contract","poNumber","string",28,"build",null,false],["Contract","miscChargeAmount","decimal",100,"build",null,false],["Contract","miscChargeTaxFlag","int",100,"build",null,false],["Contract","miscChargeDescription","string",11,"build",null,false],["Contract","miscContinuous","boolean",100,"build",null,false],["Contract","remarks","string",2,"build",null,false],["Contract","unearnedBalance","decimal",100,"build",null,false],["Contract","bill","boolean",100,"build",null,false],["Contract","activated","datetime",100,"build",null,false],["Contract","terminated","datetime",0,"skip",null,false],["Contract","renewed","datetime",100,"build",null,false],["Contract","active","boolean",100,"map","active",false],["Contract","lastUpdate","datetime",100,"skip",null,false],["Contract","leaseSchedule","string",4,"build",null,false],["Contract","taxCodeId","int",99,"build",null,false],["Contract","branchId","int",100,"build",null,false],["Contract","contractLeaseId","int",2,"build",null,false],["Contract","useLeaseOnAllEquipment","boolean",100,"build",null,false],["Contract","remarksInternal","string",2,"build",null,false],["Contract","termId","int",100,"build",null,false],["Contract","salesRepId","int",94,"build",null,false],["Contract","jobId","int",2,"build",null,false],["Contract","accumCopies","decimal",0,"skip",null,false],["Contract","expCopyExpDate","datetime",0,"skip",null,false],["Contract","contactId","int",47,"build",null,false],["Contract","billToAttn","string",48,"build",null,false],["Contract","billToAddress","string",98,"build",null,false],["Contract","billToCity","string",98,"build",null,false],["Contract","billToState","string",96,"build",null,false],["Contract","billToZip","string",96,"build",null,false],["Contract","billToCountry","string",14,"build",null,false],["Contract","baseBilledThruDate","datetime",80,"build",null,false],["Contract","overageBilledThruDate","datetime",35,"build",null,false],["Contract","baseAccruedThruDate","datetime",66,"build",null,false],["Contract","renewable","boolean",100,"build",null,false],["Contract","baseRateScheduleStartDate","datetime",78,"build",null,false],["Contract","ovgRateScheduleStartDate","datetime",78,"build",null,false],["Contract","renewalCycleId","int",27,"build",null,false],["Contract","nextBaseIncreaseDate","datetime",1,"build",null,false],["Contract","nextOvgIncreaseDate","datetime",0,"skip",null,false],["Contract","taxable","boolean",100,"build",null,false],["Contract","baseBillingStartDate","datetime",75,"build",null,false],["Contract","overageBillingStartDate","datetime",22,"build",null,false],["Contract","useAlternateOvgBillTo","boolean",100,"build",null,false],["Contract","ovgBillToId","int",1,"build",null,false],["Contract","ovgBillToAttn","string",0,"skip",null,false],["Contract","ovgBillToAddress","string",0,"skip",null,false],["Contract","ovgBillToCity","string",0,"skip",null,false],["Contract","ovgBillToState","string",0,"skip",null,false],["Contract","ovgBillToZip","string",0,"skip",null,false],["Contract","ovgBillToCountry","string",0,"skip",null,false],["Contract","ovgBillToTermId","int",0,"skip",null,false],["Contract","contractAdjCodeId","int",25,"build",null,false],["Contract","useIndividualTaxCodes","boolean",100,"build",null,false],["Contract","terminationCodeId","int",0,"skip",null,false],["Contract","contractStatusId","int",100,"build",null,false],["Contract","oneTimeRemark","string",1,"build",null,false],["Contract","printOneTimeRemark","boolean",100,"build",null,false],["Contract","ovgBillToTaxable","boolean",100,"build",null,false],["Contract","ovgBillToTaxCodeId","int",50,"build",null,false],["Contract","ovgBillToUseIndividualTaxCodes","boolean",100,"build",null,false],["Contract","allowMeterEstimation","boolean",100,"build",null,false],["Contract","expCopiesBase","int",100,"build",null,false],["Contract","expAdjCopies","int",100,"build",null,false],["Contract","expCopiesActualExpDate","datetime",2,"build",null,false],["Contract","expDateInitial","datetime",99,"build",null,false],["Contract","cppMinimumPages","int",100,"build",null,false],["Contract","cppRate","decimal",100,"build",null,false],["Contract","cppHardwareAmount","decimal",100,"build",null,false],["Contract","cppServiceRate","decimal",100,"build",null,false],["Contract","combineLeaseAndBase","boolean",100,"build",null,false],["Contract","timeBlockBased","boolean",100,"build",null,false],["Contract","noteCount","int",100,"skip",null,false],["Contract","baseRatePeriodType","int",100,"build",null,false],["Contract","unearnedInterestBalance","decimal",100,"build",null,false],["Contract","unearnedLeaseBalance","decimal",100,"build",null,false],["Contract","unearnedLeasePostTermBalance","decimal",100,"build",null,false],["Contract","message","string",0,"skip",null,false],["Contract","messReqAcknowledgment","boolean",100,"build",null,false],["Contract","taxExemptCodeId","int",0,"skip",null,false],["Contract","ovgBillToTaxExemptCodeId","int",0,"skip",null,false],["Contract","slaCodeId","int",6,"build",null,false],["Contract","customer","Customer",0,"skip",null,false],["Contract","billTo","Customer",0,"skip",null,false],["Contract","details","ContractDetail[]",100,"skip",null,false],["ContractDetail","contractDetailId","int",null,"build",null,false],["ContractDetail","contractId","int",null,"build",null,false],["ContractDetail","equipmentId","int",null,"build",null,false],["ContractDetail","locationId","int",null,"build",null,false],["ContractDetail","baseRate","decimal",null,"map","base_rate",false],["ContractDetail","billCodeId","int",null,"build",null,false],["ContractDetail","useContractLease","boolean",null,"build",null,false],["ContractDetail","startDate","datetime",null,"map","start_date",false],["ContractDetail","endDate","datetime",null,"build",null,false],["ContractDetail","baseBilledThruDate","datetime",null,"build",null,false],["ContractDetail","overageBilledThruDate","datetime",null,"build",null,false],["ContractDetail","baseAccruedThruDate","datetime",null,"build",null,false],["ContractDetail","prorateStart","boolean",null,"build",null,false],["ContractDetail","prorateStartAmount","decimal",null,"build",null,false],["ContractDetail","prorateStartBillNow","boolean",null,"build",null,false],["ContractDetail","prorateEnd","boolean",null,"build",null,false],["ContractDetail","prorateEndAmount","decimal",null,"build",null,false],["ContractDetail","prorateEndBillNow","boolean",null,"build",null,false],["ContractDetail","address","string",null,"build",null,false],["ContractDetail","city","string",null,"build",null,false],["ContractDetail","state","string",null,"build",null,false],["ContractDetail","zip","string",null,"build",null,false],["ContractDetail","country","string",null,"build",null,false],["ContractDetail","nextBaseIncreaseDate","datetime",null,"build",null,false],["ContractDetail","unEarnedBalance","decimal",null,"build",null,false],["ContractDetail","prorateStartAutoCalc","boolean",null,"build",null,false],["ContractDetail","prorateEndAutoCalc","boolean",null,"build",null,false],["ContractDetail","startMeterReadingDate","datetime",null,"build",null,false],["ContractDetail","endMeterReadingDate","datetime",null,"build",null,false],["ContractDetail","baseRateScheduleStartDate","datetime",null,"build",null,false],["ContractDetail","taxCodeId","int",null,"build",null,false],["ContractDetail","terminationCodeId","int",null,"build",null,false],["ContractDetail","quantity","decimal",null,"build",null,false],["ContractDetail","unitBaseRate","decimal",null,"build",null,false],["ContractDetail","noteCount","int",null,"skip",null,false],["ContractDetail","billStartDate","datetime",null,"build",null,false],["ContractDetail","billEndDate","datetime",null,"build",null,false],["ContractDetail","parentContractDetailId","int",null,"build",null,false],["ContractDetail","contractDetailTypeId","int",null,"build",null,false],["ContractDetail","subLeaseNumber","string",null,"build",null,false],["ContractDetail","subLeaseMajor","string",null,"build",null,false],["ContractDetail","subLeaseMinor","string",null,"build",null,false],["ContractDetail","leaseTerm","int",null,"build",null,false],["ContractDetail","leasePaymentStartDate","datetime",null,"build",null,false],["ContractDetail","leasePaymentEndDate","datetime",null,"build",null,false],["ContractDetail","leaseRate","decimal",null,"build",null,false],["ContractDetail","leaseRateFactor","decimal",null,"build",null,false],["ContractDetail","leaseInterestRate","decimal",null,"build",null,false],["ContractDetail","leaseFinancedAmount","decimal",null,"build",null,false],["ContractDetail","leasePaymentAmount","decimal",null,"build",null,false],["ContractDetail","leasePrincipalBalance","decimal",null,"build",null,false],["ContractDetail","combineWithParentBaseAmount","boolean",null,"build",null,false],["ContractDetail","unearnedInterestBalance","decimal",null,"build",null,false],["ContractDetail","unearnedLeaseBalance","decimal",null,"build",null,false],["ContractDetail","unearnedLeasePostTermBalance","decimal",null,"build",null,false],["ContractDetail","leaseTerminationCodeId","int",null,"build",null,false],["ContractDetail","assetNumber","string",null,"build",null,false],["ContractDetail","taxExemptCodeId","int",null,"build",null,false],["ContractDetail","taxable","boolean",null,"build",null,false],["ContractDetail","overrideTaxable","boolean",null,"build",null,false],["ContractDetail","itemId","int",null,"build",null,false],["ContractDetail","description","string",null,"build",null,false],["ContractDetail","locationRemarks","string",null,"build",null,false],["ContractDetail","slaCodeId","int",null,"build",null,false],["ContractDetail","equipment","Equipment",null,"skip",null,false],["ContractDetail","location","Customer",null,"skip",null,false],["ContractDetail","slaCode","SLACode",null,"skip",null,false]],"build":155,"map":4},{"rank":4,"cj":["SalesOrder"],"hs":"Deal","kind":"standard","oid":null,"why":"A quote pushed to e-automate becomes this. Free \u2014 Deal is standard.","rows":[["SalesOrder","soId","int",100,"build",null,false],["SalesOrder","soNumber","string",100,"build",null,true],["SalesOrder","customerId","int",100,"build",null,false],["SalesOrder","billToId","int",100,"build",null,false],["SalesOrder","locationId","int",84,"build",null,false],["SalesOrder","date","datetime",100,"build",null,false],["SalesOrder","description","string",12,"map","description",false],["SalesOrder","poNumber","string",46,"build",null,false],["SalesOrder","reqDate","datetime",100,"build",null,false],["SalesOrder","termId","int",99,"build",null,false],["SalesOrder","termDiscountRate","decimal",100,"build",null,false],["SalesOrder","termDiscountDate","datetime",5,"build",null,false],["SalesOrder","dueDate","datetime",100,"build",null,false],["SalesOrder","shipMethodId","int",100,"build",null,false],["SalesOrder","jobId","int",1,"build",null,false],["SalesOrder","salesRepId","int",97,"build",null,false],["SalesOrder","mailToAttn","string",45,"build",null,false],["SalesOrder","mailToName","string",100,"build",null,false],["SalesOrder","mailToAddress","string",98,"build",null,false],["SalesOrder","mailToCity","string",98,"build",null,false],["SalesOrder","mailToState","string",98,"build",null,false],["SalesOrder","mailToZip","string",98,"build",null,false],["SalesOrder","mailToCountry","string",30,"build",null,false],["SalesOrder","shipToName","string",100,"build",null,false],["SalesOrder","shipToAttn","string",49,"build",null,false],["SalesOrder","shipToAddress","string",94,"build",null,false],["SalesOrder","shipToCity","string",94,"build",null,false],["SalesOrder","shipToState","string",94,"build",null,false],["SalesOrder","shipToZip","string",94,"build",null,false],["SalesOrder","shipToCountry","string",28,"build",null,false],["SalesOrder","remarks","string",4,"build",null,false],["SalesOrder","discountRate","decimal",100,"build",null,false],["SalesOrder","discount","decimal",100,"build",null,false],["SalesOrder","freight","decimal",100,"build",null,false],["SalesOrder","taxCodeId","int",94,"build",null,false],["SalesOrder","tax","decimal",100,"build",null,false],["SalesOrder","total","decimal",100,"build",null,false],["SalesOrder","approvedById","int",4,"build",null,false],["SalesOrder","onHold","boolean",100,"build",null,false],["SalesOrder","onHoldCodeId","int",18,"build",null,false],["SalesOrder","onHoldReleaseDate","datetime",11,"build",null,false],["SalesOrder","onHoldReleaserId","string",11,"build",null,false],["SalesOrder","branchId","int",100,"build",null,false],["SalesOrder","chargeMethodId","int",19,"build",null,false],["SalesOrder","taxable","boolean",100,"build",null,false],["SalesOrder","amountTotal","decimal",100,"build",null,false],["SalesOrder","amountPicketed","decimal",100,"build",null,false],["SalesOrder","amountShipped","decimal",100,"build",null,false],["SalesOrder","amountFulFilled","decimal",100,"build",null,false],["SalesOrder","amountBilled","decimal",100,"build",null,false],["SalesOrder","quantityTotal","decimal",100,"build",null,false],["SalesOrder","quantityShipped","decimal",100,"build",null,false],["SalesOrder","quantityFulfilled","decimal",100,"build",null,false],["SalesOrder","quantityBilled","decimal",100,"build",null,false],["SalesOrder","billedFreight","decimal",100,"build",null,false],["SalesOrder","orderTypeId","int",100,"build",null,false],["SalesOrder","warehouseId","int",30,"build",null,false],["SalesOrder","amountBackOrdered","decimal",100,"build",null,false],["SalesOrder","quantityBackOrdered","decimal",100,"build",null,false],["SalesOrder","statusId","int",100,"build",null,false],["SalesOrder","returnCodeId","int",2,"build",null,false],["SalesOrder","origInvoiceId","int",0,"skip",null,false],["SalesOrder","returnMethodId","int",2,"build",null,false],["SalesOrder","orderedByContactId","int",2,"map","contact_id",false],["SalesOrder","quoteId","int",4,"build",null,false],["SalesOrder","quoteOriginatorEmail","string",4,"build",null,false],["SalesOrder","noteCount","int",100,"skip",null,false],["SalesOrder","sendShippingNotifications","boolean",100,"build",null,false],["SalesOrder","sendShippingNotificationToOrderByContact","boolean",100,"build",null,false],["SalesOrder","shippingNotificationAdditionalEmails","string",0,"skip",null,false],["SalesOrder","taxExemptCodeId","int",0,"skip",null,false],["SalesOrder","salesRep","Agent",0,"skip",null,false],["SalesOrder","customer","Customer",0,"skip",null,false],["SalesOrder","billTo","Customer",0,"skip",null,false],["SalesOrder","orderType","SOOrderType",0,"skip",null,false],["SalesOrder","status","SoStatus",0,"skip",null,false],["SalesOrder","details","SOOrderDetail[]",100,"skip",null,false]],"build":65,"map":2},{"rank":5,"cj":["ServiceCall"],"hs":"Ticket","kind":"standard","oid":null,"why":"Service history. Free, and Tickets already carry 132 custom properties.","rows":[["ServiceCall","callId","int",100,"build",null,false],["ServiceCall","callNumber","string",100,"build",null,true],["ServiceCall","customerId","int",100,"build",null,false],["ServiceCall","status","string",100,"build",null,false],["ServiceCall","description","string",92,"build",null,false],["ServiceCall","notes","string",62,"build",null,false],["ServiceCall","date","datetime",100,"build",null,false],["ServiceCall","reqDate","datetime",100,"build",null,false],["ServiceCall","estStartDate","datetime",100,"build",null,false],["ServiceCall","closeDate","datetime",0,"skip",null,false],["ServiceCall","creatorId","string",100,"skip",null,false],["ServiceCall","createDate","datetime",100,"skip",null,false],["ServiceCall","updatorId","string",100,"skip",null,false],["ServiceCall","lastUpdate","datetime",100,"skip",null,false],["ServiceCall","equipment","Equipment",0,"skip",null,false],["ServiceCall","technician","Agent",0,"skip",null,false],["ServiceCall","addressStreet","string",100,"build",null,false],["ServiceCall","addressCity","string",100,"build",null,false],["ServiceCall","addressState","string",100,"build",null,false],["ServiceCall","addressZip","string",100,"build",null,false],["ServiceCall","addressCountry","string",6,"build",null,false],["ServiceCall","caller","string",98,"build",null,false],["ServiceCall","trackingKey","string",0,"skip",null,false],["ServiceCall","externalId","string",0,"skip",null,false]],"build":15,"map":0},{"rank":6,"cj":["PrintReleafUsageRecord"],"hs":"Company","kind":"standard","oid":null,"why":"The only real page volume this API returns. Rolls onto the account.","rows":[["PrintReleafUsageRecord","customerId","int",null,"map","e_automate_customer_id",false],["PrintReleafUsageRecord","customerNumber","string",null,"build",null,false],["PrintReleafUsageRecord","customerName","string",null,"map","name",false],["PrintReleafUsageRecord","periodStart","datetime",null,"build",null,false],["PrintReleafUsageRecord","periodEnd","datetime",null,"build",null,false],["PrintReleafUsageRecord","blackAndWhitePages","int",null,"build",null,false],["PrintReleafUsageRecord","colorPages","int",null,"build",null,false],["PrintReleafUsageRecord","duplexCount","int",null,"build",null,false],["PrintReleafUsageRecord","totalPages","int",null,"build",null,false]],"build":7,"map":2},{"rank":7,"cj":["Item"],"hs":"Product","kind":"standard","oid":null,"why":"Use Products, not a custom object. Line items reference it natively.","rows":[["Item","itemId","int",null,"build",null,false],["Item","itemNumber","string",null,"map","item_number",false],["Item","description","string",null,"map","description",false],["Item","onHandQty","decimal",null,"build",null,false],["Item","active","boolean",null,"build",null,false],["Item","prefMfgNumber","string",null,"build",null,false],["Item","modelId","int",null,"build",null,false],["Item","model","Model",null,"skip",null,false],["Item","defaultPrice","decimal",null,"build",null,false],["Item","customerPrice","decimal",null,"build",null,false]],"build":7,"map":2},{"rank":8,"cj":[],"hs":"Lease","kind":"exists","oid":"2-50535055","why":"Already built. Populate from ContractDetail lease factors rather than duplicating.","rows":[],"build":0,"map":0},{"rank":9,"cj":["SOOrderDetail"],"hs":"Order Line","kind":"new","oid":null,"why":"What was actually sold, per line. Needed for margin reporting, not for a first cut.","rows":[["SOOrderDetail","soId","int",null,"build",null,false],["SOOrderDetail","detailId","int",null,"build",null,false],["SOOrderDetail","itemId","int",null,"build",null,false],["SOOrderDetail","description","string",null,"build",null,false],["SOOrderDetail","quantity","decimal",null,"build",null,false],["SOOrderDetail","um","string",null,"build",null,false],["SOOrderDetail","price","decimal",null,"build",null,false],["SOOrderDetail","equipmentId","int",null,"build",null,false],["SOOrderDetail","contractId","int",null,"build",null,false],["SOOrderDetail","bill","boolean",null,"build",null,false],["SOOrderDetail","discount","decimal",null,"build",null,false],["SOOrderDetail","stocked","boolean",null,"build",null,false],["SOOrderDetail","amount","decimal",null,"build",null,false],["SOOrderDetail","backOrdered","decimal",null,"build",null,false],["SOOrderDetail","picketed","decimal",null,"build",null,false],["SOOrderDetail","shipped","decimal",null,"build",null,false],["SOOrderDetail","canceled","decimal",null,"build",null,false],["SOOrderDetail","billed","decimal",null,"build",null,false],["SOOrderDetail","workOrderId","int",null,"build",null,false],["SOOrderDetail","returnCodeId","int",null,"build",null,false],["SOOrderDetail","returnRemarks","string",null,"build",null,false],["SOOrderDetail","fulfilled","decimal",null,"build",null,false],["SOOrderDetail","remarks","string",null,"build",null,false],["SOOrderDetail","isReturn","boolean",null,"build",null,false],["SOOrderDetail","isRMAReturn","boolean",null,"build",null,false],["SOOrderDetail","trackingNumber","string",null,"build",null,false],["SOOrderDetail","earliestDate","datetime",null,"build",null,false],["SOOrderDetail","latestDate","datetime",null,"build",null,false],["SOOrderDetail","notes","string",null,"build",null,false],["SOOrderDetail","shipToContactId","int",null,"build",null,false],["SOOrderDetail","lineNumber","string",null,"build",null,false],["SOOrderDetail","displayPrice","decimal",null,"build",null,false],["SOOrderDetail","displayAmount","decimal",null,"build",null,false],["SOOrderDetail","displayDiscount","decimal",null,"build",null,false],["SOOrderDetail","contractDetailId","int",null,"build",null,false],["SOOrderDetail","branchId","int",null,"build",null,false],["SOOrderDetail","item","Item",null,"skip",null,false],["SOOrderDetail","equipment","Equipment",null,"skip",null,false]],"build":36,"map":0},{"rank":10,"cj":["Invoice"],"hs":"Invoice","kind":"new","oid":null,"why":"Billing history. Defer \u2014 most of this is answerable from Contract until it isn't.","rows":[["Invoice","invoiceId","int",null,"build",null,false],["Invoice","invoiceNumber","string",null,"build",null,false],["Invoice","type","string",null,"build",null,false],["Invoice","customerId","int",null,"build",null,false],["Invoice","billToId","int",null,"build",null,false],["Invoice","applyToId","int",null,"build",null,false],["Invoice","masterInvoiceId","int",null,"build",null,false],["Invoice","locationId","int",null,"build",null,false],["Invoice","date","datetime",null,"build",null,false],["Invoice","datePeriod","int",null,"build",null,false],["Invoice","period","int",null,"build",null,false],["Invoice","description","string",null,"build",null,false],["Invoice","poNumber","string",null,"build",null,false],["Invoice","termId","int",null,"build",null,false],["Invoice","termDiscountRate","decimal",null,"build",null,false],["Invoice","termDiscountDate","datetime",null,"build",null,false],["Invoice","termDiscount","decimal",null,"build",null,false],["Invoice","dueDate","datetime",null,"build",null,false],["Invoice","salesRepId","int",null,"build",null,false],["Invoice","mailToAttn","string",null,"build",null,false],["Invoice","mailToName","string",null,"build",null,false],["Invoice","mailToAddress","string",null,"build",null,false],["Invoice","mailToCity","string",null,"build",null,false],["Invoice","mailToState","string",null,"build",null,false],["Invoice","mailToZip","string",null,"build",null,false],["Invoice","mailToCountry","string",null,"build",null,false],["Invoice","shipToAttn","string",null,"build",null,false],["Invoice","shipToName","string",null,"build",null,false],["Invoice","shipToAddress","string",null,"build",null,false],["Invoice","shipToCity","string",null,"build",null,false],["Invoice","shipToState","string",null,"build",null,false],["Invoice","shipToZip","string",null,"build",null,false],["Invoice","shipToCountry","string",null,"build",null,false],["Invoice","remarks","string",null,"build",null,false],["Invoice","discountRate","decimal",null,"build",null,false],["Invoice","discount","decimal",null,"build",null,false],["Invoice","freight","decimal",null,"build",null,false],["Invoice","taxCodeId","int",null,"build",null,false],["Invoice","tax","decimal",null,"build",null,false],["Invoice","total","decimal",null,"build",null,false],["Invoice","adjTotal","decimal",null,"build",null,false],["Invoice","due","decimal",null,"build",null,false],["Invoice","voidId","int",null,"build",null,false],["Invoice","module","string",null,"build",null,false],["Invoice","source","string",null,"build",null,false],["Invoice","reference","string",null,"build",null,false],["Invoice","creatorId","string",null,"skip",null,false],["Invoice","updatorId","string",null,"skip",null,false],["Invoice","createDate","datetime",null,"skip",null,false],["Invoice","lastUpdate","datetime",null,"skip",null,false],["Invoice","transactionTypeId","int",null,"build",null,false],["Invoice","chargeMethodId","int",null,"build",null,false],["Invoice","chargeAccountInfo","string",null,"build",null,false],["Invoice","taxable","boolean",null,"build",null,false],["Invoice","freightDeptId","int",null,"build",null,false],["Invoice","discountDeptId","int",null,"build",null,false],["Invoice","consolidate","boolean",null,"build",null,false],["Invoice","consolidatedBillingId","int",null,"build",null,false],["Invoice","billingNumber","string",null,"build",null,false],["Invoice","isVoid","boolean",null,"skip",null,false],["Invoice","sent","boolean",null,"build",null,false],["Invoice","noteId","int",null,"build",null,false],["Invoice","noteFlag","int",null,"build",null,false],["Invoice","orderedByContactId","int",null,"build",null,false],["Invoice","sendContactId","int",null,"build",null,false],["Invoice","sendMethodId","int",null,"build",null,false],["Invoice","receivablePayableId","int",null,"build",null,false],["Invoice","primaryReportDefinitionId","int",null,"build",null,false],["Invoice","noteCount","int",null,"skip",null,false],["Invoice","extReferenceNumber","string",null,"build",null,false],["Invoice","commissionRepId","int",null,"build",null,false],["Invoice","taxExemptCodeId","int",null,"build",null,false],["Invoice","freightTaxFlag","int",null,"build",null,false],["Invoice","freightTaxFlagId","int",null,"build",null,false],["Invoice","customer","Customer",null,"skip",null,false],["Invoice","billTo","Customer",null,"skip",null,false],["Invoice","details","InvoiceDetail[]",null,"skip",null,false]],"build":68,"map":0},{"rank":11,"cj":["InvoiceDetail"],"hs":"Invoice Line","kind":"new","oid":null,"why":"Only if invoice-level detail proves insufficient.","rows":[["InvoiceDetail","invoiceId","int",null,"build",null,false],["InvoiceDetail","detailId","int",null,"build",null,false],["InvoiceDetail","description","string",null,"build",null,false],["InvoiceDetail","amount","decimal",null,"build",null,false],["InvoiceDetail","taxFlag","int",null,"build",null,false],["InvoiceDetail","cost","decimal",null,"build",null,false],["InvoiceDetail","creatorId","string",null,"skip",null,false],["InvoiceDetail","updatorId","string",null,"skip",null,false],["InvoiceDetail","createDate","datetime",null,"skip",null,false],["InvoiceDetail","lastUpdate","datetime",null,"skip",null,false],["InvoiceDetail","taxCodeId","int",null,"build",null,false],["InvoiceDetail","lineNumber","string",null,"build",null,false],["InvoiceDetail","taxable","boolean",null,"build",null,false],["InvoiceDetail","taxExemptCodeId","int",null,"build",null,false],["InvoiceDetail","taxFlagId","int",null,"build",null,false]],"build":11,"map":0},{"rank":12,"cj":["Contact"],"hs":"Contact","kind":"blocked","oid":null,"why":"BLOCKED. All four routes return a join record with the nested contact null.","rows":[["Contact","contactId","int",100,"map","contact_id",false],["Contact","contactNumber","string",0,"skip",null,false],["Contact","lastName","string",0,"skip",null,false],["Contact","firstName","string",0,"skip",null,false],["Contact","middleName","string",0,"skip",null,false],["Contact","prefName","string",0,"skip",null,false],["Contact","prefFullName","string",0,"skip",null,false],["Contact","address","string",0,"skip",null,false],["Contact","city","string",0,"skip",null,false],["Contact","state","string",0,"skip",null,false],["Contact","zip","string",0,"skip",null,false],["Contact","country","string",0,"skip",null,false],["Contact","phone1","string",0,"skip",null,false],["Contact","phone2","string",0,"skip",null,false],["Contact","fax","string",0,"skip",null,false],["Contact","email","string",0,"skip",null,false],["Contact","allEmails","string",0,"skip",null,false],["Contact","remarks","string",0,"skip",null,false],["Contact","active","boolean",0,"skip",null,false],["Contact","attn","string",0,"skip",null,false],["Contact","salesRepId","int",0,"skip",null,false],["Contact","preferedContactMethodId","int",0,"skip",null,false],["Contact","emailType","boolean",0,"skip",null,false],["Contact","sendShippingConfirmations","boolean",0,"skip",null,false],["Contact","noteCount","int",0,"skip",null,false],["Contact","lastUpdate","datetime",0,"skip",null,false]],"build":0,"map":1}];
+const rowsEl=document.getElementById('rows'), q=document.getElementById('q');
+const expandBtn=document.getElementById('expand');
+let vf='all';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KIND={standard:['t-std','standard · free'],exists:['t-exists','custom · exists'],
+            new:['t-new','custom · create'],blocked:['t-blocked','blocked']};
+const CUT=8; // last rank buildable without new custom objects
+
+const frag=document.createDocumentFragment();
+PLAN.forEach(p=>{
+  if(p.rank===CUT+1){
+    const cl=document.createElement('div'); cl.className='cutline';
+    cl.innerHTML='<span class="lbl">cut line — below here needs new custom objects</span><span class="bar"></span>';
+    frag.appendChild(cl);
+  }
+  const wrap=document.createElement('div'); wrap.className='acc';
+  const det=document.createElement('details');
+  const [cls,label]=KIND[p.kind];
+  const src=p.cj.length?p.cj.join(' + '):'—';
+  det.innerHTML=
+    '<summary><span class="rank">'+p.rank+'</span>'+
+    '<span><span class="flow"><span class="src">'+esc(src)+'</span>'+
+    '<span class="arr">→</span><span class="dst">'+esc(p.hs)+'</span>'+
+    (p.oid?'<span class="oid">'+esc(p.oid)+'</span>':'')+'</span>'+
+    '<p class="why">'+esc(p.why)+'</p></span>'+
+    '<span class="rt"><span class="tag '+cls+'">'+label+'</span>'+
+    (p.build?'<span class="tag t-build">'+p.build+' build</span>':'')+
+    (p.map?'<span class="tag t-map">'+p.map+' map</span>':'')+
+    (p.rows.length?'<span class="cnt">'+p.rows.length+' props</span>':'')+
+    '</span></summary>';
+  if(p.rows.length){
+    const panel=document.createElement('div'); panel.className='panel';
+    const sc=document.createElement('div'); sc.className='scroll';
+    const t=document.createElement('table'); t.className='f';
+    const multi=p.cj.length>1;
+    t.innerHTML='<thead><tr>'+(multi?'<th>Source</th>':'')+
+      '<th>CEO Juice property</th><th>Type</th><th style="text-align:right">Filled</th>'+
+      '<th>Verdict</th><th>HubSpot property</th></tr></thead>';
+    const tb=document.createElement('tbody');
+    p.rows.forEach(r=>{
+      const [obj,field,type,fill,v,hsp]=r;
+      const tr=document.createElement('tr');
+      tr.dataset.k=(field+' '+type).toLowerCase();
+      tr.dataset.v=v.startsWith('skip')?'skip':v;
+      const tag=v==='build'?'<span class="tag t-build">build</span>':
+                v==='map'?'<span class="tag t-map">map</span>':'<span class="dim">skip</span>';
+      tr.innerHTML=(multi?'<td class="src-obj">'+esc(obj)+'</td>':'')+
+        '<td class="fn">'+esc(field)+'</td><td class="ft">'+esc(type)+'</td>'+
+        '<td class="fill">'+(fill===null||fill===undefined?'—':fill+'%')+'</td>'+
+        '<td>'+tag+'</td>'+
+        '<td class="'+(hsp?'fh':'dim')+'">'+(hsp?esc(hsp):'—')+'</td>';
+      tb.appendChild(tr);
+    });
+    t.appendChild(tb); sc.appendChild(t); panel.appendChild(sc); det.appendChild(panel);
+  }
+  wrap.appendChild(det); frag.appendChild(wrap);
+});
+rowsEl.appendChild(frag);
+
+function apply(){
+  const term=q.value.trim().toLowerCase();
+  let anyMatch=false;
+  rowsEl.querySelectorAll('details').forEach(det=>{
+    let vis=0;
+    det.querySelectorAll('tbody tr').forEach(tr=>{
+      let ok=true;
+      if(term && !tr.dataset.k.includes(term)) ok=false;
+      if(vf!=='all' && tr.dataset.v!==vf) ok=false;
+      tr.classList.toggle('hide',!ok);
+      if(ok) vis++;
+    });
+    /* Open a row automatically when a filter actually selects something inside it —
+       otherwise a search appears to return nothing because every panel is closed. */
+    if((term||vf!=='all') && vis>0){det.open=true; anyMatch=true;}
+    if((term||vf!=='all') && vis===0 && det.querySelector('tbody tr')) det.open=false;
+  });
+}
+q.addEventListener('input',apply);
+document.querySelectorAll('.seg[role="group"] button').forEach(b=>b.addEventListener('click',()=>{
+  vf=b.dataset.v;
+  document.querySelectorAll('.seg[role="group"] button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  apply();
+}));
+expandBtn.addEventListener('click',()=>{
+  const dets=[...rowsEl.querySelectorAll('details')];
+  const anyClosed=dets.some(d=>!d.open);
+  dets.forEach(d=>d.open=anyClosed);
+  expandBtn.textContent=anyClosed?'collapse all':'expand all';
+});
+</script>

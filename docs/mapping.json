@@ -1,0 +1,4990 @@
+{
+ "Customer": {
+  "target": "companies",
+  "sampled": 160,
+  "rows": [
+   {
+    "field": "customerId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "map",
+    "hubspot": "e_automate_customer_id",
+    "unique": false
+   },
+   {
+    "field": "billtoId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "locationId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customerNumber",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": true
+   },
+   {
+    "field": "customerName",
+    "type": "string",
+    "fill": 100,
+    "verdict": "map",
+    "hubspot": "name",
+    "unique": false
+   },
+   {
+    "field": "attn",
+    "type": "string",
+    "fill": 38,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "address",
+    "type": "string",
+    "fill": 92,
+    "verdict": "map",
+    "hubspot": "address",
+    "unique": false
+   },
+   {
+    "field": "city",
+    "type": "string",
+    "fill": 92,
+    "verdict": "map",
+    "hubspot": "city",
+    "unique": false
+   },
+   {
+    "field": "state",
+    "type": "string",
+    "fill": 89,
+    "verdict": "map",
+    "hubspot": "state",
+    "unique": false
+   },
+   {
+    "field": "zip",
+    "type": "string",
+    "fill": 86,
+    "verdict": "map",
+    "hubspot": "zip",
+    "unique": false
+   },
+   {
+    "field": "country",
+    "type": "string",
+    "fill": 8,
+    "verdict": "map",
+    "hubspot": "country",
+    "unique": false
+   },
+   {
+    "field": "county",
+    "type": "string",
+    "fill": 11,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "longitude",
+    "type": "decimal",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "latitude",
+    "type": "decimal",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "phone1",
+    "type": "string",
+    "fill": 82,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "phone2",
+    "type": "string",
+    "fill": 71,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "fax",
+    "type": "string",
+    "fill": 75,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "email",
+    "type": "string",
+    "fill": 22,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "webSite",
+    "type": "string",
+    "fill": 31,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prospect",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "salesRepId",
+    "type": "int",
+    "fill": 81,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "priceLevelId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customerTypeId",
+    "type": "int",
+    "fill": 86,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "blanketPO",
+    "type": "string",
+    "fill": 8,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "hold",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "remarks",
+    "type": "string",
+    "fill": 13,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "active",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "map",
+    "hubspot": "certified_company_active",
+    "unique": false
+   },
+   {
+    "field": "shipTo",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "branchId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "lastUpdate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "technicianId",
+    "type": "int",
+    "fill": 71,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "territoryId",
+    "type": "int",
+    "fill": 70,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "companyCustomer",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "requirePONum",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "allowAutoMeterRequests",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxable",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "onHoldCodeId",
+    "type": "int",
+    "fill": 3,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "timeZoneCodeID",
+    "type": "int",
+    "fill": 42,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToAttn",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToAddress",
+    "type": "string",
+    "fill": 1,
+    "verdict": "map",
+    "hubspot": "address",
+    "unique": false
+   },
+   {
+    "field": "billToCity",
+    "type": "string",
+    "fill": 1,
+    "verdict": "map",
+    "hubspot": "city",
+    "unique": false
+   },
+   {
+    "field": "billToCounty",
+    "type": "string",
+    "fill": 1,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToState",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToZip",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToCountry",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mapAddress",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mapCity",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mapState",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mapZip",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mapCountry",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "miles",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "noteCount",
+    "type": "int",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "slaCodeId",
+    "type": "int",
+    "fill": 17,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 10,
+   "build": 30,
+   "skip": 13
+  },
+  "uniqueKey": "customerNumber"
+ },
+ "Contact": {
+  "target": "contacts",
+  "sampled": 137,
+  "rows": [
+   {
+    "field": "contactId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "map",
+    "hubspot": "contact_id",
+    "unique": false
+   },
+   {
+    "field": "contactNumber",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "lastName",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "firstName",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "middleName",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prefName",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prefFullName",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "address",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "city",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "state",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "zip",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "country",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "phone1",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "phone2",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "fax",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "email",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "allEmails",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "remarks",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "active",
+    "type": "boolean",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "attn",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "salesRepId",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "preferedContactMethodId",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "emailType",
+    "type": "boolean",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "sendShippingConfirmations",
+    "type": "boolean",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "noteCount",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "lastUpdate",
+    "type": "datetime",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 1,
+   "build": 0,
+   "skip": 25
+  },
+  "uniqueKey": null
+ },
+ "SalesOrder": {
+  "target": "deals",
+  "sampled": 200,
+  "rows": [
+   {
+    "field": "soId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "soNumber",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": true
+   },
+   {
+    "field": "customerId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "locationId",
+    "type": "int",
+    "fill": 84,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "date",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "description",
+    "type": "string",
+    "fill": 12,
+    "verdict": "map",
+    "hubspot": "description",
+    "unique": false
+   },
+   {
+    "field": "poNumber",
+    "type": "string",
+    "fill": 46,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "reqDate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "termId",
+    "type": "int",
+    "fill": 99,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "termDiscountRate",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "termDiscountDate",
+    "type": "datetime",
+    "fill": 5,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "dueDate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipMethodId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "jobId",
+    "type": "int",
+    "fill": 1,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "salesRepId",
+    "type": "int",
+    "fill": 97,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToAttn",
+    "type": "string",
+    "fill": 45,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToName",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToAddress",
+    "type": "string",
+    "fill": 98,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToCity",
+    "type": "string",
+    "fill": 98,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToState",
+    "type": "string",
+    "fill": 98,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToZip",
+    "type": "string",
+    "fill": 98,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToCountry",
+    "type": "string",
+    "fill": 30,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToName",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToAttn",
+    "type": "string",
+    "fill": 49,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToAddress",
+    "type": "string",
+    "fill": 94,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToCity",
+    "type": "string",
+    "fill": 94,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToState",
+    "type": "string",
+    "fill": 94,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToZip",
+    "type": "string",
+    "fill": 94,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToCountry",
+    "type": "string",
+    "fill": 28,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "remarks",
+    "type": "string",
+    "fill": 4,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "discountRate",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "discount",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "freight",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxCodeId",
+    "type": "int",
+    "fill": 94,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "tax",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "total",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "approvedById",
+    "type": "int",
+    "fill": 4,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "onHold",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "onHoldCodeId",
+    "type": "int",
+    "fill": 18,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "onHoldReleaseDate",
+    "type": "datetime",
+    "fill": 11,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "onHoldReleaserId",
+    "type": "string",
+    "fill": 11,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "branchId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "chargeMethodId",
+    "type": "int",
+    "fill": 19,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxable",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "amountTotal",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "amountPicketed",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "amountShipped",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "amountFulFilled",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "amountBilled",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "quantityTotal",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "quantityShipped",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "quantityFulfilled",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "quantityBilled",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billedFreight",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "orderTypeId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "warehouseId",
+    "type": "int",
+    "fill": 30,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "amountBackOrdered",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "quantityBackOrdered",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "statusId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "returnCodeId",
+    "type": "int",
+    "fill": 2,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "origInvoiceId",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "returnMethodId",
+    "type": "int",
+    "fill": 2,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "orderedByContactId",
+    "type": "int",
+    "fill": 2,
+    "verdict": "map",
+    "hubspot": "contact_id",
+    "unique": false
+   },
+   {
+    "field": "quoteId",
+    "type": "int",
+    "fill": 4,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "quoteOriginatorEmail",
+    "type": "string",
+    "fill": 4,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "noteCount",
+    "type": "int",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "sendShippingNotifications",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "sendShippingNotificationToOrderByContact",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shippingNotificationAdditionalEmails",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxExemptCodeId",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "salesRep",
+    "type": "Agent",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customer",
+    "type": "Customer",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billTo",
+    "type": "Customer",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "orderType",
+    "type": "SOOrderType",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "status",
+    "type": "SoStatus",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "details",
+    "type": "SOOrderDetail[]",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 2,
+   "build": 65,
+   "skip": 10
+  },
+  "uniqueKey": "soNumber"
+ },
+ "ServiceCall": {
+  "target": "tickets",
+  "sampled": 200,
+  "rows": [
+   {
+    "field": "callId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "callNumber",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": true
+   },
+   {
+    "field": "customerId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "status",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "description",
+    "type": "string",
+    "fill": 92,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "notes",
+    "type": "string",
+    "fill": 62,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "date",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "reqDate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "estStartDate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "closeDate",
+    "type": "datetime",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "creatorId",
+    "type": "string",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "createDate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "updatorId",
+    "type": "string",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "lastUpdate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "equipment",
+    "type": "Equipment",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "technician",
+    "type": "Agent",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "addressStreet",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "addressCity",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "addressState",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "addressZip",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "addressCountry",
+    "type": "string",
+    "fill": 6,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "caller",
+    "type": "string",
+    "fill": 98,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "trackingKey",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "externalId",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 0,
+   "build": 15,
+   "skip": 9
+  },
+  "uniqueKey": "callNumber"
+ },
+ "Item": {
+  "target": "products",
+  "sampled": 0,
+  "rows": [
+   {
+    "field": "itemId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "itemNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "map",
+    "hubspot": "item_number",
+    "unique": false
+   },
+   {
+    "field": "description",
+    "type": "string",
+    "fill": null,
+    "verdict": "map",
+    "hubspot": "description",
+    "unique": false
+   },
+   {
+    "field": "onHandQty",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "active",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prefMfgNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "modelId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "model",
+    "type": "Model",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "defaultPrice",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customerPrice",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 2,
+   "build": 7,
+   "skip": 1
+  },
+  "uniqueKey": null
+ },
+ "PrintReleafUsageRecord": {
+  "target": "companies",
+  "sampled": 0,
+  "rows": [
+   {
+    "field": "customerId",
+    "type": "int",
+    "fill": null,
+    "verdict": "map",
+    "hubspot": "e_automate_customer_id",
+    "unique": false
+   },
+   {
+    "field": "customerNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customerName",
+    "type": "string",
+    "fill": null,
+    "verdict": "map",
+    "hubspot": "name",
+    "unique": false
+   },
+   {
+    "field": "periodStart",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "periodEnd",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "blackAndWhitePages",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "colorPages",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "duplexCount",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "totalPages",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 2,
+   "build": 7,
+   "skip": 0
+  },
+  "uniqueKey": null
+ },
+ "Equipment": {
+  "target": "2-50535052",
+  "sampled": 200,
+  "rows": [
+   {
+    "field": "equipmentId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "equipmentNumber",
+    "type": "string",
+    "fill": 100,
+    "verdict": "map",
+    "hubspot": "equipment_number",
+    "unique": true
+   },
+   {
+    "field": "itemId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "serialNumber",
+    "type": "string",
+    "fill": 96,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customerId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billtoId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "locationId",
+    "type": "int",
+    "fill": 98,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "address",
+    "type": "string",
+    "fill": 98,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "city",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "state",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "zip",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "country",
+    "type": "string",
+    "fill": 32,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "locationDescription",
+    "type": "string",
+    "fill": 12,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "officeOpen",
+    "type": "datetime",
+    "fill": 14,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "officeClose",
+    "type": "datetime",
+    "fill": 14,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "installDate",
+    "type": "datetime",
+    "fill": 12,
+    "verdict": "map",
+    "hubspot": "install_date",
+    "unique": false
+   },
+   {
+    "field": "contact",
+    "type": "string",
+    "fill": 18,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contactPhone",
+    "type": "string",
+    "fill": 12,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contactFax",
+    "type": "string",
+    "fill": 7,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "decisionMaker",
+    "type": "string",
+    "fill": 14,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "decisionMakerPhone",
+    "type": "string",
+    "fill": 13,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "decisionMakerFax",
+    "type": "string",
+    "fill": 5,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "territoryId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "technicianId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "warrantyDate",
+    "type": "datetime",
+    "fill": 12,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "warrantyMeter",
+    "type": "int",
+    "fill": 54,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "pmMeterInterval",
+    "type": "int",
+    "fill": 53,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "pmMeterDue",
+    "type": "int",
+    "fill": 53,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "pmDateInterval",
+    "type": "int",
+    "fill": 8,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "pmDateDue",
+    "type": "datetime",
+    "fill": 8,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "pmUseMeter",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "pmUseDate",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "remarks",
+    "type": "string",
+    "fill": 4,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "active",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "map",
+    "hubspot": "active",
+    "unique": false
+   },
+   {
+    "field": "lastUpdate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "statusId",
+    "type": "int",
+    "fill": 57,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "conditionId",
+    "type": "int",
+    "fill": 22,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "branchId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "parentId",
+    "type": "int",
+    "fill": 1,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "hosting",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "attached",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leaseId",
+    "type": "int",
+    "fill": 4,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leaseEquipmentNumber",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "modelId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "isMetered",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "requireMeteronServiceCalls",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mostRecentDefaultMeterReadingDisplay",
+    "type": "decimal",
+    "fill": 16,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mostRecentDefaultMeterReadingDate",
+    "type": "datetime",
+    "fill": 16,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "priorityId",
+    "type": "int",
+    "fill": 12,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "equipmentContactId",
+    "type": "int",
+    "fill": 10,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "decisionContactId",
+    "type": "int",
+    "fill": 10,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "allowAutoMeterRequests",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "nextMeterReading",
+    "type": "datetime",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "lastMeterRequest",
+    "type": "datetime",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "timeZoneCodeId",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "expireByUsage",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "warrantyEndMeter",
+    "type": "decimal",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "meterContactId",
+    "type": "int",
+    "fill": 10,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "assetId",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ipAddress",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "macAddress",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "noteCount",
+    "type": "int",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "slaCodeId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "model",
+    "type": "Model",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customer",
+    "type": "Customer",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "location",
+    "type": "Customer",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billTo",
+    "type": "Customer",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "slaCode",
+    "type": "SLACode",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 3,
+   "build": 50,
+   "skip": 15
+  },
+  "uniqueKey": "equipmentNumber"
+ },
+ "ModelMeters": {
+  "target": "2-50535052",
+  "sampled": 0,
+  "rows": [
+   {
+    "field": "modelMeterId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "modelId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "meterTypeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "description",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "meterDigits",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "requireReading",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "warrantyClicks",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "doPMByClicks",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "pmIntervalClicks",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "pmDueClicks",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "meterFormula",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "isDefault",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "interfaceName",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "active",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "map",
+    "hubspot": "active",
+    "unique": false
+   },
+   {
+    "field": "avgMonthlyVolume3Mo",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "avgMonthlyVolume6Mo",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "avgMonthlyVolume12Mo",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "avgMonthlyVolumeInstall",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mfgSuggestedMonthlyVolume",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "targetMonthlyVolume",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "includeInMeterRequests",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "sequentialMeter",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "meterType",
+    "type": "MeterType",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 1,
+   "build": 21,
+   "skip": 1
+  },
+  "uniqueKey": null
+ },
+ "Contract": {
+  "target": "2-36237359",
+  "sampled": 200,
+  "rows": [
+   {
+    "field": "contractId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contractNumber",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": true
+   },
+   {
+    "field": "contractMajor",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contractMinor",
+    "type": "string",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customerId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contact",
+    "type": "string",
+    "fill": 61,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "phone",
+    "type": "string",
+    "fill": 52,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "fax",
+    "type": "string",
+    "fill": 47,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contractCodeId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billCodeId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billGroupId",
+    "type": "int",
+    "fill": 5,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "startdate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "expDate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "expCopies",
+    "type": "int",
+    "fill": 2,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseNextBillingDate",
+    "type": "datetime",
+    "fill": 84,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseLastBillingDate",
+    "type": "datetime",
+    "fill": 84,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseBillingCycleId",
+    "type": "int",
+    "fill": 84,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseArrears",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "sumIndividualBaseRates",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseRate",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "map",
+    "hubspot": "base_rate",
+    "unique": false
+   },
+   {
+    "field": "baseRatePeriod",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "overageNextBillingDate",
+    "type": "datetime",
+    "fill": 69,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "overageLastBillingDate",
+    "type": "datetime",
+    "fill": 83,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "overageBillingCycleId",
+    "type": "int",
+    "fill": 28,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "bsaBillForServices",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "bsaLaborDiscount",
+    "type": "decimal",
+    "fill": 2,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "bsaMaterialsDiscount",
+    "type": "decimal",
+    "fill": 2,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "bsaMinimumBalance",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "bsaMinimumBilling",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "coveredCopies",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "groupInvoices",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "poNumber",
+    "type": "string",
+    "fill": 28,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "miscChargeAmount",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "miscChargeTaxFlag",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "miscChargeDescription",
+    "type": "string",
+    "fill": 11,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "miscContinuous",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "remarks",
+    "type": "string",
+    "fill": 2,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "unearnedBalance",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "bill",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "activated",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "terminated",
+    "type": "datetime",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "renewed",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "active",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "map",
+    "hubspot": "active",
+    "unique": false
+   },
+   {
+    "field": "lastUpdate",
+    "type": "datetime",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leaseSchedule",
+    "type": "string",
+    "fill": 4,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxCodeId",
+    "type": "int",
+    "fill": 99,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "branchId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contractLeaseId",
+    "type": "int",
+    "fill": 2,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "useLeaseOnAllEquipment",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "remarksInternal",
+    "type": "string",
+    "fill": 2,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "termId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "salesRepId",
+    "type": "int",
+    "fill": 94,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "jobId",
+    "type": "int",
+    "fill": 2,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "accumCopies",
+    "type": "decimal",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "expCopyExpDate",
+    "type": "datetime",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contactId",
+    "type": "int",
+    "fill": 47,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToAttn",
+    "type": "string",
+    "fill": 48,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToAddress",
+    "type": "string",
+    "fill": 98,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToCity",
+    "type": "string",
+    "fill": 98,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToState",
+    "type": "string",
+    "fill": 96,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToZip",
+    "type": "string",
+    "fill": 96,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToCountry",
+    "type": "string",
+    "fill": 14,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseBilledThruDate",
+    "type": "datetime",
+    "fill": 80,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "overageBilledThruDate",
+    "type": "datetime",
+    "fill": 35,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseAccruedThruDate",
+    "type": "datetime",
+    "fill": 66,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "renewable",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseRateScheduleStartDate",
+    "type": "datetime",
+    "fill": 78,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgRateScheduleStartDate",
+    "type": "datetime",
+    "fill": 78,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "renewalCycleId",
+    "type": "int",
+    "fill": 27,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "nextBaseIncreaseDate",
+    "type": "datetime",
+    "fill": 1,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "nextOvgIncreaseDate",
+    "type": "datetime",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxable",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseBillingStartDate",
+    "type": "datetime",
+    "fill": 75,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "overageBillingStartDate",
+    "type": "datetime",
+    "fill": 22,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "useAlternateOvgBillTo",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToId",
+    "type": "int",
+    "fill": 1,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToAttn",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToAddress",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToCity",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToState",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToZip",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToCountry",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToTermId",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contractAdjCodeId",
+    "type": "int",
+    "fill": 25,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "useIndividualTaxCodes",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "terminationCodeId",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contractStatusId",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "oneTimeRemark",
+    "type": "string",
+    "fill": 1,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "printOneTimeRemark",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToTaxable",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToTaxCodeId",
+    "type": "int",
+    "fill": 50,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToUseIndividualTaxCodes",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "allowMeterEstimation",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "expCopiesBase",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "expAdjCopies",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "expCopiesActualExpDate",
+    "type": "datetime",
+    "fill": 2,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "expDateInitial",
+    "type": "datetime",
+    "fill": 99,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "cppMinimumPages",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "cppRate",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "cppHardwareAmount",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "cppServiceRate",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "combineLeaseAndBase",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "timeBlockBased",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "noteCount",
+    "type": "int",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseRatePeriodType",
+    "type": "int",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "unearnedInterestBalance",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "unearnedLeaseBalance",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "unearnedLeasePostTermBalance",
+    "type": "decimal",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "message",
+    "type": "string",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "messReqAcknowledgment",
+    "type": "boolean",
+    "fill": 100,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxExemptCodeId",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "ovgBillToTaxExemptCodeId",
+    "type": "int",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "slaCodeId",
+    "type": "int",
+    "fill": 6,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customer",
+    "type": "Customer",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billTo",
+    "type": "Customer",
+    "fill": 0,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "details",
+    "type": "ContractDetail[]",
+    "fill": 100,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 2,
+   "build": 94,
+   "skip": 21
+  },
+  "uniqueKey": "contractNumber"
+ },
+ "ContractDetail": {
+  "target": "2-36237359",
+  "sampled": 0,
+  "rows": [
+   {
+    "field": "contractDetailId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contractId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "equipmentId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "locationId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseRate",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "map",
+    "hubspot": "base_rate",
+    "unique": false
+   },
+   {
+    "field": "billCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "useContractLease",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "startDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "map",
+    "hubspot": "start_date",
+    "unique": false
+   },
+   {
+    "field": "endDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseBilledThruDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "overageBilledThruDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseAccruedThruDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prorateStart",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prorateStartAmount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prorateStartBillNow",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prorateEnd",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prorateEndAmount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prorateEndBillNow",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "address",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "city",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "state",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "zip",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "country",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "nextBaseIncreaseDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "unEarnedBalance",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prorateStartAutoCalc",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "prorateEndAutoCalc",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "startMeterReadingDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "endMeterReadingDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "baseRateScheduleStartDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "terminationCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "quantity",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "unitBaseRate",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "noteCount",
+    "type": "int",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billStartDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billEndDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "parentContractDetailId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contractDetailTypeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "subLeaseNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "subLeaseMajor",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "subLeaseMinor",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leaseTerm",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leasePaymentStartDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leasePaymentEndDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leaseRate",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leaseRateFactor",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leaseInterestRate",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leaseFinancedAmount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leasePaymentAmount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leasePrincipalBalance",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "combineWithParentBaseAmount",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "unearnedInterestBalance",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "unearnedLeaseBalance",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "unearnedLeasePostTermBalance",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "leaseTerminationCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "assetNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxExemptCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxable",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "overrideTaxable",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "itemId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "description",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "locationRemarks",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "slaCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "equipment",
+    "type": "Equipment",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "location",
+    "type": "Customer",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "slaCode",
+    "type": "SLACode",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 2,
+   "build": 61,
+   "skip": 4
+  },
+  "uniqueKey": null
+ },
+ "Invoice": {
+  "target": null,
+  "sampled": 0,
+  "rows": [
+   {
+    "field": "invoiceId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "invoiceNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "type",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customerId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billToId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "applyToId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "masterInvoiceId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "locationId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "date",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "datePeriod",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "period",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "description",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "poNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "termId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "termDiscountRate",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "termDiscountDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "termDiscount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "dueDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "salesRepId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToAttn",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToName",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToAddress",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToCity",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToState",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToZip",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "mailToCountry",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToAttn",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToName",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToAddress",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToCity",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToState",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToZip",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToCountry",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "remarks",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "discountRate",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "discount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "freight",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "tax",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "total",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "adjTotal",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "due",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "voidId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "module",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "source",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "reference",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "creatorId",
+    "type": "string",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "updatorId",
+    "type": "string",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "createDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "lastUpdate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "transactionTypeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "chargeMethodId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "chargeAccountInfo",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxable",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "freightDeptId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "discountDeptId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "consolidate",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "consolidatedBillingId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billingNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "isVoid",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "sent",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "noteId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "noteFlag",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "orderedByContactId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "sendContactId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "sendMethodId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "receivablePayableId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "primaryReportDefinitionId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "noteCount",
+    "type": "int",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "extReferenceNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "commissionRepId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxExemptCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "freightTaxFlag",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "freightTaxFlagId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "customer",
+    "type": "Customer",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billTo",
+    "type": "Customer",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "details",
+    "type": "InvoiceDetail[]",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 0,
+   "build": 68,
+   "skip": 9
+  },
+  "uniqueKey": null
+ },
+ "InvoiceDetail": {
+  "target": null,
+  "sampled": 0,
+  "rows": [
+   {
+    "field": "invoiceId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "detailId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "description",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "amount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxFlag",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "cost",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "creatorId",
+    "type": "string",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "updatorId",
+    "type": "string",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "createDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "lastUpdate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "lineNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxable",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxExemptCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "taxFlagId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 0,
+   "build": 11,
+   "skip": 4
+  },
+  "uniqueKey": null
+ },
+ "SOOrderDetail": {
+  "target": null,
+  "sampled": 0,
+  "rows": [
+   {
+    "field": "soId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "detailId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "itemId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "description",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "quantity",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "um",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "price",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "equipmentId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contractId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "bill",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "discount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "stocked",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "amount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "backOrdered",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "picketed",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipped",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "canceled",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "billed",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "workOrderId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "returnCodeId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "returnRemarks",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "fulfilled",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "remarks",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "isReturn",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "isRMAReturn",
+    "type": "boolean",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "trackingNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "earliestDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "latestDate",
+    "type": "datetime",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "notes",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "shipToContactId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "lineNumber",
+    "type": "string",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "displayPrice",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "displayAmount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "displayDiscount",
+    "type": "decimal",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "contractDetailId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "branchId",
+    "type": "int",
+    "fill": null,
+    "verdict": "build",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "item",
+    "type": "Item",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   },
+   {
+    "field": "equipment",
+    "type": "Equipment",
+    "fill": null,
+    "verdict": "skip",
+    "hubspot": null,
+    "unique": false
+   }
+  ],
+  "counts": {
+   "map": 0,
+   "build": 36,
+   "skip": 2
+  },
+  "uniqueKey": null
+ }
+}
