@@ -436,6 +436,27 @@ def main() -> None:
     co_ids = upsert(COMPANY, "ea_customer_number", co_rows, "Company")
 
     print("contracts ...", file=sys.stderr)
+    # THE ALLOWANCE MUST RECONCILE WITH THE DEVICES ON THE CONTRACT, AND SIT BELOW THEM.
+    #
+    # ea_exp_copies shares the base rate's period -- verified against this portal's real
+    # e-automate contracts, which pair 10,000 copies with a $200 MONTHLY base rate. The
+    # first version of this fixture set a flat 240,000 against devices running 57,000: an
+    # allowance four times actual, which taught the exact opposite of the intended lesson,
+    # because the screen then read "well within allowance" on a fleet built to demonstrate
+    # overage exposure.
+    #
+    # Derived per contract from its OWN devices instead, deliberately under actual so every
+    # agreement shows overage -- which is the point of the comparison. The factor varies by
+    # account so the three read differently: Contoso is badly under-contracted, Northwind
+    # modestly, Fabrikam barely.
+    UNDER = {"CUST-01": 0.92, "CUST-02": 0.78, "CUST-03": 0.95}
+    allowance: dict[str, int] = {}
+    for a in ACCOUNTS:
+        f = UNDER.get(a["num"], 0.9)
+        for c in a["contracts"]:
+            actual = sum(x["bw"] + x["clr"] for x in a["devices"]
+                         if x["contract"] == c["id"])
+            allowance[c["id"]] = int(round(actual * f / 100.0) * 100) if actual else 0
     ct_rows = []
     for a in ACCOUNTS:
         for c in a["contracts"]:
@@ -448,7 +469,7 @@ def main() -> None:
                 "start_date": d(c["start"]), "ea_exp_date": d(c["exp"]),
                 "ea_renewable": "true" if c["renewable"] else "false",
                 "base_rate": str(c["rate"]), "ea_base_rate_period": c["period"],
-                "ea_exp_copies": str(c["copies"]),
+                "ea_exp_copies": str(allowance.get(c["id"]) or c["copies"]),
                 "ea_unearned_balance": str(c["unearned"]),
                 # NOT ea_customer_number: neither Contract nor Equipment has that
                 # property in this portal. The Company association carries the
@@ -614,6 +635,34 @@ def main() -> None:
     link(EQUIPMENT, METER, eq_me, "Equipment -> Meter")
     link(EQUIPMENT, SERVICE_CALL, eq_sc, "Equipment -> Service Call")
     link(CONTRACT, LEASE, ct_ls, "Contract -> Lease")
+
+    # ── equipment rollups ───────────────────────────────────────────────────
+    # Equipment carries its own restatement of the meter figures. Written here from the
+    # fixture so they AGREE with the meters, because a generator that authors them
+    # independently produces a device whose mono plus colour does not equal its total --
+    # which is what happened on the first fill pass and reads as a broken screen.
+    print("\nequipment rollups ...", file=sys.stderr)
+    eq_roll = []
+    for a in ACCOUNTS:
+        for x in a["devices"]:
+            eid = eq_ids.get(PREFIX + x["id"])
+            if not eid:
+                continue
+            total = x["bw"] + x["clr"]
+            eq_roll.append({"id": eid, "properties": {
+                "ea_bw_avg_monthly_volume12_mo": str(x["bw"]),
+                "ea_color_avg_monthly_volume12_mo": str(x["clr"]),
+                "ea_total_avg_monthly_volume12_mo": str(total),
+                "ea_meter_count": str((2 if x["clr"] else 1) + 1),
+                "ea_is_metered": "true",
+            }})
+    for i in range(0, len(eq_roll), 100):
+        r = call("POST", f"/crm/v3/objects/{EQUIPMENT}/batch/update",
+                 {"inputs": eq_roll[i:i + 100]})
+        if "__error" in r:
+            print(f"  ! equipment rollups: {r['__error']} {r.get('__body','')[:200]}",
+                  file=sys.stderr)
+    print(f"  {len(eq_roll)} devices rolled up", file=sys.stderr)
 
     # ── company rollups ─────────────────────────────────────────────────────
     # The real accounts get these from PrintReleaf, which knows nothing about DEMO-
