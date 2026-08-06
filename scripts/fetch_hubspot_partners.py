@@ -264,6 +264,8 @@ def fetch_details(listing_ids: list[int]) -> dict[int, dict]:
 
 COLUMNS = [
     "company_name",
+    "domain",
+    "directory_listing_name",
     "directory_url",
     "website",
     "tier",
@@ -303,6 +305,58 @@ def ms_to_date(value) -> str:
     if not isinstance(value, (int, float)) or value <= 0:
         return ""
     return time.strftime("%Y-%m-%d", time.gmtime(value / 1000))
+
+
+TWO_LABEL_SUFFIXES = {
+    "co.uk", "org.uk", "ac.uk", "gov.uk", "com.au", "net.au", "org.au",
+    "co.nz", "com.br", "com.mx", "co.za", "co.jp", "or.jp", "ne.jp",
+    "co.in", "com.sg", "com.tr", "com.ar", "com.co", "co.il", "com.hk",
+}
+
+
+def registrable_domain(value: str) -> str:
+    """Reduce a URL to its registrable domain - the CRM join key."""
+    if not value:
+        return ""
+    raw = value.strip().lower()
+    if "://" not in raw:
+        raw = "http://" + raw
+    try:
+        host = (urllib.parse.urlsplit(raw).hostname or "").rstrip(".")
+    except ValueError:
+        return ""
+    if not host or "." not in host:
+        return ""
+    host = re.sub(r"^(www|www\d|ww2|web|en|us|m)\.", "", host)
+    labels = host.split(".")
+    if len(labels) >= 3 and ".".join(labels[-2:]) in TWO_LABEL_SUFFIXES:
+        return ".".join(labels[-3:])
+    if len(labels) > 2:
+        return ".".join(labels[-2:])
+    return host
+
+
+# Tokens that should not be title-cased when rebuilding a name from a slug.
+SLUG_UPPER = {"llc", "inc", "ltd", "gmbh", "bv", "srl", "sa", "ag", "plc",
+              "crm", "seo", "b2b", "b2c", "ai", "it", "uk", "usa", "us"}
+
+
+def name_from_slug(slug: str) -> str:
+    """Rebuild a plausible company name from the directory slug.
+
+    The directory's companyName field is partner-editable marketing copy - some
+    partners replace their name with a keyword list entirely (New Breed lists
+    itself as "CRM Implementations, RevOps, AEO + Web, Demand Gen"). The slug is
+    generated from the real company name when the profile is created, so it is a
+    far better basis for a CRM-facing name.
+    """
+    if not slug:
+        return ""
+    words = [w for w in re.split(r"[-_]+", slug.strip().lower()) if w]
+    out = []
+    for w in words:
+        out.append(w.upper() if w in SLUG_UPPER else w[:1].upper() + w[1:])
+    return " ".join(out)
 
 
 # Control characters that are legal in JSON but rejected by the XLSX writer.
@@ -360,10 +414,18 @@ def _build_row(card: dict, detail: dict) -> dict:
     if tier in ("none", "null"):
         tier = ""
 
+    listed_name = detail.get("companyName") or card.get("companyName") or ""
+    slug = card.get("slug") or detail.get("urlSlug") or ""
+    website = detail.get("companyUrl") or ""
+
     return {
-        "company_name": detail.get("companyName") or card.get("companyName") or "",
-        "directory_url": PROFILE_URL.format(slug=card.get("slug", "")),
-        "website": detail.get("companyUrl") or "",
+        # Slug-derived name is the CRM-facing one; the directory's own field is
+        # kept alongside it because that is what HubSpot displays publicly.
+        "company_name": name_from_slug(slug) or listed_name,
+        "domain": registrable_domain(website),
+        "directory_listing_name": listed_name,
+        "directory_url": PROFILE_URL.format(slug=slug),
+        "website": website,
         "tier": tier,
         "partner_type": detail.get("partnerType") or product.get("partnerType") or "",
         "review_count": reviews.get("reviewCount") or 0,
