@@ -265,6 +265,7 @@ def fetch_details(listing_ids: list[int]) -> dict[int, dict]:
 COLUMNS = [
     "company_name",
     "domain",
+    "website_is_platform_link",
     "directory_listing_name",
     "directory_url",
     "website",
@@ -307,34 +308,47 @@ def ms_to_date(value) -> str:
     return time.strftime("%Y-%m-%d", time.gmtime(value / 1000))
 
 
-TWO_LABEL_SUFFIXES = {
-    "co.uk", "org.uk", "ac.uk", "gov.uk", "com.au", "net.au", "org.au",
-    "co.nz", "com.br", "com.mx", "co.za", "co.jp", "or.jp", "ne.jp",
-    "co.in", "com.sg", "com.tr", "com.ar", "com.co", "co.il", "com.hk",
-}
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from domainutil import (  # noqa: E402
+    is_generic,
+    needs_redirect_resolution,
+    registrable_domain,
+    resolve_final_domain,
+)
+
+# Populated by resolve_shortened_websites(): shortener URL -> real domain.
+RESOLVED_DOMAINS: dict[str, str] = {}
 
 
-def registrable_domain(value: str) -> str:
-    """Reduce a URL to its registrable domain - the CRM join key."""
-    if not value:
-        return ""
-    raw = value.strip().lower()
-    if "://" not in raw:
-        raw = "http://" + raw
-    try:
-        host = (urllib.parse.urlsplit(raw).hostname or "").rstrip(".")
-    except ValueError:
-        return ""
-    if not host or "." not in host:
-        return ""
-    host = re.sub(r"^(www|www\d|ww2|web|en|us|m)\.", "", host)
-    labels = host.split(".")
-    if len(labels) >= 3 and ".".join(labels[-2:]) in TWO_LABEL_SUFFIXES:
-        return ".".join(labels[-3:])
-    if len(labels) > 2:
-        return ".".join(labels[-2:])
-    return host
+def resolve_shortened_websites(details: dict[int, dict]) -> None:
+    """Resolve partners whose website is a shortener into their real domain.
 
+    Cached on disk because it costs one HTTP request per affected partner.
+    """
+    cache_path = os.path.join(DATA_DIR, "resolved_domains.json")
+    if os.path.exists(cache_path):
+        with open(cache_path, encoding="utf-8") as fh:
+            RESOLVED_DOMAINS.update(json.load(fh))
+
+    todo = sorted({
+        (d.get("companyUrl") or "")
+        for d in details.values()
+        if needs_redirect_resolution(d.get("companyUrl") or "")
+    } - set(RESOLVED_DOMAINS))
+    if not todo:
+        return
+
+    print(f"resolving {len(todo)} shortened partner websites")
+    for i, url in enumerate(todo, 1):
+        RESOLVED_DOMAINS[url] = resolve_final_domain(url)
+        if i % 10 == 0:
+            print(f"  resolved: {i}/{len(todo)}", end="\r", flush=True)
+
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(cache_path, "w", encoding="utf-8") as fh:
+        json.dump(RESOLVED_DOMAINS, fh, indent=1, sort_keys=True)
+    hit = sum(1 for v in RESOLVED_DOMAINS.values() if v)
+    print(f"  resolved: {hit}/{len(RESOLVED_DOMAINS)} produced a real domain")
 
 # Tokens that should not be title-cased when rebuilding a name from a slug.
 SLUG_UPPER = {"llc", "inc", "ltd", "gmbh", "bv", "srl", "sa", "ag", "plc",
@@ -422,7 +436,15 @@ def _build_row(card: dict, detail: dict) -> dict:
         # Slug-derived name is the CRM-facing one; the directory's own field is
         # kept alongside it because that is what HubSpot displays publicly.
         "company_name": name_from_slug(slug) or listed_name,
-        "domain": registrable_domain(website),
+        # A shortener resolves to the real site; anything else uses the URL as
+        # given. Partners who list only a LinkedIn/Linktree page have no usable
+        # domain and cannot be domain-matched or imported.
+        "domain": (
+            RESOLVED_DOMAINS.get(website, "")
+            if needs_redirect_resolution(website)
+            else registrable_domain(website)
+        ),
+        "website_is_platform_link": is_generic(website),
         "directory_listing_name": listed_name,
         "directory_url": PROFILE_URL.format(slug=slug),
         "website": website,
@@ -569,6 +591,7 @@ def main() -> int:
     listing_ids = [c["listingId"] for c in cards]
 
     details = {} if args.no_details else fetch_details(listing_ids)
+    resolve_shortened_websites(details)
 
     rows = [build_row(card, details.get(card["listingId"], {})) for card in cards]
     rows.sort(key=sort_key)

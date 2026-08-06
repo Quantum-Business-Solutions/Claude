@@ -39,50 +39,8 @@ COMPANIES_CACHE = os.path.join(SCRATCH, "qbs_companies.jsonl")
 MATCHED_CSV = os.path.join(DATA_DIR, "partners_matched_in_hubspot.csv")
 MISSING_CSV = os.path.join(DATA_DIR, "partners_missing_from_hubspot.csv")
 
-# Multi-part public suffixes we care about, so "foo.co.uk" keeps two labels.
-TWO_LABEL_SUFFIXES = {
-    "co.uk", "org.uk", "ac.uk", "gov.uk", "com.au", "net.au", "org.au",
-    "co.nz", "com.br", "com.mx", "co.za", "co.jp", "or.jp", "ne.jp",
-    "co.in", "com.sg", "com.tr", "com.ar", "com.co", "co.il", "com.hk",
-}
-
-# Hosts that are never a company's own identity.
-GENERIC_HOSTS = {
-    "hubspot.com", "www.hubspot.com", "sites.google.com", "google.com",
-    "facebook.com", "linkedin.com", "wixsite.com", "squarespace.com",
-    "wordpress.com", "godaddysites.com", "myshopify.com", "webflow.io",
-    "github.io", "notion.site", "carrd.co", "framer.website",
-}
-
-
-def registrable_domain(value: str) -> str:
-    """Reduce a URL or host to its registrable domain, or '' if unusable."""
-    if not value:
-        return ""
-    raw = value.strip().lower()
-    if not raw:
-        return ""
-    if "://" not in raw:
-        raw = "http://" + raw
-    try:
-        host = urllib.parse.urlsplit(raw).hostname or ""
-    except ValueError:
-        return ""
-    host = host.rstrip(".")
-    if not host or "." not in host:
-        return ""
-    # Strip common leading noise.
-    host = re.sub(r"^(www|www\d|ww2|web|info|en|us|m)\.", "", host)
-    if host in GENERIC_HOSTS:
-        return ""
-    labels = host.split(".")
-    if len(labels) >= 3 and ".".join(labels[-2:]) in TWO_LABEL_SUFFIXES:
-        host = ".".join(labels[-3:])
-    elif len(labels) > 2:
-        host = ".".join(labels[-2:])
-    if host in GENERIC_HOSTS:
-        return ""
-    return host
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from domainutil import registrable_domain  # noqa: E402
 
 
 # --------------------------------------------------------------------------- #
