@@ -1,0 +1,7 @@
+# Raw per-profile API cache — large, regenerable, and only used to make
+# re-runs resumable. The CSV/XLSX in data/ are the actual deliverables.
+data/listing_details.cache.jsonl
+
+__pycache__/
+*.pyc
+.DS_Store
