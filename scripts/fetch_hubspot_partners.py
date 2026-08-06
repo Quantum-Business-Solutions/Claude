@@ -27,6 +27,7 @@ import csv
 import json
 import os
 import random
+import re
 import sys
 import threading
 import time
@@ -304,6 +305,18 @@ def ms_to_date(value) -> str:
     return time.strftime("%Y-%m-%d", time.gmtime(value / 1000))
 
 
+# Control characters that are legal in JSON but rejected by the XLSX writer.
+# Partner-authored profile copy occasionally contains them.
+ILLEGAL_CHARS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
+
+
+def scrub(value):
+    """Strip control characters and collapse whitespace in text values."""
+    if not isinstance(value, str):
+        return value
+    return re.sub(r"\s+", " ", ILLEGAL_CHARS.sub("", value)).strip()
+
+
 def join(values) -> str:
     if not values:
         return ""
@@ -317,6 +330,10 @@ def join(values) -> str:
 
 
 def build_row(card: dict, detail: dict) -> dict:
+    return {k: scrub(v) for k, v in _build_row(card, detail).items()}
+
+
+def _build_row(card: dict, detail: dict) -> dict:
     products = card.get("products") or [{}]
     product = products[0] if products else {}
     reviews = card.get("reviewSummary") or {}
