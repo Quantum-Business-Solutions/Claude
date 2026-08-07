@@ -1,0 +1,1383 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Shawn Peterson",
+ "categoryId": 1,
+ "contentTypeCategory": 4,
+ "createdAt": "2026-08-07T17:38:30.093Z",
+ "createdById": "26261533",
+ "currentState": "DRAFT",
+ "domain": "info.davincilabs.com",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "htmlTitle": "Private Label Capsule Supplements | DaVinci Private Label",
+ "id": "218936720462",
+ "language": "en",
+ "layoutSections": {
+  "main_content": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "label": "Main Content",
+   "name": "main_content",
+   "params": {},
+   "rowMetaData": [
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    }
+   ],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_0",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Hero",
+         "name": "module_0",
+         "params": {
+          "align": "center",
+          "background_image": {
+           "background_position": "MIDDLE_CENTER",
+           "background_size": "cover",
+           "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_HeroBackground_2.jpg"
+          },
+          "background_screen": {
+           "color": "#c9dbe2",
+           "opacity": 85
+          },
+          "buttons": [
+           {
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Talk to Our Team"
+           }
+          ],
+          "eyebrow": "PRIVATE LABEL CAPSULES",
+          "eyebrow_color": "heading",
+          "headline": "<h1>Launch your supplement line in capsules, customer-ready.</h1>",
+          "max_width": 900,
+          "module_id": 218939846507,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "subhead": "<p>Doctor-formulated supplements available in capsules format, ready to brand as your own and ship to your customers.</p>",
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_1",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Rich Text",
+         "name": "module_1",
+         "params": {
+          "align": "left",
+          "body_size": 18,
+          "content": "<h2>Why brands choose capsules as a supplement format.</h2><p>Different audiences prefer different delivery formats. Capsules are a category-leading choice when your customers want a specific combination of convenience, dosing precision, and ingredient compatibility.</p><p>With direct access to over 250 doctor-formulated supplements, low minimums, and no set-up fees, you can quickly build a capsules-based product line that fits your audience. Below is what to know about manufacturing capsules for private label: the formulations we offer, the specs available, how we make them, and which health categories benefit most.</p>",
+          "max_width": 850,
+          "module_id": 218940115784,
+          "section_id": "",
+          "size": "normal",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "top_border": false
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_2",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Card Grid",
+         "name": "module_2",
+         "params": {
+          "accent_color": {
+           "color": "#6BA644",
+           "opacity": 100
+          },
+          "card_align": "left",
+          "card_style": "plain",
+          "cards": [
+           {
+            "content": "<p>Direct access to over 250 doctor-formulated supplements with low minimums and no set-up fees. Choose what fits your audience and your timeline.</p>",
+            "number_or_eyebrow": "01",
+            "title": "BUILD YOUR PRODUCT LINE"
+           },
+           {
+            "content": "<p>Use your existing logo, customize a new label, or pick from our professional templates. Our in-house design team brings your vision to life.</p>",
+            "number_or_eyebrow": "02",
+            "title": "DESIGN YOUR BRAND"
+           },
+           {
+            "content": "<p>Launch in as little as 3 to 4 weeks after approving your labels. Every product passes rigorous quality assurance before it ships.</p>",
+            "number_or_eyebrow": "03",
+            "title": "START SELLING FAST"
+           }
+          ],
+          "eyebrow_style": "text",
+          "gap": 40,
+          "icon_badge": true,
+          "icon_badge_color": {
+           "color": "#c9dbe2",
+           "opacity": 100
+          },
+          "max_width": 1100,
+          "min_column_width": 260,
+          "module_id": 218940115759,
+          "section_eyebrow": "HOW IT WORKS",
+          "section_headline": "Get to market faster with a partner who handles the heavy lifting.",
+          "section_subhead": "",
+          "show_accent": true,
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 70
+           }
+          },
+          "text_color": "dark",
+          "title_style": "eyebrow-caps"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_3",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Card Grid",
+         "name": "module_3",
+         "params": {
+          "accent_color": {
+           "color": "#6BA644",
+           "opacity": 100
+          },
+          "card_align": "left",
+          "card_style": "card",
+          "cards": [
+           {
+            "content": "<p>Capsules are the most recognized supplement format. Customers swallow them whole, dosing is precise, and the format works across nearly every health category. The right choice when your audience prefers a familiar, low-friction supplement experience.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-ae9b4a4f61.svg"
+            },
+            "title": "The standard for no-fuss supplement delivery"
+           },
+           {
+            "content": "<p>Choose hard-shell gelatin for traditional formulations or HPMC vegetarian capsules for plant-based, kosher, and halal-compatible positioning. Both deliver the same dosing precision and stability.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-0e742f57f3.svg"
+            },
+            "title": "Vegetarian and gelatin options"
+           },
+           {
+            "content": "<p>Capsules accommodate powders, oils, herbs, and combination formulas that would not work in tablet form. The strongest choice for complex multi-ingredient products and sensitive actives.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-ad898d8cf3.svg"
+            },
+            "title": "Wide ingredient compatibility"
+           }
+          ],
+          "eyebrow_style": "text",
+          "gap": 28,
+          "icon_badge": true,
+          "icon_badge_color": {
+           "color": "#c9dbe2",
+           "opacity": 100
+          },
+          "max_width": 1100,
+          "min_column_width": 260,
+          "module_id": 218940115759,
+          "section_eyebrow": "ADVANTAGES",
+          "section_headline": "What makes capsules a strong supplement format.",
+          "section_subhead": "",
+          "show_accent": true,
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 70
+           }
+          },
+          "text_color": "dark",
+          "title_style": "heading"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_4",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Section Header",
+         "name": "module_4",
+         "params": {
+          "align": "center",
+          "eyebrow": "SPECIFICATIONS",
+          "headline": "Manufacturing specs available for private label capsules.",
+          "module_id": 218940115771,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 30,
+            "padding_top": 70
+           }
+          },
+          "subhead": "<p>The most common questions from brand owners are about sizes, materials, fill capacity, and minimums. Here is the short answer for each.</p>",
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_5",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Stat Band",
+         "name": "module_5",
+         "params": {
+          "accent_color": {
+           "color": "#012638",
+           "opacity": 100
+          },
+          "align": "left",
+          "card_style": "card",
+          "gap": 24,
+          "max_width": 1200,
+          "min_column_width": 240,
+          "module_id": 218940115735,
+          "section_headline": "",
+          "stats": [
+           {
+            "description": "<p>Six standard capsule sizes from 00 (largest, ~1000mg fill) to size 4 (smallest, ~210mg fill). Choose based on your formulation and target audience.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-7389db2445.svg"
+            },
+            "stat_label": "Size Options",
+            "value": "00 - 4"
+           },
+           {
+            "description": "<p>Hard-shell bovine gelatin (most common, lowest cost) or HPMC vegetarian capsules (plant-based, kosher, halal compatible). Pick what fits your brand positioning.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-0e742f57f3.svg"
+            },
+            "stat_label": "Material Options",
+            "value": "2"
+           },
+           {
+            "description": "<p>Fill range depends on capsule size and ingredient density. Our formulators help right-size the capsule to dosing requirements and customer experience.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-04cb8f7fc7.svg"
+            },
+            "stat_label": "Fill Capacity",
+            "value": "210mg - 1000mg"
+           },
+           {
+            "description": "<p>Low order minimums and no set-up fees. Exact MOQ varies by formulation complexity and is scoped during the discovery call.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-681f7474d8.svg"
+            },
+            "stat_label": "Minimums &amp; Set-Up",
+            "value": "Low MOQ"
+           }
+          ],
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "value_size": 28
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_6",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Content Split",
+         "name": "module_6",
+         "params": {
+          "buttons": [],
+          "content": "<p>Our encapsulation lines run in our FDA-registered Vermont facility under full GMP controls. Every batch goes through identity verification on raw materials, in-process fill weight checks, and finished-product testing for identity, purity, potency, and contaminants before release. Bottling, induction sealing, and labeling happen on the same site, so your private label product ships customer-ready without a third-party packaging handoff.</p>",
+          "eyebrow": "MANUFACTURING",
+          "gap": 60,
+          "headline": "How we manufacture capsules for private label.",
+          "image": {
+           "alt": "Capsules manufacturing",
+           "loading": "lazy",
+           "size_type": "auto",
+           "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Capsules.jpg"
+          },
+          "image_radius": 6,
+          "image_shadow": false,
+          "image_side": "left",
+          "max_width": 1100,
+          "module_id": 218939846527,
+          "ratio": "1fr 1fr",
+          "style": {
+           "background_color": {
+            "color": "#012638",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "text_color": "light"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_7",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - CTA Band",
+         "name": "module_7",
+         "params": {
+          "background_screen": {
+           "color": "#012638",
+           "opacity": 0
+          },
+          "buttons": [
+           {
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "dark",
+            "text": "Request Samples"
+           }
+          ],
+          "content": "<p>Want to see capsules samples or talk through your formulation?</p>",
+          "eyebrow": "",
+          "headline": "",
+          "max_width": 800,
+          "module_id": 218940115731,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 50
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_8",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Tile Grid",
+         "name": "module_8",
+         "params": {
+          "columns": "auto",
+          "gap": 24,
+          "image_fit": "cover",
+          "image_height": 160,
+          "image_max_width": 0,
+          "label_size": 17,
+          "max_width": 1200,
+          "min_column_width": 180,
+          "module_id": 218940115743,
+          "row_gap": 0,
+          "section_headline": "Categories where capsules shine",
+          "section_subhead": "<p>Some health categories work better in capsules than others. Here are the ones where this format is the natural choice.</p>",
+          "show_labels_over_image": false,
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "tile_style": "card",
+          "tiles": [
+           {
+            "image": {
+             "alt": "Aging",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/agingsupps.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/private-label-aging",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Aging"
+           },
+           {
+            "image": {
+             "alt": "Herbal",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/herbalsupps.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/private-label-herbal",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Herbal"
+           },
+           {
+            "image": {
+             "alt": "Probiotics",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/probioticsupps.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/private-label-probiotics",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Probiotics"
+           },
+           {
+            "image": {
+             "alt": "Women's Health",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/womenssupps.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/private-label-womens-health",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Women's Health"
+           },
+           {
+            "image": {
+             "alt": "Sleep",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/sleepsupps.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/private-label-sleep",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Sleep"
+           }
+          ]
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_9",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - FAQ",
+         "name": "module_9",
+         "params": {
+          "items": [
+           {
+            "answer": "<p>Yes. HPMC (hydroxypropyl methylcellulose) vegetarian capsules are available across all our standard sizes. They are plant-derived, kosher, and halal compatible. Cost is slightly higher than gelatin but most brands targeting health-conscious audiences choose vegetarian as a default.</p>",
+            "question": "Do you offer vegetarian capsules?"
+           },
+           {
+            "answer": "<p>Standard gelatin capsules are derived from bovine sources, so they are not appropriate for vegetarian or kosher/halal positioning unless verified. HPMC capsules avoid this entirely. Both formats can be manufactured allergen-free for the top common allergens (soy, dairy, wheat, etc.) with proper segregation, which is part of our standard GMP practice.</p>",
+            "question": "What are common allergens to watch for in capsules?"
+           },
+           {
+            "answer": "<p>Most capsule formulations have a 24-month shelf life from manufacture date when stored under standard conditions. Specific shelf life depends on the active ingredients. Stability testing for longer claims (36 months) is available on request.</p>",
+            "question": "What is the typical shelf life of a private label capsule product?"
+           },
+           {
+            "answer": "<p>Yes. We offer delayed-release (enteric-coated) capsules for ingredients that need to bypass stomach acid, and controlled-release formats for ingredients where extended absorption matters. These are scoped during the formulation phase based on the specific actives.</p>",
+            "question": "Can you do controlled-release or delayed-release capsules?"
+           },
+           {
+            "answer": "<p>Both gelatin and HPMC capsules come in a wide range of colors, including clear, opaque, and two-tone combinations. Capsule printing (brand name or logo directly on the capsule) is available for orders above our standard run minimum. Talk to our team about your brand requirements.</p>",
+            "question": "What color and printing options are available for capsules?"
+           }
+          ],
+          "max_width": 820,
+          "module_id": 218940115739,
+          "open_first": false,
+          "section_eyebrow": "",
+          "section_headline": "Capsules questions we hear most often",
+          "section_id": "",
+          "section_subhead": "<p>Quick answers to the questions brand owners ask before they commit.</p>",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_10",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Tile Grid",
+         "name": "module_10",
+         "params": {
+          "columns": "auto",
+          "gap": 24,
+          "image_fit": "cover",
+          "image_height": 187,
+          "image_max_width": 180,
+          "image_radius": 8,
+          "label_size": 16,
+          "max_width": 1200,
+          "min_column_width": 160,
+          "module_id": 218940115743,
+          "row_gap": 36,
+          "section_headline": "Other supplement forms we offer",
+          "section_subhead": "<p>Most brands launch with two or three formats to give customers options. Here is the full list of formats we manufacture.</p>",
+          "show_labels_over_image": false,
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "tile_style": "plain",
+          "tiles": [
+           {
+            "image": {
+             "alt": "Tablets",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Tablets.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Tablets"
+           },
+           {
+            "image": {
+             "alt": "Soft Gels",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_SoftGel.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Soft Gels"
+           },
+           {
+            "image": {
+             "alt": "Powders",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Powders.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Powders"
+           },
+           {
+            "image": {
+             "alt": "Chewables",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_ChewableTablet.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Chewables"
+           },
+           {
+            "image": {
+             "alt": "Liquids",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Liquid.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Liquids"
+           },
+           {
+            "image": {
+             "alt": "Oral Sprays",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Spray.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Oral Sprays"
+           }
+          ]
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_11",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global Product Guide Link",
+         "name": "module_11",
+         "params": {
+          "module_id": 218942529660
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_12",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - CTA Band",
+         "name": "module_12",
+         "params": {
+          "background_screen": {
+           "color": "#012638",
+           "opacity": 0
+          },
+          "buttons": [
+           {
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Schedule a Consultation"
+           }
+          ],
+          "content": "<p>Schedule a consultation and we will walk through formulation options, packaging, branding, and the timeline. Most brands launch within 3 to 4 weeks of approving labels, 8 to 12 weeks from first conversation.</p>",
+          "eyebrow": "",
+          "headline": "Ready to launch your supplement line in capsules?",
+          "max_width": 720,
+          "module_id": 218940115731,
+          "section_id": "get-started",
+          "style": {
+           "background_color": {
+            "color": "#e6e5e3",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_13",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global Guide Offer",
+         "name": "module_13",
+         "params": {
+          "module_id": 218944099153
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_14",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Section Header",
+         "name": "module_14",
+         "params": {
+          "align": "center",
+          "eyebrow": "50+ YEARS OF SUPPLEMENT MANUFACTURING",
+          "headline": "Developed by us. Made for you.",
+          "module_id": 218940115771,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#e6e5e3",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 0,
+            "padding_top": 90
+           }
+          },
+          "subhead": "",
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_15",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Rich Text",
+         "name": "module_15",
+         "params": {
+          "align": "center",
+          "body_size": 17,
+          "content": "<p>With over 50 years in the health supplement industry, we are one of the most trusted dietary supplement manufacturers. Every private label supplement we produce is doctor-formulated using thoroughly researched ingredients, then scientifically reviewed for efficacy and quality before it ever enters production in our U.S. facilities.</p><p>FoodScience is an FDA-registered food facility, GMP certified to SQF food safety standards, and certified to NSF GMP 455-2.</p><p>When you partner with us, our expert team is with you every step of the way. Help your customers find what they want from a source they trust. You.</p><p style=\"display:flex;gap:50px;justify-content:center;align-items:center;flex-wrap:wrap;margin:40px 0 0;\"><img src=\"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_Logo_SQF.png\" alt=\"SQF Certified\" width=\"177\" height=\"80\" style=\"height:80px;width:auto;max-width:100%;\"><img src=\"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/NSF.png\" alt=\"NSF GMP Certified\" width=\"55\" height=\"80\" style=\"height:80px;width:auto;max-width:100%;\"></p>",
+          "max_width": 900,
+          "module_id": 218940115784,
+          "section_id": "",
+          "size": "normal",
+          "style": {
+           "background_color": {
+            "color": "#e6e5e3",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 24
+           }
+          },
+          "text_color": "dark",
+          "top_border": false
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_16",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global FDA Disclaimer",
+         "name": "module_16",
+         "params": {
+          "module_id": 218942529652
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "type": "cell",
+   "w": 0,
+   "x": 0
+  }
+ },
+ "metaDescription": "Private label capsule supplements. Vegetarian, gelatin, multi-size, multi-dosage. The most versatile and trusted supplement format. Doctor-formulated.",
+ "name": "Private Label - Page - Capsules \u2014 V3 (New Modules)",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "1970-01-01T00:00:00Z",
+ "published": false,
+ "slug": "pl-demo-capsules-v3",
+ "state": "DRAFT",
+ "subcategory": "site_page",
+ "templatePath": "Private Label/Templates/Page - DND.html",
+ "translations": {},
+ "updatedAt": "2026-08-07T21:45:42.700Z",
+ "updatedById": "26261533",
+ "url": "https://info.davincilabs.com/pl-demo-capsules-v3",
+ "useFeaturedImage": false,
+ "widgetContainers": {
+  "main_content": {
+   "deleted_at": 1786126404643,
+   "widgets": []
+  }
+ },
+ "widgets": {}
+}

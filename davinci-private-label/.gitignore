@@ -1,0 +1,3 @@
+# never commit credentials to this repo
+davinci-private-label/**/*token*
+*.pat

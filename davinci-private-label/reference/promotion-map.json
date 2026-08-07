@@ -1,0 +1,50 @@
+[
+ {
+  "name": "Home",
+  "v3": "218936720512",
+  "v1": "216189433405",
+  "slug": "en/pl-demo-pillar"
+ },
+ {
+  "name": "Capsules  [PROMOTED]",
+  "v3": "218936720462",
+  "v1": "216186379314",
+  "slug": "pl-demo-capsules"
+ },
+ {
+  "name": "Gummies",
+  "v3": "218946510174",
+  "v1": "216192983401",
+  "slug": "pl-demo-gummies"
+ },
+ {
+  "name": "Tablets",
+  "v3": "218946510195",
+  "v1": "216192983343",
+  "slug": "pl-demo-tablets"
+ },
+ {
+  "name": "Powders",
+  "v3": "218946510230",
+  "v1": "216192983382",
+  "slug": "pl-demo-powders"
+ },
+ {
+  "name": "Soft Gels",
+  "v3": "218946632248",
+  "v1": "216192983363",
+  "slug": "pl-demo-soft-gels"
+ },
+ {
+  "name": "Liquids",
+  "v3": "218946510259",
+  "v1": "216188835866",
+  "slug": "pl-demo-liquids"
+ },
+ {
+  "name": "Our Process (non-dnd control)",
+  "v3": "218936720484",
+  "v1": "216186379326",
+  "slug": "pl-demo-our-process"
+ }
+]

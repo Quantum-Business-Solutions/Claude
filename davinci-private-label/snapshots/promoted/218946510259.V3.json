@@ -1,0 +1,1383 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Shawn Peterson",
+ "categoryId": 1,
+ "contentTypeCategory": 4,
+ "createdAt": "2026-08-07T20:19:59.838Z",
+ "createdById": "26261533",
+ "currentState": "DRAFT",
+ "domain": "info.davincilabs.com",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "htmlTitle": "Private Label Liquid Supplements | DaVinci Private Label",
+ "id": "218946510259",
+ "language": "en",
+ "layoutSections": {
+  "main_content": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "label": "Main Content",
+   "name": "main_content",
+   "params": {},
+   "rowMetaData": [
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    }
+   ],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_0",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Hero",
+         "name": "module_0",
+         "params": {
+          "align": "center",
+          "background_image": {
+           "background_position": "MIDDLE_CENTER",
+           "background_size": "cover",
+           "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_HeroBackground_2.jpg"
+          },
+          "background_screen": {
+           "color": "#c9dbe2",
+           "opacity": 85
+          },
+          "buttons": [
+           {
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Talk to Our Team"
+           }
+          ],
+          "eyebrow": "PRIVATE LABEL LIQUIDS",
+          "eyebrow_color": "heading",
+          "headline": "<h1>Launch your supplement line in liquids, customer-ready.</h1>",
+          "max_width": 900,
+          "module_id": 218939846507,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "subhead": "<p>Doctor-formulated supplements available in liquids format, ready to brand as your own and ship to your customers.</p>",
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_1",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Rich Text",
+         "name": "module_1",
+         "params": {
+          "align": "left",
+          "body_size": 18,
+          "content": "<h2>Why brands choose liquids as a supplement format.</h2><p>Different audiences prefer different delivery formats. Liquids are a category-leading choice when your customers want a specific combination of convenience, dosing precision, and ingredient compatibility.</p><p>With direct access to over 250 doctor-formulated supplements, low minimums, and no set-up fees, you can quickly build a liquids-based product line that fits your audience. Below is what to know about manufacturing liquids for private label: the formulations we offer, the specs available, how we make them, and which health categories benefit most.</p>",
+          "max_width": 850,
+          "module_id": 218940115784,
+          "section_id": "",
+          "size": "normal",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "top_border": false
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_2",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Card Grid",
+         "name": "module_2",
+         "params": {
+          "accent_color": {
+           "color": "#6BA644",
+           "opacity": 100
+          },
+          "card_align": "left",
+          "card_style": "plain",
+          "cards": [
+           {
+            "content": "<p>Direct access to over 250 doctor-formulated supplements with low minimums and no set-up fees. Choose what fits your audience and your timeline.</p>",
+            "number_or_eyebrow": "01",
+            "title": "BUILD YOUR PRODUCT LINE"
+           },
+           {
+            "content": "<p>Use your existing logo, customize a new label, or pick from our professional templates. Our in-house design team brings your vision to life.</p>",
+            "number_or_eyebrow": "02",
+            "title": "DESIGN YOUR BRAND"
+           },
+           {
+            "content": "<p>Launch in as little as 3 to 4 weeks after approving your labels. Every product passes rigorous quality assurance before it ships.</p>",
+            "number_or_eyebrow": "03",
+            "title": "START SELLING FAST"
+           }
+          ],
+          "eyebrow_style": "text",
+          "gap": 40,
+          "icon_badge": true,
+          "icon_badge_color": {
+           "color": "#c9dbe2",
+           "opacity": 100
+          },
+          "max_width": 1100,
+          "min_column_width": 260,
+          "module_id": 218940115759,
+          "section_eyebrow": "HOW IT WORKS",
+          "section_headline": "Get to market faster with a partner who handles the heavy lifting.",
+          "section_subhead": "",
+          "show_accent": true,
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 70
+           }
+          },
+          "text_color": "dark",
+          "title_style": "eyebrow-caps"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_3",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Card Grid",
+         "name": "module_3",
+         "params": {
+          "accent_color": {
+           "color": "#6BA644",
+           "opacity": 100
+          },
+          "card_align": "left",
+          "card_style": "card",
+          "cards": [
+           {
+            "content": "<p>Liquids skip the dissolution step entirely. Actives are immediately available for absorption, making liquids the right choice when speed matters or when the audience cannot tolerate pills.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-d03e635789.svg"
+            },
+            "title": "Highest bioavailability and fastest onset"
+           },
+           {
+            "content": "<p>Customers can adjust serving size up or down with dropper or measured-cup dosing. Strong fit for pediatric formulations, sensitive populations, and ingredients with narrow therapeutic ranges.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-681f7474d8.svg"
+            },
+            "title": "Precise dose customization"
+           },
+           {
+            "content": "<p>Liposomal and nano-emulsion liquid formats deliver fat-soluble vitamins and certain compounds with bioavailability that no other format can match. Premium positioning, premium price point.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-e2f38469a7.svg"
+            },
+            "title": "Best for liposomal and specialty delivery"
+           }
+          ],
+          "eyebrow_style": "text",
+          "gap": 28,
+          "icon_badge": true,
+          "icon_badge_color": {
+           "color": "#c9dbe2",
+           "opacity": 100
+          },
+          "max_width": 1100,
+          "min_column_width": 260,
+          "module_id": 218940115759,
+          "section_eyebrow": "ADVANTAGES",
+          "section_headline": "What makes liquids a strong supplement format.",
+          "section_subhead": "",
+          "show_accent": true,
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 70
+           }
+          },
+          "text_color": "dark",
+          "title_style": "heading"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_4",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Section Header",
+         "name": "module_4",
+         "params": {
+          "align": "center",
+          "eyebrow": "SPECIFICATIONS",
+          "headline": "Manufacturing specs available for private label liquids.",
+          "module_id": 218940115771,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 30,
+            "padding_top": 70
+           }
+          },
+          "subhead": "<p>The most common questions from brand owners are about sizes, materials, fill capacity, and minimums. Here is the short answer for each.</p>",
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_5",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Stat Band",
+         "name": "module_5",
+         "params": {
+          "accent_color": {
+           "color": "#012638",
+           "opacity": 100
+          },
+          "align": "left",
+          "card_style": "card",
+          "gap": 24,
+          "max_width": 1200,
+          "min_column_width": 240,
+          "module_id": 218940115735,
+          "section_headline": "",
+          "stats": [
+           {
+            "description": "<p>1oz dropper bottles for premium concentrated formulas, 4-8oz for standard daily-dose liquids, 16oz for higher-volume immune and wellness shots. Glass or food-grade plastic available.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-7389db2445.svg"
+            },
+            "stat_label": "Bottle Sizes",
+            "value": "1oz - 16oz"
+           },
+           {
+            "description": "<p>Calibrated droppers (1ml, 2.5ml, 5ml) for precise dosing. Measured dosing cups for larger servings. Pumps available for ongoing-use products like sprays and oils.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-04cb8f7fc7.svg"
+            },
+            "stat_label": "Dosing Options",
+            "value": "Dropper or Cup"
+           },
+           {
+            "description": "<p>Citrus, berry, and vanilla are our most common liquid flavor profiles. Unflavored available for liposomal and pure-active formulations. Sweeteners include stevia, monk fruit, and natural fruit concentrates.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-e2f38469a7.svg"
+            },
+            "stat_label": "Flavor Systems",
+            "value": "Natural Flavors"
+           },
+           {
+            "description": "<p>Low order minimums and no set-up fees. Liquid manufacturing has slightly higher MOQ than tablets due to bottling and filling minimums. Exact MOQ scoped during discovery.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-681f7474d8.svg"
+            },
+            "stat_label": "Minimums &amp; Set-Up",
+            "value": "Low MOQ"
+           }
+          ],
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "value_size": 28
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_6",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Content Split",
+         "name": "module_6",
+         "params": {
+          "buttons": [],
+          "content": "<p>Liquid manufacturing happens in sanitized stainless-steel mixing tanks under controlled temperature and pH conditions. Every batch goes through in-process pH, brix, and microbial testing, and finished-product testing for identity, purity, potency, contaminants, and preservative efficacy. Filling, capping, and sealing happen on-site under sanitary conditions to maintain product integrity.</p>",
+          "eyebrow": "MANUFACTURING",
+          "gap": 60,
+          "headline": "How we manufacture liquids for private label.",
+          "image": {
+           "alt": "Liquids manufacturing",
+           "loading": "lazy",
+           "size_type": "auto",
+           "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Liquid.jpg"
+          },
+          "image_radius": 6,
+          "image_shadow": false,
+          "image_side": "left",
+          "max_width": 1100,
+          "module_id": 218939846527,
+          "ratio": "1fr 1fr",
+          "style": {
+           "background_color": {
+            "color": "#012638",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "text_color": "light"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_7",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - CTA Band",
+         "name": "module_7",
+         "params": {
+          "background_screen": {
+           "color": "#012638",
+           "opacity": 0
+          },
+          "buttons": [
+           {
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "dark",
+            "text": "Request Samples"
+           }
+          ],
+          "content": "<p>Want to see liquids samples or talk through your formulation?</p>",
+          "eyebrow": "",
+          "headline": "",
+          "max_width": 800,
+          "module_id": 218940115731,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 50
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_8",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Tile Grid",
+         "name": "module_8",
+         "params": {
+          "columns": "auto",
+          "gap": 24,
+          "image_fit": "cover",
+          "image_height": 160,
+          "image_max_width": 0,
+          "label_size": 17,
+          "max_width": 1200,
+          "min_column_width": 180,
+          "module_id": 218940115743,
+          "row_gap": 0,
+          "section_headline": "Categories where liquids shine",
+          "section_subhead": "<p>Some health categories work better in liquids than others. Here are the ones where this format is the natural choice.</p>",
+          "show_labels_over_image": false,
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "tile_style": "card",
+          "tiles": [
+           {
+            "image": {
+             "alt": "Aging",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/agingsupps.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/private-label-aging",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Aging"
+           },
+           {
+            "image": {
+             "alt": "Sleep",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/sleepsupps.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/private-label-sleep",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Sleep"
+           },
+           {
+            "image": {
+             "alt": "Herbal",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/herbalsupps.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/private-label-herbal",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Herbal"
+           },
+           {
+            "image": {
+             "alt": "Women's Health",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/womenssupps.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/private-label-womens-health",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Women's Health"
+           },
+           {
+            "image": {
+             "alt": "Probiotics",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/probioticsupps.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/private-label-probiotics",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Probiotics"
+           }
+          ]
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_9",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - FAQ",
+         "name": "module_9",
+         "params": {
+          "items": [
+           {
+            "answer": "<p>We use minimal preservatives where required to maintain microbial safety, and avoid them entirely where the formulation allows (high-acid, high-alcohol, or low-water-activity products). Preservative system is chosen based on the specific formulation, shelf life requirements, and brand positioning.</p>",
+            "question": "Do you use preservatives?"
+           },
+           {
+            "answer": "<p>Most liquid formulations have a 12 to 24-month shelf life depending on actives, preservative system, and packaging. Liquid actives generally have shorter intrinsic stability than dry formats. Stability testing for longer claims available on request.</p>",
+            "question": "What is the shelf life of a liquid product?"
+           },
+           {
+            "answer": "<p>Yes. Alcohol is sometimes used as a preservative or extraction solvent for herbal liquids, but alcohol-free formulations using vegetable glycerin or other natural carriers are available for kids' products, religious-compliance positioning, or alcohol-sensitive audiences.</p>",
+            "question": "Do you offer alcohol-free liquid formulations?"
+           },
+           {
+            "answer": "<p>Yes. Liposomal liquids deliver fat-soluble vitamins and certain compounds with much higher bioavailability than standard formats. This is a premium-priced format, typically used for vitamin C, glutathione, DHEA, curcumin, and similar actives.</p>",
+            "question": "Can you do liposomal liquid formulations?"
+           },
+           {
+            "answer": "<p>Both available. Glass is preferred for premium positioning, photosensitive ingredients, and oil-based liquids. Food-grade plastic (PET, HDPE) is preferred for travel-friendly, shatter-resistant, and lower-cost products. Choice depends on positioning and shipping considerations.</p>",
+            "question": "Glass or plastic bottles?"
+           }
+          ],
+          "max_width": 820,
+          "module_id": 218940115739,
+          "open_first": false,
+          "section_eyebrow": "",
+          "section_headline": "Liquids questions we hear most often",
+          "section_id": "",
+          "section_subhead": "<p>Quick answers to the questions brand owners ask before they commit.</p>",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_10",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Tile Grid",
+         "name": "module_10",
+         "params": {
+          "columns": "auto",
+          "gap": 24,
+          "image_fit": "cover",
+          "image_height": 187,
+          "image_max_width": 180,
+          "image_radius": 8,
+          "label_size": 16,
+          "max_width": 1200,
+          "min_column_width": 160,
+          "module_id": 218940115743,
+          "row_gap": 36,
+          "section_headline": "Other supplement forms we offer",
+          "section_subhead": "<p>Most brands launch with two or three formats to give customers options. Here is the full list of formats we manufacture.</p>",
+          "show_labels_over_image": false,
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "tile_style": "plain",
+          "tiles": [
+           {
+            "image": {
+             "alt": "Capsules",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Capsules.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Capsules"
+           },
+           {
+            "image": {
+             "alt": "Tablets",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Tablets.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Tablets"
+           },
+           {
+            "image": {
+             "alt": "Soft Gels",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_SoftGel.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Soft Gels"
+           },
+           {
+            "image": {
+             "alt": "Powders",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Powders.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Powders"
+           },
+           {
+            "image": {
+             "alt": "Chewables",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_ChewableTablet.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Chewables"
+           },
+           {
+            "image": {
+             "alt": "Oral Sprays",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Spray.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Oral Sprays"
+           }
+          ]
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_11",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global Product Guide Link",
+         "name": "module_11",
+         "params": {
+          "module_id": 218942529660
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_12",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - CTA Band",
+         "name": "module_12",
+         "params": {
+          "background_screen": {
+           "color": "#012638",
+           "opacity": 0
+          },
+          "buttons": [
+           {
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Schedule a Consultation"
+           }
+          ],
+          "content": "<p>Schedule a consultation and we will walk through formulation options, packaging, branding, and the timeline. Most brands launch within 3 to 4 weeks of approving labels, 8 to 12 weeks from first conversation.</p>",
+          "eyebrow": "",
+          "headline": "Ready to launch your supplement line in liquids?",
+          "max_width": 720,
+          "module_id": 218940115731,
+          "section_id": "get-started",
+          "style": {
+           "background_color": {
+            "color": "#e6e5e3",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_13",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global Guide Offer",
+         "name": "module_13",
+         "params": {
+          "module_id": 218944099153
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_14",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Section Header",
+         "name": "module_14",
+         "params": {
+          "align": "center",
+          "eyebrow": "50+ YEARS OF SUPPLEMENT MANUFACTURING",
+          "headline": "Developed by us. Made for you.",
+          "module_id": 218940115771,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#e6e5e3",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 0,
+            "padding_top": 90
+           }
+          },
+          "subhead": "",
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_15",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Rich Text",
+         "name": "module_15",
+         "params": {
+          "align": "center",
+          "body_size": 17,
+          "content": "<p>With over 50 years in the health supplement industry, we are one of the most trusted dietary supplement manufacturers. Every private label supplement we produce is doctor-formulated using thoroughly researched ingredients, then scientifically reviewed for efficacy and quality before it ever enters production in our U.S. facilities.</p><p>FoodScience is an FDA-registered food facility, GMP certified to SQF food safety standards, and certified to NSF GMP 455-2.</p><p>When you partner with us, our expert team is with you every step of the way. Help your customers find what they want from a source they trust. You.</p><p style=\"display:flex;gap:50px;justify-content:center;align-items:center;flex-wrap:wrap;margin:40px 0 0;\"><img src=\"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_Logo_SQF.png\" alt=\"SQF Certified\" width=\"177\" height=\"80\" style=\"height:80px;width:auto;max-width:100%;\"><img src=\"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/NSF.png\" alt=\"NSF GMP Certified\" width=\"55\" height=\"80\" style=\"height:80px;width:auto;max-width:100%;\"></p>",
+          "max_width": 900,
+          "module_id": 218940115784,
+          "section_id": "",
+          "size": "normal",
+          "style": {
+           "background_color": {
+            "color": "#e6e5e3",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 24
+           }
+          },
+          "text_color": "dark",
+          "top_border": false
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_16",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global FDA Disclaimer",
+         "name": "module_16",
+         "params": {
+          "module_id": 218942529652
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "type": "cell",
+   "w": 0,
+   "x": 0
+  }
+ },
+ "metaDescription": "Private label liquid supplements. Fast absorption, dose flexibility, ideal for pediatric and senior audiences. Liposomal delivery available.",
+ "name": "Private Label - Page - Liquids \u2014 V3 (New Modules)",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "1970-01-01T00:00:00Z",
+ "published": false,
+ "slug": "pl-demo-liquids-v3",
+ "state": "DRAFT",
+ "subcategory": "site_page",
+ "templatePath": "Private Label/Templates/Page - DND.html",
+ "translations": {},
+ "updatedAt": "2026-08-07T21:45:46.662Z",
+ "updatedById": "26261533",
+ "url": "https://info.davincilabs.com/pl-demo-liquids-v3",
+ "useFeaturedImage": false,
+ "widgetContainers": {
+  "main_content": {
+   "deleted_at": 1786126404643,
+   "widgets": []
+  }
+ },
+ "widgets": {}
+}

@@ -1,0 +1,1848 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Shawn Peterson",
+ "categoryId": 1,
+ "contentTypeCategory": 4,
+ "createdAt": "2026-08-07T17:40:40.917Z",
+ "createdById": "26261533",
+ "currentState": "DRAFT",
+ "domain": "info.davincilabs.com",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "htmlTitle": "Private Label Supplement Manufacturer | Prexera Private Label",
+ "id": "218936720512",
+ "language": "en",
+ "layoutSections": {
+  "main_content": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "label": "Main Content",
+   "name": "main_content",
+   "params": {},
+   "rowMetaData": [
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    }
+   ],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_0",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Hero",
+         "name": "module_0",
+         "params": {
+          "align": "center",
+          "background_image": {
+           "background_position": "MIDDLE_CENTER",
+           "background_size": "cover",
+           "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_HeroBackground_2.jpg"
+          },
+          "background_screen": {
+           "color": "#c9dbe2",
+           "opacity": 85
+          },
+          "buttons": [
+           {
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Schedule a Consultation"
+           }
+          ],
+          "eyebrow": "PRIVATE LABEL SUPPLEMENT MANUFACTURING WITH PREXERA",
+          "headline": "<h1>Get to market faster with 50 years of supplement manufacturing expertise.</h1>",
+          "max_width": 900,
+          "module_id": 218939846507,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "subhead": "<p>Over 250 doctor-formulated supplements, low minimums, no set-up fees. Build your product line, design your brand, and start selling in as little as 3 to 4 weeks after approving labels.</p>",
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_1",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Rich Text",
+         "name": "module_1",
+         "params": {
+          "align": "left",
+          "content": "<h2>A turnkey path from idea to shelf, built for serious private label supplement brands.</h2><p>We have been formulating dietary supplements for over 50 years. Our private label program gives you direct access to the same doctor-formulated products that integrative physicians trust, with the production infrastructure to scale as your brand grows.</p><p>Most of our private label partners launch their first product line within 3 to 4 weeks of approving labels, 8 to 12 weeks from the first conversation. Whether you are launching your first supplement brand or expanding an existing product line, we handle the manufacturing complexity so you focus on your customers and your brand.</p>",
+          "max_width": 850,
+          "module_id": 218940115784,
+          "size": "normal",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_2",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Stat Band",
+         "name": "module_2",
+         "params": {
+          "align": "center",
+          "card_style": "plain",
+          "gap": 40,
+          "max_width": 1100,
+          "min_column_width": 180,
+          "module_id": 218940115735,
+          "section_headline": "",
+          "stats": [
+           {
+            "description": "",
+            "stat_label": "years formulating supplements",
+            "value": "50+"
+           },
+           {
+            "description": "",
+            "stat_label": "doctor-formulated products",
+            "value": "250+"
+           },
+           {
+            "description": "",
+            "stat_label": "Top-Selling wellness categories",
+            "value": "17"
+           },
+           {
+            "description": "",
+            "stat_label": "from label approval to shipping",
+            "value": "3-4 wk"
+           }
+          ],
+          "style": {
+           "background_color": {
+            "color": "#012638",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 70
+           }
+          },
+          "text_color": "light",
+          "value_size": 48
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_3",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Section Header",
+         "name": "module_3",
+         "params": {
+          "align": "center",
+          "eyebrow": "HOW IT WORKS",
+          "headline": "Get to market faster with a partner who handles the heavy lifting.",
+          "max_width": 1100,
+          "module_id": 218940115771,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 70
+           }
+          },
+          "subhead": "",
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_4",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Card Grid",
+         "name": "module_4",
+         "params": {
+          "accent_color": {
+           "color": "#6BA644",
+           "opacity": 100
+          },
+          "card_align": "left",
+          "card_style": "card",
+          "cards": [
+           {
+            "content": "<p>Direct access to over 250 <a href=\"https://www.davincilabs.com/product-guide\">doctor-formulated vitamins and supplements</a>. Low minimums. No set-up fees. Choose from a range of product forms to specialize your line for your customers.</p>",
+            "icon": {
+             "alt": "Build your product line",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-c3d261a26a.svg"
+            },
+            "image": {
+             "alt": "vitamin-manufacturer-prexera",
+             "height": 271,
+             "loading": "lazy",
+             "max_height": 271,
+             "max_width": 379,
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/vitamin-manufacturer-prexera.png",
+             "width": 379
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_badge": "1",
+            "number_or_eyebrow": "",
+            "title": "Build your product line"
+           },
+           {
+            "content": "<p>Our in-house <a href=\"/pl-demo-design-team\">design team</a> brings your vision to life. Bring an existing logo, customize a new label, or choose from professional pre-made templates.</p>",
+            "icon": {
+             "alt": "Design your private label supplement brand",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-2bdc5d924e.svg"
+            },
+            "image": {
+             "alt": "prexera",
+             "height": 217,
+             "loading": "lazy",
+             "max_height": 217,
+             "max_width": 379,
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/prexera.png",
+             "width": 379
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_badge": "2",
+            "number_or_eyebrow": "",
+            "title": "Design your private label supplement brand"
+           },
+           {
+            "content": "<p>Launch your line of the market's most popular supplements like ADK, Nattokinase, collagen, probiotics, sleep, iron, and magnesium, in as little as 3 to 4 weeks after approving your labels. Every product goes through rigorous quality assurance before it ships.</p>",
+            "icon": {
+             "alt": "Start selling fast",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-1db66df0d8.svg"
+            },
+            "image": {
+             "alt": "Start selling fast",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_StartSellingFast.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_badge": "3",
+            "number_or_eyebrow": "",
+            "title": "Start selling fast"
+           }
+          ],
+          "eyebrow_style": "text",
+          "gap": 32,
+          "icon_badge": false,
+          "icon_badge_color": {
+           "color": "#c9dbe2",
+           "opacity": 100
+          },
+          "icon_tile": false,
+          "icon_tile_color": {
+           "color": "#c9dbe2",
+           "opacity": 100
+          },
+          "max_icon_height": 24,
+          "max_width": 1100,
+          "min_column_width": 300,
+          "module_id": 218940115759,
+          "section_eyebrow": "",
+          "section_headline": "",
+          "section_subhead": "",
+          "show_accent": true,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 25,
+            "padding_top": 25
+           }
+          },
+          "text_color": "dark",
+          "title_style": "heading"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_5",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Rich Text",
+         "name": "module_5",
+         "params": {
+          "align": "left",
+          "content": "<p style=\"color: #6ba644; font-size: 13px; font-weight: bold; letter-spacing: 2px; margin: 0 0 12px; text-align: center;\">STEP 1</p><h2 style=\"text-align: center;\">Build your product line.</h2><h2><br>Direct access to over 250 doctor-formulated supplements.</h2><p>With low minimums and no set-up fees, you can quickly and easily build your product line from our catalog of doctor-formulated vitamins and supplements designed to support health and wellness. Specialized formats let you tailor your line to fit your unique customers: capsules, tablets, powders, softgels, chewables, liquids.</p><p>Some of the most popular formulations in our catalog include ADK, Nattokinase, collagen, probiotics, sleep support, iron, magnesium, and full multivitamin lines. Browse the complete catalog in our Product Guide.</p>",
+          "max_width": 850,
+          "module_id": 218940115784,
+          "size": "normal",
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_6",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Section Header",
+         "name": "module_6",
+         "params": {
+          "align": "center",
+          "eyebrow": "STEP 2",
+          "headline": "Design your supplement brand.",
+          "module_id": 218940115771,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 30,
+            "padding_top": 70
+           }
+          },
+          "subhead": "",
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_7",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Rich Text",
+         "name": "module_7",
+         "params": {
+          "align": "left",
+          "content": "<h2>Expert in-house designers help bring your vision to life.</h2><p>The right design can set your products apart online or on the shelf. Our expert designers will help bring your vision to life whether you already have a brand logo, want to customize a new label, or want to choose from one of our 20+ professionally pre-made label templates.</p><p>Design services are included with your private label engagement. No separate retainer, no hourly design fees on top of product costs. Your label looks the way you want before we move to print.</p>",
+          "max_width": 850,
+          "module_id": 218940115784,
+          "size": "normal",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_8",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Content Split",
+         "name": "module_8",
+         "params": {
+          "buttons": [],
+          "content": "<p>Most private label clients fall into one of two camps. Either they have brand assets they want to apply to a label template, or they're building their brand from scratch and need help with everything from logo to finished design. We work with both. Your design service includes brand discovery, template selection, label iteration, and print-ready production files. All in-house, all included.</p>",
+          "eyebrow": "DESIGN SERVICES",
+          "gap": 20,
+          "headline": "From logo to print-ready label, our team becomes yours.",
+          "image": {
+           "alt": "DV-PRIVATE",
+           "height": 400,
+           "loading": "lazy",
+           "max_height": 400,
+           "max_width": 400,
+           "size_type": "auto",
+           "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/DV-PRIVATE.png",
+           "width": 400
+          },
+          "image_radius": 6,
+          "image_shadow": false,
+          "image_side": "right",
+          "max_width": 1100,
+          "module_id": 218939846527,
+          "ratio": "1fr 1fr",
+          "style": {
+           "background_color": {
+            "color": "#012638",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "text_color": "light"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_9",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Rich Text",
+         "name": "module_9",
+         "params": {
+          "align": "left",
+          "content": "<p style=\"color: #6ba644; font-size: 13px; font-weight: bold; letter-spacing: 2px; margin: 0 0 12px; text-align: center;\">STEP 3</p><h2 style=\"text-align: center;\">Start selling fast.</h2><h2><br>Turnkey production, U.S. manufacturing, ready in weeks.</h2><p>With our turnkey options, you'll be ready to launch your new line of products right away. Start selling the market's most popular supplements in as little as 3 to 4 weeks after approving your labels. And do it with confidence: every product has gone through rigorous quality assurance processes in our FDA-registered, GMP-certified U.S. facility.</p>",
+          "max_width": 850,
+          "module_id": 218940115784,
+          "size": "normal",
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_10",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - CTA Band",
+         "name": "module_10",
+         "params": {
+          "background_image": {
+           "background_position": "MIDDLE_CENTER",
+           "background_size": "cover",
+           "src": ""
+          },
+          "background_screen": {
+           "color": "#012638",
+           "opacity": 0
+          },
+          "buttons": [
+           {
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Schedule a Consultation"
+           }
+          ],
+          "content": "<p>Schedule a consultation. We will walk through your audience, the right formulations for them, branding options, and the timeline. No commitment.</p>",
+          "eyebrow": "",
+          "headline": "Ready to start your private label supplement line?",
+          "max_width": 720,
+          "module_id": 218940115731,
+          "section_id": "get-started",
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_11",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Tile Grid",
+         "name": "module_11",
+         "params": {
+          "columns": "4",
+          "gap": 16,
+          "image_fit": "cover",
+          "image_height": 180,
+          "image_max_width": 0,
+          "label_size": 15,
+          "max_width": 1200,
+          "min_column_width": 280,
+          "module_id": 218940115743,
+          "row_gap": 0,
+          "section_headline": "Popular dietary supplements.",
+          "section_subhead": "<h3 style=\"color: #6ba644; font-size: 26px; font-weight: bold; margin: 0 0 16px;\">17 private label wellness categories to choose from</h3><p>Proven formulations across the highest-demand health categories. Build across any combination or create category-specific product lines. Most new brands start with one and expand over time.</p>",
+          "show_labels_over_image": false,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "tile_style": "card",
+          "tiles": [
+           {
+            "image": {
+             "alt": "Women's Health",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/WOMENS-CATEGORY-PREXERA.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/pl-demo-womens-health",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Women's Health"
+           },
+           {
+            "image": {
+             "alt": "Men's Health",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/PREXERA-MENS.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/pl-demo-mens-health",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Men's Health"
+           },
+           {
+            "image": {
+             "alt": "Probiotics",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/prexera-probiotic_supplements.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/pl-demo-probiotics",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Probiotics"
+           },
+           {
+            "image": {
+             "alt": "Sleep",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/sleep-prexera.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/pl-demo-sleep",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Sleep"
+           },
+           {
+            "image": {
+             "alt": "Fitness",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/prexera-fitness_supplements.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/pl-demo-fitness",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Fitness"
+           },
+           {
+            "image": {
+             "alt": "Weight Management",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/prexera-weight-supplements.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/pl-demo-weight-management",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Weight Management"
+           },
+           {
+            "image": {
+             "alt": "Cognitive",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/cognitive-prexera.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/pl-demo-cognitive",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Cognitive"
+           },
+           {
+            "accent_glyph": "+",
+            "glyph_size": 56,
+            "image": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": ""
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/pl-demo-pillar",
+              "type": "EXTERNAL"
+             }
+            },
+            "sublabel": "",
+            "tile_bg": {
+             "color": "#012638",
+             "opacity": 100
+            },
+            "tile_label": "AND MORE",
+            "tile_text_color": "light"
+           }
+          ]
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_12",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Card Grid",
+         "name": "module_12",
+         "params": {
+          "card_style": "plain",
+          "cards": [
+           {
+            "content": "<p>Initial conversation about your audience, brand vision, and product mix. Receive full product catalog and pricing.</p>",
+            "icon": {
+             "alt": "Discovery & Strategy",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-5bf250bd3b.svg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_or_eyebrow": "WEEK 1",
+            "title": "Discovery &amp; Strategy"
+           },
+           {
+            "content": "<p>Finalize your product line. Begin label design with our in-house team.</p>",
+            "icon": {
+             "alt": "Product Selection & Design",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-a3f9f9c009.svg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_or_eyebrow": "WEEK 2-3",
+            "title": "Product Selection &amp; Design"
+           },
+           {
+            "content": "<p>Iterate on label proofs until you approve them. This is the gate that starts production.</p>",
+            "icon": {
+             "alt": "Label Approval",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-aa0cb79f50.svg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_or_eyebrow": "WEEK 4-5",
+            "title": "Label Approval"
+           },
+           {
+            "content": "<p>Completion of your brand products in our FDA-registered, cGMP certified facility.</p>",
+            "icon": {
+             "alt": "Production",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-f1cc1b9522.svg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_or_eyebrow": "WEEK 6-9",
+            "title": "Production"
+           },
+           {
+            "content": "<p>Finished, labeled product ships to your warehouse or fulfillment partner. Ready to sell.</p>",
+            "icon": {
+             "alt": "Shipping & Launch",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-8e0f332c4a.svg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_or_eyebrow": "WEEK 10-12",
+            "title": "Shipping &amp; Launch"
+           }
+          ],
+          "gap": 30,
+          "icon_style": "ring",
+          "max_width": 1200,
+          "min_column_width": 170,
+          "module_id": 218940115759,
+          "section_eyebrow": "",
+          "section_headline": "From first conversation to product shipping in 8 to 12 weeks.",
+          "section_subhead": "<p>The timeline below is what most clients experience from initial discovery through finished product in their warehouse.</p>",
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_13",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Tile Grid",
+         "name": "module_13",
+         "params": {
+          "columns": "3",
+          "gap": 24,
+          "image_fit": "contain",
+          "image_height": 180,
+          "image_max_width": 0,
+          "image_radius": 0,
+          "label_size": 17,
+          "max_width": 1200,
+          "min_column_width": 260,
+          "module_id": 218940115743,
+          "row_gap": 0,
+          "section_headline": "Available private label supplement forms.",
+          "section_subhead": "<p>A range of&nbsp;private label product format options to let you specialize your product line to fit how your customers prefer to take their supplements.</p>",
+          "show_labels_over_image": false,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 110,
+            "padding_top": 110
+           }
+          },
+          "text_color": "dark",
+          "tile_style": "plain",
+          "tiles": [
+           {
+            "image": {
+             "alt": "Capsules",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Capsules.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Capsules"
+           },
+           {
+            "image": {
+             "alt": "Tablets",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Tablets.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Tablets"
+           },
+           {
+            "image": {
+             "alt": "Soft Gels",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_SoftGel.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Soft Gels"
+           },
+           {
+            "image": {
+             "alt": "Liquids",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_Liquid.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Liquids"
+           },
+           {
+            "image": {
+             "alt": "Chewables",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/DV_PL_AS_ChewableTablet.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Chewables"
+           },
+           {
+            "accent_glyph": "+",
+            "glyph_size": 32,
+            "image": {
+             "alt": "",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": ""
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "sublabel": "AND MORE",
+            "tile_bg": {
+             "color": "#E6E5E3",
+             "opacity": 100
+            },
+            "tile_label": "Gummies",
+            "tile_text_color": "dark"
+           }
+          ]
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_14",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Card Grid",
+         "name": "module_14",
+         "params": {
+          "card_style": "card",
+          "cards": [
+           {
+            "content": "<p>FoodScience is an FDA-registered food facility and GMP certified to SQF food safety and NSF GMP 455-2 standards. Every product is manufactured in the United States.</p>",
+            "icon": {
+             "alt": "U.S. manufacturing, FDA-registered",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-30d8dc8a51.svg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_or_eyebrow": "",
+            "title": "U.S. manufacturing, FDA-registered"
+           },
+           {
+            "content": "<p>All private label supplements are doctor-formulated using thoroughly researched ingredients and scientifically reviewed for efficacy and quality before production.</p>",
+            "icon": {
+             "alt": "Doctor-formulated, scientifically reviewed",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-cdd25abe4f.svg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_or_eyebrow": "",
+            "title": "Doctor-formulated, scientifically reviewed"
+           },
+           {
+            "content": "<p>Our expert team is with you every step of the way: product selection, design, manufacturing, and ongoing brand support.</p>",
+            "icon": {
+             "alt": "White-glove support from day one",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/icons/pl-icon-0be0af31bd.svg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "",
+              "type": "EXTERNAL"
+             }
+            },
+            "link_text": "",
+            "number_or_eyebrow": "",
+            "title": "White-glove support from day one"
+           }
+          ],
+          "gap": 28,
+          "icon_style": "badge",
+          "max_width": 1100,
+          "min_column_width": 260,
+          "module_id": 218940115759,
+          "section_eyebrow": "",
+          "section_headline": "",
+          "section_subhead": "",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 20
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_15",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global Product Guide Link",
+         "name": "module_15",
+         "params": {
+          "module_id": 218942529660
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_16",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global Guide Offer",
+         "name": "module_16",
+         "params": {
+          "module_id": 218944099153
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_17",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Heritage (Section)",
+         "name": "module_17",
+         "params": {
+          "content": "<p>With over 50 years in the health supplement industry, we are one of the most trusted dietary supplement providers. Every private label supplement we produce is doctor-formulated using thoroughly researched ingredients, then scientifically reviewed for efficacy and quality before it ever enters production in our U.S. facilities.</p><p>Prexera is a division of FoodScience, an FDA-registered food facility, GMP certified to SQF food safety standards, and certified to NSF GMP 455-2.</p><p>When you partner with us, our expert team is with you every step of the way. Help your customers find what they want from a source they trust. You.</p>",
+          "eyebrow": "50+ YEARS OF PROVIDING TOP-QUALITY SUPPLEMENTS",
+          "headline": "Developed by us. Made for you.",
+          "images": [],
+          "max_width": 900,
+          "module_id": 218954101913,
+          "style": {
+           "background_color": {
+            "color": "#E6E5E3",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_18",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Form Section",
+         "name": "module_18",
+         "params": {
+          "content": "",
+          "eyebrow": "",
+          "form_field": {
+           "form_id": "d8dfdd90-98f1-4cba-bedf-181dd9286ca1",
+           "form_type": "HUBSPOT",
+           "message": "<p>Thanks! We'll be in touch shortly.</p>",
+           "response_type": "inline"
+          },
+          "form_title": "",
+          "headline": "",
+          "image": {
+           "alt": "",
+           "loading": "lazy",
+           "src": ""
+          },
+          "layout": "centered",
+          "module_id": 218940115793,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_19",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - FAQ",
+         "name": "module_19",
+         "params": {
+          "items": [
+           {
+            "answer": "<p>A private label supplement is a pre-formulated dietary supplement produced by a manufacturer (us) and sold under your brand name. You don't formulate it, you don't manufacture it, and you don't run quality testing. You select from existing formulations, design your label, and we produce finished inventory ready to ship under your brand.</p>",
+            "question": "What is a private label supplement, exactly?"
+           },
+           {
+            "answer": "<p>The terms are used interchangeably by most people. Technically, white label refers to generic products that anyone can rebrand identically. Private label refers to formulations and packaging that are customized for a specific brand. In our world, the practical difference is small: you get to customize the label design (and optionally the packaging) regardless of which term you use.</p>",
+            "question": "What is the difference between private label and white label?"
+           },
+           {
+            "answer": "<p>Most clients launch a 3-5 SKU line for under $15,000 in initial inventory, including label design. There are no setup fees, no annual contracts, no formulation fees for private label, and no minimum spend across SKUs. The cost depends on the specific SKUs, packaging choices, and quantities.</p>",
+            "question": "How much does it cost to start a supplement brand with private labeling?"
+           },
+           {
+            "answer": "<p>Three things matter most. First: pick a real niche and audience, not a generic 'wellness' play. Second: understand DSHEA labeling rules (structure-function claims, supplement facts panels, disclaimers) before you finalize labels. Third: plan distribution. Direct-to-consumer Shopify is the most accessible channel; retail and wholesale need additional positioning work. We help you think through all three during onboarding.</p>",
+            "question": "What are the most important things to know before launching a private label supplement brand?"
+           },
+           {
+            "answer": "<p>Standard supplement retail pricing follows a 4-5x markup over cost-of-goods for DTC and 2-3x for wholesale. Premium positioning supports higher markups. We give you transparent SKU-level cost data so you can price intelligently for your channel and audience.</p>",
+            "question": "How do I price my private label supplements?"
+           },
+           {
+            "answer": "<p>In the U.S., you don't need a license to sell dietary supplements, but you must comply with FDA labeling rules (DSHEA), follow good manufacturing practices on your distribution side, and register with FDA if you import or manufacture certain products. We handle the manufacturing-side compliance. Your business-side compliance (state business licenses, sales tax registration, claims review) is your responsibility, and we point you to resources.</p>",
+            "question": "Do I need any licenses or certifications to sell private label supplements?"
+           },
+           {
+            "answer": "<p>Yes. Many of our private label clients sell on Amazon. You will need to register your brand in Amazon Brand Registry, ensure your labels comply with Amazon's supplement category requirements (which are stricter than basic FDA rules), and meet their barcoding requirements. We help you understand these during onboarding.</p>",
+            "question": "Can I sell my private label supplements on Amazon?"
+           }
+          ],
+          "max_width": 820,
+          "module_id": 218940115739,
+          "open_first": false,
+          "section_eyebrow": "",
+          "section_headline": "Frequently asked questions",
+          "section_id": "",
+          "section_subhead": "",
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_20",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global FDA Disclaimer",
+         "name": "module_20",
+         "params": {
+          "module_id": 218942529652
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "type": "cell",
+   "w": 0,
+   "x": 0
+  }
+ },
+ "metaDescription": "50 years of supplement manufacturing. 250+ doctor-formulated products. 17 wellness categories. FDA-registered, GMP-certified. Ship in 3-4 weeks after labels.",
+ "name": "Private Label - Page - Home - Private Label Supplements \u2014 V3 (New Modules)",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "1970-01-01T00:00:00Z",
+ "published": false,
+ "slug": "en/pl-demo-pillar-v3",
+ "state": "DRAFT",
+ "subcategory": "site_page",
+ "templatePath": "Private Label/Templates/Page - DND.html",
+ "translations": {},
+ "updatedAt": "2026-08-07T21:47:37.188Z",
+ "updatedById": "26261533",
+ "url": "https://info.davincilabs.com/en/pl-demo-pillar-v3",
+ "useFeaturedImage": false,
+ "widgetContainers": {
+  "main_content": {
+   "deleted_at": 1786126404643,
+   "widgets": []
+  }
+ },
+ "widgets": {}
+}
