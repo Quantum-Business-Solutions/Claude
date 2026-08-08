@@ -28,6 +28,7 @@ STYLE_KEYS = {
     'title_size', 'content_size', 'question_size', 'answer_size', 'value_size',
     'label_size', 'label_weight', 'body_color', 'subhead_color',
     'content_weight', 'content_color', 'subhead_width',
+    'heading_size', 'number_size',
 }
 
 
@@ -157,19 +158,25 @@ def style_for(mid, h):
                 "button_size": button_px(h, 16)}
     if mid == RT:
         p = paras(h)
-        return {"body_size": px(p[0][0], 17) if p else 17}
+        return {"body_size": px(p[0][0], 17) if p else 17,
+                "heading_size": heading_px(h, 32)}
     if mid == CG:
         ss, sc = subhead(h, 17, '#555555')
         t, b, bc = card_type(h, 19, 15, '#555555')
-        return {"headline_size": heading_px(h, 32), "subhead_size": ss,
-                "title_size": t, "body_size": b, "body_color": col(bc)}
+        # the big step number, which V1 also holds at every width
+        nm = max((px(a, 0) or 0 for a, _ in tags(h, 'p')), default=0)
+        out = {"headline_size": heading_px(h, 32), "subhead_size": ss,
+               "title_size": t, "body_size": b, "body_color": col(bc)}
+        if nm >= 30: out["number_size"] = nm
+        return out
     if mid == SH:
         ss, sc = subhead(h, 17, '#555555')
         return {"headline_size": heading_px(h, 34), "subhead_size": ss,
                 "subhead_color": col(sc)}
     if mid == CS:
         p = paras(h)
-        return {"body_size": px(p[-1][0], 16) if p else 16}
+        return {"body_size": px(p[-1][0], 16) if p else 16,
+                "headline_size": heading_px(h, 32)}
     if mid == TG:
         ss, sc = subhead(h, 17, '#555555')
         ls, lw = tile_label(h, 17, '700')
@@ -194,7 +201,7 @@ def style_for(mid, h):
         ps = [a for a, _ in tags(h, 'p')]
         big = max((px(a, 0) or 0 for a in ps), default=48) or 48
         lab = [a for a in ps if 'letter-spacing' in a]
-        return {"value_size": big,
+        return {"value_size": big, "headline_size": heading_px(h, 32),
                 "label_size": px(lab[0], 14) if lab else 14,
                 "label_weight": weight(lab[0], '700') if lab else '700'}
     if mid == HERITAGE:

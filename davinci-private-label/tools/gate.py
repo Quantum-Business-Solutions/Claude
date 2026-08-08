@@ -25,15 +25,28 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shot import mirror, CHROME, ARGS
 from verify import serve, PROBE, pixdiff
 from breakdown import classify
+from batch import side_by_side
 
 S = os.path.dirname(os.path.abspath(__file__)) + '/'
+os.makedirs(S + 'cmp', exist_ok=True)
 REFSEL  = 'div[id^="hs_cos_wrapper_widget_"]:not([id$="_"])'
 LIVESEL = 'div[id^="hs_cos_wrapper_module_"]:not([id$="_"])'
 WIDTHS  = (1440, 768, 390)
 SECTION_PCT = 8.0
 
 
+def body_only(h):
+    """Everything the visitor reads, and nothing from <head>.
+
+    The <title> is composed from stored page metadata that a conversion never
+    touches; comparing it made the reference replica's stale title look like
+    lost copy on every dosage page."""
+    i = h.lower().find('<body')
+    return h[i:] if i > 0 else h
+
+
 def words(h):
+    h = body_only(h)
     h = re.sub(r'<!--.*?-->', ' ', h, flags=re.S)
     h = re.sub(r'<(script|style)\b.*?</\1>', ' ', h, flags=re.S)
     t = _html.unescape(re.sub(r'<[^>]+>', ' ', h)).lower()
@@ -41,9 +54,14 @@ def words(h):
 
 
 def assets(h):
+    """Links by destination, images by alt text.
+
+    Images are matched on alt rather than filename: the same certification logo
+    is served from two different hosts on the two pages, and the mirror names
+    files by a hash of the URL, so identical logos compared as missing."""
+    h = body_only(h)
     hrefs = set(re.findall(r'href="([^"#]+)"', h))
-    imgs  = set(os.path.basename(u.split('?')[0])
-                for u in re.findall(r'<img[^>]+src="([^"]+)"', h))
+    imgs  = set(a.strip() for a in re.findall(r'<img[^>]+alt="([^"]*)"', h) if a.strip())
     return hrefs, imgs
 
 
@@ -110,7 +128,12 @@ def pair_sections(ta, tb):
             if j in taken or not (wa | w): continue
             k = len(wa & w) / len(wa | w)
             if k > score: best, score = j, k
-        if best is not None and score >= 0.6:
+        # 0.9, not 0.6: a merge -- one module absorbing two V1 sections -- still
+        # scores well above half, and pixel-comparing a section against a taller
+        # one that also carries its neighbour's copy reports a large difference
+        # that is not a regression. Merges are recorded and left to the
+        # element-by-element type comparison, which is merge-proof.
+        if best is not None and score >= 0.9:
             out.append(best); taken.add(best)
         else:
             out.append(None)
@@ -172,8 +195,14 @@ def run(ref_id, live_id, name, keep_ref=True, sel=None):
             pairs = pair_sections(A['sectext'], B['sectext'])
             missing = [i for i, j in enumerate(pairs) if j is None
                        and wordset(A['sectext'][i])]
+            # a section with no counterpart is only a defect if its copy went
+            # missing too; a conversion may legitimately merge two V1 sections
+            # into one module, and the copy check above already proves nothing
+            # was dropped
             if missing:
-                fails.append(f"V1 sections with no match in the rebuild: {missing}")
+                (fails if lost else notes.setdefault('merged', [])).append(
+                    f"V1 sections merged into others: {missing}" if not lost
+                    else f"V1 sections with no match in the rebuild: {missing}")
             worst = []
             for i, j in enumerate(pairs):
                 if j is None or not A['secs'][i] or not B['secs'][j]: continue
@@ -182,6 +211,8 @@ def run(ref_id, live_id, name, keep_ref=True, sel=None):
                 if pct >= SECTION_PCT:
                     fails.append(f"V1 section {i} (rebuilt as {j}) "
                                  f"differs by {pct:.1f}% of pixels")
+                    side_by_side(A['secs'][i], B['secs'][j],
+                                 f"{S}cmp/{name}_s{i:02d}.png", f"{name} V1 §{i} -> §{j}")
             notes['worst_sections'] = [[i, round(p, 1)]
                                        for p, i in sorted(worst, reverse=True)[:3]]
 
