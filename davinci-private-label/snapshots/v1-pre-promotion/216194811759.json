@@ -1,1 +1,175 @@
-{"archivedAt":"1970-01-01T00:00:00Z","archivedInDashboard":false,"attachedStylesheets":[],"authorName":"Shawn Peterson","categoryId":1,"contentTypeCategory":4,"createdAt":"2026-06-30T18:12:44.487Z","createdById":"26261533","currentState":"DRAFT","domain":"info.davincilabs.com","featuredImage":"","featuredImageAltText":"","htmlTitle":"Terms of Service | DaVinci Private Label","id":"216194811759","language":"en","layoutSections":{},"metaDescription":"DaVinci Private Label terms of service. Acceptable website use, intellectual property, disclaimers, limitation of liability.","name":"Private Label - Page - Terms of Service","pageRedirected":false,"publicAccessRules":[],"publicAccessRulesEnabled":false,"publishDate":"1970-01-01T00:00:00Z","published":false,"slug":"pl-demo-terms","state":"DRAFT","subcategory":"site_page","templatePath":"Private Label/Templates/Page.html","translations":{},"updatedAt":"2026-08-07T19:43:50.030Z","updatedById":"26261533","url":"https://info.davincilabs.com/pl-demo-terms","useFeaturedImage":false,"widgetContainers":{"main_content":{"widgets":[{"body":{"html":"<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">LEGAL</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Terms of Service</h2>\n    <p style=\"color: #333; font-size: 17px; line-height: 1.65; max-width: 760px; margin: 22px auto 0;\">Last updated: June 30, 2026</p>\n  </div>\n</div>"},"id":216207762442,"type":"rich_text"},{"body":{"html":"<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">These Terms of Service govern your access to and use of this website. By using this website, you agree to be bound by these terms. If you do not agree, please do not use this website.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">These terms apply to your use of the website itself, not to the contractual relationship between your business and DaVinci Laboratories of Vermont if you become a private label client. That relationship is governed by a separate Private Label Agreement signed by both parties.</p>\n  </div>\n</div>"},"id":216207762443,"type":"rich_text"},{"body":{"html":"<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">WEBSITE USE</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Acceptable Use.</h2>\n    \n  </div>\n</div>"},"id":216207762444,"type":"rich_text"},{"body":{"html":"<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">This website is provided for informational purposes to support businesses evaluating DaVinci as a private label supplement manufacturing partner. You agree to use the website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use of the website.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">You may not attempt to access areas of the website that are restricted, interfere with the operation of the website, use automated systems to harvest data from the website, or use the website to transmit any harmful content.</p>\n  </div>\n</div>"},"id":216207762445,"type":"rich_text"},{"body":{"html":"<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">INTELLECTUAL PROPERTY</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Content Ownership.</h2>\n    \n  </div>\n</div>"},"id":216207762446,"type":"rich_text"},{"body":{"html":"<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">All content on this website, including text, graphics, logos, images, product photography, formulation descriptions, and downloadable resources, is the property of DaVinci Laboratories of Vermont or its content suppliers and is protected by copyright, trademark, and other intellectual property laws.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">You may view, download, and print content from this website for your personal business evaluation purposes. You may not reproduce, distribute, modify, or create derivative works from this content without our prior written permission.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">The DaVinci name, logos, and product names are trademarks of DaVinci Laboratories of Vermont. Other product and company names mentioned on this website may be trademarks of their respective owners.</p>\n  </div>\n</div>"},"id":216207762447,"type":"rich_text"},{"body":{"html":"<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">DISCLAIMERS</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Information Provided As-Is.</h2>\n    \n  </div>\n</div>"},"id":216207762448,"type":"rich_text"},{"body":{"html":"<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">The information on this website is provided as-is for general informational purposes. While we make reasonable efforts to keep information current and accurate, we make no warranties or representations about the completeness, accuracy, reliability, or suitability of the information for any particular purpose.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">Dietary supplements referenced on this website are intended to support general health and wellness. They are not intended to diagnose, treat, cure, or prevent any disease. Statements about specific products have not been evaluated by the U.S. Food and Drug Administration.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">Pricing, lead times, minimum order quantities, product availability, and other commercial terms referenced on this website are estimates only. Final commercial terms are set in your Private Label Agreement.</p>\n  </div>\n</div>"},"id":216207762449,"type":"rich_text"},{"body":{"html":"<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">LIMITATION OF LIABILITY</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Limitation of Liability.</h2>\n    \n  </div>\n</div>"},"id":216207762450,"type":"rich_text"},{"body":{"html":"<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">To the fullest extent permitted by law, DaVinci Laboratories of Vermont, its parent company, affiliates, directors, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages arising from or related to your use of this website.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">Our total liability for any claim arising from your use of this website will not exceed the greater of one hundred dollars (USD 100) or the amount you have paid to us for products or services in the twelve months preceding the claim.</p>\n  </div>\n</div>"},"id":216207762451,"type":"rich_text"},{"body":{"html":"<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">LINKS AND THIRD-PARTY CONTENT</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">External Links.</h2>\n    \n  </div>\n</div>"},"id":216207762452,"type":"rich_text"},{"body":{"html":"<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">This website may contain links to third-party websites, including blog content, ingredient supplier sites, and industry resources. We provide these links for convenience only. We do not endorse, control, or take responsibility for the content of third-party sites you may reach through links on this website.</p>\n  </div>\n</div>"},"id":216207762453,"type":"rich_text"},{"body":{"html":"<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">CHANGES</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Changes to These Terms.</h2>\n    \n  </div>\n</div>"},"id":216207762454,"type":"rich_text"},{"body":{"html":"<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">We may update these Terms of Service from time to time. When we do, we will update the date at the top of this page. Material changes will also be announced on the website. Continued use of the website after a change constitutes acceptance of the updated terms.</p>\n  </div>\n</div>"},"id":216207762455,"type":"rich_text"},{"body":{"html":"<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">GOVERNING LAW</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Governing Law.</h2>\n    \n  </div>\n</div>"},"id":216207762456,"type":"rich_text"},{"body":{"html":"<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">These Terms of Service are governed by the laws of the State of Vermont, without regard to its conflict of law principles. Any disputes arising from or related to these terms or your use of this website will be resolved in the state or federal courts located in Vermont.</p>\n  </div>\n</div>"},"id":216207762457,"type":"rich_text"},{"body":{"html":"<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">CONTACT</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Questions About These Terms.</h2>\n    \n  </div>\n</div>"},"id":216207762458,"type":"rich_text"},{"body":{"html":"<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">Questions about these Terms of Service can be sent to info@davincilabs.com or mailed to DaVinci Laboratories of Vermont, 929 Harvest Lane, Williston, VT 05495.</p>\n  </div>\n</div>"},"id":216207762459,"type":"rich_text"},{"body":{},"id":218949182031,"label":"PL - Global FDA Disclaimer","module_id":218942529652,"order":18,"type":"module"}]}},"widgets":{}}
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Shawn Peterson",
+ "categoryId": 1,
+ "contentTypeCategory": 4,
+ "createdAt": "2026-06-30T18:12:44.487Z",
+ "createdById": "26261533",
+ "currentState": "DRAFT",
+ "domain": "info.davincilabs.com",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "htmlTitle": "Terms of Service | DaVinci Private Label",
+ "id": "216194811759",
+ "language": "en",
+ "layoutSections": {},
+ "metaDescription": "DaVinci Private Label terms of service. Acceptable website use, intellectual property, disclaimers, limitation of liability.",
+ "name": "Private Label - Page - Terms of Service",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "1970-01-01T00:00:00Z",
+ "published": false,
+ "slug": "pl-demo-terms",
+ "state": "DRAFT",
+ "subcategory": "site_page",
+ "templatePath": "Private Label/Templates/Page.html",
+ "translations": {},
+ "updatedAt": "2026-08-07T19:43:50.030Z",
+ "updatedById": "26261533",
+ "url": "https://info.davincilabs.com/pl-demo-terms",
+ "useFeaturedImage": false,
+ "widgetContainers": {
+  "main_content": {
+   "widgets": [
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">LEGAL</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Terms of Service</h2>\n    <p style=\"color: #333; font-size: 17px; line-height: 1.65; max-width: 760px; margin: 22px auto 0;\">Last updated: June 30, 2026</p>\n  </div>\n</div>"
+     },
+     "id": 216207762442,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">These Terms of Service govern your access to and use of this website. By using this website, you agree to be bound by these terms. If you do not agree, please do not use this website.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">These terms apply to your use of the website itself, not to the contractual relationship between your business and DaVinci Laboratories of Vermont if you become a private label client. That relationship is governed by a separate Private Label Agreement signed by both parties.</p>\n  </div>\n</div>"
+     },
+     "id": 216207762443,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">WEBSITE USE</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Acceptable Use.</h2>\n    \n  </div>\n</div>"
+     },
+     "id": 216207762444,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">This website is provided for informational purposes to support businesses evaluating DaVinci as a private label supplement manufacturing partner. You agree to use the website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use of the website.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">You may not attempt to access areas of the website that are restricted, interfere with the operation of the website, use automated systems to harvest data from the website, or use the website to transmit any harmful content.</p>\n  </div>\n</div>"
+     },
+     "id": 216207762445,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">INTELLECTUAL PROPERTY</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Content Ownership.</h2>\n    \n  </div>\n</div>"
+     },
+     "id": 216207762446,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">All content on this website, including text, graphics, logos, images, product photography, formulation descriptions, and downloadable resources, is the property of DaVinci Laboratories of Vermont or its content suppliers and is protected by copyright, trademark, and other intellectual property laws.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">You may view, download, and print content from this website for your personal business evaluation purposes. You may not reproduce, distribute, modify, or create derivative works from this content without our prior written permission.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">The DaVinci name, logos, and product names are trademarks of DaVinci Laboratories of Vermont. Other product and company names mentioned on this website may be trademarks of their respective owners.</p>\n  </div>\n</div>"
+     },
+     "id": 216207762447,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">DISCLAIMERS</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Information Provided As-Is.</h2>\n    \n  </div>\n</div>"
+     },
+     "id": 216207762448,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">The information on this website is provided as-is for general informational purposes. While we make reasonable efforts to keep information current and accurate, we make no warranties or representations about the completeness, accuracy, reliability, or suitability of the information for any particular purpose.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">Dietary supplements referenced on this website are intended to support general health and wellness. They are not intended to diagnose, treat, cure, or prevent any disease. Statements about specific products have not been evaluated by the U.S. Food and Drug Administration.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">Pricing, lead times, minimum order quantities, product availability, and other commercial terms referenced on this website are estimates only. Final commercial terms are set in your Private Label Agreement.</p>\n  </div>\n</div>"
+     },
+     "id": 216207762449,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">LIMITATION OF LIABILITY</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Limitation of Liability.</h2>\n    \n  </div>\n</div>"
+     },
+     "id": 216207762450,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">To the fullest extent permitted by law, DaVinci Laboratories of Vermont, its parent company, affiliates, directors, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages arising from or related to your use of this website.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">Our total liability for any claim arising from your use of this website will not exceed the greater of one hundred dollars (USD 100) or the amount you have paid to us for products or services in the twelve months preceding the claim.</p>\n  </div>\n</div>"
+     },
+     "id": 216207762451,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">LINKS AND THIRD-PARTY CONTENT</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">External Links.</h2>\n    \n  </div>\n</div>"
+     },
+     "id": 216207762452,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">This website may contain links to third-party websites, including blog content, ingredient supplier sites, and industry resources. We provide these links for convenience only. We do not endorse, control, or take responsibility for the content of third-party sites you may reach through links on this website.</p>\n  </div>\n</div>"
+     },
+     "id": 216207762453,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">CHANGES</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Changes to These Terms.</h2>\n    \n  </div>\n</div>"
+     },
+     "id": 216207762454,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">We may update these Terms of Service from time to time. When we do, we will update the date at the top of this page. Material changes will also be announced on the website. Continued use of the website after a change constitutes acceptance of the updated terms.</p>\n  </div>\n</div>"
+     },
+     "id": 216207762455,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">GOVERNING LAW</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Governing Law.</h2>\n    \n  </div>\n</div>"
+     },
+     "id": 216207762456,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">These Terms of Service are governed by the laws of the State of Vermont, without regard to its conflict of law principles. Any disputes arising from or related to these terms or your use of this website will be resolved in the state or federal courts located in Vermont.</p>\n  </div>\n</div>"
+     },
+     "id": 216207762457,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">CONTACT</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Questions About These Terms.</h2>\n    \n  </div>\n</div>"
+     },
+     "id": 216207762458,
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">Questions about these Terms of Service can be sent to info@davincilabs.com or mailed to DaVinci Laboratories of Vermont, 929 Harvest Lane, Williston, VT 05495.</p>\n  </div>\n</div>"
+     },
+     "id": 216207762459,
+     "type": "rich_text"
+    },
+    {
+     "body": {},
+     "id": 218949182031,
+     "label": "PL - Global FDA Disclaimer",
+     "module_id": 218942529652,
+     "order": 18,
+     "type": "module"
+    }
+   ]
+  }
+ },
+ "widgets": {}
+}
