@@ -17,6 +17,29 @@ def body_text(h):
     cut=h.find('global_footer')
     if cut>0: cut=h.rfind('<',0,cut)      # back up to the tag start, or we truncate mid-tag
     return clean(h[:cut] if cut>0 else h)
+def v1_widgets(v1id):
+    v1=get(v1id); ws=(v1.get('widgetContainers') or {}).get('main_content',{}).get('widgets',[])
+    if not ws:
+        import os
+        for cand in (f'../promote/{v1id}.PRE.json',
+                     f'/home/user/Claude/davinci-private-label/snapshots/v1-pre-promotion/{v1id}.json',
+                     f'../backup_v1_2026-08-07/{v1id}.json', f'{v1id}.json', BK+f'{v1id}.json'):
+            if os.path.exists(cand):
+                snap=json.load(open(cand))
+                ws=(snap.get('widgetContainers') or {}).get('main_content',{}).get('widgets',[])
+                if ws: break
+    return ws
+
+
+def v1_h1(v1id):
+    """How many <h1> V1 had. The privacy and terms pages have none, and adding
+    one would be a change, not a fix -- so the rule is 'match V1', except where
+    V1 had more than one, which we deliberately collapse to a single heading."""
+    h=' '.join((w.get('body',{}).get('html') or w.get('body',{}).get('value') or '')
+               for w in v1_widgets(v1id))
+    return len(re.findall(r'<h1[ >]', h))
+
+
 def v1_text(v1id):
     v1=get(v1id); ws=(v1.get('widgetContainers') or {}).get('main_content',{}).get('widgets',[])
     if not ws:
@@ -65,9 +88,10 @@ def check(v1id,v3id,label):
               ' '.join(re.findall(r'<div class="pl-cg__content">(.*?)</div>',body,re.S))))
     inv=[w for w in gained if w.strip() not in {'+','−',''}]
     want = module_count(v3id)
-    ok = (not bad) and not inv and err==0 and sec==want and h1==1 and junk==0
-    print("  %-26s %-4s  sections:%d/%-3d err:%d  h1:%d  junk:%d  lost:%d  invented:%d %s" % (
-        label,"PASS" if ok else "FAIL",sec,want,err,h1,junk,len(bad),len(inv),
+    want_h1 = 1 if v1_h1(v1id) >= 1 else 0
+    ok = (not bad) and not inv and err==0 and sec==want and h1==want_h1 and junk==0
+    print("  %-26s %-4s  sections:%d/%-3d err:%d  h1:%d/%d  junk:%d  lost:%d  invented:%d %s" % (
+        label,"PASS" if ok else "FAIL",sec,want,err,h1,want_h1,junk,len(bad),len(inv),
         (bad[:6] or inv[:6]) if (bad or inv) else ''))
     return ok
 if __name__=='__main__':

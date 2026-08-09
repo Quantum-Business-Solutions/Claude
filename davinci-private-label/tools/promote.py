@@ -19,9 +19,26 @@ ALLOWED_DELETIONS  = {'+', '−', ''}   # FAQ open/close markers, drawn in CSS
 # Per-page exceptions: text present in V1 that is deliberately NOT reproduced,
 # because it was a defect in V1 rather than content. Keep these specific and few.
 PAGE_EXCEPTIONS = {
-    # Home: V1 widget 19 serialised a literal Python None as the FAQ subhead,
-    # rendering "None" under "Frequently asked questions". Verified: 1 occurrence.
+    # Home and the 16 category pages each serialised a literal Python None as their
+    # FAQ subhead. Verified per page: exactly one occurrence, in the FAQ widget,
+    # as <p ...>None</p>. Dropping it is deliberate.
     '216189433405': {'None'},
+    '216179449410': {'None'},
+    '216188836111': {'None'},
+    '216188836114': {'None'},
+    '216189432990': {'None'},
+    '216189432992': {'None'},
+    '216189433007': {'None'},
+    '216189433092': {'None'},
+    '216189433094': {'None'},
+    '216189433236': {'None'},
+    '216189433251': {'None'},
+    '216189433267': {'None'},
+    '216189433270': {'None'},
+    '216189433371': {'None'},
+    '216189433373': {'None'},
+    '216189433375': {'None'},
+    '216189433390': {'None'},
 }
 
 
@@ -72,6 +89,9 @@ def body_text(html):
         h = html
     h = re.sub(r'(?is)<(script|style)\b.*?</\1>', ' ', h)
     h = re.sub(r'(?s)<!--.*?-->', ' ', h)
+    cut = h.find('global_footer')
+    if cut > 0:
+        h = h[:h.rfind('<', 0, cut)]      # back up to the tag start, or we truncate mid-tag
     return re.sub(r'\s+', ' ', _html.unescape(re.sub(r'<[^>]+>', ' ', h))).strip()
 
 
@@ -99,6 +119,23 @@ def v1_source_text(pre, v1id):
     return re.sub(r'\s+', ' ', _html.unescape(re.sub(r'<[^>]+>', ' ', joined))).strip()
 
 
+def none_artifacts(pre):
+    """Count the stray literal 'None' tokens V1 rendered, and only those.
+
+    A token is an artifact when it stands alone between two tags. Counting every
+    occurrence would let real prose disappear: two sentences on quality-standards
+    begin with the word."""
+    h = ' '.join((w.get('body', {}).get('html') or w.get('body', {}).get('value') or '')
+                 for w in (pre.get('widgetContainers') or {})
+                     .get('main_content', {}).get('widgets', []))
+    n = 0
+    for m in re.finditer(r'(?<![A-Za-z])None(?![A-Za-z])', h):
+        if re.search(r'>\s*$', h[max(0, m.start() - 60):m.start()]) \
+           and re.search(r'^\s*<', h[m.end():m.end() + 40]):
+            n += 1
+    return n
+
+
 def check(page, v3, pre, html, v3_html, pre_text, v1id=''):
     """Return list of failure strings. Empty list == every gate passed."""
     f = []
@@ -115,16 +152,31 @@ def check(page, v3, pre, html, v3_html, pre_text, v1id=''):
         for md in sec.get('rowMetaData', []):
             if md != {"cssClass": "dnd-section"}:
                 f.append(f"unexpected rowMetaData entry {md!r}")
+        nmod = 0
         for row in sec.get('rows', []):
+            if list(row.keys()) != ['0']:
+                f.append(f"section row keys are {list(row.keys())!r}, expected ['0']")
             for col in row.values():
+                if col.get('type') != 'cell':
+                    f.append(f"section cell type is {col.get('type')!r}, expected 'cell'")
                 if col.get('params', {}).get('css_class') != 'dnd-column':
                     f.append("a section cell is missing params.css_class=dnd-column")
+                if col.get('w') != 0 or col.get('x') != 0:
+                    f.append(f"section cell has non-zero geometry w={col.get('w')} x={col.get('x')}")
+                for inner in col.get('rows', []):
+                    if list(inner.keys()) != ['0']:
+                        f.append(f"module row keys are {list(inner.keys())!r}, expected ['0']")
+                    nmod += len(inner)
+        if nmod != len(sec.get('rows', [])):
+            f.append(f"module count ({nmod}) != row count ({len(sec.get('rows', []))})")
     mods = modules_of(page)
     if not mods:
         f.append("no modules found in layoutSections")
     for m in mods:
         if m.get('type') != 'module' or not m.get('params', {}).get('module_id'):
             f.append(f"module cell {m.get('name')!r} is malformed")
+        if m.get('w') != 0 or m.get('x') != 0:
+            f.append(f"module {m.get('name')!r} has non-zero geometry w={m.get('w')} x={m.get('x')}")
 
     # the combination that previously froze the HubSpot editor
     if wc.get('widgets'):
@@ -138,8 +190,14 @@ def check(page, v3, pre, html, v3_html, pre_text, v1id=''):
     for k in ('id', 'name', 'slug', 'htmlTitle', 'metaDescription', 'domain', 'language'):
         if page.get(k) != pre.get(k):
             f.append(f"{k} changed: {pre.get(k)!r} -> {page.get(k)!r}")
-    if page.get('state') != 'DRAFT' or page.get('currentlyPublished'):
-        f.append(f"page is not a safe draft (state={page.get('state')}, published={page.get('currentlyPublished')})")
+    # currentlyPublished is not a field this API returns, so testing it was
+    # vacuously true. state / currentState / published are the real ones, and
+    # archivedAt is checked so an archived page cannot slip through as a draft.
+    if (page.get('state') != 'DRAFT' or page.get('published')
+            or page.get('currentState') not in (None, 'DRAFT')
+            or (page.get('archivedAt') or '1970')[:4] != '1970'):
+        f.append(f"page is not a safe draft (state={page.get('state')}, "
+                 f"currentState={page.get('currentState')}, published={page.get('published')})")
 
     # render
     if 'hubl error' in html.lower() or 'jinjava' in html.lower():
@@ -163,7 +221,20 @@ def check(page, v3, pre, html, v3_html, pre_text, v1id=''):
         if op in ('insert', 'replace'):
             added += now[j1:j2]
     allowed = ALLOWED_DELETIONS | PAGE_EXCEPTIONS.get(v1id, set())
-    bad = [w for w in lost if w.strip() not in allowed]
+    # V1's FAQ widget serialised a literal None on most pages. That is an
+    # artifact and may go -- but quality-standards genuinely starts two
+    # sentences with the word, so the page is allowed to lose exactly as many
+    # as V1 rendered standalone between tags, and not one more.
+    budget = none_artifacts(pre)
+    bad = []
+    for w in lost:
+        t = w.strip()
+        if t in allowed:
+            continue
+        if t == 'None' and budget > 0:
+            budget -= 1
+            continue
+        bad.append(w)
     if bad:
         f.append(f"{len(bad)} word(s) from V1 missing: {bad[:12]}")
     return f
@@ -183,6 +254,12 @@ def main():
         json.dump(pre, open(pre_path, 'w'), indent=1)
         print(f"  snapshot -> {os.path.basename(pre_path)}")
     pre = json.load(open(pre_path))
+    pre_widgets = (pre.get('widgetContainers') or {}).get('main_content', {}).get('widgets', [])
+    if not pre_widgets or (pre.get('layoutSections') or {}):
+        print(f"  ABORT {v1id}: {os.path.basename(pre_path)} is not a pre-promotion snapshot "
+              f"({len(pre_widgets)} widgets, {len(pre.get('layoutSections') or {})} layoutSections). "
+              f"Restoring from it would destroy the page. Delete it and re-snapshot from a known-good source.")
+        return 2
     pre_text = v1_source_text(pre, v1id)
     json.dump(v3, open(S + f"{v3id}.V3.json", 'w'), indent=1)
 
@@ -203,7 +280,14 @@ def main():
             patch(v1id, {"templatePath": pre['templatePath'],
                          "layoutSections": pre.get('layoutSections') or {},
                          "widgetContainers": pre['widgetContainers']})
-            print("  restored.")
+            back = get_page(v1id)
+            n = len((back.get('widgetContainers') or {}).get('main_content', {}).get('widgets', []))
+            if n == len(pre_widgets) and not (back.get('layoutSections') or {}):
+                print(f"  restored and verified ({n} widgets back).")
+            else:
+                print(f"  RESTORE DID NOT VERIFY -- {n} widgets, "
+                      f"{len(back.get('layoutSections') or {})} layoutSections. Page needs manual repair.")
+                return 3
         return 1
 
     json.dump(page, open(S + f"{v1id}.POST.json", 'w'), indent=1)
