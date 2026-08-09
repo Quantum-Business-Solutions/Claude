@@ -54,14 +54,129 @@ def icon_url(svg):
     return "https://info.davincilabs.com/hubfs/private-label/icons/pl-icon-%s.svg" % name
 
 
+# ------------------------------------------------------------- html scanning
+#
+# Everything below walks the markup by balanced tags instead of splitting on a
+# style declaration. Splitting was what lost the copy: a card whose wrapper is an
+# <a>, or declares no padding of its own, never started a new block, so the whole
+# grid collapsed into one "card" and every card after the first disappeared.
+
+_TAG = re.compile(r'<(/?)([a-zA-Z][\w:-]*)((?:"[^"]*"|\'[^\']*\'|[^>"\'])*?)(/?)>')
+VOID = {'img', 'br', 'hr', 'input', 'meta', 'link', 'source', 'col', 'area', 'base',
+        'embed', 'param', 'track', 'wbr', 'path', 'circle', 'rect', 'line',
+        'polyline', 'polygon', 'ellipse', 'use', 'stop'}
+
+
+def decomment(h):
+    return re.sub(r'(?s)<!--.*?-->', '', h)
+
+
+def elements(h):
+    """Top-level balanced elements of a fragment.
+
+    Unmatched closing tags -- what any regex split through a grid leaves behind --
+    are dropped rather than carried into a richtext field, where a stray </div>
+    would tear the page layout open."""
+    out, depth, start = [], 0, None
+    for m in _TAG.finditer(h):
+        closing, name, self_close = m.group(1), m.group(2).lower(), m.group(4)
+        if closing:
+            # an SVG primitive may be written <path/> or <path></path>; skipping
+            # the open tag but honouring the close unbalances the whole scan
+            if name in VOID: continue
+            if depth:
+                depth -= 1
+                if depth == 0 and start is not None:
+                    out.append(h[start:m.end()]); start = None
+            continue
+        if name in VOID or self_close:
+            if depth == 0: out.append(m.group(0))
+            continue
+        if depth == 0: start = m.start()
+        depth += 1
+    return out
+
+
+def element_inner(e):
+    """What is inside a single balanced element."""
+    m = _TAG.match(e)
+    if not m or m.group(4) or m.group(2).lower() in VOID:
+        return ''
+    j = e.rstrip().rfind('</')
+    return e[m.end():j] if j > m.end() else ''
+
+
+def direct_text(e):
+    """An element's own text, with the text of its children taken out."""
+    inner = element_inner(e)
+    for k in elements(inner):
+        inner = inner.replace(k, ' ', 1)
+    return txt(inner)
+
+
+def text_units(h):
+    """One entry per element that carries its own text, in document order.
+    Each entry is (markup, text) so a caller can still look inside for a
+    sublabel that V1 nested in a <span>."""
+    out = []
+    for e in elements(decomment(h)):
+        d = direct_text(e)
+        if d:
+            out.append((e, d))
+        else:
+            out += text_units(element_inner(e))
+    return out
+
+
+def grid_open(h):
+    """The opening tag of the section's grid container."""
+    for want in ('grid-template-columns', None):
+        for m in _TAG.finditer(h):
+            if m.group(1) or m.group(4): continue
+            a = m.group(3)
+            if want and want in a: return m
+            if not want and re.search(r'display:\s*grid', a): return m
+    return None
+
+
+def grid_cells(h):
+    """The direct children of the section's grid container -- its cards or tiles.
+
+    V1 writes grids three ways: a styled `grid-template-columns`, a bare
+    `display: grid` with the columns in a stylesheet class, and cells wrapped in
+    <a>. All three have to split the same way or the cards vanish."""
+    h = decomment(h)
+    m = grid_open(h)
+    if not m: return []
+    depth, end = 0, None
+    for t in _TAG.finditer(h, m.start()):
+        name = t.group(2).lower()
+        if t.group(1):
+            if name in VOID: continue
+            depth -= 1
+            if depth <= 0: end = t.start(); break
+        elif not (name in VOID or t.group(4)):
+            depth += 1
+    inner = h[m.end():end] if end else h[m.end():]
+    return [e for e in elements(inner) if txt(e) or '<img' in e]
+
+
+def _paras_in(h):
+    return [(a, i) for a, i in re.findall(r'<p(?=[\s>])([^>]*)>(.*?)</p>', h, re.S) if txt(i)]
+
+
 # --------------------------------------------------------------- classifying
 
 def kind_of(h, w):
     """What sort of section this is. Order matters: the tests run most specific
     first, because a card grid also contains paragraphs and a hero also contains
     a heading."""
-    if w.get('module_id'):
-        return 'global'                        # already a module; pass it through
+    # A `module` widget is only a global block when its body is empty -- that is
+    # what "the copy comes from the global at render time" means. Several pages
+    # hold their own copy inside a generic module, and passing those through as a
+    # bare module_id threw the copy away and rendered the module's placeholder.
+    if w.get('module_id') and not h.strip():
+        return 'global'
     if not h.strip():
         return 'skip'
     if 'hbspt.forms.create' in h or re.search(r'<form(?=[\s>])', h):
@@ -70,24 +185,34 @@ def kind_of(h, w):
         return 'faq'
     if all(m in txt(h) for m in HERITAGE_MARKERS[:1]) or 'Developed by us' in h:
         return 'heritage'
-    if re.search(r'<h1(?=[\s>])', h):
-        return 'hero'
-    grid = 'grid-template-columns' in h
-    if grid:
+    cells = grid_cells(h)
+    if cells:
+        # one photo beside one column of copy is a content split, not a one-card
+        # grid -- read as a grid its eyebrow is emitted twice, as the section's
+        # and again as the single card's title
+        if h.count('<img') == 1 and '<h3' not in h:
+            return 'contentsplit'
+        if '<h3' in h:
+            return 'cardgrid'
         if re.search(r'<a[^>]*>\s*(?:<div[^>]*>)?\s*<img', h, re.S) or h.count('<img') >= 3:
             return 'tilegrid'
-        if re.search(r'font-size:\s*(?:3[6-9]|[4-9]\d)px', h) and '<h3' not in h:
+        if re.search(r'font-size:\s*(?:3[6-9]|[4-9]\d)px', h):
+            # a stat is a value and a label, optionally a description. A third
+            # paragraph under a section heading is a numbered step, and the stat
+            # band has nowhere to put the step's eyebrow or its body copy.
+            if max(len(_paras_in(c)) for c in cells) >= 3 and (eyebrow(h) or headline(h)):
+                return 'cardgrid'
             return 'statband'
         return 'cardgrid'
-    if re.search(r'<img', h) and re.search(r'display:\s*(?:flex|grid)', h):
+    if re.search(r'<h1(?=[\s>])', h):
+        return 'hero'
+    if re.search(r'<img', h) and re.search(r'display:\s*flex', h):
         return 'contentsplit'
     if re.search(r'<a[^>]*display:\s*inline-block', h):
         return 'cta'
-    if re.search(r'<img', h):
-        return 'imageband'
     body = [p for p in re.findall(r'<p(?=[\s>])([^>]*)>(.*?)</p>', h, re.S)
             if 'letter-spacing' not in p[0] and txt(p[1])]
-    if len(body) <= 1 and re.search(r'<h[23](?=[\s>])', h):
+    if len(body) <= 1 and re.search(r'<h[23](?=[\s>])', h) and '<img' not in h:
         return 'sectionheader'
     return 'richtext'
 
@@ -108,15 +233,16 @@ def inner_html(h):
     through renders identically and is still editable; inventing a shape that
     merely looks close is not worth the regression."""
     body = h.strip()
-    opens = 0
-    while True:
-        m = re.match(r'\s*<div\b[^>]*>\s*', body)
-        if not m or opens >= 2: break
-        body = body[m.end():]; opens += 1
-    for _ in range(opens):
-        j = body.rstrip().rfind('</div>')
+    for _ in range(2):
+        m = re.match(r'\s*<div\b([^>]*)>\s*', body)
+        if not m: break
+        # a wrapper that declares the section's alignment is part of the design,
+        # not scaffolding: strip it and centred copy silently goes left
+        if 'text-align' in m.group(1): break
+        rest = body[m.end():]
+        j = rest.rstrip().rfind('</div>')
         if j < 0: break
-        body = body[:j]
+        body = rest[:j]
     return body.strip()
 
 
@@ -124,26 +250,61 @@ def head_of(h):
     """Everything above the grid. A section's own heading and subhead live here;
     below it are the cards. Searching the whole section for a subhead picks up
     the first card's body copy and emits it twice."""
-    at = h.find('grid-template-columns')
-    return h[:at] if at > 0 else h
+    m = grid_open(h)
+    return h[:m.start()] if m and m.start() > 0 else h
 
 
 def _blocks(h):
-    """Split a grid into its cards. Card wrappers all declare their own padding,
-    which is what separates them from the section wrapper around them."""
+    """A grid's cards."""
+    cells = grid_cells(h)
+    if len(cells) > 1: return cells
     parts = re.split(r'(?=<div style="[^"]*padding:\s*\d+px\s+\d+px[^"]*")', h)
     return parts[1:] if len(parts) > 1 else [h]
 
 
-def _eyebrows(blk):
-    """A card's kicker. V1 writes it as a letter-spaced <p>, and sometimes as a
-    coloured pill <div> as well -- the onboarding cards carry both STEP 01 and
-    WEEK 1, and taking only one of them drops copy."""
+def _kickers(seg):
+    """Every letter-spaced kicker stacked above the headline, in V1's order.
+
+    Some sections carry two: a coloured `STEP 01` pill authored as a <div> over a
+    letter-spaced <p>. Matching a single <p ... letter-spacing: 2px> -- which is
+    what the category family needed -- drops the pill."""
+    for m in re.finditer(r'<(h1|h2)(?=[\s>])([^>]*)>', seg):
+        if 'letter-spacing' not in m.group(2):
+            seg = seg[:m.start()]; break
     out = []
-    for m in re.finditer(r'<(p|div)(?=[\s>])([^>]*letter-spacing[^>]*)>(.*?)</\1>', blk, re.S):
+    for m in re.finditer(r'<(p|div|span|h1|h2|h3)(?=[\s>])([^>]*letter-spacing[^>]*)>(.*?)</\1>',
+                         seg, re.S):
         t = txt(m.group(3))
         if t and t not in out: out.append(t)
     return out
+
+
+def eyebrow(h):
+    """The section's kicker: read from above the grid, so a card's own kicker is
+    never mistaken for the section's."""
+    return ' '.join(_kickers(head_of(h)))
+
+
+def eyebrow_all(h):
+    """For sections whose heading sits inside the grid, e.g. a content split."""
+    return ' '.join(_kickers(h))
+
+
+def _eyebrows(blk):
+    """A card's kicker."""
+    return _kickers(blk)
+
+
+def card_body(seg):
+    """A card's copy below its title, exactly as V1 wrote it.
+
+    Taking only the first <p> drops the link list under a resource card, the
+    second paragraph of a two-paragraph card, and the caps line some cards set
+    between the title and the body. Lifting those into separate module fields
+    would re-order them, which the copy gate reads as words both lost and
+    invented -- so the markup is carried through instead, inline styles and all,
+    and renders identically."""
+    return ''.join(e.strip() for e in elements(decomment(seg)) if txt(e))
 
 
 def cards_in(h):
@@ -153,6 +314,9 @@ def cards_in(h):
     gate then fails the page rather than letting the cards disappear quietly."""
     out = []
     for blk in _blocks(h):
+        blk = decomment(blk)
+        photo = img_of(blk)
+        href = re.search(r'<a[^>]+href="([^"]+)"', blk)
         for m in re.finditer(r'<h3(?=[\s>])[^>]*>(.*?)</h3>', blk, re.S):
             seg = blk[m.end():]
             nxt = re.search(r'<h3(?=[\s>])', seg)
@@ -161,13 +325,14 @@ def cards_in(h):
             c = {"title": txt(m.group(1))}
             eb = _eyebrows(head)
             if eb: c["number_or_eyebrow"] = ' '.join(eb)
-            ps = [x for x in re.findall(r'<p(?=[\s>])[^>]*>(.*?)</p>', seg, re.S) if txt(x)]
-            if ps: c["content"] = f"<p>{ps[0].strip()}</p>"
-            chips = [txt(x) for x in re.findall(
-                r'<span[^>]*border-radius: 100px[^>]*>(.*?)</span>', seg, re.S)]
-            if chips: c["tags"] = ', '.join(chips)
+            body = card_body(seg)
+            if body: c["content"] = body
             sv = re.search(r'<svg\b.*?</svg>', head + seg[:400], re.S)
             if sv: c["icon"] = {"src": icon_url(sv.group(0)), "alt": "", "loading": "lazy"}
+            if photo: c["image"] = photo
+            if href:
+                c["link"] = {"url": {"href": href.group(1), "type": "EXTERNAL"},
+                             "open_in_new_tab": False}
             out.append(c)
     if out:
         return out
@@ -188,7 +353,9 @@ def cards_in(h):
             continue
         c["title"] = txt(rest[0][1])
         if len(rest) > 1:
-            c["content"] = f"<p>{rest[-1][1].strip()}</p>"
+            # every remaining paragraph, in V1's order -- a numbered step whose
+            # body was read as `the last <p>` lost anything in between
+            c["content"] = ''.join(f'<p{a}>{i.strip()}</p>' for a, i in rest[1:])
         sv = re.search(r'<svg\b.*?</svg>', blk, re.S)
         if sv: c["icon"] = {"src": icon_url(sv.group(0)), "alt": "", "loading": "lazy"}
         out.append(c)
@@ -249,16 +416,18 @@ def section(kind, h, w):
                          'https://info.davincilabs.com/hubfs/'),
                 "alt": "", "loading": "lazy"}
             p["background_screen"] = {"color": "#c9dbe2", "opacity": 85}
-        bt = button(h)
-        if bt: p["buttons"] = [bt]
+        # an omitted button group falls back to the module's default, which
+        # renders a "Schedule a Consultation" the page never had
+        p["buttons"] = [bt] if (bt := button(h)) else []
         return p
 
     if kind == 'richtext':
         hl = headline(h)
         content = (f"<h2>{hl}</h2>" if hl else '') + paras(h)
-        # if rebuilding from headings and paragraphs would lose anything, carry
-        # the section's own markup instead of an approximation
-        if set(words_of(h)) - set(words_of(content)):
+        # if rebuilding from headings and paragraphs would lose anything -- copy
+        # or an inline photograph -- carry the section's own markup instead of an
+        # approximation
+        if set(words_of(h)) - set(words_of(content)) or '<img' in h:
             content = inner_html(h)
         return {**base("#FFFFFF"), "module_id": MOD['rt'], "align": "left",
                 "max_width": maxw(h, 850), "top_border": False,
@@ -288,23 +457,46 @@ def section(kind, h, w):
 
     if kind == 'tilegrid':
         tiles = []
-        for href, inner in re.findall(r'<a href="([^"]+)"[^>]*>(.*?)</a>', h, re.S):
-            im = img_of(inner)
-            lab = re.search(r'<p(?=[\s>])[^>]*>(.*?)</p>', inner, re.S)
-            label = txt(lab.group(1)) if lab else (im.get('alt', '') if im else '')
-            link = {"url": {"href": href, "type": "EXTERNAL"}, "open_in_new_tab": False}
-            gl = re.search(r'<div style="([^"]*font-size:\s*(\d+)px[^"]*)">\s*\+\s*</div>',
-                           inner, re.S)
+        # read the grid's own cells: V1 links only some of its tile grids, and
+        # matching on <a href> alone dropped every tile of the unlinked ones
+        for cell in grid_cells(h):
+            im = img_of(cell)
+            a = re.search(r'<a[^>]+href="([^"]+)"', cell)
+            link = ({"url": {"href": a.group(1), "type": "EXTERNAL"}, "open_in_new_tab": False}
+                    if a else {"url": {"href": "", "type": "EXTERNAL"}, "open_in_new_tab": False})
+            gl = re.search(r'<(\w+)[^>]*style="([^"]*font-size:\s*(\d+)px[^"]*)"[^>]*>\s*\+\s*</\1>',
+                           cell, re.S)
+            body = cell[:gl.start()] + cell[gl.end():] if gl else cell
+            units = text_units(body)
+            label = units[0][1] if units else (im.get('alt', '') if im else '')
+            sub = ''
+            if units:
+                # V1's "+ AND MORE" tile nests its second line in a smaller span
+                # inside the label; the module has a `sublabel` for exactly that
+                inner0 = element_inner(units[0][0]) or units[0][0]
+                sm = re.search(r'<span[^>]*>(.*?)</span>\s*$', inner0.rstrip(), re.S)
+                if sm and txt(sm.group(1)) and txt(sm.group(1)) != label:
+                    sub = txt(sm.group(1))
+                    label = txt(re.sub(r'<span[^>]*>.*?</span>\s*$', '', inner0.rstrip(),
+                                       flags=re.S))
             if im:
-                tiles.append({"image": im, "tile_label": label, "link": link})
+                t3 = {"image": im, "tile_label": label, "link": link}
+                if sub: t3["sublabel"] = sub
+                tiles.append(t3)
             elif gl or label:
-                tiles.append({"tile_label": label, "link": link,
-                              "accent_glyph": "+" if gl else "",
-                              "glyph_size": int(gl.group(2)) if gl else 56,
-                              "tile_bg": {"color": "#012638", "opacity": 100},
-                              "tile_text_color": "light"})
-        at = h.find('grid-template-columns')
-        labm = re.search(r'<p(?=[\s>])([^>]*font-size:\s*\d+px[^>]*)>', h[at:] if at > 0 else h)
+                cbg = next((bg(st) for st in re.findall(r'style="([^"]*)"', cell)
+                            if re.search(r'background(?:-color)?:\s*(#[0-9a-fA-F]{3,6}|white)', st)),
+                           "#012638")
+                t3 = {"tile_label": label, "link": link,
+                      "accent_glyph": "+" if gl else "",
+                      "glyph_size": int(gl.group(3)) if gl else 56,
+                      "tile_bg": {"color": cbg, "opacity": 100},
+                      "tile_text_color": "light" if re.search(r'color:\s*(white|#fff)', cell, re.I)
+                                         else "dark"}
+                if sub: t3["sublabel"] = sub
+                tiles.append(t3)
+        gm = grid_open(h)
+        labm = re.search(r'<p(?=[\s>])([^>]*font-size:\s*\d+px[^>]*)>', h[gm.start():] if gm else h)
         cols = re.search(r'grid-template-columns:\s*repeat\((\d+),', h)
         fit  = re.search(r'height:\s*(\d+)px;\s*object-fit:\s*(\w+)', h)
         t2, b2 = pad_span(h, (80, 80))
@@ -327,10 +519,15 @@ def section(kind, h, w):
 
     if kind == 'statband':
         stats = []
-        for blk in re.split(r'(?=<div)', h):
-            ps = [(a, i) for a, i in re.findall(r'<p(?=[\s>])([^>]*)>(.*?)</p>', blk, re.S) if txt(i)]
+        for cell in (grid_cells(h) or re.split(r'(?=<div)', h)):
+            ps = _paras_in(cell)
             if len(ps) >= 2:
-                stats.append({"value": txt(ps[0][1]), "stat_label": txt(ps[1][1])})
+                st = {"value": txt(ps[0][1]), "stat_label": txt(ps[1][1])}
+                # V1's stat bands carry a third line under the label; the module
+                # has a `description` for it and reading only two dropped it
+                if len(ps) > 2:
+                    st["description"] = ''.join(f'<p>{i.strip()}</p>' for _, i in ps[2:])
+                stats.append(st)
         lab = re.search(r'<p(?=[\s>])([^>]*letter-spacing[^>]*)>', h)
         return {**base("#012638"), "module_id": STAT, "text_color": "light",
                 "max_width": maxw(h, 1100), "section_headline": headline(h),
@@ -345,7 +542,7 @@ def section(kind, h, w):
         left = bool(re.search(r'<img', h[:len(h) // 2]))
         p = {**base("#FFFFFF"), "module_id": MOD['cs'], "max_width": maxw(h, 1100),
              "image_side": "left" if left else "right", "ratio": "1fr 1fr", "gap": 60,
-             "image_radius": 6, "image_shadow": False, "eyebrow": eyebrow(h),
+             "image_radius": 6, "image_shadow": False, "eyebrow": eyebrow_all(h),
              "headline": headline(h), "content": body, "body_size": body_px(h, 16)}
         if im: p["image"] = im
         return p
@@ -364,8 +561,8 @@ def section(kind, h, w):
              "button_size": px_of(h, r"<a[^>]*font-size:\s*(\d+)px", 16)}
         wt = re.search(r'font-weight:\s*(\w+)', a0)
         if wt: p["content_weight"] = {'normal': '400', 'bold': '700'}.get(wt.group(1), wt.group(1))
-        bt = button(h)
-        if bt: p["buttons"] = [bt]
+        # explicit empty list: the module's default button is a real one
+        p["buttons"] = [bt] if (bt := button(h)) else []
         return p
 
     if kind == 'form':

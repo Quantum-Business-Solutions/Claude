@@ -157,6 +157,24 @@ def run(ref_id, live_id, name, keep_ref=True, sel=None):
     hl = open(dl + '/index.html').read()
     fails, notes = [], {}
 
+    # A module CSS deploy moves the live page's asset versions for about fifteen
+    # minutes while the CDN revalidates, and the reference mirror is frozen -- so
+    # a run started in that window compares a half-deployed page against a
+    # settled one. Fetch the live page again and fail closed if its asset
+    # versions are still moving, rather than report a difference that is really
+    # a deploy in progress.
+    if live_id:
+        ver = lambda h: set(re.findall(r'hub_generated/[^"\']*?/(\d+)/', h))
+        again = f"{dl}__recheck"
+        shutil.rmtree(again, ignore_errors=True)
+        mirror(live_id, again)
+        v1s, v2s = ver(hl), ver(open(again + '/index.html').read())
+        shutil.rmtree(again, ignore_errors=True)
+        if v1s != v2s:
+            fails.append("module assets are still deploying "
+                         f"(versions moved between two fetches: {sorted(v1s ^ v2s)[:4]}) "
+                         "-- re-run once they settle")
+
     # ---- copy
     wr, wl = words(hr), words(hl)
     from collections import Counter

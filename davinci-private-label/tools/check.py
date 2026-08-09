@@ -52,14 +52,26 @@ def v1_text(v1id):
                 ws=(snap.get('widgetContainers') or {}).get('main_content',{}).get('widgets',[])
                 if ws: break
         if not ws: raise RuntimeError(f'no V1 body available for {v1id}')
-    june=None
+    # A global widget's body is empty by design, so its text comes from the June
+    # backup. Match on module_id, not list position: design-services gained a
+    # global after the backup was taken, and by position it then counted its
+    # heritage twice and lost its FDA disclaimer. Widget ids are not usable --
+    # re-inserting a global mints a new one -- so position is the last resort.
+    june=[]
     try: june=json.load(open(BK+f'{v1id}.json'))['widgetContainers']['main_content']['widgets']
     except Exception: pass
+    by_mod={}
+    for jw in june:
+        t=(jw.get('body') or {}).get('html') or (jw.get('body') or {}).get('content') or ''
+        if jw.get('module_id') and t.strip(): by_mod.setdefault(jw['module_id'], t)
     parts=[]
     for i,w in enumerate(ws):
         b=w.get('body') or {}; t=b.get('html') or b.get('content') or ''
-        if not t.strip() and june and i<len(june):   # global blocks are empty by design
-            jb=june[i].get('body') or {}; t=jb.get('html') or jb.get('content') or ''
+        if not t.strip():
+            t=by_mod.get(w.get('module_id')) or ''
+            if not t.strip() and i < len(june):
+                jb=june[i].get('body') or {}
+                t=jb.get('html') or jb.get('content') or ''
         parts.append(t)
     return clean(' '.join(parts))
 def module_count(v3id):
