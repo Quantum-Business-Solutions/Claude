@@ -3,9 +3,13 @@
 
 Two stages, deliberately split by cost:
 
-1. /search/contact per company domain - FREE. Filtered to C-level and board
-   seniority, which is the filter that actually works; passing jobTitle together
-   with companyWebsite silently returns zero results.
+1. /search/contact per company domain - FREE. Deliberately UNFILTERED, then
+   screened on job title locally. ZoomInfo's own managementLevel tag cannot be
+   trusted for this: SyncShow's "Chief Executive Officer" record is not tagged
+   C-level, so filtering server-side reported that company as having no
+   decision-maker at all. Titles are also not usable as a server-side filter -
+   passing jobTitle alongside companyWebsite silently returns zero rows. Pulling
+   everything and screening here costs nothing extra and misses nothing.
 2. /enrich/contact in batches of 10 - BILLS BULK CREDITS. Only the people who
    survive the decision-maker screen get enriched, and only once: results are
    appended to a resume cache so an interrupted run never re-buys a contact.
@@ -77,6 +81,47 @@ def is_decision_maker(title: str) -> bool:
     if _EQUITY.search(t):
         return True
     return bool(_EXEC.search(t)) and not _FUNCTIONAL.search(t)
+
+
+def search_company_contacts(zi: ZoomInfo, domain: str,
+                            max_pages: int = 8) -> list[dict]:
+    """Every contact ZoomInfo holds for a domain, paged. Free.
+
+    Capped at max_pages because a handful of these agencies share a domain with
+    a much larger parent; without a cap one company can pull thousands of rows
+    and none of the extras are owners. The cap is logged when it bites so the
+    truncation is never silent.
+    """
+    out: list[dict] = []
+    for page in range(1, max_pages + 1):
+        try:
+            res = zi.search_contacts(companyWebsite=domain, rpp=100, page=page)
+        except ZoomInfoError as exc:
+            print(f"\n  ! search {domain} p{page}: {exc}", file=sys.stderr)
+            break
+        batch = res.get("data") or []
+        out.extend(batch)
+        total = res.get("maxResults") or res.get("totalResults") or 0
+        if len(batch) < 100 or len(out) >= total:
+            break
+        if page == max_pages:
+            print(f"\n  ! {domain}: stopped at {len(out)} of {total} contacts "
+                  f"({max_pages}-page cap)", file=sys.stderr)
+        time.sleep(0.08)
+    time.sleep(0.05)
+    return out
+
+
+def field(contact: dict, name: str):
+    """Read a search-result field regardless of response shape.
+
+    /search/contact returns flat records; the MCP's search_contacts_v2 nests
+    everything under "attributes". Reading through both means the same screen
+    works whichever path sourced the rows, including cached rows from the other.
+    """
+    if name in contact:
+        return contact[name]
+    return (contact.get("attributes") or {}).get(name)
 
 
 def load_cache(path: str) -> dict:
@@ -162,18 +207,10 @@ def main() -> int:
         if dom in scache:
             data = scache[dom]
         else:
-            try:
-                res = zi.search_contacts(
-                    companyWebsite=dom, managementLevel="C-Level,Board Member",
-                    rpp=25, page=1)
-                data = res.get("data") or []
-            except ZoomInfoError as exc:
-                print(f"\n  ! search {dom}: {exc}", file=sys.stderr)
-                data = []
+            data = search_company_contacts(zi, dom)
             append_cache(SEARCH_CACHE, dom, data)
-            time.sleep(0.08)
         for c in data:
-            if is_decision_maker(c.get("jobTitle") or ""):
+            if is_decision_maker(field(c, "jobTitle") or ""):
                 hits.append({"partner": p, "contact": c})
         if i % 25 == 0 or i == len(todo):
             print(f"  searched {i}/{len(todo)}, decision-makers so far "
