@@ -3,3 +3,7 @@
 
 # preview keys open unpublished pages; keep them out of the repo
 PL-conversion-index.md
+
+# build output: republished to the same artifact URL from this path,
+# with the committed copy kept under davinci-private-label/reports/
+pl-conversion-report.html
