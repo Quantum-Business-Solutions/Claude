@@ -2,6 +2,11 @@
 # re-runs resumable. The CSV/XLSX in data/ are the actual deliverables.
 data/listing_details.cache.jsonl
 
+# Output of find_acquisition_conversations.py: contains excerpts of confidential
+# M&A discussions pulled from CRM engagement records. Regenerable on demand;
+# deliberately not committed.
+data/acquisition_conversations.csv
+
 __pycache__/
 *.pyc
 .DS_Store
