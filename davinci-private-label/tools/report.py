@@ -7,7 +7,7 @@ rather than the one that happened to be quoted in conversation.
 
 usage: report.py
 """
-import json, os, glob, html, datetime
+import json, os, glob, html, re, datetime
 
 S   = os.path.dirname(os.path.abspath(__file__)) + '/'
 OUT = '/home/user/Claude/pl-conversion-report.html'
@@ -41,7 +41,33 @@ def newest():
             continue
         out[n] = {w: (d.get(w) or {}).get('real') for w in ('1440px', '768px', '390px')}
         out[n]['words'] = d.get('words')
+        out[n]['loud'] = noticeable(d)
     return out
+
+
+def noticeable(d):
+    """Which differences a reader would actually see.
+
+    A count on its own says nothing about severity: a page reading 30 may be
+    thirty sub-pixel roundings, and a page reading 2 may be two headlines at the
+    wrong size. Only four things carry far enough to be seen without the
+    original beside you."""
+    def px(v):
+        m = re.search(r'[\d.]+', str(v))
+        return float(m.group(0)) if m else 0.0
+    seen = set()
+    for w in ('1440px', '768px', '390px'):
+        for _t, diff in (d.get(w) or {}).get('examples') or []:
+            if 'fs' in diff and abs(px(diff['fs'][0]) - px(diff['fs'][1])) >= 4:
+                seen.add('type size')
+            if 'fw' in diff and diff['fw'][1] == '700' and diff['fw'][0] != '700':
+                seen.add('bolder')
+            # a shift to a translucent white is a faint dimming, not a colour change
+            if 'color' in diff and not re.search(r'0\.[89]', str(diff['color'][1])):
+                seen.add('colour')
+            if 'measure' in diff and abs(diff['measure'][0] - diff['measure'][1]) > 60:
+                seen.add('column width')
+    return sorted(seen)
 
 
 def rows():
@@ -49,21 +75,22 @@ def rows():
     r = []
     for n in CAT:
         r.append(dict(page=n, group="Category", state="converted",
-                      d=CATRES.get(n, 0), t=None, m=None,
+                      d=CATRES.get(n, 0), t=None, m=None, loud=[],
                       note="desktop only — tablet and phone not yet measured"))
     for n in DOSE:
         x = g.get(n)
         if not x:
             continue
         r.append(dict(page=n, group="Home + dosage", state="converted",
-                      d=x['1440px'], t=x['768px'], m=x['390px'],
+                      d=x['1440px'], t=x['768px'], m=x['390px'], loud=x['loud'],
                       note=("reference render unusable — this number is not trustworthy"
                             if n == "home" else "")))
     for n, x in g.items():
         if n in CAT or n in DOSE:
             continue
         r.append(dict(page=n, group="Draft — not yet on the live record", state="draft",
-                      d=x['1440px'], t=x['768px'], m=x['390px'], note=""))
+                      d=x['1440px'], t=x['768px'], m=x['390px'],
+                      loud=x['loud'], note=""))
     r.sort(key=lambda x: (x['group'] != "Category", -(x['d'] or 0), x['page']))
     return r
 
@@ -100,7 +127,7 @@ def build():
             f'{html.escape(r["page"])}</td><td class="st">{html.escape(r["state"])}</td>'
             f'<td class="num">{n(r["d"])}</td><td class="num">{n(r["t"])}</td>'
             f'<td class="num">{n(r["m"])}</td>'
-            f'<td class="note">{html.escape(r["note"]) or LABEL[s]}</td></tr>')
+            f'<td class="note">{html.escape(r["note"]) or (", ".join(r["loud"]) if r.get("loud") else LABEL[s])}</td></tr>')
     stamp = datetime.datetime.now().strftime('%d %B, %H:%M')
     tpl = open(S + 'report_template.html').read()
     for tok, val in (('@@ROWS@@', "".join(body)), ('@@STAMP@@', stamp),
