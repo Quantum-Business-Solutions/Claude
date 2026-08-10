@@ -115,7 +115,12 @@ def v1_source_text(pre, v1id):
             jb = jw[i].get('body') or {}
             t = jb.get('html') or jb.get('content') or ''
         parts.append(t)
-    joined = re.sub(r'(?s)<!--.*?-->', ' ', ' '.join(parts))
+    # V1 embeds its HubSpot forms as a raw <script> block. body_text() strips
+    # scripts out of the rendered page, so leaving them in the source side made
+    # twelve lines of JavaScript read as copy the rebuild had lost -- which is
+    # what rolled back a page that was otherwise perfect.
+    joined = re.sub(r'(?is)<(script|style)\b.*?</\1>', ' ', ' '.join(parts))
+    joined = re.sub(r'(?s)<!--.*?-->', ' ', joined)
     return re.sub(r'\s+', ' ', _html.unescape(re.sub(r'<[^>]+>', ' ', joined))).strip()
 
 

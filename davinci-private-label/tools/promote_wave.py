@@ -14,7 +14,7 @@ holds its original markup, so the evidence needed to judge it is gone.
 usage: promote_wave.py <name> <V1_ID> <V3_ID> [--dry]
        promote_wave.py --list <file>      one "<name> <V1_ID> <V3_ID>" per line
 """
-import os, sys, json, subprocess, datetime
+import os, sys, json, time, subprocess, datetime
 
 S    = os.path.dirname(os.path.abspath(__file__)) + '/'
 REPO = '/home/user/Claude/davinci-private-label/snapshots/v1-pre-promotion/'
@@ -29,12 +29,19 @@ def snapshot(v1id):
     """The page exactly as it is before anything is written to it."""
     os.makedirs(REPO, exist_ok=True)
     path = REPO + f"{v1id}.json"
-    rc, out = sh(f'curl -s -H "Authorization: Bearer $TOKEN" '
-                 f'"https://api.hubapi.com/cms/v3/pages/site-pages/{v1id}"')
-    try:
-        page = json.loads(out)
-    except Exception:
-        return None
+    # One unparseable response used to abort the page silently. A transient API
+    # hiccup is not a reason to skip a snapshot -- it is a reason to ask again.
+    page = None
+    for attempt in range(4):
+        rc, out = sh(f'curl -s --fail --retry 2 -H "Authorization: Bearer $TOKEN" '
+                     f'"https://api.hubapi.com/cms/v3/pages/site-pages/{v1id}"')
+        try:
+            page = json.loads(out); break
+        except Exception:
+            if attempt == 3:
+                print(f"    could not read {v1id} after 4 attempts: {out[:120]}")
+                return None
+            time.sleep(2 ** attempt)
     widgets = (page.get('widgetContainers') or {}).get('main_content', {}).get('widgets', [])
     if not widgets:
         # already promoted, or empty: never overwrite a good snapshot with an empty one
