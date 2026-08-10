@@ -31,6 +31,7 @@ STYLE_KEYS = {
     'label_size', 'label_weight', 'body_color', 'subhead_color',
     'content_weight', 'content_color', 'subhead_width',
     'heading_size', 'number_size', 'max_width', 'header_width',
+    'headline_lh', 'title_lh', 'body_lh', 'image_max_width', 'caption_padding',
 }
 
 
@@ -130,6 +131,73 @@ def card_type(h, dflt_title, dflt_body, dflt_colour):
     return t, dflt_body, dflt_colour
 
 
+def heading_lh(h):
+    """The heading's line-height as V1 renders it.
+
+    A size on its own is not enough to reproduce a heading. V1 writes
+    `line-height: 1.2` on some section headings and nothing at all on others, and
+    where it writes nothing the browser uses `normal` -- about 1.16 for this face,
+    not the 1.25 the modules default to. Three pixels per heading is invisible on
+    its own and is not, but every row below it moves by the same three pixels, and
+    down a seventeen-tile grid that walks into a visible misalignment. Returns the
+    literal string so `normal` survives; None when there is no heading to read."""
+    for attrs, _ in re.findall(r'<(?:h1|h2)(?=[\s>])([^>]*)>(.*?)</(?:h1|h2)>', h, re.S):
+        if 'letter-spacing' in attrs: continue
+        m = re.search(r'line-height:\s*([\d.]+)', attrs)
+        return m.group(1) if m else 'normal'
+    return None
+
+
+def tile_image_cap(h):
+    """The widest V1 lets a tile image draw, in px, or 0 for the full tile.
+
+    V1 has two tile shapes. Most pages crop the photo edge to edge (`cover`, no
+    padding) and want no cap. Herbal insets a round product shot with
+    `padding: 16px` inside a `height: 200px` box, so the artwork is 168px across,
+    not 200. `object-fit: contain` inside a 168px-wide box lands the artwork in
+    exactly the same place as V1's padding does, which is why the cap can stand in
+    for the padding."""
+    m = re.search(r'<img[^>]*style="width: 100%; height: (\d+)px; object-fit: \w+;'
+                  r'[^"]*?padding:\s*(\d+)px', h)
+    if not m: return 0
+    return int(m.group(1)) - 2 * int(m.group(2))
+
+
+def card_lh(h):
+    """(card title leading, card body leading) as V1 renders them.
+
+    Sizes were read here from the start and leading was not, because a single
+    line looks the same either way. It is the stack that shows: the module's card
+    title runs at 1.3 where V1's runs at the browser's `normal`, and its body at
+    1.55 where V1 writes 1.6, so a three-card row ends five pixels short and the
+    section below it starts five pixels early. Returns None for either value when
+    there is no card to read it from."""
+    t = b = None
+    m = re.search(r'<h3(?=[\s>])([^>]*)>', h)
+    if m:
+        lm = re.search(r'line-height:\s*([\d.]+)', m.group(1))
+        t = lm.group(1) if lm else 'normal'
+        for attrs, inner in tags(h[m.end():], 'p'):
+            if 'letter-spacing' in attrs: continue
+            if not re.sub(r'<[^>]+>', '', inner).strip(): continue
+            lm = re.search(r'line-height:\s*([\d.]+)', attrs)
+            b = lm.group(1) if lm else None
+            break
+    return t, b
+
+
+def tile_caption_pad(h):
+    """The padding V1 puts round a tile's caption, or None to keep the module's.
+
+    Read because it is not slack. On a wide grid the caption sits in a 1fr track
+    and 8px more padding changes nothing a reader can see, which is why the
+    module's single hard-coded value looked safe. On a phone the same track is
+    sized by its min-content, so the padding sets the tile width: aging's tiles
+    came out 16px wider than V1's and its grid 16px taller per row."""
+    m = re.search(r'<img[^>]*object-fit: \w+;[^>]*>\s*<div style="[^"]*padding:\s*([^;"]+)', h)
+    return m.group(1).strip() if m else None
+
+
 def tile_label(h, dflt_size, dflt_weight):
     at = h.find('grid-template-columns')
     for attrs, _ in tags(h[at:] if at > 0 else h, 'p'):
@@ -193,6 +261,11 @@ def style_for(mid, h, parts=None):
                "title_size": t, "body_size": b, "body_color": col(bc),
                "max_width": wide or 1100}
         if head: out["header_width"] = head
+        hl = heading_lh(h)
+        if hl: out["headline_lh"] = hl
+        tl, bl = card_lh(h)
+        if tl: out["title_lh"] = tl
+        if bl: out["body_lh"] = bl
         if nm >= 30: out["number_size"] = nm
         return out
     if mid == SH:
@@ -207,9 +280,15 @@ def style_for(mid, h, parts=None):
         ss, sc = subhead(h, 17, '#555555')
         ls, lw = tile_label(h, 17, '700')
         w = re.search(r'<p[^>]*max-width:\s*(\d+)px', h)
-        return {"headline_size": heading_px(h, 32), "subhead_size": ss,
-                "subhead_color": col(sc), "subhead_width": int(w.group(1)) if w else 0,
-                "label_size": ls, "label_weight": lw}
+        out = {"headline_size": heading_px(h, 32), "subhead_size": ss,
+               "subhead_color": col(sc), "subhead_width": int(w.group(1)) if w else 0,
+               "label_size": ls, "label_weight": lw,
+               "image_max_width": tile_image_cap(h)}
+        lh = heading_lh(h)
+        if lh: out["headline_lh"] = lh
+        cp = tile_caption_pad(h)
+        if cp: out["caption_padding"] = cp
+        return out
     if mid == CTA:
         p = paras(h)
         a = p[-1][0] if p else ''
