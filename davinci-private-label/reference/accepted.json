@@ -1,0 +1,9 @@
+{
+ "_": "Pages signed off by Shawn as good, despite measured differences from V1. Recorded so the difference is never silently dropped -- each entry says what remains and why it was accepted.",
+ "definitive-guide": "V1 sets a 20,000-character section edge-to-edge at 1440px; the module gives it a readable measure and type scale. Reviewed 10 Aug: the rebuild is better.",
+ "how-to-sell-supplements": "Most of its count is V1 failing to stack a two-column layout on tablet (334px column vs 728px). Two phrases render bold where V1 was normal, and one paragraph is #333 where V1 was navy -- accepted as-is.",
+ "customer-art": "Page heading holds 40px where V1's theme shrinks it to 30px on small screens. A design judgement, not a defect.",
+ "about": "Both differences are V1 squeezing body copy into a 334px column on tablet; the rebuild stacks it full width. No real defect.",
+ "resources": "Heading holds 50px where V1 shrinks to 40px; card links differ by 2-84px and sit a line taller.",
+ "home": "Approved 10 Aug. Known remaining: inline links in body copy render bold green (#6BA644) where V1 had navy with an underline -- 'doctor-formulated vitamins and supplements' and 'design team'; step headings 34px render 32px; seven tile labels re-wrap at 248px against V1's 264px. Separately, the shared Guide Offer block's Download CTA points at /guide-definitive-private-label, which 404s -- that is a portal-wide defect on 98 records, not a conversion one, and still needs fixing."
+}

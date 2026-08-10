@@ -95,7 +95,14 @@ def rows():
     return r
 
 
+ACCEPTED = json.load(open(S + 'accepted.json'))
+
+
 def sev(r):
+    # a page the client has looked at and signed off outranks its measurement:
+    # several of these differ only because V1 itself laid out badly on a tablet
+    if r['page'] in ACCEPTED:
+        return 'accepted' 
     if r['note'].startswith('reference'):
         return 'unknown'
     vals = [v for v in (r['d'], r['t'], r['m']) if v is not None]
@@ -108,7 +115,8 @@ def sev(r):
     return 'near' if r['d'] <= 3 else 'work'
 
 
-LABEL = {'clean': 'matches V1 at every width', 'desktop': 'matches at desktop',
+LABEL = {'accepted': 'signed off — reviewed and accepted',
+         'clean': 'matches V1 at every width', 'desktop': 'matches at desktop',
          'near': 'close', 'work': 'differences remain', 'unknown': 'not measurable'}
 
 
@@ -127,17 +135,18 @@ def build():
             f'{html.escape(r["page"])}</td><td class="st">{html.escape(r["state"])}</td>'
             f'<td class="num">{n(r["d"])}</td><td class="num">{n(r["t"])}</td>'
             f'<td class="num">{n(r["m"])}</td>'
-            f'<td class="note">{html.escape(r["note"]) or (", ".join(r["loud"]) if r.get("loud") else LABEL[s])}</td></tr>')
+            f'<td class="note">{html.escape(ACCEPTED[r["page"]]) if s == "accepted" else (html.escape(r["note"]) or (", ".join(r["loud"]) if r.get("loud") else LABEL[s]))}</td></tr>')
     stamp = datetime.datetime.now().strftime('%d %B, %H:%M')
     tpl = open(S + 'report_template.html').read()
     for tok, val in (('@@ROWS@@', "".join(body)), ('@@STAMP@@', stamp),
                      ('@@TOTAL@@', len(rs)), ('@@CLEAN@@', counts['clean']),
                      ('@@DESKTOP@@', counts['desktop']),
-                     ('@@DIFFER@@', counts['near'] + counts['work'])):
+                     ('@@DIFFER@@', counts['near'] + counts['work']),
+                     ('@@ACCEPTED@@', counts['accepted'])):
         tpl = tpl.replace(tok, str(val))
     open(OUT, 'w').write(tpl)
     print(f"{len(rs)} pages -> {OUT}")
-    print(f"  clean {counts['clean']}   desktop-only {counts['desktop']}   "
+    print(f"  clean {counts['clean']}   accepted {counts['accepted']}   desktop-only {counts['desktop']}   "
           f"differ {counts['near'] + counts['work']}   unmeasurable {counts['unknown']}")
 
 
