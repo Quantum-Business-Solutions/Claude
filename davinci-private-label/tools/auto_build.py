@@ -26,7 +26,11 @@ API = "https://api.hubapi.com"
 S   = os.path.dirname(os.path.abspath(__file__)) + '/'
 TOMBSTONE = 1786126404643
 FORM      = 218940115793      # PL - Form Section
+FORM_WIDGET = 1155238         # the stock form module V1 uses for a bare form + title
 STAT      = 218940115735      # PL - Stat Band, not in the category family's module set
+# what the shared Heritage global renders, headline then body: it takes no
+# fields, so a page whose V1 heritage type differs cannot use it
+GLOBAL_HERITAGE_TYPE = (34, 17)
 
 
 # ------------------------------------------------------------------- icons
@@ -165,7 +169,79 @@ def _paras_in(h):
     return [(a, i) for a, i in re.findall(r'<p(?=[\s>])([^>]*)>(.*?)</p>', h, re.S) if txt(i)]
 
 
+def wrap_style(h):
+    """The style of the element that actually wraps the section.
+
+    The shared reader searched for the first styled <div> anywhere in the
+    markup. On a legacy pillar-page section -- copy pasted in as bare headings
+    and paragraphs, with a grey callout partway down -- that match is the
+    callout, so the section took the callout's background, its padding and its
+    measure as its own and rendered a whole page of copy on grey. A wrapper has
+    to be the section's first element to be the section's wrapper."""
+    for e in elements(decomment(h)):
+        m = re.match(r'\s*<div\b([^>]*)>', e)
+        if not m:
+            if txt(e) or '<img' in e:
+                return ''            # the section opens with content: no wrapper
+            continue                 # a leading <hr> or <br> is not content
+        s = re.search(r'\sstyle="([^"]*)"', m.group(1))
+        return s.group(1) if s else ''
+    return ''
+
+
 # --------------------------------------------------------------- classifying
+
+def stat_row(cells):
+    """Is this grid a row of statistics rather than a grid of cards?
+
+    A stat reads value / uppercase label / optional sentence: a big figure over
+    a letter-spaced caps line. A card reads title / sentence, and a numbered
+    step reads number / title / sentence -- in neither of those is the second
+    line set in caps.
+
+    Distinguishing them on the size of the figure alone does not work. The
+    facility spec row sets its values at 28px, under the 36px the old test
+    needed, so it was built as a card grid: the card module decides between its
+    56px numeral slot and its 13px eyebrow slot on the LENGTH of the string, so
+    `7` came out at 56px while `100%`, `FDA` and `50+` came out at 13px in the
+    same row, and the caps labels lost their capitals. The stat module is the
+    one that has a value, a caps label and a description."""
+    if len(cells) < 2:
+        return False
+    for c in cells:
+        ps = _paras_in(c)
+        if len(ps) < 2:
+            return False
+        big = px_of(ps[0][0], r'font-size:\s*(\d+)px', 0)
+        small = px_of(ps[1][0], r'font-size:\s*(\d+)px', 0)
+        capsish = ('letter-spacing' in ps[1][0]
+                   and re.search(r'text-transform:\s*uppercase', ps[1][0]))
+        if not (capsish and big >= 22 and small and big >= 1.6 * small):
+            return False
+    return True
+
+
+def headline_el(h):
+    """The section's real heading element, as a match: attributes and inner
+    markup. The eyebrow is a heading on some pages, so it is skipped here the
+    same way `headline` skips it."""
+    for m in re.finditer(r'<(h1|h2)(?=[\s>])([^>]*)>(.*?)</\1>', h, re.S):
+        if 'letter-spacing' in m.group(2): continue
+        return m
+    return None
+
+
+def heading_markup(h):
+    """Does the section's heading carry markup a plain text field would lose?
+
+    A <br>, a link or an inline span is part of what V1 paints; the text fields
+    the heading modules expose keep only the words."""
+    for m in re.finditer(r'<(h1|h2|h3)(?=[\s>])([^>]*)>(.*?)</\1>', h, re.S):
+        if 'letter-spacing' in m.group(2): continue
+        if re.search(r'<(br|a|span|strong|em|b|i|sup|sub)\b', m.group(3), re.I):
+            return True
+    return False
+
 
 def kind_of(h, w):
     """What sort of section this is. Order matters: the tests run most specific
@@ -177,6 +253,10 @@ def kind_of(h, w):
     # bare module_id threw the copy away and rendered the module's placeholder.
     if w.get('module_id') and not h.strip():
         return 'global'
+    # a legacy form widget: no module_id and no markup, but a form and a title
+    # that V1 renders. Skipped, it took its heading off the page with it.
+    if w.get('type') == 'form' and (w.get('body') or {}).get('form_to_use'):
+        return 'formwidget'
     if not h.strip():
         return 'skip'
     if 'hbspt.forms.create' in h or re.search(r'<form(?=[\s>])', h):
@@ -196,6 +276,8 @@ def kind_of(h, w):
             return 'cardgrid'
         if re.search(r'<a[^>]*>\s*(?:<div[^>]*>)?\s*<img', h, re.S) or h.count('<img') >= 3:
             return 'tilegrid'
+        if stat_row(cells):
+            return 'statband'
         if re.search(r'font-size:\s*(?:3[6-9]|[4-9]\d)px', h):
             # a stat is a value and a label, optionally a description. A third
             # paragraph under a section heading is a numbered step, and the stat
@@ -206,6 +288,11 @@ def kind_of(h, w):
         return 'cardgrid'
     if re.search(r'<h1(?=[\s>])', h):
         return 'hero'
+    # a flex row of logos under a kicker is not a content split: read as one, only
+    # its first image survives and the certification mark beside it disappears
+    if (h.count('<img') >= 2 and re.search(r'display:\s*flex', h)
+            and not re.search(r'<h[123](?=[\s>])', h)):
+        return 'logoband'
     if re.search(r'<img', h) and re.search(r'display:\s*flex', h):
         return 'contentsplit'
     if re.search(r'<a[^>]*display:\s*inline-block', h):
@@ -213,7 +300,12 @@ def kind_of(h, w):
     body = [p for p in re.findall(r'<p(?=[\s>])([^>]*)>(.*?)</p>', h, re.S)
             if 'letter-spacing' not in p[0] and txt(p[1])]
     if len(body) <= 1 and re.search(r'<h[23](?=[\s>])', h) and '<img' not in h:
-        return 'sectionheader'
+        # the section header's headline is a plain text field, so anything the
+        # heading carries inside it is dropped: onboarding-guide's "Grab the ...
+        # Guide" ends in <br><br>, and losing them took a blank line -- 29px --
+        # out of the section. A heading with markup goes through rich text,
+        # which keeps it.
+        return 'richtext' if heading_markup(h) else 'sectionheader'
     return 'richtext'
 
 
@@ -316,7 +408,12 @@ def cards_in(h):
     for blk in _blocks(h):
         blk = decomment(blk)
         photo = img_of(blk)
-        href = re.search(r'<a[^>]+href="([^"]+)"', blk)
+        # Only an anchor that wraps the whole cell is the card's own link. Taking
+        # the first anchor anywhere inside it made every resource card a link to
+        # whichever blog post its body listed first, and wrapped the card in an
+        # <a> whose own text is the title -- so the title measured as the link.
+        href = (re.match(r'\s*<a[^>]+href="([^"]+)"', blk)
+                or re.match(r'\s*<div[^>]*>\s*<a[^>]+href="([^"]+)"', blk))
         for m in re.finditer(r'<h3(?=[\s>])[^>]*>(.*?)</h3>', blk, re.S):
             seg = blk[m.end():]
             nxt = re.search(r'<h3(?=[\s>])', seg)
@@ -362,19 +459,74 @@ def cards_in(h):
     return out
 
 
-def subhead_of(h):
-    """The capped, centred paragraph V1 uses under a section heading."""
+def _subhead_match(h):
     head = head_of(h)
-    m = re.search(r'<p[^>]*max-width:\s*\d+px[^>]*>(.*?)</p>', head, re.S)
+    m = re.search(r'<p([^>]*max-width:\s*\d+px[^>]*)>(.*?)</p>', head, re.S)
     if not m:
-        m = re.search(r'</h[123]>\s*<p(?=[\s>])[^>]*>(.*?)</p>', head, re.S)
-    return f"<p>{m.group(1).strip()}</p>" if m and txt(m.group(1)) else ""
+        m = re.search(r'</h[123]>\s*<p(?=[\s>])([^>]*)>(.*?)</p>', head, re.S)
+    return m if m and txt(m.group(2)) else None
+
+
+TYPE_DECLS = ('font-size', 'line-height', 'color', 'font-weight', 'font-style',
+              'letter-spacing', 'text-transform', 'opacity')
+
+
+def keep_type(attrs):
+    """V1's typographic declarations for one element, and only those.
+
+    Carrying a paragraph's whole style attribute through is tempting -- it makes
+    the copy render exactly as V1 painted it -- but it also carries the layout:
+    V1's card-grid subhead sets `margin: 0 auto 48px`, and the module's header
+    already puts 48px under the block, so the gap before the grid came out
+    double. Size, weight, colour and leading are what the modules get wrong and
+    what a reader sees; margin and max-width stay with the module."""
+    m = re.search(r'\bstyle="([^"]*)"', attrs or '')
+    out = []
+    for d in re.split(r';', m.group(1) if m else ''):
+        k = d.split(':', 1)[0].strip().lower()
+        if k in TYPE_DECLS and ':' in d:
+            out.append(d.strip())
+    return '; '.join(out)
+
+
+def subhead_of(h):
+    """The capped, centred paragraph V1 uses under a section heading.
+
+    Its type is carried inline, so the leading and the colour V1 paints hold
+    even where the module has no field for them -- the contact and request-quote
+    form sections read 18px/1.6 in V1 and rendered at the module's 17px/1.65."""
+    m = _subhead_match(h)
+    if not m: return ""
+    st = keep_type(m.group(1))
+    open_tag = '<p style="%s">' % st if st else '<p>'
+    return open_tag + m.group(2).strip() + '</p>'
+
+
+def subhead_attrs(h):
+    """The style attribute of the very paragraph `subhead_of` picked, so its size
+    and its colour are read off the element the module will actually render."""
+    m = _subhead_match(h)
+    return m.group(1) if m else ''
 
 
 def sub_px(h, dflt=17):
-    return px_of(head_of(h),
-                 r"max-width:\s*\d+px[^\"]*font-size:\s*(\d+)px"
-                 r"|font-size:\s*(\d+)px[^\"]*max-width:\s*\d+px", dflt)
+    """V1's subhead size.
+
+    The old reader only matched a subhead that declared max-width and font-size
+    on one element. Where V1 puts the max-width on the section wrapper instead --
+    which it does on every thank-you page -- it fell back to the module's 17px
+    and quietly shrank an 18px subhead."""
+    return px_of(subhead_attrs(h), r'font-size:\s*(\d+)px',
+                 px_of(head_of(h),
+                       r"max-width:\s*\d+px[^\"]*font-size:\s*(\d+)px"
+                       r"|font-size:\s*(\d+)px[^\"]*max-width:\s*\d+px", dflt))
+
+
+def subhead_colour(h, dflt="#555555"):
+    c = own_colour(subhead_attrs(h))
+    if not c: return body_colour(h, dflt)
+    v = _hexpand(c)
+    return v.upper() if re.fullmatch(r'#[0-9a-f]{6}', v) else body_colour(h, dflt)
 
 
 def card_px(h, which, dflt):
@@ -389,23 +541,298 @@ def card_px(h, which, dflt):
     return dflt
 
 
+# ------------------------------------------------------------ reading colour
+#
+# Every module drives its whole palette from one `text_color` choice. Leaving it
+# at the module default painted eight content splits -- all authored
+# `background: #012638; color: white` -- in near-black on near-black. So the
+# choice is read from V1 like every other value, never assumed.
+
+def _hexpand(v):
+    v = (v or '').strip().lower().rstrip(';')
+    if v in ('white', '#fff', '#ffffff'): return '#ffffff'
+    if v in ('black', '#000', '#000000'): return '#000000'
+    if re.fullmatch(r'#[0-9a-f]{3}', v):  return '#' + ''.join(c * 2 for c in v[1:])
+    return v
+
+
+def _lum(v):
+    """Perceived luminance 0..1, or None for anything that is not a plain hex."""
+    m = re.fullmatch(r'#([0-9a-f]{6})', _hexpand(v) or '')
+    if not m: return None
+    r, g, b = (int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4))
+    return (0.299 * r + 0.587 * g + 0.114 * b) / 255
+
+
+def own_colour(style):
+    """A `color:` declaration, never the `background-color:` that contains it.
+
+    The boundary has to admit the opening quote as well as `;` and the start of
+    the string, because callers pass whole attribute strings -- ` style="color:
+    #333; ..."` -- as often as they pass a bare style value."""
+    m = re.search(r'(?:^|[;"])\s*color:\s*([^;"]+)', style or '')
+    return m.group(1).strip() if m else None
+
+
+def text_col(h, dflt_bg="#FFFFFF"):
+    """'light' or 'dark', read from V1: its own text colour first, its own
+    background second. Nothing here is a guess about the design."""
+    s = wrap_style(h)
+    c = own_colour(s)
+    if c is None:
+        # a section that paints no colour on its wrapper paints it on the heading
+        for m in re.finditer(r'<(h1|h2|h3)(?=[\s>])([^>]*)>', h):
+            if 'letter-spacing' in m.group(2): continue
+            c = own_colour(m.group(2))
+            break
+    if c is not None and _lum(c) is not None:
+        return "light" if _lum(c) > 0.6 else "dark"
+    l = _lum(bg(s, dflt_bg))
+    return "light" if (l is not None and l < 0.45) else "dark"
+
+
+def weight_of(style, dflt=None):
+    m = re.search(r'font-weight:\s*(\w+)', style or '')
+    if not m: return dflt
+    return {'normal': '400', 'bold': '700'}.get(m.group(1), m.group(1))
+
+
+def align_of(h, dflt="left"):
+    """How V1 aligns the section's own copy.
+
+    V1 writes it two ways: the hero and the CTA declare `text-align: center` on
+    the outer band, while the facility card grid leaves the band alone and
+    centres its h2 and subhead individually. Reading only the band missed the
+    second kind; reading the whole section would let a centred card below the
+    grid re-align the header. So the wrappers and the heading are read, and
+    nothing below it.
+
+    Where V1 declares nothing, the browser's own default applies -- left. The
+    old `center` default put every plain section header in the middle of the
+    page: `guides` is authored flush left and was rebuilt centred."""
+    head = head_of(h)
+    m = re.search(r'<(h1|h2)(?=[\s>])[^>]*>', head)
+    seg = head[:m.end()] if m else ''
+    seg += ' ' + ' '.join(re.findall(r'<div[^>]*?\sstyle="([^"]*)"', head)[:2])
+    a = re.search(r'text-align:\s*(left|center)', seg)
+    return a.group(1) if a else dflt
+
+
+def screen_of(style, dflt=("#c9dbe2", 85)):
+    """The rgba() screen V1 lays over a hero photograph, as colour + opacity.
+    Hard-coding 85% of #c9dbe2 would repaint any hero screened a different way."""
+    m = re.search(r'rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(0?\.\d+|[01])\s*\)', style or '')
+    if not m: return dflt
+    return ('#%02X%02X%02X' % tuple(int(m.group(i)) for i in (1, 2, 3)),
+            int(round(float(m.group(4)) * 100)))
+
+
+def eyebrow_colour(h, dflt="heading"):
+    m = re.search(r'<(?:p|div|span|h1|h2|h3)(?=[\s>])([^>]*letter-spacing[^>]*)>', h)
+    c = own_colour(m.group(1)) if m else None
+    if not c: return dflt
+    return "accent" if _hexpand(c) == "#6ba644" else "heading"
+
+
+def min_col(h, bound, gap_px, dflt):
+    """The grid's own minimum column.
+
+    V1 writes columns two ways. `minmax(Npx, 1fr)` is the module's own field,
+    read straight across. A fixed `repeat(N, 1fr)` has no equivalent field, so
+    the minimum that yields exactly N columns inside the section's bound is
+    computed -- leaving the module's 260px default there gave a four-column V1
+    row three columns."""
+    m = re.search(r'minmax\((\d+)px', h)
+    if m: return int(m.group(1))
+    c = re.search(r'grid-template-columns:\s*repeat\((\d+),', h)
+    if c and bound:
+        n = int(c.group(1))
+        return max(1, (int(bound) - (n - 1) * int(gap_px)) // n)
+    return dflt
+
+
+def ratio_of(h, dflt="1fr 1.2fr"):
+    m = re.search(r'grid-template-columns:\s*([^;"}]+)', h)
+    if not m: return dflt
+    v = re.sub(r'\s+', ' ', m.group(1)).strip()
+    return v if v in ("1fr 1.2fr", "1fr 1fr", "1.2fr 1fr") else dflt
+
+
+def subhead_maxw(h, dflt=0):
+    m = re.search(r'<p[^>]*max-width:\s*(\d+)px', head_of(h))
+    return int(m.group(1)) if m else dflt
+
+
+# Main.css -- the site stylesheet V1 and V3 both load -- sizes any heading and
+# paragraph that declares nothing of its own. That rendered size is V1's, so it
+# is what the rebuild has to reproduce; falling back to the module's own default
+# put a 48px hero headline where the reader sees 40, and 17px body copy where
+# the reader sees 16.
+THEME_HEADING = {'h1': 50, 'h2': 40}
+THEME_BODY = 16
+
+
+def span_px(inner):
+    """The size an inline <span> imposes on the text it wraps.
+
+    The rich-text editor writes a resize as a span inside the heading rather
+    than as a change to the heading's own declaration, so `onboarding-guide`
+    reads `<h1 style="font-size:48px"><span style="font-size:40px">...`. The
+    reader sees 40px. Only counted when the span carries the element's whole
+    text, otherwise a highlighted phrase would resize the heading."""
+    m = re.search(r'<span(?=[\s>])([^>]*font-size:\s*(\d+)px[^>]*)>(.*?)</span>', inner or '', re.S)
+    if not m: return None
+    return int(m.group(2)) if txt(m.group(3)) == txt(inner) else None
+
+
+def headline_px(h, dflt=32):
+    for m in re.finditer(r'<(h1|h2)([^>]*)>(.*?)</\1>', h, re.S):
+        if 'letter-spacing' in m.group(2): continue
+        inner = span_px(m.group(3))
+        if inner: return inner
+        px = re.search(r'font-size:\s*(\d+)px', m.group(2))
+        return int(px.group(1)) if px else THEME_HEADING[m.group(1).lower()]
+    return dflt
+
+
+def body_px(h, dflt=17):
+    """The size of the section's first real paragraph.
+
+    It stops at that paragraph rather than scanning on for one that happens to
+    declare a size: on a legacy page the next declaration belongs to a callout
+    halfway down, and adopting it set every paragraph on the page to 19px."""
+    for m in re.finditer(r'<p(?=[\s>])([^>]*)>', h):
+        if 'letter-spacing' in m.group(1): continue
+        px = re.search(r'font-size:\s*(\d+)px', m.group(1))
+        return int(px.group(1)) if px else THEME_BODY
+    return dflt
+
+
+def eyebrow_px(h, dflt=13):
+    """The kicker's own size, whichever order V1 wrote its declarations in.
+    The old pattern required font-size before letter-spacing and returned the
+    default whenever V1 wrote them the other way round; where the kicker
+    declares nothing at all it still defers to that reader."""
+    m = re.search(r'<(p|div|span|h1|h2|h3)(?=[\s>])([^>]*letter-spacing[^>]*)>(.*?)</\1>', h, re.S)
+    if m:
+        # an inline span the editor left behind repaints the kicker: onboarding
+        # declares 13px on the <p> and 18px on the span that holds its text
+        inner = span_px(m.group(3))
+        if inner: return inner
+        px = re.search(r'font-size:\s*(\d+)px', m.group(2))
+        if px: return int(px.group(1))
+    return px_of(h, r"font-size:\s*(\d+)px[^>]*letter-spacing", dflt)
+
+
+def own_hex(attrs, dflt):
+    """An element's own `color:` as a six-digit hex, or `dflt`."""
+    c = own_colour(re.search(r'\bstyle="([^"]*)"', attrs or '').group(1)
+                   if re.search(r'\bstyle="', attrs or '') else attrs)
+    if not c: return dflt
+    v = _hexpand(c)
+    return v.upper() if re.fullmatch(r'#[0-9a-f]{6}', v) else dflt
+
+
+def lh_of(attrs, dflt=None):
+    """The line-height a reader actually sees on a V1 element.
+
+    A declaration on the element wins. Where V1 declares none, Main.css's
+    `p{line-height:27px}` is what paints -- which is why the modules' own 1.1,
+    1.35 and 1.4 made every kicker, stat label and FAQ question a few pixels
+    shorter than V1 and walked everything below them up the page. `dflt` is
+    returned only when there is no element to read at all."""
+    if not attrs: return dflt
+    m = re.search(r'line-height:\s*([0-9.]+(?:px|em|rem)?)', attrs)
+    return m.group(1) if m else '27px'
+
+
+def card_body_colour(h, dflt="#555555"):
+    """The colour of the very paragraph the card body is built from.
+
+    Read off the first grid cell, past its title, and past the big step number a
+    numbered card opens with -- that number is painted brand green, and taking
+    its colour turned five sections of body copy green."""
+    cells = grid_cells(h)
+    seg = cells[0] if cells else h
+    m = re.search(r'<h3(?=[\s>])[^>]*>', seg)
+    if m: seg = seg[m.end():]
+    cands = [a for a, i in re.findall(r'<p(?=[\s>])([^>]*)>(.*?)</p>', seg, re.S)
+             if txt(i) and 'letter-spacing' not in a]
+    if not m and len(cands) > 1: cands = cands[1:]
+    for a in cands:
+        c = own_colour(a)
+        if not c: break
+        v = _hexpand(c)
+        return v.upper() if re.fullmatch(r'#[0-9a-f]{6}', v) else body_colour(h, dflt)
+    return body_colour(h, dflt)
+
+
+def cell_boxed(h):
+    """Does V1 draw a box around each card?
+
+    Tested on the first grid cell, not on the whole section: `our-process` sets
+    `background: white` on the section wrapper while its cards are bare, and
+    reading the section put the module's 34x30 card padding round every one of
+    them -- sixty pixels off the measure of every card on the page."""
+    cells = grid_cells(h)
+    if not cells: return 'background: white' in h
+    m = re.match(r'\s*<\w+[^>]*\sstyle="([^"]*)"', cells[0])
+    return bool(m and re.search(r'background(?:-color)?:\s*(?:white|#[0-9a-fA-F]{3,6})', m.group(1)))
+
+
+def cell_shadow(h):
+    """Does V1 drop a shadow under each card?"""
+    cells = grid_cells(h)
+    m = re.match(r'\s*<\w+[^>]*\sstyle="([^"]*)"', cells[0]) if cells else None
+    return bool(m and 'box-shadow' in m.group(1))
+
+
+def cell_align(h, dflt="left"):
+    """A grid cell's own alignment. Reading `text-align: center` anywhere in the
+    section instead picks up the centred section header above the grid and
+    centres every card under it."""
+    cells = grid_cells(h)
+    if not cells: return dflt
+    m = re.match(r'\s*<\w+[^>]*\sstyle="([^"]*)"', cells[0])
+    if not m: return dflt
+    a = re.search(r'text-align:\s*(\w+)', m.group(1))
+    return a.group(1) if a and a.group(1) in ('left', 'center') else dflt
+
+
 def section(kind, h, w):
     s = wrap_style(h)
     t, b = pad(s, (70, 70))
-    base = lambda dflt: {"style": style_of(t, b, bg(s, dflt)), "text_color": "dark"}
+    base = lambda dflt: {"style": style_of(t, b, bg(s, dflt)),
+                         "text_color": text_col(h, dflt)}
 
     if kind == 'global':
-        return {"module_id": w['module_id']}
+        # A global block stores nothing on the page and needs only its id. A
+        # stock module stores its field values on the widget, and passing the id
+        # alone rendered an empty form with no heading on five pages.
+        own = {k2: v2 for k2, v2 in (w.get('body') or {}).items()
+               if k2 not in ('html', 'content', 'value')}
+        return {"module_id": w['module_id'], **own}
+
+    if kind == 'formwidget':
+        b2 = w.get('body') or {}
+        return {"module_id": FORM_WIDGET,
+                "title": b2.get('title', ''),
+                "form": {"form_id": b2.get('form_to_use', ''),
+                         "form_type": b2.get('form_type', 'HUBSPOT'),
+                         "message": b2.get('response_message', ''),
+                         "response_type": b2.get('response_response_type', 'inline')}}
 
     if kind == 'hero':
         t, b = pad(s, (90, 90))
         bgimg = re.search(r"url\('([^']+)'\)", s)
         hl = headline(h)
         subm = re.search(r'</h[12]>\s*<p(?=[\s>])([^>]*)>(.*?)</p>', h, re.S)
-        p = {**base("#c9dbe2"), "module_id": MOD['hero'], "align": "center",
-             "max_width": maxw(h, 900), "eyebrow": eyebrow(h), "eyebrow_color": "heading",
+        scr_col, scr_op = screen_of(s)
+        p = {**base(scr_col), "module_id": MOD['hero'], "align": align_of(h, "center"),
+             "max_width": maxw(h, 900), "eyebrow": eyebrow(h),
+             "eyebrow_color": eyebrow_colour(h),
              "headline_size": headline_px(h, 48),
-             "eyebrow_size": px_of(h, r"font-size:\s*(\d+)px[^>]*letter-spacing", 13),
+             "eyebrow_size": eyebrow_px(h, 13),
              "subhead_size": px_of(subm.group(1), r'font-size:\s*(\d+)px', 19) if subm else 19,
              "headline": f"<h1>{hl}</h1>" if hl else "",
              "subhead": f"<p>{txt(subm.group(2))}</p>" if subm and txt(subm.group(2)) else "",
@@ -415,7 +842,7 @@ def section(kind, h, w):
                 .replace('https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/',
                          'https://info.davincilabs.com/hubfs/'),
                 "alt": "", "loading": "lazy"}
-            p["background_screen"] = {"color": "#c9dbe2", "opacity": 85}
+            p["background_screen"] = {"color": scr_col, "opacity": scr_op}
         # an omitted button group falls back to the module's default, which
         # renders a "Schedule a Consultation" the page never had
         p["buttons"] = [bt] if (bt := button(h)) else []
@@ -423,36 +850,80 @@ def section(kind, h, w):
 
     if kind == 'richtext':
         hl = headline(h)
-        content = (f"<h2>{hl}</h2>" if hl else '') + paras(h)
+        hpx = headline_px(h, 32)
+        hm = headline_el(h)
+        # The module sizes its h2 from a stylesheet rule, so `heading_size` alone
+        # would hold V1's size at one width and lose it at another. An inline
+        # declaration on the heading itself is the one that holds everywhere --
+        # and it carries V1's leading and colour with it. The heading's own inner
+        # markup is kept too: a <br> the text of the heading does not record is
+        # still a blank line the reader sees.
+        htype = keep_type(hm.group(2)) if hm else ''
+        hstyle = '; '.join(x for x in (htype, '' if 'font-size' in htype
+                                       else f'font-size: {hpx}px') if x)
+        inner = hm.group(3).strip() if hm else hl
+        htag = f'<h2 style="{hstyle}">{inner}</h2>'
+        content = (htag if hl else '') + paras(h)
         # if rebuilding from headings and paragraphs would lose anything -- copy
         # or an inline photograph -- carry the section's own markup instead of an
         # approximation
         if set(words_of(h)) - set(words_of(content)) or '<img' in h:
             content = inner_html(h)
-        return {**base("#FFFFFF"), "module_id": MOD['rt'], "align": "left",
-                "max_width": maxw(h, 850), "top_border": False,
+        return {**base("#FFFFFF"), "module_id": MOD['rt'],
+                "align": align_of(h, "left"),
+                # no measure declared in V1 means no measure: the section runs
+                # the full width less its gutter. Falling back to 850 capped
+                # onboarding-guide's full-width heading at a little over half it.
+                "max_width": maxw(h, 0), "top_border": False,
+                "heading_size": hpx,
                 "body_size": body_px(h, 17), "content": content}
 
+    if kind == 'logoband':
+        t, b = pad(s, (60, 60))
+        logos = [{"image": img_of(m.group(0)),
+                  "max_height": px_of(m.group(0), r'height:\s*(\d+)px', 80)}
+                 for m in re.finditer(r'<img[^>]+>', h) if img_of(m.group(0))]
+        return {"style": style_of(t, b, bg(s, "#FFFFFF")), "text_color": text_col(h, "#FFFFFF"),
+                "module_id": MOD['sh'], "align": align_of(h, "center"),
+                "eyebrow": eyebrow(h), "headline": "", "subhead": "",
+                "headline_size": headline_px(h, 34), "max_width": maxw(h, 0),
+                # V1's own flex gap between the marks, not the module's 40px
+                "logo_gap": px_of(h, r'display:\s*flex[^"]*gap:\s*(\d+)px'
+                                     r'|gap:\s*(\d+)px[^"]*display:\s*flex', 40),
+                "logos": logos}
+
     if kind == 'sectionheader':
-        return {**base("#f7f7f6"), "module_id": MOD['sh'], "align": "center",
+        return {**base("#FFFFFF"), "module_id": MOD['sh'], "align": align_of(h),
                 "headline_size": headline_px(h, 34), "eyebrow": eyebrow(h),
                 "headline": headline(h), "subhead": subhead_of(h),
                 "subhead_size": sub_px(h), "max_width": maxw(h, 0),
-                "subhead_color": {"color": body_colour(h), "opacity": 100}}
+                "subhead_color": {"color": subhead_colour(h), "opacity": 100}}
 
     if kind == 'cardgrid':
         cards = cards_in(h)
-        cols = re.search(r'grid-template-columns:\s*repeat\((\d+),', h)
-        p = {**base("#FFFFFF"), "module_id": MOD['cg'], "max_width": maxw(h, 1100),
-             "header_width": maxw(h, 1100), "section_eyebrow": eyebrow(h),
+        bound = maxw(h, 1100)
+        gap = px_of(h, r"gap:\s*(\d+)px", 24)
+        # a big figure above the card title -- V1 sizes it itself, and 56px was
+        # the family's number, not this page's
+        num = px_of(h, r'<p[^>]*font-size:\s*(\d\d)px[^>]*>\s*\d+\s*</p>', 0)
+        p = {**base("#FFFFFF"), "module_id": MOD['cg'], "max_width": bound,
+             "header_width": bound, "section_eyebrow": eyebrow(h),
              "section_headline": headline(h), "headline_size": headline_px(h, 32),
              "section_subhead": subhead_of(h), "subhead_size": sub_px(h),
+             # V1 caps the heading at the grid's measure but the sentence under
+             # it at its own, narrower one -- a different number of lines
+             "subhead_width": subhead_maxw(h, 0),
              "title_size": card_px(h, 'title', 19), "body_size": card_px(h, 'body', 15),
-             "body_color": {"color": body_colour(h), "opacity": 100},
-             "card_style": "card" if 'background: white' in h else "plain",
-             "title_style": "heading", "gap": px_of(h, r"gap:\s*(\d+)px", 24),
+             "body_color": {"color": card_body_colour(h), "opacity": 100},
+             # V1's numbered steps title their cards with a 15px letter-spaced
+             # caps paragraph, which is exactly what the module's caps style is;
+             # forcing "heading" rendered them at the module's 19px
+             "title_style": "heading" if '<h3' in h else "eyebrow-caps",
+             "card_style": "card" if cell_boxed(h) else "plain",
+             "card_align": cell_align(h, "left"), "gap": gap,
+             "min_column_width": min_col(h, bound, gap, 260),
              "cards": cards}
-        if cols: p["min_column_width"] = 0
+        if num: p["number_size"] = num
         return p
 
     if kind == 'tilegrid':
@@ -500,15 +971,22 @@ def section(kind, h, w):
         cols = re.search(r'grid-template-columns:\s*repeat\((\d+),', h)
         fit  = re.search(r'height:\s*(\d+)px;\s*object-fit:\s*(\w+)', h)
         t2, b2 = pad_span(h, (80, 80))
+        tg_bound = maxw(h, 1200)
+        tg_gap = px_of(h, r"gap:\s*(\d+)px", 24)
         p = {**base("#f7f7f6"), "module_id": MOD['tg'],
              "style": style_of(t2, b2, bg(s, "#f7f7f6")),
-             "max_width": maxw(h, 1200), "section_eyebrow": eyebrow(h),
+             "max_width": tg_bound, "section_eyebrow": eyebrow(h),
              "section_headline": headline(h), "headline_size": headline_px(h, 32),
              "section_subhead": subhead_of(h), "subhead_size": sub_px(h),
+             "subhead_width": subhead_maxw(h, 0),
+             "subhead_color": {"color": subhead_colour(h), "opacity": 100},
+             "min_column_width": min_col(h, tg_bound, tg_gap, 180),
+             # the tile photograph's own radius, not the card's around it
+             "image_radius": px_of(h, r'<img[^>]*border-radius:\s*(\d+)px', 8),
              "tile_style": "card", "image_max_width": 0, "row_gap": 0,
              "image_fit": fit.group(2) if fit else "cover",
              "image_height": int(fit.group(1)) if fit else 160,
-             "gap": px_of(h, r"gap:\s*(\d+)px", 24),
+             "gap": tg_gap,
              "label_size": px_of(labm.group(1), r'font-size:\s*(\d+)px', 17) if labm else 17,
              "label_weight": (lambda m: {'normal': '400', 'bold': '700'}.get(m.group(1), m.group(1))
                               if m else "700")(re.search(r'font-weight:\s*(\w+)',
@@ -518,21 +996,59 @@ def section(kind, h, w):
         return p
 
     if kind == 'statband':
-        stats = []
-        for cell in (grid_cells(h) or re.split(r'(?=<div)', h)):
+        stats, cells = [], (grid_cells(h) or re.split(r'(?=<div)', h))
+        vala = laba = ''
+        for cell in cells:
             ps = _paras_in(cell)
-            if len(ps) >= 2:
-                st = {"value": txt(ps[0][1]), "stat_label": txt(ps[1][1])}
-                # V1's stat bands carry a third line under the label; the module
-                # has a `description` for it and reading only two dropped it
-                if len(ps) > 2:
-                    st["description"] = ''.join(f'<p>{i.strip()}</p>' for _, i in ps[2:])
-                stats.append(st)
-        lab = re.search(r'<p(?=[\s>])([^>]*letter-spacing[^>]*)>', h)
-        return {**base("#012638"), "module_id": STAT, "text_color": "light",
-                "max_width": maxw(h, 1100), "section_headline": headline(h),
-                "value_size": px_of(h, r"font-size:\s*(\d\d)px", 48),
-                "label_size": px_of(lab.group(1), r'font-size:\s*(\d+)px', 14) if lab else 14,
+            if len(ps) < 2:
+                continue
+            if not vala:
+                vala, laba = ps[0][0], ps[1][0]
+            st = {"value": txt(ps[0][1]), "stat_label": txt(ps[1][1])}
+            # V1's stat bands carry a third line under the label; the module
+            # has a `description` for it and reading only two dropped it
+            if len(ps) > 2:
+                st["description"] = ''.join(f'<p>{i.strip()}</p>' for _, i in ps[2:])
+            # V1 sets an icon over the value in its spec rows; read from the cell,
+            # because the section heading may carry a decorative one of its own
+            sv = re.search(r'<svg\b.*?</svg>', cell, re.S)
+            if sv: st["icon"] = {"src": icon_url(sv.group(0)), "alt": "", "loading": "lazy"}
+            stats.append(st)
+        if not laba:
+            lab = re.search(r'<p(?=[\s>])([^>]*letter-spacing[^>]*)>', h)
+            laba = lab.group(1) if lab else ''
+        st_bound = maxw(h, 1100)
+        st_gap = px_of(h, r"gap:\s*(\d+)px", 24)
+        return {**base("#012638"), "module_id": STAT,
+                "max_width": st_bound, "section_headline": headline(h),
+                "headline_size": headline_px(h, 32),
+                "section_subhead": subhead_of(h), "subhead_size": sub_px(h),
+                "subhead_width": subhead_maxw(h, 0),
+                "subhead_color": {"color": subhead_colour(h), "opacity": 100},
+                # a cell that declares no alignment is left-aligned, which is
+                # what the browser does; centring by default put V1's flush-left
+                # spec cards in the middle of their boxes
+                "align": cell_align(h, "left"),
+                "card_style": "card" if cell_boxed(h) else "plain",
+                # V1's spec cards are a top rule on white with nothing under
+                # them; the module's own soft drop shadow is not on the page
+                "card_shadow": cell_shadow(h),
+                # read off the value paragraph itself. Scanning the section for
+                # the first two-digit size found the 32px section heading and
+                # sized every figure in the row to it.
+                "value_size": px_of(vala, r'font-size:\s*(\d+)px',
+                                    px_of(h, r"font-size:\s*(\d\d)px", 48)),
+                "label_size": px_of(laba, r'font-size:\s*(\d+)px', 14),
+                # V1 sets its stat labels at 600; the module's own default is 700
+                "label_weight": weight_of(laba, "700"),
+                # a bare <p> in V1 takes Main.css's p{line-height:27px}; the
+                # module's own 1.1 / 1.35 made every row of the band taller
+                "value_lh": lh_of(vala, "1.1"),
+                "label_lh": lh_of(laba, "1.35"),
+                # V1's own grid, not the module's: gap 40 against a default 24
+                # narrowed every column on every stat band by twelve pixels
+                "min_column_width": min_col(h, st_bound, st_gap, 180),
+                "gap": st_gap,
                 "stats": stats}
 
     if kind == 'contentsplit':
@@ -541,9 +1057,13 @@ def section(kind, h, w):
         im = img_of(h)
         left = bool(re.search(r'<img', h[:len(h) // 2]))
         p = {**base("#FFFFFF"), "module_id": MOD['cs'], "max_width": maxw(h, 1100),
-             "image_side": "left" if left else "right", "ratio": "1fr 1fr", "gap": 60,
-             "image_radius": 6, "image_shadow": False, "eyebrow": eyebrow_all(h),
-             "headline": headline(h), "content": body, "body_size": body_px(h, 16)}
+             "image_side": "left" if left else "right",
+             "ratio": ratio_of(h, "1fr 1.2fr"),
+             "gap": px_of(h, r"gap:\s*(\d+)px", 56),
+             "image_radius": px_of(h, r'border-radius:\s*(\d+)px', 8),
+             "image_shadow": False, "eyebrow": eyebrow_all(h),
+             "headline": headline(h), "headline_size": headline_px(h, 32),
+             "content": body, "body_size": body_px(h, 16)}
         if im: p["image"] = im
         return p
 
@@ -552,12 +1072,19 @@ def section(kind, h, w):
         ps = [(a, i) for a, i in re.findall(r'<p(?=[\s>])([^>]*)>(.*?)</p>', h, re.S)
               if 'letter-spacing' not in a and txt(i)]
         a0 = ps[-1][0] if ps else ''
+        # the band's copy is carried with its own type, so its leading and its
+        # colour come off the paragraph the module actually renders. Reading the
+        # colour off the section instead matched on a size pattern the paragraph
+        # did not have, and painted ingredients-testing's #012638 line in #333.
+        c0 = keep_type(a0)
         p = {**base("#e6e5e3"), "module_id": MOD['cta'], "max_width": maxw(h, 720),
              "eyebrow": eyebrow(h), "headline": headline(h),
              "headline_size": headline_px(h, 32),
-             "content": f"<p>{ps[-1][1].strip()}</p>" if ps else "",
+             "content": (('<p style="%s">' % c0 if c0 else '<p>')
+                         + ps[-1][1].strip() + '</p>') if ps else "",
              "content_size": px_of(a0, r'font-size:\s*(\d+)px', 17),
-             "content_color": {"color": body_colour(h, "#333333"), "opacity": 100},
+             "content_color": {"color": own_hex(a0, body_colour(h, "#333333")),
+                               "opacity": 100},
              "button_size": px_of(h, r"<a[^>]*font-size:\s*(\d+)px", 16)}
         wt = re.search(r'font-weight:\s*(\w+)', a0)
         if wt: p["content_weight"] = {'normal': '400', 'bold': '700'}.get(wt.group(1), wt.group(1))
@@ -570,8 +1097,16 @@ def section(kind, h, w):
         # renders the same form rather than re-embedding V1's inline script
         t, b = pad(s, (80, 80))
         fid = re.search(r'formId:\s*"([0-9a-f-]+)"', h)
-        return {**base("#f7f7f6"), "module_id": FORM, "layout": "form-only",
+        # 'form-only' is not one of the module's two choices, so HubSpot silently
+        # fell back to 'split' and put V1's centred heading beside the form
+        layout = "split" if re.search(r'display:\s*grid|display:\s*flex', h) else "centered"
+        hm = re.search(r'<(h1|h2)(?=[\s>])([^>]*)>', h)
+        return {**base("#f7f7f6"), "module_id": FORM, "layout": layout,
                 "headline": headline(h), "content": subhead_of(h),
+                # V1 sets the form heading at 36px on contact and request-quote;
+                # the module's own 32px is not this page's measurement
+                "headline_size": headline_px(h, 32),
+                "headline_lh": lh_of(hm.group(2) if hm else '', "1.25"),
                 "eyebrow": eyebrow(h), "section_id": "",
                 "form_field": {"form_id": fid.group(1) if fid else "",
                                "response_type": "inline",
@@ -595,8 +1130,13 @@ def section(kind, h, w):
 
     if kind == 'heritage':
         # the shared global may only be used where the copy already matches it,
-        # or it silently replaces the page's own wording (this happened on Home)
-        if all(mk in txt(h) for mk in HERITAGE_MARKERS):
+        # or it silently replaces the page's own wording (this happened on Home).
+        # The same argument applies to its type: the global block carries no
+        # fields, so it renders 34/17 on every page that uses it. Three thank-you
+        # pages set their heritage copy at 18px, and on those the global is the
+        # wrong block -- the local twin holds V1's own size at every width.
+        if (all(mk in txt(h) for mk in HERITAGE_MARKERS)
+                and (headline_px(h, 34), body_px(h, 17)) == GLOBAL_HERITAGE_TYPE):
             return {"module_id": GLOBAL['heritage']}
         t, b = pad(s, (90, 90))
         logos = [{"image": img_of(m.group(0)), "max_height": 80}
@@ -646,8 +1186,12 @@ def main():
             "htmlTitle": v1.get('htmlTitle'), "metaDescription": v1.get('metaDescription'),
             "widgetContainers": {"main_content": {"widgets": []}},
         }, separators=(',', ':')).encode())['id']
+    # Five V1 pages carry two to five kilobytes of their own CSS in headHtml --
+    # it is what centres and styles their embedded form. Left behind, the form
+    # rendered full-bleed at browser defaults instead of 560px at 22px.
     req(f"{API}/cms/v3/pages/site-pages/{v3id}", method='PATCH', data=json.dumps(
-        {"templatePath": "Private Label/Templates/Page - DND.html", "layoutSections": ls},
+        {"templatePath": "Private Label/Templates/Page - DND.html", "layoutSections": ls,
+         "headHtml": v1.get('headHtml') or "", "footerHtml": v1.get('footerHtml') or ""},
         separators=(',', ':')).encode())
     req(f"{API}/cms/v3/pages/site-pages/{v3id}", method='PATCH', data=json.dumps(
         {"widgetContainers": {"main_content": {"widgets": [], "deleted_at": TOMBSTONE}}},

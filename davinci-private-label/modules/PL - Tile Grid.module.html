@@ -1,0 +1,209 @@
+{# PL - Tile Grid — small linked image + label tiles.
+   Restores the LINK that the Five Column Icons / Premium Products rebuilds dropped. #}
+{% set tone = module.text_color|default('dark', true) %}
+{% set overlay = module.show_labels_over_image %}
+{% set pl_cols = module.columns|default('auto', true) %}
+{% set pl_style = module.tile_style == 'plain' ? 'pl_tiles--plain' : 'pl_tiles--card' %}
+{% set pl_fit = module.image_fit == 'contain' ? 'pl_tiles--fit-contain' : 'pl_tiles--fit-cover' %}
+
+<div class="moduleStyles pl_tiles pl_tiles--{{ tone }} {{ pl_style }} {{ pl_fit }}{% if overlay %} pl_tiles--overlay{% endif %}">
+  <div class="bodyContainer">
+
+    {% if module.section_eyebrow or module.section_headline or module.section_subhead %}
+      <div class="pl_tiles_head">
+        {% if module.section_eyebrow %}
+          <p class="pl_tiles_eyebrow">{{ module.section_eyebrow }}</p>
+        {% endif %}
+        {% if module.section_headline %}
+          <h2 class="pl_tiles_headline">{% inline_text field="section_headline" value="{{ module.section_headline }}" %}</h2>
+        {% endif %}
+        {% if module.section_subhead %}
+          <div class="pl_tiles_subhead">{% inline_rich_text field="section_subhead" value="{{ module.section_subhead }}" %}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if module.tiles %}
+      <div class="pl_tile_grid">
+        {% for item in module.tiles %}
+
+          {% set has_image = item.image.src %}
+
+          {% if has_image or item.tile_label or item.accent_glyph %}
+
+            {% set tile_href = item.link.url.href %}
+            {% if item.link.url.type == "EMAIL_ADDRESS" and tile_href %}
+              {% set tile_href = "mailto:" ~ item.link.url.href %}
+            {% endif %}
+
+            {% set rel_value = "" %}
+            {% if item.link.no_follow %}{% set rel_value = "nofollow" %}{% endif %}
+            {% if item.link.open_in_new_tab %}{% set rel_value = (rel_value ~ " noopener")|trim %}{% endif %}
+
+            {% if tile_href %}
+              <a class="pl_tile pl_tile--linked" href="{{ tile_href }}"{% if item.link.open_in_new_tab %} target="_blank"{% endif %}{% if rel_value %} rel="{{ rel_value }}"{% endif %}>
+            {% else %}
+              <div class="pl_tile">
+            {% endif %}
+
+              {% set g_light = item.tile_text_color == 'light' %}
+              <div class="pl_tile_card{% if item.accent_glyph %} pl_tile_card--glyph{% endif %}{% if g_light %} pl_tile_card--light{% endif %}"{% if item.tile_bg and item.tile_bg.opacity > 0 %} style="background-color: rgba({{ item.tile_bg.color|convert_rgb }}, {{ item.tile_bg.opacity / 100 }});"{% endif %}>
+
+                {% if item.accent_glyph %}
+                  <div class="pl_tile_glyph" style="font-size: {{ item.glyph_size|default(56, true) }}px;" aria-hidden="true">{{ item.accent_glyph }}</div>
+                {% endif %}
+
+                {% if has_image %}
+                  <div class="pl_tile_media">
+                    <img class="pl_tile_img"
+                         src="{{ item.image.src }}"
+                         alt="{{ item.image.alt|default(item.tile_label, true) }}"
+                         {% if item.image.width %}width="{{ item.image.width }}"{% endif %}
+                         {% if item.image.height %}height="{{ item.image.height }}"{% endif %}
+                         {% if item.image.loading != 'disabled' %}loading="{{ item.image.loading|default('lazy', true) }}"{% endif %}>
+                    {% if overlay and item.tile_label %}
+                      <span class="pl_tile_scrim" aria-hidden="true"></span>
+                      <span class="pl_tile_label pl_tile_label--over"{% if item.label_size or item.label_weight %} style="{% if item.label_size %}font-size: {{ item.label_size }}px;{% endif %}{% if item.label_weight %}font-weight: {{ item.label_weight }};{% endif %}"{% endif %}>{{ item.tile_label }}</span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {% if item.tile_label and (not overlay or not has_image) %}
+                  <div class="pl_tile_caption">
+                    <p class="pl_tile_label"{% if item.label_size or item.label_weight %} style="{% if item.label_size %}font-size: {{ item.label_size }}px;{% endif %}{% if item.label_weight %}font-weight: {{ item.label_weight }};{% endif %}"{% endif %}>{{ item.tile_label }}{% if item.sublabel %}<br><span class="pl_tile_sublabel">{{ item.sublabel }}</span>{% endif %}</p>
+                  </div>
+                {% endif %}
+
+              </div>
+
+            {% if tile_href %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+
+          {% endif %}
+
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+{% require_css %}
+  <style>
+
+    {% scope_css %}
+
+      .pl_tiles_subhead,.pl_tiles_subhead p{ font-size: {{ module.subhead_size|default(17, true) }}px; }
+
+
+      .moduleStyles{
+        padding-top: {{ module.style.padding.padding_top }}px;
+        padding-bottom: {{ module.style.padding.padding_bottom }}px;
+        background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity / 100 }});
+      }
+
+      {% if module.max_width and module.max_width > 0 %}
+        .bodyContainer{
+          max-width: {{ module.max_width }}px !important;
+        }
+      {% endif %}
+
+      .pl_tile_grid{
+        {% if pl_cols == 'auto' %}
+          grid-template-columns: repeat(auto-fit, minmax({{ module.min_column_width|default(180, true) }}px, 1fr));
+        {% else %}
+          grid-template-columns: repeat({{ pl_cols }}, 1fr);
+        {% endif %}
+        gap: {% if module.row_gap and module.row_gap > 0 %}{{ module.row_gap }}px {{ module.gap|default(24, true) }}px{% else %}{{ module.gap|default(24, true) }}px{% endif %};
+      }
+
+      {% if module.header_width and module.header_width > 0 %}
+        .pl_tiles_head{
+          max-width: {{ module.header_width }}px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      {% endif %}
+
+      {% if module.subhead_color and module.subhead_color.color %}
+        .pl_tiles_subhead, .pl_tiles_subhead p{
+          color: rgba({{ module.subhead_color.color|convert_rgb }}, {{ module.subhead_color.opacity|default(100) / 100 }});
+        }
+      {% endif %}
+
+      {% if module.subhead_width and module.subhead_width > 0 %}
+        .pl_tiles_subhead{
+          max-width: {{ module.subhead_width }}px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      {% endif %}
+
+      .pl_tiles_headline{
+        font-size: {{ module.headline_size|default(32, true) }}px;
+      }
+
+      .pl_tile_label{
+        font-size: {{ module.label_size|default(17, true) }}px;
+        font-weight: {{ module.label_weight|default(700, true) }};
+      }
+
+      .pl_tiles--plain .pl_tile_img{
+        border-radius: {{ module.image_radius is none ? 8 : module.image_radius }}px;
+      }
+
+      .pl_tile_img{
+        height: {{ module.image_height|default(160, true) }}px;
+      }
+
+      .pl_tile_card--glyph{
+        min-height: {{ module.image_height|default(160, true) }}px;
+      }
+
+      {% if module.image_max_width and module.image_max_width > 0 %}
+        .pl_tile_img{
+          max-width: {{ module.image_max_width }}px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      {% endif %}
+
+      {% if pl_cols != 'auto' %}
+        @media screen and (max-width: 900px){
+          .pl_tile_grid{
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media screen and (max-width: 520px){
+          .pl_tile_grid{
+            grid-template-columns: 1fr;
+          }
+        }
+      {% endif %}
+
+    
+      /* hold V1 type at every width */
+      @media screen and (max-width: 900px){
+        {% if module.headline_size %}.pl_tiles_headline{ font-size: {{ module.headline_size }}px; }{% endif %}
+        {% if module.label_size %}.pl_tile_label, .pl_tile_label--over{ font-size: {{ module.label_size }}px; }{% endif %}
+      }
+      @media screen and (max-width: 600px){
+        {% if module.headline_size %}.pl_tiles_headline{ font-size: {{ module.headline_size }}px; }{% endif %}
+        {% if module.label_size %}.pl_tile_label, .pl_tile_label--over{ font-size: {{ module.label_size }}px; }{% endif %}
+      }
+
+    
+      /* V1 gutters at a flat 20px and has no breakpoint; the theme container
+         jumps to 35px below 1300px, which narrows the measure by 30px on a
+         tablet and 60px on a phone and re-wraps every paragraph. */
+      @media screen and (max-width: 1300px){
+        .bodyContainer{ padding-left: 20px; padding-right: 20px; }
+      }
+
+    {% end_scope_css %}
+
+  </style>
+{% end_require_css %}

@@ -1,0 +1,93 @@
+{% set pl_tc = module.text_color == 'light' ? 'pl-sh--light' : 'pl-sh--dark' %}
+{% set pl_align = module.align == 'left' ? 'pl-sh--left' : 'pl-sh--center' %}
+{% set pl_anchor = module.section_id|replace('#', '')|trim %}
+
+<div class="moduleStyles pl-sh {{ pl_tc }} {{ pl_align }}"{% if pl_anchor %} id="{{ pl_anchor }}"{% endif %}>
+  <div class="bodyContainer">
+    <div class="pl-sh__inner">
+
+      {% if module.eyebrow %}
+        <p class="pl-sh__eyebrow">{{ module.eyebrow }}</p>
+      {% endif %}
+
+      {% if module.headline %}
+        <h2 class="pl-sh__headline">{% inline_text field="headline" value="{{ module.headline }}" %}</h2>
+      {% endif %}
+
+      {% if module.subhead %}
+        <div class="pl-sh__subhead">{% inline_rich_text field="subhead" value="{{ module.subhead }}" %}</div>
+      {% endif %}
+
+      {% if module.logos %}
+        {% set pl_has_logo = false %}
+        {% for logo in module.logos %}{% if logo.image.src %}{% set pl_has_logo = true %}{% endif %}{% endfor %}
+        {% if pl_has_logo %}
+          <div class="pl-sh__logos">
+            {% for logo in module.logos %}
+              {% if logo.image.src %}
+                <span class="pl-sh__logo"><img src="{{ logo.image.src }}" alt="{{ logo.image.alt }}" style="max-height: {{ logo.max_height|default(80, true) }}px;"{% if logo.image.loading != 'disabled' %} loading="{{ logo.image.loading|default('lazy', true) }}"{% endif %}></span>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+
+{% require_css %}
+  <style>
+
+    {% scope_css %}
+
+      .moduleStyles{
+        padding-top: {{ module.style.padding.padding_top }}px;
+        padding-bottom: {{ module.style.padding.padding_bottom }}px;
+        background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity / 100 }});
+      }
+
+      {% if module.subhead_size and module.subhead_size != 17 %}
+        .pl-sh__subhead, .pl-sh__subhead p, .pl-sh__subhead li{
+          font-size: {{ module.subhead_size }}px;
+        }
+      {% endif %}
+
+      {% if module.subhead_color and module.subhead_color.color %}
+        .pl-sh__subhead, .pl-sh__subhead p, .pl-sh__subhead li{
+          color: rgba({{ module.subhead_color.color|convert_rgb }}, {{ module.subhead_color.opacity|default(100) / 100 }});
+        }
+      {% endif %}
+
+      .pl-sh__headline{
+        font-size: {{ module.headline_size|default(34, true) }}px;
+      }
+
+      {% if module.max_width and module.max_width > 0 %}
+        .pl-sh__inner{
+          max-width: {{ module.max_width }}px;
+        }
+      {% endif %}
+
+    
+      /* hold V1 type at every width */
+      @media screen and (max-width: 900px){
+        {% if module.headline_size %}.pl-sh__headline{ font-size: {{ module.headline_size }}px; }{% endif %}
+      }
+      @media screen and (max-width: 600px){
+        {% if module.headline_size %}.pl-sh__headline{ font-size: {{ module.headline_size }}px; }{% endif %}
+      }
+
+    
+      /* V1 gutters at a flat 20px and has no breakpoint; the theme container
+         jumps to 35px below 1300px, which narrows the measure by 30px on a
+         tablet and 60px on a phone and re-wraps every paragraph. */
+      @media screen and (max-width: 1300px){
+        .bodyContainer{ padding-left: 20px; padding-right: 20px; }
+      }
+
+    {% end_scope_css %}
+
+  </style>
+{% end_require_css %}

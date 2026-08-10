@@ -1,0 +1,237 @@
+{% set pl_tc = module.text_color == 'light' ? 'pl-cg--light' : 'pl-cg--dark' %}
+{% set pl_cs = module.card_style == 'plain' ? 'pl-cg--plain' : 'pl-cg--boxed' %}
+{% set pl_al = module.card_align == 'center' ? 'pl-cg--align-center' : 'pl-cg--align-left' %}
+{% set pl_es = module.eyebrow_style == 'pill' ? 'pl-cg--eyebrow-pill' : 'pl-cg--eyebrow-text' %}
+{% set pl_ts = module.title_style == 'eyebrow-caps' ? 'pl-cg--title-caps' : 'pl-cg--title-heading' %}
+
+{# Icon badge is ON unless one of the two aliases is explicitly switched off. #}
+{% set pl_badge_off = module.icon_badge == false or module.icon_tile == false %}
+{% set pl_istyle = module.icon_style|default('auto', true) %}
+{% set pl_dens = module.card_density == 'compact' ? 'pl-cg--compact' : 'pl-cg--standard' %}
+{% if pl_istyle == 'ring' %}{% set pl_bd = 'pl-cg--icon-ring' %}
+{% elif pl_istyle == 'plain' %}{% set pl_bd = 'pl-cg--icon-plain' %}
+{% elif pl_istyle == 'badge' %}{% set pl_bd = 'pl-cg--icon-badge' %}
+{% else %}{% set pl_bd = pl_badge_off ? 'pl-cg--icon-plain' : 'pl-cg--icon-badge' %}{% endif %}
+
+{# Accent rule is ON unless explicitly switched off, so payloads written before the
+   field existed still get V1's primary card treatment. #}
+{% set pl_accent_on = module.show_accent != false %}
+{% set pl_accent_hex = module.accent_color.color|default('#6BA644', true) %}
+{% set pl_accent_op = module.accent_color.opacity|default(100) / 100 %}
+
+{% set pl_badge_hex = module.icon_badge_color.color|default(module.icon_tile_color.color|default('#c9dbe2', true), true) %}
+{% set pl_badge_op = module.icon_badge_color.opacity|default(module.icon_tile_color.opacity|default(100)) / 100 %}
+
+<div class="moduleStyles pl-cg {{ pl_tc }} {{ pl_cs }} {{ pl_al }} {{ pl_es }} {{ pl_ts }} {{ pl_bd }} {{ pl_dens }}">
+  <div class="bodyContainer">
+    <div class="pl-cg__bound">
+
+    {% if module.section_eyebrow or module.section_headline or module.section_subhead %}
+      <div class="pl-cg__header">
+        {% if module.section_eyebrow %}
+          <p class="pl-cg__section-eyebrow">{{ module.section_eyebrow }}</p>
+        {% endif %}
+        {% if module.section_headline %}
+          <h2 class="pl-cg__section-headline">{% inline_text field="section_headline" value="{{ module.section_headline }}" %}</h2>
+        {% endif %}
+        {% if module.section_subhead %}
+          <div class="pl-cg__section-subhead">{% inline_rich_text field="section_subhead" value="{{ module.section_subhead }}" %}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if module.cards %}
+      <div class="pl-cg__grid">
+        {% for item in module.cards %}
+
+          {% set pl_href = item.link.url.href %}
+          {% if item.link.url.type is equalto "EMAIL_ADDRESS" and pl_href %}
+            {% set pl_href = "mailto:" + pl_href %}
+          {% endif %}
+
+          {% if pl_href %}
+            <a class="pl-cg__card pl-cg__card--clickable{% if item.image.src %} pl-cg__card--has-photo{% endif %}" href="{{ pl_href }}"{% if item.link.open_in_new_tab %} target="_blank"{% endif %}{% if item.link.rel %} rel="{{ item.link.rel }}"{% endif %}>
+          {% else %}
+            <div class="pl-cg__card{% if item.image.src %} pl-cg__card--has-photo{% endif %}">
+          {% endif %}
+
+            {# 1. card photograph — full bleed at the top of the card #}
+            {% if item.image.src %}
+              <span class="pl-cg__photo"><img src="{{ item.image.src }}" alt="{{ item.image.alt }}"{% if item.image.width %} width="{{ item.image.width }}"{% endif %}{% if item.image.height %} height="{{ item.image.height }}"{% endif %}{% if item.image.loading != 'disabled' %} loading="{{ item.image.loading }}"{% endif %}></span>
+            {% endif %}
+
+            {# card body wrapper only exists so the photo can bleed past the padding #}
+            <div class="pl-cg__body">
+
+              {# 2. circular number badge #}
+              {% if item.number_badge %}
+                <span class="pl-cg__numbadge">{{ item.number_badge }}</span>
+              {% endif %}
+
+              {# 3. icon, in its 56x56 badge #}
+              {% if item.icon.src %}
+                <span class="pl-cg__icon"><img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}"{% if item.icon.width %} width="{{ item.icon.width }}"{% endif %}{% if item.icon.height %} height="{{ item.icon.height }}"{% endif %}{% if item.icon.loading != 'disabled' %} loading="{{ item.icon.loading }}"{% endif %}></span>
+              {% endif %}
+
+              {# 4. big numeral or uppercase eyebrow #}
+              {% if item.number_or_eyebrow %}
+                {% if item.number_or_eyebrow|length <= 2 %}
+                  <span class="pl-cg__number">{{ item.number_or_eyebrow }}</span>
+                {% else %}
+                  <span class="pl-cg__eyebrow">{{ item.number_or_eyebrow }}</span>
+                {% endif %}
+              {% endif %}
+
+              {# 5. title #}
+              {% if item.title %}
+                <h3 class="pl-cg__title">{{ item.title }}</h3>
+              {% endif %}
+
+              {# 6. body copy #}
+              {% if item.content %}
+                <div class="pl-cg__content">{{ item.content }}</div>
+              {% endif %}
+
+              {# 7. pill tags #}
+              {% if item.tags %}
+                <span class="pl-cg__tags">
+                  {%- for t in item.tags|split(',') -%}
+                    {%- if t|trim -%}<span class="pl-cg__tag">{{ t|trim }}</span>{%- endif -%}
+                  {%- endfor -%}
+                </span>
+              {% endif %}
+
+              {# 8. link line #}
+              {% if pl_href and item.link_text %}
+                <span class="pl-cg__linktext">{{ item.link_text }}</span>
+              {% endif %}
+
+            </div>
+
+          {% if pl_href %}
+            </a>
+          {% else %}
+            </div>
+          {% endif %}
+
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    </div>
+  </div>
+</div>
+
+
+{% require_css %}
+  <style>
+
+    {% scope_css %}
+
+      {% if module.subhead_size and module.subhead_size != 17 %}
+        .pl-cg__section-subhead, .pl-cg__section-subhead p{ font-size: {{ module.subhead_size }}px; }
+      {% endif %}
+
+
+      {% if module.body_size and module.body_size != 15 %}
+        .pl-cg__content, .pl-cg__content p, .pl-cg__content li{ font-size: {{ module.body_size }}px; }
+      {% endif %}
+
+      .pl-cg--title-heading .pl-cg__title{ font-size: {{ module.title_size|default(19, true) }}px; }
+
+
+      .moduleStyles{
+        padding-top: {{ module.style.padding.padding_top }}px;
+        padding-bottom: {{ module.style.padding.padding_bottom }}px;
+        background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity / 100 }});
+      }
+
+      {% if module.max_width and module.max_width > 0 %}
+        .pl-cg__bound{
+          max-width: {{ module.max_width }}px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      {% endif %}
+
+      .pl-cg{
+        --pl-cg-body: rgba({{ module.body_color.color|default('#555555', true)|convert_rgb }}, {{ module.body_color.opacity|default(100) / 100 }});
+      }
+
+      .pl-cg__header{
+        max-width: {{ module.header_width|default(900, true) }}px;
+      }
+
+      .pl-cg__section-headline{
+        font-size: {{ module.headline_size|default(32, true) }}px;
+      }
+
+      .pl-cg__grid{
+        grid-template-columns: repeat(auto-fit, minmax({{ module.min_column_width }}px, 1fr));
+        gap: {{ module.gap }}px;
+      }
+
+      {# Selectors below are deliberately one class heavier than the matching rule in
+         module.css so they win on specificity, never on stylesheet order. #}
+
+      .pl-cg.pl-cg--icon-badge .pl-cg__icon{
+        background-color: rgba({{ pl_badge_hex|convert_rgb }}, {{ pl_badge_op }});
+      }
+
+      .pl-cg.pl-cg--icon-plain .pl-cg__icon img{
+        max-height: {{ module.max_icon_height|default(56, true) }}px;
+      }
+
+      .pl-cg.pl-cg--icon-ring .pl-cg__icon{
+        border: 3px solid rgba({{ pl_accent_hex|convert_rgb }}, {{ pl_accent_op }});
+      }
+
+      .pl-cg .pl-cg__numbadge{
+        background-color: rgba({{ pl_accent_hex|convert_rgb }}, {{ pl_accent_op }});
+      }
+
+      {% if pl_accent_on %}
+        .pl-cg.pl-cg--boxed .pl-cg__card{
+          border-top: 4px solid rgba({{ pl_accent_hex|convert_rgb }}, {{ pl_accent_op }});
+          border-radius: 6px;
+          box-shadow: 0 2px 12px rgba(1, 38, 56, .06);
+        }
+
+        .pl-cg.pl-cg--boxed.pl-cg--light .pl-cg__card{
+          box-shadow: none;
+        }
+      {% endif %}
+
+      {# V1 lets auto-fit decide, so a 768px tablet still shows two columns.
+         Forcing one column here doubled every card's width against V1. Only
+         collapse once a single card can no longer fit beside another. #}
+      @media screen and (max-width: {{ (module.min_column_width|default(260, true) * 2) + module.gap|default(24, true) + 40 }}px){
+        .pl-cg__grid{
+          grid-template-columns: 1fr;
+          gap: {{ module.gap }}px;
+        }
+      }
+
+    
+      /* hold V1 type at every width */
+      @media screen and (max-width: 900px){
+        {% if module.headline_size %}.pl-cg__section-headline{ font-size: {{ module.headline_size }}px; }{% endif %}
+        {% if module.number_size %}.pl-cg__number{ font-size: {{ module.number_size }}px; }{% endif %}
+      }
+      @media screen and (max-width: 600px){
+        {% if module.headline_size %}.pl-cg__section-headline{ font-size: {{ module.headline_size }}px; }{% endif %}
+        {% if module.number_size %}.pl-cg__number{ font-size: {{ module.number_size }}px; }{% endif %}
+      }
+
+    
+      /* V1 gutters at a flat 20px and has no breakpoint; the theme container
+         jumps to 35px below 1300px, which narrows the measure by 30px on a
+         tablet and 60px on a phone and re-wraps every paragraph. */
+      @media screen and (max-width: 1300px){
+        .bodyContainer{ padding-left: 20px; padding-right: 20px; }
+      }
+
+    {% end_scope_css %}
+
+  </style>
+{% end_require_css %}

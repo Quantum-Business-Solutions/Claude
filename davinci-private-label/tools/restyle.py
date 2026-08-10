@@ -17,6 +17,8 @@ import os, re, sys, json, copy, html as _html, urllib.request
 TOK = os.environ['TOKEN']
 API = "https://api.hubapi.com"
 S   = os.path.dirname(os.path.abspath(__file__)) + '/'
+sys.path.insert(0, S + 'fam16')
+from build import maxw          # widest content measure, padding subtracted
 
 HERO, RT, CG, SH, CS, TG, CTA, FAQ, STAT, HERITAGE = (
     218939846507, 218940115784, 218940115759, 218940115771, 218939846527,
@@ -28,7 +30,7 @@ STYLE_KEYS = {
     'title_size', 'content_size', 'question_size', 'answer_size', 'value_size',
     'label_size', 'label_weight', 'body_color', 'subhead_color',
     'content_weight', 'content_color', 'subhead_width',
-    'heading_size', 'number_size',
+    'heading_size', 'number_size', 'max_width', 'header_width',
 }
 
 
@@ -149,7 +151,25 @@ def col(c):
 
 # ------------------------------------------------------------------ per type
 
-def style_for(mid, h):
+def bounds(parts):
+    """(widest measure in the section, measure of the band holding the heading).
+
+    A V1 section is not always one widget. The dosage pages split the advantages
+    section into a centred header band capped at 900 and a card band at 1100, so
+    a single number cannot describe it: the cards want the widest bound and the
+    header wants its own, narrower one. Reading one figure for both is what put
+    the cards at 900. The heading band is returned as None when no part carries a
+    heading, so a grid with no section header is not given a header measure it
+    has no use for."""
+    wide = max((maxw(p, 0) for p in parts), default=0)
+    for p in parts:
+        if re.search(r'<h[12](?=[\s>])', p):
+            return wide, maxw(p, wide)
+    return wide, None
+
+
+def style_for(mid, h, parts=None):
+    parts = parts or [h]
     if mid == HERO:
         p = paras(h)
         return {"headline_size": heading_px(h, 48),
@@ -159,14 +179,20 @@ def style_for(mid, h):
     if mid == RT:
         p = paras(h)
         return {"body_size": px(p[0][0], 17) if p else 17,
-                "heading_size": heading_px(h, 32)}
+                "heading_size": heading_px(h, 32),
+                "max_width": maxw(h, 850)}
     if mid == CG:
         ss, sc = subhead(h, 17, '#555555')
         t, b, bc = card_type(h, 19, 15, '#555555')
         # the big step number, which V1 also holds at every width
         nm = max((px(a, 0) or 0 for a, _ in tags(h, 'p')), default=0)
+        # the measure matters as much as the type: a wider column re-wraps
+        # every paragraph in the section, which a reader sees immediately
+        wide, head = bounds(parts)
         out = {"headline_size": heading_px(h, 32), "subhead_size": ss,
-               "title_size": t, "body_size": b, "body_color": col(bc)}
+               "title_size": t, "body_size": b, "body_color": col(bc),
+               "max_width": wide or 1100}
+        if head: out["header_width"] = head
         if nm >= 30: out["number_size"] = nm
         return out
     if mid == SH:
@@ -234,20 +260,62 @@ def anchor_of(params):
     return ''
 
 
+def probes_of(params):
+    """Distinctive strings from a module's own content, one per piece of copy.
+
+    The anchor is a single string, which is enough to find a section but not
+    enough to tell that a second widget is the same section continued. Every
+    card title, card body, question, tile and stat gives another place to look."""
+    out = []
+    for k in ('section_headline', 'headline', 'form_title',
+              'section_subhead', 'subhead', 'content'):
+        t = plain(params.get(k))
+        if len(t) > 14: out.append(t[:80])
+    for key, subs in (('cards', ('title', 'content', 'body')),
+                      ('items', ('question', 'answer')),
+                      ('tiles', ('tile_label', 'sublabel')),
+                      ('stats', ('stat_label', 'stat_value'))):
+        for row in (params.get(key) or []):
+            if not isinstance(row, dict): continue
+            for s in subs:
+                t = plain(row.get(s))
+                if len(t) > 14: out.append(t[:80])
+    return out
+
+
 def pair_up(mods, H):
-    """Match each module to the V1 section it came from, by content.
+    """Match each module to the V1 widgets it was built from, by content.
 
     Matching by position is what broke the dosage pages: their hand-built
     conversion did not keep V1's section order, so module i was restyled from a
-    section it has nothing to do with. A module that cannot be matched to
-    exactly one section is left alone rather than guessed at."""
+    section it has nothing to do with.
+
+    A section is not always one widget, and a widget is not always one section.
+    V1 splits the advantages section into a header band and a card band, and it
+    puts the whole heritage section in one widget that the conversion split into
+    two modules. So each module gets a LIST of widgets: first the one its anchor
+    names, then any widget nobody claimed whose copy belongs to this module and
+    to no other. Reading the header band alone is what left the advantage cards
+    at the header's 900px. Anything still ambiguous is left alone, not guessed."""
     plains = [plain(h) for h in H]
-    out, used = [], set()
+    out = []
     for m in mods:
         a = anchor_of(m.get('params', {}))
         hits = [i for i, t in enumerate(plains) if a and a in t]
-        out.append(hits[0] if len(hits) == 1 else None)
-        if len(hits) == 1: used.add(hits[0])
+        out.append([hits[0]] if len(hits) == 1 else [])
+
+    claimed = {i for idx in out for i in idx}
+    probes = [probes_of(m.get('params', {})) for m in mods]
+    for j, t in enumerate(plains):
+        if j in claimed or not t: continue
+        score = {i: n for i, n in
+                 ((i, sum(1 for p in ps if p in t)) for i, ps in enumerate(probes)) if n}
+        if not score: continue
+        best = max(score.values())
+        winners = [i for i, n in score.items() if n == best]
+        if len(winners) == 1:
+            out[winners[0]].append(j)
+    for idx in out: idx.sort()
     return out
 
 
@@ -282,7 +350,7 @@ def main():
     page = req(f"{API}/cms/v3/pages/site-pages/{v1id}")
     mods = modules(page)
     pairs = pair_up(mods, H)
-    matched = sum(1 for x in pairs if x is not None)
+    matched = sum(1 for x in pairs if x)
     if matched < max(3, len(mods) // 2):
         print(f"  ABORT {v1id}: only {matched}/{len(mods)} modules could be matched to a "
               f"V1 section by content -- restyling the rest would be guesswork")
@@ -299,11 +367,12 @@ def main():
     skipped = []
     for m, si in zip(mods, pairs):
         p = m.setdefault('params', {})
-        if si is None:
+        if not si:
             skipped.append(p.get('module_id'))
             continue
-        h = H[si]
-        want = style_for(p.get('module_id'), h)
+        parts = [H[j] for j in si]
+        h = ''.join(parts)
+        want = style_for(p.get('module_id'), h, parts)
         # a size read for content the module does not carry is a guess, not a
         # measurement -- a grid with no subhead has nothing to read it from
         if not (p.get('section_subhead') or p.get('subhead')):

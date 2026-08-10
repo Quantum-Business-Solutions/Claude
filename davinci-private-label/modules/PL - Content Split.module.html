@@ -1,0 +1,114 @@
+{% set pl_tc = module.text_color == 'light' ? 'pl-cs--light' : 'pl-cs--dark' %}
+{% set pl_side = module.image_side == 'left' ? 'pl-cs--image-left' : 'pl-cs--image-right' %}
+{% set pl_shadow = module.image_shadow != false ? 'pl-cs--image-shadow' : 'pl-cs--image-flat' %}
+
+<div class="moduleStyles pl-cs {{ pl_tc }} {{ pl_side }} {{ pl_shadow }}">
+  <div class="bodyContainer">
+    <div class="pl-cs__bound">
+    <div class="pl-cs__grid">
+
+      <div class="pl-cs__copy">
+
+        {% if module.eyebrow %}
+          <p class="pl-cs__eyebrow">{{ module.eyebrow }}</p>
+        {% endif %}
+
+        {% if module.headline %}
+          <h2 class="pl-cs__headline">{% inline_text field="headline" value="{{ module.headline }}" %}</h2>
+        {% endif %}
+
+        {% if module.content %}
+          <div class="pl-cs__content">{% inline_rich_text field="content" value="{{ module.content }}" %}</div>
+        {% endif %}
+
+        {% if module.buttons and ((module.buttons[0].link.url.href and module.buttons[0].text) or (module.buttons[1].link.url.href and module.buttons[1].text)) %}
+          <div class="pl-cs__buttons">
+            {% for btn in module.buttons %}
+              {% set pl_href = btn.link.url.href %}
+              {% if btn.link.url.type is equalto "EMAIL_ADDRESS" and pl_href %}
+                {% set pl_href = "mailto:" + pl_href %}
+              {% endif %}
+              {% if pl_href and btn.text %}
+                <a class="pl-cs__button {{ loop.index == 1 ? 'pl-cs__button--primary' : 'pl-cs__button--secondary' }}" href="{{ pl_href }}"{% if btn.link.open_in_new_tab %} target="_blank"{% endif %}{% if btn.link.rel %} rel="{{ btn.link.rel }}"{% endif %}>{{ btn.text }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+      </div>
+
+      {% if module.image.src %}
+        <div class="pl-cs__media">
+          <img class="pl-cs__image" src="{{ module.image.src }}" alt="{{ module.image.alt }}"{% if module.image.width %} width="{{ module.image.width }}"{% endif %}{% if module.image.height %} height="{{ module.image.height }}"{% endif %}{% if module.image.loading != 'disabled' %} loading="{{ module.image.loading }}"{% endif %}>
+        </div>
+      {% endif %}
+
+    </div>
+    </div>
+  </div>
+</div>
+
+
+{% require_css %}
+  <style>
+
+    {% scope_css %}
+
+      .pl-cs__content,
+      .pl-cs__content p,
+      .pl-cs__content li{
+        font-size: {{ module.body_size|default(16, true) }}px;
+      }
+
+
+      .moduleStyles{
+        padding-top: {{ module.style.padding.padding_top }}px;
+        padding-bottom: {{ module.style.padding.padding_bottom }}px;
+        background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity / 100 }});
+      }
+
+      {% if module.max_width and module.max_width > 0 %}
+        .pl-cs__bound{
+          max-width: {{ module.max_width }}px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      {% endif %}
+
+      .pl-cs__grid{
+        grid-template-columns: {{ module.ratio }};
+        gap: {{ module.gap }}px;
+      }
+
+      .pl-cs__image{
+        border-radius: {{ module.image_radius|default(8) }}px;
+      }
+
+      @media screen and (max-width: 800px){
+        .pl-cs__grid{
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+
+    
+      /* hold V1 type at every width */
+      @media screen and (max-width: 900px){
+        {% if module.headline_size %}.pl-cs__headline{ font-size: {{ module.headline_size }}px; }{% endif %}
+      }
+      @media screen and (max-width: 600px){
+        {% if module.headline_size %}.pl-cs__headline{ font-size: {{ module.headline_size }}px; }{% endif %}
+      }
+
+    
+      /* V1 gutters at a flat 20px and has no breakpoint; the theme container
+         jumps to 35px below 1300px, which narrows the measure by 30px on a
+         tablet and 60px on a phone and re-wraps every paragraph. */
+      @media screen and (max-width: 1300px){
+        .bodyContainer{ padding-left: 20px; padding-right: 20px; }
+      }
+
+    {% end_scope_css %}
+
+  </style>
+{% end_require_css %}
