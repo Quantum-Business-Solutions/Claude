@@ -7,6 +7,18 @@ data/listing_details.cache.jsonl
 # deliberately not committed.
 data/acquisition_conversations.csv
 
+# ZoomInfo resume caches. These exist so an interrupted sourcing run never
+# re-buys a contact it already paid for; large, and not a deliverable.
+data/zi_search.cache.jsonl
+data/zi_enrich.cache.jsonl
+
+# Working output of load_ma_contacts_to_hubspot.py - regenerated on every run.
+data/ma_load_preview.csv
+data/ma_load_rejects.csv
+
+# Local venv, only needed because the system cryptography install is broken.
+.venv-zi/
+
 __pycache__/
 *.pyc
 .DS_Store
