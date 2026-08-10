@@ -27,7 +27,9 @@ def newest():
     for f in (glob.glob(S + 'vis/gate_*.json') + glob.glob(S + 'vis/*/json/gate_*.json')
               + glob.glob(S + 'run26/*/gate_*.json')):
         n = os.path.basename(f)[5:-5]
-        if n.endswith('_post'):
+        # skip anything that is not a page: post-promotion re-checks, and the
+        # baselines agents save alongside a run (gate_home.BEFORE.json and the like)
+        if n.endswith('_post') or '.' in n or n == 'selftest':
             continue
         if n not in best or os.path.getmtime(f) > os.path.getmtime(best[n]):
             best[n] = f
