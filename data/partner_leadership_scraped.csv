@@ -1,10 +1,185 @@
 ﻿domain,company,tier,country,name,titles,is_owner,name_matches_slug,linkedin_url,source_url,site_emails
-clearpivot.com,Clearpivot,platinum,US,Chris Strom,Principal,YES,,,https://www.clearpivot.com/team,
-syncshow.com,Syncshow,platinum,US,Chris Peer,Ceo/President,YES,,,https://www.syncshow.com/about/syncshow-executive-team,
-310creative.com,310 Creative,gold,US,Revenue Operations Marketing,Chief Executive Officer,YES,,,https://www.310creative.com/,
-geear.io,Geear,diamond,US,Chris Leone,Ceo,YES,,,https://www.geear.io/about/the-team,
-geear.io,Geear,diamond,US,Neal Lappe,Founder,YES,,,https://www.geear.io/about/the-team,
-transfunnel.com,Transfunnel Consulting Pvt LTD,diamond,IN,Alice Branton,Ceo,YES,,,https://transfunnel.com,support@transfunnel.com
-transfunnel.com,Transfunnel Consulting Pvt LTD,diamond,IN,Pahwa Associate,Ceo,YES,,,https://transfunnel.com/monday-work-management,support@transfunnel.com
+hubsnacks.com,Juice Tactics Hubsnacks,diamond,GB,Ashok Mehan,Founder,YES,,,https://www.hubsnacks.com/,
+hubsnacks.com,Juice Tactics Hubsnacks,diamond,GB,Fedmine These,Ceo,YES,,,https://www.hubsnacks.com/,
+hubsnacks.com,Juice Tactics Hubsnacks,diamond,GB,Chuck Dishmon,Ceo,YES,,,https://www.hubsnacks.com/,
+inboundvalue.com,Inbound Value,diamond,FR,Jérémy Gallemard,Ceo,YES,,,https://www.inboundvalue.com,
+inboundvalue.com,Inbound Value,diamond,FR,Corcoran St Barth,Ceo,YES,,,https://www.inboundvalue.com,
+inboundvalue.com,Inbound Value,diamond,FR,Bertrand Lafforgue,Ceo,YES,,,https://www.inboundvalue.com,
+inboundvalue.com,Inbound Value,diamond,FR,Raphaël Labbé,Ceo,YES,,,https://www.inboundvalue.com,
 inboundcycle.com,Inboundcycle,diamond,ES,Lluis Martínez,Founder,YES,,,https://www.inboundcycle.com/,info@inboundcycle.com
 inboundcycle.com,Inboundcycle,diamond,ES,Gracia Cardona,Ceo,YES,,,https://www.inboundcycle.com/,info@inboundcycle.com
+transfunnel.com,Transfunnel Consulting Pvt LTD,diamond,IN,Alice Branton,Ceo,YES,,,https://transfunnel.com,support@transfunnel.com
+transfunnel.com,Transfunnel Consulting Pvt LTD,diamond,IN,Pahwa Associate,Ceo,YES,,,https://transfunnel.com/monday-work-management,support@transfunnel.com
+trooinbound.com,Trooinbound Com,diamond,IN,Nikhil Jani,Ceo/Chief Executive Officer,YES,YES,https://www.linkedin.com/in/nikhil-jani,https://www.trooinbound.com/,hello@trooinbound.com; nikhil.jani@trooinbound.com; sopan.aghera@trooinbound.com; ankit.kandoliya@trooinbound.com
+trooinbound.com,Trooinbound Com,diamond,IN,Priyank Dobariya,Managing Director,YES,YES,https://www.linkedin.com/in/priyank-dobariya-20a79053,https://www.trooinbound.com/team,hello@trooinbound.com; nikhil.jani@trooinbound.com; sopan.aghera@trooinbound.com; ankit.kandoliya@trooinbound.com
+6minded.com,6minded,diamond,PL,Team Mat,Ceo,YES,,,https://www.6minded.com/about-us?hsLang=en,office@6minded.com
+redpandas.com.au,Redpandas,diamond,AU,Alex Taskun,Owner,YES,,,https://www.redpandas.com.au/,
+redpandas.com.au,Redpandas,diamond,AU,Wasif Kasim,Founder,YES,,,https://www.redpandas.com.au/,
+redpandas.com.au,Redpandas,diamond,AU,John Smith,Ceo,YES,,,https://www.redpandas.com.au/,
+redpandas.com.au,Redpandas,diamond,AU,Amanda Barret,Ceo,YES,,,https://www.redpandas.com.au/about-us,
+hubgem.co.uk,Hubgem,diamond,GB,Gemma Price,Ceo/Founder,YES,,,https://www.hubgem.co.uk/about-us,hello@hubgem.co.uk
+hubgem.co.uk,Hubgem,diamond,GB,Our Current Vacancies,Founder,YES,,,https://www.hubgem.co.uk/join-our-team,hello@hubgem.co.uk
+evara.co,Inboundfintech,diamond,GB,Marie Hanes,Ceo,YES,YES,https://www.linkedin.com/in/mariehanes,https://www.evara.co/about,hello@evara.co
+evara.co,Inboundfintech,diamond,GB,Kareem Amin,Ceo,YES,,,https://www.evara.co/,hello@evara.co
+evara.co,Inboundfintech,diamond,GB,Fran Sanchez Managing,Ceo,YES,,,https://www.evara.co/about,hello@evara.co
+evara.co,Inboundfintech,diamond,GB,Fran Sanchez,Managing Director,YES,,,https://www.evara.co/about,hello@evara.co
+evara.co,Inboundfintech,diamond,GB,Mihai Jepan,Principal,YES,,,https://www.evara.co/about,hello@evara.co
+synx.com.au,Synx,diamond,AU,Matt Hurle Charles,Co-Founder,YES,,,https://www.synx.com.au/,
+synx.com.au,Synx,diamond,AU,James Sutton,Managing Director,YES,,,https://www.synx.com.au/,
+bryantworks.com,Bryant Works,diamond,US,Katie Hernandez,Founder,YES,,,https://bryantworks.com/about-bryant-works?hsLang=en,
+cixon.de,Cixon De,diamond,DE,Philipp Prömm,Managing Partner,YES,,,https://cixon.de,
+cixon.de,Cixon De,diamond,DE,Tino Wendland,Co-Founder,YES,,,https://cixon.de,
+cixon.de,Cixon De,diamond,DE,Business Benjamin,Co-Founder,YES,,,https://cixon.de/team,
+cixon.de,Cixon De,diamond,DE,Martin Feilkas,Founder,YES,,,https://cixon.de/case-studies/teamscale,
+yeswesales.com,Rd Informatique,diamond,FR,Laurent Tostain,President,YES,,,https://yeswesales.com,
+yeswesales.com,Rd Informatique,diamond,FR,Terracall Nous,Co-Founder,YES,,,https://yeswesales.com,
+karman.digital,Karmandigital,diamond,GB,Simon Hurst,Managing Director,YES,,,https://www.karman.digital/,hello@karman.digital
+pinetco.com,Pinetco,diamond,DE,Christof Bluj,Ceo,YES,,,https://www.pinetco.com/,barbara@pinetco.com
+pinetco.com,Pinetco,diamond,DE,Raviraj Chauhan,Ceo,YES,,,https://www.pinetco.com/team,barbara@pinetco.com
+sagemarketing.io,Sage,diamond,IL,Thinkz Thinkz,Co-Founders,YES,,,https://www.sagemarketing.io/,info@sagemarketing.io
+sagemarketing.io,Sage,diamond,IL,Messages We,Founder,YES,,,https://www.sagemarketing.io/about,info@sagemarketing.io
+therevopscompany.com,Therevopscompany,diamond,NL,Dennis Monner,Ceo,YES,,,https://www.therevopscompany.com/,kevin.dejong@therevopscompany.com
+jdrgroup.co.uk,Jdr Group,diamond,GB,David Roberts,Managing Director,YES,,,https://www.jdrgroup.co.uk/meet-the-team,info@jdrgroup.co.uk
+okedito.com,Okedito Agence Partenaire,diamond,FR,Laurent Jarnoux,Ceo,YES,,,https://www.okedito.com/,contact@okedito.com
+solidteam.com,Solid,diamond,ES,Ansó Estarriaga,Ceo,YES,,,https://solidteam.com,
+solidteam.com,Solid,diamond,ES,Albert Rodríguez,Managing Director,YES,,,https://solidteam.com,
+lookers.cl,Lookers,diamond,CL,Eitan Guinguis,Ceo,YES,,,https://lookers.cl,hola@lookers.cl
+themoderategenius.com,Themoderategenius,diamond,CA,Edward Stranks,Founder,YES,,,https://themoderategenius.com/about-us,
+themoderategenius.com,Themoderategenius,diamond,CA,The Moderate Genius,Founder,YES,,,https://themoderategenius.com/about-us,
+power2cloud.com,Power2cloud,diamond,IT,Ruben Santopietro,Ceo,YES,,,https://power2cloud.com,
+power2cloud.com,Power2cloud,diamond,IT,De Candia,Cofounder,YES,,,https://power2cloud.com,
+power2cloud.com,Power2cloud,diamond,IT,Gabriella Dozio,Ceo,YES,,,https://power2cloud.com,
+power2cloud.com,Power2cloud,diamond,IT,Gennaro Durante,Ceo,YES,,,https://power2cloud.com,
+teamcloudsource.com,Teamcloudsource,diamond,MY,Ali Razzak,Ceo,YES,,,https://www.teamcloudsource.com/,
+digitale.gr,Digitale Gr,diamond,GR,Yamini Rangan,Ceo,YES,,,https://digitale.gr/about-digitale,info@digitale.gr
+meticulosity.com,Meticulosity,diamond,EG,Dave Ward,Ceo,YES,YES,https://www.linkedin.com/in/davewardny,https://www.meticulosity.com/about-meticulosity,
+meticulosity.com,Meticulosity,diamond,EG,Alicia Williams,Co-Founder,YES,,,https://www.meticulosity.com/,
+meticulosity.com,Meticulosity,diamond,EG,Ahmed Mourady,President,YES,,,https://www.meticulosity.com/about-meticulosity,
+ixtensa.de,Ixtensa GMBH Co Kg,diamond,DE,Melanie Müller,Ceo,YES,,,https://www.ixtensa.de/,info@ixtensa.de
+unmatched.agency,Unmatched,diamond,GB,Matt Freestone,Founder,YES,,,https://www.unmatched.agency/about/team,
+automatenow.uk,Automatenow,diamond,PL,Bart Kowalczyk,Ceo,YES,YES,https://www.linkedin.com/in/bart-kowalczyk,https://www.automatenow.uk/,info@automatenow.uk; bart@automatenow.uk; anna@automatenow.uk; sam@automatenow.uk; smarshall@automatenow.uk
+loncomconsulting.com,Loncomconsulting,diamond,GB,Luca Pallattella,Co-Founder,YES,,,https://www.loncomconsulting.com/,info@loncomconsulting.com
+loncomconsulting.com,Loncomconsulting,diamond,GB,Luke Cuthbert,Managing Director,YES,,,https://www.loncomconsulting.com/,info@loncomconsulting.com
+loncomconsulting.com,Loncomconsulting,diamond,GB,Stefan Loncar,Founder,YES,,,https://www.loncomconsulting.com/pages/team,info@loncomconsulting.com
+mkt4sales.com,Mkt4sales,diamond,BR,Davi Holanda,Ceo,YES,,,https://www.mkt4sales.com/,info@mkt4sales.com
+growthfuelconsulting.com,Growth Fuel Consulting,diamond,SG,Yan Yip,Co-Founder,YES,YES,https://www.linkedin.com/in/wai-yan-yip,https://www.growthfuelconsulting.com/about,bryan@growthfuelconsulting.com; waiyan@growthfuelconsulting.com; sharvesh.sreetharan@growthfuelconsulting.com; nicola.choon@growthfuelconsulting.com
+growthfuelconsulting.com,Growth Fuel Consulting,diamond,SG,Bryan Cawse,Co-Founder,YES,,,https://www.growthfuelconsulting.com/about,bryan@growthfuelconsulting.com; waiyan@growthfuelconsulting.com; sharvesh.sreetharan@growthfuelconsulting.com; nicola.choon@growthfuelconsulting.com
+thesalesplaybook.com,Salesplaybook,diamond,CH,Sparring Not,Ceo,YES,,,https://thesalesplaybook.com,
+thesalesplaybook.com,Salesplaybook,diamond,CH,Sparring Investment,Ceo,YES,,,https://thesalesplaybook.com,
+thesalesplaybook.com,Salesplaybook,diamond,CH,Sparring See,Ceo,YES,,,https://thesalesplaybook.com,
+thesalesplaybook.com,Salesplaybook,diamond,CH,Board Member,Co-Founder,YES,,,https://thesalesplaybook.com,
+thesalesplaybook.com,Salesplaybook,diamond,CH,Manuel Hartmann,Founder,YES,,,https://thesalesplaybook.com,
+thesalesplaybook.com,Salesplaybook,diamond,CH,Advisory Board,Co-Founder,YES,,,https://thesalesplaybook.com,
+thesalesplaybook.com,Salesplaybook,diamond,CH,Sparring Pricing Company,Ceo,YES,,,https://thesalesplaybook.com,
+thesalesplaybook.com,Salesplaybook,diamond,CH,Sparring An,Ceo,YES,,,https://thesalesplaybook.com/foundersparring,
+thesalesplaybook.com,Salesplaybook,diamond,CH,Sparring Learn,Ceo,YES,,,https://thesalesplaybook.com/fractionalleadership,
+marketing-engineers.co.uk,Intergage,diamond,GB,James Dashwood,Managing Director,YES,,,https://www.marketing-engineers.co.uk/,
+marketing-engineers.co.uk,Intergage,diamond,GB,Mike Finn Follow,Managing Director,YES,,,https://www.marketing-engineers.co.uk/about-us,
+bespokedigital.agency,Digital Media Stream,diamond,GB,Lucy Trueman,Founder,YES,,,https://www.bespokedigital.agency/,
+g2msolutions.com.au,G2m,diamond,AU,Energy Controls,Ceo,YES,,,https://www.g2msolutions.com.au/,sales@g2msolutions.com.au; support@g2msolutions.com.au
+g2msolutions.com.au,G2m,diamond,AU,Ashkan Shahmir,Founder,YES,,,https://www.g2msolutions.com.au/,sales@g2msolutions.com.au; support@g2msolutions.com.au
+chooseoxygen.com,Oxygen Strategic Partners,diamond,HK,Martin Solorzano,Ceo,YES,,,https://www.chooseoxygen.com/,
+chooseoxygen.com,Oxygen Strategic Partners,diamond,HK,Gareth Jones,Managing Partner,YES,,,https://www.chooseoxygen.com/about,
+chooseoxygen.com,Oxygen Strategic Partners,diamond,HK,Laurent Ross,Managing Partner,YES,,,https://www.chooseoxygen.com/about,
+chili.ch,Chilidigital,diamond,CH,Roger Meili,Ceo,YES,YES,https://www.linkedin.com/in/rogermeili,https://www.chili.ch/about-us/team?hsLang=de,
+geear.io,Geear,diamond,US,Chris Leone,Ceo,YES,,,https://www.geear.io/about/the-team,
+geear.io,Geear,diamond,US,Neal Lappe,Founder,YES,,,https://www.geear.io/about/the-team,
+more-fire.com,Morefire GMBH,diamond,DE,Julia Thoenes,Principal,YES,,,https://www.more-fire.com/team,
+more-fire.com,Morefire GMBH,diamond,DE,Chris Roeb,Principal,YES,,,https://www.more-fire.com/team,
+more-fire.com,Morefire GMBH,diamond,DE,Isis Neuerbourg,Principal,YES,,,https://www.more-fire.com/team,
+more-fire.com,Morefire GMBH,diamond,DE,Janina Focke,Principal,YES,,,https://www.more-fire.com/team,
+more-fire.com,Morefire GMBH,diamond,DE,Kristin Kiel,Principal,YES,,,https://www.more-fire.com/team,
+more-fire.com,Morefire GMBH,diamond,DE,Martin Weber,Principal,YES,,,https://www.more-fire.com/team,
+more-fire.com,Morefire GMBH,diamond,DE,Nina Künzl,Principal,YES,,,https://www.more-fire.com/team,
+more-fire.com,Morefire GMBH,diamond,DE,Pia Dederichs,Principal,YES,,,https://www.more-fire.com/team,
+more-fire.com,Morefire GMBH,diamond,DE,René Dege,Principal,YES,,,https://www.more-fire.com/team,
+more-fire.com,Morefire GMBH,diamond,DE,Thomas Kaiser,Principal,YES,,,https://www.more-fire.com/team,
+more-fire.com,Morefire GMBH,diamond,DE,Valerie Khalifeh,Principal,YES,,,https://www.more-fire.com/team,
+homebuilderops.com,Small Marketing Teams,diamond,US,Homebuilder Ops,Ceo,YES,,,https://homebuilderops.com/about,
+revopsautomated.com,Revops Automated,diamond,GB,Transformation Executives,Founders,YES,,,https://www.revopsautomated.com/,
+divia.de,Divia GMBH Germany,diamond,DE,Christian Retz,Managing Director,YES,YES,https://www.linkedin.com/in/christianretz,https://www.divia.de/about,christian.retz@divia.de; jan.baudisch@divia.de; martin.reti@divia.de; verena.gut@divia.de; maren.kopp@divia.de
+divia.de,Divia GMBH Germany,diamond,DE,Jan Baudisch,Managing Director,YES,YES,https://www.linkedin.com/in/janbaudisch,https://www.divia.de/about,christian.retz@divia.de; jan.baudisch@divia.de; martin.reti@divia.de; verena.gut@divia.de; maren.kopp@divia.de
+divia.de,Divia GMBH Germany,diamond,DE,Karl Finke,Principal,YES,YES,https://www.linkedin.com/in/karl-finke-2aa747210,https://www.divia.de/about,christian.retz@divia.de; jan.baudisch@divia.de; martin.reti@divia.de; verena.gut@divia.de; maren.kopp@divia.de
+divia.de,Divia GMBH Germany,diamond,DE,Christoph Dill,Ceo,YES,,,https://www.divia.de/,christian.retz@divia.de; jan.baudisch@divia.de; martin.reti@divia.de; verena.gut@divia.de; maren.kopp@divia.de
+digitalstand.com,Digital Stand,diamond,AU,Our Clients,Ceo,YES,,,https://www.digitalstand.com/,sayhello@digitalstand.com
+digitalstand.com,Digital Stand,diamond,AU,Meet Our Leader,Founder,YES,,,https://www.digitalstand.com/,sayhello@digitalstand.com
+digitalstand.com,Digital Stand,diamond,AU,Slavica Our,Founder,YES,,,https://www.digitalstand.com/,sayhello@digitalstand.com
+digitalstand.com,Digital Stand,diamond,AU,Mathew Slavica,Founder,YES,,,https://www.digitalstand.com/about-us,sayhello@digitalstand.com
+dma.it,Dma,diamond,IT,Marco Borghetti,Ceo,YES,,,https://www.dma.it/,
+dma.it,Dma,diamond,IT,Fabbri Franz,Ceo,YES,,,https://www.dma.it/team,
+blueoshan.com,Shkubo Cmo Services Pvt LTD,diamond,IN,Shantha Kumar,Founder,YES,,,https://www.blueoshan.com/team,
+epic.digital,Epic Digital,diamond,BR,Executive Vice-,President,YES,,,https://www.epic.digital/,
+srpro.marketing,Srpro,diamond,US,Armando Torres,Ceo,YES,,,https://www.srpro.marketing/,info@srpro.marketing
+srpro.marketing,Srpro,diamond,US,Ronen Wasserman,Founder,YES,,,https://www.srpro.marketing/the-sr-pro-team,info@srpro.marketing
+srpro.marketing,Srpro,diamond,US,Eddie Ram Senior,President,YES,,,https://www.srpro.marketing/the-sr-pro-team,info@srpro.marketing
+fileroom.com,Fileroom Com Au,diamond,AU,Emma Ruefli,Founder,YES,YES,https://www.linkedin.com/in/emma-ruefli-1372b315,https://fileroom.com/about-us,hello@fileroom.com
+fileroom.com,Fileroom Com Au,diamond,AU,Ivan Ruefli,Founder,YES,YES,https://www.linkedin.com/in/ivan-ruefli,https://fileroom.com/about-us,hello@fileroom.com
+modernvisual.au,Grow With Modernvisual,diamond,AU,Luke Trewin,Founder,YES,,,https://modernvisual.au/about,
+breckenridge.agency,Breckenridge,diamond,GB,Kelly Goodship,Managing Director,YES,,,https://www.breckenridge.agency/,
+breckenridge.agency,Breckenridge,diamond,GB,Mark Robinson,Managing Director,YES,,,https://www.breckenridge.agency/,
+breckenridge.agency,Breckenridge,diamond,GB,Emmet Kearney,Managing Director,YES,,,https://www.breckenridge.agency/,
+flowwdigital.co.uk,Flowwdigital Co UK,diamond,GB,Simon Mone,Managing Director,YES,,,https://www.flowwdigital.co.uk/en-gb/about,%c2%a0info@flowwdigital.co.uk; info@flowwdigital.co.uk
+flowwdigital.co.uk,Flowwdigital Co UK,diamond,GB,Chalmers Business,Owner,YES,,,https://www.flowwdigital.co.uk/en-gb/about,%c2%a0info@flowwdigital.co.uk; info@flowwdigital.co.uk
+flowwdigital.co.uk,Flowwdigital Co UK,diamond,GB,Bruynseels Business,Owner,YES,,,https://www.flowwdigital.co.uk/en-gb/about,%c2%a0info@flowwdigital.co.uk; info@flowwdigital.co.uk
+flowwdigital.co.uk,Flowwdigital Co UK,diamond,GB,Duck Business,Owner,YES,,,https://www.flowwdigital.co.uk/en-gb/about,%c2%a0info@flowwdigital.co.uk; info@flowwdigital.co.uk
+flowwdigital.co.uk,Flowwdigital Co UK,diamond,GB,Richmond Business,Owner,YES,,,https://www.flowwdigital.co.uk/en-gb/about,%c2%a0info@flowwdigital.co.uk; info@flowwdigital.co.uk
+liftenablement.com,Imagine Business Development,diamond,US,Programs Devin Chaloux,President,YES,,,https://www.liftenablement.com/aboutus,
+liftenablement.com,Imagine Business Development,diamond,US,Drew Davidoff What,Ceo,YES,,,https://www.liftenablement.com/aboutus,
+cloudfresh.com,Cloudfresh,diamond,PL,Jad Halaoui,Co-Founder,YES,,,https://cloudfresh.com/en/,
+cloudfresh.com,Cloudfresh,diamond,PL,Mauricio Facchinetti,Ceo,YES,,,https://cloudfresh.com/en/,
+cloudfresh.com,Cloudfresh,diamond,PL,Maria Bakatsiuk,Founder,YES,,,https://cloudfresh.com/en/,
+cloudfresh.com,Cloudfresh,diamond,PL,Shu Zhang,Co-Founder,YES,,,https://cloudfresh.com/en/,
+cloudfresh.com,Cloudfresh,diamond,PL,Mehdi Taleb,Ceo,YES,,,https://cloudfresh.com/en/,
+cloudfresh.com,Cloudfresh,diamond,PL,Everfruit Digital,Founder,YES,,,https://cloudfresh.com/en/,
+cloudfresh.com,Cloudfresh,diamond,PL,Representative Bohdan,Founder,YES,,,https://cloudfresh.com/en/about-us,
+cloudfresh.com,Cloudfresh,diamond,PL,Manager Oleh,Co-Founder,YES,,,https://cloudfresh.com/en/about-us,
+cloudfresh.com,Cloudfresh,diamond,PL,Developer Radek,Co-Founder,YES,,,https://cloudfresh.com/en/about-us,
+begradient.com,Gradient,diamond,NL,Aelio How,Managing Director,YES,,,https://begradient.com,info@begradient.com
+synolia.com,Synolia Com,diamond,FR,Pascal Brunel,Co-Founder,YES,YES,https://www.linkedin.com/in/pascalbrunel,https://www.synolia.com/en/team,
+synolia.com,Synolia Com,diamond,FR,Romain André,Ceo,YES,YES,https://www.linkedin.com/in/romain-andré-27b15128,https://www.synolia.com/en/team,
+synolia.com,Synolia Com,diamond,FR,Gary Trojanowski,Managing Partner,YES,YES,https://www.linkedin.com/in/garytrojanowski,https://www.synolia.com/en/team,
+synolia.com,Synolia Com,diamond,FR,Ceyhun Kaplan,Managing Partner,YES,,,https://www.synolia.com/en/team,
+synolia.com,Synolia Com,diamond,FR,Blackbird Marine Jacq,Co-Founder,YES,,,https://www.synolia.com/en/team,
+scherponline.nl,Scherponline Nl,diamond,NL,Lars Hoving,Ceo,YES,,,https://scherponline.nl,info@scherponline.nl
+scherponline.nl,Scherponline Nl,diamond,NL,Wesley Plugers,Co-Owner,YES,,,https://scherponline.nl,info@scherponline.nl
+scherponline.nl,Scherponline Nl,diamond,NL,Piet Zweegers,Co-Owner,YES,,,https://scherponline.nl,info@scherponline.nl
+structsales.se,Structsales,diamond,SE,Torbjörn Appehl,Ceo,YES,,,https://www.structsales.se,
+structsales.se,Structsales,diamond,SE,Marcus Frantzén,Ceo,YES,,,https://www.structsales.se,
+zooma.se,Zooma,diamond,SE,Anders Björklund,Ceo,YES,,,https://zooma.agency/en/about,
+insightsalesglobal.com,Insight Sales,diamond,,About Us What,Principal,YES,,,https://insightsalesglobal.com,
+insightsalesglobal.com,Insight Sales,diamond,,Lucas Rocha,Co-Founder,YES,,,https://insightsalesglobal.com,
+insightsalesglobal.com,Insight Sales,diamond,,França Lima,Ceo,YES,,,https://insightsalesglobal.com,
+insightsalesglobal.com,Insight Sales,diamond,,Power Tuning,Founder,YES,,,https://insightsalesglobal.com,
+insightsalesglobal.com,Insight Sales,diamond,,Henrique Vieira,Managing Partner,YES,,,https://insightsalesglobal.com,
+thorit.de,Thorit GMBH,diamond,DE,Nina Zimmermann,Ceo,YES,,,https://www.thorit.com/magazin/thorit-erneut-als-kununu-top-company-2025-ausgezeichnet?hsLang=de,sales@thorit.de; help@thorit.de
+thorit.de,Thorit GMBH,diamond,DE,David Schuh,Ceo,YES,,,https://www.thorit.com/magazin/thorit-erneut-als-kununu-top-company-2025-ausgezeichnet?hsLang=de,sales@thorit.de; help@thorit.de
+digitalimpact.ai,Digital Impact,diamond,US,Devin Holmes,Founder,YES,,,https://www.digitalimpact.ai/,
+wisegroup.pl,Sellwise,diamond,PL,Szymon Negacz,Founder,YES,YES,https://www.linkedin.com/in/szymonnegacz,https://wisegroup.pl,kontakt@wisegroup.pl
+wisegroup.pl,Sellwise,diamond,PL,Więcej Anna Negacz,Managing Partner,YES,YES,https://www.linkedin.com/in/anna-negacz-51810169,https://wisegroup.pl,kontakt@wisegroup.pl
+wisegroup.pl,Sellwise,diamond,PL,Więcej Filip Kulikowski,Managing Partner,YES,YES,https://www.linkedin.com/in/filipkulikowski,https://wisegroup.pl,kontakt@wisegroup.pl
+wisegroup.pl,Sellwise,diamond,PL,Więcej Mateusz Chinczewski,Co-Founder,YES,YES,https://www.linkedin.com/in/mateusz-chinczewski-137336217,https://wisegroup.pl,kontakt@wisegroup.pl
+wisegroup.pl,Sellwise,diamond,PL,Mateusz Chinczewski,Ceo,YES,YES,https://www.linkedin.com/in/mateusz-chinczewski-137336217,https://wisegroup.pl,kontakt@wisegroup.pl
+wisegroup.pl,Sellwise,diamond,PL,Więcej Marcin Grela,Managing Partner,YES,,,https://wisegroup.pl,kontakt@wisegroup.pl
+bac.co,Bac,diamond,AU,Kevin Woolley,Managing Director,YES,,,https://www.bac.co/,
+azend.group,Azend Group,diamond,MY,Aaron Goh Chief,Founders,YES,,,https://www.azend.group/about-us,
+azend.group,Azend Group,diamond,MY,Aaron Goh,Chief Executive Officer,YES,,,https://www.azend.group/about-us,
+azend.group,Azend Group,diamond,MY,Marketing Monk,Chief Executive Officer,YES,,,https://www.azend.group/about-us,
+kkvision.de,Kkvision,diamond,DE,Köksal Product,Owner,YES,,,https://www.kkvision.de/,info@kkvision.de
+open.de,Opencx,diamond,DE,Digital Experience,Managing Director,YES,,,https://open.de,david.cavas@open.de; info@open.de
+scalebox.ai,Scalebox,diamond,SG,Alex Doroshko,Founder,YES,,,https://scalebox.ai,ask@scalebox.ai
+scalebox.ai,Scalebox,diamond,SG,Greg Mars,Founder,YES,,,https://scalebox.ai,ask@scalebox.ai
+scalestation.io,Scalestation,diamond,AU,Dharmesh Porwal,Founder,YES,YES,https://www.linkedin.com/in/dharmeshporwal,https://scalestation.io,
+scalestation.io,Scalestation,diamond,AU,Chris Ellis,Ceo,YES,,,https://scalestation.io/about-us,
+njiuko.com,Njiuko,diamond,DE,Norman Timmler,Founder,YES,YES,https://www.linkedin.com/in/normantimmler,https://njiuko.com/team,kimberly.dohmen@njiuko.com; tobias.heinl@njiuko.com; imke.wittke@njiuko.com; gervais.mckoy@njiuko.com; mateusz.boratynski@njiuko.com
+njiuko.com,Njiuko,diamond,DE,Deniz Bergmann,Ceo,YES,YES,https://www.linkedin.com/in/jasmin-deniz-bergmann,https://njiuko.com/team,kimberly.dohmen@njiuko.com; tobias.heinl@njiuko.com; imke.wittke@njiuko.com; gervais.mckoy@njiuko.com; mateusz.boratynski@njiuko.com
+njiuko.com,Njiuko,diamond,DE,Raoul Hess,Founder,YES,YES,https://www.linkedin.com/in/raoulhess,https://njiuko.com/team,kimberly.dohmen@njiuko.com; tobias.heinl@njiuko.com; imke.wittke@njiuko.com; gervais.mckoy@njiuko.com; mateusz.boratynski@njiuko.com
+njiuko.com,Njiuko,diamond,DE,Pascal Friederich,Founder,YES,YES,https://www.linkedin.com/in/pascalfriederich,https://njiuko.com/team,kimberly.dohmen@njiuko.com; tobias.heinl@njiuko.com; imke.wittke@njiuko.com; gervais.mckoy@njiuko.com; mateusz.boratynski@njiuko.com
+sunzinet.com,Sunzinet Digital Agency,diamond,DE,Georges Wolff,Chief Executive Officer,YES,YES,https://www.linkedin.com/in/georges-wolff-48919425,https://www.sunzinet.com/unser-team,uenal.simona@sunzinet.com; mayer.simona@sunzinet.com; kamm.lukas@sunzinet.com
+sunzinet.com,Sunzinet Digital Agency,diamond,DE,Theresa Gruhler,Ceo/Chief Executive Officer,YES,YES,https://www.linkedin.com/in/theresa-gruhler-27510a162,https://www.sunzinet.com/unser-team,uenal.simona@sunzinet.com; mayer.simona@sunzinet.com; kamm.lukas@sunzinet.com
+sunzinet.com,Sunzinet Digital Agency,diamond,DE,Piotr Obrebski,Ceo,YES,YES,https://www.linkedin.com/in/piotrobrebski,https://www.sunzinet.com/unser-team,uenal.simona@sunzinet.com; mayer.simona@sunzinet.com; kamm.lukas@sunzinet.com
+sunzinet.com,Sunzinet Digital Agency,diamond,DE,Sebastian Ludwig,Managing Director,YES,,,https://www.sunzinet.com/,uenal.simona@sunzinet.com; mayer.simona@sunzinet.com; kamm.lukas@sunzinet.com
+sunzinet.com,Sunzinet Digital Agency,diamond,DE,Marina Reufels,Managing Director,YES,,,https://www.sunzinet.com/,uenal.simona@sunzinet.com; mayer.simona@sunzinet.com; kamm.lukas@sunzinet.com
+sunzinet.com,Sunzinet Digital Agency,diamond,DE,Management Management Georges,Chief Executive Officer,YES,,,https://www.sunzinet.com/unser-team,uenal.simona@sunzinet.com; mayer.simona@sunzinet.com; kamm.lukas@sunzinet.com
+sunzinet.com,Sunzinet Digital Agency,diamond,DE,Officer Als,Chief Executive Officer,YES,,,https://www.sunzinet.com/unser-team,uenal.simona@sunzinet.com; mayer.simona@sunzinet.com; kamm.lukas@sunzinet.com
+sunzinet.com,Sunzinet Digital Agency,diamond,DE,Schmitz Product,Owner,YES,,,https://www.sunzinet.com/unser-team,uenal.simona@sunzinet.com; mayer.simona@sunzinet.com; kamm.lukas@sunzinet.com
+sunzinet.com,Sunzinet Digital Agency,diamond,DE,Caroline Vu,Principal,YES,,,https://www.sunzinet.com/unser-team,uenal.simona@sunzinet.com; mayer.simona@sunzinet.com; kamm.lukas@sunzinet.com

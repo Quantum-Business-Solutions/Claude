@@ -285,22 +285,30 @@ def main() -> int:
         todo = targets(tuple(args.tiers), args.limit)
     print(f"scraping {len(todo)} partner sites with {args.workers} workers\n")
 
+    COLS = ["domain", "company", "tier", "country", "name", "titles",
+            "is_owner", "name_matches_slug", "linkedin_url", "source_url",
+            "site_emails"]
     rows, stats = [], {"ok": 0, "unreachable": 0, "no_profiles_found": 0}
     with_owner = 0
+    # Written as results arrive: a full pass over 1,424 sites takes ~20 minutes
+    # and a failure near the end must not discard everything before it.
+    out_fh = open(OUT, "w", newline="", encoding="utf-8-sig")
+    writer = csv.DictWriter(out_fh, fieldnames=COLS)
+    writer.writeheader()
     with concurrent.futures.ThreadPoolExecutor(args.workers) as ex:
-        for res in ex.map(one_domain, todo):
+        for i, res in enumerate(ex.map(one_domain, todo), 1):
             stats[res["status"]] = stats.get(res["status"], 0) + 1
             owners = [p for p in res["people"] if p["titles"]]
             if owners:
                 with_owner += 1
-            print(f"{res['domain']:28s} {res['status']:18s} "
-                  f"pages={res['pages']} profiles={len(res['people'])} "
+            print(f"[{i}/{len(todo)}] {res['domain'][:26]:26s} "
+                  f"{res['status']:18s} pages={res['pages']} "
                   f"owners={len(owners)} emails={len(res['emails'])}")
             for p in owners[:4]:
                 print(f"      {p['name'] or '(name unresolved)':26s} "
                       f"{'/'.join(sorted(p['titles']))[:34]:34s} {p['linkedin_url']}")
             for p in res["people"]:
-                rows.append({
+                row = {
                     "domain": res["domain"], "company": res["company"],
                     "tier": res["tier"], "country": res["country"],
                     "name": p["name"], "titles": "/".join(sorted(p["titles"])),
@@ -309,13 +317,11 @@ def main() -> int:
                     "linkedin_url": p["linkedin_url"],
                     "source_url": p["source_url"],
                     "site_emails": "; ".join(res["emails"][:5]),
-                })
-
-    with open(OUT, "w", newline="", encoding="utf-8-sig") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()) if rows else
-                           ["domain"])
-        w.writeheader()
-        w.writerows(rows)
+                }
+                rows.append(row)
+                writer.writerow(row)
+            out_fh.flush()
+    out_fh.close()
     n = len(todo)
     print(f"\n{stats}")
     print(f"companies with at least one owner-titled profile: "
