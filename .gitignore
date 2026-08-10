@@ -1,2 +1,5 @@
 
 .claude/settings.local.json
+
+# preview keys open unpublished pages; keep them out of the repo
+PL-conversion-index.md
