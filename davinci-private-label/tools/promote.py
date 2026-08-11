@@ -107,20 +107,19 @@ def v1_source_text(pre, v1id):
     if os.path.exists(june_path):
         jw = (json.load(open(june_path)).get('widgetContainers', {})
               .get('main_content', {}).get('widgets', []))
+    # A global block's body is empty by design, and reconstructing its text from
+    # the June backup was only ever a guess: the two files are aligned by list
+    # position, and design-services gained a global after that backup was taken,
+    # so it counted its heritage twice and lost its FDA disclaimer -- 106 words
+    # that were never missing. Globals render from one shared definition, so they
+    # are identical on both sides by construction; leaving them out of the
+    # comparison removes the guess and loses no coverage. The rendered-page diff
+    # still sees them.
     parts = []
-    for i, w in enumerate(pre.get('widgetContainers', {}).get('main_content', {}).get('widgets', [])):
+    for w in pre.get('widgetContainers', {}).get('main_content', {}).get('widgets', []):
         b = w.get('body') or {}
-        t = b.get('html') or b.get('content') or ''
-        if not t.strip() and i < len(jw):        # global block -> take June's copy
-            jb = jw[i].get('body') or {}
-            t = jb.get('html') or jb.get('content') or ''
-        parts.append(t)
-    # V1 embeds its HubSpot forms as a raw <script> block. body_text() strips
-    # scripts out of the rendered page, so leaving them in the source side made
-    # twelve lines of JavaScript read as copy the rebuild had lost -- which is
-    # what rolled back a page that was otherwise perfect.
-    joined = re.sub(r'(?is)<(script|style)\b.*?</\1>', ' ', ' '.join(parts))
-    joined = re.sub(r'(?s)<!--.*?-->', ' ', joined)
+        parts.append(b.get('html') or b.get('content') or '')
+    joined = re.sub(r'(?s)<!--.*?-->', ' ', ' '.join(parts))
     return re.sub(r'\s+', ' ', _html.unescape(re.sub(r'<[^>]+>', ' ', joined))).strip()
 
 

@@ -1,0 +1,182 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Shawn Peterson",
+ "categoryId": 1,
+ "contentTypeCategory": 4,
+ "createdAt": "2026-06-30T18:12:22.317Z",
+ "createdById": "26261533",
+ "currentState": "DRAFT",
+ "domain": "info.davincilabs.com",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "htmlTitle": "Privacy Policy | [BRAND_TBD] Private Label",
+ "id": "216194811650",
+ "language": "en",
+ "layoutSections": {},
+ "linkRelCanonicalUrl": "",
+ "metaDescription": "[BRAND_TBD] Private Label privacy policy. How we collect, use, store, and protect your business information.",
+ "name": "Private Label - Page - Privacy Policy",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "1970-01-01T00:00:00Z",
+ "published": false,
+ "slug": "en/pl-demo-privacy",
+ "state": "DRAFT",
+ "subcategory": "site_page",
+ "templatePath": "Private Label/Templates/Page.html",
+ "translations": {},
+ "updatedAt": "2026-08-10T23:28:21.773Z",
+ "updatedById": "26261533",
+ "url": "https://info.davincilabs.com/en/pl-demo-privacy",
+ "useFeaturedImage": false,
+ "widgetContainers": {
+  "main_content": {
+   "widgets": [
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">LEGAL</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Privacy Policy</h2>\n    <p style=\"color: #333; font-size: 17px; line-height: 1.65; max-width: 760px; margin: 22px auto 0;\">Last updated: June 30, 2026</p>\n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762358,
+     "order": 0,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">[BRAND_TBD], a division of FoodScience Corporation&trade; values our private label partners and their privacy. All personal and business information you provide is used to evaluate your inquiry, deliver private label services, and maintain the working relationship between your business and ours. We do not give, sell, rent, or loan any personally identifiable information to any third party, unless we are legally required to do so or you authorize us to do so.</p>\n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762359,
+     "order": 1,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">WHAT WE COLLECT</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Information Collection and Use.</h2>\n    \n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762360,
+     "order": 2,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">Our website includes forms and contact options that ask you to provide business contact information: your name, business name, email address, phone number, and details about the supplement products and volumes you are interested in. We use this information to follow up on your inquiry, schedule consultations, send pricing information, and provide the educational resources you have requested.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">We also collect standard web analytics information automatically when you visit the site: pages viewed, time on site, referring source, browser type, and approximate geographic location. We use this information to improve the site, understand what content is most useful to our audience, and identify technical issues.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">You can opt out of marketing communications at any time by clicking the unsubscribe link in any email we send, or by contacting us directly.</p>\n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762361,
+     "order": 3,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">SECURITY</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">How We Protect Your Information.</h2>\n    \n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762432,
+     "order": 4,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">This website takes every precaution to protect the information you submit. Sensitive information submitted through our forms is protected with encryption in transit and at rest. Access to your information is limited to [BRAND_TBD] team members who need it to provide private label services to you.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">When you submit business inquiries through our forms, that information is transmitted securely and stored in our customer relationship management system. We follow industry-standard practices for data security and review our practices regularly.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">If you have any questions about how your information is collected, used, stored, or protected, please email us at info@[BRAND_TBD].com or use the contact form on our Contact page.</p>\n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762433,
+     "order": 5,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">THIRD-PARTY SERVICES</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Service Providers We Use.</h2>\n    \n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762434,
+     "order": 6,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n<div style=\"max-width: 800px; margin: 0 auto;\">\n<p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">We use a small number of third-party service providers to operate this website and our private label program. These include website hosting, customer relationship management, email delivery, analytics, and advertising platforms. Each provider has access only to the information they need to perform their function and is bound by confidentiality obligations.</p>\n<p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">We do not sell information about you to advertising platforms or data brokers.</p>\n</div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762435,
+     "order": 7,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">YOUR RIGHTS</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Your Rights and Choices.</h2>\n    \n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762436,
+     "order": 8,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: white; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">You can request access to the personal information we hold about you, correction of inaccurate information, or deletion of your information from our systems at any time. Send requests to info@[BRAND_TBD].com and we will respond within 30 days.</p><p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">You can opt out of marketing emails by clicking unsubscribe in any email. Note that even if you opt out of marketing, we may still send you transactional emails related to an active private label engagement.</p>\n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762437,
+     "order": 9,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 70px 20px 30px; text-align: center;\">\n  <div style=\"max-width: 900px; margin: 0 auto;\">\n    <p style=\"color: #6BA644; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px;\">CONTACT</p>\n    <h2 style=\"color: #012638; font-size: 34px; font-weight: 700; line-height: 1.2; margin: 0;\">Privacy Questions.</h2>\n    \n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762438,
+     "order": 10,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {
+      "html": "<div style=\"background: #f7f7f6; padding: 10px 20px 70px;\">\n  <div style=\"max-width: 800px; margin: 0 auto;\">\n    <p style=\"color: #333; font-size: 17px; line-height: 1.7; margin: 0 0 18px;\">Questions about this privacy policy or about how we handle your information can be sent to info@[BRAND_TBD].com or mailed to [BRAND_TBD], a division of FoodScience Corporation&trade;, 929 Harvest Lane, Williston, VT 05495.</p>\n  </div>\n</div>"
+     },
+     "child_css": {},
+     "css": {},
+     "id": 216207762439,
+     "order": 11,
+     "styles": {},
+     "type": "rich_text"
+    },
+    {
+     "body": {},
+     "id": 218949181984,
+     "label": "PL - Global FDA Disclaimer",
+     "module_id": 218942529652,
+     "order": 12,
+     "type": "module"
+    }
+   ]
+  }
+ },
+ "widgets": {}
+}
