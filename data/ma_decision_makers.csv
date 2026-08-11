@@ -1,3 +1,201 @@
-first_name,last_name,email,linkedin_url,job_title,role,company_domain,partner_company,tier,country,phone,mobile_phone,source,accuracy,valid_date,zi_person_id
-Kapil,Arora,kapil@transfunnel.com,,Chief Executive Officer,,transfunnel.com,Transfunnel Consulting,Diamond,IN,,,ZoomInfo,98,2026-06-09,17686027471
-Katie,Hernandez,katie@bryantworks.com,https://www.linkedin.com/in/katiemhernandez,Chief Operating Officer,,bryantworks.com,Bryantworks,Diamond,US,,(859) 967-6272,ZoomInfo,75,2026-07-08,9721604626
+﻿first_name,last_name,email,linkedin_url,job_title,role,company_domain,partner_company,tier,country,phone,mobile_phone,source,accuracy,valid_date,zi_person_id
+George,Roadman,george@accelant.com,,Founder & CEO,Founder,accelant.com,Accelant,Elite,US,,,ZoomInfo,75,2026-07-01,14827729317
+Noah,Berk,noah@aptitude8.com,,Co-Founder,Founder,aptitude8.com,Aptitude 8,Elite,US,(443) 266-3250,,ZoomInfo,94,2026-07-01,1659584513
+Robert,Guinn,rguinn@aptitude8.com,,Co-Chief Executive Officer,CEO,aptitude8.com,Aptitude 8,Elite,US,(410) 656-2013,(843) 252-1654,ZoomInfo,93,2026-07-01,1315819503
+Melissa,Baum,melissa@bluleadz.com,,"Owner, Founder, President & Partner",Owner,bluleadz.com,Bluleadz,Elite,US,,,ZoomInfo,85,2024-10-11,13386903576
+Eric,Baum,ebaum@bluleadz.com,,Chief Executive Officer,CEO,bluleadz.com,Bluleadz,Elite,US,,,ZoomInfo,99,2026-07-01,1965208725
+Luis,Silva-Ball,luis@digifianz.com,,CEO & Co-Founder,Founder,digifianz.com,Digifianz,Elite,US,,(305) 916-3419,ZoomInfo,98,2026-06-09,3237523176
+John,Heritage,john@evenbound.com,,Founder & CEO,Founder,evenbound.com,Evenbound,Elite,US,,,ZoomInfo,98,2026-07-22,5229335215
+John,Burdett,john.burdett@fastslowmotion.com,,President & CEO,CEO,fastslowmotion.com,Fast Slow Motion,Elite,US,,+81 20-5937-0054,ZoomInfo,99,2026-05-09,644478005
+Jeffrey,White,jeff.white@fastslowmotion.com,,President,President,fastslowmotion.com,Fast Slow Motion,Elite,US,,(520) 910-1935,ZoomInfo,99,2026-04-16,1586501874
+Pratik,Thakker,pratik@insidea.com,,Founder & CEO,Founder,insidea.com,Insidea,Elite,US,,,ZoomInfo,94,2026-03-05,10277412323
+Eric,Pratt,eric@instrumental.net,,Founder & CEO,Founder,instrumental.net,Instrumental Group,Elite,US,,,ZoomInfo,98,2026-07-01,2070413580
+Trish,Lessard,trish.lessard@mediajunction.com,,Founder & CEO,Founder,mediajunction.com,Media Junction,Elite,US,,,ZoomInfo,86,2025-04-16,1144255258
+Brian,LaPann,brian@molestreet.com,,Co-Founder & CEO,Founder,molestreet.com,Mole Street,Elite,US,,(856) 217-2893,ZoomInfo,98,2026-03-24,1957704270
+Brendan,Walsh,brendan@molestreet.com,,Co-Founder & CRO,Founder,molestreet.com,Mole Street,Elite,US,,,ZoomInfo,98,2026-07-15,18111591753
+Darlingtina,Tucker,darlingtina.tucker@newbreedrevenue.com,,Founder,Founder,newbreedrevenue.com,New Breed,Elite,US,,(267) 972-5189,ZoomInfo,88,2026-02-19,8089686421
+Alex,Fleary,afleary@newbreedrevenue.com,,Chief Executive Officer,CEO,newbreedrevenue.com,New Breed,Elite,US,,,ZoomInfo,92,2026-07-01,10763632700
+Rose,DiFerdinando,rose.diferdinando@newbreedrevenue.com,,Chief Executive Officer,CEO,newbreedrevenue.com,New Breed,Elite,US,,,ZoomInfo,90,2026-03-26,9869598849
+Nathan,Paris,nathan@onthefuze.com,,CEO & Founder,Founder,onthefuze.com,On The Fuze,Elite,US,,,ZoomInfo,93,2026-07-01,1899058912
+Jatin,Chhabra,jatin@onemetric.io,,Co-Founder,Founder,onemetric.io,One Metric,Elite,US,,,ZoomInfo,98,2026-06-04,17632647540
+Nishant,Gupta,nishant.gupta@onemetric.io,,Co-Founder,Founder,onemetric.io,One Metric,Elite,US,+91 90087 82078,,ZoomInfo,98,2026-06-04,17632647391
+Andre,Bulls,andre@openflowdigital.com,,Partner,Equity partner,openflowdigital.com,Open Flow,Elite,US,,(309) 825-5406,ZoomInfo,98,2026-07-01,3241412591
+Perry,Nalevka,perry@penguinstrategies.com,,CEO & Founder,Founder,penguinstrategies.com,Penguin Strategies,Elite,US,(650) 437-0439,(404) 826-3266,ZoomInfo,99,2026-05-06,1307985440
+Brendan,Tolleson,btolleson@revpartners.io,,Co-Founder & CEO,Founder,revpartners.io,RevPartners,Elite,US,,(404) 354-4649,ZoomInfo,98,2026-07-01,11286512710
+Nick,Vena,nick@saltedstone.com,,Part Owner,Owner,saltedstone.com,Salted Stone,Elite,US,,(626) 386-3146,ZoomInfo,98,2026-07-01,2509704880
+Ryan,Malone,r.malone@smartbugmedia.com,,Founder & CEO,Founder,smartbugmedia.com,SmartBug,Elite,US,(949) 236-6448 ext. 700,(714) 674-1638,ZoomInfo,93,2026-07-01,624516893
+Vicky,Kumar,vkumar@smartbugmedia.com,,Co-Founder,Founder,smartbugmedia.com,SmartBug,Elite,US,,,ZoomInfo,75,2026-03-29,-1493787210
+Ivan,Karp,ivan@syncmatters.com,,Managing Director,Managing Director,syncmatters.com,SyncMatters,Elite,US,,,ZoomInfo,75,2026-04-29,9002001810
+Alexander,Arango,alexander.arango@triario.co,,Chief Executive Officer,CEO,triario.co,Triario,Elite,US,+57 4 4480195,,ZoomInfo,95,2026-06-09,3388681082
+Corne,van Driel,corne@unlimitedtechsolutions.com,,CTO & Co-Founder,Founder,unlimitedtechsolutions.com,Unlimited Tech Solutions,Elite,US,(419) 441-1005,,ZoomInfo,98,2026-07-01,9021314227
+Kevin,England,kbengland@vonazon.com,,CEO & President,CEO,vonazon.com,Vonazon,Elite,US,,(818) 919-2874,ZoomInfo,98,2026-05-06,1448220632
+Michael,Svanascini,mikes@americaneagle.com,,President,President,americaneagle.com,Americaneagle.com,Diamond,US,,,ZoomInfo,98,2026-07-01,-1367457772
+Anthony,Svanascini,tonys@americaneagle.com,,President,President,americaneagle.com,Americaneagle.com,Diamond,US,(847) 635-0155,(847) 452-0395,ZoomInfo,96,2026-06-22,8057259307
+Bart,Kowalczyk,bart@automatenow.uk,https://www.linkedin.com/in/bart-kowalczyk,Ceo,,automatenow.uk,Automatenow,Diamond,PL,,,Website + LinkedIn,,,
+Matt,Reilly,mreilly@salesempowermentgroup.com,,Chairman & CEO,Chairman,brick.work,Brickwork,Diamond,US,,,ZoomInfo,95,2026-07-01,16616282201
+Kevin,Potrzeba,kpotrzeba@brick.work,,President,President,brick.work,Brickwork,Diamond,US,,,ZoomInfo,93,2026-03-26,2097704220
+Spencer,Powell,spowell@builderfunnel.com,,Chief Executive Officer,CEO,builderfunnel.com,Builder Funnel,Diamond,US,(719) 626-8760,,ZoomInfo,99,2026-07-01,1681692401
+Danielle,Russell,drussell@builderfunnel.com,,President,President,builderfunnel.com,Builder Funnel,Diamond,US,,,ZoomInfo,98,2026-06-11,8856931193
+Nathan,Scott,nscott@cargas.com,,President & CEO,CEO,cargas.com,Cargas Systems,Diamond,US,,,ZoomInfo,98,2026-07-01,14448283814
+Pauline,Lewis,pauline@causemic.com,,Co-Founder,Founder,causemic.com,CauseMic,Diamond,US,,,ZoomInfo,94,2026-07-01,41943030
+Matthew,Scott,matt@causemic.com,,CEO & Co-Founder,Founder,causemic.com,CauseMic,Diamond,US,,,ZoomInfo,93,2026-07-01,10215346636
+John,Angove,johna@commercient.com,,Co-Founder & President,Founder,commercient.com,Commercient,Diamond,US,,,ZoomInfo,99,2026-07-01,11516352
+Corinne,Allgaier,corinne@commercient.com,,Co-Founder & CFO,Founder,commercient.com,Commercient,Diamond,US,,,ZoomInfo,98,2026-07-01,11082553203
+Richard,Jenkins,richardj@commercient.com,,Chief Executive Officer,CEO,commercient.com,Commercient,Diamond,US,,,ZoomInfo,98,2026-07-01,5901497302
+Kristin,Dennewill,kristin.dennewill@denamico.com,,Co-Founder & Co-CEO,Founder,denamico.com,Denamico,Diamond,US,,,ZoomInfo,99,2026-08-04,2095455617
+Brendon,Dennewill,brendon.dennewill@denamico.com,,Co-CEO & Co-Founder,Founder,denamico.com,Denamico,Diamond,US,,,ZoomInfo,98,2026-07-01,2095455618
+Christian,Retz,christian.retz@divia.de,https://www.linkedin.com/in/christianretz,Managing Director,,divia.de,Divia GMBH Germany,Diamond,DE,,,Website + LinkedIn,,,
+Alok,Anibha,alok@girikon.com,,Co-Founder,Founder,girikon.com,Girikon,Diamond,US,,+91 97119 89809,ZoomInfo,98,2026-07-01,3001009883
+Caleb,Edwards,caleb@ghagency.com,,Founder & CEO,Founder,ghagency.com,GreenHouse Agency,Diamond,US,,(954) 591-7459,ZoomInfo,93,2026-07-01,10658752549
+Dustin,Brackett,dustin@hivestrategy.com,,CEO & Founder,Founder,hivestrategy.com,HIVE Strategy,Diamond,US,,,ZoomInfo,93,2026-07-08,2556725782
+David,Scilabro,dave@harvestroi.com,,Founder & CEO,Founder,harvestroi.com,Harvest ROI,Diamond,US,,,ZoomInfo,99,2026-07-01,2611206979
+Ronald,McGrath,rmcgrath@highroadsolution.com,,Owner,Owner,highroadsolutions.com,HighRoad Solution,Diamond,US,(703) 297-8890,,ZoomInfo,99,,1588567049
+David,Caruso,dcaruso@highroadsolution.com,,President,President,highroadsolutions.com,HighRoad Solution,Diamond,US,(703) 297-8887,(703) 403-2041,ZoomInfo,87,2025-01-14,1370818704
+Jed,Morey,jmorey@hyphadev.io,,Chief Executive Officer,CEO,hyphadev.io,Hypha,Diamond,US,,(516) 284-3321,ZoomInfo,99,2026-07-01,3216318698
+Lois,Harmon,lharmon@impactplus.com,,Founder,Founder,impactplus.com,IMPACT,Diamond,US,,(352) 870-8366,ZoomInfo,93,2026-04-20,3087115251
+Katie,Coelho,kcoelho@impactplus.com,,President & Integrator,President,impactplus.com,IMPACT,Diamond,US,,,ZoomInfo,94,2026-07-01,6530283663
+Thomas,DiScipio,tdiscipio@impactplus.com,,Managing Partner,Equity partner,impactplus.com,IMPACT,Diamond,US,,,ZoomInfo,93,2026-07-01,988225930
+Marcus,Sheridan,msheridan@impactplus.com,,Partner,Equity partner,impactplus.com,IMPACT,Diamond,US,,(804) 761-7630,ZoomInfo,85,2025-05-09,65359292
+Rachel,Begg,rachel@chooseimpulse.com,,Co-Founder,Founder,impulsecreative.com,Impulse Creative,Diamond,US,(239) 206-4653,,ZoomInfo,98,2026-05-17,1670461403
+Tim,Ritchie,tim@integrateiq.com,,Chief Executive Officer,CEO,integrateiq.com,Integrate IQ,Diamond,US,,,ZoomInfo,95,2026-07-01,2566702182
+Antoine,Vial,antoine.vial@kalungi.com,,Chief Executive Officer,CEO,kalungi.com,Kalungi,Diamond,US,,(631) 746-7941,ZoomInfo,98,2026-07-08,10048777044
+Chris,Knipper,chris@kunocreative.com,,Chief Executive Officer,CEO,kunocreative.com,Kuno Creative,Diamond,US,(440) 934-3690,(440) 225-4144,ZoomInfo,98,2026-07-01,89706491
+Todd,Laire,todd@lairedigital.com,,CEO & Co-Founder,Founder,lairedigital.com,LAIRE,Diamond,US,,,ZoomInfo,93,2026-06-05,1328915064
+William,Haraway,will@leadcoverage.com,,Co-Founder,Founder,leadcoverage.com,Lead Coverage,Diamond,US,,,ZoomInfo,99,2026-07-01,2046490156
+Kevin,Dean,kevin@manobyte.com,,President & CEO,CEO,manobyte.com,ManoByte,Diamond,US,(616) 371-2686,,ZoomInfo,94,2026-07-01,1300899728
+Jennelle,McGrath,jennellemcgrath@marketveep.com,,CEO & Founder,Founder,marketveep.com,Market Veep,Diamond,US,,(978) 960-9904,ZoomInfo,95,2026-06-08,9237112816
+Tom,Nelson,tom@ndgcommunications.com,,President,President,ndgcommunications.com,NDG Communications,Diamond,US,(301) 934-5960,,ZoomInfo,94,2026-07-01,3705513969
+Annie,Smith,asmith@ocozzio.com,,Chief Executive Officer,CEO,ocozzio.com,Ocozzio,Diamond,US,,,ZoomInfo,98,2026-07-01,1834772978
+Douglas,Kirk,doug@optimize3point0.com,,Chief Executive Officer,CEO,optimize3point0.com,Optimize 3.0,Diamond,US,,,ZoomInfo,95,2026-07-01,10710569
+Rebecca,Gonzalez,rebecca.gonzalez@orangemarketing.com,,Chief Executive Officer,CEO,orangemarketing.com,Orange Marketing,Diamond,US,,,ZoomInfo,98,2026-07-01,815792000
+Dawn,Mathis,dawn@primocoding.com,,Chief Executive Officer,CEO,primocoding.com,Primo Coding,Diamond,US,,,ZoomInfo,98,2026-07-01,3387517638
+Adam,Sharrow,adamsharrow@processproconsulting.com,,Co-Founder & Principal,Founder,processproconsulting.com,Process Pro Consulting,Diamond,US,,(201) 428-4782,ZoomInfo,98,2026-06-09,10615336894
+Andrew,Millet,andrewmillet@processproconsulting.com,,Founder & Principal,Founder,processproconsulting.com,Process Pro Consulting,Diamond,US,,,ZoomInfo,93,2026-06-09,2604356470
+Donald,Kemick,donnyk@protocol80.com,,President & Owner,Owner,protocol80.com,Protocol 80,Diamond,US,,,ZoomInfo,99,2026-05-22,1260575927
+Joshua,Curcio,joshc@protocol80.com,,CRO & Partner,Equity partner,protocol80.com,Protocol 80,Diamond,US,(814) 313-4286,,ZoomInfo,98,2026-07-08,1544060076
+Darian,Rogers,drogers@provisionsgroup.com,,CFO & Partner,Equity partner,provisionsgroup.com,Provisions Group,Diamond,US,,(615) 424-9994,ZoomInfo,98,2026-05-09,69313837
+Parker,Short,parker@pyxisgrowth.com,,CEO & Owner,Owner,pyxisgrowth.com,Pyxis Growth Partners,Diamond,US,(512) 814-8442,,ZoomInfo,93,2026-07-01,1534286032
+Adrian,Robinson,adrian@roofingbusinesspartner.com,,Partner & Chief Strategy Officer,Equity partner,roofingbusinesspartner.com,RBP Consulting,Diamond,US,,,ZoomInfo,98,2026-07-07,17705347413
+Aaron,Platt,aaron@salesmomentum.io,,CEO & Founder,Founder,salesmomentum.io,Sales Momentum,Diamond,US,,,ZoomInfo,93,2026-07-01,2841826900
+Tyler,Samani-Sprunk,tyler@simplestrat.com,,Chief Executive Officer,CEO,simplestrat.com,Simple Strat,Diamond,US,,,ZoomInfo,94,2026-07-01,3051366057
+Maor,Ventorero,maor@solutech.ai,,Chief Executive Officer,CEO,solutech.ai,Solutech.ai,Diamond,US,,+972 54-560-4824,ZoomInfo,92,2026-04-24,5187560699
+Nikhil,Jani,nikhil.jani@trooinbound.com,https://www.linkedin.com/in/nikhil-jani,Ceo / Chief Executive Officer,,trooinbound.com,Trooinbound Com,Diamond,IN,,,Website + LinkedIn,,,
+Parag,Jagdale,parag@unific.com,,Co-Founder & CEO,Founder,unific.com,Unific,Diamond,US,,,ZoomInfo,93,2026-07-01,849568950
+Leah,Cunnington,leah@unific.com,,President & Founder,Founder,unific.com,Unific,Diamond,US,,,ZoomInfo,85,2026-07-01,9033606027
+Blaine,LaFleur,blafleur@vested.marketing,,Owner,Owner,vested.marketing,Vested Marketing,Diamond,US,,,ZoomInfo,93,2026-07-01,1791171486
+Colten,Roderigue,colten@elefanterevops.com,,Co-Founder & CEO,Founder,elefanterevops.com,elefante RevOps,Diamond,US,,,ZoomInfo,98,2026-06-09,5314685728
+Garo,Aroian,garo@elefanterevops.com,,Co-Founder & CRO,Founder,elefanterevops.com,elefante RevOps,Diamond,US,,+374 98 002737,ZoomInfo,98,2026-06-09,2694313569
+Nick,Montagu,,https://www.linkedin.com/in/nick-montagu,Ceo / Founder,,alphawhale.com.au,Alphawhale,Diamond,AU,,,Website + LinkedIn,,,
+Ben,Henzell,,https://www.linkedin.com/in/ben-henzell,Managing Director,,bfj.digital,Bfj Digital,Diamond,AU,,,Website + LinkedIn,,,
+Roger,Meili,,https://www.linkedin.com/in/rogermeili,Ceo,,chili.ch,Chilidigital,Diamond,CH,,,Website + LinkedIn,,,
+Emma,Ruefli,,https://www.linkedin.com/in/emma-ruefli-1372b315,Founder,,fileroom.com,Fileroom Com Au,Diamond,AU,,,Website + LinkedIn,,,
+Aimee,Engelmann,,https://www.linkedin.com/in/aimeeengelmann,Founder,,flipsidegroup.com.au,Flipsidegroup,Diamond,AU,,,Website + LinkedIn,,,
+Yan,Yip,,https://www.linkedin.com/in/wai-yan-yip,Co-Founder,,growthfuelconsulting.com,Growth Fuel Consulting,Diamond,SG,,,Website + LinkedIn,,,
+Marie,Hanes,,https://www.linkedin.com/in/mariehanes,Ceo,,evara.co,Inboundfintech,Diamond,GB,,,Website + LinkedIn,,,
+Norman,Timmler,,https://www.linkedin.com/in/normantimmler,Founder,,njiuko.com,Njiuko,Diamond,DE,,,Website + LinkedIn,,,
+Dharmesh,Porwal,,https://www.linkedin.com/in/dharmeshporwal,Founder,,scalestation.io,Scalestation,Diamond,AU,,,Website + LinkedIn,,,
+Michael,Marcks,michael.marcks@alfamedia.com,,Chief Executive Officer,,alfamedia.com,Alfamedia,Platinum,DE,,,Website,,,
+Karin,Tamir,karin@glaremarketing.co,https://www.linkedin.com/in/karin-tamir-13a05b6,Ceo,,glaremarketing.co,Glaremarketing,Platinum,IL,,,Website + LinkedIn,,,
+Daniel,Peterson,dpeterson@graniteslopes.com,,Ceo,,graniteslopes.com,Graniteslopes,Platinum,US,,,Website,,,
+Jeff,Kushmerek,jeff@infiniterenewals.com,https://www.linkedin.com/in/jeffkushmerek,Founder,,infiniterenewals.com,Infiniterenewals,Platinum,US,,,Website + LinkedIn,,,
+Marco,Stocker,marco.stocker@neustadt.swiss,,Ceo,,neustadt.swiss,Neustadt,Platinum,CH,,,Website,,,
+David,Lisitsa,david@newlaw.com,,Ceo,,newlaw.com,Newlaw,Platinum,AU,,,Website,,,
+Milica,Zec,milica.zec@obsidianagency.com,,Managing Director,,obsidianagency.com,Obsidian,Platinum,DK,,,Website,,,
+Orit,Oz,orit@ozglobalb2b.com,https://www.linkedin.com/in/oritoz,Ceo,,ozglobalb2b.com,Oz Global B2B,Platinum,IL,,,Website + LinkedIn,,,
+Milica,Zec,milica.zec@obsidianagency.com,,Managing Director,,obsidianagency.com,Paper Planes,Platinum,FI,,,Website,,,
+James,Desmond,james@perryavenue.com,,Founder / Principal,,perryavenue.com,Perryavenue,Platinum,US,,,Website,,,
+Diederik,Gerbranda,diederik@sumdigital.co,https://www.linkedin.com/in/diederikgerbranda,Ceo,,sumdigital.co,Sum Digital,Platinum,NL,,,Website + LinkedIn,,,
+Jennifer,Jurgens,,https://www.linkedin.com/in/jenniferjurgens,Ceo,,1boldstep.com,1boldstepllc Com,Platinum,US,,,Website + LinkedIn,,,
+Daniel,Casarin,,https://www.linkedin.com/in/danielcasarin,Ceo,,advmedialab.com,Adv Media Lab,Platinum,IT,,,Website + LinkedIn,,,
+Taylor,White,,https://www.linkedin.com/in/taylor-white-7954b1,Founder,,adwhite.com,Adwhite,Platinum,US,,,Website + LinkedIn,,,
+Florian,Anderhub,,https://www.linkedin.com/in/anderhub,Ceo,,ander.group,Ander Group SA,Platinum,CH,,,Website + LinkedIn,,,
+Sonny,Sultani,,https://www.linkedin.com/in/sonnysultani,Founder,,behindthework.com,Behindthework,Platinum,US,,,Website + LinkedIn,,,
+Rob,Harris,,https://www.linkedin.com/in/robharris17,Managing Director,,bettawebs.com,Bettawebs,Platinum,GB,,,Website + LinkedIn,,,
+Mariano,Duca,,https://www.linkedin.com/in/marianoduca,Founder,,bizen.it,Bizen SRL,Platinum,IT,,,Website + LinkedIn,,,
+Ben,Sealey,,https://www.linkedin.com/in/ben-sealey-00424b193,Chief Executive Officer,,brightagroup.com,Brighta Group,Platinum,AU,,,Website + LinkedIn,,,
+Jim,Gobes,,https://www.linkedin.com/in/jim-gobes-0221221,Ceo,,bristolstrategy.com,Bristol Strategy INC,Platinum,US,,,Website + LinkedIn,,,
+Rom,Agustin,,https://www.linkedin.com/in/rom-agustin-81aa0424a,Ceo,,callboxinc.com,Callboxinc Com,Platinum,US,,,Website + LinkedIn,,,
+Noah,Charak,,https://www.linkedin.com/in/noahcharak,Managing Director,,checkpointgtm.com,Checkpoint,Platinum,DE,,,Website + LinkedIn,,,
+Matthew,Kay,,https://www.linkedin.com/in/matthewkay87,Founder,,colmanrose.com,Colman Rose,Platinum,GB,,,Website + LinkedIn,,,
+Ben,Childs,,https://www.linkedin.com/in/benchilds1,President,,digitalreachagency.com,Digital Reach Agency,Platinum,US,,,Website + LinkedIn,,,
+Michael,Turcsanyi,,https://www.linkedin.com/in/michaelturcsanyi,Founder,,goosedigital.com,Goose Digital,Platinum,CA,,,Website + LinkedIn,,,
+Alok,Ramsisaria,,https://www.linkedin.com/in/alokr,Ceo,,grazitti.com,Grazitti Interactive,Platinum,IN,,,Website + LinkedIn,,,
+Mark,Flint,,https://www.linkedin.com/in/markflint89,Founder,,weareincremental.com,Incremental,Platinum,GB,,,Website + LinkedIn,,,
+Yannick,Devits Brings,,https://www.linkedin.com/in/yannickdevits,Founder,,lead-2-customer.be,Lead 2 Customer,Platinum,BE,,,Website + LinkedIn,,,
+David,Beentjes,,https://www.linkedin.com/in/davidbeentjes,Chief Executive Officer,,leadscope.nl,Leadscope,Platinum,NL,,,Website + LinkedIn,,,
+Mark,Mutch,,https://www.linkedin.com/in/markmutch,Founder,,modgility.com,Modgility,Platinum,US,,,Website + LinkedIn,,,
+Paula,Simpson,,https://www.linkedin.com/in/paula-simpson-9715b73a,Co-Founder,,neontrumpet.com,Neontrumpet,Platinum,IN,,,Website + LinkedIn,,,
+Justin,Shardlow,,https://www.linkedin.com/in/justinshardlow,Founder,,pacificmarketing.co.uk,Pacific Marketing,Platinum,GB,,,Website + LinkedIn,,,
+Kevin,Hjorslev,,https://www.linkedin.com/in/kevinhjorslev,Ceo,,profoundnorth.com,Profoundnorth,Platinum,DK,,,Website + LinkedIn,,,
+Joakim,Steenfos,,https://www.linkedin.com/in/joakimsteenfos,Ceo,,radiant.dk,Radiant,Platinum,DK,,,Website + LinkedIn,,,
+Adryanna,Sutherland,,https://www.linkedin.com/in/adryanna,Managing Director,,gogreymatter.com,Ready Set Grow,Platinum,US,,,Website + LinkedIn,,,
+Courtney,Vermette,,https://www.linkedin.com/in/courtney-vermette-9649308b,Principal,,refinelabs.com,Refinelabs Com,Platinum,US,,,Website + LinkedIn,,,
+Roberto,Guerra,,https://www.linkedin.com/in/robertoguerrav,Founder,,revenuehublatam.com,Revenuehublatam,Platinum,CL,,,Website + LinkedIn,,,
+Jeremy,Steinbring,,https://www.linkedin.com/in/jeremysteinbring,Founder,,revonyx.io,Revonyx,Platinum,US,,,Website + LinkedIn,,,
+Jason,Amsbaugh,,https://www.linkedin.com/in/jason-amsbaugh,Ceo,,sambasci.com,Samba Scientific,Platinum,US,,,Website + LinkedIn,,,
+Jess,Vossler,,https://www.linkedin.com/in/jessvossler,Co-Founder,,thesecondmile.com,Secondmile,Platinum,US,,,Website + LinkedIn,,,
+Corey,Berse,,https://www.linkedin.com/in/coreyberse,Founder,,soundfront.io,Soundfront,Platinum,US,,,Website + LinkedIn,,,
+Travis,Haninger,,https://www.linkedin.com/in/travishaninger,Managing Partner,,squad4.io,Squad4,Platinum,US,,,Website + LinkedIn,,,
+Alysha,Dominico,,https://www.linkedin.com/in/alyshadominico,Ceo / Co-Founder,,tangiblewords.com,Tangible Words,Platinum,CA,,,Website + LinkedIn,,,
+Erwin,Arnold,,https://www.linkedin.com/in/erwinarnold,Ceo,,thalox.com,Thalox,Platinum,DE,,,Website + LinkedIn,,,
+Shiyam,Sunder,,https://www.linkedin.com/in/shiyamsunder,Co-Founder,,tripledart.com,Tripledart,Platinum,IN,,,Website + LinkedIn,,,
+Alex,Robinson,,https://www.linkedin.com/in/alex-robinson-303653118,Chief Executive Officer,,upstreamtech.io,Upstream,Platinum,AU,,,Website + LinkedIn,,,
+Matt,Guevara,,https://www.linkedin.com/in/mattguevara,Founder,,venndigital.co,Venn Digital,Platinum,US,,,Website + LinkedIn,,,
+Singh,Lamba,,https://www.linkedin.com/in/gurlin-singh-lamba,Co-Founder,,vertis.digital,Vertis Digital,Platinum,SG,,,Website + LinkedIn,,,
+Linkedin,Julián Carceller,,https://www.linkedin.com/in/carceller,Founder,,vexcosolutions.com,Vexco Solutions,Platinum,ES,,,Website + LinkedIn,,,
+Mike,Stokes,,https://www.linkedin.com/in/mike-stokes-2a3350a,Ceo / Founder,,indicator.co.nz,Www Indicator Co Nz,Platinum,NZ,,,Website + LinkedIn,,,
+Camille,Winer,,https://www.linkedin.com/in/camillewiner,Founder,,yodelpop.com,Yodelpop,Platinum,US,,,Website + LinkedIn,,,
+Josh,Dougherty,josh@abravenew.com,,Founder,,abravenew.com,A Brave New,Gold,US,,,Website,,,
+Jared,Broussard,jared@blinkjarmedia.com,,Founder,,blinkjarmedia.com,Blinkjar Media,Gold,US,,,Website,,,
+Davide,Fornasiero,d.fornasiero@escagency.it,https://www.linkedin.com/in/davide-fornasiero,Managing Director,,escagency.it,Esc SRL,Gold,IT,,,Website + LinkedIn,,,
+Nathan,Gifford,nathan@hubshelp.com,,Founder,,hubshelp.com,Hubs Help,Gold,US,,,Website,,,
+Marie,Wiese,marie@marketingcopilot.com,https://www.linkedin.com/in/mariewiese,Ceo / Founder / President,,marketingcopilot.com,Marketing Copilot,Gold,CA,,,Website + LinkedIn,,,
+Steph,Eady,steph@mission10.co.uk,,Co-Founder,,mission10.co.uk,Mission10,Gold,GB,,,Website,,,
+Patrick,Sullivan,patrick@pageonewebsolutions.com,,Founder,,pageonewebsolutions.com,Page One Web Solutions,Gold,US,,,Website,,,
+Lisa,Proeber,lisa@themiddlesix.com,https://www.linkedin.com/in/lisa-proeber,Owner,,themiddlesix.com,Themiddlesix,Gold,US,,,Website + LinkedIn,,,
+David,Cockrum,david@vantagepoint.io,,Ceo / Founder,,vantagepoint.io,Vantagepoint,Gold,US,,,Website,,,
+Bianca,Dillon,,https://www.linkedin.com/in/biancadillon,Founder,,bcontent.com.au,B Content Marketing,Gold,AU,,,Website + LinkedIn,,,
+Anton,Loos,,https://www.linkedin.com/in/antonloos,Managing Director,,bbc.be,Bbc,Gold,BE,,,Website + LinkedIn,,,
+Valero,Vernet,,https://www.linkedin.com/in/cristobalvalerovernet,Chief Executive Officer,,bluepaperclip.com,Bluepaperclip,Gold,US,,,Website + LinkedIn,,,
+Christina,Savage,,https://www.linkedin.com/in/christinasavage,President,,christinasavage.com,Christinasavage,Gold,US,,,Website + LinkedIn,,,
+Beth,Carter,,https://www.linkedin.com/in/bethcarter,Founder,,clariantcreative.com,Clariant Creative Agency,Gold,US,,,Website + LinkedIn,,,
+Szymon,Binek,,https://www.linkedin.com/in/szymonbinek,Co-Founder,,clickray.eu,Clickray Eu,Gold,PL,,,Website + LinkedIn,,,
+Jackie,Lee,,https://www.linkedin.com/in/jackieleechoonyau,Chief Executive Officer,,clicktrue.biz,Clicktrue Pte LTD,Gold,SG,,,Website + LinkedIn,,,
+Bill,Heinzelman Bill,,https://www.linkedin.com/in/bill-heinzelman,Founder,,commonmind.com,Commonmind,Gold,US,,,Website + LinkedIn,,,
+Adam,Bennett,,https://www.linkedin.com/in/jadambennett,Founder,,cubecreative.design,Cube Creative Design,Gold,US,,,Website + LinkedIn,,,
+Elizabeth,Lafontaine Vice,,https://www.linkedin.com/in/elizabeth-lafontaine,President,,dreww.ca,Dreww,Gold,CA,,,Website + LinkedIn,,,
+Olivier,Kennedy,,https://www.linkedin.com/in/olivierkennedy15,Ceo,,enigma.swiss,Enigma Swiss,Gold,CH,,,Website + LinkedIn,,,
+Ritesh,Tiwarri,,https://www.linkedin.com/in/riteshtiwarri,Ceo / Founder,,epirco.com,Epirco,Gold,AE,,,Website + LinkedIn,,,
+Calle,Lindahl,,https://www.linkedin.com/in/calle-lindahl,Co-Founder,,exelement.co,Exelement,Gold,SE,,,Website + LinkedIn,,,
+Lance,Hemenway,,https://www.linkedin.com/in/lancehemenway,Founder,,fireball.agency,Fireball Agency,Gold,US,,,Website + LinkedIn,,,
+Chelsea,Jones,,https://www.linkedin.com/in/chelsea-jones101,Co-Founder,,firesidedigital.co,Fireside,Gold,US,,,Website + LinkedIn,,,
+Nathan,Weill,,https://www.linkedin.com/in/nweill,Ceo / Founder,,flow.digital,Flowdigital,Gold,US,,,Website + LinkedIn,,,
+Lonnie,Hansen,,https://www.linkedin.com/in/lonniehan,Founder,,fuel-k12.com,Fuel Sales,Gold,US,,,Website + LinkedIn,,,
+Keith,Edwards,,https://www.linkedin.com/in/keithedwards,President,,good2bsocial.com,Good2bsocial LLC,Gold,US,,,Website + LinkedIn,,,
+Karla,Finnegan,,https://www.linkedin.com/in/karla-finnegan-7b9a859,Co-Founder,,growth-pad.com,Growth Pad,Gold,US,,,Website + LinkedIn,,,
+Divyanshu,Tuli,,https://www.linkedin.com/in/divyanshu-tuli,Founder,,huboexperts.com,Huboexperts,Gold,IN,,,Website + LinkedIn,,,
+Michael,Ryan Mike,,https://www.linkedin.com/in/michaelryan94,Ceo,,ink-digital.co.uk,Ink Digital,Gold,GB,,,Website + LinkedIn,,,
+Christopher,Potts,,https://www.linkedin.com/in/christopher-potts-059279132,Founder,,itcservice.co.uk,Itcservice,Gold,GB,,,Website + LinkedIn,,,
+Chen,Yehoshua Chen,,https://www.linkedin.com/in/chen-yehoshua,Ceo,,iv-lead.com,Iv Lead,Gold,IL,,,Website + LinkedIn,,,
+Randy,Milanovic,,https://www.linkedin.com/in/randymilanovic,Ceo / Owner,,kayakwebsites.com,Kayak Websites,Gold,CA,,,Website + LinkedIn,,,
+Stephan,Sigloch,,https://www.linkedin.com/in/sigloch,Ceo,,klickpiloten.de,Klickpiloten,Gold,DE,,,Website + LinkedIn,,,
+Robert,Cwicinski,,https://www.linkedin.com/in/robert-cwicinski-15929740,Ceo,,leafworks.de,Leafworks,Gold,DE,,,Website + LinkedIn,,,
+Natalie,Nathanson,,https://www.linkedin.com/in/natalienathanson,Ceo,,magnetudeconsulting.com,Magnetude Consulting,Gold,US,,,Website + LinkedIn,,,
+Virginia,Bray,,https://www.linkedin.com/in/virginiabray,Ceo,,marketing-fusion.co.uk,Marketing Fusion,Gold,GB,,,Website + LinkedIn,,,
+Stan,Puchyn,,https://www.linkedin.com/in/stanpuchyn,Co-Founder / Founder,,martechdo.com,Martech Do,Gold,CA,,,Website + LinkedIn,,,
+Rhys,Downard,,https://www.linkedin.com/in/rhysdownard,Co-Founder,,mediarocket.space,Media Rocket Studio,Gold,ZA,,,Website + LinkedIn,,,
+Peter,Palarchio,,https://www.linkedin.com/in/peter-palarchio-61787351,Ceo,,nav43.com,Nav43,Gold,CA,,,Website + LinkedIn,,,
+Jesper,Hartvigsen,,https://www.linkedin.com/in/jesper-hartvigsen,Ceo,,nordicworkflow.com,Nordicworkflow,Gold,DK,,,Website + LinkedIn,,,
+Eric,Smith,,https://www.linkedin.com/in/eric-smith-digital,Ceo,,smithdigital.io,Oak City Inbound,Gold,US,,,Website + LinkedIn,,,
+Mark,Littlewood,,https://www.linkedin.com/in/mark-littlewood-739387b,Managing Director,,oneagency.co,Oneagency,Gold,GB,,,Website + LinkedIn,,,
+Rob,Palowitz,,https://www.linkedin.com/in/robpalowitz,Ceo / President,,palocreative.com,Palo Creative,Gold,US,,,Website + LinkedIn,,,
+Sean,Henri,,https://www.linkedin.com/in/seanhenri,Founder,,pepperlandmarketing.com,Pepperland Marketing,Gold,US,,,Website + LinkedIn,,,
+Troy,Cartmill,,https://www.linkedin.com/in/troycartmill,President,,reapandsowmarketing.com,Reap And Sow Marketing,Gold,US,,,Website + LinkedIn,,,
+Christian,Freese,,https://www.linkedin.com/in/christian-freese-🏒-a95198183,Founder,,gorevpal.com,Revpal,Gold,US,,,Website + LinkedIn,,,
+Louise,Kerr,,https://www.linkedin.com/in/dawnlouisekerr,Founder,,sm2communicate.co.uk,Sm2communicate Co UK,Gold,GB,,,Website + LinkedIn,,,
+Andrey,Gavrylenko,,https://www.linkedin.com/in/gavrylenko,Founder,,techunit.io,Techunit,Gold,AE,,,Website + LinkedIn,,,
+Nishant,Mishra,,https://www.linkedin.com/in/nishantmishra1,Co-Founder,,thehigherpitch.com,Thehigherpitch,Gold,IN,,,Website + LinkedIn,,,
+Melanie,Budden,,https://www.linkedin.com/in/melanie-budden-7a8290,Co-Founder,,therealizationgroup.com,Trg,Gold,GB,,,Website + LinkedIn,,,
+Nathan,George,,https://www.linkedin.com/in/nathan-george-0947a420,Managing Director,,pixeld.com.au,Www Pixeld Com Au,Gold,AU,,,Website + LinkedIn,,,
+Darrell,Evans,,https://www.linkedin.com/in/mrdarrellevans,Ceo,,mindshiftdigital.co,Yokel Local Internet Marketing,Gold,US,,,Website + LinkedIn,,,
+Sean,Towson,,https://www.linkedin.com/in/seantowson93,Founder,,zippily.co.nz,Zippily,Gold,NZ,,,Website + LinkedIn,,,

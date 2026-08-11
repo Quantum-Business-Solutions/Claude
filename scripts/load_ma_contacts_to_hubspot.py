@@ -341,17 +341,18 @@ def main() -> int:
         print(f"  updated {done_u}/{len(updates)}", end="\r", flush=True)
         time.sleep(0.15)
     new_ids: dict[str, str] = {}
+    done_r = 0
     for chunk in batched(creates, 100):
-        res = call("/crm/v3/objects/contacts/batch/create", {"inputs": chunk})
-        for r in res.get("results", []):
-            p = r.get("properties", {})
-            key = (p.get("email") or "").lower() or p.get(LINKEDIN_PROP) or ""
-            if key:
-                new_ids[key] = r["id"]
-        done_c += len(chunk)
-        print(f"  created {done_c}/{len(creates)}", end="\r", flush=True)
+        made, recovered = create_chunk(chunk)
+        new_ids.update(made)
+        new_ids.update(recovered)
+        done_c += len(made)
+        done_r += len(recovered)
+        print(f"  created {done_c}, recovered {done_r} "
+              f"of {len(creates)}", end="\r", flush=True)
         time.sleep(0.15)
-    print(f"\nupdated {done_u}, created {done_c}")
+    print(f"\nupdated {done_u}, created {done_c}, "
+          f"converted to update on conflict {done_r}")
 
     assoc = 0
     for r in clean:
@@ -371,6 +372,61 @@ def main() -> int:
         time.sleep(0.08)
     print(f"associated {assoc} contact-company links")
     return 0
+
+
+EXISTING_ID = re.compile(r"Existing ID:\s*(\d+)")
+
+
+def key_of(props: dict) -> str:
+    return (props.get("email") or "").lower() or props.get(LINKEDIN_PROP) or ""
+
+
+def create_chunk(chunk: list[dict]) -> tuple[dict, dict]:
+    """Create a batch of contacts, recovering from already-exists conflicts.
+
+    batch/create is atomic: one conflicting row 409s the whole batch of 100 and
+    nothing is written. Conflicts are unavoidable here because a lookup on the
+    primary email cannot see a contact that holds the same address as a
+    *secondary* email - HubSpot still refuses the create.
+
+    So on a 409, fall back to creating one at a time, and turn each individual
+    conflict into an update against the ID HubSpot names in the error. Identity
+    fields are stripped from those updates for the same reason they are stripped
+    from all updates: the existing record may have been corrected by a human.
+    """
+    try:
+        res = call("/crm/v3/objects/contacts/batch/create", {"inputs": chunk})
+        return ({key_of(r.get("properties", {})): r["id"]
+                 for r in res.get("results", [])
+                 if key_of(r.get("properties", {}))}, {})
+    except HubSpotError as exc:
+        if exc.code != 409:
+            raise
+
+    made, recovered = {}, {}
+    for item in chunk:
+        props = item["properties"]
+        try:
+            r = call("/crm/v3/objects/contacts", {"properties": props})
+            if key_of(props):
+                made[key_of(props)] = r["id"]
+        except HubSpotError as inner:
+            m = EXISTING_ID.search(inner.body or "")
+            if inner.code != 409 or not m:
+                print(f"  ! create {key_of(props)}: {inner}", file=sys.stderr)
+                continue
+            hs_id = m.group(1)
+            patch = {k: v for k, v in props.items()
+                     if k not in ("firstname", "lastname", "email")}
+            try:
+                call(f"/crm/v3/objects/contacts/{hs_id}", {"properties": patch},
+                     "PATCH")
+                if key_of(props):
+                    recovered[key_of(props)] = hs_id
+            except HubSpotError as patch_err:
+                print(f"  ! patch {hs_id}: {patch_err}", file=sys.stderr)
+        time.sleep(0.08)
+    return made, recovered
 
 
 def ensure_props(commit: bool) -> None:
