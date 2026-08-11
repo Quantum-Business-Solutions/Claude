@@ -112,6 +112,28 @@ def fetch(url: str, timeout: int = 15) -> tuple[str, str]:
     return raw.decode("utf-8", errors="replace"), final
 
 
+def page_kind(url: str) -> str:
+    """Classify a page by how much its owner-titled names can be trusted.
+
+    This distinction is the difference between a usable file and a useless one.
+    Homepages carry client testimonials and logo walls - "Jérémy Gallemard, CEO"
+    on a French agency's homepage is that agency's *customer*, not its founder.
+    Inbound Value yielded four different "CEOs" from its homepage alone. A /team
+    page, by contrast, is the agency describing itself.
+    """
+    path = urllib.parse.urlparse(url).path.lower().rstrip("/")
+    if not path:
+        return "homepage"
+    last = path.split("/")[-1]
+    if any(h in last for h in ("team", "leadership", "management", "founders",
+                               "people", "directors")):
+        return "team"
+    if any(h in last for h in ("about", "who-we-are", "our-story", "company",
+                               "meet", "agency")):
+        return "about"
+    return "other"
+
+
 def visible_text(page: str) -> str:
     page = TAG_RE.sub(" ", page)
     page = re.sub(r"<[^>]+>", " ", page)
@@ -199,7 +221,8 @@ def harvest(domain: str, url: str, page: str, company: str) -> list[dict]:
             continue
         rec = found.setdefault(name.lower(), {
             "domain": domain, "name": name, "titles": set(),
-            "linkedin_url": "", "name_matches_slug": "", "source_url": url})
+            "linkedin_url": "", "name_matches_slug": "", "source_url": url,
+            "page_kind": "", "confidence": ""})
         rec["titles"].add(title.title())
         # If the page does link profiles, attach the one whose slug matches.
         if not rec["linkedin_url"]:
@@ -227,7 +250,8 @@ def one_domain(p: dict) -> dict:
     domain = p["domain"]
     result = {"domain": domain, "company": p.get("company_name", ""),
               "tier": p.get("tier", ""), "country": p.get("country", ""),
-              "status": "", "people": [], "emails": [], "pages": 0}
+              "status": "", "people": [], "emails": [], "pages": 0,
+              "suspect_count": 0}
     home = base = ""
     for candidate in (f"https://{domain}", f"https://www.{domain}"):
         try:
@@ -247,11 +271,17 @@ def one_domain(p: dict) -> dict:
             continue
     result["pages"] = len(pages)
     people: dict[str, dict] = {}
+    RANK = {"team": 0, "about": 1, "other": 2, "homepage": 3}
     for url, page in pages:
+        kind = page_kind(url)
         for rec in harvest(domain, url, page, result["company"] or domain):
+            rec["page_kind"] = kind
             prior = people.get(rec["name"].lower())
             if prior:
                 prior["titles"] |= rec["titles"]
+                # Keep the most trustworthy page that named this person.
+                if RANK[kind] < RANK[prior["page_kind"]]:
+                    prior["page_kind"], prior["source_url"] = kind, url
                 if rec["linkedin_url"] and not prior["linkedin_url"]:
                     prior["linkedin_url"] = rec["linkedin_url"]
                     prior["name_matches_slug"] = rec["name_matches_slug"]
@@ -260,11 +290,25 @@ def one_domain(p: dict) -> dict:
         for e in emails(domain, page):
             if e not in result["emails"]:
                 result["emails"].append(e)
-    # Owner-titled profiles first, then those whose name matches their slug.
-    ranked = sorted(people.values(),
-                    key=lambda r: (not r["titles"], not r["linkedin_url"]))
+
+    named_on_team = [p for p in people.values()
+                     if p["page_kind"] in ("team", "about")]
+    # A small agency has one or two owners. A long list means the extractor ate a
+    # testimonial wall, so the whole company's names are untrustworthy - better
+    # to report nothing than to hand over plausible-looking strangers.
+    if len(named_on_team) > 4:
+        result["status"] = "too_many_suspect"
+        result["people"] = []
+        result["suspect_count"] = len(named_on_team)
+        return result
+    for p in named_on_team:
+        p["confidence"] = ("high" if p["page_kind"] == "team" and
+                           (p["linkedin_url"] or len(named_on_team) <= 2)
+                           else "medium")
+    ranked = sorted(named_on_team,
+                    key=lambda r: (RANK[r["page_kind"]], not r["linkedin_url"]))
     result["people"] = ranked
-    result["status"] = "ok" if ranked else "no_profiles_found"
+    result["status"] = "ok" if ranked else "no_owner_on_team_page"
     return result
 
 
@@ -286,9 +330,9 @@ def main() -> int:
     print(f"scraping {len(todo)} partner sites with {args.workers} workers\n")
 
     COLS = ["domain", "company", "tier", "country", "name", "titles",
-            "is_owner", "name_matches_slug", "linkedin_url", "source_url",
-            "site_emails"]
-    rows, stats = [], {"ok": 0, "unreachable": 0, "no_profiles_found": 0}
+            "confidence", "page_kind", "name_matches_slug", "linkedin_url",
+            "source_url", "site_emails"]
+    rows, stats = [], {}
     with_owner = 0
     # Written as results arrive: a full pass over 1,424 sites takes ~20 minutes
     # and a failure near the end must not discard everything before it.
@@ -298,7 +342,7 @@ def main() -> int:
     with concurrent.futures.ThreadPoolExecutor(args.workers) as ex:
         for i, res in enumerate(ex.map(one_domain, todo), 1):
             stats[res["status"]] = stats.get(res["status"], 0) + 1
-            owners = [p for p in res["people"] if p["titles"]]
+            owners = res["people"]
             if owners:
                 with_owner += 1
             print(f"[{i}/{len(todo)}] {res['domain'][:26]:26s} "
@@ -312,7 +356,7 @@ def main() -> int:
                     "domain": res["domain"], "company": res["company"],
                     "tier": res["tier"], "country": res["country"],
                     "name": p["name"], "titles": "/".join(sorted(p["titles"])),
-                    "is_owner": "YES" if p["titles"] else "",
+                    "confidence": p["confidence"], "page_kind": p["page_kind"],
                     "name_matches_slug": p["name_matches_slug"],
                     "linkedin_url": p["linkedin_url"],
                     "source_url": p["source_url"],
