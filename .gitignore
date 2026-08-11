@@ -16,6 +16,11 @@ data/zi_enrich.cache.jsonl
 data/ma_load_preview.csv
 data/ma_load_rejects.csv
 
+# Raw scraper output, rewritten in place on every run and streamed to during a
+# ~20 minute pass, so a commit mid-run captures a truncated file. Names in here
+# still need a verification pass; commit a reviewed extract, not this.
+data/partner_leadership_scraped.csv
+
 # Local venv, only needed because the system cryptography install is broken.
 .venv-zi/
 
