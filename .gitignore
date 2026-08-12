@@ -21,6 +21,11 @@ data/ma_load_rejects.csv
 # still need a verification pass; commit a reviewed extract, not this.
 data/partner_leadership_scraped.csv
 
+# Audit output: every CRM contact whose email domain belongs to a partner, with
+# their address. Third-party personal data, regenerable in one command, and it
+# has no business in version control.
+data/partner_contact_audit.csv
+
 # Local venv, only needed because the system cryptography install is broken.
 .venv-zi/
 
