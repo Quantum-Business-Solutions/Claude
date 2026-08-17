@@ -1,0 +1,413 @@
+<title>Section 179 Depreciation Cliff Finder</title>
+<style>
+  :root{
+    color-scheme:light;
+    --ground:#eef1f4; --surface:#fbfcfd; --sunk:#f4f6f8;
+    --line:#dbe1e7; --line2:#c3ccd5;
+    --ink:#0e1216; --ink2:#4a545e; --ink3:#7b8794;
+    --accent:#2a78d6; --accent-soft:rgba(42,120,214,.10);
+    --bar:#2a78d6; --bar-soft:#9ec5f4;
+    --good:#0ca30c; --warn:#b06a00; --crit:#d03b3b;
+    --grid:#e4e9ee; --base:#c3ccd5;
+    --shadow:0 1px 2px rgba(14,18,22,.05),0 8px 24px -12px rgba(14,18,22,.16);
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0c0e11; --surface:#14171b; --sunk:#191d22;
+    --line:#272c33; --line2:#39404a;
+    --ink:#f2f5f8; --ink2:#a8b3bf; --ink3:#7b8794;
+    --accent:#3987e5; --accent-soft:rgba(57,135,229,.16);
+    --bar:#3987e5; --bar-soft:#1c5cab;
+    --good:#0ca30c; --warn:#d9a441; --crit:#d03b3b;
+    --grid:#23282e; --base:#39404a;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.7);
+  }}
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --ground:#0c0e11; --surface:#14171b; --sunk:#191d22;
+    --line:#272c33; --line2:#39404a;
+    --ink:#f2f5f8; --ink2:#a8b3bf; --ink3:#7b8794;
+    --accent:#3987e5; --accent-soft:rgba(57,135,229,.16);
+    --bar:#3987e5; --bar-soft:#1c5cab;
+    --good:#0ca30c; --warn:#d9a441; --crit:#d03b3b;
+    --grid:#23282e; --base:#39404a;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+       font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;gap:26px}
+  .plate{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+         color:var(--ink3);font-weight:600}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:4px;box-shadow:var(--shadow)}
+  .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+  header{display:flex;flex-direction:column;gap:14px}
+  .rule{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line2);padding-bottom:10px}
+  .rule .fill{flex:1;height:1px;background:var(--line2)}
+  h1{font-size:clamp(28px,4.4vw,42px);line-height:1.08;letter-spacing:-.022em;font-weight:620;
+     margin:0;text-wrap:balance;max-width:010ch;max-width:19ch}
+  .stand{margin:0;max-width:66ch;color:var(--ink2);font-size:16px}
+
+  .hero{display:grid;grid-template-columns:minmax(280px,1.1fr) 1fr;gap:20px}
+  @media(max-width:760px){.hero{grid-template-columns:1fr}}
+  .heroCard{padding:20px 22px 22px;display:flex;flex-direction:column;gap:4px}
+  .heroCard .fig{font-family:var(--mono);font-size:clamp(38px,6.4vw,54px);font-weight:640;
+                 letter-spacing:-.03em;line-height:1.02}
+  .heroCard .sub{color:var(--ink2);font-size:13.5px}
+  .heroCard .strip{height:3px;background:var(--bar);border-radius:2px;margin-top:auto}
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .tile{padding:13px 15px 14px;display:flex;flex-direction:column;gap:3px}
+  .tile .v{font-family:var(--mono);font-size:20px;font-weight:620;letter-spacing:-.015em}
+  .tile .c{font-size:11.5px;color:var(--ink3);line-height:1.35}
+
+  .sec{padding:20px 22px 20px;display:flex;flex-direction:column;gap:15px}
+  .sec h2{margin:0;font-size:17px;font-weight:620;letter-spacing:-.012em}
+  .sec p{margin:0;font-size:13.5px;color:var(--ink2);max-width:70ch}
+
+  .ctlrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+        font-weight:650;padding:5px 10px;border-radius:3px;cursor:pointer;
+        background:var(--sunk);border:1px solid var(--line);color:var(--ink2)}
+  .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+  .ctlrow .spacer{flex:1}
+  .rateBox{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink3);font-family:var(--mono)}
+  .rateBox input{width:52px;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;
+    font-weight:600;color:var(--ink);background:var(--sunk);border:1px solid var(--line);
+    border-radius:3px;padding:4px 6px}
+  input:focus-visible,button:focus-visible,tr:focus-visible,a:focus-visible{
+    outline:2px solid var(--accent);outline-offset:2px}
+
+  .scroll{overflow-x:auto}
+  svg.plot{display:block;min-width:700px;width:100%;height:auto}
+  svg.plot text{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+  table{border-collapse:collapse;width:100%;font-size:13px;min-width:940px}
+  th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal;min-width:210px}
+  thead th{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--ink3);font-weight:700;border-bottom:1px solid var(--line2);
+    background:var(--surface);position:sticky;top:0;cursor:pointer;user-select:none}
+  thead th:hover{color:var(--ink)}
+  thead th[aria-sort]{color:var(--ink)}
+  td.n{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  tbody tr:hover{background:var(--sunk)}
+  .pos{color:var(--crit)} .neg{color:var(--good)}
+
+  .tag{font-family:var(--mono);font-size:9px;letter-spacing:.07em;text-transform:uppercase;
+       font-weight:700;padding:2px 5px;border-radius:3px;border:1px solid var(--line2);color:var(--ink2)}
+  .tag.gr{border-color:var(--good);color:var(--good)}
+  .tag.vf{border-color:var(--warn);color:var(--warn)}
+
+  .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:8px}
+  .links a{font-family:var(--mono);font-size:12px;padding:9px 11px;border:1px solid var(--line);
+    border-radius:3px;color:var(--ink);text-decoration:none;background:var(--sunk);
+    display:flex;justify-content:space-between;gap:8px;align-items:center}
+  .links a:hover{border-color:var(--accent);color:var(--accent)}
+  .links a span{color:var(--ink3);font-size:10.5px}
+
+  ul.notes{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;
+           font-size:13.5px;color:var(--ink2);max-width:74ch}
+  ul.notes b{color:var(--ink);font-weight:620}
+  footer{border-top:1px solid var(--line2);padding-top:16px;font-size:12.5px;color:var(--ink3);max-width:74ch}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="rule">
+      <span class="plate">Phoenix AZ · 250 mi · 2023+ · under 30,000 mi</span>
+      <span class="fill"></span><span class="plate">Aug 2026</span>
+    </div>
+    <h1>Buying the depreciation cliff</h1>
+    <p class="stand">
+      Section&nbsp;179 doesn't care whether a vehicle is new or used — a two-year-old truck earns the
+      identical 100% first-year write-off. So the play is to let the first owner absorb the cliff, then
+      take the full deduction anyway. Ranked by <b>dollars off original sticker</b>, because that's the
+      money — big percentages hide on cheap cars.
+    </p>
+  </header>
+
+  <section class="hero">
+    <div class="card heroCard">
+      <span class="plate">Deepest cliff found · dollars off MSRP</span>
+      <span class="fig num" id="hFig">—</span>
+      <span class="sub" id="hSub">—</span>
+      <div class="strip"></div>
+    </div>
+    <div class="tiles">
+      <div class="card tile"><span class="plate">Vehicles analysed</span>
+        <span class="v num" id="tN">—</span><span class="c">Across 12 §179-eligible models</span></div>
+      <div class="card tile"><span class="plate">Median off sticker</span>
+        <span class="v num" id="tMed">—</span><span class="c">Half the market sits below this</span></div>
+      <div class="card tile"><span class="plate">Cliff + write-off</span>
+        <span class="v num" id="tCombo">—</span><span class="c" id="tComboC">—</span></div>
+      <div class="card tile"><span class="plate">Effective cost</span>
+        <span class="v num" id="tNet">—</span><span class="c">After the year-one deduction</span></div>
+    </div>
+  </section>
+
+  <section class="card sec">
+    <div class="ctlrow">
+      <button class="chip" data-metric="off" aria-pressed="true">$ off sticker</button>
+      <button class="chip" data-metric="offPct" aria-pressed="false">% off sticker</button>
+      <button class="chip" data-metric="net" aria-pressed="false">Net cost</button>
+      <span class="spacer"></span>
+      <label class="rateBox">Tax rate <input id="rate" type="number" min="0" max="60" value="37" /> %</label>
+    </div>
+    <div>
+      <h2 id="chTitle">Dollars off original sticker</h2>
+      <p id="chSub">Original MSRP minus today's asking price. Bars show the discount the first owner already absorbed.</p>
+    </div>
+    <div class="scroll">
+      <svg class="plot" id="plot" viewBox="0 0 940 620" role="img" aria-labelledby="pt">
+        <title id="pt">Bar chart of discount from original MSRP by vehicle</title>
+      </svg>
+    </div>
+  </section>
+
+  <section class="card sec">
+    <h2>Every vehicle, with mileage against expectation</h2>
+    <p>
+      <b>Expected miles</b> is age × 13,500/yr, the industry norm. A negative excess means the car has
+      <em>fewer</em> miles than its age implies — you're buying time, not wear. Positive excess is where
+      the market often over-penalizes, which is its own kind of value. Click any column to sort.
+    </p>
+    <div class="scroll">
+      <table id="tbl">
+        <thead><tr>
+          <th data-k="name">Vehicle</th>
+          <th data-k="age">Age</th>
+          <th data-k="mi">Miles</th>
+          <th data-k="exp">Expected</th>
+          <th data-k="excess">Excess</th>
+          <th data-k="msrp">Orig. MSRP</th>
+          <th data-k="p">Asking</th>
+          <th data-k="off">$ off</th>
+          <th data-k="offPct">% off</th>
+          <th data-k="net">Net after §179</th>
+          <th data-k="dist">Dealer</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card sec">
+    <h2>Reproduce any of these searches</h2>
+    <p>
+      Cars.com blocks direct vehicle-detail URLs in robots.txt, so these are the filtered search pages —
+      same criteria, live inventory. The specific cars below are on page one.
+    </p>
+    <div class="links" id="links"></div>
+  </section>
+
+  <section class="card sec">
+    <h2>Read this before you chase the biggest number</h2>
+    <ul class="notes">
+      <li><b>A steep cliff is only useful if it flattens after you buy.</b> The QX80 fell 49% because 2024 was the last year of the outgoing body — a redesign cliff, permanent and non-recovering. The Escalade barely moved because demand holds. You want the drop <em>already taken</em>, not still coming.</li>
+      <li><b>Percentage flatters cheap cars.</b> The QX80's 49% is $38,796. The XM's 52% is $83,002. Same-ish percentage, twice the money, and one of them is a 644-hp V8 hybrid.</li>
+      <li><b>You still want resale.</b> Writing basis to zero means the entire eventual sale price returns as §1245 recapture at ordinary rates — you keep roughly 63¢ of every resale dollar, not zero. Value retention after purchase still matters.</li>
+      <li><b>MSRPs here are base figures</b>, excluding destination and options. Real stickers ran higher, so every discount shown is a <em>floor</em>. Pull the window sticker by VIN on finalists to see true as-built MSRP.</li>
+      <li><b>Plate-check anything marked</b> <span class="tag vf">verify</span>. Those sit near the 6,000 lb GVWR line where trim and drivetrain decide whether you get the full write-off or the §280F cap — a swing of tens of thousands.</li>
+      <li><b>Two MSRPs came back unreliable</b> and were excluded rather than guessed: 2023 Cadillac Escalade and BMW X7 base. Those models appear only where a trustworthy figure existed.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Listing data pulled from cars.com search pages, August 2026, filtered to 2023+ / under 30,000 miles /
+    under $140,000 / within 250 miles of Phoenix. Original MSRP figures from manufacturer and Edmunds/KBB
+    pricing archives; Aston Martin DBX MSRP is disputed across sources ($193K–$260K) and the conservative
+    figure is used. Tax estimates assume 100% business use and full §179 plus bonus eligibility.
+    Planning discussion only — not tax advice. Confirm with your CPA.
+  </footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+const MI_YR=13500, NOW=2026;
+// model, year, trim, price, miles, MSRP, dealer, dist, badge, gvwr, verifyGVWR
+const D=[
+["BMW XM",2023,"Base",75998,29893,159000,"Beemer Haus, Mesa",12,"—",6900,1],
+["BMW XM",2023,"Base",77998,16342,159000,"Beemer Haus, Mesa",12,"—",6900,1],
+["BMW XM",2023,"Base",79612,21928,159000,"BMW North Scottsdale",16,"Great",6900,1],
+["BMW XM",2023,"Base",79998,19938,159000,"Beemer Haus, Mesa",12,"—",6900,1],
+["BMW XM",2023,"Base",80999,18258,159000,"Certified Benz & Beemer",8,"Great",6900,1],
+["BMW XM",2023,"Base",82599,24915,159000,"Certified Benz & Beemer",8,"Good",6900,1],
+["BMW XM",2024,"Base",88998,13531,159000,"Beemer Haus, Mesa",12,"—",6900,1],
+["BMW XM",2024,"Base",89498,15053,159000,"Mark Kia, Scottsdale",11,"Great",6900,1],
+["Aston Martin DBX",2023,"Base",119693,5035,193000,"Scottsdale Maserati",17,"Great",6644,0],
+["Bentley Bentayga",2023,"V8",138380,29529,226750,"Classic Motor, Scottsdale",9,"Good",7275,0],
+["Range Rover",2024,"P530 Autobiography",122599,26059,166400,"Certified Benz & Beemer",8,"Good",7055,0],
+["Range Rover",2024,"P530 SE",101599,25491,130400,"Certified Benz & Beemer",8,"Good",7055,0],
+["Range Rover",2024,"P530 SE",103799,26300,130400,"Luxury Auto Collection",13,"Good",7055,0],
+["Range Rover",2024,"P530 SE",109899,12085,130400,"Luxury Auto Collection",13,"Good",7055,0],
+["Range Rover",2024,"P530 SE",109999,21668,130400,"Luxury Auto Collection",13,"Great",7055,0],
+["Range Rover",2025,"P530 SE",119400,10333,132875,"Royal JLR Tucson",103,"Great",7055,0],
+["Range Rover",2025,"P400 SE",99233,20067,109375,"CardinaleWay Mazda Peoria",17,"Great",6920,0],
+["Range Rover",2025,"P400 SE",106999,10140,109375,"Certified Benz & Beemer",8,"Good",6920,0],
+["Range Rover",2025,"P400 SE",106950,16427,109375,"Cascio Motors",16,"—",6920,0],
+["Range Rover",2024,"P400 SE",100399,4136,107400,"Certified Benz & Beemer",8,"Good",6920,0],
+["Range Rover",2024,"P400 SE",98999,26638,107400,"Luxury Auto Collection",13,"Good",6920,0],
+["Range Rover",2023,"SE (P400)",95688,22432,106500,"Audi North Scottsdale",16,"Good",6920,0],
+["INFINITI QX80",2024,"Luxe",40499,23886,79295,"Showcase Honda, Phoenix",5,"Great",7500,0],
+["Grand Wagoneer",2023,"Series I 4x4",51672,29977,92495,"Bill Luke CJDR",5,"Good",7500,0],
+["Grand Wagoneer",2024,"Base 4x4",57272,23844,93945,"Findlay Bullhead",185,"Good",7500,0],
+["Lincoln Navigator",2023,"Reserve",63399,19251,91935,"Courtesy Kia, Mesa",22,"Good",7625,0],
+["Tesla Model X",2023,"Dual Motor AWD",56898,22480,81380,"Scottsdale Mitsubishi",11,"Great",6788,1],
+["Tesla Model X",2023,"Plaid",73992,26000,96380,"Mark Kia, Scottsdale",11,"Good",6788,1],
+["Rivian R1S",2023,"Adventure",65988,24452,79800,"Scottsdale Mitsubishi",11,"Good",8532,0],
+["Rivian R1S",2023,"Adventure",66099,22486,79800,"Porsche Chandler",20,"Great",8532,0],
+["Lexus LX 600",2023,"F Sport",85599,22269,102025,"Earnhardt Lexus",5,"Good",7230,0],
+["Cadillac Escalade",2024,"V-Series",136799,21997,152295,"Luxury Auto Collection",13,"Good",7600,0],
+["Cadillac Escalade",2025,"Sport Platinum",101998,20862,118890,"CarMax Murrieta",12,"Great",7600,0],
+["Cadillac Escalade",2025,"Sport Platinum",108696,11508,118890,"Earnhardt Chandler",20,"Great",7600,0],
+["Cadillac Escalade",2025,"Sport Platinum",116994,10080,118890,"Scottsdale Mitsubishi",11,"Great",7600,0],
+["Cadillac Escalade",2025,"Sport Platinum",117988,6321,118890,"Mark Mazda",11,"Great",7600,0],
+["Cadillac Escalade",2025,"Prem Lux Platinum",108579,16457,118390,"Royal Buick GMC Tucson",103,"Good",7600,0],
+["Cadillac Escalade",2025,"Sport",92507,26139,99390,"Anderson Chevrolet Kingman",167,"Great",7600,0],
+["Cadillac Escalade",2025,"Sport",95000,22641,99390,"Casa Nissan Prescott",79,"—",7600,0],
+["Cadillac Escalade",2025,"Sport",96000,14383,99390,"Casa Nissan Prescott",79,"—",7600,0],
+["Cadillac Escalade",2025,"Premium Luxury",95900,13969,98790,"Hubbard Auto Center",16,"—",7600,0],
+["Mercedes GLS 450",2024,"4MATIC",65132,19803,84500,"Van Chevrolet, Scottsdale",16,"Great",6768,0],
+["Mercedes GLS 450",2024,"4MATIC",67072,10742,84500,"Bill Luke Marana",93,"Good",6768,0],
+["Mercedes GLS 450",2024,"4MATIC",69694,18261,84500,"Mercedes-Benz of Gilbert",20,"Good",6768,0],
+["Porsche Cayenne",2024,"S E-Hybrid",87687,15342,99900,"BMW of Tucson",103,"Good",6173,1]
+];
+const SEARCH=[
+["BMW XM","bmw-xm"],["Aston Martin DBX","aston_martin-dbx"],["Bentley Bentayga","bentley-bentayga"],
+["Range Rover","land_rover-range_rover"],["INFINITI QX80","infiniti-qx80"],
+["Grand Wagoneer","jeep-grand_wagoneer"],["Lincoln Navigator","lincoln-navigator"],
+["Tesla Model X","tesla-model_x"],["Rivian R1S","rivian-r1s"],["Lexus LX 600","lexus-lx_600"],
+["Cadillac Escalade","cadillac-escalade"],["Mercedes GLS 450","mercedes_benz-gls_450"],
+["Porsche Cayenne","porsche-cayenne"]
+];
+
+const rows=D.map(([m,y,t,p,mi,msrp,dl,dist,b,gv,vf])=>{
+  const age=Math.max(0.5,NOW-y), exp=Math.round(age*MI_YR);
+  return{m,y,t,p,mi,msrp,dl,dist,b,gv,vf,age,exp,excess:mi-exp,
+    name:y+" "+m+" "+t, off:msrp-p, offPct:(msrp-p)/msrp*100};
+});
+
+const $=id=>document.getElementById(id);
+const usd=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0});
+const f=v=>usd.format(Math.round(v));
+const kf=v=>{const a=Math.abs(v);return (v<0?"-$":"$")+(a>=1000?Math.round(a/1000)+"K":Math.round(a));};
+const nf=v=>new Intl.NumberFormat("en-US").format(Math.round(v));
+let metric="off", rate=.37, sortK="off", sortDir=-1;
+
+function recalc(){rows.forEach(r=>{r.save=r.p*rate;r.net=r.p*(1-rate);});}
+
+/* ---------- chart: single-hue magnitude bars ---------- */
+function niceMax(v){if(v<=0)return 1;const m=Math.pow(10,Math.floor(Math.log10(v)));
+  for(const s of[1,1.25,1.5,2,2.5,3,4,5,7.5,10])if(v<=s*m)return s*m;return 10*m;}
+const NS="http://www.w3.org/2000/svg";
+function el(t,a,x){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);
+  if(x!=null)e.textContent=x;return e;}
+function barPath(x,y,w,h,r){if(w<=.4)return"";r=Math.min(r,h/2,w);
+  return`M${x},${y} L${x+w-r},${y} Q${x+w},${y} ${x+w},${y+r} L${x+w},${y+h-r} Q${x+w},${y+h} ${x+w-r},${y+h} L${x},${y+h} Z`;}
+
+function draw(){
+  const svg=$("plot");while(svg.childNodes.length>1)svg.removeChild(svg.lastChild);
+  const N=22;
+  const asc=metric==="net";
+  const data=[...rows].sort((a,b)=>asc?a[metric]-b[metric]:b[metric]-a[metric]).slice(0,N);
+  const W=940,M={t:10,r:74,b:34,l:250},ph=data.length*25;
+  const H=M.t+ph+M.b; svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const pw=W-M.l-M.r;
+  const max=niceMax(Math.max(...data.map(d=>d[metric])));
+  const xOf=v=>(v/max)*pw;
+
+  for(let i=0;i<=4;i++){
+    const v=max/4*i,x=M.l+xOf(v);
+    svg.appendChild(el("line",{x1:x,x2:x,y1:M.t,y2:M.t+ph,
+      stroke:i===0?"var(--base)":"var(--grid)","stroke-width":1}));
+    svg.appendChild(el("text",{x:x,y:M.t+ph+18,"text-anchor":"middle","font-size":10.5,
+      fill:"var(--ink3)"}, metric==="offPct"?Math.round(v)+"%":kf(v)));
+  }
+
+  data.forEach((d,i)=>{
+    const bh=17, y=M.t+i*25+(25-bh)/2, w=xOf(d[metric]);
+    // include mileage so same-model duplicates stay distinguishable
+    svg.appendChild(el("text",{x:M.l-12,y:y+bh/2+4,"text-anchor":"end","font-size":11,
+      fill:"var(--ink2)"}, d.y+" "+d.m+" · "+(d.mi/1000).toFixed(0)+"k"));
+    svg.appendChild(el("path",{d:barPath(M.l,y,w,bh,4),fill:"var(--bar)"}));
+    svg.appendChild(el("text",{x:M.l+w+8,y:y+bh/2+4,"font-size":11,
+      fill:"var(--ink)","font-weight":650},
+      metric==="offPct"?d[metric].toFixed(0)+"%":f(d[metric])));
+    const tt=el("title",{},`${d.name}\n${nf(d.mi)} mi · ${d.dl}\nMSRP ${f(d.msrp)} → ${f(d.p)}\n${f(d.off)} off (${d.offPct.toFixed(0)}%) · net ${f(d.net)}`);
+    svg.appendChild(el("rect",{x:M.l,y:M.t+i*25,width:pw,height:25,fill:"transparent"})).appendChild(tt);
+  });
+}
+
+/* ---------- table ---------- */
+function drawTable(){
+  const tb=$("tbl").querySelector("tbody");tb.innerHTML="";
+  const s=[...rows].sort((a,b)=>{const x=a[sortK],y=b[sortK];
+    return (typeof x==="string"?x.localeCompare(y):x-y)*sortDir;});
+  s.forEach(r=>{
+    const tr=document.createElement("tr");
+    tr.innerHTML=
+      "<td>"+r.name+(r.vf?' <span class="tag vf">verify</span>':"")+
+        (r.b==="Great"?' <span class="tag gr">great</span>':"")+"</td>"+
+      '<td class="n">'+r.age+"y</td>"+
+      '<td class="n">'+nf(r.mi)+"</td>"+
+      '<td class="n">'+nf(r.exp)+"</td>"+
+      '<td class="n '+(r.excess>0?"pos":"neg")+'">'+(r.excess>0?"+":"")+nf(r.excess)+"</td>"+
+      '<td class="n">'+f(r.msrp)+"</td>"+
+      '<td class="n">'+f(r.p)+"</td>"+
+      '<td class="n">'+f(r.off)+"</td>"+
+      '<td class="n">'+r.offPct.toFixed(0)+"%</td>"+
+      '<td class="n">'+f(r.net)+"</td>"+
+      '<td style="text-align:left;font-size:12px;color:var(--ink2)">'+r.dl+" · "+r.dist+"mi</td>";
+    tb.appendChild(tr);
+  });
+  $("tbl").querySelectorAll("thead th").forEach(th=>{
+    if(th.dataset.k===sortK)th.setAttribute("aria-sort",sortDir<0?"descending":"ascending");
+    else th.removeAttribute("aria-sort");});
+}
+
+function drawStats(){
+  const top=[...rows].sort((a,b)=>b.off-a.off)[0];
+  $("hFig").textContent=f(top.off);
+  $("hSub").textContent=top.name+" — "+f(top.msrp)+" new, "+f(top.p)+" today at "+nf(top.mi)+" miles ("+top.offPct.toFixed(0)+"% off)";
+  $("tN").textContent=rows.length;
+  const offs=[...rows].map(r=>r.off).sort((a,b)=>a-b);
+  $("tMed").textContent=f(offs[Math.floor(offs.length/2)]);
+  $("tCombo").textContent=f(top.off+top.save);
+  $("tComboC").textContent="Sticker drop plus the year-one tax saving on "+top.m;
+  $("tNet").textContent=f(top.net);
+}
+
+function drawLinks(){
+  const base="https://www.cars.com/shopping/",
+    q="/?zip=85004&maximum_distance=250&year_min=2023&mileage_max=30000&list_price_max=140000";
+  $("links").innerHTML=SEARCH.map(([n,slug])=>{
+    const c=rows.filter(r=>r.m===n).length;
+    return '<a href="'+base+slug+q+'" target="_blank" rel="noopener">'+n+"<span>"+c+" listed →</span></a>";
+  }).join("");
+}
+
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+  metric=b.dataset.metric;
+  document.querySelectorAll(".chip").forEach(o=>o.setAttribute("aria-pressed",String(o===b)));
+  const T={off:["Dollars off original sticker","Original MSRP minus today's asking price. Bars show the discount the first owner already absorbed."],
+    offPct:["Percent off original sticker","The same drop as a share of MSRP — note how it reorders toward the cheaper vehicles."],
+    net:["Net cost after the §179 write-off","Asking price less the first-year deduction at your marginal rate. Lowest first."]};
+  $("chTitle").textContent=T[metric][0];$("chSub").textContent=T[metric][1];
+  draw();
+}));
+$("tbl").querySelectorAll("thead th").forEach(th=>th.addEventListener("click",()=>{
+  const k=th.dataset.k;
+  if(k===sortK)sortDir*=-1;else{sortK=k;sortDir=(k==="name")?1:-1;}
+  drawTable();}));
+$("rate").addEventListener("input",e=>{
+  rate=Math.max(0,Math.min(100,Number(e.target.value)||0))/100;
+  recalc();drawStats();drawTable();if(metric==="net")draw();});
+
+recalc();drawStats();draw();drawTable();drawLinks();
+})();
+</script>
