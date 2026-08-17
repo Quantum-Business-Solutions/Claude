@@ -26,6 +26,11 @@ data/partner_leadership_scraped.csv
 # has no business in version control.
 data/partner_contact_audit.csv
 
+# LinkedIn validation output: names, live profile headlines, locations and
+# profile slugs pulled from a real LinkedIn session. Personal data, and the
+# network-distance columns describe Shawn's own connection graph.
+data/linkedin_validation.csv
+
 # Local venv, only needed because the system cryptography install is broken.
 .venv-zi/
 
