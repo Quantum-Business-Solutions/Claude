@@ -37,3 +37,6 @@ data/linkedin_validation.csv
 __pycache__/
 *.pyc
 .DS_Store
+
+# Matched LinkedIn connections: third-party names, headlines and profile URLs.
+data/partner_linkedin_connections.csv
