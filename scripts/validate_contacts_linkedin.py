@@ -17,6 +17,17 @@ returns HTTP 200 with zero results for every query on every account, because the
 connected accounts only have a _MESSAGING source provisioned. So this can verify
 people we already have a profile URL for, and cannot discover new ones.
 
+A first-degree connection additionally exposes contact_info.emails, so running
+this over people Shawn already knows is also an email source - Nikhil Jani's
+profile returned an address on a different domain than the one scraped from his
+site, which is a discrepancy worth resolving before mailing him.
+
+NOTE ON THIS ENVIRONMENT: Unipile serves on port 16072, and the sandbox's
+outbound proxy only permits standard ports, so this script cannot run here - the
+connection is reset before it leaves. It runs fine anywhere without that
+restriction. In this session the same lookups have to go through the Unipile MCP
+tool, one profile per call.
+
 Read-only against HubSpot; read-only against LinkedIn.
 
 Usage:
@@ -111,8 +122,9 @@ def main() -> int:
     print(f"contacts with a LinkedIn URL to validate: {len(rows)}\n")
 
     cache = load_cache()
-    out_rows, stats = [], {"confirmed": 0, "title_changed": 0,
-                           "company_mismatch": 0, "not_found": 0, "error": 0}
+    out_rows, stats = [], {"confirmed": 0, "title_unstated": 0,
+                           "title_changed": 0, "company_mismatch": 0,
+                           "not_found": 0, "error": 0}
     for i, r in enumerate(rows, 1):
         slug = SLUG_RE.search(r["linkedin_url"]).group(1).lower()
         if slug in cache:
@@ -144,10 +156,19 @@ def main() -> int:
             w in headline.lower() for w in company_words)
         title_ok = is_decision_maker(headline) and not FORMER.search(headline)
 
+        # An absent title is not a changed title. Plenty of founders - European
+        # ones especially - write a value-proposition headline with no role in
+        # it at all ("Helping B2B companies optimize their sales processes"),
+        # and Christian Retz at Divia reads exactly that way while divia.de sits
+        # right there in his profile websites. Treating that as a departure
+        # would discard a good contact, so only an explicit former/ex- marker
+        # counts as a change and everything else is merely unconfirmed.
         if not company_ok:
             verdict = "company_mismatch"
-        elif not title_ok:
+        elif FORMER.search(headline):
             verdict = "title_changed"
+        elif not title_ok:
+            verdict = "title_unstated"
         else:
             verdict = "confirmed"
         stats[verdict] += 1
