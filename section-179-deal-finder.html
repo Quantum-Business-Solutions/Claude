@@ -198,8 +198,13 @@
   <section class="card sec">
     <h2>Reproduce any of these searches</h2>
     <p>
-      Cars.com blocks direct vehicle-detail URLs in robots.txt, so these are the filtered search pages —
-      same criteria, live inventory. The specific cars below are on page one.
+      Filtered search pages — same criteria, live inventory. Append
+      <code style="font-family:var(--mono);font-size:11.5px;color:var(--ink)">&amp;deal_ratings[]=great</code>
+      to any of these to return <em>only</em> Great&nbsp;Deal badged cars. Verified across three models;
+      note the value is <code style="font-family:var(--mono);font-size:11.5px;color:var(--ink)">great</code>,
+      not <code style="font-family:var(--mono);font-size:11.5px;color:var(--ink)">great_deal</code>, which is
+      silently ignored. The filter also widens the radius to national delivery inventory, so keep filtering
+      distance yourself.
     </p>
     <div class="links" id="links"></div>
   </section>
