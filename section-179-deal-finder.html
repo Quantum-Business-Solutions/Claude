@@ -213,6 +213,9 @@
       <li><b>You still want resale.</b> Writing basis to zero means the entire eventual sale price returns as §1245 recapture at ordinary rates — you keep roughly 63¢ of every resale dollar, not zero. Value retention after purchase still matters.</li>
       <li><b>MSRPs here are base figures</b>, excluding destination and options. Real stickers ran higher, so every discount shown is a <em>floor</em>. Pull the window sticker by VIN on finalists to see true as-built MSRP.</li>
       <li><b>Plate-check anything marked</b> <span class="tag vf">verify</span>. Those sit near the 6,000 lb GVWR line where trim and drivetrain decide whether you get the full write-off or the §280F cap — a swing of tens of thousands.</li>
+      <li><b>You can settle GVWR from the VIN, free.</b> NHTSA's vPIC API returns a GVWR class for any VIN with no key and no signup:<br>
+        <code style="font-family:var(--mono);font-size:11.5px;color:var(--ink)">vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/&lt;VIN&gt;?format=json</code><br>
+        The BMW XM came back <b>Class 2F: 7,001–8,000 lb</b>, which is how its <span class="tag vf">verify</span> flag was cleared — its §179 eligibility is now confirmed rather than assumed. VINs are published right on the cars.com search page, so this check is cheap on every candidate.</li>
       <li><b>Rows are missing where MSRP couldn't be sourced</b>, rather than guessed. The standard GMC Yukon Denali (non-Ultimate) has no published base figure I could verify, so six Denali listings sit outside this table — including a 2025 Yukon Denali at Camelback Ford, $75,590 with 11,663 miles, badged <b>$11,000 below market</b>. That's the largest below-market figure in the whole GMC set and worth a look on badge evidence alone.</li>
       <li><b>Mercedes G-Class has no inventory here.</b> Nothing within 250 miles under $140,000; the nearest is Las Vegas at 256 miles. A G-Wagon means shopping nationally with delivery.</li>
     </ul>
@@ -236,14 +239,14 @@ const MI_YR=13500, NOW=2026;
 // Only rows with a defensible original-MSRP figure are included.
 const D=[
 // ---- BMW ----
-["BMW XM",2023,"Base",75998,29893,159000,"Beemer Haus, Mesa",12,"—",6900,1],
-["BMW XM",2023,"Base",77998,16342,159000,"Beemer Haus, Mesa",12,"—",6900,1],
-["BMW XM",2023,"Base",79612,21928,159000,"BMW North Scottsdale",16,"Great",6900,1],
-["BMW XM",2023,"Base",79998,19938,159000,"Beemer Haus, Mesa",12,"—",6900,1],
-["BMW XM",2023,"Base",80999,18258,159000,"Certified Benz & Beemer",8,"Great",6900,1],
-["BMW XM",2023,"Base",82599,24915,159000,"Certified Benz & Beemer",8,"Good",6900,1],
-["BMW XM",2024,"Base",88998,13531,159000,"Beemer Haus, Mesa",12,"—",6900,1],
-["BMW XM",2024,"Base",89498,15053,159000,"Mark Kia, Scottsdale",11,"Great",6900,1],
+["BMW XM",2023,"Base",75998,29893,159000,"Beemer Haus, Mesa",12,"—",7001,0],
+["BMW XM",2023,"Base",77998,16342,159000,"Beemer Haus, Mesa",12,"—",7001,0],
+["BMW XM",2023,"Base",79612,21928,159000,"BMW North Scottsdale",16,"Great",7001,0],
+["BMW XM",2023,"Base",79998,19938,159000,"Beemer Haus, Mesa",12,"—",7001,0],
+["BMW XM",2023,"Base",80999,18258,159000,"Certified Benz & Beemer",8,"Great",7001,0],
+["BMW XM",2023,"Base",82599,24915,159000,"Certified Benz & Beemer",8,"Good",7001,0],
+["BMW XM",2024,"Base",88998,13531,159000,"Beemer Haus, Mesa",12,"—",7001,0],
+["BMW XM",2024,"Base",89498,15053,159000,"Mark Kia, Scottsdale",11,"Great",7001,0],
 ["BMW X7",2024,"M60i",84794,15826,108700,"BMW of Tucson",103,"Good",7319,0],
 ["BMW X7",2024,"xDrive40i",64999,28048,82895,"Certified Benz & Beemer",8,"Good",7022,0],
 ["BMW X7",2024,"xDrive40i",66580,21363,82895,"Mercedes-Benz of N. Scottsdale",17,"Good",7022,0],
