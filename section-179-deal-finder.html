@@ -125,8 +125,8 @@
     <p class="stand">
       Section&nbsp;179 doesn't care whether a vehicle is new or used — a two-year-old truck earns the
       identical 100% first-year write-off. So the play is to let the first owner absorb the cliff, then
-      take the full deduction anyway. Ranked by <b>dollars off original sticker</b>, because that's the
-      money — big percentages hide on cheap cars.
+      take the full deduction anyway. <b>BMW, Mercedes-Benz, Land Rover and GMC Denali</b>, ranked by
+      <b>dollars off original sticker</b>, because that's the money — big percentages hide on cheap cars.
     </p>
   </header>
 
@@ -139,7 +139,7 @@
     </div>
     <div class="tiles">
       <div class="card tile"><span class="plate">Vehicles analysed</span>
-        <span class="v num" id="tN">—</span><span class="c">Across 12 §179-eligible models</span></div>
+        <span class="v num" id="tN">—</span><span class="c">BMW · Mercedes · Range Rover · Denali</span></div>
       <div class="card tile"><span class="plate">Median off sticker</span>
         <span class="v num" id="tMed">—</span><span class="c">Half the market sits below this</span></div>
       <div class="card tile"><span class="plate">Cliff + write-off</span>
@@ -207,20 +207,23 @@
   <section class="card sec">
     <h2>Read this before you chase the biggest number</h2>
     <ul class="notes">
-      <li><b>A steep cliff is only useful if it flattens after you buy.</b> The QX80 fell 49% because 2024 was the last year of the outgoing body — a redesign cliff, permanent and non-recovering. The Escalade barely moved because demand holds. You want the drop <em>already taken</em>, not still coming.</li>
-      <li><b>Percentage flatters cheap cars.</b> The QX80's 49% is $38,796. The XM's 52% is $83,002. Same-ish percentage, twice the money, and one of them is a 644-hp V8 hybrid.</li>
+      <li><b>The XM's cliff is a warning as much as an opportunity.</b> It fell 50% in three years because it was a first-model-year, low-volume plug-in V8 that the market never warmed to. Some of that decline continues after you own it. The Yukon Denali and Range Rover P400 held value precisely because demand is steady — you want the drop <em>already taken</em>, not still coming.</li>
+      <li><b>Percentage flatters cheap cars.</b> Rank by dollars: a 26% drop on a $166K Range Rover Autobiography is $43,801, while 26% on a GLS 450 is $22,918. Same percentage, twice the money.</li>
+      <li><b>The Mercedes GLE sits on the line.</b> Rated around 6,008 lb — roughly eight pounds of margin, and some configurations fall <em>below</em> 6,000. Get it wrong and a $52,695 write-off becomes a $20,300 §280F cap. Do not buy a GLE for this purpose without reading the door plate first.</li>
       <li><b>You still want resale.</b> Writing basis to zero means the entire eventual sale price returns as §1245 recapture at ordinary rates — you keep roughly 63¢ of every resale dollar, not zero. Value retention after purchase still matters.</li>
       <li><b>MSRPs here are base figures</b>, excluding destination and options. Real stickers ran higher, so every discount shown is a <em>floor</em>. Pull the window sticker by VIN on finalists to see true as-built MSRP.</li>
       <li><b>Plate-check anything marked</b> <span class="tag vf">verify</span>. Those sit near the 6,000 lb GVWR line where trim and drivetrain decide whether you get the full write-off or the §280F cap — a swing of tens of thousands.</li>
-      <li><b>Two MSRPs came back unreliable</b> and were excluded rather than guessed: 2023 Cadillac Escalade and BMW X7 base. Those models appear only where a trustworthy figure existed.</li>
+      <li><b>Rows are missing where MSRP couldn't be sourced</b>, rather than guessed. The standard GMC Yukon Denali (non-Ultimate) has no published base figure I could verify, so six Denali listings sit outside this table — including a 2025 Yukon Denali at Camelback Ford, $75,590 with 11,663 miles, badged <b>$11,000 below market</b>. That's the largest below-market figure in the whole GMC set and worth a look on badge evidence alone.</li>
+      <li><b>Mercedes G-Class has no inventory here.</b> Nothing within 250 miles under $140,000; the nearest is Las Vegas at 256 miles. A G-Wagon means shopping nationally with delivery.</li>
     </ul>
   </section>
 
   <footer>
     Listing data pulled from cars.com search pages, August 2026, filtered to 2023+ / under 30,000 miles /
-    under $140,000 / within 250 miles of Phoenix. Original MSRP figures from manufacturer and Edmunds/KBB
-    pricing archives; Aston Martin DBX MSRP is disputed across sources ($193K–$260K) and the conservative
-    figure is used. Tax estimates assume 100% business use and full §179 plus bonus eligibility.
+    under $140,000 / within 250 miles of Phoenix. Original MSRP figures are base prices from manufacturer
+    and Edmunds/KBB archives; the 2023 GLS 580 and the 2024 Yukon XL Denali Ultimate use the closest
+    verified adjacent-year or short-wheelbase figure, so both discounts are understated. Tax estimates
+    assume 100% business use and full §179 plus bonus eligibility.
     Planning discussion only — not tax advice. Confirm with your CPA.
   </footer>
 </div>
@@ -230,7 +233,9 @@
 "use strict";
 const MI_YR=13500, NOW=2026;
 // model, year, trim, price, miles, MSRP, dealer, dist, badge, gvwr, verifyGVWR
+// Only rows with a defensible original-MSRP figure are included.
 const D=[
+// ---- BMW ----
 ["BMW XM",2023,"Base",75998,29893,159000,"Beemer Haus, Mesa",12,"—",6900,1],
 ["BMW XM",2023,"Base",77998,16342,159000,"Beemer Haus, Mesa",12,"—",6900,1],
 ["BMW XM",2023,"Base",79612,21928,159000,"BMW North Scottsdale",16,"Great",6900,1],
@@ -239,8 +244,24 @@ const D=[
 ["BMW XM",2023,"Base",82599,24915,159000,"Certified Benz & Beemer",8,"Good",6900,1],
 ["BMW XM",2024,"Base",88998,13531,159000,"Beemer Haus, Mesa",12,"—",6900,1],
 ["BMW XM",2024,"Base",89498,15053,159000,"Mark Kia, Scottsdale",11,"Great",6900,1],
-["Aston Martin DBX",2023,"Base",119693,5035,193000,"Scottsdale Maserati",17,"Great",6644,0],
-["Bentley Bentayga",2023,"V8",138380,29529,226750,"Classic Motor, Scottsdale",9,"Good",7275,0],
+["BMW X7",2024,"M60i",84794,15826,108700,"BMW of Tucson",103,"Good",7319,0],
+["BMW X7",2024,"xDrive40i",64999,28048,82895,"Certified Benz & Beemer",8,"Good",7022,0],
+["BMW X7",2024,"xDrive40i",66580,21363,82895,"Mercedes-Benz of N. Scottsdale",17,"Good",7022,0],
+["BMW X7",2024,"xDrive40i",67693,23754,82895,"Land Rover Chandler",11,"Good",7022,0],
+["BMW X5",2024,"M60i",66094,29566,89300,"Liberty Buick, Peoria",17,"Great",6300,1],
+["BMW X5",2025,"M60i",79999,16450,90850,"Certified Benz & Beemer",8,"Good",6300,1],
+["BMW X5",2025,"M60i",82683,7717,90850,"Mercedes-Benz of Scottsdale",10,"Good",6300,1],
+// ---- Mercedes-Benz ----
+["Mercedes GLS 580",2023,"4MATIC",75643,18620,110000,"MB of Northern Arizona",126,"—",6768,0],
+["Mercedes GLS 580",2025,"4MATIC",101599,277,115950,"Certified Benz & Beemer",8,"Great",6768,0],
+["Mercedes GLS 450",2024,"4MATIC",65132,19803,88050,"Van Chevrolet, Scottsdale",16,"Great",6768,0],
+["Mercedes GLS 450",2024,"4MATIC",67072,10742,88050,"Bill Luke Marana",93,"Good",6768,0],
+["Mercedes GLS 450",2024,"4MATIC",69694,18261,88050,"Mercedes-Benz of Gilbert",20,"Good",6768,0],
+["Mercedes GLS 450",2024,"4MATIC",69862,22650,88050,"Mercedes-Benz of Chandler",11,"Good",6768,0],
+["Mercedes GLS 450",2025,"4MATIC",71643,19519,90350,"MB of Northern Arizona",126,"—",6768,0],
+["Mercedes GLE 450",2024,"4MATIC",52695,20791,69500,"MB of North Scottsdale",17,"Great",6008,1],
+["Mercedes GLE 450",2024,"4MATIC",56599,14843,69500,"Certified Benz & Beemer",8,"Great",6008,1],
+// ---- Land Rover ----
 ["Range Rover",2024,"P530 Autobiography",122599,26059,166400,"Certified Benz & Beemer",8,"Good",7055,0],
 ["Range Rover",2024,"P530 SE",101599,25491,130400,"Certified Benz & Beemer",8,"Good",7055,0],
 ["Range Rover",2024,"P530 SE",103799,26300,130400,"Luxury Auto Collection",13,"Good",7055,0],
@@ -253,37 +274,20 @@ const D=[
 ["Range Rover",2024,"P400 SE",100399,4136,107400,"Certified Benz & Beemer",8,"Good",6920,0],
 ["Range Rover",2024,"P400 SE",98999,26638,107400,"Luxury Auto Collection",13,"Good",6920,0],
 ["Range Rover",2023,"SE (P400)",95688,22432,106500,"Audi North Scottsdale",16,"Good",6920,0],
-["INFINITI QX80",2024,"Luxe",40499,23886,79295,"Showcase Honda, Phoenix",5,"Great",7500,0],
-["Grand Wagoneer",2023,"Series I 4x4",51672,29977,92495,"Bill Luke CJDR",5,"Good",7500,0],
-["Grand Wagoneer",2024,"Base 4x4",57272,23844,93945,"Findlay Bullhead",185,"Good",7500,0],
-["Lincoln Navigator",2023,"Reserve",63399,19251,91935,"Courtesy Kia, Mesa",22,"Good",7625,0],
-["Tesla Model X",2023,"Dual Motor AWD",56898,22480,81380,"Scottsdale Mitsubishi",11,"Great",6788,1],
-["Tesla Model X",2023,"Plaid",73992,26000,96380,"Mark Kia, Scottsdale",11,"Good",6788,1],
-["Rivian R1S",2023,"Adventure",65988,24452,79800,"Scottsdale Mitsubishi",11,"Good",8532,0],
-["Rivian R1S",2023,"Adventure",66099,22486,79800,"Porsche Chandler",20,"Great",8532,0],
-["Lexus LX 600",2023,"F Sport",85599,22269,102025,"Earnhardt Lexus",5,"Good",7230,0],
-["Cadillac Escalade",2024,"V-Series",136799,21997,152295,"Luxury Auto Collection",13,"Good",7600,0],
-["Cadillac Escalade",2025,"Sport Platinum",101998,20862,118890,"CarMax Murrieta",12,"Great",7600,0],
-["Cadillac Escalade",2025,"Sport Platinum",108696,11508,118890,"Earnhardt Chandler",20,"Great",7600,0],
-["Cadillac Escalade",2025,"Sport Platinum",116994,10080,118890,"Scottsdale Mitsubishi",11,"Great",7600,0],
-["Cadillac Escalade",2025,"Sport Platinum",117988,6321,118890,"Mark Mazda",11,"Great",7600,0],
-["Cadillac Escalade",2025,"Prem Lux Platinum",108579,16457,118390,"Royal Buick GMC Tucson",103,"Good",7600,0],
-["Cadillac Escalade",2025,"Sport",92507,26139,99390,"Anderson Chevrolet Kingman",167,"Great",7600,0],
-["Cadillac Escalade",2025,"Sport",95000,22641,99390,"Casa Nissan Prescott",79,"—",7600,0],
-["Cadillac Escalade",2025,"Sport",96000,14383,99390,"Casa Nissan Prescott",79,"—",7600,0],
-["Cadillac Escalade",2025,"Premium Luxury",95900,13969,98790,"Hubbard Auto Center",16,"—",7600,0],
-["Mercedes GLS 450",2024,"4MATIC",65132,19803,84500,"Van Chevrolet, Scottsdale",16,"Great",6768,0],
-["Mercedes GLS 450",2024,"4MATIC",67072,10742,84500,"Bill Luke Marana",93,"Good",6768,0],
-["Mercedes GLS 450",2024,"4MATIC",69694,18261,84500,"Mercedes-Benz of Gilbert",20,"Good",6768,0],
-["Porsche Cayenne",2024,"S E-Hybrid",87687,15342,99900,"BMW of Tucson",103,"Good",6173,1]
+// ---- GMC Denali ----
+["GMC Yukon XL",2024,"Denali Ultimate",81499,19000,100750,"Certified Benz & Beemer",8,"Great",7800,0],
+["GMC Yukon XL",2024,"Denali Ultimate",97189,24173,100750,"Lifted Trucks, Mesa",15,"—",7800,0],
+["GMC Yukon",2025,"Denali Ultimate",88883,21521,103295,"Liberty GMC, Peoria",17,"—",7500,0],
+["GMC Yukon",2025,"Denali Ultimate",93683,16555,103295,"Mark Kia, Scottsdale",11,"Good",7500,0],
+["GMC Yukon",2025,"Denali Ultimate",98387,12447,103295,"Liberty GMC, Peoria",17,"—",7500,0],
+["GMC Yukon",2023,"Denali",70072,17797,76200,"Bill Luke Marana",93,"Good",7500,0]
 ];
 const SEARCH=[
-["BMW XM","bmw-xm"],["Aston Martin DBX","aston_martin-dbx"],["Bentley Bentayga","bentley-bentayga"],
-["Range Rover","land_rover-range_rover"],["INFINITI QX80","infiniti-qx80"],
-["Grand Wagoneer","jeep-grand_wagoneer"],["Lincoln Navigator","lincoln-navigator"],
-["Tesla Model X","tesla-model_x"],["Rivian R1S","rivian-r1s"],["Lexus LX 600","lexus-lx_600"],
-["Cadillac Escalade","cadillac-escalade"],["Mercedes GLS 450","mercedes_benz-gls_450"],
-["Porsche Cayenne","porsche-cayenne"]
+["BMW XM","bmw-xm"],["BMW X7","bmw-x7"],["BMW X5","bmw-x5"],
+["Mercedes GLS 580","mercedes_benz-gls_580"],["Mercedes GLS 450","mercedes_benz-gls_450"],
+["Mercedes GLE 450","mercedes_benz-gle_450"],["Mercedes G-Class","mercedes_benz-g_class"],
+["Range Rover","land_rover-range_rover"],
+["GMC Yukon","gmc-yukon"],["GMC Yukon XL","gmc-yukon_xl"]
 ];
 
 const rows=D.map(([m,y,t,p,mi,msrp,dl,dist,b,gv,vf])=>{
