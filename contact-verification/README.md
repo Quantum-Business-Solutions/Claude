@@ -28,6 +28,28 @@ export NB=<neverbounce api key>              # email verification only
 
 LinkedIn reads go through the Unipile MCP tool, not these scripts.
 
+## Run it as a skill
+
+The process is packaged as the **`qbs-list-verification`** skill (`skill/qbs-list-verification/SKILL.md`).
+Invoke it on any list:
+
+```
+/qbs-list-verification <listId>
+```
+
+The skill orchestrates and enforces the guardrails; two generalized scripts do the mechanical core,
+and every judgement call is queued for a human rather than guessed:
+
+- `scripts/queue.py <listId> [N]` — next N unverified contacts + LinkedIn identifier; snapshots intake
+- `scripts/writeverdicts.py <listId> <batch.json>` — writes a batch, enforces the lead-status rules
+  (refuses a lead status on a `yes`, allows only the four valid literals), chunks at 100, diffs
+  requested-vs-returned, reads back to confirm, logs per-list, and queues movers
+
+First pass = interactive (it produces the human queue). Refresh pass = unattended-safe.
+
+To make the skill available in future sessions org-wide it must be published through QBS's skill
+sync (it currently lives here in the repo and is installed locally for the session that wrote it).
+
 ## Scripts, by phase
 
 Not a pipeline yet — these are the steps as they were actually executed, in order of use.
