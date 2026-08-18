@@ -482,3 +482,81 @@ Re-association must carry the phone, not just the company and the email:
   4. record the replaced number and its owner in the evidence field
 Skipping step 2 leaves a dialable line to the wrong company on a list whose entry criteria
 require a phone. That is the worst possible combination.
+
+# ===== 2026-08-18: TWO QA AUDITS. THREE CLAIMS OF MINE WERE WRONG. =====
+Shawn asked for two quality agents to QA the process. Both landed. Corrections first, because
+three things I had written down and told him were not true.
+
+## 1. "662 contacts in, every one read on LinkedIn" — FALSE
+Verified with coverage.py against the intake snapshot:
+  intake (mem5243.txt)          662
+  carrying a verdict            491
+  NEVER verified                171
+li_verdicts.json holds 493 verdicts, 2 of which are for contacts not in the intake snapshot.
+The 171 left list 5243 BEFORE they were read - ejected by this process's own lead-status and
+persona writes, because both are entry criteria for the list. None of them are on any calling
+list, so no rep is dialing an unverified record, but "we read them all" was wrong.
+RULE: measure PROGRESS against live membership; measure COVERAGE against the intake snapshot.
+
+## 2. "None of the 32 non-matching phones belonged to a different company" — FALSE
+id32.py identified ownership with companies.search phone CONTAINS_TOKEN "*<raw digits>*" - the
+EXACT query shape I had condemned one message earlier - and returned "no company record owns it"
+for all 32. I read that silence as a finding and wrote a conclusion on it.
+redo32.py does it correctly: tries digits, dashed, parenthesised, +1 and dotted forms, AND
+self-tests on (212) 991-6540 = TouchTunes, a number known to be present, before trusting any
+null. Result: 9 of 32 sit on a differently-named company's number.
+  Heath Johnson + Erin Wall  Workiva          -> webfilings.com   (Workiva's original name)
+  Tommy Bliven               66degrees        -> Pandera Systems  (rebranded to 66degrees)
+  Robert Hilson              Reveal           -> Logikcull        (acquired by Reveal)
+  John Reumann               Taylor           -> MentorMate       (a Taylor company)
+  Kevin Potts                Softdocs         -> ValGenesis
+  Joshua Raymond             OMNIA Partners   -> Ministry Brands
+  Dana Liedholm              Cytracom         -> Kaseya
+  Josh Stancil               Procure Analytics-> Insight Sourcing Group
+ALL NINE FLAGGED IN ai__contact_evidence, NONE OVERWRITTEN (flag9.py). They are confirmed
+CURRENT at their employer, so the number may be a predecessor line that still reaches them, and
+replacing a working direct line with a toll-free menu is worse. Non-mover phone conflicts are a
+HUMAN QUEUE item, never an auto-write.
+
+## 3. THE ALIAS TEST DOES NOT DETECT REBRANDS OR ACQUISITIONS — correct the rule
+I had written: same ZoomInfo company id => same company. That is sound for DOMAIN aliases inside
+one entity (dominodatalab.com and domino.ai are both id 358094550). It is NOT a test for
+corporate identity across a rename or acquisition. ZoomInfo keeps the predecessor as its own
+record with its own id:
+  Workiva 371769443   vs WebFilings 353924011
+  Reveal 351793036    vs Logikcull 369750751
+  66degrees 354213475 vs Pandera Systems 346166229
+  Taylor 103284965    vs MentorMate 24543647
+So "different id" does NOT mean "different company" once an acquisition is involved. The alias
+test can only ever CONFIRM sameness, never establish difference.
+
+## 4. Unreadable rate was understated ~3x
+41 of 493 verdicts are `unreadable` = 8.3%. The doc said "15 of 662" (2.3%), which was only the
+residue still on the list at the end. Budget ~8% for Stage 2 failure, not 2%.
+
+## THE METHOD RULE THAT GENERATED TWO OF THESE ERRORS
+Self-test every query against a case whose answer you already know, BEFORE trusting a null
+result. A digits-only token search against parenthesised stored numbers returns nothing for
+every input, forever. That silence was read as a finding twice in this pass. redo32.py now
+does the self-test and refuses to continue if it fails - copy that pattern.
+
+## DNC IS OUT OF SCOPE - Shawn, twice, 2026-08-18
+"dont worry about the do not call zoominfo properties" / "i dont want that in here.. i am just
+wantint to clean data". An audit found 86 of 312 on the calling list carry a ZoomInfo DNC flag
+(78 mobile-only, 3 direct-only, 5 both). NOT ACTED ON, NOT ADDED TO THE PROCESS DOC. Do not
+raise it again unless Shawn does.
+
+## STILL TO FOLD IN FROM THE AUDITS (not yet done)
+The completeness audit raised 32 items and the automation audit 4 sections. Corrected above are
+the ones where the doc was WRONG. The larger set of ADDITIONS is still outstanding - the biggest:
+  - hs_lead_status exact enum vocabulary, and the rule to leave it alone on a `yes`
+  - the calling list's own four clauses (f8260.json) - the doc never defines its stated output
+  - hs_persona: 105 of 324 removals, mechanism entirely absent from the doc
+  - movers who went independent/fractional/retired: do NOT re-associate, do NOT flip to `yes`
+  - read-back verification of every write, and calculated-field lag (associatedcompanyid ~20s)
+  - Unipile account allowlist and the missing account_id on the profile-read line
+  - bounce history outranks the email verifier; never re-check an address with bounce data
+  - wr.py OVERWRITES ai__contact_evidence; every other writer appends - marker loss root cause
+  - the write endpoints are entirely absent from the runbook
+  - name normalisation (NFKD, strip to a-z) for pattern construction; O'Dell-class crashes
+  - ai__contact_verified_date and D="2026-08-17" hardcoded in 10 scripts

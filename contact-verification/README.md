@@ -5,7 +5,9 @@ apologising. Reads every contact against dated LinkedIn employment history, reco
 was found and how it is known, and routes each person to a channel: dial them,
 re-target them at their new employer, or leave them alone.
 
-Built from the full pass on QBS list 5243 — 662 contacts in, every one read, 340 surviving.
+Built from the full pass on QBS list 5243: 662 contacts at intake, 491 read against dated
+LinkedIn history, 340 surviving. The other 171 were ejected from the list by this process's own
+lead-status and persona writes before they were ever read - itself a lesson the docs now carry.
 
 ## Start here
 
@@ -71,6 +73,21 @@ Contact-level run data — verdict logs, email and phone write logs, audit outpu
 files carry names, email addresses and phone numbers for several hundred real people, and
 a git repository is the wrong place for them. They stay in the working directory of the
 session that produced them. The code and the process are what belong here.
+
+## Corrections applied after two QA audits
+
+Three claims in the first version of these docs were wrong and are now fixed:
+
+- "every one read on LinkedIn" - 491 of 662 were read; 171 left the list first
+- "none of the 32 mismatched phones belonged to another company" - 9 of 32 do. The check that
+  said otherwise used a digits-only search that cannot match a parenthesised stored number, so
+  it returned nothing for every input and the nothing was read as an answer
+- "same vendor company id means same company" - sound for domain aliases within one record, but
+  it cannot detect a rebrand or acquisition; the vendor keeps predecessors as separate records
+
+The method rule that would have caught two of them: **self-test every query against a case whose
+answer you already know before trusting a null result.** `redo32.py` does this and refuses to
+continue if the self-test fails.
 
 ## Known state at time of commit
 
