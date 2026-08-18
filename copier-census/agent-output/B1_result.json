@@ -1,0 +1,1472 @@
+[
+ {
+  "cid": "6930207670",
+  "company": "Copy Link Inc",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Copy Link (Chula Vista/San Diego CA) now trades as FlexTG of San Diego. FlexTG's own location page states 'FlexTG, formerly CopyLink' (flextg.com/san-diego). PitchBook lists Copy Link's ownership status as 'Acquired/Merged (Operating Subsidiary), Private Equity-Backed'. copylink.net still resolves and serves Copy Link branding, so both domains are live. No personal email address is published at either copylink.net or flextg.com (flextg.com publishes only info@flextg.com in its privacy policy), so there is no real published address at either domain to anchor a naming pattern on. Data brokers disagree about the pattern (RocketReach: first@copylink.net 51%; Prospeo: finitial+lastname 89%), which is exactly the situation in which an inferred address should not be reported.",
+  "domain_correction": null,
+  "acquired_by": "Flex Technology Group (FlexTG)",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "acquirer_site",
+   "firecrawl_search",
+   "pitchbook"
+  ],
+  "people": [
+   {
+    "firstname": "Kimberley",
+    "lastname": "Marshall",
+    "title": "Co-Founder / Corporate Secretary (leadership role retained post-FlexTG investment)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record; no LinkedIn URL on file and no independent source found this pass naming her. Not re-confirmed in role.",
+    "existing_contact_id": "242578661298"
+   },
+   {
+    "firstname": "Kyle",
+    "lastname": "Harvey",
+    "title": "Regional President, FlexTG CA",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record (previously validated). No LinkedIn URL on file; no email published at copylink.net or flextg.com.",
+    "existing_contact_id": "242557064630"
+   }
+  ]
+ },
+ {
+  "cid": "7313698080",
+  "company": "On Demand",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live independent dealer, 2650 Fountain View Dr, Houston TX 77057. ENX Magazine Elite Dealers 2025 ($5M-$10M tier) lists 'On Demand, Inc. Houston, TX www.ondemandhouston.com. Year Founded: 1999. President/Owner: Mike Gray, Terry Gray' - so the two Grays are co-owners. Multiple state contract amendments (NASPO ValuePoint ADSPO16-169897, Michigan MiDEAL 180000000011, Idaho PADD18200512, Maryland DGS 001B0600430) list the dealer with 'Single Point of Contact: Michael Gray, Title: President, Phone 832-333-...' and 'Email Address: mgray@ondemandhouston.com'. That published address establishes the naming convention as first-initial + lastname.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "state_contract_naspo",
+   "state_contract_michigan",
+   "state_contract_idaho",
+   "state_contract_maryland",
+   "trade_press_enx"
+  ],
+  "people": [
+   {
+    "firstname": "Terry",
+    "lastname": "Gray",
+    "title": "President / Owner (co-owner with Mike Gray)",
+    "linkedin_url": null,
+    "email": "tgray@ondemandhouston.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "email_domain": "ondemandhouston.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Role confirmed by ENX Magazine Elite Dealers 2025, which names 'President/Owner: Mike Gray, Terry Gray' for On Demand, Inc. of Houston. Email is PATTERN-INFERRED from the real published address mgray@ondemandhouston.com (Michael Gray, President) carried in the NASPO ValuePoint / Michigan / Idaho state contract amendments - first-initial + lastname. Not verified against a source naming Terry's own address.",
+    "existing_contact_id": "242201314422",
+    "notes": "DUPLICATE: HubSpot contacts 242201314422 and 242551262119 are the same human (Terry Gray). Merge."
+   },
+   {
+    "firstname": "Terry",
+    "lastname": "Gray",
+    "title": "President / Owner (co-owner with Mike Gray)",
+    "linkedin_url": null,
+    "email": "tgray@ondemandhouston.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "email_domain": "ondemandhouston.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Second HubSpot record for the same person - see contact 242201314422. Same evidence and same inferred address; flagged for merge rather than researched separately.",
+    "existing_contact_id": "242551262119",
+    "notes": "DUPLICATE of contact 242201314422."
+   },
+   {
+    "firstname": "Michael",
+    "lastname": "Gray",
+    "title": "President",
+    "linkedin_url": null,
+    "email": "mgray@ondemandhouston.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "email_domain": "ondemandhouston.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "NOT PREVIOUSLY IN HUBSPOT. State contract vendor records publish him directly: NASPO ValuePoint ADSPO16-169897 Amendment 4 Attachment D gives 'Partner: On Demand, Inc. DealerAddress: 2650 Fountain View Dr. Houston, TX 77057. Single Point of Contact: Michael Gray. Title: President.' and the Michigan MiDEAL and Idaho Division of Purchasing amendments of the same contract carry 'Email Address: mgray@ondemandhouston.com'. Corroborated by ENX Elite Dealers 2025 'President/Owner: Mike Gray, Terry Gray'.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "35958015664",
+  "company": "Atlantic Business Systems",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Confirmed live Sharp dealer, 5131 Industry Drive Ste 101, Melbourne FL 32940, 321-259-7575, 7 sales / 11 service staff, Florida vendor tax ID 59-3240687, servicing Brevard, Indian River, Okeechobee, St. Lucie, Flagler, Volusia and Martin counties. Source: Florida Department of Management Services State Term Contract STC 600-000-11-1 'Sharp Authorized Dealers' (dms.myflorida.com). That document publishes the principal contact and his direct address, which fixes the domain naming convention as first-initial + lastname.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "state_contract_florida_dms",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Jena",
+    "lastname": "Wallingford",
+    "title": "Vice President",
+    "linkedin_url": null,
+    "email": "jwallingford@abs4sharp.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "email_domain": "abs4sharp.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Title carried from the existing HubSpot record; not independently re-confirmed this pass (no LinkedIn URL on file, no staff page on abs4sharp.com). Email is PATTERN-INFERRED from the real published address bwallingford@abs4sharp.com, which the Florida DMS State Term Contract STC 600-000-11-1 Sharp Authorized Dealers list gives as the Sales and Service email for Barry J. Wallingford at this dealer - first-initial + lastname.",
+    "existing_contact_id": "242201314457"
+   },
+   {
+    "firstname": "Barry",
+    "lastname": "Wallingford",
+    "title": "Principal contact for sales and service on the Florida state term contract (named as both Sales Contact and Service Contact for the dealer)",
+    "linkedin_url": null,
+    "email": "bwallingford@abs4sharp.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "email_domain": "abs4sharp.com",
+    "email_matches_dealer_domain": true,
+    "phone": "321-259-7575",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "NOT PREVIOUSLY IN HUBSPOT. Florida Department of Management Services State Term Contract STC 600-000-11-1 'Sharp Authorized Dealers' names, verbatim: 'Dealer Name: ATLANTIC BUSINESS SYSTEMS ... Melbourne, FL 32940 ... Sales Contact: BARRY J. WALLINGFORD / Sales Email Address: bwallingford@abs4sharp.com / Service Contact: BARRY J. WALLINGFORD / Service Email Address: bwallingford@abs4sharp.com'. The document states the contract role, not a corporate officer title, so the title above is described as such rather than asserted as President/Owner.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "7660799328",
+  "company": "1 Source Technology Solutions",
+  "outcome": "found",
+  "company_verdict": "dealer_bad_domain",
+  "company_notes": "Live Kyocera dealer at 310 Kendall Street, McComb MS 39648, 601-684-3815, registered as a minority vendor on the Mississippi state Copiers/Printers contract. CRITICAL DOMAIN FINDING: the company's actual mail domain is officeautomationcenter.com, not 1sourceit.net. The Mississippi MAGIC procurement portal 'Authorized Dealers/Distributors List' for the Kyocera Document Solutions America Copiers/Printers contract lists: '1 Source Technology Solutions | Kitty Freeman | 310 Kendall Street | McComb, MS 39648 | 601-684-3815 | 601-684-1043 | kfreeman@officeautomationcenter.com | MV | Yes'. officeautomationcenter.com resolves live. A local news thread separately records the business as 'Office Automation Center, owned by Chuck and Kitty Freeman of McComb' - which corroborates Charles ('Chuck') Freeman on file as an owner.",
+  "domain_correction": "officeautomationcenter.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "state_contract_mississippi_magic",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Phyllis",
+    "lastname": "Freeman",
+    "title": "President",
+    "linkedin_url": null,
+    "email": "pfreeman@officeautomationcenter.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "email_domain": "officeautomationcenter.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Title carried from the existing HubSpot record; no independent source named her this pass. Email is PATTERN-INFERRED from the real published address kfreeman@officeautomationcenter.com (Kitty Freeman) on the Mississippi MAGIC Kyocera authorized-dealer list - first-initial + lastname. The President title is the least-corroborated element here: published sources name Chuck and Kitty Freeman as the owners, not Phyllis.",
+    "existing_contact_id": "242201314428"
+   },
+   {
+    "firstname": "Charles",
+    "lastname": "Freeman",
+    "title": "Vice President (published locally as co-owner, 'Chuck' Freeman)",
+    "linkedin_url": null,
+    "email": "cfreeman@officeautomationcenter.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "email_domain": "officeautomationcenter.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Ownership corroborated: a local property news item records the business as 'formerly Office Automation Center, owned by Chuck and Kitty Freeman of McComb', which matches Charles Freeman on file. Email is PATTERN-INFERRED from the real published kfreeman@officeautomationcenter.com - first-initial + lastname.",
+    "existing_contact_id": "242201314564"
+   },
+   {
+    "firstname": "Kitty",
+    "lastname": "Freeman",
+    "title": "Named contact and co-owner on the Mississippi state copier contract",
+    "linkedin_url": null,
+    "email": "kfreeman@officeautomationcenter.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "email_domain": "officeautomationcenter.com",
+    "email_matches_dealer_domain": true,
+    "phone": "601-684-3815",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "NOT PREVIOUSLY IN HUBSPOT. Mississippi MAGIC procurement portal 'Authorized Dealers/Distributors List' for the Kyocera Document Solutions America Copiers/Printers contract publishes her directly against this dealer: '1 Source Technology Solutions | Kitty Freeman | 310 Kendall Street | McComb, MS 39648 | 601-684-3815 | kfreeman@officeautomationcenter.com | MV'. Co-ownership corroborated by a local news item naming 'Chuck and Kitty Freeman of McComb' as the owners of Office Automation Center.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "8293107793",
+  "company": "CommSat",
+  "outcome": "no_people_online",
+  "company_verdict": "dealer",
+  "company_notes": "commsat.net is live and now brands itself 'American Lazer/CommSat' - the site title on the services pages reads 'Network Cabling & Other Services - American Lazer/CommSat', with contact details 'CommSat IT Services, 158 Bridge Rd, Salisbury, MA 01952, Phone: 978-309-9900'. That co-branding is consistent with the 'Confirmed Acquired' flag already on the record (apparently a combination with American Lazer) but I could not find a press release, filing or trade item that states the transaction, so I am NOT asserting the acquirer. The LinkedIn company page 'CommSat IT & Technical Services' shows 2-10 employees. The site exposes no email address at all - contact forms and phone only. Company verdict left as dealer with the acquisition unresolved.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Deatrice",
+    "lastname": "Gross",
+    "title": "Owner",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. No LinkedIn URL on file, no staff page on commsat.net, and no independent source found naming her. Not confirmed in role.",
+    "existing_contact_id": "132316269947"
+   },
+   {
+    "firstname": "Christopher",
+    "lastname": "Copelas",
+    "title": "Vice President and Integrator",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. Not confirmed in role this pass; no email published anywhere on commsat.net.",
+    "existing_contact_id": "242551262113"
+   }
+  ]
+ },
+ {
+  "cid": "8507612331",
+  "company": "teasra.com",
+  "outcome": "not_a_dealer",
+  "company_verdict": "not_dealer",
+  "company_notes": "This record is not a copier dealer. The business is TEASRA, The Innovation Channel LLC - Ray Stasieczko's consulting, speaking and media venture (host of 'End Of The Day With Ray!'), founded Aug 2018, self-employed, based in Peoria, Illinois. His LinkedIn profile lists his sites as teasratic.com, endofthedaywithray.com and a YouTube channel - it does NOT list teasra.com. The shard's city/state of 'Stonehouse, Gloucestershire' does not match the person or the business at all, so the domain on the record appears to belong to an unrelated UK registrant. He is an industry commentator who formerly owned copier dealerships (Modern Office Methods LLC 1999-2005, KK Office Solutions to 2011), which is likely why the record was created, but TEASRA itself sells no copiers.",
+  "domain_correction": "teasratic.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin"
+  ],
+  "people": [
+   {
+    "firstname": "Ray",
+    "lastname": "Stasieczko",
+    "title": "Founder / CEO, TEASRA - The Innovation Channel LLC; host of 'End Of The Day With Ray!'",
+    "linkedin_url": "https://linkedin.com/in/raystasieczko",
+    "email": "raystasieczko@gmail.com",
+    "email_class": "personal",
+    "email_confidence": "verified",
+    "email_domain": "gmail.com",
+    "email_matches_dealer_domain": false,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile (Unipile, Shawn's account) confirms the identity on file is the right human and the role is current: work_experience entry 'TEASRA, The Innovation Channel LLC - Founder/CEO TEASRA and Host of End Of The Day With Ray!', start 8/2018, end null. He is a FIRST_DEGREE connection, so contact_info was exposed: the single address published is raystasieczko@gmail.com. That is a free-mail Gmail address and is classified PERSONAL - it must not be written to the business email field.",
+    "existing_contact_id": "242203089195"
+   }
+  ]
+ },
+ {
+  "cid": "8507187975",
+  "company": "Advanced Systems Inc",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by the Gordon Flesch Company. GFC's own press release dated 09/23/2019 - 'Gordon Flesch Company Acquires Advanced Systems, Inc., Creating the Midwest's Largest Independent Office Equipment Dealer' - states the merged company 'will be known as the Gordon Flesch Company', i.e. the ASI brand was retired. ASI was headquartered in Cedar Falls IA with offices in Mason City, Fort Dodge, Davenport, Dubuque, Spencer, Hiawatha, Fairfield, Windom MN and Sioux Falls SD. IMPORTANT CONFLICT: that release quotes 'Troy Love, president and CEO of ASI' - it does not mention a Gary Loo. A Waverly IA chamber listing for ASI gives a real address in the form alove@asiowa.com (Anna Love), i.e. first-initial + lastname, but since the brand is retired and the person on file is himself unconfirmed I have not inferred an address on that domain.",
+  "domain_correction": null,
+  "acquired_by": "Gordon Flesch Company",
+  "sources_tried": [
+   "linkedin",
+   "acquirer_press_release",
+   "firecrawl_search",
+   "chamber_directory"
+  ],
+  "people": [
+   {
+    "firstname": "Gary",
+    "lastname": "Loo",
+    "title": "President & Chief Executive Officer (AS RECORDED IN HUBSPOT - CONTRADICTED, see evidence)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "TITLE AND IDENTITY BOTH IN DOUBT - HOLD FOR A HUMAN. The Gordon Flesch acquisition press release of 23 Sep 2019 names the president and CEO of Advanced Systems, Inc. as Troy Love, quoted directly. No source found this pass names a Gary Loo at ASI in any role. The surname is also one character from 'Love', the family name that does appear at the company (Anna Love, alove@asiowa.com). This looks like a corrupted or conflated record rather than a real person in that role, and the company itself no longer trades under this brand. Recommend a human decide between correcting to Troy Love and voiding the record; I am not asserting either.",
+    "existing_contact_id": "132094484262"
+   }
+  ]
+ },
+ {
+  "cid": "9364908971",
+  "company": "XBS Office Solutions",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live, locally owned multi-line dealer trading as XBS Digital, 790 N Dixie Ave #500, Elizabethtown KY 42701, with six Kentucky locations per its LinkedIn company page. xbsdigital.com is live. The site also surfaces royal@royalofficeequipment.com, suggesting a relationship with (probably an acquisition of) Royal Office Equipment - noted but not established. The only other address on the site is support@xbsdigital.com, a role alias that reveals nothing about the personal naming pattern, so no address is inferred.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Joshua",
+    "lastname": "Hope",
+    "title": "Owner / President",
+    "linkedin_url": "https://linkedin.com/in/joshua-hope-21869880",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE. LinkedIn profile (Unipile) shows the URL on file resolves to the right human: headline 'Owner | President at XBS Digital Solutions', work_experience entry 'XBS Digital - Owner / President', location field 'www.xbsdigital.com', start 1/2000, end null. Profile websites are http://www.xbsdigital.com, tying the person to the dealer domain. SECOND_DEGREE, so LinkedIn exposed no contact_info, and no personal address is published on the dealer site.",
+    "existing_contact_id": "242557856349"
+   }
+  ]
+ },
+ {
+  "cid": "9364909100",
+  "company": "Woodburn Co",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live print-management dealer, woodburnco.com, LinkedIn company page 'Woodburn Company' (company_id 4286342), Everett WA with a Spokane Valley location (10020 E Montgomery Dr, Spokane Valley WA 99206) per the Greater Spokane chamber directory. No email addresses are published anywhere on woodburnco.com.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search",
+   "chamber_directory"
+  ],
+  "people": [
+   {
+    "firstname": "Penny",
+    "lastname": "Fukui",
+    "title": "Vice President",
+    "linkedin_url": "https://linkedin.com/in/penny-fukui-983817155",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN. LinkedIn profile (Unipile) for the URL on file: headline 'Vice President at Woodburn Company', location 'Everett, Washington, United States' - matching the dealer's city - and the single work_experience entry is 'Woodburn Company - Vice President' with end null. Network distance OUT_OF_NETWORK, so no contact_info is exposed; nothing published on the dealer site either.",
+    "existing_contact_id": "242552054593"
+   },
+   {
+    "firstname": "Tamara",
+    "lastname": "Brovarenko",
+    "title": "Business Development Chief",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. No LinkedIn URL on file and no independent source found naming her at Woodburn this pass; the title as written is also not a conventional Woodburn role. Not confirmed - recommend a human check whether this record belongs to this company at all.",
+    "existing_contact_id": "212993318290"
+   }
+  ]
+ },
+ {
+  "cid": "9499324050",
+  "company": "(blank in shard; abtech1.com / Advanced Business Copiers)",
+  "outcome": "found",
+  "company_verdict": "unresolved",
+  "company_notes": "abtech1.com resolves and serves a live site, but publishes no email address and no staff page, and the shard carries no company name, city or state, so I could not tie the domain to a verified legal entity this pass. The only structural information available is what is already embedded in the HubSpot titles: Advanced Business Copiers, LP, whose general partner is Hardin Enterprises, LLC. Verifying that would need a Secretary of State entity search once the state is known - which the record does not give. Leaving unresolved rather than guessing a state registry.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Charles",
+    "lastname": "Taylor",
+    "title": "Manager of Hardin Enterprises, LLC - general partner of Advanced Business Copiers, LP (controlling principal)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "NAME AMBIGUITY FLAGGED FOR A HUMAN, carried straight from the existing record, which itself says 'listed elsewhere as Ronnie Taylor'. Two different first names are attached to one role in our own data and I found no source this pass to settle which is correct. The controlling-principal structure is not independently confirmed either. No email.",
+    "existing_contact_id": "242614902640"
+   },
+   {
+    "firstname": "Carl",
+    "lastname": "Kelley",
+    "title": "Co-Owner",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record; no independent source found naming him. No email published at abtech1.com.",
+    "existing_contact_id": "242614902660"
+   }
+  ]
+ },
+ {
+  "cid": "9931647917",
+  "company": "BDL HP Toshiba",
+  "outcome": "non_us",
+  "company_verdict": "non_us",
+  "company_notes": "NEW ZEALAND, not US - out of scope for a US dealer census. The legal entity is Business Distributors Limited (LinkedIn company_id 6868425, vanity 'bdlcopiers'), trading as BDL Copiers and BDL 3D, an HP Print Partner and HP Multi Jet Fusion 3D print bureau. Confirmed location Christchurch, Canterbury, New Zealand (the shard's 'Sydenham / CHC' is a Christchurch suburb). Domain bdlcopiers.co.nz.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin"
+  ],
+  "people": [
+   {
+    "firstname": "Penny",
+    "lastname": "Huston",
+    "title": "Director (Business Distributors Limited / BDL Copiers, and BDL 3D)",
+    "linkedin_url": "https://linkedin.com/in/penny-huston-a899951ab",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN. LinkedIn profile (Unipile) for the URL on file: headline 'Director at BDL 3D & BDL Copiers, HP Print Partners, HP Multi Jet Fusion 3D Print Bureau', location Christchurch NZ, and two current roles both with end null - 'Business Distributors Limited - Director' (full-time, from 10/2008) and 'BDL 3D - Director' (from 12/2022). Title on file 'Director' is correct. THIRD_DEGREE, so no contact_info exposed.",
+    "existing_contact_id": "242201314421"
+   },
+   {
+    "firstname": "Garth",
+    "lastname": "Huston",
+    "title": "Founder & CEO",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. No LinkedIn URL on file; not re-confirmed this pass. Note the company is non-US, so it is likely out of scope regardless.",
+    "existing_contact_id": "242201314567"
+   }
+  ]
+ },
+ {
+  "cid": "9931506510",
+  "company": "Gold Business Solutions",
+  "outcome": "non_us",
+  "company_verdict": "non_us",
+  "company_notes": "CANADA, not US - out of scope for a US dealer census; and acquired long ago. Gold Business Solutions is the Manitoba operation of Kyocera Document Solutions Canada, with branches in Winnipeg and Brandon MB. The acquisition is stated by the general manager himself on his LinkedIn profile: 'We just completed our best year (2023) since Kyocera bought Gold in 2009' and 'I am the GM for Kyocera Manitoba', with his profile website given as kyoceradocumentsolutions.ca. So the correct acquirer is Kyocera Document Solutions Canada and the acquisition year is 2009, which the record's bare 'Confirmed Acquired' flag did not capture.",
+  "domain_correction": null,
+  "acquired_by": "Kyocera Document Solutions Canada (2009)",
+  "sources_tried": [
+   "linkedin"
+  ],
+  "people": [
+   {
+    "firstname": "Mike",
+    "lastname": "Fischer",
+    "title": "General Manager / Director of Sales, Gold Business Solutions / Kyocera Canada (TITLE CORRECTED - was 'General Manager')",
+    "linkedin_url": "https://linkedin.com/in/mike-fischer-243165b",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN, TITLE CORRECTED. LinkedIn profile (Unipile) for the URL on file: headline 'General Manager at Gold Business Solutions/Kyocera Canada', location Winnipeg MB, current role 'Gold Business Solutions/Kyocera Canada - General Manager/Director of Sales' (full-time, Winnipeg Manitoba, start 9/2016, end null). The position text is 'General Manager/Director of Sales', which is broader than the 'General Manager' on file. He describes managing the Winnipeg branch with 26 staff. SECOND_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242574773052"
+   },
+   {
+    "firstname": "Rick",
+    "lastname": "Walker",
+    "title": "General Manager (Brandon branch)",
+    "linkedin_url": "https://linkedin.com/in/rick-walker-87566b39",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN. LinkedIn profile (Unipile) for the URL on file: headline 'General Manager at Gold Business Solutions', location 'Brandon, Manitoba, Canada' - matching the branch on file - current role 'Gold Business Solutions - General Manager' with end null, described as 'Kyocera and Samsung office products sales and service'. SECOND_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242552391699"
+   }
+  ]
+ },
+ {
+  "cid": "9931487371",
+  "company": "Kyocera Document Solutions NY Metro",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "This is a manufacturer-owned direct branch, not an independent dealer: KYOCERA Document Solutions New York Metro, Inc. The domain on file, kyoceraduplitron.com, preserves the acquired dealer name (Duplitron) and still resolves, but publishes no email address and no staff page. Because the entity is a Kyocera subsidiary, the people on file are corporate employees rather than dealer principals. Neither person has a LinkedIn URL on file and I found no independent source for either this pass.",
+  "domain_correction": null,
+  "acquired_by": "Kyocera Document Solutions America",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Neil",
+    "lastname": "Steinkamp",
+    "title": "Vice President of Sales, KYOCERA Document Solutions New York Metro, Inc.",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. No LinkedIn URL on file, no staff page on kyoceraduplitron.com, no independent source found. Not confirmed in role.",
+    "existing_contact_id": "242556598121"
+   },
+   {
+    "firstname": "Norihiko",
+    "lastname": "Ina",
+    "title": "President",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. Not confirmed in role this pass. Kyocera rotates Japanese executives through US subsidiary presidencies on multi-year postings, so a President record of unknown vintage at a manufacturer-owned branch is at elevated risk of being stale - worth a human check before use.",
+    "existing_contact_id": "242551262115"
+   }
+  ]
+ },
+ {
+  "cid": "9931644805",
+  "company": "ManagedPrint",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live dealer. DOMAIN CORRECTION: the record carries lpmpinc.com, but the president's own LinkedIn profile gives the company website as http://managedprint.com, and managedprint.com resolves live. The only address published there is ccc@managedprint.com, a role alias that does not reveal the personal naming convention, so no address is inferred. Company is based in the Columbia / Lexington County, South Carolina area.",
+  "domain_correction": "managedprint.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Rich",
+    "lastname": "Houghton",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/rich-houghton-64325513",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN. LinkedIn profile (Unipile) for the URL on file: headline 'President at ManagedPrint', location 'Lexington County, South Carolina, United States' - consistent with the Columbia SC on file - current role 'ManagedPrint - President' start 1/2003, end null, and profile website http://managedprint.com. Career history is Lanier Worldwide in Columbia SC, consistent with the industry and region. SECOND_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242572755263"
+   }
+  ]
+ },
+ {
+  "cid": "9931487370",
+  "company": "Scheffer's Office Solutions",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live dealer in Sikeston MO, operating under the Lakeland Office Systems group. scheffersoffice.com resolves and publishes only role aliases - contact@, service@, meters@ and supplies@sheffersoffice.com (note the last is on a misspelled domain, 'sheffersoffice.com', which is worth flagging to the client as a likely typo on their own site). No personal address is published, so nothing is inferred. The parent, Lakeland Office Systems of Joplin MO (lakelandoffice.com), was bought by the Tyson family in July 2007 and is run by two brothers.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "parent_company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "John",
+    "lastname": "Tyson",
+    "title": "President & CEO, Lakeland Office Systems (parent)",
+    "linkedin_url": "https://linkedin.com/in/jmtyson",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN - upgraded from unvalidated. LinkedIn profile (Unipile) for the URL on file: headline 'President & CEO at Lakeland Office Systems', location Joplin MO, current role 'Lakeland Office Systems - President & CEO' start 7/2007, end null, with the description 'Our family purchased Lakeland in July 2007. My brother and I manage Lakeland along side an excellent management team' and profile website www.lakelandoffice.com. SECOND_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242557064629"
+   },
+   {
+    "firstname": "David",
+    "lastname": "Tyson",
+    "title": "Co-Owner, Lakeland Office Systems (parent)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "PARTIALLY corroborated but not confirmed: John Tyson's LinkedIn states 'My brother and I manage Lakeland', which supports the existence of a brother co-owner, but no source found this pass names that brother as David. No LinkedIn URL on file and no email published on either domain.",
+    "existing_contact_id": "242557064597"
+   }
+  ]
+ },
+ {
+  "cid": "9931637911",
+  "company": "Technic Business Solutions Inc.",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "technic.net resolves live; the business is active on social media as an IT and print partner in the Irvine CA area. The site publishes no email address and no staff page, and I found no state contract or trade-press item naming a principal this pass.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Tam",
+    "lastname": "Duong",
+    "title": "Owner / President",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record, where it was already marked validated. I could not re-confirm it this pass - no LinkedIn URL on file, no staff page on technic.net - so I am not upgrading it on my own evidence. No email found.",
+    "existing_contact_id": "242551262217"
+   },
+   {
+    "firstname": "Mbaguta",
+    "lastname": "Hassan",
+    "title": "Small Business Owner (AS RECORDED - no tie to this dealer evidenced)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": false,
+    "validated": "Needs Updated",
+    "evidence": "PROBABLE BAD RECORD - HOLD FOR A HUMAN. The title 'Small Business Owner' is a generic LinkedIn-style headline that names no company, and nothing in it or in any source found this pass ties this person to Technic Business Solutions. Per the shard rules a match needs the person's current employer to be the dealer, evidenced, and that condition is not met. Marked is_decision_maker false pending a human decision rather than treated as a Technic principal.",
+    "existing_contact_id": "212994000446"
+   }
+  ]
+ },
+ {
+  "cid": "10262847667",
+  "company": "Peak IT",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Peak I.T. of Youngstown OH (8534 South Ave, Youngstown OH 44514, 330-259-3454) trades under Valley Office Solutions, which the existing HubSpot titles already identify as the parent. peakittech.com is live but publishes only support@peakittech.com, a role alias, so no personal naming pattern can be established and nothing is inferred. Data brokers assert first-initial+lastname for the domain but they disagree with each other (RocketReach: jdoe@ 100%; SignalHire: lastinitial.first 'most common'), which is not a basis to infer an address.",
+  "domain_correction": null,
+  "acquired_by": "Valley Office Solutions",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Steven",
+    "lastname": "Blakeman",
+    "title": "President, Valley Office Solutions (parent of Peak I.T.)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. No LinkedIn URL on file and no independent source found naming him this pass. Not confirmed in role; no email.",
+    "existing_contact_id": "242571315296"
+   },
+   {
+    "firstname": "Kathy",
+    "lastname": "Blakeman",
+    "title": "Vice President, Valley Office Solutions (parent of Peak I.T.)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. Not confirmed in role this pass; no email.",
+    "existing_contact_id": "242577261640"
+   }
+  ]
+ },
+ {
+  "cid": "14774590600",
+  "company": "JayMaxX, LLC.",
+  "outcome": "no_people_online",
+  "company_verdict": "unresolved",
+  "company_notes": "DEAD DOMAIN. jaymaxxonline.com does not respond on either http or https and returned no body at all on repeated attempts, so there is no company site to read. That is consistent with the business having closed or rebranded, but a dead domain alone is not proof of dissolution, so I am recording unresolved rather than defunct. The remaining lead is a Virginia SCC entity search for JayMaxX, LLC (Harrisonburg VA) to establish current status and registered agent - Virginia's registry was not reachable in this pass.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Chip",
+    "lastname": "McIntyre",
+    "title": "Owner (also Executive VP, Sales & Marketing)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. Not confirmed - no LinkedIn URL on file, the company domain is dead, and no independent source was found. No email.",
+    "existing_contact_id": "242557064608"
+   }
+  ]
+ },
+ {
+  "cid": "14773253399",
+  "company": "Minnesota Computer Systems",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live dealer, LinkedIn company 'Minnesota Computer Systems, Inc. (MCSI)' (company_id 3253565), St Cloud MN. DOMAIN NOTE: mcsionline.net resolves, but the page publishes admin@mncopy.com - a different domain - and mncopy.com also resolves live, so mncopy.com appears to be the operating mail domain and is offered as a domain correction for human confirmation. admin@ is a role alias and reveals no personal naming pattern, so no address is inferred.",
+  "domain_correction": "mncopy.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Michael",
+    "lastname": "Houghton",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/michael-houghton-7165102b8",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN - upgraded from unvalidated. LinkedIn profile (Unipile) for the URL on file: headline 'President at Minnesota Computer Systems, Inc. (MCSI)', location 'St Cloud, Minnesota, United States' - matching the Saint Cloud on file - and the single work_experience entry is 'Minnesota Computer Systems, Inc. (MCSI) - President', full-time, end null. Note this is a different Houghton from Rich Houghton at ManagedPrint in South Carolina, also in this shard - two unrelated people who share a surname. SECOND_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242557064709"
+   }
+  ]
+ },
+ {
+  "cid": "14773253394",
+  "company": "Rabbit Office Automation",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Still trading, and the 'Incorrect Contact' flag on the person is wrong (see person evidence). DOMAIN CORRECTION: the record carries roa-usa.com, but the operating domain is rabbitoa.com, which resolves live and is the domain cited for the company by both Yelp listings and a 2006 Truckee Donner PUD contract document. LOCATION CAVEAT FOR A HUMAN: the Yelp listing for the Sunnyvale address (904 Weddell Ct, Sunnyvale CA 94089) is marked CLOSED, while a Pleasanton listing (6601 Koll Center Pkwy Ste 210, Pleasanton CA 94566, 925-226-1024) is active - so the Sunnyvale city on file may be stale even though the company is not. rabbitoa.com publishes no email address.",
+  "domain_correction": "rabbitoa.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search",
+   "public_contract_document"
+  ],
+  "people": [
+   {
+    "firstname": "Richard",
+    "lastname": "Zirpolo",
+    "title": "Chief Executive Officer",
+    "linkedin_url": "https://linkedin.com/in/richard-zirpolo-3a960311",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN - AND THE EXISTING 'Incorrect Contact' LEAD STATUS IS CONTRADICTED, recommend clearing it. LinkedIn profile (Unipile) for the URL on file: headline 'CEO at Rabbit Office Automation', location 'Sunnyvale, California, United States', current role 'Rabbit Office Automation - CEO' (LinkedIn company_id 56679) start 3/1987, end null. Independently corroborated by a Truckee Donner PUD contract document that records 'Rick Zirpolo President/CEO Rabbit Office Automation'. SECOND_DEGREE - no contact_info exposed. Note the shard had swept:false for this company, so this is the first LinkedIn confirmation on the record.",
+    "existing_contact_id": "214613490987"
+   }
+  ]
+ },
+ {
+  "cid": "14774371334",
+  "company": "Borden Office Equipment Co",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live dealer, bordenofficeequipment.com, 740-283-3321, Steubenville OH area (both Simpsons are located in Follansbee WV, directly across the river). The site publishes no email address. The important finding here is a succession claim in our own data that LinkedIn contradicts - see the two person records.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search",
+   "chamber_directory"
+  ],
+  "people": [
+   {
+    "firstname": "Jerry",
+    "lastname": "Simpson",
+    "title": "Owner / President",
+    "linkedin_url": "https://linkedin.com/in/jerry-simpson-0ba35b5a",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN, AND STILL SHOWN AS THE SITTING OWNER. LinkedIn profile (Unipile) for the URL on file: headline 'Owner/President at Borden Office Equipment Co.', location Follansbee WV, single work_experience entry 'Borden Office Equipment Co. - Owner/President' start 8/1981, end null - i.e. LinkedIn shows no handover. THIRD_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242554882709"
+   },
+   {
+    "firstname": "Jerad",
+    "lastname": "Simpson",
+    "title": "Sales Representative (PER LINKEDIN - the 'Owner/President, succeeded his father January 2026' on file is NOT supported)",
+    "linkedin_url": "https://linkedin.com/in/jerad-simpson-642aa923",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": false,
+    "validated": "Needs Updated",
+    "evidence": "TITLE CONTRADICTED - HOLD FOR A HUMAN. The HubSpot record claims 'J.D. Simpson, Owner/President (succeeded his father January 2026)'. The LinkedIn profile on file resolves to the right human but shows headline 'Sales Representative at Borden Office Equipment' with the single work_experience entry 'Borden Office Equipment - Sales Representative', Steubenville Ohio Area, start 5/2011, end null - no owner or president role at all. His father Jerry Simpson's profile simultaneously still shows Owner/President with end null. Caveat both ways: this is a very low-activity profile (10 followers, 9 connections), so an unannounced real-world succession would plausibly not appear on it - but nothing corroborates the January 2026 handover either. Do not treat him as the decision-maker until a human confirms; is_decision_maker set false for now.",
+    "existing_contact_id": "242203089184"
+   }
+  ]
+ },
+ {
+  "cid": "57388358291",
+  "company": "Copytronics Information Systems, Inc.",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Now Konica Minolta-owned, and the LinkedIn evidence states it outright: the company name on the shared LinkedIn company page (company_id 924280) is literally 'Copytronics Information Systems - A Konica Minolta Company', which is how the Director of Sales' current role is titled on his profile. This confirms and names the acquirer behind the record's bare 'Confirmed Acquired' flag. copytronics.net still resolves but publishes no email address. Both people on file are branch/regional managers rather than dealer principals, which is the expected shape after a manufacturer acquisition.",
+  "domain_correction": null,
+  "acquired_by": "Konica Minolta",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Bob",
+    "lastname": "Gavrish",
+    "title": "Director of South Region (TITLE CORRECTED - was 'Director of Sales - South Region')",
+    "linkedin_url": "https://linkedin.com/in/bob-gavrish-1026b4a6",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN, TITLE CORRECTED. LinkedIn profile (Unipile) for the URL on file: headline 'Director of Sales - South Region at Copytronics Information Systems - A Konica Minolta Company', current role position text 'DIRECTOR OF SOUTH REGION' at location 'COCOA/ROCKLEDGE BRANCH FACILITY', start 4/2014, end null; he is located in Rockledge FL. His history is Branch Manager at Copytronics 2007-2014 and, notably, General Manager at Atlantic Business Systems 1999-2006 - another company in this same shard. SECOND_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242554082832"
+   },
+   {
+    "firstname": "Al",
+    "lastname": "Marinucci",
+    "title": "Director, Service",
+    "linkedin_url": "https://linkedin.com/in/al-marinucci-0b972522",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN. LinkedIn profile (Unipile) for the URL on file: headline 'director service at Copytronics Information Systems', location 'Jacksonville, Florida, United States' - matching the Jacksonville on file - single work_experience entry at the same company page (company_id 924280) with end null. SECOND_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242550020785"
+   }
+  ]
+ },
+ {
+  "cid": "14945458250",
+  "company": "Gray & Creech Office Systems",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Very much alive and expanding, but on a different domain. DOMAIN CORRECTION: grayandcreech.com on file, actual site gcoffice.solutions. Established 1922, a Sharp Platinum Level Service Dealer for nine consecutive years (2016-2024) and holder of the Sharp AAA Platinum Service Award and Hyakuman Kai Award. It ACQUIRED Bailey Access and Security LLC of Raleigh effective 8 July 2024, whose owner Joe Bailey now leads Gray & Creech's security division as operations manager. It also MOVED - the current Greensboro address is 2-A Oak Branch Drive, Greensboro NC 27407, a 12,000 sq ft office, with a second fully staffed office in Raleigh. No email address is published anywhere on gcoffice.solutions, so nothing is inferred. All of the above is from the company's own news page.",
+  "domain_correction": "gcoffice.solutions",
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Lisa",
+    "lastname": "Bean",
+    "title": "CFO",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record and NOT independently confirmed - she is not named anywhere on the company's own site or news page. The surname is at least consistent with the confirmed owner and president, Alec Bean, so this is plausibly a family officer, but surname consistency is explicitly not evidence under the shard rules. No email published.",
+    "existing_contact_id": "242563393797"
+   },
+   {
+    "firstname": "Alec",
+    "lastname": "Bean",
+    "title": "Owner & President",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "NOT PREVIOUSLY IN HUBSPOT. Named and quoted twice on the company's own website news page: 'said Gray & Creech Office Solutions president Alec Bean' (Sharp Platinum award release, Greensboro NC, 25 February 2025) and 'said Gray & Creech owner and president Alec Bean' (Bailey Access and Security acquisition release, 9 July 2024). Two dated first-party statements of the same title. No email published on the site, and no real published address exists at gcoffice.solutions to anchor a pattern on, so no address is inferred.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "28706261829",
+  "company": "Atlantic Office Automation Inc.",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Company confirmed trading; the person on file is not confirmed. aoa-sf.com resolves live but publishes no email address or staff page. Two independent documents place the dealer in the California public procurement channel: a Sharp Authorized Dealer Listing for Northern California includes 'Atlantic Office Automation and Sierra, Phone: 707-526-7701', and a state contract user-instructions supplement lists 'Atlantic Office Automation. SB. 1790078. San Francisco, San Mateo' - the 'SB' marking it a certified small business and the counties matching the Burlingame base on file. Neither document names an owner or an email.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "state_contract_california",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Peter",
+    "lastname": "Chao",
+    "title": "President",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. No LinkedIn URL on file; the two California contract documents that confirm the company do not name any individual; aoa-sf.com has no staff page. Not confirmed in role, no email found.",
+    "existing_contact_id": "242201314468"
+   }
+  ]
+ },
+ {
+  "cid": "28766875464",
+  "company": "Compton Office Machines",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live dealer, comptonoffice.com (LinkedIn company 'Compton Office Machine Co', company_id 5866029, logo updated November 2025 - a good freshness signal). Vienna WV on file. The site publishes no email address; the address below came from LinkedIn contact_info because the president is a first-degree connection of Shawn's, and it is a personal Gmail rather than a company address.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Todd",
+    "lastname": "Raines",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/todd-raines-9263b912",
+    "email": "todd.raines63@gmail.com",
+    "email_class": "personal",
+    "email_confidence": "verified",
+    "email_domain": "gmail.com",
+    "email_matches_dealer_domain": false,
+    "phone": "303-633-6258",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN, AND CONTACT DETAILS EXPOSED. LinkedIn profile (Unipile) for the URL on file: headline 'President at Compton Office Machine Company', single work_experience entry 'Compton Office Machine Co - President' start 2/2016, end null, profile website http://www.comptonoffice.com tying him to the dealer domain. He is FIRST_DEGREE (connected to Shawn since Jan 2021), so contact_info was exposed: emails ['todd.raines63@gmail.com'], phones ['303-633-6258']. THE EMAIL IS A FREE-MAIL GMAIL AND IS CLASSIFIED PERSONAL - it must not be written to the business email field. No business address for him was found anywhere.",
+    "existing_contact_id": "242558516495"
+   }
+  ]
+ },
+ {
+  "cid": "28703828596",
+  "company": "Advanced Document Systems",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired; the acquirer is already named inside the existing HubSpot title - Kelley Connect (Kelley Connect Co, dba Advanced Document Systems), the Kent WA based dealer group. adocs.net still resolves but publishes no email address and no staff page, and no personal address is published at the acquirer domain either, so nothing is inferred. The shard had swept:false for this company, and it still has no LinkedIn confirmation.",
+  "domain_correction": null,
+  "acquired_by": "Kelley Connect",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Al",
+    "lastname": "Didier",
+    "title": "President, Kelley Connect Co (dba Advanced Document Systems)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. No LinkedIn URL on file, no staff page on adocs.net, and no independent source found naming him this pass. Not confirmed in role; no email.",
+    "existing_contact_id": "242551262226"
+   }
+  ]
+ },
+ {
+  "cid": "28733949591",
+  "company": "The Office Shop Inc.",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "The dealer is real and live - officeshopinc.com, a Canon dealer serving Wyoming school districts, colleges and municipalities since at least 1984, with testimonials from Park County School District #6 (Cody), Washakie County School District, Northwest College, Sweetwater County School District #1, Fremont County School District #2 and Powell Valley Health Care, and it appears in City of Cody council warrant registers as 'THE OFFICE SHOP INC (7440)' against copier contracts. One real address is published on the site's careers page: reese@officeshopinc.com - a first-name-only convention - but it cannot be attributed to any named person on file. THE PERSON ON FILE LOOKS WRONG - see the person record.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "firecrawl_search",
+   "local_press",
+   "municipal_records"
+  ],
+  "people": [
+   {
+    "firstname": "Bunky",
+    "lastname": "Loucks",
+    "title": "President (AS RECORDED - LIKELY THE WRONG HUMAN, see evidence)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "PROBABLE WRONG-IDENTITY RECORD - HOLD FOR A HUMAN. Every source found for the name 'Bunky Loucks' is Carl 'Bunky' Loucks, a Wyoming State Representative for House District 59 in CASPER - listed in the Wyoming Association of Conservation Districts 2019 directory as 'Carl \"Bunky\" Loucks, H.D. 59, 1555 W. Coffman Ave, Casper 82604, 259-0195, bunky.loucks@wyoleg.gov' - roughly 200 miles from Lovell, with no source tying him to The Office Shop. Separately, a Powell Tribune article of 14 August 2018 describes the dealer's manager as a different person entirely: 'Before becoming a state lawmaker, the manager of The Office Shop served as a Cowley town councilman for six years and as a Big Horn County commissioner for eight years', with the quoted speaker named Peterson - Cowley being a Big Horn County town next to Lovell. A LinkedIn profile for a Kyle Peterson also records working at The Office Shop Inc. So the dealer's principal appears to be a Peterson, not Loucks. I have not asserted a replacement name because the Powell Tribune piece gives only the surname. Recommended next step: phone the main line and ask for the owner by name. His wyoleg.gov address is a government legislative address and is deliberately NOT reported as a business contact for this dealer.",
+    "existing_contact_id": "136219869710"
+   }
+  ]
+ },
+ {
+  "cid": "28764535201",
+  "company": "West Kentucky Xerographics",
+  "outcome": "no_people_online",
+  "company_verdict": "dealer_bad_domain",
+  "company_notes": "BAD DOMAIN CONFIRMED. westkentuckyxerographics.com does not respond on either http or https and returned no body at all, so the dealer_bad_domain verdict already on the record is correct and I could not find a replacement domain this pass. No state contract, trade-press or registry source naming a principal at Benton KY was found. I did not find a Kentucky authorized-dealer list covering this vendor.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "firecrawl_search",
+   "state_contract_kentucky"
+  ],
+  "people": [
+   {
+    "firstname": "Jim",
+    "lastname": "Dema",
+    "title": "Owner",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. Not confirmed - the company domain is dead, there is no LinkedIn URL on file, and no independent source naming him was found. No email.",
+    "existing_contact_id": "242203089187"
+   }
+  ]
+ },
+ {
+  "cid": "28767446191",
+  "company": "Document Technologies of N C Florida",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live dealer trading as Document Technologies, ocalacopiers.com, Ocala FL with a Gainesville line too - Ocala: (352) 368-6664 - and listed in the Ocala CEP (chamber/economic partnership) member directory against the same website and phone. The site is contact-form and phone only; no email address is published, so nothing is inferred.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search",
+   "chamber_directory"
+  ],
+  "people": [
+   {
+    "firstname": "Bill",
+    "lastname": "Schroeder",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/bill-schroeder-2782a6102",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN, AND TIED TO THE DOMAIN. LinkedIn profile (Unipile) for the URL on file: headline 'President at Document Technologies', location 'Ocala, Florida, United States' - matching the Ocala on file - single work_experience entry 'Document Technologies - President', location 'Ocala, Florida', start 1/2002, end null, and the role description is literally 'www.OcalaCopiers.com', which ties the person directly to the domain on the record. THIRD_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242550510679"
+   }
+  ]
+ },
+ {
+  "cid": "28766860571",
+  "company": "DOS Canada",
+  "outcome": "non_us",
+  "company_verdict": "non_us",
+  "company_notes": "CANADA, not US - out of scope for a US dealer census. The legal name is Direct Office Solutions Inc (LinkedIn company_id 8663448), Mississauga / Greater Toronto, Ontario; doscanada.ca is live and publishes only info@doscanada.ca, a role alias. Both owners on file are confirmed on LinkedIn and both are in Ontario. DATA HYGIENE NOTE: the crawl of doscanada.ca also surfaced the string mllegeorgesand@gmail.com embedded in a page; it has no connection to either principal and is almost certainly third-party template or widget residue, so it is deliberately not attributed to anyone here.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site"
+  ],
+  "people": [
+   {
+    "firstname": "Andrew",
+    "lastname": "Miocevich",
+    "title": "Owner / General Manager, Direct Office Solutions Inc",
+    "linkedin_url": "https://linkedin.com/in/andrew-miocevich-19966926",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN. LinkedIn profile (Unipile) for the URL on file: headline 'Owner, Direct Office Solutions, Husband, Father of 2, Brother of 4, Hockey Coach', current role 'Direct Office Solutions Inc - General Manager', Toronto Ontario, start 6/2001, end null. Note the headline says Owner while the position field says General Manager, so the 'Owner / General Manager' on file is accurate as written. Prior role Area Manager at Danka Office Imaging - consistent with the industry. SECOND_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242201314451"
+   },
+   {
+    "firstname": "Tom",
+    "lastname": "DiFrancesco",
+    "title": "Owner, Direct Office Solutions",
+    "linkedin_url": "https://linkedin.com/in/tom-difrancesco-b794411a",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN - upgraded from unvalidated. LinkedIn profile (Unipile) for the URL on file: headline 'Owner, Direct office solutions', location 'Mississauga, Ontario, Canada' - matching the Mississauga on file - current role 'Direct office solutions - Owner', Mississauga, start 1/2000, end null, and profile website http://www.doscanada.ca, tying him to the domain on the record. Prior roles at Kodak and Canon Canada. SECOND_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242201314577"
+   }
+  ]
+ },
+ {
+  "cid": "28766873882",
+  "company": "tsbei.com (Tri-State Business Equipment)",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired into Donnellon McCarthy Enterprises, the Cincinnati-based dealer group that owns the Tri-State brand and domain - as the existing HubSpot title for Jim George already states, and which his LinkedIn profile confirms by showing him as President and CEO of Donnellon McCarthy Enterprises covering 'Ohio, Kentucky, Indiana, Pennsylvania, Illinois and West Virginia'. tsbei.com still resolves but publishes no email address. The address below came from LinkedIn contact_info (first-degree connection) and is a personal AOL account, not a company address.",
+  "domain_correction": null,
+  "acquired_by": "Donnellon McCarthy Enterprises",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Jim",
+    "lastname": "George",
+    "title": "President and CEO, Donnellon McCarthy Enterprises (TITLE CORRECTED - was 'President & CEO')",
+    "linkedin_url": "https://linkedin.com/in/jimgeorge77",
+    "email": "jimpb77@aol.com",
+    "email_class": "personal",
+    "email_confidence": "verified",
+    "email_domain": "aol.com",
+    "email_matches_dealer_domain": false,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN, AND CONTACT INFO EXPOSED. LinkedIn profile (Unipile) for the URL on file: headline 'President @ Donnellon McCarthy | Key Account Management, Sales Growth', location Cincinnati OH, current role 'Donnellon McCarthy Enterprises - President and CEO' (company_id 1620550) start 3/2016, end null. He is FIRST_DEGREE (connected to Shawn since Oct 2016), so contact_info was exposed: emails ['jimpb77@aol.com']. THAT IS A FREE-MAIL AOL ADDRESS AND IS CLASSIFIED PERSONAL - it must not be written to the business email field. Prior roles: VP Sales at ProSource, Area VP at Konica Minolta.",
+    "existing_contact_id": "242614902653"
+   },
+   {
+    "firstname": "Jim",
+    "lastname": "Donnellon",
+    "title": "Chairman of the Board (formerly CEO/owner)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Carried through from the existing HubSpot record. No LinkedIn URL on file and no independent source found confirming a current chairman role this pass. Note the record itself describes him as formerly CEO/owner, so this is a legacy-relationship contact rather than the operating decision-maker - Jim George is the confirmed operating principal. No email.",
+    "existing_contact_id": "242614902651"
+   }
+  ]
+ },
+ {
+  "cid": "35373555118",
+  "company": "Allied Document Solutions and Services [ads-s]",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live independent dealer; DOMAIN FOUND where the record had none - ads-s.com, which resolves live. ENX Magazine's Elite Dealers 2025 (Under $5 million tier) lists 'Allied Document Solutions & Services, Swedesboro, NJ, www.ads-s.com. Year Founded: 1994. President/Owner: Rob Richardson. Number of Employees: 11'. The company appears in New Jersey public spending records (Maurice River Township bill lists, Gloucester County bill list 3.17.22, NJ open-data vendor payments) confirming it actively supplies public bodies. The site publishes only sales@ads-s.com, a role alias, so no personal naming pattern can be established and no address is inferred.",
+  "domain_correction": "ads-s.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "trade_press_enx",
+   "municipal_records",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Michael",
+    "lastname": "Silvia",
+    "title": "VP of Operations & Director of Sales",
+    "linkedin_url": "https://linkedin.com/in/michael-silvia-0985aa25",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN. LinkedIn profile (Unipile) for the URL on file: headline 'VP of Operations & Director of Sales at Allied Document Solutions and Services [ads-s]', location 'Swedesboro, New Jersey, United States' - matching the company's Swedesboro base - current role at the same named company (company_id 64777290), full-time, start 6/2015, end null, with a description of the firm as a managed print services provider. SECOND_DEGREE - no contact_info exposed.",
+    "existing_contact_id": "242554261125"
+   },
+   {
+    "firstname": "Rob",
+    "lastname": "Richardson",
+    "title": "President & Founder",
+    "linkedin_url": "https://linkedin.com/in/adssrichardson",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "email_domain": null,
+    "email_matches_dealer_domain": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "NOT PREVIOUSLY IN HUBSPOT. ENX Magazine Elite Dealers 2025 lists him against this dealer directly: 'Allied Document Solutions & Services, Swedesboro, NJ, www.ads-s.com. Year Founded: 1994. President/Owner: Rob Richardson.' Corroborated by his own LinkedIn profile, which shows 'President & Founder, Allied Document Solutions & Services (ads-s), Feb 1994 - Present, Swedesboro, New Jersey' - the founding date matching ENX's 1994. He is the senior decision-maker at this dealer and was missing from the CRM. No email published at ads-s.com beyond the sales@ role alias.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "35411544332",
+  "company": "doceo office solutions, llc",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Large live dealer, mydoceo.com, HQ York PA with offices across PA, MD, VA and DC (51-200 employees). Its own About Us timeline states 'Founded by John Lewis, Christian White, and Dave Bryson' in 2004 and records the executive hires used below. EMAIL PATTERN ESTABLISHED FROM TWO REAL PUBLISHED ADDRESSES: doceo's own privacy policy page (mydoceo.com/privacy-policy) instructs 'Email jhaney@mydoceo.com to submit a request', and the CPNG cooperative purchasing member directory lists Doceo Office Solutions with 'Main Contact: Lance Martin ... Email Address: lmartin@mydoceo.com'. Both are first-initial + lastname, so that convention is used for the inferred addresses below. Role aliases on the site are customercare@ and MediaRelations@mydoceo.com. Also visible on doceo's own timeline but not in our CRM: Joette Willey (CFO), Brian Shaffer and Aaron Fineberg (VP of Sales: Print Technology), Bill Baldauf, Dave Snyder and Denny Rager (VP of Service: Print Technology), and co-founders John Lewis and Dave Bryson - a further prospecting list if wanted.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "cooperative_vendor_list_cpng",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Christian",
+    "lastname": "White",
+    "title": "COO / CTO and co-founder",
+    "linkedin_url": null,
+    "email": "cwhite@mydoceo.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "email_domain": "mydoceo.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ROLE CONFIRMED on doceo's own website - the About Us page bylines him as \"Doceo's COO/CTO\" and the 2004 milestone reads 'Founded by John Lewis, Christian White, and Dave Bryson'; he also authors current company blog posts (e.g. 'By Christian White, December 17'), so he is demonstrably active. Email is PATTERN-INFERRED from the real published addresses jhaney@mydoceo.com (on mydoceo.com/privacy-policy) and lmartin@mydoceo.com (CPNG cooperative member directory) - first-initial + lastname. Kept at Needs Updated because the address itself is inferred, not published.",
+    "existing_contact_id": "242574898978",
+    "notes": "DUPLICATE: HubSpot contacts 242574898978 and 242557064714 are the same human (Christian White). Merge."
+   },
+   {
+    "firstname": "Christian",
+    "lastname": "White",
+    "title": "Chief Operating Officer (co-founder)",
+    "linkedin_url": null,
+    "email": "cwhite@mydoceo.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "email_domain": "mydoceo.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Second HubSpot record for the same person - see contact 242574898978. Same evidence and same inferred address; flagged for merge rather than researched separately.",
+    "existing_contact_id": "242557064714",
+    "notes": "DUPLICATE of contact 242574898978."
+   },
+   {
+    "firstname": "Juleen",
+    "lastname": "Bixler",
+    "title": "Vice President of Operations",
+    "linkedin_url": null,
+    "email": "jbixler@mydoceo.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "email_domain": "mydoceo.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "NOT CONFIRMED. She is the one person on this record who does not appear on doceo's own About Us executive timeline, which does name the other VPs by hire year, and no other source was found for her this pass. Title carried from the existing HubSpot record. Email is PATTERN-INFERRED from the real published jhaney@mydoceo.com / lmartin@mydoceo.com - first-initial + lastname.",
+    "existing_contact_id": "242562881144"
+   },
+   {
+    "firstname": "Alice",
+    "lastname": "Muldrow",
+    "title": "VP of Human Resources (TITLE TRIMMED - was 'VP of Human Resources and Technology Advisor')",
+    "linkedin_url": null,
+    "email": "amuldrow@mydoceo.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "email_domain": "mydoceo.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ROLE CONFIRMED on doceo's own website: the About Us timeline carries the milestone 'Alice Muldrow joins as VP of HR'. The company's own wording is VP of HR only - the 'and Technology Advisor' half of the title on file is not corroborated anywhere, so it is trimmed. Email is PATTERN-INFERRED from the real published jhaney@mydoceo.com / lmartin@mydoceo.com - first-initial + lastname.",
+    "existing_contact_id": "242571935009"
+   },
+   {
+    "firstname": "Tom",
+    "lastname": "Kuhn",
+    "title": "Executive Vice President of Sales, Print Technology Division (PROMOTED December 2025)",
+    "linkedin_url": "https://linkedin.com/in/tomkuhn1",
+    "email": "tkuhn@mydoceo.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "email_domain": "mydoceo.com",
+    "email_matches_dealer_domain": true,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "CONFIRMED STILL IN ROLE, RIGHT HUMAN, AND A PROMOTION CAPTURED. LinkedIn profile (Unipile) for the URL on file: headline 'EVP of Sales @ Doceo | Helping Maryland Businesses Manage Print Costs & Workflow', location Cockeysville MD, current role 'Doceo - Executive Vice President of Sales, Print Technology Division' (company_id 3034857) start 12/2025, end null - immediately preceded by 'VP of Sales, Print Technology Division' from 3/2017 to 12/2025. So the 'EVP of Sales' on file is right but the full current title is the longer one, and the promotion is recent. Corroborated by doceo's own timeline milestone 'Tom Kuhn joins as VP of Sales: Print Technology' in 2017. SECOND_DEGREE - no contact_info exposed, so the email is PATTERN-INFERRED from the real published jhaney@mydoceo.com / lmartin@mydoceo.com - first-initial + lastname.",
+    "existing_contact_id": "242564660391"
+   }
+  ]
+ }
+]

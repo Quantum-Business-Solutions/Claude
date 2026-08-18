@@ -1,0 +1,622 @@
+[
+ {
+  "cid": "7596648523",
+  "company": "Terrell's Office Solutions",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "ACQUIRED by Fisher's Technology, closed 2 May 2022. Idaho Business Review 6 May 2022 'Fisher's Technology acquires Terrell's Office Solutions in Montana'; The Cannata Report and fisherstech.com/terrells/ carry the same deal. Fisher's PR: 'Phil Angell, owner of Terrell's Office Solutions, entrusted Fisher's to take care of his customers and employees after 13+ years of greatness.' Terrell's founded 1962 in Bozeman MT. LinkedIn company search on 'Terrell's Office Solutions', 'Terrells Office Solutions Bozeman' and 'Terrells Office Plus' all returned zero (canary query 'Xerox Business Solutions' returned 10 companies in the same session, so this is a true zero). The only surviving LinkedIn page is /company/terrell-s-office-machines, renamed 'Formerly Terrell's Office Supplies'. People sweep on '\"Terrell's Office\" Bozeman' returned only Bozeman-area Fisher's Technology and Kyocera staff, no Terrell's employee. Phil Angell is a FORMER owner (2022) so he is not reported as current; he is the single best remaining human lead. Brand and domain terrellsoffice.com are retired in favour of fisherstech.com.",
+  "domain_correction": "fisherstech.com",
+  "acquired_by": "Fisher's Technology",
+  "sources_tried": [
+   "linkedin",
+   "web_search",
+   "trade_press",
+   "company_site"
+  ],
+  "people": []
+ },
+ {
+  "cid": "7718157199",
+  "company": "Danka Business Systems",
+  "outcome": "defunct",
+  "company_verdict": "defunct",
+  "company_notes": "DEFUNCT. Danka Business Systems PLC (St. Petersburg FL HQ, UK-listed plc) signed 8 Apr 2008 and completed 27 Jun 2008 the sale of its entire US operating subsidiary, Danka Office Imaging Company, to Konica Minolta Business Solutions U.S.A., Inc. for $240m cash (SEC 8-K, Danka Business Systems PLC, FY2008; Konica Minolta release 0409_01_01; FTC early-termination notice 20081092). DOIC had ~45,000 US customers and ~$450m revenue FY2007. After the sale the plc had no operating business and wound down; the Danka brand no longer trades. The domain on file, minoltambs.com, is a legacy 'Minolta Business Solutions' domain, not a Danka domain, and is not a usable dealer website. No people sought: there is no company left to reach. Recommend this record be closed as defunct rather than enriched.",
+  "domain_correction": null,
+  "acquired_by": "Konica Minolta Business Solutions U.S.A., Inc.",
+  "sources_tried": [
+   "web_search",
+   "sec_filings",
+   "trade_press"
+  ],
+  "people": []
+ },
+ {
+  "cid": "8493764885",
+  "company": "MiniWrites",
+  "outcome": "not_a_dealer",
+  "company_verdict": "not_dealer",
+  "company_notes": "NOT A COPIER DEALER and NOT US. MiniWrites (MiniWrites Content Services) is a content-writing, translation, transcription, editing, proofreading and subtitling agency in Navi Mumbai, Maharashtra, India. miniwrites.com is live and self-describes as 'A hub for your creative projects!' offering 'Writing & Translation Services' and 'Transcription'; miniwrites.com/business-profile advertises 'Content Writing and Linguistic needs'. Its LinkedIn page is in.linkedin.com/company/miniwrites, 'Miniwrites Content Translation and Writing Services'. Nothing in the business touches copiers, MFPs or office imaging. No people researched: the record does not belong in a US copier-dealer census. Recommend removal from the dealer universe.",
+  "domain_correction": "miniwrites.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "web_search",
+   "firecrawl"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931498006",
+  "company": "Carolina Office Systems (CSS) - A Xerox Company",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED and still trading as a Xerox Business Solutions company. LinkedIn company page /company/carolina-office-systems (id 1367915), location 'Huntersville, North Carolina', summary: 'Carolina Office Systems, A Xerox Business Solutions Company is a large and well respected consulting firm specializing in workflow optimization.' Formerly Copy Service & Supply, in business since 1982. IMPORTANT NEGATIVE: the unfiltered company-to-people sweep surfaced Mark Taylor as the top hit with headline 'President at Carolina Office Systems', but his profile experience reads position 'President and CEO (retired)' (start 2010, end null) - he is RETIRED and is deliberately NOT reported as a current decision-maker. A prior wave had already flagged him the same way. A separate prior-wave note attaching a 'Mark Taylor, President' to G-Five, Inc. (cid 9931504442) looks like a conflation with this man and should be discarded - G-Five's president is Gary Gerack (see that record). No current DM appeared on LinkedIn; the two names below come from the BBB principal block only, so they are Needs Updated. Domain note: file has carolinaos.com (which is the site on Mark Taylor's LinkedIn), BBB lists carolinaosonline.com - both plausible, no correction asserted.",
+  "domain_correction": null,
+  "acquired_by": "Xerox Business Solutions",
+  "sources_tried": [
+   "linkedin",
+   "bbb",
+   "web_search"
+  ],
+  "people": [
+   {
+    "firstname": "Beth",
+    "lastname": "Thomas",
+    "title": "President",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "BBB business profile for Carolina Office Systems, Inc. (bbb.org/us/nc/huntersville/profile/office-equipment/carolina-office-systems-inc-0473-745495), Business Management block: 'Ms. Beth Thomas, President'. BBB is not an accepted verified source, and she did not appear in the LinkedIn company-to-people sweep, so this needs confirmation.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Tim",
+    "lastname": "Howard",
+    "title": "Vice President of Operations",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Same BBB principal block: 'Mr. Tim Howard, Vice President of Operations'. Address 10506 Bryton Corporate Center Dr Ste 400 Bldg B, Huntersville, NC 28078, phone (704) 337-8900. Not confirmed on LinkedIn.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9931506505",
+  "company": "Digital Office Solutions-DOS",
+  "outcome": "blocked",
+  "company_verdict": "unresolved",
+  "company_notes": "UNRESOLVED - the one record in this shard I could not settle. dos-usa.com returned HTTP 503 on a direct fetch, so the dealer's own site could neither be read nor confirmed dead. Web and Firecrawl searches on 'Digital Office Solutions' + 'dos-usa.com' + Brooklyn + Xerox returned no page about this company; the only 'Digital Office Solutions' LinkedIn page found is a Delaware Konica Minolta/Toshiba dealer on doscorp.net (302 area code), which is a DIFFERENT company and must not be matched to this record. Separately, ALL_FOUND_CONTACTS carries a 'Digital Office Solutions, Inc. / Chad Fedorkowicz, Vice President' under a different company id (53558899869) and a 'Digital Office Systems, Inc. / Nicole Holt' under 53545025336 - neither is evidenced against this Brooklyn record and neither should be attached to it. Remaining leads for a human: (a) retry dos-usa.com when the host recovers, or pull it from the Wayback Machine; (b) NY State Secretary of State / NYC entity search for the legal name; (c) NY State OGS contract vendor lists, which in an earlier wave carried owner name, title and direct email for ~13 dealers.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "web_search",
+   "firecrawl"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931644803",
+  "company": "Image Technology Specialists - ITS (a Xerox Co.)",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED and still trading. LinkedIn company page /company/imagetech-a-xerox-company (id 83039), location 'Canton, MA', summary: 'ImageTech a Xerox Company is locally operated wholly owned subsidiary of Xerox Corporation.' 56 employees, 70 Shawmut Road, Canton MA 02021, (781) 830-9911, site its-xrx.com - so the domain on file is correct. The unfiltered company-to-people sweep on id 83039 returned the VP as the top hit plus Xerox Business Solutions Northeast regional sales and service staff, which corroborates that the ITS entity now sits inside XBS Northeast. No email exposed - all hits were 2nd/3rd degree, and LinkedIn only exposes contact_info.emails for 1st-degree connections. Aggregator sites (RocketReach/Seamless) additionally name 'Peter Nauditt' as CEO and 'Paul Manish', 'Paul Steinberg' as decision-makers; none of those appeared on LinkedIn and aggregators are not an accepted source, so they are recorded here as unverified leads only, not as people.",
+  "domain_correction": null,
+  "acquired_by": "Xerox Business Solutions (Northeast)",
+  "sources_tried": [
+   "linkedin",
+   "web_search"
+  ],
+  "people": [
+   {
+    "firstname": "Rich",
+    "lastname": "Marchioni",
+    "title": "Vice President, Xerox Business Solutions - Northeast",
+    "linkedin_url": "https://linkedin.com/in/rich-marchioni-97599653",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Top result of the unfiltered LinkedIn company-to-people sweep on the ITS/ImageTech company id 83039; headline 'Vice President, Xerox Business Solutions - Northeast', location Boston, Massachusetts. Confirms a current VP over the acquired ITS business.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Joe",
+    "lastname": "Meagher",
+    "title": "Controller",
+    "linkedin_url": "https://linkedin.com/in/joe-meagher-5119a913",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": false,
+    "validated": "Yes",
+    "evidence": "Profile fetched with linkedin_sections=experience: headline 'Controller at Image Technology Specialists, Inc', work_experience[0] = company 'Image Technology Specialists, A Xerox Company', position 'Controller', start 1/1/2013, end null - i.e. current. Included as a confirmed current employee; Controller is below the decision-maker bar used here.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9931640632",
+  "company": "Office1 (CA) Form. OneSource Office Systems",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED, brand retired. OneSource Office Systems (2154 Paragon Dr, San Jose CA) was sold on 16 Jun 2016; ENX Magazine, 'Zygoquest Group Advised OneSource Office Systems on Sale to Officia Imaging', and PitchBook both carry the deal, with the acquirer appearing as Officia Imaging in the trade press and as Office1 in company data. OneSource was a Kyocera MPS dealer 'serving customers throughout San Jose and San Francisco since Thomas and Connie George acquired the business in 2006'; the sale note says Thomas George 'remained with OneSource joining the Officia Imaging management team'. Yelp now lists the San Jose location as CLOSED, and the domain on file, onesource-office.com, now serves Office1 ('Managed IT Services | Achieve Your IT Goals | Office1'), so domain_correction is office1.com. No person is reported: Thomas and Connie George were the owners as at 2016 and I could not evidence either as current ten years later, and reporting a stale principal as current is the error this brief forbids. Remaining lead: Office1's own leadership page, or a California SoS filing for the OneSource entity.",
+  "domain_correction": "office1.com",
+  "acquired_by": "Officia Imaging / Office1",
+  "sources_tried": [
+   "web_search",
+   "trade_press",
+   "company_site"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931508837",
+  "company": "ShelDon Business Solutions",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED, no decision-maker findable. EO Johnson Business Technologies acquired ShelDon Business Solutions of Duluth MN, finalised 31 Aug 2022 (eojohnson.com blog; Wausau Pilot & Review 1 Sep 2022; ENX M&A Roundup Sep 2022; Industry Analysts; BTA). EO Johnson CEO Mary Jo Johnson: 'With the acquisition of ShelDon Business Solutions, we are able to enlarge our EO Johnson footprint and expand our Canon partnership into the Duluth, Minnesota area.' Note that ShelDon Print, Signs & Design was NOT part of the deal and remains a separate entity under the same ownership - so the ShelDon name still trades in Duluth as a print shop, which is a live confusion risk for this record. The unfiltered LinkedIn people sweep on '\"ShelDon Business Solutions\"' returned ten hits, all non-decision-makers: two Office Managers (Molly Andrews, Phil Gaudino), an Account Executive (Robert Chesser), a Solutions Specialist (Dan Roach), a Sales Orders/Dispatch coordinator (Michelle Running), plus EO Johnson Duluth staff (Eric Rinerson, Sales Manager; James Cahill, Senior Account Executive Production Print). No owner, president, VP or GM exists on LinkedIn under either name. A Kompass listing shows a 'Vice-President (Cfo)' slot with no name attached. Remaining leads: Minnesota SoS / corporationwiki officer filing for Sheldon Business Solutions LLC, or the EO Johnson Duluth branch leader.",
+  "domain_correction": "eojohnson.com",
+  "acquired_by": "EO Johnson Business Technologies",
+  "sources_tried": [
+   "linkedin",
+   "web_search",
+   "trade_press",
+   "firecrawl"
+  ],
+  "people": []
+ },
+ {
+  "cid": "14773218084",
+  "company": "Kenmark Office Systems",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED. Visual Edge Technology acquired KenMark Office Systems of Mashpee MA on 1 Aug 2018 and merged it with its New England company Axion Business Technologies (The Imaging Channel, 'Visual Edge Acquires KenMark Office Systems, Inc.' - 'forged an agreement to acquire KenMark Office Systems and merge it with its core New England company, Axion'; also ENX 'A Merger of the Minds in Massachusetts', The Recycler, OPI). KenMark was an award-winning Savin/Ricoh dealer from 1983 and a Konica Minolta dealer from 2007. The merged unit trades as 'Kenmark Axion' / Visual Edge IT, which is why Dan Sanderson below is the reachable branch leader for this location. This record and Axion (cid 35972093007) are two halves of one operating unit and should be cross-referenced, not treated as independent.",
+  "domain_correction": null,
+  "acquired_by": "Visual Edge Technology / Visual Edge IT",
+  "sources_tried": [
+   "linkedin",
+   "trade_press",
+   "web_search"
+  ],
+  "people": [
+   {
+    "firstname": "Ken",
+    "lastname": "Pedicini",
+    "title": "President / Founder",
+    "linkedin_url": "https://linkedin.com/in/ken-pedicini-aa720a10",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Profile fetched with linkedin_sections=experience. Headline verbatim: 'President / founder KenMark Office Systems 9/1983 Sold business 8/1/2018 to Visual Edge Technology. Still on staff.' work_experience carries 'KenMark Office Systems', position 'President', location '340 main street, Mashpee, Ma.', start 9/1/1983, end null - current, and he states himself that he is still on staff post-sale. Website on profile: kenmarkoffice.com, matching the domain on file.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Dan",
+    "lastname": "Sanderson",
+    "title": "Branch Manager, Kenmark Axion",
+    "linkedin_url": "https://linkedin.com/in/dsanderson11",
+    "email": "dansanderson@axionbt.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Profile fetched with linkedin_sections=experience: work_experience[0] = company 'Kenmark Axion', position 'Branch Manager', location 'Cape and Islands', start 10/1/2016, end null - current. His earlier 'Axion, Vice President of Sales' role ended 2/1/2019. Email is the pre-existing HubSpot value on contact 214609816485 (axionbt.com, the dealer group's own domain). He is attached in HubSpot to the Axion record, not this one; he runs the Cape/Kenmark branch, so he is the local decision-maker for BOTH records.",
+    "existing_contact_id": "214609816485"
+   },
+   {
+    "firstname": "Bill",
+    "lastname": "Bradley",
+    "title": "Vice President Service",
+    "linkedin_url": "https://linkedin.com/in/bill-bradley-a784441a",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "LinkedIn profile title as returned by search: 'Bill Bradley - Vice President Service at KenMark Office Systems', company KenMark Office Systems, location Pembroke, Massachusetts. I did not fetch his experience section, so I have not confirmed end:null - treat the title as unconfirmed until his profile is read.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "14774642510",
+  "company": "A-Copi",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED and domain retired. Visual Edge acquired A-COPI in April 2018 alongside A.B. Dick and H.C. Berger (The Imaging Channel, 'Visual Edge Acquires A-COPI, A.B. Dick and H.C. Berger', 5 Apr 2018: \"A-COPI's 26 employees, including the company's president and...\"). DOMAIN VERIFIED DEAD: a direct fetch of a-copi.com now resolves to visualedgeit.com (Visual Edge IT corporate site, whose Locations menu includes Maine) - so a-copi.com is a redirect, not a dealer site, and domain_correction is visualedgeit.com. Despite that, the A-COPI trading name is still in use by its president on LinkedIn, which is how the decision-maker below was found. Note the same April-2018 Visual Edge deal also covers Ab Dick Document Solutions (cid 9931632762) in this shard.",
+  "domain_correction": "visualedgeit.com",
+  "acquired_by": "Visual Edge Technology / Visual Edge IT",
+  "sources_tried": [
+   "linkedin",
+   "trade_press",
+   "company_site"
+  ],
+  "people": [
+   {
+    "firstname": "Robin",
+    "lastname": "Spencer",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/robin-spencer-32109b32",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Found by LinkedIn people search on quoted '\"A-COPI\"', then confirmed by fetching the profile with linkedin_sections=experience: headline 'president at A-copi/ Kinney Office Systems', location 'Portland, Maine, United States' (matches the record's city/state), websites ['http://www.a-copi.com'], and the single work_experience entry is company 'A-COPI LLC/Kinney Office Systems', position 'president', location 'Gardiner/Bangor', start 1/1/2005, end null - current. No email: 2nd-degree profile, so contact_info.emails is not exposed.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "28753195269",
+  "company": "Ophthalmic Instruments",
+  "outcome": "not_a_dealer",
+  "company_verdict": "not_dealer",
+  "company_notes": "NOT A COPIER DEALER. Ophthalmic Instruments Inc. (OII) sold and serviced OPHTHALMIC / EYECARE diagnostic instruments, not office imaging. Advancing Eyecare announced its acquisition of Ophthalmic Instruments Inc. on 4 Sep 2019 (PR Newswire 300911192; Healio 9 Sep 2019; BioSpace; Mergr). Per the release: 'Over the past 40 years the Shone family built OII into one of the leading and most respected providers of ophthalmic instruments on the West Coast,' with four locations in California, Arizona and Colorado serving eight states. Advancing Eyecare was formed in 2019 by Atlantic Street Capital with Lombart Instrument and Marco Ophthalmic. NOTE THE DOMAIN ON FILE IS SUSPECT: oii.ca reads as a Canadian ccTLD but the company was US West Coast - the 'CA' almost certainly came from California in a bad transcription. I could not load oii.ca (Firecrawl proxy tunnel failure) so I am not asserting a correction. No people researched: wrong industry. Recommend removal from the dealer universe.",
+  "domain_correction": null,
+  "acquired_by": "Advancing Eyecare",
+  "sources_tried": [
+   "web_search",
+   "trade_press"
+  ],
+  "people": []
+ },
+ {
+  "cid": "28766869269",
+  "company": "Imatron Office Solutions",
+  "outcome": "non_us",
+  "company_verdict": "non_us",
+  "company_notes": "NON-US. Imatron Office Solutions is a Canadian office-imaging dealer founded 1990 with offices in Saskatoon and Regina, Saskatchewan (Dun & Bradstreet company profile 'Imatron Office Solutions, Regina, SK, Canada'; Indeed Canada employer page). It is a genuine document-imaging dealer - hardware, wide format, software - but it is outside the US census scope. CORRECTION TO THE SHARD: the acquirer on file is 'Xerox', which is wrong. PitchBook records Imatron Office Solutions as acquired on 1 Jul 2017 by DIGITEX CANADA; nothing found ties it to Xerox, and the Regina Xerox presence is a separate Xerox Canada Ltd branch at 2055 Park St. D&B/PitchBook list Ken Thiessen as a key principal - an aggregator-only name, not verified, and not reported as a person. Domain on file imatroncontinental.ca is consistent with the Imatron/Continental Imaging pairing in Saskatchewan. Recommend flagging non-US and excluding from US outreach.",
+  "domain_correction": null,
+  "acquired_by": "Digitex Canada",
+  "sources_tried": [
+   "web_search",
+   "company_data"
+  ],
+  "people": []
+ },
+ {
+  "cid": "35972093007",
+  "company": "Axion Business Technologies",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED and REBRANDED. Axion Business Technologies of Cranston RI is now Visual Edge IT; the LinkedIn company page no longer exists under the Axion name - company searches for 'Axion Business Technologies' and plain 'Axion' both returned zero Axion dealer page while the canary 'Visual Edge IT' returned ten companies in the same session, so this is a true rename, not throttling. Direct evidence from the people sweep: Bruno Paglia's headline reads 'Retired in May 2023 as Regional Senior Major Acounts Manager at VisualEdge IT formerly Axion Business Technologies Inc', and Helene Martinelli (Warwick RI) now carries a Visual Edge IT headline. Axion was also Visual Edge's 'core New England company' into which KenMark was merged in 2018 (The Imaging Channel), so this record and Kenmark (cid 14773218084) are one operating unit. Existing HubSpot contacts Kirk Varatta (97273899326) and Carlos Rodrigues (97274263950) hold @axionbt.com addresses but have NO job title in the CRM and I could not verify either on LinkedIn - they are left unreported rather than guessed at. ALL_FOUND_CONTACTS also carries 'Robert Ferland, Chief Executive Officer' for this company from ZoomInfo at medium confidence; not confirmed on LinkedIn, not reported.",
+  "domain_correction": null,
+  "acquired_by": "Visual Edge Technology / Visual Edge IT",
+  "sources_tried": [
+   "linkedin",
+   "trade_press",
+   "web_search"
+  ],
+  "people": [
+   {
+    "firstname": "Daniello",
+    "lastname": "Cimarelli",
+    "title": "National VP, Service Technology and Operations, Visual Edge IT",
+    "linkedin_url": "https://linkedin.com/in/daniello-cimarelli-aa906833",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Returned by LinkedIn people search on quoted '\"Axion Business Technologies\"'; headline 'National VP, Service Technology and Operations at Visual Edge IT', location 'Cranston, Rhode Island, United States' - the same city as the Axion record, i.e. he is a VP of the acquirer working out of the former Axion site. No email: 2nd-degree profile.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Dan",
+    "lastname": "Sanderson",
+    "title": "Branch Manager, Kenmark Axion",
+    "linkedin_url": "https://linkedin.com/in/dsanderson11",
+    "email": "dansanderson@axionbt.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Profile fetched with linkedin_sections=experience: work_experience[0] = company 'Kenmark Axion', position 'Branch Manager', location 'Cape and Islands', start 10/1/2016, end null - current. His prior 'Axion, Vice President of Sales' role shows end 2/1/2019, so Branch Manager is the live title. Email is the pre-existing HubSpot value on this contact and is on the dealer group's own axionbt.com domain.",
+    "existing_contact_id": "214609816485"
+   }
+  ]
+ },
+ {
+  "cid": "9931644806",
+  "company": "ASI Business Solutions Ltd",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED, brand retired, and TWO EXISTING CRM CONTACTS ARE BAD. The Xerox Business Solutions Southwest LinkedIn company page (id 35583666, San Antonio TX) states in its own summary: 'ImageTek, Denitech, ASI, OneSOURCE, Dahill, Lewan & Arizona Office Technology are now Xerox Business Solutions Southwest' - direct confirmation that ASI (Dallas TX) is now XBS Southwest. Note that the 'OneSOURCE' in that list is the Texas OneSource, NOT the San Jose OneSource Office Systems that appears separately in this shard as cid 9931640632. NEEDS A HUMAN DECISION on two existing contacts: (1) Doug Young (136218313894, dougy@asibiz.com, LinkedIn /in/dougyoung2020) has DEPARTED - his profile shows 'ASI Business Solutions, VP of Service & Operations' with end 1/1/2020 and his current role since 3/1/2021 is 'National Operations Manager at Novatech, Inc.'; the asibiz.com address should not be mailed. (2) Scott Stahl (213209923108, scott.stahl@asibiz.com) carries LinkedIn /in/scott-s-1444a318, but that profile is a Chief Information Officer at Northern New Mexico College in Espanola NM whose five-role history contains no ASI and no office-imaging work at all - the LinkedIn URL on that CRM contact is the WRONG PERSON and should be stripped. No current ASI decision-maker was found; the remaining lead is the XBS Southwest leadership in San Antonio.",
+  "domain_correction": null,
+  "acquired_by": "Xerox Business Solutions Southwest",
+  "sources_tried": [
+   "linkedin",
+   "web_search"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931504442",
+  "company": "G-Five, Inc.",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED. Global Imaging Systems (GIS), A Xerox Company, acquired G-Five, Inc. - announced 6 Nov 2017 on news.xerox.com ('Xerox's Global Imaging Systems Acquires Office Technology Dealer G-Five; Expands Reach in Carolinas'), also carried by The Imaging Channel and Wirth Consulting. G-Five was a Carolinas multi-brand dealer serving Greenville and Charlotte; it was GIS's third dealer purchase of 2017 and it now operates as a Xerox Business Solutions company in Upstate SC. A LinkedIn company search for 'G-Five Greenville South Carolina Xerox' returned zero (semantic search dilutes on added geography); the surviving page appears to be /company/g-five, listed as 'G5'. IMPORTANT CORRECTION: a prior wave recorded 'Mark Taylor, President' against G-Five from press at low confidence - that is almost certainly a conflation with Mark Taylor, the retired President and CEO of Carolina Office Systems (cid 9931498006). The Xerox release names Gary Gerack as G-Five's president, and Gary Gerack is already the existing HubSpot contact here. Discard the Mark Taylor / G-Five association.",
+  "domain_correction": null,
+  "acquired_by": "Global Imaging Systems, A Xerox Company",
+  "sources_tried": [
+   "linkedin",
+   "trade_press",
+   "web_search"
+  ],
+  "people": [
+   {
+    "firstname": "Gary",
+    "lastname": "Gerack",
+    "title": "President",
+    "linkedin_url": null,
+    "email": "hr@gfive.net",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Xerox press release news.xerox.com/news/GIS-A-Xerox-Company-Acquires-G-Five, 6 Nov 2017, quotes him by name and title: 'Gary Gerack, President, G-Five, Inc.' - \"We're confident that GIS is the best decision for G-Five's long-time customers as Xerox has always shown a commitment to small and mid-size businesses like ours.\" Michael Pietrunti, Senior Vice President, Acquisitions, GIS is the Xerox-side signatory. CAVEAT ON THE EMAIL: hr@gfive.net is the pre-existing HubSpot value on contact 97263873814. The domain is the dealer's own so it classifies business, but it is a GENERIC HR ROLE MAILBOX, not Gerack's personal address, and it should not be treated as a personal business email for him. A verified personal address is the outstanding gap on this record.",
+    "existing_contact_id": "97263873814"
+   }
+  ]
+ },
+ {
+  "cid": "9931496290",
+  "company": "Martin Whalen Office Solutions, Inc.",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED, no current decision-maker on LinkedIn. The Xerox Business Solutions Midwest LinkedIn company page (id 42016, Bolingbrook IL) states in its own summary: 'COTG, MOTG, & Martin Whalen are now Xerox Business Solutions Midwest' - direct confirmation. The Martin Whalen trading name is still live on employee profiles: an unfiltered LinkedIn people search on quoted '\"Martin Whalen Office Solutions\"' returned Joshua Pfeuffer (Managed Print Service Specialist, Aurora IL), John Spearman (Software Sales, Joliet IL) and Brian Mcconkey (Parts Manager, Bradley IL - the record's own city), plus Walter Burden (Major Corporate Account Executive at Xerox Business Solutions Midwest). None of those is a decision-maker. FALSE-MATCH WARNING: the top hit for that query is 'Marty Whalen', headline 'Crossroads Solar', South Bend-Mishawaka - a different man in a different industry and state; do not attach him to this dealer. Prior waves recorded 'Marty Whalen Jr., President and CEO' and 'Daniel Whalen, Vice President' from press at medium confidence. I could not re-locate the source URL for either, and this brief requires an evidence URL and quote per person, so I am recording them here as UNVERIFIED LEADS rather than as people. Remaining lead: an Illinois SoS officer filing for Martin Whalen Office Solutions, Inc., or XBS Midwest leadership in Bolingbrook.",
+  "domain_correction": null,
+  "acquired_by": "Xerox Business Solutions Midwest",
+  "sources_tried": [
+   "linkedin",
+   "web_search"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9364909092",
+  "company": "Hunter Business Systems",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED. Marco announced its acquisition of Hunter Business Systems, a copier and printer company in Monroe Township NJ, on 16 Oct 2023 (marconet.com/press-releases/acquisition-hunter-business-systems; also ChannelE2E, Wirth Consulting, PitchBook). Hunter was founded 1993 at 164 Applegarth Rd, Monroe NJ 08831. Marco CEO Doug Albregts: 'We have been serving the state of New Jersey since 2019 and welcome our new clients and employees to Marco.' Hunter's workforce moved into Marco's East Coast operations to keep serving Northern New Jersey, so the hunterbiz.net brand is retired and marconet.com is the live domain. Prior-wave ZoomInfo low-confidence records for 'Laura-Jean Parsard-Hunter, Managing Director and Co-Owner' carry no email and no verifiable source and are not reported.",
+  "domain_correction": "marconet.com",
+  "acquired_by": "Marco Technologies",
+  "sources_tried": [
+   "trade_press",
+   "web_search",
+   "company_site"
+  ],
+  "people": [
+   {
+    "firstname": "Steve",
+    "lastname": "Martin",
+    "title": "Owner (at the October 2023 sale)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Marco press release 16 Oct 2023 quotes him as Hunter's principal announcing the sale: 'We are proud to announce that Hunter Business Systems is joining the Marco Team. Marco Technologies, with its extensive offerings was the best fit for our customers and sales team.' The release is an accepted verified source for the fact that he was the owner AT CLOSE, but it says nothing about his role afterwards, and nearly three years have passed - so he is deliberately marked Needs Updated, NOT confirmed current. ZoomInfo separately lists 'Steven Martin, Owner at Hunter Business Systems' with a hunterbiz.net address, which is the retired domain. Confirm his current employer before any outreach.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9931494538",
+  "company": "TML (a Xerox Co.)",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED and still trading, with its president confirmed on LinkedIn and a LinkedIn URL now available for the existing CRM contact that previously had none. FALSE-MATCH WARNING: a LinkedIn people search on '\"Ben Simms\" TML Xerox' returns exactly two men of that name - the Nashville TN 'Senior Vice President Sales Central Region @ Novatech' (/in/bensimms2) is NOT this person and must not be attached to this record. The outstanding gap is an email: none is exposed on the 3rd-degree profile and the CRM contact has none.",
+  "domain_correction": null,
+  "acquired_by": "Xerox Business Solutions",
+  "sources_tried": [
+   "linkedin",
+   "web_search"
+  ],
+  "people": [
+   {
+    "firstname": "Ben",
+    "lastname": "Simms",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/ben-simms-975737129",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn people search returned headline verbatim 'President at TML, A Xerox Company', location 'Manassas, Virginia, United States' - consistent with the record's Chantilly VA (same Northern Virginia market). This matches the title already held on HubSpot contact 132367149920, which had no LinkedIn URL and no email; the profile URL above is the new datum.",
+    "existing_contact_id": "132367149920"
+   }
+  ]
+ },
+ {
+  "cid": "9931647915",
+  "company": "Benchmark Business Solutions",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED and DOMAIN VERIFIED DEAD - this is the actionable finding on this record. A direct fetch of benchmarkyouroffice.com/about-us/ returns HTTP 301 to benchmarkyouroffice.visualedgeit.com/about-us/, which in turn returns HTTP 301 to visualedgeit.com. The Benchmark site no longer exists as its own property; the dealer is absorbed into Visual Edge IT (whose Locations menu includes Texas). NEEDS A HUMAN DECISION: both existing HubSpot contacts hold addresses on that dead domain - LeDwain Turner (134258201782, lturner@benchmarkyouroffice.com, title 'Partner') and John Lane (1699453, jlane@benchmarkyouroffice.com, title 'Sales Leadership', LinkedIn /in/john-d-lane-5199489). Because benchmarkyouroffice.com now 301s to a different host, mail to those addresses is likely to bounce and both should be re-verified or suppressed before any send. I did not re-confirm either person's current employer on LinkedIn, so I am not reporting them as verified people. Also note ALL_FOUND_CONTACTS carries 'Melissa Morrison, Chief Human Resources Officer' against 'Benchmark Business SYSTEMS' from a company site at high confidence - a different company name, and it should not be folded into this Benchmark Business SOLUTIONS record without a check.",
+  "domain_correction": "visualedgeit.com",
+  "acquired_by": "Visual Edge IT",
+  "sources_tried": [
+   "company_site",
+   "web_search",
+   "linkedin"
+  ],
+  "people": []
+ },
+ {
+  "cid": "7589140662",
+  "company": "Ethos Technologies",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED. RJ Young announced its acquisition of Ethos Technologies on 1 Mar 2022 (blog.rjyoung.com/news/rj-young-announces-acquisition-of-virginia-based-ethos-technologies). Useful detail: Ethos was 'previously Blue Ridge Copier', founded 1996, and was 'the largest office technology and IT solutions provider in Southwest Virginia' - so a Blue Ridge Copier record, if one exists elsewhere in the census, is the same company. RJ Young's President and CEO Chip Crunk is the acquirer-side principal; this was RJ Young's ninth acquisition in five years. Note that RJ Young is also the acquirer named on this shard's Ethos row, which the press release confirms.",
+  "domain_correction": "rjyoung.com",
+  "acquired_by": "RJ Young",
+  "sources_tried": [
+   "trade_press",
+   "company_site",
+   "web_search",
+   "linkedin"
+  ],
+  "people": [
+   {
+    "firstname": "Paul",
+    "lastname": "Story",
+    "title": "President / CEO / Owner",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "RJ Young press release 1 Mar 2022 quotes him by name and title: \"'We are excited about our future with RJ Young,' said Ethos Technologies' CEO Paul Story.\" A prior wave independently recorded 'Paul Story Jr., President, CEO, Owner' for this company from LinkedIn at high confidence, and ZoomInfo's Ethos directory lists him as 'President, Chief Executive Officer & Owner'. Two of those three are accepted sources. No email observed - I did not construct one.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Doug",
+    "lastname": "Turpin",
+    "title": "Vice President of Technology",
+    "linkedin_url": null,
+    "email": "dturpin@e-thostech.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Pre-existing HubSpot contact 97260832162, title 'Vice President of Technology', email dturpin@e-thostech.com on the dealer's own domain (business class). I did NOT independently re-verify him this wave - a LinkedIn people query that added the Salem/Roanoke geography diluted to zero Ethos hits, and I did not spend a second call - so he stays Needs Updated. Given RJ Young absorbed Ethos in 2022, the e-thostech.com domain should be checked for redirect to rjyoung.com before mailing.",
+    "existing_contact_id": "97260832162"
+   }
+  ]
+ },
+ {
+  "cid": "9359290226",
+  "company": "MercuryDoc",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED, and the single existing contact is a DEPARTURE - that is the finding here. OPI reports Visual Edge 'has now acquired Mercury Document Imaging, KenMark Office Systems, and Technocom', noting Mercury Document Imaging had three locations; Mercury is the MercuryDoc entity in Van Nuys CA. NEEDS A HUMAN DECISION: HubSpot contact 1241357, Joel Volk, volkj@mercurydoc.com, title 'Board Member', LinkedIn /in/joelvolk. I fetched that profile with linkedin_sections=experience: his Mercury role is 'Mercury Document Imaging Co., Inc.', position 'General Manager, President', start 6/1/1985, END 7/1/2021 - he left five years ago. His current role since 7/1/2021 is 'President and Business Counselor' at 'Hot Dog Business Growth (A JoVoCo, Inc. Company)', self-employed, Oxnard CA, sites hotdogbizgrowth.com and SmallBizCast.com. The mercurydoc.com address should be suppressed and the contact re-pointed or detached. No current MercuryDoc decision-maker was found; the remaining lead is the Visual Edge IT California branch.",
+  "domain_correction": null,
+  "acquired_by": "Visual Edge Technology / Visual Edge IT",
+  "sources_tried": [
+   "linkedin",
+   "trade_press",
+   "web_search"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931632762",
+  "company": "Ab Dick Document Solutions",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed ACQUIRED but the owner is still in place - the strongest single result in this shard. Visual Edge acquired A.B. Dick in April 2018 in the same transaction as A-COPI and H.C. Berger (The Imaging Channel, 'Visual Edge Acquires A-COPI, A.B. Dick and H.C. Berger', 5 Apr 2018) - the same deal that covers cid 14774642510 in this shard. The domain on file, cjhiotas.com, is the owner's own initials (C.J. Hiotas) and is consistent with the LinkedIn entity name. City note: the record says Grand Rapids MI; his LinkedIn location is Ada, Michigan, an adjacent Grand Rapids suburb - consistent, not a mismatch.",
+  "domain_correction": null,
+  "acquired_by": "Visual Edge Technology / Visual Edge IT",
+  "sources_tried": [
+   "linkedin",
+   "trade_press",
+   "web_search"
+  ],
+  "people": [
+   {
+    "firstname": "Charlie",
+    "lastname": "Hiotas",
+    "title": "Owner",
+    "linkedin_url": "https://linkedin.com/in/charlie-hiotas-a258147",
+    "email": "chiotas@cjhiotas.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Profile fetched with linkedin_sections=experience: headline 'Owner, A. B. Dick Document Solutions', location 'Ada, Michigan, United States', and the single work_experience entry is company 'A. B. Dick Document Solutions', position 'Owner', with end null - current. Email is the pre-existing HubSpot value on contact 97259796902 and its domain cjhiotas.com is the dealer's own domain on file, so it classifies business. Title in the CRM ('Owner') matches LinkedIn exactly.",
+    "existing_contact_id": "97259796902"
+   }
+  ]
+ },
+ {
+  "cid": "14774547500",
+  "company": "Precision Copier Service Inc",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Company settled, and a SERIOUS FALSE MATCH found in the CRM. Precision Copier Service, Inc. trades d/b/a Sierra Office Solutions - its own site states 'Precision Copier Service, Inc. d/b/a Sierra Office Solutions' - and now presents as 'Sierra Office Systems, A Xerox Business Solutions Company', established 1990 in Reno with offices in Reno, Las Vegas and Elko, having 'joined forces with Inland Business Systems | A Xerox Company'. So the record is a live, still-trading dealer inside Xerox Business Solutions, and sierraoffice.com is the correct domain (a direct fetch of sierraoffice.com/about/ returned HTTP 421/403 behind Fastly, which is a WAF block, not a dead site). NEEDS A HUMAN DECISION: HubSpot contact 134275501404, Andrew Thompson, 'Managing Director', andrew.thompson@sierraoffice.com, LinkedIn /in/andrew-thompson-26159b5a - I fetched that profile and it is 'Managing Director' of 'SIERRA OFFICE SOLUTIONS PTY LTD' in BRISBANE, QUEENSLAND, AUSTRALIA, start 4/2011, and it is his only role. That is an Australian company of the same name, not the Reno dealer. The unfiltered LinkedIn company-to-people sweep on the Reno page (id 1536427, 'Established in 1990 as a full service Document Imaging company in Reno') confirms the leak: it returned a SECOND Brisbane-based Andrew Thompson (/in/andrew-thompson-09138644, 'Managing Director at Sierra Office Solutions', Greater Brisbane Area) alongside the genuine Reno staff. The 'Managing Director' title on the CRM contact almost certainly originated from that Australian conflation via an aggregator, and both the LinkedIn URL and the title should be treated as unsafe. The genuine Reno people on that page are all below the decision-maker bar - Charlene Bair (Parts Manager, Reno), Ann Marie Jobe (Assistant Controller, Reno), Michael Leonetti and Felicity Sundsboe (Account Managers, Bishop CA) - and a second Charlene Bair profile reading 'Parts Supervisor, Team Lead and Purchaser at XBS west' independently corroborates the Xerox Business Solutions West ownership. No current decision-maker found; remaining lead is XBS West / Inland Business Systems leadership.",
+  "domain_correction": null,
+  "acquired_by": "Xerox Business Solutions (via Inland Business Systems)",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "web_search"
+  ],
+  "people": []
+ },
+ {
+  "cid": "28717505977",
+  "company": "XDOS, Inc.",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "MAJOR CORRECTION plus a departure. The acquirer on file is 'Xerox' - that is WRONG. XDOS was a Xerox Authorized Sales Agency, never Xerox-owned, and it was acquired by LEVIFI, announced January 2025 (levifi.com/levifi-acquires-xdos-inc/; Industry Analysts 31 Jan 2025; The Sumter Item, 'Levifi acquires XDOS Inc., bringing workplace technology full circle for CEO'). Per the coverage, Levifi acquired 'XDOS Inc., a Xerox sales agency and dealership with offices in Sumter and Florence, SC' - Levifi's seventh acquisition, and full circle for founder Thomas Fimian, who started his career at XDOS in 1997 before founding Levifi in 2002. Company history from the dealer's own site xdosinc.com/about-xdos: created 1 Jan 1990 by Harold R. Nixon as the Xerox agency for Sumter, Clarendon, Orangeburg and Calhoun counties, originally Graphic Office Systems, renamed XDOS (Xerox Digital Office Solutions) in 1999, expanded to XDOS Pee Dee in Florence SC in Jan 2000, and 'In March of 2012, Faye Nixon became majority owner of XDOS, Inc.' - a woman-owned business. NEEDS A HUMAN DECISION: HubSpot contact 132373545540, Harold Nixon, 'Agent Owner', hnixon@xdosinc.com - the Levifi release names him explicitly as 'Harold Nixon, former owner of XDOS Inc.', so that title is now historic and the contact needs a departure/former-owner flag rather than being mailed as the owner.",
+  "domain_correction": null,
+  "acquired_by": "Levifi",
+  "sources_tried": [
+   "trade_press",
+   "company_site",
+   "web_search"
+  ],
+  "people": [
+   {
+    "firstname": "Thomas",
+    "lastname": "Fimian",
+    "title": "Founder and CEO, Levifi",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Levifi press release levifi.com/levifi-acquires-xdos-inc/ (Jan 2025) names him as 'Thomas Fimian, Founder and CEO of Levifi'; The Sumter Item's coverage adds that he 'began his career in the workplace technology industry at XDOS in 1997 before founding Levifi in 2002'. He is the current decision-maker over the acquired XDOS business, at the acquirer rather than at the retired XDOS entity. No email observed.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Faye",
+    "lastname": "Nixon",
+    "title": "Majority Owner (pre-acquisition)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "The dealer's own website, xdosinc.com/about-xdos, states verbatim: 'In March of 2012, Faye Nixon became majority owner of XDOS, Inc.' and that XDOS 'is a woman owned business headquartered in the historic district of downtown Sumter, South Carolina.' A dealer's own site is an accepted verified source, BUT that page predates the January 2025 Levifi acquisition and the release describes Harold Nixon as 'former owner', so ownership has changed hands. Marked Needs Updated: confirm whether she remains involved post-close before treating her as current.",
+    "existing_contact_id": null
+   }
+  ]
+ }
+]

@@ -1,0 +1,5 @@
+# never commit credentials or live data pulls
+.env
+*.token
+xlsx_data.json
+COPIER_DEALER_CONTACTS.xlsx

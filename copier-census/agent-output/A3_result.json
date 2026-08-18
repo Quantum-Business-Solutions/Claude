@@ -1,0 +1,503 @@
+[
+ {
+  "cid": "7673433103",
+  "company": "Go Image Tech",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Trading name was 'Image Tech' / 'IT Image Tech', 70 Shawmut Rd, Canton MA (Yelp listing cites goimagetech.com and the Canton address). The domain on file, goimagetech.com, now resolves straight through to https://www.xeroxbusinesssolutions.com/en-us — the brand is fully absorbed into Xerox Business Solutions and has no independent web presence. No LinkedIn company page exists for it (a companies search for 'Go Image Tech' returned only unrelated firms in Dhaka, Delhi and Cologne; a qualified search 'Image Tech copier Massachusetts' returned zero). A people search on \\\"Image Tech\\\" + Canton Massachusetts + copier returned zero. Wayback Machine could not be reached from this container (web.archive.org is egress-blocked, and the availability API returned no snapshot for /about). Evidenced zero.",
+  "domain_correction": "xeroxbusinesssolutions.com",
+  "acquired_by": "Xerox Business Solutions",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "company_site", "firecrawl_search", "wayback"],
+  "people": []
+ },
+ {
+  "cid": "8293034866",
+  "company": "Digital Marketing for Today",
+  "outcome": "not_a_dealer",
+  "company_verdict": "not_dealer",
+  "company_notes": "Not a copier dealer and not a resolvable company. The domain on file, integraphy.co, fails DNS resolution entirely (no A record). Searches for 'Digital Marketing for Today' + Seattle + integraphy return only generic Seattle agency directories, no such firm. The record name is a marketing-services phrase, not an office-imaging business. Recommend deleting or archiving rather than researching further.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": ["company_site", "firecrawl_search"],
+  "people": []
+ },
+ {
+  "cid": "9931500180",
+  "company": "Advanced Office Systems (Branch of Zeno Imaging)",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Two-step acquisition, both legs evidenced. Charles Broussard's LinkedIn profile shows he founded Advanced Office Systems (Arlington, TX) in Jan 1989 ('Started Advanced Office Systems in January of 1989 ... Elite Dealer Award - Office Dealer Magazine 2003') and that the role ended May 2014, when his Zeno Imaging role begins. Zeno Imaging was then acquired by Visual Edge Technology in Nov 2018 (theimagingchannel.com and enxmag.com both report it, naming Zeno owner Tom Frederick). The surviving operating entity is Zeno Digital Solutions, LLC — 14320 Midway Rd, Farmers Branch TX 75244, 817-695-1700, info@zenodallas.com — and the DFW branch trades as 'Zeno Dallas'. The Zeno LinkedIn page's own tagline still lists 'Advanced Office Systems (Arlington, Tx)'. The domain on file, aos-arlington.com, fails DNS resolution. Texas DIR lists Zeno Digital Solutions, LLC as a vendor but every contract is Expired and no sales contact is published.",
+  "domain_correction": "zenodallas.com",
+  "acquired_by": "Zeno Imaging (2014); Zeno acquired by Visual Edge Technology Nov 2018; now Zeno Digital Solutions, LLC",
+  "sources_tried": ["linkedin", "linkedin_profile_verification", "company_site", "firecrawl_search", "state_contract_vendor_list_texas_dir"],
+  "people": [
+   {
+    "firstname": "Charles",
+    "lastname": "Broussard",
+    "title": "Regional Director, Zeno Dallas (founder/former owner of Advanced Office Systems)",
+    "linkedin_url": "https://www.linkedin.com/in/charles-broussard-1713218",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile (experience section) shows current role 'Regional Director at Zeno Dallas' at ZENO DIGITAL SOLUTIONS, LLC with end: null, and the preceding entry 'Owner - Advanced Office Systems' at Advanced Office Systems (Arlington, Tx) from 1/1989 to 5/2014 — he is the founder of the target company and still runs the successor branch. Profile website field is zenodallas.com. Second-degree connection, so no email exposed.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Kristen",
+    "lastname": "Perotti",
+    "title": "New Business Development & Marketing Director",
+    "linkedin_url": "https://www.linkedin.com/in/kristen-perotti-36887344",
+    "email": "perottikristen@gmail.com",
+    "email_class": "personal",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile confirms current role 'New Business Development & Marketing Director' at ZENO DIGITAL SOLUTIONS, LLC (Farmers Branch, Texas, On-site), start 7/2022, end: null, following 'Senior Business Development Executive' at Zeno Imaging. The published contact_info email is a Gmail address — PERSONAL, must never go in the primary business email field.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9931498007",
+  "company": "Counsel",
+  "outcome": "no_people_online",
+  "company_verdict": "acquired",
+  "company_notes": "COUNSEL Office & Document (2309 Chatburn Ave, Harlan IA — western Iowa, not Omaha as the record says) and sister company Midwest Office Automations were acquired by Visual Edge Technology, Inc., announced 6 March 2018 in Visual Edge's own press release: 'Visual Edge Technology, Inc. expressed interest in bringing Joel Longtin's thriving office technology companies, COUNSEL and Midwest Office Automations (MOA) onboard'. The domain on file, counseldoc.com, 301-redirects to visualedgeit.com. NO CURRENT DECISION-MAKER EXISTS TO FIND, and both named candidates were positively ruled out: (a) owner Joel Longtin's LinkedIn now reads 'owner at JKL Enterprises, Inc.', Naples, Florida — he has left the industry; (b) Mark Rasmussen, named in the 2018 release as leading COUNSEL, cannot be found on LinkedIn in any COUNSEL/Visual Edge role. A LinkedIn quoted-name people search on \\\"Counsel Office & Document\\\" returns only non-decision-makers: Territorial Sales Manager (Harlan IA), Connectivity Specialist (Harlan IA), Field Service Technician (Carroll IA) and a Sales Administrative Assistant. Evidenced zero.",
+  "domain_correction": "visualedgeit.com",
+  "acquired_by": "Visual Edge Technology, Inc. (March 2018)",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "company_site", "acquirer_press_release", "firecrawl_search", "web_search"],
+  "people": []
+ },
+ {
+  "cid": "9931637909",
+  "company": "East Texas Copy Systems",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Datamax Inc. (Coppell, TX) — announced in Datamax's own release dated 10 Jan 2018: 'Datamax is pleased to announce the acquisition of East Texas Copy Systems, a privately-owned business technology provider headquartered in Tyler, TX.' The brand survives as 'East Texas Copy Systems (A Division of Datamax Inc.)' with three locations (Tyler, Longview, Lufkin) and keeps its own etcopy.com domain, so the domain on file is correct. No LinkedIn company page exists (a companies search returned zero), but the quoted-name people search surfaced a live staff roster including the President. EMAIL PATTERN IS FIRST-PARTY EVIDENCED: the same Datamax release publishes 'Jeff Walker, Marketing Director, East Texas Copy Systems (A Division of Datamax Inc.), 903-939-2255, jwalker@etcopy.com', i.e. first-initial + lastname @etcopy.com (LeadIQ independently puts that pattern at 83.8%). Addresses below are built on that pattern and are therefore INFERRED, not verified.",
+  "domain_correction": null,
+  "acquired_by": "Datamax Inc. (January 2018)",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "linkedin_profile_verification", "acquirer_press_release", "web_search"],
+  "people": [
+   {
+    "firstname": "Greg",
+    "lastname": "Walker",
+    "title": "President",
+    "linkedin_url": "https://www.linkedin.com/in/greg-walker-3459b0b",
+    "email": "gwalker@etcopy.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "The PERSON and TITLE are LinkedIn-verified: profile experience shows 'President' at East Texas Copy Systems, start 1/1999, end: null, location Tyler TX, described as 'Office equipment supplier in East Texas with 3 offices serving 18 counties'; he is also quoted as 'East Texas Copy Systems President Greg Walker' in the Datamax acquisition release. Marked Needs Updated ONLY because the email is pattern-inferred (from the verified jwalker@etcopy.com in the same release) and has not been confirmed against a live source.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Rick",
+    "lastname": "Fedell",
+    "title": "Vice President",
+    "linkedin_url": null,
+    "email": "rfedell@etcopy.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": "903-939-2255",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Named in the Datamax acquisition release (10 Jan 2018) inside Greg Walker's quote: 'Rick Fedell (Vice President) and I are beyond thrilled...'. That is an eight-year-old source and I could not confirm the role is still current on LinkedIn, so currency is UNCONFIRMED — do not treat the title as present-tense without a check. Email is pattern-inferred.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9931653643",
+  "company": "Modern Business Machines - MBM (a Xerox Co.)",
+  "outcome": "no_people_online",
+  "company_verdict": "acquired",
+  "company_notes": "The domain on file, mbm360.com, resolves straight through to https://www.xeroxbusinesssolutions.com/en-us — brand fully absorbed, no independent site. No LinkedIn company page for the Appleton WI business: a companies search for 'Modern Business Machines' returned only 'Modern Business Machines Nigeria Ltd' (Lagos) and 'MODERN BUSINESS MACHINES INC' (Troy, Michigan), both rejected on location. The quoted-name people search on \\\"Modern Business Machines\\\" + Appleton produced exactly one genuine current employee, Thomas Moore, Service Manager — not a decision-maker; every other hit was a company-filter leak (Gordon Flesch, Essity, Catalysis etc.). Evidenced zero.",
+  "domain_correction": "xeroxbusinesssolutions.com",
+  "acquired_by": "Xerox Business Solutions",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "company_site"],
+  "people": []
+ },
+ {
+  "cid": "9931623094",
+  "company": "rabbitoa.com",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "The company is Rabbit Office Automation (Pleasanton/Sunnyvale CA; LinkedIn company id 56679). rabbitoa.com 301-redirects to mrc360.com, which itself resolves to https://www.xeroxbusinesssolutions.com/en-us — a two-hop path into Xerox Business Solutions. THE ACQUISITION DATE IS PINNED BY AN EMPLOYEE RECORD: Sukhvinder K. Chana's LinkedIn experience shows 'Accounting Manager' at Rabbit Office Automation (Sunnyvale, CA) running 4/2001 to 10/2018, immediately followed by 'Director Of Operations' at Xerox starting 10/2018 — i.e. Rabbit was taken into Xerox in October 2018. She has since moved on again (Modern Office Solutions LLC, 5/2026) and is NOT a Rabbit contact. The quoted-name people search on \\\"Rabbit Office Automation\\\" returned only former-employer leaks (Modern Office Solutions, Eclipse Office Technology, Xerox Business Solutions regional roles) — no one currently at the Rabbit brand. Evidenced zero.",
+  "domain_correction": "mrc360.com",
+  "acquired_by": "Xerox (October 2018); local brand now MRC / Xerox Business Solutions",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "linkedin_profile_verification", "company_site"],
+  "people": []
+ },
+ {
+  "cid": "9931632766",
+  "company": "US Imaging Solutions (part of Dex)",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "U.S. Imaging Solutions (USIS), Fort Lauderdale FL, was absorbed by DEX Imaging in 2013. Pinned by the founder's own LinkedIn record: Britt Sikes shows 'CEO' at U.S. Imaging Solutions from 1/1998 to 4/2013 ('USIS is a document and print management company...'), immediately followed by DEX Imaging from 1/2013 to present. The record's prior verdict 'part of Dex' is therefore confirmed. No independent USIS site or team page remains; the quoted-name people search returned Sikes plus a page of unrelated leaks. He still lists usimagingsolutions.com among his profile websites, which is how the identity tie was made.",
+  "domain_correction": "deximaging.com",
+  "acquired_by": "DEX Imaging (2013)",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "linkedin_profile_verification"],
+  "people": [
+   {
+    "firstname": "Britt",
+    "lastname": "Sikes",
+    "title": "Executive Vice President, Enterprise Accounts, DEX Imaging (former CEO, U.S. Imaging Solutions)",
+    "linkedin_url": "https://www.linkedin.com/in/brittsikes",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile experience shows current role 'Executive Vice President, Enterprise Accounts' at DEX Imaging, start 1/2013, end: null, location Fort Lauderdale FL; the immediately prior entry is 'CEO' at U.S. Imaging Solutions (1998–4/2013). He is the target company's former chief executive, still at the acquirer and still listing usimagingsolutions.com on his profile. Second-degree, so no email exposed; I did not construct one because I found no first-party evidence of DEX's address pattern.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "14773253395",
+  "company": "Ross Imaging dba James Imaging",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed: James Imaging Systems took over the Ross Imaging offices in Sheboygan and Appleton WI. Industry Analysts reported 'James Imaging Systems will become the owner and operator of the Ross Imaging offices in Sheboygan and Appleton' (Oct 2017) and BizTimes covered the same deal ('James Imaging Systems acquires local branches of Illinois firm ... Wisconsin Ross offices, which are in Sheboygan and Appleton'). The acquirer is emphatically live — James Imaging Systems, founded 1977, HQ Brookfield WI with offices in Brookfield, Madison, Neenah and Sheboygan, a 2026 BizTimes Future 50 company, 3,000 LinkedIn followers. EMAIL PATTERN IS EVIDENCED from two staff LinkedIn headlines that publish their own addresses (mkirchen@jamesimaging.com for Mone Kirchen, tschumacher@jamesimaging.com for Tyler Schumacher): first-initial + lastname @jamesimaging.com. Note: ZoomInfo lists a 'David Kaufman, CEO & President' for this company — that contradicts the dealer's own leadership page and should be ignored.",
+  "domain_correction": "jamesimaging.com",
+  "acquired_by": "James Imaging Systems (October 2017)",
+  "sources_tried": ["linkedin", "linkedin_company_to_people", "company_site", "trade_press_industry_analysts", "trade_press_biztimes", "firecrawl_search"],
+  "people": [
+   {
+    "firstname": "Lola",
+    "lastname": "Tegeder",
+    "title": "Chairman & CEO",
+    "linkedin_url": null,
+    "email": "ltegeder@jamesimaging.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Named on the dealer's own leadership page, jamesimaging.com/company-overview: 'Lola Tegeder — Chairman & CEO. Lola Tegeder is the CEO of James Imaging Systems and is actively involved in its daily operations.' The company's LinkedIn page also states 'Lola Tegeder, CEO'. The PERSON and TITLE are first-party verified; marked Needs Updated only because the email is pattern-inferred from the two staff-published @jamesimaging.com addresses, not confirmed.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Thomas",
+    "lastname": "Tegeder",
+    "title": "President",
+    "linkedin_url": null,
+    "email": "ttegeder@jamesimaging.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Named on the dealer's own leadership page, jamesimaging.com/company-overview ('Thomas J. Tegeder, President of James Imaging Systems'), and independently in BizTimes coverage of the Ross Imaging deal: 'Lola Tegeder, CEO and Tom Tegeder, president at James Imaging Systems.' Also documented there as having acquired his brother Patrick's ownership interest in 2004. Needs Updated only because the email is pattern-inferred.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "21355268228",
+  "company": "Global Imaging Systems",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Global Imaging Systems (Tampa FL) is the Xerox subsidiary acquired in 2007 that holds the Xerox Business Solutions dealer network — so 'acquired' is right, but unlike the other Xerox-absorbed brands in this shard it is STILL A STAFFED, OPERATING ENTITY with a live LinkedIn company page (id 68549, Tampa FL, 5,000 followers) and a current senior team. The unfiltered company-to-people sweep returned three decision-makers whose headlines name the company and whose locations match Tampa. Its domain gisx.com returned HTTP 503 on two fetch attempts so I could not confirm or correct it — left null rather than guessed. Leaks correctly rejected from the same sweep: a retired CFO (retired Jan 2018), a Kelley Create account manager, a Michigan Office Solutions CFO and a retired VP of Service.",
+  "domain_correction": null,
+  "acquired_by": "Xerox (2007)",
+  "sources_tried": ["linkedin", "linkedin_company_to_people", "linkedin_profile_verification", "company_site"],
+  "people": [
+   {
+    "firstname": "Tom",
+    "lastname": "Salierno",
+    "title": "Chief Executive Officer",
+    "linkedin_url": "https://www.linkedin.com/in/tom-salierno-b653176",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile experience shows 'Chief Executive Officer' at Global Imaging Systems (company id 68549), start 1/2012, end: null — current. Career history corroborates seniority in this industry (Senior VP Acquisitions at Global 2008-2012; President and COO of Ricoh U.S.; President of Savin). Second-degree, no email exposed.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Peter",
+    "lastname": "Shoemaker",
+    "title": "Executive Vice President",
+    "linkedin_url": "https://www.linkedin.com/in/peter-shoemaker-4032853b",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Returned by the unfiltered company-to-people sweep on Global Imaging Systems (company id 68549) with headline 'Executive Vice President at Global Imaging Systems' and location Tampa, Florida — company named in the headline and city matches the dealer's HQ. Title currency rests on the headline; I did not spend a separate profile call on him.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Al",
+    "lastname": "Vieira",
+    "title": "Vice President of Operations",
+    "linkedin_url": "https://www.linkedin.com/in/al-vieira-7426743b",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Returned by the unfiltered company-to-people sweep on Global Imaging Systems (company id 68549) with headline 'Vice President of Operations at Global Imaging Systems' and location Tampa, Florida — company named in the headline and city matches HQ. Title currency rests on the headline; no separate profile call spent.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "28714445744",
+  "company": "High Country Copiers",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "ACQUIRER ON FILE IS WRONG AND IS CORRECTED HERE. High Country Copiers (HCC) — a Xerox agency covering Summit and Eagle Counties CO — was acquired in September 2016 not by Xerox itself but by Professional Document Solutions, Inc. (PDS Xerox) of Fort Collins, 4114 South Timberline Road; PDS now trades as 'PDS - Proven IT Colorado' at pds-co.com. The domain on file, highcountrycopiers.com, has LAPSED — it 301-redirects to an expireddomains.com parking profile. A LinkedIn quoted-name people search on \\\"High Country Copiers\\\" produced no current employee at all (only Aubel-surname and unrelated leaks — none matched on employer). Evidenced zero for this brand. DELIBERATE OMISSION: I did not attach PDS/Proven IT executives to this record; they belong to a different, live company that will have its own CRM record, and hanging them here would create wrong-company contacts. Flagging PDS as the live successor for a human to route.",
+  "domain_correction": "pds-co.com",
+  "acquired_by": "Professional Document Solutions, Inc. (PDS Xerox), Sept 2016 — now PDS - Proven IT Colorado",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "company_site", "web_search"],
+  "people": []
+ },
+ {
+  "cid": "28707250467",
+  "company": "Witt Company",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Witt Company (founded 1961, 850 SW 7th Street, Renton WA) was acquired by KYOCERA Document Solutions on 1 October 2014 and now trades as 'KYOCERA Document Solutions America, Inc. / WITT Company'. The domain on file, witt-company.com, is dead — it 302-redirects to a HugeDomains for-sale listing. CAREFUL NEGATIVE: there is a genuine LinkedIn company page 'Witt Company Inc' (id 5918297, Hillsboro OR, Retail Office Equipment) and its unfiltered people sweep does return a 'VP/Partner at WITT Company' — but that profile is anonymised (no name, no public identifier) and is located in Corona, California, alongside several other California/Arizona 'Witt Company' staff, i.e. a different Witt entity. I rejected it rather than risk a wrong-company decision-maker. The Renton-area people I could confirm are an Account Manager and a Strategic Account Executive (Camille Simonsen) — not decision-makers. Evidenced zero.",
+  "domain_correction": null,
+  "acquired_by": "KYOCERA Document Solutions (1 October 2014)",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "linkedin_company_to_people", "company_site", "web_search"],
+  "people": []
+ },
+ {
+  "cid": "28766862366",
+  "company": "Metro Business Systems",
+  "outcome": "defunct",
+  "company_verdict": "defunct",
+  "company_notes": "Metro Business Systems, L.L.C., 2950 Kaverton Rd, Forestville MD — an authorised full-service Konica Minolta dealer serving the DC metro since the mid-1990s, ~20 staff, ~$3.2M revenue per D&B/ZoomInfo directory data. Evidence it has stopped trading: the domain on file, mbs-copiers.com, no longer hosts the business — it now serves a 'findresultsquick.com' parking/ad page; there is no LinkedIn company page; a quoted-name people search on \\\"Metro Business Systems\\\" + Maryland + copiers returned exactly one person, headline 'Retired'; and one directory listing marks it closed. IMPORTANT DATA-QUALITY FLAG: the three contacts already on this record (Jacob Tchantchung, David Santana, Tatyana Bailey) all carry @mbs-copiers.com addresses, which are now undeliverable — they should be suppressed from any send list. The prior wave recorded 'Confirmed Acquired' with no acquirer; I found no acquisition announcement, so 'defunct/ceased trading' fits the evidence better, but the two are not distinguishable from open sources. NOTE ON A REJECTED SOURCE: I constructed a plausible BBB profile URL for this company and it resolved to an unrelated Bensalem PA landscaping firm — exactly the BBB slug hazard the recipe warns about. Discarded, not used. The one remaining lead is a phone call to the Forestville main line.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "company_site", "web_search", "corporationwiki", "bbb"],
+  "people": []
+ },
+ {
+  "cid": "8293005620",
+  "company": "United Laser",
+  "outcome": "no_people_online",
+  "company_verdict": "acquired",
+  "company_notes": "Confirmed acquired by Novatech and since merged out of existence as a separate brand. The domain on file, unitedlaser.com, 301-redirects to managedprint.com, whose own site states: 'ManagedPrint and United Laser (both Novatech companies) recently merged to form one unified entity.' A quoted-name people search on \\\"United Laser\\\" + South Carolina surfaced only non-decision-makers — Becky Munn, Service Coordinator (Florence SC) — plus one explicit departure, Lynette Church, whose headline reads 'Former Admin Manager United Laser'. The contact already on this record, Shannon Ellisor, is an Office Manager, i.e. not a decision-maker, so the record's decision-maker gap is real and unfilled. Evidenced zero.",
+  "domain_correction": "managedprint.com",
+  "acquired_by": "Novatech (merged into ManagedPrint)",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "company_site"],
+  "people": []
+ },
+ {
+  "cid": "28767460701",
+  "company": "Datamaxkc",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "THREE CORRECTIONS ON THIS RECORD. (1) The state on file is wrong: this is Datamax of Kansas City, Saint Joseph MISSOURI, not Texas. (2) The acquirer on file, 'Datamax', conflates two unrelated companies — Datamax Inc. of Coppell TX / Little Rock AR (the acquirer of East Texas Copy Systems elsewhere in this shard) is NOT this company's parent. Datamax of Kansas City was a legacy division of Sumner Group, Inc. and was rebranded when Sumner Group became SumnerOne; SumnerOne now runs the Saint Joseph and Kansas City offices, and the business's Facebook presence is 'SumnerOne Datamax | Saint Joseph MO'. (3) The domain on file is dead and hostile: datamaxkc.com has been abandoned and re-registered by an unrelated Chinese video-streaming site (5557影视) — it must not be treated as a company domain, and the contact on this record ('Sales Sales', sales1@datamaxkc.com) is both a role account and undeliverable. No decision-maker is findable for the retired brand.",
+  "domain_correction": "sumnerone.com",
+  "acquired_by": "SumnerOne (Sumner Group, Inc.)",
+  "sources_tried": ["company_site", "web_search"],
+  "people": []
+ },
+ {
+  "cid": "28703828596",
+  "company": "Advanced Document Systems",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Kelley Connect, effective end of 2021 — ENX Magazine, 10 Feb 2022: 'Kelley Connect has acquired two new companies ... Advanced Document Systems (Kent, Washington), and Superior Office System (Medford, Oregon), are now in the fold. All employees will be retained in the merger', quoting Kelley Connect CEO Aric Manion. Kelley Connect has since rebranded toward 'Kelley Create'. THE VALUABLE FINDING HERE IS A TITLE CORRECTION on a contact you already hold: Aaron Klovas is recorded in the CRM as 'Account Representative' when he is in fact VP of Sales & Operations and a Partner — a decision-maker who was mis-tiered. One unresolved tension worth a human eye: his headline says 'Advanced Document Systems - Xerox Agent/Partner' while the trade press has the business going to Kelley Connect, so the current channel affiliation is ambiguous. adocs.net still backs his working email so the domain on file looks live; left uncorrected.",
+  "domain_correction": null,
+  "acquired_by": "Kelley Connect (December 2021)",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "linkedin_profile_verification", "trade_press_enx"],
+  "people": [
+   {
+    "firstname": "Aaron",
+    "lastname": "Klovas",
+    "title": "Vice President of Sales & Operations / Partner",
+    "linkedin_url": "https://www.linkedin.com/in/aaron-m-klovas-0a432a38",
+    "email": "aklovas@adocs.net",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile experience shows 'Vice President of Sales & Operations / Partner' at Advanced Document Systems, Kent WA, start 1/2015, end: null, with the description 'Partner for a business that was ultimately sold in a multi million dollar acquisition' — which independently corroborates the Kelley Connect deal. This upgrades the CRM's recorded title of 'Account Representative'. Email is the one already held on the CRM contact record (business domain, matches the dealer), not constructed by me.",
+    "existing_contact_id": "136224369164"
+   }
+  ]
+ },
+ {
+  "cid": "9931640626",
+  "company": "Illinois Paper and Copier",
+  "outcome": "no_people_online",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Impact Networking (per the prior wave's verdict, which I did not contradict). The brand is still staffed and still used on LinkedIn — a quoted-name people search on \\\"Illinois Paper\\\" + copier + Bolingbrook returned a full current roster at Bolingbrook IL (Major Account Representative, A/R, Senior Production Print Specialist, Executive Assistant/Leasing Coordinator, Document Specialist, National Account Coordinator, warehouse manager). NEAR MISS WORTH RECORDING: one of those hits has the headline 'Vice President at Illinois Paper and Copier' at Bolingbrook — a genuine decision-maker — but the profile is fully anonymised (LinkedIn Member, OUT_OF_NETWORK, no name and no public identifier), so there is no person to report. That single unnamed VP is the highest-value remaining lead: it should be resolvable by phoning the Bolingbrook main line and asking for the VP by role. The contact already on this record, Scott Schiffner (Director, Sales), is decision-maker-tier but has no email and I did not re-verify him this wave. Named-decision-maker zero.",
+  "domain_correction": null,
+  "acquired_by": "Impact Networking",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "company_site"],
+  "people": []
+ },
+ {
+  "cid": "28732614974",
+  "company": "Royal Business Systems",
+  "outcome": "no_people_online",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Kelley Connect (now trading toward 'Kelley Create'); the acquisition is corroborated from inside the staff base — Rick Helme's LinkedIn headline reads 'Kelley Connect Account Rep. / ... / Former Sales Manager at Royal Business Systems' (Greater Anchorage). The Royal Business Systems brand still has Anchorage staff on LinkedIn but none at decision-maker level: Office Manager, three Account Managers, Billing Department, Dispatcher. DEPARTURE FLAG — NEEDS A HUMAN: the sole decision-maker on this record, David Eibeck (recorded as President), now has the LinkedIn headline 'President at RBS Property Management', Greater Anchorage. That reads as a pivot out of the copier business into property management, so his CRM title should not be treated as current; I am reporting it as a hold rather than asserting a departure. Named-decision-maker zero for the dealer itself.",
+  "domain_correction": null,
+  "acquired_by": "Kelley Connect (now Kelley Create)",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "trade_press_enx"],
+  "people": []
+ },
+ {
+  "cid": "36265516928",
+  "company": "JM Todd Inc",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "THE ONE UNAMBIGUOUSLY INDEPENDENT LIVE DEALER IN THIS SHARD — not acquired, not defunct. Family-owned since 1984, 12670 McGregor Blvd, Fort Myers FL, an authorised Canon and Ricoh/Savin dealer serving Charlotte, Lee and Collier Counties; own live site at jmtodd.com; LinkedIn company page id 25072927 (Fort Myers FL, 'Retail Office Equipment'). Domain on file is correct. The unfiltered company-to-people sweep returned eight current staff (Inside Sales Rep, Service Manager, New Business Development Coordinator, Corporate Accounting Manager, technician, Administrative Assistant, Service Technician) — useful proof of life but no decision-makers, because the family principals are not on the company page. I found the owner via a separate route. News-Press coverage confirms the family structure: J.M. Todd's sons Greg and Rodney both came into the business.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": ["linkedin", "linkedin_company_to_people", "linkedin_profile_verification", "company_site", "firecrawl_search", "trade_press_news_press"],
+  "people": [
+   {
+    "firstname": "Rodney",
+    "lastname": "Todd",
+    "title": "Owner",
+    "linkedin_url": "https://www.linkedin.com/in/rodney-todd-7887144",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile experience shows 'Owner' at J. M. TODD, INC., Fort Myers FL, On-site, Full-time, start 6/2023, end: null, immediately following 'Vice President Sales/Marketing' at J.M. Todd Inc (1998–11/2023); profile website is jmtodd.com. Deliberately no email: the two @jmtodd.com addresses already in the CRM use inconsistent formats (jtodd@ vs gregt@), so no pattern can be inferred safely.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Greg",
+    "lastname": "Todd",
+    "title": "General Manager, Sales & Marketing",
+    "linkedin_url": null,
+    "email": "gregt@jmtodd.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Already a CRM contact with a business-domain email. Corroborated this wave only by third-party directory data (ZoomInfo lists him as 'Top Executive — Greg Todd, General Manager, Sales & Marketing') and by his presence on the company's Facebook activity — neither counts as verification under the brief. He did NOT appear in the LinkedIn company-to-people sweep, so his current title is unconfirmed. Included so the record is complete, flagged for a human check.",
+    "existing_contact_id": "97275684899"
+   }
+  ]
+ },
+ {
+  "cid": "7665760920",
+  "company": "Carolina Business Equipment Inc",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Novatech — the domain on file, cbesc.com, 301-redirects to novatech.net. But the CBE brand and its people are demonstrably still active in Columbia/Lexington County SC, and the owner still presents as owner, so treat this as a Novatech-owned operating brand rather than a retired one. DATA-QUALITY FLAG ON AN EXISTING CONTACT: Kurt Beasley is held on this record with the email kurt.beasley@sg.sc.gov and the title 'Deputy Chief of Staff, Communications & Electronics (G6)' — that is a South Carolina National Guard address and role, wrong for a copier dealer. His actual LinkedIn headline is 'Business Analyst / Branch IT Director Novatech, Inc.' (Lexington County SC), which both explains the record's confusion and independently corroborates the Novatech acquisition. That contact needs its email and title corrected. No email is offered for the two people below because I found no first-party evidence of the cbesc.com or novatech.net address pattern and would only have been guessing.",
+  "domain_correction": "novatech.net",
+  "acquired_by": "Novatech",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "linkedin_profile_verification", "company_site"],
+  "people": [
+   {
+    "firstname": "John",
+    "lastname": "Eckstrom",
+    "title": "Owner",
+    "linkedin_url": "https://www.linkedin.com/in/john-eckstrom",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile experience shows 'Owner' at Carolina Business Equipment (company id 1911067), Columbia South Carolina Metropolitan Area, On-site, Full-time, start 1/1995, end: null; profile website is cbesc.com. Worth a human note: he still presents as Owner even though cbesc.com now redirects to novatech.net, so the ownership/brand relationship post-acquisition is not fully clear from open sources.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Bert",
+    "lastname": "Richardson",
+    "title": "Service Director",
+    "linkedin_url": "https://www.linkedin.com/in/bert-richardson-02399457",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn quoted-name people search on \\\"Carolina Business Equipment\\\" returned him with the headline 'Service Director at Carolina Business Equipment' and location Lexington County, South Carolina — company named in the headline, location consistent with the dealer's Columbia base, LinkedIn-verified badge on the profile. Director-level, so decision-maker per the shard's definition. Title currency rests on the headline; no separate profile call spent.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9561589566",
+  "company": "pmi-ny.com",
+  "outcome": "not_a_dealer",
+  "company_verdict": "not_dealer",
+  "company_notes": "The company is PMI Document Solutions, Inc. — a records-management and document-conversion services bureau (paper to microfilm/CD-ROM, imaging system installation, a hosted 'PMI WebDocs Server'), serving New York, Vermont and Northern Pennsylvania. It is an authorised reseller for Canon, DocuWare and Fujifilm, so it is adjacent to the trade, but its business is scanning/micrographics services, not MFP sales and service — the prior 'not_dealer' verdict holds. Because of the Canon reseller status I would call this a borderline judgement rather than a clear-cut exclusion, and flag it for a human to confirm the exclusion rule. LOCATION CORRECTION: the record says Des Plaines, ILLINOIS; the company is in Johnson City, NEW YORK (which the pmi-ny domain always implied) and serves NY/VT/PA. The domain on file is correct and live.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "company_site"],
+  "people": [
+   {
+    "firstname": "John",
+    "lastname": "Welch",
+    "title": "President",
+    "linkedin_url": "https://www.linkedin.com/in/john-welch-a7a56420",
+    "email": "jwelch@pmi-ny.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn quoted-name people search on \\\"PMI Document Solutions\\\" returned exactly one person: headline 'President at PMI Document Solutions, Inc.', location Johnson City, New York. This both confirms the existing CRM contact's title and establishes the company's true location. Email is the business-domain address already on the CRM record, not constructed. Reported for completeness even though the company itself is excluded as not-a-dealer.",
+    "existing_contact_id": "1277560"
+   }
+  ]
+ },
+ {
+  "cid": "9931647916",
+  "company": "Heritage Business Systems, Inc.",
+  "outcome": "no_people_online",
+  "company_verdict": "acquired",
+  "company_notes": "The domain on file, heritagebusiness.com, resolves through to https://www.xeroxbusinesssolutions.com/en-us (403 to a plain fetch; confirmed with a stealth-proxy scrape) — brand fully absorbed into Xerox Business Solutions, no independent site. A quoted-name people search on \\\"Heritage Business Systems\\\" + New Jersey returned exactly one current employee, Rhonda Ganges, 'Sales at Heritage Business Systems, Inc.' (Moorestown NJ) — not a decision-maker — plus a Moorestown-based generic 'Heritage Social Media' account and a page of competitor leaks (Altek Business Systems CSO, United Business Systems, AnchorPoint). Evidenced zero.",
+  "domain_correction": "xeroxbusinesssolutions.com",
+  "acquired_by": "Xerox Business Solutions",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "company_site"],
+  "people": []
+ },
+ {
+  "cid": "14774447724",
+  "company": "Sands Office Equipment",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Applied Imaging (Grand Rapids MI) effective 31 December 2021, reported by ENX Magazine and The Cannata Report: 'Applied Imaging ... has expanded into Indiana with the acquisitions of Advanced Imaging Solutions of South Bend and Sands Office Equipment Service of Warsaw, effective Dec. 31, 2021', with the detail that 'Sands' employees will remain under the Applied Imaging brand'. Founder history from the same source: 'After starting Sands Office Equipment in their home in 1992, Joe and Myra Sands eventually moved into a Winona, Indiana, office in 1996' — so the principals are Joe and Myra Sands. Applied Imaging's President/CEO is John Lowery. Corroborating the absorption on the ground, David Rapp appears in Warsaw IN as 'Account Manager at Applied Imaging'. sandsoffice.com returned HTTP 503 and could not be checked. Note three separate stale LinkedIn profiles for Joe Sands (President / Owner variants, Warsaw, Milford Junction and Etna Green IN) — duplicates of one person, none updated for the 2021 sale.",
+  "domain_correction": "appliedimaging.com",
+  "acquired_by": "Applied Imaging (effective 31 December 2021)",
+  "sources_tried": ["linkedin", "linkedin_quoted_name_people", "company_site", "trade_press_enx", "trade_press_cannata", "web_search"],
+  "people": [
+   {
+    "firstname": "Joe",
+    "lastname": "Sands",
+    "title": "President / founder (pre-acquisition)",
+    "linkedin_url": "https://www.linkedin.com/in/joe-sands-78840911",
+    "email": "jlsands@sandsoffice.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "HOLD FOR A HUMAN — do not treat as a current title. He is an existing CRM contact with a business-domain email, and three LinkedIn profiles still read 'President at Sands Office Equipment Service Inc.' / 'Owner, Sands Office Equipment Srv. Inc.'. But ENX/Cannata confirm the business was sold to Applied Imaging on 31 Dec 2021 and now operates under the Applied Imaging brand, so those headlines are very likely stale and sandsoffice.com may no longer route mail (the site returned 503). Whether he stayed on post-sale is unresolved.",
+    "existing_contact_id": "132369281665"
+   }
+  ]
+ }
+]

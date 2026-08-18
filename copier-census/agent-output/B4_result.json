@@ -1,0 +1,1446 @@
+[
+ {
+  "cid": "6930374492",
+  "company": "Laser Logic Inc. (now bishop business)",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Kansas dealer, already flagged Confirmed Acquired by Bishop Business. Both named principals still carry Laser Logic records in ZoomInfo but at a weak accuracy score of 50, and no live laserlogic.com team/contact page could be reached, so treat the laserlogic.com mailbox as at-risk post-acquisition. Bishop Business Equipment exists as a separate ZoomInfo company record (id 15061528); no Laser Logic person could be matched onto it.",
+  "domain_correction": null,
+  "acquired_by": "Bishop Business",
+  "sources_tried": [
+   "zoominfo",
+   "linkedin",
+   "company_site",
+   "state_contract_list"
+  ],
+  "people": [
+   {
+    "firstname": "John",
+    "lastname": "Ross",
+    "title": "President",
+    "linkedin_url": null,
+    "email": "jross@laserlogic.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(785) 769-1212",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ZoomInfo FULL_MATCH on John Ross / Laser Logic returned title President and jross@laserlogic.com but with contactAccuracyScore 50.0 (validDate 2026-04-10). A score of 50 is not a confirmation, and the dealer is acquired, so the address is reportable but unproven.",
+    "existing_contact_id": "132096221291",
+    "email_domain": "laserlogic.com",
+    "email_matches_dealer_domain": true,
+    "note": "If Bishop Business has migrated mail, the parallel address would be at bishopbusiness.com; not established."
+   },
+   {
+    "firstname": "Kathryn",
+    "lastname": "Ross",
+    "title": "Owner",
+    "linkedin_url": null,
+    "email": "kross@laserlogic.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ZoomInfo FULL_MATCH on Kathryn Ross / Laser Logic returned title Owner at contactAccuracyScore 50.0 with no email. Address constructed from the real published-in-ZoomInfo address jross@laserlogic.com (first initial + surname) at the same domain. ZoomInfo also attaches /in/cathy-ross-08a46820, unverified.",
+    "existing_contact_id": "132354846040",
+    "email_domain": "laserlogic.com",
+    "email_matches_dealer_domain": true
+   }
+  ]
+ },
+ {
+  "cid": "53535904330",
+  "company": "American Business Systems",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live Ricoh/Square 9 dealer, Springfield + Joplin MO ('Serving the Ozarks since 1952'). Springfield Business Journal profile quotes 'President Andrew Runge'. Site staff page publishes real addresses in two shapes: mrunge@ambussys.com for Michelle Runge (Administration) and firstnamelastname@ambussys.com for sales/service staff (ronschultz@, rickshirrell@, byronpearson@, terriesmith@).",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "state_contract_list",
+   "company_site",
+   "trade_press",
+   "linkedin",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "Andrew",
+    "lastname": "Runge",
+    "title": "President / Owner",
+    "linkedin_url": null,
+    "email": "arunge@ambussys.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(417) 866-5083",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Named as the dealer's Primary Contact with this exact email in the Ricoh authorized-dealer list published as a state contract document (bidopportunities.iowa.gov ShowContractDocument/370f621d-1392-496d-bb01-3ce3dab7b99f, same file served by apps.des.wa.gov as WA.State.Ricoh.Dealer.List.xlsx): 'Company Name: AMERICAN BUSINESS SYSTEMS / City: SPRINGFIELD / State: MO / Primary Contact: Andrew Runge / Phone: (417) 866-5083 / Email: arunge@ambussys.com'. Role independently corroborated by sbj.net, 'President Andrew Runge says...'.",
+    "existing_contact_id": "242557064627",
+    "email_domain": "ambussys.com",
+    "email_matches_dealer_domain": true,
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "7657880468",
+  "company": "Commonwealth Technology Inc",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "commonwealthtechnology.com now serves Visual Edge IT content end to end (page pulls images/links from visualedgeit.com, login goes to er.visualedge.com, main line (800) 828-4801). Third-party listings describe it as 'Commonwealth Technology, powered by Visual Edge IT' and name Troy Turner as President/Owner. The commonwealthtechnology.com mail domain is still in use (a Visual Edge IT employee is listed with an address there).",
+  "domain_correction": null,
+  "acquired_by": "Visual Edge IT",
+  "sources_tried": [
+   "company_site",
+   "linkedin",
+   "zoominfo",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Patricia",
+    "lastname": "Ulrich",
+    "title": "Vice President",
+    "linkedin_url": "https://linkedin.com/in/patricia-ulrich-b84aa633",
+    "email": "pulrich@commonwealthtechnology.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "LinkedIn profile confirms her CURRENT: headline 'Vice President at Commonwealth Technology', work_experience single entry Commonwealth Technology / Vice President, start 2/2001, end null, location Lexington KY (matches the shard). ZoomInfo FULL_MATCH agrees, Vice President, contactAccuracyScore 89.0, validDate 2026-07-01. No published address found at the domain, so the email is a first-initial+surname guess with NO real anchor address at commonwealthtechnology.com - weakest class of inference. Her LinkedIn URL was blank on file; this shard adds it.",
+    "existing_contact_id": "242201314439",
+    "email_domain": "commonwealthtechnology.com",
+    "email_matches_dealer_domain": true,
+    "linkedin_url_added": true,
+    "note": "A second Patricia Ulrich profile with the identical headline exists (/in/patricia-ulrich-83719853, Richmond KY). The Lexington one matches the dealer's city and is the one reported."
+   }
+  ]
+ },
+ {
+  "cid": "57364882235",
+  "company": "ALC Tech Solutions (formerly American Lazer Services, Inc. / American Lazer-CommSat)",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live dealer. alctechsolutions.com carries a 2026 rebrand banner: 'American Lazer/CommSat is rebranding to ALC Tech Solutions... This isn't a sale or a merger; it's a milestone. Carl and the entire leadership team remain the same.' So the principal's first name is Carl and ownership did not change. Eastern MA & southern NH; IT support 978-309-9900, copier support 978-922-9003. No staff names or addresses published anywhere on the site.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "linkedin",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "Christopher",
+    "lastname": "Copelas",
+    "title": "Vice President and Integrator",
+    "linkedin_url": "https://linkedin.com/in/cronusbusinesssystems",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "IDENTITY / EMPLOYER PROBLEM. Only one Christopher Copelas on LinkedIn with any history: /in/cronusbusinesssystems, headline 'Director of Business Development at Cronus Business Systems', Salem MA, website cronusbusiness.com. His 8-entry work_experience contains NO ALC Tech Solutions / American Lazer / CommSat role at all - Cronus Business Systems, Director of Business Development, start 1/2009, end null, i.e. continuously employed elsewhere across the whole period the ALC title would cover. Cronus is itself a Massachusetts copier/IT dealer ~5 miles from Beverly. The other LinkedIn Christopher Copelas has a blank headline and no history. Nothing on alctechsolutions.com names him. His ALC title on file is unsupported.",
+    "existing_contact_id": "242201314450",
+    "needs_human": true,
+    "note": "Human decision: either re-point this contact to Cronus Business Systems (cronusbusiness.com) or detach him from ALC. Do not mail an ALC address for him. ALC's own principal is a 'Carl' per the site banner - a better ALC target once surnamed."
+   }
+  ]
+ },
+ {
+  "cid": "8293445717",
+  "company": "United Office Technologies Group",
+  "outcome": "found",
+  "company_verdict": "dealer_bad_domain",
+  "company_notes": "ZoomInfo holds the company (id 16943850) and returns the CEO on the domain copierspecialists.com, not the unitedofficetechnologiesgroup.com on file - that name is almost certainly a descriptive placeholder rather than a live mail domain. Irvine CA.",
+  "domain_correction": "copierspecialists.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "zoominfo",
+   "linkedin",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Roland",
+    "lastname": "Tolan",
+    "title": "Chief Executive Officer",
+    "linkedin_url": null,
+    "email": "roland@copierspecialists.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ZoomInfo FULL_MATCH, Roland Tolan / United Office Technologies Group, jobTitle Chief Executive Officer, email roland@copierspecialists.com, contactAccuracyScore 83.0, validDate 2024-06-02 (lastUpdated 2026-04-27). Score 83 is usable but the validDate is two years old and no independent source confirms the role, so not marked verified-role.",
+    "existing_contact_id": "242557064606",
+    "email_domain": "copierspecialists.com",
+    "email_matches_dealer_domain": false,
+    "note": "Domain does not match the domain on file; it matches the corrected domain copierspecialists.com."
+   },
+   {
+    "firstname": "Mark",
+    "lastname": "O'Brien",
+    "title": "Chairman / Owner",
+    "linkedin_url": null,
+    "email": "mark@copierspecialists.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ZoomInfo returned COMPANY_ONLY_MATCH with contactAccuracyScore 0.0 - i.e. it knows the company but has no live record of this person, which under the brief's rule is no evidence at all. Address constructed from the real ZoomInfo-sourced address roland@copierspecialists.com (firstname-only convention) at the same domain.",
+    "existing_contact_id": "242557064623",
+    "email_domain": "copierspecialists.com",
+    "email_matches_dealer_domain": false
+   }
+  ]
+ },
+ {
+  "cid": "8507615638",
+  "company": "Ohio Business System",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live Ricoh dealer, 2278 & 2309 W Dublin Granville Rd, Worthington OH 43085 (Columbus metro), 614-846-1510. Site publishes only the generic Sales@ohiobusinesssystems.com. The state Ricoh dealer list names MIKE RUSSELL - not either person on file - as the dealer's Primary Contact, with mrussell@ohiobusinesssystems.com. That fixes the naming convention as first-initial + surname.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "state_contract_list",
+   "company_site",
+   "zoominfo",
+   "linkedin"
+  ],
+  "people": [
+   {
+    "firstname": "Stephen",
+    "lastname": "Skobrak",
+    "title": "President",
+    "linkedin_url": null,
+    "email": "sskobrak@ohiobusinesssystems.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": "(614) 846-1510",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "NOT CONFIRMED. ZoomInfo returned COMPANY_ONLY_MATCH at contactAccuracyScore 0.0 on two spellings of the company - it has the dealer but no live record of Skobrak. Nothing on ohiobusinesssystems.com names him, and the state Ricoh dealer list gives Mike Russell as the dealer's Primary Contact instead. Address inferred from the real published address mrussell@ohiobusinesssystems.com in Ricoh authorized-dealer list published as a state contract document (bidopportunities.iowa.gov ShowContractDocument/370f621d-1392-496d-bb01-3ce3dab7b99f, same file served by apps.des.wa.gov as WA.State.Ricoh.Dealer.List.xlsx).",
+    "existing_contact_id": "26849914918",
+    "email_domain": "ohiobusinesssystems.com",
+    "email_matches_dealer_domain": true,
+    "needs_human": true,
+    "note": "Human decision: Skobrak's presidency is unevidenced in 2026. Mike Russell (mrussell@ohiobusinesssystems.com, state-list Primary Contact) is the better-evidenced live contact at this dealer."
+   },
+   {
+    "firstname": "Jay",
+    "lastname": "Herzog",
+    "title": "Owner",
+    "linkedin_url": "https://linkedin.com/in/jay-herzog-6549a419",
+    "email": "jherzog@ohiobusinesssystems.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": "(614) 846-1510",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ZoomInfo FULL_MATCH, Jay Herzog / Ohio Business Systems, jobTitle Owner, contactAccuracyScore 90.0, validDate 2026-07-01 - the title on file is right and he is still recorded there. No email in the record. Address inferred from the real published address mrussell@ohiobusinesssystems.com in Ricoh authorized-dealer list published as a state contract document (bidopportunities.iowa.gov ShowContractDocument/370f621d-1392-496d-bb01-3ce3dab7b99f, same file served by apps.des.wa.gov as WA.State.Ricoh.Dealer.List.xlsx) (first initial + surname).",
+    "existing_contact_id": "132353145139",
+    "email_domain": "ohiobusinesssystems.com",
+    "email_matches_dealer_domain": true,
+    "linkedin_url_added": true,
+    "note": "LinkedIn URL taken from the ZoomInfo externalUrls block, not opened directly; a second candidate /in/jay-herzog-151a4b155 also exists, so treat the URL as unconfirmed."
+   }
+  ]
+ },
+ {
+  "cid": "9306179879",
+  "company": "Eastern Copy Products",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Syracuse NY dealer, already flagged Confirmed Acquired. The named CEO has left the company and moved to his own advisory firm, so this record now has zero live decision-makers. I could not establish the acquirer's name from trade press in the time available; easterncopy.com appears in ZoomInfo's external-URL block for the old company.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "zoominfo",
+   "linkedin",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "William",
+    "lastname": "Gage",
+    "title": "Senior Advisor, Gage Profit Partners (was Chief Executive Officer, Eastern Copy Products)",
+    "linkedin_url": "https://linkedin.com/in/gageprofitpartners",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "DEPARTED. ZoomInfo FULL_MATCH on the input 'William Gage / Eastern Copy Products' resolves to companyName 'Gage Profit Partners' (zoominfoCompanyId 477740202), jobTitle 'Senior Advisor', contactAccuracyScore 90.0, validDate 2026-06-17, lastUpdated 2026-08-09 - i.e. ZoomInfo's current employer for him is no longer the dealer. No email exposed. His externalUrls include /in/gageprofitpartners and easterncopy.com.",
+    "existing_contact_id": "242551262136",
+    "departed": true,
+    "departed_to": "Gage Profit Partners",
+    "needs_human": true,
+    "note": "The shard had him validated 'Yes' as CEO; that is now stale. No replacement CEO identified - the dealer is acquired and I could not name the acquirer."
+   }
+  ]
+ },
+ {
+  "cid": "9364909082",
+  "company": "Bay Copy",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "ACQUIRER ESTABLISHED: Bay Copy (Rockland MA) was acquired by UBEO, LLC. Prosperity Plus (the broker) announced 'Bay Copy has been acquired by UBEO, LLC', and Industry Analysts' 2024 imaging-industry acquisition roundup carries 'UBEO Expands with Bay Copy Acquisitions'. The one person on file left the company two years before that and left the industry, so this record has zero live decision-makers.",
+  "domain_correction": null,
+  "acquired_by": "UBEO, LLC",
+  "sources_tried": [
+   "trade_press",
+   "linkedin",
+   "zoominfo",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Peter",
+    "lastname": "Racicot",
+    "title": "Vice President of Business Development, Coastal Medical Transportation Systems (was Director of Healthcare and Strategic Accounts, Bay Copy)",
+    "linkedin_url": "https://linkedin.com/in/peter-racicot-3a79b012",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "DEPARTED, with dates. His LinkedIn work_experience shows 'Bay Copy / Director of Healthcare and Strategic Accounts / Rockland, Massachusetts / start 2/2021 / end 2/2022' - an ENDED role - and his current entry (end null) is 'Coastal Medical Transportation Systems / Vice President of Business Development / start 2/2022'. ZoomInfo agrees the title is now VP Business Development and returns zoominfoCompanyId 0 (no employer tie) at contactAccuracyScore 91.0. He is out of the copier industry.",
+    "existing_contact_id": "242551561507",
+    "departed": true,
+    "departed_to": "Coastal Medical Transportation Systems (non-copier)",
+    "note": "No replacement sought at Bay Copy: the dealer is absorbed into UBEO, so any successor belongs on the UBEO record."
+   }
+  ]
+ },
+ {
+  "cid": "9365081696",
+  "company": "Alttrix",
+  "outcome": "not_a_dealer",
+  "company_verdict": "not_dealer",
+  "company_notes": "Already carried verdict not_dealer on the shard, so research was deliberately kept shallow per the breadth-before-depth rule. For completeness: ZoomInfo returned NO_MATCH for Joseph Caputo against 'Alttrix', so there is nothing to add and no email to find.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "Joseph",
+    "lastname": "Caputo",
+    "title": "Vice President, Operations, Business Development (USA)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "No evidence found. ZoomInfo NO_MATCH on Joseph Caputo / Alttrix. Not researched further because the company is already judged not a copier dealer; a non-dealer is a valid answer and forcing a contact here would be waste.",
+    "existing_contact_id": "26848673572",
+    "note": "Left as-is. Recommend the company be dropped from the dealer census rather than enriched."
+   }
+  ]
+ },
+ {
+  "cid": "9561723786",
+  "company": "Eastern Copyfax",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live dealer, Eastern Copy Fax Inc, 42 Blackburn Center, Gloucester MA 01930, (978) 768-3808, generic info@easterncopyfax.com. The site's own 25th-Anniversary Ribbon-Cutting photo caption reads 'Eric, Tony, Tina & George', which puts a Tony in the company photograph. Naming convention is firstname@easterncopyfax.com (tony@..., and George Moomjian the Service Manager shows as g***@easterncopyfax.com).",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "zoominfo",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Tony",
+    "lastname": "Loiacano",
+    "title": "President & Sales Representative",
+    "linkedin_url": null,
+    "email": "tony@easterncopyfax.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(978) 515-5100",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Address is real and published, not constructed: a Gift-Certificate lot donated by the dealer to a charity auction lists 'Website: EasternCopyFax.com  e-mail: tony@easterncopyfax.com'. Role: ZoomInfo FULL_MATCH gives jobTitle 'President & Sales Representative', contactAccuracyScore 89.0, validDate 2026-07-01, direct phone (978) 515-5100 - which refines the bare 'President' on file. The dealer's own site names a 'Tony' in its anniversary photo but gives no title, so the role sits just short of the brief's verified bar.",
+    "existing_contact_id": "242557064704",
+    "email_domain": "easterncopyfax.com",
+    "email_matches_dealer_domain": true,
+    "title_refined_from": "President",
+    "note": "Generic fallback on the site is info@easterncopyfax.com, main line (978) 768-3808."
+   }
+  ]
+ },
+ {
+  "cid": "9931494541",
+  "company": "SumnerOne UDP",
+  "outcome": "found",
+  "company_verdict": "dealer_bad_domain",
+  "company_notes": "UDP is a SumnerOne brand; the live mail domain is sumnerone.com, not udpcorp.com. ZoomInfo holds one SumnerOne company record (id 403019573) and returns a real sumnerone.com address for the senior Sumner. Convention is firstname + surname initial (edmunds@ for Edmund Sumner).",
+  "domain_correction": "sumnerone.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "zoominfo",
+   "linkedin",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Ed",
+    "lastname": "Sumner",
+    "title": "Managing Director",
+    "linkedin_url": null,
+    "email": "edmunds@sumnerone.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(314) 633-2047",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ZoomInfo FULL_MATCH resolves 'Ed Sumner / SumnerOne' to firstName Edmund, jobTitle 'Managing Director', email edmunds@sumnerone.com, direct phone (314) 633-2047, contactAccuracyScore 93.0, validDate 2026-04-10, lastUpdated 2026-08-14. NOTE the title on file says 'Chief Executive Officer, SumnerOne' and ZoomInfo says Managing Director - the two disagree and I could not settle it, so the role is not marked verified.",
+    "existing_contact_id": "242551262216",
+    "email_domain": "sumnerone.com",
+    "email_matches_dealer_domain": false,
+    "needs_human": true,
+    "note": "Title conflict for a human: file says CEO, ZoomInfo (93, Apr 2026) says Managing Director. Legal first name is Edmund, not Ed."
+   },
+   {
+    "firstname": "Liz",
+    "lastname": "Sumner",
+    "title": "Managing Director",
+    "linkedin_url": null,
+    "email": "lizs@sumnerone.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "NOT CONFIRMED. ZoomInfo returned COMPANY_ONLY_MATCH at contactAccuracyScore 0.0 for 'Liz Sumner / SumnerOne' and NO_MATCH against 'UDP' - it has the company but no live record of her. Address constructed from the real ZoomInfo-sourced address edmunds@sumnerone.com (firstname + surname initial) at the same domain.",
+    "existing_contact_id": "242565123440",
+    "email_domain": "sumnerone.com",
+    "email_matches_dealer_domain": false
+   }
+  ]
+ },
+ {
+  "cid": "9931640627",
+  "company": "Innovative Office Systems LLC",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live Lanier/Kyocera dealer + FP mailing, 816 Benton Rd Ste 200, Bossier City LA 71111, (318) 752-1959. DOMAIN CORRECTION: the working mail domain is innovativeofficesystems.net - it is what the state Ricoh dealer list uses and what the owner's own LinkedIn websites field carries. iosconnect.com appears only on the VP's profile. The shard also contains a DUPLICATE HUMAN: contact ids 242201314469 and 242551262224 are both 'Walt Bigby, Jr. / Owner'.",
+  "domain_correction": "innovativeofficesystems.net",
+  "acquired_by": null,
+  "sources_tried": [
+   "state_contract_list",
+   "linkedin",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "Greg",
+    "lastname": "Whittington",
+    "title": "Owner",
+    "linkedin_url": "https://linkedin.com/in/greg-whittington-5425941",
+    "email": "gregw@innovativeofficesystems.net",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(318) 752-1959",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Two independent confirmations. (1) Ricoh authorized-dealer list published as a state contract document (bidopportunities.iowa.gov ShowContractDocument/370f621d-1392-496d-bb01-3ce3dab7b99f, same file served by apps.des.wa.gov as WA.State.Ricoh.Dealer.List.xlsx) carries: 'Company Name: INNOVATIVE OFFICE SYSTEMS LLC / Address: 816 BENTON RD STE 200 / City: BOSSIER CITY / State: LA / Phone: (318) 752-1959 / Email: gregw@innovativeofficesystems.net'. (2) His LinkedIn profile is current and matches: headline 'Owner, Innovative Office Systems,LLC', work_experience 'Innovative Office Systems,LLC / Owner / 816 Benton Rd. Bossier City, La 71111 / start 3/2001 / end null', websites ['http://www.innovativeofficesystems.net'], location Bossier City LA. Same human, same address, same domain.",
+    "existing_contact_id": "242555374086",
+    "email_domain": "innovativeofficesystems.net",
+    "email_matches_dealer_domain": true,
+    "role_validated": "Yes"
+   },
+   {
+    "firstname": "Walt",
+    "lastname": "Bigby, Jr.",
+    "title": "Owner",
+    "linkedin_url": null,
+    "email": "waltb@innovativeofficesystems.net",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": "(318) 752-1959",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Presence confirmed, address not. Ricoh authorized-dealer list published as a state contract document (bidopportunities.iowa.gov ShowContractDocument/370f621d-1392-496d-bb01-3ce3dab7b99f, same file served by apps.des.wa.gov as WA.State.Ricoh.Dealer.List.xlsx) names 'Primary Contact: Walter Bigby' for this dealer - but pairs that name with gregw@innovativeofficesystems.net, so the document gives no address of his own. ZoomInfo has only COMPANY_ONLY_MATCH at contactAccuracyScore 0.0 for him. Address constructed from the real published gregw@ address (firstname + surname initial) at the same domain.",
+    "existing_contact_id": "242201314469",
+    "email_domain": "innovativeofficesystems.net",
+    "email_matches_dealer_domain": true,
+    "duplicate_of": "242551262224",
+    "needs_human": true,
+    "note": "DEDUPE: this person appears twice in the shard, as contact 242201314469 and contact 242551262224, same name and same title."
+   },
+   {
+    "firstname": "Walt",
+    "lastname": "Bigby, Jr.",
+    "title": "Owner",
+    "linkedin_url": null,
+    "email": "waltb@innovativeofficesystems.net",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": "(318) 752-1959",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Duplicate record of the same human as contact 242201314469 - reported separately only so the merge is visible. Same evidence: named 'Primary Contact: Walter Bigby' in Ricoh authorized-dealer list published as a state contract document (bidopportunities.iowa.gov ShowContractDocument/370f621d-1392-496d-bb01-3ce3dab7b99f, same file served by apps.des.wa.gov as WA.State.Ricoh.Dealer.List.xlsx); ZoomInfo COMPANY_ONLY_MATCH at accuracy 0.0; address inferred from the real published gregw@innovativeofficesystems.net.",
+    "existing_contact_id": "242551262224",
+    "email_domain": "innovativeofficesystems.net",
+    "email_matches_dealer_domain": true,
+    "duplicate_of": "242201314469",
+    "needs_human": true
+   },
+   {
+    "firstname": "Tim",
+    "lastname": "Harms",
+    "title": "VP Sales",
+    "linkedin_url": "https://linkedin.com/in/timcharms",
+    "email": "timh@innovativeofficesystems.net",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "LinkedIn identity confirmed and current, but note he wears several hats: headline 'VP Sales at Innovative-CF Biggs-Ace Digital-Dick Roundtree Copiers Inc', websites ['iosconnect.com'], and FOUR concurrent end:null roles - Innovative Office Systems 'General Manager/Owner' start 9/2011, Dick Roundtree Copiers COO start 12/2018, CF BIGGS COO start 10/2017, ACE DIGITAL LLC Owner start 8/2016. So 'VP Sales' is his self-described headline title across the group while his Innovative-specific title is General Manager/Owner. Address inferred from the real published gregw@innovativeofficesystems.net.",
+    "existing_contact_id": "242578222664",
+    "email_domain": "innovativeofficesystems.net",
+    "email_matches_dealer_domain": true,
+    "note": "Title nuance for a human: file says 'VP Sales' (his headline); his Innovative Office Systems role is listed as General Manager/Owner. iosconnect.com may also be a live alias - it is the domain in his own websites field."
+   }
+  ]
+ },
+ {
+  "cid": "9931623095",
+  "company": "Kyocera Document Solutions Northwest, Inc.",
+  "outcome": "no_people_online",
+  "company_verdict": "acquired",
+  "company_notes": "Kent WA, already flagged Confirmed Acquired. This is the one record in the shard where I found nothing at all. ZoomInfo NO_MATCH on 'Jason Fagan / Kyocera Document Solutions Northwest'; retrying against 'Kyocera Northwest' mis-resolved to an unrelated company (HALOSENSOR) at accuracy 0.0, which is a non-answer. The dealer appears in no state Ricoh dealer list (it is a Kyocera house account, not a Ricoh dealer). Reporting a genuine zero rather than forcing a guess.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "zoominfo",
+   "state_contract_list",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Jason",
+    "lastname": "Fagan",
+    "title": "Dealer Principal",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "No evidence found in any source. ZoomInfo NO_MATCH; no LinkedIn profile tied to a Kyocera Document Solutions Northwest role surfaced; no state contract list carries the dealer. The remaining lead is the one the HARD_RECIPE names last: phone the Kent WA main line and ask for the dealer principal by name.",
+    "existing_contact_id": "242551262114",
+    "note": "Honest zero. Do not synthesise an address for this person - the dealer is acquired and even the mail domain is unproven."
+   }
+  ]
+ },
+ {
+  "cid": "57393780493",
+  "company": "TAM Business Systems, Inc. d/b/a New York Business Systems",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live Xerox dealer, 150 Fulton Avenue, Garden City Park NY 11040, customer service (516) 739-0200, generic info@nybs.com. LinkedIn company id 672208. Six people on file, four of whom I opened profiles for and all four confirmed CURRENT at the dealer. The domain publishes TWO conventions: billy@nybs.com (firstname) and craigs@nybs.com (firstname + surname initial); the firstname+initial form is the majority pattern, so it is what I inferred from.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "zoominfo",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Anthony",
+    "lastname": "Sementa",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/anthony-sementa-a782b573",
+    "email": "anthonys@nybs.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Partially confirmed. ZoomInfo returns a CONTACT_ONLY_MATCH: firstName Anthony, lastName Sementa, jobTitle President, contactAccuracyScore 83.0, validDate 2025-09-18 - but zoominfoCompanyId 0, i.e. it does NOT currently tie him to an employer, which is exactly the shape of a record for someone who has moved on. Address inferred from the real ZoomInfo-sourced craigs@nybs.com at the same domain.",
+    "existing_contact_id": "213002617903",
+    "email_domain": "nybs.com",
+    "email_matches_dealer_domain": true,
+    "linkedin_url_added": true,
+    "needs_human": true,
+    "note": "Human decision: NYBS has TWO people on file titled President - Anthony Sementa (ZoomInfo 83, no employer tie) and Billy Benedict ('President & Owner', ZoomInfo 75, real address billy@nybs.com). One of the two is likely stale."
+   },
+   {
+    "firstname": "Michael",
+    "lastname": "Anhouse",
+    "title": "VP Sales",
+    "linkedin_url": "https://linkedin.com/in/michael-anhouse-4288355",
+    "email": "michaela@nybs.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": "(212) 267-4377 ext. 2",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Role verified, email inferred. LinkedIn profile is current and unambiguous: headline 'VP Sales at New York Business Systems', work_experience 'New York Business Systems (company_id 672208) / VP Sales / Greater New York City Area / Manage 2 Sales teams (New York City & Long Island) / start 1/2009 / end null'. ZoomInfo FULL_MATCH agrees ('Vice President, Sales', accuracy 89.0, validDate 2026-07-01) and supplies the direct phone. No email in either source; address inferred from the real craigs@nybs.com. ROLE IS VERIFIED (see above) but the EMAIL is pattern-constructed, so per the brief this record is 'Needs Updated' and the address must not be treated as confirmed; role_validated:'Yes' records that the person and title themselves are evidenced.",
+    "existing_contact_id": "242551262220",
+    "email_domain": "nybs.com",
+    "email_matches_dealer_domain": true,
+    "note": "His profile's websites field is http://nycopiers.com - a possible NYBS marketing alias, not tested as a mail domain.",
+    "role_validated": "Yes"
+   },
+   {
+    "firstname": "Billy",
+    "lastname": "Benedict",
+    "title": "President & Owner",
+    "linkedin_url": "https://linkedin.com/in/billy-benedict-61126614",
+    "email": "billy@nybs.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ZoomInfo FULL_MATCH, Billy Benedict / New York Business Systems (company id 167641478), jobTitle 'President & Owner', email billy@nybs.com, validDate 2026-06-12 - but contactAccuracyScore is only 75.0, the lowest usable band, so the role is not marked verified. The address is real and sourced, not constructed, and it is what establishes the firstname-only variant at this domain.",
+    "existing_contact_id": "242551262109",
+    "email_domain": "nybs.com",
+    "email_matches_dealer_domain": true,
+    "linkedin_url_added": true,
+    "needs_human": true,
+    "note": "See the Sementa note - two Presidents on file at one dealer."
+   },
+   {
+    "firstname": "Craig",
+    "lastname": "Sweezey",
+    "title": "Vice President of Sales",
+    "linkedin_url": "https://linkedin.com/in/craig-sweezey-8132a22",
+    "email": "craigs@nybs.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Best-evidenced person at this dealer. LinkedIn confirms role and currency: headline 'Vice President of Sales at New York Business Systems', work_experience 'New York Business Systems (company_id 672208) / Vice President of Sales / Full-time / start 1/2014 / end null', with a long bio about leading the sales team. ZoomInfo FULL_MATCH supplies craigs@nybs.com at contactAccuracyScore 98.0, validDate 2026-07-01. IMPORTANT: ZoomInfo's jobTitle for him is 'Manager, Information Technology' - that is his PREVIOUS NYBS role (LinkedIn: 'Manager of information systems, 1/2008-1/2014'), so the title on file is correct and ZoomInfo's is stale. LinkedIn wins on title.",
+    "existing_contact_id": "242573532837",
+    "email_domain": "nybs.com",
+    "email_matches_dealer_domain": true,
+    "note": "Do not let ZoomInfo downgrade his title - the CRM's 'Vice President of Sales' is the current one per LinkedIn.",
+    "role_validated": "Yes"
+   },
+   {
+    "firstname": "Pious",
+    "lastname": "Hwang",
+    "title": "Vice President",
+    "linkedin_url": "https://linkedin.com/in/pious-hwang-89100688",
+    "email": "pioush@nybs.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Role verified by LinkedIn, email inferred. Headline 'Vice President at New York Bussiness Systems, Inc.' (their typo), single work_experience entry 'New York Bussiness Systems, Inc. / Vice President / Full-time / start 1/1992 / end null' - 34 years at the dealer, location New York NY. Address inferred from the real craigs@nybs.com. ROLE IS VERIFIED (see above) but the EMAIL is pattern-constructed, so per the brief this record is 'Needs Updated' and the address must not be treated as confirmed; role_validated:'Yes' records that the person and title themselves are evidenced.",
+    "existing_contact_id": "242548951140",
+    "email_domain": "nybs.com",
+    "email_matches_dealer_domain": true,
+    "role_validated": "Yes"
+   },
+   {
+    "firstname": "ED",
+    "lastname": "Rivera",
+    "title": "Vice President",
+    "linkedin_url": "https://linkedin.com/in/ed-rivera-15426ab",
+    "email": "edr@nybs.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Role verified by LinkedIn, email inferred. Headline 'VP at NYBS', single work_experience entry 'New York Business Systems (company_id 672208) / VP / sales, service of copier, facsimiles, digital imaging solutions... / start 1/1985 / end null'. His own websites field is the mistyped 'http://WWWMNYBS.COM', which is nybs.com with a typo - further tying him to the domain. Address inferred from the real craigs@nybs.com. ROLE IS VERIFIED (see above) but the EMAIL is pattern-constructed, so per the brief this record is 'Needs Updated' and the address must not be treated as confirmed; role_validated:'Yes' records that the person and title themselves are evidenced.",
+    "existing_contact_id": "242578222947",
+    "email_domain": "nybs.com",
+    "email_matches_dealer_domain": true,
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "9931632768",
+  "company": "Stewart - A Xerox Company",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live Xerox company, 6000 Irwin Road, Mt. Laurel NJ 08054, (800) 322-5584. LinkedIn company id 205012 ('Stewart, A Xerox Company' / 'Stewart Business Systems'). The stewartxerox.com mail domain is live and its convention is first initial + surname, anchored on a real sourced address for the VP. One of the three on file looks like a departure to Toshiba and needs a human call.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "zoominfo",
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Pat",
+    "lastname": "Healy",
+    "title": "Vice President of Managed Print Services",
+    "linkedin_url": "https://linkedin.com/in/pat-healy-47657914",
+    "email": "phealy@stewartxerox.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(609) 589-4913",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Fully confirmed. LinkedIn work_experience: 'Stewart, A Xerox Company (company_id 205012) / Vice President of Managed Print Services / start 2/2016 / end null', with two earlier Stewart roles beneath it, and a headline about building the managed-print team at Xerox. ZoomInfo FULL_MATCH supplies phealy@stewartxerox.com and direct phone (609) 589-4913 at contactAccuracyScore 93.0, validDate 2026-07-01, and agrees the title. Legal first name Patrick.",
+    "existing_contact_id": "242564319542",
+    "email_domain": "stewartxerox.com",
+    "email_matches_dealer_domain": true,
+    "role_validated": "Yes"
+   },
+   {
+    "firstname": "Jim",
+    "lastname": "Seasholtz",
+    "title": "Sales Director",
+    "linkedin_url": "https://linkedin.com/in/jim-seasholtz-32b0a711",
+    "email": "james.seasholtz@tbs.toshiba.com",
+    "email_class": "unknown",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "PROBABLE DEPARTURE - CONFLICTING SOURCES, needs a human. ZoomInfo FULL_MATCH on 'Jim Seasholtz / Stewart Business Systems' resolves to firstName James, companyName 'Toshiba America Business Solutions' (zoominfoCompanyId 358990145), jobTitle 'Vice President, Sales', email james.seasholtz@tbs.toshiba.com, contactAccuracyScore 94.0, validDate 2026-04-05 - a competitor manufacturer, not the dealer. His LinkedIn still says 'Sales Director at Stewart Business Systems' with company_id 205012, but that profile is plainly unmaintained: ONE experience entry with start:null AND end:null, 22 followers, 21 connections, no photo-era updates. A dateless LinkedIn entry cannot outrank a competitor record validated in April 2026.",
+    "existing_contact_id": "242565434900",
+    "email_domain": "tbs.toshiba.com",
+    "departed": true,
+    "departed_to": "Toshiba America Business Solutions",
+    "needs_human": true,
+    "email_matches_dealer_domain": false,
+    "note": "If he has left, the Stewart-domain alternative jseasholtz@stewartxerox.com is dead. Do not mail both. Human should confirm before either address is used; the shard currently has him validated 'Yes' at Stewart."
+   },
+   {
+    "firstname": "John",
+    "lastname": "Knox",
+    "title": "Director of Customer Relations",
+    "linkedin_url": "https://linkedin.com/in/john-knox-490942135",
+    "email": "jknox@stewartxerox.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": "(856) 857-3950",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Role verified by LinkedIn: 'Stewart, A Xerox Company (company_id 205012) / Director Of Customer Relations / start 4/2019 / end null', preceded by Implementation Manager at the same company and nine years at Xerox - The Document Group; location Mount Laurel NJ, matching the dealer. Email is INFERRED from the real sourced address phealy@stewartxerox.com (first initial + surname). ZoomInfo offers john.knox@xerox.com instead but at contactAccuracyScore 50.0, too weak to prefer over the dealer-domain pattern; its direct phone (856) 857-3950 is carried through. ROLE IS VERIFIED (see above) but the EMAIL is pattern-constructed, so per the brief this record is 'Needs Updated' and the address must not be treated as confirmed; role_validated:'Yes' records that the person and title themselves are evidenced.",
+    "existing_contact_id": "242578970993",
+    "email_domain": "stewartxerox.com",
+    "email_matches_dealer_domain": true,
+    "note": "Two candidate addresses: jknox@stewartxerox.com (pattern-inferred from phealy@) and john.knox@xerox.com (ZoomInfo, accuracy 50). Stewart is a Xerox company so both are plausible.",
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "9931653638",
+  "company": "Valley Office Systems",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Already flagged Confirmed Acquired. Two corrections fall out of the research. (1) The operating address in the state Ricoh dealer list is 2050 1st St, IDAHO FALLS ID 83401, (208) 529-2777 - not the Salt Lake City on file; Utah appears only as a covered territory. (2) The dealer's state-list Primary Contact is HOWARD HANSEN, hhansen@valleyofficesystems.com - a different Hansen from the one on file, which fixes the convention as first initial + surname.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "state_contract_list",
+   "zoominfo",
+   "linkedin"
+  ],
+  "people": [
+   {
+    "firstname": "Colleen",
+    "lastname": "Hansen",
+    "title": "Vice President",
+    "linkedin_url": "https://linkedin.com/in/colleen-hansen-b2a57580",
+    "email": "chansen@valleyofficesystems.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": "(208) 233-2777 ext. 105",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "TITLE CORRECTION plus inferred address. ZoomInfo FULL_MATCH, Colleen Hansen / Valley Office Systems (company id 159416396), jobTitle 'Vice President' - NOT 'Owner' as held on file - contactAccuracyScore 90.0, validDate 2026-07-01, direct phone (208) 233-2777 ext. 105. No email in the record. Address constructed from the real published address hhansen@valleyofficesystems.com (Howard Hansen, the dealer's Primary Contact) in Ricoh authorized-dealer list published as a state contract document (bidopportunities.iowa.gov ShowContractDocument/370f621d-1392-496d-bb01-3ce3dab7b99f, same file served by apps.des.wa.gov as WA.State.Ricoh.Dealer.List.xlsx).",
+    "existing_contact_id": "242551262130",
+    "email_domain": "valleyofficesystems.com",
+    "email_matches_dealer_domain": true,
+    "linkedin_url_added": true,
+    "title_corrected_from": "Owner",
+    "note": "Howard Hansen (hhansen@valleyofficesystems.com, state-list Primary Contact, Idaho Falls) is a real published address at this dealer and may be the better entry point."
+   }
+  ]
+ },
+ {
+  "cid": "14774487981",
+  "company": "Total Print Management",
+  "outcome": "found",
+  "company_verdict": "dealer_bad_domain",
+  "company_notes": "IDENTITY RESOLVED. 'Total Print Management' at Orland Park IL is the trading style; the operating company is NEXT DAY PLUS (LinkedIn company id 445739, Greater Chicago Area). The domain on file, totalprintmanagement.com.au, is an AUSTRALIAN domain and cannot be this Illinois dealer's - a straightforward bad-domain artefact. Both people on file are confirmed at Next Day Plus, one with a high-confidence real address on nextdayplus.com, which fixes the convention as first initial + surname.",
+  "domain_correction": "nextdayplus.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "zoominfo",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Tom",
+    "lastname": "Kosloskus",
+    "title": "Chief Executive Officer",
+    "linkedin_url": "https://linkedin.com/in/tomkosloskus",
+    "email": "tkosloskus@nextdayplus.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Person is real and senior but the EMPLOYER NAME ON FILE IS WRONG. His LinkedIn profile (surname shown as 'K.') has headline 'CEO at Next Day Plus' and work_experience 'Next Day Plus (company_id 445739) / CEO / start 2/2016 / end null' plus 'Next Day Plus / VP of Sales / start 8/2001 / end null'; websites ['http://www.nextdaytoner.com']; location Greater Chicago Area. NOWHERE in his 3 experience entries does 'Total Print Management' appear. So the CEO title on file is right and the company label is the trading name. Address inferred from the real ZoomInfo-sourced jfiala@nextdayplus.com at the same domain.",
+    "existing_contact_id": "242203089198",
+    "email_domain": "nextdayplus.com",
+    "email_matches_dealer_domain": false,
+    "note": "nextdaytoner.com is a second live domain of his per his own profile."
+   },
+   {
+    "firstname": "Jonathan",
+    "lastname": "Fiala",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/jonathanfiala",
+    "email": "jfiala@nextdayplus.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ZoomInfo FULL_MATCH, Jonathan Fiala / Next Day Plus (company id 353776493), jobTitle President, email jfiala@nextdayplus.com, contactAccuracyScore 98.0, validDate 2026-07-01 - the highest-scoring record in this shard, and it is what proves the Total Print Management / Next Day Plus tie, since the same query against 'Total Print Management' returned NO_MATCH. Role not independently confirmed off ZoomInfo, hence Needs Updated rather than Yes.",
+    "existing_contact_id": "242557064613",
+    "email_domain": "nextdayplus.com",
+    "email_matches_dealer_domain": false,
+    "linkedin_url_added": true
+   }
+  ]
+ },
+ {
+  "cid": "14774707280",
+  "company": "Metro Copier Service, Inc.",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "LOCATION CORRECTION - the shard says Denver CO and that is wrong. The dealer's own site is titled 'Copier Repairs, Sales, & Lease | New Orleans, LA | Metro Copier Service', its address block reads '208 Pasadena Avenue, Metairie, LA, 70001, United States', its phone is (504) 837-2201 and its copy shop is 'in Metairie'. It is a Sharp Certified Channel Reseller 2025 and also services Canon, HP, Samsung, Toshiba, so it is a live dealer. Footer copyright reads 2026.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Ed",
+    "lastname": "Hingle",
+    "title": "Owner",
+    "linkedin_url": null,
+    "email": "ed@metro-nola.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(504) 837-2201",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Named and titled on the dealer's OWN website, with the address published beside the office location: the site carries a pull-quote 'I never thought I'd see the day where doing business the right way was considered old-fashioned.' attributed 'Ed Hingle | owner', and the contact block lists '(504) 837-2201  ed@metro-nola.com'. The domain metro-nola.com is a corporate (non-freemail) domain and is transparently the dealer's own - 'nola' for New Orleans, matching the corrected Metairie LA location.",
+    "existing_contact_id": "242201314430",
+    "email_domain": "metro-nola.com",
+    "email_matches_dealer_domain": false,
+    "note": "email_matches_dealer_domain is false only because the domain on file is metrocopyprint.com; metro-nola.com is the same business's mail domain, published by them on metrocopyprint.com.",
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "14774539604",
+  "company": "Office Business Systems Inc",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live Ricoh dealer, 2380 Capital Cir NE, Tallahassee FL 32308, (850) 385-1230 - the site says 'your preferred vendor for digital copiers and facsimile products from RICOH in the Tallahassee area'. But the state Ricoh dealer list names RANDY HOLLEY, not the Gaston Holley on file, as Primary Contact, and the only address it publishes for this dealer is randyholley@comcast.net - a FREEMAIL address, so it gives no obstallahassee.com convention to work from. No business address could be anchored for anyone here.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "state_contract_list",
+   "company_site",
+   "zoominfo",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Gaston",
+    "lastname": "Holley",
+    "title": "President, Secretary & Treasurer (Owner)",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": "(850) 385-1230",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "NOT CONFIRMED and no email found. ZoomInfo returned COMPANY_ONLY_MATCH at contactAccuracyScore 0.0 - it has the dealer (company id 75580186) but no live record of Gaston Holley. Ricoh authorized-dealer list published as a state contract document (bidopportunities.iowa.gov ShowContractDocument/370f621d-1392-496d-bb01-3ce3dab7b99f, same file served by apps.des.wa.gov as WA.State.Ricoh.Dealer.List.xlsx) lists a different Holley for this dealer: 'Primary Contact: Randy Holley / Phone: (850) 385-1230 / Email: randyholley@comcast.net'. I am deliberately NOT guessing an obstallahassee.com address, because the one published address at this dealer is on comcast.net, so there is no evidence the corporate domain is even used for mail.",
+    "existing_contact_id": "242580362162",
+    "needs_human": true,
+    "note": "Lead for a human: Randy Holley, randyholley@comcast.net, the state-list Primary Contact - PERSONAL/freemail class, so under the user's rule it must never land in the business email field. Also worth clarifying whether Gaston and Randy Holley are the same person under different names, or two family members."
+   }
+  ]
+ },
+ {
+  "cid": "14774487982",
+  "company": "ATLAS Wyoming",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Live Xerox/Lexmark/Sharp dealer plus wide-format reprographics, IT services and office supplies: 800 E A St, Casper WY 82601, (307) 237-9523. Site has About Us, Contact Us and Careers pages but NO staff/team page and no published email address anywhere - I mapped the whole site (100+ URLs) to check. A Canon page on the site refers to 'Canon and Advanced Document Systems', suggesting Advanced Document Systems is the legal entity behind the ATLAS brand.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "zoominfo",
+   "linkedin",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Nicholas",
+    "lastname": "Auerbach",
+    "title": "Managing Partner",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": "(307) 237-9523",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Role corroborated, identity NOT. ZoomInfo FULL_MATCH, Nicholas Auerbach / ATLAS Wyoming (company id 454575893), jobTitle 'Managing Partner', contactAccuracyScore 88.0, validDate 2026-04-16 - no email held. WRONG-IDENTITY WARNING: the LinkedIn URLs ZoomInfo attaches to him are a DIFFERENT HUMAN. I opened /in/nicholas-auerbach: it is 'Managing Partner at Atlas Strategic Holdings LLC | Finance & Operations Investor', located in Michigan, 85 followers, whose three experience entries are Atlas Strategic Holdings (a strategic investment firm he founded 1/2026, 'focused on the automation and agency sectors') and two US Navy Officer Candidate ranks. Nothing to do with a Casper WY copier dealer - ZoomInfo has matched on the word 'Atlas' plus the title 'Managing Partner'. Do not attach that URL.",
+    "existing_contact_id": "242201314418",
+    "needs_human": true,
+    "wrong_identity_linkedin_rejected": "https://www.linkedin.com/in/nicholas-auerbach",
+    "note": "No email found and none inferred: the site publishes no address at atlaswy.com to anchor a pattern. Remaining lead is the main line (307) 237-9523, or a Wyoming SoS / corporationwiki officer filing for Advanced Document Systems."
+   }
+  ]
+ },
+ {
+  "cid": "14774531936",
+  "company": "Chaparral Business Machines Inc",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Flagged Confirmed Acquired on the shard, but the business still trades under its own name and domain and appears in the state Ricoh dealer list as an active dealer: 'CHAPARRAL BUSINESS MACHINES, 825 RIVERSIDE AVE STE 6, PASO ROBLES, CA 93446', (805) 239-3555, covering San Luis Obispo and Santa Barbara counties. Convention at cbmachines.com is firstname.surname.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "state_contract_list",
+   "linkedin",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "Phil",
+    "lastname": "Cagliero",
+    "title": "General Manager",
+    "linkedin_url": "https://linkedin.com/in/phil-cagliero-46a32b84",
+    "email": "phil.cagliero@cbmachines.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(805) 239-3555",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "TITLE CORRECTION plus a verified address, both from independent sources. (1) Ricoh authorized-dealer list published as a state contract document (bidopportunities.iowa.gov ShowContractDocument/370f621d-1392-496d-bb01-3ce3dab7b99f, same file served by apps.des.wa.gov as WA.State.Ricoh.Dealer.List.xlsx) carries 'Company Name: CHAPARRAL BUSINESS MACHINES / City: PASO ROBLES / State: CA / Primary Contact: Phillip Cagliero / Phone: (805) 239-3555 / Email: phil.cagliero@cbmachines.com'. (2) His LinkedIn profile says he is CURRENT and gives a different title from the file: headline 'General Manager at Chaparral Business Machines, Inc.', single work_experience entry 'Chaparral Business Machines, Inc. / General Manager / San Luis Obispo and Santa Barbara Counties / start 3/1991 / end null', location Paso Robles CA. The file's 'Co-Owner (pre-2019 sale)' is stale on both counts - he is General Manager and he is still there.",
+    "existing_contact_id": "242201314442",
+    "email_domain": "cbmachines.com",
+    "email_matches_dealer_domain": true,
+    "title_corrected_from": "Co-Owner (pre-2019 sale)",
+    "note": "The shard's 'acquired' verdict is questionable: the dealer is still listed as an active Ricoh dealer under its own name and its long-time GM is still in post.",
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "14945449563",
+  "company": "Elbar Duplicator Corp dba EDC Business Solutions",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Resolved from 'unresolved'. The live entity is EDC Business Solutions on the domain edcbizsolutions.com (ZoomInfo company id 346772497), not elbardigital.com. Note the direct-dial area code is 631 (Suffolk County, Long Island) rather than the Richmond Hill NY (Queens) address on file, so the operating location may also want checking.",
+  "domain_correction": "edcbizsolutions.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "zoominfo",
+   "linkedin",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Joe",
+    "lastname": "Terio",
+    "title": "Director of Sales",
+    "linkedin_url": "https://linkedin.com/in/joe-terio-23915b27",
+    "email": "jterio@edcbizsolutions.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(631) 482-1220 ext. 3",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ZoomInfo FULL_MATCH, Joe Terio / EDC Business Solutions, jobTitle 'Director, Sales' (matching the 'Director of Sales' on file), email jterio@edcbizsolutions.com, direct phone (631) 482-1220 ext. 3, contactAccuracyScore 85.0, validDate 2025-12-14. This single record is what resolved the company from 'unresolved' and produced the domain correction. Role not independently confirmed off ZoomInfo, so Needs Updated.",
+    "existing_contact_id": "242551262112",
+    "email_domain": "edcbizsolutions.com",
+    "email_matches_dealer_domain": false,
+    "linkedin_url_added": true,
+    "note": "LinkedIn URL from ZoomInfo's externalUrls, not opened directly."
+   }
+  ]
+ },
+ {
+  "cid": "28767440970",
+  "company": "Business Products",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "The domain on file, absproducts.com, is ABS Business Products (Columbus OH, 51-200 employees per its LinkedIn company page) - so the company is real and live. But I could NOT anchor the mail convention on a real published address: no address at absproducts.com appears on the dealer's site, in the state Ricoh dealer list, or in ZoomInfo. The only convention evidence is third-party aggregators (RocketReach: 'first_initial . last@absproducts.com (100.0%)'; LeadIQ: 'F.Last@absproducts.com'), which the brief does not accept as verification.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "zoominfo",
+   "firecrawl_search",
+   "company_site",
+   "state_contract_list"
+  ],
+  "people": [
+   {
+    "firstname": "Duane",
+    "lastname": "Kimble",
+    "title": "Vice President of Finance and Administration",
+    "linkedin_url": null,
+    "email": "d.kimble@absproducts.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "WEAKEST INFERENCE IN THE SHARD - flagged as such deliberately. ZoomInfo returned NO_MATCH for 'Duane Kimble / Business Products' and COMPANY_ONLY_MATCH at contactAccuracyScore 0.0 against 'Advanced Business Solutions', so there is no live record of this person anywhere I looked, and his title on file could not be re-confirmed. The address is constructed purely from aggregator-reported convention (first initial + dot + surname), with NO real published address at absproducts.com to anchor it. Treat as a hypothesis, not a contact.",
+    "existing_contact_id": "242553619566",
+    "email_domain": "absproducts.com",
+    "email_matches_dealer_domain": true,
+    "needs_human": true,
+    "note": "The shard had him validated 'Yes'; nothing I found supports that. Recommend a human verify he is still there before any send."
+   }
+  ]
+ },
+ {
+  "cid": "28707666562",
+  "company": "Digital Solutions",
+  "outcome": "found",
+  "company_verdict": "dealer_bad_domain",
+  "company_notes": "The operating company is DOCUSYSTEMS INC of Myrtle Beach SC. Ricoh authorized-dealer list published as a state contract document (bidopportunities.iowa.gov ShowContractDocument/370f621d-1392-496d-bb01-3ce3dab7b99f, same file served by apps.des.wa.gov as WA.State.Ricoh.Dealer.List.xlsx) confirms it: 'Company Name: DOCUSYSTEMS / Address: 1372 DIVIDEND LOOP / City: MYRTLE BEACH / State: SC / Zip: 29577 / Primary Contact: Dean Carroll / Phone: (843) 448-4141 / Email: deancarroll@aol.com'. The live mail domain is docusystemsinc.com, not the digitalsolutionscopiers.com on file. The shard also contains a DUPLICATE HUMAN: contact ids 242614902641 and 242614902661 are both 'Jeff Blumling / CFO, DocuSystems Inc.'.",
+  "domain_correction": "docusystemsinc.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "state_contract_list",
+   "zoominfo",
+   "linkedin"
+  ],
+  "people": [
+   {
+    "firstname": "Jeff",
+    "lastname": "Blumling",
+    "title": "Chief Financial Officer",
+    "linkedin_url": "https://linkedin.com/in/jeffrey-blumling-73156120",
+    "email": "jblumling@docusystemsinc.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "ZoomInfo FULL_MATCH, Jeff Blumling / DocuSystems (company id 25775799), jobTitle 'Chief Financial Officer', email jblumling@docusystemsinc.com, contactAccuracyScore 94.0, validDate 2026-05-06, lastUpdated 2026-08-02 - a strong, recently revalidated record that both confirms the title on file and produces the domain correction. Role not independently confirmed off ZoomInfo, so Needs Updated.",
+    "existing_contact_id": "242614902641",
+    "email_domain": "docusystemsinc.com",
+    "email_matches_dealer_domain": false,
+    "duplicate_of": "242614902661",
+    "linkedin_url_added": true,
+    "needs_human": true,
+    "note": "DEDUPE: same human held twice, as contact 242614902641 and contact 242614902661."
+   },
+   {
+    "firstname": "Jeff",
+    "lastname": "Blumling",
+    "title": "Chief Financial Officer",
+    "linkedin_url": "https://linkedin.com/in/jeffrey-blumling-73156120",
+    "email": "jblumling@docusystemsinc.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Duplicate record of the same human as contact 242614902641 - reported separately only so the merge is visible. Same single ZoomInfo FULL_MATCH (accuracy 94.0, validDate 2026-05-06) behind both.",
+    "existing_contact_id": "242614902661",
+    "email_domain": "docusystemsinc.com",
+    "email_matches_dealer_domain": false,
+    "duplicate_of": "242614902641",
+    "linkedin_url_added": true,
+    "needs_human": true
+   }
+  ]
+ },
+ {
+  "cid": "28766872131",
+  "company": "DB Technology Group",
+  "outcome": "found",
+  "company_verdict": "non_us",
+  "company_notes": "CANADIAN dealer - Alberta, not a US record. Owner's LinkedIn puts him in Medicine Hat AB (Redcliff, the town on file, adjoins Medicine Hat), and LinkedIn's creator_website block on his profile links https://dbtechgroup.ca/, confirming the domain. No email published on the site or held by ZoomInfo.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "Bill",
+    "lastname": "Boyer",
+    "title": "Owner",
+    "linkedin_url": "https://linkedin.com/in/bill-boyer-846b067a",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Role and currency verified by LinkedIn; no email found. Headline 'Owner at DB Technology Group', work_experience 'DB Technology Group / Owner / Medicine Hat / start 12/2018 / end null', preceded by Xerox Sales Agency Account Manager and nine years as a Xerox Territory Account Manager - a coherent copier-industry history. creator_website on the profile is https://dbtechgroup.ca/. ZoomInfo has only COMPANY_ONLY_MATCH at contactAccuracyScore 0.0 for him, i.e. no address. I did NOT guess one: there is no published address at dbtechgroup.ca to anchor a pattern.",
+    "existing_contact_id": "242201314487",
+    "note": "Honest no-email. Any dbtechgroup.ca guess would be unanchored. Canadian record - confirm it is in scope for a US dealer census.",
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "28757723930",
+  "company": "MRG Technologies",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "MRG Technologies merged into GAM TECH (gamtech.ca, Alberta). The departure noted on the shard is confirmed in the man's own words, and his co-partner is still in post with a high-confidence address - so this record gains a live decision-maker as the other one leaves. Canadian.",
+  "domain_correction": "gamtech.ca",
+  "acquired_by": "GAM Tech",
+  "sources_tried": [
+   "linkedin",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "Mike",
+    "lastname": "Rokosh",
+    "title": "Partner, Estate Strategies Inc. (was President, MRG Technologies and Managing Partner & COO, GAM Tech)",
+    "linkedin_url": "https://linkedin.com/in/mike-rokosh",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "DEPARTED, fully exited, in his own words. LinkedIn: both his MRG/GAM entries are ENDED - 'MRG Technologies Inc. / President / start 1/2019 / end 11/2021' and 'GAM Tech (company_id 3537813) / Managing Partner & COO / start 7/2020 / end 11/2021' - and BOTH descriptions read verbatim 'Sold my equity completely out of MRG/GAM Tech, and no longer working w/ Xerox.' His current role (end null) is 'Estate Strategies Inc. / Partner / Edmonton, Alberta / Self-employed / start 6/2023', headline 'CIM Wealth Manager', describing himself as 'a semi-retired tech entrepreneur'. He has left the copier industry.",
+    "existing_contact_id": "242203089190",
+    "departed": true,
+    "departed_to": "Estate Strategies Inc. (wealth management, Edmonton AB)",
+    "note": "Replacement found: Paul Peters, below, is the surviving Managing Partner and carries a 98-accuracy address."
+   },
+   {
+    "firstname": "Paul",
+    "lastname": "Peters",
+    "title": "Managing Partner and Chief Revenue Officer, GAM Tech",
+    "linkedin_url": null,
+    "email": "paul.peters@gamtech.ca",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(403) 343-7334 ext. 1301",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "The live decision-maker at this record, and the highest-confidence contact in the shard alongside Jonathan Fiala. ZoomInfo FULL_MATCH, Paul Peters / GAM Tech (company id 358936077), jobTitle 'Managing Partner and Chief Revenue Officer' - which matches the 'became GAM Tech Managing Partner & CRO' already noted on file - email paul.peters@gamtech.ca, direct phone (403) 343-7334 ext. 1301, contactAccuracyScore 98.0, validDate 2026-07-01. Role not confirmed off ZoomInfo, so Needs Updated.",
+    "existing_contact_id": "242557064633",
+    "email_domain": "gamtech.ca",
+    "email_matches_dealer_domain": false,
+    "note": "Domain gamtech.ca is the acquirer/merged entity, hence the domain correction on this company. His ZoomInfo externalUrls also show HubSpot contact links from another portal (id 47866835) - unrelated to QBS, ignore."
+   }
+  ]
+ },
+ {
+  "cid": "28767450708",
+  "company": "Norman Orr Office Supply",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "REBRANDED, not departed. Norman Orr Office Supply was bought by the man on file and renamed BURO, trading from 202 West Main Street, West Plains MO 65775 on the domain thinkburo.com, 417-256-6808 / (800) 667-6260. The site's own contact block publishes 'E-mail: Reid@thinkburo.com' and its Facebook contact panel publishes sales@thinkburo.com - so the convention is firstname@thinkburo.com and the owner's address is directly published, not inferred.",
+  "domain_correction": "thinkburo.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "firecrawl_search",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "Reid",
+    "lastname": "Grigsby",
+    "title": "Owner, BURO (formerly Vice President, Norman Orr Office Supply)",
+    "linkedin_url": "https://linkedin.com/in/reidgrigsby",
+    "email": "Reid@thinkburo.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "417-256-6808",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "TITLE CORRECTION and a verified address. His LinkedIn states the transaction explicitly: current role (end null) is 'BURO / Independent Business Owner / West Plains, Missouri / Full-time / start 1/2017', description 'I purchased Norman Orr Office Supply and re-branded to BURO in 2020.' His Norman Orr VP role is ENDED (start 12/2003, end 12/2016). websites ['www.thinkburo.com'], location West Plains MO - matching the dealer's town. The address Reid@thinkburo.com is published in the contact block of thinkburo.com, the dealer's own website. So the file's 'formerly VP' framing understates him: he is the OWNER.",
+    "existing_contact_id": "242201314560",
+    "email_domain": "thinkburo.com",
+    "email_matches_dealer_domain": false,
+    "title_corrected_from": "Independent Business Owner (formerly VP, Norman Orr Office Supply)",
+    "note": "Generic fallback sales@thinkburo.com. The old norman-orr.com domain should be retired in favour of thinkburo.com.",
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "28763982952",
+  "company": "ECS Digital Solutions",
+  "outcome": "found",
+  "company_verdict": "non_us",
+  "company_notes": "CANADIAN dealer - Ajax, Ontario. Full-line SHARP dealer plus Francotyp-Postalia mailing, trading since 1983 out of a 4,000 sq ft facility, serving Durham Region and the GTA. The legal name in LinkedIn experience is 'Executive Copier Systems Inc (SHARP) Francotyp Postalia Mailing Solutions' - ECS is the initialism - and the domain ecsdigital.ca is confirmed on the person's own profile. No email published; ZoomInfo has the company (id 402668174) but no live person record.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "John",
+    "lastname": "Turnone",
+    "title": "Vice President of Sales",
+    "linkedin_url": "https://linkedin.com/in/john-turnone-b1651a43",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": "(905) 683-1089",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Role and currency verified by LinkedIn; no email found. Headline 'Vice President of Sales@ ECS Digital Solutions', websites ['http://www.ecsdigital.ca'], location Ajax Ontario - all matching the file. His current entry (end null) is 'Executive Copier Systems Inc (SHARP) Francotyp Postalia Mailing Solutions / Account Manager Specialist / Ajax, Ontario, Canada / Permanent Full-time / start 2/2007', i.e. the same company under its legal name. His own description publishes a direct line: 'Call me directly at (905)683- 1089'. ZoomInfo COMPANY_ONLY_MATCH at accuracy 0.0 - no address. I did not guess one: nothing is published at ecsdigital.ca to anchor a pattern.",
+    "existing_contact_id": "242201314458",
+    "note": "Honest no-email, but a direct dial he published himself, which is arguably the better channel here. Canadian record - confirm scope.",
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "28753195270",
+  "company": "Clinique du Copieur",
+  "outcome": "found",
+  "company_verdict": "non_us",
+  "company_notes": "CANADIAN dealer - La Clinique du Copieur, Capitale-Nationale (Quebec City) region, already flagged Confirmed Acquired. Both people on file are confirmed on LinkedIn in the titles held, but both profiles are minimal, French-locale and outside my network (THIRD_DEGREE and OUT_OF_NETWORK), and per the confirmed Unipile behaviour contact_info.emails is exposed only for DISTANCE_1 connections - so no email was obtainable from LinkedIn by design, not by failure. ZoomInfo has the company (id 411632091) but returned COMPANY_ONLY_MATCH at accuracy 0.0 for the President. Also note the city/state fields on file are mojibake ('QuÃƒÂ©bec').",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "Alain",
+    "lastname": "Michaud",
+    "title": "President (President)",
+    "linkedin_url": "https://linkedin.com/in/alain-michaud-711007141",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Confirmed in role, no email available. LinkedIn headline 'President chez Clinique du Copieur', single work_experience entry 'Clinique du Copieur / President' with start and end both null (no dates given, but no end date either), primary_locale FR, location Capitale-Nationale Quebec. network_distance OUT_OF_NETWORK, so no contact_info is exposed - a hard LinkedIn limit for non-first-degree profiles, not a gap I can close.",
+    "existing_contact_id": "242201314434",
+    "note": "Non-US. No mail-domain anchor found at cliniqueducopieur.com, so nothing inferred.",
+    "role_validated": "Yes"
+   },
+   {
+    "firstname": "Rejean",
+    "lastname": "Grenier",
+    "title": "Vice President (Vice-President)",
+    "linkedin_url": "https://linkedin.com/in/r%c3%a9jean-grenier-ba2b9a4b",
+    "email": null,
+    "email_class": "unknown",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Confirmed in role, no email available. LinkedIn headline 'Vice-President chez La Clinique du Copieur', single work_experience entry 'La Clinique du Copieur / Vice-President', primary_locale FR, location Capitale-Nationale Quebec, 12 followers. network_distance THIRD_DEGREE, so contact_info is not exposed. The accented slug resolves correctly when percent-encoded as r%c3%a9jean-grenier-ba2b9a4b.",
+    "existing_contact_id": "242201314429",
+    "note": "Non-US. Name carries an accent (Rejean = Rejean with acute e) - watch encoding on write.",
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "28713734572",
+  "company": "qbsi.com",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "The company is QUALITY BUSINESS SYSTEMS, A XEROX COMPANY (Redmond/Bellevue WA) - the shard's company name is just the bare domain. LinkedIn company id 50048. The live mail domain is qbsi-xerox.com, not qbsi.com.",
+  "domain_correction": "qbsi-xerox.com",
+  "acquired_by": "Xerox",
+  "sources_tried": [
+   "linkedin",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "James",
+    "lastname": "Aghabeigi",
+    "title": "Director of Service",
+    "linkedin_url": "https://linkedin.com/in/james-aghabeigi-523952110",
+    "email": "jaghabeigi@qbsi-xerox.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(425) 896-5094",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Fully confirmed on both axes. LinkedIn: headline 'Director of Service at Quality Business Systems, A Xerox Company', single work_experience entry 'Quality Business Systems, A Xerox Company (company_id 50048) / Director of Service / start 6/2013 / end null', location Bellevue WA. ZoomInfo FULL_MATCH agrees ('Director, Service') and supplies jaghabeigi@qbsi-xerox.com plus direct phone (425) 896-5094 at contactAccuracyScore 94.0, validDate 2026-07-01. Title on file was already correct.",
+    "existing_contact_id": "242578534218",
+    "email_domain": "qbsi-xerox.com",
+    "email_matches_dealer_domain": false,
+    "note": "Domain differs from the qbsi.com on file - qbsi-xerox.com is the live mail domain.",
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "28743172756",
+  "company": "Sentriq Solutions Inc.",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Resolved from 'unresolved' - this is a live copier/phone/internet dealer. LinkedIn company id 71662846; the person's own profile hashtags are #copiers, #multifunctionalprinter, #businessphonesystem, #internet, #businesssolutions, and her role location is Sunrise FL, matching the file. Convention at sentriqsolutions.com is firstname@.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "zoominfo"
+  ],
+  "people": [
+   {
+    "firstname": "Sarais",
+    "lastname": "Castillo",
+    "title": "VP of Administrative Services",
+    "linkedin_url": "https://linkedin.com/in/sarais-castillo-3243bb1a7",
+    "email": "sarais@sentriqsolutions.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Fully confirmed. LinkedIn: headline 'VP of Administrative Services at Sentriq Solutions', single work_experience entry 'Sentriq Solutions (company_id 71662846) / VP of Administrative Services / Sunrise, Florida, United States / Full-time / start 4/2019 / end null'. ZoomInfo FULL_MATCH agrees ('Vice President, Administrative Services'), supplies sarais@sentriqsolutions.com at contactAccuracyScore 93.0, validDate 2026-07-01, and its externalUrls point at the same LinkedIn slug that was already on file - so the URL on file is the right human. Title on file correct.",
+    "existing_contact_id": "242570540628",
+    "email_domain": "sentriqsolutions.com",
+    "email_matches_dealer_domain": true,
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "35410874471",
+  "company": "Proven IT",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Domain established as PROVENIT.COM (it was null on the shard). Tinley Park IL; provenit.com/leadership publishes ~20 named leaders WITH mailto: addresses, which makes the convention unambiguous: first initial + surname (bEndre@, cSultanian@, cVanEck@, dSchaeflein@, eHusic@, gLyerla@, kSchweet@, mOpyd@, nKrapf@, pDinella@, tDixon@, wburfeind@, tcosich@, dvidro@, jcosich@, bcosich@). CEO and founder is John Cosich; Brett Cosich is COO. Note a data error on the page itself: Mike Engels' mailto and LinkedIn links both wrongly point at John Cosich.",
+  "domain_correction": "provenit.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "company_site",
+   "trade_press",
+   "zoominfo",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "Phil",
+    "lastname": "Lampugnano",
+    "title": "Vice President of Business Development",
+    "linkedin_url": null,
+    "email": "pLampugnano@provenit.com",
+    "email_class": "business",
+    "email_confidence": "inferred",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "Role sourced from trade press, but ABSENT FROM THE CURRENT LEADERSHIP PAGE - flagged for a human. Industry Analysts published 'Phil Lampugnano to join Proven IT on August 1st. Phil will join the Proven IT leadership team as Vice President of Business Development', which matches the title on file exactly and is a source the brief accepts. However he does NOT appear among the ~20 leaders currently listed on provenit.com/leadership (last modified 2026-07-30), and ZoomInfo has only COMPANY_ONLY_MATCH at contactAccuracyScore 0.0 for him against both 'Proven IT' and 'Proven Business Systems'. Address inferred from the many real published addresses on that page (first initial + surname, e.g. bEndre@provenit.com).",
+    "existing_contact_id": "242565123426",
+    "email_domain": "provenit.com",
+    "email_matches_dealer_domain": true,
+    "needs_human": true,
+    "note": "Human decision: joined per Industry Analysts, but not on the 2026-07-30 leadership page and accuracy 0.0 in ZoomInfo - a likely departure. Verify before sending."
+   },
+   {
+    "firstname": "Brett",
+    "lastname": "Cosich",
+    "title": "Chief Operating Officer",
+    "linkedin_url": "https://linkedin.com/in/brett-cosich-85604b99",
+    "email": "bcosich@provenit.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Confirmed on the dealer's own website with the address published beside the name: provenit.com/leadership carries the entry 'Chief Operating Officer / Brett Cosich - Brett has been Proven IT's Chief Operation Officer for over 20 years... instrumental to key acquisitions such as ThinkTank in 2021', with links 'Brett Cosich on Linkedin' (/in/brett-cosich-85604b99) and 'Brett Cosich on Envelope' (mailto:bcosich@provenit.com). Independently corroborated by a BTA press release quoting 'Brett Cosich, COO, Proven IT' and by Industry Analysts quoting 'Proven IT Chief Operating Officer Brett Cosich'. The file's 'co-owner' addition is plausible given the Cosich family ownership but is not stated on the page.",
+    "existing_contact_id": "242557064713",
+    "email_domain": "provenit.com",
+    "email_matches_dealer_domain": true,
+    "linkedin_url_added": true,
+    "title_refined_from": "Chief Operating Officer / co-owner",
+    "role_validated": "Yes"
+   }
+  ]
+ },
+ {
+  "cid": "57291548839",
+  "company": "Martin Group",
+  "outcome": "found",
+  "company_verdict": "unresolved",
+  "company_notes": "Martin Group-driven by people, Lake Geneva WI (LinkedIn company id 1940066), martingroup.com, (262) 248-8911. The single decision-maker on file RETIRED in November 2025 and I could find NO successor - not in trade press, not on the company's LinkedIn page, not in ZoomInfo (which still returns him as CEO), and the BBB profile still lists 'Business Management: John ...' i.e. it is stale too. This record has zero live decision-makers and is the clearest single item in the shard needing a human. Do NOT confuse martingroup.com with martingroup.co (The Martin Group, an unrelated agency) or with KLS Martin Group.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "zoominfo",
+   "trade_press",
+   "firecrawl_search"
+  ],
+  "people": [
+   {
+    "firstname": "John",
+    "lastname": "Stensland",
+    "title": "Retired (was President & CEO / Owner, Martin Group)",
+    "linkedin_url": "https://linkedin.com/in/johnstensland",
+    "email": "stenslandj@martingroup.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": "(262) 248-8911",
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "DEPARTED - RETIRED, on his own profile, with a date. His CURRENT entry (end null) is 'Official Lake Life Lover / Retired / start 11/2025'; directly beneath it 'Martin Group-driven by people (company_id 1940066) / President, C.E.O. / Lake Geneva / start 1/1999 / end 11/2025' - an ENDED role. His headline still reads 'President, C.E.O. @ Martin Group' and his websites field is http://www.martingroup.com, which is why aggregators still name him as CEO. The email is REAL AND PUBLISHED BY HIM, in the description of his Cheese Head Toner partnership entry: 'Please contact John at stenslandj@martingroup.com for more details.' That also fixes the domain convention as surname + first initial. Because he retired in Nov 2025 the mailbox may well be closed - reported so the CONVENTION is captured even if the address is not deliverable.",
+    "existing_contact_id": "242614902655",
+    "email_domain": "martingroup.com",
+    "departed": true,
+    "departed_to": "Retired (November 2025)",
+    "email_matches_dealer_domain": true,
+    "needs_human": true,
+    "note": "NO SUCCESSOR FOUND - the top priority human action in this shard. The convention surname+firstinitial@martingroup.com is now known, so a named successor becomes reachable immediately. Remaining leads: the Martin Group LinkedIn company page people sweep, or phoning (262) 248-8911 and asking who replaced John Stensland."
+   }
+  ]
+ }
+]

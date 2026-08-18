@@ -1,0 +1,1762 @@
+[
+ {
+  "cl": "6930353971",
+  "cids": [
+   "6930353971"
+  ],
+  "name": "Copier Fax Business Technologies Inc",
+  "domain": "cfbtsolutions.com",
+  "city": "Tonawanda",
+  "state": "New York",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "bbb",
+   "company_site",
+   "linkedin",
+   "press_release",
+   "state_cooperative_vendor_list"
+  ],
+  "dms": [
+   {
+    "id": "242565912158",
+    "name": "Timothy Warren",
+    "title": "Director of Finance & Administration",
+    "li": "https://linkedin.com/in/timothy-warren-14432123a",
+    "alt": null,
+    "val": "Yes"
+   },
+   {
+    "id": "242619334045",
+    "name": "Jim Bodie",
+    "title": "Vice President of Service",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "7050200672",
+  "cids": [
+   "7050200672"
+  ],
+  "name": "Copy King",
+  "domain": "copyking.com",
+  "city": "St. Charles",
+  "state": "Illinois",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "132096271983",
+    "name": "Mossy Little",
+    "title": "President (unconfirmed - no source found)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "7313698080",
+  "cids": [
+   "7313698080"
+  ],
+  "name": "On Demand",
+  "domain": "ondemandhouston.com",
+  "city": "Houston",
+  "state": "Texas",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "linkedin",
+   "state_contract_idaho",
+   "state_contract_maryland",
+   "state_contract_michigan",
+   "state_contract_naspo",
+   "trade_press_enx"
+  ],
+  "dms": [
+   {
+    "id": "242201314422",
+    "name": "Terry Gray",
+    "title": "President / Owner (co-owner with Mike Gray)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242551262119",
+    "name": "Terry Gray",
+    "title": "President / Owner (co-owner with Mike Gray)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "57383655525",
+  "cids": [
+   "57383655525"
+  ],
+  "name": "JD Young Technologies",
+  "domain": "jdyoung.com",
+  "city": "Tulsa",
+  "state": "Oklahoma",
+  "rev": null,
+  "swept_w2": false,
+  "sources": [],
+  "dms": [
+   {
+    "id": "242573039142",
+    "name": "Weldon Gould",
+    "title": "Director, Information Technology",
+    "li": null,
+    "alt": null,
+    "val": null
+   },
+   {
+    "id": "242565912156",
+    "name": "Doug Stuart",
+    "title": "President and Co-Owner",
+    "li": null,
+    "alt": null,
+    "val": null
+   }
+  ]
+ },
+ {
+  "cl": "7570059090",
+  "cids": [
+   "7570059090"
+  ],
+  "name": "Tritec Office Equipment Inc",
+  "domain": "tritecricoh.com",
+  "city": "Parsippany",
+  "state": "New Jersey",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "firecrawl_search",
+   "linkedin",
+   "state_contract_vendor_list"
+  ],
+  "dms": [
+   {
+    "id": "242565912154",
+    "name": "James Santos",
+    "title": "Director of Sales",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242565912157",
+    "name": "John Tucker",
+    "title": "Director, Service",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "53535904330",
+  "cids": [
+   "53535904330"
+  ],
+  "name": "American Business Systems",
+  "domain": "ambussys.com",
+  "city": "Springfield",
+  "state": "Missouri",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "linkedin",
+   "state_contract_list",
+   "trade_press",
+   "zoominfo"
+  ],
+  "dms": [
+   {
+    "id": "242557064627",
+    "name": "Andrew Runge",
+    "title": "President / Owner",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "7641813418",
+  "cids": [
+   "7641813418"
+  ],
+  "name": "Plan And Print",
+  "domain": "planandprint.com",
+  "city": "Syracuse",
+  "state": "New York",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242557064711",
+    "name": "Frank Lipari",
+    "title": "Vice President of Sales",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "7642231100",
+  "cids": [
+   "7642231100"
+  ],
+  "name": "Moldova Enterprises",
+  "domain": "onedocmanagedsolutions.com",
+  "city": "",
+  "state": "",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242614902647",
+    "name": "Nadejda Newby",
+    "title": "Owner, Moldova Enterprises LLC",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "7751688784",
+  "cids": [
+   "7751688784"
+  ],
+  "name": "Atec Office Solutions",
+  "domain": "atecofficesolutions.com",
+  "city": "Stockton",
+  "state": "California",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242201314465",
+    "name": "James McLemore",
+    "title": "Owner",
+    "li": "https://linkedin.com/in/james-mclemore-2793491b",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "57364882235",
+  "cids": [
+   "57364882235"
+  ],
+  "name": "ALC Tech Solutions (formerly American Lazer Services, Inc. / American Lazer-CommSat)",
+  "domain": "alctechsolutions.com",
+  "city": "Beverly",
+  "state": "MA",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "linkedin",
+   "zoominfo"
+  ],
+  "dms": [
+   {
+    "id": "242201314450",
+    "name": "Christopher Copelas",
+    "title": "Vice President and Integrator",
+    "li": "https://linkedin.com/in/cronusbusinesssystems",
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "8293107793",
+  "cids": [
+   "8293107793"
+  ],
+  "name": "CommSat",
+  "domain": "commsat.net",
+  "city": "Salisbury",
+  "state": "Massachusetts",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "132316269947",
+    "name": "Deatrice Gross",
+    "title": "Owner",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242551262113",
+    "name": "Christopher Copelas",
+    "title": "Vice President and Integrator",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "8293081683",
+  "cids": [
+   "8293081683"
+  ],
+  "name": "CV Business Solutions",
+  "domain": "cvbusinesssolutions.com",
+  "city": "Tampa",
+  "state": "Florida",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242574898972",
+    "name": "Eric Johnson",
+    "title": "Owner (unverified - see evidence)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "8293445708",
+  "cids": [
+   "8293445708"
+  ],
+  "name": "Empire Office Systems",
+  "domain": "empiretampa.com",
+  "city": "Tampa",
+  "state": "Florida",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "state_contract_vendor_list",
+   "trade_press"
+  ],
+  "dms": [
+   {
+    "id": "213003044377",
+    "name": "Kevin Mahoney",
+    "title": "Owner",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "8499240064",
+  "cids": [
+   "8499240064"
+  ],
+  "name": "Mavericks",
+  "domain": "mavericksofficesolutions.com",
+  "city": "Mentor",
+  "state": "Ohio",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "bbb",
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242551262125",
+    "name": "Ashley Figueroa",
+    "title": "Director, Marketing",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "8507615638",
+  "cids": [
+   "8507615638"
+  ],
+  "name": "Ohio Business System",
+  "domain": "ohiobusinesssystems.com",
+  "city": "Columbus",
+  "state": "Ohio",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "linkedin",
+   "state_contract_list",
+   "zoominfo"
+  ],
+  "dms": [
+   {
+    "id": "26849914918",
+    "name": "Stephen Skobrak",
+    "title": "President",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "132353145139",
+    "name": "Jay Herzog",
+    "title": "Owner",
+    "li": "https://linkedin.com/in/jay-herzog-6549a419",
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "8499164983",
+  "cids": [
+   "8499164983"
+  ],
+  "name": "Sharp Business Systems",
+  "domain": "sharp-sbs.com",
+  "city": "Indianapolis",
+  "state": "Indiana",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "iowa_cooperative_dealer_list",
+   "linkedin",
+   "linkedin_keyword_people_search",
+   "naspo_konica_dealer_list",
+   "naspo_riso_dealer_list",
+   "state_vendor_list_wa_ricoh"
+  ],
+  "dms": [
+   {
+    "id": "198910205965",
+    "name": "Pravin Chand",
+    "title": "Branch President (not corroborated)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242551262110",
+    "name": "Joe Hogue",
+    "title": "Vice President, Service (not corroborated)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242599117722",
+    "name": "Wendi Hopewell",
+    "title": "Associate Director of Document Business Development, Sharp Business USA",
+    "li": "https://linkedin.com/in/wendi-hopewell-1132299",
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "8514068771",
+  "cids": [
+   "8514068771"
+  ],
+  "name": "printscan.solutions",
+  "domain": "printscansolutions.com",
+  "city": "Plano",
+  "state": "Texas",
+  "rev": null,
+  "swept_w2": false,
+  "sources": [],
+  "dms": [
+   {
+    "id": "242201314571",
+    "name": "Jon Walden",
+    "title": "Copier Sales Owner",
+    "li": null,
+    "alt": null,
+    "val": null
+   }
+  ]
+ },
+ {
+  "cl": "8822337025",
+  "cids": [
+   "8822337025"
+  ],
+  "name": "TC Technologies",
+  "domain": "tctechwny.com",
+  "city": "Tonawanda",
+  "state": "New York",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "132373487942",
+    "name": "Connie Tepper",
+    "title": "Business Owner",
+    "li": "https://linkedin.com/in/connie-tepper-328299104",
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242618249764",
+    "name": "Richard Hermann",
+    "title": "Chief Executive Officer",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "9364908971",
+  "cids": [
+   "9364908971"
+  ],
+  "name": "XBS Office Solutions",
+  "domain": "xbsdigital.com",
+  "city": "Elizabethtown",
+  "state": "KY",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242557856349",
+    "name": "Joshua Hope",
+    "title": "Owner / President",
+    "li": "https://linkedin.com/in/joshua-hope-21869880",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "9364909100",
+  "cids": [
+   "9364909100"
+  ],
+  "name": "Woodburn Co",
+  "domain": "woodburnco.com",
+  "city": "Everett",
+  "state": "Washington",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "chamber_directory",
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242552054593",
+    "name": "Penny Fukui",
+    "title": "Vice President",
+    "li": "https://linkedin.com/in/penny-fukui-983817155",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "9364958515",
+  "cids": [
+   "9364958515"
+  ],
+  "name": "Preferred Office Products",
+  "domain": "preferred-office.com",
+  "city": "Fort Smith",
+  "state": "Arkansas",
+  "rev": null,
+  "swept_w2": false,
+  "sources": [],
+  "dms": [
+   {
+    "id": "242565912159",
+    "name": "Joe Dickinson",
+    "title": "Owner (family owner; BBB lists him as President)",
+    "li": null,
+    "alt": null,
+    "val": null
+   },
+   {
+    "id": "242575080231",
+    "name": "Nathan Handley",
+    "title": "Chief Information Officer",
+    "li": "https://linkedin.com/in/nathan-handley-85604960",
+    "alt": null,
+    "val": "Yes"
+   },
+   {
+    "id": "242578534301",
+    "name": "Miranda Brinkman",
+    "title": "Director of Client Services & Organizational Development",
+    "li": "https://linkedin.com/in/miranda-s-brinkman",
+    "alt": null,
+    "val": "Yes"
+   },
+   {
+    "id": "242571034231",
+    "name": "Paula Carter",
+    "title": "Marketing Director",
+    "li": "https://linkedin.com/in/paula-carter-59a902101",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "9561723786",
+  "cids": [
+   "9561723786"
+  ],
+  "name": "Eastern Copyfax",
+  "domain": "easterncopyfax.com",
+  "city": "Gloucester",
+  "state": "Massachusetts",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "zoominfo"
+  ],
+  "dms": [
+   {
+    "id": "242557064704",
+    "name": "Tony Loiacano",
+    "title": "President & Sales Representative",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "9904155758",
+  "cids": [
+   "9904155758"
+  ],
+  "name": "So Cal Office Technologies (aka MRC Smart Technology Solutions)",
+  "domain": "socal-office.com",
+  "city": "Cypress",
+  "state": "CA",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin",
+   "school_district_bid_document"
+  ],
+  "dms": [
+   {
+    "id": "242558797484",
+    "name": "Greg Tennyson",
+    "title": "Vice President, Technology Services",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242577574436",
+    "name": "Tara Ratna",
+    "title": "Vice President of Sales",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242565901628",
+    "name": "Jim Potts",
+    "title": "General Manager, Orange County",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242551262129",
+    "name": "Jim Potts",
+    "title": "General Manager, Orange County - DUPLICATE of 242565901628",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242571339319",
+    "name": "Barbara Sanchez",
+    "title": "Director of Public Sector Sales",
+    "li": "https://linkedin.com/in/barbara-sanchez-5318898",
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242577286328",
+    "name": "Mark Irwin",
+    "title": "Director of Professional Services",
+    "li": "https://linkedin.com/in/mark-irwin-0427696",
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "9931644805",
+  "cids": [
+   "9931644805"
+  ],
+  "name": "ManagedPrint",
+  "domain": "lpmpinc.com",
+  "city": "Columbia",
+  "state": "SC",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242572755263",
+    "name": "Rich Houghton",
+    "title": "President",
+    "li": "https://linkedin.com/in/rich-houghton-64325513",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "9931487370",
+  "cids": [
+   "9931487370"
+  ],
+  "name": "Scheffer's Office Solutions",
+  "domain": "scheffersoffice.com",
+  "city": "Sikeston",
+  "state": "MO",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin",
+   "parent_company_site"
+  ],
+  "dms": [
+   {
+    "id": "242557064597",
+    "name": "David Tyson",
+    "title": "Co-Owner, Lakeland Office Systems (parent)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242557064629",
+    "name": "John Tyson",
+    "title": "President & CEO, Lakeland Office Systems (parent)",
+    "li": "https://linkedin.com/in/jmtyson",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "9931650599",
+  "cids": [
+   "9931650599"
+  ],
+  "name": "Solution One",
+  "domain": "solutiononenow.com",
+  "city": "Lincoln",
+  "state": "NE",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "linkedin",
+   "linkedin_keyword_people",
+   "web_search"
+  ],
+  "dms": [
+   {
+    "id": "136537570211",
+    "name": "Lisa Joley",
+    "title": "Co-Owner",
+    "li": null,
+    "alt": null,
+    "val": null
+   }
+  ]
+ },
+ {
+  "cl": "9931637911",
+  "cids": [
+   "9931637911"
+  ],
+  "name": "Technic Business Solutions Inc.",
+  "domain": "technic.net",
+  "city": "Irvine",
+  "state": "CA",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "212994000446",
+    "name": "Mbaguta Hassan",
+    "title": "Small Business Owner (AS RECORDED - no tie to this dealer evidenced)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242551262217",
+    "name": "Tam Duong",
+    "title": "Owner / President",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "14774414496",
+  "cids": [
+   "14774414496"
+  ],
+  "name": "DocResources LLC",
+  "domain": "docresources.com",
+  "city": "Crosby",
+  "state": "Texas",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "iowa_cooperative_dealer_list",
+   "linkedin",
+   "naspo_konica_dealer_list",
+   "naspo_riso_dealer_list",
+   "state_vendor_list_wa_ricoh"
+  ],
+  "dms": [
+   {
+    "id": "242201314572",
+    "name": "Eric Jennings",
+    "title": "Director of Business Operations",
+    "li": "https://linkedin.com/in/ejennings1",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "14774394751",
+  "cids": [
+   "14774394751"
+  ],
+  "name": "Komax Business Systems LLC",
+  "domain": "komaxwv.com",
+  "city": "Charleston",
+  "state": "West Virginia",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242565912155",
+    "name": "Andy Maxwell",
+    "title": "VP of Services",
+    "li": "https://linkedin.com/in/andy-maxwell-crw",
+    "alt": null,
+    "val": "Yes"
+   },
+   {
+    "id": "242594924059",
+    "name": "Bob Maxwell",
+    "title": "Business Owner / Partner",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "14774302236",
+  "cids": [
+   "14774302236"
+  ],
+  "name": "Laser Imaging Inc",
+  "domain": "laserimaginginc.com",
+  "city": "Houston",
+  "state": "Texas",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "136224201054",
+    "name": "Jim Smith",
+    "title": "Owner",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "14773253399",
+  "cids": [
+   "14773253399"
+  ],
+  "name": "Minnesota Computer Systems",
+  "domain": "mcsionline.net",
+  "city": "Saint Cloud",
+  "state": "Minnesota",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242557064709",
+    "name": "Michael Houghton",
+    "title": "President",
+    "li": "https://linkedin.com/in/michael-houghton-7165102b8",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "14774294917",
+  "cids": [
+   "14774294917"
+  ],
+  "name": "NCI Business Systems Inc",
+  "domain": "ncibsi.com",
+  "city": "Springfield",
+  "state": "Illinois",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242201314570",
+    "name": "Robert Regal",
+    "title": "President (unverified - see evidence)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242561167450",
+    "name": "Michael Schmit",
+    "title": "Director of Field Services",
+    "li": "https://linkedin.com/in/michael-schmit-b93a5514",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "14774421322",
+  "cids": [
+   "14774421322"
+  ],
+  "name": "N&L Business Systems Inc",
+  "domain": "nlbusinesssystems.com",
+  "city": "Cookeville",
+  "state": "Tennessee",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "firecrawl_search",
+   "linkedin",
+   "state_contract_vendor_list"
+  ],
+  "dms": [
+   {
+    "id": "242614902642",
+    "name": "Neil Sweeney",
+    "title": "Owner (listed as Primary Contact)",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "14774539604",
+  "cids": [
+   "14774539604"
+  ],
+  "name": "Office Business Systems Inc",
+  "domain": "obstallahassee.com",
+  "city": "Tallahassee",
+  "state": "Florida",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "state_contract_list",
+   "zoominfo"
+  ],
+  "dms": [
+   {
+    "id": "242580362162",
+    "name": "Gaston Holley",
+    "title": "President, Secretary & Treasurer (Owner)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "14773253394",
+  "cids": [
+   "14773253394"
+  ],
+  "name": "Rabbit Office Automation",
+  "domain": "roa-usa.com",
+  "city": "Sunnyvale",
+  "state": "California",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "domain_redirect",
+   "firecrawl_search",
+   "linkedin",
+   "public_contract_document"
+  ],
+  "dms": [
+   {
+    "id": "242613809565",
+    "name": "Satpal Pannu",
+    "title": "Director of Service",
+    "li": "https://linkedin.com/in/satpal-pannu-20486a187",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "14774414502",
+  "cids": [
+   "14774414502"
+  ],
+  "name": "American Office Machines",
+  "domain": "aominc.net",
+  "city": "Metairie",
+  "state": "Louisiana",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin",
+   "municipal_open_data",
+   "state_contract_vendor_list"
+  ],
+  "dms": [
+   {
+    "id": "242553772067",
+    "name": "Greg Manzella",
+    "title": "Vice-President",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242557064632",
+    "name": "John Manzella",
+    "title": "President",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "14774512565",
+  "cids": [
+   "14774512565"
+  ],
+  "name": "Baker Office Solutions (systeloa)",
+  "domain": "bakerofficesolutions.com",
+  "city": "Florence",
+  "state": "SC",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "chamber_directory",
+   "company_site",
+   "firecrawl_search",
+   "iowa_cooperative_dealer_list",
+   "linkedin",
+   "naspo_konica_dealer_list",
+   "naspo_riso_dealer_list",
+   "state_vendor_list_wa_ricoh"
+  ],
+  "dms": [
+   {
+    "id": "136204231227",
+    "name": "Dale Baker",
+    "title": "Owner / Partner",
+    "li": "https://linkedin.com/in/dale-baker-52a61a18",
+    "alt": null,
+    "val": "Yes"
+   },
+   {
+    "id": "242203800662",
+    "name": "Tammy Baker",
+    "title": "Partner (not corroborated)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242551262218",
+    "name": "Tammy Baker",
+    "title": "Partner (not corroborated); DUPLICATE of 242203800662",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "14774371334",
+  "cids": [
+   "14774371334"
+  ],
+  "name": "Borden Office Equipment Co",
+  "domain": "bordenofficeequipment.com",
+  "city": "Steubenville",
+  "state": "Ohio",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "chamber_directory",
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242203089184",
+    "name": "J.D. Simpson",
+    "title": "Sales Representative (PER LINKEDIN - the 'Owner/President, succeeded his father January 2026' on file is NOT supported)",
+    "li": "https://linkedin.com/in/jerad-simpson-642aa923",
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242554882709",
+    "name": "Jerry Simpson",
+    "title": "Owner / President",
+    "li": "https://linkedin.com/in/jerry-simpson-0ba35b5a",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "14774358697",
+  "cids": [
+   "14774358697"
+  ],
+  "name": "Cannon IV Inc",
+  "domain": "cannon4.com",
+  "city": "Indianapolis",
+  "state": "Indiana",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_map",
+   "linkedin",
+   "state_contract_vendor_list",
+   "trade_press"
+  ],
+  "dms": [
+   {
+    "id": "242550785964",
+    "name": "Ron Nielson",
+    "title": "Chief Operating Officer (Flex Technology Group)",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   },
+   {
+    "id": "242565768981",
+    "name": "Jerry Jones",
+    "title": "President / Owner",
+    "li": "https://linkedin.com/in/jerry-jones-24b0161",
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "14773253392",
+  "cids": [
+   "14773253392"
+  ],
+  "name": "Colson Business Systems Inc",
+  "domain": "colsonbusiness.com",
+  "city": "Valdosta",
+  "state": "Georgia",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "naspo_konica_dealer_list"
+  ],
+  "dms": [
+   {
+    "id": "242557064616",
+    "name": "Patricia Colson",
+    "title": "Owner, President and Chief Executive Officer",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "14930676483",
+  "cids": [
+   "14930676483"
+  ],
+  "name": "Flynns",
+  "domain": "flynns.com",
+  "city": "New York",
+  "state": "New York",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "89730385067",
+    "name": "Cathy Flynn",
+    "title": "Co-owner",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "132320436662",
+    "name": "Cynthia Flynn",
+    "title": "Owner",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "14930694179",
+  "cids": [
+   "14930694179"
+  ],
+  "name": "Bauernfeind Business Technologies, Inc.",
+  "domain": null,
+  "city": "Marshfield",
+  "state": "Wisconsin",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_map",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242560220059",
+    "name": "Kim Bauernfeind",
+    "title": "Owner",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242557064620",
+    "name": "Thomas Bauernfeind",
+    "title": "President / Owner",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   },
+   {
+    "id": "242550020782",
+    "name": "Thomas LinkedIn)",
+    "title": "President (duplicate record, name field corrupted to 'Thomas LinkedIn)')",
+    "li": "https://linkedin.com/in/thomas-b-1b526813",
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242557548856",
+    "name": "Scott Knodle",
+    "title": "Vice President",
+    "li": "https://linkedin.com/in/scott-knodle-b7925387",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "14945449563",
+  "cids": [
+   "14945449563"
+  ],
+  "name": "Elbar Duplicator Corp dba EDC Business Solutions",
+  "domain": "elbardigital.com",
+  "city": "Richmond Hill",
+  "state": "NY",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "firecrawl_search",
+   "linkedin",
+   "zoominfo"
+  ],
+  "dms": [
+   {
+    "id": "242551262112",
+    "name": "Joe Terio",
+    "title": "Director of Sales",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "14945494374",
+  "cids": [
+   "14945494374"
+  ],
+  "name": "Electronic Office Systems LLC",
+  "domain": "electronicofficesystems.com",
+  "city": "Fairfield",
+  "state": "New Jersey",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "iowa_cooperative_dealer_list",
+   "linkedin",
+   "state_vendor_list_wa_ricoh"
+  ],
+  "dms": [
+   {
+    "id": "242571810447",
+    "name": "Andrew Ritschel",
+    "title": "Founder and President",
+    "li": "https://linkedin.com/in/andrew-ritschel-99297b6",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "14945458250",
+  "cids": [
+   "14945458250"
+  ],
+  "name": "Gray & Creech Office Systems",
+  "domain": "grayandcreech.com",
+  "city": "Greensboro",
+  "state": "NC",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242615541278",
+    "name": "Alec Bean",
+    "title": "Owner & President",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "21355508649",
+  "cids": [
+   "21355508649"
+  ],
+  "name": "Miller IDS",
+  "domain": "millerids.com",
+  "city": "Austin",
+  "state": "Texas",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242614902656",
+    "name": "Josh Miller",
+    "title": "Director of Operations",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "28767440970",
+  "cids": [
+   "28767440970"
+  ],
+  "name": "Business Products",
+  "domain": "absproducts.com",
+  "city": "Columbus",
+  "state": "Ohio",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "state_contract_list",
+   "zoominfo"
+  ],
+  "dms": [
+   {
+    "id": "242553619566",
+    "name": "Duane Kimble",
+    "title": "Vice President of Finance and Administration",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "28706261829",
+  "cids": [
+   "28706261829"
+  ],
+  "name": "Atlantic Office Automation Inc.",
+  "domain": "aoa-sf.com",
+  "city": "Burlingame",
+  "state": "California",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin",
+   "state_contract_california"
+  ],
+  "dms": [
+   {
+    "id": "242201314468",
+    "name": "Peter Chao",
+    "title": "President",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "28766875464",
+  "cids": [
+   "28766875464"
+  ],
+  "name": "Compton Office Machines",
+  "domain": "comptonoffice.com",
+  "city": "Vienna",
+  "state": "West Virginia",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242558516495",
+    "name": "Todd Raines",
+    "title": "President",
+    "li": "https://linkedin.com/in/todd-raines-9263b912",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "28733949591",
+  "cids": [
+   "28733949591"
+  ],
+  "name": "The Office Shop Inc.",
+  "domain": "officeshopinc.com",
+  "city": "Lovell",
+  "state": "Wyoming",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "local_press",
+   "municipal_records"
+  ],
+  "dms": [
+   {
+    "id": "136219869710",
+    "name": "Bunky Loucks",
+    "title": "President (AS RECORDED - LIKELY THE WRONG HUMAN, see evidence)",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ },
+ {
+  "cl": "28767446191",
+  "cids": [
+   "28767446191"
+  ],
+  "name": "Document Technologies of N C Florida",
+  "domain": "ocalacopiers.com",
+  "city": "Ocala",
+  "state": "Florida",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "chamber_directory",
+   "company_site",
+   "firecrawl_search",
+   "linkedin"
+  ],
+  "dms": [
+   {
+    "id": "242550510679",
+    "name": "Bill Schroeder",
+    "title": "President",
+    "li": "https://linkedin.com/in/bill-schroeder-2782a6102",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "35373555118",
+  "cids": [
+   "35373555118"
+  ],
+  "name": "Allied Document Solutions and Services [ads-s]",
+  "domain": null,
+  "city": null,
+  "state": null,
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin",
+   "municipal_records",
+   "trade_press_enx"
+  ],
+  "dms": [
+   {
+    "id": "242554261125",
+    "name": "Michael Silvia",
+    "title": "VP of Operations & Director of Sales",
+    "li": "https://linkedin.com/in/michael-silvia-0985aa25",
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "35410874471",
+  "cids": [
+   "35410874471"
+  ],
+  "name": "Proven IT",
+  "domain": null,
+  "city": null,
+  "state": null,
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "trade_press",
+   "zoominfo"
+  ],
+  "dms": [
+   {
+    "id": "242565123426",
+    "name": "Phil Lampugnano",
+    "title": "Vice President of Business Development",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242557064713",
+    "name": "Brett Cosich",
+    "title": "Chief Operating Officer",
+    "li": null,
+    "alt": null,
+    "val": "Yes"
+   }
+  ]
+ },
+ {
+  "cl": "57302065051",
+  "cids": [
+   "57302065051"
+  ],
+  "name": "Prosource",
+  "domain": "totalprosource.com",
+  "city": "Blue Ash",
+  "state": "Ohio",
+  "rev": null,
+  "swept_w2": true,
+  "sources": [
+   "company_site",
+   "firecrawl_search",
+   "linkedin",
+   "state_contract_vendor_list"
+  ],
+  "dms": [
+   {
+    "id": "242563393807",
+    "name": "Chris Ventrola",
+    "title": "Director of Human Resources",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242557064599",
+    "name": "Jeff Loeb",
+    "title": "President, Prosource Technologies",
+    "li": null,
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242554882926",
+    "name": "Thomas Messmer",
+    "title": "Vice President of Strategic Accounts (record says Area Vice President - Sales)",
+    "li": "https://linkedin.com/in/thomas-messmer-18334014",
+    "alt": null,
+    "val": "Needs Updated"
+   },
+   {
+    "id": "242557393196",
+    "name": "Tom Hemmelgarn",
+    "title": "Senior Vice President of Sales",
+    "li": "https://linkedin.com/in/tom-hemmelgarn-3240397",
+    "alt": null,
+    "val": "Needs Updated"
+   }
+  ]
+ }
+]

@@ -1,0 +1,625 @@
+[
+ {
+  "cid": "7658344811",
+  "company": "Anderson Business Technology",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by AIS. andersonbt.com 301-redirects to https://www.ais-now.com/andersonbt, a landing page headed 'Looking for Anderson Business Technology?' reading 'We are excited to announce that Anderson Business Technology has joined forces with AIS. As part of this transition, you've been redirected to the AIS website.' LinkedIn company 4024000 (Pasadena, California; summary 'From printers, copiers, multi-function, fax machines and typewriters') is the correct entity by exact city/state. Unfiltered company-to-people sweep returned only an Account Executive (Steve Hochstein) and an Account Manager (Isaiah Adidjaja) - no decision-makers. Two 'Owner at Anderson Technology' hits (Detroit MI and Fort Worth TX) were company-filter LEAKS from a different firm and were rejected. Anderson brand is retired; live contacts for this account sit at AIS.",
+  "domain_correction": "ais-now.com",
+  "acquired_by": "AIS (ais-now.com)",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "domain_redirect",
+   "web_search"
+  ],
+  "people": []
+ },
+ {
+  "cid": "7773281955",
+  "company": "DOPnow.com",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Trades as Digital Office Products, McLean VA. LinkedIn company 9239833 tied to the dealer by an EXACT vanity-URL match (linkedin.com/company/dopnow -> dopnow.com) plus city/state. Acquisition by Nauticon confirmed on-profile: the current VP's headline reads 'Digital Office Products a Nauticon Company'. Domain on file is correct and still cited by the VP's own profile (websites: http://www.dopnow.com). Joseph Vaghi III appears on the company but his headline says 'Former President & CEO' - rejected as not current.",
+  "domain_correction": null,
+  "acquired_by": "Nauticon",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Mark",
+    "lastname": "Dirlam",
+    "title": "Vice President",
+    "linkedin_url": "https://linkedin.com/in/markdirlam",
+    "email": "markdirlam@gmail.com",
+    "email_class": "personal",
+    "email_confidence": "verified",
+    "phone": "240-364-4523",
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile markdirlam, DISTANCE_1. work_experience[0]: company 'Digital Office Products', position 'Vice President', start 1/1/2002, end: null = CURRENT. Headline 'Digital Office Products a Nauticon Company'. contact_info.emails exposed markdirlam@gmail.com - a FREE-MAIL (gmail) address, so classified personal and must not go in the primary email field. Phone from contact_info.phones.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9359290372",
+  "company": "ExpressCopier.com",
+  "outcome": "defunct",
+  "company_verdict": "defunct",
+  "company_notes": "No evidence this dealer still exists. expresscopier.com no longer belongs to it - it now 200s at https://get-entry.to/, an unrelated parked/redirect property. LinkedIn company search for 'Express Copier' returns only 'Express Copier Supplies' of Toms River, New Jersey (company 4037859), which is a DIFFERENT firm - not forced as a match per the recipe. Firecrawl web search for an ExpressCopier / Express Copier in Portland, Maine surfaced nothing relating to this company (only unrelated Express Copier Service Inc of Albuquerque NM and Express Copier Services Ltd in Wales). Wayback availability API was rate-limited (HTTP 429) and is the one unexhausted source; a Maine Secretary of State entity search is the other remaining lead.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect",
+   "web_search",
+   "wayback"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931644808",
+  "company": "Capitol Office Solutions (COS) - A Xerox Company",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Xerox subsidiary, confirmed two ways: LinkedIn company 54549 ('COS: Capitol Office Solutions', Columbia Maryland) summary states 'Capitol Office Solutions (COS) is a subsidiary of Xerox Corporation (NYSE: XRX)', and gotocos.com now redirects to https://www.xeroxbusinesssolutions.com/en-us. Still trading under the COS name - many current staff headlines read 'Capitol Office Solutions, A Xerox Company'. Two pages of the unfiltered people sweep produced one clear decision-maker. Michael Veen was rejected: headline 'CFO CPA Retired January, 2018'.",
+  "domain_correction": "xeroxbusinesssolutions.com",
+  "acquired_by": "Xerox Business Solutions",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Sharon",
+    "lastname": "Rindge",
+    "title": "Vice President of Human Resources",
+    "linkedin_url": "https://linkedin.com/in/sharon-rindge-b8372abb",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn company-to-people sweep of company 54549: headline 'Vice President of Human Resources at COS: Capitol Office Solutions', location Baltimore City County, Maryland, verified badge. Headline names the dealer so this is not a filter leak. DISTANCE_2, so no email is exposed by LinkedIn (first-degree only).",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9931625826",
+  "company": "EBE Office Solutions",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "EBE now trades as part of R.K. Black. Boone County (MO) Commission minutes of 16 Jul 2013 record contract 'C213018001 with RK Black Missouri, LLC dba EBE Office Solutions of Lenexa, Kansas' - EBE is a dba of R.K. Black. Corroborated by rkblack.com carrying a Kansas City location page and by kansascitycopier.com branding itself 'R.K. Black, Inc.'. The domain on file, ebe-usa.com, is DEAD (DNS resolution fails). LinkedIn company 2487225 is the right entity (Lenexa KS, same Kansas City metro as the Olathe address on file; summary 'locally owned company that has been serving the greater Kansas City metro for more than 70 years... Office Automation dealer'), but the unfiltered people sweep produced only an Inventory Control Supervisor plus one Brazil-based leak - no decision-makers. Missouri SoS Local Records vendor list independently confirms the old identity: 'EBE Office Solutions, www.ebe-usa.com, 15080 W. 116th St. Olathe, KS 66062'.",
+  "domain_correction": "rkblack.com",
+  "acquired_by": "R.K. Black, Inc.",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "domain_redirect",
+   "web_search",
+   "county_contract_records",
+   "sos_vendor_list"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931491909",
+  "company": "Lasers Resource",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Acquisition stated by the dealer's own LinkedIn page. Company 133313 (linkedin.com/company/lasersresource -> lasersresource.com, Grand Rapids Michigan) summary reads verbatim: 'Lasers Resource was acquired by Applied Imaging on 12/1/2020. For more information visit https://www.appliedimaging.com'. Independently, lasersresource.com now redirects to https://www.appliedinnovation.com/ (Applied Imaging's current Applied Innovation branding). The unfiltered people sweep returned only a Sales Administrator, Customer Service staff and a Service Technician. One hit with the headline 'president at Laser's Resource' is an anonymised 'LinkedIn Member' with NO NAME and a Montreal, Quebec location - unusable and probably a leak, so not reported.",
+  "domain_correction": "appliedinnovation.com",
+  "acquired_by": "Applied Imaging (now Applied Innovation)",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931647921",
+  "company": "Office Systems Company",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Loffler Companies. officesystemsco.com now resolves to loffler.com (scraping officesystemsco.com/about-us returns the Loffler 'About Us' page, final URL https://www.loffler.com/about-us), and Loffler's own locations list includes 'Iowa - Sioux City'. LinkedIn company 7101667 (Sioux City, Iowa; Retail Office Equipment) is the right entity but its unfiltered people sweep yielded only a Document Management Systems Engineer and a Service Technician - no decision-makers. NOTE / not reported as a contact: a Briar Cliff University (Sioux City) donor publication names 'Chic Wolfe, President, Office Systems Company'. That document is undated and pre-dates the Loffler acquisition, so it is recorded here as a historical lead only and NOT as a current decision-maker.",
+  "domain_correction": "loffler.com",
+  "acquired_by": "Loffler Companies",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "domain_redirect",
+   "web_search"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931653648",
+  "company": "Saxon Business Systems",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Xerox company. saxon.net redirects to https://www.xeroxbusinesssolutions.com/en-us, and the majority of current staff headlines on LinkedIn company 106476 (Miami Lakes, Florida) read 'Saxon Business Systems, A Xerox Company'. Brand is still in active use. Two pages of the unfiltered sweep produced two Directors whose headlines explicitly name the dealer. Not used: David King 'Director of Major Account Sales' (headline omits the employer, so unverifiable against the leaky company filter) and an anonymised 'Director of Business Development at Saxon Business Systems' with no name.",
+  "domain_correction": "xeroxbusinesssolutions.com",
+  "acquired_by": "Xerox Business Solutions",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Rick",
+    "lastname": "Borges",
+    "title": "Director of Managed Print Services",
+    "linkedin_url": "https://linkedin.com/in/rick-borges-36b4758",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn company-to-people sweep of company 106476: headline 'Director of Managed Print Services at Saxon Business Systems', Hialeah FL, verified badge. DISTANCE_2 so no email exposed.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Ray",
+    "lastname": "Morffi",
+    "title": "Director of Service",
+    "linkedin_url": "https://linkedin.com/in/raymorffi",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn company-to-people sweep of company 106476: headline 'Director of Service at Saxon Business Systems', Jacksonville FL. DISTANCE_2 so no email exposed.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "14774447726",
+  "company": "Oshkosh Office Systems, Inc.",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Gordon Flesch Company (GFC), announced 02 Nov 2022. GFC press release 'Gordon Flesch Company Acquires Oshkosh Office Systems' states GFC 'has agreed to acquire Oshkosh Office Systems (OOS) of Oshkosh, WI' and that 'The merged company will be known as the Gordon Flesch Company'; FOX11 reported 'OOS will take the Gordon Flesch name'. oshkoshofficesystems.com no longer resolves. The LinkedIn people sweep of company 372906 returned only Technical Operations Managers, a Service Manager and sales staff, so both decision-makers below come from the press release instead. IMPORTANT CAVEAT FOR A HUMAN: the press release is 3.5 years old and describes the Gradys as owners AT THE POINT OF SALE. Their status after close is unconfirmed and neither has a findable LinkedIn profile (a keyword search on 'Grady Oshkosh Office Systems' found none), so treat both as needing a currency check before outreach.",
+  "domain_correction": "gflesch.com",
+  "acquired_by": "Gordon Flesch Company",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect",
+   "trade_press",
+   "acquirer_press_release"
+  ],
+  "people": [
+   {
+    "firstname": "Carolyn",
+    "lastname": "Grady",
+    "title": "Executive Vice President / Co-Owner",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Gordon Flesch Company press release 02/11/2022: quoted as \"'We are proud of our high-quality service, creativity and customer responsiveness that has been a part of our tradition at Oshkosh Office Systems,' says Carolyn Grady, Executive Vice President of OOS\"; photo caption 'Scott & Carolyn Grady, OOS Co-Owners'. Role evidenced as of the Nov 2022 acquisition announcement - post-close status unverified.",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Scott",
+    "lastname": "Grady",
+    "title": "Co-Owner",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "Gordon Flesch Company press release 02/11/2022, photo caption: 'Pictured, left to right: Scott & Carolyn Grady, OOS Co-Owners and Bill Flesch, GFC Chief Development Officer.' Role evidenced as of the Nov 2022 acquisition announcement - post-close status unverified.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "14774627629",
+  "company": "Advanced Copier Technology",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Identity nailed by an exact domain tie despite a very high false-match risk on this generic name. LinkedIn company 1295320 'Advanced Copier Technology Inc.' has no location field, and its people list CONFLATES THREE different firms: a North Carolina 'ADVANCED COPIER TECHNOLOGIES, INC.' (Gastonia / Cramerton / Dallas NC), a Brewster NY 'Advanced Copier Technology' owner, and the Texas dealer. Only the Texas people were kept. The decisive evidence is Dan Schmoll's profile listing websites ['http://www.actcopiers.com'] - an exact match to the domain on file - with a description reading 'Advanced Copier Technology is a Dallas based business providing Canon and Samsung office products'; Richardson TX is in the Dallas metro. WARNING: actcopiers.com has EXPIRED (it now resolves to an expireddomains.com listing page), so any @actcopiers.com address should be treated as undeliverable. The 'Smart Office Automation' acquirer on file could NOT be corroborated by any source I reached - that attribution needs a human check.",
+  "domain_correction": null,
+  "acquired_by": "Smart Office Automation (on file; NOT corroborated by this sweep)",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect",
+   "web_search"
+  ],
+  "people": [
+   {
+    "firstname": "Dan",
+    "lastname": "Schmoll",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/dan-schmoll-3b75072",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile dan-schmoll-3b75072: work_experience[0] company_id 1295320 'Advanced Copier Technology Inc.', position 'President', start 1/1/1987, end: null = CURRENT. websites ['http://www.actcopiers.com'] ties him to the exact domain on file; location Dallas, Texas. DISTANCE_2 so no email exposed. A second duplicate profile for the same man exists at /in/dan-schmoll-4273a1b6.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "28766875466",
+  "company": "Butterfly Business Products",
+  "outcome": "non_us",
+  "company_verdict": "non_us",
+  "company_notes": "NOT A US DEALER - this record is mis-scoped for a US shard. LinkedIn company 54862166 places it in Etobicoke, Ontario (Toronto), and every person the unfiltered sweep returned is in Ontario, Canada (Barrie, Mississauga, Greater Toronto). Xerox relationship confirmed by staff headlines reading 'Butterfly Business Products - Xerox'. butterflybiz.com no longer resolves. Ownership is stated on the company's own LinkedIn About text: 'Butterfly Business Products has been delivering world class document management solutions and office printing technology for over 20 years and is owned and operated by Stephen and Colin Brennan.' The sweep found no individual decision-maker profiles (only Senior Account Managers), so the two owners below are recorded from that company-page statement and marked Needs Updated - I could not tie either to a personal profile or confirm currency.",
+  "domain_correction": null,
+  "acquired_by": "Xerox",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Stephen",
+    "lastname": "Brennan",
+    "title": "Owner",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "LinkedIn company page 54862166 About text: 'owned and operated by Stephen and Colin Brennan.' Source is a company page, not a personal profile, and is undated - no personal profile found, so currency is unconfirmed. Company is Canadian (Etobicoke, Ontario).",
+    "existing_contact_id": null
+   },
+   {
+    "firstname": "Colin",
+    "lastname": "Brennan",
+    "title": "Owner",
+    "linkedin_url": null,
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Needs Updated",
+    "evidence": "LinkedIn company page 54862166 About text: 'owned and operated by Stephen and Colin Brennan.' Source is a company page, not a personal profile, and is undated - no personal profile found, so currency is unconfirmed. Company is Canadian (Etobicoke, Ontario).",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "28717505975",
+  "company": "Copycare Document Solutions",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Advanced Office: copycaresd.com now redirects to https://www.goadvanced.com/copycare, a dedicated Copycare page on the acquirer's site. LinkedIn company 1436143 has no location field but is confirmed as the right entity because its people cluster in Escondido / San Diego County, California, matching the address on file. The President's own profile is Escondido-based.",
+  "domain_correction": "goadvanced.com",
+  "acquired_by": "Advanced Office",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Mark",
+    "lastname": "Johnson",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/mark-johnson-0259541a",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile mark-johnson-0259541a: headline 'President at Copycare Document Solutions'; work_experience[0] company 'Copycare Document Solutions', position 'President', end: null = CURRENT; location Escondido, California - exact city/state match to the record. DISTANCE_3 so no email exposed.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "14774497363",
+  "company": "Conestoga Copiers Inc",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Xerox Business Solutions - conestogacopiers.com now redirects to https://www.xeroxbusinesssolutions.com/en-us. LinkedIn company 1889150 'CONESTOGA COPIERS, INC.' (Lanier and Konica Minolta lines) is the right entity; its people are in Lancaster PA, matching the record. The unfiltered sweep returned only two people, one of them a decision-maker. NOTE for the central write: the three contacts already on file carry @conestogacopiers.com addresses (Mike Denlinger, Dana Warfel, Tom DeLellis) - since the domain now redirects to Xerox, those addresses should be revalidated before use. Mike Denlinger and Tom DeLellis have no job title on file and I could not establish one from LinkedIn (a keyword people search on 'Denlinger Conestoga Copiers' returned zero items). OPEN LEAD for a human on Tom DeLellis: a 1992 La Salle University alumni bulletin records 'DeLellis was named director of sales at Conestoga Copiers, Lancaster, Pa.', which suggests a long and senior tenure, and general web results point toward a President title - but the only sources carrying that title are residential people-search sites, which this project excludes, so I did NOT use them and am NOT asserting the title. Confirm via a Pennsylvania Department of State business filing instead.",
+  "domain_correction": "xeroxbusinesssolutions.com",
+  "acquired_by": "Xerox Business Solutions",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Richard",
+    "lastname": "Klock",
+    "title": "Director of Sales",
+    "linkedin_url": "https://linkedin.com/in/richard-klock-a21b9339",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn company-to-people sweep of company 1889150: headline 'Director of Sales at CONESTOGA COPIERS, INC.', location Lancaster, Pennsylvania - exact city/state match. DISTANCE_3 so no email exposed.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "7990896643",
+  "company": "documentWORKS",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by DOCUmation - documentworks.com now redirects to https://www.mation.com/ (DOCUmation's domain), which confirms the acquirer named on file. The dealer has NO surviving LinkedIn company page: searches for both 'documentWORKS' and 'documentWORKS Fort Worth' returned only unrelated firms (Document Works LLC of Sacramento CA, Leferink Document Works BV in the Netherlands), and no match was forced. No decision-makers found. FLAG for a human: the single contact on file, Lewis Bullion, carries the job title 'Employee Benefits Consultant' with lbullion@documentworks.com - that title is not a copier-dealer role and, with the domain now pointing at mation.com, both the title and the address look stale.",
+  "domain_correction": "mation.com",
+  "acquired_by": "DOCUmation",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect"
+  ],
+  "people": []
+ },
+ {
+  "cid": "28767450710",
+  "company": "Copeco Inc",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Visual Edge - copeco.com now redirects to https://visualedgeit.com/, confirming the 'Visual Edge' acquirer on file and resolving it specifically to Visual Edge IT. No surviving LinkedIn company page: a company search for 'Copeco' returned only foreign namesakes (COPECO Honduras, COPECO S.R.L. in Udine Italy, a Spanish construction firm) - none forced as a match. Falling back to HARD_RECIPE source 9, a quoted people search on \"Copeco\" returned only people whose CURRENT headlines are at other employers (Copier Consultants, Ohio Business Machine, Visual Edge IT), i.e. Copeco appears in their history, not their present - none reportable as current Copeco staff. The one contact on file, Mark Pamer, is a Service Manager, which is not a decision-maker. Acquisition date pinned to 2005 by two independent sources: Visual Edge's own boilerplate ('In 2005 it acquired Copeco, Inc., a digital document and workflow solutions company expanding throughout northeast Ohio') and a WhatTheyThink trade report 'Visual Edge Technology Inc. Acquires Copeco Inc.'. That report names 'Copeco President and CEO, Thomas A. Schiltz' - but as a 2005 departure into a consultancy role, so he is recorded here as historical context ONLY and deliberately NOT reported as a current decision-maker.",
+  "domain_correction": "visualedgeit.com",
+  "acquired_by": "Visual Edge Technology (Visual Edge IT), 2005",
+  "sources_tried": [
+   "linkedin",
+   "linkedin_keyword_people",
+   "domain_redirect"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931653638",
+  "company": "Valley Office Systems",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Still trading under its own name; the Salt Lake City address on file is a branch - the company is headquartered in Idaho Falls, ID (LinkedIn company 270208, plus sibling page 76125166 for its Production Print arm; both swept together). Identity confirmed by the domain on the existing contact (jkolsen@valleyofficesystems.com) and by a Utah-based staffer (Utah Operations Manager, Ogden UT). The DEX Imaging acquisition on file is corroborated from within the same sweep: Bart Cornwall of Pocatello ID appears on the company with the current headline 'Regional Service Director for Dex Imaging - Mountain Region'. valleyofficesystems.com currently returns HTTP 503, so it is up but erroring rather than gone.",
+  "domain_correction": null,
+  "acquired_by": "DEX Imaging",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Terry",
+    "lastname": "Moore",
+    "title": "VP of Sales, Boise",
+    "linkedin_url": "https://linkedin.com/in/terry-moore-0b433691",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn company-to-people sweep of companies 270208 + 76125166: headline 'VP of Sales, Boise at Valley Office Systems', location Boise, Idaho, verified badge. Headline names the dealer. DISTANCE_2 so no email exposed.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9931632757",
+  "company": "Data Comm Inc.",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Brand and domain both retired, consistent with the Marco Technologies acquisition on file. datacomminc.com still answers but serves only a parked-domain stub - the body is '<script>window.onload=function(){window.location.href=\"/lander\"}</script>' with no title and no content. No surviving LinkedIn company page: a search for 'Data Comm Jefferson City' returned only unrelated telecoms/networking firms (General DataComm, Eastern DataComm, DataComm Networks, Data Comm for Business) and no match was forced. No decision-makers found and no contacts on file. Remaining lead: a Missouri Secretary of State filing for the dissolved entity, or Marco's own Jefferson City branch staff.",
+  "domain_correction": null,
+  "acquired_by": "Marco Technologies",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "domain_redirect"
+  ],
+  "people": []
+ },
+ {
+  "cid": "14773253394",
+  "company": "Rabbit Office Automation",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Xerox Business Solutions - roa-usa.com now redirects to https://www.xeroxbusinesssolutions.com/en-us, confirming the acquirer on file. LinkedIn company 56679 (Sunnyvale, California; summary 'Rabbit Office Automation (ROA) is a San Francisco Bay Area owned and operated provider of copy machines and document and print management solutions') is an exact city/state match. The unfiltered sweep confirmed the CEO already on file as still current and added a second decision-maker.",
+  "domain_correction": "xeroxbusinesssolutions.com",
+  "acquired_by": "Xerox Business Solutions",
+  "sources_tried": [
+   "linkedin",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Richard",
+    "lastname": "Zirpolo",
+    "title": "Chief Executive Officer",
+    "linkedin_url": "https://linkedin.com/in/richard-zirpolo-3a960311",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn company-to-people sweep of company 56679: headline 'CEO at Rabbit Office Automation', location Sunnyvale, California - exact match to the record. Confirms the title already held in the CRM. DISTANCE_2 so no email exposed; the CRM record has no email either.",
+    "existing_contact_id": "214613490987"
+   },
+   {
+    "firstname": "Satpal",
+    "lastname": "Pannu",
+    "title": "Director of Service",
+    "linkedin_url": "https://linkedin.com/in/satpal-pannu-20486a187",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn company-to-people sweep of company 56679: headline 'Director of Service at Rabbit Office Automation', San Francisco Bay Area. Headline names the dealer. DISTANCE_2 so no email exposed.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9931650599",
+  "company": "Solution One",
+  "outcome": "already_complete",
+  "company_verdict": "dealer",
+  "company_notes": "Already at the two-decision-maker bar before this sweep (Keith Snyder, CFO, kds@solutiononenow.com and Lisa Joley, Co-Owner, no email), and I could not add to it. Trades as one word, 'SolutionOne', 7407 O Street, Lincoln NE 68510 - and it does have a LinkedIn page at linkedin.com/company/solutionone_2, but that page is NOT reachable through the classic company-search endpoint: queries for 'SolutionOne', 'Solution One Lincoln Nebraska' and 'Solution One office technology Nebraska copiers' all failed to surface it (the last two returned zero items; a Gordon Flesch canary run immediately afterwards returned results normally, so this was genuine non-matching, not throttling). Without the company id the company-to-people sweep cannot be run, and a quoted-name people search returned only an unrelated Lincoln consultant. solutiononenow.com fails its TLS handshake from this container so the team page could not be read. The open lead is the missing email for Lisa Joley: fetch linkedin.com/company/solutionone_2 directly for its company id, then sweep it.",
+  "domain_correction": null,
+  "acquired_by": null,
+  "sources_tried": [
+   "linkedin",
+   "linkedin_keyword_people",
+   "company_site",
+   "web_search"
+  ],
+  "people": []
+ },
+ {
+  "cid": "7591378342",
+  "company": "Innovex",
+  "outcome": "found",
+  "company_verdict": "dealer",
+  "company_notes": "Still operating under its own name as INNOVEX Co, Lincoln RI. The owner's profile shows the role as current with no end date, so I am NOT recording this as a completed absorption despite the 'Marco' acquirer on file. The Marco link is real but partial: Matthew Blair, in the same town of Lincoln RI, appears on the Innovex company with the current headline 'Sales Manager, RI / MA at Marco Technologies', i.e. staff have moved across. FLAG: innovex.co no longer serves the dealer's site - it returns a bare \"Web Server's Default Page\" - so pparisi@innovex.co on file may no longer deliver even though the owner's profile still cites the domain. The unfiltered sweep added a second decision-maker. LaVonne Tomes was rejected: headline 'Retired at INNOVEX tech'.",
+  "domain_correction": null,
+  "acquired_by": "Marco (partial; Innovex still trades under its own name)",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Peter",
+    "lastname": "Parisi",
+    "title": "President/CEO",
+    "linkedin_url": "https://linkedin.com/in/peter-parisi-7197bb15",
+    "email": "pparisi@innovex.co",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile peter-parisi-7197bb15: headline 'President/CEO at INNOVEX Co'; work_experience[0] company_id 2251766 'INNOVEX Co', position 'President/CEO', description 'Proud Owner, President/CEO of INNOVEX', start 6/1/2001, end: null = CURRENT; location Lincoln, Rhode Island. Email is the one already in the CRM and its domain matches the dealer, so business-class - but see the note that innovex.co now serves a default page, so deliverability is doubtful.",
+    "existing_contact_id": "214602927641"
+   },
+   {
+    "firstname": "Matthew",
+    "lastname": "Manzi",
+    "title": "Vice President of Finance",
+    "linkedin_url": "https://linkedin.com/in/matthew-manzi-3506822",
+    "email": null,
+    "email_class": null,
+    "email_confidence": null,
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn company-to-people sweep of company 2251766: headline 'Vice President of Finance at INNOVEX Co', location Lincoln, Rhode Island - exact city/state match. DISTANCE_2 so no email exposed.",
+    "existing_contact_id": null
+   }
+  ]
+ },
+ {
+  "cid": "9561575006",
+  "company": "WPS Solutions",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Consistent with the Doing Better Business acquisition on file: the brand has no surviving web or LinkedIn presence. wpssolutions.com resolves but returns an empty reply over HTTPS and no title, no content and no email addresses over HTTP - effectively dead. No LinkedIn company page: a search for 'WPS Solutions Hagerstown' returned only unrelated WPS namesakes (WPS Health Solutions, WPS Parking Solutions, WPS pumps, etc.) and no match was forced, so the company-to-people sweep could not be run. No new decision-makers. FLAG: the contact on file, Emmett Killeen (Director, Sales, ekilleen@wpssolutions.com) is a decision-maker by title but sits on a dead domain - revalidate or re-point to Doing Better Business before any send.",
+  "domain_correction": null,
+  "acquired_by": "Doing Better Business",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "domain_redirect"
+  ],
+  "people": []
+ },
+ {
+  "cid": "9931508841",
+  "company": "Digitec Companies",
+  "outcome": "acquired",
+  "company_verdict": "acquired",
+  "company_notes": "Acquired by Function4 - digiteconline.com now 307-redirects to https://function-4.com/, confirming the acquirer on file. The Digitec brand is retired and its principal now runs the acquirer: the contact already on file as 'William Patsouras, Principal, billp@digiteconline.com' is Bill Patsouras, whose LinkedIn headline is now 'Owner, Function4 Companies' in the same city (Sugar Land, Texas). His profile still cites websites ['http://www.digiteconline.com'], which is what ties the two identities together. He is a FIRST-DEGREE connection, so LinkedIn exposed a working business address on the acquirer's domain - see below. The billp@digiteconline.com address on file should be superseded by that one. No LinkedIn company page survives for Digitec itself (a company search for 'Digitec Companies' returned zero items; the Gordon Flesch canary was healthy, so this was genuine non-matching rather than throttling).",
+  "domain_correction": "function-4.com",
+  "acquired_by": "Function4",
+  "sources_tried": [
+   "linkedin",
+   "linkedin_keyword_people",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Bill",
+    "lastname": "Patsouras",
+    "title": "Owner, Function4 Companies (formerly Principal, Digitec)",
+    "linkedin_url": "https://linkedin.com/in/bill-patsouras-7a94331",
+    "email": "bpatsouras@function-4.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile bill-patsouras-7a94331, DISTANCE_1 (first-degree). Headline 'Owner, Function4 Companies'; work_experience[0] company_id 10347430 'Function4', position 'Principal', start 7/1/1998, end: null = CURRENT; location Sugar Land, Texas - matches the Digitec record. websites ['http://www.digiteconline.com'] links him to the Digitec identity already in the CRM. contact_info.emails exposed bpatsouras@function-4.com - a corporate domain matching the acquirer, so business-class and verified, not pattern-guessed.",
+    "existing_contact_id": "183216745762"
+   }
+  ]
+ },
+ {
+  "cid": "35927372036",
+  "company": "Integra PaperLESS Business Solutions",
+  "outcome": "not_a_dealer",
+  "company_verdict": "not_dealer",
+  "company_notes": "Confirms the 'not_dealer' verdict on file and resolves where the company went. integrapaperless.com now redirects to https://daida.com/, which titles itself 'Daida | Business Process Services' and describes itself as existing 'to allow organizations to capitalize on and secure their most important assets - their data and intelligence.' That is document/data business-process outsourcing, not copier hardware dealing - so this record is correctly excluded from the dealer census. Consistent with the existing contact Roger Brazier (CEO) carrying an @integrainfotech.com address rather than the integrapaperless.com domain on file. Recommend the domain on file be corrected to daida.com and the record be dropped from the dealer population rather than worked for contacts.",
+  "domain_correction": "daida.com",
+  "acquired_by": null,
+  "sources_tried": [
+   "domain_redirect",
+   "company_site"
+  ],
+  "people": []
+ },
+ {
+  "cid": "28713084949",
+  "company": "The Copier Connection, Inc.",
+  "outcome": "found",
+  "company_verdict": "acquired",
+  "company_notes": "Newburyport, Massachusetts (the state field on file is blank - it is MA). Tied to American Lazer through shared ownership rather than a clean absorption: Carleton 'Carl' Ekborg III holds the presidency of The Copier Connection Inc. AND of American Lazer - CommSat simultaneously, both with end: null, and his profile's websites field points at http://www.amlazer.com. This corroborates the 'American Lazer' acquirer on file and shows the same principal still runs the Copier Connection entity. No LinkedIn company page survives for it (searches for 'The Copier Connection' returned zero items and 'Copier Connection' returned only unrelated West Palm Beach FL and Tomball TX firms - no match forced). thecopierconnection.com did not respond from this container, so the @thecopierconnection.com address should be revalidated. Only one decision-maker found; the second lead is a sweep of the American Lazer - CommSat page (LinkedIn company 35588302).",
+  "domain_correction": null,
+  "acquired_by": "American Lazer (- CommSat)",
+  "sources_tried": [
+   "linkedin",
+   "company_site",
+   "domain_redirect"
+  ],
+  "people": [
+   {
+    "firstname": "Carleton",
+    "lastname": "Ekborg III",
+    "title": "President",
+    "linkedin_url": "https://linkedin.com/in/carleton-ekborg-iii-46113213",
+    "email": "carl@thecopierconnection.com",
+    "email_class": "business",
+    "email_confidence": "verified",
+    "phone": null,
+    "is_decision_maker": true,
+    "validated": "Yes",
+    "evidence": "LinkedIn profile carleton-ekborg-iii-46113213: work_experience entry company 'The Copier Connection Inc.', position 'President', location '3 Graf Road Newburyport MA 01950' - an exact address match to the record - start 11/1/2017, end: null = CURRENT. He is concurrently President of 'American Lazer - CommSat' (also end: null). Email is the address already in the CRM and its domain matches the dealer, so business-class; note the domain did not respond during this sweep.",
+    "existing_contact_id": "214602981685"
+   }
+  ]
+ }
+]
