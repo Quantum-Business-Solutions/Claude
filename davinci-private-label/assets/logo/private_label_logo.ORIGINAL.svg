@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 61" width="300" height="61">
+  <text x="150" y="38"
+        font-family="Helvetica, Arial, sans-serif"
+        font-size="26"
+        font-weight="600"
+        letter-spacing="0.5"
+        fill="#012638"
+        text-anchor="middle">Private Label</text>
+  <text x="150" y="54"
+        font-family="Helvetica, Arial, sans-serif"
+        font-size="9"
+        font-weight="400"
+        letter-spacing="3"
+        fill="#012638"
+        opacity="0.6"
+        text-anchor="middle">PLACEHOLDER  ·  AWAITING BRAND</text>
+</svg>
