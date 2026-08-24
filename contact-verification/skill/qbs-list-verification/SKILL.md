@@ -146,6 +146,12 @@ Per-list verdict log `li_verdicts_<id>.json`; `pending_movers_<id>.json`; and tw
 A calling list is `ai__li_still_at_company = yes` AND `hs_lead_status = ConnectandSell Prospect`
 AND IN_LIST <source> (add a dedicated exclusion marker property if you gate on one).
 
+## Repeatability & live-list cadence (learned the hard way)
+- **A dynamic calling list is never "done."** It keeps admitting new members from its own filter criteria. On list 3675, ~263 brand-new contacts appeared within hours of a full pass. Treat verification as a **standing cadence**, not a one-shot: the refresh must run often enough to stay ahead of intake (weekly for an active list; monthly is too slow if churn is high). Scope each refresh to members with **no `ai__li_still_at_company`** OR **`ai__contact_verified_date` older than 90 days**.
+- **`unreadable` does NOT remove a contact from the calling list.** Only a `hs_lead_status` change does, and `unreadable` sets none — so locked/bogus/wrong-linked records keep getting dialed. Policy: after a human reviews the HUMAN queue, give the genuinely unusable ones (`no profile`, wrong-link you can't fix, bogus/placeholder) `Need Updated Info` so they leave the list; keep only real-but-locked profiles as dial-cautiously. Do not leave a large `unreadable` population silently dialable.
+- **No LinkedIn URL = not LinkedIn-verifiable.** Members with an empty `hs_linkedin_url` (131 on 3675) can only be resolved by people-search or ZoomInfo; if neither confirms, they are `unreadable` + HUMAN, not silently "yes". Always run the people-search fallback before calling a no-URL member unverifiable.
+- **Measure cleanliness honestly each run**: report members, and the split of verified-yes / unverified(no verdict) / unreadable-still-on-list / no-LinkedIn-URL — not just "coverage of the intake snapshot," which goes stale the moment new members arrive.
+
 ## Non-goals
 Does not write `hs_persona` or native `jobtitle` (writes the AI-owned `ai__job_title` instead); does not blank what it did not prove wrong; does not
 create/edit lists as part of a verdict run; does not verify a phone actually dials (the largest
