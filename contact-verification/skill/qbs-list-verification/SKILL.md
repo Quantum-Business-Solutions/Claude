@@ -39,6 +39,22 @@ failure; a rep discovering the truth on a call is the expensive one.
    fails, STOP.
 2. Read the list's REAL criteria: `GET /crm/v3/lists/{id}?includeFilters=true`. Confirm it is a
    contact list (objectTypeId 0-1) and note every gating property.
+   **Map the FULL gate chain before writing anything — membership is rarely governed by the list you
+   were handed.** Walk `filterBranch` recursively and record all four filter kinds; a parser that only
+   reads `property` silently misses the ones that matter:
+   - `filterType: "PROPERTY"` — contact fields (e.g. `hs_lead_status IS_ANY_OF [...]`, `phone IS_KNOWN`).
+   - `filterType: "IN_LIST"` (`listId`) — **an upstream list the contact must ALSO be in.** Recurse into
+     each one and map its criteria too. These are the real gates and they are invisible from the child list.
+   - `filterBranchType: "ASSOCIATION"` (`objectTypeId 0-2`, `associationTypeId 279`) — conditions on the
+     ASSOCIATED COMPANY (e.g. `lifecyclestage IS_NONE_OF [other, customer]`, `number_of_sales_employees`).
+     Re-associating a contact re-evaluates every one of these.
+   - Nested OR-of-AND branches — a contact needs only ONE branch to pass, so never conclude "removed"
+     from a single failing clause.
+   Write the chain to `list_anatomy_<id>.json`. On 3675 the chain was: 3675 -> IN_LIST 1678
+   ("HubSpot Tech Used - Not Clients") AND IN_LIST 3196 ("CEO - 50-99 Sales Employees", itself gated on
+   `hs_persona = persona_1` + an ASSOCIATION filter on company `number_of_sales_employees`), plus a phone
+   requirement (`phone` OR `mobilephone` OR `business_phone` IS_KNOWN) and a company-lifecyclestage gate.
+   Knowing this up front is what separates "our writes broke the list" from "the ICP gate did its job".
 3. **Snapshot intake membership to `mem_<id>.txt` before the first write** and keep it immutable.
    This process writes lead status (and, if enabled, persona) — both are often list entry criteria,
    so its own writes eject records from the list it is working. On list 5243 that removed 171 of 662
@@ -97,6 +113,15 @@ failure; a rep discovering the truth on a call is the expensive one.
    a company, do not flip to `yes`.
 2. Find-or-create company by `domain EQ`. On create, ENQUEUE tech-signal enrichment (an unenriched
    new company silently drops its occupants out of every ICP list).
+   **A newly created company has NONE of the ICP fields the calling list gates on** (`number_of_sales_employees`,
+   tech signals, lifecyclestage), so every mover re-associated to a new company disappears from the calling
+   list until those are filled. Pull `employeeCountByDepartment` from ZoomInfo `enrich_companies` and write
+   the ICP band to `icp_queue_<id>.json` — do NOT auto-write ICP fields; they redefine list membership and
+   are a human decision. **Then check whether the mover still belongs in the ICP at all:** of 7 new companies
+   on 3675, only ONE was inside the target 50-99 sales-employee band (it had 67); the others measured 174, 12,
+   11, 3 and 2. A mover dropping off the calling list is usually CORRECT: they left
+   for a company outside the target profile. Do not "fix" it by loosening the ICP; route them from the
+   Moved-Companies list to a campaign that fits.
 3. DELETE stale associations, PUT new with BOTH `associationTypeId` 1 AND 279 (one alone leaves
    `associatedcompanyid` empty). `associatedcompanyid` is calculated and lags ~20s - re-read before
    concluding failure.
@@ -118,6 +143,31 @@ failure; a rep discovering the truth on a call is the expensive one.
    valid + note). File any prior address to `previous__email` (never clobber) and
    `previous__company_domain_name` (URL type - prefix https://). To clear a primary email: empty
    `hs_additional_emails` first, THEN `email` (two writes, in that order).
+
+## ZoomInfo: corroborator, never overrider
+ZoomInfo (`mcp__ZoomInfo__enrich_companies` / `enrich_contacts`) is the second source that makes
+`sources: 2` honest. It never outranks dated LinkedIn history.
+- **Companies** (`enrich_companies`): accept a domain ONLY on `matchStatus: FULL_MATCH` **plus an
+  independent corroborator** — the returned city/state matching the person's LinkedIn location, or the
+  industry matching the role. On 3675 this corroborated 6 of 6 destination domains (each ZoomInfo city/state
+  matched the person's own LinkedIn location) and it is also what separates two real companies that share a
+  name: an energy-software firm and a crypto exchange both trade as "Kraken", and only the industry +
+  headquarters check picks the right one. Request `isDefunct`/`companyStatus` and never associate anyone to a
+  defunct company. `NO_MATCH` on a small private brand is normal -> leave the domain UNRESOLVED and match by
+  name; never invent a domain.
+- **Contacts** (`enrich_contacts`): require `matchStatus: FULL_MATCH` AND `contactAccuracyScore >= 85`.
+  `COMPANY_ONLY_MATCH` means it matched the COMPANY, not the PERSON — accuracy comes back `0.0` and you
+  write NOTHING from it (this is exactly how a wrong number reaches a rep). Prefer `validDate` /
+  `positionStartDate` as corroboration: on 3675 a mover's ZoomInfo position-start month matched the LinkedIn
+  move month exactly, which is what earns `sources: 2`.
+- **DNC is a hard stop, not a preference.** Always request `directPhoneDoNotCall` and `mobilePhoneDoNotCall`.
+  `true` -> the number is NEVER written and the evidence must say so. On 3675 a confirmed mover's ONLY
+  ZoomInfo number was a DNC-flagged mobile; writing it would have handed a rep a number they are not
+  permitted to dial.
+- Where ZoomInfo and LinkedIn AGREE, record `sources: 2`. Where they DISAGREE, LinkedIn's dated history wins
+  and the record goes to the HUMAN queue — never split the difference.
+- Credits are consumed per company/contact (free for a year after first enrichment). Batch up to 10 per call
+  and keep enrichment inside the per-run ceiling.
 
 ## Guardrails - halt and report, do not push through
 - Any 401/403 -> hard stop (an auth failure otherwise reads as "no data" and stamps live records).
@@ -150,11 +200,15 @@ AND IN_LIST <source> (add a dedicated exclusion marker property if you gate on o
 - **A dynamic calling list is never "done."** It keeps admitting new members from its own filter criteria. On list 3675, ~263 brand-new contacts appeared within hours of a full pass. Treat verification as a **standing cadence**, not a one-shot: the refresh must run often enough to stay ahead of intake (weekly for an active list; monthly is too slow if churn is high). Scope each refresh to members with **no `ai__li_still_at_company`** OR **`ai__contact_verified_date` older than 90 days**.
 - **`unreadable` does NOT remove a contact from the calling list.** Only a `hs_lead_status` change does, and `unreadable` sets none — so locked/bogus/wrong-linked records keep getting dialed. Policy: after a human reviews the HUMAN queue, give the genuinely unusable ones (`no profile`, wrong-link you can't fix, bogus/placeholder) `Need Updated Info` so they leave the list; keep only real-but-locked profiles as dial-cautiously. Do not leave a large `unreadable` population silently dialable.
 - **No LinkedIn URL = not LinkedIn-verifiable.** Members with an empty `hs_linkedin_url` (131 on 3675) can only be resolved by people-search or ZoomInfo; if neither confirms, they are `unreadable` + HUMAN, not silently "yes". Always run the people-search fallback before calling a no-URL member unverifiable.
-- **The stored LinkedIn slug is often WRONG-LINKED (a different same-name person).** A very common failure mode, separate from "no URL" and "locked": the `hs_linkedin_url` resolves to a real profile, but it's a *different human* with the same name (e.g. HubSpot said "Howard Moore, CIT / CEO" but the slug was a Keste CEO; "David Duncan, FBSciences" but the slug was a First-Hospitality CEO). **Trigger:** the linked profile's current company does not match the HubSpot company. **Rule:** do NOT trust a name-only match — run a people-search by `name + company` and accept a hit ONLY when an independent corroborator lines up (profile location = company HQ region, industry, or role). Corroborated → judge on that profile AND write the corrected slug back via `li_url` (both URL fields). No corroborator → `unreadable` + `Need Updated Info`, never guess. This is why "yes" needs a company match, not just an open profile.
-- **HubSpot titles are frequently wrong even when employment is current** — several "President"/"CEO" records were actually Marketing/VP/Director on LinkedIn (Kristin Huber "President at Advance" was never President there; Mike Minelli "President & CEO SirionLabs" was VP Sales). Judge employment and persona from the **dated LinkedIn history, never the HubSpot title string**; capture the real title in `ai__job_title` so the correction is visible.
+- **The stored LinkedIn slug is often WRONG-LINKED (a different same-name person).** A very common failure mode, separate from "no URL" and "locked": the `hs_linkedin_url` resolves to a real profile, but it's a *different human* with the same name (on 3675: a record saying "CEO of an IT-finance firm" was linked to a same-name CEO of an unrelated consultancy; another "CEO, agri-science" was linked to a same-name hospitality CEO in a different state). **Trigger:** the linked profile's current company does not match the HubSpot company. **Rule:** do NOT trust a name-only match — run a people-search by `name + company` and accept a hit ONLY when an independent corroborator lines up (profile location = company HQ region, industry, or role). Corroborated → judge on that profile AND write the corrected slug back via `li_url` (both URL fields). No corroborator → `unreadable` + `Need Updated Info`, never guess. This is why "yes" needs a company match, not just an open profile.
+- **HubSpot titles are frequently wrong even when employment is current** — several "President"/"CEO" records were actually Marketing/VP/Director on LinkedIn (one "President" had only ever been a Marketing Director at that company; one "President & CEO" had been VP Sales). Judge employment and persona from the **dated LinkedIn history, never the HubSpot title string**; capture the real title in `ai__job_title` so the correction is visible.
 - **"CEO / role with no end date" after an acquisition is ambiguous, not automatically current.** Watch for the company logo/name having changed to an acquirer (FBSciences → Valent BioSciences). If LinkedIn still shows the role active (`end: null`), judge `yes` but NOTE the acquisition in evidence so the rep knows who actually owns the line now.
-- **Former-CEO-now-Board/Advisor is NOT a buyer.** A "Former CEO"/"Board Advisor"/"Board Member" who stepped out of the operating seat (Trey Campbell, OneSource Virtual) is still affiliated with the company but is no longer the decision-maker → `Not Decision Maker`, not `yes`.
+- **Former-CEO-now-Board/Advisor is NOT a buyer.** A "Former CEO"/"Board Advisor"/"Board Member" who stepped out of the operating seat (one 3675 record had ended the CEO role a year earlier and held only a board-advisor seat) is still affiliated with the company but is no longer the decision-maker → `Not Decision Maker`, not `yes`.
 - **Measure cleanliness honestly each run**: report members, and the split of verified-yes / unverified(no verdict) / unreadable-still-on-list / no-LinkedIn-URL / wrong-linked-slug — not just "coverage of the intake snapshot," which goes stale the moment new members arrive.
+- **The list count WILL crater, and most of it is the process working.** Expect the owner to ask "why did my list drop?" Have the arithmetic ready before they ask: on 3675, 389 of 1,680 verdicts carried a lead status (216 No Longer with Company / 94 Not Decision Maker / 48 Need Updated Info / 31 Retired) and each one correctly ejects the contact. Report intended removals and unintended ones separately — never as one number.
+- **Never diagnose a membership drop by assertion — run the attribution.** The procedure, in order: (1) pull current membership; (2) intersect with your verdict log to find verified-`yes` contacts that fell off; (3) read their `hs_lead_status`, phone fields, `number_of_associated_companies` — this rules the process in or out; (4) test them against EACH upstream `IN_LIST` gate separately; (5) only then look at the ASSOCIATION (company) filters. On 3675 this proved 487 verified-good CEOs fell off, and that **zero** of the 308 that failed the CEO gate had been touched by our pipeline — they fail `hs_persona = persona_1` (163 blank, 140 `persona_14`), a field this process is forbidden to write. Without the attribution that looks exactly like self-inflicted damage.
+- **`hs_persona` is the silent ICP gate.** A calling list keyed on a persona value cannot see a contact whose persona is blank or wrong, no matter how cleanly verified they are. 163 contacts on 3675 are confirmed current CEOs with a blank persona — invisible to the CEO list. Surface this as a headline finding with counts; it is usually the single biggest recoverable pool on the list, and fixing it is a persona decision (human-approved), never a silent write.
+- **Do not trust a membership count taken during recalculation.** After a few hundred property writes HubSpot re-evaluates dynamic lists asynchronously; list 3675 read 964, then 112, then 87, then 576 within one hour, all while `processingStatus` said COMPLETE. Take counts twice, several minutes apart, and report a settled number or explicitly label it as still moving.
 
 ## Non-goals
 Does not write `hs_persona` or native `jobtitle` (writes the AI-owned `ai__job_title` instead); does not blank what it did not prove wrong; does not
