@@ -33,11 +33,37 @@ failure; a rep discovering the truth on a call is the expensive one.
   Run it with a person present.
 - **Refresh pass -> unattended-safe.** Skips anything stamped within N days; small queue.
 
+## Autonomous end-to-end run (the default; `/qbs-list-verification <listId>`)
+The operator's expectation is: **pick a list, run the skill, it just does it.** Honour that.
+Do not ask permission between phases, do not stop to report progress, do not hand back a plan
+when you were asked for a clean list. Run this sequence to completion:
+
+1. `scripts/listanatomy.py <listId>` — map the gate chain. If it WARNS that the list gates on
+   `hs_persona`/`jobtitle`, note it now; it will explain the membership numbers later.
+2. Phase 0 preflight + intake snapshot.
+3. Loop: `queue.py <listId> 12` -> read -> judge -> `writeverdicts.py`. Repeat until
+   `unverified` reads 0 **on two consecutive checks several minutes apart** (dynamic lists
+   re-admit members while you work — one zero reading is not done).
+4. Mover pipeline whenever ~10 movers accumulate, ZoomInfo-verifying each destination domain.
+5. Refresh the two output lists; queue ICP enrichment for any company created.
+6. Report once, at the end, in the honest format below.
+
+**Self-continuation.** A long list will outlive a single turn. Schedule the next continuation
+before the turn ends (`send_later` ~2 minutes out) carrying the full instruction — list id,
+credentials, next batch number, escalation ladder, stop condition — so the loop survives a
+context boundary. Stop re-arming only when the stop condition in step 3 is met.
+
+**Stop and ask ONLY for:** a guardrail trip (below), a write outside this skill's field set,
+or a Human-queue judgment call. Everything else, decide and keep moving. When in doubt about a
+single contact, mark it `unreadable` + queue it — never stall the whole run on one record.
+
 ## Phase 0 - Preflight (no writes; abort on any failure)
 1. Self-test every query type against a case whose answer you already know before trusting a null
    result (a digits-only phone search silently matches nothing — see FIELD-NOTES). If the self-test
    fails, STOP.
-2. Read the list's REAL criteria: `GET /crm/v3/lists/{id}?includeFilters=true`. Confirm it is a
+2. Read the list's REAL criteria - **`python3 scripts/listanatomy.py <listId>` does all of this
+   automatically and writes `list_anatomy_<id>.json`**; the manual walk is described here so you can
+   verify it. `GET /crm/v3/lists/{id}?includeFilters=true`. Confirm it is a
    contact list (objectTypeId 0-1) and note every gating property.
    **Map the FULL gate chain before writing anything — membership is rarely governed by the list you
    were handed.** Walk `filterBranch` recursively and record all four filter kinds; a parser that only
@@ -209,6 +235,11 @@ AND IN_LIST <source> (add a dedicated exclusion marker property if you gate on o
 - **Never diagnose a membership drop by assertion — run the attribution.** The procedure, in order: (1) pull current membership; (2) intersect with your verdict log to find verified-`yes` contacts that fell off; (3) read their `hs_lead_status`, phone fields, `number_of_associated_companies` — this rules the process in or out; (4) test them against EACH upstream `IN_LIST` gate separately; (5) only then look at the ASSOCIATION (company) filters. On 3675 this proved 487 verified-good CEOs fell off, and that **zero** of the 308 that failed the CEO gate had been touched by our pipeline — they fail `hs_persona = persona_1` (163 blank, 140 `persona_14`), a field this process is forbidden to write. Without the attribution that looks exactly like self-inflicted damage.
 - **`hs_persona` is the silent ICP gate.** A calling list keyed on a persona value cannot see a contact whose persona is blank or wrong, no matter how cleanly verified they are. 163 contacts on 3675 are confirmed current CEOs with a blank persona — invisible to the CEO list. Surface this as a headline finding with counts; it is usually the single biggest recoverable pool on the list, and fixing it is a persona decision (human-approved), never a silent write.
 - **Do not trust a membership count taken during recalculation.** After a few hundred property writes HubSpot re-evaluates dynamic lists asynchronously; list 3675 read 964, then 112, then 87, then 576 within one hour, all while `processingStatus` said COMPLETE. Take counts twice, several minutes apart, and report a settled number or explicitly label it as still moving.
+
+- **A slug whose NAME doesn't match the contact's name is a wrong-link you can catch for free.** Before spending a read, compare the stored slug against the contact name: a record for one surname pointing at a slug built from a completely different surname is mis-linked on its face (on 3675 one such slug resolved to an automation engineer at a pharma company, nothing to do with the CRM employer). Same-name wrong-links still need the company check, but name-mismatch is a zero-cost pre-filter.
+- **One person can have TWO LinkedIn profiles — distinct from two CRM contacts.** On 3675 a contact's stored slug showed an old employer while a second profile for the same name in the same city showed the CRM employer with a current dated role. Two different member ids, one human, one stale profile. This is NOT the unique-URL collision case (that means two CRM *contacts*). Rule: corroborate on company + city, judge on the profile with the dated current role, write that slug back, and flag the pair for human dedupe review - do not assume the stored one is authoritative just because it loaded.
+- **Junk source records are a category, not a one-off.** Watch for: a placeholder name (a first name repeated as the surname), a self-declared title with no dated history ("Independent Business Owner" with `start: null`), several contacts sharing one company with identical vague titles, or an out-of-network profile with no connections. These pass an "is there a profile?" test and fail every evidence test. They are `unreadable` + `Need Updated Info`, and when several cluster on one company, say so in the report - the finding is about the SOURCE of the data, not the individual records. A rep once burned a call on exactly this.
+- **Persona remediation is a proposal workflow, and it belongs at the end of a run.** Because `hs_persona` is often the real ICP gate and this process must not write it, the deliverable is an evidence-backed candidate list: contacts you verified `yes` whose `ai__job_title` shows a C-level/owner title but whose persona is blank or wrong. Emit `persona1_candidates.json` (id, current persona, LinkedIn-verified title) and hand it over. Exclude former-CEO/board-advisor titles - they are affiliation, not authority. Never apply it silently; a persona write redefines list membership.
 
 ## Non-goals
 Does not write `hs_persona` or native `jobtitle` (writes the AI-owned `ai__job_title` instead); does not blank what it did not prove wrong; does not

@@ -11,3 +11,5 @@ scripts/b*.json
 scripts/_*.json
 scripts/*.log
 scripts/*.csv
+__pycache__/
+*.pyc

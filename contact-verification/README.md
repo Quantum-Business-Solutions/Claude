@@ -5,117 +5,81 @@ apologising. Reads every contact against dated LinkedIn employment history, reco
 was found and how it is known, and routes each person to a channel: dial them,
 re-target them at their new employer, or leave them alone.
 
-Built from the full pass on QBS list 5243: 662 contacts at intake, 491 read against dated
-LinkedIn history, 340 surviving. The other 171 were ejected from the list by this process's own
-lead-status and persona writes before they were ever read - itself a lesson the docs now carry.
-
 ## Start here
 
 | Document | What it is for |
 |---|---|
-| `docs/verification-process.html` | **The process.** End-to-end flow chart, stage specs, decision rules, failure modes. Read this first. |
-| `docs/evidence-ladder.html` | Companion. Source-yield measurements and the case histories that produced the rules. |
-| `docs/FIELD-NOTES.md` | Raw working notes taken as the work happened, including sections that correct earlier mistakes. Densest source of gotchas. |
+| `skill/qbs-list-verification/SKILL.md` | **The authority.** Process, verdict vocabulary, guardrails, field conventions, judgment rules. |
+| `RUNBOOK.md` | **The mechanics.** Copy-paste commands, list-agnostic — substitute `<LIST>` and run. |
+| `docs/FIELD-NOTES.md` | Raw working notes, including sections that correct earlier mistakes. Densest source of gotchas. |
+| `docs/verification-process.html` | Flow chart and stage specs. |
+| `docs/evidence-ladder.html` | Source-yield measurements and the case histories behind the rules. |
+
+## Run it
+
+```
+/qbs-list-verification <listId>
+```
+
+One command. The skill runs Phase 0, loops the batches, runs the mover pipeline, refreshes
+the output lists, and reports — stopping only for the judgment calls it is required to
+escalate. See **Autonomous end-to-end run** in SKILL.md for the exact contract and the
+stop conditions.
 
 ## Credentials
 
 Nothing is hardcoded. Every script reads from the environment:
 
 ```bash
-export TOKEN=<hubspot private app token>     # 31 of 36 scripts
-export NB=<neverbounce api key>              # email verification only
+export TOKEN=<hubspot private app token>     # see the qbs-hubspot-private-app skill
+export NB=<neverbounce api key>              # email verification rung only
 ```
 
-LinkedIn reads go through the Unipile MCP tool, not these scripts.
+LinkedIn reads go through the Unipile MCP tool (Shawn's two authorized accounts only — the
+other identities on that tenant are client accounts). ZoomInfo enrichment goes through the
+ZoomInfo MCP tools as a *corroborator*, never as an override.
 
-## Run it as a skill
+## Scripts
 
-The process is packaged as the **`qbs-list-verification`** skill (`skill/qbs-list-verification/SKILL.md`).
-Invoke it on any list:
+Nine scripts. Everything else is judgment, and judgment lives in the skill.
 
-```
-/qbs-list-verification <listId>
-```
-
-The skill orchestrates and enforces the guardrails; two generalized scripts do the mechanical core,
-and every judgement call is queued for a human rather than guessed:
-
-- `scripts/queue.py <listId> [N]` — next N unverified contacts + LinkedIn identifier; snapshots intake
-- `scripts/writeverdicts.py <listId> <batch.json>` — writes a batch, enforces the lead-status rules
-  (refuses a lead status on a `yes`, allows only the four valid literals), chunks at 100, diffs
-  requested-vs-returned, reads back to confirm, logs per-list, and queues movers
-
-First pass = interactive (it produces the human queue). Refresh pass = unattended-safe.
-
-To make the skill available in future sessions org-wide it must be published through QBS's skill
-sync (it currently lives here in the repo and is installed locally for the session that wrote it).
-
-## Scripts, by phase
-
-Not a pipeline yet — these are the steps as they were actually executed, in order of use.
-`docs/verification-process.html` explains what each phase is doing and why.
-
-**Queue and verdicts**
-- `nextbatch.py` — print the next N unverified contacts from the queue
-- `wr.py` — batch-write verdicts, evidence, verified date, source count
-
-**Movers (re-association)**
-- `movepipe.py` — the mover pipeline: verify domain, find/create company, delete stale
-  associations, PUT new with **both** association type IDs, reconcile the flag
-- `stampmovers.py` — ensure every re-associated contact carries the marker the lists key on
-- `sweepaddl.py` — look for a current-employer address already sitting in a secondary field
-
-**Email resolution**
-- `patmail.py` — first-generation format engine (learned patterns only)
-- `patmail2.py` — **use this one.** Full universal format set (14 formats) plus nickname
-  short forms, ordered by real-world prevalence
-- `runpat.py`, `runpat2.py`, `run14.py` — resolution runs (background + thread pool)
-- `wremail.py`, `residue.py`, `fix4.py` — write results, applying the hard domain rule
-- `pastemail.py` — file a prior-employer address to `previous__email` and clear the live field
-
-**Phone (do not skip — this is the channel reps actually use)**
-- `phoneaudit.py` — find contacts whose business number is not their employer's
-- `whosephone.py` — identify which company a number actually belongs to
-- `fixphones.py` — correct or clear them, preserving what was replaced
-- `verifyphone.py` — prove the fix applied
-- `audit8260.py`, `id32.py` — check whether the problem extends beyond the movers
-
-**Lists and reconciliation**
-- `twolists.py`, `mklist3.py`, `listb.py` — create the output lists (includes the
-  hard-won HubSpot list-filter shapes)
-- `reconcile662.py` — account for every contact that left the source list, with the reason
-- `why46.py`, `diag422.py`, `split.py`, `gate.py` — diagnose why verified contacts fall
-  out of an ICP list
-- `notmkt.py`, `chk7.py`, `unmark.py` — persona-exclusion marker audits and repairs
-- `final2.py`, `lscheck.py`, `counts2.py`, `livestate.py` — verification and state reads
+| Script | Phase | What it does |
+|---|---|---|
+| `listanatomy.py <listId>` | Phase 0 | **Run first.** Maps the full gate chain — recurses every `IN_LIST` upstream gate and every company-level `ASSOCIATION` filter, then lists every property that can eject a contact. Warns when the list gates on a field this process must not write. |
+| `queue.py <listId> [N]` | batch loop | Next N unverified contacts + their LinkedIn identifier; snapshots intake. |
+| `writeverdicts.py <listId> <batch.json>` | batch loop | Writes a batch and enforces the rules no caller may bypass: refuses a lead status on a `yes`, allows only the four valid literals, never writes native `jobtitle`, stamps evidence in the standard format, chunks at 100, diffs requested-vs-returned, reads back to confirm, logs per-list, queues movers. |
+| `movepipe.py <listId> <movers.json>` | movers | Find-or-create company, swap associations (both type IDs), reconcile the flag, carry the phone, stamp `RE-ASSOCIATED` evidence. |
+| `phoneaudit.py` → `fixphones.py` → `verifyphone.py` | phone | Find numbers that belong to a former employer, correct or clear them, prove the fix applied. |
+| `patmail2.py` | email | Universal format set (14 formats) plus nickname short forms, ordered by real-world prevalence. |
+| `twolists.py`, `listb.py` | outputs | Create the two output lists (carries the hard-won HubSpot list-filter shapes). |
 
 ## What is deliberately not in this repo
 
-Contact-level run data — verdict logs, email and phone write logs, audit output. Those
-files carry names, email addresses and phone numbers for several hundred real people, and
-a git repository is the wrong place for them. They stay in the working directory of the
-session that produced them. The code and the process are what belong here.
+Contact-level run data — verdict logs, email and phone write logs, audit output, intake
+snapshots. Those files carry names, employers and phone numbers for real people, and a git
+repository is the wrong place for them. They stay in the working directory of the session
+that produced them (`.gitignore` enforces this). The code and the process are what belong here.
 
-## Corrections applied after two QA audits
+## Corrections applied after QA audits
 
-Three claims in the first version of these docs were wrong and are now fixed:
+Claims in earlier versions of these docs that were wrong and are now fixed:
 
-- "every one read on LinkedIn" - 491 of 662 were read; 171 left the list first
-- "none of the 32 mismatched phones belonged to another company" - 9 of 32 do. The check that
+- "every one read on LinkedIn" — on list 5243, 491 of 662 were read; 171 left the list first
+- "none of the 32 mismatched phones belonged to another company" — 9 of 32 do. The check that
   said otherwise used a digits-only search that cannot match a parenthesised stored number, so
   it returned nothing for every input and the nothing was read as an answer
-- "same vendor company id means same company" - sound for domain aliases within one record, but
+- "same vendor company id means same company" — sound for domain aliases within one record, but
   it cannot detect a rebrand or acquisition; the vendor keeps predecessors as separate records
+- this README previously listed ~29 one-off scripts that were deleted in the PII cleanup
 
-The method rule that would have caught two of them: **self-test every query against a case whose
-answer you already know before trusting a null result.** `redo32.py` does this and refuses to
-continue if the self-test fails.
+The method rule that would have caught most of them: **self-test every query against a case
+whose answer you already know before trusting a null result.**
 
-## Known state at time of commit
+## Open gaps
 
-- Zero contacts on the calling list carry a former employer's phone or email
-- 70 movers re-associated, 56 holding a confirmed current-employer email
-- Two contacts have no dialable number at all and correctly fell off the phone-gated list
-- Still open: 27 company records created during the pass were never enriched for tech
-  signals, so verified contacts sit outside the ICP as *unproven* rather than disqualified;
-  one duplicate contact needs a human merge; **no phone number has been dial-tested**
+- **No phone number has been dial-tested.** The process corrects and clears numbers on
+  evidence, but never proves one rings the right desk. Largest open gap.
+- **Duplicate contacts** are detected (unique-URL collision) and queued, never merged.
+- **`hs_persona`** is frequently the real ICP gate and this process is forbidden to write it,
+  so blank-persona contacts stay invisible until a human decides. Evidence-backed proposals
+  are produced; applying them is a human call.
