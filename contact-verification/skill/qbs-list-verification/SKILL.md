@@ -61,6 +61,11 @@ failure; a rep discovering the truth on a call is the expensive one.
 4. Write the batch: `python3 scripts/writeverdicts.py <listId> batch.json`. It enforces the
    lead-status rules, chunks at 100, diffs requested-vs-returned, reads back to confirm, appends to
    `li_verdicts_<id>.json`, and queues movers to `pending_movers_<id>.json`.
+   Batch item fields: `id`, `verdict`, `ev`, and optional `ls`, `newco`, `sources`,
+   `title` (current LinkedIn title -> `ai__job_title`), `li_url` (corrected LinkedIn URL -> written
+   to BOTH `hs_linkedin_url` and `linkedin_profile_url__unique_value`), `changed` (explicit
+   "what changed in HubSpot"). Every write also sets `validated__linkedin_or_manually` and stamps
+   the evidence in the standard format (below).
 
 ## Verdicts and the exact vocabulary
 - **yes** = a dated row for the CRM company with `end: null`. Write evidence + date only.
@@ -70,6 +75,13 @@ failure; a rep discovering the truth on a call is the expensive one.
   to exactly one literal: `No Longer with Company` (moved) / `Need Updated Info` (moved, destination
   ambiguous/fractional) / `Retired - Remove from All Lists` / `Not Decision Maker` (employed, cannot buy).
 - **unreadable** = no profile, or a real profile with no dated history. Name what was tried.
+
+## Fields this process writes (repeatable conventions)
+- **Evidence format** (`ai__contact_evidence`): always `Verified - <date> - <evidence> - Changed: <what changed in HubSpot>`. writeverdicts.py builds this; the `Changed:` clause auto-summarises flag/lead-status/title/URL/mover unless you pass an explicit `changed`.
+- **`ai__job_title`** (AI-owned title field): write the current LinkedIn-verified title here via the batch `title` field. This exists because the native `jobtitle` is fought over by 3 integrations (~38% oscillation) — NEVER write `jobtitle`; this field is the trustworthy display title.
+- **`validated__linkedin_or_manually`** (select): set every verified record — `yes`->`Yes`, `no`+Retired->`Retired`, any other `no`/`unreadable`->`Needs Updated`. (`Delete` is human-only, for bogus records.)
+- **LinkedIn URL**: when you correct a slug, pass `li_url`. It is written to `hs_linkedin_url` AND the unique field `linkedin_profile_url__unique_value` (set per-record). A unique-value **collision means another contact already owns that URL** -> compare the two: same person = duplicate (queue for merge, `dedupe_review_<id>.json`), different person = the other record is wrong-linked (queue to fix its URL). Never force past the collision.
+- Canonical verdict field is `ai__li_still_at_company` (the calling list keys on it); the legacy string `ai__still_works_at_company` is NOT used.
 - Persona ("can this person buy?"): the test is buying power, not department. C-level/EVP/SVP/VP with
   a function, Director of Demand Gen, GM, COO, CRO = buyers. EA/gatekeeper, IC rep, one-person shop,
   outside consultant = not. Anything between the two -> QUEUE, do not decide. **Persona re-mapping
@@ -88,7 +100,11 @@ failure; a rep discovering the truth on a call is the expensive one.
 3. DELETE stale associations, PUT new with BOTH `associationTypeId` 1 AND 279 (one alone leaves
    `associatedcompanyid` empty). `associatedcompanyid` is calculated and lags ~20s - re-read before
    concluding failure.
-4. Reconcile flag to `yes`; set `company`; append evidence (never overwrite it).
+4. Reconcile flag to `yes`; set `company`; set `ai__job_title` to the new-company title and
+   `validated__linkedin_or_manually` (`Yes` if a live decision-maker, else `Needs Updated`); append
+   evidence in the `Verified - <date> - ... - Changed: RE-ASSOCIATED to <newco> ...` format (never
+   overwrite it, and it must contain `RE-ASSOCIATED` so the Moved-Companies list picks it up). Never
+   write native `jobtitle`.
 5. **Carry the phone in the same transaction.** `business_phone` predates the move so it is the old
    employer's line - overwrite with the new company's number, or CLEAR it if the company has none.
    Never touch `mobilephone`. Touch `phone` only when an exact-digit match proves it belongs to a
@@ -112,7 +128,7 @@ failure; a rep discovering the truth on a call is the expensive one.
   phones cleared, personas changed (default 0), NeverBounce/ZoomInfo credits.
 
 ## Never touch
-`mobilephone`; `jobtitle` (3 competing writers, ~38% oscillation - truth goes in evidence);
+`mobilephone`; `jobtitle` (3 competing writers, ~38% oscillation - write the AI-owned `ai__job_title` instead, truth also in evidence);
 `hs_persona` without approval; `hs_lead_status` on a `yes`; a populated `previous__email`; any
 contact outside the intake snapshot; `email`/`phone` on a non-mover you have not PROVEN wrong
 (non-mover phone conflicts are flag-only). Do not suppress the lead-status workflow - it is by design
@@ -131,6 +147,6 @@ A calling list is `ai__li_still_at_company = yes` AND `hs_lead_status = Connecta
 AND IN_LIST <source> (add a dedicated exclusion marker property if you gate on one).
 
 ## Non-goals
-Does not write `hs_persona` or `jobtitle`; does not blank what it did not prove wrong; does not
+Does not write `hs_persona` or native `jobtitle` (writes the AI-owned `ai__job_title` instead); does not blank what it did not prove wrong; does not
 create/edit lists as part of a verdict run; does not verify a phone actually dials (the largest
 open gap - flagged, not solved).
