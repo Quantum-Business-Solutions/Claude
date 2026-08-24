@@ -83,3 +83,10 @@ whose answer you already know before trusting a null result.**
 - **`hs_persona`** is frequently the real ICP gate and this process is forbidden to write it,
   so blank-persona contacts stay invisible until a human decides. Evidence-backed proposals
   are produced; applying them is a human call.
+- **Succession conflicts are caught by eye, not by code.** Two contacts on the same list can
+  both verify as the current CEO of one company (each profile is internally consistent; one is
+  simply stale). Nothing in the batch loop cross-checks the run's `yes` set for duplicate
+  company + C-level pairs — it took a human noticing. Worth a script.
+- **Company-name collisions rely on judgment.** A destination company match can be a
+  `FULL_MATCH` on the name and still be the wrong business — the corroborator rule is written
+  down and followed, but nothing enforces it mechanically.

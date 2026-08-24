@@ -64,9 +64,16 @@ For each: read the profile via Unipile (`linkedin_sections=experience_preview`),
 Escalation ladder when the stored slug fails:
 
 1. **422 / locked** → LinkedIn people-search on `name + company`.
-2. **Wrong-linked** (linked profile's company ≠ HubSpot company — roughly 1 in 8) → people-search,
-   and accept a hit **only with an independent corroborator**: location = company HQ region, industry,
-   or role. Corroborated → judge on that profile *and* write the corrected slug back via `li_url`.
+2. **Wrong-linked** (linked profile's company ≠ HubSpot company — closer to 1 in 4 on recent
+   batches) → people-search, and accept a hit **only with an independent corroborator**: location =
+   company HQ region, industry, or role. Corroborated → judge on that profile *and* write the
+   corrected slug back via `li_url`. Free pre-filter: if the stored slug's surname differs from the
+   contact's, it is mis-linked on its face — don't spend the read.
+2b. **Before judging `no`, check the org chart.** A move into the parent/holding company, or into a
+   sibling brand of the CRM company, is `yes` with a corrected title — not a mover. Same for a
+   spinoff or rebrand: same operating business, stale company name.
+2c. **A "Retired" headline beats an un-ended role row.** Four such contacts on the last pass would
+   have stayed dialable on dated history alone.
 3. **No URL at all** → people-search; still nothing → `unreadable`, naming every source tried.
 4. ZoomInfo `enrich_contacts` as a corroborator only (see SKILL.md guardrails: FULL_MATCH +
    accuracy ≥ 85; `COMPANY_ONLY_MATCH` writes nothing; DNC-flagged numbers are never written).
@@ -88,6 +95,10 @@ lead-status literals; never native `jobtitle`; evidence stamped
 
 ```bash
 # a. verify each destination domain — FULL_MATCH + a corroborator, via ZoomInfo enrich_companies
+#    The company name match needs its OWN corroborator (HQ city/state, or industry vs the person's
+#    career). A bare-name FULL_MATCH has returned an entirely unrelated business in another country
+#    more than once. Watch near-homograph destinations — one transposed letter
+#    attaches the contact to the wrong employer and the evidence still reads plausibly.
 # b. build movers.json: {id, newco, domain?, dm, title, ev}
 python3 scripts/movepipe.py <LIST> movers.json
 ```
@@ -115,6 +126,10 @@ Report, every run:
 - verified-yes / no / unreadable
 - **intended removals** (lead status set) vs **unintended** — never one number
 - unreadable still dialable, no-LinkedIn-URL, wrong-linked-slug counts
+- **succession conflicts**: scan the run's `yes` set for two contacts claiming the same top seat at
+  the same company. Keep both verdicts, annotate the older profile's evidence, name it in the report.
+- read-back shortfall: contacts stamped earlier in the run can be deleted/merged before the report —
+  say so rather than quoting the verdict-log length as if it were live membership.
 
 ### When the owner asks "why did my list drop?"
 
