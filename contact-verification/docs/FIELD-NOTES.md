@@ -212,8 +212,8 @@ Ralph Calistri (IC rep at Cisco).
 movepipe.py only WRITES an email when it passes the domain hard rule. It never
 clears an existing email that belongs to the PRIOR employer. Spot check after
 the 66-mover run:
-  - Thomas Been  -> Domino Data Lab, but email still thomas.been@datastax.com
-  - Trisha Fields -> Mighty & True,  but email still tfields@sonatype.com
+  - Contact T  -> Domino Data Lab, but email still contactT@datastax.com
+  - Contact F -> Mighty & True,  but email still contactF@sonatype.com
 So ~all movers with no findable new address still carry a dead address.
 FIX (do as a sweep over reassoc_log.json once verification is finished):
 for each mover, if email domain != new company domain, move the address into
@@ -223,7 +223,7 @@ to overwrite hs_lead_status, so re-assert hs_lead_status in the same PATCH and
 re-check after.
 
 ## ALSO confirmed 2026-08-17: jobtitle really is being reverted
-movepipe PATCHed Trisha Fields jobtitle="Vice President, Client Strategy";
+movepipe PATCHed Contact F jobtitle="Vice President, Client Strategy";
 `company` and the association stuck, jobtitle read back as the OLD
 "Vice President of Performance Marketing". This is the 3-competing-writers
 oscillation on jobtitle. Do not trust HubSpot jobtitle; the truth is in
@@ -258,8 +258,8 @@ Order of attack for a contact with no URL:
      sources were tried and what ZoomInfo did or did not corroborate
 
 ## ZoomInfo was WRONG or STALE on a lot of them - always finish on LinkedIn
-  - Juliann Irwin: ZI said Kasasa (updated 2026-07-23). LinkedIn: left 12/2023.
-  - Nancy Elsner: ZI said TouchTunes (updated 2026-08-14, THREE DAYS OLD). LinkedIn: left 04/2024.
+  - Contact I: ZI said Kasasa (updated 2026-07-23). LinkedIn: left 12/2023.
+  - Contact N: ZI said TouchTunes (updated 2026-08-14, THREE DAYS OLD). LinkedIn: left 04/2024.
   - Steve Dauber: ZI said RedSeal VP Marketing "since 2009". LinkedIn: left 01/2011.
   - Steve Susina: ZI said NRI. LinkedIn: ended 06/2026.
   - Chris Heggem: ZI said Wallarm. LinkedIn: Ciroos.
@@ -280,19 +280,19 @@ OFF the list ([NOT-MKT] or 'no'):
   Julie Kawejsza - founder of AFTR, a brand-new one-person content studio
   Michel Benjamin - founder of his own fractional-CMO practice
   Marcie Montague - opening an independent bookstore
-  Stacie Immesberger - Anaplan "Supply Chain Domain Advisory", an SME seat
-  Chris Sheen - Celonis "Director of Social", a function lead not a budget holder
+  Contact G - Anaplan "Supply Chain Domain Advisory", an SME seat
+  Contact H - Celonis "Director of Social", a function lead not a budget holder
   Carey Waterman - Executive Assistant to the CMO/CRO, a gatekeeper
 ON the list despite an odd title:
   Forrest Leighton - fractional CMO AT a named company (RevenueBase)
-  Trisha Fields - VP Client Strategy at an agency (Mighty & True)
+  Contact F - VP Client Strategy at an agency (Mighty & True)
   Katy Gilligan - promoted from SVP Marketing to COO at Brandpoint
   Elise Ring - moved from VP Marketing to VP Strategic Growth, still on the leadership team
   Laura Felthaus - VP Marketing scope EXPANDED to VP/GM Residential with P&L
 
 ## Not-a-US-dial (timezone flags written into the evidence field)
 Ayaan Mohamud (Sydney), Kaushal Bhatt (Bengaluru), Abhijit Mhetre (Pune),
-Joanne Wong (Singapore), Gily Netzer (Tel Aviv), Chris Sheen (London)
+Joanne Wong (Singapore), Contact Y (Tel Aviv), Contact H (London)
 
 # ===== 2026-08-17b: MOVER EMAIL REPAIR =====
 Shawn: "We'd definitely want the new email for their current role if we can get it."
@@ -324,19 +324,19 @@ email field simply absent). Do not stop there. Derive and then PROVE:
  4. Preserve every replaced address in ai__email_information. Nothing is lost.
 
 ## invalid-at-an-answering-domain is a real finding, not a dead end
- - Thomas Been: every pattern INVALID at domino.ai, which does answer verification. The company
-   rebranded Domino Data Lab -> Domino but kept the OLD mail domain. thomas.been@dominodatalab.com
+ - Contact T: every pattern INVALID at domino.ai, which does answer verification. The company
+   rebranded Domino Data Lab -> Domino but kept the OLD mail domain. contactT@dominodatalab.com
    is valid. ALIAS-DOMAIN RULE: accept a different domain only when ZoomInfo enrich_companies on
    it returns the SAME company id (dominodatalab.com -> id 358094550 == domino.ai). Then it is
    the same employer, not a different org, and the hard rule is satisfied in spirit.
- - Kristin Melville: every pattern INVALID at celigo.com, which also answers. Her address is
+ - Contact M: every pattern INVALID at celigo.com, which also answers. Her address is
    genuinely non-standard. Left alone and flagged - a guess there would be WRONG, not unproven.
 
 ## RESOLVED 2026-08-17c - all four prior-employer addresses are gone (see below)
-  Kristin Melville  kmelville@clari.com        -> should be @celigo.com   (all patterns invalid)
-  Mariana Cogan     mariana.cogan@people.ai    -> should be @hexagonmi.com (no sample, unknown)
-  Stacy Malyil      smalyil@healthwise.org     -> should be @aidoc.com     (ambiguous pattern)
-  Juliann Irwin     juliann.irwin@kasasa.com   -> should be @sandkindustrial.com (no reliable sample)
+  Contact M  contactM@clari.com        -> should be @celigo.com   (all patterns invalid)
+  Contact C     contactC@people.ai    -> should be @hexagonmi.com (no sample, unknown)
+  Contact S      contactS@healthwise.org     -> should be @aidoc.com     (ambiguous pattern)
+  Contact I     contactI@kasasa.com   -> should be @sandkindustrial.com (no reliable sample)
 I did NOT blank these - blanking is Shawn's call. They are safe to DIAL, not to email.
 
 ## WORKFLOW RACE - re-asserting inside the same PATCH IS NOT ENOUGH
@@ -372,15 +372,15 @@ email" whenever hs_additional_emails holds anything. Clear hs_additional_emails 
 then clear email in a SECOND PATCH. Two writes, in that order.
 
 ## LOOK IN hs_additional_emails BEFORE HUNTING - the answer is sometimes already in the CRM
-Stacy Malyil's current-employer address stacys@aidoc.com was sitting in hs_additional_emails
-the whole time while the primary Email field held a dead healthwise.org address. Mariana Cogan's
-mariana.cogan@hexagon.com likewise. ALWAYS sweep hs_additional_emails, email_2, email_other,
+Contact S's current-employer address contactS@aidoc.com was sitting in hs_additional_emails
+the whole time while the primary Email field held a dead healthwise.org address. Contact C's
+contactC@hexagon.com likewise. ALWAYS sweep hs_additional_emails, email_2, email_other,
 work_email and linkedin__email for an address on the current employer's domain before deriving
 anything. Cost: one batch read. Both were NeverBounce 'valid'.
 
 ## NICKNAME VARIANTS - try them before giving up
 celigo.com rejected kristin.melville, kmelville, kristinmelville, kristin, kris and melville as
-INVALID, then accepted kris.melville@celigo.com. She goes by Kris. Because the server answered
+INVALID, then accepted contactM@celigo.com. She goes by Kris. Because the server answered
 INVALID five times and VALID once it is discriminating properly, so that is a genuine positive
 and not a catch-all. When a domain answers verification, keep trying variants - the negatives
 are informative.
@@ -433,12 +433,12 @@ low-stakes version of this problem. The PHONE is the channel the reps actually u
 69 of 70 movers had a business/company number that did not match their new employer.
 31 were PROVEN to belong to a named FORMER employer by matching the number against that
 company's own record in HubSpot:
-  Thomas Been -> DataStax        Nancy Elsner -> TouchTunes    Chris Heggem -> Noname Security
+  Contact T -> DataStax        Contact N -> TouchTunes    Chris Heggem -> Noname Security
   Keith Pearce -> Alteryx        David Spitz -> Egnyte         Venu Nambiar -> Marlabs
-  Kelli Negro -> Billtrust       Tal Klein -> Relay Network    Taylor Mortti -> Virtuoso
+  Contact E -> Billtrust       Tal Klein -> Relay Network    Taylor Mortti -> Virtuoso
   Renette Youssef -> Velo3D      Eric Olson -> QuickBase       Micheline Nijmeh -> JFrog
-  Mariana Cogan -> People.ai     Melike Abacioglu -> Mixpanel  Matthew Gaudio -> Advizex
-  ...and 16 more. Several corroborate the filed previous__email exactly (dspitz@egnyte.com etc).
+  Contact C -> People.ai     Melike Abacioglu -> Mixpanel  Matthew Gaudio -> Advizex
+  ...and 16 more. Several corroborate the filed previous__email exactly (contactD@egnyte.com etc).
 
 ## The decisive argument, which covers the ones we could NOT name
 business_phone is by definition the CURRENT employer's business line. Every one of these values
@@ -453,7 +453,7 @@ company record exists to prove ownership. Do not wait for proof on each one.
   - mobilephone NEVER touched - a mobile follows the person
   - old number + whose it was recorded in ai__contact_evidence
 VERIFIED AFTER: all 70 movers now have business_phone matching their employer or empty. Zero
-mismatches. 2 contacts (Mariana Cogan, Melike Abacioglu) now have NO dialable number at all and
+mismatches. 2 contacts (Contact C, Melike Abacioglu) now have NO dialable number at all and
 will correctly fall off 5243 - both had only former-employer numbers.
 
 ## Is it wider than the movers? Checked, and mostly no.

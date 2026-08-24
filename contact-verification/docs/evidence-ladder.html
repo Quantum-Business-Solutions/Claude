@@ -294,14 +294,14 @@
 
     <div class="case">
       <div class="case-head">
-        <b>William "Bill" Burfeind</b>
+        <b>Contact B</b>
         <span>Chief Revenue Officer · Proven IT · Tinley Park, IL · contact 119401</span>
       </div>
       <div class="case-body">
         <div class="cmp">
           <span class="lbl">Email</span>
-          <span class="crm">bill.burfeind@provenit.com</span>
-          <span class="real">wburfeind@provenit.com</span>
+          <span class="crm">firstlast@provenit.com</span>
+          <span class="real">flast@provenit.com</span>
           <span class="note">The CRM guessed a <code>first.last</code> pattern. That guess is the entire reason the address hard-bounced — which the pipeline then read as evidence the <em>person</em> was gone. His correct address appears in every reply he has ever sent.</span>
         </div>
         <div class="cmp">
@@ -333,7 +333,7 @@
 
   <section>
     <h2>The second case: contamination flows downhill</h2>
-    <p>Burfeind showed that vendor data can be wrong. This one shows something worse — that a <em>guessed</em> field can overwrite a <em>correct</em> one, and then be mistaken for evidence.</p>
+    <p>Contact B showed that vendor data can be wrong. This one shows something worse — that a <em>guessed</em> field can overwrite a <em>correct</em> one, and then be mistaken for evidence.</p>
 
     <div class="case">
       <div class="case-head">
@@ -356,7 +356,7 @@
         <div class="cmp">
           <span class="lbl">Email</span>
           <span class="crm">flagged as wrong company</span>
-          <span class="real">mmacri@fraser-ais.com — correct</span>
+          <span class="real">contactMac@fraser-ais.com — correct</span>
           <span class="note">It matches Fraser's <code>flast</code> convention, used by 18+ colleagues. The address was right all along; the bounce is a mailbox problem, not a wrong address and not a departure.</span>
         </div>
         <div class="cmp">
@@ -423,7 +423,7 @@
 
           <rect class="d-good" x="150" y="190" width="325" height="94" rx="4"/>
           <text class="d-s" x="166" y="210">asserted — all three name fraser</text>
-          <text class="d-t" x="166" y="232">email · mmacri@fraser-ais.com</text>
+          <text class="d-t" x="166" y="232">email · contactMac@fraser-ais.com</text>
           <text class="d-t" x="166" y="251">title · &#8220;VP, Sales — Fraser Advanced&#8221;</text>
           <text class="d-t" x="166" y="270">city · Bala Cynwyd, PA</text>
         </svg>
@@ -577,7 +577,7 @@
         </thead>
         <tbody>
           <tr><td><code>dial_now</code></td><td>Number confirmed by a prior connect or first-party source</td><td><span class="pill p-ok">Auto</span></td></tr>
-          <tr><td><code>linkedin_first</code></td><td>Person confirmed in seat, but phone or email is closed — Burfeind's case</td><td><span class="pill p-ok">Auto</span></td></tr>
+          <tr><td><code>linkedin_first</code></td><td>Person confirmed in seat, but phone or email is closed — Contact B's case</td><td><span class="pill p-ok">Auto</span></td></tr>
           <tr><td><code>email_only</code></td><td>Address verified, no usable number on file</td><td><span class="pill p-ok">Auto</span></td></tr>
           <tr><td><code>needs_research</code></td><td>Unresolved after all five tiers</td><td><span class="pill p-warn">Auto, queued</span></td></tr>
           <tr><td><code>departed_confirmed</code></td><td>Left the company, per tier 1–3 only</td><td><span class="pill p-bad">Human</span></td></tr>
@@ -591,7 +591,7 @@
 
   <section>
     <h2>Pilot findings — provisional</h2>
-    <p>These are the pilot's tiers 2–5 results on list 3625, <strong>before</strong> stage 1 ran. Burfeind demonstrates that first-party evidence moves records between buckets, so treat every number here as an upper bound on the problem, not a measurement of it.</p>
+    <p>These are the pilot's tiers 2–5 results on list 3625, <strong>before</strong> stage 1 ran. Contact B demonstrates that first-party evidence moves records between buckets, so treat every number here as an upper bound on the problem, not a measurement of it.</p>
 
     <div class="tbl-scroll">
       <table>
@@ -600,7 +600,7 @@
           <tr><td>No known problem</td><td class="num">107</td><td class="num">58%</td><td>Absence of evidence, not evidence of health</td></tr>
           <tr><td>Something contradicts</td><td class="num">60</td><td class="num">33%</td><td>51 resolvable on LinkedIn</td></tr>
           <tr><td>NeverBounce vs ZoomInfo disagree</td><td class="num">43</td><td class="num">23%</td><td>Two paid sources, opposite answers</td></tr>
-          <tr><td>Hard bounce on record</td><td class="num">15</td><td class="num">8%</td><td>A departure <em>hint</em> — or a wrong-pattern guess, as with Burfeind</td></tr>
+          <tr><td>Hard bounce on record</td><td class="num">15</td><td class="num">8%</td><td>A departure <em>hint</em> — or a wrong-pattern guess, as with Contact B</td></tr>
           <tr><td>Email domain ≠ company domain</td><td class="num">12</td><td class="num">7%</td><td>Catches rebrands, aliases, and malformed fields</td></tr>
           <tr><td>No LinkedIn URL</td><td class="num">11</td><td class="num">6%</td><td>Needs tier 4</td></tr>
           <tr><td>No phone at all</td><td class="num">1</td><td class="num">1%</td><td>The only contact with no open channel</td></tr>
@@ -643,7 +643,7 @@
       </div>
       <div class="err">
         <b>Read an email bounce as a departed person</b>
-        <p>Burfeind's address bounced because the CRM had invented the wrong pattern, not because he left.</p>
+        <p>Contact B's address bounced because the CRM had invented the wrong pattern, not because he left.</p>
         <span class="rule">A channel failure is evidence about the channel. Only tiers 1–3 speak to employment.</span>
       </div>
       <div class="err">
@@ -806,7 +806,7 @@
     <p class="meta">Added after the 5243 pass, when 42 of 70 re-associated movers turned out to have either no email at all or a dead one at the employer they had left. ZoomInfo could not supply a single one of them — it returned <code>COMPANY_ONLY_MATCH</code>, or a full match whose email field was simply absent. A vendor miss is where this ladder starts, not where it ends.</p>
 
     <h3>Rung 1 — look in the record you already have</h3>
-    <p>Before deriving anything, sweep the other address fields on the contact: <code>hs_additional_emails</code>, <code>email_2</code>, <code>email_other</code>, <code>work_email</code>, <code>linkedin__email</code>. Two of the four hardest cases were solved here for the cost of one batch read. Stacy Malyil's <code>stacys@aidoc.com</code> had been sitting in <code>hs_additional_emails</code> the entire time while the primary Email field held a dead <code>healthwise.org</code> address. The CRM already knew.</p>
+    <p>Before deriving anything, sweep the other address fields on the contact: <code>hs_additional_emails</code>, <code>email_2</code>, <code>email_other</code>, <code>work_email</code>, <code>linkedin__email</code>. Two of the four hardest cases were solved here for the cost of one batch read. Contact S's <code>contactS@aidoc.com</code> had been sitting in <code>hs_additional_emails</code> the entire time while the primary Email field held a dead <code>healthwise.org</code> address. The CRM already knew.</p>
 
     <h3>Rung 2 — learn the company's format from a colleague you already trust</h3>
     <p>Search your own portal for a known-good address on the exact domain:</p>
@@ -827,8 +827,8 @@
     <h3>Rung 4 — read the negatives</h3>
     <p>An <code>invalid</code> from a domain that answers is a finding. Two cases, opposite conclusions:</p>
     <ul>
-      <li><strong>Thomas Been.</strong> Every pattern invalid at <code>domino.ai</code>. The company had rebranded from Domino Data Lab and kept the old mail domain — <code>thomas.been@dominodatalab.com</code> is valid.</li>
-      <li><strong>Kris Melville.</strong> Every pattern invalid at <code>celigo.com</code>, which answers. Five rejections and one acceptance later: she goes by <em>Kris</em>, not Kristin. When the server discriminates, keep trying nickname variants — the negatives are the map.</li>
+      <li><strong>Contact T.</strong> Every pattern invalid at <code>domino.ai</code>. The company had rebranded from Domino Data Lab and kept the old mail domain — <code>contactT@dominodatalab.com</code> is valid.</li>
+      <li><strong>Contact M.</strong> Every pattern invalid at <code>celigo.com</code>, which answers. Five rejections and one acceptance later: she goes by <em>Kris</em>, not Kristin. When the server discriminates, keep trying nickname variants — the negatives are the map.</li>
     </ul>
 
     <h3>The hard rule, and the only two ways around it</h3>

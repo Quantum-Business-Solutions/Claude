@@ -1,70 +1,88 @@
-import json,subprocess,os
-T=os.environ['TOKEN']; D="2026-08-17"
+#!/usr/bin/env python3
+"""movepipe.py <listId> <movers.json> - re-associate confirmed movers to their new employer,
+one HubSpot transaction per contact, with the qbs-list-verification conventions.
+
+movers.json = [{"id","newco",
+                "domain"(optional - verified company domain; find-or-create by it),
+                "dm"(optional bool - is the person a decision-maker at newco?),
+                "ls"(optional lead status override; default: dm->ConnectandSell Prospect else Not Decision Maker),
+                "title"(optional - current title -> ai__job_title),
+                "li_url"(optional - corrected LinkedIn URL -> BOTH url fields),
+                "ev"(evidence string; the mechanism, dates, sources)}]
+
+Per contact: find-or-create company (by domain if given, else by exact name), DELETE stale company
+associations, PUT the new one with BOTH associationTypeId 1 AND 279, reconcile the flag to `yes`,
+set `company`, set `ai__job_title` + `validated__linkedin_or_manually`, stamp evidence as
+`Verified - <date> - <ev> - Changed: RE-ASSOCIATED to <newco> ...` (must contain RE-ASSOCIATED so the
+Moved-Companies list picks it up), and set lead status. NEVER writes native `jobtitle`. The phone is
+left untouched so a personal/mobile number carries; the evidence flags "verify phone before dialing".
+A corrected LinkedIn URL is written to hs_linkedin_url AND (per-record) linkedin_profile_url__unique_value;
+a unique-value collision means a duplicate/wrong-linked contact -> logged, not forced.
+Env: TOKEN. DATE=YYYY-MM-DD optional. Appends to reassoc_<listId>_log.json; clears pending_movers_<listId>.json."""
+import json,subprocess,os,sys,re
+T=os.environ['TOKEN']; D=os.environ.get('DATE') or subprocess.run(['date','-u','+%Y-%m-%d'],capture_output=True,text=True).stdout.strip()
+lid=sys.argv[1]; M=json.load(open(sys.argv[2]))
 def call(m,url,body=None):
-    c=['curl','-s','-X',m,'-H','Authorization: Bearer '+T,'-H','Content-Type: application/json']
+    c=['curl','-s','--max-time','25','-X',m,'-H','Authorization: Bearer '+T,'-H','Content-Type: application/json']
     if body is not None:
-        open('_t.json','w').write(json.dumps(body)); c+=['-d','@_t.json']
+        open('_mp.json','w').write(json.dumps(body)); c+=['-d','@_mp.json']
     o=subprocess.run(c+[url],capture_output=True,text=True).stdout
     try: return json.loads(o) if o.strip() else {}
-    except: return {"raw":o}
-
-M=[
-{"id":"30945449318","n":"Stacie Immesberger","co":"Anaplan","dom":"anaplan.com","t":"Supply Chain Domain Advisory","em":None,"mkt":False,"src":"LinkedIn 08/2025 full-time + ZoomInfo FULL_MATCH (agree). Left Cloudleaf 12/2021. Domain anaplan.com verified by website lookup, ZI id 353647107 matches the id on her contact record. Domain/SME advisory seat, not a marketing budget holder"},
-{"id":"1295967","n":"Nancy Elsner","co":"ArtsQuest","dom":"artsquest.org","t":"Head of Marketing","em":None,"mkt":True,"src":"LinkedIn 04/2024 full-time; profile found by LinkedIn people search (none was on file). ZoomInfo still shows TouchTunes and is WRONG. Domain artsquest.org verified via ZoomInfo id 2851679"},
-{"id":"2096396","n":"Gily Netzer","co":"JFrog","dom":"jfrog.com","t":"SVP Marketing, EMEA","em":None,"mkt":True,"src":"LinkedIn 07/2024 (at JFrog since 05/2023). No Cymulate row anywhere in readable history. Based Tel Aviv, Israel - IST timezone. Domain jfrog.com verified via ZoomInfo id 346026911"},
-{"id":"360753","n":"Chris Sheen","co":"Celonis","dom":"celonis.com","t":"Director of Social","em":None,"mkt":False,"src":"LinkedIn 02/2022 - left the Sideways 6 CMO seat four years ago. Director of Social is a function lead, not a budget holder. London UK. Domain celonis.com verified via ZoomInfo id 372193030"},
-{"id":"1401589","n":"Corey McCarthy","co":"Devicie","dom":"devicie.com","t":"Chief Marketing Officer","em":None,"mkt":True,"src":"LinkedIn 08/2026 full-time (UniFocus ended 01/2025, then Axonify CMO to 01/2026). Domain devicie.com verified via ZoomInfo id 542701610"},
-]
-
-log=[]
+    except Exception: return {"raw":o[:200]}
+logf='reassoc_'+lid+'_log.json'
+log=json.load(open(logf)) if os.path.exists(logf) else []
+done={x['id'] for x in log if x.get('ok')}
 for m in M:
-    cid=m['id']
-    # HARD RULE: email domain must match the LinkedIn-confirmed company
-    if m['em'] and m['em'].split('@')[-1].lower()!=m['dom']:
-        print("REJECT email domain mismatch",m['em']); m['em']=None
-    # 1. company by domain
-    r=call('POST','https://api.hubapi.com/crm/v3/objects/companies/search',
-      {"filterGroups":[{"filters":[{"propertyName":"domain","operator":"EQ","value":m['dom']}]}],
-       "properties":["name","domain"],"limit":1})
-    res=r.get('results',[])
-    if res:
-        coid=res[0]['id']; created=False
+    cid=str(m['id'])
+    if cid in done: continue
+    newco=m['newco']; dom=m.get('domain'); dm=m.get('dm')
+    # 1. find-or-create company
+    coid=None; created=False
+    if dom:
+        r=call('POST','https://api.hubapi.com/crm/v3/objects/companies/search',
+          {"filterGroups":[{"filters":[{"propertyName":"domain","operator":"EQ","value":dom}]}],"properties":["name"],"limit":1})
+        res=r.get('results',[])
+        if res: coid=res[0]['id']
+        else:
+            c=call('POST','https://api.hubapi.com/crm/v3/objects/companies',{"properties":{"name":newco,"domain":dom}}); coid=c.get('id'); created=True
     else:
-        c=call('POST','https://api.hubapi.com/crm/v3/objects/companies',
-          {"properties":{"name":m['co'],"domain":m['dom']}})
-        coid=c.get('id'); created=True
+        r=call('POST','https://api.hubapi.com/crm/v3/objects/companies/search',
+          {"filterGroups":[{"filters":[{"propertyName":"name","operator":"EQ","value":newco}]}],"properties":["name"],"limit":1})
+        res=r.get('results',[])
+        if res: coid=res[0]['id']
+        else:
+            c=call('POST','https://api.hubapi.com/crm/v3/objects/companies',{"properties":{"name":newco}}); coid=c.get('id'); created=True
     if not coid:
-        print("FAIL company",m['n'],r,c); continue
-    # 2. current contact props + existing associations
-    cur=call('GET',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}?properties=email,company,ai__email_information")
-    oldemail=(cur.get('properties') or {}).get('email')
+        log.append({"id":cid,"newco":newco,"ok":False,"err":"no company id"}); json.dump(log,open(logf,'w'),indent=1); print("FAIL company",cid); continue
+    # 2. swap associations
     assoc=call('GET',f"https://api.hubapi.com/crm/v4/objects/contacts/{cid}/associations/companies")
     old=[a['toObjectId'] for a in assoc.get('results',[]) if str(a['toObjectId'])!=str(coid)]
-    for o in old:
-        call('DELETE',f"https://api.hubapi.com/crm/v4/objects/contacts/{cid}/associations/companies/{o}")
+    for o in old: call('DELETE',f"https://api.hubapi.com/crm/v4/objects/contacts/{cid}/associations/companies/{o}")
     call('PUT',f"https://api.hubapi.com/crm/v4/objects/contacts/{cid}/associations/companies/{coid}",
-      [{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":1},
-       {"associationCategory":"HUBSPOT_DEFINED","associationTypeId":279}])
-    # 3. reconcile: re-associated to new employer -> flag is 'yes' THERE
-    p={"company":m['co'],"jobtitle":m['t'],
-       "ai__li_still_at_company":"yes","ai__contact_verified_date":D,"ai__sources_confirming":2,
-       "hs_lead_status":"ConnectandSell Prospect" if m['mkt'] else "Not Decision Maker",
-       "ai__contact_evidence":(("" if m['mkt'] else "[NOT-MKT] ")+f"RE-ASSOCIATED {D}: moved to {m['co']} ({m['dom']}) as {m['t']}. Evidence: {m['src']}. "
-         f"Flag reconciled to 'yes' because the contact is now associated to {m['co']}, where they DO work. "
-         + ("Marketing leader - kept on the calling list." if m['mkt'] else "Not a marketing decision maker - kept off the calling list."))[:990]}
-    if m['em']:
-        p['email']=m['em']
-        if oldemail and oldemail!=m['em']:
-            prev=(cur.get('properties') or {}).get('ai__email_information') or ''
-            p['ai__email_information']=(prev+f" | prior email {oldemail} (replaced {D})").strip()[:990]
-    u=call('PATCH',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}",{"properties":p})
-    ok='id' in u
-    print(f"{'OK ' if ok else 'ERR'} {m['n']:22s} co={coid}{' NEW' if created else ''} unassoc={len(old)} email={m['em'] or '-'}")
-    log.append({"id":cid,"name":m['n'],"newco":m['co'],"companyId":coid,"created":created,
-                "email":m['em'],"old_email":oldemail,"mkt":m['mkt'],"date":D})
-
-f='reassoc_log.json'
-prev=json.load(open(f)) if os.path.exists(f) else []
-json.dump(prev+log,open(f,'w'),indent=1)
-json.dump([],open('pending_movers.json','w'))
-print("\nreassoc_log total",len(prev)+len(log))
+      [{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":1},{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":279}])
+    # 3. reconcile contact
+    ls=m.get('ls') or ("ConnectandSell Prospect" if dm else "Not Decision Maker")
+    domnote=dom if dom else "UNRESOLVED (verify/enrich)"
+    ev=(f"Verified - {D} - {m.get('ev','')} - Changed: RE-ASSOCIATED to {newco} ({domnote}); flag->yes; "
+        f"lead status='{ls}'; phone carried (verify before dialing); "
+        f"{'ai__job_title set; ' if m.get('title') else ''}{'LinkedIn URL corrected; ' if m.get('li_url') else ''}"
+        f"{'decision-maker' if dm else 'not a decision-maker'} at new company.")[:990]
+    p={"company":newco,"ai__li_still_at_company":"yes","ai__contact_verified_date":D,"ai__sources_confirming":2,
+       "ai__contact_evidence":ev,"hs_lead_status":ls,
+       "validated__linkedin_or_manually":("Yes" if dm else "Needs Updated")}
+    if m.get('title'): p["ai__job_title"]=m['title']
+    if m.get('li_url'): p["hs_linkedin_url"]=m['li_url']
+    u=call('PATCH',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}",{"properties":p}); ok='id' in u
+    ucol=False
+    if ok and m.get('li_url'):
+        ur=call('PATCH',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}",{"properties":{"linkedin_profile_url__unique_value":m['li_url']}})
+        ucol=not ur.get('id')
+    log.append({"id":cid,"newco":newco,"companyId":coid,"created":created,"dm":dm,"title":m.get('title'),
+                "unassoc":len(old),"lead_status":ls,"url_unique_collision":ucol,"ok":ok,"err":None if ok else str(u)[:150]})
+    print(f"{'OK ' if ok else 'ERR'} {cid} -> {newco[:26]:26} co={coid}{' NEW' if created else ''} ls={ls}"+(" UNIQUE-COLLISION(dup?)" if ucol else ""))
+    json.dump(log,open(logf,'w'),indent=1)
+okc=sum(1 for x in log if x.get('ok'))
+print(f"\nreassoc_{lid}_log: {len(log)} | ok {okc} | companies created {sum(1 for x in log if x.get('created'))}"
+      f" | unique-URL collisions (dedupe review) {sum(1 for x in log if x.get('url_unique_collision'))}")
+pf='pending_movers_'+lid+'.json'
+if os.path.exists(pf): json.dump([],open(pf,'w'))
