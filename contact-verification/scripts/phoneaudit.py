@@ -1,4 +1,4 @@
-import json,subprocess,os,re
+import json,subprocess,os,sys,re
 T=os.environ['TOKEN']
 def call(m,url,body=None):
     c=['curl','-s','-X',m,'-H','Authorization: Bearer '+T,'-H','Content-Type: application/json']
@@ -13,13 +13,17 @@ def dig(s):
     if len(d)==11 and d.startswith("1"): d=d[1:]
     return d
 
-L=json.load(open('reassoc_log.json'))
+lid=sys.argv[1] if len(sys.argv)>1 else os.environ.get('LIST_ID')
+if not lid: sys.stderr.write('usage: %s <listId>\n'%__file__); sys.exit(2)
+LOGF='reassoc_'+str(lid)+'_log.json'
+if not os.path.exists(LOGF): sys.stderr.write('no '+LOGF+' - run movepipe.py first\n'); sys.exit(2)
+L=json.load(open(LOGF))
 rows={}
 for r in L:
     cid=str(r.get('id') or r.get('cid'))
     rows[cid]={"cid":cid,"newco":r.get('newco'),"name":r.get('name'),
                "coid_logged":r.get('companyId') or r.get('company_id'),
-               "unassociated":r.get('unassociated') or []}
+               "unassociated":r.get('unassoc') or []}
 ids=list(rows)
 PH=["phone","mobilephone","business_phone","hs_calculated_phone_number","company_phone"]
 for i in range(0,len(ids),100):

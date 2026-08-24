@@ -1,5 +1,6 @@
 import json,subprocess,os,re
-T=os.environ['TOKEN']; D="2026-08-17"
+T=os.environ['TOKEN']
+D=os.environ.get('DATE') or subprocess.run(['date','-u','+%Y-%m-%d'],capture_output=True,text=True).stdout.strip()
 def call(m,url,body=None):
     c=['curl','-s','-X',m,'-H','Authorization: Bearer '+T,'-H','Content-Type: application/json']
     if body is not None:

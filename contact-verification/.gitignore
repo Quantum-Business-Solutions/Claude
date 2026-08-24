@@ -13,3 +13,6 @@ scripts/*.log
 scripts/*.csv
 __pycache__/
 *.pyc
+scripts/list_anatomy_*.json
+scripts/*.tmp
+scripts/dedupe_review_*.json

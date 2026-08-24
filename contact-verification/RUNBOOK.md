@@ -56,6 +56,11 @@ filters on a prose property you write.
 
 ```bash
 python3 scripts/queue.py <LIST> 12        # next 12 unverified + LinkedIn identifier
+# STALE_DAYS=90 (env) re-queues verdicts older than that, so a refresh pass re-reads aged records.
+# The header line also reports `unreadable-still-on-list` and `in intake snapshot but no longer
+# members` - the second number is the population your own lead-status writes ejected, which the
+# live-membership count can no longer see. Any non-2xx from HubSpot exits 2 rather than
+# reporting an empty list as a clean one.
 ```
 
 For each: read the profile via Unipile (`linkedin_sections=experience_preview`), then judge from the
@@ -101,6 +106,10 @@ lead-status literals; never native `jobtitle`; evidence stamped
 #    attaches the contact to the wrong employer and the evidence still reads plausibly.
 # b. build movers.json: {id, newco, domain?, dm, title, ev}
 python3 scripts/movepipe.py <LIST> movers.json
+# `dm` is now REQUIRED - omitting it used to default to "Not Decision Maker" and silently eject a
+# verified executive. Ambiguous destinations (>1 company sharing the name) are queued to
+# dedupe_review_<LIST>.json instead of being guessed. Only completed movers are removed from
+# pending_movers_<LIST>.json; the rest stay queued.
 ```
 
 `dm` (is this person a decision-maker at the NEW company?) drives lead status:

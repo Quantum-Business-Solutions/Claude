@@ -43,7 +43,13 @@ when you were asked for a clean list. Run this sequence to completion:
 2. Phase 0 preflight + intake snapshot.
 3. Loop: `queue.py <listId> 12` -> read -> judge -> `writeverdicts.py`. Repeat until
    `unverified` reads 0 **on two consecutive checks several minutes apart** (dynamic lists
-   re-admit members while you work — one zero reading is not done).
+   re-admit members while you work — one zero reading is not done). **`unverified 0` is not by
+   itself proof the intake was covered**: this process writes `hs_lead_status`, which is list-entry
+   criteria, so contacts our own writes eject stop being members and are never counted as unverified
+   again. queue.py now also prints `in intake snapshot but no longer members: N` — reconcile that N
+   against your lead-status writes before declaring the pass complete (on 3675 it was 112).
+   queue.py re-queues any verdict older than `STALE_DAYS` (default 90), so a refresh pass actually
+   re-reads aged records instead of reporting an instant zero.
 4. Mover pipeline whenever ~10 movers accumulate, ZoomInfo-verifying each destination domain.
 5. Refresh the two output lists; queue ICP enrichment for any company created.
 6. Report once, at the end, in the honest format below.
@@ -58,6 +64,11 @@ or a Human-queue judgment call. Everything else, decide and keep moving. When in
 single contact, mark it `unreadable` + queue it — never stall the whole run on one record.
 
 ## Phase 0 - Preflight (no writes; abort on any failure)
+`listanatomy.py` now **exits 3** on a non-contact list or a non-DYNAMIC list, and prints a
+second warning class: gates on properties **this process writes** (`hs_lead_status`, `phone`,
+`business_phone`, …). That second case means the list changes membership underneath the run —
+measure coverage against the intake snapshot, never against live membership.
+
 1. Self-test every query type against a case whose answer you already know before trusting a null
    result (a digits-only phone search silently matches nothing — see FIELD-NOTES). If the self-test
    fails, STOP.
@@ -196,12 +207,22 @@ ZoomInfo (`mcp__ZoomInfo__enrich_companies` / `enrich_contacts`) is the second s
   and keep enrichment inside the per-run ceiling.
 
 ## Guardrails - halt and report, do not push through
-- Any 401/403 -> hard stop (an auth failure otherwise reads as "no data" and stamps live records).
-- `no` share >~60% or <~5% over the first 50 verdicts (baseline ~36%); unreadable >~20% (baseline ~8%);
-  5 consecutive identity failures (an account/ban problem) -> stop.
+Four of these are now **enforced in code** (the model cannot hold running totals across context
+boundaries, so prose guardrails in an autonomous run are decoration):
+- Any non-2xx from HubSpot -> `sys.exit(2)` in queue.py / writeverdicts.py / movepipe.py. **ENFORCED.**
+  An auth failure otherwise reads as "no data": zero members, zero unverified — which satisfies the
+  stop condition exactly, so one expired token could report a dirty list as clean.
+- A membership walk returning zero members -> refuse to run or to write the intake snapshot. **ENFORCED.**
+- `no` share >60% or <5%, or unreadable >20%, computed over the accumulated verdict log once it
+  passes 50 -> `sys.exit(3)`. **ENFORCED** in writeverdicts.py.
+- Read-back that does not match the requested verdict -> printed per id, `sys.exit(1)`, and the
+  unconfirmed ids are **not** written to the verdict log. **ENFORCED.**
+- 5 consecutive identity failures (an account/ban problem) -> stop. *Judgment; not enforced.*
 - Live membership drifts >10% mid-run -> re-snapshot and re-confirm.
 - Per-run ceilings (halt if exceeded): companies created, associations deleted, emails cleared,
-  phones cleared, personas changed (default 0), NeverBounce/ZoomInfo credits.
+  phones cleared, personas changed (default 0), NeverBounce/ZoomInfo credits. *Not enforced in code —
+  the mover log records `unassoc_ids` and `prev_company` per contact so the damage is at least
+  reconstructible; a ceiling check is still owed.*
 
 ## Never touch
 `mobilephone`; `jobtitle` (3 competing writers, ~38% oscillation - write the AI-owned `ai__job_title` instead, truth also in evidence);
