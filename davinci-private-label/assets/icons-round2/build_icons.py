@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+"""Draw the icons Sarah asked for, in the system the site already uses.
+
+The existing 36 icons are 24x24 stroke drawings: stroke #012638, width 1.6,
+round caps and joins, no fill. Anything new has to match that exactly or it
+reads as borrowed from somewhere else, which is the one thing a mixed icon set
+always looks like. Nothing here is filled, scaled differently, or recoloured.
+
+usage: build_icons.py  ->  writes one .svg per icon plus proof.html
+"""
+import os
+
+STROKE, WIDTH = "#012638", "1.6"
+
+# name, what Sarah asked for, path data (list of <path>/<circle> fragments)
+ICONS = [
+("muscle", "Muscle — bicep", [
+  '<path d="M15.5 2.8v4.4"/>',
+  '<path d="M15.5 7.2c0 1.9-1.4 2.9-3.1 2.9H8.7A4.7 4.7 0 0 0 4 14.8v3.4"/>',
+  '<path d="M4 18.2c0 1.7 1.4 3 3.1 3h6.4a6.5 6.5 0 0 0 6.5-6.5c0-3.1-2-5.6-4.5-6.4"/>',
+  '<path d="M13.4 2.8h2.1"/>',
+]),
+("hormonal-balance", "Hormonal Balance — balance beam, female and male", [
+  '<path d="M12 20V7"/>', '<path d="M8.5 20h7"/>', '<path d="M4.5 7h15"/>',
+  '<path d="M4.5 7v2.2"/>',
+  '<circle cx="4.5" cy="11.5" r="2.3"/>',
+  '<path d="M4.5 13.8v2.6"/>', '<path d="M3.1 15.1h2.8"/>',
+  '<path d="M19.5 7v1.9"/>',
+  '<circle cx="18.5" cy="12.1" r="2.3"/>',
+  '<path d="m20.2 10.4 2.2-2.2"/>', '<path d="M19.9 8.1h2.5v2.5"/>',
+]),
+("probiotic", "Probiotic — live cultures, no leaf", [
+  '<circle cx="8.8" cy="9.2" r="4"/>',
+  '<circle cx="16" cy="13.9" r="3.3"/>',
+  '<circle cx="8.1" cy="17.4" r="2.5"/>',
+  '<circle cx="8.8" cy="9.2" r="1"/>', '<circle cx="16" cy="13.9" r="0.9"/>',
+]),
+("weight-management", "Weight Management — classic balance scale", [
+  '<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>',
+  '<path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>',
+  '<path d="M7 21h10"/>', '<path d="M12 3v18"/>',
+  '<path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>',
+]),
+("design-your-brand", "Design Your Brand — paintbrush", [
+  '<path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/>',
+  '<path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02Z"/>',
+]),
+("bone-health", "Bone Health — leg bone, upright", [
+  '<g transform="rotate(-45 12 12)"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></g>',
+]),
+("bone-health-alt", "Bone Health — alternate, diagonal bone (deck version)", [
+  '<path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/>',
+]),
+("prenatal-care", "Prenatal Care — profile of a pregnant woman", [
+  '<circle cx="9.3" cy="4.3" r="2.4"/>',
+  '<path d="M9.3 6.7c-1.9 0-2.9 1.3-3.1 3.1L5.7 16"/>',
+  '<path d="M9.6 7.6c3.2.4 5.2 2.5 5.2 5.1 0 2.7-2.3 4.7-5.4 4.7H7.9"/>',
+  '<path d="M5.7 16h3.7"/>',
+  '<path d="M7 18.4v3.1"/>', '<path d="M10.1 18.4v3.1"/>',
+]),
+("white-glove", "White Glove — person, checkmark replaced with a star", [
+  '<circle cx="8.5" cy="6.5" r="3.2"/>',
+  '<path d="M2.6 21v-1.4a5.9 5.9 0 0 1 5.9-5.9h1.1"/>',
+  '<path d="m17.2 12.6 1.44 2.92 3.22.47-2.33 2.27.55 3.21-2.88-1.52-2.88 1.52.55-3.21-2.33-2.27 3.22-.47Z"/>',
+]),
+("us-made", "US Manufacturing — outline of the US", [
+  '<path d="M1.6 8.1 3.3 7.7 6.2 7.5 9.4 7.3 11.2 8.6 12.9 7.6 14.6 8.4 16.4 7.2 19.4 7 21.1 7.9 22.4 9.3 21 10.4 20.2 12.2 19.4 13.6 19.6 15.4 18.9 18.4 17.6 15 15.2 14.9 13.2 15.2 11.9 14.8 10.6 17.4 9.1 14.6 6.1 13.5 3.4 12 2.2 10Z"/>',
+]),
+]
+
+# "Product selection and design: update to something different" — no direction
+# given, so three options rather than one guess.
+OPTIONS = [
+("product-selection-a", "Option A — swatches", [
+  '<rect x="3" y="3" width="8" height="8" rx="1.6"/>',
+  '<rect x="13" y="3" width="8" height="8" rx="1.6"/>',
+  '<rect x="3" y="13" width="8" height="8" rx="1.6"/>',
+  '<path d="m14 17.5 2.2 2.2 4.3-4.3"/>',
+]),
+("product-selection-b", "Option B — bottle and pencil", [
+  '<path d="M9.5 2.5h5"/>', '<path d="M10.5 2.5v3.2L8.2 8a3 3 0 0 0-.9 2.1V19a2.5 2.5 0 0 0 2.5 2.5h1.7"/>',
+  '<path d="M13.5 2.5v3.2l1.2 1.2"/>',
+  '<path d="M20.6 10.9a1.9 1.9 0 0 0-2.7-2.7l-4.6 4.6-.9 3.6 3.6-.9Z"/>',
+]),
+("product-selection-c", "Option C — catalogue with a check", [
+  '<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H19v17H6.5A2.5 2.5 0 0 0 4 21.5Z"/>',
+  '<path d="M4 19.5h15"/>',
+  '<path d="m8.5 9.5 2.2 2.2 4.3-4.3"/>',
+]),
+]
+
+def svg(paths, px=24):
+    body = "".join(paths)
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" '
+            f'fill="none" stroke="{STROKE}" stroke-width="{WIDTH}" '
+            f'stroke-linecap="round" stroke-linejoin="round" '
+            f'style="width:{px}px;height:{px}px;">{body}</svg>')
+
+def main():
+    rows = []
+    for name, label, paths in ICONS + OPTIONS:
+        open(f"{name}.svg", "w").write(svg(paths))
+        rows.append((name, label, svg(paths, 28)))
+    print(f"wrote {len(rows)} svg files")
+
+    cells = "".join(
+        f'<figure><div class="tile">{s}</div>'
+        f'<figcaption><b>{n}</b><span>{l}</span></figcaption></figure>'
+        for n, l, s in rows)
+    open("proof.html", "w").write(f"""<!doctype html><meta charset="utf-8">
+<title>Praxera icon round 2</title>
+<style>
+ body{{font:15px/1.5 -apple-system,Segoe UI,sans-serif;color:#012638;background:#fff;
+      margin:0;padding:40px}}
+ h1{{font-size:22px;margin:0 0 4px}}
+ p.sub{{color:#5b6d73;margin:0 0 30px}}
+ .grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:26px}}
+ figure{{margin:0}}
+ /* the real card treatment: 28px icon inside a 56px #c9dbe2 tile, 1:2 like V1 */
+ .tile{{width:56px;height:56px;border-radius:10px;background:#c9dbe2;
+        display:flex;align-items:center;justify-content:center;margin-bottom:10px}}
+ figcaption b{{display:block;font-size:13px;font-weight:600}}
+ figcaption span{{display:block;font-size:12.5px;color:#5b6d73;margin-top:2px}}
+ h2{{font-size:15px;margin:34px 0 14px;padding-top:20px;border-top:1px solid #e3e6e5;
+     letter-spacing:.04em;text-transform:uppercase;color:#5b6d73}}
+</style>
+<h1>Praxera — icon round 2</h1>
+<p class="sub">Drawn to the existing system: 24&times;24, stroke #012638 at 1.6,
+round caps. Shown at 28px in the 56px tile the cards actually use.</p>
+<div class="grid">{cells}</div>
+""")
+    print("wrote proof.html")
+
+main()
