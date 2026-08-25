@@ -1,0 +1,694 @@
+{
+ "_note": "Derived live from the portal, not from CONVERSION_INDEX.md -- that file lists both V1 and V3 ids, and matching it with a bare id regex pulls in the -v3 duplicate records. Regenerate with tools/page_index.py.",
+ "production": [
+  {
+   "id": "219487767066",
+   "slug": "-temporary-slug-blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026-26d2f052-144d-4083-9145-64630a22f746",
+   "name": "Private Label - Blog - How to Make Money"
+  },
+  {
+   "id": "219472435309",
+   "slug": "blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
+   "name": "Private Label - Blog - Vitamin Manufacturing 2026"
+  },
+  {
+   "id": "216189432992",
+   "slug": "en/pl-demo-aging",
+   "name": "Private Label - Page - Aging Supplements"
+  },
+  {
+   "id": "216194811718",
+   "slug": "en/pl-demo-book-consultation",
+   "name": "Private Label - Page - Book a Consultation"
+  },
+  {
+   "id": "216189433156",
+   "slug": "en/pl-demo-customer-art",
+   "name": "Private Label - Page - Customer-Supplied Art Guidelines"
+  },
+  {
+   "id": "216194811561",
+   "slug": "en/pl-demo-definitive-guide",
+   "name": "Private Label - Page - Definitive Guide"
+  },
+  {
+   "id": "216179449206",
+   "slug": "en/pl-demo-design-services",
+   "name": "Private Label - Standard Page - Design Services Hub"
+  },
+  {
+   "id": "216189433139",
+   "slug": "en/pl-demo-design-team",
+   "name": "Private Label - Page - Working With Our Design Team"
+  },
+  {
+   "id": "216186378936",
+   "slug": "en/pl-demo-dropshipping",
+   "name": "Private Label - Standard Page - Dropshipping for Private Label"
+  },
+  {
+   "id": "216179449410",
+   "slug": "en/pl-demo-fitness",
+   "name": "Private Label - Page - Fitness Supplements"
+  },
+  {
+   "id": "216194811571",
+   "slug": "en/pl-demo-get-started",
+   "name": "Private Label - Page - Get Started"
+  },
+  {
+   "id": "216189432990",
+   "slug": "en/pl-demo-herbal",
+   "name": "Private Label - Page - Herbal Supplements"
+  },
+  {
+   "id": "216176671879",
+   "slug": "en/pl-demo-how-to-sell-supplements",
+   "name": "Private Label - Standard Page - How to Sell Private Label Supplements"
+  },
+  {
+   "id": "216194811563",
+   "slug": "en/pl-demo-onboarding-guide",
+   "name": "Private Label - Page - Onboarding Guide"
+  },
+  {
+   "id": "216189433355",
+   "slug": "en/pl-demo-pediatric",
+   "name": "Private Label - Page - Pediatric Supplements"
+  },
+  {
+   "id": "216189433405",
+   "slug": "en/pl-demo-pillar",
+   "name": "Private Label - Page - Home - Private Label Supplements"
+  },
+  {
+   "id": "219002204572",
+   "slug": "en/pl-demo-pillar-v1ref",
+   "name": "Private Label - Page - Home - Private Label Supplements \u2014 V1 reference render"
+  },
+  {
+   "id": "216194811650",
+   "slug": "en/pl-demo-privacy",
+   "name": "Private Label - Page - Privacy Policy"
+  },
+  {
+   "id": "216189433440",
+   "slug": "en/pl-demo-resources",
+   "name": "Private Label - Page - Resources Hub"
+  },
+  {
+   "id": "216192983665",
+   "slug": "en/pl-demo-ty-consultation",
+   "name": "Private Label - Page - TY - Consultation Booked"
+  },
+  {
+   "id": "216194811652",
+   "slug": "en/pl-demo-ty-guide",
+   "name": "Private Label - Page - TY - Guide Download"
+  },
+  {
+   "id": "216194811659",
+   "slug": "en/pl-demo-ty-onboarding",
+   "name": "Private Label - Page - TY - Onboarding"
+  },
+  {
+   "id": "216194811755",
+   "slug": "en/pl-demo-ty-quote",
+   "name": "Private Label - Page - TY - Quote Request Submitted"
+  },
+  {
+   "id": "216189433092",
+   "slug": "en/pl-demo-womens-health",
+   "name": "Private Label - Page - Women's Health Supplements"
+  },
+  {
+   "id": "216189433476",
+   "slug": "pl-demo-about",
+   "name": "Private Label - Page - About Us"
+  },
+  {
+   "id": "216192983654",
+   "slug": "pl-demo-ads-contract-mfg",
+   "name": "Private Label - Ads LP - Supplement Contract Manufacturer"
+  },
+  {
+   "id": "216192983663",
+   "slug": "pl-demo-ads-custom",
+   "name": "Private Label - Ads LP - Custom Formulation Supplements"
+  },
+  {
+   "id": "216192983652",
+   "slug": "pl-demo-ads-mfg-usa",
+   "name": "Private Label - Ads LP - Supplement Manufacturer USA"
+  },
+  {
+   "id": "216194811734",
+   "slug": "pl-demo-ads-pl-mfg",
+   "name": "Private Label - Ads LP - Private Label Supplement Manufacturer"
+  },
+  {
+   "id": "216186379314",
+   "slug": "pl-demo-capsules",
+   "name": "Private Label - Page - Capsules"
+  },
+  {
+   "id": "219000704684",
+   "slug": "pl-demo-capsules-v1ref",
+   "name": "Private Label - Page - Capsules \u2014 V1 reference render"
+  },
+  {
+   "id": "216194811714",
+   "slug": "pl-demo-case-studies",
+   "name": "Private Label - Page - Case Studies"
+  },
+  {
+   "id": "216192983597",
+   "slug": "pl-demo-certifications",
+   "name": "Private Label - Page - Certifications"
+  },
+  {
+   "id": "216188835864",
+   "slug": "pl-demo-chewables",
+   "name": "Private Label - Page - Chewables"
+  },
+  {
+   "id": "216189433251",
+   "slug": "pl-demo-cognitive",
+   "name": "Private Label - Page - Cognitive Support Supplements"
+  },
+  {
+   "id": "216192983650",
+   "slug": "pl-demo-contact",
+   "name": "Private Label - Page - Contact"
+  },
+  {
+   "id": "216189433487",
+   "slug": "pl-demo-custom-formulation",
+   "name": "Private Label - Page - Custom Formulation"
+  },
+  {
+   "id": "216189433375",
+   "slug": "pl-demo-detox",
+   "name": "Private Label - Page - Detox & Liver Support Supplements"
+  },
+  {
+   "id": "216189433390",
+   "slug": "pl-demo-energy",
+   "name": "Private Label - Page - Energy & Vitality Supplements"
+  },
+  {
+   "id": "216194811691",
+   "slug": "pl-demo-facility",
+   "name": "Private Label - Page - Our Facility"
+  },
+  {
+   "id": "216192983618",
+   "slug": "pl-demo-faq",
+   "name": "Private Label - Page - FAQ"
+  },
+  {
+   "id": "216192983627",
+   "slug": "pl-demo-guides",
+   "name": "Private Label - Page - Guides Library"
+  },
+  {
+   "id": "216192983401",
+   "slug": "pl-demo-gummies",
+   "name": "Private Label - Page - Gummies"
+  },
+  {
+   "id": "219002204574",
+   "slug": "pl-demo-gummies-v1ref",
+   "name": "Private Label - Page - Gummies \u2014 V1 reference render"
+  },
+  {
+   "id": "216189433373",
+   "slug": "pl-demo-heart-health",
+   "name": "Private Label - Page - Heart Health Supplements"
+  },
+  {
+   "id": "216189433236",
+   "slug": "pl-demo-immune-support",
+   "name": "Private Label - Page - Immune Support Supplements"
+  },
+  {
+   "id": "216192983616",
+   "slug": "pl-demo-ingredient-sourcing",
+   "name": "Private Label - Page - Ingredient Sourcing"
+  },
+  {
+   "id": "216189433459",
+   "slug": "pl-demo-ingredients-testing",
+   "name": "Private Label - Page - Ingredients & Testing Guide"
+  },
+  {
+   "id": "216189433371",
+   "slug": "pl-demo-joint-support",
+   "name": "Private Label - Page - Joint Support Supplements"
+  },
+  {
+   "id": "216188835866",
+   "slug": "pl-demo-liquids",
+   "name": "Private Label - Page - Liquids"
+  },
+  {
+   "id": "219000704690",
+   "slug": "pl-demo-liquids-v1ref",
+   "name": "Private Label - Page - Liquids \u2014 V1 reference render"
+  },
+  {
+   "id": "216188836114",
+   "slug": "pl-demo-mens-health",
+   "name": "Private Label - Page - Men's Health Supplements"
+  },
+  {
+   "id": "216189433270",
+   "slug": "pl-demo-multivitamin",
+   "name": "Private Label - Page - Multivitamin Supplements"
+  },
+  {
+   "id": "216186379326",
+   "slug": "pl-demo-our-process",
+   "name": "Private Label - Page - Our Process"
+  },
+  {
+   "id": "216189433489",
+   "slug": "pl-demo-packaging",
+   "name": "Private Label - Page - Packaging"
+  },
+  {
+   "id": "216192983382",
+   "slug": "pl-demo-powders",
+   "name": "Private Label - Page - Powders"
+  },
+  {
+   "id": "219002204576",
+   "slug": "pl-demo-powders-v1ref",
+   "name": "Private Label - Page - Powders \u2014 V1 reference render"
+  },
+  {
+   "id": "216189433267",
+   "slug": "pl-demo-prenatal",
+   "name": "Private Label - Page - Prenatal Supplements"
+  },
+  {
+   "id": "216189433094",
+   "slug": "pl-demo-probiotics",
+   "name": "Private Label - Page - Probiotic Supplements"
+  },
+  {
+   "id": "216186379328",
+   "slug": "pl-demo-quality-standards",
+   "name": "Private Label - Page - Quality Standards"
+  },
+  {
+   "id": "216194811716",
+   "slug": "pl-demo-request-quote",
+   "name": "Private Label - Page - Request a Quote"
+  },
+  {
+   "id": "216194811689",
+   "slug": "pl-demo-sell-sheets",
+   "name": "Private Label - Page - Sell Sheets"
+  },
+  {
+   "id": "216189433007",
+   "slug": "pl-demo-sleep",
+   "name": "Private Label - Page - Sleep Supplements"
+  },
+  {
+   "id": "216192983363",
+   "slug": "pl-demo-soft-gels",
+   "name": "Private Label - Page - Soft Gels"
+  },
+  {
+   "id": "219000704688",
+   "slug": "pl-demo-soft-gels-v1ref",
+   "name": "Private Label - Page - Soft Gels \u2014 V1 reference render"
+  },
+  {
+   "id": "216192983343",
+   "slug": "pl-demo-tablets",
+   "name": "Private Label - Page - Tablets"
+  },
+  {
+   "id": "219000704686",
+   "slug": "pl-demo-tablets-v1ref",
+   "name": "Private Label - Page - Tablets \u2014 V1 reference render"
+  },
+  {
+   "id": "216194811759",
+   "slug": "pl-demo-terms",
+   "name": "Private Label - Page - Terms of Service"
+  },
+  {
+   "id": "216192983607",
+   "slug": "pl-demo-testing",
+   "name": "Private Label - Page - Testing Protocols"
+  },
+  {
+   "id": "216194811757",
+   "slug": "pl-demo-ty-sell-sheets",
+   "name": "Private Label - Page - TY - Sell Sheets Requested"
+  },
+  {
+   "id": "216188836111",
+   "slug": "pl-demo-weight-management",
+   "name": "Private Label - Page - Weight Management Supplements"
+  },
+  {
+   "id": "218947739963",
+   "slug": "pl-global-blocks",
+   "name": "Private Label - GLOBAL BLOCKS (Review)"
+  }
+ ],
+ "duplicate": [
+  {
+   "id": "219119622782",
+   "slug": "en/pl-demo-ads-contract-mfg-v3",
+   "name": "Private Label - Ads LP - Supplement Contract Manufacturer \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218987854639",
+   "slug": "en/pl-demo-aging-v3",
+   "name": "Private Label - Page - Aging Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219007697984",
+   "slug": "en/pl-demo-book-consultation-v3",
+   "name": "Private Label - Page - Book a Consultation \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967751",
+   "slug": "en/pl-demo-customer-art-v3",
+   "name": "Private Label - Page - Customer-Supplied Art Guidelines \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219007697988",
+   "slug": "en/pl-demo-definitive-guide-v3",
+   "name": "Private Label - Page - Definitive Guide \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219007697991",
+   "slug": "en/pl-demo-design-services-v3",
+   "name": "Private Label - Standard Page - Design Services Hub \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219007697995",
+   "slug": "en/pl-demo-design-team-v3",
+   "name": "Private Label - Page - Working With Our Design Team \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967759",
+   "slug": "en/pl-demo-dropshipping-v3",
+   "name": "Private Label - Standard Page - Dropshipping for Private Label \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967761",
+   "slug": "en/pl-demo-get-started-v3",
+   "name": "Private Label - Page - Get Started \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218987854615",
+   "slug": "en/pl-demo-herbal-v3",
+   "name": "Private Label - Page - Herbal Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967764",
+   "slug": "en/pl-demo-how-to-sell-supplements-v3",
+   "name": "Private Label - Standard Page - How to Sell Private Label Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219002204226",
+   "slug": "en/pl-demo-onboarding-guide-v3",
+   "name": "Private Label - Page - Onboarding Guide \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967767",
+   "slug": "en/pl-demo-pediatric-v3",
+   "name": "Private Label - Page - Pediatric Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218936720512",
+   "slug": "en/pl-demo-pillar-v3",
+   "name": "Private Label - Page - Home - Private Label Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219006293567",
+   "slug": "en/pl-demo-privacy-v3",
+   "name": "Private Label - Page - Privacy Policy \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219007698004",
+   "slug": "en/pl-demo-resources-v3",
+   "name": "Private Label - Page - Resources Hub \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967726",
+   "slug": "en/pl-demo-ty-consultation-v3",
+   "name": "Private Label - Page - TY - Consultation Booked \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967728",
+   "slug": "en/pl-demo-ty-guide-v3",
+   "name": "Private Label - Page - TY - Guide Download \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219007698008",
+   "slug": "en/pl-demo-ty-onboarding-v3",
+   "name": "Private Label - Page - TY - Onboarding \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219006293564",
+   "slug": "en/pl-demo-ty-quote-v3",
+   "name": "Private Label - Page - TY - Quote Request Submitted \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967770",
+   "slug": "pl-demo-about-v3",
+   "name": "Private Label - Page - About Us \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219006293554",
+   "slug": "pl-demo-ads-contract-mfg-v3",
+   "name": "Private Label - Ads LP - Supplement Contract Manufacturer \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967719",
+   "slug": "pl-demo-ads-custom-v3",
+   "name": "Private Label - Ads LP - Custom Formulation Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219006293558",
+   "slug": "pl-demo-ads-mfg-usa-v3",
+   "name": "Private Label - Ads LP - Supplement Manufacturer USA \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967723",
+   "slug": "pl-demo-ads-pl-mfg-v3",
+   "name": "Private Label - Ads LP - Private Label Supplement Manufacturer \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218936720462",
+   "slug": "pl-demo-capsules-v3",
+   "name": "Private Label - Page - Capsules \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000775282",
+   "slug": "pl-demo-case-studies-v3",
+   "name": "Private Label - Page - Case Studies \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000775290",
+   "slug": "pl-demo-certifications-v3",
+   "name": "Private Label - Page - Certifications \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219007698013",
+   "slug": "pl-demo-chewables-v3",
+   "name": "Private Label - Page - Chewables \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218987854618",
+   "slug": "pl-demo-cognitive-v3",
+   "name": "Private Label - Page - Cognitive Support Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000705045",
+   "slug": "pl-demo-contact-v3",
+   "name": "Private Label - Page - Contact \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000775296",
+   "slug": "pl-demo-custom-formulation-v3",
+   "name": "Private Label - Page - Custom Formulation \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218987854620",
+   "slug": "pl-demo-detox-v3",
+   "name": "Private Label - Page - Detox & Liver Support Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218987854623",
+   "slug": "pl-demo-energy-v3",
+   "name": "Private Label - Page - Energy & Vitality Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000775271",
+   "slug": "pl-demo-facility-v3",
+   "name": "Private Label - Page - Our Facility \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219007698017",
+   "slug": "pl-demo-faq-v3",
+   "name": "Private Label - Page - FAQ \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218987854257",
+   "slug": "pl-demo-fitness-v3",
+   "name": "Private Label - Page - Fitness Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000775274",
+   "slug": "pl-demo-guides-v3",
+   "name": "Private Label - Page - Guides Library \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218946510174",
+   "slug": "pl-demo-gummies-v3",
+   "name": "Private Label - Page - Gummies \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218987854626",
+   "slug": "pl-demo-heart-health-v3",
+   "name": "Private Label - Page - Heart Health Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218987854630",
+   "slug": "pl-demo-immune-support-v3",
+   "name": "Private Label - Page - Immune Support Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000775286",
+   "slug": "pl-demo-ingredient-sourcing-v3",
+   "name": "Private Label - Page - Ingredient Sourcing \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000705048",
+   "slug": "pl-demo-ingredients-testing-v3",
+   "name": "Private Label - Page - Ingredients & Testing Guide \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218987854354",
+   "slug": "pl-demo-joint-support-v3",
+   "name": "Private Label - Page - Joint Support Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218946510259",
+   "slug": "pl-demo-liquids-v3",
+   "name": "Private Label - Page - Liquids \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218987854635",
+   "slug": "pl-demo-mens-health-v3",
+   "name": "Private Label - Page - Men's Health Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218990333858",
+   "slug": "pl-demo-multivitamin-v3",
+   "name": "Private Label - Page - Multivitamin Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218936720484",
+   "slug": "pl-demo-our-process-v3",
+   "name": "Private Label - Page - Our Process \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000775277",
+   "slug": "pl-demo-packaging-v3",
+   "name": "Private Label - Page - Packaging \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218946510230",
+   "slug": "pl-demo-powders-v3",
+   "name": "Private Label - Page - Powders \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218990333861",
+   "slug": "pl-demo-prenatal-v3",
+   "name": "Private Label - Page - Prenatal Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218992659553",
+   "slug": "pl-demo-probiotics-v3",
+   "name": "Private Label - Page - Probiotic Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967775",
+   "slug": "pl-demo-quality-standards-v3",
+   "name": "Private Label - Page - Quality Standards \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000705050",
+   "slug": "pl-demo-request-quote-v3",
+   "name": "Private Label - Page - Request a Quote \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000705043",
+   "slug": "pl-demo-sell-sheets-v3",
+   "name": "Private Label - Page - Sell Sheets \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218990333865",
+   "slug": "pl-demo-sleep-v3",
+   "name": "Private Label - Page - Sleep Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218946632248",
+   "slug": "pl-demo-soft-gels-v3",
+   "name": "Private Label - Page - Soft Gels \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218946510195",
+   "slug": "pl-demo-tablets-v3",
+   "name": "Private Label - Page - Tablets \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967737",
+   "slug": "pl-demo-terms-v3",
+   "name": "Private Label - Page - Terms of Service \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219000705034",
+   "slug": "pl-demo-testing-v3",
+   "name": "Private Label - Page - Testing Protocols \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "219004967734",
+   "slug": "pl-demo-ty-sell-sheets-v3",
+   "name": "Private Label - Page - TY - Sell Sheets Requested \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218990333869",
+   "slug": "pl-demo-weight-management-v3",
+   "name": "Private Label - Page - Weight Management Supplements \u2014 V3 (New Modules)"
+  },
+  {
+   "id": "218992659556",
+   "slug": "pl-demo-womens-health-v3",
+   "name": "Private Label - Page - Women's Health Supplements \u2014 V3 (New Modules)"
+  }
+ ],
+ "scratch": [
+  {
+   "id": "218939556889",
+   "slug": "pl-module-library",
+   "name": "Private Label - ALL MODULES (Reference Library)"
+  },
+  {
+   "id": "215778017615",
+   "slug": "private-label-test",
+   "name": "Private Label - Home - Test Page (reference)"
+  }
+ ]
+}
