@@ -128,10 +128,15 @@ Create `ai__lease_information` (string/textarea) on each engagement object carry
 Format:
 
 ```
-MM/YYYY - <Provider or "Provider unknown"> - <evidence excerpt>
+YYYY/MM - <Provider or "Provider unknown"> - <evidence excerpt>
   [source: <type> <id>, logged MM/DD/YYYY, <derivation>: "<basis phrase>"]
   ** FLAGS: <flags>
 ```
+
+**Lead with `YYYY/MM`, never `MM/YYYY`.** These are text fields, so reps sort
+them as strings. `MM/YYYY` puts `01/2029` above `09/2026` — exactly backwards
+for a list whose whole purpose is "who expires soonest." Year-first makes a
+plain A→Z sort chronological, with no view configuration or extra property.
 
 **Center the evidence excerpt on the basis phrase** — roughly 150 characters either side. Do not slice the first N characters of the body: the phrase justifying the date frequently sits past the cut, leaving a field that asserts a date with nothing visible to support it. Verify after building that every value contains its own basis phrase.
 
@@ -159,6 +164,9 @@ Note the supporting count (`+3 other engagements with lease signal`) so a rep se
 ## Step 9 — Structured dates, only after vetting
 
 Once the client signs off, populate the date properties (`potential_prospect__lease_end_date` or equivalent). Keep the confidence tier alongside so a rep sees `~2yrs left, stated 9/2024` rather than false precision.
+
+Once real date properties exist, the text field keeps earning its place as the
+audit trail — the date property answers *when*, the text answers *why we think so*.
 
 ## Order of operations
 
