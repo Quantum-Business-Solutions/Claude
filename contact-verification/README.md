@@ -47,7 +47,7 @@ Nine scripts. Everything else is judgment, and judgment lives in the skill.
 |---|---|---|
 | `listanatomy.py <listId>` | Phase 0 | **Run first.** Maps the full gate chain — recurses every `IN_LIST` upstream gate and every company-level `ASSOCIATION` filter, then lists every property that can eject a contact. Warns when the list gates on a field this process must not write. |
 | `queue.py <listId> [N]` | batch loop | Next N unverified contacts + their LinkedIn identifier; snapshots intake. |
-| `writeverdicts.py <listId> <batch.json>` | batch loop | Writes a batch and enforces the rules no caller may bypass: refuses a lead status on a `yes`, allows only the four valid literals, never writes native `jobtitle`, stamps evidence in the standard format, chunks at 100, diffs requested-vs-returned, reads back to confirm, logs per-list, queues movers. |
+| `writeverdicts.py <listId> <batch.json>` | batch loop | Writes a batch and enforces the rules no caller may bypass: refuses a lead status on a `yes`, allows only the four valid literals, writes native `jobtitle` only at `title_conf` ≥ 0.90 (fails closed, read back), stamps evidence in the standard format, chunks at 100, diffs requested-vs-returned, reads back to confirm, logs per-list, queues movers. |
 | `movepipe.py <listId> <movers.json>` | movers | Find-or-create company, swap associations (both type IDs), reconcile the flag, carry the phone, stamp `RE-ASSOCIATED` evidence. |
 | `phoneaudit.py` → `fixphones.py` → `verifyphone.py` | phone | Find numbers that belong to a former employer, correct or clear them, prove the fix applied. |
 | `patmail2.py` | email | Universal format set (14 formats) plus nickname short forms, ordered by real-world prevalence. |

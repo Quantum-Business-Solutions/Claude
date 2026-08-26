@@ -88,10 +88,12 @@ python3 scripts/writeverdicts.py <LIST> b<LIST>_runN.json
 ```
 
 Batch item: `{id, verdict, ev}` + optional `ls`, `newco`, `sources`, `title` → `ai__job_title`,
-`li_url` → both URL fields, `changed` → explicit "what changed in HubSpot".
+`title_conf` (0-1; ≥0.90 also writes native `jobtitle`), `li_url` → both URL fields,
+`changed` → explicit "what changed in HubSpot".
 
 The script enforces the rules you must not bypass: no `hs_lead_status` on a `yes`; only the four
-lead-status literals; never native `jobtitle`; evidence stamped
+lead-status literals; native `jobtitle` only at `title_conf` ≥ 0.90 with no hedge words in the
+evidence (fails closed, prior value preserved in the evidence, write read back); evidence stamped
 `Verified - <date> - <evidence> - Changed: <what changed>`; read-back confirmation; movers queued.
 
 ---

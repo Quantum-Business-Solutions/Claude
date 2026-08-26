@@ -131,7 +131,9 @@ measure coverage against the intake snapshot, never against live membership.
 
 ## Fields this process writes (repeatable conventions)
 - **Evidence format** (`ai__contact_evidence`): always `Verified - <date> - <evidence> - Changed: <what changed in HubSpot>`. writeverdicts.py builds this; the `Changed:` clause auto-summarises flag/lead-status/title/URL/mover unless you pass an explicit `changed`.
-- **`ai__job_title`** (AI-owned title field): write the current LinkedIn-verified title here via the batch `title` field. This exists because the native `jobtitle` is fought over by 3 integrations (~38% oscillation) — NEVER write `jobtitle`; this field is the trustworthy display title.
+- **`ai__job_title`** (AI-owned title field): write the current LinkedIn-verified title here via the batch `title` field. Always safe — nothing else writes it.
+- **`jobtitle`** (native title field, ≥90% confidence only): pass `title_conf` (0-1) alongside `title`. At `title_conf >= 0.90` the batch ALSO writes the native `jobtitle`, so reps see the corrected title in the sidebar, screen-pop and exports without a view change. The gate is enforced in code and **fails closed** — no `title_conf`, no native write — and additionally requires verdict `yes` (movers: a resolved employer domain) and evidence free of hedge words (`probably`, `CAUTION`, `succession`, `may be`, …). Do NOT use `ai__sources_confirming` as the confidence signal; it is a count, populated liberally, and would wave nearly everything through. **What ≥0.90 means:** a dated LinkedIn row for THIS employer whose title string you are reading directly, `end: null`, no competing row, no division/parent ambiguity — i.e. you are reading the title, not inferring it. A headline-only title, a people-search hit, or a vendor title is never ≥0.90.
+  Two things make the write reversible and honest: the prior `jobtitle` value is recorded in the evidence string (`jobtitle was 'X' -> 'Y' (conf 0.95)`), and the write is **read back**. `jobtitle` has 3 competing integration writers (~38% oscillation, confirmed reverting a `movepipe` write), so expect some reverts: the scripts print `held on read-back N/M`. A revert is a competing integration, not a failed write — `ai__job_title` still holds the truth, and making the native field stick durably is a HubSpot-admin change to the integration field mappings (Shawn only).
 - **`validated__linkedin_or_manually`** (select): set every verified record — `yes`->`Yes`, `no`+Retired->`Retired`, any other `no`/`unreadable`->`Needs Updated`. (`Delete` is human-only, for bogus records.)
 - **LinkedIn URL**: when you correct a slug, pass `li_url`. It is written to `hs_linkedin_url` AND the unique field `linkedin_profile_url__unique_value` (set per-record). A unique-value **collision means another contact already owns that URL** -> compare the two: same person = duplicate (queue for merge, `dedupe_review_<id>.json`), different person = the other record is wrong-linked (queue to fix its URL). Never force past the collision.
 - Canonical verdict field is `ai__li_still_at_company` (the calling list keys on it); the legacy string `ai__still_works_at_company` is NOT used.
@@ -165,8 +167,8 @@ measure coverage against the intake snapshot, never against live membership.
 4. Reconcile flag to `yes`; set `company`; set `ai__job_title` to the new-company title and
    `validated__linkedin_or_manually` (`Yes` if a live decision-maker, else `Needs Updated`); append
    evidence in the `Verified - <date> - ... - Changed: RE-ASSOCIATED to <newco> ...` format (never
-   overwrite it, and it must contain `RE-ASSOCIATED` so the Moved-Companies list picks it up). Never
-   write native `jobtitle`.
+   overwrite it, and it must contain `RE-ASSOCIATED` so the Moved-Companies list picks it up). Native
+   `jobtitle` is written only when `title_conf >= 0.90` AND the new employer's domain resolved.
 5. **Carry the phone in the same transaction.** `business_phone` predates the move so it is the old
    employer's line - overwrite with the new company's number, or CLEAR it if the company has none.
    Never touch `mobilephone`. Touch `phone` only when an exact-digit match proves it belongs to a
@@ -225,7 +227,7 @@ boundaries, so prose guardrails in an autonomous run are decoration):
   reconstructible; a ceiling check is still owed.*
 
 ## Never touch
-`mobilephone`; `jobtitle` (3 competing writers, ~38% oscillation - write the AI-owned `ai__job_title` instead, truth also in evidence);
+`mobilephone`; `jobtitle` **below the 0.90 confidence gate** (3 competing writers, ~38% oscillation - `ai__job_title` is always the trustworthy copy, and the prior native value is preserved in the evidence);
 `hs_persona` without approval; `hs_lead_status` on a `yes`; a populated `previous__email`; any
 contact outside the intake snapshot; `email`/`phone` on a non-mover you have not PROVEN wrong
 (non-mover phone conflicts are flag-only). Do not suppress the lead-status workflow - it is by design
@@ -274,6 +276,6 @@ AND IN_LIST <source> (add a dedicated exclusion marker property if you gate on o
 - **Persona remediation is a proposal workflow, and it belongs at the end of a run.** Because `hs_persona` is often the real ICP gate and this process must not write it, the deliverable is an evidence-backed candidate list: contacts you verified `yes` whose `ai__job_title` shows a C-level/owner title but whose persona is blank or wrong. Emit `persona1_candidates.json` (id, current persona, LinkedIn-verified title) and hand it over. Exclude former-CEO/board-advisor titles - they are affiliation, not authority. Never apply it silently; a persona write redefines list membership.
 
 ## Non-goals
-Does not write `hs_persona` or native `jobtitle` (writes the AI-owned `ai__job_title` instead); does not blank what it did not prove wrong; does not
+Does not write `hs_persona`; does not write native `jobtitle` below `title_conf` 0.90 (`ai__job_title` is always written); does not blank what it did not prove wrong; does not
 create/edit lists as part of a verdict run; does not verify a phone actually dials (the largest
 open gap - flagged, not solved).

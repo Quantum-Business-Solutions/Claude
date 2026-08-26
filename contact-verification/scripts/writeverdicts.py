@@ -5,6 +5,8 @@ append to per-list log li_verdicts_<listId>.json, and queue movers to pending_mo
 batch.json = [{"id","verdict"(yes|no|unreadable),"ev",
                "ls"(optional lead status),"newco"(optional),"sources"(optional),
                "title"(optional - current LinkedIn title -> ai__job_title),
+               "title_conf"(optional float 0-1 - confidence the title is accurate; >=0.90 ALSO
+                            writes the native `jobtitle`. Absent = no native write, ever),
                "li_url"(optional - corrected LinkedIn URL, written to BOTH url fields),
                "changed"(optional - explicit 'what changed in HubSpot' text)}]
 
@@ -13,8 +15,12 @@ RULES enforced here so no caller can bypass them:
                       contact drops off the calling list). An 'ls' on a yes is refused.
   - lead status    -> only these literals allowed: No Longer with Company / Need Updated Info /
                       Retired - Remove from All Lists / Not Decision Maker
-  - jobtitle       -> NEVER written (3 competing integrations, ~38% oscillation). The current
-                      title goes in the AI-owned field ai__job_title instead.
+  - ai__job_title  -> always written when `title` is given (AI-owned, uncontested).
+  - jobtitle       -> the NATIVE title field is written only when title_conf >= 0.90 AND the
+                      verdict is `yes` AND the evidence carries no ambiguity marker. Fails CLOSED:
+                      no title_conf means no native write. 3 integrations compete for this field
+                      (~38% oscillation), so the write is read back and the prior value is recorded
+                      in ai__contact_evidence, making a bad write reversible without a schema change.
   - validated__linkedin_or_manually -> set from the verdict: yes->Yes, retired->Retired, else->Needs Updated
   - evidence       -> ai__contact_evidence, formatted "Verified - <date> - <evidence> - Changed: <what changed>"
                       (<=990 chars). Appended-safe; the verified date is also stamped structurally.
@@ -53,7 +59,31 @@ def validated_of(verdict,ls):
     if verdict=='yes': return "Yes"
     if verdict=='no' and ls=='Retired - Remove from All Lists': return "Retired"
     return "Needs Updated"   # any 'no' (moved / not DM / need info) or 'unreadable' -> a human should look
-inputs=[];refused=[];urlfix=[];accepted=[]
+TITLE_CONF_MIN=0.90
+# Hedge words in the evidence mean the title is not a 90% call, whatever number the caller passed.
+AMBIG=("caution","ambig","uncertain","unclear","probably","possibly","perhaps","assumed","appears to",
+       "may be","might be","succession","dormant","not updated","stale profile","conflict","unsure","?")
+def title_ok(r):
+    """Native `jobtitle` is written ONLY on an explicit >=0.90 flag. ai__sources_confirming is NOT a
+    proxy for confidence - it is populated liberally and would wave nearly everything through."""
+    if not r.get('title'): return (False,"no title supplied")
+    if r['verdict']!='yes': return (False,"verdict is '"+str(r['verdict'])+"', not yes")
+    c=r.get('title_conf')
+    if isinstance(c,bool) or not isinstance(c,(int,float)): return (False,"no numeric title_conf - failing closed")
+    if c<TITLE_CONF_MIN: return (False,"title_conf %.2f below %.2f"%(c,TITLE_CONF_MIN))
+    blob=((r.get('ev') or '')+' '+(r.get('changed') or '')).lower()
+    hit=[t for t in AMBIG if t in blob]
+    if hit: return (False,"ambiguity marker in evidence: "+", ".join(hit[:3]))
+    return (True,None)
+inputs=[];refused=[];urlfix=[];accepted=[];titlewrite=[];title_skip=[]
+# Read prior evidence AND prior jobtitle before building anything: the evidence string records the
+# native title we are about to overwrite, so the overwrite stays reversible with no new field.
+prior={}
+for i in range(0,len(V),100):
+    pr=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/batch/read',
+            {"inputs":[{"id":str(x['id'])} for x in V[i:i+100]],
+             "properties":["ai__contact_evidence","jobtitle"]})
+    for x in pr.get('results',[]): prior[str(x['id'])]=x['properties'] or {}
 for r in V:
     verdict=r['verdict']; ls=r.get('ls')
     if ls and verdict=='yes':
@@ -66,6 +96,9 @@ for r in V:
         refused.append((r['id'],"verdict 'no' with no lead status - RECORD DROPPED")); continue
     if MARKER in (r.get('ev') or '') or MARKER in (r.get('changed') or ''):
         refused.append((r['id'],"evidence contains the mover filter token - RECORD DROPPED")); continue
+    wt,wt_why=title_ok(r)
+    old_title=(prior.get(str(r['id'])) or {}).get('jobtitle') or ''
+    if r.get('title') and not wt: title_skip.append((str(r['id']),wt_why))
     # build the "what changed in HubSpot" clause (explicit if given, else auto)
     if r.get('changed'):
         changed=r['changed']
@@ -73,6 +106,8 @@ for r in V:
         bits=["flag="+verdict]
         if ls: bits.append("lead status='"+ls+"'")
         if r.get('title'): bits.append("ai__job_title='"+r['title']+"'")
+        if wt: bits.append("jobtitle "+(("was '"+old_title+"' ->") if old_title else "set ->")
+                           +" '"+r['title']+"' (conf %.2f)"%r['title_conf'])
         if r.get('li_url'): bits.append("LinkedIn URL corrected")
         if r.get('newco'): bits.append("re-associate queued -> "+r['newco'])
         changed=", ".join(bits)
@@ -83,20 +118,16 @@ for r in V:
        "ai__contact_verified_date":D,"ai__sources_confirming":r.get('sources',1),
        "validated__linkedin_or_manually":validated_of(verdict,ls)}
     if ls: p["hs_lead_status"]=ls
-    if r.get('title'): p["ai__job_title"]=r['title']            # AI-owned title (never native jobtitle)
+    if r.get('title'): p["ai__job_title"]=r['title']            # AI-owned title, always safe to write
+    if wt: p["jobtitle"]=r['title']; titlewrite.append((str(r['id']),r['title'],old_title))
     if r.get('li_url'): p["hs_linkedin_url"]=r['li_url']; urlfix.append((str(r['id']),r['li_url']))
     inputs.append({"id":str(r['id']),"properties":p}); accepted.append(r)
 for cid,why in refused: print("REFUSED",cid,why)
+for cid,why in title_skip: print("NO-JOBTITLE",cid,why,"(ai__job_title still written)")
 # append, never overwrite: prior entries carry the mover marker, phone-correction notes and
 # human flags that two production lists filter on.
-prior={}
-if inputs:
-    for i in range(0,len(inputs),100):
-        pr=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/batch/read',
-                {"inputs":[{"id":x["id"]} for x in inputs[i:i+100]],"properties":["ai__contact_evidence"]})
-        for x in pr.get('results',[]): prior[str(x['id'])]=x['properties'].get('ai__contact_evidence') or ''
 for it in inputs:
-    old=prior.get(it['id'],'')
+    old=(prior.get(it['id']) or {}).get('ai__contact_evidence') or ''
     if old: it['properties']['ai__contact_evidence']=(it['properties']['ai__contact_evidence']+" || "+old)[:990]
 # queue movers FIRST: once a contact is flagged in the CRM, queue.py never surfaces it again,
 # so a crash between the write and the queue loses the mover permanently.
@@ -129,12 +160,22 @@ if urlfix: print("LinkedIn unique-value synced "+str(usync)+"/"+str(len(urlfix))
 # read-back verification
 ids=[str(r['id']) for r in V]
 rb=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/batch/read',
-   {"inputs":[{"id":i} for i in ids],"properties":["ai__li_still_at_company"]})
+   {"inputs":[{"id":i} for i in ids],"properties":["ai__li_still_at_company","jobtitle"]})
 want={str(r['id']):r['verdict'] for r in accepted}
 back={str(x['id']):x['properties'].get('ai__li_still_at_company') for x in rb.get('results',[])}
 confirmed=[i for i,v in want.items() if back.get(i)==v]
 bad=[(i,v,back.get(i)) for i,v in want.items() if back.get(i)!=v]
 print("applied "+str(applied)+"/"+str(len(inputs))+" | read-back confirms "+str(len(confirmed))+"/"+str(len(want))+" | date "+D)
+if titlewrite:
+    # measure, do not assume: this field has competing writers and has been observed reverting.
+    tb={str(x['id']):(x['properties'].get('jobtitle') or '') for x in rb.get('results',[])}
+    lost=[(c,t,tb.get(c)) for c,t,_ in titlewrite if tb.get(c)!=t]
+    print("jobtitle written "+str(len(titlewrite))+" (conf>="+str(TITLE_CONF_MIN)+
+          ") | held on read-back "+str(len(titlewrite)-len(lost))+"/"+str(len(titlewrite)))
+    for c,t,g in lost[:10]: print("   REVERTED",c,repr(t),"->",repr(g))
+    if lost: print("   NOTE: a reverted jobtitle is a competing integration, not a failed write. "
+                   "ai__job_title is unaffected and the prior value is in ai__contact_evidence. "
+                   "A durable fix is a HubSpot-admin change to the integration field mappings.")
 if bad:
     print("READ-BACK MISMATCH (requested -> found):")
     for i,v,g in bad[:20]: print("  ",i,v,"->",g)
@@ -145,7 +186,8 @@ cset=set(confirmed)
 for r in accepted:
     if str(r['id']) not in cset: continue      # never log a write we could not confirm
     log.append({"id":str(r['id']),"verdict":r['verdict'],"newco":r.get('newco'),
-                "lead_status":r.get('ls'),"title":r.get('title'),"date":D})
+                "lead_status":r.get('ls'),"title":r.get('title'),"title_conf":r.get('title_conf'),
+                "jobtitle_written":str(r['id']) in {c for c,_,_ in titlewrite},"date":D})
 tmp=f+'.tmp'; json.dump(log,open(tmp,'w'),indent=1); os.replace(tmp,f)
 from collections import Counter
 print("li_verdicts_"+lid+" total "+str(len(log))+" "+str(dict(Counter(x['verdict'] for x in log))))
