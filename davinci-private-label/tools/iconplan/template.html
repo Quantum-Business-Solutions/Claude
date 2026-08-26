@@ -1,0 +1,163 @@
+<title>Praxera Icon Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{{--paper:#F5F7F6;--card:#FFF;--ink:#12262F;--muted:#5B6D73;--faint:#8A9BA0;
+ --rule:#DCE3E1;--accent:#0F4C5C;--tile:#C9DBE2;--ok:#2E6A4F;--hold:#8A6212;
+ --holdbg:#F7EFDD;--warn:#9E3B2B}}
+@media (prefers-color-scheme:dark){{:root:not([data-theme="light"]){{
+ --paper:#0E1619;--card:#151F23;--ink:#E6EDEB;--muted:#9DAFB4;--faint:#72868C;
+ --rule:#26343A;--accent:#6FB3C0;--tile:#22343B;--ok:#7FC0A0;--hold:#D8AC5C;
+ --holdbg:#33280F44;--warn:#E08977}}}}
+:root[data-theme="dark"]{{--paper:#0E1619;--card:#151F23;--ink:#E6EDEB;--muted:#9DAFB4;
+ --faint:#72868C;--rule:#26343A;--accent:#6FB3C0;--tile:#22343B;--ok:#7FC0A0;
+ --hold:#D8AC5C;--holdbg:#33280F44;--warn:#E08977}}
+*{{box-sizing:border-box}}
+body{{margin:0;background:var(--paper);color:var(--ink);
+ font-family:"IBM Plex Sans",-apple-system,Segoe UI,sans-serif;font-size:16px;line-height:1.6}}
+.wrap{{max-width:1120px;margin:0 auto;padding:52px 26px 90px}}
+.kick{{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+ text-transform:uppercase;color:var(--accent);margin:0 0 13px}}
+h1{{font-family:Spectral,Georgia,serif;font-weight:600;font-size:clamp(31px,4.6vw,46px);
+ line-height:1.07;margin:0 0 14px;letter-spacing:-.015em;text-wrap:balance}}
+.stand{{font-family:Spectral,Georgia,serif;font-size:18.5px;color:var(--muted);
+ max-width:64ch;margin:0 0 26px}}
+.tally{{display:flex;flex-wrap:wrap;border-top:2px solid var(--ink);
+ border-bottom:1px solid var(--rule);margin-bottom:8px}}
+.tally div{{flex:1 1 140px;padding:16px 20px 16px 0;border-right:1px solid var(--rule)}}
+.tally div:last-child{{border-right:0}}
+.t-ok b{{color:var(--ok)}}
+.tally b{{display:block;font-family:"IBM Plex Mono",monospace;font-size:26px;font-weight:500;
+ font-variant-numeric:tabular-nums;letter-spacing:-.02em}}
+.tally span{{display:block;font-size:12px;color:var(--muted);margin-top:2px}}
+h2{{font-family:Spectral,Georgia,serif;font-size:24px;font-weight:600;margin:46px 0 4px}}
+h2+p.lede{{margin:0 0 20px;color:var(--muted);font-size:15px;max-width:74ch}}
+.scroll{{overflow-x:auto}}
+table{{width:100%;border-collapse:collapse;font-size:14.5px}}
+th{{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+ text-transform:uppercase;color:var(--faint);font-weight:500;text-align:left;
+ padding:0 12px 8px 0;border-bottom:1px solid var(--rule);white-space:nowrap}}
+td{{padding:9px 12px 9px 0;border-bottom:1px solid var(--rule);vertical-align:middle}}
+.tag{{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;
+ letter-spacing:.09em;text-transform:uppercase;color:var(--faint);margin-left:8px}}
+.jm{{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;
+ letter-spacing:.08em;text-transform:uppercase;color:var(--hold);
+ background:var(--holdbg);padding:2px 6px;border-radius:2px;margin-left:8px}}
+.warn{{display:block;font-size:12px;color:var(--warn);margin-top:2px}}
+.cell{{white-space:nowrap;width:1%}}
+.ic{{width:26px;height:26px;background:var(--tile);border-radius:7px;padding:4px;
+ margin-right:5px;vertical-align:middle}}
+.ic.nu{{outline:1.5px solid var(--ok);outline-offset:1px}}
+.q{{display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;
+ background:var(--tile);border-radius:7px;color:var(--faint);font-size:13px}}
+.arrow{{color:var(--faint);width:1%;padding:0 10px}}
+.nm{{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ok)}}
+.num{{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+ color:var(--muted);text-align:right;width:1%}}
+.ublock{{background:var(--card);border:1px solid var(--rule);border-radius:4px;
+ padding:18px 20px;margin-bottom:14px}}
+.uhead{{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}}
+.uhead h3{{font-size:16px;margin:0;font-weight:600}}
+.ucount{{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--hold);
+ background:var(--holdbg);padding:3px 8px;border-radius:2px;white-space:nowrap}}
+.uhint{{margin:5px 0 14px;font-size:14px;color:var(--muted);max-width:78ch}}
+.ugrid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:9px}}
+.uitem{{display:flex;align-items:center;gap:7px;font-size:13.5px;border:1px solid var(--rule);
+ border-radius:3px;padding:6px 9px;min-width:0}}
+.ul{{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+.un{{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--faint)}}
+.note{{margin-top:44px;padding-top:26px;border-top:2px solid var(--ink)}}
+.note h2{{margin-top:0}} .note ol{{padding-left:20px;max-width:78ch}}
+.note li{{margin-bottom:10px}}
+code{{font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--tile);
+ padding:1.5px 5px;border-radius:2px}}
+@media (max-width:640px){{.wrap{{padding:34px 15px 64px}} .ic{{width:22px;height:22px}}}}
+</style>
+<div class="wrap">
+  <p class="kick">Praxera · icon deployment plan · 350 slots</p>
+  <h1>Praxera Icon Plan</h1>
+  <p class="stand">One outcome for every icon slot on the site. Read from the live pages
+  and the live file library, and revised against the 25&nbsp;August call — where the
+  answer to most of these turned out to be fewer icons, not more.</p>
+
+  <div class="tally">
+    <div class="t-ok"><b>{swap}</b><span>Swap the icon</span></div>
+    <div><b>{strip}</b><span>Remove the icon</span></div>
+    <div><b>{logo}</b><span>Real brand logo</span></div>
+    <div><b>{art}</b><span>Still need artwork</span></div>
+    <div><b>350</b><span>Total slots</span></div>
+  </div>
+  <p class="lede" style="margin:14px 0 0"><b>{nostrip} of 350 slots need no new artwork.</b>
+  Every icon in the swap column is already uploaded to HubSpot.</p>
+
+  <h2>1 &middot; Swap — {swap} slots, {nicons} icons</h2>
+  <p class="lede">The key is the category tag on product cards and the card heading on
+  concept cards. Rows marked <em>judgement call</em> put a tag on the nearest available
+  icon rather than a real match. Rows flagged red are drawn more than one way on the site
+  today, so this consolidates them.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Key on the page</th><th>Now</th><th></th><th>Becomes</th>
+    <th>New icon</th><th>Slots</th><th>Pages</th></tr></thead>
+    <tbody>{mrows}</tbody></table></div>
+
+  <h2>2 &middot; Remove — {strip} slots</h2>
+  <p class="lede">These lose their icon rather than gaining a new one. Sarah:
+  <em>&ldquo;I don&rsquo;t see why these need icons.&rdquo;</em> Tammy: <em>&ldquo;it starts
+  to mean nothing when you&hellip; this feels overwhelming, and too much.&rdquo;</em>
+  Most are one-off benefit and positioning claims; the rest are stat bands, which Shawn
+  proposed dropping and Tammy agreed to.</p>
+  <div class="ublock">
+    <div class="uhead"><h3>Losing their icon</h3>
+    <span class="ucount">{strip} slots &middot; {nstrip} distinct</span></div>
+    <p class="uhint">A sample of the {nstrip}. Sarah asked for a different visual device in
+    their place — <em>&ldquo;a colour block&hellip; utilise a header size&hellip; maybe the
+    shape of the box is highlighted with a thicker line.&rdquo;</em> That is a module styling
+    job and nobody has picked it up yet.</p>
+    <div class="ugrid">{stripchips}</div>
+  </div>
+
+  <h2>3 &middot; Real logos — {logo} slots</h2>
+  <p class="lede">Shawn on the call: <em>&ldquo;these will get the real logos.&rdquo;</em>
+  A generic cart standing in for Shopify reads as a placeholder nobody replaced.</p>
+  <div class="ublock"><div class="ugrid">{logochips}</div></div>
+
+  <h2>4 &middot; Still need artwork — {art} slots</h2>
+  <p class="lede">This is the whole remaining design job. Everything else on the site is
+  covered by an icon that already exists.</p>
+  <div class="ublock">
+    <div class="uhead"><h3>One set of numbered markers</h3>
+    <span class="ucount">{nstep} slots &middot; {nstepvar} label variants</span></div>
+    <p class="uhint">The Design Services and onboarding timelines label steps by number and
+    week — <code>STEP 01 WEEK 1</code> through <code>STEP 06 WEEKS 8-12</code>. All the same
+    idea; numerals 1&ndash;6 cover every one. Those labels are also inconsistent with each
+    other (<code>WEEK</code> versus <code>WEEKS</code>, and the same step number carrying
+    different week ranges across pages), which is a copy fix rather than a design one.</p>
+  </div>
+  <div class="ublock">
+    <div class="uhead"><h3>Individual icons</h3><span class="ucount">{nart} slots</span></div>
+    <p class="uhint">Everything else consolidated onto an existing icon, per Sarah: marine,
+    mushroom and premium omega <em>&ldquo;all would fit into one category.&rdquo;</em></p>
+    <div class="ugrid">{artchips}</div>
+  </div>
+
+  <div class="note"><h2>Before any of this deploys</h2><ol>
+    <li><b>Barb is still working through the copy.</b> 67 &trade; marks, 22 &reg; marks and
+    18 visitor-facing DaVinci references are still live, several on pages that also carry
+    icons. Confirm which pages she has finished before writing to them.</li>
+    <li><b>Two icons have a stale twin in the library.</b> The Fitness runner went up as
+    <code>fitness-green-64</code> and the redrawn Prenatal as
+    <code>prenatal-care-green-1</code>, with the superseded versions still sitting beside
+    them. Ten files should be deleted so a filename match cannot pick the wrong one.</li>
+    <li><b>Three icons are much heavier than the rest.</b> Measured ink coverage inside the
+    artwork: <code>senior</code> 63%, <code>us-manufacturing</code> 62% and the redrawn
+    <code>prenatal-care</code>, against roughly 32% for a typical stroke icon. They will
+    read as bolder than everything around them.</li>
+    <li><b>Immune and Foundation are both shields.</b> Sarah has rejected duplicate icons
+    twice already — Muscle/Strength, and Design Your Brand/Product Selection.</li>
+    <li><b>U.S. Manufacturing will not read at 28px</b>, the size the cards use. Its own
+    floor is 32px.</li>
+    <li><b>Hormonal Balance is Mindy&rsquo;s call.</b> Sarah prefers the linked male/female
+    pair; that glyph is the established intersex symbol and will be read that way.</li>
+  </ol></div>
+</div>

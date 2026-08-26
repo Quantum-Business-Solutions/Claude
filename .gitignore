@@ -11,3 +11,5 @@ pl-conversion-report.html
 # Python bytecode, left behind whenever a tool is imported for a self-test
 __pycache__/
 *.pyc
+davinci-private-label/tools/iconplan/cache.json
+davinci-private-label/tools/iconplan/plan.html
