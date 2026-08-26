@@ -7,3 +7,7 @@ PL-conversion-index.md
 # build output: republished to the same artifact URL from this path,
 # with the committed copy kept under davinci-private-label/reports/
 pl-conversion-report.html
+
+# Python bytecode, left behind whenever a tool is imported for a self-test
+__pycache__/
+*.pyc
