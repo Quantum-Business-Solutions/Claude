@@ -1,131 +1,129 @@
 #!/usr/bin/env python3
-"""Replace icon images on the Private Label pages, and nothing else.
+"""Swap icons on the Private Label pages, and change nothing else.
 
-The whole design of this script is the promise that only icons change. It reads
-the live page, walks to each card's icon.src, rewrites that one string, and then
-proves the claim: it diffs the page object it is about to send against the one it
-read, and if a single difference is anything other than an icon src it refuses to
-write. A page is snapshotted before the write and restored if the readback does
-not match. Fails closed, every time.
+Two things this gets right that an earlier version did not.
 
-usage: icon_swap.py --dry            show every change, write nothing
-       icon_swap.py --apply [slug…]  write, verifying each page
+It writes to the DRAFT. HubSpot keeps unpublished edits there and returns the base
+record from /cms/v3/pages/site-pages/{id}; on this project the base sat five days
+stale while the site rendered current content. Writing to the base would have put
+new icons where nothing renders them and left the draft untouched.
+
+And it keys the swap on the SLOT, not on the filename that is in it. One current
+file, pl-icon-30d8dc8a51.svg, serves 42 different labels across the site -- mapping
+filename to new icon would have stamped a single glyph across all 42.
+
+usage: icon_swap.py --dry [slug ...]      show every change, write nothing
+       icon_swap.py --apply <slug> [...]  write, verifying each page
 """
-import json, os, sys, copy, time, urllib.request, urllib.error
+import copy, json, os, re, sys, time, urllib.request
 
 TOK = os.environ["TOKEN"]
 API = "https://api.hubapi.com"
 H   = {"Authorization": "Bearer " + TOK, "Content-Type": "application/json"}
 S   = os.path.dirname(os.path.abspath(__file__)) + "/"
-SNAP = S + "../snapshots/icon-swap/"
+sys.path.insert(0, S + "iconplan")
+from build import RULES, JUDGE, match          # one source of truth for the mapping
 
-def call(method, path, body=None):
-    r = urllib.request.Request(API + path, method=method, headers=H,
-                               data=json.dumps(body).encode() if body else None)
-    with urllib.request.urlopen(r) as f:
-        raw = f.read()
-    return json.loads(raw) if raw else {}
+def call(method, path, body=None, tries=4):
+    for i in range(tries):
+        try:
+            r = urllib.request.Request(API + path, method=method, headers=H,
+                                       data=json.dumps(body).encode() if body else None)
+            with urllib.request.urlopen(r) as f: raw = f.read()
+            return json.loads(raw) if raw else {}
+        except Exception:
+            if i == tries - 1: raise
+            time.sleep(2 * (i + 1))
 
-# ---------------------------------------------------------------- diffing
-def flatten(o, path="", out=None):
-    """Every leaf value in the page, addressed by its full path."""
+def flatten(o, p="", out=None):
     if out is None: out = {}
     if isinstance(o, dict):
-        for k, v in o.items(): flatten(v, path + "/" + str(k), out)
+        for k, v in o.items(): flatten(v, p + "/" + str(k), out)
     elif isinstance(o, list):
-        for i, v in enumerate(o): flatten(v, path + f"[{i}]", out)
-    else:
-        out[path] = o
+        for i, v in enumerate(o): flatten(v, p + f"[{i}]", out)
+    else: out[p] = o
     return out
 
-def differences(before, after):
-    """Every leaf that changed, was added, or was removed."""
-    A, B = flatten(before), flatten(after)
-    diffs = []
-    for k in set(A) | set(B):
-        if A.get(k, "\0MISSING") != B.get(k, "\0MISSING"):
-            diffs.append((k, A.get(k, "\0MISSING"), B.get(k, "\0MISSING")))
-    return sorted(diffs)
+def differences(a, b):
+    A, B = flatten(a), flatten(b)
+    return sorted((k, A.get(k, "\0"), B.get(k, "\0"))
+                  for k in set(A) | set(B) if A.get(k, "\0") != B.get(k, "\0"))
 
-def is_icon_path(p):
-    """Only an icon's own src may move. Not its alt, not the card, not the copy."""
-    return p.endswith("/icon/src")
-
-# ---------------------------------------------------------------- the edit
-def swap_icons(page, mapping, report):
-    """Rewrite icon.src in place. mapping: {current filename: new url}."""
-    def walk(o, path=""):
+def swap(page, urls, report):
+    """Rewrite icon.src per slot. The key is the card's own eyebrow/title/stat."""
+    def walk(o, pk=None):
         if isinstance(o, dict):
-            ic = o.get("icon")
-            if isinstance(ic, dict) and isinstance(ic.get("src"), str):
-                cur = ic["src"].rsplit("/", 1)[-1]
-                if cur in mapping:
-                    key = o.get("number_or_eyebrow") or o.get("title") or ""
-                    report.append((key, cur, mapping[cur].rsplit("/", 1)[-1]))
-                    ic["src"] = mapping[cur]
-            for k, v in o.items(): walk(v, path + "/" + str(k))
+            if pk != "icon":
+                ic = o.get("icon")
+                if isinstance(ic, dict) and "/icons/" in str(ic.get("src", "")):
+                    key = ((o.get("number_or_eyebrow") or "").strip()
+                           or re.sub(r"<[^>]+>", "", o.get("title") or "").strip()
+                           or re.sub(r"<[^>]+>", "", o.get("stat_label") or "").strip())
+                    icon, judged = match(key)
+                    if icon and icon in urls:
+                        report.append((key, ic["src"].rsplit("/", 1)[-1],
+                                       urls[icon].rsplit("/", 1)[-1], judged))
+                        ic["src"] = urls[icon]
+            for k, v in o.items(): walk(v, k)
         elif isinstance(o, list):
-            for i, v in enumerate(o): walk(v, path + f"[{i}]")
-    walk(page)
-    return page
+            for v in o: walk(v, pk)
+    walk(page); return page
 
-def guard(before, after, slug):
-    """Refuse to write if anything but an icon src moved."""
-    bad = [d for d in differences(before, after) if not is_icon_path(d[0])]
-    if bad:
-        print(f"  REFUSED on {slug}: {len(bad)} non-icon change(s) would be written")
-        for p, a, b in bad[:6]:
-            print(f"      {p}\n        was: {str(a)[:90]}\n        now: {str(b)[:90]}")
-        return False
-    return True
+def icon_urls():
+    """Newest upload wins: an icon can sit under several names as it is re-cut."""
+    url = f"{API}/files/v3/files/search?limit=100&path=/Praxera"; f = {}
+    while url:
+        d = json.load(urllib.request.urlopen(urllib.request.Request(url, headers=H)))
+        for x in d.get("results", []): f[x["name"]] = x
+        url = d.get("paging", {}).get("next", {}).get("link")
+    bases = {re.sub(r"-\d+$", "", re.sub(r"-ink$", "", re.sub(r"-\d+$", "", n)))
+             for n in f if re.match(r".*-ink(-\d+)?$", n)}
+    best = {}
+    for n, x in f.items():
+        m = re.match(r"^(.+?)-green(?:-\d+)?$", n)
+        if not m or m.group(1) not in bases: continue
+        b = m.group(1); t = str(x.get("createdAt") or "")
+        if b not in best or t > best[b][0]: best[b] = (t, x["url"])
+    return {b: u for b, (t, u) in best.items()}
 
-def run(mapping, ids, apply_):
-    os.makedirs(SNAP, exist_ok=True)
-    total = changed_pages = 0
-    for pid, slug in ids:
-        live = call("GET", f"/cms/v3/pages/site-pages/{pid}")
-        after = copy.deepcopy(live)
-        report = []
-        swap_icons(after, mapping, report)
-        if not report:
-            continue
-        if not guard(live, after, slug):
-            sys.exit(1)
-        icon_diffs = differences(live, after)
-        total += len(icon_diffs); changed_pages += 1
-        print(f"\n{slug}  —  {len(icon_diffs)} icon(s)")
-        for key, old, new in report:
-            print(f"     {(key or '(no label)')[:38]:40} {old} -> {new}")
-        if not apply_:
-            continue
-        # Someone editing this page in HubSpot right now would have their work
-        # overwritten by a blind PATCH, and no diff of mine would show it. Re-read
-        # immediately before writing and skip the page if it moved underneath us.
-        fresh = call("GET", f"/cms/v3/pages/site-pages/{pid}")
-        if fresh.get("updatedAt") != live.get("updatedAt"):
-            print(f"  SKIPPED {slug}: edited by someone else since this run started "
-                  f"({live.get('updatedAt')} -> {fresh.get('updatedAt')})")
-            continue
-        json.dump(live, open(f"{SNAP}{pid}.BEFORE.json", "w"))
-        call("PATCH", f"/cms/v3/pages/site-pages/{pid}", after)
-        back = call("GET", f"/cms/v3/pages/site-pages/{pid}")
-        # the readback must differ from the original in icon srcs ONLY
-        bad = [d for d in differences(live, back) if not is_icon_path(d[0])
-               and not d[0].endswith(("/updatedAt", "/updated"))]
+def run(slugs, apply_):
+    idx = json.load(open(S + "../reference/page_index.json"))
+    urls = icon_urls()
+    print(f"{len(urls)} icons available in /Praxera\n")
+    total = pages = judged = 0
+    for p in idx["production"]:
+        if slugs and p["slug"] not in slugs: continue
+        live = call("GET", f"/cms/v3/pages/site-pages/{p['id']}/draft")
+        after = copy.deepcopy(live); rep = []
+        swap(after, urls, rep)
+        if not rep: continue
+        bad = [d for d in differences(live, after) if not d[0].endswith("/icon/src")]
         if bad:
-            print(f"  READBACK MISMATCH on {slug} — restoring")
-            call("PATCH", f"/cms/v3/pages/site-pages/{pid}", live)
+            print(f"  REFUSED on {p['slug']}: {len(bad)} non-icon change(s)")
+            for k, a, b in bad[:5]: print(f"      {k}\n        {str(a)[:80]}\n        {str(b)[:80]}")
             sys.exit(1)
-        print(f"     verified: {len(icon_diffs)} changed, 0 other fields touched")
+        n = len(differences(live, after)); total += n; pages += 1
+        judged += sum(1 for r in rep if r[3])
+        print(f"\n{p['slug']}  —  {n} icon(s)")
+        for key, old, new, j in rep:
+            print(f"     {'~' if j else ' '} {key[:34]:36} {old:26} -> {new}")
+        if not apply_: continue
+        fresh = call("GET", f"/cms/v3/pages/site-pages/{p['id']}/draft")
+        if fresh.get("updatedAt") != live.get("updatedAt"):
+            print(f"  SKIPPED {p['slug']}: edited by someone else since this run started"); continue
+        call("PATCH", f"/cms/v3/pages/site-pages/{p['id']}/draft", after)
+        back = call("GET", f"/cms/v3/pages/site-pages/{p['id']}/draft")
+        stray = [d for d in differences(live, back)
+                 if not d[0].endswith("/icon/src") and not d[0].endswith(("/updatedAt", "/updated"))]
+        if stray:
+            print(f"  READBACK MISMATCH on {p['slug']} — restore from the snapshot and stop")
+            for k, a, b in stray[:5]: print(f"      {k}")
+            sys.exit(1)
+        print(f"     verified: {n} changed, 0 other fields touched")
         time.sleep(0.3)
-    print(f"\n{'WOULD CHANGE' if not apply_ else 'CHANGED'}: "
-          f"{total} icon(s) on {changed_pages} page(s)")
+    print(f"\n{'WOULD CHANGE' if not apply_ else 'CHANGED'}: {total} icon(s) on {pages} page(s)"
+          f"   ({judged} of them are judgement calls, marked ~)")
 
 if __name__ == "__main__":
-    apply_ = "--apply" in sys.argv
-    mapping = json.load(open(S + "../reference/icon_swap_map.json"))
-    idx = json.load(open(S + "../reference/page_index.json"))
-    only = [a for a in sys.argv[1:] if not a.startswith("--")]
-    ids = [(p["id"], p["slug"]) for p in idx["production"]
-           if not only or p["slug"] in only]
-    run(mapping, ids, apply_)
+    a = [x for x in sys.argv[1:] if not x.startswith("--")]
+    run(set(a), "--apply" in sys.argv)
