@@ -42,6 +42,17 @@ python3 qa_gates.py rollup --signals signals.json --assoc assoc.json \
         --companies companies.json --kept-existing 1906
 ```
 
+## These are the production versions
+
+Not sketches. `harvest_pool.py` carries the date-windowing that beats the 10K
+cap; `extract_signals.py` carries every parsing fix from the UBEO run
+(fuzzy quantifiers, 10/31 pinning, numeric months, month-to-month retention,
+one-cycle projection cap, lease-context requirement, email thread-stripping,
+negation guards); `company_rollup.py` carries both gates and emits the customer
+engagement list that `clear_customers.py` consumes.
+
+If you edit one, re-run its gate before trusting the output.
+
 ## Per-client adaptation
 
 `TERMS`, the object list, and the `EXCLUDE` lifecycle set change per client.
