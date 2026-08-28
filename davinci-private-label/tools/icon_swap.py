@@ -49,6 +49,8 @@ def differences(a, b):
     return sorted((k, A.get(k, "\0"), B.get(k, "\0"))
                   for k in set(A) | set(B) if A.get(k, "\0") != B.get(k, "\0"))
 
+STAMPS = {"authorName", "updatedById", "updatedAt", "updated"}
+
 def swap(page, urls, report):
     """Rewrite icon.src per slot. The key is the card's own eyebrow/title/stat."""
     def walk(o, pk=None):
@@ -113,8 +115,12 @@ def run(slugs, apply_):
             print(f"  SKIPPED {p['slug']}: edited by someone else since this run started"); continue
         call("PATCH", f"/cms/v3/pages/site-pages/{p['id']}/draft", after)
         back = call("GET", f"/cms/v3/pages/site-pages/{p['id']}/draft")
+        # HubSpot stamps its own audit fields on any write: the page's "last edited
+        # by" becomes whoever owns the token. That is not a content change, and
+        # treating it as one aborted a run whose page was in fact untouched.
         stray = [d for d in differences(live, back)
-                 if not d[0].endswith("/icon/src") and not d[0].endswith(("/updatedAt", "/updated"))]
+                 if not d[0].endswith("/icon/src")
+                 and d[0].lstrip("/") not in STAMPS]
         if stray:
             print(f"  READBACK MISMATCH on {p['slug']} — restore from the snapshot and stop")
             for k, a, b in stray[:5]: print(f"      {k}")
