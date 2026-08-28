@@ -16,7 +16,7 @@ import json, os, sys, gzip, urllib.request, collections
 T = os.environ["TOKEN"]
 S = os.path.dirname(os.path.abspath(__file__)) + "/"
 SNAP = sys.argv[1].rstrip("/")
-EXPECT = sys.argv[sys.argv.index("--expect") + 1] if "--expect" in sys.argv else None
+EXPECT = set(sys.argv[sys.argv.index("--expect") + 1:]) if "--expect" in sys.argv else set()
 
 # HubSpot stamps these on any write; they are the API's bookkeeping, not content.
 STAMPS = {"authorName", "updatedById", "updatedAt", "updated"}
@@ -43,10 +43,20 @@ def walk(o, p=""):
 idx = json.load(open(S + "../reference/page_index.json"))
 buckets = [(b, v) for b, v in idx.items() if isinstance(v, list)]
 missing, moved, clean = [], [], 0
+early, late = [], []
+SINCE = os.environ.get("SINCE") or max(
+    (json.loads(gzip.open(f"{SNAP}/{q['id']}.json.gz").read().decode())["draft"]["updatedAt"]
+     for b, v in json.load(open(S + "../reference/page_index.json")).items() if isinstance(v, list)
+     for q in v if os.path.exists(f"{SNAP}/{q['id']}.json.gz")), default="")
 for bucket, pages in buckets:
     for p in pages:
         f = f"{SNAP}/{p['id']}.json.gz"
-        if not os.path.exists(f): missing.append((bucket, p["slug"])); continue
+        if not os.path.exists(f):
+            # The snapshot only covers production. For the rest, a draft whose
+            # updatedAt predates the run cannot have been touched by it.
+            u = get(f"/cms/v3/pages/site-pages/{p['id']}/draft").get("updatedAt", "")
+            (late if u >= SINCE else early).append((bucket, p["slug"], u))
+            continue
         s = json.loads(gzip.open(f).read().decode())
         for kind in ("draft", "base"):
             new = get(f"/cms/v3/pages/site-pages/{p['id']}" + ("/draft" if kind == "draft" else ""))
@@ -63,13 +73,15 @@ print(f"snapshot   : {SNAP}")
 print(f"pages read : {sum(len(v) for _, v in buckets)} across {len(buckets)} buckets "
       f"({', '.join(f'{b} {len(v)}' for b, v in buckets)})")
 print(f"records identical (ignoring audit stamps): {clean}")
-if missing:
-    print(f"\nNOT IN SNAPSHOT -- unverifiable: {len(missing)}")
-    for b, s_ in missing[:10]: print(f"   {b:11} {s_}")
+if early or late:
+    print(f"\nnot in the snapshot ({len(early)+len(late)} pages, all non-production):")
+    print(f"   last edited before the run, so untouched : {len(early)}")
+    print(f"   edited at or after the run               : {len(late)}")
+    for b, s_, u in late: print(f"      {b:11} {s_:34} {u}")
 
 print(f"\nrecords that moved: {len(moved)}")
 for bucket, slug, kind, icons, other, detail in moved:
-    flag = "" if slug == EXPECT else "   <-- NOT THE PAGE UNDER TEST"
+    flag = "" if slug in EXPECT else "   <-- NOT A PAGE UNDER TEST"
     print(f"\n  [{bucket}] {slug}  ({kind}){flag}")
     print(f"      icon srcs changed: {len(icons)}")
     for k, a, b in detail:
@@ -78,10 +90,10 @@ for bucket, slug, kind, icons, other, detail in moved:
         print(f"           + {str(b).rsplit('/',1)[-1]}")
     print(f"      other fields changed: {len(other)}" + (f"  {other}" if other else ""))
 
-bad = [m for m in moved if m[4] or (EXPECT and m[1] != EXPECT)]
+bad = [m for m in moved if m[4] or (EXPECT and m[1] not in EXPECT)] + late
 print("\n" + "="*64)
-print(f"VERDICT: {'PASS' if not bad and not missing else 'REVIEW'}")
+print(f"VERDICT: {'PASS' if not bad else 'REVIEW'}")
 print(f"  pages other than the one under test that moved : "
-      f"{len({m[1] for m in moved if EXPECT and m[1] != EXPECT})}")
+      f"{len({m[1] for m in moved if EXPECT and m[1] not in EXPECT})}")
 print(f"  non-icon content fields changed anywhere       : {sum(len(m[4]) for m in moved)}")
-print(f"  pages that could not be verified               : {len(missing)}")
+print(f"  non-production pages edited since the run      : {len(late)}")

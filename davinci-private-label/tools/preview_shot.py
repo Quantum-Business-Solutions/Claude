@@ -19,7 +19,9 @@ T    = os.environ["TOKEN"]
 S    = os.path.dirname(os.path.abspath(__file__)) + "/"
 SLUG = sys.argv[1]
 OUT  = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else "/tmp/preview_shot"
-PORT = 8899
+# A fixed port breaks the second page in a row: the first server is still
+# holding it. Let the OS pick a free one.
+PORT = 0
 
 def api(u):
     return json.load(urllib.request.urlopen(urllib.request.Request(
@@ -70,7 +72,9 @@ print(f"mirrored {len(seen)} assets")
 
 class Q(http.server.SimpleHTTPRequestHandler):
     def log_message(self, *a): pass
-srv = socketserver.TCPServer(("127.0.0.1", PORT), Q); srv.allow_reuse_address = True
+socketserver.TCPServer.allow_reuse_address = True
+srv = socketserver.TCPServer(("127.0.0.1", PORT), Q)
+PORT = srv.server_address[1]
 threading.Thread(target=srv.serve_forever, daemon=True).start()
 
 from playwright.sync_api import sync_playwright

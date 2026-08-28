@@ -57,7 +57,12 @@ def swap(page, urls, report):
         if isinstance(o, dict):
             if pk != "icon":
                 ic = o.get("icon")
-                if isinstance(ic, dict) and "/icons/" in str(ic.get("src", "")):
+                # Match the Praxera folder too, not just the old /icons/ path.
+                # One card had already been moved to phone-ink.png by hand, and a
+                # detector keyed on "/icons/" could not see it -- so the page kept
+                # a navy icon beside two green ones and nothing reported it.
+                src = str(ic.get("src", "")) if isinstance(ic, dict) else ""
+                if "/icons/" in src or "/Praxera/" in src:
                     key = ((o.get("number_or_eyebrow") or "").strip()
                            or re.sub(r"<[^>]+>", "", o.get("title") or "").strip()
                            or re.sub(r"<[^>]+>", "", o.get("stat_label") or "").strip())
