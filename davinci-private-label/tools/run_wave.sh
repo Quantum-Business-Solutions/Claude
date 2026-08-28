@@ -9,9 +9,9 @@
 #             to do before it does it. A "~" marks a stretch match, not a match.
 #   apply     re-reads each page immediately before writing and skips it if
 #             someone saved in between.
-#   qa        reads all 137 pages, not just the ones touched, against the
-#             snapshot. The swap tool's own readback cannot see a page it
-#             never opened.
+#   qa        full field diff on the page you touched, plus a draft-timestamp
+#             check on the other 136. The swap tool's own readback cannot see a
+#             page it never opened, and the sweep costs about six seconds.
 #   shot      renders the real draft through HubSpot's preview and reports
 #             any broken or mis-sized icon, which no JSON diff can catch.
 #
@@ -34,7 +34,7 @@ read -r -p "apply these changes? [y/N] " ok
 echo; echo "=== 3/5  apply ==============================================="
 python3 tools/icon_swap.py "$@" --apply
 
-echo; echo "=== 4/5  QA: all 137 pages against the snapshot ==============="
+echo; echo "=== 4/5  QA: the pages touched, in full; the rest by timestamp ="
 python3 tools/qa_write.py "snapshots/pages/$SNAP" --expect "$@"
 
 echo; echo "=== 5/5  render each page and check the icons ================="

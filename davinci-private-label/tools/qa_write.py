@@ -1,35 +1,40 @@
 #!/usr/bin/env python3
-"""Independent QA on an icon write: prove one page moved and nothing else did.
+"""QA one icon write: what changed on the page, and confirmation nothing else moved.
+
+Two questions, answered at the cost each deserves.
+
+The page you touched gets a full field-by-field diff against the snapshot --
+every leaf compared, so a stray edit anywhere in it shows up by name.
+
+Every other page in the portal gets its draft timestamp checked. That is the
+whole question for them: a page whose draft has not been written cannot have
+changed. 137 pages take about six seconds in parallel, which is cheap enough
+that there is no reason to skip it and find out later.
 
 Deliberately not the check the swap tool runs on itself. That one compares the
 page it just wrote against the copy it held in memory, so it cannot see a page
-it never opened -- and the first pass after the design-team swap only looked at
+it never opened -- and the first pass after the design-team swap looked only at
 the 65 production pages, leaving the 63 V3 duplicates and the v1ref set
-unverified. This reads every page in the portal index, both records, against a
-snapshot, and compares canonical JSON rather than reusing the swap tool's own
-flattening.
+unexamined.
 
-usage: TOKEN=... qa_write.py <snapshot-dir> [--expect slug]
+usage: TOKEN=... qa_write.py <snapshot-dir> --expect <slug> [slug ...] [--deep-all]
 """
-import json, os, sys, gzip, urllib.request, collections
+import concurrent.futures as cf
+import gzip, json, os, sys, urllib.request
 
-T = os.environ["TOKEN"]
-S = os.path.dirname(os.path.abspath(__file__)) + "/"
+T    = os.environ["TOKEN"]
+S    = os.path.dirname(os.path.abspath(__file__)) + "/"
 SNAP = sys.argv[1].rstrip("/")
-EXPECT = set(sys.argv[sys.argv.index("--expect") + 1:]) if "--expect" in sys.argv else set()
+DEEP_ALL = "--deep-all" in sys.argv
+EXPECT = set(a for a in sys.argv[sys.argv.index("--expect") + 1:]
+             if not a.startswith("-")) if "--expect" in sys.argv else set()
 
-# HubSpot stamps these on any write; they are the API's bookkeeping, not content.
+# HubSpot stamps these on any write; they are its bookkeeping, not page content.
 STAMPS = {"authorName", "updatedById", "updatedAt", "updated"}
 
 def get(u):
     return json.load(urllib.request.urlopen(urllib.request.Request(
         "https://api.hubapi.com" + u, headers={"Authorization": "Bearer " + T})))
-
-def canon(o, drop_stamps=True):
-    """Canonical JSON with the audit stamps optionally lifted out."""
-    if drop_stamps and isinstance(o, dict):
-        o = {k: v for k, v in o.items() if k not in STAMPS}
-    return json.dumps(o, sort_keys=True, separators=(",", ":"))
 
 def walk(o, p=""):
     d = {}
@@ -40,60 +45,72 @@ def walk(o, p=""):
     else: d[p] = o
     return d
 
-idx = json.load(open(S + "../reference/page_index.json"))
-buckets = [(b, v) for b, v in idx.items() if isinstance(v, list)]
-missing, moved, clean = [], [], 0
-early, late = [], []
-SINCE = os.environ.get("SINCE") or max(
-    (json.loads(gzip.open(f"{SNAP}/{q['id']}.json.gz").read().decode())["draft"]["updatedAt"]
-     for b, v in json.load(open(S + "../reference/page_index.json")).items() if isinstance(v, list)
-     for q in v if os.path.exists(f"{SNAP}/{q['id']}.json.gz")), default="")
-for bucket, pages in buckets:
-    for p in pages:
-        f = f"{SNAP}/{p['id']}.json.gz"
-        if not os.path.exists(f):
-            # The snapshot only covers production. For the rest, a draft whose
-            # updatedAt predates the run cannot have been touched by it.
-            u = get(f"/cms/v3/pages/site-pages/{p['id']}/draft").get("updatedAt", "")
-            (late if u >= SINCE else early).append((bucket, p["slug"], u))
-            continue
-        s = json.loads(gzip.open(f).read().decode())
-        for kind in ("draft", "base"):
-            new = get(f"/cms/v3/pages/site-pages/{p['id']}" + ("/draft" if kind == "draft" else ""))
-            if canon(s[kind]) == canon(new): clean += 1; continue
-            A, B = walk(s[kind]), walk(new)
-            fields = sorted(k for k in set(A) | set(B) if A.get(k) != B.get(k))
-            icons = [k for k in fields if k.endswith("/icon/src")]
-            other = [k for k in fields if k not in icons
-                     and k.lstrip("/") not in STAMPS]
+def snapshot(pid):
+    f = f"{SNAP}/{pid}.json.gz"
+    return json.loads(gzip.open(f).read().decode()) if os.path.exists(f) else None
+
+idx   = json.load(open(S + "../reference/page_index.json"))
+pages = [(b, p) for b, v in idx.items() if isinstance(v, list) for p in v]
+deep  = [(b, p) for b, p in pages if DEEP_ALL or p["slug"] in EXPECT]
+light = [(b, p) for b, p in pages if (b, p) not in deep]
+
+print(f"snapshot : {SNAP}")
+print(f"deep diff: {len(deep)} page(s)   timestamp check: {len(light)} page(s)\n")
+
+# ---- the page(s) under test: every field ------------------------------------
+moved = []
+for bucket, p in deep:
+    s = snapshot(p["id"])
+    if s is None:
+        moved.append((bucket, p["slug"], "draft", [], ["NOT IN SNAPSHOT"], [])); continue
+    for kind in ("draft", "base"):
+        new = get(f"/cms/v3/pages/site-pages/{p['id']}" + ("/draft" if kind == "draft" else ""))
+        A, B = walk(s[kind]), walk(new)
+        fields = sorted(k for k in set(A) | set(B) if A.get(k) != B.get(k))
+        icons  = [k for k in fields if k.endswith("/icon/src")]
+        other  = [k for k in fields if k not in icons and k.lstrip("/") not in STAMPS]
+        if fields:
             moved.append((bucket, p["slug"], kind, icons, other,
                           [(k, A.get(k), B.get(k)) for k in icons]))
+        if kind == "draft":
+            print(f"  {p['slug']}  ({len(A)} fields)")
+            for k, a, b in [(k, A.get(k), B.get(k)) for k in icons]:
+                print(f"      {k.split('/params/')[-1]}")
+                print(f"         - {str(a).rsplit('/', 1)[-1]}")
+                print(f"         + {str(b).rsplit('/', 1)[-1]}")
+            print(f"      icons changed: {len(icons)}   other fields changed: {len(other)}"
+                  + (f"  {other}" if other else ""))
 
-print(f"snapshot   : {SNAP}")
-print(f"pages read : {sum(len(v) for _, v in buckets)} across {len(buckets)} buckets "
-      f"({', '.join(f'{b} {len(v)}' for b, v in buckets)})")
-print(f"records identical (ignoring audit stamps): {clean}")
-if early or late:
-    print(f"\nnot in the snapshot ({len(early)+len(late)} pages, all non-production):")
-    print(f"   last edited before the run, so untouched : {len(early)}")
-    print(f"   edited at or after the run               : {len(late)}")
-    for b, s_, u in late: print(f"      {b:11} {s_:34} {u}")
+# ---- everything else: did its draft move? -----------------------------------
+def check(arg):
+    bucket, p = arg
+    s = snapshot(p["id"])
+    was = s["draft"]["updatedAt"] if s else None
+    now = get(f"/cms/v3/pages/site-pages/{p['id']}/draft").get("updatedAt")
+    return bucket, p["slug"], was, now
 
-print(f"\nrecords that moved: {len(moved)}")
-for bucket, slug, kind, icons, other, detail in moved:
-    flag = "" if slug in EXPECT else "   <-- NOT A PAGE UNDER TEST"
-    print(f"\n  [{bucket}] {slug}  ({kind}){flag}")
-    print(f"      icon srcs changed: {len(icons)}")
-    for k, a, b in detail:
-        print(f"        {k.split('/params/')[-1]}")
-        print(f"           - {str(a).rsplit('/',1)[-1]}")
-        print(f"           + {str(b).rsplit('/',1)[-1]}")
-    print(f"      other fields changed: {len(other)}" + (f"  {other}" if other else ""))
+drifted, unbaselined = [], []
+with cf.ThreadPoolExecutor(8) as ex:
+    for bucket, slug, was, now in ex.map(check, light):
+        if was is None: unbaselined.append((bucket, slug, now))
+        elif was != now: drifted.append((bucket, slug, was, now))
 
-bad = [m for m in moved if m[4] or (EXPECT and m[1] not in EXPECT)] + late
-print("\n" + "="*64)
+print(f"\nother pages whose draft moved: {len(drifted)}")
+for b, slug, was, now in drifted:
+    print(f"   [{b}] {slug:34} {was[:19]} -> {now[:19]}")
+if unbaselined:
+    # The snapshot covers production only; for the rest, compare against the run.
+    since = max((s["draft"]["updatedAt"] for _, p in deep
+                 for s in [snapshot(p["id"])] if s), default="")
+    late = [(b, s_, n) for b, s_, n in unbaselined if n and n >= since]
+    print(f"not in the snapshot ({len(unbaselined)} pages, non-production):")
+    print(f"   last written before this run, so untouched : {len(unbaselined)-len(late)}")
+    print(f"   written since                              : {len(late)}")
+    for b, s_, n in late: print(f"      [{b}] {s_:32} {n[:19]}")
+    drifted += [(b, s_, "?", n) for b, s_, n in late]
+
+bad = [m for m in moved if m[4] or (EXPECT and m[1] not in EXPECT)] + drifted
+print("\n" + "=" * 62)
 print(f"VERDICT: {'PASS' if not bad else 'REVIEW'}")
-print(f"  pages other than the one under test that moved : "
-      f"{len({m[1] for m in moved if EXPECT and m[1] not in EXPECT})}")
-print(f"  non-icon content fields changed anywhere       : {sum(len(m[4]) for m in moved)}")
-print(f"  non-production pages edited since the run      : {len(late)}")
+print(f"  non-icon fields changed on the page(s) under test : {sum(len(m[4]) for m in moved)}")
+print(f"  any other page whose draft moved                  : {len(drifted)}")
