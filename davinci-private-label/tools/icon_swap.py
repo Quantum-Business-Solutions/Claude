@@ -76,8 +76,18 @@ def swap(page, urls, report):
             for v in o: walk(v, pk)
     walk(page); return page
 
-def icon_urls():
+# The library carries four cuts of every icon and two of them are greens:
+#   -ink         #231F20   uniform black, the set we use
+#   -green       #65A11B
+#   -brand-green #76BC43
+#   -white       for dark backgrounds
+# Mixing -green and -brand-green puts two different greens on one page, which is
+# what sent us to ink. Change VARIANT, never the call sites.
+VARIANT = "ink"
+
+def icon_urls(variant=None):
     """Newest upload wins: an icon can sit under several names as it is re-cut."""
+    variant = variant or VARIANT
     url = f"{API}/files/v3/files/search?limit=100&path=/Praxera"; f = {}
     while url:
         d = json.load(urllib.request.urlopen(urllib.request.Request(url, headers=H)))
@@ -87,7 +97,7 @@ def icon_urls():
              for n in f if re.match(r".*-ink(-\d+)?$", n)}
     best = {}
     for n, x in f.items():
-        m = re.match(r"^(.+?)-green(?:-\d+)?$", n)
+        m = re.match(rf"^(.+?)-{variant}(?:-\d+)?$", n)
         if not m or m.group(1) not in bases: continue
         b = m.group(1); t = str(x.get("createdAt") or "")
         if b not in best or t > best[b][0]: best[b] = (t, x["url"])
