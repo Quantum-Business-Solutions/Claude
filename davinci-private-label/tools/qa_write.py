@@ -99,9 +99,13 @@ print(f"\nother pages whose draft moved: {len(drifted)}")
 for b, slug, was, now in drifted:
     print(f"   [{b}] {slug:34} {was[:19]} -> {now[:19]}")
 if unbaselined:
-    # The snapshot covers production only; for the rest, compare against the run.
-    since = max((s["draft"]["updatedAt"] for _, p in deep
-                 for s in [snapshot(p["id"])] if s), default="")
+    # The snapshot covers production only. For the rest the question is whether
+    # they were written after the snapshot was taken, so the reference is the
+    # capture time in the directory name -- not the pages' own timestamps, which
+    # are mostly older and flagged nine of Barb's V3 edits as ours.
+    since = os.path.basename(SNAP).replace("T", "T", 1)
+    since = since[:13] + ":" + since[14:16] + ":" + since[17:19] + "Z" \
+            if len(since) >= 19 else ""
     late = [(b, s_, n) for b, s_, n in unbaselined if n and n >= since]
     print(f"not in the snapshot ({len(unbaselined)} pages, non-production):")
     print(f"   last written before this run, so untouched : {len(unbaselined)-len(late)}")

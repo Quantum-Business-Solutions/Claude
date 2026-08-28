@@ -1,0 +1,980 @@
+{
+ "taken": "2026-08-28T21-23-23",
+ "pages": {
+  "219487767066": {
+   "slug": "-temporary-slug-blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026-26d2f052-144d-4083-9145-64630a22f746",
+   "draft": {
+    "bytes": 18217,
+    "icons": 0,
+    "updatedAt": "2026-08-25T16:22:33.368Z",
+    "slug": "-temporary-slug-blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026-26d2f052-144d-4083-9145-64630a22f746"
+   },
+   "base": {
+    "bytes": 18217,
+    "icons": 0,
+    "updatedAt": "2026-08-25T16:22:33.368Z",
+    "slug": "-temporary-slug-blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026-26d2f052-144d-4083-9145-64630a22f746"
+   }
+  },
+  "219472435309": {
+   "slug": "blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
+   "draft": {
+    "bytes": 18121,
+    "icons": 0,
+    "updatedAt": "2026-08-25T18:46:30.233Z",
+    "slug": "blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026"
+   },
+   "base": {
+    "bytes": 18120,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:15:46.171Z",
+    "slug": "blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026"
+   }
+  },
+  "216189432992": {
+   "slug": "en/pl-demo-aging",
+   "draft": {
+    "bytes": 29255,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:29:13.128Z",
+    "slug": "en/pl-demo-aging"
+   },
+   "base": {
+    "bytes": 29255,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:29:13.128Z",
+    "slug": "en/pl-demo-aging"
+   }
+  },
+  "216194811718": {
+   "slug": "en/pl-demo-book-consultation",
+   "draft": {
+    "bytes": 14283,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:44:49.587Z",
+    "slug": "en/pl-demo-book-consultation"
+   },
+   "base": {
+    "bytes": 14283,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:44:49.587Z",
+    "slug": "en/pl-demo-book-consultation"
+   }
+  },
+  "216189433156": {
+   "slug": "en/pl-demo-customer-art",
+   "draft": {
+    "bytes": 19771,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:44:18.618Z",
+    "slug": "en/pl-demo-customer-art"
+   },
+   "base": {
+    "bytes": 19771,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:44:18.618Z",
+    "slug": "en/pl-demo-customer-art"
+   }
+  },
+  "216194811561": {
+   "slug": "en/pl-demo-definitive-guide",
+   "draft": {
+    "bytes": 40666,
+    "icons": 0,
+    "updatedAt": "2026-08-27T13:38:56.203Z",
+    "slug": "en/pl-demo-definitive-guide"
+   },
+   "base": {
+    "bytes": 40666,
+    "icons": 0,
+    "updatedAt": "2026-08-27T13:38:56.203Z",
+    "slug": "en/pl-demo-definitive-guide"
+   }
+  },
+  "216179449206": {
+   "slug": "en/pl-demo-design-services",
+   "draft": {
+    "bytes": 17117,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:30:56.941Z",
+    "slug": "en/pl-demo-design-services"
+   },
+   "base": {
+    "bytes": 17117,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:30:56.941Z",
+    "slug": "en/pl-demo-design-services"
+   }
+  },
+  "216189433139": {
+   "slug": "en/pl-demo-design-team",
+   "draft": {
+    "bytes": 29282,
+    "icons": 4,
+    "updatedAt": "2026-08-28T20:53:51.594Z",
+    "slug": "en/pl-demo-design-team"
+   },
+   "base": {
+    "bytes": 29319,
+    "icons": 4,
+    "updatedAt": "2026-08-25T17:27:35.399Z",
+    "slug": "en/pl-demo-design-team"
+   }
+  },
+  "216186378936": {
+   "slug": "en/pl-demo-dropshipping",
+   "draft": {
+    "bytes": 27536,
+    "icons": 10,
+    "updatedAt": "2026-08-27T13:38:58.082Z",
+    "slug": "en/pl-demo-dropshipping"
+   },
+   "base": {
+    "bytes": 27536,
+    "icons": 10,
+    "updatedAt": "2026-08-27T13:38:58.082Z",
+    "slug": "en/pl-demo-dropshipping"
+   }
+  },
+  "216179449410": {
+   "slug": "en/pl-demo-fitness",
+   "draft": {
+    "bytes": 28349,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:24:48.191Z",
+    "slug": "en/pl-demo-fitness"
+   },
+   "base": {
+    "bytes": 28349,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:24:48.191Z",
+    "slug": "en/pl-demo-fitness"
+   }
+  },
+  "216194811571": {
+   "slug": "en/pl-demo-get-started",
+   "draft": {
+    "bytes": 16128,
+    "icons": 2,
+    "updatedAt": "2026-08-27T13:38:59.026Z",
+    "slug": "en/pl-demo-get-started"
+   },
+   "base": {
+    "bytes": 16132,
+    "icons": 2,
+    "updatedAt": "2026-08-27T13:38:59.026Z",
+    "slug": "en/pl-demo-get-started"
+   }
+  },
+  "216189432990": {
+   "slug": "en/pl-demo-herbal",
+   "draft": {
+    "bytes": 28340,
+    "icons": 9,
+    "updatedAt": "2026-08-25T17:14:23.913Z",
+    "slug": "en/pl-demo-herbal"
+   },
+   "base": {
+    "bytes": 28342,
+    "icons": 9,
+    "updatedAt": "2026-08-25T17:14:23.913Z",
+    "slug": "en/pl-demo-herbal"
+   }
+  },
+  "216176671879": {
+   "slug": "en/pl-demo-how-to-sell-supplements",
+   "draft": {
+    "bytes": 53264,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:40:24.212Z",
+    "slug": "en/pl-demo-how-to-sell-supplements"
+   },
+   "base": {
+    "bytes": 53264,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:40:24.212Z",
+    "slug": "en/pl-demo-how-to-sell-supplements"
+   }
+  },
+  "216194811563": {
+   "slug": "en/pl-demo-onboarding-guide",
+   "draft": {
+    "bytes": 16002,
+    "icons": 5,
+    "updatedAt": "2026-08-27T13:41:42.647Z",
+    "slug": "en/pl-demo-onboarding-guide"
+   },
+   "base": {
+    "bytes": 16002,
+    "icons": 5,
+    "updatedAt": "2026-08-27T13:41:42.647Z",
+    "slug": "en/pl-demo-onboarding-guide"
+   }
+  },
+  "216189433355": {
+   "slug": "en/pl-demo-pediatric",
+   "draft": {
+    "bytes": 33328,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:17:58.546Z",
+    "slug": "en/pl-demo-pediatric"
+   },
+   "base": {
+    "bytes": 33328,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:17:58.546Z",
+    "slug": "en/pl-demo-pediatric"
+   }
+  },
+  "216189433405": {
+   "slug": "en/pl-demo-pillar",
+   "draft": {
+    "bytes": 44412,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:19:26.326Z",
+    "slug": "en/pl-demo-pillar"
+   },
+   "base": {
+    "bytes": 44412,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:19:26.326Z",
+    "slug": "en/pl-demo-pillar"
+   }
+  },
+  "216194811650": {
+   "slug": "en/pl-demo-privacy",
+   "draft": {
+    "bytes": 14363,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:30:10.656Z",
+    "slug": "en/pl-demo-privacy"
+   },
+   "base": {
+    "bytes": 14363,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:30:10.656Z",
+    "slug": "en/pl-demo-privacy"
+   }
+  },
+  "216189433440": {
+   "slug": "en/pl-demo-resources",
+   "draft": {
+    "bytes": 23225,
+    "icons": 9,
+    "updatedAt": "2026-08-25T17:38:08.079Z",
+    "slug": "en/pl-demo-resources"
+   },
+   "base": {
+    "bytes": 23225,
+    "icons": 9,
+    "updatedAt": "2026-08-25T17:38:08.079Z",
+    "slug": "en/pl-demo-resources"
+   }
+  },
+  "216192983665": {
+   "slug": "en/pl-demo-ty-consultation",
+   "draft": {
+    "bytes": 8118,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:39:00.005Z",
+    "slug": "en/pl-demo-ty-consultation"
+   },
+   "base": {
+    "bytes": 8118,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:39:00.005Z",
+    "slug": "en/pl-demo-ty-consultation"
+   }
+  },
+  "216194811652": {
+   "slug": "en/pl-demo-ty-guide",
+   "draft": {
+    "bytes": 8414,
+    "icons": 3,
+    "updatedAt": "2026-08-25T19:24:34.459Z",
+    "slug": "en/pl-demo-ty-guide"
+   },
+   "base": {
+    "bytes": 8377,
+    "icons": 3,
+    "updatedAt": "2026-08-25T17:58:47.054Z",
+    "slug": "en/pl-demo-ty-guide"
+   }
+  },
+  "216194811659": {
+   "slug": "en/pl-demo-ty-onboarding",
+   "draft": {
+    "bytes": 13426,
+    "icons": 5,
+    "updatedAt": "2026-08-25T17:34:28.274Z",
+    "slug": "en/pl-demo-ty-onboarding"
+   },
+   "base": {
+    "bytes": 13426,
+    "icons": 5,
+    "updatedAt": "2026-08-25T17:34:28.274Z",
+    "slug": "en/pl-demo-ty-onboarding"
+   }
+  },
+  "216194811755": {
+   "slug": "en/pl-demo-ty-quote",
+   "draft": {
+    "bytes": 8085,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:39:00.287Z",
+    "slug": "en/pl-demo-ty-quote"
+   },
+   "base": {
+    "bytes": 8085,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:39:00.287Z",
+    "slug": "en/pl-demo-ty-quote"
+   }
+  },
+  "216189433092": {
+   "slug": "en/pl-demo-womens-health",
+   "draft": {
+    "bytes": 28509,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:13:43.171Z",
+    "slug": "en/pl-demo-womens-health"
+   },
+   "base": {
+    "bytes": 28511,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:13:43.171Z",
+    "slug": "en/pl-demo-womens-health"
+   }
+  },
+  "216189433476": {
+   "slug": "pl-demo-about",
+   "draft": {
+    "bytes": 21562,
+    "icons": 3,
+    "updatedAt": "2026-08-28T20:53:53.185Z",
+    "slug": "en/pl-demo-about"
+   },
+   "base": {
+    "bytes": 21609,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:38:59.658Z",
+    "slug": "en/pl-demo-about"
+   }
+  },
+  "216192983654": {
+   "slug": "pl-demo-ads-contract-mfg",
+   "draft": {
+    "bytes": 13141,
+    "icons": 3,
+    "updatedAt": "2026-08-27T15:02:08.308Z",
+    "slug": "en/pl-demo-ads-contract-mfg"
+   },
+   "base": {
+    "bytes": 13141,
+    "icons": 3,
+    "updatedAt": "2026-08-27T15:02:08.308Z",
+    "slug": "en/pl-demo-ads-contract-mfg"
+   }
+  },
+  "216192983663": {
+   "slug": "pl-demo-ads-custom",
+   "draft": {
+    "bytes": 13275,
+    "icons": 3,
+    "updatedAt": "2026-08-27T15:03:25.469Z",
+    "slug": "en/pl-demo-ads-custom"
+   },
+   "base": {
+    "bytes": 13275,
+    "icons": 3,
+    "updatedAt": "2026-08-27T15:03:25.469Z",
+    "slug": "en/pl-demo-ads-custom"
+   }
+  },
+  "216192983652": {
+   "slug": "pl-demo-ads-mfg-usa",
+   "draft": {
+    "bytes": 12952,
+    "icons": 3,
+    "updatedAt": "2026-08-27T15:06:00.925Z",
+    "slug": "en/pl-demo-ads-mfg-usa"
+   },
+   "base": {
+    "bytes": 12952,
+    "icons": 3,
+    "updatedAt": "2026-08-27T15:06:00.925Z",
+    "slug": "en/pl-demo-ads-mfg-usa"
+   }
+  },
+  "216194811734": {
+   "slug": "pl-demo-ads-pl-mfg",
+   "draft": {
+    "bytes": 13048,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:45:00.178Z",
+    "slug": "en/pl-demo-ads-pl-mfg"
+   },
+   "base": {
+    "bytes": 13048,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:45:00.178Z",
+    "slug": "en/pl-demo-ads-pl-mfg"
+   }
+  },
+  "216186379314": {
+   "slug": "pl-demo-capsules",
+   "draft": {
+    "bytes": 29049,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:52:18.889Z",
+    "slug": "en/pl-demo-capsules"
+   },
+   "base": {
+    "bytes": 29049,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:52:18.889Z",
+    "slug": "en/pl-demo-capsules"
+   }
+  },
+  "216194811714": {
+   "slug": "pl-demo-case-studies",
+   "draft": {
+    "bytes": 11697,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:42:00.852Z",
+    "slug": "en/pl-demo-case-studies"
+   },
+   "base": {
+    "bytes": 11696,
+    "icons": 3,
+    "updatedAt": "2026-08-25T18:02:53.746Z",
+    "slug": "en/pl-demo-case-studies"
+   }
+  },
+  "216192983597": {
+   "slug": "pl-demo-certifications",
+   "draft": {
+    "bytes": 12974,
+    "icons": 3,
+    "updatedAt": "2026-08-25T18:01:22.667Z",
+    "slug": "en/pl-demo-certifications"
+   },
+   "base": {
+    "bytes": 12974,
+    "icons": 3,
+    "updatedAt": "2026-08-25T18:01:22.667Z",
+    "slug": "en/pl-demo-certifications"
+   }
+  },
+  "216188835864": {
+   "slug": "pl-demo-chewables",
+   "draft": {
+    "bytes": 27143,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:56:30.200Z",
+    "slug": "en/pl-demo-chewables"
+   },
+   "base": {
+    "bytes": 27143,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:56:30.200Z",
+    "slug": "en/pl-demo-chewables"
+   }
+  },
+  "216189433251": {
+   "slug": "pl-demo-cognitive",
+   "draft": {
+    "bytes": 27373,
+    "icons": 9,
+    "updatedAt": "2026-08-27T15:09:11.704Z",
+    "slug": "en/pl-demo-cognitive"
+   },
+   "base": {
+    "bytes": 27373,
+    "icons": 9,
+    "updatedAt": "2026-08-27T15:09:11.704Z",
+    "slug": "en/pl-demo-cognitive"
+   }
+  },
+  "216192983650": {
+   "slug": "pl-demo-contact",
+   "draft": {
+    "bytes": 11989,
+    "icons": 3,
+    "updatedAt": "2026-08-28T20:53:54.683Z",
+    "slug": "en/pl-demo-contact"
+   },
+   "base": {
+    "bytes": 12062,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:51:53.593Z",
+    "slug": "en/pl-demo-contact"
+   }
+  },
+  "216189433487": {
+   "slug": "pl-demo-custom-formulation",
+   "draft": {
+    "bytes": 16617,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:43:02.935Z",
+    "slug": "en/pl-demo-custom-formulation"
+   },
+   "base": {
+    "bytes": 16612,
+    "icons": 3,
+    "updatedAt": "2026-08-25T18:00:39.735Z",
+    "slug": "en/pl-demo-custom-formulation"
+   }
+  },
+  "216189433375": {
+   "slug": "pl-demo-detox",
+   "draft": {
+    "bytes": 27452,
+    "icons": 9,
+    "updatedAt": "2026-08-27T15:13:50.948Z",
+    "slug": "en/pl-demo-detox"
+   },
+   "base": {
+    "bytes": 27454,
+    "icons": 9,
+    "updatedAt": "2026-08-27T15:13:50.948Z",
+    "slug": "en/pl-demo-detox"
+   }
+  },
+  "216189433390": {
+   "slug": "pl-demo-energy",
+   "draft": {
+    "bytes": 28057,
+    "icons": 11,
+    "updatedAt": "2026-08-27T15:46:45.498Z",
+    "slug": "en/pl-demo-energy"
+   },
+   "base": {
+    "bytes": 28057,
+    "icons": 11,
+    "updatedAt": "2026-08-27T15:46:45.498Z",
+    "slug": "en/pl-demo-energy"
+   }
+  },
+  "216194811691": {
+   "slug": "pl-demo-facility",
+   "draft": {
+    "bytes": 12099,
+    "icons": 4,
+    "updatedAt": "2026-08-27T13:38:59.348Z",
+    "slug": "en/pl-demo-facility"
+   },
+   "base": {
+    "bytes": 12099,
+    "icons": 4,
+    "updatedAt": "2026-08-27T13:38:59.348Z",
+    "slug": "en/pl-demo-facility"
+   }
+  },
+  "216192983618": {
+   "slug": "pl-demo-faq",
+   "draft": {
+    "bytes": 10046,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:33:33.563Z",
+    "slug": "en/pl-demo-faq"
+   },
+   "base": {
+    "bytes": 10046,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:33:33.563Z",
+    "slug": "en/pl-demo-faq"
+   }
+  },
+  "216192983627": {
+   "slug": "pl-demo-guides",
+   "draft": {
+    "bytes": 10986,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:38:54.136Z",
+    "slug": "en/pl-demo-guides"
+   },
+   "base": {
+    "bytes": 10986,
+    "icons": 3,
+    "updatedAt": "2026-08-27T13:38:54.136Z",
+    "slug": "en/pl-demo-guides"
+   }
+  },
+  "216192983401": {
+   "slug": "pl-demo-gummies",
+   "draft": {
+    "bytes": 29508,
+    "icons": 7,
+    "updatedAt": "2026-08-27T15:20:45.194Z",
+    "slug": "en/pl-demo-gummies"
+   },
+   "base": {
+    "bytes": 29508,
+    "icons": 7,
+    "updatedAt": "2026-08-27T15:20:45.194Z",
+    "slug": "en/pl-demo-gummies"
+   }
+  },
+  "216189433373": {
+   "slug": "pl-demo-heart-health",
+   "draft": {
+    "bytes": 27669,
+    "icons": 10,
+    "updatedAt": "2026-08-25T17:07:04.421Z",
+    "slug": "en/pl-demo-heart-health"
+   },
+   "base": {
+    "bytes": 27671,
+    "icons": 10,
+    "updatedAt": "2026-08-25T17:07:04.421Z",
+    "slug": "en/pl-demo-heart-health"
+   }
+  },
+  "216189433236": {
+   "slug": "pl-demo-immune-support",
+   "draft": {
+    "bytes": 27232,
+    "icons": 9,
+    "updatedAt": "2026-08-25T17:09:38.133Z",
+    "slug": "en/pl-demo-immune-support"
+   },
+   "base": {
+    "bytes": 27232,
+    "icons": 9,
+    "updatedAt": "2026-08-25T17:09:38.133Z",
+    "slug": "en/pl-demo-immune-support"
+   }
+  },
+  "216192983616": {
+   "slug": "pl-demo-ingredient-sourcing",
+   "draft": {
+    "bytes": 12169,
+    "icons": 3,
+    "updatedAt": "2026-08-25T18:01:53.539Z",
+    "slug": "en/pl-demo-ingredient-sourcing"
+   },
+   "base": {
+    "bytes": 12169,
+    "icons": 3,
+    "updatedAt": "2026-08-25T18:01:53.539Z",
+    "slug": "en/pl-demo-ingredient-sourcing"
+   }
+  },
+  "216189433459": {
+   "slug": "pl-demo-ingredients-testing",
+   "draft": {
+    "bytes": 15397,
+    "icons": 4,
+    "updatedAt": "2026-08-27T13:38:55.621Z",
+    "slug": "en/pl-demo-ingredients-testing"
+   },
+   "base": {
+    "bytes": 15397,
+    "icons": 4,
+    "updatedAt": "2026-08-27T13:38:55.621Z",
+    "slug": "en/pl-demo-ingredients-testing"
+   }
+  },
+  "216189433371": {
+   "slug": "pl-demo-joint-support",
+   "draft": {
+    "bytes": 27254,
+    "icons": 9,
+    "updatedAt": "2026-08-25T17:10:10.912Z",
+    "slug": "en/pl-demo-joint-support"
+   },
+   "base": {
+    "bytes": 27256,
+    "icons": 9,
+    "updatedAt": "2026-08-25T17:10:10.912Z",
+    "slug": "en/pl-demo-joint-support"
+   }
+  },
+  "216188835866": {
+   "slug": "pl-demo-liquids",
+   "draft": {
+    "bytes": 28903,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:41:02.146Z",
+    "slug": "en/pl-demo-liquids"
+   },
+   "base": {
+    "bytes": 28903,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:41:02.146Z",
+    "slug": "en/pl-demo-liquids"
+   }
+  },
+  "216188836114": {
+   "slug": "pl-demo-mens-health",
+   "draft": {
+    "bytes": 28017,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:11:44.424Z",
+    "slug": "en/pl-demo-mens-health"
+   },
+   "base": {
+    "bytes": 28019,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:11:44.424Z",
+    "slug": "en/pl-demo-mens-health"
+   }
+  },
+  "216189433270": {
+   "slug": "pl-demo-multivitamin",
+   "draft": {
+    "bytes": 27884,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:10:59.801Z",
+    "slug": "en/pl-demo-multivitamin"
+   },
+   "base": {
+    "bytes": 27884,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:10:59.801Z",
+    "slug": "en/pl-demo-multivitamin"
+   }
+  },
+  "216186379326": {
+   "slug": "pl-demo-our-process",
+   "draft": {
+    "bytes": 16414,
+    "icons": 6,
+    "updatedAt": "2026-08-27T15:00:20.540Z",
+    "slug": "en/pl-demo-our-process"
+   },
+   "base": {
+    "bytes": 16414,
+    "icons": 6,
+    "updatedAt": "2026-08-27T15:00:20.540Z",
+    "slug": "en/pl-demo-our-process"
+   }
+  },
+  "216189433489": {
+   "slug": "pl-demo-packaging",
+   "draft": {
+    "bytes": 11685,
+    "icons": 3,
+    "updatedAt": "2026-08-25T18:03:55.957Z",
+    "slug": "en/pl-demo-packaging"
+   },
+   "base": {
+    "bytes": 11685,
+    "icons": 3,
+    "updatedAt": "2026-08-25T18:03:55.957Z",
+    "slug": "en/pl-demo-packaging"
+   }
+  },
+  "216192983382": {
+   "slug": "pl-demo-powders",
+   "draft": {
+    "bytes": 28482,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:40:12.951Z",
+    "slug": "en/pl-demo-powders"
+   },
+   "base": {
+    "bytes": 28482,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:40:12.951Z",
+    "slug": "en/pl-demo-powders"
+   }
+  },
+  "216189433267": {
+   "slug": "pl-demo-prenatal",
+   "draft": {
+    "bytes": 27180,
+    "icons": 9,
+    "updatedAt": "2026-08-27T15:27:40.384Z",
+    "slug": "en/pl-demo-prenatal"
+   },
+   "base": {
+    "bytes": 27180,
+    "icons": 9,
+    "updatedAt": "2026-08-27T15:27:40.384Z",
+    "slug": "en/pl-demo-prenatal"
+   }
+  },
+  "216189433094": {
+   "slug": "pl-demo-probiotics",
+   "draft": {
+    "bytes": 28402,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:08:02.459Z",
+    "slug": "en/pl-demo-probiotics"
+   },
+   "base": {
+    "bytes": 28404,
+    "icons": 11,
+    "updatedAt": "2026-08-25T17:08:02.459Z",
+    "slug": "en/pl-demo-probiotics"
+   }
+  },
+  "216186379328": {
+   "slug": "pl-demo-quality-standards",
+   "draft": {
+    "bytes": 20002,
+    "icons": 4,
+    "updatedAt": "2026-08-27T13:38:58.371Z",
+    "slug": "en/pl-demo-quality-standards"
+   },
+   "base": {
+    "bytes": 20002,
+    "icons": 4,
+    "updatedAt": "2026-08-27T13:38:58.371Z",
+    "slug": "en/pl-demo-quality-standards"
+   }
+  },
+  "216194811716": {
+   "slug": "pl-demo-request-quote",
+   "draft": {
+    "bytes": 13958,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:31:37.821Z",
+    "slug": "en/pl-demo-request-quote"
+   },
+   "base": {
+    "bytes": 13958,
+    "icons": 0,
+    "updatedAt": "2026-08-25T17:31:37.821Z",
+    "slug": "en/pl-demo-request-quote"
+   }
+  },
+  "216194811689": {
+   "slug": "pl-demo-sell-sheets",
+   "draft": {
+    "bytes": 11667,
+    "icons": 3,
+    "updatedAt": "2026-08-25T18:03:24.169Z",
+    "slug": "en/pl-demo-sell-sheets"
+   },
+   "base": {
+    "bytes": 11667,
+    "icons": 3,
+    "updatedAt": "2026-08-25T18:03:24.169Z",
+    "slug": "en/pl-demo-sell-sheets"
+   }
+  },
+  "216189433007": {
+   "slug": "pl-demo-sleep",
+   "draft": {
+    "bytes": 27853,
+    "icons": 10,
+    "updatedAt": "2026-08-27T13:38:58.674Z",
+    "slug": "en/pl-demo-sleep"
+   },
+   "base": {
+    "bytes": 27853,
+    "icons": 10,
+    "updatedAt": "2026-08-27T13:38:58.674Z",
+    "slug": "en/pl-demo-sleep"
+   }
+  },
+  "216192983363": {
+   "slug": "pl-demo-soft-gels",
+   "draft": {
+    "bytes": 28754,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:39:25.705Z",
+    "slug": "en/pl-demo-soft-gels"
+   },
+   "base": {
+    "bytes": 28754,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:39:25.705Z",
+    "slug": "en/pl-demo-soft-gels"
+   }
+  },
+  "216192983343": {
+   "slug": "pl-demo-tablets",
+   "draft": {
+    "bytes": 28577,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:42:00.783Z",
+    "slug": "en/pl-demo-tablets"
+   },
+   "base": {
+    "bytes": 28577,
+    "icons": 7,
+    "updatedAt": "2026-08-27T14:42:00.783Z",
+    "slug": "en/pl-demo-tablets"
+   }
+  },
+  "216194811759": {
+   "slug": "pl-demo-terms",
+   "draft": {
+    "bytes": 20378,
+    "icons": 0,
+    "updatedAt": "2026-08-27T13:38:57.525Z",
+    "slug": "en/pl-demo-terms"
+   },
+   "base": {
+    "bytes": 20378,
+    "icons": 0,
+    "updatedAt": "2026-08-27T13:38:57.525Z",
+    "slug": "en/pl-demo-terms"
+   }
+  },
+  "216192983607": {
+   "slug": "pl-demo-testing",
+   "draft": {
+    "bytes": 12581,
+    "icons": 4,
+    "updatedAt": "2026-08-27T13:38:54.846Z",
+    "slug": "en/pl-demo-testing"
+   },
+   "base": {
+    "bytes": 12581,
+    "icons": 4,
+    "updatedAt": "2026-08-27T13:38:54.846Z",
+    "slug": "en/pl-demo-testing"
+   }
+  },
+  "216194811757": {
+   "slug": "pl-demo-ty-sell-sheets",
+   "draft": {
+    "bytes": 6714,
+    "icons": 3,
+    "updatedAt": "2026-08-25T17:48:32.646Z",
+    "slug": "en/pl-demo-ty-sell-sheets"
+   },
+   "base": {
+    "bytes": 6714,
+    "icons": 3,
+    "updatedAt": "2026-08-25T17:48:32.646Z",
+    "slug": "en/pl-demo-ty-sell-sheets"
+   }
+  },
+  "216188836111": {
+   "slug": "pl-demo-weight-management",
+   "draft": {
+    "bytes": 27668,
+    "icons": 9,
+    "updatedAt": "2026-08-25T17:15:10.032Z",
+    "slug": "en/pl-demo-weight-management"
+   },
+   "base": {
+    "bytes": 27670,
+    "icons": 9,
+    "updatedAt": "2026-08-25T17:15:10.032Z",
+    "slug": "en/pl-demo-weight-management"
+   }
+  },
+  "218947739963": {
+   "slug": "pl-global-blocks",
+   "draft": {
+    "bytes": 4380,
+    "icons": 0,
+    "updatedAt": "2026-08-27T13:38:56.541Z",
+    "slug": "pl-global-blocks"
+   },
+   "base": {
+    "bytes": 4380,
+    "icons": 0,
+    "updatedAt": "2026-08-27T13:38:56.541Z",
+    "slug": "pl-global-blocks"
+   }
+  }
+ }
+}
