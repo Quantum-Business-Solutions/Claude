@@ -1,0 +1,4142 @@
+[
+ {
+  "slug": "en/pl-demo-aging",
+  "id": "216189432992",
+  "name": "Private Label - Page - Aging Supplements",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Multi-benefit appeal",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Advanced formulations drive premium price",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Long-term customer relationships",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     }
+    ]
+   },
+   {
+    "cards": 8,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "CELLULAR",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cellular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     },
+     {
+      "label": "LONGEVITY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cellular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "BOTANICAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "botanical",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "ANTIOXIDANT",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "SKIN & BEAUTY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "beauty-mood",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "LIPOSOMAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "liposomal",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "FOUNDATION",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "OMEGAS",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "omega",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-design-team",
+  "id": "216189433139",
+  "name": "Private Label - Page - Working With Our Design Team",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
+  "rows": [
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "1. Brand discovery call",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "discovery-strategy",
+      "stretch": false,
+      "done": true,
+      "now": "discovery-strategy-ink.png"
+     },
+     {
+      "label": "2. Template selection",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "product-selection-design",
+      "stretch": false,
+      "done": true,
+      "now": "product-selection-design-ink.png"
+     },
+     {
+      "label": "3. Design iteration",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "design-your-brand",
+      "stretch": false,
+      "done": true,
+      "now": "design-your-brand-ink.png"
+     },
+     {
+      "label": "4. Print-ready file & label approval",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "label-approval",
+      "stretch": false,
+      "done": true,
+      "now": "label-approval-ink.png"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-dropshipping",
+  "id": "216186378936",
+  "name": "Private Label - Standard Page - Dropshipping for Private Label",
+  "editor": "HubSpot System",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 6,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Lower overhead, less capital tied up",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-960271aa9b.svg"
+     },
+     {
+      "label": "Faster turnaround on every order",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     },
+     {
+      "label": "More time for what grows the business",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Freedom to experiment",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Reduced risk on every SKU",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Scale without operational drag",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-95ad87ff0f.svg"
+     }
+    ]
+   },
+   {
+    "cards": 4,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "Premium ingredient quality",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Quality assurance throughout production",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-19d5e7af05.svg"
+     },
+     {
+      "label": "Flexibility and scaling capacity",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-261f1b1e4f.svg"
+     },
+     {
+      "label": "Adherence to CGMP regulations",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "production",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-fitness",
+  "id": "216179449410",
+  "name": "Private Label - Page - Fitness Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "High-repeat purchase category",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-156db8917c.svg"
+     },
+     {
+      "label": "Clear, defined audience segments",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "Outcome-driven value proposition",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     }
+    ]
+   },
+   {
+    "cards": 8,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "HORMONAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "hormonal-balance",
+      "stretch": false,
+      "done": true,
+      "now": "hormonal-balance-ink.png"
+     },
+     {
+      "label": "MUSCLE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "muscle",
+      "stretch": false,
+      "done": true,
+      "now": "muscle-ink.png"
+     },
+     {
+      "label": "MUSCLE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "muscle",
+      "stretch": false,
+      "done": true,
+      "now": "muscle-ink.png"
+     },
+     {
+      "label": "ENDURANCE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "endurance",
+      "stretch": false,
+      "done": true,
+      "now": "endurance-ink.png"
+     },
+     {
+      "label": "ENERGY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "energy",
+      "stretch": true,
+      "done": true,
+      "now": "energy-ink.png"
+     },
+     {
+      "label": "BODY COMP",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "body-composition",
+      "stretch": false,
+      "done": true,
+      "now": "body-composition-ink.png"
+     },
+     {
+      "label": "FOUNDATION",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": true,
+      "now": "foundation-ink.png"
+     },
+     {
+      "label": "STRENGTH",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "strength",
+      "stretch": false,
+      "done": true,
+      "now": "strength-ink.png"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-get-started",
+  "id": "216194811571",
+  "name": "Private Label - Page - Get Started",
+  "editor": "HubSpot System",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 2,
+    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "slots": [
+     {
+      "label": "The Definitive Guide to Private Label Supplements",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-2d74ec447b.svg"
+     },
+     {
+      "label": "Ingredients & Testing Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-herbal",
+  "id": "216189432990",
+  "name": "Private Label - Page - Herbal Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Targeted wellness, broad appeal",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "Bioavailability drives results",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Quality matters more than quantity",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-19d5e7af05.svg"
+     }
+    ]
+   },
+   {
+    "cards": 6,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "GREENS",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "botanical",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "CARDIO",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cardiovascular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "DIGESTIVE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "probiotics",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "ANTIOXIDANT",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "ENERGY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "energy",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-156db8917c.svg"
+     },
+     {
+      "label": "IMMUNE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "immune",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-how-to-sell-supplements",
+  "id": "216176671879",
+  "name": "Private Label - Standard Page - How to Sell Private Label Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Match products to the right audience segments",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-d3b0931fcb.svg"
+     },
+     {
+      "label": "Learn the supplements you will offer",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-2d74ec447b.svg"
+     },
+     {
+      "label": "Find where your audience already spends time",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-59cd63d8e7.svg"
+     }
+    ]
+   },
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Social Media Marketing",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "social",
+      "stretch": false,
+      "done": true,
+      "now": "social-ink.png"
+     },
+     {
+      "label": "Content Marketing",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": true,
+      "now": "file-text-ink.png"
+     },
+     {
+      "label": "Email Marketing",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "mail",
+      "stretch": false,
+      "done": true,
+      "now": "mail-ink.png"
+     }
+    ]
+   },
+   {
+    "cards": 5,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Shopify",
+      "kind": "claim",
+      "action": "LOGO",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-f92397308c.svg"
+     },
+     {
+      "label": "WooCommerce",
+      "kind": "claim",
+      "action": "LOGO",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38955d961f.svg"
+     },
+     {
+      "label": "BigCommerce",
+      "kind": "claim",
+      "action": "LOGO",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-95ad87ff0f.svg"
+     },
+     {
+      "label": "Amazon",
+      "kind": "claim",
+      "action": "LOGO",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "eBay",
+      "kind": "claim",
+      "action": "LOGO",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-6f572adbe4.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-onboarding-guide",
+  "id": "216194811563",
+  "name": "Private Label - Page - Onboarding Guide",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 5,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "STEP 01 WEEK 1",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "prexera-icon-compass.svg"
+     },
+     {
+      "label": "STEP 02 WEEKS 2-3",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "prexera-icon-palette.svg"
+     },
+     {
+      "label": "STEP 03 WEEKS 4-5",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "prexera-icon-document.svg"
+     },
+     {
+      "label": "STEP 04 WEEKS 6-9",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "prexera-icon-factory.svg"
+     },
+     {
+      "label": "STEP 05 WEEKS 10-12",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "prexera-icon-cart.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-pediatric",
+  "id": "216189433355",
+  "name": "Private Label - Page - Pediatric Supplements",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "High-trust pediatric audience",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "Compliance matters as much as formulation",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Multi-product household opportunity",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     }
+    ]
+   },
+   {
+    "cards": 8,
+    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "slots": [
+     {
+      "label": "MULTI",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "BONE & IMMUNE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "bone-health",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "PROBIOTIC",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "probiotics",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "SLEEP",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "sleep",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-20d2ae991c.svg"
+     },
+     {
+      "label": "RELAXATION",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "sleep",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "OMEGAS",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "omega",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "IMMUNE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "immune",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "BRAIN",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cognitive",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-pillar",
+  "id": "216189433405",
+  "name": "Private Label - Page - Home - Private Label Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Build your product line",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "build-your-product-line",
+      "stretch": false,
+      "done": true,
+      "now": "build-your-product-line-ink.png"
+     },
+     {
+      "label": "Design your private label supplement brand",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "design-your-brand",
+      "stretch": false,
+      "done": true,
+      "now": "design-your-brand-ink.png"
+     },
+     {
+      "label": "Start selling fast",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "start-selling",
+      "stretch": false,
+      "done": true,
+      "now": "start-selling-ink.png"
+     }
+    ]
+   },
+   {
+    "cards": 5,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "WEEK 1",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-5bf250bd3b.svg"
+     },
+     {
+      "label": "WEEK 2-3",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-a3f9f9c009.svg"
+     },
+     {
+      "label": "WEEK 4-5",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-aa0cb79f50.svg"
+     },
+     {
+      "label": "WEEK 6-9",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-f1cc1b9522.svg"
+     },
+     {
+      "label": "WEEK 10-12",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-8e0f332c4a.svg"
+     }
+    ]
+   },
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "U.S. manufacturing, FDA-registered",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "us-manufacturing",
+      "stretch": false,
+      "done": true,
+      "now": "us-manufacturing-ink.png"
+     },
+     {
+      "label": "Doctor-formulated, scientifically reviewed",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "doctor-formulated",
+      "stretch": false,
+      "done": true,
+      "now": "doctor-formulated-ink.png"
+     },
+     {
+      "label": "White-glove support from day one",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "white-glove-support",
+      "stretch": false,
+      "done": true,
+      "now": "white-glove-support-ink.png"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-resources",
+  "id": "216189433440",
+  "name": "Private Label - Page - Resources Hub",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
+    "slots": [
+     {
+      "label": "The Definitive Guide to Private Label Supplements",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-2d74ec447b.svg"
+     },
+     {
+      "label": "Ingredients, Testing & Certification Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-becc2276f4.svg"
+     },
+     {
+      "label": "Client Onboarding Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     }
+    ]
+   },
+   {
+    "cards": 6,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "Pricing & Margins",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-261f1b1e4f.svg"
+     },
+     {
+      "label": "FDA & Compliance",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "us-manufacturing",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Brand & Design",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "design-your-brand",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Marketing & Sales",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "start-selling",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-8d2ecad961.svg"
+     },
+     {
+      "label": "Distribution",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "shipping-launch",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38955d961f.svg"
+     },
+     {
+      "label": "Audience & Positioning",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "discovery-strategy",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-ty-consultation",
+  "id": "216192983665",
+  "name": "Private Label - Page - TY - Consultation Booked",
+  "editor": "HubSpot System",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
+    "slots": [
+     {
+      "label": "The Definitive Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-2d74ec447b.svg"
+     },
+     {
+      "label": "Onboarding Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     },
+     {
+      "label": "Resource Library",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38955d961f.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-ty-guide",
+  "id": "216194811652",
+  "name": "Private Label - Page - TY - Guide Download",
+  "editor": "Justin Hilbert",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "slots": [
+     {
+      "label": "Read the guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     },
+     {
+      "label": "Schedule a consultation",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "calendar",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-43011b1691.svg"
+     },
+     {
+      "label": "Browse our resource library",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38955d961f.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-ty-onboarding",
+  "id": "216194811659",
+  "name": "Private Label - Page - TY - Onboarding",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 5,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "STEP 01 WEEK 1",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-53ff426d23.svg"
+     },
+     {
+      "label": "STEP 02 WEEK 2-3",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-016fd6d21f.svg"
+     },
+     {
+      "label": "STEP 03 WEEK 4-5",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3fed8e1fb2.svg"
+     },
+     {
+      "label": "STEP 04 WEEK 6-9",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-560899fc77.svg"
+     },
+     {
+      "label": "STEP 05 WEEK 10-12",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-2f12f77db2.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-ty-quote",
+  "id": "216194811755",
+  "name": "Private Label - Page - TY - Quote Request Submitted",
+  "editor": "HubSpot System",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
+    "slots": [
+     {
+      "label": "The Definitive Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-2d74ec447b.svg"
+     },
+     {
+      "label": "Onboarding Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     },
+     {
+      "label": "Resource Library",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38955d961f.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-womens-health",
+  "id": "216189433092",
+  "name": "Private Label - Page - Women's Health Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Hormonal balance across life stages",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "Bone, reproductive, and prenatal needs",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Beauty, mood, and energy",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     }
+    ]
+   },
+   {
+    "cards": 8,
+    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "slots": [
+     {
+      "label": "MULTIVITAMIN",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "HORMONAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "hormonal-balance",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "PRENATAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "prenatal-care",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "CYCLE SUPPORT",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "hormonal-balance",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "BEAUTY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "beauty-mood",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "VITALITY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "energy",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "BONE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "bone-health",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "ENERGY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "energy",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-about",
+  "id": "216189433476",
+  "name": "Private Label - Page - About Us",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Truth in labeling",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "label-approval",
+      "stretch": false,
+      "done": true,
+      "now": "label-approval-ink.png"
+     },
+     {
+      "label": "Scientific rigor",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "doctor-formulated",
+      "stretch": false,
+      "done": true,
+      "now": "doctor-formulated-ink.png"
+     },
+     {
+      "label": "Partnership, not transaction",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "white-glove-support",
+      "stretch": false,
+      "done": true,
+      "now": "white-glove-support-ink.png"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ads-contract-mfg",
+  "id": "216192983654",
+  "name": "Private Label - Ads LP - Supplement Contract Manufacturer",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "U.S. manufacturing, FDA-registered",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "us-manufacturing",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Low minimums, no set-up fees",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-960271aa9b.svg"
+     },
+     {
+      "label": "Fast turnaround",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ads-custom",
+  "id": "216192983663",
+  "name": "Private Label - Ads LP - Custom Formulation Supplements",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "U.S. manufacturing, FDA-registered",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "us-manufacturing",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Low minimums, no set-up fees",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-960271aa9b.svg"
+     },
+     {
+      "label": "Fast turnaround",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ads-mfg-usa",
+  "id": "216192983652",
+  "name": "Private Label - Ads LP - Supplement Manufacturer USA",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "U.S. manufacturing, FDA-registered",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "us-manufacturing",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Low minimums, no set-up fees",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-960271aa9b.svg"
+     },
+     {
+      "label": "Fast turnaround",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ads-pl-mfg",
+  "id": "216194811734",
+  "name": "Private Label - Ads LP - Private Label Supplement Manufacturer",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "U.S. manufacturing, FDA-registered",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "us-manufacturing",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Low minimums, no set-up fees",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-960271aa9b.svg"
+     },
+     {
+      "label": "Fast turnaround",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-capsules",
+  "id": "216186379314",
+  "name": "Private Label - Page - Capsules",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "The standard for no-fuss supplement delivery",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-ae9b4a4f61.svg"
+     },
+     {
+      "label": "Vegetarian and gelatin options",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "Wide ingredient compatibility",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-ad898d8cf3.svg"
+     }
+    ]
+   },
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Size Options",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-7389db2445.svg"
+     },
+     {
+      "label": "Material Options",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "Fill Capacity",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Minimums & Set-Up",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-681f7474d8.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-case-studies",
+  "id": "216194811714",
+  "name": "Private Label - Page - Case Studies",
+  "editor": "Shawn Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Fitness Brand Launch",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-156db8917c.svg"
+     },
+     {
+      "label": "Healthcare Practice Expansion",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "DTC Brand Scale",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38955d961f.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-certifications",
+  "id": "216192983597",
+  "name": "Private Label - Page - Certifications",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "FDA-registered facility",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "us-manufacturing",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-19d5e7af05.svg"
+     },
+     {
+      "label": "SQF Food Safety",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "NSF GMP 455-2",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-261f1b1e4f.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-chewables",
+  "id": "216188835864",
+  "name": "Private Label - Page - Chewables",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Pediatric and accessibility-friendly",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "No water needed",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Palatable formulations",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   },
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Format Options",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-6f572adbe4.svg"
+     },
+     {
+      "label": "Flavor Systems",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Sweetener Options",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "Minimums & Set-Up",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-261f1b1e4f.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-cognitive",
+  "id": "216189433251",
+  "name": "Private Label - Page - Cognitive Support Supplements",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Multiple distinct audiences",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     },
+     {
+      "label": "Premium nootropic positioning",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     },
+     {
+      "label": "Daily compliance, monthly cadence",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     }
+    ]
+   },
+   {
+    "cards": 6,
+    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
+    "slots": [
+     {
+      "label": "NOOTROPIC",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cognitive",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "BRAIN",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cognitive",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "MEMORY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cognitive",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "METHYLATION",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "vitamin-mineral",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "OMEGAS",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "omega",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-6f572adbe4.svg"
+     },
+     {
+      "label": "B-COMPLEX",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "vitamin-mineral",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-contact",
+  "id": "216192983650",
+  "name": "Private Label - Page - Contact",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Email",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "mail",
+      "stretch": false,
+      "done": true,
+      "now": "mail-ink.png"
+     },
+     {
+      "label": "Phone",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "phone",
+      "stretch": false,
+      "done": true,
+      "now": "phone-ink.png"
+     },
+     {
+      "label": "Mailing address",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "map-pin",
+      "stretch": false,
+      "done": true,
+      "now": "map-pin-ink.png"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-custom-formulation",
+  "id": "216189433487",
+  "name": "Private Label - Page - Custom Formulation",
+  "editor": "Shawn Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "Doctor-formulated R&D",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "doctor-formulated",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Proprietary ownership",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Full format flexibility",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-6f572adbe4.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-detox",
+  "id": "216189433375",
+  "name": "Private Label - Page - Detox & Liver Support Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Daily and protocol-based use",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "Science-backed positioning wins",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Cross-category opportunity",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   },
+   {
+    "cards": 6,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "LIVER",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "liver",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "ANTIOXIDANT",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "DETOX",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "liver",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "CELLULAR",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cellular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     },
+     {
+      "label": "BOTANICAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "botanical",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "GUT",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "probiotics",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-energy",
+  "id": "216189433390",
+  "name": "Private Label - Page - Energy & Vitality Supplements",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Beyond-caffeine positioning",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     },
+     {
+      "label": "Multiple use cases",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-156db8917c.svg"
+     },
+     {
+      "label": "Daily compliance, monthly cadence",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     }
+    ]
+   },
+   {
+    "cards": 8,
+    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "slots": [
+     {
+      "label": "MITOCHONDRIAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cellular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     },
+     {
+      "label": "CELLULAR",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cellular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "HGH SUPPORT",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "mens-health",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-156db8917c.svg"
+     },
+     {
+      "label": "PROTEIN",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "protein",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-6f572adbe4.svg"
+     },
+     {
+      "label": "CARDIO ENERGY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cardiovascular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "RECOVERY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "fitness",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "B-COMPLEX",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "vitamin-mineral",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     },
+     {
+      "label": "METABOLIC",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "weight-management",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-facility",
+  "id": "216194811691",
+  "name": "Private Label - Page - Our Facility",
+  "editor": "HubSpot System",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "supplement formats",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-6f572adbe4.svg"
+     },
+     {
+      "label": "on-site QC",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "registered facility",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "years experience",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-guides",
+  "id": "216192983627",
+  "name": "Private Label - Page - Guides Library",
+  "editor": "HubSpot System",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
+    "slots": [
+     {
+      "label": "The Definitive Guide to Private Label Supplements",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-2d74ec447b.svg"
+     },
+     {
+      "label": "Ingredients, Testing & Certification Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Client Onboarding Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-gummies",
+  "id": "216192983401",
+  "name": "Private Label - Page - Gummies",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Fastest-growing supplement format",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-330bfa2ad5.svg"
+     },
+     {
+      "label": "High-palatability, broad appeal",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-e2f38469a7.svg"
+     },
+     {
+      "label": "Sugar-free and pectin-based options",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     }
+    ]
+   },
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Shapes & Sizes",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-7389db2445.svg"
+     },
+     {
+      "label": "Base Options",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "Sweetener Options",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-e2f38469a7.svg"
+     },
+     {
+      "label": "Minimums & Set-Up",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-681f7474d8.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-heart-health",
+  "id": "216189433373",
+  "name": "Private Label - Page - Heart Health Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Doctor-recommended category",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "Branded ingredient premium",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Aging tailwind, sticky customers",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     }
+    ]
+   },
+   {
+    "cards": 7,
+    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "slots": [
+     {
+      "label": "OMEGAS",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "omega",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "CELLULAR ENERGY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cellular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     },
+     {
+      "label": "UBIQUINOL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cellular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "BLOOD PRESSURE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cardiovascular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "FORMULA",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "CHOLESTEROL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cardiovascular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-261f1b1e4f.svg"
+     },
+     {
+      "label": "PREMIUM OMEGA",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "omega",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-immune-support",
+  "id": "216189433236",
+  "name": "Private Label - Page - Immune Support Supplements",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Year-round + seasonal demand",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Trusted ingredients with mass appeal",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Broad audience including pediatric",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     }
+    ]
+   },
+   {
+    "cards": 6,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "VITAMIN D",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "vitamin-mineral",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "LIPOSOMAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "liposomal",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "VITAMIN C",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "vitamin-mineral",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "ANTIOXIDANT",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "LUNG",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "lung",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "MUSHROOM",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "botanical",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ingredient-sourcing",
+  "id": "216192983616",
+  "name": "Private Label - Page - Ingredient Sourcing",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Decades of supplier relationships",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "Country-of-origin transparency",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38955d961f.svg"
+     },
+     {
+      "label": "Branded ingredient access",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-19d5e7af05.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ingredients-testing",
+  "id": "216189433459",
+  "name": "Private Label - Page - Ingredients & Testing Guide",
+  "editor": "HubSpot System",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Ingredient sourcing",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "Third-party testing",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Certifications explained",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-19d5e7af05.svg"
+     },
+     {
+      "label": "Branded ingredients",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-joint-support",
+  "id": "216189433371",
+  "name": "Private Label - Page - Joint Support Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Aging population tailwind",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Multiple customer entry points",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-156db8917c.svg"
+     },
+     {
+      "label": "Branded ingredients command premium",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     }
+    ]
+   },
+   {
+    "cards": 6,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "COMPREHENSIVE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": true,
+      "now": "foundation-ink.png"
+     },
+     {
+      "label": "BOTANICAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "botanical",
+      "stretch": false,
+      "done": true,
+      "now": "botanical-ink.png"
+     },
+     {
+      "label": "COLLAGEN",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "beauty-mood",
+      "stretch": false,
+      "done": true,
+      "now": "beauty-mood-ink.png"
+     },
+     {
+      "label": "MOBILITY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "mobility",
+      "stretch": false,
+      "done": true,
+      "now": "mobility-ink.png"
+     },
+     {
+      "label": "RECOVERY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "fitness",
+      "stretch": true,
+      "done": true,
+      "now": "fitness-ink-64.png"
+     },
+     {
+      "label": "MARINE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "omega",
+      "stretch": false,
+      "done": true,
+      "now": "omega-ink.png"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-liquids",
+  "id": "216188835866",
+  "name": "Private Label - Page - Liquids",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Highest bioavailability and fastest onset",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-d03e635789.svg"
+     },
+     {
+      "label": "Precise dose customization",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-681f7474d8.svg"
+     },
+     {
+      "label": "Best for liposomal and specialty delivery",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-e2f38469a7.svg"
+     }
+    ]
+   },
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Bottle Sizes",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-7389db2445.svg"
+     },
+     {
+      "label": "Dosing Options",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Flavor Systems",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-e2f38469a7.svg"
+     },
+     {
+      "label": "Minimums & Set-Up",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-681f7474d8.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-mens-health",
+  "id": "216188836114",
+  "name": "Private Label - Page - Men's Health Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Defined male wellness audience",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "Multi-decade purchase pattern",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "Premium pricing supported by science",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   },
+   {
+    "cards": 8,
+    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "slots": [
+     {
+      "label": "MULTIVITAMIN",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "PROSTATE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "mens-health",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "TESTOSTERONE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "mens-health",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-156db8917c.svg"
+     },
+     {
+      "label": "PROSTATE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "mens-health",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "VITALITY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "energy",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "HORMONAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "hormonal-balance",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-261f1b1e4f.svg"
+     },
+     {
+      "label": "HAIR",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "beauty-mood",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "CARDIO",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "cardiovascular",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-multivitamin",
+  "id": "216189433270",
+  "name": "Private Label - Page - Multivitamin Supplements",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Gateway category",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Audience tiers from kids to seniors",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "Daily compliance, predictable revenue",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   },
+   {
+    "cards": 8,
+    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "slots": [
+     {
+      "label": "DAILY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "FOUNDATION",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "MEN'S",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "mens-health",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "WOMEN'S",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "womens-health",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "SENIOR",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "senior",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     },
+     {
+      "label": "MEN'S",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "mens-health",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "WOMEN'S",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "womens-health",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "METABOLIC",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "weight-management",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-our-process",
+  "id": "216186379326",
+  "name": "Private Label - Page - Our Process",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 6,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "STEP 01 WEEK 1",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "STEP 02 WEEKS 1-2",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "STEP 03 WEEKS 2-4",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-becc2276f4.svg"
+     },
+     {
+      "label": "STEP 04 WEEK 4",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "STEP 05 WEEKS 5-8",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-6f572adbe4.svg"
+     },
+     {
+      "label": "STEP 06 WEEKS 8-12",
+      "kind": "tag",
+      "action": "ART",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-91313be750.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-packaging",
+  "id": "216189433489",
+  "name": "Private Label - Page - Packaging",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Standard bottle catalog",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-6f572adbe4.svg"
+     },
+     {
+      "label": "Premium packaging upgrades",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Sustainable options",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-powders",
+  "id": "216192983382",
+  "name": "Private Label - Page - Powders",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "High doses without size limitations",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-681f7474d8.svg"
+     },
+     {
+      "label": "Flexible serving sizes",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-e2f38469a7.svg"
+     },
+     {
+      "label": "Faster onset, better mixability",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-d03e635789.svg"
+     }
+    ]
+   },
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Packaging Options",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-7389db2445.svg"
+     },
+     {
+      "label": "Serving Sizes",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Flavor Systems",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-e2f38469a7.svg"
+     },
+     {
+      "label": "Minimums & Set-Up",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-681f7474d8.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-prenatal",
+  "id": "216189433267",
+  "name": "Private Label - Page - Prenatal Supplements",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "slots": [
+     {
+      "label": "High-trust, high-LTV audience",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "Pregnancy through post-natal",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "Clinical credibility is everything",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "doctor-formulated",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   },
+   {
+    "cards": 6,
+    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "slots": [
+     {
+      "label": "PRENATAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "prenatal-care",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "FERTILITY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "hormonal-balance",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "FOLATE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "vitamin-mineral",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "PRENATAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "prenatal-care",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "FOUNDATION",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "MINERALS",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "vitamin-mineral",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-probiotics",
+  "id": "216189433094",
+  "name": "Private Label - Page - Probiotic Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Gut and immune health in one category",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Broad audience from kids to adults",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "Premium pricing supported by science",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     }
+    ]
+   },
+   {
+    "cards": 8,
+    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
+    "slots": [
+     {
+      "label": "HIGH-CFU",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "probiotics",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "DAILY",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "FOUNDATION",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "PEDIATRIC",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "baby",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38c98f6790.svg"
+     },
+     {
+      "label": "GREENS+PROBIOTIC",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "botanical",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "VEGAN PROTEIN",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "protein",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-6f572adbe4.svg"
+     },
+     {
+      "label": "STRAINS",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "probiotics",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "ENZYMES",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "probiotics",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-quality-standards",
+  "id": "216186379328",
+  "name": "Private Label - Page - Quality Standards",
+  "editor": "HubSpot System",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Batch Tested",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Compliant",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Formulators",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     },
+     {
+      "label": "Transparently",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38955d961f.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-sell-sheets",
+  "id": "216194811689",
+  "name": "Private Label - Page - Sell Sheets",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Template-based sell sheets",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-becc2276f4.svg"
+     },
+     {
+      "label": "Fully custom design",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Multi-format delivery",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38955d961f.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-sleep",
+  "id": "216189433007",
+  "name": "Private Label - Page - Sleep Supplements",
+  "editor": "HubSpot System",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Universal customer pain point",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-20d2ae991c.svg"
+     },
+     {
+      "label": "Daily compliance, high LTV",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "Format flexibility matches audience preference",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     }
+    ]
+   },
+   {
+    "cards": 7,
+    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "slots": [
+     {
+      "label": "FORMULA",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-20d2ae991c.svg"
+     },
+     {
+      "label": "PEDIATRIC",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "baby",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-33836997a3.svg"
+     },
+     {
+      "label": "FOUNDATION",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "foundation",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "LIPOSOMAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "liposomal",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     },
+     {
+      "label": "RELAXATION",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "sleep",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "STRESS",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "stress",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     },
+     {
+      "label": "BOTANICAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "botanical",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-soft-gels",
+  "id": "216192983363",
+  "name": "Private Label - Page - Soft Gels",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Best format for oils and oil-soluble actives",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-e2f38469a7.svg"
+     },
+     {
+      "label": "Sealed integrity, no oxidation",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-ae9b4a4f61.svg"
+     },
+     {
+      "label": "Faster absorption than hard-shell formats",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-d03e635789.svg"
+     }
+    ]
+   },
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Shape Options",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-7389db2445.svg"
+     },
+     {
+      "label": "Gelatin Source",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "Fill Capacity",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Minimums & Set-Up",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-681f7474d8.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-tablets",
+  "id": "216192983343",
+  "name": "Private Label - Page - Tablets",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Dense dosing in a smaller footprint",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-7389db2445.svg"
+     },
+     {
+      "label": "Lowest cost per dose",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-960271aa9b.svg"
+     },
+     {
+      "label": "Coating options for taste and release",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-ae9b4a4f61.svg"
+     }
+    ]
+   },
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Shape Options",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-7389db2445.svg"
+     },
+     {
+      "label": "Coating Types",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-ae9b4a4f61.svg"
+     },
+     {
+      "label": "Active Dose Range",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Minimums & Set-Up",
+      "kind": "stat",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-681f7474d8.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-testing",
+  "id": "216192983607",
+  "name": "Private Label - Page - Testing Protocols",
+  "editor": "HubSpot System",
+  "edited": "2026-08-27",
+  "rows": [
+   {
+    "cards": 4,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Raw material identity testing",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-04cb8f7fc7.svg"
+     },
+     {
+      "label": "Potency verification",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-261f1b1e4f.svg"
+     },
+     {
+      "label": "Contaminant screening",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "Third-party verification",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-19d5e7af05.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ty-sell-sheets",
+  "id": "216194811757",
+  "name": "Private Label - Page - TY - Sell Sheets Requested",
+  "editor": "Barb Peterson",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
+    "slots": [
+     {
+      "label": "The Definitive Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-2d74ec447b.svg"
+     },
+     {
+      "label": "Onboarding Guide",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-3d71165814.svg"
+     },
+     {
+      "label": "Resource Library",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "file-text",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-38955d961f.svg"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-weight-management",
+  "id": "216188836111",
+  "name": "Private Label - Page - Weight Management Supplements",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-25",
+  "rows": [
+   {
+    "cards": 3,
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
+    "slots": [
+     {
+      "label": "Sustainable, not gimmicky positioning",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-261f1b1e4f.svg"
+     },
+     {
+      "label": "Multiple sub-categories to expand into",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-156db8917c.svg"
+     },
+     {
+      "label": "GLP-1 era opportunity",
+      "kind": "claim",
+      "action": "STRIP",
+      "icon": null,
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-73e72ca5aa.svg"
+     }
+    ]
+   },
+   {
+    "cards": 6,
+    "hold": "4 different labels land on one icon -- needs Sarah's ruling",
+    "slots": [
+     {
+      "label": "METABOLIC",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "weight-management",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-156db8917c.svg"
+     },
+     {
+      "label": "FAT ABSORPTION",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "weight-management",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-261f1b1e4f.svg"
+     },
+     {
+      "label": "HORMONAL",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "hormonal-balance",
+      "stretch": false,
+      "done": false,
+      "now": "pl-icon-261f1b1e4f.svg"
+     },
+     {
+      "label": "APPETITE",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "weight-management",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-0e742f57f3.svg"
+     },
+     {
+      "label": "GLP-1 SUPPORT",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "weight-management",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-30d8dc8a51.svg"
+     },
+     {
+      "label": "METABOLIC",
+      "kind": "tag",
+      "action": "SWAP",
+      "icon": "weight-management",
+      "stretch": true,
+      "done": false,
+      "now": "pl-icon-76acdf2fc7.svg"
+     }
+    ]
+   }
+  ]
+ }
+]
