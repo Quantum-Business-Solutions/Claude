@@ -1,0 +1,866 @@
+<title>Contact Verification Process</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#EDF0F2; --surface:#FFFFFF; --sunk:#E1E6E9;
+    --ink:#141C22; --ink-2:#33434E; --muted:#5C6E7A; --faint:#8698A3; --rule:#C8D2D8;
+    --accent:#2F4B7C; --accent-soft:#DFE6F1; --accent-ink:#233A61;
+    --ok:#2E7248; --ok-soft:#DCEBE2;
+    --warn:#946012; --warn-soft:#F2E7D2;
+    --bad:#9C3630; --bad-soft:#F1DCDA;
+    --shadow:0 1px 2px rgba(20,28,34,.05),0 10px 28px rgba(20,28,34,.05);
+    --display:"Spectral",Georgia,"Times New Roman",serif;
+    --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1418; --surface:#161E24; --sunk:#1C262D;
+      --ink:#E6EDF1; --ink-2:#C0CDD5; --muted:#90A1AC; --faint:#6B7C87; --rule:#2A363E;
+      --accent:#7FA3DC; --accent-soft:#16233A; --accent-ink:#A9C4EC;
+      --ok:#6FBF8C; --ok-soft:#132A1C;
+      --warn:#D6A75C; --warn-soft:#2B2313;
+      --bad:#E08A82; --bad-soft:#2E1917;
+      --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 28px rgba(0,0,0,.32);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1418; --surface:#161E24; --sunk:#1C262D;
+    --ink:#E6EDF1; --ink-2:#C0CDD5; --muted:#90A1AC; --faint:#6B7C87; --rule:#2A363E;
+    --accent:#7FA3DC; --accent-soft:#16233A; --accent-ink:#A9C4EC;
+    --ok:#6FBF8C; --ok-soft:#132A1C;
+    --warn:#D6A75C; --warn-soft:#2B2313;
+    --bad:#E08A82; --bad-soft:#2E1917;
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 28px rgba(0,0,0,.32);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--body); font-size:16.5px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px; margin:0 auto; padding:56px 26px 96px}
+  .col{max-width:68ch}
+
+  h1{
+    font-family:var(--display); font-weight:600; font-size:clamp(2.1rem,4.6vw,3.15rem);
+    line-height:1.08; letter-spacing:-.014em; margin:.1em 0 .3em; text-wrap:balance;
+  }
+  h2{
+    font-family:var(--display); font-weight:600; font-size:1.62rem; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 .5em; text-wrap:balance;
+  }
+  h3{
+    font-family:var(--body); font-weight:700; font-size:1.02rem; line-height:1.32;
+    letter-spacing:.005em; margin:2em 0 .45em; color:var(--ink);
+  }
+  p{margin:0 0 1em}
+  a{color:var(--accent-ink); text-decoration-thickness:1px; text-underline-offset:2px}
+
+  .eyebrow{
+    font-family:var(--mono); font-size:.7rem; font-weight:600; letter-spacing:.15em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 1.1em;
+  }
+  .lede{font-size:1.14rem; color:var(--ink-2); max-width:64ch}
+  .meta{font-size:.9rem; color:var(--muted)}
+
+  section{
+    margin:0 0 18px; padding:34px 34px 30px; background:var(--surface);
+    border:1px solid var(--rule); border-radius:3px; box-shadow:var(--shadow);
+  }
+  section.flush{padding:34px 20px 26px}
+  header.mast{margin:0 0 26px; padding:0 2px}
+
+  .num{
+    display:inline-block; font-family:var(--mono); font-size:.72rem; font-weight:600;
+    color:var(--accent); border:1px solid var(--rule); border-radius:2px;
+    padding:2px 7px; margin:0 0 12px; letter-spacing:.08em;
+  }
+
+  code,.mono{font-family:var(--mono); font-size:.86em}
+  code{background:var(--sunk); padding:.1em .35em; border-radius:2px}
+  pre{
+    font-family:var(--mono); font-size:.8rem; line-height:1.55; margin:0 0 1em;
+    background:var(--sunk); border:1px solid var(--rule); border-left:2px solid var(--accent);
+    border-radius:2px; padding:13px 15px; overflow-x:auto; color:var(--ink-2);
+  }
+
+  ul,ol{margin:0 0 1em; padding-left:1.15em}
+  li{margin:0 0 .45em}
+  li::marker{color:var(--faint)}
+
+  .tags{display:flex; flex-wrap:wrap; gap:7px; margin:0 0 1.2em}
+  .tag{
+    font-family:var(--mono); font-size:.7rem; letter-spacing:.04em; padding:3px 8px;
+    border-radius:2px; border:1px solid var(--rule); color:var(--muted); background:var(--sunk);
+  }
+
+  .pill{
+    display:inline-block; font-family:var(--mono); font-size:.7rem; font-weight:600;
+    letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:2px;
+  }
+  .p-ok{background:var(--ok-soft); color:var(--ok); border:1px solid var(--ok)}
+  .p-warn{background:var(--warn-soft); color:var(--warn); border:1px solid var(--warn)}
+  .p-bad{background:var(--bad-soft); color:var(--bad); border:1px solid var(--bad)}
+  .p-acc{background:var(--accent-soft); color:var(--accent-ink); border:1px solid var(--accent)}
+
+  .tblwrap{overflow-x:auto; margin:0 0 1.1em; border:1px solid var(--rule); border-radius:2px}
+  table{border-collapse:collapse; width:100%; font-size:.88rem}
+  th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--rule); vertical-align:top}
+  thead th{
+    background:var(--sunk); font-family:var(--mono); font-size:.7rem; font-weight:600;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--muted); white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:0}
+  td.n{font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap}
+  td.m{font-family:var(--mono); font-size:.82rem; word-break:break-all}
+
+  figure{margin:0 0 1.2em}
+  figure svg{display:block; width:100%; max-width:100%; height:auto}
+  figcaption{font-size:.88rem; color:var(--muted); margin-top:11px; max-width:70ch}
+  .figscroll{overflow-x:auto}
+
+  .callout{
+    margin:1.3em 0; padding:15px 17px; border-radius:2px; background:var(--sunk);
+    border-left:2px solid var(--accent); font-size:.95rem; color:var(--ink-2);
+  }
+  .callout.bad{border-left-color:var(--bad); background:var(--bad-soft)}
+  .callout.warn{border-left-color:var(--warn); background:var(--warn-soft)}
+  .callout strong{color:var(--ink)}
+
+  .kv{display:grid; grid-template-columns:auto 1fr; gap:6px 16px; margin:0 0 1.1em; font-size:.92rem}
+  .kv dt{font-family:var(--mono); font-size:.8rem; color:var(--accent-ink); white-space:nowrap}
+  .kv dd{margin:0; color:var(--ink-2)}
+
+  footer{
+    margin-top:34px; padding:20px 2px 0; border-top:1px solid var(--rule);
+    font-size:.85rem; color:var(--faint);
+  }
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+  @media (max-width:620px){
+    .wrap{padding:34px 16px 70px}
+    section{padding:24px 20px 20px}
+  }
+  svg a.node{cursor:pointer}
+  svg a.node text{text-decoration:none}
+  svg a.node rect,svg a.node path{transition:stroke-width .12s ease, filter .12s ease}
+  svg a.node:hover rect,svg a.node:hover path{stroke-width:2.6px; filter:brightness(1.05)}
+  svg a.node:focus-visible rect,svg a.node:focus-visible path{stroke:var(--accent); stroke-width:3px}
+  section{scroll-margin-top:14px}
+  section:target{animation:flash 1.5s ease}
+  @keyframes flash{0%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:var(--shadow)}}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Quantum Business Solutions · CRM operations</p>
+  <h1>Contact Verification Process</h1>
+  <p class="lede">How a purchased or inherited contact list becomes a list a rep can dial without apologising. Written from the full pass on list 5243: 662 contacts at intake, 491 read against dated LinkedIn history, 340 surviving. The other 171 left the list — on lead-status and persona writes this process itself made — before they were ever read.</p>
+  <div class="tags">
+    <span class="tag">input: one list ID</span>
+    <span class="tag">source of truth: dated LinkedIn history</span>
+    <span class="tag">output: verdict + channel</span>
+    <span class="tag">companion: The Evidence Ladder</span>
+  </div>
+</header>
+
+<section>
+  <span class="num">SCOPE</span>
+  <h2>What this process is for, and what it refuses to do</h2>
+  <div class="col">
+    <p>A bought list decays from the day it is delivered. People change jobs, companies rebrand, vendors lag, and the CRM keeps serving the stale version with total confidence. This process reads every contact against dated employment history, records what it found and how it knows, and routes each person to a channel: dial them, re-target them at their new employer, or leave them alone.</p>
+    <p>It is deliberately narrow in one respect. <strong>It never upgrades a guess into a fact.</strong> Every write carries its evidence, every unverifiable record says so in plain language, and no field is filled just because a field was empty. A rep discovering the truth on a call is the expensive failure this exists to prevent; a blank field is the cheap one.</p>
+  </div>
+  <div class="callout">
+    <strong>The one rule that generates all the others.</strong> Dated <code>work_experience</code> rows are evidence. A headline is marketing. A vendor record is a lead to a URL. A <code>websites</code> field is stale garbage. When two sources disagree, the dated row wins and the disagreement gets written down.
+  </div>
+</section>
+
+<section class="flush">
+  <span class="num">FLOW</span>
+  <h2>The whole process, end to end</h2>
+  <p class="meta">Every box is a link — click any step to jump to its full spec below.</p>
+  <figure>
+    <div class="figscroll">
+    <svg viewBox="0 0 1000 1090" role="img" aria-label="Flow chart of the contact verification process: pull list membership, resolve a LinkedIn profile through three fallbacks, read dated employment history, then route each contact to one of three verdicts. Movers continue through domain verification, re-association, and the email ladder before a lead-status workflow returns them to prospect and an ICP gate decides whether they reach the calling list.">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+        <marker id="arOk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--ok)"/>
+        </marker>
+        <marker id="arBad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--bad)"/>
+        </marker>
+        <marker id="arWarn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--warn)"/>
+        </marker>
+      </defs>
+
+      <g font-family="Source Sans 3, system-ui, sans-serif" font-size="12.5" fill="currentColor" color="currentColor">
+
+        <!-- STAGE 1 : intake -->
+        <a class="node" href="#stage1"><rect x="360" y="14" width="280" height="42" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
+        <text x="500" y="32" text-anchor="middle" font-weight="700" fill="var(--accent-ink)">List ID</text>
+        <text x="500" y="47" text-anchor="middle" font-size="11" fill="var(--accent-ink)">the only input</text></a>
+
+        <line x1="500" y1="56" x2="500" y2="86" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+
+        <a class="node" href="#stage1"><rect x="330" y="86" width="340" height="46" rx="2" fill="var(--surface)" stroke="currentColor"/>
+        <text x="500" y="105" text-anchor="middle">Pull membership from the list itself</text>
+        <text x="500" y="121" text-anchor="middle" font-size="11" fill="var(--muted)">never from a local queue file</text></a>
+
+        <line x1="500" y1="132" x2="500" y2="160" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+
+        <!-- STAGE 2 : identify -->
+        <a class="node" href="#stage2"><path d="M500,162 L648,200 L500,238 L352,200 z" fill="var(--sunk)" stroke="currentColor"/>
+        <text x="500" y="196" text-anchor="middle" font-weight="600">LinkedIn URL</text>
+        <text x="500" y="211" text-anchor="middle">on file?</text></a>
+
+        <!-- fallback chain to the right -->
+        <line x1="648" y1="200" x2="712" y2="200" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+        <text x="680" y="193" text-anchor="middle" font-size="10.5" fill="var(--muted)">no</text>
+        <a class="node" href="#stage2"><rect x="712" y="176" width="256" height="48" rx="2" fill="var(--surface)" stroke="currentColor"/>
+        <text x="840" y="195" text-anchor="middle">ZoomInfo <tspan font-family="JetBrains Mono, monospace" font-size="11">externalUrls</tspan></text>
+        <text x="840" y="211" text-anchor="middle" font-size="11" fill="var(--muted)">solved about half</text></a>
+
+        <line x1="840" y1="224" x2="840" y2="252" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+        <a class="node" href="#stage2"><rect x="712" y="252" width="256" height="48" rx="2" fill="var(--surface)" stroke="currentColor"/>
+        <text x="840" y="271" text-anchor="middle">LinkedIn people search</text>
+        <text x="840" y="287" text-anchor="middle" font-size="11" fill="var(--muted)">name + company keywords</text></a>
+
+        <line x1="840" y1="300" x2="840" y2="330" stroke="var(--warn)" stroke-width="1.4" marker-end="url(#arWarn)"/>
+        <a class="node" href="#stage2"><rect x="736" y="330" width="208" height="40" rx="2" fill="var(--warn-soft)" stroke="var(--warn)"/>
+        <text x="840" y="355" text-anchor="middle" font-weight="700" fill="var(--warn)">UNREADABLE</text></a>
+
+        <!-- back into the spine -->
+        <line x1="500" y1="238" x2="500" y2="268" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+        <text x="516" y="256" font-size="10.5" fill="var(--muted)">yes</text>
+        <path d="M712,300 L700,300 L700,292" fill="none" stroke="none"/>
+        <path d="M712,276 L688,276 L688,268 L520,268" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ar)"/>
+        <text x="606" y="262" text-anchor="middle" font-size="10.5" fill="var(--muted)">profile found</text>
+
+        <!-- STAGE 3 : read -->
+        <a class="node" href="#stage34"><rect x="316" y="268" width="368" height="52" rx="2" fill="var(--surface)" stroke="currentColor" stroke-width="1.5"/>
+        <text x="500" y="288" text-anchor="middle" font-weight="600">Read dated <tspan font-family="JetBrains Mono, monospace" font-size="11">work_experience</tspan></text>
+        <text x="500" y="305" text-anchor="middle" font-size="11" fill="var(--muted)">experience_preview · start / end dates, not the headline</text></a>
+
+        <line x1="500" y1="320" x2="500" y2="350" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+
+        <!-- STAGE 4 : the verdict diamond -->
+        <a class="node" href="#stage34"><path d="M500,352 L678,398 L500,444 L322,398 z" fill="var(--sunk)" stroke="currentColor"/>
+        <text x="500" y="392" text-anchor="middle" font-weight="600">CRM company present</text>
+        <text x="500" y="407" text-anchor="middle">with <tspan font-family="JetBrains Mono, monospace" font-size="11">end: null</tspan>?</text></a>
+
+        <!-- YES -> verdict yes -->
+        <line x1="322" y1="398" x2="212" y2="398" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arOk)"/>
+        <text x="266" y="391" text-anchor="middle" font-size="10.5" fill="var(--ok)">yes</text>
+        <a class="node" href="#stage34"><rect x="36" y="376" width="176" height="44" rx="2" fill="var(--ok-soft)" stroke="var(--ok)"/>
+        <text x="124" y="395" text-anchor="middle" font-weight="700" fill="var(--ok)">VERDICT: yes</text>
+        <text x="124" y="410" text-anchor="middle" font-size="10.5" fill="var(--ok)">still there — dial them</text></a>
+
+        <!-- truncation loop -->
+        <line x1="678" y1="398" x2="770" y2="398" stroke="currentColor" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#ar)"/>
+        <a class="node" href="#stage34"><rect x="770" y="374" width="198" height="48" rx="2" fill="var(--surface)" stroke="currentColor" stroke-dasharray="4 3"/>
+        <text x="869" y="392" text-anchor="middle" font-size="11.5">absent AND rows truncated</text>
+        <text x="869" y="408" text-anchor="middle" font-size="11" fill="var(--muted)">re-pull FULL experience</text></a>
+        <path d="M869,374 L869,344 L500,344" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ar)"/>
+        <text x="700" y="338" text-anchor="middle" font-size="10.5" fill="var(--muted)">then judge again</text>
+
+        <!-- NO -> mover -->
+        <line x1="500" y1="444" x2="500" y2="474" stroke="var(--bad)" stroke-width="1.6" marker-end="url(#arBad)"/>
+        <text x="516" y="463" font-size="10.5" fill="var(--bad)">no</text>
+
+        <a class="node" href="#stage5"><rect x="330" y="474" width="340" height="46" rx="2" fill="var(--bad-soft)" stroke="var(--bad)"/>
+        <text x="500" y="493" text-anchor="middle" font-weight="700" fill="var(--bad)">VERDICT: no — they moved</text>
+        <text x="500" y="509" text-anchor="middle" font-size="11" fill="var(--bad)">do not dial at the company on file</text></a>
+
+        <line x1="500" y1="520" x2="500" y2="550" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+
+        <!-- STAGE 5 : mover pipeline -->
+        <a class="node" href="#stage5"><rect x="256" y="550" width="488" height="122" rx="2" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="500" y="572" text-anchor="middle" font-weight="700" fill="var(--accent-ink)">Mover pipeline</text>
+        <line x1="276" y1="582" x2="724" y2="582" stroke="var(--rule)"/>
+        <text x="286" y="601">1 · Verify the new domain by website lookup — never guess it</text>
+        <text x="286" y="620">2 · Find or create the company record</text>
+        <text x="286" y="639">3 · Delete stale associations, PUT new with typeId 1 AND 279</text>
+        <text x="286" y="658">4 · Reconcile the flag to <tspan font-family="JetBrains Mono, monospace" font-size="11">yes</tspan> — they DO work at the new company</text></a>
+
+        <line x1="500" y1="672" x2="500" y2="702" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+
+        <!-- STAGE 6 : email ladder -->
+        <a class="node" href="#stage6"><rect x="256" y="702" width="488" height="46" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
+        <text x="500" y="721" text-anchor="middle" font-weight="700" fill="var(--accent-ink)">Email ladder — four rungs, hard domain rule</text>
+        <text x="500" y="737" text-anchor="middle" font-size="11" fill="var(--accent-ink)">old address moves to Previous — Email, never stays, never deleted</text></a>
+
+        <line x1="500" y1="748" x2="500" y2="778" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+
+        <!-- STAGE 7 : stamp -->
+        <a class="node" href="#stage7"><rect x="300" y="778" width="400" height="46" rx="2" fill="var(--surface)" stroke="currentColor"/>
+        <text x="500" y="797" text-anchor="middle">Stamp verdict, evidence, date, source count</text>
+        <text x="500" y="813" text-anchor="middle" font-size="11" fill="var(--muted)">research that isn't stamped does not exist</text></a>
+
+        <line x1="500" y1="824" x2="500" y2="854" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+
+        <!-- workflow -->
+        <a class="node" href="#stage7"><rect x="286" y="854" width="428" height="46" rx="2" fill="var(--sunk)" stroke="currentColor" stroke-dasharray="5 3"/>
+        <text x="500" y="873" text-anchor="middle">Lead-status workflow fires <tspan font-size="11" fill="var(--muted)">(asynchronously, by design)</tspan></text>
+        <text x="500" y="889" text-anchor="middle" font-size="11" fill="var(--muted)">information found → back to prospect at the new company</text></a>
+
+        <line x1="500" y1="900" x2="500" y2="930" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+
+        <!-- ICP gate -->
+        <a class="node" href="#output"><path d="M500,932 L690,978 L500,1024 L310,978 z" fill="var(--sunk)" stroke="currentColor"/>
+        <text x="500" y="972" text-anchor="middle" font-weight="600">ICP gate — still meets</text>
+        <text x="500" y="987" text-anchor="middle" font-size="11.5">phone · persona · tech-signal lists?</text></a>
+
+        <line x1="310" y1="978" x2="212" y2="978" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arOk)"/>
+        <text x="260" y="971" text-anchor="middle" font-size="10.5" fill="var(--ok)">yes</text>
+        <a class="node" href="#output"><rect x="36" y="956" width="176" height="44" rx="2" fill="var(--ok-soft)" stroke="var(--ok)"/>
+        <text x="124" y="975" text-anchor="middle" font-weight="700" fill="var(--ok)">CALLING LIST</text>
+        <text x="124" y="990" text-anchor="middle" font-size="10.5" fill="var(--ok)">a rep can dial it</text></a>
+
+        <line x1="690" y1="978" x2="788" y2="978" stroke="var(--warn)" stroke-width="1.6" marker-end="url(#arWarn)"/>
+        <text x="739" y="971" text-anchor="middle" font-size="10.5" fill="var(--warn)">no</text>
+        <a class="node" href="#output"><rect x="788" y="946" width="180" height="64" rx="2" fill="var(--warn-soft)" stroke="var(--warn)"/>
+        <text x="878" y="966" text-anchor="middle" font-weight="700" font-size="11.5" fill="var(--warn)">OUT OF PROFILE</text>
+        <text x="878" y="981" text-anchor="middle" font-size="10.5" fill="var(--warn)">accurate record,</text>
+        <text x="878" y="995" text-anchor="middle" font-size="10.5" fill="var(--warn)">wrong campaign —</text>
+        <text x="878" y="1009" text-anchor="middle" font-size="10.5" fill="var(--warn)">check it isn't just unenriched</text></a>
+
+        <!-- yes-verdict rejoins the ICP gate -->
+        <path d="M124,420 L124,700 L150,700" fill="none" stroke="var(--ok)" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <path d="M150,700 L150,978 L36,978" fill="none" stroke="none"/>
+        <path d="M124,420 L124,934 L124,956" fill="none" stroke="var(--ok)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arOk)"/>
+        <text x="132" y="700" font-size="10.5" fill="var(--ok)">a "yes" skips the</text>
+        <text x="132" y="714" font-size="10.5" fill="var(--ok)">mover pipeline but</text>
+        <text x="132" y="728" font-size="10.5" fill="var(--ok)">still faces the gate</text>
+      </g>
+    </svg>
+    </div>
+    <figcaption>Every contact leaves with one of three verdicts, and a verdict is not the same thing as reaching a rep. The two dashed loops are where the process was wrong before it was right: a truncated history that has to be re-pulled before anyone is called a mover, and an ICP gate that quietly holds back records nobody has enriched yet.</figcaption>
+  </figure>
+</section>
+
+<section id="stage1">
+  <span class="num">STAGE 1</span>
+  <h2>Intake — read membership, not your notes</h2>
+  <div class="col">
+    <p>Pull the contact IDs from the list itself and re-read them after every write. A local queue file is a snapshot, and a snapshot goes stale the moment the first verdict lands.</p>
+    <p>This is not a stylistic preference. On list 5243 the queue file reported zero contacts remaining while <strong>thirty</strong> members had never been touched — they had no LinkedIn URL stored, so the queue-building step had silently skipped them. The list knew. The notes didn't.</p>
+  </div>
+  <pre>GET /crm/v3/lists/{listId}/memberships?limit=250   → paginate on paging.next.after
+POST /crm/v3/objects/contacts/batch/read           → 100 ids per call</pre>
+  <div class="callout warn">
+    <strong>Snapshot the intake membership before the first write, and keep it immutable.</strong> This process changes lead status and persona, and both are entry criteria — so its own writes eject records from the list it is working. On 5243 that removed 171 of 662 contacts before they were ever read, and only the intake snapshot makes them recoverable or even countable. Measure progress against live membership; measure <em>coverage</em> against the snapshot.
+  </div>
+  <div class="callout warn">
+    <strong>Completion is a property of the list, not of your loop.</strong> "Done" means every member carries a verdict when you read the flag straight off membership. Anything else is a guess about your own bookkeeping.
+  </div>
+</section>
+
+<section id="stage2">
+  <span class="num">STAGE 2</span>
+  <h2>Identify — three ways to find a human</h2>
+  <div class="col">
+    <p>Roughly one stored profile URL in seven is wrong or dead: a 422, a different person with a similar name, an abandoned duplicate profile with no dated history. Treat the stored URL as a hypothesis.</p>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Order</th><th>Method</th><th>What it costs</th><th>Yield on 5243</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td>The URL already on the record</td><td>one profile read</td><td>~85% usable</td></tr>
+        <tr><td class="n">2</td><td>ZoomInfo <code>externalUrls</code> — returns the profile URL directly, often several</td><td>one enrich call</td><td>about half the gaps</td></tr>
+        <tr><td class="n">3</td><td>LinkedIn people search on name + company keywords</td><td>one search + one read</td><td>most of the remainder</td></tr>
+        <tr><td class="n">4</td><td>Nothing worked → <span class="pill p-warn">unreadable</span>, naming every source tried</td><td>—</td><td>41 of 493, ~8%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">When ZoomInfo hands back several LinkedIn URLs, try them in order — the first is frequently the dead one. Two contacts on 5243 were recovered exactly this way after their stored URL 422'd.</p>
+  <pre>POST /api/v1/linkedin/search?account_id={acct}&amp;limit=5
+  {"api":"classic","category":"people","keywords":"Firstname Lastname Company"}
+GET  /api/v1/users/{identifier}?account_id={acct}&amp;linkedin_sections=experience_preview</pre>
+  <div class="callout bad">
+    <strong>Whose LinkedIn account reads the profile is not a detail.</strong> Both calls require
+    <code>account_id</code>, and only the accounts belonging to your own team are authorised. A
+    connected-accounts list will also contain <em>client</em> identities; reading prospect profiles
+    through a client's LinkedIn account is not a recoverable mistake. Keep an explicit allowlist in
+    the run config and fail closed on anything outside it.
+  </div>
+  <p class="meta">Identifier hygiene, each learned by a 400 or a wrong answer: strip
+  <code>?trk=…</code> tracking parameters; URL-encode non-ASCII (<code>ñ</code> →
+  <code>%C3%B1</code>); never send <code>*experience</code> as the section name. And read every
+  property that might hold a profile URL, not just one — a portal typically carries several
+  (<code>hs_linkedin_url</code>, a Hublead public identifier, a vendor's LinkedIn URL field). Reading
+  one field is how 30 contacts got silently skipped on the first pass of this process.</p>
+</section>
+
+<section id="stage34">
+  <span class="num">STAGE 3–4</span>
+  <h2>Read and judge</h2>
+  <div class="col">
+    <p>Signals, strongest first: a dated row whose <code>end</code> is <code>null</code>; the same <code>company_id</code> recurring across promotions; a <code>start</code> date consistent with the CRM. Then, far weaker: the headline. Then, not evidence at all: the <code>websites</code> field, which routinely still points at an employer three jobs back.</p>
+  </div>
+  <h3>The three verdicts</h3>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Verdict</th><th>Means</th><th>Test</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill p-ok">yes</span></td><td>Still at the company on file</td><td>a dated row for that company with <code>end: null</code></td></tr>
+        <tr><td><span class="pill p-bad">no</span></td><td>Gone — and usually somewhere identifiable</td><td>that company's row has an end date, or a different employer is current</td></tr>
+        <tr><td><span class="pill p-warn">unreadable</span></td><td>Could not be established by any source</td><td>no profile, or a real profile with no dated history</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout bad">
+    <strong>The truncation trap.</strong> <code>experience_preview</code> returns only the first handful of rows. If the CRM's company is <em>absent</em> and <code>work_experience_total_count</code> exceeds the rows you got, you have not seen the whole history — re-pull with <code>linkedin_sections=experience</code> before calling anyone a mover or a wrong human. Skipping this produces confident, wrong "no" verdicts.
+  </div>
+  <h3>Persona: the test is whether they can buy</h3>
+  <div class="col">
+    <p>Not being a marketer does not disqualify anyone. A CRO, an EVP of Partnerships, a VP of Communications, a COO promoted out of marketing — all buyers. What actually disqualifies: a gatekeeper (an executive assistant), an individual contributor with no budget, a one-person shop that cannot buy the offer, or an outside consultant.</p>
+    <p>Record that exclusion in the <em>evidence</em> field, never in lead status — a workflow will overwrite lead status, and should. See the failure modes below for the way this can go wrong.</p>
+  </div>
+</section>
+
+<section id="stage5">
+  <span class="num">STAGE 5</span>
+  <h2>Movers — re-associate, don't just annotate</h2>
+  <div class="col">
+    <p>A contact confirmed to have moved is worth more than one confirmed to have stayed: they are a warm name at a new account. Finishing the job means the CRM shows where they actually work.</p>
+  </div>
+  <ol>
+    <li><strong>Verify the domain, never guess it.</strong> Name searches fail or return garbage — a search for one small vendor returned an unrelated charity's domain. Instead, pass a candidate domain to a company lookup and accept only a full match on the right name.</li>
+    <li><strong>Decide whether there is a destination at all.</strong> Not every mover goes to a
+      company you should create. Someone who went independent, took a fractional or advisory seat,
+      is between roles, or retired has no employer to re-associate to — record the destination in
+      the evidence field, leave the verdict <code>no</code>, and set the lead status to reflect it.
+      Creating a company record for a one-person practice fills the CRM with junk and, worse,
+      promotes a non-buyer onto the calling list.</li>
+    <li><strong>Disambiguate before you move anyone.</strong> A changed email domain looks like a
+      job change and usually isn't — on one list, 37 of 49 domain mismatches were aliases or former
+      names, not moves. And never choose between same-named company records: where several exist,
+      suppress and queue rather than guess.</li>
+    <li><strong>Find or create the company record.</strong> Search by <code>domain EQ</code> first.
+      Take the domain from the LinkedIn company page so the record is matchable later — never
+      create a name-only stub.</li>
+    <li><strong>Delete the stale associations, then write the new one with <em>both</em> type IDs</strong> — <code>1</code> and <code>279</code>. Write only one and <code>associatedcompanyid</code> stays empty, which looks like success and isn't.</li>
+    <li><strong>Reconcile the flag to <code>yes</code>.</strong> Once they are attached to the employer they actually work for, "still at company" is true. Leaving it <code>no</code> describes a record that no longer exists.</li>
+  </ol>
+  <div class="callout warn">
+    <strong>Creating a company record has a side effect.</strong> A record you create carries no tech-signal enrichment, so its occupants silently drop out of every ICP list keyed on those signals. Enrich on create, or accept that you are hiding the people you just finished verifying. This cost 27 verified contacts their place on the calling list.
+  </div>
+</section>
+
+
+<section id="stage5b">
+  <span class="num">STAGE 5b</span>
+  <h2>Carry the phone, or the whole pass is undone</h2>
+  <div class="col">
+    <p>Re-associating a contact fixes the company, and a diligent pass then fixes the email. Both can be right while the record still connects a rep to the employer the person left — because <code>business_phone</code> was populated before anyone knew they had moved, and nothing in the re-association touches it.</p>
+    <p>This is the most damaging defect in the process, for one reason: the source list requires a known phone as an entry condition. So the stale number is not dormant data sitting in an unused field. It is the number a rep dials.</p>
+  </div>
+  <div class="callout bad">
+    <strong>Measured on the 5243 movers: 69 of 70 carried a business number that was not their new employer's.</strong> 31 were proven to belong to a named former employer by matching the number against that company's own record — one CMO's business line was his previous employer's switchboard, and his filed previous email was on that same company's domain. Two independent fields agreeing on the wrong company.
+  </div>
+
+  <h3>You do not need to identify every number to know it is wrong</h3>
+  <p>Proving ownership is satisfying and slow. The decisive argument is simpler: <code>business_phone</code> means <em>the current employer's business line</em>, and every value on a mover's record predates the discovery of the move. It therefore describes the previous job whether or not a company record exists to name it. Fix the field on that basis; use ownership lookups to build confidence, not as a precondition.</p>
+
+  <h3>What to do with each field</h3>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Field</th><th>Action on a confirmed mover</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td class="m">business_phone</td><td>Overwrite with the new employer's number; <strong>clear it</strong> if that company record has none</td><td>An empty field costs a rep nothing. A wrong one costs a call and the credibility of the list.</td></tr>
+        <tr><td class="m">phone</td><td>Touch only when <em>proven</em> to belong to a former employer</td><td>Often a genuine direct dial that follows the person.</td></tr>
+        <tr><td class="m">mobilephone</td><td>Never touch</td><td>A mobile belongs to the person, not the employer.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">Record the replaced number and whose it was in the evidence field. And check afterwards for contacts left with no dialable number at all — they will fall off a phone-gated list, which is correct, but somebody should know it happened.</p>
+
+  <h3>Check the rest of the list too — and self-test the check before believing it</h3>
+  <p>The same audit across all 312 contacts on the calling list found 276 matching their employer and 32 not. The first attempt to identify those 32 reported that none belonged to another company — <strong>and that conclusion was wrong.</strong> It used a digits-only token search that cannot match a number stored in parenthesised form, so it returned nothing for all 32 and the nothing was read as an answer. Re-run with a query that tries every stored format, and after a self-test against a number already known to be present, <strong>9 of the 32 sit on a differently-named company's number.</strong></p>
+    <p>Those 9 split two ways and neither the CRM nor a vendor can separate them automatically. Roughly half are the employer's own predecessor or an acquired subsidiary — a contact at Workiva holding the number registered to WebFilings, Workiva's original name. The rest look like a former employer's line on a contact who never moved, the same defect as the movers but pre-existing. The vendor alias test does <em>not</em> resolve this: it keeps predecessor names as separate company records with separate ids, so "different id" and "different company" are not the same statement once an acquisition is involved.</p>
+    <p><strong>So non-mover phone conflicts get flagged for a human, never auto-corrected.</strong> Overwriting a contact's working office line with their employer's toll-free menu is a worse outcome than the ambiguity.</p>
+  <div class="callout bad"><strong>Self-test every query before you trust its silence.</strong> A digits-only token search against a parenthesised stored number returns nothing, for every input, forever. That silence was twice read as a finding in this pass — once as "no contact shares this number" and once as "no company owns this number" — and the second one reached a written conclusion before it was caught. Run the query against a case whose answer you already know. If it cannot find that, it has told you nothing about anything else.</div>
+</section>
+
+<section id="stage6">
+  <span class="num">STAGE 6</span>
+  <h2>The email ladder</h2>
+  <div class="col">
+    <p>Vendors do not have the address of someone who just moved — that is precisely the population they lag on. Four rungs, in order, each cheaper than the one below it.</p>
+  </div>
+
+  <h3>Rung 0 · Bounce history outranks the verifier</h3>
+  <p>Before spending a credit, read what the CRM already knows about deliverability — the hard bounce reason, any sending tool's bounce flag, a stored verification result. A bounce is ground truth and no verifier overrides it: tested against three addresses that had genuinely hard-bounced, the verifier returned <em>valid</em> for two of them. Never re-check an address you already hold bounce data for, and never let a <code>valid</code> overturn a recorded bounce.</p>
+
+  <h3>Rung 1 · Look in the record you already have</h3>
+  <p>Sweep <code>hs_additional_emails</code>, <code>email_2</code>, <code>email_other</code>, <code>work_email</code>, <code>linkedin__email</code> for an address on the current employer's domain. Two of the four hardest cases on 5243 were solved here for one batch read — the correct address had been sitting in a secondary field while the primary held a dead one.</p>
+
+  <p>Two more fields worth reading at this rung, because they answer part of the question for free: a vendor's own stored verification status, and its “email matches company name” flag. And if the person's LinkedIn contact-info block carries a published address on the confirmed domain, <strong>prefer it over anything derived</strong> — it is first-party. On this pass a self-published <code>gwen.lamar@</code> beat a vendor's <code>gwendolyn.lamar@</code> when both verified.</p>
+
+  <h3>Rung 2 · Learn the company's format from a colleague you already trust</h3>
+  <p>Search your own portal for a known-good address on that exact domain, then score the samples against the format table below and keep only formats that explain a real sample. This solved 22 of 42 domains with no external calls at all.</p>
+  <pre>POST /crm/v3/objects/contacts/search
+  filter: email CONTAINS_TOKEN "*@thedomain.com"</pre>
+
+  <h3>Rung 3 · Construct across the universal format set, then make the server answer</h3>
+  <p>There are only so many ways the world builds an address. Walk the set — learned formats first, then the rest — and let verification decide. Add common short forms of the first name once the full set fails on the given name.</p>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>#</th><th>Format</th><th>Example</th><th>#</th><th>Format</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td class="m">first.last</td><td class="m">jane.doe@</td><td class="n">8</td><td class="m">first-last</td><td class="m">jane-doe@</td></tr>
+        <tr><td class="n">2</td><td class="m">flast</td><td class="m">jdoe@</td><td class="n">9</td><td class="m">lastf</td><td class="m">doej@</td></tr>
+        <tr><td class="n">3</td><td class="m">firstlast</td><td class="m">janedoe@</td><td class="n">10</td><td class="m">last.first</td><td class="m">doe.jane@</td></tr>
+        <tr><td class="n">4</td><td class="m">first</td><td class="m">jane@</td><td class="n">11</td><td class="m">lastfirst</td><td class="m">doejane@</td></tr>
+        <tr><td class="n">5</td><td class="m">first_last</td><td class="m">jane_doe@</td><td class="n">12</td><td class="m">fl</td><td class="m">jd@</td></tr>
+        <tr><td class="n">6</td><td class="m">f.last</td><td class="m">j.doe@</td><td class="n">13</td><td class="m">last</td><td class="m">doe@</td></tr>
+        <tr><td class="n">7</td><td class="m">firstl</td><td class="m">janed@</td><td class="n">14</td><td class="m">f_last</td><td class="m">j_doe@</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <strong>Normalise the name before building a candidate.</strong> Decompose to ASCII, strip everything that is not a letter, lowercase. Without that step an apostrophe or an accent produces a malformed address — a derivation routine on an earlier run crashed on <em>O'Dell</em>, and in a bulk run it would have silently skipped every O'Brien, O'Neill and D'Angelo on the list. Skip contacts whose name does not yield two usable tokens rather than guessing.
+  </div>
+  <p>Verification returns four answers, and they are not shades of one thing:</p>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Result</th><th>Means</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill p-ok">valid</span></td><td>The mailbox exists</td><td>Write it.</td></tr>
+        <tr><td><span class="pill p-acc">catchall</span></td><td>Domain accepts everything; the person is unconfirmed</td><td>Write it, flag it, never call it proven.</td></tr>
+        <tr><td><span class="pill p-warn">unknown</span></td><td>Server refuses verification entirely</td><td>Proves nothing. Write only on an unambiguous multi-sample pattern, stamped unverified.</td></tr>
+        <tr><td><span class="pill p-bad">invalid</span></td><td>A real negative — <em>if</em> that domain answers other probes</td><td>Never write it. Read it as evidence.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Rung 4 · Read the negatives</h3>
+  <p>An <code>invalid</code> from a domain that answers is a finding, and it points two different ways:</p>
+  <ul>
+    <li><strong>The domain is wrong.</strong> Every format failed for one CMO at his company's current domain — the company had rebranded and kept its legacy mail domain, where <code>first.last</code> was valid all along.</li>
+    <li><strong>The name is wrong.</strong> Every format failed for another contact, then one nickname variant succeeded: she goes by Kris, not Kristin. Five rejections and one acceptance from a discriminating server is a genuine answer.</li>
+  </ul>
+
+  <h3>The hard rule, and its two exceptions</h3>
+  <p>An address is written only when its domain is the employer LinkedIn confirmed. A vendor-supplied address on the previous employer's domain is the exact failure this process exists to prevent. Two exceptions:</p>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Tier</th><th>Situation</th><th>Bar to clear</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td>Same company, different domain — a rebrand keeping legacy mail</td><td>the vendor resolves both domains to the <em>identical</em> company id</td></tr>
+        <tr><td class="n">2</td><td>Parent group and division sharing one corporate mail domain</td><td>different ids, so weaker: requires <code>valid</code> plus a note recording the weaker tier</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Where the old address goes</h3>
+  <p>Never leave a former employer's address in the Email field, and never simply delete it.</p>
+  <dl class="kv">
+    <dt>previous__email</dt><dd>The prior address. Read it first — if it already holds a value, leave that value alone.</dd>
+    <dt>previous__company_domain_name</dt><dd>Its domain. <strong>URL-typed</strong> — a bare domain is rejected with <code>INVALID_URL</code>, so prefix <code>https://</code>.</dd>
+    <dt>ai__email_information</dt><dd>The narrative: what was replaced, what verification said, and how confident to be.</dd>
+  </dl>
+  <div class="callout">
+    <strong>Clearing a primary address takes two writes, in order.</strong> Empty <code>hs_additional_emails</code> first, then empty <code>email</code> — otherwise the API refuses with <em>"Remove all secondary emails first before deleting the primary email."</em>
+  </div>
+</section>
+
+<section id="stage7">
+  <span class="num">STAGE 7</span>
+  <h2>Stamp, then let the automation do its job</h2>
+  <div class="col">
+    <p>Research that isn't written to a field does not exist. Every contact leaves with a verdict, the evidence behind it, the date, and how many sources agreed.</p>
+  </div>
+  <dl class="kv">
+    <dt>ai__li_still_at_company</dt><dd><code>yes</code> · <code>no</code> · <code>unreadable</code> — the routing decision</dd>
+    <dt>ai__contact_evidence</dt><dd>What was read, where, and the caveat a rep needs before dialing</dd>
+    <dt>ai__contact_verified_date</dt><dd>When. A verdict without a date rots invisibly</dd>
+    <dt>ai__sources_confirming</dt><dd>1 for LinkedIn alone, 2 when a vendor independently agreed</dd>
+  </dl>
+  <div class="callout bad">
+    <strong>Verify every write by reading it back.</strong> A batch update returns
+    <code>COMPLETE</code> with zero errors and can still not apply. Diff the ids you requested
+    against the ids returned, then re-read the records. Every self-check in this process exists
+    because a write that reported success had not landed.
+  </div>
+  <div class="callout warn">
+    <strong>Calculated fields lag — do not mistake that for failure.</strong>
+    <code>associatedcompanyid</code> can take 20 seconds or more to reflect a new association. Read
+    it too early, see it empty, and you will "repair" a write that worked. Re-read before concluding
+    anything failed. Related limit: a batch read will not accept
+    <code>propertiesWithHistory</code> at 100 records — drop to 25 per call or the whole response
+    comes back null. Property history is the only way to catch two systems fighting over one field,
+    so this matters more than it looks.
+  </div>
+  <div class="callout">
+    <strong>The lead-status workflow is not fighting you.</strong> Writing an email triggers it, and it asynchronously returns the contact to prospect status at their new company — which is the entire point: information was found, so they are workable again. Do not suppress it, do not re-assert a stale status inside the same write, and do not trust a status you read <em>before</em> the write. Re-read it afterward if you need to know.
+  </div>
+</section>
+
+
+<section id="vocab">
+  <span class="num">VOCABULARY</span>
+  <h2>What gets written, in exactly which words</h2>
+  <div class="col">
+    <p>A verdict is only as useful as the field it lands in, and this is where a re-runner can do
+    real damage by inventing a value. Every string below is literal.</p>
+  </div>
+
+  <h3>The verification properties</h3>
+  <dl class="kv">
+    <dt>ai__li_still_at_company</dt><dd><code>yes</code> · <code>no</code> · <code>unreadable</code> — the routing decision</dd>
+    <dt>ai__contact_evidence</dt><dd>What was read, where, and the caveat a rep needs. Also carries the persona-exclusion marker. <strong>Append-only</strong> — see the warning below.</dd>
+    <dt>ai__contact_verified_date</dt><dd>Date type, <code>YYYY-MM-DD</code>. The <em>actual</em> write date, never a constant.</dd>
+    <dt>ai__sources_confirming</dt><dd>How many independent sources actually agreed. Not a constant.</dd>
+    <dt>ai__li_recent_role_change</dt><dd><code>yes</code> · <code>no</code></dd>
+    <dt>ai__li_tenure_years</dt><dd>Number, from the current row's start date</dd>
+    <dt>ai__email_information</dt><dd>The email narrative: what was replaced, what verification said, how much to trust it</dd>
+    <dt>previous__email</dt><dd>A prior employer's address. Never clobber an existing value.</dd>
+    <dt>previous__company_domain_name</dt><dd><strong>URL type</strong> — prefix <code>https://</code> or it rejects with <code>INVALID_URL</code></dd>
+  </dl>
+
+  <h3>Lead status — the exact enum, and the one you must not touch</h3>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Finding</th><th>Write this literal value</th><th class="n">Used</th></tr></thead>
+      <tbody>
+        <tr><td>Confirmed at a different employer</td><td class="m">No Longer with Company</td><td class="n">153</td></tr>
+        <tr><td>Moved, destination ambiguous or fractional</td><td class="m">Need Updated Info</td><td class="n">36</td></tr>
+        <tr><td>Retired</td><td class="m">Retired - Remove from All Lists</td><td class="n">5</td></tr>
+        <tr><td>Employed, but cannot buy</td><td class="m">Not Decision Maker</td><td class="n">4</td></tr>
+        <tr><td><strong>Confirmed still there</strong></td><td><strong>write nothing — leave it alone</strong></td><td class="n">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout bad">
+    <strong>Never normalise the lead status of a contact you just confirmed.</strong> The calling
+    list requires <code>ConnectandSell Prospect</code>. Rewriting a confirmed contact's status —
+    even to something that reads better — ejects the person you just verified from the list you are
+    building. The portal enum offers two dozen values; only the four above are outputs of this
+    process.
+  </div>
+
+  <h3>The evidence field has one writer's worth of room and several writers</h3>
+  <div class="callout warn">
+    Roughly 1,000 characters, hard truncated. On this pass the verdict writer <em>overwrote</em> the
+    field while every later phase <em>appended</em> to it — which is why 22 of 70 movers lost the
+    marker two production lists filter on, and why a repair script had to exist. Make every write
+    append, give each phase a size budget, put markers in <strong>dedicated typed properties</strong>
+    rather than prose, and run any marker re-stamp <em>after</em> the last verdict write.
+  </div>
+
+  <h3>Properties this process must not write</h3>
+  <ul>
+    <li><code>jobtitle</code> — three systems already fight over it at roughly 38% oscillation; a
+      write was observed reverting within seconds. The real title belongs in the evidence field.</li>
+    <li><code>hs_persona</code> — see the next section. Proposals only.</li>
+    <li><code>mobilephone</code> — a mobile follows the person, not the employer.</li>
+    <li>Anything on a contact outside the intake snapshot.</li>
+  </ul>
+</section>
+
+<section id="output">
+  <span class="num">OUTPUT</span>
+  <h2>The calling list, defined</h2>
+  <div class="col">
+    <p>The process produces a second, derived dynamic list — the one reps actually work. It is worth
+    stating its clauses exactly, because three of the four are properties this process writes, which
+    means the process can remove people from its own output.</p>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Clause</th><th>Filter</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td class="m">ai__li_still_at_company IS_ANY_OF [yes]</td><td>confirmed current</td></tr>
+        <tr><td class="n">2</td><td class="m">hs_lead_status IS_ANY_OF [ConnectandSell Prospect]</td><td>this is why clause 2 of the vocabulary table matters</td></tr>
+        <tr><td class="n">3</td><td class="m">ai__contact_evidence DOES_NOT_CONTAIN &lt;exclusion token&gt;</td><td><strong>must set includeObjectsWithNoValueSet: true</strong>, or every contact with an empty evidence field drops out</td></tr>
+        <tr><td class="n">4</td><td class="m">IN_LIST &lt;source list id&gt;</td><td>inherits the whole source ICP — the coupling that hides verified people</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">Clause 4 is the one to think hardest about. It keeps the calling list honest to the
+  campaign's ICP, and it is also why re-associating a mover can make them vanish: they leave the
+  source list, so they leave this one. Decide deliberately whether your output should inherit the
+  source ICP or stand on the verification evidence alone.</p>
+</section>
+
+<section id="persona">
+  <span class="num">PERSONA</span>
+  <h2>Persona: the largest destructive write, and the one to default off</h2>
+  <div class="col">
+    <p>On this pass, correcting <code>hs_persona</code> removed <strong>105 of the 324</strong>
+    contacts that left the source list — more than any cause except the verdicts themselves. Those
+    removals were right: the records were analysts, sales directors, a COO, a marketing specialist,
+    people who were never marketing buyers and had been mis-personad into the campaign. But it is a
+    write to a targeting property, it is the second-largest thing this process does, and it deserves
+    to be named as a stage rather than appear as a number in a table.</p>
+  </div>
+  <div class="callout bad">
+    <strong>In an unattended run this defaults to off, and produces proposals.</strong> A persona
+    re-map changes who is in the campaign. Emit the proposed change with the title that justifies it
+    and let a human approve the set.
+  </div>
+  <h3>What makes it treacherous</h3>
+  <ul>
+    <li><strong>Multiple persona workflows race each other.</strong> Expect a value you write to be
+      re-decided. Verify by reading back.</li>
+    <li><strong>The workflow that assigns "does not match persona" only fires on a BLANK persona.</strong>
+      A wrong persona is therefore stable — nothing will correct it for you, and nothing will
+      correct yours either.</li>
+    <li><strong>Persona is title-driven, so it survives a job change at the same title.</strong> If
+      movers are dropping out of a persona-gated list, persona is probably not the reason — check
+      which criterion actually failed before concluding anything.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="num">FAILURE MODES</span>
+  <h2>Two ways a perfect record still fails to reach a rep</h2>
+  <div class="col">
+    <p>Both of these were found <em>after</em> the list was reported complete, which is the argument for verifying against the list rather than against your own bookkeeping.</p>
+  </div>
+
+  <h3>A filter token is a control character, not prose</h3>
+  <p>The calling list excludes anyone whose evidence field contains a persona-exclusion token. When seven people were correctly reinstated as decision makers, the note explaining the reinstatement <em>quoted that token verbatim</em> — so the filter kept matching and seven qualified prospects stayed invisible for hours. Write the token only when you mean it, build it at runtime so a script file cannot seed it either, and phrase every removal note without it.</p>
+
+  <h3>Re-association can walk a contact off the source list</h3>
+  <p>The calling list gates on membership in the source list, which requires a known phone, a qualifying persona, and membership in two tech-signal lists. Move someone to a new employer and they can leave the ICP — which is often correct. The distinction that matters is between <strong>disqualified</strong> and <strong>unexamined</strong>:</p>
+  <ul>
+    <li><strong>Disqualified.</strong> An enriched company genuinely lacking the signal. An accurate record in the wrong campaign — leave it.</li>
+    <li><strong>Unexamined.</strong> A company record created during the pass, never enriched, whose signals are unknown rather than absent. These are verified prospects being silently dropped, and they are recoverable by enriching the company.</li>
+  </ul>
+  <p class="meta">Persona is title-driven, so it survives a job change at the same title — persona was <em>not</em> what removed the movers. Check which criterion actually failed before concluding anything.</p>
+</section>
+
+<section>
+  <span class="num">MEASURED</span>
+  <h2>What the full pass on list 5243 produced</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Population</th><th class="n">Count</th><th>Reading</th></tr></thead>
+      <tbody>
+        <tr><td>Contacts at intake</td><td class="n">662</td><td>snapshot taken before the first write</td></tr>
+        <tr><td>Actually read against dated LinkedIn history</td><td class="n">491</td><td>the remaining 171 left the list before being reached — see the caution below</td></tr>
+        <tr><td>Confirmed still at the company on file</td><td class="n">314</td><td><span class="pill p-ok">yes</span></td></tr>
+        <tr><td>Confirmed gone</td><td class="n">179</td><td><span class="pill p-bad">no</span> — 71 re-associated to their real employer</td></tr>
+        <tr><td>Unverifiable by any source</td><td class="n">41</td><td><span class="pill p-warn">unreadable</span> across the whole pass — 8.3%, not the 15 still on the list at the end</td></tr>
+        <tr><td>Removed by lead status the verdicts set</td><td class="n">159</td><td>no-longer-with-company, needs-updated-info, retired</td></tr>
+        <tr><td>Removed by persona correction</td><td class="n">110</td><td>never marketing buyers — analysts, sales directors, an IC</td></tr>
+        <tr><td>Left the ICP on re-association</td><td class="n">60</td><td>27 of them merely unenriched, not disqualified</td></tr>
+        <tr><td>Movers holding a current-employer email</td><td class="n">56 / 70</td><td>zero still hold a prior employer's address</td></tr>
+        <tr><td><strong>On the calling list, all confirmed current</strong></td><td class="n">312</td><td>all with a phone, 306 with an email</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">The list roughly halved, and that is the process working rather than failing: 269 of the 322 removals were people who had left, retired, or were never marketing buyers in the first place. The number to watch is not the size of the list but the share of it a rep can dial without being surprised.</p>
+</section>
+
+
+<section>
+  <span class="num">LISTS</span>
+  <h2>Turning the output into lists people can use</h2>
+  <div class="col">
+    <p>The obvious filter is the wrong one. <em>"Primary associated company has been updated in the last 30 days"</em> looks like it answers "who changed jobs" and does not — it reports CRM <strong>activity</strong>, not employment change. It fires on a dedupe, a merge, an integration sync, someone correcting a bad link, and on this process's own re-association writes. Nothing in it requires that a human being actually moved, or that anyone checked.</p>
+    <p>On a portal with 138,000 contacts carrying a company association, that filter returned 615 people for a 30-day window. The evidence-based question — verified to have changed employer in the same window — returned 192. The gap is plumbing noise, and a rep working it burns calls discovering that nothing changed.</p>
+  </div>
+
+  <h3>Ask the evidence, not the audit trail</h3>
+  <p>Two branches, joined with OR, each requiring that something was actually established:</p>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Branch</th><th>Filter</th><th>Means</th></tr></thead>
+      <tbody>
+        <tr><td class="n">A</td><td class="m">ai__contact_evidence CONTAINS "RE-ASSOCIATED"</td><td>we moved their primary company after confirming the move</td></tr>
+        <tr><td class="n">B</td><td class="m">ai__li_still_at_company = no</td><td>confirmed gone; destination not set yet</td></tr>
+        <tr><td class="n">+</td><td class="m">ai__contact_verified_date within the window</td><td>scopes either branch to a period</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout warn">
+    <strong>A marker only works if every record carries it.</strong> 22 of 70 movers were missing the <code>RE-ASSOCIATED</code> string because later evidence writes had overwritten the phrasing. A list keyed on a marker is only as complete as the marker — audit coverage before trusting the count, and re-stamp the gaps.
+  </div>
+
+  <h3>The two lists worth standing up</h3>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>List</th><th>Definition</th><th>What it is for</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Moved companies</strong></td><td class="m">evidence CONTAINS "RE-ASSOCIATED"</td><td>Warm names at new accounts. The single highest-value output of a verification pass.</td></tr>
+        <tr><td><strong>No primary associated company</strong></td><td class="m">number_of_associated_companies = 0, including no-value</td><td>Orphans. Nothing about them can be scoped by company, so they fall out of every ICP list silently.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>List-filter shapes the API will not guess for you</h3>
+  <p>The list endpoint rejects malformed filters with the valid enum in the error message, so probing beats reading. Four findings that each cost a round trip:</p>
+  <ul>
+    <li><strong><code>associatedcompanyid</code> is hidden</strong> and cannot be used in a list filter at all — <em>"Property filters cannot be used against hidden properties."</em> Use <code>number_of_associated_companies</code>, a visible rollup, and set <code>includeObjectsWithNoValueSet: true</code> so records that never had one are caught alongside those at zero.</li>
+    <li><strong>A <code>date</code> property accepts only</strong> <code>COMPARATIVE_PROPERTY_UPDATED</code>, <code>TIME_POINT</code>, <code>TIME_RANGED</code>, <code>ALL_PROPERTY</code>. Not <code>DATE</code>, and not <code>ROLLING_DATE_RANGE</code> — that one is for datetime properties.</li>
+    <li><strong>A rolling window is a <code>TIME_POINT</code> with <code>timeType: "INDEXED"</code></strong>, an <code>indexReference</code> of <code>referenceType: "TODAY"</code>, and a <em>positive</em> offset — the API rejects negative offsets even though the window looks backwards.</li>
+    <li><strong>The timezone is not yours to choose.</strong> <code>zoneId</code> must be the portal's own — <em>"Invalid time zone UTC provided, valid time zones are America/Chicago."</em></li>
+  </ul>
+  <p class="meta">An absolute cutoff is the pragmatic fallback: build the list with a fixed date and switch it to a rolling window in the UI, which is one click and immune to all of the above.</p>
+</section>
+
+<section>
+  <span class="num">ENDPOINTS</span>
+  <h2>Every call this process makes</h2>
+  <div class="col">
+    <p>The reads are scattered through the stages above; the writes were missing entirely. Limits
+    shown are the ones that actually bite.</p>
+  </div>
+  <pre># READ
+GET  /crm/v3/lists/{listId}                      ?includeFilters=true   → the list's real criteria
+GET  /crm/v3/lists/{listId}/memberships          limit=250, page on paging.next.after
+POST /crm/v3/objects/contacts/batch/read         100 ids max; 25 if asking for propertiesWithHistory
+POST /crm/v3/objects/contacts/search             CONTAINS_TOKEN needs the stored format, not raw digits
+POST /crm/v3/objects/companies/batch/read        100 ids max
+POST /crm/v3/objects/companies/search            filter domain EQ
+
+# WRITE
+POST   /crm/v3/objects/contacts/batch/update     100 inputs max — chunk, then diff requested vs returned
+PATCH  /crm/v3/objects/contacts/{id}             single-record writes
+POST   /crm/v3/objects/companies                 create; find-or-create by domain or it mints duplicates
+DELETE /crm/v4/objects/contacts/{cid}/associations/companies/{coid}
+PUT    /crm/v4/objects/contacts/{cid}/associations/companies/{coid}
+       body: [{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":1},
+              {"associationCategory":"HUBSPOT_DEFINED","associationTypeId":279}]
+POST   /crm/v3/lists                             objectTypeId "0-1", processingType "DYNAMIC",
+                                                 top-level OR branch wrapping AND sub-branches
+POST   /crm/v3/properties/contacts               only when a genuinely new field is needed</pre>
+  <p class="meta">Ordering constraints that are not optional, all learned by failure: both
+  association typeIds in a single PUT; <code>hs_additional_emails</code> cleared before
+  <code>email</code>; <code>https://</code> on the URL-typed previous-domain field; marker
+  re-stamping after the last verdict write; and the phone carried inside the re-association
+  transaction rather than swept up later.</p>
+</section>
+
+<section>
+  <span class="num">NEXT LIST</span>
+  <h2>Running this again</h2>
+  <div class="col">
+    <p>The process takes a list ID and nothing else, but three things are worth settling before you start.</p>
+  </div>
+  <ul>
+    <li><strong>Write after every batch, never at the end.</strong> Reps dial while the pass runs. A verdict held in memory protects nobody.</li>
+    <li><strong>Run verification concurrently and in the background.</strong> Six workers, and expect a serial loop over forty contacts to blow a two-minute shell timeout.</li>
+    <li><strong>Decide the reachability bar up front.</strong> A cold prospecting list and a deal-follow-up list fail differently; the bar is a parameter, not a constant.</li>
+    <li><strong>Phones are still unverified.</strong> Every contact on the calling list has a number and nobody has proven it dials. For a list built for dialing, that is the largest remaining gap in this process.</li>
+  </ul>
+</section>
+
+<footer>
+  Built from the full pass on list 5243 · Quantum Business Solutions · companion to <em>The Evidence Ladder</em>, which carries the source-yield measurements and the case histories behind these rules
+</footer>
+
+</div>
