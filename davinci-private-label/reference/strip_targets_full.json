@@ -1,0 +1,965 @@
+[
+ {
+  "slug": "en/pl-demo-aging",
+  "id": "216189432992",
+  "rows": [
+   {
+    "match": [
+     "Advanced formulations drive premium price",
+     "Long-term customer relationships",
+     "Multi-benefit appeal"
+    ],
+    "clear": [
+     "Advanced formulations drive premium price",
+     "Long-term customer relationships",
+     "Multi-benefit appeal"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-dropshipping",
+  "id": "216186378936",
+  "rows": [
+   {
+    "match": [
+     "Faster turnaround on every order",
+     "Freedom to experiment",
+     "Lower overhead, less capital tied up",
+     "More time for what grows the business",
+     "Reduced risk on every SKU",
+     "Scale without operational drag"
+    ],
+    "clear": [
+     "Faster turnaround on every order",
+     "Freedom to experiment",
+     "Lower overhead, less capital tied up",
+     "More time for what grows the business",
+     "Reduced risk on every SKU",
+     "Scale without operational drag"
+    ]
+   },
+   {
+    "match": [
+     "Adherence to CGMP regulations",
+     "Flexibility and scaling capacity",
+     "Premium ingredient quality",
+     "Quality assurance throughout production"
+    ],
+    "clear": [
+     "Flexibility and scaling capacity",
+     "Premium ingredient quality",
+     "Quality assurance throughout production"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-fitness",
+  "id": "216179449410",
+  "rows": [
+   {
+    "match": [
+     "Clear, defined audience segments",
+     "High-repeat purchase category",
+     "Outcome-driven value proposition"
+    ],
+    "clear": [
+     "Clear, defined audience segments",
+     "High-repeat purchase category",
+     "Outcome-driven value proposition"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-get-started",
+  "id": "216194811571",
+  "rows": [
+   {
+    "match": [
+     "Ingredients & Testing Guide",
+     "The Definitive Guide to Private Label Supplements"
+    ],
+    "clear": [
+     "Ingredients & Testing Guide",
+     "The Definitive Guide to Private Label Supplements"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-herbal",
+  "id": "216189432990",
+  "rows": [
+   {
+    "match": [
+     "Bioavailability drives results",
+     "Quality matters more than quantity",
+     "Targeted wellness, broad appeal"
+    ],
+    "clear": [
+     "Bioavailability drives results",
+     "Quality matters more than quantity",
+     "Targeted wellness, broad appeal"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-how-to-sell-supplements",
+  "id": "216176671879",
+  "rows": [
+   {
+    "match": [
+     "Find where your audience already spends time",
+     "Learn the supplements you will offer",
+     "Match products to the right audience segments"
+    ],
+    "clear": [
+     "Find where your audience already spends time",
+     "Learn the supplements you will offer",
+     "Match products to the right audience segments"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-onboarding-guide",
+  "id": "216194811563",
+  "rows": [
+   {
+    "match": [
+     "STEP 01 WEEK 1",
+     "STEP 02 WEEKS 2-3",
+     "STEP 03 WEEKS 4-5",
+     "STEP 04 WEEKS 6-9",
+     "STEP 05 WEEKS 10-12"
+    ],
+    "clear": [
+     "STEP 01 WEEK 1",
+     "STEP 02 WEEKS 2-3",
+     "STEP 03 WEEKS 4-5",
+     "STEP 04 WEEKS 6-9",
+     "STEP 05 WEEKS 10-12"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-pediatric",
+  "id": "216189433355",
+  "rows": [
+   {
+    "match": [
+     "Compliance matters as much as formulation",
+     "High-trust pediatric audience",
+     "Multi-product household opportunity"
+    ],
+    "clear": [
+     "Compliance matters as much as formulation",
+     "High-trust pediatric audience",
+     "Multi-product household opportunity"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-pillar",
+  "id": "216189433405",
+  "rows": [
+   {
+    "match": [
+     "WEEK 1",
+     "WEEK 10-12",
+     "WEEK 2-3",
+     "WEEK 4-5",
+     "WEEK 6-9"
+    ],
+    "clear": [
+     "WEEK 1",
+     "WEEK 10-12",
+     "WEEK 2-3",
+     "WEEK 4-5",
+     "WEEK 6-9"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-resources",
+  "id": "216189433440",
+  "rows": [
+   {
+    "match": [
+     "Audience & Positioning",
+     "Brand & Design",
+     "Distribution",
+     "FDA & Compliance",
+     "Marketing & Sales",
+     "Pricing & Margins"
+    ],
+    "clear": [
+     "Pricing & Margins"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-ty-onboarding",
+  "id": "216194811659",
+  "rows": [
+   {
+    "match": [
+     "STEP 01 WEEK 1",
+     "STEP 02 WEEK 2-3",
+     "STEP 03 WEEK 4-5",
+     "STEP 04 WEEK 6-9",
+     "STEP 05 WEEK 10-12"
+    ],
+    "clear": [
+     "STEP 01 WEEK 1",
+     "STEP 02 WEEK 2-3",
+     "STEP 03 WEEK 4-5",
+     "STEP 04 WEEK 6-9",
+     "STEP 05 WEEK 10-12"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "en/pl-demo-womens-health",
+  "id": "216189433092",
+  "rows": [
+   {
+    "match": [
+     "Beauty, mood, and energy",
+     "Bone, reproductive, and prenatal needs",
+     "Hormonal balance across life stages"
+    ],
+    "clear": [
+     "Beauty, mood, and energy",
+     "Bone, reproductive, and prenatal needs",
+     "Hormonal balance across life stages"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ads-contract-mfg",
+  "id": "216192983654",
+  "rows": [
+   {
+    "match": [
+     "Fast turnaround",
+     "Low minimums, no set-up fees",
+     "U.S. manufacturing, FDA-registered"
+    ],
+    "clear": [
+     "Fast turnaround",
+     "Low minimums, no set-up fees"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ads-custom",
+  "id": "216192983663",
+  "rows": [
+   {
+    "match": [
+     "Fast turnaround",
+     "Low minimums, no set-up fees",
+     "U.S. manufacturing, FDA-registered"
+    ],
+    "clear": [
+     "Fast turnaround",
+     "Low minimums, no set-up fees"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ads-mfg-usa",
+  "id": "216192983652",
+  "rows": [
+   {
+    "match": [
+     "Fast turnaround",
+     "Low minimums, no set-up fees",
+     "U.S. manufacturing, FDA-registered"
+    ],
+    "clear": [
+     "Fast turnaround",
+     "Low minimums, no set-up fees"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ads-pl-mfg",
+  "id": "216194811734",
+  "rows": [
+   {
+    "match": [
+     "Fast turnaround",
+     "Low minimums, no set-up fees",
+     "U.S. manufacturing, FDA-registered"
+    ],
+    "clear": [
+     "Fast turnaround",
+     "Low minimums, no set-up fees"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-capsules",
+  "id": "216186379314",
+  "rows": [
+   {
+    "match": [
+     "The standard for no-fuss supplement delivery",
+     "Vegetarian and gelatin options",
+     "Wide ingredient compatibility"
+    ],
+    "clear": [
+     "The standard for no-fuss supplement delivery",
+     "Vegetarian and gelatin options",
+     "Wide ingredient compatibility"
+    ]
+   },
+   {
+    "match": [
+     "Fill Capacity",
+     "Material Options",
+     "Minimums & Set-Up",
+     "Size Options"
+    ],
+    "clear": [
+     "Fill Capacity",
+     "Material Options",
+     "Minimums & Set-Up",
+     "Size Options"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-case-studies",
+  "id": "216194811714",
+  "rows": [
+   {
+    "match": [
+     "DTC Brand Scale",
+     "Fitness Brand Launch",
+     "Healthcare Practice Expansion"
+    ],
+    "clear": [
+     "DTC Brand Scale",
+     "Fitness Brand Launch",
+     "Healthcare Practice Expansion"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-certifications",
+  "id": "216192983597",
+  "rows": [
+   {
+    "match": [
+     "FDA-registered facility",
+     "NSF GMP 455-2",
+     "SQF Food Safety"
+    ],
+    "clear": [
+     "NSF GMP 455-2",
+     "SQF Food Safety"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-chewables",
+  "id": "216188835864",
+  "rows": [
+   {
+    "match": [
+     "No water needed",
+     "Palatable formulations",
+     "Pediatric and accessibility-friendly"
+    ],
+    "clear": [
+     "No water needed",
+     "Palatable formulations",
+     "Pediatric and accessibility-friendly"
+    ]
+   },
+   {
+    "match": [
+     "Flavor Systems",
+     "Format Options",
+     "Minimums & Set-Up",
+     "Sweetener Options"
+    ],
+    "clear": [
+     "Flavor Systems",
+     "Format Options",
+     "Minimums & Set-Up",
+     "Sweetener Options"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-cognitive",
+  "id": "216189433251",
+  "rows": [
+   {
+    "match": [
+     "Daily compliance, monthly cadence",
+     "Multiple distinct audiences",
+     "Premium nootropic positioning"
+    ],
+    "clear": [
+     "Daily compliance, monthly cadence",
+     "Multiple distinct audiences",
+     "Premium nootropic positioning"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-custom-formulation",
+  "id": "216189433487",
+  "rows": [
+   {
+    "match": [
+     "Doctor-formulated R&D",
+     "Full format flexibility",
+     "Proprietary ownership"
+    ],
+    "clear": [
+     "Full format flexibility",
+     "Proprietary ownership"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-detox",
+  "id": "216189433375",
+  "rows": [
+   {
+    "match": [
+     "Cross-category opportunity",
+     "Daily and protocol-based use",
+     "Science-backed positioning wins"
+    ],
+    "clear": [
+     "Cross-category opportunity",
+     "Daily and protocol-based use",
+     "Science-backed positioning wins"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-energy",
+  "id": "216189433390",
+  "rows": [
+   {
+    "match": [
+     "Beyond-caffeine positioning",
+     "Daily compliance, monthly cadence",
+     "Multiple use cases"
+    ],
+    "clear": [
+     "Beyond-caffeine positioning",
+     "Daily compliance, monthly cadence",
+     "Multiple use cases"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-facility",
+  "id": "216194811691",
+  "rows": [
+   {
+    "match": [
+     "on-site QC",
+     "registered facility",
+     "supplement formats",
+     "years experience"
+    ],
+    "clear": [
+     "on-site QC",
+     "registered facility",
+     "supplement formats",
+     "years experience"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-gummies",
+  "id": "216192983401",
+  "rows": [
+   {
+    "match": [
+     "Fastest-growing supplement format",
+     "High-palatability, broad appeal",
+     "Sugar-free and pectin-based options"
+    ],
+    "clear": [
+     "Fastest-growing supplement format",
+     "High-palatability, broad appeal",
+     "Sugar-free and pectin-based options"
+    ]
+   },
+   {
+    "match": [
+     "Base Options",
+     "Minimums & Set-Up",
+     "Shapes & Sizes",
+     "Sweetener Options"
+    ],
+    "clear": [
+     "Base Options",
+     "Minimums & Set-Up",
+     "Shapes & Sizes",
+     "Sweetener Options"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-heart-health",
+  "id": "216189433373",
+  "rows": [
+   {
+    "match": [
+     "Aging tailwind, sticky customers",
+     "Branded ingredient premium",
+     "Doctor-recommended category"
+    ],
+    "clear": [
+     "Aging tailwind, sticky customers",
+     "Branded ingredient premium",
+     "Doctor-recommended category"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-immune-support",
+  "id": "216189433236",
+  "rows": [
+   {
+    "match": [
+     "Broad audience including pediatric",
+     "Trusted ingredients with mass appeal",
+     "Year-round + seasonal demand"
+    ],
+    "clear": [
+     "Broad audience including pediatric",
+     "Trusted ingredients with mass appeal",
+     "Year-round + seasonal demand"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ingredient-sourcing",
+  "id": "216192983616",
+  "rows": [
+   {
+    "match": [
+     "Branded ingredient access",
+     "Country-of-origin transparency",
+     "Decades of supplier relationships"
+    ],
+    "clear": [
+     "Branded ingredient access",
+     "Country-of-origin transparency",
+     "Decades of supplier relationships"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-ingredients-testing",
+  "id": "216189433459",
+  "rows": [
+   {
+    "match": [
+     "Branded ingredients",
+     "Certifications explained",
+     "Ingredient sourcing",
+     "Third-party testing"
+    ],
+    "clear": [
+     "Branded ingredients",
+     "Certifications explained",
+     "Ingredient sourcing",
+     "Third-party testing"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-joint-support",
+  "id": "216189433371",
+  "rows": [
+   {
+    "match": [
+     "Aging population tailwind",
+     "Branded ingredients command premium",
+     "Multiple customer entry points"
+    ],
+    "clear": [
+     "Aging population tailwind",
+     "Branded ingredients command premium",
+     "Multiple customer entry points"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-liquids",
+  "id": "216188835866",
+  "rows": [
+   {
+    "match": [
+     "Best for liposomal and specialty delivery",
+     "Highest bioavailability and fastest onset",
+     "Precise dose customization"
+    ],
+    "clear": [
+     "Best for liposomal and specialty delivery",
+     "Highest bioavailability and fastest onset",
+     "Precise dose customization"
+    ]
+   },
+   {
+    "match": [
+     "Bottle Sizes",
+     "Dosing Options",
+     "Flavor Systems",
+     "Minimums & Set-Up"
+    ],
+    "clear": [
+     "Bottle Sizes",
+     "Dosing Options",
+     "Flavor Systems",
+     "Minimums & Set-Up"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-mens-health",
+  "id": "216188836114",
+  "rows": [
+   {
+    "match": [
+     "Defined male wellness audience",
+     "Multi-decade purchase pattern",
+     "Premium pricing supported by science"
+    ],
+    "clear": [
+     "Defined male wellness audience",
+     "Multi-decade purchase pattern",
+     "Premium pricing supported by science"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-multivitamin",
+  "id": "216189433270",
+  "rows": [
+   {
+    "match": [
+     "Audience tiers from kids to seniors",
+     "Daily compliance, predictable revenue",
+     "Gateway category"
+    ],
+    "clear": [
+     "Audience tiers from kids to seniors",
+     "Daily compliance, predictable revenue",
+     "Gateway category"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-our-process",
+  "id": "216186379326",
+  "rows": [
+   {
+    "match": [
+     "STEP 01 WEEK 1",
+     "STEP 02 WEEKS 1-2",
+     "STEP 03 WEEKS 2-4",
+     "STEP 04 WEEK 4",
+     "STEP 05 WEEKS 5-8",
+     "STEP 06 WEEKS 8-12"
+    ],
+    "clear": [
+     "STEP 01 WEEK 1",
+     "STEP 02 WEEKS 1-2",
+     "STEP 03 WEEKS 2-4",
+     "STEP 04 WEEK 4",
+     "STEP 05 WEEKS 5-8",
+     "STEP 06 WEEKS 8-12"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-packaging",
+  "id": "216189433489",
+  "rows": [
+   {
+    "match": [
+     "Premium packaging upgrades",
+     "Standard bottle catalog",
+     "Sustainable options"
+    ],
+    "clear": [
+     "Premium packaging upgrades",
+     "Standard bottle catalog",
+     "Sustainable options"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-powders",
+  "id": "216192983382",
+  "rows": [
+   {
+    "match": [
+     "Faster onset, better mixability",
+     "Flexible serving sizes",
+     "High doses without size limitations"
+    ],
+    "clear": [
+     "Faster onset, better mixability",
+     "Flexible serving sizes",
+     "High doses without size limitations"
+    ]
+   },
+   {
+    "match": [
+     "Flavor Systems",
+     "Minimums & Set-Up",
+     "Packaging Options",
+     "Serving Sizes"
+    ],
+    "clear": [
+     "Flavor Systems",
+     "Minimums & Set-Up",
+     "Packaging Options",
+     "Serving Sizes"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-prenatal",
+  "id": "216189433267",
+  "rows": [
+   {
+    "match": [
+     "Clinical credibility is everything",
+     "High-trust, high-LTV audience",
+     "Pregnancy through post-natal"
+    ],
+    "clear": [
+     "High-trust, high-LTV audience",
+     "Pregnancy through post-natal"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-probiotics",
+  "id": "216189433094",
+  "rows": [
+   {
+    "match": [
+     "Broad audience from kids to adults",
+     "Gut and immune health in one category",
+     "Premium pricing supported by science"
+    ],
+    "clear": [
+     "Broad audience from kids to adults",
+     "Gut and immune health in one category",
+     "Premium pricing supported by science"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-quality-standards",
+  "id": "216186379328",
+  "rows": [
+   {
+    "match": [
+     "Batch Tested",
+     "Compliant",
+     "Formulators",
+     "Transparently"
+    ],
+    "clear": [
+     "Batch Tested",
+     "Compliant",
+     "Formulators",
+     "Transparently"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-sell-sheets",
+  "id": "216194811689",
+  "rows": [
+   {
+    "match": [
+     "Fully custom design",
+     "Multi-format delivery",
+     "Template-based sell sheets"
+    ],
+    "clear": [
+     "Fully custom design",
+     "Multi-format delivery",
+     "Template-based sell sheets"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-sleep",
+  "id": "216189433007",
+  "rows": [
+   {
+    "match": [
+     "Daily compliance, high LTV",
+     "Format flexibility matches audience preference",
+     "Universal customer pain point"
+    ],
+    "clear": [
+     "Daily compliance, high LTV",
+     "Format flexibility matches audience preference",
+     "Universal customer pain point"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-soft-gels",
+  "id": "216192983363",
+  "rows": [
+   {
+    "match": [
+     "Best format for oils and oil-soluble actives",
+     "Faster absorption than hard-shell formats",
+     "Sealed integrity, no oxidation"
+    ],
+    "clear": [
+     "Best format for oils and oil-soluble actives",
+     "Faster absorption than hard-shell formats",
+     "Sealed integrity, no oxidation"
+    ]
+   },
+   {
+    "match": [
+     "Fill Capacity",
+     "Gelatin Source",
+     "Minimums & Set-Up",
+     "Shape Options"
+    ],
+    "clear": [
+     "Fill Capacity",
+     "Gelatin Source",
+     "Minimums & Set-Up",
+     "Shape Options"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-tablets",
+  "id": "216192983343",
+  "rows": [
+   {
+    "match": [
+     "Coating options for taste and release",
+     "Dense dosing in a smaller footprint",
+     "Lowest cost per dose"
+    ],
+    "clear": [
+     "Coating options for taste and release",
+     "Dense dosing in a smaller footprint",
+     "Lowest cost per dose"
+    ]
+   },
+   {
+    "match": [
+     "Active Dose Range",
+     "Coating Types",
+     "Minimums & Set-Up",
+     "Shape Options"
+    ],
+    "clear": [
+     "Active Dose Range",
+     "Coating Types",
+     "Minimums & Set-Up",
+     "Shape Options"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-testing",
+  "id": "216192983607",
+  "rows": [
+   {
+    "match": [
+     "Contaminant screening",
+     "Potency verification",
+     "Raw material identity testing",
+     "Third-party verification"
+    ],
+    "clear": [
+     "Contaminant screening",
+     "Potency verification",
+     "Raw material identity testing",
+     "Third-party verification"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pl-demo-weight-management",
+  "id": "216188836111",
+  "rows": [
+   {
+    "match": [
+     "GLP-1 era opportunity",
+     "Multiple sub-categories to expand into",
+     "Sustainable, not gimmicky positioning"
+    ],
+    "clear": [
+     "GLP-1 era opportunity",
+     "Multiple sub-categories to expand into",
+     "Sustainable, not gimmicky positioning"
+    ]
+   }
+  ]
+ }
+]

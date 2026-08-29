@@ -60,7 +60,12 @@ def label_of(card):
             or re.sub(r"<[^>]+>", "", card.get("stat_label") or "").strip())
 
 def strip_rows(page, wanted, report):
-    """Blank icon.src on every card of any card array whose labels match a target."""
+    """Blank icon.src on the named cards of any card array matching a target.
+
+    A target is (labels that identify the row, labels to clear). The second is
+    separate because a row can mix icons that go with icons that stay -- the ads
+    pages keep "U.S. manufacturing" and lose the two beside it -- and clearing
+    the whole array there would take an icon we mean to replace."""
     hit = set()
     def walk(o):
         if isinstance(o, dict):
@@ -68,14 +73,17 @@ def strip_rows(page, wanted, report):
                 arr = o.get(key)
                 if isinstance(arr, list) and arr:
                     labels = [label_of(c) for c in arr if isinstance(c, dict)]
-                    for i, want in enumerate(wanted):
+                    for i, (want, clear) in enumerate(wanted):
                         if i in hit: continue
                         if all(w in labels for w in want):
                             hit.add(i)
                             for c in arr:
+                                if not isinstance(c, dict): continue
+                                lab = label_of(c)
+                                if clear is not None and lab not in clear: continue
                                 ic = c.get("icon")
                                 if isinstance(ic, dict) and ic.get("src"):
-                                    report.append((label_of(c), ic["src"].rsplit("/", 1)[-1]))
+                                    report.append((lab, ic["src"].rsplit("/", 1)[-1]))
                                     ic["src"] = ""
             for v in o.values(): walk(v)
         elif isinstance(o, list):
@@ -86,7 +94,9 @@ def strip_rows(page, wanted, report):
 def run(targets, apply_):
     total = pages = 0
     for t in targets:
-        slug, wanted = t["slug"], [set(r) for r in t["rows"]]
+        slug = t["slug"]
+        wanted = [(set(r["match"]), set(r["clear"]) if r.get("clear") is not None else None)
+                  if isinstance(r, dict) else (set(r), None) for r in t["rows"]]
         live = call("GET", f"/cms/v3/pages/site-pages/{t['id']}/draft")
         after = copy.deepcopy(live); rep = []
         hit = strip_rows(after, wanted, rep)
@@ -123,14 +133,14 @@ def selftest():
         {"title": "Guide A", "content": "<p>keep me</p>", "icon": {"src": "x/a.svg", "alt": ""}},
         {"title": "Guide B", "content": "<p>keep me too</p>", "icon": {"src": "x/b.svg", "alt": ""}}]}}}}
     cases = [
-      ("icon only (should pass)", lambda p: strip_rows(p, [{"Guide A", "Guide B"}], [])),
-      ("edits body copy",  lambda p: (strip_rows(p, [{"Guide A","Guide B"}], []),
+      ("icon only (should pass)", lambda p: strip_rows(p, [({"Guide A","Guide B"}, None)], [])),
+      ("edits body copy",  lambda p: (strip_rows(p, [({"Guide A","Guide B"}, None)], []),
           p["layoutSections"]["m"]["params"]["cards"][0].__setitem__("content", "<p>changed</p>"))),
-      ("edits a title",    lambda p: (strip_rows(p, [{"Guide A","Guide B"}], []),
+      ("edits a title",    lambda p: (strip_rows(p, [({"Guide A","Guide B"}, None)], []),
           p["layoutSections"]["m"]["params"]["cards"][1].__setitem__("title", "Guide C"))),
-      ("edits alt text",   lambda p: (strip_rows(p, [{"Guide A","Guide B"}], []),
+      ("edits alt text",   lambda p: (strip_rows(p, [({"Guide A","Guide B"}, None)], []),
           p["layoutSections"]["m"]["params"]["cards"][0]["icon"].__setitem__("alt", "new"))),
-      ("drops a card",     lambda p: (strip_rows(p, [{"Guide A","Guide B"}], []),
+      ("drops a card",     lambda p: (strip_rows(p, [({"Guide A","Guide B"}, None)], []),
           p["layoutSections"]["m"]["params"]["cards"].pop())),
     ]
     ok = True
