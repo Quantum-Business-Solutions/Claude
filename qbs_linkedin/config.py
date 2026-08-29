@@ -24,17 +24,14 @@ SHAWN_ACCOUNT_ID = "S6ua4SfUT4SMRFZFOmyUzQ"
 SHAWN_PROVIDER_ID = "ACoAAAGv8WABzhfWcURPIaBDzbgiEWX5e781Etw"
 SHAWN_PUBLIC_IDENTIFIER = "shawnpetersonquantum"
 
-#: Shawn's second connection to the same LinkedIn login. NOT interchangeable
-#: with the primary:
-#:   - Sends (invite / DM / InMail): forbidden. v3 sent InMails here and the
-#:     path was never proven; the outreach runbook stops rather than falling back.
-#:   - Sales Navigator search (the watch-list sync): required, per the
-#:     2026-08-29 watch-sync audit, which found the classic account lacks the
-#:     Sales Nav entitlement.
-#: Note the two source documents contradict each other on that entitlement, so
-#: unipile.resolve_search_account() reads premiumFeatures live instead of
-#: trusting either. See docs/known-issues.md#sales-nav-entitlement.
-SHAWN_SEARCH_ACCOUNT_ID = "7lBoyXuETqKdiJYLj5HBGA"
+#: Shawn's LinkedIn is connected to Unipile TWICE, both sessions live on one
+#: login — a restriction risk in itself (the API's 401 enum includes
+#: errors/multiple_sessions). Live GET /accounts shows both carry
+#: premiumFeatures ["sales_navigator"] and premiumContractId 2014060643, so
+#: the watch-sync audit's claim that the classic account lacks the Sales Nav
+#: entitlement is FALSE. There is no reason to keep the second account and no
+#: code may reference it. Recommend disconnecting 7lBoyXuETqKdiJYLj5HBGA.
+DUPLICATE_ACCOUNT_TO_DISCONNECT = "7lBoyXuETqKdiJYLj5HBGA"
 
 #: Colleagues' accounts in the same Unipile workspace. Sending from one of
 #: these puts QBS outreach out under someone else's name.
@@ -46,10 +43,99 @@ COLLEAGUE_ACCOUNT_IDS = frozenset({
     "xgfVW4VBRri7sQ9tDmSGAw",
 })
 
-#: Accounts no send may ever originate from.
-FORBIDDEN_SEND_ACCOUNT_IDS = COLLEAGUE_ACCOUNT_IDS | {SHAWN_SEARCH_ACCOUNT_ID}
+def assert_send_account(account_id: str) -> str:
+    """Allowlist gate for every send/comment path.
+
+    A denylist fails OPEN: one API key spans seven accounts and five people,
+    so the moment a sixth person connects, their id is absent from any
+    hardcoded blocklist and the guard silently passes. Only one account is
+    ever correct, so assert equality.
+    """
+    if account_id != SHAWN_ACCOUNT_ID:
+        raise PermissionError(
+            f"Refusing to act as account {account_id!r}. The only permitted "
+            f"send/comment account is {SHAWN_ACCOUNT_ID} (Shawn Peterson). "
+            "This key also spans colleague and client identities."
+        )
+    return account_id
 
 TIMEZONE = ZoneInfo("America/Chicago")
+
+# --- Unipile API facts (verified live 2026-08-29) -------------------------
+
+#: Dedupe endpoint. Per-post comment reads return TOP-LEVEL COMMENTS ONLY —
+#: replies need a separate &comment_id call. Proved: on activity
+#: 7495818623802916864 the post reports comment_counter 11, the comments list
+#: returns total_items 8 with cursor null ("complete"), and Shawn's own
+#: comment is one of the 3 missing replies. A per-post dedupe therefore says
+#: "Shawn has not commented" about a post he commented on. This endpoint
+#: returns his comments across ALL posts including replies, in one call.
+SELF_COMMENTS_PATH = "/users/{provider_id}/comments"
+
+#: /users/{id}/posts REJECTS the vanity slug with 422 invalid_recipient — it
+#: requires the provider id (ACo…/ADo…), or a numeric id with is_company=true.
+#: Note the asymmetry: GET /users/{slug} (profile) DOES accept a slug.
+#: This is why the roster must carry the member ID, not just a URL.
+POSTS_REQUIRE_PROVIDER_ID = True
+
+#: Omitting this returns HTTP 200 with NO work_experience key at all. The
+#: Reading Rule then has no input, and a parser that maps "no current role
+#: matches" to `no` would write LEAD_STATUS_MOVED across the CRM. A missing
+#: key is an INFRASTRUCTURE FAULT, never a verdict. Do not use "*" — it
+#: returns ~20KB of skills/education/recommendations for no benefit.
+PROFILE_SECTIONS_PARAM = "experience"
+
+#: Post timestamps: there is no `created_at`. `date` is a relative string
+#: ("3d", "1w"). Use `parsed_datetime` (absolute ISO). On a reshare,
+#: parsed_datetime is the RESHARE time, so a freshness window happily admits
+#: someone resharing months-old content, and the draft would be scored
+#: against the resharer's one-line commentary rather than the substance.
+#: `article.published_at` is garbage (a 2028 date observed).
+POST_TIMESTAMP_FIELD = "parsed_datetime"
+SKIP_REPOSTS = True
+
+#: Group posts appear in the feed with author.id == None, and private groups
+#: make a comment invisible to the prospect's network — worthless for warming
+#: and a None-comparison crash waiting to happen.
+SKIP_POST_URN_PREFIXES = ("urn:li:groupPost:",)
+
+#: Comment.post_id matches the NUMERIC TAIL OF social_id, never the post's
+#: own `id`. Verified: social_id urn:li:ugcPost:7495561989247856640 has
+#: id 7495561990287826944 — different numbers. Joining on `id` silently
+#: returns False for every ugcPost and groupPost (~half of a typical feed).
+def post_join_key(social_id: str) -> str:
+    """Derive the id that Comment.post_id will carry."""
+    return social_id.rsplit(":", 1)[-1]
+
+#: Match Shawn on the comment author's provider id. Comment-level
+#: network_distance uses a DIFFERENT vocabulary from the profile endpoint
+#: (DISTANCE_1/2/3 vs FIRST_DEGREE/…), the published schema documents it
+#: wrongly, and Shawn's own comment reports DISTANCE_3 for himself. Never
+#: route or identify off comment-level distance; never match on name or slug
+#: (author_details carries no public_identifier).
+COMMENT_SELF_MATCH_FIELD = "author_details.id"
+
+#: Free, provider-side idempotency check that does not depend on the HubSpot
+#: logging path being alive — which matters, since that path has been dead
+#: since 2026-06-01. Profile carries invitation: {type, status}. A live case
+#: exists right now: Jared Nimblett was invited 2026-08-28, is still PENDING,
+#: and routes to FREE_INMAIL today because the CRM guard property is empty.
+SKIP_ON_PENDING_INVITATION = True
+
+#: Unipile error taxonomy. Anything not listed is treated as a hard stop.
+UNIPILE_BENIGN = ("already_invited_recently", "already_connected")
+UNIPILE_RETRYABLE = ("provider_error", "request_timeout")
+UNIPILE_STOP_FOR_DAY = ("too_many_requests", "limit_exceeded")
+UNIPILE_HARD_STOP = (
+    "account_restricted", "checkpoint_error",
+    "disconnected_account", "multiple_sessions",
+)
+#: A 200 invite response carries `usage` — a percentage of provider quota that
+#: fires at 50/75/90/95. It is the only authoritative throttle signal, and it
+#: is in the SUCCESS body: a send path that checks status codes only throws it
+#: away. Note the MCP passthrough returns body only, no response headers, so
+#: header-based limits are unreadable on the only transport that works here.
+UNIPILE_USAGE_STOP_THRESHOLD = 90
 
 # --- HubSpot task types ---------------------------------------------------
 
@@ -116,7 +202,10 @@ NICKNAMES = {
     "rick": "richard", "steve": "steven", "tom": "thomas",
 }
 
-SENIORITY_ALLOWED = frozenset({"executive", "owner", "vp", "director"})
+#: 'partner' was previously excluded here but accepted by SENIOR_TITLE_TOKENS
+#: — 557 CAS Prospect contacts sit in that gap. Included, since the title
+#: re-check downstream is the stricter gate.
+SENIORITY_ALLOWED = frozenset({"executive", "owner", "vp", "director", "partner"})
 
 #: Verified titles at or above this line qualify. Checked against the title
 #: read off LinkedIn, because hs_seniority can be years stale.
@@ -159,7 +248,17 @@ EXCLUDED_INDUSTRY_TOKENS = ("advertising", "marketing")
 
 # --- Outreach routine -----------------------------------------------------
 
-REQUIRED_LEAD_STATUS_LABEL = "CAS Prospect"
+#: INTERNAL VALUE, not the label. The label is "CAS Prospect"; the internal
+#: value is "ConnectandSell Prospect". Verified live 2026-08-29:
+#:   hs_lead_status EQ "CAS Prospect"            -> 0 contacts
+#:   hs_lead_status EQ "ConnectandSell Prospect" -> 126,145 contacts
+#: HubSpot returns 0 for an invalid enum VALUE but errors on an invalid
+#: property NAME, so this class of bug fails completely silently. Never
+#: hardcode a label. resolve_lead_status() re-checks against the live option
+#: set on every run and halts if it is absent.
+REQUIRED_LEAD_STATUS = "ConnectandSell Prospect"
+
+#: Internal value (label is "No Longer with Company - Needs Updated").
 LEAD_STATUS_MOVED = "No Longer with Company"
 
 VERIFICATION_UNIVERSE_LIST_ID = "5243"
@@ -222,10 +321,27 @@ class OutreachCaps:
     invite_channel_cutoff: int = 15
     paid_inmails_per_day: int = 25
     free_inmails_per_day: int = 15
-    combined_ceiling: int = 100
-    daily_stop: int = 70
+    #: The per-channel caps sum to 60, so the runbook's daily_stop of 70 and
+    #: combined ceiling of 100 could NEVER fire — both were dead code, and the
+    #: "70 vs 100 contradiction" was a decoy. The real binding constraint has
+    #: always been target_high. A cap that cannot be reached is not a safety
+    #: net; it is a false one. __post_init__ now asserts reachability.
+    daily_stop: int = 60
     target_low: int = 15
     target_high: int = 20
+
+    def __post_init__(self) -> None:
+        channel_sum = (
+            self.invites_per_day + self.paid_inmails_per_day + self.free_inmails_per_day
+        )
+        if self.daily_stop > channel_sum:
+            raise ValueError(
+                f"daily_stop={self.daily_stop} is unreachable: the per-channel "
+                f"caps sum to {channel_sum}, so the stop condition can never "
+                "fire. Lower daily_stop or raise a channel cap."
+            )
+        if self.invite_channel_cutoff > self.invites_per_day:
+            raise ValueError("invite_channel_cutoff must not exceed invites_per_day")
 
     weekly_invites_zero: int = 100
     weekly_invites_reduced: int = 80
@@ -243,18 +359,33 @@ class OutreachThresholds:
     """Stop conditions expressed as ratios of the candidates examined."""
 
     max_invalid_recipient_rate: float = 0.30
-    #: A high `no` rate is the established ~49% baseline, NOT a stop condition.
-    #: A high `unreadable` rate means the API or permissions changed.
-    max_unreadable_rate: float = 0.40
+    #: A high `no` rate is expected and is NOT a stop condition. But the "49%
+    #: baseline" in the runbook does not match the portal. Live cumulative
+    #: distribution over 2,842 verified contacts (2026-08-29):
+    #:   yes 1,962 (69%) | no 431 (15%) | unreadable 435 (15%)
+    #:   moved 7 | no_profile 7        -> all non-yes = 31%
+    #: The real `no` rate is ~15%, not 49% — that figure looks like one run
+    #: generalized into doctrine. Consequence: a 40% unreadable ceiling was
+    #: calibrated against the wrong baseline. Against a 15% norm, 40% is far
+    #: too loose to catch an instrument failure. Tightened to 0.25; revisit
+    #: once the routine produces its own run-level history.
+    max_unreadable_rate: float = 0.25
     max_single_channel_rate: float = 0.50
     max_unipile_errors: int = 2
     min_candidates: int = 5
     min_connections_count: int = 30
     #: Skip anyone with a meeting booked inside this window.
     recent_meeting_days: int = 180
-    #: Rolling scan: extra pages of 100 companies when the pool runs thin.
+    #: Rolling scan: extra pages when the pool runs thin.
     max_extra_pages: int = 5
-    page_size: int = 100
+    #: HubSpot search caps `limit` at 200 and the `after` offset at 10,000.
+    #: Always read the response's exact `total`; never len(results) — with
+    #: page_size == a cap value, a count silently saturates at the ceiling.
+    page_size: int = 200
+    max_search_offset: int = 10_000
+    #: Hard HubSpot limit: 6 filters per filterGroup. The qualification set
+    #: uses 5, so there is exactly one slot of headroom.
+    max_filters_per_group: int = 6
     runway_warning_margin: int = 500
 
 
@@ -262,9 +393,27 @@ class OutreachThresholds:
 
 WATCH_LIST_NAME = "LinkedIn Watch — Sales Nav"
 
-#: Load-bearing: tally.count_engagement_posts_today() matches on this prefix.
-#: Changing it silently resets the daily count to zero.
+#: Human-readable subject only. DO NOT COUNT ON IT.
+#: HubSpot's CONTAINS_TOKEN is a case-insensitive, order-independent,
+#: unanchored AND-of-whole-tokens — not a prefix match. Verified live:
+#:   "LinkedIn Free OP InMail —" -> 30 ... and so does "InMail OP Free LinkedIn"
+#: The em dash is stripped by the tokenizer (harmless but inert). So this
+#: prefix really means "linkedin AND engagement anywhere in the subject", and
+#: is contaminated by hand-typed tasks: 6 unrelated CALL/TODO subjects already
+#: match "Engagement", e.g. "Call re: marketing engagement. See email".
+#: Historical subjects also use five inconsistent variants, so no subject rule
+#: can reconstruct history either.
 TASK_SUBJECT_PREFIX = "LinkedIn Engagement —"
+
+#: Count on THIS instead — a structural marker written into the task body that
+#: no human types by hand. Cheap, needs no new property, and is exact.
+TASK_LEDGER_MARKER = "qbs-ledger:engage-v1"
+OUTREACH_LEDGER_MARKER = "qbs-ledger:outreach-v1"
+
+#: HubSpot sets hs_createdate and it cannot be wrong. hs_timestamp is the DUE
+#: DATE and is writer-controlled — the Jun 1 batch wrote an identical
+#: hs_timestamp to all 19 rows. Bucket the daily cap on hs_createdate.
+CAP_DATE_PROPERTY = "hs_createdate"
 
 #: Stable LinkedIn member ID (== Unipile provider_id). Already exists in the
 #: portal and is UNIQUE, so no custom property is needed: keying on this means
@@ -281,7 +430,20 @@ UNIQUE_IDENTITY_PROPERTIES = (
     "linkedin_profile_url__unique_value",  # the unique profile-URL property
 )
 
-UPSERT_KEY_PROPERTY = "hublead_linkedin_member_id"
+#: Upsert key. Uniqueness is necessary but NOT sufficient — coverage decides
+#: whether an upsert matches or mass-creates duplicates. Live coverage over
+#: 153,330 contacts, measured 2026-08-29:
+#:   linkedin_profile_url__unique_value   123,471  (80.5%)  <- key
+#:   hublead_linkedin_public_identifier       295  ( 0.19%)
+#:   hublead_linkedin_urn                     294  ( 0.19%)
+#:   hublead_linkedin_member_id                29  ( 0.02%)  <- do NOT key on
+#: Keying on the member ID would miss ~99.98% of contacts and create a
+#: duplicate for each — exactly what watch-sync blocker #2 exists to prevent.
+UPSERT_KEY_PROPERTY = "linkedin_profile_url__unique_value"
+
+#: Tried first as a precise match, and WRITTEN on every touch so its coverage
+#: grows over time. Never create a contact on a member-ID miss alone.
+SECONDARY_MATCH_PROPERTY = "hublead_linkedin_member_id"
 
 #: Non-unique URL properties, read-only for us. Preferred order for reading an
 #: existing LinkedIn URL off a contact.
@@ -316,22 +478,31 @@ REQUESTED_BY_SHAWN = "linkedin__requested_by_shawn"  # select
 
 @dataclass(frozen=True)
 class EngagementPacing:
-    """Comment limits.
+    """Comment limits for an HOURLY routine.
 
-    The Cowork skill burst-posted its whole daily allowance in ~16 minutes and
-    then went silent for 24h. `per_hour` exists so an hourly routine can spread
-    the same volume across a workday, which is both safer and more human.
+    The previous numbers did not cohere. per_hour == per_run made the
+    per-hour cap a no-op; per_day=12 was unreachable under the deployed
+    twice-daily schedule (2 runs x 2 = 4/day ceiling); and throttle_after=16
+    could never fire against a 12/day cap. These assume the hourly routine
+    this rebuild actually deploys.
     """
 
-    per_day: int = 12
-    per_run: int = 2
-    per_hour: int = 2
-    #: Local hours during which commenting is allowed (start inclusive, end exclusive).
+    per_run: int = 1
+    per_day: int = 10
+    #: Local hours, start inclusive / end EXCLUSIVE. Checked PER POST, not
+    #: once at run start: a run beginning at 17:55 must not post its second
+    #: comment at 18:02 after a 90-180s gap.
     active_hours: tuple[int, int] = (7, 18)
-    throttle_after: int = 16
-    throttled_per_day: int = 6
     min_gap_seconds: int = 90
     max_gap_seconds: int = 180
+
+    def __post_init__(self) -> None:
+        slots = self.active_hours[1] - self.active_hours[0]
+        if self.per_run * slots < self.per_day:
+            raise ValueError(
+                f"per_day={self.per_day} unreachable: {slots} hourly slots x "
+                f"per_run={self.per_run} = {self.per_run * slots}"
+            )
 
 
 @dataclass(frozen=True)
@@ -339,7 +510,12 @@ class EngagementScreening:
     min_score: int = 4
     min_words: int = 15
     max_words: int = 50
-    freshness_hours: int = 12
+    #: Must exceed the longest gap between runs or posts fall in a blind spot.
+    #: At the old twice-daily cadence a 12h window left 14:08->20:05 invisible
+    #: every day (~6h) and Friday 14:08 -> Monday 08:05 (66h) every weekend —
+    #: prospects posting Friday afternoon were never engaged. Hourly runs make
+    #: 24h ample, and the dedupe (not the window) prevents re-commenting.
+    freshness_hours: int = 24
 
 
 # --- Settings -------------------------------------------------------------
@@ -348,7 +524,9 @@ class EngagementScreening:
 class Settings:
     hubspot_token: str
     unipile_api_key: str
-    dry_run: bool = False
+    #: Defaults TRUE. Given that a task reported success for months while
+    #: doing nothing, a misconfigured runner must not send for real.
+    dry_run: bool = True
     caps: OutreachCaps = field(default_factory=OutreachCaps)
     thresholds: OutreachThresholds = field(default_factory=OutreachThresholds)
     pacing: EngagementPacing = field(default_factory=EngagementPacing)
@@ -359,7 +537,7 @@ class ConfigError(RuntimeError):
     """Raised when required credentials are absent or malformed."""
 
 
-def load_settings(dry_run: bool = False) -> Settings:
+def load_settings(dry_run: bool = True) -> Settings:
     """Read credentials from the environment.
 
     Fails with an actionable message rather than deep inside an API call, so an
@@ -379,6 +557,13 @@ def load_settings(dry_run: bool = False) -> Settings:
             + "\n  - ".join(missing)
             + "\n\nSet these on the Claude Code environment so scheduled "
             "routines inherit them."
+        )
+
+    if len(unipile_api_key) < 30 or "." not in unipile_api_key:
+        raise ConfigError(
+            "UNIPILE_API_KEY looks truncated or malformed. Failing now rather "
+            "than deep in a run, where an auth error can be mistaken for a "
+            "transient fault and retried."
         )
 
     if not hubspot_token.startswith("pat-"):
