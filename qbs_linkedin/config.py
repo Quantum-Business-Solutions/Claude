@@ -64,17 +64,40 @@ ALL_LINKEDIN_TASK_TYPES = (TASK_TYPE_INVITE, TASK_TYPE_INMAIL, TASK_TYPE_DM)
 
 # --- Verification (the Reading Rule) --------------------------------------
 
+#: The live option set on ai__li_still_at_company, read from the portal
+#: schema on 2026-08-29. NOTE: the qbs-linkedin-daily runbook documents only
+#: yes/no/unreadable — that vocabulary is stale. Writing only three values
+#: makes outreach data incomparable with the contact-verification routine,
+#: which is the opposite of what the runbook says it wants.
 VERDICT_YES = "yes"
 VERDICT_NO = "no"
+VERDICT_MOVED = "moved"
+VERDICT_NO_PROFILE = "no_profile"
 VERDICT_UNREADABLE = "unreadable"
+
+VERDICTS = (VERDICT_YES, VERDICT_NO, VERDICT_MOVED, VERDICT_NO_PROFILE, VERDICT_UNREADABLE)
 
 #: Written to the ai__ namespace, which the overwriting portal workflows
 #: (274857276, 274857511) and Data Enrichment do not touch.
-AI_STILL_AT_COMPANY = "ai__li_still_at_company"
-AI_CONTACT_EVIDENCE = "ai__contact_evidence"
-AI_VERIFIED_DATE = "ai__contact_verified_date"
-AI_SOURCES_CONFIRMING = "ai__sources_confirming"
-AI_SOURCE_LABEL = "LinkedIn (Unipile work_experience)"
+AI_STILL_AT_COMPANY = "ai__li_still_at_company"       # select, 5 options above
+AI_CONTACT_EVIDENCE = "ai__contact_evidence"           # textarea
+AI_VERIFIED_DATE = "ai__contact_verified_date"         # date
+AI_LAST_ATTEMPT_DATE = "ai__li_last_attempt_date"      # date
+AI_TENURE_YEARS = "ai__li_tenure_years"                # number
+AI_ROLE_CHANGED = "ai__li_recent_role_change"          # select: yes/no
+AI_JOB_TITLE = "ai__job_title"                         # text — LinkedIn-verified title
+AI_REASSOCIATED_ON = "ai__reassociated_on"             # date
+
+#: BUG IN THE RUNBOOK: qbs-linkedin-daily Step 4c says to set this to the
+#: string "LinkedIn (Unipile work_experience)". The property is type NUMBER
+#: ("Sources Confirming This Contact"). That write fails or coerces badly.
+#: It is a COUNT of corroborating sources, not a source label.
+AI_SOURCES_CONFIRMING = "ai__sources_confirming"       # number
+
+#: Review-queue properties, shared with the contact-verification routine.
+AI_ISSUE = "ai__verification_issue"                    # select
+AI_ISSUE_NOTE = "ai__verification_issue_note"          # textarea
+AI_ISSUE_ON = "ai__verification_issue_on"              # date
 
 #: Stripped from both sides before comparing employers.
 COMPANY_SUFFIXES = (
@@ -142,8 +165,6 @@ LEAD_STATUS_MOVED = "No Longer with Company"
 VERIFICATION_UNIVERSE_LIST_ID = "5243"
 VERIFIED_CALLABLE_LIST_ID = "8260"
 
-LAST_MESSAGE_PROPERTY = "hublead_last_linkedin_message_sent_date"
-LAST_INVITE_PROPERTY = "hublead_last_linkedin_invitation_sent_date"
 
 CHANNEL_DM = "DM"
 CHANNEL_FREE_INMAIL = "FREE_INMAIL"
@@ -245,13 +266,52 @@ WATCH_LIST_NAME = "LinkedIn Watch — Sales Nav"
 #: Changing it silently resets the daily count to zero.
 TASK_SUBJECT_PREFIX = "LinkedIn Engagement —"
 
-#: Contact property caching the Unipile provider_id, so a prospect who changes
-#: their LinkedIn vanity URL does not silently drop off the watch list.
-PROVIDER_ID_PROPERTY = "qbs_linkedin_provider_id"
+#: Stable LinkedIn member ID (== Unipile provider_id). Already exists in the
+#: portal and is UNIQUE, so no custom property is needed: keying on this means
+#: a prospect who changes their vanity URL never drops off the watch list.
+PROVIDER_ID_PROPERTY = "hublead_linkedin_member_id"
 
-#: Candidate properties holding a contact's LinkedIn URL, most-preferred
-#: first. Resolved against the portal at runtime rather than assumed.
-LINKEDIN_URL_PROPERTIES = ("hs_linkedin_url", "linkedin_url", "linkedinbio")
+#: Unique identity properties, verified against the portal schema. Any of
+#: these is safe to upsert on; hs_linkedin_url is NOT unique and must not be
+#: used as an upsert key. This resolves watch-sync audit blocker #2.
+UNIQUE_IDENTITY_PROPERTIES = (
+    "hublead_linkedin_member_id",          # stable member ID — preferred key
+    "hublead_linkedin_public_identifier",  # slug — changeable, still unique
+    "hublead_linkedin_urn",
+    "linkedin_profile_url__unique_value",  # the unique profile-URL property
+)
+
+UPSERT_KEY_PROPERTY = "hublead_linkedin_member_id"
+
+#: Non-unique URL properties, read-only for us. Preferred order for reading an
+#: existing LinkedIn URL off a contact.
+LINKEDIN_URL_PROPERTIES = (
+    "linkedin_profile_url__unique_value",
+    "hs_linkedin_url",
+    "pb_linkedin_profile_url",
+    "zoominfo_person_linkedin_url_",
+    "linkedinbio",
+)
+
+SALESNAV_URL_PROPERTY = "hublead_salesnav_profile_url"
+
+# --- Outreach date properties ---------------------------------------------
+# Send side — written by the outreach routine today.
+LAST_MESSAGE_SENT = "hublead_last_linkedin_message_sent_date"
+LAST_INVITE_SENT = "hublead_last_linkedin_invitation_sent_date"
+
+#: Response side — these EXIST in the portal but nothing writes them. This is
+#: why the weekly digest has to hand-assemble a reply rate from Unipile and
+#: reports "0/4, essentially no signal". Populating them makes acceptance and
+#: reply rate native CRM metrics.
+LAST_INVITE_ACCEPTED = "hublead_last_linkedin_invitation_accepted_date"
+LAST_MESSAGE_RECEIVED = "hublead_last_linkedin_message_received_date"
+
+#: Status enums that already exist for outreach state.
+OUTREACH_STATUS = "linkedin__outreach"          # select
+CONTACTED_STATUS = "linkedin__contacts"         # select — read by the runbook
+CONNECTED_STATUS = "linkedin__connected"        # select
+REQUESTED_BY_SHAWN = "linkedin__requested_by_shawn"  # select
 
 
 @dataclass(frozen=True)
