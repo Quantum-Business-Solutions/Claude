@@ -120,3 +120,81 @@ couldn't resolve them.
   field.
 - **Silent-failure class.** `watch-sync` reported `lastRunAt` normally for months while
   accomplishing nothing. **Any rewrite must make a zero-result run loud**, not merely absent.
+
+## Cap accounting and date arithmetic — `qbs_linkedin/ledger.py`
+
+Built and tested 2026-08-29. This is the module whose failure costs the most:
+an undercount reads as spare capacity, spare capacity authorises more sends,
+and over-sending is what gets a LinkedIn account restricted. Every path fails
+**closed** — when the ledger cannot be trusted the allowance is zero, not the cap.
+
+### The off-by-one that was hiding in plain sight
+
+HubSpot has two kinds of timestamp and they need opposite handling. Mixing them
+is only ever wrong by a few hours, which is exactly why it survives review.
+
+**`date` properties** — `ai__contact_verified_date`, `ai__li_last_attempt_date`,
+`ai__reassociated_on`, `ai__verification_issue_on` — store **UTC midnight of the
+intended calendar date**. They are a date, not an instant. Converting one to
+America/Chicago yields 18:00 or 19:00 the *previous* day:
+
+```
+date_to_hubspot_date(2026-01-16)          -> UTC midnight Jan 16
+  read as UTC   -> 2026-01-16   correct
+  read as local -> 2026-01-15   the bug
+```
+
+Every "don't re-attempt within N days" guard would fire a day early, always in
+the direction of re-attempting too soon. A 14-day retry window opens on day 13.
+
+**`datetime` properties** — `hs_createdate`, `hs_timestamp`,
+`hublead_last_linkedin_message_sent_date` — are real instants, and bucketing
+them by day is a genuine timezone question requiring Chicago-local midnight.
+A comment posted at 23:30 Chicago is 04:30 UTC the next day; bucketing by UTC
+files it under the wrong day and splits one run's tally across two.
+
+Both rules are now separate named functions so they cannot be confused, with
+tests asserting the wrong answer is *not* produced.
+
+### DST is not cosmetic
+
+A hardcoded 24-hour window is wrong twice a year. Tested:
+
+| Local day | Real length |
+|---|---|
+| 2026-03-08 (spring forward) | **23 hours** |
+| 2026-08-29 (ordinary CDT) | 24 hours |
+| 2026-11-01 (fall back) | **25 hours** |
+
+On the spring-forward day a fixed 24h window overruns into the next day and
+double-counts its first hour — inflating the tally, which fails safe — but on
+fall-back it *undercounts* by an hour, which does not.
+
+### Fail-closed rules, all tested
+
+| Condition | Allowance | Why |
+|---|---|---|
+| Ledger has history but no write in 3 days | **0, halt** | The live condition: 153 historic tasks, none since 2026-06-01. A naive read is "0 sent today, full capacity" |
+| No history and no recent writes | normal | A first run, not a failure |
+| Independent count exceeds ledger by >2 | **0, halt** | The ledger is missing sends; its low number must not authorise more |
+| Independent count exceeds by ≤2 | normal | Unipile's own counts are approximate — `/users/invite/sent` is pending-only with synthesised timestamps |
+| `posted_today >= per_day` | 0 | Ordinary cap |
+
+Staleness is checked **before** the cap: a dead ledger with a plausible-looking
+count is still a halt, because the count itself cannot be trusted.
+
+Preflight now delegates to the same function, so preflight and the routines
+cannot drift apart on what "safe to send" means. Live output:
+
+```
+[FAIL] ledger: 0 today / 0 in 3d / 153 ever -> ledger has no write in 3d but
+       holds 153 historic records — it is not recording. A zero count here
+       means 'unknown', not 'nothing sent'.
+```
+
+### Active hours are checked per action
+
+`within_active_hours` is called before each post, not once per run. A run
+starting at 17:55 must not place its next comment at 18:02 after a 90–180s
+pause. Tested at both ends of the window and against a UTC instant that looks
+like the middle of the night but is 18:00 locally.

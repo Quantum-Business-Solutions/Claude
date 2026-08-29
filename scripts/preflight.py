@@ -37,17 +37,14 @@ from datetime import datetime, timedelta, timezone
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from qbs_linkedin import config as cfg  # noqa: E402
+from qbs_linkedin.ledger import (  # noqa: E402
+    LEDGER_STALE_DAYS,
+    chicago_day_bounds,
+    decide_allowance,
+)
 
 EXIT_OK, EXIT_ENV, EXIT_SCHEMA = 0, 2, 3
 API = "https://api.hubapi.com"
-
-#: Days without a single LinkedIn task before the ledger is judged dead.
-#: The ledger IS the daily cap, so a dead ledger reads "0 sent today" and
-#: authorizes a full day's volume against an unverifiable count. All three
-#: logging paths (Hindsight, HubSpot tasks, contact properties) stopped on
-#: 2026-06-01 while sends continued -- this check is what makes that loud.
-LEDGER_STALE_DAYS = 3
-
 
 @dataclass
 class Report:
@@ -218,39 +215,45 @@ def check_pool(token: str, rep: Report) -> None:
 
 
 def check_ledger_alive(token: str, rep: Report) -> None:
-    """The send ledger must show recent writes, or the cap cannot be trusted.
+    """The send ledger must be trustworthy, or no run may send.
 
-    A dead ledger reads zero, and zero reads as "full capacity available".
-    That is the over-send direction, which is what gets an account restricted.
+    Delegates the decision to ledger.decide_allowance so preflight and the
+    routines cannot drift apart on what "safe to send" means.
     """
     cutoff = datetime.now(timezone.utc) - timedelta(days=LEDGER_STALE_DAYS)
+    linkedin_task = [
+        {"propertyName": "hs_task_type", "operator": "IN",
+         "values": list(cfg.ALL_LINKEDIN_TASK_TYPES)},
+        {"propertyName": "hubspot_owner_id", "operator": "EQ",
+         "value": cfg.SHAWN_OWNER_ID},
+    ]
+    day_start, day_end = chicago_day_bounds()
     try:
-        recent = _count(token, "tasks", [
-            {"propertyName": "hs_task_type", "operator": "IN",
-             "values": list(cfg.ALL_LINKEDIN_TASK_TYPES)},
-            {"propertyName": "hubspot_owner_id", "operator": "EQ",
-             "value": cfg.SHAWN_OWNER_ID},
+        recent = _count(token, "tasks", linkedin_task + [
             {"propertyName": cfg.CAP_DATE_PROPERTY, "operator": "GTE",
-             "value": int(cutoff.timestamp() * 1000)},
-        ])
-        ever = _count(token, "tasks", [
-            {"propertyName": "hs_task_type", "operator": "IN",
-             "values": list(cfg.ALL_LINKEDIN_TASK_TYPES)},
-            {"propertyName": "hubspot_owner_id", "operator": "EQ",
-             "value": cfg.SHAWN_OWNER_ID},
-        ])
+             "value": int(cutoff.timestamp() * 1000)}])
+        ever = _count(token, "tasks", linkedin_task)
+        today = _count(token, "tasks", linkedin_task + [
+            {"propertyName": cfg.CAP_DATE_PROPERTY, "operator": "BETWEEN",
+             "value": day_start, "highValue": day_end}])
     except Exception as exc:
         rep.add("ledger", False, f"query failed: {exc}", EXIT_ENV)
         return
 
-    if recent == 0 and ever > 0:
-        rep.add("ledger", False,
-                f"no LinkedIn task written in {LEDGER_STALE_DAYS}d "
-                f"({ever:,} exist historically). The cap reads 0 and would "
-                "authorise a full day's sends against an unverifiable count. "
-                "Reconcile against Unipile before sending.", EXIT_ENV)
-    else:
-        rep.add("ledger", True, f"{recent:,} task(s) in {LEDGER_STALE_DAYS}d")
+    caps = cfg.OutreachCaps()
+    decision = decide_allowance(
+        posted_today=today,
+        per_day=caps.daily_stop,
+        per_run=caps.target_high,
+        ledger_writes_in_window=recent,
+        ledger_writes_ever=ever,
+    )
+    rep.add(
+        "ledger", not decision.halted,
+        f"{today} today / {recent} in {LEDGER_STALE_DAYS}d / {ever:,} ever "
+        f"-> {decision.reason}",
+        EXIT_ENV if decision.halted else None,
+    )
 
 
 def check_watch_list(token: str, rep: Report) -> None:
