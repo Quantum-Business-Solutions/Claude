@@ -22,13 +22,35 @@ has ever had presented as a confident clean bill of health:
 
 1. `TOKEN=... python3 scripts/preflight.py <listId>` — **stop the run on any non-zero exit and
    report the reason.** Do not continue and do not "try anyway".
-2. **Unipile self-test.** Read one profile known to have dated experience rows, using only
-   Shawn's accounts (`S6ua4SfUT4SMRFZFOmyUzQ` / `7lBoyXuETqKdiJYLj5HBGA`). If it does not return
-   dated rows, HALT — every contact would otherwise score `unreadable` and look like a finding.
+2. **Unipile self-test — try BOTH transports before halting.** They fail independently:
+   - **MCP connector** — routes via Anthropic's `mcp-proxy`, so it ignores the egress firewall.
+     Currently the only path measured working from a cloud session. It also drops and reconnects.
+   - **REST** — `python3 scripts/unipile.py selftest`. Measured from a cloud session: the agent
+     proxy establishes the CONNECT tunnel and returns 200, the TLS handshake is then reset, and a
+     direct socket times out on the tenant's non-standard port while 443 is open on the same IP.
+     Outbound egress here reaches standard ports only, and no 443 host serves the tenant API. This
+     is a property of the ENVIRONMENT, not of the DSN or the key — `unipile.py probe` shows it.
+
+   Use only Shawn's accounts (`S6ua4SfUT4SMRFZFOmyUzQ` / `7lBoyXuETqKdiJYLj5HBGA`); every other
+   account on that tenant is a client identity. **HALT only if both transports fail, and name
+   which one did.** An outage written as several hundred `unreadable` verdicts is a lie about the
+   data, not a finding about the contacts — and the verdict is durable while the outage is not.
 3. `TOKEN=... python3 scripts/listanatomy.py <listId>` — map the gate chain. It exits 3 on a
    non-contact or non-dynamic list, and warns when the list gates on properties this process
    writes (the run changes membership underneath itself).
 4. `TOKEN=... STALE_DAYS=90 python3 scripts/queue.py <listId>` — work queue + intake snapshot.
+   Three intervals, not one: `STALE_DAYS` (90) for a confirmed verdict, `RETRY_DAYS` (14) for a
+   transient `unreadable`, `NOPROFILE_DAYS` (180) for `no_profile`. Records come back in a strict
+   **work order** — band 0 never verified, 1 verdict stale, 2 unreadable retry, 3 no_profile
+   recheck — oldest first inside each band. **Work them in that order.** It is the anti-starvation
+   guarantee: nothing is skipped forever, and a band that never drains is a capacity fact the
+   printed depths make visible rather than something hidden by interleaving.
+
+4b. **Choose MODE from what queue.py reports; do not assume.** `MODE=refresh` drops the `no`-share
+   FLOOR, which is the only automated check against a judge rubber-stamping `yes`. That is correct
+   when the queue is mostly stale re-confirmations and wrong when it is mostly never-verified
+   records — a list can be a first pass wearing a refresh label. The ceilings apply in both modes.
+   Set it on every writeverdicts call: `MODE=first_pass|refresh python3 scripts/writeverdicts.py …`
 5. Batch loop per SKILL.md. `writeverdicts.py` exits 1 on read-back mismatch, 2 on HTTP failure,
    3 on a guardrail breach. **Any non-zero exit ends the run and gets reported.**
 6. Movers, then output lists.
@@ -49,6 +71,12 @@ Post one summary whatever happens, and never round a failure up to a success:
 ## What a routine must NOT do unattended
 
 - write `hs_persona` (redefines list membership — propose, never write)
+- write `unreadable` when the real answer is `no_profile`. Verdicts are yes / no / unreadable /
+  no_profile; the split is what lets the queue retry a transient failure in 14 days and a person
+  with no profile in 180 instead of re-reading them forever at full cost
+- decide anything a human should decide. Pass `issue` + `issue_note` on the batch item — it writes
+  `ai__verification_issue`, `_note` and `_on`, which live in HubSpot and survive this container.
+  A judgement call queued only to a session scratch file is one nobody will ever see
 - write native `jobtitle` below the `title_conf` 0.90 gate (the gate is enforced in code)
 - write `hs_lead_status` on a `yes`
 - guess `dm` on a mover, or pick `results[0]` from an ambiguous company search

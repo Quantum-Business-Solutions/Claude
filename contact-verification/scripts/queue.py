@@ -68,12 +68,42 @@ def due(verdict,verified,attempt):
         # verdict so a human's answer is not re-litigated on every single run.
         return (True,'moved, verdict stale') if stale(verified) else (False,None)
     return True,'unknown verdict '+str(verdict)
+# ---------------------------------------------------------------------------------------------
+# WORK ORDER. A daily worker needs a deterministic answer to "who next", or it re-reads whatever
+# the membership walk happened to return first and some records are never reached at all.
+#
+# Strict BANDS, and strict oldest-first inside each band. Two properties matter:
+#   - nothing starves WITHIN a band, because the oldest always wins and every touch updates a date
+#   - a band that never drains is VISIBLE rather than papered over. If band 1 never empties, the
+#     list is being added to faster than it can be verified - that is a capacity fact the report
+#     should state, not something to hide by interleaving bands.
+BANDS = {'never verified':          0,   # nobody has ever checked this record - biggest liability
+         'verdict stale':           1,   # a confirmed verdict aged past STALE_DAYS
+         'moved, verdict stale':    1,
+         'unreadable retry due':    2,   # transient failure, cheap to retry
+         'no_profile recheck due':  3}   # permanently unverifiable by this method; long recheck
+def order_key(why, verified, attempt, p):
+    """Sort key. Lower sorts first."""
+    band = BANDS.get(why, 4)
+    # oldest first: age is None (never touched) sorts ahead of any real age
+    a = age(verified) if band in (1,) else age(attempt)
+    if a is None: a = 10**6
+    # within the same band and age, prefer the records most likely to have changed and most
+    # expensive to get wrong: short tenure churns, a recent role change churns, and a record with
+    # a phone is one a rep can actually dial tomorrow.
+    try: tenure=float(p.get('ai__li_tenure_years') or 99)
+    except Exception: tenure=99
+    recent = 0 if (p.get('ai__li_recent_role_change')=='yes') else 1
+    dialable = 0 if (p.get('phone') or p.get('business_phone')) else 1
+    return (band, -a, recent, tenure, dialable, str(p.get('hs_object_id') or ''))
 out=[];unver=0;stale_n=0;unread_flag=0;noprof=0;seen=set();reasons={}
 for i in range(0,len(ids),100):
     chunk=ids[i:i+100]
     b={"inputs":[{"id":x} for x in chunk],
        "properties":["firstname","lastname","company","jobtitle","ai__li_still_at_company",
                      "ai__contact_verified_date","ai__li_last_attempt_date",
+                     "ai__li_tenure_years","ai__li_recent_role_change",
+                     "phone","business_phone","ai__verification_issue",
                      "hs_linkedin_url","linkedin_profile_url__unique_value"]}
     r=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/batch/read',b)
     for x in r.get('results',[]):
@@ -86,14 +116,23 @@ for i in range(0,len(ids),100):
         reasons[why]=reasons.get(why,0)+1
         if v: stale_n+=1                    # already carries a verdict, but it is due again
         unver+=1
-        if len(out)<N:
-            idn=ident(p.get('hs_linkedin_url')) or ident(p.get('linkedin_profile_url__unique_value'))
-            out.append((x['id'],p.get('firstname'),p.get('lastname'),p.get('company'),p.get('jobtitle'),idn))
+        idn=ident(p.get('hs_linkedin_url')) or ident(p.get('linkedin_profile_url__unique_value'))
+        out.append((order_key(why,p.get('ai__contact_verified_date'),p.get('ai__li_last_attempt_date'),p),
+                    x['id'],p.get('firstname'),p.get('lastname'),p.get('company'),p.get('jobtitle'),idn,why))
 unread_snapshot=len(SNAP-seen)
 print("LIST "+lid+" | members "+str(len(ids))+" | unverified "+str(unver)
       +" (of which re-due: "+str(stale_n)+")"
       +" | unreadable "+str(unread_flag)+" | no_profile "+str(noprof)
       +" | in intake snapshot but no longer members: "+str(unread_snapshot))
 if reasons: print("  why queued: "+" | ".join(k+" "+str(v) for k,v in sorted(reasons.items(),key=lambda x:-x[1])))
-for cid,f,l,co,jt,idn in out:
-    print(cid+" | "+str(f)+" "+str(l)+" | "+str(co)+" | "+str(jt)[:34]+" | "+str(idn))
+out.sort(key=lambda r:r[0])
+# Band depths make "can this ever finish" answerable. A band that never drains is a capacity
+# problem; at N/day, band 0 alone takes ceil(depth/N) days before band 1 gets any attention.
+depth={}
+for r in out: depth[r[0][0]]=depth.get(r[0][0],0)+1
+if depth:
+    lbl={0:'never verified',1:'verdict stale',2:'unreadable retry',3:'no_profile recheck',4:'other'}
+    print("  work order: "+" -> ".join("band%d %s %d"%(b,lbl.get(b,'?'),depth[b]) for b in sorted(depth))
+          +("  | at %d/run, %d run(s) to clear band %d"%(N,-(-depth[min(depth)]//N),min(depth)) if N else ""))
+for k,cid,f,l,co,jt,idn,why in out[:N]:
+    print(cid+" | "+str(f)+" "+str(l)+" | "+str(co)+" | "+str(jt)[:34]+" | "+str(idn)+" | "+why)
