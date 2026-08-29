@@ -1,18 +1,32 @@
 # Run data — contact-level PII (names, emails, phones, verdicts) and ID snapshots.
 # The skill writes these into the working dir; they belong in the session scratchpad, not git.
 scripts/li_verdicts_*.json
+li_verdicts_*.json
 scripts/pending_movers_*.json
+pending_movers_*.json
 scripts/reassoc_log*.json
+reassoc_log*.json
 scripts/email_*.json
+email_*.json
 scripts/phone_*.json
+phone_*.json
 scripts/mem_*.txt
+mem_*.txt
 scripts/mem*.txt
+mem*.txt
 scripts/b*.json
+b*.json
 scripts/_*.json
+_*.json
 scripts/*.log
+*.log
 scripts/*.csv
+*.csv
 __pycache__/
 *.pyc
 scripts/list_anatomy_*.json
+list_anatomy_*.json
 scripts/*.tmp
+*.tmp
 scripts/dedupe_review_*.json
+dedupe_review_*.json

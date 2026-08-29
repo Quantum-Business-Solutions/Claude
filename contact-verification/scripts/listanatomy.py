@@ -33,9 +33,16 @@ def walk(branch, lid, depth=0, path='root'):
         ft = f.get('filterType')
         if ft == 'IN_LIST':
             sub = str(f.get('listId'))
-            gates.append({'list': lid, 'path': path, 'kind': 'IN_LIST',
-                          'detail': f'must ALSO be in list {sub}'})
-            upstream.append((sub, lid))
+            if btype == 'ASSOCIATION':
+                # "the contact's associated COMPANY must be in company list <sub>" - a legitimate
+                # HubSpot construct. Walking into it as if the CONTACT had to be a member of a
+                # company list produced a false "not a contact list" abort that killed every run.
+                gates.append({'list': lid, 'path': path, 'kind': 'ASSOCIATION(company IN_LIST)',
+                              'detail': f'the associated COMPANY must be in company list {sub}'})
+            else:
+                gates.append({'list': lid, 'path': path, 'kind': 'IN_LIST',
+                              'detail': f'the contact must ALSO be in list {sub}'})
+                upstream.append((sub, lid))
         else:
             op = f.get('operation', {}) or {}
             gates.append({'list': lid, 'path': path,
@@ -57,8 +64,13 @@ def process(lid):
     print(f'\n=== list {lid} :: {name} ===')
     print(f'    objectTypeId={l.get("objectTypeId")}  processingType={l.get("processingType")}')
     if l.get('objectTypeId') not in (None, '0-1'):
-        print('    !! NOT a contact list - this process only runs on 0-1')
-        blockers.append(f'list {lid} is objectTypeId {l.get("objectTypeId")}, not a contact list (0-1)')
+        if lid == root:
+            print('    !! NOT a contact list - this process only runs on 0-1')
+            blockers.append(f'list {lid} is objectTypeId {l.get("objectTypeId")}, not a contact list (0-1)')
+        else:
+            # An upstream list of another object type is normal - a contact list routinely gates on
+            # its associated COMPANY being in a company list. Only the ROOT must be contacts.
+            print('    (upstream list of another object type - informational, not a blocker)')
     if lid == root and l.get('processingType') not in (None, 'DYNAMIC'):
         blockers.append(f'list {lid} is {l.get("processingType")}, not DYNAMIC - '
                         'this process is built for a list that recalculates')
@@ -81,7 +93,8 @@ print('\n' + '='*72)
 print('EVERY PROPERTY THAT CAN EJECT A CONTACT FROM LIST ' + root + ':')
 props = {}
 for g in gates:
-    if g['kind'] == 'IN_LIST': continue
+    # membership gates name no property - they are structural, not property, ejection paths
+    if g['kind'] in ('IN_LIST', 'ASSOCIATION(company IN_LIST)') or not g.get('property'): continue
     key = (g.get('property'), g['kind'])
     props.setdefault(key, []).append(g['list'])
 for (p, kind), lids in sorted(props.items(), key=lambda x: str(x[0])):
@@ -96,7 +109,10 @@ if warn:
     print('   A contact with a blank/wrong value there is invisible to the list no matter how cleanly verified.')
 # (b) gates on a field this process DOES write -> the run changes membership underneath itself
 WRITES = {'hs_lead_status','ai__li_still_at_company','ai__contact_evidence','ai__contact_verified_date',
-          'ai__job_title','ai__sources_confirming','validated__linkedin_or_manually','hs_linkedin_url',
+          'ai__li_last_attempt_date','ai__reassociated_on','ai__li_tenure_years',
+          'ai__li_recent_role_change','ai__verification_issue','ai__verification_issue_note',
+          'ai__verification_issue_on','ai__job_title','jobtitle','ai__sources_confirming',
+          'validated__linkedin_or_manually','hs_linkedin_url',
           'linkedin_profile_url__unique_value','company','phone','business_phone','email',
           'previous__company_domain_name'}
 selfgate = sorted({p for (p, k) in props if p in WRITES})
