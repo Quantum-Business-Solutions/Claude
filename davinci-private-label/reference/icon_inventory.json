@@ -40,11 +40,11 @@
      {
       "label": "ANTIOXIDANT",
       "kind": "tag",
-      "action": "ART",
-      "icon": null,
+      "action": "SWAP",
+      "icon": "antioxidant",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "antioxidant-ink.png"
      },
      {
       "label": "SKIN & BEAUTY",
@@ -91,7 +91,7 @@
   "id": "216189433139",
   "name": "Private Label - Page - Working With Our Design Team",
   "editor": "Marko Ajder",
-  "edited": "2026-08-28",
+  "edited": "2026-08-29",
   "rows": [
    {
     "cards": 4,
@@ -132,30 +132,6 @@
       "stretch": false,
       "done": true,
       "now": "label-approval-ink.png"
-     }
-    ]
-   }
-  ]
- },
- {
-  "slug": "en/pl-demo-dropshipping",
-  "id": "216186378936",
-  "name": "Private Label - Standard Page - Dropshipping for Private Label",
-  "editor": "Marko Ajder",
-  "edited": "2026-08-29",
-  "rows": [
-   {
-    "cards": 1,
-    "hold": "nothing to swap -- these slots are for stripping or need artwork",
-    "slots": [
-     {
-      "label": "Adherence to CGMP regulations",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "production",
-      "stretch": false,
-      "done": true,
-      "now": "production-ink.png"
      }
     ]
    }
@@ -289,11 +265,11 @@
      {
       "label": "ANTIOXIDANT",
       "kind": "tag",
-      "action": "ART",
-      "icon": null,
+      "action": "SWAP",
+      "icon": "antioxidant",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "antioxidant-ink.png"
      },
      {
       "label": "ENERGY",
@@ -580,9 +556,18 @@
   "edited": "2026-08-29",
   "rows": [
    {
-    "cards": 5,
+    "cards": 6,
     "hold": "nothing to swap -- these slots are for stripping or need artwork",
     "slots": [
+     {
+      "label": "Pricing & Margins",
+      "kind": "claim",
+      "action": "SWAP",
+      "icon": "pricing",
+      "stretch": false,
+      "done": true,
+      "now": "pricing-ink.png"
+     },
      {
       "label": "FDA & Compliance",
       "kind": "claim",
@@ -766,7 +751,7 @@
   "id": "216189433476",
   "name": "Private Label - Page - About Us",
   "editor": "Marko Ajder",
-  "edited": "2026-08-28",
+  "edited": "2026-08-29",
   "rows": [
    {
     "cards": 3,
@@ -798,126 +783,6 @@
       "stretch": false,
       "done": true,
       "now": "white-glove-support-ink.png"
-     }
-    ]
-   }
-  ]
- },
- {
-  "slug": "pl-demo-ads-contract-mfg",
-  "id": "216192983654",
-  "name": "Private Label - Ads LP - Supplement Contract Manufacturer",
-  "editor": "Marko Ajder",
-  "edited": "2026-08-29",
-  "rows": [
-   {
-    "cards": 1,
-    "hold": "nothing to swap -- these slots are for stripping or need artwork",
-    "slots": [
-     {
-      "label": "U.S. manufacturing, FDA-registered",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "us-manufacturing",
-      "stretch": false,
-      "done": true,
-      "now": "us-manufacturing-ink.png"
-     }
-    ]
-   }
-  ]
- },
- {
-  "slug": "pl-demo-ads-custom",
-  "id": "216192983663",
-  "name": "Private Label - Ads LP - Custom Formulation Supplements",
-  "editor": "Marko Ajder",
-  "edited": "2026-08-29",
-  "rows": [
-   {
-    "cards": 1,
-    "hold": "nothing to swap -- these slots are for stripping or need artwork",
-    "slots": [
-     {
-      "label": "U.S. manufacturing, FDA-registered",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "us-manufacturing",
-      "stretch": false,
-      "done": true,
-      "now": "us-manufacturing-ink.png"
-     }
-    ]
-   }
-  ]
- },
- {
-  "slug": "pl-demo-ads-mfg-usa",
-  "id": "216192983652",
-  "name": "Private Label - Ads LP - Supplement Manufacturer USA",
-  "editor": "Marko Ajder",
-  "edited": "2026-08-29",
-  "rows": [
-   {
-    "cards": 1,
-    "hold": "nothing to swap -- these slots are for stripping or need artwork",
-    "slots": [
-     {
-      "label": "U.S. manufacturing, FDA-registered",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "us-manufacturing",
-      "stretch": false,
-      "done": true,
-      "now": "us-manufacturing-ink.png"
-     }
-    ]
-   }
-  ]
- },
- {
-  "slug": "pl-demo-ads-pl-mfg",
-  "id": "216194811734",
-  "name": "Private Label - Ads LP - Private Label Supplement Manufacturer",
-  "editor": "Marko Ajder",
-  "edited": "2026-08-29",
-  "rows": [
-   {
-    "cards": 1,
-    "hold": "nothing to swap -- these slots are for stripping or need artwork",
-    "slots": [
-     {
-      "label": "U.S. manufacturing, FDA-registered",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "us-manufacturing",
-      "stretch": false,
-      "done": true,
-      "now": "us-manufacturing-ink.png"
-     }
-    ]
-   }
-  ]
- },
- {
-  "slug": "pl-demo-certifications",
-  "id": "216192983597",
-  "name": "Private Label - Page - Certifications",
-  "editor": "Marko Ajder",
-  "edited": "2026-08-29",
-  "rows": [
-   {
-    "cards": 1,
-    "hold": "nothing to swap -- these slots are for stripping or need artwork",
-    "slots": [
-     {
-      "label": "FDA-registered facility",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "us-manufacturing",
-      "stretch": false,
-      "done": true,
-      "now": "us-manufacturing-ink.png"
      }
     ]
    }
@@ -997,7 +862,7 @@
   "id": "216192983650",
   "name": "Private Label - Page - Contact",
   "editor": "Marko Ajder",
-  "edited": "2026-08-28",
+  "edited": "2026-08-29",
   "rows": [
    {
     "cards": 3,
@@ -1035,30 +900,6 @@
   ]
  },
  {
-  "slug": "pl-demo-custom-formulation",
-  "id": "216189433487",
-  "name": "Private Label - Page - Custom Formulation",
-  "editor": "Marko Ajder",
-  "edited": "2026-08-29",
-  "rows": [
-   {
-    "cards": 1,
-    "hold": "nothing to swap -- these slots are for stripping or need artwork",
-    "slots": [
-     {
-      "label": "Doctor-formulated R&D",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "doctor-formulated",
-      "stretch": false,
-      "done": true,
-      "now": "doctor-formulated-ink.png"
-     }
-    ]
-   }
-  ]
- },
- {
   "slug": "pl-demo-detox",
   "id": "216189433375",
   "name": "Private Label - Page - Detox & Liver Support Supplements",
@@ -1081,11 +922,11 @@
      {
       "label": "ANTIOXIDANT",
       "kind": "tag",
-      "action": "ART",
-      "icon": null,
+      "action": "SWAP",
+      "icon": "antioxidant",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "antioxidant-ink.png"
      },
      {
       "label": "DETOX",
@@ -1333,11 +1174,11 @@
      {
       "label": "ANTIOXIDANT",
       "kind": "tag",
-      "action": "ART",
-      "icon": null,
+      "action": "SWAP",
+      "icon": "antioxidant",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
+      "done": true,
+      "now": "antioxidant-ink.png"
      },
      {
       "label": "LUNG",
@@ -1611,21 +1452,6 @@
   "editor": "Marko Ajder",
   "edited": "2026-08-29",
   "rows": [
-   {
-    "cards": 1,
-    "hold": "nothing to swap -- these slots are for stripping or need artwork",
-    "slots": [
-     {
-      "label": "Clinical credibility is everything",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "doctor-formulated",
-      "stretch": false,
-      "done": true,
-      "now": "doctor-formulated-ink.png"
-     }
-    ]
-   },
    {
     "cards": 6,
     "hold": "nothing to swap -- these slots are for stripping or need artwork",

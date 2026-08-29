@@ -76,8 +76,10 @@ for slug, d, groups in data:
             if len(labs) > 2: dups.append((slug, f, sorted(labs)))
 
 def show(title, rows, fmt, ok="none"):
+    """Print every row. An earlier cap of eight hid the ninth broken row on
+    prenatal through a whole round of fixes."""
     print(f"\n{'PASS' if not rows else 'CHECK'}  {title}: {len(rows) or ok}")
-    for r in rows[:8]: print("        " + fmt(r))
+    for r in rows: print("        " + fmt(r))
 
 show("old-set icons still on a page", old_refs, lambda r: f"{r[0]:30} {r[1][:26]:28} {r[2]}")
 show("rows where only some cards kept an icon", halfrows,

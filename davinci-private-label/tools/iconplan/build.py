@@ -116,6 +116,8 @@ RULES = [
  (r"u\.?s\.? manufactur|fda[- ]registered|fda & compliance","us-manufacturing"),
  (r"doctor[- ]formulated|clinical credibility|scientific rigor","doctor-formulated"),
  (r"white[- ]glove|partnership, not transaction","white-glove-support"),
+ (r"^antioxidant$","antioxidant"),
+ (r"pricing & margins|^pricing$","pricing"),
  (r"^discovery|kickoff|audience & positioning|brand discovery","discovery-strategy"),
  (r"product selection|formula selection|template selection","product-selection-design"),
  (r"label approval|label design|truth in labeling|branding & labels","label-approval"),
