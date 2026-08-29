@@ -127,3 +127,52 @@ Marketing"*. The config names them generically as the verification universe and
 the verified-callable set, but they are far narrower than the 83,826-contact
 ICP. Worth confirming whether engagement should target those lists or a broader
 roster.
+
+## Test fire, 2026-08-29
+
+The routine was created (`trig_01N5WJvp47qoYtrEg7wUtUPB`, weekdays 12:30 UTC,
+fresh session per fire) and fired manually. Result: the session ran ~2.5 minutes
+and completed, and **wrote zero provider IDs**.
+
+That is the correct outcome for the condition it hit, and it is what the run
+contract asks for — halt and report rather than proceed on a broken instrument.
+
+### Confirmed blocker: routines carry no connector grant
+
+`create_trigger` returned:
+
+> this trigger stores no MCP connectors, so the sessions it fires will run
+> without connector (`mcp__<server>__*`) tools
+
+Passing `connectors: ["Unipile"]` explicitly was refused — *"the connectors
+parameter is not available for this organization."* So a fired session has no
+`mcp__Unipile__execute-request`, and Unipile is unreachable any other way from
+the sandbox (port 16072, non-443, not carried by the agent proxy).
+
+Steps 1 and 4 (preflight, `plan`) need only HubSpot and work. Step 5
+(resolution) cannot run at all.
+
+**To fix:** recreate the routine from the claude.ai Routines UI, where
+connectors can be attached. Worth checking how the existing
+`contact-verification` routine obtains its Unipile access, since it has the
+same dependency and was created the same way.
+
+### The test also found a bug that would have shipped
+
+Verifying the effect rather than reading the run's own report surfaced this:
+of the 30 contacts carrying `hublead_linkedin_member_id`, **29 hold a numeric
+value** (`67306739`, `19325984`, `156477844`) rather than a member id.
+
+Those are `member_urn` values — a *different* identifier.
+`GET /users/{id}/posts` rejects them with `422 invalid_recipient`. Only the one
+contact resolved by hand in this session carries a real `ACoAAA…` id.
+
+`build_queue` originally treated the property's mere *presence* as "ready".
+Those 29 would have been handed to the engagement routine as engageable,
+failed at fetch time, and done so quietly on every run forever — the exact
+silent-failure class this rebuild exists to eliminate. Classification now
+validates the `ACo`/`ADo` prefix, and a populated-but-wrong value is recorded
+as `stale_provider_id` and re-resolved.
+
+So the honest provider-id coverage is **1**, not 30. The engagement routine is
+gated on this run working.

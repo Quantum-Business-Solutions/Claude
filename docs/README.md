@@ -13,7 +13,7 @@ Rebuilding the QBS LinkedIn GTM automation as Claude Code Routines.
 
 | Component | State |
 |---|---|
-| `qbs-linkedin-watch-sync` | 🛑 Never completed a successful run since inception |
+| `qbs-linkedin-watch-sync` | 🔨 Rebuilt as `scripts/watch_sync.py` + routine; blocked on connector grant |
 | `qbs-linkedin-engage-am` | 🛑 Blocked daily on a watch list that has never existed |
 | `qbs-linkedin-engage` (pm) | 🛑 Same |
 | `qbs-linkedin-daily` (outreach) | ⚠️ Sending, but ~90% below baseline and unlogged since 2026-06-01 |

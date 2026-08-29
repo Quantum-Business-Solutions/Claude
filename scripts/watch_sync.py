@@ -61,6 +61,15 @@ from qbs_linkedin.normalize import (  # noqa: E402
 API = "https://api.hubapi.com"
 EXIT_OK, EXIT_ENV = 0, 2
 
+#: LinkedIn member ids start ACo (people) or ADo (companies). The numeric
+#: `member_urn` is a DIFFERENT identifier and is not accepted by
+#: /users/{id}/posts, which returns 422 invalid_recipient for it.
+MEMBER_ID_PREFIXES = ("ACo", "ADo")
+
+
+def is_member_id(value: str | None) -> bool:
+    return bool(value) and value.startswith(MEMBER_ID_PREFIXES)
+
 ROSTER_PROPERTIES = [
     "firstname", "lastname", "company", "jobtitle",
     cfg.UPSERT_KEY_PROPERTY, "hs_linkedin_url",
@@ -158,10 +167,18 @@ def build_queue(rows: list[dict]) -> dict:
             "public_identifier": extract_slug(url),
         }
         provider_id = props.get(cfg.SECONDARY_MATCH_PROPERTY)
-        if provider_id:
+        if provider_id and is_member_id(provider_id):
             entry["provider_id"] = provider_id
             ready.append(entry)
         else:
+            # A populated-but-wrong value must NOT count as ready. 29 of the 30
+            # contacts carrying this property hold a numeric member_urn
+            # ("67306739") rather than a member id ("ACoAAA..."). Those are a
+            # different identifier: /users/{id}/posts rejects them with 422, so
+            # trusting the property's mere presence would classify them ready
+            # and then fail at fetch time, silently, forever.
+            if provider_id:
+                entry["stale_provider_id"] = provider_id
             needs_resolution.append(entry)
 
     return {
@@ -191,7 +208,7 @@ def write_back(token: str, resolved: list[dict], dry_run: bool) -> dict:
         if not cid or not pid:
             rejected.append({**item, "reason": "missing contact_id or provider_id"})
             continue
-        if not pid.startswith(("ACo", "ADo")):
+        if not is_member_id(pid):
             rejected.append({**item, "reason": f"{pid!r} is not a LinkedIn member id"})
             continue
         props = {cfg.SECONDARY_MATCH_PROPERTY: pid}
