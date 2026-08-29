@@ -207,6 +207,69 @@ assert not any(has_value(e) for e in cust), f"{len(cust)} customer engagements s
 
 ---
 
+## 10. Direction inversion — elapsed term read as remaining term
+
+**The one that survived two QA passes.** Found only when a human opened a record
+and asked why a note mentioning a contract had no lease field.
+
+Every term set is built around *remaining* term — "3 yrs left", "2 years to go".
+A comparable volume of notes state *elapsed* term instead, and the two look almost
+identical:
+
+```
+"a year and a half left on the lease"        ->  ends ~2028-02   (remaining)
+"a year and half into their contract"        ->  ends ~2030-02   (elapsed)
+```
+
+One word, `into`, flips the answer by three years. A fuzzy-quantifier rule written
+for the first form will happily fire on the second and produce a confidently wrong
+date — worse than no date, because it looks trustworthy.
+
+### Why aggregate statistics cannot catch it
+
+The extractor's output looked healthy: dates in range, tiers assigned, evidence
+attached. Nothing in a count, a distribution, or a null-rate check distinguishes a
+lease ending in 2028 from one ending in 2030. **Only reading a record next to its
+source text exposes it.**
+
+### Detection
+
+```python
+# every record whose evidence contains "into" must have come from an elapsed rule
+suspect = [r for r in rows
+           if re.search(r'\binto\b', r['basis'], re.I)
+           and 'elapsed' not in r['src']]
+assert not suspect, "remaining-term rule fired on elapsed-term language"
+```
+
+And the inverse — records the harvest never even saw:
+
+```python
+# sample records containing elapsed language but carrying no signal at all
+"into their contract", "years into", "just renewed", "recently renewed"
+```
+
+At UBEO this second query returned ~1,400 calls gross, harvesting to **3,189 calls
+and 5,000+ tasks** with no lease field, on a run already declared complete.
+
+### Fixes
+
+1. Harvest the elapsed class explicitly (`references/elapsed-terms.json`).
+2. Require a duration before `into` and a lease noun after it — bare `into` is one
+   of the commonest words in English and floods the pool with *"walked into the
+   lobby"*.
+3. Where no total term is stated, project on the 60-month copier convention, tier
+   it `PROJECTED`, and **put the assumption in the evidence string**:
+   `(assumes the 60-month copier term)`. A projection that hides its assumption is
+   indistinguishable from a measurement.
+4. Reject impossibilities — *"6 years into a 5 year lease"* yields nothing.
+
+### The general lesson
+
+Ask of every extraction rule: *does this phrasing have a mirror image that means
+the opposite?* Remaining/elapsed. Signed/expiring. Renewed/lapsed. The mirror is
+usually in the data at similar volume, and it usually reads as a near-synonym.
+
 ## Infrastructure failures
 
 Not data bugs, but they cost hours.

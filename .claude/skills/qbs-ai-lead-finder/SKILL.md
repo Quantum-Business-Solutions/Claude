@@ -185,7 +185,7 @@ strong one.
 | 7 | Month-to-month | no lease at all → date = today | WINNABLE NOW |
 | 8 | Projected next cycle | lapsed lease + own term, **one roll only** | VERIFY |
 
-### The three classes people get wrong
+### The four classes people get wrong
 
 **Just-signed is the best material in the corpus, not a rejection.** Someone who
 has just signed volunteers *who they signed with* — signing date, term length,
@@ -202,6 +202,37 @@ to month"* is not a hit.
 term is defensible once. Measured degradation at UBEO: 1 cycle 2,588
 (defensible) / 2 cycles 4,411 (assumes same vendor and term twice) / 3+ cycles
 3,143 (fiction). Never exceed one, and always label it VERIFY.
+
+**Elapsed term is a second, invisible half of the corpus — and it inverts.**
+Every term set starts by looking for *remaining* term ("3 yrs left"). Roughly the
+same volume of notes state *elapsed* term instead:
+
+> *"not the decision maker will try again monday before 9. A year and half into
+> their contract"*
+
+That is a dated lease signal. Read naively it is also **backwards**: a
+"year and a half" rule built for remaining term dates this to early 2028 when the
+answer is early 2030. The direction flips on one word — `into`.
+
+Rules:
+
+- If a duration is followed by `into`, it is elapsed. Remaining-term rules must
+  not fire on that sentence.
+- **Total term stated** → `CALCULATED`. *"2 years into a 5 year lease"* → 3 years out.
+- **No total stated** → `PROJECTED`, assuming the 60-month copier convention, and
+  the assumption goes **in the evidence string** so nobody mistakes it for a fact:
+  `(assumes the 60-month copier term)`.
+- Ordinals count too: *"in the second year of a 5 year lease"* → 1.5 elapsed.
+- *"just renewed" / "recently renewed" / "signed in 2023"* are the same class
+  viewed from the start date. Guard the negation — *"they did **not** just renew"*.
+- Reject the impossible: *"6 years into a 5 year lease"* yields nothing.
+
+Beware the tokenizer here. `into` is an extremely common English word — *"we
+walked into the lobby"*, *"moved into their new office"*. The pattern must require
+a duration before it and a lease noun after it, or the pool fills with noise.
+
+Measured at UBEO, this class was worth **~3,200 calls and ~5,000 tasks** that the
+original term set never touched, on a run that had already been QA'd twice.
 
 ### Parsing details that cost real yield
 

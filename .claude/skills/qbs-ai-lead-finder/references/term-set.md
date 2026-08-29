@@ -77,6 +77,35 @@ vocabulary will not match yours.
 
 ---
 
+## Elapsed term — the mirror image, and the one everyone forgets
+
+Every term above reads *remaining* time. These read *elapsed* time and are just as
+datable — but they invert if you feed them to a remaining-term rule. Found only
+after a run that had already passed two QA passes.
+
+| Term | calls | note |
+|---|---|---|
+| `into the contract` | 205 | |
+| `just renewed` | 210 | start-date form |
+| `recently renewed` | 209 | start-date form |
+| `year into` | 151 | |
+| `years into` | 138 | |
+| `into their contract` | 136 | |
+| `years ago we` | 122 | |
+| `signed last year` | 58 | |
+| `into a 5 year` / `into a five year` | 41 each | total term stated → CALCULATED |
+| `into their lease` | 39 | |
+| `renewed last` | 40 | |
+| `started our lease` | 7 | |
+| `signed two years ago` | 5 | |
+
+Gross ~1,400 on calls before dedupe; the harvested pool came to **3,189 calls and
+5,000+ tasks**. Also harvest the ordinal forms — `first year of`, `second year of`,
+`third year of`, `year of their`, `year of the`.
+
+**Do not harvest bare `into`.** It is one of the most common words in English and
+the pool becomes unusable. Always pair it with a duration or a lease noun.
+
 ## Term lengths — a length plus a start date yields an end date
 
 `36 month` `39 month` `48 month` `60 month` `63 month` `66 month` `12 month`
