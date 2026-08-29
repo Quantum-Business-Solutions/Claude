@@ -1,0 +1,11 @@
+# Secrets — never commit. Set these on the Claude Code environment for routines.
+.env
+*.key
+*.pem
+secrets/
+
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+scratch/
