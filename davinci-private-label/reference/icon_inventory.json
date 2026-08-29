@@ -726,8 +726,8 @@
   "slug": "en/pl-demo-pediatric",
   "id": "216189433355",
   "name": "Private Label - Page - Pediatric Supplements",
-  "editor": "Barb Peterson",
-  "edited": "2026-08-25",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
   "rows": [
    {
     "cards": 3,
@@ -764,7 +764,7 @@
    },
    {
     "cards": 8,
-    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
     "slots": [
      {
       "label": "MULTI",
@@ -772,8 +772,8 @@
       "action": "SWAP",
       "icon": "foundation",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "foundation-ink.png"
      },
      {
       "label": "BONE & IMMUNE",
@@ -781,8 +781,8 @@
       "action": "SWAP",
       "icon": "bone-health",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
+      "done": true,
+      "now": "bone-health-ink.png"
      },
      {
       "label": "PROBIOTIC",
@@ -790,8 +790,8 @@
       "action": "SWAP",
       "icon": "probiotics",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-38c98f6790.svg"
+      "done": true,
+      "now": "probiotics-ink.png"
      },
      {
       "label": "SLEEP",
@@ -799,8 +799,8 @@
       "action": "SWAP",
       "icon": "sleep",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-20d2ae991c.svg"
+      "done": true,
+      "now": "sleep-ink.png"
      },
      {
       "label": "RELAXATION",
@@ -808,8 +808,8 @@
       "action": "SWAP",
       "icon": "sleep",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-0e742f57f3.svg"
+      "done": true,
+      "now": "sleep-ink.png"
      },
      {
       "label": "OMEGAS",
@@ -817,8 +817,8 @@
       "action": "SWAP",
       "icon": "omega",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "omega-ink.png"
      },
      {
       "label": "IMMUNE",
@@ -826,8 +826,8 @@
       "action": "SWAP",
       "icon": "immune",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
+      "done": true,
+      "now": "immune-ink.png"
      },
      {
       "label": "BRAIN",
@@ -835,8 +835,8 @@
       "action": "SWAP",
       "icon": "cognitive",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-3d71165814.svg"
+      "done": true,
+      "now": "cognitive-ink.png"
      }
     ]
    }
@@ -972,42 +972,9 @@
   "slug": "en/pl-demo-resources",
   "id": "216189433440",
   "name": "Private Label - Page - Resources Hub",
-  "editor": "Barb Peterson",
-  "edited": "2026-08-25",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
   "rows": [
-   {
-    "cards": 3,
-    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
-    "slots": [
-     {
-      "label": "The Definitive Guide to Private Label Supplements",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-2d74ec447b.svg"
-     },
-     {
-      "label": "Ingredients, Testing & Certification Guide",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-becc2276f4.svg"
-     },
-     {
-      "label": "Client Onboarding Guide",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-3d71165814.svg"
-     }
-    ]
-   },
    {
     "cards": 6,
     "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
@@ -1065,48 +1032,6 @@
       "stretch": false,
       "done": false,
       "now": "pl-icon-38c98f6790.svg"
-     }
-    ]
-   }
-  ]
- },
- {
-  "slug": "en/pl-demo-ty-consultation",
-  "id": "216192983665",
-  "name": "Private Label - Page - TY - Consultation Booked",
-  "editor": "HubSpot System",
-  "edited": "2026-08-27",
-  "rows": [
-   {
-    "cards": 3,
-    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
-    "slots": [
-     {
-      "label": "The Definitive Guide",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-2d74ec447b.svg"
-     },
-     {
-      "label": "Onboarding Guide",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-3d71165814.svg"
-     },
-     {
-      "label": "Resource Library",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-38955d961f.svg"
      }
     ]
    }
@@ -1215,53 +1140,11 @@
   ]
  },
  {
-  "slug": "en/pl-demo-ty-quote",
-  "id": "216194811755",
-  "name": "Private Label - Page - TY - Quote Request Submitted",
-  "editor": "HubSpot System",
-  "edited": "2026-08-27",
-  "rows": [
-   {
-    "cards": 3,
-    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
-    "slots": [
-     {
-      "label": "The Definitive Guide",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-2d74ec447b.svg"
-     },
-     {
-      "label": "Onboarding Guide",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-3d71165814.svg"
-     },
-     {
-      "label": "Resource Library",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-38955d961f.svg"
-     }
-    ]
-   }
-  ]
- },
- {
   "slug": "en/pl-demo-womens-health",
   "id": "216189433092",
   "name": "Private Label - Page - Women's Health Supplements",
   "editor": "Marko Ajder",
-  "edited": "2026-08-25",
+  "edited": "2026-08-28",
   "rows": [
    {
     "cards": 3,
@@ -1298,7 +1181,7 @@
    },
    {
     "cards": 8,
-    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
     "slots": [
      {
       "label": "MULTIVITAMIN",
@@ -1306,8 +1189,8 @@
       "action": "SWAP",
       "icon": "foundation",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "foundation-ink.png"
      },
      {
       "label": "HORMONAL",
@@ -1315,8 +1198,8 @@
       "action": "SWAP",
       "icon": "hormonal-balance",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "hormonal-balance-ink.png"
      },
      {
       "label": "PRENATAL",
@@ -1324,8 +1207,8 @@
       "action": "SWAP",
       "icon": "prenatal-care",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-38c98f6790.svg"
+      "done": true,
+      "now": "prenatal-care-ink-1.png"
      },
      {
       "label": "CYCLE SUPPORT",
@@ -1333,8 +1216,8 @@
       "action": "SWAP",
       "icon": "hormonal-balance",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-0e742f57f3.svg"
+      "done": true,
+      "now": "hormonal-balance-ink.png"
      },
      {
       "label": "BEAUTY",
@@ -1342,8 +1225,8 @@
       "action": "SWAP",
       "icon": "beauty-mood",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "beauty-mood-ink.png"
      },
      {
       "label": "VITALITY",
@@ -1351,8 +1234,8 @@
       "action": "SWAP",
       "icon": "energy",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "energy-ink.png"
      },
      {
       "label": "BONE",
@@ -1360,8 +1243,8 @@
       "action": "SWAP",
       "icon": "bone-health",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
+      "done": true,
+      "now": "bone-health-ink.png"
      },
      {
       "label": "ENERGY",
@@ -1369,8 +1252,8 @@
       "action": "SWAP",
       "icon": "energy",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-76acdf2fc7.svg"
+      "done": true,
+      "now": "energy-ink.png"
      }
     ]
    }
@@ -2130,8 +2013,8 @@
   "slug": "pl-demo-energy",
   "id": "216189433390",
   "name": "Private Label - Page - Energy & Vitality Supplements",
-  "editor": "Barb Peterson",
-  "edited": "2026-08-27",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
   "rows": [
    {
     "cards": 3,
@@ -2168,7 +2051,7 @@
    },
    {
     "cards": 8,
-    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
     "slots": [
      {
       "label": "MITOCHONDRIAL",
@@ -2176,8 +2059,8 @@
       "action": "SWAP",
       "icon": "cellular",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-76acdf2fc7.svg"
+      "done": true,
+      "now": "cellular-ink.png"
      },
      {
       "label": "CELLULAR",
@@ -2185,8 +2068,8 @@
       "action": "SWAP",
       "icon": "cellular",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
+      "done": true,
+      "now": "cellular-ink.png"
      },
      {
       "label": "HGH SUPPORT",
@@ -2194,8 +2077,8 @@
       "action": "SWAP",
       "icon": "mens-health",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-156db8917c.svg"
+      "done": true,
+      "now": "mens-health-ink.png"
      },
      {
       "label": "PROTEIN",
@@ -2203,8 +2086,8 @@
       "action": "SWAP",
       "icon": "protein",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-6f572adbe4.svg"
+      "done": true,
+      "now": "protein-ink.png"
      },
      {
       "label": "CARDIO ENERGY",
@@ -2212,8 +2095,8 @@
       "action": "SWAP",
       "icon": "cardiovascular",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "cardiovascular-ink.png"
      },
      {
       "label": "RECOVERY",
@@ -2221,8 +2104,8 @@
       "action": "SWAP",
       "icon": "fitness",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-0e742f57f3.svg"
+      "done": true,
+      "now": "fitness-ink-64.png"
      },
      {
       "label": "B-COMPLEX",
@@ -2230,8 +2113,8 @@
       "action": "SWAP",
       "icon": "vitamin-mineral",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-76acdf2fc7.svg"
+      "done": true,
+      "now": "vitamin-mineral-ink.png"
      },
      {
       "label": "METABOLIC",
@@ -2239,8 +2122,8 @@
       "action": "SWAP",
       "icon": "weight-management",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "weight-management-ink.png"
      }
     ]
    }
@@ -2289,48 +2172,6 @@
       "kind": "stat",
       "action": "STRIP",
       "icon": null,
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-3d71165814.svg"
-     }
-    ]
-   }
-  ]
- },
- {
-  "slug": "pl-demo-guides",
-  "id": "216192983627",
-  "name": "Private Label - Page - Guides Library",
-  "editor": "HubSpot System",
-  "edited": "2026-08-27",
-  "rows": [
-   {
-    "cards": 3,
-    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
-    "slots": [
-     {
-      "label": "The Definitive Guide to Private Label Supplements",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-2d74ec447b.svg"
-     },
-     {
-      "label": "Ingredients, Testing & Certification Guide",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-04cb8f7fc7.svg"
-     },
-     {
-      "label": "Client Onboarding Guide",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
       "stretch": false,
       "done": false,
       "now": "pl-icon-3d71165814.svg"
@@ -2428,7 +2269,7 @@
   "id": "216189433373",
   "name": "Private Label - Page - Heart Health Supplements",
   "editor": "Marko Ajder",
-  "edited": "2026-08-25",
+  "edited": "2026-08-28",
   "rows": [
    {
     "cards": 3,
@@ -2465,7 +2306,7 @@
    },
    {
     "cards": 7,
-    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
     "slots": [
      {
       "label": "OMEGAS",
@@ -2473,8 +2314,8 @@
       "action": "SWAP",
       "icon": "omega",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "omega-ink.png"
      },
      {
       "label": "CELLULAR ENERGY",
@@ -2482,8 +2323,8 @@
       "action": "SWAP",
       "icon": "cellular",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-76acdf2fc7.svg"
+      "done": true,
+      "now": "cellular-ink.png"
      },
      {
       "label": "UBIQUINOL",
@@ -2491,8 +2332,8 @@
       "action": "SWAP",
       "icon": "cellular",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
+      "done": true,
+      "now": "cellular-ink.png"
      },
      {
       "label": "BLOOD PRESSURE",
@@ -2500,8 +2341,8 @@
       "action": "SWAP",
       "icon": "cardiovascular",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-0e742f57f3.svg"
+      "done": true,
+      "now": "cardiovascular-ink.png"
      },
      {
       "label": "FORMULA",
@@ -2509,8 +2350,8 @@
       "action": "SWAP",
       "icon": "foundation",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "foundation-ink.png"
      },
      {
       "label": "CHOLESTEROL",
@@ -2518,8 +2359,8 @@
       "action": "SWAP",
       "icon": "cardiovascular",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-261f1b1e4f.svg"
+      "done": true,
+      "now": "cardiovascular-ink.png"
      },
      {
       "label": "PREMIUM OMEGA",
@@ -2527,8 +2368,8 @@
       "action": "SWAP",
       "icon": "omega",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-04cb8f7fc7.svg"
+      "done": true,
+      "now": "omega-ink.png"
      }
     ]
    }
@@ -2920,7 +2761,7 @@
   "id": "216188836114",
   "name": "Private Label - Page - Men's Health Supplements",
   "editor": "Marko Ajder",
-  "edited": "2026-08-25",
+  "edited": "2026-08-28",
   "rows": [
    {
     "cards": 3,
@@ -2957,7 +2798,7 @@
    },
    {
     "cards": 8,
-    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
     "slots": [
      {
       "label": "MULTIVITAMIN",
@@ -2965,8 +2806,8 @@
       "action": "SWAP",
       "icon": "foundation",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "foundation-ink.png"
      },
      {
       "label": "PROSTATE",
@@ -2974,8 +2815,8 @@
       "action": "SWAP",
       "icon": "mens-health",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
+      "done": true,
+      "now": "mens-health-ink.png"
      },
      {
       "label": "TESTOSTERONE",
@@ -2983,8 +2824,8 @@
       "action": "SWAP",
       "icon": "mens-health",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-156db8917c.svg"
+      "done": true,
+      "now": "mens-health-ink.png"
      },
      {
       "label": "PROSTATE",
@@ -2992,8 +2833,8 @@
       "action": "SWAP",
       "icon": "mens-health",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-0e742f57f3.svg"
+      "done": true,
+      "now": "mens-health-ink.png"
      },
      {
       "label": "VITALITY",
@@ -3001,8 +2842,8 @@
       "action": "SWAP",
       "icon": "energy",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "energy-ink.png"
      },
      {
       "label": "HORMONAL",
@@ -3010,8 +2851,8 @@
       "action": "SWAP",
       "icon": "hormonal-balance",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-261f1b1e4f.svg"
+      "done": true,
+      "now": "hormonal-balance-ink.png"
      },
      {
       "label": "HAIR",
@@ -3019,8 +2860,8 @@
       "action": "SWAP",
       "icon": "beauty-mood",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "beauty-mood-ink.png"
      },
      {
       "label": "CARDIO",
@@ -3028,8 +2869,8 @@
       "action": "SWAP",
       "icon": "cardiovascular",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "cardiovascular-ink.png"
      }
     ]
    }
@@ -3039,8 +2880,8 @@
   "slug": "pl-demo-multivitamin",
   "id": "216189433270",
   "name": "Private Label - Page - Multivitamin Supplements",
-  "editor": "Barb Peterson",
-  "edited": "2026-08-25",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
   "rows": [
    {
     "cards": 3,
@@ -3077,7 +2918,7 @@
    },
    {
     "cards": 8,
-    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
     "slots": [
      {
       "label": "DAILY",
@@ -3085,8 +2926,8 @@
       "action": "SWAP",
       "icon": "foundation",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "foundation-ink.png"
      },
      {
       "label": "FOUNDATION",
@@ -3094,8 +2935,8 @@
       "action": "SWAP",
       "icon": "foundation",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "foundation-ink.png"
      },
      {
       "label": "MEN'S",
@@ -3103,8 +2944,8 @@
       "action": "SWAP",
       "icon": "mens-health",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-38c98f6790.svg"
+      "done": true,
+      "now": "mens-health-ink.png"
      },
      {
       "label": "WOMEN'S",
@@ -3112,8 +2953,8 @@
       "action": "SWAP",
       "icon": "womens-health",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "womens-health-ink.png"
      },
      {
       "label": "SENIOR",
@@ -3121,8 +2962,8 @@
       "action": "SWAP",
       "icon": "senior",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-3d71165814.svg"
+      "done": true,
+      "now": "senior-ink.png"
      },
      {
       "label": "MEN'S",
@@ -3130,8 +2971,8 @@
       "action": "SWAP",
       "icon": "mens-health",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-38c98f6790.svg"
+      "done": true,
+      "now": "mens-health-ink.png"
      },
      {
       "label": "WOMEN'S",
@@ -3139,8 +2980,8 @@
       "action": "SWAP",
       "icon": "womens-health",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "womens-health-ink.png"
      },
      {
       "label": "METABOLIC",
@@ -3148,8 +2989,8 @@
       "action": "SWAP",
       "icon": "weight-management",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-76acdf2fc7.svg"
+      "done": true,
+      "now": "weight-management-ink.png"
      }
     ]
    }
@@ -3354,12 +3195,12 @@
   "slug": "pl-demo-prenatal",
   "id": "216189433267",
   "name": "Private Label - Page - Prenatal Supplements",
-  "editor": "Barb Peterson",
-  "edited": "2026-08-27",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
   "rows": [
    {
     "cards": 3,
-    "hold": "row mixes icons that stay with icons that go -- needs the strip ruling",
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
     "slots": [
      {
       "label": "High-trust, high-LTV audience",
@@ -3385,14 +3226,14 @@
       "action": "SWAP",
       "icon": "doctor-formulated",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
+      "done": true,
+      "now": "doctor-formulated-ink.png"
      }
     ]
    },
    {
     "cards": 6,
-    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
     "slots": [
      {
       "label": "PRENATAL",
@@ -3400,8 +3241,8 @@
       "action": "SWAP",
       "icon": "prenatal-care",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-38c98f6790.svg"
+      "done": true,
+      "now": "prenatal-care-ink-1.png"
      },
      {
       "label": "FERTILITY",
@@ -3409,8 +3250,8 @@
       "action": "SWAP",
       "icon": "hormonal-balance",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "hormonal-balance-ink.png"
      },
      {
       "label": "FOLATE",
@@ -3418,8 +3259,8 @@
       "action": "SWAP",
       "icon": "vitamin-mineral",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-0e742f57f3.svg"
+      "done": true,
+      "now": "vitamin-mineral-ink.png"
      },
      {
       "label": "PRENATAL",
@@ -3427,8 +3268,8 @@
       "action": "SWAP",
       "icon": "prenatal-care",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "prenatal-care-ink-1.png"
      },
      {
       "label": "FOUNDATION",
@@ -3436,8 +3277,8 @@
       "action": "SWAP",
       "icon": "foundation",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
+      "done": true,
+      "now": "foundation-ink.png"
      },
      {
       "label": "MINERALS",
@@ -3445,8 +3286,8 @@
       "action": "SWAP",
       "icon": "vitamin-mineral",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-04cb8f7fc7.svg"
+      "done": true,
+      "now": "vitamin-mineral-ink.png"
      }
     ]
    }
@@ -3669,8 +3510,8 @@
   "slug": "pl-demo-sleep",
   "id": "216189433007",
   "name": "Private Label - Page - Sleep Supplements",
-  "editor": "HubSpot System",
-  "edited": "2026-08-27",
+  "editor": "Marko Ajder",
+  "edited": "2026-08-28",
   "rows": [
    {
     "cards": 3,
@@ -3707,7 +3548,7 @@
    },
    {
     "cards": 7,
-    "hold": "two labels share an icon -- Sarah's consolidation, likely fine",
+    "hold": "nothing to swap -- these slots are for stripping or need artwork",
     "slots": [
      {
       "label": "FORMULA",
@@ -3715,8 +3556,8 @@
       "action": "SWAP",
       "icon": "foundation",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-20d2ae991c.svg"
+      "done": true,
+      "now": "foundation-ink.png"
      },
      {
       "label": "PEDIATRIC",
@@ -3724,8 +3565,8 @@
       "action": "SWAP",
       "icon": "baby",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-33836997a3.svg"
+      "done": true,
+      "now": "baby-ink.png"
      },
      {
       "label": "FOUNDATION",
@@ -3733,8 +3574,8 @@
       "action": "SWAP",
       "icon": "foundation",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
+      "done": true,
+      "now": "foundation-ink.png"
      },
      {
       "label": "LIPOSOMAL",
@@ -3742,8 +3583,8 @@
       "action": "SWAP",
       "icon": "liposomal",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-76acdf2fc7.svg"
+      "done": true,
+      "now": "liposomal-ink.png"
      },
      {
       "label": "RELAXATION",
@@ -3751,8 +3592,8 @@
       "action": "SWAP",
       "icon": "sleep",
       "stretch": true,
-      "done": false,
-      "now": "pl-icon-0e742f57f3.svg"
+      "done": true,
+      "now": "sleep-ink.png"
      },
      {
       "label": "STRESS",
@@ -3760,8 +3601,8 @@
       "action": "SWAP",
       "icon": "stress",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-73e72ca5aa.svg"
+      "done": true,
+      "now": "stress-ink.png"
      },
      {
       "label": "BOTANICAL",
@@ -3769,8 +3610,8 @@
       "action": "SWAP",
       "icon": "botanical",
       "stretch": false,
-      "done": false,
-      "now": "pl-icon-0e742f57f3.svg"
+      "done": true,
+      "now": "botanical-ink.png"
      }
     ]
    }
@@ -3996,53 +3837,11 @@
   ]
  },
  {
-  "slug": "pl-demo-ty-sell-sheets",
-  "id": "216194811757",
-  "name": "Private Label - Page - TY - Sell Sheets Requested",
-  "editor": "Barb Peterson",
-  "edited": "2026-08-25",
-  "rows": [
-   {
-    "cards": 3,
-    "hold": "3 different labels land on one icon -- needs Sarah's ruling",
-    "slots": [
-     {
-      "label": "The Definitive Guide",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-2d74ec447b.svg"
-     },
-     {
-      "label": "Onboarding Guide",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-3d71165814.svg"
-     },
-     {
-      "label": "Resource Library",
-      "kind": "claim",
-      "action": "SWAP",
-      "icon": "file-text",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-38955d961f.svg"
-     }
-    ]
-   }
-  ]
- },
- {
   "slug": "pl-demo-weight-management",
   "id": "216188836111",
   "name": "Private Label - Page - Weight Management Supplements",
   "editor": "Marko Ajder",
-  "edited": "2026-08-25",
+  "edited": "2026-08-28",
   "rows": [
    {
     "cards": 3,
@@ -4074,66 +3873,6 @@
       "stretch": false,
       "done": false,
       "now": "pl-icon-73e72ca5aa.svg"
-     }
-    ]
-   },
-   {
-    "cards": 6,
-    "hold": "4 different labels land on one icon -- needs Sarah's ruling",
-    "slots": [
-     {
-      "label": "METABOLIC",
-      "kind": "tag",
-      "action": "SWAP",
-      "icon": "weight-management",
-      "stretch": true,
-      "done": false,
-      "now": "pl-icon-156db8917c.svg"
-     },
-     {
-      "label": "FAT ABSORPTION",
-      "kind": "tag",
-      "action": "SWAP",
-      "icon": "weight-management",
-      "stretch": true,
-      "done": false,
-      "now": "pl-icon-261f1b1e4f.svg"
-     },
-     {
-      "label": "HORMONAL",
-      "kind": "tag",
-      "action": "SWAP",
-      "icon": "hormonal-balance",
-      "stretch": false,
-      "done": false,
-      "now": "pl-icon-261f1b1e4f.svg"
-     },
-     {
-      "label": "APPETITE",
-      "kind": "tag",
-      "action": "SWAP",
-      "icon": "weight-management",
-      "stretch": true,
-      "done": false,
-      "now": "pl-icon-0e742f57f3.svg"
-     },
-     {
-      "label": "GLP-1 SUPPORT",
-      "kind": "tag",
-      "action": "SWAP",
-      "icon": "weight-management",
-      "stretch": true,
-      "done": false,
-      "now": "pl-icon-30d8dc8a51.svg"
-     },
-     {
-      "label": "METABOLIC",
-      "kind": "tag",
-      "action": "SWAP",
-      "icon": "weight-management",
-      "stretch": true,
-      "done": false,
-      "now": "pl-icon-76acdf2fc7.svg"
      }
     ]
    }
