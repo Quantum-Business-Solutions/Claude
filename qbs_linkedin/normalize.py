@@ -102,12 +102,57 @@ def same_profile(a: str | None, b: str | None) -> bool:
 
 
 #: Shortened first names accepted when checking a slug against a contact name.
+#: Extended from the live list-5243 run, where a first-name-only check skipped
+#: 31 contacts and most were this person under a common short form.
 NICKNAMES = {
     "chuck": "charles", "mike": "michael", "bob": "robert", "danny": "daniel",
     "zach": "zachary", "ken": "kenneth", "bill": "william", "jim": "james",
     "dave": "david", "rick": "richard", "steve": "steven", "tom": "thomas",
     "dick": "richard", "nan": "nancy", "pat": "patrick", "greg": "gregory",
+    "liz": "elizabeth", "beth": "elizabeth", "drew": "andrew",
+    "andy": "andrew", "nick": "nicholas", "tony": "anthony",
+    "phil": "philip", "nikki": "nicole", "jess": "jessica",
+    "chris": "christopher", "matt": "matthew", "ben": "benjamin",
+    "dan": "daniel", "joe": "joseph", "tim": "timothy", "ted": "edward",
+    "sam": "samuel", "alex": "alexander", "kate": "katherine",
+    "cathy": "catherine", "sue": "susan", "jen": "jennifer",
+    "jenny": "jennifer", "peggy": "margaret", "meg": "margaret",
+    "tope": "temitope", "ron": "ronald", "don": "donald", "ed": "edward",
 }
+
+#: Latin-1 letters folded to ASCII so an accent cannot break a match.
+#: Live case: Kris Gosser, stored with an umlaut, whose slug is "kgosser".
+_ACCENT_MAP = str.maketrans(
+    "áàâäãåéèêëíìîïóòôöõúùûüñçýÿšžœæø",
+    "aaaaaaeeeeiiiiooooouuuuncyyszoao",
+)
+
+#: Below this, a first-name prefix is too short to be evidence.
+_MIN_PREFIX = 4
+
+
+def fold(value: str | None) -> str:
+    """Lowercase and strip accents for comparison purposes only."""
+    return (value or "").strip().lower().translate(_ACCENT_MAP)
+
+
+def _at_token_boundary(slug: str, needle: str) -> bool:
+    """Does `needle` appear in `slug` as a whole token rather than a fragment?
+
+    Slugs separate tokens with hyphens, dots, underscores and digits, so a
+    short name only counts when it starts the slug or follows a separator and
+    is itself followed by one (or the end).
+    """
+    seps = "-._0123456789"
+    start = 0
+    while (idx := slug.find(needle, start)) != -1:
+        before_ok = idx == 0 or slug[idx - 1] in seps
+        end = idx + len(needle)
+        after_ok = end == len(slug) or slug[end] in seps
+        if before_ok and after_ok:
+            return True
+        start = idx + 1
+    return False
 
 
 def slug_matches_name(
@@ -144,25 +189,68 @@ def slug_matches_name(
     """
     if not slug:
         return False
-    first = (firstname or "").strip().lower()
-    last = (lastname or "").strip().lower()
+    slug = fold(slug)
+    first, last = fold(firstname), fold(lastname)
     if not first and not last:
         return False
 
+    # 1. First name, or a nickname of it, appears in the slug.
+    #    Short names need a boundary: a bare substring test lets "jim" match
+    #    "jimenez-corp", and "ed" or "sam" would match almost anything.
     if first:
         alts = {first, NICKNAMES.get(first, first)}
         alts |= {short for short, full in NICKNAMES.items() if full == first}
-        if any(alt and alt in slug for alt in alts):
-            return True
+        for alt in alts:
+            if not alt:
+                continue
+            if len(alt) >= _MIN_PREFIX:
+                if alt in slug:
+                    return True
+            elif _at_token_boundary(slug, alt):
+                return True
 
-    if last and first and last in slug and slug.startswith(first[0]):
+    if not last:
+        return False
+
+    # 2. Surname present and the slug leads with the first initial.
+    #    Admits "kgosser" (Kris Gosser); rejects "margie-becker" for Jim.
+    if first and last in slug and slug.startswith(first[0]):
         return True
 
-    # A bare-surname slug ("grahl" for Mike Grahl) is a real and common style.
-    # Requiring the first initial rejects it, and rejecting it drops a valid
-    # prospect. Exact equality only -- "becker" alone would pass here, but a
-    # relative case is always "margie-becker", never bare.
-    if last and slug == last:
+    # 3. Bare-surname slug: "grahl" for Mike Grahl. Exact only -- a relative
+    #    case is always "margie-becker", never bare "becker".
+    if slug == last:
+        return True
+
+    # 4. Surname-led slug: "barnesphil", "smithm432", "pradog". The surname
+    #    starts the slug, so it cannot be a differently-named relative.
+    if slug.startswith(last):
+        return True
+
+    # 5. Surname-trailing with the first initial in the prefix: "jbbattaglia"
+    #    (Ben Battaglia). The initial check is what keeps relatives out --
+    #    "alec-strohmaier" has no 'n' for Nan, "virginia-kelley" no 'p' for
+    #    Patrick, "margie-becker" no 'j' for Jim.
+    #    The prefix must carry the first initial OR a short form of the first
+    #    name -- "lizchasse" is Liz + Chasse. Checking only the initial misses
+    #    that whole style, and checking neither would admit every relative.
+    if first and slug.endswith(last):
+        prefix = slug[: -len(last)]
+        short_forms = {first[0], first} | {
+            s for s, full in NICKNAMES.items() if full == first
+        }
+        if any(form and form in prefix for form in short_forms):
+            return True
+
+    # 6. Initial plus a truncated surname: "sbhagcha" for Sumit Bhagchandani.
+    if (first and len(last) >= 5 and slug.startswith(first[0])
+            and last[:5] in slug):
+        return True
+
+    # 7. A long-enough first-name prefix: "julietin" for Julieta, "jessg..."
+    #    for Jessica. Short names are excluded -- "jim" would match far too
+    #    much -- so this needs at least four characters of evidence.
+    if first and len(first) >= _MIN_PREFIX and first[:_MIN_PREFIX] in slug:
         return True
 
     return False

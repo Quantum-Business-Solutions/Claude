@@ -173,3 +173,54 @@ class TestChooseProfileUrl:
         url, problem = choose_profile_url(None, None, "Jim")
         assert url is None
         assert "no LinkedIn URL" in problem
+
+
+class TestSlugMatchingAtScale:
+    """Cases from the live list-5243 run (1,136 contacts).
+
+    A first-name-only check skipped 31 of them; most were this person under a
+    short form, an accent, or a surname-led slug. Each row here is a real
+    portal contact.
+    """
+
+    @pytest.mark.parametrize("slug,first,last", [
+        ("pradog", "Gabriel", "Prado"),                 # surname + initial
+        ("smithm432", "Matthew", "Smith"),              # surname-led
+        ("barnesphil", "Philip", "Barnes"),             # surname-led
+        ("jbbattaglia", "Ben", "Battaglia"),            # initials + surname
+        ("sbhagcha", "Sumit", "Bhagchandani"),          # initial + truncated
+        ("kgosser", "Kris", "Gösser"),                  # accent folded
+        ("lizchasse", "Elizabeth", "Chasse"),           # Liz
+        ("drew-detzler-8863559a", "Andrew", "Detzler"), # Drew
+        ("nickz1", "Nicholas", "Zgorski"),              # Nick
+        ("anthonyroy", "Tony", "Roy"),                  # Tony -> Anthony
+        ("nicolemstmartin", "Nikki", "St.Martin"),      # Nikki -> Nicole
+        ("julietin", "Julieta", "Alvarado"),            # first-name prefix
+        ("jessgmarketing", "Jessica", "Garrett"),       # prefix in brand slug
+    ])
+    def test_recovers_real_contacts(self, slug, first, last):
+        assert slug_matches_name(slug, first, last)
+
+    @pytest.mark.parametrize("slug,first,last", [
+        # Wrong person — the expensive failure. Messaging one of these sends
+        # a cold pitch to someone's relative under Shawn's name.
+        ("margie-becker-267034a", "Jim", "Becker"),
+        ("alec-strohmaier-411a915", "Nan", "Strohmaier"),
+        ("virginia-kelley-5223b563", "Patrick", "Kelley"),
+        ("elvira-perez-5640b1227", "Froy", "Perez"),
+        ("aisling-kerins-9b411861", "Craig", "Rosenstein"),
+        ("kerstin-topham-30b32971", "Michael", "Murdock"),
+        ("am-hernandez", "Angela", "Cipriani"),
+        # Brand slugs — genuinely ambiguous, belong in review not in a guess.
+        ("techmarketingpro", "Scott", "Davis"),
+        ("bbmktg", "Linda", "Ford"),
+        ("navipsych", "Stephanie", "Camp"),
+        ("innovationinaction", "Bill", "Evans"),
+    ])
+    def test_never_admits_the_wrong_person(self, slug, first, last):
+        assert not slug_matches_name(slug, first, last)
+
+    def test_short_first_names_do_not_prefix_match(self):
+        # "jim"[:4] would be "jim" — three characters is not evidence, and a
+        # loose prefix rule here is what would let "margie" through.
+        assert not slug_matches_name("jimenez-corp", "Jim", "Becker")

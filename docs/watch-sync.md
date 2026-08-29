@@ -176,3 +176,45 @@ as `stale_provider_id` and re-resolved.
 
 So the honest provider-id coverage is **1**, not 30. The engagement routine is
 gated on this run working.
+
+## Testing at scale — list 5243, 1,136 contacts
+
+The 40-contact sample was too small to characterise the matcher. A full run
+(12 membership pages, 12 batch-read pages, 7.5s) told a different story:
+**10.7% skipped**, and inspecting all 31 name-mismatch skips showed most were
+the matcher being too strict rather than bad data.
+
+| Pattern | Example | Rule added |
+|---|---|---|
+| Surname + initial | `pradog` — Gabriel Prado | slug starts with the surname |
+| Surname-led | `smithm432`, `barnesphil` | same |
+| Initials + surname | `jbbattaglia` — Ben Battaglia | surname trailing, initial or short form in the prefix |
+| Nickname + surname | `lizchasse` — Elizabeth Chasse | same |
+| Initial + truncated surname | `sbhagcha` — Sumit Bhagchandani | first 5 chars of surname |
+| Accented name | `kgosser` — Kris Gösser | accent folding |
+| Short form | `drew-…`, `nickz1`, `anthonyroy`, `nicolemstmartin` | nickname table extended |
+| First-name prefix | `julietin` — Julieta, `jessgmarketing` — Jessica | ≥4-character prefix |
+
+Verified on the real rows: **13 of 15 recovered, zero leaks.** Every
+wrong-person case still rejects — `margie-becker` for Jim, `alec-strohmaier`
+for Nan, `virginia-kelley` for Patrick, `kerstin-topham` for Michael Murdock,
+`am-hernandez` for Angela Cipriani — as do brand slugs like `techmarketingpro`
+and `bbmktg`, which are genuinely ambiguous and belong in review.
+
+Two remain unmatched (`bawotona` for Tope Awotona, `agammy` for Alexandra
+Gammelgard). Loosening further to catch them would start admitting relatives,
+so they stay queued.
+
+### The tests caught a bug the scale run didn't
+
+`slug_matches_name("jimenez-corp", "Jim", "Becker")` returned **True** — "jim"
+matched as a bare substring of "jimenez". Short names now require a token
+boundary (start of slug, or delimited by `-._` or a digit). `ed`, `sam`, `ben`
+and `dan` would otherwise have matched almost anything.
+
+### Result
+
+Skip rate **10.7% → 9.5%**, and name mismatches **32 → 17**. The residual is
+mostly legitimate: 78 contacts with no LinkedIn URL at all, 12 verified as
+moved, and 17 genuinely ambiguous brand slugs. 60 tests, all from real portal
+rows.
