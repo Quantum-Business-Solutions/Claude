@@ -93,7 +93,14 @@ python3 scripts/writeverdicts.py <LIST> b<LIST>_runN.json
 
 Batch item: `{id, verdict, ev}` + optional `ls`, `newco`, `sources`, `title` → `ai__job_title`,
 `title_conf` (0-1; ≥0.90 also writes native `jobtitle`), `li_url` → both URL fields,
-`changed` → explicit "what changed in HubSpot".
+`changed` → explicit "what changed in HubSpot", `tenure` → `ai__li_tenure_years`,
+`role_change` → `ai__li_recent_role_change`, and `issue`/`issue_note` → the HubSpot-resident
+review queue (`ai__verification_issue`).
+
+Verdicts are `yes` / `no` / `unreadable` / `no_profile`. Use `no_profile` when there is no profile
+to read — writing those as `unreadable` re-reads them every 14 days forever. Set `MODE=refresh` on
+a refresh pass so the `no`-share floor is not applied to records selected for having been
+confirmed already.
 
 The script enforces the rules you must not bypass: no `hs_lead_status` on a `yes`; only the four
 lead-status literals; native `jobtitle` only at `title_conf` ≥ 0.90 with no hedge words in the
@@ -132,7 +139,8 @@ the ICP.
 ## 4. Outputs + honest reporting
 
 Two dynamic lists via `scripts/twolists.py` / `listb.py`: **Moved Companies** (evidence CONTAINS
-`RE-ASSOCIATED`) and **No Primary Associated Company** (`number_of_associated_companies = 0`).
+`ai__reassociated_on` IS KNOWN, OR the legacy `RE-ASSOCIATED` substring) and **No Primary
+Associated Company** (`number_of_associated_companies = 0`).
 
 Report, every run:
 

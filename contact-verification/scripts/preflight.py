@@ -24,15 +24,21 @@ fail=[]; warn=[]
 # A routine clones the default branch. If that branch predates the QA fixes, the run will
 # look successful and do nothing. Refuse rather than emit a false clean bill of health.
 REQUIRED={
- 'queue.py':        [('STALE_DAYS',          'staleness window (refresh passes re-read aged verdicts)'),
-                     ('sys.exit(2)',         'fail-fast on non-2xx')],
- 'writeverdicts.py':[('sys.exit(2)',         'fail-fast on non-2xx'),
-                     ('title_conf',          'jobtitle confidence gate'),
-                     ('RECORD DROPPED',      'rule refusals')],
- 'movepipe.py':     [('dm not supplied',     'no silent Not-Decision-Maker default'),
-                     ('associations read failed','associations guard')],
- 'phoneaudit.py':   [("reassoc_'+lid",       'per-list log filename')],
- 'verifyphone.py':  [("reassoc_'+lid",       'per-list log filename')],
+ 'queue.py':        [('STALE_DAYS',              'staleness window'),
+                     ('sys.exit(2)',             'fail-fast on non-2xx'),
+                     ('def due(',                'per-verdict-class retry intervals'),
+                     ('NOPROFILE_DAYS',          'no_profile long recheck')],
+ 'writeverdicts.py':[('sys.exit(2)',             'fail-fast on non-2xx'),
+                     ('title_conf',              'jobtitle confidence gate'),
+                     ('RECORD DROPPED',          'rule refusals'),
+                     ('VERDICT_OK',              'verdict vocabulary enforcement'),
+                     ('ai__li_last_attempt_date','attempt vs confirmed date split')],
+ 'movepipe.py':     [('dm not supplied',         'no silent Not-Decision-Maker default'),
+                     ('associations read failed','associations guard'),
+                     ('ai__reassociated_on',     'mover marker as a date, not a substring')],
+ 'twolists.py':     [('ai__reassociated_on',     'Moved-Companies filters the date')],
+ 'phoneaudit.py':   [("reassoc_'+str(lid)",     'per-list log filename')],
+ 'verifyphone.py':  [("reassoc_'+str(lid)",     'per-list log filename')],
 }
 for fn,checks in REQUIRED.items():
     p=os.path.join(HERE,fn)
@@ -77,6 +83,9 @@ name=meta.get('name'); size=meta.get('additionalProperties',{}).get('hs_list_siz
 otype=meta.get('objectTypeId'); ptype=meta.get('processingType')
 print("ok   list "+lid+": "+repr(name)+" objectType="+str(otype)+" processing="+str(ptype)+" size="+str(size))
 if otype!='0-1': fail.append("LIST  objectTypeId "+str(otype)+" is not contacts (0-1)")
+if ptype and ptype!='DYNAMIC':
+    fail.append("LIST  processingType "+str(ptype)+" is not DYNAMIC - a static list does not "
+                "recalculate, so coverage and the output lists are meaningless")
 txt,code=call('GET','https://api.hubapi.com/crm/v3/lists/'+lid+'/memberships?limit=2')
 ids=[x.get('recordId') for x in (json.loads(txt) if code.startswith('2') else {}).get('results',[])]
 if not ids:
@@ -87,9 +96,11 @@ print("ok   membership probe: "+str(len(ids))+" member(s) readable, e.g. "+str(i
 
 # ---------- 4. every property this process writes must still exist ------------------------
 WRITES=['ai__li_still_at_company','ai__contact_evidence','ai__contact_verified_date',
-        'ai__sources_confirming','ai__job_title','validated__linkedin_or_manually',
-        'hs_linkedin_url','linkedin_profile_url__unique_value','previous__company_domain_name',
-        'jobtitle','hs_lead_status','company','phone','business_phone','email']
+        'ai__li_last_attempt_date','ai__reassociated_on','ai__li_tenure_years',
+        'ai__li_recent_role_change','ai__sources_confirming','ai__job_title',
+        'validated__linkedin_or_manually','hs_linkedin_url','linkedin_profile_url__unique_value',
+        'previous__company_domain_name','jobtitle','hs_lead_status','company','phone',
+        'business_phone','email']
 txt,code=call('GET','https://api.hubapi.com/crm/v3/properties/contacts')
 if not code.startswith('2'):
     print("HALT: cannot read the contact property schema - HTTP "+code); sys.exit(2)
@@ -104,6 +115,13 @@ opts={o['value'] for o in (props.get('hs_lead_status') or {}).get('options',[])}
 lost=sorted(LS_OK-opts)
 if lost: fail.append("SCHEMA hs_lead_status lost literal(s): "+", ".join(lost)+" - movers cannot be ejected")
 else: print("ok   lead-status vocabulary: all 4 literals present")
+# The verdict field is an enumeration. Writing a value it does not define 400s mid-pass, AFTER
+# movers have been queued - so check the options, not just that the property exists.
+VERDICTS_NEEDED={'yes','no','unreadable','no_profile'}
+vopts={o['value'] for o in (props.get('ai__li_still_at_company') or {}).get('options',[])}
+vlost=sorted(VERDICTS_NEEDED-vopts)
+if vlost: fail.append("SCHEMA ai__li_still_at_company lost option(s): "+", ".join(vlost))
+else: print("ok   verdict vocabulary: "+", ".join(sorted(VERDICTS_NEEDED))+" all present")
 if 'ai__contact_evidence' in props:
     ml=(props['ai__contact_evidence'] or {}).get('maxLength')
     if ml and int(ml)<990: warn.append("ai__contact_evidence maxLength "+str(ml)+" < the 990 the writers assume")

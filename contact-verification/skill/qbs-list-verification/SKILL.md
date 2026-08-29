@@ -135,14 +135,36 @@ measure coverage against the intake snapshot, never against live membership.
 - **no** = that company's row has an end date, or a different employer is current. Set lead status
   to exactly one literal: `No Longer with Company` (moved) / `Need Updated Info` (moved, destination
   ambiguous/fractional) / `Retired - Remove from All Lists` / `Not Decision Maker` (employed, cannot buy).
-- **unreadable** = no profile, or a real profile with no dated history. Name what was tried.
+- **unreadable** = a TRANSIENT failure to read: 422/locked, rate-limited, a profile that would not
+  load. Worth retrying in days. Name what was tried.
+- **no_profile** = there is no LinkedIn profile to read, or a real profile carries no dated history.
+  This is PERMANENT for this method — retrying costs a read and buys nothing. Splitting it out of
+  `unreadable` is what lets the queue retry the two at different intervals (14 days vs 180) and
+  what makes the `unreadable` guardrail mean something. **Use it.** Writing a no-profile contact as
+  `unreadable` re-reads them roughly every two weeks, forever, and inflates the guardrail that halts
+  the run.
+- **When a record needs a human, say so in the record.** Pass `issue` (and `issue_note`) on the
+  batch item: it writes `ai__verification_issue`, `ai__verification_issue_note` and
+  `ai__verification_issue_on`. Values: `wrong_link_suspected`, `identity_unresolved`, `no_identifier`,
+  `ambiguous_destination`, `company_ambiguous`, `succession_conflict`, `duplicate_contact`,
+  `division_scope_unclear`, `persona_review`, `title_conflict`, `phone_unverified`,
+  `email_unprovable`, `retired_headline`. This is the durable exception register — a judgement call
+  queued only to a session scratch file is a judgement call nobody ever sees.
 
 ## Fields this process writes (repeatable conventions)
 - **Evidence format** (`ai__contact_evidence`): always `Verified - <date> - <evidence> - Changed: <what changed in HubSpot>`. writeverdicts.py builds this; the `Changed:` clause auto-summarises flag/lead-status/title/URL/mover unless you pass an explicit `changed`.
 - **`ai__job_title`** (AI-owned title field): write the current LinkedIn-verified title here via the batch `title` field. Always safe — nothing else writes it.
 - **`jobtitle`** (native title field, ≥90% confidence only): pass `title_conf` (0-1) alongside `title`. At `title_conf >= 0.90` the batch ALSO writes the native `jobtitle`, so reps see the corrected title in the sidebar, screen-pop and exports without a view change. The gate is enforced in code and **fails closed** — no `title_conf`, no native write — and additionally requires verdict `yes` (movers: a resolved employer domain) and evidence free of hedge words (`probably`, `CAUTION`, `succession`, `may be`, …). Do NOT use `ai__sources_confirming` as the confidence signal; it is a count, populated liberally, and would wave nearly everything through. **What ≥0.90 means:** a dated LinkedIn row for THIS employer whose title string you are reading directly, `end: null`, no competing row, no division/parent ambiguity — i.e. you are reading the title, not inferring it. A headline-only title, a people-search hit, or a vendor title is never ≥0.90.
   Two things make the write reversible and honest: the prior `jobtitle` value is recorded in the evidence string (`jobtitle was 'X' -> 'Y' (conf 0.95)`), and the write is **read back**. `jobtitle` has 3 competing integration writers (~38% oscillation, confirmed reverting a `movepipe` write), so expect some reverts: the scripts print `held on read-back N/M`. A revert is a competing integration, not a failed write — `ai__job_title` still holds the truth, and making the native field stick durably is a HubSpot-admin change to the integration field mappings (Shawn only).
-- **`validated__linkedin_or_manually`** (select): set every verified record — `yes`->`Yes`, `no`+Retired->`Retired`, any other `no`/`unreadable`->`Needs Updated`. (`Delete` is human-only, for bogus records.)
+- **`validated__linkedin_or_manually`** (select): set every verified record — `yes`->`Yes`, `no`+Retired->`Retired`, any other `no`/`unreadable`/`no_profile`->`Needs Updated`. (`Delete` is human-only, for bogus records.)
+- **`ai__contact_verified_date`** = the last date employment was actually CONFIRMED. Written **only**
+  on `yes` or `no`. **`ai__li_last_attempt_date`** = every touch, including a failed read. Stamping a
+  verified date on an unreadable made a never-verified record look fresh for 90 days.
+- **`ai__li_tenure_years`** / **`ai__li_recent_role_change`**: pass `tenure` (number) and
+  `role_change` (`yes`/`no`) on the batch item. Both come off the dated row you already read, cost
+  nothing extra, and are the only way tenure-stratified decay is ever computable.
+- **`ai__reassociated_on`** (movers): a date, stamped by movepipe. The Moved-Companies list filters
+  on THIS, not on the `RE-ASSOCIATED` substring, which truncated out of 22 of 70 movers.
 - **LinkedIn URL**: when you correct a slug, pass `li_url`. It is written to `hs_linkedin_url` AND the unique field `linkedin_profile_url__unique_value` (set per-record). A unique-value **collision means another contact already owns that URL** -> compare the two: same person = duplicate (queue for merge, `dedupe_review_<id>.json`), different person = the other record is wrong-linked (queue to fix its URL). Never force past the collision.
 - Canonical verdict field is `ai__li_still_at_company` (the calling list keys on it); the legacy string `ai__still_works_at_company` is NOT used.
 - Persona ("can this person buy?"): the test is buying power, not department. C-level/EVP/SVP/VP with
@@ -247,8 +269,12 @@ boundaries, so prose guardrails in an autonomous run are decoration):
   An auth failure otherwise reads as "no data": zero members, zero unverified — which satisfies the
   stop condition exactly, so one expired token could report a dirty list as clean.
 - A membership walk returning zero members -> refuse to run or to write the intake snapshot. **ENFORCED.**
-- `no` share >60% or <5%, or unreadable >20%, computed over the accumulated verdict log once it
-  passes 50 -> `sys.exit(3)`. **ENFORCED** in writeverdicts.py.
+- `no` share >60% or <5%, unreadable >20%, or `no_profile` >35%, computed over the accumulated
+  verdict log once it passes 50 -> `sys.exit(3)`. **ENFORCED** in writeverdicts.py.
+  Set `MODE=refresh` on a refresh pass: it drops the `no`-share FLOOR only. A refresh deliberately
+  selects records confirmed before, so most re-confirm and a near-zero `no` share is correct
+  behaviour, not a rubber-stamping judge. The ceilings still apply in both modes — they detect the
+  instrument failing, and the mode does not excuse that.
 - Read-back that does not match the requested verdict -> printed per id, `sys.exit(1)`, and the
   unconfirmed ids are **not** written to the verdict log. **ENFORCED.**
 - 5 consecutive identity failures (an account/ban problem) -> stop. *Judgment; not enforced.*
@@ -272,7 +298,8 @@ before suppression. Emit each with the evidence needed to decide in seconds.
 
 ## Outputs
 Per-list verdict log `li_verdicts_<id>.json`; `pending_movers_<id>.json`; and two dynamic lists
-(`scripts/twolists.py`, `listb.py`): "Moved Companies" (evidence CONTAINS RE-ASSOCIATED) and
+(`scripts/twolists.py`, `listb.py`): "Moved Companies" (`ai__reassociated_on` IS KNOWN, OR the
+legacy evidence substring for movers written before that property existed) and
 "No Primary Associated Company" (`number_of_associated_companies = 0`, includeObjectsWithNoValueSet).
 A calling list is `ai__li_still_at_company = yes` AND `hs_lead_status = ConnectandSell Prospect`
 AND IN_LIST <source> (add a dedicated exclusion marker property if you gate on one).

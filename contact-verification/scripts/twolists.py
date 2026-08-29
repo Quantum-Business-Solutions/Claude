@@ -32,8 +32,31 @@ MOVED_DATE=[{"property":"ai__reassociated_on","filterType":"PROPERTY",
 MOVED_LEGACY=[{"property":"ai__contact_evidence","filterType":"PROPERTY",
   "operation":{"operationType":"STRING","operator":"CONTAINS","value":"RE-"+"ASSOCIATED",
                "includeObjectsWithNoValueSet":False}}]
-a=mklist("Claude - Moved Companies (primary company changed, LinkedIn verified)",
-         MOVED_DATE, MOVED_LEGACY)
+# PROBE, do not assert. This file already refuses to guess a filter shape for "has no value"
+# (below); a date operation this codebase has never used deserves the same treatment. Both groups
+# go in ONE create request, so an unaccepted date shape would otherwise take the PROVEN legacy
+# substring filter down with it and leave the highest-value output list simply not existing.
+a=None
+for shape in ({"operationType":"DATE_TIME","operator":"IS_KNOWN","includeObjectsWithNoValueSet":False},
+              {"operationType":"ALL_PROPERTY","operator":"IS_KNOWN","includeObjectsWithNoValueSet":False},
+              {"operationType":"DATE","operator":"IS_KNOWN","includeObjectsWithNoValueSet":False}):
+    MOVED_DATE=[{"property":"ai__reassociated_on","filterType":"PROPERTY","operation":shape}]
+    a=mklist("Claude - Moved Companies (primary company changed, LinkedIn verified)",
+             MOVED_DATE, MOVED_LEGACY)
+    if a: print("         (date filter shape accepted: "+shape["operationType"]+")"); break
+if not a:
+    print("WARN no accepted shape for ai__reassociated_on - falling back to the legacy substring "
+          "ONLY. That filter loses movers to evidence truncation; fix the shape.")
+    a=mklist("Claude - Moved Companies (primary company changed, LinkedIn verified)", MOVED_LEGACY)
+
+# ---- LIST C: the human review queue, resident in HubSpot rather than a scratch file ----
+c=None
+for shape in ({"operationType":"ENUMERATION","operator":"IS_KNOWN","includeObjectsWithNoValueSet":False},
+              {"operationType":"ALL_PROPERTY","operator":"IS_KNOWN","includeObjectsWithNoValueSet":False}):
+    c=mklist("Claude - AI Verification Issues (needs a human)",
+             [{"property":"ai__verification_issue","filterType":"PROPERTY","operation":shape}])
+    if c: break
+if not c: print("WARN could not create the AI Verification Issues list")
 
 # ---- LIST B: contacts with no primary associated company ----
 # probe the right shape for "has no value"
@@ -54,4 +77,7 @@ for label,f in SHAPES:
     if b:
         print("   (shape used: "+label+")")
         break
-json.dump({"moved":a,"no_company":b},open('twolists.json','w'))
+json.dump({"moved":a,"no_company":b,"issues":c},open('twolists.json','w'))
+if not a or not b:
+    import sys as _s
+    print("HALT: an output list was not created - the pass produced no reviewable output."); _s.exit(2)

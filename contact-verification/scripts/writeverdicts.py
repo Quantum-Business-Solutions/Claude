@@ -4,6 +4,8 @@ append to per-list log li_verdicts_<listId>.json, and queue movers to pending_mo
 
 batch.json = [{"id","verdict"(yes|no|unreadable|no_profile),"ev",
                "ls"(optional lead status),"newco"(optional),"sources"(optional),
+               "issue"(optional - machine-readable reason a human is needed -> ai__verification_issue),
+               "issue_note"(optional - one line a human can act on in seconds),
                "tenure"(optional number - years in the current role -> ai__li_tenure_years),
                "role_change"(optional 'yes'/'no' -> ai__li_recent_role_change),
                "title"(optional - current LinkedIn title -> ai__job_title),
@@ -40,6 +42,9 @@ LS_OK={"No Longer with Company","Need Updated Info","Retired - Remove from All L
 # no LinkedIn profile is PERMANENTLY unverifiable by this method and re-reading them forever is waste,
 # while `unreadable` is a transient failure worth retrying. Collapsing them hid both facts.
 VERDICT_OK={"yes","no","unreadable","no_profile"}
+ISSUE_OK={"wrong_link_suspected","identity_unresolved","no_identifier","ambiguous_destination",
+          "company_ambiguous","succession_conflict","duplicate_contact","division_scope_unclear",
+          "persona_review","title_conflict","phone_unverified","email_unprovable","retired_headline"}
 CONFIRMED={"yes","no"}      # only these two justify stamping a "verified" date
 TMP=tempfile.NamedTemporaryFile('w',suffix='.json',delete=False).name
 def call(m,url,body=None,fatal=True):
@@ -137,6 +142,13 @@ for r in V:
     if isinstance(r.get('tenure'),(int,float)) and not isinstance(r.get('tenure'),bool):
         p["ai__li_tenure_years"]=r['tenure']
     if r.get('role_change') in ('yes','no'): p["ai__li_recent_role_change"]=r['role_change']
+    # The durable exception register. Session scratch files do not survive a scheduled run, so a
+    # queued judgement call that lives only in a local JSON is a queued judgement call nobody sees.
+    if r.get('issue'):
+        if r['issue'] not in ISSUE_OK:
+            refused.append((r['id'],"unknown issue '"+str(r['issue'])+"' - RECORD DROPPED")); continue
+        p["ai__verification_issue"]=r['issue']; p["ai__verification_issue_on"]=D
+        if r.get('issue_note'): p["ai__verification_issue_note"]=str(r['issue_note'])[:900]
     if ls: p["hs_lead_status"]=ls
     if r.get('title'): p["ai__job_title"]=r['title']            # AI-owned title, always safe to write
     if wt: p["jobtitle"]=r['title']; titlewrite.append((str(r['id']),r['title'],old_title))
@@ -213,9 +225,17 @@ tmp=f+'.tmp'; json.dump(log,open(tmp,'w'),indent=1); os.replace(tmp,f)
 from collections import Counter
 print("li_verdicts_"+lid+" total "+str(len(log))+" "+str(dict(Counter(x['verdict'] for x in log))))
 # running guardrails over the accumulated log (the model cannot hold these across context windows)
+# MODE matters. A refresh pass deliberately selects records that were confirmed before, so most
+# re-confirm and the `no` share is legitimately near zero - the floor exists to catch a judge
+# rubber-stamping `yes` on a FIRST pass, and on a refresh it fires on correct behaviour. Ceilings
+# still apply in both modes: they detect the instrument failing, which mode does not excuse.
+MODE=os.environ.get('MODE','first_pass')
 c=Counter(x['verdict'] for x in log); n=len(log)
 if n>=50:
     no_share=c.get('no',0)/n; un_share=c.get('unreadable',0)/n; np_share=c.get('no_profile',0)/n
+    if MODE=='refresh' and no_share<0.05:
+        print("note: 'no' share %.1f%% - floor not applied in MODE=refresh (re-confirming known-good records)"%(no_share*100))
+        no_share=0.10
     if no_share>0.60 or no_share<0.05:
         print("GUARDRAIL: 'no' share %.0f%% over %d verdicts - outside 5-60%%. HALT and report."%(no_share*100,n)); sys.exit(3)
     if un_share>0.20:
@@ -230,4 +250,8 @@ if n>=50:
         print("  That many contacts absent from LinkedIn is a statement about the SOURCE of this")
         print("  data or about a sector this method cannot see - not a per-contact finding.")
         sys.exit(3)
+# A batch where everything was refused writes nothing and would otherwise exit 0 - which an
+# unattended runner reads as a clean success. Refusal is a finding, not a no-op.
+if refused and not inputs:
+    print("HALT: every record in this batch was refused - nothing was written."); sys.exit(3)
 if bad: sys.exit(1)

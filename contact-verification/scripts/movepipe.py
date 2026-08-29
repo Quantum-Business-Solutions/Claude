@@ -95,6 +95,13 @@ for m in M:
             d.append({"contact":cid,"newco":newco,"candidates":[{"id":x['id'],"name":x['properties'].get('name'),"domain":x['properties'].get('domain')} for x in res]})
             tmp=dr+'.tmp'; json.dump(d,open(tmp,'w'),indent=1); os.replace(tmp,dr)
             log.append({"id":cid,"newco":newco,"ok":False,"err":str(len(res))+" companies share this name - queued to "+dr})
+            # also raise it IN HubSpot - the scratch file dies with the container
+            call('PATCH','https://api.hubapi.com/crm/v3/objects/contacts/'+cid,
+                 {"properties":{"ai__verification_issue":"company_ambiguous",
+                                "ai__verification_issue_on":D,
+                                "ai__verification_issue_note":("%d HubSpot companies are named %r - "
+                                  "pick the right one before re-associating."%(len(res),newco[:60]))}},
+                 fatal=False)
             print("QUEUE "+cid+" "+str(len(res))+" companies named '"+newco[:30]+"' -> "+dr); continue
         if res: coid=res[0]['id']
         else:
@@ -144,9 +151,19 @@ for m in M:
        "validated__linkedin_or_manually":("Yes" if dm else "Needs Updated")}
     if m.get('title'): p["ai__job_title"]=m['title']
     if wt: p["jobtitle"]=m['title']
+    if not dom:
+        # re-associated without a proven domain: the company record has no ICP fields and the
+        # contact silently leaves every gated list. Surface it rather than let it vanish.
+        p["ai__verification_issue"]="ambiguous_destination"; p["ai__verification_issue_on"]=D
+        p["ai__verification_issue_note"]=("Re-associated to %r with no verified domain - confirm "
+                                          "the employer and fill the ICP fields."%newco[:60])
     if isinstance(m.get('tenure'),(int,float)) and not isinstance(m.get('tenure'),bool):
         p["ai__li_tenure_years"]=m['tenure']
-    p["ai__li_recent_role_change"]="yes"     # a mover changed roles by definition
+    # Deliberately NOT hardcoded to "yes". Nothing in this process ever writes it back to "no",
+    # so an unconditional write means every contact ever re-associated reads "recent role change"
+    # forever - and `ai__reassociated_on` (above) already records the same fact WITH a date that
+    # can be aged. Write it only when the caller actually judged recency.
+    if m.get('role_change') in ('yes','no'): p["ai__li_recent_role_change"]=m['role_change']
     if m.get('li_url'): p["hs_linkedin_url"]=m['li_url']
     if prev_company and prev_company!=newco: p["previous__company_domain_name"]=prev_company
     u=call('PATCH',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}",{"properties":p}); ok='id' in u
