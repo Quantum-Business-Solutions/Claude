@@ -112,6 +112,45 @@ connected to Brian at the IT support centre. Call cut short as a misdial.
 
 ---
 
+## Stage 0 — Mine what the client already recorded, before reading anything
+
+**Do this first. It is minutes of work and it beat days of reading.**
+
+Reps with no field for "this person decides" type it into the only editable text
+box in front of them: the contact's name.
+
+```
+firstname "Tomiko (DM)"          lastname "Leitner (DM)"
+firstname "(Retired) Nancy"      lastname "Lasky (DM) (GONE)"
+firstname "DO NOT EMAIL Katherine"
+lastname  "Mansu (DM) (Replaced Tami F)"     <- succession, recorded in a name
+```
+
+At UBEO this yielded **2,088 contacts in two minutes** — 183 decision makers and
+1,900 status findings — against 224 records read by hand over hours.
+
+Search `firstname` and `lastname` for `(DM)`, `(GONE)`, `(RETIRED)`, `no longer`,
+`DO NOT CALL`, `DO NOT EMAIL`, `(POC)`, `(left)`, `(replaced`. Then:
+
+- **Verify literally.** A CONTAINS_TOKEN search for `DO NOT CALL` matches a
+  contact genuinely named **Do Nguyen**. Re-check every hit with a real regex
+  before you count it — at UBEO that removed 515 of 2,628 hits.
+- **Never modify the name.** Write the AI fields only. The names feed
+  personalization, dedupe and integrations; editing them is a separate decision
+  for the client, and the migration must be safe to re-run.
+- **Never overwrite a verdict that came from reading an engagement.** That is
+  better evidence than a marker of unknown age.
+
+Report the side effects too. Markers in `firstname` render in email greetings —
+*"Hi DO NOT EMAIL Katherine,"* — and any enrichment tool that writes the name
+field silently destroys the intelligence.
+
+Also sweep for legacy free-text fields carried over in migrated bodies
+(`SalesStrategy:`, `SalesChainID:`). **Measure before mining them:** UBEO's
+`SalesStrategy` appears on 178,240 tasks and a 60-record sample contained *zero*
+decision-maker statements — it is mostly revenue boilerplate. The one real hit
+was already caught by the ordinary language sweep.
+
 ## Stage 1 — Find conversations, not dial attempts
 
 **Most logged calls never reached a person.** At UBEO roughly 90% of the recent
@@ -157,6 +196,35 @@ not the (right person|decision maker) · not in charge · not my area
 At UBEO: **17 of 650 conversations** (2.6%). That is the real working set —
 small, and worth reading properly.
 
+## Stage 2.5 — Deduplicate before you read
+
+**A migrated CRM stamps an account-level header onto every engagement for that
+account.** The same sentence appears on ten records:
+
+```
+x64  "USE THE 202 298 4268 NUMBER TO CALL DM"
+x52  "Mike Seay/DM - FLAVO Rx IS THE NAME OF THE COMPANY"
+x36  "***HQ FOR 4 or 5 LOCATIONS AND GARY YANKANICH IS POC AND DM FOR ALL LOCATIONS***"
+x11  "Linda POC and Trish the final decision maker"
+```
+
+Group by the normalised header text, read once, write the determination to every
+record in the group. At UBEO 3,710 records collapsed to 1,702 determinations, and
+the first 18 groups read covered **245 records — a 13.6x multiplier**.
+
+### Strip call scripts first
+
+The single largest "group" at UBEO was **1,761 records of one SDR call script**:
+
+> *"Hi, this is _____ with UBEO Business Services… I was curious who typically
+> oversees those areas for your organization." **Prospect Identifies Decision
+> Maker** "Perfect. The reason for my call is…"*
+
+It matched every decision-maker filter because the *script* discusses decision
+makers. Nothing in it is about any real account. Detect templates by their
+placeholders (`____`, `Hi, this is _`) and by any single text repeated across
+hundreds of records, and drop them before ranking.
+
 ## Stage 3 — Read them
 
 Patterns cannot finish this job. Three things defeat them, all common:
@@ -174,6 +242,33 @@ first.
 Read each candidate and record: the name, their stated role, the confidence
 tier, and one line on *why* you reached that determination. That last part is
 what makes the field auditable.
+
+### Can you infer authority from how the contact talks? Tested: no.
+
+It is a reasonable idea — a person with authority says *"we went with Ricoh"*,
+*"I handle the copiers"*, *"send me a proposal"* — so it was built and validated
+against 220 hand-read calls where the answer was already known.
+
+**It found 0 of 16.** The cause is structural:
+
+```
+hand-read calls containing FIRST-person authority ("I handle")  :   0 of 220
+hand-read calls containing THIRD-person authority ("X handles") :  91 of 220
+```
+
+The notes are **AI-generated summaries, not transcripts**. First-person speech is
+paraphrased into the third person before it is ever stored. Rebuilt as
+coreference — *does the authority verb attach to the person who answered?* — it
+reached **26% agreement**, failing the usual way by extracting `who`,
+`person who`, `she`, `staff members`, `that Greg` as names.
+
+Verbatim rep-written tasks were tested too, on the theory they escape the
+summariser: **1 relevant hit in 96 sampled records.**
+
+**Use inference to rank the reading queue, never to fill a field.** And be
+careful quoting portal-wide counts for these phrases — summing `CONTAINS_TOKEN`
+across four objects and several properties inflates them wildly ("I handle"
+looked like 6,562; on tasks it is 56).
 
 ## Stage 4 — Resolve against the CRM
 
@@ -226,6 +321,13 @@ The rules that produce those scores:
   names are ≥6 characters. It lets through Sabina/Sabrina and Steven/Stephen; it
   keeps out Mark/Mary and Kim/Tim, which are too short to distinguish a typo from
   a different name.
+- **Strip honorifics before matching.** A title routinely stands where a first
+  name should be — `Pastor Halley` is Anthony Halley, `Dr. Amaker` is Corey
+  Amaker, `Mrs. Cantwell` has no first name recorded at all. Church, school and
+  medical accounts make this constant. Strip `Pastor|Rev|Father|Sister|Dr|Mr|
+  Mrs|Ms|Prof|Deacon|Bishop|Rabbi|Coach|Principal`, then allow a bare surname to
+  match on its own — but only when the surname is longer than four characters,
+  or `Pastor Lee` starts matching every Leek and Leach at the account.
 - **Single-token names never use containment.** Notes name a lone first name
   constantly — *"ask for Kim, she oversees print"*. Containment would match `Kim`
   to `Kim O`, `Kimberly Anderson` and `Kimura` alike, and `Dan` to `Danielle

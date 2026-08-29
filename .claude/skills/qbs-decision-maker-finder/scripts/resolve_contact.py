@@ -23,6 +23,14 @@ def post(u, b):
         except Exception: time.sleep(2*(i+1))
     return {}
 
+# Titles stand where a first name should be - "Pastor Halley" is Anthony Halley,
+# "Mrs. Cantwell" has no first name at all. Common in church, school and medical
+# accounts, which is most of this corpus.
+HONORIFIC = re.compile(r"^\s*(?:pastor|rev(?:erend)?|father|fr|sister|sr|brother|"
+                       r"dr|doctor|mr|mrs|ms|miss|prof(?:essor)?|deacon|bishop|rabbi|"
+                       r"chief|capt(?:ain)?|sgt|officer|coach|principal)\.?\s+", re.I)
+def strip_title(s): return HONORIFIC.sub("", (s or "").strip())
+
 def norm(s): return re.sub(r"[^a-z]", "", (s or "").lower())
 
 def lev(a, b):
@@ -56,9 +64,13 @@ def score(want, cand_first, cand_last):
     edit apart sit Eric/Erik (same person) and Mark/Mary, Kim/Tim (different
     people), so edit distance alone cannot decide and phonetics must.
     """
+    want = strip_title(want); cand_first = strip_title(cand_first)
     w = norm(want); cf = norm(cand_first); cl = norm(cand_last); full = cf + cl
     if not w or not full: return 0
     parts = [p for p in re.split(r"\s+", want.strip()) if p]
+    # a bare surname after a title - "Pastor Halley", "Mrs. Cantwell" - matches on
+    # the surname alone, but only when it is distinctive enough to be unambiguous
+    if len(parts) == 1 and norm(parts[0]) == cl and len(cl) > 4: return 2
     # SINGLE-TOKEN NAMES FIRST. Containment must not see them: "Kim" is contained in
     # "Kim O", "Kimberly Anderson" and "Kimura" alike, and notes name a lone first
     # name constantly ("ask for Kim, she oversees print"). Exact first name only,
@@ -95,12 +107,12 @@ def score(want, cand_first, cand_last):
     if difflib.SequenceMatcher(None, w, full).ratio() >= 0.90: return 2
     return 0
 
-def candidates(call_id):
+def candidates(call_id, obj="calls"):
     """directly-associated contacts first, then everyone at the company"""
     out, seen = [], set()
-    d = post("https://api.hubapi.com/crm/v4/associations/calls/contacts/batch/read", {"inputs":[{"id":call_id}]})
+    d = post("https://api.hubapi.com/crm/v4/associations/%s/contacts/batch/read" % obj, {"inputs":[{"id":call_id}]})
     direct = [str(t["toObjectId"]) for r in d.get("results",[]) for t in r.get("to",[])]
-    d = post("https://api.hubapi.com/crm/v4/associations/calls/companies/batch/read", {"inputs":[{"id":call_id}]})
+    d = post("https://api.hubapi.com/crm/v4/associations/%s/companies/batch/read" % obj, {"inputs":[{"id":call_id}]})
     comps = [str(t["toObjectId"]) for r in d.get("results",[]) for t in r.get("to",[])]
     roster = []
     if comps:
@@ -117,10 +129,10 @@ def candidates(call_id):
     out.sort(key=lambda r: order.get(r["id"], 999))
     return out, direct
 
-def resolve(name, call_id, cands=None):
+def resolve(name, call_id, cands=None, obj="calls"):
     """-> (contact_id, buying_role_state, matched_name, match_strength)"""
     if not name: return None, "NoContact", None, 0
-    if cands is None: cands, _ = candidates(call_id)
+    if cands is None: cands, _ = candidates(call_id, obj)
     best = (0, None); hits = 0
     for r in cands:
         p = r["properties"]
