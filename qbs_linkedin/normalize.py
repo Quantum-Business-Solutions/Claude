@@ -18,6 +18,28 @@ host             linkedin.com 94.9% / www.linkedin.com 5.1%  **SPLIT**
 Same slug already stored in two host forms: 0 pairs. So no duplicates exist
 yet, but ~1 in 20 records is in the minority form and any new write in the
 other form manufactures one.
+
+The dedupe mechanism is HubSpot's ``idProperty`` lookup, and it is BYTE-EXACT.
+Verified live against contact 251 (Clark Peterson), whose stored value is
+``https://linkedin.com/in/clarkpeterson1``::
+
+    GET /crm/v3/objects/contacts/{url}?idProperty=linkedin_profile_url__unique_value
+
+    https://linkedin.com/in/clarkpeterson1       -> 200 FOUND (id 251)
+    https://www.linkedin.com/in/clarkpeterson1   -> 404 MISS
+    https://linkedin.com/in/clarkpeterson1/      -> 404 MISS
+    https://linkedin.com/in/ClarkPeterson1       -> 404 MISS
+
+On an upsert, every one of those 404s becomes a CREATE. So the unique property
+prevents duplicates only for values already in the exact stored form; this
+module is what guarantees that. It is not a replacement for the unique key --
+it is the guard that makes the unique key actually fire.
+
+A second, separate hazard: a unique constraint enforces "one contact per URL",
+so it dedupes a WRONG value just as confidently as a right one. Writing a
+relative's URL into the key does not create a duplicate; it permanently binds
+the wrong identity to the record. That is what :func:`choose_profile_url`
+guards, and why it skips rather than guesses.
 """
 
 from __future__ import annotations
