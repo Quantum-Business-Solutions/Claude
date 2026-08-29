@@ -48,7 +48,8 @@ E_ORD   = re.compile(r'\b(first|second|third|fourth|fifth|1st|2nd|3rd|4th|5th)\s
 # "just renewed for 5 years" / "recently renewed"
 R_TERM  = re.compile(r'\b(?:just|recently|newly|only\s+just)\s+(?:renewed|re-?signed|signed)\b[^.]{0,50}?\bfor\s+(?:another\s+)?'+DUR+r'\s*'+UNIT, re.I)
 R_BARE  = re.compile(r'\b(?:just|recently|newly)\s+(?:renewed|re-?signed|signed)\b(?![^.]{0,30}\bnot\b)', re.I)
-R_YEAR  = re.compile(r'\b(?:renewed|re-?signed|signed|started)\b[^.]{0,40}?\b(?:in|back in)\s+(20\d{2})\b(?:[^.]{0,40}?\bfor\s+'+DUR+r'\s*'+UNIT+r')?', re.I)
+R_YEAR  = re.compile(r'\b(?:renewed|re-?signed|signed|started)\b(?:\s+(?:a|an|the|their|our|new)){0,3}\s*(?:(\d+)\s*[- ]?(?:yr|yrs|year|years)\s*)?(?:lease|contract|agreement|deal|term)?\s*\b(?:in|back in)\s+(20\d{2})\b(?:[^.]{0,25}?\bfor\s+'+DUR+r'\s*'+UNIT+r')?', re.I)
+CALLBACK = re.compile(r"\b(?:call|try|follow(?:ing)?[- ]?up|reach out|check|touch base|contact)\s+(?:me\s+|them\s+|him\s+|her\s+)?(?:back\s+)?(?:again\s+)?(?:in|around|early|late|by)\b", re.I)
 NEG     = re.compile(r"\b(?:not|isn'?t|aren'?t|won'?t|didn'?t|never|no longer|hasn'?t)\b", re.I)
 
 def months(v, unit):
@@ -57,7 +58,7 @@ def months(v, unit):
     return v * (1 if u.startswith('m') else 12)
 
 def derive(sent, ts):
-    """-> (end_date, src, basis, tier) or None. sent is ONE sentence."""
+    """-> (end, src, basis, tier, term_months, year_only) or None. sent is ONE sentence."""
     s = sent.strip()
     if len(s) < 12: return None
     m = E_TOTAL.search(s)
@@ -68,7 +69,7 @@ def derive(sent, ts):
         el_mo = months(el, m.group(2) or 'year')
         tot_mo = months(float(m.group(3)), m.group(4))
         if tot_mo and el_mo is not None and 0 <= el_mo < tot_mo and tot_mo <= 120:
-            return add_months(ts, tot_mo - el_mo), "computed from elapsed term against a stated total", m.group(0).strip(), "CALCULATED"
+            return add_months(ts, tot_mo - el_mo), "computed from elapsed term against a stated total", m.group(0).strip(), "CALCULATED", tot_mo, False
     m = E_ORD.search(s)
     if m:
         el = ORD[m.group(1).lower()] - 0.5
@@ -76,7 +77,7 @@ def derive(sent, ts):
         if 0 <= el*12 < tot_mo:
             tier = "CALCULATED" if m.group(2) else "PROJECTED"
             extra = "" if m.group(2) else " (assumes the 60-month copier term)"
-            return add_months(ts, tot_mo - el*12), "computed from elapsed term"+extra, m.group(0).strip(), tier
+            return add_months(ts, tot_mo - el*12), "computed from elapsed term"+extra, m.group(0).strip(), tier, tot_mo, False
     m = E_ONLY.search(s)
     if m:
         if re.search(r'year\s+(?:and|&)\s+(?:a\s+)?half', m.group(0), re.I): el_mo = 18.0
@@ -86,23 +87,29 @@ def derive(sent, ts):
             if re.search(r'(?:and|&)\s+(?:a\s+)?half', m.group(0), re.I): el += 0.5
             el_mo = months(el, m.group(2) or 'year')
         if el_mo is None or not (0 <= el_mo < DEFAULT_TERM_MO): return None
-        return add_months(ts, DEFAULT_TERM_MO - el_mo), "computed from elapsed term (assumes the 60-month copier term)", m.group(0).strip(), "PROJECTED"
+        return add_months(ts, DEFAULT_TERM_MO - el_mo), "computed from elapsed term (assumes the 60-month copier term)", m.group(0).strip(), "PROJECTED", DEFAULT_TERM_MO, False
     m = R_YEAR.search(s)
     if m:
-        yr = int(m.group(1)); start = datetime.date(yr, 7, 1)
-        tot_mo = months(num(m.group(2)), m.group(3)) if m.group(2) else DEFAULT_TERM_MO
+        # "renewed for 5 years, call back in 2026" - 2026 is a callback, not a start
+        window = s[max(0, m.start()-45):m.start(2) if m.lastindex and m.start(2) > 0 else m.start()]
+        if CALLBACK.search(window): m = None
+    if m:
+        yr = int(m.group(2)); start = datetime.date(yr, 7, 1)
+        stated = m.group(1) or m.group(3)
+        unit = 'year' if m.group(1) else m.group(4)
+        tot_mo = months(num(stated), unit) if stated else DEFAULT_TERM_MO
         if tot_mo and 12 <= tot_mo <= 120 and 2005 <= yr <= TODAY.year:
-            tier = "CALCULATED" if m.group(2) else "PROJECTED"
-            extra = "" if m.group(2) else " (assumes the 60-month copier term)"
-            return add_months(start, tot_mo), "computed from a stated start year"+extra, m.group(0).strip(), tier
+            tier = "CALCULATED" if stated else "PROJECTED"
+            extra = "" if stated else " (assumes the 60-month copier term)"
+            return add_months(start, tot_mo), "computed from a stated start year"+extra, m.group(0).strip(), tier, tot_mo, True
     m = R_TERM.search(s)
     if m:
         tot_mo = months(num(m.group(1)), m.group(2))
         if tot_mo and 12 <= tot_mo <= 120:
-            return add_months(ts, tot_mo), "computed from a stated renewal term", m.group(0).strip(), "CALCULATED"
+            return add_months(ts, tot_mo), "computed from a stated renewal term", m.group(0).strip(), "CALCULATED", tot_mo, False
     m = R_BARE.search(s)
     if m and not NEG.search(s[:m.start()]):
-        return add_months(ts, DEFAULT_TERM_MO), "computed from a recent renewal (assumes the 60-month copier term)", m.group(0).strip(), "PROJECTED"
+        return add_months(ts, DEFAULT_TERM_MO), "computed from a recent renewal (assumes the 60-month copier term)", m.group(0).strip(), "PROJECTED", DEFAULT_TERM_MO, False
     return None
 
 def run(pool_file, typ, body_props, already):
@@ -124,11 +131,17 @@ def run(pool_file, typ, body_props, already):
             rank = {"CALCULATED":2, "PROJECTED":1}[d[3]]
             if not best or rank > best[0]: best = (rank, d)
         if not best: continue
-        end, src, basis, tier = best[1]
+        end, src, basis, tier, term_mo, year_only = best[1]
         flags = []
-        if end < TODAY:                       # one-cycle roll-forward, same cap as the main run
-            end = add_months(end, DEFAULT_TERM_MO); rolled += 1
+        if year_only:
+            # only the YEAR was stated; July 1 is the midpoint, not a real date
+            flags.append("start month unknown - year midpoint used, +/- 6 months")
+        if end < TODAY:
+            # roll forward by THIS lease's own term, not a flat 60 months
+            end = add_months(end, term_mo or DEFAULT_TERM_MO); rolled += 1
+            tier = "PROJECTED"
             flags.append("lapsed - rolled forward one cycle")
+            if end < TODAY: continue          # still lapsed after one cycle - the cap holds
         if not (TODAY - datetime.timedelta(days=400) <= end <= datetime.date(2034,12,31)): continue
         out.append({"engagement_id":eid, "engagement_type":typ, "ts":ts_raw,
                     "end":end.isoformat(), "basis":basis, "src":src, "tier":tier,

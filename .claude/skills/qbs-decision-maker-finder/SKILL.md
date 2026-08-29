@@ -226,6 +226,11 @@ The rules that produce those scores:
   names are ≥6 characters. It lets through Sabina/Sabrina and Steven/Stephen; it
   keeps out Mark/Mary and Kim/Tim, which are too short to distinguish a typo from
   a different name.
+- **Single-token names never use containment.** Notes name a lone first name
+  constantly — *"ask for Kim, she oversees print"*. Containment would match `Kim`
+  to `Kim O`, `Kimberly Anderson` and `Kimura` alike, and `Dan` to `Danielle
+  Smith`. A one-word name matches on **exact first name only**, and if several
+  people at the account share it, it identifies nobody and drops to a flag.
 - **Shared-prefix pairs score 1, never 2.** Britney/Brittany (same person) and
   Michael/Michelle (different people) are *identical* under every mechanical test:
   four-character shared prefix, three edits apart, same surname. Nothing separates
@@ -273,6 +278,21 @@ nobody to sequence.
 they decide. Populating `hs_buying_role` turns a dead field into a filter the
 whole team can use.
 
+Two more things fall out for free, and clients tend to want them more than the
+lists above.
+
+**Opt-outs and do-not-call requests buried in note text.** *"Gina requested to be
+taken off the call list."* *"He asked to be removed from the call list and not
+contacted again."* These are compliance obligations sitting in free text where no
+suppression process can see them. Three appeared in the first 64 records. Surface
+them loudly.
+
+**Buying structure.** Notes routinely reveal *how* the account buys, which decides
+whether there is a decision maker to find at all: *"all contracts are handled
+through the state"*, *"their corporate office in San Antonio manages those
+services"*, *"individuals manage their own printer needs"*. A site that cannot
+decide should not be worked as if it can.
+
 A third thing falls out for free: **dead contacts.** *"Pedro informed me that
 Judy Gilmore is retired"* — Judy is the contact the call was logged against.
 Capture those; they are CRM hygiene nobody is paying for and everybody wants.
@@ -316,6 +336,25 @@ Scaled to the full portal, the same funnel over every call in HubSpot produced a
 **reading queue of 3,779**. That is the honest size of the job: ~3,800 records a
 human (or a careful model) has to read. There is no shortcut that preserves the
 accuracy.
+
+### The headline number
+
+Across the first 64 records read at UBEO:
+
+| | |
+|---|---|
+| Note names someone **other than** the logged contact | **42** |
+| Logged contact **is** the decision maker | 12 |
+| Unclear from the note | 8 |
+| No contact associated at all | 2 |
+
+**Roughly four in five conversations were logged against the wrong person.** Not
+through carelessness — the rep logs the call against whoever the dialer dialled,
+and the note faithfully records that someone else decides. The information was
+always there; nothing read it.
+
+Of the 38 decision makers actually named: **29 exist as contacts with the buying
+role unset**, and **9 do not exist in the CRM at all**.
 
 ### What the first read batches actually contained
 

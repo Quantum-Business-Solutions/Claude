@@ -5,6 +5,8 @@ import json, os, sys, time, urllib.request, urllib.error, datetime, socket
 socket.setdefaulttimeout(60)
 PAT = os.environ['PAT']
 OBJ, PROPS = sys.argv[1], sys.argv[2].split(",")
+for _t in ("hs_timestamp", "hs_createdate"):
+    if _t not in PROPS: PROPS.append(_t)   # anchor fields, never optional
 POOL, DONE = "el_%s_pool.json" % OBJ, "el_%s_done.json" % OBJ
 pool = json.load(open(POOL)) if os.path.exists(POOL) else {}
 done = set(json.load(open(DONE))) if os.path.exists(DONE) else set()

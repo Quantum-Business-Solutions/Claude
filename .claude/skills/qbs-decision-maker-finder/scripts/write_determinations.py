@@ -7,7 +7,13 @@ CASES = json.load(open(sys.argv[1]))
 written = 0; nearmiss = []
 
 for c in CASES:
-    cands, _ = candidates(c["call"])
+    cands, direct = candidates(c["call"])
+    if not c.get("assoc"):          # look it up rather than transcribe it by hand
+        for x in cands:
+            if x["id"] in direct:
+                p = x["properties"]
+                c["assoc"] = ("%s %s" % (p.get("firstname") or "", p.get("lastname") or "")).strip()
+                break
     cid, role_state, crm_name, strength = resolve(c.get("dm"), c["call"], cands)
     in_hs = "Yes" if cid else ("No" if c.get("dm") else None)
 

@@ -270,6 +270,71 @@ Ask of every extraction rule: *does this phrasing have a mirror image that means
 the opposite?* Remaining/elapsed. Signed/expiring. Renewed/lapsed. The mirror is
 usually in the data at similar volume, and it usually reads as a near-synonym.
 
+## 11. The anchor field missing from the harvest — failure mode 2, second helping
+
+The elapsed-term harvester was told which body fields to search and dutifully
+stored exactly those. It was never told to store `hs_timestamp`. Every downstream
+computation measures from the engagement date, so every record hit
+`if not ts: continue` and the extractor reported **0 signals from 14,300
+harvested records** while its unit tests passed 14/14.
+
+Zero is a suspiciously clean number. Treat any extractor that returns *nothing*
+from a large pool as broken until proven otherwise — a genuine yield of zero
+essentially never happens on a pool built from matched keywords.
+
+**Fix:** the harvester appends the anchor fields itself rather than trusting the
+caller:
+
+```python
+for _t in ("hs_timestamp", "hs_createdate"):
+    if _t not in PROPS: PROPS.append(_t)   # anchor fields, never optional
+```
+
+Backfilling an existing pool is cheap — batch/read 100 ids at a time — so a
+mis-harvested pool never needs re-harvesting.
+
+## 12. Regex windows that leap across clauses
+
+```
+"renewed for 5years, call back in 2026"   ->  dated 2031-07-01
+```
+
+The start-year rule allowed up to 40 characters between the verb and the year, so
+it skipped over the real term and read the **callback date** as the lease start,
+then added 60 months. The output looked entirely normal: plausible tier, plausible
+date, evidence quoted.
+
+**Fixes:**
+
+1. Shrink the gap to what the grammar actually needs — a few optional articles,
+   not 40 free characters.
+2. Add an explicit veto for the competing meaning:
+
+```python
+CALLBACK = re.compile(r"\b(?:call|try|follow[- ]?up|reach out|check|touch base)\s+"
+                      r"(?:me |them |him |her )?(?:back )?(?:again )?(?:in|around|by)\b", re.I)
+```
+
+Any date-bearing rule needs the same question asked of it: **what else could this
+number be?** Callback dates, invoice dates, fiscal years and delivery dates all
+look exactly like lease dates to a regex.
+
+## 13. Rolling a lapsed lease forward on the wrong term
+
+The one-cycle roll-forward used a flat 60 months even when the note stated the
+term. *"Signed a new lease in 2018 for 3 yrs"* ended 2021; rolled by 60 months it
+became 2026 and looked current. Rolled by its own 36-month term it lands in 2024 —
+still lapsed, and correctly dropped.
+
+Roll by the term the record states, and only fall back to the convention when
+none is stated. Then re-check the cap: a record still lapsed after one cycle is
+dropped, not rolled again. Applying this at UBEO cut the elapsed-term set from
+1,616 to 1,283 — the 333 removed were all fiction.
+
+**A rolled record is a projection, whatever it was before.** Demote the tier on
+roll-forward; a CALCULATED date that has been moved by an assumed renewal is no
+longer calculated. This alone moved 275 UBEO records out of CALCULATED.
+
 ## Infrastructure failures
 
 Not data bugs, but they cost hours.

@@ -58,13 +58,18 @@ def score(want, cand_first, cand_last):
     """
     w = norm(want); cf = norm(cand_first); cl = norm(cand_last); full = cf + cl
     if not w or not full: return 0
-    if w == full: return 3
-    if w in full or full in w: return 3                        # Amy Greenlee / Greenlee Holland
     parts = [p for p in re.split(r"\s+", want.strip()) if p]
+    # SINGLE-TOKEN NAMES FIRST. Containment must not see them: "Kim" is contained in
+    # "Kim O", "Kimberly Anderson" and "Kimura" alike, and notes name a lone first
+    # name constantly ("ask for Kim, she oversees print"). Exact first name only,
+    # and resolve() downgrades it when several people at the account share it.
     if len(parts) < 2:
         wf = norm(parts[0])
-        if len(wf) > 3 and wf == cf: return 2                  # lone distinctive first name
-        return 1 if (len(wf) > 3 and phon(wf) == phon(cf)) else 0
+        if len(wf) < 3: return 0
+        if wf == cf: return 2
+        return 1 if phon(wf) == phon(cf) else 0
+    if w == full: return 3
+    if w in full or full in w: return 3                        # Amy Greenlee / Greenlee Holland
     wf, wl = norm(parts[0]), norm(parts[-1])
     if not wl or not cl: return 0
     dl, df = lev(wl, cl), lev(wf, cf)
@@ -116,12 +121,16 @@ def resolve(name, call_id, cands=None):
     """-> (contact_id, buying_role_state, matched_name, match_strength)"""
     if not name: return None, "NoContact", None, 0
     if cands is None: cands, _ = candidates(call_id)
-    best = (0, None)
+    best = (0, None); hits = 0
     for r in cands:
         p = r["properties"]
         s = score(name, p.get("firstname"), p.get("lastname"))
+        if s >= 2: hits += 1
         if s > best[0]: best = (s, r)
         if s == 3: break
+    # a lone first name matching several people at the account identifies nobody
+    if len(name.split()) < 2 and hits > 1:
+        return None, "NoContact", None, 1
     if best[0] < 2: return None, "NoContact", None, best[0]
     p = best[1]["properties"]
     br = p.get("hs_buying_role") or ""
