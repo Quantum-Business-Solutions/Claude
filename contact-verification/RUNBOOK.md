@@ -31,7 +31,12 @@ real people; only code and docs go to git.
 # 0. MANDATORY before an unattended run, cheap enough to always run. Refuses the pass if the
 #    checkout predates the QA fixes, the token is dead, the list is empty, a written property
 #    was renamed, or hs_lead_status lost a literal. Exit 2 = environment, 3 = code/schema.
-TOKEN=$TOKEN python3 scripts/preflight.py LIST_ID || echo "HALT - do not run the pass"
+TOKEN=$TOKEN python3 scripts/preflight.py LIST_ID || { echo "HALT - do not run the pass"; exit 1; }
+# 0b. LinkedIn, both transports. MCP first (only path that works from a cloud session); REST as
+#     fallback. `probe` shows why each endpoint answers or does not. HALT only if BOTH fail.
+python3 scripts/unipile.py probe
+python3 scripts/unipile.py selftest || echo "REST down - try the MCP connector before halting"
+# Queue intervals: STALE_DAYS=90 confirmed, RETRY_DAYS=14 unreadable, NOPROFILE_DAYS=180 no_profile.
 # a. self-test: prove your query types return known-good answers before trusting any null
 # b. map the FULL gate chain (this is the step that prevents a false "we broke the list" panic)
 curl -s -H "Authorization: Bearer $TOKEN" \

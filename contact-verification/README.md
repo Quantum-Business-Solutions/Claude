@@ -41,17 +41,20 @@ ZoomInfo MCP tools as a *corroborator*, never as an override.
 
 ## Scripts
 
-Nine scripts. Everything else is judgment, and judgment lives in the skill.
+Thirteen scripts. Everything else is judgment, and judgment lives in the skill.
 
 | Script | Phase | What it does |
 |---|---|---|
+| `preflight.py <listId>` | Phase 0 | **Run before anything, mandatory unattended.** Refuses a run it cannot prove safe: the checkout predates the QA fixes (exit 3), TOKEN missing or HubSpot unreachable (exit 2), the list empty / not a contact list / not DYNAMIC (exit 2), a written property missing, or `hs_lead_status` / `ai__li_still_at_company` missing a value the process writes (exit 3). Every one of those used to present as a confident "nothing needed refreshing". |
+| `unipile.py probe\|selftest\|profile` | Phase 0 | Reaches LinkedIn by whatever transport works. Probes each candidate endpoint, separating TCP reachability from auth so a firewall is never mistaken for a bad key. **Measured: outbound egress from a cloud session reaches port 443 only, and no 443 host serves the tenant API — so the MCP connector is the only LinkedIn path a routine has.** Halt only when BOTH transports fail, and say which. |
 | `listanatomy.py <listId>` | Phase 0 | **Run first.** Maps the full gate chain — recurses every `IN_LIST` upstream gate and every company-level `ASSOCIATION` filter, then lists every property that can eject a contact. Warns when the list gates on a field this process must not write. |
 | `queue.py <listId> [N]` | batch loop | Next N unverified contacts + their LinkedIn identifier; snapshots intake. |
 | `writeverdicts.py <listId> <batch.json>` | batch loop | Writes a batch and enforces the rules no caller may bypass: refuses a lead status on a `yes`, allows only the four valid literals, writes native `jobtitle` only at `title_conf` ≥ 0.90 (fails closed, read back), stamps evidence in the standard format, chunks at 100, diffs requested-vs-returned, reads back to confirm, logs per-list, queues movers. |
 | `movepipe.py <listId> <movers.json>` | movers | Find-or-create company, swap associations (both type IDs), reconcile the flag, carry the phone, stamp `RE-ASSOCIATED` evidence. |
 | `phoneaudit.py` → `fixphones.py` → `verifyphone.py` | phone | Find numbers that belong to a former employer, correct or clear them, prove the fix applied. |
 | `patmail2.py` | email | Universal format set (14 formats) plus nickname short forms, ordered by real-world prevalence. |
-| `twolists.py`, `listb.py` | outputs | Create the two output lists (carries the hard-won HubSpot list-filter shapes). |
+| `twolists.py`, `listb.py` | outputs | Create the three output lists — Moved Companies, No Primary Associated Company, and the AI Verification Issues review queue (carries the hard-won HubSpot list-filter shapes, and probes a filter shape rather than asserting one). |
+| `backfill.py <listId> [--apply]` | migration | Dry-run by default. Brings records written by older code up to the current standard **without inventing anything**: derives `ai__reassociated_on` from the date already in the evidence, and clears `ai__contact_verified_date` where the verdict is `unreadable`/`no_profile`. Refuses to derive tenure or role-change, which would need a re-read. |
 
 ## What is deliberately not in this repo
 

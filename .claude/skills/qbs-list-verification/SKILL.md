@@ -64,7 +64,7 @@ or a Human-queue judgment call. Everything else, decide and keep moving. When in
 single contact, mark it `unreadable` + queue it — never stall the whole run on one record.
 
 ## Phase 0 - Preflight (no writes; abort on any failure)
-**Run `preflight.py <listId>` first.** It refuses the run — before any record is touched — when
+**Run `preflight.py <listId>` first**, then the Unipile self-test. It refuses the run — before any record is touched — when
 the checkout predates the QA fixes (exit 3), TOKEN is missing or HubSpot is unreachable (exit 2),
 the list is empty or not a contact list (exit 2), a written property no longer exists (exit 3), or
 `hs_lead_status` has lost one of the four literals (exit 3). Every one of those previously
@@ -77,6 +77,13 @@ second warning class: gates on properties **this process writes** (`hs_lead_stat
 `business_phone`, …). That second case means the list changes membership underneath the run —
 measure coverage against the intake snapshot, never against live membership.
 
+0. **LinkedIn, both transports.** MCP connector first — it routes via Anthropic's mcp-proxy and is
+   the only path measured working from a cloud session. If it is down, `python3 scripts/unipile.py
+   selftest` tries REST; `probe` shows why each candidate endpoint does or does not answer.
+   Measured: egress from a cloud session reaches port 443 only and no 443 host serves the tenant
+   API, so REST currently cannot work there — a property of the environment, not the key. HALT only
+   if BOTH fail, and name which. An outage written as `unreadable` verdicts is a durable lie about
+   the data; the outage is not durable.
 1. Self-test every query type against a case whose answer you already know before trusting a null
    result (a digits-only phone search silently matches nothing — see FIELD-NOTES). If the self-test
    fails, STOP.
@@ -163,6 +170,14 @@ measure coverage against the intake snapshot, never against live membership.
 - **`ai__li_tenure_years`** / **`ai__li_recent_role_change`**: pass `tenure` (number) and
   `role_change` (`yes`/`no`) on the batch item. Both come off the dated row you already read, cost
   nothing extra, and are the only way tenure-stratified decay is ever computable.
+- **Work order** (`queue.py`): records come back banded — 0 never verified, 1 verdict stale,
+  2 unreadable retry, 3 no_profile recheck — oldest first inside each band, with the depths
+  printed. **Work them in that order.** Nothing starves, and a band that never drains is a
+  capacity fact rather than something hidden by interleaving. Intervals: `STALE_DAYS` 90,
+  `RETRY_DAYS` 14, `NOPROFILE_DAYS` 180.
+- **`backfill.py`**: brings records written by older code up to standard without inventing
+  anything — derives `ai__reassociated_on` from the date already in the evidence, clears a
+  `ai__contact_verified_date` that an `unreadable` never earned. Dry-run unless `--apply`.
 - **`ai__reassociated_on`** (movers): a date, stamped by movepipe. The Moved-Companies list filters
   on THIS, not on the `RE-ASSOCIATED` substring, which truncated out of 22 of 70 movers.
 - **LinkedIn URL**: when you correct a slug, pass `li_url`. It is written to `hs_linkedin_url` AND the unique field `linkedin_profile_url__unique_value` (set per-record). A unique-value **collision means another contact already owns that URL** -> compare the two: same person = duplicate (queue for merge, `dedupe_review_<id>.json`), different person = the other record is wrong-linked (queue to fix its URL). Never force past the collision.
