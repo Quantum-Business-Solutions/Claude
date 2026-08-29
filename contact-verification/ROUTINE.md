@@ -70,6 +70,14 @@ It is NOT fine for an **incremental daily worker**, where it breaks three things
   50 mean the guardrails **never fire at all**
 - the intake snapshot is rewritten every fire, so coverage and the snapshot gap reset daily
 
+**The intake snapshot is per-directory, which makes coverage self-flattering.** `queue.py` writes
+`mem_<id>.txt` into the CURRENT directory and only if it does not already exist. Run from a fresh
+checkout and it writes a NEW snapshot equal to today's membership, so the "in intake snapshot but
+no longer members" gap reads ~0 — a perfect coverage number that measures nothing. Measured on the
+completed list: against the real Aug-19 snapshot (1,614 ids) the gap is **902**; against a
+same-day snapshot it is 0. A routine gets a fresh container every fire, so it always gets the
+flattering number unless the snapshot is stored outside the container.
+
 A daily worker therefore requires the cross-run state to live outside the container — in HubSpot
 itself (properties and lists), or a controlled external store. See the daily-worker design before
 scheduling one.

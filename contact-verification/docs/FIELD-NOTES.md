@@ -355,7 +355,16 @@ address property I have"
 
 ## The property to use - it already exists and is already well populated
   previous__email                  "Previous - Email"                 string/text   (12,785 populated)
-  previous__company_domain_name    "Previous - Company Domain Name"   URL type      (12,051 populated)
+  previous__company_domain_name    "Previous - Company Domain Name"   string/text   (12,051 populated)
+CORRECTED 2026-08-29 by reading the live property schema: this property is `type=string,
+fieldType=text`, NOT a URL type. The note below is WRONG and two QA reviews repeated it from here,
+one of them escalating it to a suspected hard bug in movepipe (a company NAME written into a
+URL-typed field inside the same fatal PATCH as the flag). There is no such bug - the write
+succeeds. What remains is a naming mismatch worth cleaning up someday: a field called "domain
+name" currently receives the previous company's NAME. Kept verbatim below as a record of how a
+confident note in this file propagated into two independent reviews unchallenged.
+
+ORIGINAL (INCORRECT) NOTE:
 CAREFUL: previous__company_domain_name is a URL-type property. A bare domain is REJECTED with
 INVALID_URL - you must write "https://" + domain.
 NEVER clobber an existing previous__email value; read it first and leave it if already set.

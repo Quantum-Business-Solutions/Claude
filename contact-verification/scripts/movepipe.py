@@ -135,11 +135,18 @@ for m in M:
     ev=head+str(m.get('ev',''))[:max(0,900-len(head)-len(tail))]+tail
     if prev_ev: ev=(ev+" || "+prev_ev)[:990]
     p={"company":newco,"ai__li_still_at_company":"yes","ai__contact_verified_date":D,
+       "ai__li_last_attempt_date":D,
+       # A DATE, not a substring inside a 990-char field that truncates. The evidence marker
+       # survived only 69% of movers on a measured pass; a date cannot be truncated away.
+       "ai__reassociated_on":D,
        "ai__sources_confirming":m.get('sources',1),
        "ai__contact_evidence":ev,"hs_lead_status":ls,
        "validated__linkedin_or_manually":("Yes" if dm else "Needs Updated")}
     if m.get('title'): p["ai__job_title"]=m['title']
     if wt: p["jobtitle"]=m['title']
+    if isinstance(m.get('tenure'),(int,float)) and not isinstance(m.get('tenure'),bool):
+        p["ai__li_tenure_years"]=m['tenure']
+    p["ai__li_recent_role_change"]="yes"     # a mover changed roles by definition
     if m.get('li_url'): p["hs_linkedin_url"]=m['li_url']
     if prev_company and prev_company!=newco: p["previous__company_domain_name"]=prev_company
     u=call('PATCH',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}",{"properties":p}); ok='id' in u

@@ -2,8 +2,10 @@
 """writeverdicts.py <listId> <batch.json> - write a batch of verdicts, verify by read-back,
 append to per-list log li_verdicts_<listId>.json, and queue movers to pending_movers_<listId>.json.
 
-batch.json = [{"id","verdict"(yes|no|unreadable),"ev",
+batch.json = [{"id","verdict"(yes|no|unreadable|no_profile),"ev",
                "ls"(optional lead status),"newco"(optional),"sources"(optional),
+               "tenure"(optional number - years in the current role -> ai__li_tenure_years),
+               "role_change"(optional 'yes'/'no' -> ai__li_recent_role_change),
                "title"(optional - current LinkedIn title -> ai__job_title),
                "title_conf"(optional float 0-1 - confidence the title is accurate; >=0.90 ALSO
                             writes the native `jobtitle`. Absent = no native write, ever),
@@ -33,6 +35,12 @@ T=os.environ['TOKEN']
 D=os.environ.get('DATE') or subprocess.run(['date','-u','+%Y-%m-%d'],capture_output=True,text=True).stdout.strip()
 lid=sys.argv[1]; V=json.load(open(sys.argv[2]))
 LS_OK={"No Longer with Company","Need Updated Info","Retired - Remove from All Lists","Not Decision Maker"}
+# The portal defines five values. `moved` is reserved for the mover pipeline (movepipe reconciles to
+# `yes`), so a batch may write four. Splitting `no_profile` out of `unreadable` matters: a person with
+# no LinkedIn profile is PERMANENTLY unverifiable by this method and re-reading them forever is waste,
+# while `unreadable` is a transient failure worth retrying. Collapsing them hid both facts.
+VERDICT_OK={"yes","no","unreadable","no_profile"}
+CONFIRMED={"yes","no"}      # only these two justify stamping a "verified" date
 TMP=tempfile.NamedTemporaryFile('w',suffix='.json',delete=False).name
 def call(m,url,body=None,fatal=True):
     """Fail-fast on any non-2xx. An auth failure must never read as 'no data' and stamp live records."""
@@ -86,6 +94,8 @@ for i in range(0,len(V),100):
     for x in pr.get('results',[]): prior[str(x['id'])]=x['properties'] or {}
 for r in V:
     verdict=r['verdict']; ls=r.get('ls')
+    if verdict not in VERDICT_OK:
+        refused.append((r['id'],"unknown verdict '"+str(verdict)+"' - RECORD DROPPED")); continue
     if ls and verdict=='yes':
         refused.append((r['id'],"ls on a yes verdict - RECORD DROPPED")); continue
     if ls and ls not in LS_OK:
@@ -115,8 +125,18 @@ for r in V:
     head="Verified - "+D+" - "
     ev=head+r['ev'][:max(0,900-len(head)-len(tail))]+tail    # budget so `Changed:` always survives
     p={"ai__li_still_at_company":verdict,"ai__contact_evidence":ev,
-       "ai__contact_verified_date":D,"ai__sources_confirming":r.get('sources',1),
+       "ai__li_last_attempt_date":D,          # every touch, including a failed read
+       "ai__sources_confirming":r.get('sources',1),
        "validated__linkedin_or_manually":validated_of(verdict,ls)}
+    # Only a CONFIRMED verdict earns a verified date. Stamping it on an unreadable made a record
+    # that had never been verified look freshly verified for the whole staleness window, and the
+    # 90-day freshness query returned those records as if they were good.
+    if verdict in CONFIRMED: p["ai__contact_verified_date"]=D
+    # Free to record, already read off the same dated rows, and the only way tenure-stratified
+    # decay is ever computable: a 10-year incumbent and a 4-month hire are not the same risk.
+    if isinstance(r.get('tenure'),(int,float)) and not isinstance(r.get('tenure'),bool):
+        p["ai__li_tenure_years"]=r['tenure']
+    if r.get('role_change') in ('yes','no'): p["ai__li_recent_role_change"]=r['role_change']
     if ls: p["hs_lead_status"]=ls
     if r.get('title'): p["ai__job_title"]=r['title']            # AI-owned title, always safe to write
     if wt: p["jobtitle"]=r['title']; titlewrite.append((str(r['id']),r['title'],old_title))
@@ -187,16 +207,27 @@ for r in accepted:
     if str(r['id']) not in cset: continue      # never log a write we could not confirm
     log.append({"id":str(r['id']),"verdict":r['verdict'],"newco":r.get('newco'),
                 "lead_status":r.get('ls'),"title":r.get('title'),"title_conf":r.get('title_conf'),
-                "jobtitle_written":str(r['id']) in {c for c,_,_ in titlewrite},"date":D})
+                "jobtitle_written":str(r['id']) in {c for c,_,_ in titlewrite},
+                "tenure":r.get('tenure'),"role_change":r.get('role_change'),"date":D})
 tmp=f+'.tmp'; json.dump(log,open(tmp,'w'),indent=1); os.replace(tmp,f)
 from collections import Counter
 print("li_verdicts_"+lid+" total "+str(len(log))+" "+str(dict(Counter(x['verdict'] for x in log))))
 # running guardrails over the accumulated log (the model cannot hold these across context windows)
 c=Counter(x['verdict'] for x in log); n=len(log)
 if n>=50:
-    no_share=c.get('no',0)/n; un_share=c.get('unreadable',0)/n
+    no_share=c.get('no',0)/n; un_share=c.get('unreadable',0)/n; np_share=c.get('no_profile',0)/n
     if no_share>0.60 or no_share<0.05:
         print("GUARDRAIL: 'no' share %.0f%% over %d verdicts - outside 5-60%%. HALT and report."%(no_share*100,n)); sys.exit(3)
     if un_share>0.20:
-        print("GUARDRAIL: 'unreadable' share %.0f%% over %d verdicts - above 20%%. HALT and report."%(un_share*100,n)); sys.exit(3)
+        print("GUARDRAIL: 'unreadable' share %.1f%% over %d verdicts - above 20%%. HALT and report."%(un_share*100,n))
+        print("  'unreadable' is a TRANSIENT read failure. A high share means the instrument is")
+        print("  failing, not that the data is bad - check the Unipile account before continuing.")
+        print("  Records with no profile at all belong in 'no_profile' and are excluded from this")
+        print("  ratio; if they were being written as 'unreadable' that alone can trip it.")
+        sys.exit(3)
+    if np_share>0.35:
+        print("GUARDRAIL: 'no_profile' share %.1f%% over %d verdicts - above 35%%. HALT and report."%(np_share*100,n))
+        print("  That many contacts absent from LinkedIn is a statement about the SOURCE of this")
+        print("  data or about a sector this method cannot see - not a per-contact finding.")
+        sys.exit(3)
 if bad: sys.exit(1)

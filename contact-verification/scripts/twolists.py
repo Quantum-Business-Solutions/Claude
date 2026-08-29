@@ -6,11 +6,13 @@ def post(url,body):
         '-H','Content-Type: application/json','-d','@_tl.json',url],capture_output=True,text=True).stdout
     try: return json.loads(o)
     except Exception: return {"raw":o[:300]}
-def mklist(name,filters,branchop="AND"):
+def mklist(name,*groups,**kw):
+    """Each positional arg is one AND-group; the groups are OR'd together."""
+    branchop=kw.get('branchop','AND')
     body={"name":name,"objectTypeId":"0-1","processingType":"DYNAMIC",
       "filterBranch":{"filterBranchType":"OR","filterBranchOperator":"OR","filters":[],
         "filterBranches":[{"filterBranchType":"AND","filterBranchOperator":branchop,
-                           "filterBranches":[],"filters":filters}]}}
+                           "filterBranches":[],"filters":g} for g in groups]}}
     r=post('https://api.hubapi.com/crm/v3/lists',body)
     lst=r.get('list') or {}
     if lst.get('listId'):
@@ -20,10 +22,18 @@ def mklist(name,filters,branchop="AND"):
     return None
 
 # ---- LIST A: contacts whose primary associated company we changed ----
-MOVED={"property":"ai__contact_evidence","filterType":"PROPERTY",
-  "operation":{"operationType":"STRING","operator":"CONTAINS","value":"RE-ASSOCIATED",
-               "includeObjectsWithNoValueSet":False}}
-a=mklist("Claude - Moved Companies (primary company changed, LinkedIn verified)",[MOVED])
+# Primary filter is a DATE the mover pipeline stamps. The original filter was a substring inside
+# ai__contact_evidence - capped at 990 chars with several writers appending, and a measured 22 of
+# 70 movers had already lost the marker to truncation, silently emptying this list.
+# The legacy substring stays as a second OR-group so movers written before ai__reassociated_on
+# existed remain in the list until they are backfilled.
+MOVED_DATE=[{"property":"ai__reassociated_on","filterType":"PROPERTY",
+  "operation":{"operationType":"DATE_TIME","operator":"IS_KNOWN","includeObjectsWithNoValueSet":False}}]
+MOVED_LEGACY=[{"property":"ai__contact_evidence","filterType":"PROPERTY",
+  "operation":{"operationType":"STRING","operator":"CONTAINS","value":"RE-"+"ASSOCIATED",
+               "includeObjectsWithNoValueSet":False}}]
+a=mklist("Claude - Moved Companies (primary company changed, LinkedIn verified)",
+         MOVED_DATE, MOVED_LEGACY)
 
 # ---- LIST B: contacts with no primary associated company ----
 # probe the right shape for "has no value"

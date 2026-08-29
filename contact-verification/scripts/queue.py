@@ -41,35 +41,53 @@ def ident(u):
     if not u: return None
     m=re.search(r'/in/([^/?#]+)',u)
     return urllib.parse.quote(m.group(1)) if m else None
+RETRY_DAYS=int(os.environ.get('RETRY_DAYS','14'))         # 'unreadable' = transient, retry soon
+NOPROFILE_DAYS=int(os.environ.get('NOPROFILE_DAYS','180'))# 'no_profile' = permanent by this method
+def age(datestr):
+    if not datestr: return None
+    try: return (datetime.date.today()-datetime.date.fromisoformat(str(datestr)[:10])).days
+    except Exception: return None
 def stale(datestr):
-    """True when a verdict is old enough to re-verify (or its date is missing/unparseable)."""
-    if not datestr: return True
-    try: d=datetime.date.fromisoformat(str(datestr)[:10])
-    except Exception: return True
-    return (datetime.date.today()-d).days > STALE_DAYS
-out=[];unver=0;stale_n=0;unread_flag=0;seen=set()
+    a=age(datestr); return True if a is None else a>STALE_DAYS
+def due(verdict,verified,attempt):
+    """Should this record go back in the queue, and why?
+
+    Splitting the retry interval by verdict class is the point of separating
+    ai__contact_verified_date (confirmed verdicts only) from ai__li_last_attempt_date (every
+    touch). Without it a record with no LinkedIn profile has no verified date, reads as 'never
+    verified', and is re-read at full cost on every run forever - buying nothing."""
+    if not verdict:            return True,'never verified'
+    if verdict in ('yes','no'):
+        return (True,'verdict stale') if stale(verified) else (False,None)
+    if verdict=='unreadable':
+        a=age(attempt); return (True,'unreadable retry due') if (a is None or a>RETRY_DAYS) else (False,None)
+    if verdict=='no_profile':
+        a=age(attempt); return (True,'no_profile recheck due') if (a is None or a>NOPROFILE_DAYS) else (False,None)
+    return True,'unknown verdict '+str(verdict)
+out=[];unver=0;stale_n=0;unread_flag=0;noprof=0;seen=set()
 for i in range(0,len(ids),100):
     chunk=ids[i:i+100]
     b={"inputs":[{"id":x} for x in chunk],
        "properties":["firstname","lastname","company","jobtitle","ai__li_still_at_company",
-                     "ai__contact_verified_date",
+                     "ai__contact_verified_date","ai__li_last_attempt_date",
                      "hs_linkedin_url","linkedin_profile_url__unique_value"]}
     r=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/batch/read',b)
     for x in r.get('results',[]):
         p=x['properties']; seen.add(x['id'])
         v=p.get('ai__li_still_at_company')
-        if v:
-            if v=='unreadable': unread_flag+=1
-            if not stale(p.get('ai__contact_verified_date')): continue
-            stale_n+=1                      # verdict has aged past STALE_DAYS -> re-verify
+        if v=='unreadable': unread_flag+=1
+        if v=='no_profile': noprof+=1
+        want,why=due(v,p.get('ai__contact_verified_date'),p.get('ai__li_last_attempt_date'))
+        if not want: continue
+        if v: stale_n+=1                    # already carries a verdict, but it is due again
         unver+=1
         if len(out)<N:
             idn=ident(p.get('hs_linkedin_url')) or ident(p.get('linkedin_profile_url__unique_value'))
             out.append((x['id'],p.get('firstname'),p.get('lastname'),p.get('company'),p.get('jobtitle'),idn))
 unread_snapshot=len(SNAP-seen)
 print("LIST "+lid+" | members "+str(len(ids))+" | unverified "+str(unver)
-      +" (of which stale>"+str(STALE_DAYS)+"d: "+str(stale_n)+")"
-      +" | unreadable-still-on-list "+str(unread_flag)
+      +" (of which re-due: "+str(stale_n)+")"
+      +" | unreadable "+str(unread_flag)+" | no_profile "+str(noprof)
       +" | in intake snapshot but no longer members: "+str(unread_snapshot))
 for cid,f,l,co,jt,idn in out:
     print(cid+" | "+str(f)+" "+str(l)+" | "+str(co)+" | "+str(jt)[:34]+" | "+str(idn))
