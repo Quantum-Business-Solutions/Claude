@@ -158,6 +158,13 @@ def slug_matches_name(
     if last and first and last in slug and slug.startswith(first[0]):
         return True
 
+    # A bare-surname slug ("grahl" for Mike Grahl) is a real and common style.
+    # Requiring the first initial rejects it, and rejecting it drops a valid
+    # prospect. Exact equality only -- "becker" alone would pass here, but a
+    # relative case is always "margie-becker", never bare.
+    if last and slug == last:
+        return True
+
     return False
 
 
@@ -179,15 +186,31 @@ def choose_profile_url(
     if not slug_u and not slug_h:
         return None, "no LinkedIn URL on the contact"
     if slug_u and slug_h and slug_u != slug_h:
+        # A corrupted slug can never match the real profile, so if exactly one
+        # side is mojibake the other is simply the answer. Live case:
+        # Helen Pina, stored as "helen-piã±a-7b83773" vs a clean "helenpina".
+        mojibake_u, mojibake_h = looks_mojibake(slug_u), looks_mojibake(slug_h)
+        if mojibake_u and not mojibake_h:
+            return canonical_url(hs_url), None
+        if mojibake_h and not mojibake_u:
+            return canonical_url(unique_value), None
+
         ok_u = slug_matches_name(slug_u, firstname, lastname)
         ok_h = slug_matches_name(slug_h, firstname, lastname)
         if ok_u and not ok_h:
             return canonical_url(unique_value), None
         if ok_h and not ok_u:
             return canonical_url(hs_url), None
+        if ok_u and ok_h:
+            # Both plausibly this person -- usually one vanity slug and one
+            # auto-generated ("shivani-chakravarthy-130138197" vs
+            # "shivanich"). Not a wrong-person conflict, so take the unique
+            # property: it is the dedupe key, and skipping here would drop a
+            # valid prospect over a cosmetic difference.
+            return canonical_url(unique_value), None
         return None, (
-            f"conflicting LinkedIn URLs ({slug_u} vs {slug_h}) and the "
-            "contact's first name does not disambiguate them"
+            f"conflicting LinkedIn URLs ({slug_u} vs {slug_h}) and neither "
+            "matches the contact's name"
         )
 
     winner = unique_value or hs_url
