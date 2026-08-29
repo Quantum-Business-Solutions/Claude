@@ -28,6 +28,10 @@ real people; only code and docs go to git.
 ## 1. Phase 0 — preflight (no writes)
 
 ```bash
+# 0. MANDATORY before an unattended run, cheap enough to always run. Refuses the pass if the
+#    checkout predates the QA fixes, the token is dead, the list is empty, a written property
+#    was renamed, or hs_lead_status lost a literal. Exit 2 = environment, 3 = code/schema.
+TOKEN=$TOKEN python3 scripts/preflight.py LIST_ID || echo "HALT - do not run the pass"
 # a. self-test: prove your query types return known-good answers before trusting any null
 # b. map the FULL gate chain (this is the step that prevents a false "we broke the list" panic)
 curl -s -H "Authorization: Bearer $TOKEN" \
@@ -163,6 +167,17 @@ is forbidden to write). Watch for that persona gate: it is usually the biggest r
 A dynamic calling list is never "done" — it keeps admitting members from its own criteria (263 new on
 3675 within hours of a full pass). Re-run weekly on an active list, scoping to members with **no**
 `ai__li_still_at_company` **or** `ai__contact_verified_date` older than 90 days.
+
+**Cheaper targeting (Sales Navigator).** Unipile exposes the native `changed_jobs` filter under
+`{"api":"sales_navigator","category":"people"}`. Query it against the ICP companies to surface
+movers directly instead of re-reading everyone to find the ~1 in 4 who moved. Treat every hit as a
+**candidate** — read the dated rows and apply the corroborator rule as usual — and never treat an
+absent contact as confirmed still-employed. It re-orders the queue; `STALE_DAYS` still forces the
+full re-read that catches anyone who left without updating their profile.
+
+**Unattended.** See `ROUTINE.md` for the required order, the reporting contract, and the cross-run
+state limit (a routine's container is destroyed each fire, so queued movers and the running
+guardrail counts do not survive an incremental daily schedule).
 
 ## Guardrails that halt the run
 

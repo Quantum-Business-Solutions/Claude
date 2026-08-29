@@ -64,6 +64,14 @@ or a Human-queue judgment call. Everything else, decide and keep moving. When in
 single contact, mark it `unreadable` + queue it — never stall the whole run on one record.
 
 ## Phase 0 - Preflight (no writes; abort on any failure)
+**Run `preflight.py <listId>` first.** It refuses the run — before any record is touched — when
+the checkout predates the QA fixes (exit 3), TOKEN is missing or HubSpot is unreachable (exit 2),
+the list is empty or not a contact list (exit 2), a written property no longer exists (exit 3), or
+`hs_lead_status` has lost one of the four literals (exit 3). Every one of those previously
+presented as a confident "nothing needed refreshing". It is MANDATORY for an unattended run and
+cheap enough to be worth it interactively. It cannot check LinkedIn — do the Unipile self-test
+(step 1) yourself.
+
 `listanatomy.py` now **exits 3** on a non-contact list or a non-DYNAMIC list, and prints a
 second warning class: gates on properties **this process writes** (`hs_lead_status`, `phone`,
 `business_phone`, …). That second case means the list changes membership underneath the run —
@@ -183,6 +191,30 @@ measure coverage against the intake snapshot, never against live membership.
    `previous__company_domain_name` (URL type - prefix https://). To clear a primary email: empty
    `hs_additional_emails` first, THEN `email` (two writes, in that order).
 
+## Sales Navigator: find the movers instead of re-reading everyone
+Unipile's `POST /api/v1/linkedin/search` exposes Sales Navigator's native filters under
+`{"api":"sales_navigator","category":"people",...}` — verified against the endpoint schema, not
+assumed. The one that changes the method is **`changed_jobs: true`** ("CHANGED JOBS"), alongside
+`current_company`, `past_company`, `company_headcount` and `seniority`.
+
+**Why this matters more than any speed gain.** The default method reads every contact to discover
+the ~1-in-4 who moved: on the completed list, ~1,900 profile reads to find ~450 movers. Querying
+`changed_jobs: true` scoped to the ICP companies surfaces the movers *directly*, so the expensive
+read is spent only on records where something actually changed.
+
+**How to use it without weakening the evidence standard** — this is a TARGETING tool, not an
+evidence tool:
+- A `changed_jobs` hit is a **candidate**, never a verdict. It says LinkedIn thinks something
+  changed; it does not say what, when, or that the profile is the right human. Still read the
+  dated experience rows and still apply the wrong-linked-slug corroborator rule (~1 in 4).
+- It cannot prove a negative. A contact NOT returned is not confirmed still-employed — the filter
+  is LinkedIn's own signal with unknown recall, and it says nothing about anyone who left without
+  updating their profile. **The dated-row re-read stays the backstop**, just at a longer interval.
+- So: `changed_jobs` sets the daily working queue; `STALE_DAYS` still forces a full re-read
+  eventually. Do not let the cheap query replace the expensive one — let it re-order it.
+- Sales Navigator runs on the same authorized accounts as everything else. Shawn's two account_ids
+  only, and it consumes the same LinkedIn rate budget as `qbs-linkedin-daily`.
+
 ## ZoomInfo: corroborator, never overrider
 ZoomInfo (`mcp__ZoomInfo__enrich_companies` / `enrich_contacts`) is the second source that makes
 `sources: 2` honest. It never outranks dated LinkedIn history.
@@ -274,6 +306,21 @@ AND IN_LIST <source> (add a dedicated exclusion marker property if you gate on o
 - **Verdict-log IDs go stale.** A contact stamped earlier in the run can be deleted or merged before the final report (1 of 1,069 on this run no longer resolved). Read-backs will silently return fewer records than you asked for — compare the counts and mention the gap rather than reporting the log length as if it were live membership.
 
 - **Persona remediation is a proposal workflow, and it belongs at the end of a run.** Because `hs_persona` is often the real ICP gate and this process must not write it, the deliverable is an evidence-backed candidate list: contacts you verified `yes` whose `ai__job_title` shows a C-level/owner title but whose persona is blank or wrong. Emit `persona1_candidates.json` (id, current persona, LinkedIn-verified title) and hand it over. Exclude former-CEO/board-advisor titles - they are affiliation, not authority. Never apply it silently; a persona write redefines list membership.
+
+## Running unattended (Routines)
+See `ROUTINE.md`. The judgment in this skill is identical whether a human is watching or not —
+what changes is that **nobody is there to answer a question**, so the bar for "queue it" drops to
+zero. Anything this skill says to surface, a routine surfaces and does NOT decide: ambiguous
+destination company, unprovable email, persona proposal, succession conflict, duplicate pair,
+division-scope uncertainty. An unattended run that decided a close call correctly and an
+unattended run that decided one incorrectly look identical in the report; a queued one does not.
+
+Two properties of an unattended run to design against:
+- **It cannot be asked a follow-up.** Report the number behind every guardrail, not "guardrails
+  passed", so the run is auditable after the fact by someone who was not there.
+- **The judging is not deterministic** even though the scripts are. Two runs over the same records
+  can differ at the margins. That is why every guardrail that matters lives in code with an exit
+  code rather than in prose — prose is advice to the judge, an exit code is not.
 
 ## Non-goals
 Does not write `hs_persona`; does not write native `jobtitle` below `title_conf` 0.90 (`ai__job_title` is always written); does not blank what it did not prove wrong; does not
