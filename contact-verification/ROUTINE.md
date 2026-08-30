@@ -18,10 +18,23 @@ Two things about that session are not what you would assume, and both were measu
   claude.ai lists only first-party connectors, not custom MCP servers like Unipile. So there is
   **no way to give a Routine the Unipile connector.**
 
-**This is why the relay exists, and it is now the primary path.** Unipile serves its tenant API on
-port 16072; cloud egress reaches 443 only. A Supabase Edge Function on 443 forwards to it, so the
-scripts reach Unipile over ordinary HTTPS with no connector involved — identically from an
-interactive session, a Routine, a Cowork task or cron. Source: `contact-verification/relay/`.
+**So LinkedIn is reached over plain HTTPS instead, never a connector.** `unipile.py` runs a
+version-tagged ladder and reports which rung carried the run:
+
+1. **Unipile v2** — `https://api.unipile.com/v2/{acc}/users/{slug}?with_sections=linkedin_experience`.
+   Port 443, no relay, no connector. This is the primary path and the reason a Routine can work at
+   all. Needs `UNIPILE_V2_KEY`. It also returns LinkedIn **company IDs**, which resolve a mover's
+   destination far better than a company-name string.
+2. **Unipile v1 via the relay** — kept as a fallback while v2 is in beta. Needs `UNIPILE_API_KEY`
+   plus `UNIPILE_RELAY_TOKEN`.
+
+**Always request the FULL experience section, never `experience_preview`.** Measured 2026-08-30 —
+Sandberg 5 rows vs 15, Weiner 7 vs 24 — and a CRM company falling outside a truncated preview reads
+as departed, ejecting a real contact as "No Longer with Company".
+
+**The relay** exists because Unipile serves *v1* on port 16072 while cloud egress reaches 443 only.
+A Supabase Edge Function on 443 forwards to it. v2 needs no such thing; the relay is now fallback
+infrastructure only, and can be deleted with v1. Source: `contact-verification/relay/`.
 
     https://ladhdgwedwynmdmeeena.supabase.co/functions/v1/unipile-relay
 

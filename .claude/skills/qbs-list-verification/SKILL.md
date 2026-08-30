@@ -117,14 +117,30 @@ measure coverage against the intake snapshot, never against live membership.
 
 ## The batch loop (write after EVERY batch - reps dial while it runs)
 1. `python3 scripts/queue.py <listId> 6` -> next 6 unverified with their LinkedIn identifier.
-2. ~6 parallel `mcp__Unipile__execute-request` reads, harRequest form, allowlisted account_id,
-   `linkedin_sections=experience_preview`. Identifier hygiene: strip `?trk=`, URL-encode non-ASCII,
-   never send `*experience`.
+2. ~6 parallel profile reads. Prefer `python3 scripts/unipile.py profile <slug>`: it runs the
+   v2-first ladder over plain HTTPS, so the SAME command works in a Routine-fired session, which
+   has no MCP connector tools at all. Where the connector does exist,
+   `mcp__Unipile__execute-request` (harRequest form, allowlisted account_id) is equivalent for v1.
+
+   **ALWAYS ask for the FULL experience section** - `with_sections=linkedin_experience` on v2,
+   `linkedin_sections=experience` on v1. **Never `experience_preview`.** It truncates: measured
+   2026-08-30, Sandberg returned 5 rows vs 15 and Weiner 7 vs 24. The judge decides "still there?"
+   by finding a row matching the CRM company, so a company sitting outside a truncated preview
+   reads as departed and ejects a real, callable contact as "No Longer with Company". Asking for
+   the full section makes that failure impossible instead of something the judge must remember to
+   check for on every single contact.
+
+   Identifier hygiene: strip `?trk=`, URL-encode non-ASCII, never send `*experience`.
    - No URL on file, or 422/locked -> fallback ladder: ZoomInfo `externalUrls` (try each returned
      URL; the first is often dead) -> LinkedIn people search on name+company -> only then `unreadable`,
      naming every source tried.
-   - CRM company absent AND `work_experience_total_count` exceeds rows returned -> re-pull with
-     `linkedin_sections=experience` BEFORE judging. Skipping this makes confident wrong "no"s.
+   - The old rule here was "if the CRM company is absent AND `work_experience_total_count` exceeds
+     rows returned, re-pull the full section before judging". That guard is retired: the full
+     section is now always requested, so there is nothing left to re-pull. If you ever find
+     yourself reaching for the preview again, this is the bug you are reintroducing.
+   - On v2 each row also carries the LinkedIn `company.id`. Prefer it over the company NAME when
+     resolving a mover's destination - it is what distinguishes two genuinely different companies
+     that share a name, which is otherwise an `ambiguous_destination` for a human to settle.
 3. Judge each into a verdict (below).
 4. Write the batch: `python3 scripts/writeverdicts.py <listId> batch.json`. It enforces the
    lead-status rules, chunks at 100, diffs requested-vs-returned, reads back to confirm, appends to
