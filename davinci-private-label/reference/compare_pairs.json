@@ -1,0 +1,600 @@
+[
+ {
+  "old_url": "https://www.davincilabs.com/private-label-get-started",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-get-started",
+  "emails": 92,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-get-started",
+  "old": {
+   "name": "Private Label Get Started (main site)",
+   "title": "",
+   "meta": "",
+   "h1": "",
+   "para": "",
+   "state": "NOT IN HUBSPOT",
+   "url": "https://www.davincilabs.com/private-label-get-started"
+  },
+  "old_type": "Main-site page",
+  "new": {
+   "name": "Private Label - Page - Get Started",
+   "title": "Get Started With Private Label Supplements | Praxera Private Label",
+   "meta": "Schedule a free 30-minute private label supplement consultation. Discuss your audience, goals, and the right path to launch your supplement brand.",
+   "h1": "Let's build your private label supplement line.",
+   "para": "Schedule a 30-minute consultation with our private label specialists. We will discuss your audience, your goals, and the right path to launch.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-get-started"
+  }
+ },
+ {
+  "old_url": "https://www.davincilabs.com/private-labeling",
+  "new_url": "https://www.praxerasupplements.com/pl-demo-about",
+  "emails": 30,
+  "confidence": "MANUAL",
+  "new_slug": "pl-demo-about",
+  "old": {
+   "name": "(main site, not in HubSpot)",
+   "title": "",
+   "meta": "",
+   "h1": "",
+   "para": "",
+   "state": "NOT IN HUBSPOT",
+   "url": "https://www.davincilabs.com/private-labeling"
+  },
+  "old_type": "Main-site page",
+  "new": {
+   "name": "Private Label - Page - About Us",
+   "title": "About Praxera | Praxera Private Label",
+   "meta": "50 years of supplement manufacturing expertise. Founded in 1976 in Vermont. Truth-in-labeling commitment. Doctor-formulated, scientifically rigorous.",
+   "h1": "50 years of supplement expertise behind every brand we partner with.",
+   "para": "Praxera has been formulating dietary supplements for integrative physicians and serious brand-builders since 1976. Our private label program brings that decades-deep expertise to entrepreneurs and established brands launching their own supplement lines.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-about"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/private-label-supplements-resource-center",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-resources",
+  "emails": 13,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-resources",
+  "old": {
+   "name": "Private Label Supplements | Resource Center",
+   "title": "Private Label Supplements | Resource Center",
+   "meta": "Private labeling supplements allows your brand to source products and manufacturing to a third party. Our research center will help you get started. ",
+   "h1": "Research Center",
+   "para": "Private labeling supplements allows brands to outsource products and manufacturing to a third party. By working with a private label supplement manufacturer, you apply the brand to the packaging only when it is time to sell the product. Although many consumers are unaware of the prevalence of this practice, it is common in today's marketplace.",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/private-label-supplements-resource-center"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - Resources Hub",
+   "title": "Private Label Supplement Resources | Praxera Private Label",
+   "meta": "Guides, articles, and tools for launching and scaling your private label supplement brand. Pricing transparency, FDA compliance, brand-building tactics.",
+   "h1": "Resources for building your private label supplement brand.",
+   "para": "Guides, articles, and tools to help you launch and scale a successful private label supplement business. Start anywhere, return any time.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-resources"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/private-label-supplements-guide",
+  "new_url": "https://www.praxerasupplements.com/pl-demo-guides",
+  "emails": 10,
+  "confidence": "MANUAL",
+  "new_slug": "pl-demo-guides",
+  "old": {
+   "name": "LP: Private Label Supplements Guide",
+   "title": "Private Labeling Supplements: The Definitive Guide | DaVinci Labs",
+   "meta": "Success with private labeling supplements depends on knowing how to price your product, manage inventory, and ensure your brand meets quality standards.",
+   "h1": "",
+   "para": "Private labeling is putting your brand on existing, high-quality nutritional supplement formulas with legal permission from their provider. As the supplement landscape gears up to surpass a $1 trillion global ecosystem , generic formulations are taking a back seat. In 2026, consumers demand precise, data-driven wellness tailored to their unique biochemistry. By offering custom, practitioner-endors",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/private-label-supplements-guide"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - Guides Library",
+   "title": "Private Label Supplement Guides Library | Praxera Private Label",
+   "meta": "Free downloadable guides for supplement brand entrepreneurs. The Definitive Guide, Ingredients and Testing Guide, Client Onboarding Guide.",
+   "h1": "Free guides for supplement brand entrepreneurs.",
+   "para": "Tactical, downloadable guides covering everything from initial launch to scaling and expansion. All free, all written by our team.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-guides"
+  }
+ },
+ {
+  "old_url": "https://blog.davincilabs.com/private-label/how-to-sell-supplements",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-how-to-sell-supplements",
+  "emails": 6,
+  "confidence": "EXACT",
+  "new_slug": "en/pl-demo-how-to-sell-supplements",
+  "old": {
+   "name": "How To Sell Supplements",
+   "title": "How To Sell Supplements",
+   "meta": "Looking to sell supplements for your brand?  This guide explores how to find and market high-quality products to build patient trust & boost revenue. ",
+   "h1": "",
+   "para": "Healthcare professionals and business owners alike know that dietary supplements are one of the fastest-growing markets in the wellness industry. Recent studies by the Council of Responsible Nutrition show that nearly three-quarters of the adult American population uses supplements in their daily health practices.",
+   "state": "PUBLISHED",
+   "url": "https://blog.davincilabs.com/private-label/how-to-sell-supplements"
+  },
+  "old_type": "Blog post",
+  "new": {
+   "name": "Private Label - Standard Page - How to Sell Private Label Supplements",
+   "title": "How to Sell Private Label Supplements | Praxera Private Label",
+   "meta": "The playbook for selling private label supplements. Pricing, channels, regulatory considerations, marketing tactics for new and growing brands.",
+   "h1": "Transform your passion for health into a thriving supplement business.",
+   "para": "The supplement industry is booming. There has never been a better time to launch your private label brand. This is your seven-step playbook for marketing and selling private-label supplements.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-how-to-sell-supplements"
+  }
+ },
+ {
+  "old_url": "https://www.davincilabs.com/private-labeling-supplement-manufacturer",
+  "new_url": "https://www.praxerasupplements.com/pl-demo-about",
+  "emails": 3,
+  "confidence": "MANUAL",
+  "new_slug": "pl-demo-about",
+  "old": {
+   "name": "Private Labeling Supplement Manufacturer (main site)",
+   "title": "",
+   "meta": "",
+   "h1": "",
+   "para": "",
+   "state": "NOT IN HUBSPOT",
+   "url": "https://www.davincilabs.com/private-labeling-supplement-manufacturer"
+  },
+  "old_type": "Main-site page",
+  "new": {
+   "name": "Private Label - Page - About Us",
+   "title": "About Praxera | Praxera Private Label",
+   "meta": "50 years of supplement manufacturing expertise. Founded in 1976 in Vermont. Truth-in-labeling commitment. Doctor-formulated, scientifically rigorous.",
+   "h1": "50 years of supplement expertise behind every brand we partner with.",
+   "para": "Praxera has been formulating dietary supplements for integrative physicians and serious brand-builders since 1976. Our private label program brings that decades-deep expertise to entrepreneurs and established brands launching their own supplement lines.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-about"
+  }
+ },
+ {
+  "old_url": "https://blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024",
+  "new_url": "https://www.praxerasupplements.com/blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
+  "emails": 2,
+  "confidence": "LIKELY",
+  "new_slug": "blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
+  "old": {
+   "name": "Vitamin Manufacturing: 10 Top Sellers to Consider in 2026",
+   "title": "Vitamin Manufacturing: 10 Top Sellers to Consider in 2026",
+   "meta": "Your private label's success depends on staying current with consumer demand. See which products are best-sellers in 2024.",
+   "h1": "",
+   "para": "The supplement industry is dynamic, and your private label's success depends on staying current with consumer demand and trends. To simplify your job, we\\u2019ve compiled a list of the top 10-selling vitamins in 2026. Whether you\\u2019re a practitioner or entrepreneur, new to private label, or wanting to grow an existing business, incorporating some of this year\\u2019s best-sellers will likely boo",
+   "state": "PUBLISHED",
+   "url": "https://blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024"
+  },
+  "old_type": "Blog post",
+  "new": {
+   "name": "Private Label - Blog - Vitamin Manufacturing 2026",
+   "title": "Vitamin Manufacturing: 10 Top Sellers to Consider in 2026 | Praxera",
+   "meta": "Discover the top 10 best-selling private label vitamins for 2026, from magnesium and probiotics to omega-3s, for your supplement brand.",
+   "h1": "Vitamin Manufacturing: 10 Top Sellers to Consider in 2026",
+   "para": "The supplement industry is dynamic, and your private label's success depends on staying current with consumer demand and trends. To simplify your job, we've compiled a list of the top 10-selling vitamins in 2026. Whether you're a practitioner or entrepreneur, new to private label, or wanting to grow an existing business, incorporating some of this year's best-sellers will likely boost your busines",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/private-label-supplements-client-onboarding",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-onboarding-guide",
+  "emails": 2,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-onboarding-guide",
+  "old": {
+   "name": "DV LP: Private Label Supplements: Client Onboarding",
+   "title": "Private Label Supplements Client Onboarding | DaVinci Labs",
+   "meta": "We\u2019ve developed a simple, four-step onboarding process to help you learn about our services and launch your products quickly.",
+   "h1": "DaVinci Labs Private Label Supplements: Client Onboarding",
+   "para": "Starting or expanding your supplement business can unlock exciting opportunities to promote wellness and grow your brand. DaVinci\\u00ae Laboratories is here to support you on this journey and help you achieve your goals.",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/private-label-supplements-client-onboarding"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - Onboarding Guide",
+   "title": "Client Onboarding Guide | Praxera Private Label",
+   "meta": "Free guide to your first 90 days as a private label client. Week-by-week timeline, milestones, decisions, set yourself up for smooth launch.",
+   "h1": "Private Label Client Onboarding Guide.",
+   "para": "What to expect during your first 90 days as a private label client. Week-by-week timeline, key decisions you will make, design milestones, and how to set yourself up for a smooth launch.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-onboarding-guide"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/thank-you-guide-private-labeling-supplements",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-ty-guide",
+  "emails": 1,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-ty-guide",
+  "old": {
+   "name": "TY: Private Label Supplements Guide",
+   "title": "Thank You For Downloading Our Guide About Private Labeling Supplements",
+   "meta": "Thank you! Your download is ready.",
+   "h1": "THANK YOU!",
+   "para": "Explore ingredient sourcing, testing protocols, and certification standards for our top-selling products.",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/thank-you-guide-private-labeling-supplements"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - TY - Guide Download",
+   "title": "Thank You for Downloading the Guide | Praxera Private Label",
+   "meta": "Your private label supplements guide is on the way. Check your inbox in the next few minutes.",
+   "h1": "Your private label guide is on the way.",
+   "para": "Check your inbox in the next few minutes. If you don't see it, look in spam or promotions and add our email to your safe sender list.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-ty-guide"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/dv-pl-customer-supplied-art",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-customer-art",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-customer-art",
+  "old": {
+   "name": "DV: PL Customer Supplied Art",
+   "title": "DV: PL Customer Supplied Art",
+   "meta": "ARTWORK NEEDS TO BE SUBMITTED ON OUR TEMPLATE ONLY",
+   "h1": "",
+   "para": "RGB, which stands for red, green, & blue, is used in digital applications for artwork that will be displayed on a monitor, digital camera, or TV screen. If you have",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/dv-pl-customer-supplied-art"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - Customer-Supplied Art Guidelines",
+   "title": "Customer-Supplied Artwork Guidelines | Praxera Private Label",
+   "meta": "Technical requirements for client-supplied label artwork. Vector files, CMYK color, packaged elements. Avoid rework delays on your private label launch.",
+   "h1": "Customer-supplied artwork guidelines.",
+   "para": "Technical requirements for clients who are providing their own label artwork. Following these guidelines keeps your project on the 3-to-4-week production timeline and avoids rework.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-customer-art"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/dv-pl-our-design-services",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-design-team",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-design-team",
+  "old": {
+   "name": "DV: PL Our Design Services",
+   "title": "DV: PL Our Design Services",
+   "meta": "Providing us with your logo artwork file can start your new private label business with us immediately. ",
+   "h1": "",
+   "para": "",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/dv-pl-our-design-services"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - Working With Our Design Team",
+   "title": "Working With Our In-House Design Team | Praxera Private Label",
+   "meta": "How our private label design process works. Brand discovery, template selection, label iteration and print-ready file delivery. From logo to launch.",
+   "h1": "Working with our in-house design team.",
+   "para": "From logo and label concept through print-ready production. Our designers handle the technical complexity so your brand looks exactly the way you want it on the shelf.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-design-team"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/ingredients-testing-certification-guide",
+  "new_url": "https://www.praxerasupplements.com/pl-demo-ingredients-testing",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "pl-demo-ingredients-testing",
+  "old": {
+   "name": "DV LP: Private Labeling Supplement: Ingredients, Testing & Certification",
+   "title": "Private Label Supplements: Ingredients, Testing & Certification",
+   "meta": "Discover the growing opportunity in private labeling supplements with top-selling formulas, ingredients, testing, and certifications. ",
+   "h1": "Private Labeling Supplements: Ingredients, Testing & Certifications",
+   "para": "Many health, well-being, and beauty business owners and executives are considering adding supplements to their shelves for good reason. The supplement industry is growing exponentially, creating an opportunity to meet customers\\u2019 needs and expand your business in new ways.",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/ingredients-testing-certification-guide"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - Ingredients & Testing Guide",
+   "title": "Ingredients, Testing & Certification Guide | Praxera Private Label",
+   "meta": "Free deep-dive into how supplement quality is built. Ingredient sourcing, third-party testing, GMP certifications explained.",
+   "h1": "Ingredients, Testing & Certification Guide.",
+   "para": "A deep-dive into how supplement quality is built from raw material to finished bottle. Read this if you want your brand to stand on real quality, not just marketing claims.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-ingredients-testing"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/thank-you-client-onboarding",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-ty-onboarding",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-ty-onboarding",
+  "old": {
+   "name": "DV TY: Private Label Supplements: Client Onboarding",
+   "title": "Thank You For Downloading Our Client Onboarding Guide",
+   "meta": "Thank you! Your download is ready.",
+   "h1": "THANK YOU!",
+   "para": "Better health starts with better information. We encourage anyone taking supplements to step back and do their research.",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/thank-you-client-onboarding"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - TY - Onboarding",
+   "title": "Thank You for Starting Onboarding | Praxera Private Label",
+   "meta": "Your private label onboarding request is in. Our team will reach out within one business day to schedule your kickoff call.",
+   "h1": "Your onboarding guide is on the way.",
+   "para": "Schedule a consultation with a private label specialist to walk through your guide, clarify next steps, and map out your product launch.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-ty-onboarding"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/thank-you-ingredients-testing-certification-guide",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-ty-guide",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-ty-guide",
+  "old": {
+   "name": "DV TY: Private Label Supplements: Ingredients Testing & Certification Guide",
+   "title": "Thank You For Downloading Our Guide About Private Labeling Supplements",
+   "meta": "Thank you! Your download is ready.",
+   "h1": "THANK YOU!",
+   "para": "Better health starts with better information. We encourage anyone taking supplements to step back and do their research.",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/thank-you-ingredients-testing-certification-guide"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - TY - Guide Download",
+   "title": "Thank You for Downloading the Guide | Praxera Private Label",
+   "meta": "Your private label supplements guide is on the way. Check your inbox in the next few minutes.",
+   "h1": "Your private label guide is on the way.",
+   "para": "Check your inbox in the next few minutes. If you don't see it, look in spam or promotions and add our email to your safe sender list.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-ty-guide"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/thank-you-private-labeling",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-ty-consultation",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-ty-consultation",
+  "old": {
+   "name": "TY: Private Label",
+   "title": "Thank You For Contacting Us About Private Labeling",
+   "meta": "Thank you! Someone on our team will contact you soon. ",
+   "h1": "THANK YOU!",
+   "para": "Better health starts with better information. We encourage anyone taking supplements to step back and do their research.",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/thank-you-private-labeling"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - TY - Consultation Booked",
+   "title": "Thank You for Booking a Consultation | Praxera Private Label",
+   "meta": "Your private label consultation is confirmed. We will send a calendar invite within minutes.",
+   "h1": "Your private label consultation is confirmed.",
+   "para": "We will send a calendar invite to your email within a few minutes. If you do not receive it, please check spam or contact us directly.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-ty-consultation"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/thank-you-start-private-labeling",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-ty-consultation",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-ty-consultation",
+  "old": {
+   "name": "TY: Private Labeling_Meeting Link",
+   "title": "Thank You For Contacting Us About Private Labeling",
+   "meta": "Thank you! Please schedule a time to speak with one of our specialists. ",
+   "h1": "THANK YOU for your interest.",
+   "para": "Better health starts with better information. We encourage anyone taking supplements to step back and do their research.",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/thank-you-start-private-labeling"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - TY - Consultation Booked",
+   "title": "Thank You for Booking a Consultation | Praxera Private Label",
+   "meta": "Your private label consultation is confirmed. We will send a calendar invite within minutes.",
+   "h1": "Your private label consultation is confirmed.",
+   "para": "We will send a calendar invite to your email within a few minutes. If you do not receive it, please check spam or contact us directly.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-ty-consultation"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/ty-private-label-supplements",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-ty-consultation",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-ty-consultation",
+  "old": {
+   "name": "TY: Private Label",
+   "title": "Thank You For Your Interest In Private Label Supplements",
+   "meta": "A DaVinci representative will contact you using the information you submitted. In the meantime, please visit our Education Center and learn more about practice enhancing strategies.",
+   "h1": "",
+   "para": "A DaVinci representative will contact you using the information you submitted. In the meantime, please visit our Education Center and learn more about practice enhancing strategies.",
+   "state": "PUBLISHED_OR_SCHEDULED",
+   "url": "https://info.davincilabs.com/ty-private-label-supplements"
+  },
+  "old_type": "Landing page",
+  "new": {
+   "name": "Private Label - Page - TY - Consultation Booked",
+   "title": "Thank You for Booking a Consultation | Praxera Private Label",
+   "meta": "Your private label consultation is confirmed. We will send a calendar invite within minutes.",
+   "h1": "Your private label consultation is confirmed.",
+   "para": "We will send a calendar invite to your email within a few minutes. If you do not receive it, please check spam or contact us directly.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-ty-consultation"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/pl-demo-custom-formulation",
+  "new_url": "https://www.praxerasupplements.com/pl-demo-custom-formulation",
+  "emails": 0,
+  "confidence": "EXACT",
+  "new_slug": "pl-demo-custom-formulation",
+  "old": {
+   "name": "Private Label - Standard Page - Custom Formulation",
+   "title": "",
+   "meta": "",
+   "h1": "",
+   "para": "",
+   "state": "GONE",
+   "url": "https://info.davincilabs.com/pl-demo-custom-formulation"
+  },
+  "old_type": "Site page",
+  "new": {
+   "name": "Private Label - Page - Custom Formulation",
+   "title": "Custom Formulation Services | Praxera Private Label",
+   "meta": "Beyond private label: custom formulation when our stock catalog doesn't fit. Higher minimums, longer timeline, full proprietary ownership of the result.",
+   "h1": "Custom formulation when our stock catalog doesn't fit.",
+   "para": "If you need something we don't already make, our R&D team can develop custom formulations to your specifications. Higher minimums, longer timeline, full proprietary ownership.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-custom-formulation"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/pl-demo-definitive-guide",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-definitive-guide",
+  "emails": 0,
+  "confidence": "EXACT",
+  "new_slug": "en/pl-demo-definitive-guide",
+  "old": {
+   "name": "Private Label - Resource Page - Definitive Guide",
+   "title": "",
+   "meta": "",
+   "h1": "",
+   "para": "",
+   "state": "GONE",
+   "url": "https://info.davincilabs.com/pl-demo-definitive-guide"
+  },
+  "old_type": "Site page",
+  "new": {
+   "name": "Private Label - Page - Definitive Guide",
+   "title": "The Definitive Guide to Private Label Supplements | Praxera Private Label",
+   "meta": "Free 50-plus page guide on launching your private label supplement brand. Costs, regulations, timelines, tactical advice. The most-downloaded guide in our library.",
+   "h1": "The Definitive Guide to Private Label Supplements.",
+   "para": "Everything you need to know about launching your private label supplement line. 50+ pages of frequently asked questions, costs, timelines, regulatory considerations, and step-by-step tactical advice.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-definitive-guide"
+  }
+ },
+ {
+  "old_url": "https://info.davincilabs.com/pl-demo-get-started",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-get-started",
+  "emails": 0,
+  "confidence": "EXACT",
+  "new_slug": "en/pl-demo-get-started",
+  "old": {
+   "name": "Private Label - Landing Page - Get Started",
+   "title": "",
+   "meta": "",
+   "h1": "",
+   "para": "",
+   "state": "GONE",
+   "url": "https://info.davincilabs.com/pl-demo-get-started"
+  },
+  "old_type": "Site page",
+  "new": {
+   "name": "Private Label - Page - Get Started",
+   "title": "Get Started With Private Label Supplements | Praxera Private Label",
+   "meta": "Schedule a free 30-minute private label supplement consultation. Discuss your audience, goals, and the right path to launch your supplement brand.",
+   "h1": "Let's build your private label supplement line.",
+   "para": "Schedule a 30-minute consultation with our private label specialists. We will discuss your audience, your goals, and the right path to launch.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-get-started"
+  }
+ },
+ {
+  "old_url": "https://www.davincilabs.com/private-labeling-dropship",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-dropshipping",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-dropshipping",
+  "old": {
+   "name": "Private Labeling Dropship (main site)",
+   "title": "",
+   "meta": "",
+   "h1": "",
+   "para": "",
+   "state": "NOT IN HUBSPOT",
+   "url": "https://www.davincilabs.com/private-labeling-dropship"
+  },
+  "old_type": "Main-site page",
+  "new": {
+   "name": "Private Label - Standard Page - Dropshipping for Private Label",
+   "title": "Dropshipping for Private Label Supplement Brands | Praxera Private Label",
+   "meta": "Add private label supplements to your dropshipping catalog. Low minimums, no inventory, fast fulfillment. Brand-friendly packaging.",
+   "h1": "Sell your own supplements without ever holding inventory.",
+   "para": "Choose pre-formulated supplements, brand them as your own, market them under your label. We ship every order directly to your customer.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-dropshipping"
+  }
+ },
+ {
+  "old_url": "https://www.davincilabs.com/private-labeling-how-to-sell-supplements",
+  "new_url": "https://www.praxerasupplements.com/en/pl-demo-how-to-sell-supplements",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "en/pl-demo-how-to-sell-supplements",
+  "old": {
+   "name": "Private Labeling: How to Sell Supplements (main site)",
+   "title": "",
+   "meta": "",
+   "h1": "",
+   "para": "",
+   "state": "NOT IN HUBSPOT",
+   "url": "https://www.davincilabs.com/private-labeling-how-to-sell-supplements"
+  },
+  "old_type": "Main-site page",
+  "new": {
+   "name": "Private Label - Standard Page - How to Sell Private Label Supplements",
+   "title": "How to Sell Private Label Supplements | Praxera Private Label",
+   "meta": "The playbook for selling private label supplements. Pricing, channels, regulatory considerations, marketing tactics for new and growing brands.",
+   "h1": "Transform your passion for health into a thriving supplement business.",
+   "para": "The supplement industry is booming. There has never been a better time to launch your private label brand. This is your seven-step playbook for marketing and selling private-label supplements.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-how-to-sell-supplements"
+  }
+ },
+ {
+  "old_url": "https://www.davincilabs.com/private-labeling/",
+  "new_url": "https://www.praxerasupplements.com/pl-demo-about",
+  "emails": 0,
+  "confidence": "MANUAL",
+  "new_slug": "pl-demo-about",
+  "old": {
+   "name": "Private Labeling (main site)",
+   "title": "",
+   "meta": "",
+   "h1": "",
+   "para": "",
+   "state": "NOT IN HUBSPOT",
+   "url": "https://www.davincilabs.com/private-labeling/"
+  },
+  "old_type": "Main-site page",
+  "new": {
+   "name": "Private Label - Page - About Us",
+   "title": "About Praxera | Praxera Private Label",
+   "meta": "50 years of supplement manufacturing expertise. Founded in 1976 in Vermont. Truth-in-labeling commitment. Doctor-formulated, scientifically rigorous.",
+   "h1": "50 years of supplement expertise behind every brand we partner with.",
+   "para": "Praxera has been formulating dietary supplements for integrative physicians and serious brand-builders since 1976. Our private label program brings that decades-deep expertise to entrepreneurs and established brands launching their own supplement lines.",
+   "state": "DRAFT",
+   "url": "https://info.davincilabs.com/en/pl-demo-about"
+  }
+ }
+]

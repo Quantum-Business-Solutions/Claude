@@ -148,6 +148,24 @@ ul.tight{margin:0 0 1rem;padding-left:1.15rem}
 ul.tight li{margin-bottom:.4rem}
 .note{font-size:.83rem;color:var(--muted);font-style:italic;margin-top:10px}
 hr.soft{border:0;border-top:1px solid var(--rule);margin:36px 0}
+
+/* ---- comparison ---- */
+.cmp{border:1px solid var(--rule);border-radius:3px;background:var(--surface);
+  margin:0 0 14px;overflow:hidden;box-shadow:var(--shadow)}
+.cmp-h{background:var(--sunk);padding:11px 16px;display:flex;flex-wrap:wrap;
+  gap:10px;align-items:baseline;justify-content:space-between;
+  border-bottom:1px solid var(--rule)}
+.cmp-t{font-weight:600;color:var(--ink);font-size:.92rem}
+.cmp-m{font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--muted)}
+.cmp-g{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule)}
+.cmp-c{background:var(--surface);padding:15px 16px}
+.cmp-c.gap{background:var(--bad-soft)}
+.cmp-l{margin:0 0 7px;font-family:"IBM Plex Mono",monospace;font-size:.66rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cmp-hd{margin:9px 0 6px;font-family:Newsreader,Georgia,serif;font-size:1.02rem;
+  line-height:1.3;color:var(--ink)}
+.cmp-p{margin:0;font-size:.83rem;line-height:1.55;color:var(--body)}
+@media (max-width:720px){.cmp-g{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media (max-width:640px){
   .chain .row{grid-template-columns:1fr;gap:4px}
@@ -227,6 +245,80 @@ def form_rows():
                    f'<td class="ev">{e(", ".join(f["pages"][:4]))}'
                    f'{" …" if len(f["pages"])>4 else ""}</td></tr>')
     return "\n".join(out)
+
+
+# ---------------- Praxera clones built so far
+def clone_rows():
+    out=[]
+    for c in D["clones"]:
+        out.append(f'<tr><td class="nm">{e(c["clone_name"])}</td>'
+                   f'<td class="ev">{e(c["source_name"][:56])}</td>'
+                   f'<td>{chip("not live","ok")}</td>'
+                   f'<td><a href="{e(c["url"])}" target="_blank" rel="noopener">open in HubSpot</a></td></tr>')
+    for t in D["templates"]:
+        out.append(f'<tr><td class="nm">{e(t["n"])}</td>'
+                   f'<td class="ev">{e(t["kind"])} email template</td>'
+                   f'<td>{chip("draft","ok")}</td>'
+                   f'<td><a href="{e(t["url"])}" target="_blank" rel="noopener">open in HubSpot</a></td></tr>')
+    return "\n".join(out)
+
+# ---------------- old vs new copy
+def compare_blocks():
+    out=[]
+    for r in D["compare"]:
+        o=r["old"]; n=r.get("new",{})
+        gap = not (n.get("h1") or n.get("para"))
+        out.append(f'''<div class="cmp">
+  <div class="cmp-h"><span class="cmp-t">{e(o.get("name","")[:66])}</span>
+    <span class="cmp-m">{r["emails"]} email link(s) &middot; {e(r["confidence"].lower())} match</span></div>
+  <div class="cmp-g">
+    <div class="cmp-c">
+      <p class="cmp-l">Current &mdash; {chip(o.get("state","?").replace("_"," ").lower(),"mute")}</p>
+      <p class="u">{e(o.get("url","")[:78])}</p>
+      <p class="cmp-hd">{e(o.get("h1","")) or "&mdash;"}</p>
+      <p class="cmp-p">{e(o.get("para","") or "no body copy captured")}</p>
+    </div>
+    <div class="cmp-c{" gap" if gap else ""}">
+      <p class="cmp-l">Praxera replacement &mdash; {chip(n.get("state","missing").lower(),"acc" if not gap else "bad")}</p>
+      <p class="u">{e(r["new_url"][:78])}</p>
+      <p class="cmp-hd">{e(n.get("h1","")) or "&mdash;"}</p>
+      <p class="cmp-p">{e(n.get("para","") or "NOT WRITTEN YET")}</p>
+    </div>
+  </div></div>''')
+    return "\n".join(out)
+
+# ---------------- emails, workflow-attached first
+def email_rows2():
+    rows=sorted(D["emails"], key=lambda m: (0 if m["wf"] else 1,
+                 0 if any(w["live"] for w in m["wf"]) else 1, m["n"].lower()))
+    out=[]
+    for m in rows:
+        st=m["s"]
+        k = "acc" if st.startswith("AUTOMATED") else ("ok" if st.startswith("PUBLISHED") else "warn")
+        live=any(w["live"] for w in m["wf"])
+        if m["wf"]:
+            band = chip("live workflow","ok") if live else chip("workflow (off)","mute")
+            wfn  = "<br>".join("· "+e(w["n"][:46]) for w in m["wf"][:2])
+        else:
+            band = chip("one-off send","warn"); wfn="&mdash;"
+        grp = "A" if live else ("B" if m["wf"] else "C")
+        out.append(f'<tr data-state="{e(st)}" data-grp="{grp}">'
+                   f'<td class="nm">{e(m["n"][:64])}</td>'
+                   f'<td>{band}</td>'
+                   f'<td class="ev">{wfn}</td>'
+                   f'<td>{chip(st.replace("_"," ").lower(),k)}</td>'
+                   f'<td class="u">{e(m["u"][:88])}</td></tr>')
+    return "\n".join(out)
+
+def nomatch_rows():
+    return "\n".join(
+      f'<tr><td class="num">{r["emails"]}</td><td class="u">{e(r["old"][:96])}</td></tr>'
+      for r in D["nomatch"])
+
+def topic_rows():
+    return "\n".join(
+      f'<tr><td class="nm">{e(t["n"][:62])}</td><td>{chip(t["s"].lower(),"mute")}</td>'
+      f'<td class="u">{e(t["u"][:88])}</td></tr>' for t in D["blog_topic"])
 
 R=D["recon"]
 nwf=len(D["workflows"]); ncore=sum(1 for w in D["workflows"] if w["tier"]=="CORE")
@@ -327,6 +419,44 @@ HTML=f"""<title>Praxera Migration Asset Ledger</title>
   DaVinci migration list is how the wrong emails get rewritten.</p>
 </section>
 
+<section id="brandline">
+  <div class="shead"><p class="eyebrow">The hard half of the question</p>
+    <h2>Private label, or DaVinci&rsquo;s own brand?</h2></div>
+  <div class="measure">
+  <p>Ruling out PetTechLabs is the easy half. The hard half is that DaVinci sells supplements
+  under its own name to practitioners <em>and</em> runs a private-label business, from one portal,
+  on one contact list, and the phrase &ldquo;private label&rdquo; appears on both sides.</p>
+  <p>So nothing here is classified by topic. It is classified by <strong>namespace</strong> &mdash;
+  the address the asset actually lives at:</p>
+  <ul class="tight">
+    <li><strong>Private label</strong> &mdash; the asset sits at a private-label address:
+      the <code>/private-label/</code> blog group, an <code>info.davincilabs.com/private-label*</code>
+      slug, the <code>/private-labeling*</code> main-site paths, <code>pl-demo-*</code>, or
+      praxerasupplements.com. {D["blog_pl"]} blog posts qualify this way.</li>
+    <li><strong>DaVinci brand that links to private label</strong> &mdash; a brand asset with one
+      incidental private-label link. It needs its URL updated at cutover and nothing else. The
+      &ldquo;DV Mission &amp; Register&rdquo; emails are the clearest case: practitioner
+      registration copy with a single link to <code>/private-labeling</code>.</li>
+    <li><strong>Not private label at all</strong> &mdash; the cart-recovery and
+      &ldquo;Register for your account&rdquo; product emails. They carry no private-label link
+      whatsoever. Someone abandoning a cart with a discount code is buying DaVinci product;
+      a private-label buyer commissions their own brand.</li>
+  </ul>
+  </div>
+  <div class="call warn">
+    <h3>{len(D["blog_topic"])} posts are about private label but live in another brand&rsquo;s namespace</h3>
+    <p>Every one of them is <strong>PetTechLabs</strong> &mdash; a separate brand in this same
+    portal with its own private-label pet-supplement line. Topically they are private label.
+    Structurally they are not DaVinci&rsquo;s, and none should move to Praxera. This is the exact
+    trap a name-based list falls into.</p>
+  </div>
+  <details><summary>Show the {len(D["blog_topic"])} cross-brand posts</summary><div class="dbody">
+    <div class="tscroll"><table>
+      <thead><tr><th>Post</th><th>State</th><th>Lives at</th></tr></thead>
+      <tbody>{topic_rows()}</tbody></table></div>
+  </div></details>
+</section>
+
 <section id="workflows">
   <div class="shead"><p class="eyebrow">Automation &middot; {nwf} workflows</p>
     <h2>What to clone, and what only needs a link fixed</h2></div>
@@ -362,6 +492,24 @@ HTML=f"""<title>Praxera Migration Asset Ledger</title>
   <div class="tscroll"><table>
     <thead><tr><th class="num">Emails</th><th>Where it lives</th><th>Destination</th></tr></thead>
     <tbody>{dest_rows()}</tbody></table></div>
+  <div class="call bad">
+    <h3>{len(D["nomatch"])} linked destinations have no page on the new site</h3>
+    <p>These are mostly private-label blog posts. The new build is 65 pages; the old footprint
+    included 75 blog posts, and the emails still point at them. Each needs a decision: migrate the
+    post, redirect it to the nearest new page, or accept the link breaking.</p>
+  </div>
+  <details><summary>Show the {len(D["nomatch"])} unmatched destinations</summary><div class="dbody">
+    <div class="tscroll" style="max-height:420px;overflow-y:auto"><table>
+      <thead><tr><th class="num">Emails</th><th>Destination with no replacement</th></tr></thead>
+      <tbody>{nomatch_rows()}</tbody></table></div></div></details>
+  <div class="call warn">
+    <h3>Can an email link to a draft page?</h3>
+    <p>No. An unpublished HubSpot page 404s at its live URL, and the draft is only reachable
+    behind an <code>hs_preview</code> key that is neither public-safe nor stable. The workable
+    order is the reverse: write the <em>final</em> praxerasupplements.com URL into the email now
+    and hold the email in draft until the page publishes. The link starts working the moment the
+    page goes live, and there is nothing to rewrite afterwards.</p>
+  </div>
 </section>
 
 <section id="forms">
@@ -483,23 +631,62 @@ HTML=f"""<title>Praxera Migration Asset Ledger</title>
 </section>
 
 <section id="emails">
-  <div class="shead"><p class="eyebrow">The full list</p>
+  <div class="shead"><p class="eyebrow">The full list &middot; ordered by what depends on it</p>
     <h2>{R['live_verified']} emails linking to a private-label page</h2></div>
-  <details><summary>Open the verified email list</summary><div class="dbody">
-    <div class="filters" id="em-filters">
-      <span class="lab">Show</span>
-      <button class="f" data-f="all" aria-pressed="true">All</button>
-      <button class="f" data-f="AUTOMATED" aria-pressed="false">Automated</button>
-      <button class="f" data-f="PUBLISHED" aria-pressed="false">Published</button>
-      <button class="f" data-f="DRAFT" aria-pressed="false">Draft</button>
-      <span class="count" id="em-count"></span>
-    </div>
-    <div class="tscroll" style="max-height:560px;overflow-y:auto"><table id="em-table">
-      <thead><tr><th>Email</th><th>State</th><th>Links to</th></tr></thead>
-      <tbody>{email_rows()}</tbody></table></div>
-    <p class="note">Each row qualified because an anchor in its body resolves to a
-    private-label URL. That string is the evidence; it is shown.</p>
-  </div></details>
+  <div class="measure">
+  <p>Sorted so the work sequences itself: emails a <strong>live workflow</strong> sends come
+  first, then emails attached to a workflow that is currently off, then historical one-off
+  sends. Only the first group has to exist before Praxera can run &mdash; the rest is archive.</p>
+  </div>
+  <div class="filters" id="em-filters">
+    <span class="lab">Show</span>
+    <button class="f" data-f="A" aria-pressed="true">Live workflow first</button>
+    <button class="f" data-f="B" aria-pressed="false">Workflow, off</button>
+    <button class="f" data-f="C" aria-pressed="false">One-off sends</button>
+    <button class="f" data-f="all" aria-pressed="false">All</button>
+    <span class="count" id="em-count"></span>
+  </div>
+  <div class="tscroll" style="max-height:580px;overflow-y:auto"><table id="em-table">
+    <thead><tr><th>Email</th><th>Depends on</th><th>Sent by</th><th>State</th><th>Links to</th></tr></thead>
+    <tbody>{email_rows2()}</tbody></table></div>
+  <p class="note">Each row qualified because an anchor in its body resolves to a private-label
+  URL. That string is the evidence, and it is shown.</p>
+</section>
+
+<section id="compare">
+  <div class="shead"><p class="eyebrow">Side by side</p>
+    <h2>Does the new page still say it?</h2></div>
+  <div class="measure">
+  <p>A migration list says what exists. It does not say whether the replacement carries the
+  same message. These are the {len(D["compare"])} mapped pairs, most-linked first, with the
+  headline and opening copy from each side. A red panel means nothing has been written yet.</p>
+  </div>
+  {compare_blocks()}
+</section>
+
+<section id="clones">
+  <div class="shead"><p class="eyebrow">Parallel stack &middot; built, nothing live</p>
+    <h2>What already exists under the Praxera name</h2></div>
+  <div class="measure">
+  <p>The migration pattern is a full parallel stack: clone everything under Praxera branding,
+  leave it all off, then switch over in one move. Nothing below is embedded on a page, enrolled
+  in a workflow, or scheduled &mdash; verified against all 187 site pages, 450 landing pages and
+  511 workflows in the portal.</p>
+  </div>
+  <div class="tscroll"><table>
+    <thead><tr><th>Praxera asset</th><th>Cloned from</th><th>Status</th><th>Link</th></tr></thead>
+    <tbody>{clone_rows()}</tbody></table></div>
+  <div class="call warn">
+    <h3>Two things could not be renamed</h3>
+    <p><code>i_would_like_to_subscribe_to_the_davinci_blog</code> and
+    <code>how_did_you_hear_about_davinci___other__please_specify_</code> are
+    <strong>contact-property internal names</strong>, not form copy. They are shared with every
+    other form and every contact record in the portal, so renaming them is a portal-wide change,
+    not a rebrand task. The labels a visitor reads have been changed; the internal names have not.</p>
+    <p>Everything else came out: the <code>privacyText</code> consent block is stored per form and
+    now says Praxera on all three forms that carried it, and every post-submit redirect now points
+    at a Praxera thank-you page.</p>
+  </div>
 </section>
 
 <section id="next">
@@ -545,7 +732,7 @@ function wire(barId, tableId, countId, match){{
       x.setAttribute('aria-pressed', String(x===b)); }});
     apply(b.dataset.f);
   }});
-  apply('all');
+  apply(bar.querySelector('button.f[aria-pressed=\"true\"]').dataset.f);
 }}
 wire('wf-filters','wf-table','wf-count',function(r,f){{
   if(f==='live') return r.dataset.live==='1';
@@ -557,7 +744,7 @@ wire('as-filters','as-table','as-count',function(r,f){{
   return r.dataset.type===f;
 }});
 wire('em-filters','em-table','em-count',function(r,f){{
-  return (r.dataset.state||'').indexOf(f)===0;
+  return r.dataset.grp===f;
 }});
 </script>
 """

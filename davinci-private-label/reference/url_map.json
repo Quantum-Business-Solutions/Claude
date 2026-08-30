@@ -1,0 +1,808 @@
+[
+ {
+  "old": "https://www.davincilabs.com/private-label-get-started",
+  "emails": 92,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-get-started",
+  "confidence": "MANUAL"
+ },
+ {
+  "old": "https://www.davincilabs.com/private-labeling",
+  "emails": 30,
+  "new": "https://www.praxerasupplements.com/pl-demo-about",
+  "confidence": "MANUAL"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+  "emails": 20,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://info.davincilabs.com/private-label-supplements-resource-center",
+  "emails": 13,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-resources",
+  "confidence": "MANUAL"
+ },
+ {
+  "old": "https://info.davincilabs.com/private-label-supplements-guide",
+  "emails": 10,
+  "new": "https://www.praxerasupplements.com/pl-demo-guides",
+  "confidence": "MANUAL"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-sell-supplements",
+  "emails": 6,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-how-to-sell-supplements",
+  "confidence": "EXACT"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
+  "emails": 4,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-evaluate-supplement-suppliers-in-the-us",
+  "emails": 4,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://www.davincilabs.com/private-labeling-supplement-manufacturer",
+  "emails": 3,
+  "new": "https://www.praxerasupplements.com/pl-demo-about",
+  "confidence": "MANUAL"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/are-private-label-supplements-profitable",
+  "emails": 3,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "http://blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements",
+  "emails": 3,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-private-label-supplements-set-you-apart-from-competition",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/top-selling-private-label-supplements-for-2021",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-private-label-protein-supplements",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/top-private-label-protein-powders-for-your-brand",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-find-right-supplement-wholesaler-for-your-business",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024",
+  "emails": 2,
+  "new": "https://www.praxerasupplements.com/blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
+  "confidence": "LIKELY"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-manage-private-label-supplement-packaging",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-spot-high-quality-private-label-supplements",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/what-qualifications-do-you-need-to-sell-private-label-supplements",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://info.davincilabs.com/private-label-supplements-client-onboarding",
+  "emails": 2,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-onboarding-guide",
+  "confidence": "MANUAL"
+ },
+ {
+  "old": "https://www.davincilabs.com/private-labeling#plform",
+  "emails": 2,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://www.davincilabs.com/private-labeling</a></span></p>",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/private-label-supplements-how-to-make-money",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/private-label-supplements-secret-to-surpassing-sales-goals",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/why-wellness-businesses-should-sell-private-label-supplements",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-private-label-beauty-supplements-can-increase-revenue-fast",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-private-label-supplements-can-increase-revenue-fast",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-scale-your-business-with-private-label-supplements",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/5-best-private-label-supplements-for-sleep-on-the-market",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/tag/private-labeling",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/private-label-supplements-how-to-get-superior-quality-at-low-cost",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://info.davincilabs.com/thank-you-guide-private-labeling-supplements",
+  "emails": 1,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-ty-guide",
+  "confidence": "MANUAL"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/phttps://blog.davincilabs.com/private-label/private-labeling-liquid-vitaminsrivate-labeling-liquid-vitamins",
+  "emails": 1,
+  "new": null,
+  "confidence": "NONE"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/2023-trends-in-vitamin-and-supplement-industry",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "2023 Trends in the Vitamin and Supplement Industry"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "4 Tips to Select the Best Gummy Vitamins for Integrative & Functional Practice"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/an-introduction-to-sports-supplement-manufacturing",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "An Introduction to Sports Supplement Manufacturing"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/are-private-label-vitamins-a-profitable-business",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Are Private-Label Vitamins a Profitable Business?"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/best-private-label-supplements-for-gut-health",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Best Private Label Supplements for Gut Health"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/challenges-and-opportunities-private-label-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Challenges and Opportunities in Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/custom-supplements-vs.-private-label-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Custom Supplements vs. Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How to Promote Your Private Label Supplements on Social Media"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/dev-blog/private-label-supplements-more-than-just-a-trend",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Are Private Label Supplements More Than Just a Trend?"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/do-you-need-insurance-to-sell-private-label-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Do You Need Insurance to Sell Private Label Supplements?"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/does-the-fda-approve-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Does the FDA Approve Supplements?"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-is-protein-powder-made",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How Is Protein Powder Made?"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-physicians-can-get-better-private-labeling-for-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How Physicians Can Get Better Private Labeling for Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-build-a-sports-nutrition-brand-with-private-label-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How to Build a Sports Nutrition Brand with Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-choose-a-private-label-supplement-provider",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How to Choose a Private Label Supplement Company"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-choose-the-best-private-label-manufacturer",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How to Choose the Best Private Label Manufacturer"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-compare-dietary-supplement-providers",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How to Compare Dietary Supplement Providers"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-create-exclusivity-for-private-label-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How to Create Exclusivity for Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-develop-private-label-brand",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How to Develop a brand for Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-enhance-customer-journey-with-private-label-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How to Enhance the Customer Journey with Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-get-started-with-dropshipping-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How to Get Started With Dropshipping Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-to-market-private-label-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How to Market Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/liquid-supplement-manufacturing-benefits-vs.-costs",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Liquid Supplement Manufacturing: Benefits vs. Costs"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/make-your-own-supplement-brand-the-easy-way",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Make Your Own Supplement Brand The Easy Way"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Managing the Top 3 Risks When Selling Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/must-have-private-label-probiotics-to-expand-your-product-line",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Must-Have Private-Label Probiotics To Expand Your Product Line"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/powder-supplement-manufacturing-essential-tips-for-private-labelers",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Powder Supplement Manufacturing: Essential Tips For Private Labelers"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/private-labeling-liquid-vitamins",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Private Labeling Liquid Vitamins"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/supplement-dropshipping-5-best-tips-for-success",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Supplement Dropshipping: 5 Best Tips for Success"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/supplement-dropshipping-can-it-boost-profitability",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "SUPPLEMENT DROPSHIPPING: CAN IT BOOST PROFITABILITY?"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Tips for Buying Wholesale Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-for-immunity",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Tips for Selling Private Label Supplements for Immunity"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/top-10-mistakes-to-avoid-with-supplement-manufacturing",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Top 10 Mistakes to Avoid With Supplement Manufacturing"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/top-private-label-herbal-supplements-and-their-key-benefits",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Top Private Label Herbal Supplements And Their Key Benefits"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/trending-private-label-supplements-for-2022",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Trending Private Label Supplements for 2023"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/white-label-supplements-vs.-private-label-what-is-the-difference",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "White Label Supplements vs. Private Label: What Is the Difference?"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/why-branded-ingredients-are-important-to-private-label-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Why Branded Ingredients Are Important for Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/contract-manufacturing-vs-private-labeling-supplements",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Contract Manufacturing vs Private Labeling: Which Supplement Service Is Right for Your Brand?"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/healthcare-practitioner-supplement-line-guide",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How Healthcare Practitioners Build a Private Label Supplement Line for Their Practice"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/how-much-to-start-a-private-label-supplement-business",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "How Much Does It Cost to Start a Private Label Supplement Business? (2026 Guide)"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/supplement-certifications-usp-nsf-gmp-fda",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "USP, NSF, GMP, and FDA: A Buyer's Guide to Supplement Certifications That Actually Matter"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements-0",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Tips for Buying Wholesale Private Label Supplements"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Tips for Selling Private Label Supplements on Amazon"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0-0",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Tips for Selling Private Label Supplements on Amazon"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0-1",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "Tips for Selling Private Label Supplements on Amazon"
+ },
+ {
+  "old": "https://blog.davincilabs.com/private-label/what-is-a-nutraceutical-supplement",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Blog post",
+  "title": "What Is a Nutraceutical? A Buyer's Guide to Private Label Nutraceutical Supplements"
+ },
+ {
+  "old": "https://info.davincilabs.com/dv-pl-customer-supplied-art",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-customer-art",
+  "confidence": "MANUAL",
+  "type": "Landing page",
+  "title": "DV: PL Customer Supplied Art"
+ },
+ {
+  "old": "https://info.davincilabs.com/dv-pl-design-main-page",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/pl-demo-design-services",
+  "confidence": "MANUAL",
+  "type": "Landing page",
+  "title": "DV: PL Design Main Page"
+ },
+ {
+  "old": "https://info.davincilabs.com/dv-pl-our-design-services",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-design-team",
+  "confidence": "MANUAL",
+  "type": "Landing page",
+  "title": "DV: PL Our Design Services"
+ },
+ {
+  "old": "https://info.davincilabs.com/ingredients-testing-certification-guide",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/pl-demo-ingredients-testing",
+  "confidence": "MANUAL",
+  "type": "Landing page",
+  "title": "DV LP: Private Labeling Supplement: Ingredients, Testing & Certification"
+ },
+ {
+  "old": "https://info.davincilabs.com/thank-you-client-onboarding",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-ty-onboarding",
+  "confidence": "MANUAL",
+  "type": "Landing page",
+  "title": "DV TY: Private Label Supplements: Client Onboarding"
+ },
+ {
+  "old": "https://info.davincilabs.com/thank-you-ingredients-testing-certification-guide",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-ty-guide",
+  "confidence": "MANUAL",
+  "type": "Landing page",
+  "title": "DV TY: Private Label Supplements: Ingredients Testing & Certification Guide"
+ },
+ {
+  "old": "https://info.davincilabs.com/thank-you-private-labeling",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-ty-consultation",
+  "confidence": "MANUAL",
+  "type": "Landing page",
+  "title": "TY: Private Label"
+ },
+ {
+  "old": "https://info.davincilabs.com/thank-you-start-private-labeling",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-ty-consultation",
+  "confidence": "MANUAL",
+  "type": "Landing page",
+  "title": "TY: Private Labeling_Meeting Link"
+ },
+ {
+  "old": "https://info.davincilabs.com/ty-private-label-supplements",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-ty-consultation",
+  "confidence": "MANUAL",
+  "type": "Landing page",
+  "title": "TY: Private Label"
+ },
+ {
+  "old": "http://4087538.hs-sites.com/private-label-supplements-resource-center-0",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Landing page",
+  "title": "Resource Center Update"
+ },
+ {
+  "old": "https://info.davincilabs.com/-temporary-slug-8c4e7dce-5a98-4b7f-a3f1-84a140579d00",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Landing page",
+  "title": "PL PAGE"
+ },
+ {
+  "old": "https://info.davincilabs.com/-temporary-slug-cc56708a-cd8c-4319-8c8e-a3eeb445b64e",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Landing page",
+  "title": "Private Label"
+ },
+ {
+  "old": "https://info.davincilabs.com/-temporary-slug-dff2ebb0-5dcb-445c-a5c5-baae1145dbee",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Landing page",
+  "title": "Private Label Page"
+ },
+ {
+  "old": "https://info.davincilabs.com/coming-soon-liposomal-elderberry-0",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Landing page",
+  "title": "Liposomal Elderberry Private Label"
+ },
+ {
+  "old": "https://info.davincilabs.com/learning-center-0-0",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Landing page",
+  "title": "Private Label Page"
+ },
+ {
+  "old": "https://info.davincilabs.com/pl-demo-custom-formulation",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/pl-demo-custom-formulation",
+  "confidence": "EXACT",
+  "type": "Site page",
+  "title": "Private Label - Standard Page - Custom Formulation"
+ },
+ {
+  "old": "https://info.davincilabs.com/pl-demo-definitive-guide",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-definitive-guide",
+  "confidence": "EXACT",
+  "type": "Site page",
+  "title": "Private Label - Resource Page - Definitive Guide"
+ },
+ {
+  "old": "https://info.davincilabs.com/pl-demo-get-started",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-get-started",
+  "confidence": "EXACT",
+  "type": "Site page",
+  "title": "Private Label - Landing Page - Get Started"
+ },
+ {
+  "old": "https://info.davincilabs.com/pl-demo-pillarpage",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Site page",
+  "title": "Private Label - Pillar Page - Definitive Guide"
+ },
+ {
+  "old": "https://info.davincilabs.com/private-label-home",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Site page",
+  "title": "Private Label - Home - Home Page"
+ },
+ {
+  "old": "https://info.davincilabs.com/private-label-test",
+  "emails": 0,
+  "new": null,
+  "confidence": "NONE",
+  "type": "Site page",
+  "title": "Private Label - Home - Test Page (reference)"
+ },
+ {
+  "old": "https://www.davincilabs.com/private-labeling-dropship",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-dropshipping",
+  "confidence": "MANUAL",
+  "type": "Main-site page",
+  "title": "Private Labeling Dropship (main site)"
+ },
+ {
+  "old": "https://www.davincilabs.com/private-labeling-how-to-sell-supplements",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/en/pl-demo-how-to-sell-supplements",
+  "confidence": "MANUAL",
+  "type": "Main-site page",
+  "title": "Private Labeling: How to Sell Supplements (main site)"
+ },
+ {
+  "old": "https://www.davincilabs.com/private-labeling/",
+  "emails": 0,
+  "new": "https://www.praxerasupplements.com/pl-demo-about",
+  "confidence": "MANUAL",
+  "type": "Main-site page",
+  "title": "Private Labeling (main site)"
+ }
+]
