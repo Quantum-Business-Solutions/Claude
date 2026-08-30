@@ -196,7 +196,13 @@ for m in M:
     if prev_co_domain: p["previous__company_domain_name"]=prev_co_domain
     if prev_co_id:
         p["ai__previously_associated_company_id"]=prev_co_id
-        p["ai__previously_associated_company"]=PORTAL_RECORD_URL+prev_co_id
+        # Rich text (fieldType html), so this renders as a real anchor with the company NAME as the
+        # link text rather than a bare URL. Escape the name - a company called "Smith & Jones <Co>"
+        # would otherwise break the markup or, worse, inject it.
+        import html as _html
+        _label=_html.escape(prev_co_name or ("company "+prev_co_id))
+        p["ai__previously_associated_company"]=(
+            '<a href="'+PORTAL_RECORD_URL+prev_co_id+'">'+_label+'</a>')
     if prev_co_name or prev_company:
         p["ai__previously_associated_company_name"]=prev_co_name or prev_company
     u=call('PATCH',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}",{"properties":p}); ok='id' in u
