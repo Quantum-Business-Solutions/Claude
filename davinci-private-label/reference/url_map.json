@@ -8,7 +8,7 @@
  {
   "old": "https://www.davincilabs.com/private-labeling",
   "emails": 30,
-  "new": "https://www.praxerasupplements.com/pl-demo-about",
+  "new": "https://www.praxerasupplements.com/en/pl-demo-about",
   "confidence": "MANUAL"
  },
  {
@@ -26,7 +26,7 @@
  {
   "old": "https://info.davincilabs.com/private-label-supplements-guide",
   "emails": 10,
-  "new": "https://www.praxerasupplements.com/pl-demo-guides",
+  "new": "https://www.praxerasupplements.com/en/pl-demo-guides",
   "confidence": "MANUAL"
  },
  {
@@ -50,7 +50,7 @@
  {
   "old": "https://www.davincilabs.com/private-labeling-supplement-manufacturer",
   "emails": 3,
-  "new": "https://www.praxerasupplements.com/pl-demo-about",
+  "new": "https://www.praxerasupplements.com/en/pl-demo-about",
   "confidence": "MANUAL"
  },
  {
@@ -624,7 +624,7 @@
  {
   "old": "https://info.davincilabs.com/dv-pl-design-main-page",
   "emails": 0,
-  "new": "https://www.praxerasupplements.com/pl-demo-design-services",
+  "new": "https://www.praxerasupplements.com/en/pl-demo-design-services",
   "confidence": "MANUAL",
   "type": "Landing page",
   "title": "DV: PL Design Main Page"
@@ -640,7 +640,7 @@
  {
   "old": "https://info.davincilabs.com/ingredients-testing-certification-guide",
   "emails": 0,
-  "new": "https://www.praxerasupplements.com/pl-demo-ingredients-testing",
+  "new": "https://www.praxerasupplements.com/en/pl-demo-ingredients-testing",
   "confidence": "MANUAL",
   "type": "Landing page",
   "title": "DV LP: Private Labeling Supplement: Ingredients, Testing & Certification"
@@ -736,7 +736,7 @@
  {
   "old": "https://info.davincilabs.com/pl-demo-custom-formulation",
   "emails": 0,
-  "new": "https://www.praxerasupplements.com/pl-demo-custom-formulation",
+  "new": "https://www.praxerasupplements.com/en/pl-demo-custom-formulation",
   "confidence": "EXACT",
   "type": "Site page",
   "title": "Private Label - Standard Page - Custom Formulation"
@@ -800,7 +800,7 @@
  {
   "old": "https://www.davincilabs.com/private-labeling/",
   "emails": 0,
-  "new": "https://www.praxerasupplements.com/pl-demo-about",
+  "new": "https://www.praxerasupplements.com/en/pl-demo-about",
   "confidence": "MANUAL",
   "type": "Main-site page",
   "title": "Private Labeling (main site)"
