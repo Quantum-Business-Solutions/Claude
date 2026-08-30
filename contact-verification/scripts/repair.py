@@ -18,6 +18,12 @@ FIXES
              ~192 movers are invisible to it. Recovers the date from the evidence text where it is
              stated, and reports the ones it cannot derive rather than guessing.
 
+  contradict Contacts carrying verdict `yes` - verified still employed - while ALSO carrying an
+             ejection lead status, which removes them from every calling list. The skill's rule is
+             "NEVER write hs_lead_status on a yes". Classified rather than bulk-reverted, because
+             one subset is defensible: a record with no email on file is arguably a real
+             `Need Updated Info`.
+
   dialable   Contacts carrying verdict `no` while still sitting on an ACTIVE lead status: proven
              departed and still in the dialer. Ejects them to No Longer with Company.
 
@@ -133,6 +139,47 @@ elif FIX=='movers':
     print("  date recovered for %d | cannot derive for %d (left alone, not guessed)"%(len(upd),len(nodate)))
     if nodate: print("   undated e.g.: "+", ".join(nodate[:8]))
     write(upd,'movers')
+
+elif FIX=='contradict':
+    LSX=("No Longer with Company","Need Updated Info","Retired - Remove from All Lists","Not Decision Maker")
+    rows=[];after=None
+    while True:
+        b={"filterGroups":[{"filters":[{"propertyName":"ai__li_still_at_company","operator":"EQ","value":"yes"},
+                                       {"propertyName":"hs_lead_status","operator":"EQ","value":ls}]} for ls in LSX],
+           "properties":["hs_lead_status","ai__contact_evidence","email","phone","company",
+                         "ai__reassociated_on","ai__verification_issue"],"limit":100}
+        if after: b["after"]=after
+        r=api('POST','/crm/v3/objects/contacts/search',b)
+        rows+=r.get('results',[]); after=((r.get('paging') or {}).get('next') or {}).get('after')
+        if not after: break
+    print("\n%d contact(s) verified employed AND ejected"%len(rows))
+    restore={};persona={};keep=0
+    for x in rows:
+        cid=x['id']; p=x['properties']; ls=p.get('hs_lead_status'); ev=(p.get('ai__contact_evidence') or '')
+        if p.get('ai__reassociated_on') or ls in ("No Longer with Company","Retired - Remove from All Lists"):
+            # A mover reconciled to `yes` is employed at the NEW company; the ejection belonged to
+            # the `no` stage and was never cleared. And "departed"/"retired" on a `yes` verdict is
+            # a straight contradiction under any reading.
+            restore[cid]={"hs_lead_status":"ConnectandSell Prospect"}
+        elif ls=="Not Decision Maker":
+            # This process should never have made a buyability call. Restore the person to the
+            # list and flag it, so a human can re-eject on a real judgement rather than a title
+            # string - reversible in both directions, which the silent ejection was not.
+            persona[cid]={"hs_lead_status":"ConnectandSell Prospect",
+                          "ai__verification_issue":"persona_review",
+                          "ai__verification_issue_on":D_TODAY,
+                          "ai__verification_issue_note":("Was 'Not Decision Maker' on a verified-employed "
+                            "record. This process no longer makes buying-authority calls; confirm the "
+                            "persona and re-eject by hand if it genuinely does not fit.")[:900]}
+        elif not p.get('email'):
+            keep+=1                     # genuinely needs an address; the status is doing its job
+        else:
+            restore[cid]={"hs_lead_status":"ConnectandSell Prospect"}
+    print("  restore to prospect          %d  (movers never reconciled, plus straight contradictions)"%len(restore))
+    print("  restore + flag persona_review %d  (was 'Not Decision Maker' on a verified-employed record)"%len(persona))
+    print("  leave alone                   %d  (no email on file - 'Need Updated Info' is accurate)"%keep)
+    upd=dict(restore); upd.update(persona)
+    write(upd,'contradict')
 
 elif FIX=='dialable':
     # A contact carrying verdict `no` while still on an active status is either a missed ejection
