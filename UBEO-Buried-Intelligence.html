@@ -1,0 +1,465 @@
+<title>UBEO Buried Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#F5F6F4; --card:#FFFFFF; --ink:#131A20; --ink-2:#3B474F;
+    --muted:#68757E; --rule:#DCE0DC; --rule-2:#EAEDEA;
+    --found:#1B6552;  --found-bg:#E6EFEB;
+    --risk:#9A3C24;   --risk-bg:#F6E7E1;
+    --recov:#7E6014;  --recov-bg:#F3EDDC;
+    --quote-bg:#EEF0ED;
+    --shadow:0 1px 2px rgba(19,26,32,.05), 0 8px 24px -16px rgba(19,26,32,.18);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0F1418; --card:#161D22; --ink:#E7EBE6; --ink-2:#B6C0C4;
+      --muted:#8B979D; --rule:#283238; --rule-2:#1F282E;
+      --found:#67C3A6; --found-bg:#132A24;
+      --risk:#E08B6C;  --risk-bg:#2B1912;
+      --recov:#D9B462; --recov-bg:#2A2213;
+      --quote-bg:#141B20;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0F1418; --card:#161D22; --ink:#E7EBE6; --ink-2:#B6C0C4;
+    --muted:#8B979D; --rule:#283238; --rule-2:#1F282E;
+    --found:#67C3A6; --found-bg:#132A24;
+    --risk:#E08B6C;  --risk-bg:#2B1912;
+    --recov:#D9B462; --recov-bg:#2A2213;
+    --quote-bg:#141B20;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.8);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+    font-size:16px; line-height:1.62; margin:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px 96px}
+  @media(max-width:640px){ .wrap{padding:0 18px 64px} }
+
+  /* ---------- masthead ---------- */
+  header.mast{padding:64px 0 30px; border-bottom:2px solid var(--ink)}
+  .kicker{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+    display:flex; flex-wrap:wrap; gap:8px 18px; margin-bottom:22px;
+  }
+  h1{
+    font-family:"IBM Plex Serif",Georgia,serif; font-weight:600;
+    font-size:clamp(2.1rem,5.4vw,3.15rem); line-height:1.08;
+    letter-spacing:-.02em; margin:0 0 18px; text-wrap:balance;
+  }
+  .standfirst{
+    font-size:1.14rem; line-height:1.58; color:var(--ink-2);
+    max-width:64ch; margin:0;
+  }
+  .standfirst strong{color:var(--ink); font-weight:600}
+
+  /* ---------- sections ---------- */
+  section{padding-top:52px}
+  h2{
+    font-family:"IBM Plex Serif",Georgia,serif; font-weight:600;
+    font-size:1.62rem; letter-spacing:-.012em; line-height:1.22;
+    margin:0 0 6px; text-wrap:balance;
+  }
+  .sub{color:var(--muted); font-size:.95rem; margin:0 0 26px; max-width:66ch}
+  h3{
+    font-family:"IBM Plex Sans",sans-serif; font-weight:600; font-size:1.02rem;
+    margin:34px 0 10px; letter-spacing:-.005em;
+  }
+  p{max-width:68ch; margin:0 0 16px}
+  a{color:var(--found)}
+
+  /* ---------- figures ---------- */
+  .figs{display:grid; grid-template-columns:repeat(auto-fit,minmax(168px,1fr)); gap:1px;
+        background:var(--rule); border:1px solid var(--rule); border-radius:3px; overflow:hidden}
+  .fig{background:var(--card); padding:20px 18px}
+  .fig .n{
+    font-family:"IBM Plex Mono",monospace; font-weight:500;
+    font-size:1.85rem; letter-spacing:-.03em; line-height:1;
+    font-variant-numeric:tabular-nums; display:block; margin-bottom:9px;
+  }
+  .fig .l{font-size:.845rem; color:var(--muted); line-height:1.42}
+  .fig.found .n{color:var(--found)} .fig.risk .n{color:var(--risk)} .fig.recov .n{color:var(--recov)}
+
+  /* ---------- verbatim evidence ---------- */
+  .ev{
+    background:var(--quote-bg); border-left:2.5px solid var(--muted);
+    padding:15px 18px; margin:0 0 14px; border-radius:0 3px 3px 0;
+  }
+  .ev p{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.83rem; line-height:1.66; margin:0 0 7px; color:var(--ink);
+    max-width:none; overflow-wrap:anywhere;
+  }
+  .ev p:last-of-type{margin-bottom:0}
+  .ev .src{
+    font-family:"IBM Plex Sans",sans-serif; font-size:.79rem;
+    color:var(--muted); margin-top:9px; display:block;
+  }
+  .ev.found{border-left-color:var(--found)}
+  .ev.risk{border-left-color:var(--risk)}
+  .ev.recov{border-left-color:var(--recov)}
+
+  code{
+    font-family:"IBM Plex Mono",monospace; font-size:.86em;
+    background:var(--quote-bg); padding:1.5px 5px; border-radius:3px;
+  }
+
+  /* ---------- tables ---------- */
+  .tw{overflow-x:auto; margin:0 0 20px; border:1px solid var(--rule); border-radius:3px}
+  table{width:100%; border-collapse:collapse; font-size:.9rem; background:var(--card)}
+  th,td{padding:10px 14px; text-align:left; border-bottom:1px solid var(--rule-2)}
+  thead th{
+    font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--muted); font-weight:500;
+    border-bottom:1px solid var(--rule); white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none}
+  td.num{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums;
+         text-align:right; white-space:nowrap}
+  tr.total td{font-weight:600; border-top:1px solid var(--rule); background:var(--quote-bg)}
+  .tag{
+    font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.06em;
+    text-transform:uppercase; padding:2.5px 7px; border-radius:3px; white-space:nowrap;
+  }
+  .tag.found{background:var(--found-bg); color:var(--found)}
+  .tag.risk{background:var(--risk-bg); color:var(--risk)}
+  .tag.recov{background:var(--recov-bg); color:var(--recov)}
+
+  /* ---------- finding block ---------- */
+  .finding{
+    background:var(--card); border:1px solid var(--rule); border-radius:3px;
+    padding:24px 26px; margin:0 0 18px; box-shadow:var(--shadow);
+  }
+  .finding > h3{margin-top:0}
+  .finding p:last-child{margin-bottom:0}
+  .where{
+    font-family:"IBM Plex Mono",monospace; font-size:.78rem; letter-spacing:.05em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 12px;
+    display:flex; gap:8px; align-items:baseline; flex-wrap:wrap;
+  }
+  .where b{color:var(--ink-2); font-weight:500; letter-spacing:.02em}
+
+  ul{max-width:68ch; padding-left:20px; margin:0 0 16px}
+  li{margin-bottom:7px}
+  li::marker{color:var(--muted)}
+
+  .callout{
+    border:1px solid var(--rule); border-top:3px solid var(--risk);
+    background:var(--card); border-radius:3px; padding:22px 24px; margin:0 0 18px;
+  }
+  .callout.q{border-top-color:var(--recov)}
+  .callout h3{margin-top:0}
+  .callout p:last-child{margin-bottom:0}
+
+  footer{
+    margin-top:64px; padding-top:24px; border-top:1px solid var(--rule);
+    color:var(--muted); font-size:.85rem;
+  }
+  footer p{max-width:68ch}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <div class="kicker">
+    <span>Quantum Business Solutions</span>
+    <span>Client: UBEO Business Services</span>
+    <span>Portal 516382</span>
+    <span>August 2026</span>
+  </div>
+  <h1>UBEO Buried Intelligence</h1>
+  <p class="standfirst">
+    UBEO's CRM already knew when thousands of prospects' copier leases end and who signs for
+    them. None of it was in a field anyone could filter. It was in call notes, in task headers,
+    and — for about sixteen hundred contacts — <strong>typed into the contact's name</strong>.
+    This is the record of what was found, what was built, and what was tested and rejected.
+  </p>
+</header>
+
+<section>
+  <h2>What exists now</h2>
+  <p class="sub">Written to the portal. Structured, dated, sourced, and traceable to the
+     engagement it came from.</p>
+
+  <div class="figs">
+    <div class="fig found"><span class="n">2,676</span><span class="l">companies carrying a lease end date</span></div>
+    <div class="fig found"><span class="n">5,643</span><span class="l">engagement records with lease evidence</span></div>
+    <div class="fig found"><span class="n">284</span><span class="l">contacts identified as decision makers</span></div>
+    <div class="fig risk"><span class="n">1,923</span><span class="l">contacts flagged gone, retired or opted out</span></div>
+  </div>
+
+  <h3>Where the lease evidence sits</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Object</th><th style="text-align:right">Lease evidence</th><th style="text-align:right">Decision-maker evidence</th></tr></thead>
+      <tbody>
+        <tr><td>Tasks</td><td class="num">3,744</td><td class="num">238</td></tr>
+        <tr><td>Calls</td><td class="num">1,468</td><td class="num">220</td></tr>
+        <tr><td>Meetings</td><td class="num">221</td><td class="num">6</td></tr>
+        <tr><td>Notes</td><td class="num">133</td><td class="num">5</td></tr>
+        <tr><td>Emails</td><td class="num">77</td><td class="num">0</td></tr>
+        <tr class="total"><td>Total</td><td class="num">5,643</td><td class="num">469</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Tasks outrank calls on both counts. UBEO's migrated task records carry verbatim rep
+     writing rather than AI-generated summaries, which makes them the densest source in
+     the portal — and the one nobody was looking at.</p>
+</section>
+
+<section>
+  <h2>Findings</h2>
+  <p class="sub">Each of these came out of reading real records. The quoted material is
+     exactly as stored.</p>
+
+  <div class="finding">
+    <div class="where"><b>Finding 01</b> · contact name fields</div>
+    <h3>The team has been recording decision makers inside contacts' names</h3>
+    <p>With no field to hold it, reps typed the answer into the only editable box in front of
+       them. Roughly <strong>1,600 contacts</strong> carry a hand-written marker in
+       <code>firstname</code> or <code>lastname</code>.</p>
+    <div class="ev recov">
+      <p>firstname: "Tomiko (DM)"          lastname: "Hankerson"</p>
+      <p>firstname: "Chris"                lastname: "Leitner (DM)"</p>
+      <p>firstname: "(Retired) Nancy"      lastname: "McCorkle"</p>
+      <p>firstname: "DO NOT EMAIL Katherine"  lastname: "Scardino"</p>
+      <p>lastname:  "Mansu (DM) (Replaced Tami F)"</p>
+      <span class="src">Live contact records, UBEO portal 516382</span>
+    </div>
+    <p>That last one records a succession — Leeah Mansu replaced Tami Forester — in a surname.
+       Three consequences: none of it can be filtered or reported on; markers in
+       <code>firstname</code> render inside email greetings; and any enrichment tool that
+       writes the name field destroys it silently.</p>
+    <p><strong>Recovered mechanically in two minutes: 2,088 contacts.</strong> Names were not
+       modified — only the new AI fields were written, so the migration is safe to re-run and
+       nothing downstream breaks.</p>
+  </div>
+
+  <div class="finding">
+    <div class="where"><b>Finding 02</b> · call and task notes</div>
+    <h3>Most calls are logged against the wrong person</h3>
+    <p>Of the first 204 records read closely, where authority could be determined at all:</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>What the note actually says</th><th style="text-align:right">Records</th></tr></thead>
+        <tbody>
+          <tr><td>Names <strong>someone other than</strong> the logged contact</td><td class="num">93</td></tr>
+          <tr><td>Logged contact <em>is</em> the decision maker</td><td class="num">45</td></tr>
+          <tr><td>Unclear from the note</td><td class="num">52</td></tr>
+          <tr><td>No contact associated at all</td><td class="num">14</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>This is not carelessness. The dialer logs the call against whoever it dialed, and the
+       note then faithfully records that somebody else decides. The information was always
+       there; nothing read it.</p>
+    <div class="ev">
+      <p>"Linda POC and Trish the final decision maker"</p>
+      <span class="src">Stamped on 11 separate task records at one account</span>
+    </div>
+    <p>Every logged attempt at that account went to Linda, who has no authority — which is why
+       it shows years of polite declines. Trish decides, and appears in no call log.</p>
+  </div>
+
+  <div class="finding">
+    <div class="where"><b>Finding 03</b> · rep shorthand</div>
+    <h3>Reps write the answer down; it converts better than the AI notes</h3>
+    <p>29% of determinations came from the rep's own handwritten note rather than the
+       AI-generated summary — and those convert at <strong>73%</strong> versus 62% overall.
+       Portal-wide, <strong>9,299 distinct engagement records</strong> contain explicit
+       decision-maker language.</p>
+    <div class="ev found">
+      <p>"tt John C on his cell//Said he is DM but good for now but OK to c/b in 3-6 months"</p>
+      <p>"Recpt said Don left &amp; DM for MFPs is Wendy Eaton (back next week)"</p>
+      <p>"***HQ FOR 4 or 5 LOCATIONS AND GARY YANKANICH IS POC AND DM FOR ALL LOCATIONS***"</p>
+      <p>"advised CIO Jonathan Davis is POC and DM"</p>
+      <p>"the decision-makers for equipment are the owners, not Leanne"</p>
+      <span class="src">Verbatim from UBEO call and task records</span>
+    </div>
+    <p>The last line is why this cannot be automated with pattern matching: it is an explicit
+       <em>negative</em> on a named person, and a regex reads it exactly backwards.</p>
+  </div>
+
+  <div class="finding">
+    <div class="where"><b>Finding 04</b> · everything read</div>
+    <h3>Byproducts nobody asked for</h3>
+    <ul>
+      <li><strong>1,610 contacts marked as no longer at the company</strong>, plus 281 retired —
+          still on call lists, most with live email addresses.</li>
+      <li><strong>16 opt-out and do-not-call requests</strong> recorded in free-text notes,
+          where no suppression process can see them.</li>
+      <li><strong>Buying structure</strong> — accounts that cannot decide locally at all: state
+          procurement, district contracts, parent companies, purchasing committees, fully
+          outsourced IT. Working these as normal prospects is wasted effort.</li>
+      <li><strong>Incumbent providers</strong> named in passing — Ricoh, Xerox, Toshiba, Konica
+          Minolta, Pacific Office Automation, OfficeTech, Office Value, Conway.</li>
+      <li><strong>Live meetings and callbacks</strong> sitting unactioned in old notes, including
+          one booked onsite meeting whose date is recorded two different ways on the same record.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>The gap that matters</h2>
+  <p class="sub">Two intelligence sets were built. Individually they look like progress.
+     Together they barely intersect.</p>
+
+  <div class="figs">
+    <div class="fig"><span class="n">2,676</span><span class="l">accounts with a lease date</span></div>
+    <div class="fig"><span class="n">409</span><span class="l">contacts with an authority verdict</span></div>
+    <div class="fig risk"><span class="n">14</span><span class="l">accounts where <em>both</em> are known</span></div>
+  </div>
+
+  <p>A lease date with no decision maker is a deadline you cannot act on. A decision maker
+     with no lease date is a person with no reason to call. The lease mining and the authority
+     mining were aimed at different accounts, because each followed its own language.</p>
+
+  <h3>The 2,676 accounts that already have a date</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Readiness</th><th style="text-align:right">Accounts</th><th style="text-align:right">Share</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag found">Actionable</span> &nbsp;Decision maker known</td><td class="num">15</td><td class="num">1%</td></tr>
+        <tr><td><span class="tag recov">One call away</span> &nbsp;Authority title on file, unverified</td><td class="num">1,833</td><td class="num">68%</td></tr>
+        <tr><td>Contacts exist, none with authority</td><td class="num">774</td><td class="num">29%</td></tr>
+        <tr><td><span class="tag risk">Blocked</span> &nbsp;No usable contacts at all</td><td class="num">54</td><td class="num">2%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Cut by urgency</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Lease ends</th><th style="text-align:right">Accounts</th><th style="text-align:right">DM known</th><th style="text-align:right">Titled, unverified</th><th style="text-align:right">Need a name</th></tr></thead>
+      <tbody>
+        <tr><td>Next 90 days</td><td class="num">237</td><td class="num">1</td><td class="num">157</td><td class="num">79</td></tr>
+        <tr><td>4–12 months</td><td class="num">465</td><td class="num">3</td><td class="num">313</td><td class="num">149</td></tr>
+        <tr><td>1–2 years</td><td class="num">521</td><td class="num">5</td><td class="num">363</td><td class="num">153</td></tr>
+        <tr><td>2+ years</td><td class="num">997</td><td class="num">5</td><td class="num">701</td><td class="num">291</td></tr>
+        <tr><td>Already lapsed</td><td class="num">456</td><td class="num">1</td><td class="num">299</td><td class="num">156</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>702 accounts have a lease ending within twelve months. Four can be called today.</strong>
+     237 of them expire inside 90 days, and exactly one has a verified decision maker.</p>
+
+  <div class="callout">
+    <h3>The recommendation</h3>
+    <p>Stop expanding either list. Point the reading at the 702 accounts that already have a
+       clock running — verify the named contact at each, and send the 228 with nobody to call
+       to enrichment with a deadline attached. That is a bounded job measured in days, and
+       every determination lands on an account that is actually in play.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Tested and rejected</h2>
+  <p class="sub">Recorded so nobody rebuilds them. Each was measured against records where
+     the answer was already known.</p>
+
+  <div class="finding">
+    <h3>Inferring authority from how the contact speaks</h3>
+    <p>A buyer gives themselves away — <em>"we went with Ricoh"</em>, <em>"I handle the
+       copiers"</em>, <em>"send me a proposal"</em>. Built as a scorer and validated against
+       220 hand-read calls: <strong>it found 0 of 16</strong>.</p>
+    <p>The cause is structural. UBEO's call notes are AI-generated summaries, not transcripts,
+       so first-person speech is paraphrased into the third person before it is ever stored —
+       <strong>0 of 220</strong> calls contain first-person authority language, against
+       <strong>91 of 220</strong> with third-person. Rebuilt as coreference it reached 26%,
+       failing by extracting <code>who</code>, <code>person who</code>, <code>she</code> and
+       <code>staff members</code> as names. Verbatim tasks were tested too: one relevant hit in
+       96 records. <em>Useful for ranking a reading queue; never for filling a field.</em></p>
+  </div>
+
+  <div class="finding">
+    <h3>Classifying decision makers by job title</h3>
+    <p>856,722 contacts carry a job title and roughly half hold one that implies buying
+       authority. It would produce about 418,000 labels — and it is a job-title filter, not
+       intelligence. It cannot distinguish a VP at a 50,000-person firm from an office manager
+       who actually signs, it inherits stale titles, and it says nothing about timing.
+       Available if wanted as a clearly separate confidence tier; not run.</p>
+  </div>
+
+  <div class="finding">
+    <h3>Mining the legacy <code>SalesStrategy</code> field</h3>
+    <p>Present on 178,240 migrated tasks. A 60-record sample contained <strong>zero</strong>
+       decision-maker statements — it holds revenue boilerplate, equipment models and meeting
+       times. The single useful value found was already caught by the ordinary language sweep.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Open questions for UBEO</h2>
+
+  <div class="callout q">
+    <h3>What are <code>scrole1</code> through <code>scrole6</code>?</h3>
+    <p>Six Yes/No fields on 30,987 contacts, carrying roughly 5,200 Yes values
+       (<code>scrole1</code>: 1,878 · <code>scrole4</code>: 1,677 · <code>scrole6</code>: 698 ·
+       <code>scrole2</code>: 342 · <code>scrole3</code>: 312 · <code>scrole5</code>: 297).
+       The labels say nothing — "SCRole3". They appear to have come across in the SalesChain
+       migration. <strong>If any one of them means "decision maker", that is several thousand
+       more at no cost.</strong> Somebody who worked in the legacy system will know in seconds.</p>
+  </div>
+
+  <div class="callout q">
+    <h3>Should the name fields be cleaned?</h3>
+    <p>The markers have been copied into proper fields, so the intelligence is safe either way.
+       Cleaning the names themselves would fix the email-rendering problem — a contact stored as
+       <code>DO NOT EMAIL Katherine</code> is currently marketable with a live address — but it
+       edits data the team put there deliberately. That is UBEO's call, not ours.</p>
+  </div>
+
+  <div class="callout q">
+    <h3>Buying roles on contact records</h3>
+    <p><code>hs_buying_role</code> is set on <strong>2 contacts out of 1,089,827</strong> and has
+       been left untouched throughout, by instruction. There are now 284 identified decision
+       makers whose records could populate it. Writing it changes data live workflows may depend
+       on, so it needs an explicit decision.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Method, in brief</h2>
+  <p>Six stages, with quality gates between them. Signals are extracted from unstructured
+     engagement text, tiered by how firmly the evidence supports them, written to the
+     engagement record with the quote and source id attached, then rolled up to the company and
+     contact. Nothing overwrites better data, and current customers are excluded at both the
+     engagement and rollup level.</p>
+
+  <h3>Things that cost real accuracy</h3>
+  <ul>
+    <li><strong>The search cap.</strong> HubSpot silently truncates at 10,000 results. Without
+        recursive date-windowing the first pass was 36× too small and gave no warning.</li>
+    <li><strong>Direction inversion.</strong> <em>"a year and a half left"</em> and <em>"a year
+        and half into their contract"</em> differ by one word and three years. Elapsed-term
+        language was invisible to the original vocabulary.</li>
+    <li><strong>Name matching.</strong> Exact matching invented gaps — Eric/<em>Erik</em> Porter,
+        Krista Gallio/<em>Christa Galleo</em>, Sheila/<em>Shelia</em> Wood were all in the CRM.
+        Loose matching is worse: Mark Jones and Mary Jones are equally close and different
+        people. The matcher scores rather than decides, and refuses to guess on pairs nothing
+        mechanical can separate.</li>
+    <li><strong>Template pollution.</strong> The largest apparent cluster in the queue was 1,761
+        copies of one SDR call script whose text discusses decision makers. It matched every
+        filter and described no real account.</li>
+  </ul>
+
+  <p>Both processes are documented as reusable skills with runnable quality gates and a
+     regression suite for the name matcher, so this can be run for other clients without
+     rediscovering any of the above.</p>
+</section>
+
+<footer>
+  <p>Prepared by Quantum Business Solutions · UBEO Business Services, HubSpot portal 516382 ·
+     August 2026. All figures read live from the portal at time of writing. Quoted note text is
+     reproduced verbatim from UBEO records, including original spelling.</p>
+</footer>
+
+</div>
