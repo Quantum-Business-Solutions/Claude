@@ -106,6 +106,14 @@ for i in range(0,len(ids),100):
                      "phone","business_phone","ai__verification_issue",
                      "hs_linkedin_url","linkedin_profile_url__unique_value"]}
     r=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/batch/read',b)
+    # A partially failed batch comes back 207 with errors[]; 207 starts with a 2 so the fail-fast
+    # check passes it. Contacts that errored simply never appear in results - they are never
+    # queued, never verified, and the `unverified N` line silently under-reports. Say so.
+    if isinstance(r,dict) and r.get('numErrors'):
+        miss=[i for e in (r.get('errors') or []) for i in ((e.get('context') or {}).get('ids') or [])]
+        sys.stderr.write("WARN partial batch read: "+str(r['numErrors'])+" error(s), "
+                         +str(len(miss))+" contact(s) not returned and therefore NOT queued: "
+                         +", ".join(map(str,miss[:10]))+"\n")
     for x in r.get('results',[]):
         p=x['properties']; seen.add(x['id'])
         v=p.get('ai__li_still_at_company')

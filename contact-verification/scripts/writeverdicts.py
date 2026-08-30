@@ -67,10 +67,20 @@ def call(m,url,body=None,fatal=True):
             sys.stderr.write('HTTP '+code+' on '+m+' '+url.split('?')[0]+' :: '+body_txt[:200]+'\n')
             sys.exit(2)
         return {"__http":code,"__body":body_txt[:200]}
-    try: return json.loads(body_txt) if body_txt.strip() else {}
+    try: d=json.loads(body_txt) if body_txt.strip() else {}
     except Exception:
         if fatal: sys.stderr.write('unparseable response\n'); sys.exit(2)
         return {}
+    # HubSpot answers a PARTIALLY failed batch with 207 and an errors[] array. 207 starts with a
+    # 2, so the check above waves it through and every caller here used to read the short results
+    # list as if it were the whole answer. On the prior-evidence read that is destructive: a
+    # contact missing from the response looks like "no prior evidence", and the write then
+    # REPLACES its history instead of appending to it. Surface it; never let it pass as complete.
+    if isinstance(d,dict) and d.get('numErrors'):
+        d['__partial']=True
+        sys.stderr.write("PARTIAL BATCH: HTTP "+code+", numErrors="+str(d.get('numErrors'))
+                         +" on "+url.split('?')[0]+" :: "+json.dumps(d.get('errors'))[:300]+"\n")
+    return d
 MARKER="RE-"+"ASSOCIATED"    # built at runtime: a filter token is a control character, not prose
 def slug(u):
     if not u: return None
@@ -110,6 +120,18 @@ for i in range(0,len(V),100):
             {"inputs":[{"id":str(x['id'])} for x in V[i:i+100]],
              "properties":["ai__contact_evidence","jobtitle"]})
     for x in pr.get('results',[]): prior[str(x['id'])]=x['properties'] or {}
+# Fail CLOSED on anything the prior read could not return. Writing a contact whose prior evidence
+# we never saw would replace that history rather than append to it - silently, and unrecoverably.
+unread=[str(x['id']) for x in V if str(x['id']) not in prior]
+if unread:
+    print("PRIOR READ INCOMPLETE for "+str(len(unread))+" contact(s): "+", ".join(unread[:10])
+          +("" if len(unread)<=10 else " ..."))
+    print("  These are DROPPED from this batch. Their prior evidence could not be read, so writing")
+    print("  them would overwrite history instead of appending to it. Usually a contact deleted or")
+    print("  merged since the queue was built, or a HubSpot partial-batch (207) failure.")
+    _before=len(V); V=[x for x in V if str(x['id']) in prior]
+    if not V:
+        print("HALT: nothing left in this batch after dropping unreadable records."); sys.exit(2)
 for r in V:
     verdict=r['verdict']; ls=r.get('ls')
     if verdict not in VERDICT_OK:
@@ -302,14 +324,22 @@ MODE=os.environ.get('MODE','first_pass')
 # container restart, spans however many batches the run took, and is exactly the population these
 # ratios are meant to describe.
 def _today_counts():
+    # HubSpot search compares DATE properties as epoch MILLISECONDS at UTC midnight. Passing the
+    # ISO string returns HTTP 400, which this function would have swallowed into a fallback - so
+    # the guardrail would have quietly gone on using the dead local log on every single run.
+    import datetime as _dt
+    try:
+        ms=int(_dt.datetime.strptime(D,"%Y-%m-%d").replace(tzinfo=_dt.timezone.utc).timestamp()*1000)
+    except Exception:
+        return None
     out={}
     for v in ('yes','no','unreadable','no_profile'):
         r=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/search',
                {"filterGroups":[{"filters":[
-                   {"propertyName":"ai__li_last_attempt_date","operator":"EQ","value":D},
+                   {"propertyName":"ai__li_last_attempt_date","operator":"EQ","value":ms},
                    {"propertyName":"ai__li_still_at_company","operator":"EQ","value":v}]}],
                 "limit":1},fatal=False)
-        if '__http' in r: return None
+        if not isinstance(r,dict) or '__http' in r or 'total' not in r: return None
         out[v]=r.get('total',0)
     return out
 _hs=_today_counts()
