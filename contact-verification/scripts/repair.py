@@ -181,6 +181,85 @@ elif FIX=='contradict':
     upd=dict(restore); upd.update(persona)
     write(upd,'contradict')
 
+elif FIX=='ejections':
+    # Re-read every banked `no` against the FULL LinkedIn history and restore anyone who is still
+    # in the job we ejected them from. The verdicts were written from `experience_preview`, which
+    # truncates - a current employer outside the cut reads as departed. A 57-record sample found
+    # 19% wrong. Reads are expensive and rate-limited, so this runs ONCE and writes a proposal to
+    # /tmp/ejection_proposal.json; --apply reads that file and does not re-read LinkedIn.
+    import html as _h
+    PROP='/tmp/ejection_proposal.json'
+    if APPLY:
+        if not os.path.exists(PROP):
+            sys.stderr.write("HALT: no proposal at "+PROP+". Run without --apply first.\n"); sys.exit(2)
+        prop=json.load(open(PROP))
+        print("\napplying %d restoration(s) from %s"%(len(prop),PROP))
+        upd={}
+        for r in prop:
+            note=("CORRECTION %s: this contact was marked departed on a TRUNCATED LinkedIn history "
+                  "(experience_preview returns only the most recent rows). A full read shows %s as a "
+                  "CURRENT role - %s since %s, no end date. Verdict and lead status restored."
+                  %(D_TODAY,r['company'],r['title'],r['start']))
+            upd[r['id']]={"ai__li_still_at_company":"yes",
+                          "hs_lead_status":"ConnectandSell Prospect",
+                          "ai__contact_verified_date":D_TODAY,
+                          "ai__li_last_attempt_date":D_TODAY,
+                          "ai__contact_evidence":(note+" || "+r.get('old_ev',''))[:990]}
+        write(upd,'ejections'); sys.exit(0)
+
+    K=os.environ.get('UNIPILE_V2_KEY')
+    if not K: sys.stderr.write("HALT: UNIPILE_V2_KEY not set - cannot re-read LinkedIn.\n"); sys.exit(2)
+    ACC=os.environ.get('UNIPILE_V2_ACCOUNT_ID','acc_01m19mb99wfzvsb68etkn5n87x')
+    SUF=r'\b(inc|incorporated|llc|ltd|limited|corp|corporation|co|company|group|holdings|plc|the)\b'
+    def norm(x):
+        x=re.sub(SUF,' ',re.sub(r'[^a-z0-9 ]',' ',(x or '').lower())); return re.sub(r'\s+',' ',x).strip()
+    def same(a,b):
+        a,b=norm(a),norm(b)
+        if not a or not b: return False
+        if a==b: return True
+        sh,lo=(a,b) if len(a)<=len(b) else (b,a)
+        return len(sh)>=5 and sh in lo
+    def prof(slug):
+        u=("https://api.unipile.com/v2/"+ACC+"/users/"+slug+"?with_sections=linkedin_experience")
+        rq=urllib.request.Request(u,headers={"X-API-KEY":K,"accept":"application/json"})
+        for a in range(5):
+            try:
+                with urllib.request.urlopen(rq,timeout=45) as f: d=json.loads(f.read())
+            except urllib.error.HTTPError as e:
+                if e.code==429: time.sleep(8*(a+1)); continue
+                return None,"HTTP %d"%e.code
+            except Exception as e: return None,type(e).__name__
+            return ((d.get('specifics') or {}).get('experience') or d.get('experience') or []),None
+        return None,"429 after 5 retries"
+    rows=search([{"propertyName":"ai__li_still_at_company","operator":"EQ","value":"no"}],
+                ["firstname","lastname","company","hs_lead_status","hs_linkedin_url",
+                 "linkedin_profile_url__unique_value","ai__contact_evidence"])
+    print("\nre-reading %d banked 'no' verdict(s) against FULL history..."%len(rows))
+    out=[];checked=0;skipped=0
+    for i,x in enumerate(rows):
+        p=x['properties']
+        m=re.search(r'/in/([^/?#]+)',(p.get('hs_linkedin_url') or p.get('linkedin_profile_url__unique_value') or ''))
+        if not m or not p.get('company'): skipped+=1; continue
+        exp,err=prof(m.group(1))
+        if err: skipped+=1; time.sleep(3.5); continue
+        checked+=1
+        cur=[e for e in exp if not e.get('ended_on')]
+        hit=[e for e in cur if same((e.get('company') or {}).get('name'),p['company'])]
+        if hit:
+            e=hit[0]
+            out.append({"id":x['id'],"who":"%s %s"%(p.get('firstname') or '',p.get('lastname') or ''),
+                        "company":p['company'],"title":e.get('job_title'),"start":e.get('started_on'),
+                        "was":p.get('hs_lead_status'),"rows":len(exp),
+                        "old_ev":(p.get('ai__contact_evidence') or '')[:600]})
+            print("   WRONG  %s  %s still at %s as %s since %s  [was %s]"
+                  %(x['id'],out[-1]['who'],p['company'],e.get('job_title'),e.get('started_on'),p.get('hs_lead_status')))
+        if (i+1)%50==0: print("   ...%d/%d read, %d wrong so far"%(i+1,len(rows),len(out)))
+        time.sleep(3.5)
+    json.dump(out,open(PROP,'w'),indent=1)
+    print("\nchecked %d | could not check %d | WRONGLY EJECTED %d  (%.0f%%)"
+          %(checked,skipped,len(out),100.0*len(out)/max(checked,1)))
+    print("proposal written to "+PROP+" - review it, then re-run with --apply")
+
 elif FIX=='dialable':
     # A contact carrying verdict `no` while still on an active status is either a missed ejection
     # or a verdict that was never really about employment. Ejecting the whole set on the strength
