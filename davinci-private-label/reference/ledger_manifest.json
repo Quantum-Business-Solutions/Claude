@@ -1,0 +1,47 @@
+{
+ "ledger_of_record": {
+  "clientcommand": {
+   "portal": "6d797a44-e010-410f-b532-64ac42627d64",
+   "slug": "praxera-migration-asset-ledger",
+   "updated": "2026-08-30T22:09:17Z",
+   "verified": "content read back and confirmed byte-for-byte"
+  },
+  "claude_artifact": {
+   "url": "https://claude.ai/code/artifact/5ed16bf6-6612-4867-9584-bb2face0631d",
+   "status": "SUPERSEDED - predates the workflow clones, the 26 extra email clones, the page form swap and the QA fixes"
+  },
+  "repo": "reference/*.json is the machine-readable source of truth"
+ },
+ "state_at_last_sync": {
+  "pages": {
+   "n": 65,
+   "states": {
+    "DRAFT": 65
+   }
+  },
+  "blog": {
+   "n": 75,
+   "states": {
+    "DRAFT": 75
+   }
+  },
+  "emails": {
+   "clones": 109,
+   "states": {
+    "DRAFT": 109
+   },
+   "templates": 2,
+   "portal_total": 3073
+  },
+  "forms": {
+   "clones": 11,
+   "portal_total": 263
+  },
+  "workflows": {
+   "clones": 12,
+   "enabled": 0,
+   "portal_total": 523
+  }
+ },
+ "synced": "2026-08-30T22:10:42Z"
+}
