@@ -35,6 +35,25 @@ from .config import TIMEZONE
 #: continued, and nobody noticed for twelve weeks. This is the tripwire.
 LEDGER_STALE_DAYS = 3
 
+#: The date from which the ledger is considered authoritative.
+#:
+#: The Jun 1 -> Aug 29 gap is deliberately NOT being back-filled: those sends
+#: are unrecoverable (Unipile's /users/invite/sent is pending-only with
+#: synthesised timestamps, so there is nothing accurate to reconstruct from)
+#: and inventing records would be worse than having none.
+#:
+#: But writing it off has a consequence that must be handled in code. The
+#: staleness rule halts when history exists and nothing recent does — and 153
+#: historic tasks with no recent ones is exactly that shape. Left alone it
+#: would halt EVERY run forever, because the routine cannot make its first
+#: ledger entry without sending, and cannot send while the ledger looks dead.
+#:
+#: Scoping "history" to this epoch breaks the deadlock honestly: before it,
+#: silence is written off; after it, silence is a fault. The first run finds
+#: no post-epoch history, treats itself as a fresh ledger, and proceeds. Every
+#: run after that is held to the full standard.
+LEDGER_EPOCH = date(2026, 8, 29)
+
 #: How far the independent count may exceed the ledger before a run halts.
 #: Unipile's own counts are themselves approximate (``/users/invite/sent``
 #: returns pending invitations only, with synthesised timestamps), so a small
@@ -125,6 +144,10 @@ def decide_allowance(
     """
     # A dead ledger reads zero, and zero reads as full capacity. That is the
     # over-send direction, so it is the one case that must never pass.
+    #
+    # `ledger_writes_ever` must be counted FROM LEDGER_EPOCH, not from all
+    # time. Counting all time would see the pre-epoch history, judge the
+    # ledger dead, and halt permanently -- see LEDGER_EPOCH.
     if ledger_writes_ever > 0 and ledger_writes_in_window == 0:
         return CapDecision(
             0, posted_today,

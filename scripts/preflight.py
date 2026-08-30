@@ -38,6 +38,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from qbs_linkedin import config as cfg  # noqa: E402
 from qbs_linkedin.ledger import (  # noqa: E402
+    LEDGER_EPOCH,
     LEDGER_STALE_DAYS,
     chicago_day_bounds,
     decide_allowance,
@@ -232,7 +233,14 @@ def check_ledger_alive(token: str, rep: Report) -> None:
         recent = _count(token, "tasks", linkedin_task + [
             {"propertyName": cfg.CAP_DATE_PROPERTY, "operator": "GTE",
              "value": int(cutoff.timestamp() * 1000)}])
-        ever = _count(token, "tasks", linkedin_task)
+        # Counted from LEDGER_EPOCH, not all time. The pre-epoch history is
+        # written off; counting it would judge the ledger permanently dead.
+        epoch_ms = int(datetime.combine(
+            LEDGER_EPOCH, datetime.min.time(), tzinfo=timezone.utc
+        ).timestamp() * 1000)
+        ever = _count(token, "tasks", linkedin_task + [
+            {"propertyName": cfg.CAP_DATE_PROPERTY, "operator": "GTE",
+             "value": epoch_ms}])
         today = _count(token, "tasks", linkedin_task + [
             {"propertyName": cfg.CAP_DATE_PROPERTY, "operator": "BETWEEN",
              "value": day_start, "highValue": day_end}])
@@ -250,7 +258,8 @@ def check_ledger_alive(token: str, rep: Report) -> None:
     )
     rep.add(
         "ledger", not decision.halted,
-        f"{today} today / {recent} in {LEDGER_STALE_DAYS}d / {ever:,} ever "
+        f"{today} today / {recent} in {LEDGER_STALE_DAYS}d / {ever:,} since "
+        f"epoch {LEDGER_EPOCH} "
         f"-> {decision.reason}",
         EXIT_ENV if decision.halted else None,
     )

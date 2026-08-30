@@ -181,3 +181,38 @@ class TestActiveHours:
         # after a 90-180s pause the next one would land past 18:00.
         assert within_active_hours((7, 18), datetime(2026, 8, 29, 17, 55, tzinfo=TIMEZONE))
         assert not within_active_hours((7, 18), datetime(2026, 8, 29, 18, 2, tzinfo=TIMEZONE))
+
+
+class TestLedgerEpoch:
+    """The Jun 1 -> Aug 29 gap is written off, not back-filled.
+
+    Writing it off has a consequence: 153 historic records with nothing recent
+    is exactly the shape the staleness rule halts on, so counting history from
+    all time would deadlock every run forever — the routine cannot make its
+    first ledger entry without sending, and cannot send while the ledger looks
+    dead. Scoping "history" to the epoch breaks that honestly.
+    """
+
+    def test_counting_history_from_all_time_would_deadlock(self):
+        # What the pre-epoch behaviour did: 153 historic, none recent -> halt,
+        # on every run, with no way out.
+        d = decide_allowance(posted_today=0, per_day=60, per_run=20,
+                             ledger_writes_in_window=0, ledger_writes_ever=153)
+        assert d.halted
+
+    def test_scoped_to_the_epoch_the_first_run_proceeds(self):
+        # Same portal, same day — but history counted from LEDGER_EPOCH is 0,
+        # which is a fresh ledger rather than a dead one.
+        d = decide_allowance(posted_today=0, per_day=60, per_run=20,
+                             ledger_writes_in_window=0, ledger_writes_ever=0)
+        assert not d.halted and d.allowance == 20
+
+    def test_the_standard_applies_again_from_the_second_run(self):
+        # Once post-epoch writes exist, silence is a fault once more.
+        d = decide_allowance(posted_today=0, per_day=60, per_run=20,
+                             ledger_writes_in_window=0, ledger_writes_ever=8)
+        assert d.halted
+
+    def test_epoch_is_a_date_not_a_datetime(self):
+        from qbs_linkedin.ledger import LEDGER_EPOCH
+        assert isinstance(LEDGER_EPOCH, date)

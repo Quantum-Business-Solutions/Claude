@@ -198,3 +198,47 @@ cannot drift apart on what "safe to send" means. Live output:
 starting at 17:55 must not place its next comment at 18:02 after a 90–180s
 pause. Tested at both ends of the window and against a UTC instant that looks
 like the middle of the night but is 18:00 locally.
+
+## Decision: the Jun 1 → Aug 29 ledger gap is written off, not back-filled
+
+Shawn's call, 2026-08-29. Those sends are unrecoverable anyway —
+`/users/invite/sent` returns pending invitations only, with synthesised
+timestamps (every entry shares one fabricated time-of-day), so there is nothing
+accurate to reconstruct from. Inventing records would be worse than having none.
+
+**But writing it off had a consequence that needed handling in code.** The
+staleness rule halts when history exists and nothing recent does, and 153
+historic tasks with no recent ones is exactly that shape. Left alone it would
+have halted **every run forever**: the routine cannot write its first ledger
+entry without sending, and cannot send while the ledger looks dead.
+
+`LEDGER_EPOCH = 2026-08-29` breaks the deadlock honestly. Before it, silence is
+written off; after it, silence is a fault. The first run finds no post-epoch
+history, treats itself as a fresh ledger, and proceeds. Every run after that is
+held to the full standard — one send creates one record, and a day of silence
+after that halts.
+
+Preflight now passes:
+
+```
+[PASS] ledger: 0 today / 0 in 3d / 0 since epoch 2026-08-29
+       -> 20 allowed (0/60 used today)
+
+PREFLIGHT OK
+```
+
+Three tests pin the behaviour, including one asserting the old all-time count
+*would* have deadlocked, so nobody reintroduces it.
+
+## Playwright cannot reach LinkedIn from this environment
+
+Tested 2026-08-29. Chromium launches (use the pre-installed
+`/opt/pw-browsers/chromium-1194/chrome-linux/chrome` via `executable_path` —
+`pip install playwright` pulls a build expecting 1234 and `playwright install`
+must not be run). Navigation to a LinkedIn post fails with
+`net::ERR_CONNECTION_RESET` both with and without an explicit proxy, while
+`curl https://www.linkedin.com/` returns HTTP 200 from the same container —
+so it is LinkedIn's bot detection on headless Chromium, not egress policy.
+
+Not worth pursuing: the Unipile API returns comment and post content directly,
+which is authoritative rather than a rendering of it.
