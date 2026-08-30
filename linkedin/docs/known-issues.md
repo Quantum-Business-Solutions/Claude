@@ -464,3 +464,48 @@ instrument failure become a finding.
 that silently degrades to v1 without saying so is how a version problem stays
 invisible for weeks — the same failure mode as a routine reporting SUCCEEDED
 while writing nothing. Report the route in every run summary.
+
+### Re-tested 2026-08-30: v2 still returns no work experience
+
+The first sweep varied `linkedin_sections` as a **scalar** string. The v1
+OpenAPI spec declares it an **array**, so a scalar could plausibly have been
+dropped by a stricter v2 validator — a good reason to doubt the first result.
+It was re-tested properly. Every array syntax, on the same person, same key:
+
+```
+linkedin_sections[]=experience                HTTP 200   work_experience=0
+linkedin_sections=experience&...=education    HTTP 200   work_experience=0
+linkedin_sections=["experience"]              HTTP 200   work_experience=0
+linkedin_sections[]=*                         HTTP 200   work_experience=0
+linkedin_sections[]=*_preview                 HTTP 200   work_experience=0
+```
+
+v1 control, same member id, same moment: **7 dated roles**, including the
+current one (`Quantum Business Solutions | CEO | 2/1/2020 -> None`).
+
+A separate v2 sub-resource was also ruled out — `/users/{id}/experience`,
+`/sections`, `/positions`, `/profile` and `/linkedin/users/{id}` all return
+404 `api/resource_not_found`.
+
+`specifics` on v2 carries only identity flags (`member_id`,
+`network_distance`, `is_premium`, `can_send_inmail`, …) and **no
+`throttled_sections` key at all**, so this is not LinkedIn throttling us —
+the section machinery is simply not wired up on v2 yet.
+
+So `profile()` stays pinned to v1. Revisit only when Unipile documents
+experience on v2; do not re-derive it from a 200.
+
+### Two Shawn accounts still exist on v1
+
+The v1 account list returns 7 accounts and **two** are Shawn, both reporting
+the same immutable member id `ACoAAAGv8WABzhfWcURPIaBDzbgiEWX5e781Etw`:
+
+```
+7lBoyXuETqKdiJYLj5HBGA    <- what the v2 account maps to
+S6ua4SfUT4SMRFZFOmyUzQ    <- what config.SHAWN_ACCOUNT_ID pins
+```
+
+The deletion propagated to v2 (6 accounts) but not v1 (still 7). Because both
+carry the same member id, `assert_identity` passes for either — the identity
+guard cannot tell them apart. Only `assert_send_account`'s allowlist on the
+account id does, so that constant is load-bearing and must not be relaxed.

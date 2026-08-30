@@ -123,7 +123,18 @@ def evaluate_post(
     if any(social_id.startswith(p) for p in SKIP_POST_URN_PREFIXES):
         return PostDecision(False, "group post — invisible to their network", key)
 
-    if key in already_commented:
+    # v2 hands us BOTH urns for a post (activity and ugcPost); a v1 post has
+    # only the one. Shawn's comment may carry either tail -- posts.py's own
+    # docstring above records that Comment.post_id follows social_id, and for
+    # a ugcPost that is a different number from the activity id. Checking only
+    # the preferred urn re-comments on posts he has already answered, which is
+    # the failure this module exists to prevent. So test every urn we hold.
+    candidate_keys = {key} | {
+        k for k in (post_join_key(str(u)) for u in post.get("_all_urn_ids") or [])
+        if k
+    }
+    hit = candidate_keys & already_commented
+    if hit:
         return PostDecision(False, "already commented", key)
 
     if skip_reposts and post.get("is_repost"):
