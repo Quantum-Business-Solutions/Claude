@@ -1,0 +1,460 @@
+{
+ "DV: Retargeting: Visited Private Label Page & Didn't Convert": {
+  "id": "33007370",
+  "enroll_forms": [],
+  "enroll_lists": [],
+  "enroll_filter_types": [
+   "PAGE_VIEW",
+   "PROPERTY"
+  ],
+  "emails": [
+   [
+    "31490030482",
+    "Retargeting Workflow #1: Come Back & Register!",
+    "AUTOMATED"
+   ]
+  ]
+ },
+ "DV: Private Label Guide_ToF_Danielle_Nurture": {
+  "id": "55131036",
+  "enroll_forms": [
+   "LP: Private Labeling Supplements Guide"
+  ],
+  "enroll_lists": [],
+  "enroll_filter_types": [
+   "FORM_SUBMISSION",
+   "PAGE_VIEW",
+   "PROPERTY"
+  ],
+  "emails": [
+   [
+    "41523214478",
+    "Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL",
+    "AUTOMATED"
+   ],
+   [
+    "41523978161",
+    "Private_Label_Guide_ToF_Danielle_Top_Selling_PL_Supplements_2021",
+    "AUTOMATED"
+   ],
+   [
+    "41918398828",
+    "Private_Label_Guide_ToF_Danielle_How to_start-PL_Business_7steps",
+    "AUTOMATED"
+   ],
+   [
+    "41919076196",
+    "Private_Label_Guide_ToF_Benefits_Private_Label_With_Davinci",
+    "AUTOMATED"
+   ],
+   [
+    "59544811350",
+    "1 Private_Label_Guide_ToF_Danielle_TY",
+    "AUTOMATED"
+   ],
+   [
+    "59545104541",
+    "2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
+    "AUTOMATED"
+   ],
+   [
+    "59545111816",
+    "3 Private_Label_Guide_ToF_Danielle_How_to_create_exclusivity",
+    "AUTOMATED"
+   ],
+   [
+    "159564033066",
+    "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
+    "AUTOMATED_AB"
+   ],
+   [
+    "112278594413",
+    "5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice (Test Clone)",
+    "AUTOMATED"
+   ]
+  ]
+ },
+ "DV: Private Label Guide_ToF_Paul_Nurture": {
+  "id": "63730093",
+  "enroll_forms": [
+   "LP: Private Labeling Supplements Guide"
+  ],
+  "enroll_lists": [],
+  "enroll_filter_types": [
+   "FORM_SUBMISSION",
+   "PAGE_VIEW",
+   "PROPERTY"
+  ],
+  "emails": [
+   [
+    "44286486907",
+    "Private_Label_Guide_ToF_Paul_6_Benefits of Selling PL",
+    "AUTOMATED"
+   ],
+   [
+    "44289135702",
+    "Private_Label_Guide_ToF_Paul_How to_start-PL_Business_7steps",
+    "AUTOMATED"
+   ],
+   [
+    "44289895090",
+    "Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Davinci",
+    "AUTOMATED"
+   ],
+   [
+    "59783395966",
+    "1: Private Label Guide ToF Paul_TY",
+    "AUTOMATED"
+   ],
+   [
+    "159534087563",
+    "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
+    "AUTOMATED_AB"
+   ],
+   [
+    "59790992173",
+    "3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Inventory",
+    "AUTOMATED"
+   ],
+   [
+    "159557448722",
+    "5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
+    "AUTOMATED_AB"
+   ],
+   [
+    "44287869499",
+    "Private_Label_Guide_ToF_Paul_Top_Selling_PL_Supplements",
+    "AUTOMATED"
+   ]
+  ]
+ },
+ "DV: Private Label Application Completion": {
+  "id": "343071630",
+  "enroll_forms": [],
+  "enroll_lists": [],
+  "enroll_filter_types": [],
+  "emails": []
+ },
+ "DV: Private Label_MoF_Danielle": {
+  "id": "587253915",
+  "enroll_forms": [
+   "PRIVATE LABEL NEW (New DV Site)",
+   "Contact Us NEW"
+  ],
+  "enroll_lists": [
+   "1698"
+  ],
+  "enroll_filter_types": [
+   "FORM_SUBMISSION",
+   "IN_LIST",
+   "PROPERTY"
+  ],
+  "emails": [
+   [
+    "170295027506",
+    "DV: Private Label MOF 1_Danielle_Ingredients Guide",
+    "AUTOMATED"
+   ],
+   [
+    "170301274240",
+    "DV: Private Label MOF 2_Danielle_Supplement Formats",
+    "AUTOMATED"
+   ],
+   [
+    "170597492141",
+    "DV: Private Label MOF_Danielle_Chewables 1",
+    "AUTOMATED"
+   ],
+   [
+    "170598263946",
+    "DV: Private MOF_Danielle_Chewables 2",
+    "AUTOMATED"
+   ],
+   [
+    "170653396775",
+    "DV: Private Label MOF_Danielle_Final All",
+    "AUTOMATED"
+   ],
+   [
+    "170574586726",
+    "DV: Private Label MOF_Danielle_Liquid 1",
+    "AUTOMATED"
+   ],
+   [
+    "170688239627",
+    "DV: Private Label MOF_Danielle_Liquid 2",
+    "AUTOMATED"
+   ],
+   [
+    "170653396775",
+    "DV: Private Label MOF_Danielle_Final All",
+    "AUTOMATED"
+   ],
+   [
+    "170691955519",
+    "DV: Private Label MOF_Danielle_Powder 1",
+    "AUTOMATED"
+   ],
+   [
+    "170692005796",
+    "DV: Private Label MOF_Danielle_Powder 2",
+    "AUTOMATED"
+   ],
+   [
+    "170653396775",
+    "DV: Private Label MOF_Danielle_Final All",
+    "AUTOMATED"
+   ],
+   [
+    "170697251962",
+    "DV: Private Label MOF_Danielle_Capsule 1",
+    "AUTOMATED"
+   ],
+   [
+    "170699789844",
+    "DV: Private Label MOF_Danielle_Capsule 2",
+    "AUTOMATED"
+   ],
+   [
+    "170653396775",
+    "DV: Private Label MOF_Danielle_Final All",
+    "AUTOMATED"
+   ],
+   [
+    "172303247235",
+    "DV: Private Label MOF_Danielle_Tablets 1",
+    "AUTOMATED"
+   ],
+   [
+    "172303705387",
+    "DV: Private Label MOF_Danielle_Tablets 2",
+    "AUTOMATED"
+   ],
+   [
+    "170653396775",
+    "DV: Private Label MOF_Danielle_Final All",
+    "AUTOMATED"
+   ],
+   [
+    "170653396775",
+    "DV: Private Label MOF_Danielle_Final All",
+    "AUTOMATED"
+   ]
+  ]
+ },
+ "DV: Private Label Guide_MoF_Paul": {
+  "id": "589741064",
+  "enroll_forms": [
+   "PRIVATE LABEL NEW (New DV Site)",
+   "Contact Us NEW"
+  ],
+  "enroll_lists": [
+   "1801",
+   "1802"
+  ],
+  "enroll_filter_types": [
+   "FORM_SUBMISSION",
+   "IN_LIST",
+   "PROPERTY"
+  ],
+  "emails": [
+   [
+    "170705675687",
+    "DV: Private Label MOF 2_Paul_1ngredients Guide",
+    "AUTOMATED"
+   ],
+   [
+    "170710869815",
+    "DV: Private Label MOF 2_Paul_Supplement Formats",
+    "AUTOMATED"
+   ],
+   [
+    "170706107030",
+    "DV: MOF_WF_Paul_1_Chewables",
+    "AUTOMATED"
+   ],
+   [
+    "170710874146",
+    "DV: MOF_WF_Paul_2_Chewables",
+    "AUTOMATED"
+   ],
+   [
+    "170707748955",
+    "DV: MOF_WF_Paul_Final_All",
+    "AUTOMATED"
+   ],
+   [
+    "170707894911",
+    "DV: MOF_WF_Paul_1_Liquid",
+    "AUTOMATED"
+   ],
+   [
+    "170713574748",
+    "DV: MOF_WF_Paul_2_Liquid",
+    "AUTOMATED"
+   ],
+   [
+    "170712048474",
+    "DV: MOF_WF_Paul_1_Powder",
+    "AUTOMATED"
+   ],
+   [
+    "170707864724",
+    "DV: MOF_WF_Paul_2_Powder",
+    "AUTOMATED"
+   ],
+   [
+    "170707730980",
+    "DV: MOF_WF_Paul_1_Capsule",
+    "AUTOMATED"
+   ],
+   [
+    "170707073088",
+    "DV: MOF_WF_Paul_2_Capsule",
+    "AUTOMATED"
+   ],
+   [
+    "170713567649",
+    "DV: MOF_WF_Paul_1_Tablet",
+    "AUTOMATED"
+   ],
+   [
+    "170707887656",
+    "DV: MOF_WF_Paul_2_Tablet",
+    "AUTOMATED"
+   ],
+   [
+    "170707748955",
+    "DV: MOF_WF_Paul_Final_All",
+    "AUTOMATED"
+   ],
+   [
+    "170707748955",
+    "DV: MOF_WF_Paul_Final_All",
+    "AUTOMATED"
+   ],
+   [
+    "170707748955",
+    "DV: MOF_WF_Paul_Final_All",
+    "AUTOMATED"
+   ],
+   [
+    "170707748955",
+    "DV: MOF_WF_Paul_Final_All",
+    "AUTOMATED"
+   ],
+   [
+    "170707748955",
+    "DV: MOF_WF_Paul_Final_All",
+    "AUTOMATED"
+   ]
+  ]
+ },
+ "Brand / Private Label - Segmentation": {
+  "id": "1652783782",
+  "enroll_forms": [],
+  "enroll_lists": [],
+  "enroll_filter_types": [
+   "PROPERTY"
+  ],
+  "emails": []
+ },
+ "DV: Private Label - High Priority": {
+  "id": "1685642843",
+  "enroll_forms": [],
+  "enroll_lists": [
+   "7097",
+   "7203"
+  ],
+  "enroll_filter_types": [
+   "IN_LIST"
+  ],
+  "emails": [
+   [
+    "200492727649",
+    "Private Label: High Priority - 6 Benefits",
+    "AUTOMATED"
+   ],
+   [
+    "200467327777",
+    "Private Label: High Priority - how to make money",
+    "AUTOMATED"
+   ],
+   [
+    "44289895090",
+    "Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Davinci",
+    "AUTOMATED"
+   ],
+   [
+    "202221725195",
+    "Private Label: High Priority Intro",
+    "AUTOMATED"
+   ],
+   [
+    "59790992173",
+    "3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Inventory",
+    "AUTOMATED"
+   ],
+   [
+    "200467328115",
+    "Private Label: High Priority - Reach out",
+    "AUTOMATED"
+   ],
+   [
+    "200504417306",
+    "Private Label: High Priority - Top Selling Products",
+    "AUTOMATED"
+   ],
+   [
+    "202135105656",
+    "Private Label: High Priority - Client Onboarding",
+    "AUTOMATED"
+   ]
+  ]
+ },
+ "DVL // Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)": {
+  "id": "1824975380",
+  "enroll_forms": [
+   "PRIVATE LABEL NEW (New DV Site)",
+   "Brand Development Call  (Inactive)",
+   "Contact Us NEW"
+  ],
+  "enroll_lists": [],
+  "enroll_filter_types": [
+   "FORM_SUBMISSION",
+   "PROPERTY"
+  ],
+  "emails": [
+   [
+    "208438457715",
+    "Private Label Lead - First Contact",
+    "AUTOMATED"
+   ],
+   [
+    "208438457715",
+    "Private Label Lead - First Contact",
+    "AUTOMATED"
+   ],
+   [
+    "207515963514",
+    "Custom Formulation - Auto-responder",
+    "AUTOMATED"
+   ],
+   [
+    "208438457715",
+    "Private Label Lead - First Contact",
+    "AUTOMATED"
+   ],
+   [
+    "208438457715",
+    "Private Label Lead - First Contact",
+    "AUTOMATED"
+   ],
+   [
+    "211452534860",
+    "DVL // HCP Lead - International - Reject",
+    "AUTOMATED"
+   ]
+  ]
+ }
+}

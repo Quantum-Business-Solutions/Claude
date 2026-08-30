@@ -1,0 +1,820 @@
+{
+ "forms_on_new_site": [
+  {
+   "id": "d8dfdd90-98f1-4cba-bedf-181dd9286ca1",
+   "name": "Private Label (Praxera) - Schedule a Consultation ",
+   "pages": [
+    "en/pl-demo-aging",
+    "en/pl-demo-design-services",
+    "en/pl-demo-dropshipping",
+    "en/pl-demo-fitness",
+    "en/pl-demo-get-started",
+    "en/pl-demo-herbal",
+    "en/pl-demo-how-to-sell-supplements",
+    "en/pl-demo-pediatric",
+    "en/pl-demo-pillar",
+    "en/pl-demo-ty-onboarding",
+    "en/pl-demo-womens-health",
+    "pl-demo-cognitive",
+    "pl-demo-detox",
+    "pl-demo-energy",
+    "pl-demo-heart-health",
+    "pl-demo-immune-support",
+    "pl-demo-joint-support",
+    "pl-demo-mens-health",
+    "pl-demo-multivitamin",
+    "pl-demo-prenatal",
+    "pl-demo-probiotics",
+    "pl-demo-sleep",
+    "pl-demo-weight-management"
+   ],
+   "workflows": [],
+   "live_workflows": 0
+  },
+  {
+   "id": "e0762402-c1e2-4a5a-8878-6441568fee67",
+   "name": "Private Label - Schedule a Consultation",
+   "pages": [
+    "pl-demo-ads-contract-mfg",
+    "pl-demo-ads-custom",
+    "pl-demo-ads-mfg-usa",
+    "pl-demo-ads-pl-mfg"
+   ],
+   "workflows": [],
+   "live_workflows": 0
+  },
+  {
+   "id": "0a6cdaa2-8b4a-4230-b5e7-f87c063fe6ca",
+   "name": "DV: PL Our Design Services form March 8, 2023 8:59:35 AM EST",
+   "pages": [
+    "en/pl-demo-design-team"
+   ],
+   "workflows": [
+    {
+     "name": "Unnamed workflow - 2024-02-26 21:33:01 GMT+0000",
+     "live": false
+    }
+   ],
+   "live_workflows": 0
+  },
+  {
+   "id": "b84800a2-de07-4875-9641-0a38c12eb230",
+   "name": "Private Label [Brand TBD] - Page - Onboarding Guide form July 26, 2026 2:14:25 PM EDT",
+   "pages": [
+    "en/pl-demo-onboarding-guide"
+   ],
+   "workflows": [],
+   "live_workflows": 0
+  },
+  {
+   "id": "8361c2ac-468c-4d5a-8bad-07cd8909c840",
+   "name": "Private Label - Contact Us",
+   "pages": [
+    "pl-demo-contact"
+   ],
+   "workflows": [],
+   "live_workflows": 0
+  },
+  {
+   "id": "824d9d5c-a5e4-4e36-9704-fd733cf4db30",
+   "name": "Private Label - Request a Quote",
+   "pages": [
+    "pl-demo-request-quote"
+   ],
+   "workflows": [],
+   "live_workflows": 0
+  }
+ ],
+ "workflows": [
+  {
+   "name": "Luke-Private Label (Existing) ",
+   "id": "15346995",
+   "live": false
+  },
+  {
+   "name": "Hannah-Private Label (Existing)",
+   "id": "15347099",
+   "live": false
+  },
+  {
+   "name": "New to Supplements-Private Label",
+   "id": "20072677",
+   "live": false
+  },
+  {
+   "name": "Experienced with Supplements-Private Label",
+   "id": "20196437",
+   "live": false
+  },
+  {
+   "name": "DV: Retargeting: Visited Private Label Page & Didn't Convert",
+   "id": "33007370",
+   "live": true
+  },
+  {
+   "name": "DVL // Sales Qualified Leads: Private Label: Assign Contacts to Sales (OLD - DO NOT USE)",
+   "id": "45505050",
+   "live": false
+  },
+  {
+   "name": "DV: Private Label Guide_ToF_Danielle_Nurture",
+   "id": "55131036",
+   "live": true
+  },
+  {
+   "name": "DV: Private Label Guide_ToF_Paul_Nurture",
+   "id": "63730093",
+   "live": true
+  },
+  {
+   "name": "Private Label Contact Us / SQL",
+   "id": "88472666",
+   "live": false
+  },
+  {
+   "name": "DV: OLD Private_Label_Guide_MoF_Paul",
+   "id": "171646332",
+   "live": false
+  },
+  {
+   "name": "DV: OLD Private Label Guide_MoF_Danielle ",
+   "id": "293599037",
+   "live": false
+  },
+  {
+   "name": "DV: Private Label Application Completion",
+   "id": "343071630",
+   "live": true
+  },
+  {
+   "name": "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul",
+   "id": "567755323",
+   "live": false
+  },
+  {
+   "name": "DV: Private Label_MoF_Danielle",
+   "id": "587253915",
+   "live": true
+  },
+  {
+   "name": "DV: Private Label Guide_MoF_Paul",
+   "id": "589741064",
+   "live": true
+  },
+  {
+   "name": "Brand / Private Label - Segmentation",
+   "id": "1652783782",
+   "live": true
+  },
+  {
+   "name": "DV: Private Label - High Priority",
+   "id": "1685642843",
+   "live": true
+  },
+  {
+   "name": "DV: Private Label 6-12 month",
+   "id": "1728134585",
+   "live": false
+  },
+  {
+   "name": "DV: Private Label - 5Rs Lead Nurture",
+   "id": "1774406954",
+   "live": false
+  },
+  {
+   "name": "DVL // Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)",
+   "id": "1824975380",
+   "live": true
+  }
+ ],
+ "emails": [
+  {
+   "name": "Protocol-Hannah #5: How to Choose a Private Label Supplement Provider",
+   "state": "AUTOMATED",
+   "updated": "2021-04-20"
+  },
+  {
+   "name": "Protocol-Luke #5: How to Choose a Private Label Supplement Provider",
+   "state": "AUTOMATED",
+   "updated": "2021-04-20"
+  },
+  {
+   "name": "Blog: Private Label Supplements: How to Get Superior-Quality Affordably",
+   "state": "PUBLISHED",
+   "updated": "2020-01-06"
+  },
+  {
+   "name": "NPS Email Private Label",
+   "state": "PUBLISHED",
+   "updated": "2020-06-22"
+  },
+  {
+   "name": "NPS Email Private Label Reminder",
+   "state": "PUBLISHED",
+   "updated": "2020-06-29"
+  },
+  {
+   "name": "Retargeting Workflow #1: Come Back & Private Label!",
+   "state": "AUTOMATED",
+   "updated": "2021-04-20"
+  },
+  {
+   "name": "NPS Email Brand EOY- Private Label",
+   "state": "PUBLISHED",
+   "updated": "2020-12-18"
+  },
+  {
+   "name": "NPS Email Brand EOY- Private Label 2nd attempt",
+   "state": "PUBLISHED",
+   "updated": "2021-01-11"
+  },
+  {
+   "name": "Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL",
+   "state": "AUTOMATED",
+   "updated": "2021-11-19"
+  },
+  {
+   "name": "Private_Label_Guide_ToF_Danielle_Top_Selling_PL_Supplements_2021",
+   "state": "AUTOMATED",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "Private_Label_Guide_ToF_Danielle_How to_start-PL_Business_7steps",
+   "state": "AUTOMATED",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "Private_Label_Guide_ToF_Benefits_Private_Label_With_Davinci",
+   "state": "AUTOMATED",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "Private_Label_Guide_ToF_Danielle_Elderberry_Product",
+   "state": "AUTOMATED",
+   "updated": "2021-03-02"
+  },
+  {
+   "name": "Private_Label_Guide_ToF_Paul_6_Benefits of Selling PL",
+   "state": "AUTOMATED",
+   "updated": "2025-11-21"
+  },
+  {
+   "name": "Private_Label_Guide_ToF_Paul_Top_Selling_PL_Supplements",
+   "state": "AUTOMATED",
+   "updated": "2025-11-21"
+  },
+  {
+   "name": "Private_Label_Guide_ToF_Paul_How to_start-PL_Business_7steps",
+   "state": "AUTOMATED",
+   "updated": "2022-02-07"
+  },
+  {
+   "name": "Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Davinci",
+   "state": "AUTOMATED",
+   "updated": "2025-12-10"
+  },
+  {
+   "name": "Blog email: Private Label Profitability",
+   "state": "PUBLISHED",
+   "updated": "2021-07-01"
+  },
+  {
+   "name": "Blog email: Private Labeling Liquid Vitamins",
+   "state": "PUBLISHED",
+   "updated": "2021-11-04"
+  },
+  {
+   "name": "1 Private_Label_Guide_ToF_Danielle_TY",
+   "state": "AUTOMATED",
+   "updated": "2026-02-05"
+  },
+  {
+   "name": "2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
+   "state": "AUTOMATED",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "3 Private_Label_Guide_ToF_Danielle_How_to_create_exclusivity",
+   "state": "AUTOMATED",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice",
+   "state": "AUTOMATED",
+   "updated": "2021-11-19"
+  },
+  {
+   "name": "1: Private Label Guide ToF Paul_TY",
+   "state": "AUTOMATED",
+   "updated": "2026-02-05"
+  },
+  {
+   "name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory",
+   "state": "AUTOMATED",
+   "updated": "2021-11-19"
+  },
+  {
+   "name": "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL",
+   "state": "AUTOMATED",
+   "updated": "2022-02-07"
+  },
+  {
+   "name": "3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Inventory",
+   "state": "AUTOMATED",
+   "updated": "2025-11-21"
+  },
+  {
+   "name": "4: Private_Label_Guide_ToF_Paul_Tips_For Selling_On _Amazon",
+   "state": "AUTOMATED",
+   "updated": "2021-11-19"
+  },
+  {
+   "name": "5: Private_Label_Guide_ToF_Paul_Reach_Out",
+   "state": "AUTOMATED",
+   "updated": "2022-06-24"
+  },
+  {
+   "name": "Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper",
+   "state": "AUTOMATED",
+   "updated": "2022-06-30"
+  },
+  {
+   "name": "Private_Label_Guide_MoF_Paul_Liquid_Supplements",
+   "state": "AUTOMATED",
+   "updated": "2022-06-30"
+  },
+  {
+   "name": "Private_Label_Guide_MoF_Paul_Liquid_Products",
+   "state": "AUTOMATED",
+   "updated": "2022-06-30"
+  },
+  {
+   "name": "Private_Label_Guide_MoF_Paul_How_to_create_exclusivity",
+   "state": "AUTOMATED",
+   "updated": "2022-06-30"
+  },
+  {
+   "name": "Blog email: How to develop your private label supplement brand",
+   "state": "PUBLISHED",
+   "updated": "2022-02-22"
+  },
+  {
+   "name": "Private_Label_Guide_MoF_Paul_Get Started",
+   "state": "AUTOMATED",
+   "updated": "2022-06-30"
+  },
+  {
+   "name": "Blog email: Are Private Label Supplements Profitable?",
+   "state": "PUBLISHED",
+   "updated": "2022-03-23"
+  },
+  {
+   "name": "Blog: How to Market Private Label Supplements",
+   "state": "PUBLISHED",
+   "updated": "2022-08-31"
+  },
+  {
+   "name": "Blog: Custom vs. Private Label Supplements",
+   "state": "PUBLISHED",
+   "updated": "2022-09-23"
+  },
+  {
+   "name": "Blog: Building a private label sports nutrition brand",
+   "state": "PUBLISHED",
+   "updated": "2022-10-25"
+  },
+  {
+   "name": "Blog: Do Your Private Label Supplements Need FDA Approval?",
+   "state": "PUBLISHED",
+   "updated": "2022-12-12"
+  },
+  {
+   "name": "Blog: Challenges and Opportunities with Private Label Supplements",
+   "state": "PUBLISHED",
+   "updated": "2023-01-10"
+  },
+  {
+   "name": "Blog: Should Your Wellness Businesses Sell Private Label Supplements?",
+   "state": "PUBLISHED",
+   "updated": "2023-01-27"
+  },
+  {
+   "name": "Private Label Lead - First Contact",
+   "state": "AUTOMATED",
+   "updated": "2023-11-21"
+  },
+  {
+   "name": "Updated Private Labeling Agreement",
+   "state": "PUBLISHED",
+   "updated": "2023-03-10"
+  },
+  {
+   "name": "Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)",
+   "state": "AUTOMATED",
+   "updated": "2023-06-01"
+  },
+  {
+   "name": "DV: Private_Label_Guide_MoF_Paul_How_to_create_exclusivity (Clone for Test Template)",
+   "state": "AUTOMATED",
+   "updated": "2023-06-01"
+  },
+  {
+   "name": "Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
+   "state": "AUTOMATED",
+   "updated": "2023-06-01"
+  },
+  {
+   "name": "DV PL_Blog: How to Make Money in the Fitness Industry with Private Label Supplements",
+   "state": "PUBLISHED",
+   "updated": "2023-05-09"
+  },
+  {
+   "name": "5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice (Test Clone)",
+   "state": "AUTOMATED",
+   "updated": "2023-06-01"
+  },
+  {
+   "name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone)",
+   "state": "AUTOMATED",
+   "updated": "2023-06-01"
+  },
+  {
+   "name": "DV PL_Blog: How Private Label Beauty Supplements Can Increase Revenue",
+   "state": "PUBLISHED",
+   "updated": "2023-06-01"
+  },
+  {
+   "name": "DV PL_Blog: How Private Label Set You Apart From The Competition",
+   "state": "PUBLISHED",
+   "updated": "2023-07-05"
+  },
+  {
+   "name": "Blog: Private Label Supplements: The Secret to Surpassing Sales Goals",
+   "state": "PUBLISHED",
+   "updated": "2023-07-31"
+  },
+  {
+   "name": "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) A",
+   "state": "AUTOMATED_LOSER_ABVARIANT",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
+   "state": "AUTOMATED_AB",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
+   "state": "AUTOMATED_AB",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) B",
+   "state": "AUTOMATED_AB_VARIANT",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
+   "state": "AUTOMATED_AB",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) B",
+   "state": "AUTOMATED_LOSER_ABVARIANT",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #3",
+   "state": "AUTOMATED_DRAFT",
+   "updated": "2024-04-04"
+  },
+  {
+   "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #1",
+   "state": "AUTOMATED_DRAFT",
+   "updated": "2024-05-29"
+  },
+  {
+   "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #2",
+   "state": "AUTOMATED_DRAFT",
+   "updated": "2024-04-04"
+  },
+  {
+   "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #1",
+   "state": "AUTOMATED_DRAFT",
+   "updated": "2024-04-04"
+  },
+  {
+   "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #3",
+   "state": "AUTOMATED_DRAFT",
+   "updated": "2024-04-04"
+  },
+  {
+   "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #2",
+   "state": "AUTOMATED_DRAFT",
+   "updated": "2024-04-04"
+  },
+  {
+   "name": "DV: Private Label Supplements: How to Find the Right Supplement Wholesaler for Your Business (Business Owners)",
+   "state": "PUBLISHED",
+   "updated": "2024-04-29"
+  },
+  {
+   "name": "DV: Private Label Supplements: How to Find the Right Supplement Wholesaler for Your Business (HCPs)",
+   "state": "PUBLISHED",
+   "updated": "2024-04-30"
+  },
+  {
+   "name": "PTL: What is The Difference Between Private Label Pet Supplements And Custom Formulas? (Ronald Version)",
+   "state": "PUBLISHED",
+   "updated": "2024-05-28"
+  },
+  {
+   "name": "PTL: What is The Difference Between Private Label Pet Supplements And Custom Formulas? (Patricia Version)",
+   "state": "PUBLISHED",
+   "updated": "2024-05-28"
+  },
+  {
+   "name": "DV: How Profitable Are Private Label Vitamins? (Danielle)",
+   "state": "PUBLISHED",
+   "updated": "2024-05-31"
+  },
+  {
+   "name": "DV: How Profitable Are Private Label Vitamins? (Paul)",
+   "state": "PUBLISHED",
+   "updated": "2024-05-31"
+  },
+  {
+   "name": "DV: Private Label MOF 1_Danielle_Ingredients Guide",
+   "state": "AUTOMATED",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "DV: Private Label MOF 2_Danielle_Supplement Formats",
+   "state": "AUTOMATED",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "DV: Private Label MOF_Danielle_Liquid 1",
+   "state": "AUTOMATED",
+   "updated": "2024-07-07"
+  },
+  {
+   "name": "DV: Private Label MOF_Danielle_Chewables 1",
+   "state": "AUTOMATED",
+   "updated": "2024-07-06"
+  },
+  {
+   "name": "DV: Private Label MOF_Danielle_Final All",
+   "state": "AUTOMATED",
+   "updated": "2025-11-28"
+  },
+  {
+   "name": "DV: Private Label MOF_Danielle_Liquid 2",
+   "state": "AUTOMATED",
+   "updated": "2024-07-05"
+  },
+  {
+   "name": "DV: Private Label MOF_Danielle_Powder 1",
+   "state": "AUTOMATED",
+   "updated": "2024-07-07"
+  },
+  {
+   "name": "DV: Private Label MOF_Danielle_Powder 2",
+   "state": "AUTOMATED",
+   "updated": "2024-07-07"
+  },
+  {
+   "name": "DV: Private Label MOF_Danielle_Capsule 1",
+   "state": "AUTOMATED",
+   "updated": "2024-07-07"
+  },
+  {
+   "name": "DV: Private Label MOF_Danielle_Capsule 2",
+   "state": "AUTOMATED",
+   "updated": "2024-07-07"
+  },
+  {
+   "name": "DV: Private Label MOF 2_Paul_1ngredients Guide",
+   "state": "AUTOMATED",
+   "updated": "2024-06-26"
+  },
+  {
+   "name": "DV: Private Label MOF 2_Paul_Supplement Formats",
+   "state": "AUTOMATED",
+   "updated": "2024-06-27"
+  },
+  {
+   "name": "DV: Blog - Marketing Email: How to Private Label Protein Supplements (Healthcare Professionals)",
+   "state": "PUBLISHED",
+   "updated": "2024-08-07"
+  },
+  {
+   "name": "DV: Private Label MOF_Danielle_Tablets 1",
+   "state": "AUTOMATED",
+   "updated": "2024-07-07"
+  },
+  {
+   "name": "DV: Private Label MOF_Danielle_Tablets 2",
+   "state": "AUTOMATED",
+   "updated": "2024-07-07"
+  },
+  {
+   "name": "DV: Blog - Marketing Email: How to Private Label Protein Supplements (Business Owners)",
+   "state": "PUBLISHED",
+   "updated": "2024-08-07"
+  },
+  {
+   "name": "PTL: Best Ingredients for Private Label Dog Joint Supplements",
+   "state": "PUBLISHED",
+   "updated": "2025-01-30"
+  },
+  {
+   "name": "PTL: Top Quality Cat Digestive Supplements for Private Labeling",
+   "state": "PUBLISHED_AB",
+   "updated": "2025-07-15"
+  },
+  {
+   "name": "Private Label Pulse: What\u2019s Fueling Demand in Sleep Health?",
+   "state": "PUBLISHED_AB_VARIANT",
+   "updated": "2025-07-01"
+  },
+  {
+   "name": "Top Cat Digestive Supplements to Power Your Private Label",
+   "state": "PUBLISHED_AB_VARIANT",
+   "updated": "2025-07-15"
+  },
+  {
+   "name": "1: Private Label Guide: High-Priority",
+   "state": "AUTOMATED",
+   "updated": "2025-11-21"
+  },
+  {
+   "name": "Private Label: High Priority - how to make money",
+   "state": "AUTOMATED",
+   "updated": "2025-11-21"
+  },
+  {
+   "name": "Private Label: High Priority - Reach out",
+   "state": "AUTOMATED",
+   "updated": "2026-04-06"
+  },
+  {
+   "name": "Private Label: High Priority - 6 Benefits",
+   "state": "AUTOMATED",
+   "updated": "2025-12-10"
+  },
+  {
+   "name": "Private Label: High Priority - Top Selling Products",
+   "state": "AUTOMATED",
+   "updated": "2025-11-22"
+  },
+  {
+   "name": "Private Label: High Priority - Client Onboarding",
+   "state": "AUTOMATED",
+   "updated": "2026-04-06"
+  },
+  {
+   "name": "Private Label: High Priority Intro",
+   "state": "AUTOMATED",
+   "updated": "2025-12-10"
+  },
+  {
+   "name": "Private Label Lead - First Contact",
+   "state": "AUTOMATED",
+   "updated": "2026-03-30"
+  },
+  {
+   "name": "PTL Nurture: Best Ingredients for Private Label Dog Joint Supplements (Clone)",
+   "state": "PUBLISHED",
+   "updated": "2026-03-27"
+  }
+ ],
+ "landing_pages": [
+  {
+   "name": "Private Label",
+   "state": "DRAFT",
+   "slug": "-temporary-slug-cc56708a-cd8c-4319-8c8e-a3eeb445b64e",
+   "stale": false
+  },
+  {
+   "name": "TY: Private Label",
+   "state": "PUBLISHED",
+   "slug": "ty-private-label-supplements",
+   "stale": false
+  },
+  {
+   "name": "Private Label Page",
+   "state": "DRAFT",
+   "slug": "-temporary-slug-dff2ebb0-5dcb-445c-a5c5-baae1145dbee",
+   "stale": false
+  },
+  {
+   "name": "TY: Private Label",
+   "state": "PUBLISHED",
+   "slug": "thank-you-private-labeling",
+   "stale": false
+  },
+  {
+   "name": "LP: Private Label Supplements Guide",
+   "state": "PUBLISHED",
+   "slug": "private-label-supplements-guide",
+   "stale": false
+  },
+  {
+   "name": "TY: Private Label Supplements Guide",
+   "state": "PUBLISHED",
+   "slug": "thank-you-guide-private-labeling-supplements",
+   "stale": false
+  },
+  {
+   "name": "Liposomal Elderberry Private Label",
+   "state": "DRAFT",
+   "slug": "coming-soon-liposomal-elderberry-0",
+   "stale": false
+  },
+  {
+   "name": "Private Label Supplements | Resource Center",
+   "state": "PUBLISHED",
+   "slug": "private-label-supplements-resource-center",
+   "stale": false
+  },
+  {
+   "name": "Private Label Page",
+   "state": "DRAFT",
+   "slug": "learning-center-0-0",
+   "stale": false
+  },
+  {
+   "name": "TY: Private Labeling_Meeting Link",
+   "state": "PUBLISHED",
+   "slug": "thank-you-start-private-labeling",
+   "stale": false
+  },
+  {
+   "name": "DV LP: Private Labeling Supplement: Ingredients, Testing & Certification",
+   "state": "PUBLISHED",
+   "slug": "ingredients-testing-certification-guide",
+   "stale": false
+  },
+  {
+   "name": "DV TY: Private Label Supplements: Ingredients Testing & Certification Guide",
+   "state": "PUBLISHED",
+   "slug": "thank-you-ingredients-testing-certification-guide",
+   "stale": false
+  },
+  {
+   "name": "DV LP: Private Label Supplements: Client Onboarding",
+   "state": "PUBLISHED",
+   "slug": "private-label-supplements-client-onboarding",
+   "stale": false
+  },
+  {
+   "name": "DV TY: Private Label Supplements: Client Onboarding",
+   "state": "PUBLISHED",
+   "slug": "thank-you-client-onboarding",
+   "stale": false
+  }
+ ],
+ "other_forms": [
+  {
+   "id": "1c42b9c4-2fba-4099-98a4-60116cd6764f",
+   "name": "PRIVATE LABEL NEW (New DV Site)",
+   "stale": false
+  },
+  {
+   "id": "2b0e60b3-03f3-427f-ae69-35513ab96b2f",
+   "name": "DV LP: Private Labeling Supplement: Ingredients, Testing & Certification",
+   "stale": false
+  },
+  {
+   "id": "82f30fc3-0740-411c-a3b4-13a1f9b1814a",
+   "name": "DV LP: Private Label Supplements: Client Onboarding",
+   "stale": false
+  },
+  {
+   "id": "c3728140-7dde-42d6-87cf-def58820ee74",
+   "name": "LP: Private Labeling Supplements Guide",
+   "stale": false
+  },
+  {
+   "id": "c53ef621-83e9-42a6-ae6a-a74b9e4317d5",
+   "name": "PRIVATE LABEL NEW",
+   "stale": false
+  },
+  {
+   "id": "d5f7980e-bee8-40ab-8596-b20ced7704ff",
+   "name": "PRIVATE LABEL NEW (UPDATE 7.24.25 - DO NOT USE)",
+   "stale": true
+  },
+  {
+   "id": "dcb3c62c-8ef4-4f60-afd6-677d3a6f4348",
+   "name": "Private Label [New Brand] - Page - Ingredients & Testing Guide form July 26, 2026 ",
+   "stale": false
+  },
+  {
+   "id": "cef867f3-1e84-44aa-b251-b0644a7e345d",
+   "name": "Private Label (pop-up form) (Old/Unused)",
+   "stale": true
+  }
+ ]
+}
