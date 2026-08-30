@@ -1,0 +1,20 @@
+{
+ "conclusion": "The 19 unresolvable lists are HubSpot SYSTEM-GENERATED workflow-membership lists, not curated audiences. Each is auto-created to back a criterion like 'is enrolled in workflow X'. They disappeared because the 13 workflows they were derived from were deleted -- HubSpot garbage-collects the membership list with its workflow. Nobody deleted 19 lists.",
+ "kinds": {
+  "WORKFLOWS_ACTIVE": 7,
+  "WORKFLOWS_COMPLETED": 7,
+  "WORKFLOWS_ENROLLMENT": 3,
+  "WORKFLOWS_GOAL": 2
+ },
+ "source_workflows_deleted": 13,
+ "criteria_recoverable": true,
+ "why": "metadata.inListType names the membership type and metadata.id names the workflow, so every clause is self-describing: 'in/not-in <type> of workflow <id>'.",
+ "impact": "These clauses are legacy suppression guards against workflows that no longer exist, so they can never match. They are no-ops to DELETE, not audiences to rebuild.",
+ "clone_state": {
+  "clones": 12,
+  "working_trigger_clauses": 49,
+  "dead_list_clauses_in_enrolment": 7,
+  "clones_with_no_working_trigger": 1,
+  "the_one": "Praxera - Welcome to D4HCP_BoF_Danielle/HCP (practitioner-side, already flagged as arguably not private label)"
+ }
+}
