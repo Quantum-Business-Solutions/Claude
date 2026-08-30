@@ -1,8 +1,25 @@
 # Running this process as a Routine (unattended)
 
-A Routine fires into a **fresh cloud session** that **clones the default branch** and runs with
-**no permission prompts** and nobody watching. That changes what the process must do — not what
-it decides, but how loudly it fails.
+A Routine fires into a **fresh cloud session** with **no permission prompts** and nobody watching.
+That changes what the process must do — not what it decides, but how loudly it fails.
+
+Two things about that session are not what you would assume, and both were measured on
+2026-08-30 after two fires of the 5243 routine completed in ~3 minutes and wrote nothing at all:
+
+- **It does NOT clone the repository.** An interactive session carries `session_context.sources`;
+  a routine-fired session's context has no `sources` at all, so `contact-verification/scripts/…`
+  does not exist and every step referencing it fails at the first command. The routine prompt must
+  therefore clone the code itself. The repository is public, so an unauthenticated
+  `git clone --depth 1 --branch main` works with no credentials — verified.
+- **It has NO MCP connector tools.** This is not a bug and not an outage; it is a property of how
+  the Routine was created. `create_trigger` warns in plain text: *"this trigger stores no MCP
+  connectors, so the sessions it fires will run without connector (`mcp__<server>__*`) tools."*
+  Its `connectors` parameter is rejected outright for this organization. Since Unipile's tenant API
+  sits on port 16072 and cloud egress reaches port 443 only, **the MCP connector is the only path
+  to LinkedIn**, and a programmatically-created Routine cannot verify a single contact.
+  **A Routine that needs LinkedIn must be created from the Routines UI on claude.ai**, where the
+  connector can be attached. HubSpot-only work is unaffected: `QBS_HUBSPOT_TOKEN` is set on the
+  environment and `api.hubapi.com` is on 443.
 
 ## The rule that matters
 
@@ -17,11 +34,33 @@ has ever had presented as a confident clean bill of health:
 | A written property renamed | writes land nowhere, run reports applied | `preflight.py` schema check, exit 3 |
 | `hs_lead_status` lost a literal | movers cannot be ejected; 400s mid-run | `preflight.py` vocabulary check, exit 3 |
 | LinkedIn unreadable | every contact scores `unreadable` | Unipile self-test, below (model step) |
+| No repository in the fired session | run ends in minutes having written nothing | step 0 clone, below |
+| No MCP connector in the fired session | same silent 3-minute no-op | step 0b transport check, below |
 
 ## Required order for any unattended run
 
-1. `TOKEN=... python3 scripts/preflight.py <listId>` — **stop the run on any non-zero exit and
-   report the reason.** Do not continue and do not "try anyway".
+0. **Get the code.** Never assume a checkout exists:
+
+   ```
+   if [ -d /home/user/Claude/contact-verification ]; then REPO=/home/user/Claude
+   else cd /tmp && rm -rf qbsrepo \
+        && git clone --depth 1 --branch main \
+             https://github.com/Quantum-Business-Solutions/Claude qbsrepo \
+        && REPO=/tmp/qbsrepo
+   fi
+   ```
+
+   Halt on a clone failure and report the exact git error. Use `$REPO` in every path that follows.
+
+0b. **Confirm a LinkedIn transport exists before doing anything else.** `ToolSearch` for
+   `select:mcp__Unipile__execute-request`. No match means this session has no connector tools and
+   therefore no path to LinkedIn at all. **Halt immediately**, name the cause (Routine created
+   programmatically, so no connector grant was stored) and the fix (recreate it from the Routines
+   UI on claude.ai). Do **not** fall back to curl, and do **not** write `unreadable` verdicts —
+   an outage recorded as verdicts is a durable lie about the data; a halt is not.
+
+1. `TOKEN=... python3 $REPO/contact-verification/scripts/preflight.py <listId>` — **stop the run on
+   any non-zero exit and report the reason.** Do not continue and do not "try anyway".
 2. **Unipile self-test — try BOTH transports before halting.** They fail independently:
    - **MCP connector** — routes via Anthropic's `mcp-proxy`, so it ignores the egress firewall.
      Currently the only path measured working from a cloud session. It also drops and reconnects.
