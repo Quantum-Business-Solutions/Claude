@@ -1,0 +1,52 @@
+{
+ "pages": [
+  {
+   "slug": "en/pl-demo-definitive-guide",
+   "guide_links": [
+    "http://atulgawande.com/book/the-checklist-manifesto/"
+   ],
+   "pdfs": [
+    "https://www.fsc-live.com/dvcdn/docs/PrivateLabels.pdf"
+   ]
+  },
+  {
+   "slug": "en/pl-demo-dropshipping",
+   "guide_links": [
+    "https://www.davincilabs.com/product-guide"
+   ],
+   "pdfs": []
+  },
+  {
+   "slug": "en/pl-demo-pillar",
+   "guide_links": [
+    "https://www.davincilabs.com/product-guide"
+   ],
+   "pdfs": []
+  },
+  {
+   "slug": "en/pl-demo-resources",
+   "guide_links": [
+    "https://blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide"
+   ],
+   "pdfs": []
+  }
+ ],
+ "destinations": [
+  [
+   "https://www.davincilabs.com/product-guide",
+   2
+  ],
+  [
+   "http://atulgawande.com/book/the-checklist-manifesto/",
+   1
+  ],
+  [
+   "https://www.fsc-live.com/dvcdn/docs/PrivateLabels.pdf",
+   1
+  ],
+  [
+   "https://blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
+   1
+  ]
+ ]
+}

@@ -1,0 +1,4714 @@
+[
+ {
+  "id": "100466158896",
+  "name": "DV WF: PL Guide_BoF_Danielle Build Product Line #1 Subject B",
+  "state": "AUTOMATED_LOSER_ABVARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "100477229840",
+  "name": "DV WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B",
+  "state": "AUTOMATED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "102364430662",
+  "name": "DV: Blog: How PLS Can Increase Revenue Fast",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-private-label-supplements-can-increase-revenue-fast"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "104026063464",
+  "name": "DV WF: PL Guide_BoF_Paul #1 Build Product Line Subject A",
+  "state": "AUTOMATED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "104026063467",
+  "name": "DV WF: PL Guide_BoF_Paul #1 Build Product Line Subject A (Variation)",
+  "state": "AUTOMATED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "104027076626",
+  "name": "DV WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A",
+  "state": "AUTOMATED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "104027204444",
+  "name": "DV WF: PL Guide_BoF_Paul #2 Design & Branding Subject A",
+  "state": "AUTOMATED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "10409788374",
+  "name": "June 2019 Newsletter",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "p> <a href=\"https://www.davincilabs.com/index.php?l=page_view&amp;p=private_label\" rel=\" noopener\"><img src=\"https://cdn2.hubspot.net/hubfs/4087538"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "104330406790",
+  "name": "DV WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject B",
+  "state": "AUTOMATED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "104330566274",
+  "name": "DV WF: PL Guide_BoF_Paul #2 Design & Branding Subject B",
+  "state": "AUTOMATED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "105464472904",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "106298774045",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "106495770510",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #3 GI",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "106497013266",
+  "name": "DV: Blog: How to Scale Your Business with PL Supplements",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-scale-your-business-with-private-label-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "106618393216",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "107853244512",
+  "name": "Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "107856211099",
+  "name": "DV: Private_Label_Guide_MoF_Paul_How_to_create_exclusivity (Clone for Test Template)",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "nk\": \"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email\", \"",
+   "ref=\"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\" style=\"font-weight: bold;\" rel=\"noopener\">create ex",
+   "on\": \"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "107857959470",
+  "name": "Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/phttps://blog.davincilabs.com/private-label/private-labeling-liquid-vitaminsrivate-labeling-liquid-vitamins",
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "111768719016",
+  "name": "DV PL_Blog: How to Make Money in the Fitness Industry with Private Label Supplements",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-make-money-in-the-fitness-industry-with-private-label-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "112278594413",
+  "name": "5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice (Test Clone)",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "module_padding\": false, \"hs_wrapper_css\": {}, \"img\": {\"alt\": \"DaVinci_Private_Label_Supplements\", \"height\": 320, \"src\": \"https://f.hubspotusercontent30.n",
+   "320, \"src\": \"https://f.hubspotusercontent30.net/hubfs/4087538/DaVinci_Private_Label_Supplements.png\", \"width\": 600}, \"link\": \"https://www.davincilabs.com"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "112292766579",
+  "name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone)",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "11279837742",
+  "name": "July 2019 Newsletter",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "</a><a href=\"https://www.davincilabs.com/index.php?l=page_view&amp;p=private_label\" rel=\" noopener\"></a></p> <p>&nbsp;</p> <p><a href=\"https://www",
+   "n<p><a href=\"https://www.davincilabs.com/index.php?l=page_view&amp;p=private_label\" rel=\" noopener\"><img src=\"https://cdn2.hubspot.net/hubfs/4087538"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "11281129196",
+  "name": "June 2019 Newsletter (Clone)",
+  "state": "DRAFT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "p> <a href=\"https://www.davincilabs.com/index.php?l=page_view&amp;p=private_label\" rel=\" noopener\"><img src=\"https://cdn2.hubspot.net/hubfs/4087538"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "115766876026",
+  "name": "DV PL_Blog: How Private Label Beauty Supplements Can Increase Revenue",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-private-label-beauty-supplements-can-increase-revenue-fast"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "116607281418",
+  "name": "A4M 2022 Follow Up Orlando Spring 2023",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "119992967762",
+  "name": "DV PL_Blog: How Private Label Set You Apart From The Competition",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-private-label-supplements-set-you-apart-from-competition"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "124181564273",
+  "name": "DV PL_Blog: Test",
+  "state": "DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-private-label-supplements-set-you-apart-from-competition"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "127142171014",
+  "name": "Blog: Private Label Supplements: The Secret to Surpassing Sales Goals",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/private-label-supplements-secret-to-surpassing-sales-goals"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "131557171810",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ttps://blog.davincilabs.com/blog/how-to-enhance-customer-journey-with-private-label-supplements\" style=\"color: #3366ff;\">How to Enhance the Customer J",
+   "ttps://blog.davincilabs.com/blog/how-to-enhance-customer-journey-with-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "%2Fblog.davincilabs.com%2Fblog%2Fhow-to-enhance-customer-journey-with-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "131679722565",
+  "name": "Daily notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ttps://blog.davincilabs.com/blog/how-to-enhance-customer-journey-with-private-label-supplements\" style=\"color: #3366ff;\">How to Enhance the Customer J",
+   "ttps://blog.davincilabs.com/blog/how-to-enhance-customer-journey-with-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "%2Fblog.davincilabs.com%2Fblog%2Fhow-to-enhance-customer-journey-with-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "132037149101",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ttps://blog.davincilabs.com/blog/how-to-enhance-customer-journey-with-private-label-supplements\" style=\"color: #3366ff;\">How to Enhance the Customer J",
+   "ttps://blog.davincilabs.com/blog/how-to-enhance-customer-journey-with-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "%2Fblog.davincilabs.com%2Fblog%2Fhow-to-enhance-customer-journey-with-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "132865685850",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ttps://blog.davincilabs.com/blog/how-to-enhance-customer-journey-with-private-label-supplements\" style=\"color: #3366ff;\">How to Enhance the Customer J",
+   "ttps://blog.davincilabs.com/blog/how-to-enhance-customer-journey-with-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "%2Fblog.davincilabs.com%2Fblog%2Fhow-to-enhance-customer-journey-with-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "134657782392",
+  "name": "DV PL_Blog: NAD+ Activate: Your Blueprint for Sustained Energy and a Booming Business*",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "142152309268",
+  "name": "DV: PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) B",
+  "state": "AUTOMATED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "142152416879",
+  "name": "DV: PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) A",
+  "state": "AUTOMATED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "142152977711",
+  "name": "DV: PL_Guide_MoF_Danielle_PL Answers (CRO Clone) B",
+  "state": "AUTOMATED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "http://blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "142153078660",
+  "name": "DV: PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A",
+  "state": "AUTOMATED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "http://blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "149460067177",
+  "name": "DV: A4M Post Tradeshow Eblast",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "159531098200",
+  "name": "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) A",
+  "state": "AUTOMATED_LOSER_ABVARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "/Logo.png\", \"width\": 237}, \"link\": \"https://blog.davincilabs.com/blog/private-label-supplements-how-to-make-money\", \"module_id\": 1367093, \"path\": \"@hubsp",
+   "ule_padding\": false, \"hs_wrapper_css\": {}, \"img\": {\"alt\": \"make-money-private-label-supplements\", \"height\": 320, \"src\": \"https://f.hubspotusercontent30.n",
+   ", \"src\": \"https://f.hubspotusercontent30.net/hubfs/4087538/make-money-private-label-supplements.png\", \"width\": 600}, \"link\": \"https://blog.davincilabs.co"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "159534087563",
+  "name": "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
+  "state": "AUTOMATED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/private-label-supplements-how-to-make-money"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "159557448722",
+  "name": "5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
+  "state": "AUTOMATED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "159560231447",
+  "name": "5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) B",
+  "state": "AUTOMATED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "159564033066",
+  "name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
+  "state": "AUTOMATED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "159564033537",
+  "name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) B",
+  "state": "AUTOMATED_LOSER_ABVARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "161749534521",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #3",
+  "state": "AUTOMATED_DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "161752044560",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #1",
+  "state": "AUTOMATED_DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-guide"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "161752065795",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #2",
+  "state": "AUTOMATED_DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "163117309280",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #1",
+  "state": "AUTOMATED_DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-guide"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "163117313546",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #3",
+  "state": "AUTOMATED_DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "163299221838",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #2",
+  "state": "AUTOMATED_DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "164446846234",
+  "name": "DV: Private Label Supplements: How to Find the Right Supplement Wholesaler for Your Business (Business Owners)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-find-right-supplement-wholesaler-for-your-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "164449474678",
+  "name": "DV: How to Sell Supplements (Healthcare Professionals)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-sell-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "164523548459",
+  "name": "DV: Private Label Supplements: How to Find the Right Supplement Wholesaler for Your Business (HCPs)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-find-right-supplement-wholesaler-for-your-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "164524350896",
+  "name": "DV: How to Sell Supplements (Business Owners)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-sell-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "166662763323",
+  "name": "PTL: What is The Difference Between Private Label Pet Supplements And Custom Formulas? (Ronald Version)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "&nbsp;Pet Tech Labs offers both <a href=\"https://www.pettechlabs.com/private-label-pet-supplements\" rel=\"noopener\">private labeling</a> and <a href=",
+   "<a href=\"https://blog.pettechlabs.com/what-is-the-difference-between-private-label-pet-supplements-and-custom-formulas\" rel=\"noopener\">private label "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "166837118046",
+  "name": "DV: A4M Post Tradeshow Eblast - Spring 2024",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "167283484964",
+  "name": "PTL: What is The Difference Between Private Label Pet Supplements And Custom Formulas? (Patricia Version)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ntly. Pet Tech Labs offers both <a href=\"https://www.pettechlabs.com/private-label-pet-supplements\" rel=\"noopener\">private labeling</a> and <a href=",
+   "<a href=\"https://blog.pettechlabs.com/what-is-the-difference-between-private-label-pet-supplements-and-custom-formulas\" rel=\"noopener\">private label "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "168205945456",
+  "name": "DV: Vitamin Manufacturing: 10 Top Sellers 2024 (Healthcare Professionals)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-sell-supplements",
+   "https://blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "168217421632",
+  "name": "DV: Vitamin Manufacturing: 10 Top Sellers 2024 (Business Owners)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-sell-supplements",
+   "https://blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "168862066320",
+  "name": "DV: How Profitable Are Private Label Vitamins? (Danielle)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/are-private-label-supplements-profitable",
+   "https://blog.davincilabs.com/private-label/how-to-sell-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "168941905059",
+  "name": "DV: How Profitable Are Private Label Vitamins? (Paul)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/are-private-label-supplements-profitable",
+   "https://blog.davincilabs.com/private-label/how-to-sell-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169091513764",
+  "name": "DV: White_Label_World_Expo Email #1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169091679551",
+  "name": "DV: White_Label_World_Expo Email #2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
+   "https://info.davincilabs.com/private-label-supplements-guide",
+   "https://info.davincilabs.com/private-label-supplements-resource-center"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169111471949",
+  "name": "DV: White_Label_World_Expo Email #3",
+  "state": "AUTOMATED_DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-manage-private-label-supplement-packaging",
+   "https://blog.davincilabs.com/private-label/how-to-spot-high-quality-private-label-supplements",
+   "https://blog.davincilabs.com/private-label/tag/private-labeling",
+   "https://blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements",
+   "https://blog.davincilabs.com/private-label/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
+   "https://blog.davincilabs.com/private-label/what-qualifications-do-you-need-to-sell-private-label-supplements",
+   "https://info.davincilabs.com/private-label-supplements-guide"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169176113508",
+  "name": "DV: White_Label_World_Expo Email Definitive_Guide_Click #1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/what-qualifications-do-you-need-to-sell-private-label-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169176644880",
+  "name": "DV: White_Label_World_Expo Email Definitive_Guide_Click #2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169177165674",
+  "name": "DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169177167901",
+  "name": "DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-manage-private-label-supplement-packaging"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169179039283",
+  "name": "DV: White_Label_World_Expo Final Email ALL",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169179941519",
+  "name": "DV: White_Label_World_Expo Email How_To_Make_Money_Click #1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/are-private-label-supplements-profitable"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169179942786",
+  "name": "DV: White_Label_World_Expo Email How_To_Make_Money_Click #2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/private-label-supplements-how-to-get-superior-quality-at-low-cost"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169188381366",
+  "name": "DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169188947470",
+  "name": "DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-spot-high-quality-private-label-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "169188948539",
+  "name": "DV: White_Label_World_Expo Email Did_Not_Click_Resource",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center",
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170301274240",
+  "name": "DV: Private Label MOF 2_Danielle_Supplement Formats",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170574586726",
+  "name": "DV: Private Label MOF_Danielle_Liquid 1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170597492141",
+  "name": "DV: Private Label MOF_Danielle_Chewables 1",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL\", \"height\": 299, \"loading\": \"disabled\", \"size_type\": null, \"src\": \"ht",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png\", \"width\": 560}, \"link\": \"\", \"module_id\": 1367093}, \"child_css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "170653396775",
+  "name": "DV: Private Label MOF_Danielle_Final All",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170692005796",
+  "name": "DV: Private Label MOF_Danielle_Powder 2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170694896759",
+  "name": "DV: MOF_WF_Danielle_1_Tablet",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL\", \"height\": 299, \"loading\": \"disabled\", \"size_type\": null, \"src\": \"ht",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png\", \"width\": 560}, \"link\": \"\", \"module_id\": 1367093}, \"child_css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "170697251962",
+  "name": "DV: Private Label MOF_Danielle_Capsule 1",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL\", \"height\": 299, \"loading\": \"disabled\", \"size_type\": null, \"src\": \"ht",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png\", \"width\": 560}, \"link\": \"\", \"module_id\": 1367093}, \"child_css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "170699789844",
+  "name": "DV: Private Label MOF_Danielle_Capsule 2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170705675687",
+  "name": "DV: Private Label MOF 2_Paul_1ngredients Guide",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170706107030",
+  "name": "DV: MOF_WF_Paul_1_Chewables",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL\", \"height\": 299, \"loading\": \"disabled\", \"size_type\": null, \"src\": \"ht",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png\", \"width\": 560}, \"link\": \"\", \"module_id\": 1367093}, \"child_css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "170707047061",
+  "name": "DV: MOF_WF_Danielle_2_Tablet",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170707073088",
+  "name": "DV: MOF_WF_Paul_2_Capsule",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170707730980",
+  "name": "DV: MOF_WF_Paul_1_Capsule",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL\", \"height\": 299, \"loading\": \"disabled\", \"size_type\": null, \"src\": \"ht",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png\", \"width\": 560}, \"link\": \"\", \"module_id\": 1367093}, \"child_css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "170707742787",
+  "name": "DV: MOF_WF_Paul_2",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL\", \"height\": 299, \"loading\": \"disabled\", \"size_type\": null, \"src\": \"ht",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png\", \"width\": 560}, \"link\": \"\", \"module_id\": 1367093}, \"child_css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "170707748955",
+  "name": "DV: MOF_WF_Paul_Final_All",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170707864724",
+  "name": "DV: MOF_WF_Paul_2_Powder",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170707887656",
+  "name": "DV: MOF_WF_Paul_2_Tablet",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170707894911",
+  "name": "DV: MOF_WF_Paul_1_Liquid",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170710869815",
+  "name": "DV: Private Label MOF 2_Paul_Supplement Formats",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170710874146",
+  "name": "DV: MOF_WF_Paul_2_Chewables",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "170712048474",
+  "name": "DV: MOF_WF_Paul_1_Powder",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL\", \"height\": 299, \"loading\": \"disabled\", \"size_type\": null, \"src\": \"ht",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png\", \"width\": 560}, \"link\": \"\", \"module_id\": 1367093}, \"child_css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "170713567649",
+  "name": "DV: MOF_WF_Paul_1_Tablet",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL\", \"height\": 299, \"loading\": \"disabled\", \"size_type\": null, \"src\": \"ht",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png\", \"width\": 560}, \"link\": \"\", \"module_id\": 1367093}, \"child_css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "170713574748",
+  "name": "DV: MOF_WF_Paul_2_Liquid",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL\", \"height\": 299, \"loading\": \"disabled\", \"size_type\": null, \"src\": \"ht",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png\", \"width\": 560}, \"link\": \"\", \"module_id\": 1367093}, \"child_css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "171402229607",
+  "name": "DV: Blog - Marketing Email: How to Private Label Protein Supplements (Healthcare Professionals)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-private-label-protein-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "171404904000",
+  "name": "DV: Marketing Email: Evaluate Supplement Suppliers in the US (Danielle)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-evaluate-supplement-suppliers-in-the-us"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "172303247235",
+  "name": "DV: Private Label MOF_Danielle_Tablets 1",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL\", \"height\": 299, \"loading\": \"disabled\", \"size_type\": null, \"src\": \"ht",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png\", \"width\": 560}, \"link\": \"\", \"module_id\": 1367093}, \"child_css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "172303705387",
+  "name": "DV: Private Label MOF_Danielle_Tablets 2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "173162034954",
+  "name": "DV: Blog - Marketing Email: How To Evaluate Supplement Suppliers in the US (Business Owners)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-evaluate-supplement-suppliers-in-the-us"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "173170248459",
+  "name": "DV: Blog - Marketing Email: How to Private Label Protein Supplements (Business Owners)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-private-label-protein-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "173433150391",
+  "name": "DV: Marketing Email: Evaluate Supplement Suppliers in the US (Paul)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-evaluate-supplement-suppliers-in-the-us"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "174946873134",
+  "name": "PTL: 5 Ways To Get Your Pet Supplements to Market Quicker",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ility.</li> <li><strong>Outsource Manufacturing:</strong> Choosing a private-label manufacturer can save you time and reduce upfront costs, allowing you"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "174947998036",
+  "name": "DV: Liquid Supplement Manufacturing: Benefits vs. Costs (Paul)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/how-to-evaluate-supplement-suppliers-in-the-us"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175783065195",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175803720782",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#3",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175803754509",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175804493334",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#4",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175806001459",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#1 (Clone)",
+  "state": "DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175814575650",
+  "name": "DV: Client_Onboarding_BoF_Paul_#1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175814579079",
+  "name": "DV: Client_Onboarding_BoF_Paul_#3",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center",
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175814580344",
+  "name": "DV: Client_Onboarding_BoF_Paul_#4",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175817721770",
+  "name": "DV: Client_Onboarding_BoF_Paul_#2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175886073243",
+  "name": "DV: Client_Onboarding_BoF_Paul_#1 (Clone)",
+  "state": "AUTOMATED_DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "175886356012",
+  "name": "PTL: Client_Onboarding_BoF_Patricia_#4",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "e questions? Check out our&nbsp;<a href=\"https://www.pettechlabs.com/private-label-pet-supplements\" rel=\"noopener\" data-hs-link-id=\"0\">private labe"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "175886618917",
+  "name": "PTL: Client_Onboarding_BoF_Patricia_#3 NEW",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "e questions? Check out our&nbsp;<a href=\"https://www.pettechlabs.com/private-label-pet-supplements\" rel=\"noopener\" data-hs-link-id=\"0\">private labe"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "175889280585",
+  "name": "PTL: Client_Onboarding_BoF_Patricia_#2",
+  "state": "AUTOMATED_DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "176178321480",
+  "name": "DV: Chiropractor WF: Final Email ALL",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "176828947843",
+  "name": "PTL: Client_Onboarding_BoF_Ronald_#4",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "e questions? Check out our&nbsp;<a href=\"https://www.pettechlabs.com/private-label-pet-supplements\" rel=\"noopener\" data-hs-link-id=\"0\">private labe"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "176962326198",
+  "name": "DV: Client_Onboarding_BoF_Paul_From_MoF_#1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "176962698073",
+  "name": "DV: Client_Onboarding_BoF_Danielle_From_MoF_#1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "181949158501",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/top-private-label-herbal-supplements-and-their-key-benefits\" style=\"color: #3366ff;\"",
+   "ding-bottom: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/top-private-label-herbal-supplements-and-their-key-benefits\" title=\"\" class=\"hs-fea",
+   "One significant development in recent years is the growing demand for private-label herbal supplements.</p>        <!-- Start of HubSpot Tracking Pixel "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "181969034924",
+  "name": "Daily notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/top-private-label-herbal-supplements-and-their-key-benefits\" style=\"color: #3366ff;\"",
+   "px;\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/top-private-label-herbal-supplements-and-their-key-benefits\" title=\"\" class=\"hs-fea",
+   "One significant development in recent years is the growing demand for private-label herbal supplements.</p>        <!-- Start of HubSpot Tracking Pixel "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "182025785357",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/top-private-label-herbal-supplements-and-their-key-benefits\" style=\"color: #3366ff;\"",
+   "px;\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/top-private-label-herbal-supplements-and-their-key-benefits\" title=\"\" class=\"hs-fea",
+   "One significant development in recent years is the growing demand for private-label herbal supplements.</p>        <!-- Start of HubSpot Tracking Pixel "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "182247677254",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "lor: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"color: #3366ff;\">Mu",
+   "ics-to-expand-your-product-line\" style=\"color: #3366ff;\">Must-Have Private-Label Probiotics To Expand Your Product Line</a></span></h2>       <p styl",
+   "ottom: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" title=\"\" class=\"hs-featur"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "182249219737",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "lor: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"color: #3366ff;\">Mu",
+   "ics-to-expand-your-product-line\" style=\"color: #3366ff;\">Must-Have Private-Label Probiotics To Expand Your Product Line</a></span></h2>       <p styl",
+   "width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" title=\"\" class=\"hs-featur"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "182250650998",
+  "name": "Daily notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "lor: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"color: #3366ff;\">Mu",
+   "ics-to-expand-your-product-line\" style=\"color: #3366ff;\">Must-Have Private-Label Probiotics To Expand Your Product Line</a></span></h2>       <p styl",
+   "width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" title=\"\" class=\"hs-featur"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "182353998109",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "lor: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"color: #3366ff;\">Mu",
+   "ics-to-expand-your-product-line\" style=\"color: #3366ff;\">Must-Have Private-Label Probiotics To Expand Your Product Line</a></span></h2>       <p styl",
+   "width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" title=\"\" class=\"hs-featur"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "182664021403",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\" style=\"color: #3366ff;\">5 Bes",
+   "g-bottom: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\" title=\"\" class=\"hs-featured-",
+   "538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2F5-best-private-label-supplements-for-sleep-on-the-market&amp;bu=https%3A%2F%2Fblog.davinci"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "182668943471",
+  "name": "Daily notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\" style=\"color: #3366ff;\">5 Bes",
+   "\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\" title=\"\" class=\"hs-featured-",
+   "538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2F5-best-private-label-supplements-for-sleep-on-the-market&amp;bu=https%3A%2F%2Fblog.davinci"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "182668944967",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\" style=\"color: #3366ff;\">5 Bes",
+   "\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\" title=\"\" class=\"hs-featured-",
+   "538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2F5-best-private-label-supplements-for-sleep-on-the-market&amp;bu=https%3A%2F%2Fblog.davinci"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "183391330142",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\" style=\"color: #3366ff;\">5 Bes",
+   "\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\" title=\"\" class=\"hs-featured-",
+   "538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2F5-best-private-label-supplements-for-sleep-on-the-market&amp;bu=https%3A%2F%2Fblog.davinci"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "183683605628",
+  "name": "DV: HCP/PL - 2024 A4M - Post Show",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "184021770388",
+  "name": "DV: HCP/PL - 2024 A4M - Post Show #2",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "184289419592",
+  "name": "PTL: Best Ingredients for Private Label Dog Joint Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "e\", \"destination\": \"https://blog.pettechlabs.com/best-ingredients-for-private-label-dog-joint-supplements\", \"hs_enable_module_padding\": true, \"hs_wrapper"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "184289600885",
+  "name": "PTL: Top Quality Cat Digestive Supplements for Private Labeling",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "s://blog.pettechlabs.com/en/top-quality-cat-digestive-supplements-for-private-labeling\", \"module_id\": 1367093, \"parent_widget_container\": null, \"path\": \"",
+   "s://blog.pettechlabs.com/en/top-quality-cat-digestive-supplements-for-private-labeling\", \"hs_enable_module_padding\": true, \"hs_wrapper_css\": {\"padding-bo"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "187118678867",
+  "name": "DV: Newsletter Template (Danielle)",
+  "state": "DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-guide?__hstc=&__hssc=&hsCtaTracking=23e5c138-82d8-4274-916b-687610219701%7Cundefined",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "188289978893",
+  "name": "DV: Newsletter Template (Branding)",
+  "state": "DRAFT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-guide?__hstc=&__hssc=&hsCtaTracking=23e5c138-82d8-4274-916b-687610219701%7Cundefined",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "188496769904",
+  "name": "DV: Newsletter (Brand Owners) April",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-guide?__hstc=&__hssc=&hsCtaTracking=23e5c138-82d8-4274-916b-687610219701%7Cundefined",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "188498302362",
+  "name": "DV: Newsletter (Danielle) April 7",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-guide?__hstc=&__hssc=&hsCtaTracking=23e5c138-82d8-4274-916b-687610219701%7Cundefined",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "188963823457",
+  "name": "PTL QBS: PL vs Custom Formula",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "<a href=\"https://blog.pettechlabs.com/what-is-the-difference-between-private-label-pet-supplements-and-custom-formulas\" target=\"_blank\" style=\"font-",
+   "nation\": \"https://blog.pettechlabs.com/what-is-the-difference-between-private-label-pet-supplements-and-custom-formulas\", \"file\": \"https://4087538.fs1.hu"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "188963824681",
+  "name": "PTL QBS: Boost Your Brand With Collagen",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "f=\"https://blog.pettechlabs.com/boost-your-pet-supplement-brand-with-private-label-collagen-for-dogs\" rel=\"noopener\"><strong>Boost Your Brand with Co",
+   "\": \"https://blog.pettechlabs.com/boost-your-pet-supplement-brand-with-private-label-collagen-for-dogs\", \"file\": \"https://4087538.fs1.hubspotusercontent-n"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "188967764379",
+  "name": "PTL QBS: Selecting the Right PL Ingredients",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "an> <a href=\"https://blog.pettechlabs.com/selecting-best-ingredients-private-label-supplements-dogs\" style=\"font-weight: bold;\">Selecting the Best In",
+   "estination\": \"https://blog.pettechlabs.com/selecting-best-ingredients-private-label-supplements-dogs\", \"file\": \"https://4087538.fs1.hubspotusercontent-na"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "189016356108",
+  "name": "PTL QBS May: 12 Ways to Differentiate",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " thinking about launching a new SKU, rebranding, or moving beyond the private-label pack, letu2019s chat. Weu2019re more than just manufacturers, weu2"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "189021480480",
+  "name": "PTL QBS May: The Cat\u2019s Out of the Bag: Digestive Health Is Your Brand\u2019s Next Best Seller",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ttps://blog.pettechlabs.com/top-quality-cat-digestive-supplements-for-private-labeling\"><strong>Read the post to explore how we make it easy to launch t",
+   "s://blog.pettechlabs.com/en/top-quality-cat-digestive-supplements-for-private-labeling\", \"file\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/40"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "189030754125",
+  "name": "PTL: May News Letter",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " style=\"font-weight: normal;\"><a href=\"https://www.pettechlabs.com/private-label-dog-joint-supplements\" style=\"font-weight: bold;\">ud83dudc15 Exp",
+   "1)%5B93%5D.webp\", \"width\": 558}, \"link\": \"https://www.pettechlabs.com/private-label-dog-joint-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "189066448752",
+  "name": "DV: Newsletter (Danielle) May A",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "189068497499",
+  "name": "DV: Newsletter (Paul) May A",
+  "state": "PUBLISHED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "189415081124",
+  "name": "DV: Newsletter (Paul) May B",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "189415081337",
+  "name": "DV: Newsletter (Danielle) May B",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "189864081577",
+  "name": "DV: Newsletter (Danielle) May A - Version A (Clone)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "190134620261",
+  "name": "PTL QBS May: The Cat\u2019s Out of the Bag: Digestive Health Is Your Brand\u2019s Next Best Seller B",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ttps://blog.pettechlabs.com/top-quality-cat-digestive-supplements-for-private-labeling\"><strong>Read the post to explore how we make it easy to launch t",
+   "s://blog.pettechlabs.com/en/top-quality-cat-digestive-supplements-for-private-labeling\", \"file\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/40"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "190330129182",
+  "name": "DV: Newsletter (Danielle) June A QBS",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "fferentiators that actually sell, plus how to turn them into powerful private-label SKUs for your brand.<br><br></span></p> <p style=\"line-height: 129%",
+   "t-size: 18px;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"font-weight: bold;\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "190345947931",
+  "name": "The #1 Supplement Category You\u2019re Probably Undervaluing DV QBS Marketing",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ng\", \"width\": 558}, \"link\": \"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\", \"module_id\": 1367093, \"stretch_",
+   ": \"#76bc43\", \"destination\": \"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\", \"font_style\": {\"color\": \"#fffff"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "190410728283",
+  "name": "PTL May Newsletter B",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " style=\"font-weight: normal;\"><a href=\"https://www.pettechlabs.com/private-label-dog-joint-supplements\" style=\"font-weight: bold;\">ud83dudc15 Exp",
+   "1)%5B93%5D.webp\", \"width\": 558}, \"link\": \"https://www.pettechlabs.com/private-label-dog-joint-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "190412481407",
+  "name": "PTL QBS May: 12 Ways to Differentiate B",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " thinking about launching a new SKU, rebranding, or moving beyond the private-label pack, letu2019s chat. Weu2019re more than just manufacturers, weu2"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "190430376789",
+  "name": "PTL: June News Letter General",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "supplements.png\", \"width\": 558}, \"link\": \"https://www.pettechlabs.com/private-label-dog-joint-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "190552060734",
+  "name": "DV: Newsletter (Danielle) June A QBS B",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "fferentiators that actually sell, plus how to turn them into powerful private-label SKUs for your brand.<br><br></span></p> <p style=\"line-height: 129%",
+   "t-size: 18px;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"font-weight: bold;\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "190553496600",
+  "name": "DV: Newsletter (Paul) June A QBS -",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "fferentiators that actually sell, plus how to turn them into powerful private-label SKUs for your brand.<br><br></span></p> <p style=\"line-height: 129%",
+   "t-size: 18px;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" rel=\"noopener\">Read More &"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "190553664026",
+  "name": "DV: Newsletter (Paul) June A QBS -B",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "fferentiators that actually sell, plus how to turn them into powerful private-label SKUs for your brand.<br><br></span></p> <p style=\"line-height: 129%",
+   "lineNumber\": 28, \"link\": \"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\", \"module_id\": 1367093, \"path\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "191258980238",
+  "name": "Why Smart Sellers Are Doubling Down on This Supplement: DV QBS Marketing",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ng\", \"width\": 558}, \"link\": \"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\", \"module_id\": 1367093, \"stretch_",
+   ": \"#76bc43\", \"destination\": \"https://blog.davincilabs.com/blog/5-best-private-label-supplements-for-sleep-on-the-market\", \"font_style\": {\"color\": \"#fffff"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "191564143369",
+  "name": "DV: Newsletter (Danielle) July A QBS (Build a Smarter Sleep Stack)",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "height: 115%;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"font-weight: bold;\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "191697230655",
+  "name": "Private Label Pulse: What\u2019s Fueling Demand in Sleep Health?",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "height: 115%;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"font-weight: bold;\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "192023085393",
+  "name": "DV: Newsletter (Paul) July A QBS",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "height: 115%;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"font-weight: bold;\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "192322157424",
+  "name": "PTL: You Don\u2019t Need Another \u201cChew\u201d Brand. You Need a Strategy.ually Watching the Aisle? (QBS July) - Version A (Clone)",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "th\": 558}, \"lineNumber\": 57, \"link\": \"https://blog.pettechlabs.com/en/private-label-vs.-custom-supplement-formulation-whats-right-for-your-pet-brand\", \"m",
+   "p><br>The smart answer? It depends on your game plan.<br><br></p> <p>Private-label gets you in the game quickly.<br><br></p> <p style=\"font-weight: bo"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "192769754439",
+  "name": "PTL: What\u2019s Holding Your Pet Brand Back\u2014Speed or Strategy?",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "th\": 558}, \"lineNumber\": 57, \"link\": \"https://blog.pettechlabs.com/en/private-label-vs.-custom-supplement-formulation-whats-right-for-your-pet-brand\", \"m",
+   "p><br>The smart answer? It depends on your game plan.<br><br></p> <p>Private-label gets you in the game quickly.<br><br></p> <p style=\"font-weight: bo"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "193396641969",
+  "name": "(A) DV: Newsletter (Danielle) August QBS GLP Focus",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "height: 115%;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"font-weight: bold;\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "193404237927",
+  "name": "(B) DV: Newsletter (Danielle) August QBS GLA Focus",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "height: 115%;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"font-weight: bold;\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "193601171501",
+  "name": "DV: Newsletter (Paul) August QBS GLP Focus",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "height: 115%;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"font-weight: bold;\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "194769020991",
+  "name": "DV: Launching 6-12 Months Nurture #1",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "194771038733",
+  "name": "DV: Launching 6-12 Months Nurture #2",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "194771840406",
+  "name": "DV: Launching 6-12 Months Nurture #3",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "194772490052",
+  "name": "DV: Launching 6-12 Months Nurture #4",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "194877119799",
+  "name": "PTL: Sept News Letter General",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "g-top\": \"10px\"}, \"html\": \"<h2><span style=\"color: #22539f;\"><strong>Private-Label Horse Supplements Built to Compete</strong></span></h2> <p>&nbsp;</p",
+   "eu2019re seeing smart brands win with:</p> <p>&nbsp;</p> <p>u2714 Private-label joint, calming, and hoof support formulas</p> <p>u2714 Fast lead ti"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "195012115201",
+  "name": "DV: PL Newsletter Septemeber (Danielle)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "0(DaVinci)/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \"fo",
+   "height: 115%;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"font-weight: bold;\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "196805941650",
+  "name": "DV: PL Newsletter October Protein That Performs: Clean, Clinically Backed & Built for Your Brand",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/top-private-label-protein-powders-for-your-brand"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "197596835644",
+  "name": "DV: FNCE Followup #2 (5R)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " \"width\": 600}, \"link\": \"https://meetings.hubspot.com/samantha-fuller/private-label-round-robin\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "197614796392",
+  "name": "DV: PL Followup #1",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-guide?_gl=1*oulykr*_up*MQ..*_ga*MTE2NzY2MjE3My4xNzYwNDgxNDUy*_ga_PZVE9M01EH*czE3NjA0ODE0NTEkbzEkZzAkdDE3NjA0ODE0NTEkajYwJGwwJGgw",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "197642521926",
+  "name": "DV: PL Followup #2",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-guide?_gl=1*oulykr*_up*MQ..*_ga*MTE2NzY2MjE3My4xNzYwNDgxNDUy*_ga_PZVE9M01EH*czE3NjA0ODE0NTEkbzEkZzAkdDE3NjA0ODE0NTEkajYwJGwwJGgw",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "197916915820",
+  "name": "DV: FNCE Followup #3",
+  "state": "DRAFT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " \"width\": 600}, \"link\": \"https://meetings.hubspot.com/samantha-fuller/private-label-round-robin\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "197944863159",
+  "name": "DV: PL Newsletter November (Sleep)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/5-best-private-label-supplements-for-sleep-on-the-market",
+   "https://blog.davincilabs.com/private-label/top-private-label-protein-powders-for-your-brand"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "198152624758",
+  "name": "(A) PTL: Oct News Letter",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "9re launching your first formula or expanding a DTC line, our <strong>private-label digestive health supplements for dogs</strong> are built to move unit",
+   "and digestive supplements are heating up. See the data, strategy, and private-label solutions that give your brand the edge.\"}, \"child_css\": {}, \"css\": {"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "198166464922",
+  "name": "(B) PTL: Oct News Letter",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "9re launching your first formula or expanding a DTC line, our <strong>private-label digestive health supplements for dogs</strong> are built to move unit",
+   "and digestive supplements are heating up. See the data, strategy, and private-label solutions that give your brand the edge.\"}, \"child_css\": {}, \"css\": {"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "198873729352",
+  "name": "DV: HCP Newsletter November (Sleep)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "height: 115%;\"><a href=\"https://blog.davincilabs.com/blog/must-have-private-label-probiotics-to-expand-your-product-line\" style=\"font-weight: bold;\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "200441586176",
+  "name": "1: Private Label Guide: High-Priority",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "200467327777",
+  "name": "Private Label: High Priority - how to make money",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "/Logo.png\", \"width\": 237}, \"link\": \"https://blog.davincilabs.com/blog/private-label-supplements-how-to-make-money\", \"module_id\": 1367093, \"path\": \"@hubsp",
+   "ule_padding\": false, \"hs_wrapper_css\": {}, \"img\": {\"alt\": \"make-money-private-label-supplements\", \"height\": 320, \"src\": \"https://f.hubspotusercontent30.n",
+   ", \"src\": \"https://f.hubspotusercontent30.net/hubfs/4087538/make-money-private-label-supplements.png\", \"width\": 600}, \"link\": \"https://blog.davincilabs.co"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "200467328115",
+  "name": "Private Label: High Priority - Reach out",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "200492727649",
+  "name": "Private Label: High Priority - 6 Benefits",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "200504417306",
+  "name": "Private Label: High Priority - Top Selling Products",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"width\": 598}, \"link\": \"https://blog.davincilabs.com/blog/top-selling-private-label-supplements-for-2021\", \"module_id\": 1367093}, \"child_css\": {}, \"css\":"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "200959789646",
+  "name": "(A) Newsletter December 25 PL",
+  "state": "PUBLISHED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling-supplement-manufacturer"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "201035204160",
+  "name": "PTL: Nov News Letter - Calming & Skin Care",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "th\": 558}, \"lineNumber\": 57, \"link\": \"https://blog.pettechlabs.com/en/private-label-skin-and-coat-supplements-for-dogs-are-your-winner-in-2026\", \"module_",
+   "<strong>Read More: </strong><a href=\"https://blog.pettechlabs.com/en/private-label-skin-and-coat-supplements-for-dogs-are-your-winner-in-2026\" style=\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "201422730891",
+  "name": "(B) Newsletter December 25 PL",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling-supplement-manufacturer"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "202100373636",
+  "name": "DV: # High Priority (Branded) 5Rs",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/top-selling-private-label-supplements-for-2021"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "202102714909",
+  "name": "DV: #3 High Priority (Branded) Top-Sellers",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/top-selling-private-label-supplements-for-2021"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "202109114549",
+  "name": "DV: High Priority (Branded) - Reach out",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "202135105656",
+  "name": "Private Label: High Priority - Client Onboarding",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-client-onboarding"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "202221725195",
+  "name": "Private Label: High Priority Intro",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "203947087274",
+  "name": "DV HCP // PM \u2013 January Email # 1 : Monthly Newsletter, 1/13",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "204815727478",
+  "name": "DV PL // PM \u2013 January Email # 1 : Monthly Newsletter, 1/13",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "https://www.davincilabs.com/private-label-get-started?_gl=1*hzenzk*_ga*MTg1MDY5OTMyMS4xNzY4MzM2MzI4*_ga_PZVE9M01EH*czE3NjgzMzY1NzckbzEkZzAkdDE3NjgzMzY1OTgkajYwJGwwJGgw*_gcl_au*NDc1NDE3ODE5LjE3NjM2NTcw",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "205984537752",
+  "name": "DVL // PM - Automated Email: PL 5rs #1",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "gs_link\", \"meeting_field\": \"https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin\", \"module_id\": 1976948, \"style\": {\"corner_radius\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "205989644103",
+  "name": "(A) PTL: Jan Newsletter: General",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "abs.com/en/lysine-supplements-for-cats-a-wallet-share-winner-for-your-private-label-pet-brand\" style=\"font-weight: bold;\"><span style=\"color: #22539f",
+   "abs.com/en/lysine-supplements-for-cats-a-wallet-share-winner-for-your-private-label-pet-brand\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "206251582904",
+  "name": "(A) DV PL // PM \u2013 (Resend) January Email PL NL : Monthly Newsletter, 1/28",
+  "state": "PUBLISHED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "https://www.davincilabs.com/private-label-get-started?_gl=1*hzenzk*_ga*MTg1MDY5OTMyMS4xNzY4MzM2MzI4*_ga_PZVE9M01EH*czE3NjgzMzY1NzckbzEkZzAkdDE3NjgzMzY1OTgkajYwJGwwJGgw*_gcl_au*NDc1NDE3ODE5LjE3NjM2NTcw",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "206256617125",
+  "name": "(B) DV PL // PM \u2013 (Resend) January Email PL NL : Monthly Newsletter, 1/28",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "https://www.davincilabs.com/private-label-get-started?_gl=1*hzenzk*_ga*MTg1MDY5OTMyMS4xNzY4MzM2MzI4*_ga_PZVE9M01EH*czE3NjgzMzY1NzckbzEkZzAkdDE3NjgzMzY1OTgkajYwJGwwJGgw*_gcl_au*NDc1NDE3ODE5LjE3NjM2NTcw",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "206399513127",
+  "name": "DV HCP // PM \u2013 January Email # 1 : Monthly Newsletter, 1/30 (Resend)",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "206675026057",
+  "name": "(A) DV PL // PM \u2013 February Email # 1 : Monthly Newsletter, 2/3",
+  "state": "PUBLISHED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "https://www.davincilabs.com/private-labeling",
+   "https://www.davincilabs.com/private-labeling?"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "206756017581",
+  "name": "(B) PTL: Jan Newsletter: General",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "abs.com/en/lysine-supplements-for-cats-a-wallet-share-winner-for-your-private-label-pet-brand\" style=\"font-weight: bold;\"><span style=\"color: #22539f",
+   "abs.com/en/lysine-supplements-for-cats-a-wallet-share-winner-for-your-private-label-pet-brand\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "206990886748",
+  "name": "(B) DV PL // PM \u2013 February Email # 1 : Monthly Newsletter, 2/3",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "https://www.davincilabs.com/private-labeling",
+   "https://www.davincilabs.com/private-labeling?"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "207224089437",
+  "name": "DVL // PM - Automated Email: PL 5Rs #2",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "gs_link\", \"meeting_field\": \"https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin\", \"module_id\": 1976948, \"style\": {\"corner_radius\"",
+   "gs_link\", \"meeting_field\": \"https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin\", \"module_id\": 1976948, \"style\": {\"corner_radius\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "207224096564",
+  "name": "DVL // PM - Automated Email: PL 5rs #3",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "gs_link\", \"meeting_field\": \"https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin\", \"module_id\": 1976948, \"style\": {\"corner_radius\"",
+   "gs_link\", \"meeting_field\": \"https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin\", \"module_id\": 1976948, \"style\": {\"corner_radius\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "207281483916",
+  "name": "DVL // PM - Automated Email: PL 5rs #4",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "gs_link\", \"meeting_field\": \"https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin\", \"module_id\": 1976948, \"style\": {\"corner_radius\"",
+   "gs_link\", \"meeting_field\": \"https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin\", \"module_id\": 1976948, \"style\": {\"corner_radius\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "207281829171",
+  "name": "DVL // PM - Automated Email: PL 5rs #5",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started?_gl=1*1d8vu5f*_up*MQ..*_ga*MTA0MDkwOTQxLjE3NzUyMzQ0MTQ.*_ga_PZVE9M01EH*czE3NzUyMzQ0MTMkbzEkZzEkdDE3NzUyMzQ5NDAkajYwJGwwJGgw"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "207282028161",
+  "name": "DVL // PM - Automated Email: PL 5rs #6",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling-supplement-manufacturer"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "207375276320",
+  "name": "DVL // PM - Automated Email: PL 5RS #7",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "gs_link\", \"meeting_field\": \"https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin\", \"module_id\": 1976948, \"text\": \"Reach Out and Le"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "207375369315",
+  "name": "(A) PTL Blog: CAT Supplements",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "s://blog.pettechlabs.com/en/top-5-cat-joint-supplements-available-for-private-label\" rel=\"noopener\">why aren't you selling the cat version</a>?<br><br",
+   "s://blog.pettechlabs.com/en/top-5-cat-joint-supplements-available-for-private-label\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\": \"module_17",
+   "s://blog.pettechlabs.com/en/top-5-cat-joint-supplements-available-for-private-label\", \"hs_enable_module_padding\": true, \"hs_wrapper_css\": {\"padding-botto"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "207941583710",
+  "name": "(B) PTL Blog: CAT Supplements",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "s://blog.pettechlabs.com/en/top-5-cat-joint-supplements-available-for-private-label\" rel=\"noopener\">why aren't you selling the cat version</a>?<br><br",
+   "s://blog.pettechlabs.com/en/top-5-cat-joint-supplements-available-for-private-label\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\": \"module_17",
+   "s://blog.pettechlabs.com/en/top-5-cat-joint-supplements-available-for-private-label\", \"hs_enable_module_padding\": true, \"hs_wrapper_css\": {\"padding-botto"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "207986659950",
+  "name": "PTL Page: Dog Dental Health",
+  "state": "DRAFT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "7607110844194\": {\"body\": {\"destination\": \"https://www.pettechlabs.com/private-label-dog-dental-health-supplements\", \"hs_enable_module_padding\": true, \"hs"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "208065004867",
+  "name": "(A) (A) PTL: Feb Newsletter: General",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ps://blog.pettechlabs.com/en/roi-with-dental-supplements-for-dogs-why-private-label-pet-supplements-are-your-best-investment-in-2026\" rel=\"noopener\"><",
+   "span style=\"font-size: 18px;\"><a href=\"https://www.pettechlabs.com/private-label-dog-products\" style=\"font-weight: bold;\" rel=\"noopener\">ud83du",
+   "span style=\"font-size: 18px;\"><a href=\"https://www.pettechlabs.com/private-label-dog-dental-health-supplements\" style=\"font-weight: bold;\" rel=\"no"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "208387075228",
+  "name": "(A) DV HCP // PM \u2013 March Email # 1 : Monthly Newsletter, 3/3 - Version A (tier 2)",
+  "state": "PUBLISHED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "208438457715",
+  "name": "Private Label Lead - First Contact",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-client-onboarding"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "208453898256",
+  "name": "(A) DV PL // PM \u2013 March Email: Monthly Newsletter, 3/3 (tier 1)",
+  "state": "PUBLISHED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "208648798345",
+  "name": "(B) (A) PTL: Feb Newsletter: General",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ps://blog.pettechlabs.com/en/roi-with-dental-supplements-for-dogs-why-private-label-pet-supplements-are-your-best-investment-in-2026\" rel=\"noopener\"><",
+   "span style=\"font-size: 18px;\"><a href=\"https://www.pettechlabs.com/private-label-dog-products\" style=\"font-weight: bold;\" rel=\"noopener\">ud83du",
+   "span style=\"font-size: 18px;\"><a href=\"https://www.pettechlabs.com/private-label-dog-dental-health-supplements\" style=\"font-weight: bold;\" rel=\"no"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "208648907044",
+  "name": "PTL: Feb Newsletter: Client - Version A",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ps://blog.pettechlabs.com/en/roi-with-dental-supplements-for-dogs-why-private-label-pet-supplements-are-your-best-investment-in-2026\", \"module_id\": 13670",
+   "ps://blog.pettechlabs.com/en/roi-with-dental-supplements-for-dogs-why-private-label-pet-supplements-are-your-best-investment-in-2026\", \"hs_enable_module_"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "208649333146",
+  "name": "(A) DV HCP // PM \u2013 March Email # 1 : Monthly Newsletter, 3/3 - Version A (tier 1)",
+  "state": "PUBLISHED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "208656806158",
+  "name": "(B) DV HCP // PM \u2013 March Email # 1 : Monthly Newsletter, 3/3 - Version A (tier 1)",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "208656846399",
+  "name": "(B) (A) DV HCP // PM \u2013 March Email # 1 : Monthly Newsletter, 3/3 - Version B (2",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "208656861545",
+  "name": "(B) DV PL // PM \u2013 March Email: Monthly Newsletter, 3/3 (tier 1)",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "208656865914",
+  "name": "(A) DV PL // PM \u2013 March Email: Monthly Newsletter, 3/3 (tier 2)",
+  "state": "PUBLISHED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "208656865918",
+  "name": "(A) DV PL // PM \u2013 March Email: Monthly Newsletter, 3/3 (tier 2) (Variation)",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "208784262457",
+  "name": "DV HCP // PM \u2013 March Email # 1 : Monthly Newsletter, 3/3 A/B test",
+  "state": "PUBLISHED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "208784262461",
+  "name": "DV HCP // PM \u2013 March Email # 1 : Monthly Newsletter, 3/3 A/B test (Variation)",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "209037376863",
+  "name": "DV PL // PM \u2013 March Email: Monthly Newsletter, 3/3 (tier 1) - Resend 03/10",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "209041071252",
+  "name": "DV HCP // PM \u2013 March Email # 1 : Monthly Newsletter, 3/3 - Version A (tier 1) - Resend 03/10",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "209199308366",
+  "name": "(A) PTL: March Newsletter: General - Cat Products",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "rs what <a href=\"https://blog.pettechlabs.com/en/probiotics-for-cats-private-label\" rel=\"noopener\">probiotic vs. prebiotic actually means</a>, why na",
+   " Labs supports.<br><br></p> <p><a href=\"https://www.pettechlabs.com/private-label-cat-supplements\" target=\"_blank\" rel=\"noopener\"><span style=\"fo",
+   "\": 558}, \"link\": \"https://blog.pettechlabs.com/en/probiotics-for-cats-private-label\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\": \"module_17"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "209533382568",
+  "name": "DV PL // PM \u2013 APR Email # 1 : Monthly Newsletter, 4/7",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started?srsltid=AfmBOoqvncBVI7wVl4jyTs2kHTbwRradK5jh3ii_ufm6iSQ5r1jl3XNn"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "209754049868",
+  "name": "PTL: CAT MULTIVIT (APRIL QBS)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   ": 44, \"link\": \"https://blog.pettechlabs.com/en/multivitamins-for-cats-private-label-formula\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email\", \"sche",
+   " <p><a href=\"https://blog.pettechlabs.com/en/multivitamins-for-cats-private-label-formula\" style=\"font-weight: bold;\" rel=\"noopener\">Read the comp",
+   "destination\": \"https://blog.pettechlabs.com/en/multivitamins-for-cats-private-label-formula\", \"hs_enable_module_padding\": true, \"hs_wrapper_css\": {\"paddi"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "209754049928",
+  "name": "PTL: CAT PROBIOTIC (APRIL QBS)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "er\": 44, \"link\": \"https://blog.pettechlabs.com/en/probiotics-for-cats-private-label\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email\", \"schema_versi",
+   "n<p>The <a href=\"https://blog.pettechlabs.com/en/probiotics-for-cats-private-label\" rel=\"noopener\">article we&nbsp;just published is the most compreh",
+   " {\"destination\": \"https://blog.pettechlabs.com/en/probiotics-for-cats-private-label\", \"hs_enable_module_padding\": true, \"hs_wrapper_css\": {\"padding-botto"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "209999431062",
+  "name": "PTL Nurture: Dog Dental Health (QBS)",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "<span style=\"color: #22539f;\"><a href=\"https://www.pettechlabs.com/private-label-dog-dental-health-supplements\" style=\"color: #22539f;\" rel=\"noope",
+   "7607110844194\": {\"body\": {\"destination\": \"https://www.pettechlabs.com/private-label-dog-dental-health-supplements\", \"hs_enable_module_padding\": true, \"hs"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "209999648652",
+  "name": "PTL Nurture: Best Ingredients for Private Label Dog Joint Supplements (Clone)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "e\", \"destination\": \"https://blog.pettechlabs.com/best-ingredients-for-private-label-dog-joint-supplements\", \"hs_enable_module_padding\": true, \"hs_wrapper"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "210634424723",
+  "name": "(B) PTL: March Newsletter: General - Cat Products",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "rs what <a href=\"https://blog.pettechlabs.com/en/probiotics-for-cats-private-label\" rel=\"noopener\">probiotic vs. prebiotic actually means</a>, why na",
+   " Labs supports.<br><br></p> <p><a href=\"https://www.pettechlabs.com/private-label-cat-supplements\" target=\"_blank\" rel=\"noopener\"><span style=\"fo",
+   "\": 558}, \"link\": \"https://blog.pettechlabs.com/en/probiotics-for-cats-private-label\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\": \"module_17"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "210729964334",
+  "name": "DV PL // PM \u2013 May Email # 1 : Monthly Newsletter, 5/5",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started",
+   "https://www.davincilabs.com/private-label-get-started?srsltid=AfmBOoqvncBVI7wVl4jyTs2kHTbwRradK5jh3ii_ufm6iSQ5r1jl3XNn"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "211104899607",
+  "name": "PTL: April Newsletter: General (Senior Dogs)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"width\": 558}, \"lineNumber\": 44, \"link\": \"https://www.pettechlabs.com/private-label-pet-supplements\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email",
+   "pettechlabs.com/en/supplements-for-senior-dogs-how-to-build-a-smarter-private-label-product-line\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id",
+   "pettechlabs.com/en/supplements-for-senior-dogs-how-to-build-a-smarter-private-label-product-line\", \"hs_enable_module_padding\": true, \"hs_wrapper_css\": {\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "213264699828",
+  "name": "PTL: May Newsletter: General (Science Behind Innovation)",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"width\": 558}, \"lineNumber\": 44, \"link\": \"https://www.pettechlabs.com/private-label-pet-supplements\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email",
+   "></p> <h3>ud83dudc49 <strong><a href=\"https://www.pettechlabs.com/private-label-pet-supplements\">See the Private Label Pet Supplements Overview Here"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "213427447398",
+  "name": "DV PL // PM \u2013 June Email # 1 : Monthly Newsletter",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center",
+   "https://www.davincilabs.com/private-label-get-started?_gl=1*zvobtp*_up*MQ..*_ga*ODcyMTg5ODk1LjE3Nzk0Nzk3MTk.*_ga_PZVE9M01EH*czE3Nzk0Nzk3MTgkbzEkZzAkdDE3Nzk0Nzk3MTgkajYwJGwwJGgw",
+   "https://www.davincilabs.com/private-labeling?_gl=1*1d9yyc0*_up*MQ..*_ga*ODcyMTg5ODk1LjE3Nzk0Nzk3MTk.*_ga_PZVE9M01EH*czE3Nzk0Nzk3MTgkbzEkZzEkdDE3Nzk0Nzk3OTMkajYwJGwwJGgw"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "213710510128",
+  "name": "PTL: MAY/JUNE Summer Stress Calming Supplements",
+  "state": "DRAFT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"width\": 558}, \"lineNumber\": 44, \"link\": \"https://www.pettechlabs.com/private-label-pet-supplements\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email",
+   "pettechlabs.com/en/supplements-for-senior-dogs-how-to-build-a-smarter-private-label-product-line\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id",
+   "pettechlabs.com/en/supplements-for-senior-dogs-how-to-build-a-smarter-private-label-product-line\", \"hs_enable_module_padding\": true, \"hs_wrapper_css\": {\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "215255593388",
+  "name": "PTL: June Newsletter: Gut Health Summer Stress",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"width\": 558}, \"lineNumber\": 44, \"link\": \"https://www.pettechlabs.com/private-label-pet-supplements\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email",
+   "p> <p>If you're looking to enter or expand the pet wellness space, a private-label pet gut health supplement is one of the most strategic starting point",
+   ".png\", \"width\": 558}, \"link\": \"https://blog.pettechlabs.com/en/how-to-private-label-a-pet-gut-health-supplement\", \"module_id\": 1367093}, \"child_css\": {},"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "215867507124",
+  "name": "DV PL // PM \u2013 July Email # 1 : Monthly Newsletter (",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center",
+   "https://www.davincilabs.com/private-label-get-started?_gl=1*zvobtp*_up*MQ..*_ga*ODcyMTg5ODk1LjE3Nzk0Nzk3MTk.*_ga_PZVE9M01EH*czE3Nzk0Nzk3MTgkbzEkZzAkdDE3Nzk0Nzk3MTgkajYwJGwwJGgw"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "217727446432",
+  "name": "PTL: July Newsletter: Urinary Health + SuperZoo",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"width\": 558}, \"lineNumber\": 44, \"link\": \"https://www.pettechlabs.com/private-label-pet-supplements\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email",
+   "log.pettechlabs.com/en/why-dog-urinary-tract-health-supplements-are-a-private-label-brands-best-friend\", \"hs_enable_module_padding\": true, \"hs_wrapper_cs",
+   ".png\", \"width\": 558}, \"link\": \"https://blog.pettechlabs.com/en/how-to-private-label-a-pet-gut-health-supplement\", \"module_id\": 1367093}, \"child_css\": {},"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "218646593303",
+  "name": "DV PL // PM \u2013 Aug Email # 1 : Monthly Newsletter",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center",
+   "https://www.davincilabs.com/private-label-get-started?_gl=1*zvobtp*_up*MQ..*_ga*ODcyMTg5ODk1LjE3Nzk0Nzk3MTk.*_ga_PZVE9M01EH*czE3Nzk0Nzk3MTgkbzEkZzAkdDE3Nzk0Nzk3MTgkajYwJGwwJGgw"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "219760499246",
+  "name": "PTL: August Newsletter: Senior Pet Health",
+  "state": "DRAFT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"width\": 558}, \"lineNumber\": 44, \"link\": \"https://www.pettechlabs.com/private-label-pet-supplements\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email",
+   "techlabs.com/en/supplements-for-senior-dogs-how-to-build-a-high-value-private-label-wellness-line\", \"hs_enable_module_padding\": true, \"hs_wrapper_css\": {",
+   "techlabs.com/en/supplements-for-senior-dogs-how-to-build-a-high-value-private-label-wellness-line\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"i"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "23393178395",
+  "name": "Blog: Private Label Supplements: How to Get Superior-Quality Affordably",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "able, ranging from </span><a href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-get-superior-quality-at-low-cost\" rel=\" noopener"
+  ],
+  "trackers": [
+   "http://www.facebook.com/share.php?u=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92fbf-353b-4a53-9",
+   "http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92"
+  ]
+ },
+ {
+  "id": "23841632372",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   ": 20px; line-height: 30px;\" href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-get-superior-quality-at-low-cost\">Private Label S",
+   ": 16px; line-height: 24px;\" href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-get-superior-quality-at-low-cost\">           By ",
+   ": 10px;\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-get-superior-quality-at-low-cost\" title=\"\" clas"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "31596908675",
+  "name": "Retargeting Workflow #1: Come Back & Private Label!",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": [
+   "http://www.facebook.com/share.php?u=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92fbf-353b-4a53-9",
+   "http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92"
+  ]
+ },
+ {
+  "id": "38015197272",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ht: 30px;\" href=\"https://blog.davincilabs.com/blog/how-do-i-start-a-private-label-supplement-business\">How to Start a Private Label Supplement Busines",
+   "ht: 24px;\" href=\"https://blog.davincilabs.com/blog/how-do-i-start-a-private-label-supplement-business\">           By DaVinci Healthcare Expert, Nov 2",
+   "\"100%\"> <a href=\"https://blog.davincilabs.com/blog/how-do-i-start-a-private-label-supplement-business\" title=\"\" class=\"hs-featured-image-link\" sty"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "38181864513",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ht: 30px;\" href=\"https://blog.davincilabs.com/blog/how-do-i-start-a-private-label-supplement-business-0\">FDA and Selling Supplements: What You Need to",
+   "ht: 24px;\" href=\"https://blog.davincilabs.com/blog/how-do-i-start-a-private-label-supplement-business-0\">           By DaVinci Healthcare Expert, Nov",
+   "\"100%\"> <a href=\"https://blog.davincilabs.com/blog/how-do-i-start-a-private-label-supplement-business-0\" title=\"\" class=\"hs-featured-image-link\" s"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "40596080301",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " 30px;\" href=\"https://blog.davincilabs.com/blog/benefits-of-selling-private-label-supplements\">Six Benefits of Selling Private Label Supplements</a> <",
+   " 24px;\" href=\"https://blog.davincilabs.com/blog/benefits-of-selling-private-label-supplements\">           By DaVinci Healthcare Expert, Jan 11, 2021 ",
+   "0%\"> <a href=\"https://blog.davincilabs.com/blog/benefits-of-selling-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "41235217469",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/thank-you-guide-private-labeling-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "41411614625",
+  "name": "Danielle: DV Mission & Register",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "41523214478",
+  "name": "Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " 558}, \"link\": \"https://blog.davincilabs.com/blog/benefits-of-selling-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\"",
+   "r own <a href=\"https://blog.davincilabs.com/blog/benefits-of-selling-private-label-supplements\" style=\"font-weight: bold;\" rel=\"noopener\">private l"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "41523978161",
+  "name": "Private_Label_Guide_ToF_Danielle_Top_Selling_PL_Supplements_2021",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ding-top\": \"10px\"}, \"hs_enable_module_padding\": true, \"img\": {\"alt\": \"private-label-supplements\", \"height\": 298, \"src\": \"https://f.hubspotusercontent30.n",
+   "eight\": 298, \"src\": \"https://f.hubspotusercontent30.net/hubfs/4087538/private-label-supplements.png\", \"width\": 558}, \"link\": \"https://blog.davincilabs.co",
+   "\"width\": 558}, \"link\": \"https://blog.davincilabs.com/blog/top-selling-private-label-supplements-for-2021\", \"module_id\": 1367093}, \"child_css\": {}, \"css\":"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "41918398828",
+  "name": "Private_Label_Guide_ToF_Danielle_How to_start-PL_Business_7steps",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"10px\"}, \"hs_enable_module_padding\": true, \"img\": {\"alt\": \"start-your-private-label-supplement-business\", \"height\": 298, \"src\": \"https://f.hubspotusercon",
+   ", \"src\": \"https://f.hubspotusercontent30.net/hubfs/4087538/start-your-private-label-supplement-business.jpg\", \"width\": 558}, \"link\": \"https://blog.davinc",
+   "h\": 558}, \"link\": \"https://blog.davincilabs.com/blog/how-do-i-start-a-private-label-supplement-business\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "41919076196",
+  "name": "Private_Label_Guide_ToF_Benefits_Private_Label_With_Davinci",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling#plform"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "42170019437",
+  "name": "Paul: DV Mission & Register",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "43124708742",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ref=\"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\">How to Create Exclusivity for Private Label Supplements",
+   "ref=\"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\">           By Aryel Wilbur, Mar 15, 2021 10:36:12 AM ",
+   "ref=\"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "44285478241",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "44286486907",
+  "name": "Private_Label_Guide_ToF_Paul_6_Benefits of Selling PL",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ing-top\": \"10px\"}, \"hs_enable_module_padding\": true, \"img\": {\"alt\": \"2privatelabel\", \"height\": 429, \"src\": \"https://f.hubspotusercontent30.net/hubfs/408",
+   "https://f.hubspotusercontent30.net/hubfs/4087538/Imported_Blog_Media/2privatelabel.jpg\", \"width\": 558}, \"link\": \"https://blog.davincilabs.com/blog/benef",
+   " 558}, \"link\": \"https://blog.davincilabs.com/blog/benefits-of-selling-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "44287869499",
+  "name": "Private_Label_Guide_ToF_Paul_Top_Selling_PL_Supplements",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"width\": 598}, \"link\": \"https://blog.davincilabs.com/blog/top-selling-private-label-supplements-for-2021\", \"module_id\": 1367093}, \"child_css\": {}, \"css\":"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "44289135702",
+  "name": "Private_Label_Guide_ToF_Paul_How to_start-PL_Business_7steps",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "h\": 558}, \"link\": \"https://blog.davincilabs.com/blog/how-do-i-start-a-private-label-supplement-business\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": ",
+   "-follow, <a href=\"https://blog.davincilabs.com/blog/how-do-i-start-a-private-label-supplement-business\" style=\"font-weight: bold;\" rel=\"noopener\">7",
+   "h\": 259}, \"link\": \"https://blog.davincilabs.com/blog/how-do-i-start-a-private-label-supplement-business\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": "
+  ],
+  "trackers": []
+ },
+ {
+  "id": "44289895090",
+  "name": "Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Davinci",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started",
+   "https://www.davincilabs.com/private-labeling#plform"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "44442438434",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "46289178481",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "47903671122",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "<a href=\"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\" style=\"color: #3366ff;\">Tips for Buying Wholesale Pri",
+   "<a href=\"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Ftips-for-buying-wholesale-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "47937357737",
+  "name": "Blog email: Wholesale PL Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "<a href=\"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\" style=\"font-weight: bold;\" rel=\"noopener\">start you",
+   " \"link\": \"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\"",
+   " \"link\": \"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "48150052940",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "<a href=\"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\" style=\"color: #3366ff;\">Tips for Buying Wholesale Pri",
+   "<a href=\"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Ftips-for-buying-wholesale-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "48205330450",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "<a href=\"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\" style=\"color: #3366ff;\">Tips for Buying Wholesale Pri",
+   "<a href=\"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Ftips-for-buying-wholesale-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "48480714296",
+  "name": "Blog email: Wholesale PL Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "<a href=\"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\" style=\"font-weight: bold;\" rel=\"noopener\">start you",
+   " \"link\": \"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\"",
+   " \"link\": \"https://blog.davincilabs.com/blog/tips-for-buying-wholesale-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "48995983998",
+  "name": "Blog email: Private Label Profitability",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "l entrepreneur, discusses <a href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-make-money\" style=\"font-weight: bold;\" rel=\"no",
+   "ng-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"make-money-private-label-supplements\", \"height\": 298, \"src\": \"https://f.hubspotusercontent30.n",
+   ", \"src\": \"https://f.hubspotusercontent30.net/hubfs/4087538/make-money-private-label-supplements.png\", \"width\": 558}, \"link\": \"https://blog.davincilabs.co"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "49103039765",
+  "name": "aging_protocol+mito_aging_ToF_Danielle_Register",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL_LabelDesigns\", \"height\": 304, \"src\": \"https://f.hubspotusercontent30.",
+   "eight\": 304, \"src\": \"https://f.hubspotusercontent30.net/hubfs/4087538/PRIVATELABEL_LabelDesigns.jpg\", \"width\": 560}, \"link\": \"https://www.fsc-live.com/d"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "49173078563",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   ": 18px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-make-money\" style=\"color: #3366ff;\">Private Lab",
+   " padding-bottom: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-make-money\" title=\"\" class=\"hs-featured-image-",
+   "img src=\"https://f.hubspotusercontent30.net/hubfs/4087538/make-money-private-label-supplements.png\" width=\"300\" data-filemanager-upscale=\"true\" dat"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "49701828383",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   ": 18px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-make-money\" style=\"color: #3366ff;\">Private Lab",
+   ": 10px;\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-make-money\" title=\"\" class=\"hs-featured-image-",
+   "img src=\"https://f.hubspotusercontent30.net/hubfs/4087538/make-money-private-label-supplements.png\" width=\"600\" data-filemanager-upscale=\"true\" dat"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "49959406235",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   ": 18px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-make-money\" style=\"color: #3366ff;\">Private Lab",
+   ": 10px;\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/private-label-supplements-how-to-make-money\" title=\"\" class=\"hs-featured-image-",
+   "img src=\"https://f.hubspotusercontent30.net/hubfs/4087538/make-money-private-label-supplements.png\" width=\"600\" data-filemanager-upscale=\"true\" dat"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "51577043728",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "olor: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\" style=\"color: #3366ff;",
+   "bottom: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\" title=\"\" class=\"hs-f",
+   "8&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fmanaging-private-label-shipping-and-inventory-a-step-by-step-guide&amp;bu=https%3A%2F%2Fblog"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "51975113302",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "olor: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\" style=\"color: #3366ff;",
+   " width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\" title=\"\" class=\"hs-f",
+   "8&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fmanaging-private-label-shipping-and-inventory-a-step-by-step-guide&amp;bu=https%3A%2F%2Fblog"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "52027388728",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "olor: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\" style=\"color: #3366ff;",
+   " width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\" title=\"\" class=\"hs-f",
+   "8&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fmanaging-private-label-shipping-and-inventory-a-step-by-step-guide&amp;bu=https%3A%2F%2Fblog"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "52050971936",
+  "name": "Energy_Protocol_ToF_Danielle_Register",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"PRIVATELABEL_LabelDesigns\", \"height\": 304, \"src\": \"https://f.hubspotusercontent30.",
+   "eight\": 304, \"src\": \"https://f.hubspotusercontent30.net/hubfs/4087538/PRIVATELABEL_LabelDesigns.jpg\", \"width\": 560}, \"link\": \"https://www.davincilabs.co"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "55480762483",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   ": 18px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/private-labeling-liquid-vitamins\" style=\"color: #3366ff;\">Private Labeling Liqui",
+   " padding-bottom: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/private-labeling-liquid-vitamins\" title=\"\" class=\"hs-featured-image-link\" styl",
+   "?a=4087538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fprivate-labeling-liquid-vitamins&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&a"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "55638500533",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   ": 18px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/private-labeling-liquid-vitamins\" style=\"color: #3366ff;\">Private Labeling Liqui",
+   ": 10px;\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/private-labeling-liquid-vitamins\" title=\"\" class=\"hs-featured-image-link\" styl",
+   "?a=4087538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fprivate-labeling-liquid-vitamins&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&a"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "56469000238",
+  "name": "Blog email: Private Labeling Liquid Vitamins",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "s.</p> <p>&nbsp;</p> <p><a href=\"https://blog.davincilabs.com/blog/private-labeling-liquid-vitamins\" rel=\"noopener\">Private labeling liquid vitamin",
+   "quids.png\", \"width\": 558}, \"link\": \"https://blog.davincilabs.com/blog/private-labeling-liquid-vitamins\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "56528857154",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   ": 18px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/private-labeling-liquid-vitamins\" style=\"color: #3366ff;\">Private Labeling Liqui",
+   ": 10px;\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/private-labeling-liquid-vitamins\" title=\"\" class=\"hs-featured-image-link\" styl",
+   "?a=4087538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fprivate-labeling-liquid-vitamins&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&a"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "5729590860",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ight: 30px;\" href=\"http://blog.davincilabs.com/blog/how-to-choose-a-private-label-supplement-provider\">How to Choose a Private Label Supplement Provid",
+   "ight: 24px;\" href=\"http://blog.davincilabs.com/blog/how-to-choose-a-private-label-supplement-provider\">          By Dr. Adam Killpartrick, DC CNS, Ap",
+   ": 10px;\"> <a href=\"http://blog.davincilabs.com/blog/how-to-choose-a-private-label-supplement-provider\" title=\"\" class=\"hs-featured-image-link\" sty"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "5776333860",
+  "name": "Protocol-Hannah #5: How to Choose a Private Label Supplement Provider",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "s step and <a href=\"http://blog.davincilabs.com/blog/how-to-choose-a-private-label-supplement-provider\">how to select a good private label provider</a>"
+  ],
+  "trackers": [
+   "http://www.facebook.com/share.php?u=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92fbf-353b-4a53-9",
+   "http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92"
+  ]
+ },
+ {
+  "id": "5788321854",
+  "name": "Protocol-Luke #5: How to Choose a Private Label Supplement Provider",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "s step and <a href=\"http://blog.davincilabs.com/blog/how-to-choose-a-private-label-supplement-provider\">how to select a good private label provider</a>"
+  ],
+  "trackers": [
+   "http://www.facebook.com/share.php?u=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92fbf-353b-4a53-9",
+   "http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92"
+  ]
+ },
+ {
+  "id": "5920642701",
+  "name": "PL-Hannah #1: Intro",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "href=\"http://blog.davincilabs.com/blog/how-physicians-can-get-better-private-labeling-for-supplements\">plan for a successful product launch</a> in your"
+  ],
+  "trackers": [
+   "http://www.facebook.com/share.php?u=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92fbf-353b-4a53-9",
+   "http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92"
+  ]
+ },
+ {
+  "id": "5924622840",
+  "name": "PL-Luke #1: Intro",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "href=\"http://blog.davincilabs.com/blog/how-physicians-can-get-better-private-labeling-for-supplements\">plan for a successful product launch</a> in your"
+  ],
+  "trackers": [
+   "http://www.facebook.com/share.php?u=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92fbf-353b-4a53-9",
+   "http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fdavincilabs-4087538.hs-sites.com%2F-temporary-slug-79b92"
+  ]
+ },
+ {
+  "id": "59544811350",
+  "name": "1 Private_Label_Guide_ToF_Danielle_TY",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "59545104541",
+  "name": "2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling",
+   "https://www.davincilabs.com/private-labeling</a></span></p>"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "59545111816",
+  "name": "3 Private_Label_Guide_ToF_Danielle_How_to_create_exclusivity",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "nk\": \"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email\", \"",
+   "ref=\"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\" style=\"color: #6ca439;\" rel=\"noopener\">creating exc",
+   "on\": \"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "59783393319",
+  "name": "5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "59783395966",
+  "name": "1: Private Label Guide ToF Paul_TY",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "59783515526",
+  "name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\", \"width\": 600}, \"link\": \"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\", \"module_id\": 1367093, \"",
+   "</li> </ol> <p><a href=\"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\" rel=\"noopener\">Read t",
+   "adius\": 8, \"destination\": \"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\", \"font\": \"Arial, sans-se"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "59790786942",
+  "name": "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "/Logo.png\", \"width\": 237}, \"link\": \"https://blog.davincilabs.com/blog/private-label-supplements-how-to-make-money\", \"module_id\": 1367093, \"path\": \"@hubsp",
+   "ule_padding\": false, \"hs_wrapper_css\": {}, \"img\": {\"alt\": \"make-money-private-label-supplements\", \"height\": 320, \"src\": \"https://f.hubspotusercontent30.n",
+   ", \"src\": \"https://f.hubspotusercontent30.net/hubfs/4087538/make-money-private-label-supplements.png\", \"width\": 600}, \"link\": \"https://blog.davincilabs.co"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "59790992173",
+  "name": "3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Inventory",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\", \"width\": 600}, \"link\": \"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\", \"module_id\": 1367093, \"",
+   "olor: #6ca439;\"><a href=\"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\" style=\"font-weight: bo",
+   "adius\": 8, \"destination\": \"https://blog.davincilabs.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide\", \"font\": \"Arial, sans-se"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "59791141412",
+  "name": "4: Private_Label_Guide_ToF_Paul_Tips_For Selling_On _Amazon",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "h\": 600}, \"link\": \"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-on-amazon\", \"module_id\": 1367093, \"path\": \"@hubspot/image",
+   ">Because <a href=\"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-on-amazon\" rel=\"noopener\">Amazon can truly launch your",
+   "8, \"destination\": \"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-on-amazon\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "59792529591",
+  "name": "5: Private_Label_Guide_ToF_Paul_Reach_Out",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "61813137762",
+  "name": "A4M 2021 Follow Up",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "62008049189",
+  "name": "A4M 2021 Follow Up 2nd attempt",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://info.davincilabs.com/private-label-supplements-resource-center"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "65143485781",
+  "name": "Little DaVinci PL's",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "65778711670",
+  "name": "SSRP Follow Up",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "65781098136",
+  "name": "Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "65796084343",
+  "name": "Private_Label_Guide_MoF_Paul_Liquid_Supplements",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "65865359768",
+  "name": "Private_Label_Guide_MoF_Paul_Liquid_Products",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "65870170910",
+  "name": "Private_Label_Guide_MoF_Paul_How_to_create_exclusivity",
+  "state": "AUTOMATED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "nk\": \"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\", \"module_id\": 1367093, \"path\": \"@hubspot/image_email\", \"",
+   "ref=\"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\" style=\"font-weight: bold;\" rel=\"noopener\">create ex",
+   "on\": \"https://blog.davincilabs.com/blog/how-to-create-exclusivity-for-private-label-supplements\", \"font\": \"Arial, sans-serif\", \"font_color\": \"#ffffff\", \""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "65885101493",
+  "name": "Blog email: How to develop your private label supplement brand",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "g a unique <a href=\"https://blog.davincilabs.com/blog/how-to-develop-private-label-brand\" rel=\"noopener\">private label brand</a> in the health and we",
+   "dth\": 558}, \"link\": \"https://blog.davincilabs.com/blog/how-to-develop-private-label-brand\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\": \"mod"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "65892871439",
+  "name": "Private_Label_Guide_MoF_Paul_Get Started",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "66770196279",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "#3366ff;\"><a href=\"https://blog.davincilabs.com/blog/how-to-develop-private-label-brand\" style=\"color: #3366ff;\">How to Develop a brand for Private ",
+   ": 10px;\"> <a href=\"https://blog.davincilabs.com/blog/how-to-develop-private-label-brand\" title=\"\" class=\"hs-featured-image-link\" style=\"margin:0;",
+   "k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-develop-private-label-brand&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt=email"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "67327496563",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "#3366ff;\"><a href=\"https://blog.davincilabs.com/blog/how-to-develop-private-label-brand\" style=\"color: #3366ff;\">How to Develop a brand for Private ",
+   "=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/how-to-develop-private-label-brand\" title=\"\" class=\"hs-featured-image-link\" style=\"margin:0;",
+   "k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-develop-private-label-brand&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt=email"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "67451042085",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "#3366ff;\"><a href=\"https://blog.davincilabs.com/blog/how-to-develop-private-label-brand\" style=\"color: #3366ff;\">How to Develop a brand for Private ",
+   "=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/how-to-develop-private-label-brand\" title=\"\" class=\"hs-featured-image-link\" style=\"margin:0;",
+   "k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-develop-private-label-brand&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt=email"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "68200379976",
+  "name": "Blog email: Are Private Label Supplements Profitable?",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " the potential for an <a href=\"https://blog.davincilabs.com/blog/are-private-label-supplements-profitable\" rel=\"noopener\">enormous increase in revenu",
+   "s.png\", \"width\": 558}, \"link\": \"https://blog.davincilabs.com/blog/are-private-label-supplements-profitable\", \"module_id\": 1367093}, \"child_css\": {}, \"css"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "69097591822",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/are-private-label-supplements-profitable\" style=\"color: #3366ff;\">Are Private Label ",
+   "ding-bottom: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/are-private-label-supplements-profitable\" title=\"\" class=\"hs-featured-image-link\" ",
+   "087538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fare-private-label-supplements-profitable&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fbl"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "69632464533",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/are-private-label-supplements-profitable\" style=\"color: #3366ff;\">Are Private Label ",
+   "px;\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/are-private-label-supplements-profitable\" title=\"\" class=\"hs-featured-image-link\" ",
+   "087538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fare-private-label-supplements-profitable&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fbl"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "69639087434",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "s://blog.davincilabs.com/blog/what-qualifications-do-you-need-to-sell-private-label-supplements\" style=\"color: #3366ff;\">What Qualifications Do You Ne",
+   "s://blog.davincilabs.com/blog/what-qualifications-do-you-need-to-sell-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "blog.davincilabs.com%2Fblog%2Fwhat-qualifications-do-you-need-to-sell-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "69937701132",
+  "name": "Blog email: Who Qualifies to Sell PL Supplements?",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "s://blog.davincilabs.com/blog/what-qualifications-do-you-need-to-sell-private-label-supplements\" rel=\"noopener\">ensure you're qualified and sell priva",
+   "s://blog.davincilabs.com/blog/what-qualifications-do-you-need-to-sell-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "70006316369",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "s://blog.davincilabs.com/blog/what-qualifications-do-you-need-to-sell-private-label-supplements\" style=\"color: #3366ff;\">What Qualifications Do You Ne",
+   "s://blog.davincilabs.com/blog/what-qualifications-do-you-need-to-sell-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "blog.davincilabs.com%2Fblog%2Fwhat-qualifications-do-you-need-to-sell-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "70182765122",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "s://blog.davincilabs.com/blog/what-qualifications-do-you-need-to-sell-private-label-supplements\" style=\"color: #3366ff;\">What Qualifications Do You Ne",
+   "s://blog.davincilabs.com/blog/what-qualifications-do-you-need-to-sell-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "blog.davincilabs.com%2Fblog%2Fwhat-qualifications-do-you-need-to-sell-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "71180882032",
+  "name": "Blog: PL Supplements, More Than Just a Trend",
+  "state": "PUBLISHED_AB",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "p> <p>For a good reason, <a href=\"https://blog.davincilabs.com/blog/private-label-supplements-more-than-just-a-trend\" rel=\"noopener\">private label s",
+   "trend.png\", \"width\": 558}, \"link\": \"https://blog.davincilabs.com/blog/private-label-supplements-more-than-just-a-trend\", \"module_id\": 1367093}, \"child_cs",
+   "_color\": \"#76bc43\", \"destination\": \"https://blog.davincilabs.com/blog/private-label-supplements-more-than-just-a-trend\", \"font_style\": {\"color\": \"#ffffff"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "71188158744",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   ": 18px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/private-label-supplements-more-than-just-a-trend\" style=\"color: #3366ff;\">Are Pr",
+   " padding-bottom: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/private-label-supplements-more-than-just-a-trend\" title=\"\" class=\"hs-featured-i",
+   "?a=4087538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fprivate-label-supplements-more-than-just-a-trend&amp;bu=https%3A%2F%2Fblog.davincil"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "71189364608",
+  "name": "Blog: PL Supplements, More Than Just a Trend B",
+  "state": "PUBLISHED_AB_VARIANT",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "p> <p>For a good reason, <a href=\"https://blog.davincilabs.com/blog/private-label-supplements-more-than-just-a-trend\" rel=\"noopener\">private label s",
+   "trend.png\", \"width\": 558}, \"link\": \"https://blog.davincilabs.com/blog/private-label-supplements-more-than-just-a-trend\", \"module_id\": 1367093}, \"child_cs",
+   "_color\": \"#76bc43\", \"destination\": \"https://blog.davincilabs.com/blog/private-label-supplements-more-than-just-a-trend\", \"font_style\": {\"color\": \"#ffffff"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "71323048496",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   ": 18px; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/private-label-supplements-more-than-just-a-trend\" style=\"color: #3366ff;\">Are Pr",
+   ": 10px;\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/private-label-supplements-more-than-just-a-trend\" title=\"\" class=\"hs-featured-i",
+   "?a=4087538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fprivate-label-supplements-more-than-just-a-trend&amp;bu=https%3A%2F%2Fblog.davincil"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "71875857516",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "><a href=\"https://blog.davincilabs.com/blog/how-to-spot-high-quality-private-label-supplements\" style=\"color: #3366ff;\">How to Spot High-Quality Priv",
+   " <a href=\"https://blog.davincilabs.com/blog/how-to-spot-high-quality-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-spot-high-quality-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "71878889629",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "><a href=\"https://blog.davincilabs.com/blog/how-to-spot-high-quality-private-label-supplements\" style=\"color: #3366ff;\">How to Spot High-Quality Priv",
+   " <a href=\"https://blog.davincilabs.com/blog/how-to-spot-high-quality-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-spot-high-quality-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "72378606091",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "><a href=\"https://blog.davincilabs.com/blog/how-to-spot-high-quality-private-label-supplements\" style=\"color: #3366ff;\">How to Spot High-Quality Priv",
+   " <a href=\"https://blog.davincilabs.com/blog/how-to-spot-high-quality-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-spot-high-quality-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "72451011114",
+  "name": "A4M 2022 Follow Up Hollywood",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "73006849098",
+  "name": "Blog: Why Branded Ingredients are Important for PL Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "://blog.davincilabs.com/blog/why-branded-ingredients-are-important-to-private-label-supplements\" target=\"_blank\" rel=\"noopener\">branded ingredient</",
+   "://blog.davincilabs.com/blog/why-branded-ingredients-are-important-to-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\"",
+   "://blog.davincilabs.com/blog/why-branded-ingredients-are-important-to-private-label-supplements\", \"font_style\": {\"color\": \"#ffffff\", \"font\": \"Arial, sans"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "75238150198",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "://blog.davincilabs.com/blog/why-branded-ingredients-are-important-to-private-label-supplements\" style=\"color: #3366ff;\">Why Branded Ingredients Are I",
+   "://blog.davincilabs.com/blog/why-branded-ingredients-are-important-to-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "log.davincilabs.com%2Fblog%2Fwhy-branded-ingredients-are-important-to-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "75482540803",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "://blog.davincilabs.com/blog/why-branded-ingredients-are-important-to-private-label-supplements\" style=\"color: #3366ff;\">Why Branded Ingredients Are I",
+   "://blog.davincilabs.com/blog/why-branded-ingredients-are-important-to-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "log.davincilabs.com%2Fblog%2Fwhy-branded-ingredients-are-important-to-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "76036915309",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "g.davincilabs.com/blog/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements\" style=\"color: #3366ff;\">Truth in Labeling: Ingredient",
+   "g.davincilabs.com/blog/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "vincilabs.com%2Fblog%2Ftruth-in-labeling-breaking-down-ingredients-in-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "76145179419",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "g.davincilabs.com/blog/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements\" style=\"color: #3366ff;\">Truth in Labeling: Ingredient",
+   "g.davincilabs.com/blog/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "vincilabs.com%2Fblog%2Ftruth-in-labeling-breaking-down-ingredients-in-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "76319683923",
+  "name": "Blog: PL: Tips for Selling Immune Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ecently, <a href=\"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-for-immunity\" rel=\"noopener\">immune formulas are still",
+   "h\": 558}, \"link\": \"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-for-immunity\", \"module_id\": 1367093}, \"child_css\": {}, \"c",
+   "\", \"destination\": \"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-for-immunity\", \"font_style\": {\"color\": \"#ffffff\", \"font\":"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "76748424303",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "366ff;\"><a href=\"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-for-immunity\" style=\"color: #3366ff;\">Tips for Selling",
+   "10px;\"> <a href=\"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-for-immunity\" title=\"\" class=\"hs-featured-image-link",
+   "14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Ftips-for-selling-private-label-supplements-for-immunity&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2F"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "76906055720",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "366ff;\"><a href=\"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-for-immunity\" style=\"color: #3366ff;\">Tips for Selling",
+   "\"100%\"> <a href=\"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-for-immunity\" title=\"\" class=\"hs-featured-image-link",
+   "14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Ftips-for-selling-private-label-supplements-for-immunity&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2F"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "77590860393",
+  "name": "Blog: PL: Trending 2022 PL Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ll want to track <a href=\"https://blog.davincilabs.com/blog/trending-private-label-supplements-for-2022\" rel=\"noopener\">trending supplements in 2022<",
+   "\", \"width\": 558}, \"link\": \"https://blog.davincilabs.com/blog/trending-private-label-supplements-for-2022\", \"module_id\": 1367093}, \"child_css\": {}, \"css\":",
+   "\"#76bc43\", \"destination\": \"https://blog.davincilabs.com/blog/trending-private-label-supplements-for-2022\", \"font_style\": {\"color\": \"#ffffff\", \"font\": \"Ar"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "78060536844",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "366ff;\"><a href=\"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-for-immunity\" style=\"color: #3366ff;\">Tips for Selling",
+   "\"100%\"> <a href=\"https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-for-immunity\" title=\"\" class=\"hs-featured-image-link",
+   "14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Ftips-for-selling-private-label-supplements-for-immunity&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2F"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "78250809000",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "olor: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/trending-private-label-supplements-for-2022\" style=\"color: #3366ff;\">Trending Private Lab",
+   "bottom: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/trending-private-label-supplements-for-2022\" title=\"\" class=\"hs-featured-image-link\" st",
+   "8&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Ftrending-private-label-supplements-for-2022&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "78380246533",
+  "name": "Blog: How to Choose the Best PL Manufacturer",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ur <a href=\"https://blog.davincilabs.com/blog/how-to-choose-the-best-private-label-manufacturer\" rel=\"noopener\">PL supplement manufacturer</a> is a b",
+   "8}, \"link\": \"https://blog.davincilabs.com/blog/how-to-choose-the-best-private-label-manufacturer\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id",
+   "stination\": \"https://blog.davincilabs.com/blog/how-to-choose-the-best-private-label-manufacturer\", \"font_style\": {\"color\": \"#ffffff\", \"font\": \"Arial, san"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "78870972053",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "olor: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/trending-private-label-supplements-for-2022\" style=\"color: #3366ff;\">Trending Private Lab",
+   " width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/trending-private-label-supplements-for-2022\" title=\"\" class=\"hs-featured-image-link\" st",
+   "8&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Ftrending-private-label-supplements-for-2022&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "79232259363",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"><a href=\"https://blog.davincilabs.com/blog/how-to-choose-the-best-private-label-manufacturer\" style=\"color: #3366ff;\">How to Choose the Best Priva",
+   "\"> <a href=\"https://blog.davincilabs.com/blog/how-to-choose-the-best-private-label-manufacturer\" title=\"\" class=\"hs-featured-image-link\" style=\"ma",
+   ";r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-choose-the-best-private-label-manufacturer&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "79481090398",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"><a href=\"https://blog.davincilabs.com/blog/how-to-choose-the-best-private-label-manufacturer\" style=\"color: #3366ff;\">How to Choose the Best Priva",
+   "\"> <a href=\"https://blog.davincilabs.com/blog/how-to-choose-the-best-private-label-manufacturer\" title=\"\" class=\"hs-featured-image-link\" style=\"ma",
+   ";r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-choose-the-best-private-label-manufacturer&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "80734763108",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"><a href=\"https://blog.davincilabs.com/blog/how-to-choose-the-best-private-label-manufacturer\" style=\"color: #3366ff;\">How to Choose the Best Priva",
+   "\"> <a href=\"https://blog.davincilabs.com/blog/how-to-choose-the-best-private-label-manufacturer\" title=\"\" class=\"hs-featured-image-link\" style=\"ma",
+   ";r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-choose-the-best-private-label-manufacturer&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "81223071080",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "x; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/best-private-label-supplements-for-gut-health\" style=\"color: #3366ff;\">Best Private L",
+   "ing-bottom: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/best-private-label-supplements-for-gut-health\" title=\"\" class=\"hs-featured-image-lin",
+   "87538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fbest-private-label-supplements-for-gut-health&amp;bu=https%3A%2F%2Fblog.davincilabs.com%"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "81406729252",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "x; color: #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/best-private-label-supplements-for-gut-health\" style=\"color: #3366ff;\">Best Private L",
+   "x;\" width=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/best-private-label-supplements-for-gut-health\" title=\"\" class=\"hs-featured-image-lin",
+   "87538&amp;k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fbest-private-label-supplements-for-gut-health&amp;bu=https%3A%2F%2Fblog.davincilabs.com%"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "81912320026",
+  "name": "Blog: Top Questions Consumers Ask About PL Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"https://blog.davincilabs.com/blog/top-questions-consumers-have-about-private-label-supplements\" rel=\"noopener\">top questions about private label supp",
+   "\"https://blog.davincilabs.com/blog/top-questions-consumers-have-about-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\"",
+   "\"https://blog.davincilabs.com/blog/top-questions-consumers-have-about-private-label-supplements\", \"font_style\": {\"color\": \"#ffffff\", \"font\": \"Arial, sans"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "82673501096",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"https://blog.davincilabs.com/blog/top-questions-consumers-have-about-private-label-supplements\" style=\"color: #3366ff;\">Answers to Your Top 10 Questi",
+   "\"https://blog.davincilabs.com/blog/top-questions-consumers-have-about-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "2F%2Fblog.davincilabs.com%2Fblog%2Ftop-questions-consumers-have-about-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "82931209228",
+  "name": "Blog: How to Market Private Label Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "nd and </em><a href=\"https://blog.davincilabs.com/blog/how-to-market-private-label-supplements\" style=\"font-style: italic;\" rel=\"noopener\">five cri",
+   "idth\": 558}, \"link\": \"https://blog.davincilabs.com/blog/how-to-market-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\""
+  ],
+  "trackers": []
+ },
+ {
+  "id": "83318013703",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"https://blog.davincilabs.com/blog/top-questions-consumers-have-about-private-label-supplements\" style=\"color: #3366ff;\">Answers to Your Top 10 Questi",
+   "\"https://blog.davincilabs.com/blog/top-questions-consumers-have-about-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "2F%2Fblog.davincilabs.com%2Fblog%2Ftop-questions-consumers-have-about-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "83334853997",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/how-to-market-private-label-supplements\" style=\"color: #3366ff;\">How to Market Private Label S",
+   "m: 10px;\"> <a href=\"https://blog.davincilabs.com/blog/how-to-market-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   ";k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-market-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "83341643638",
+  "name": "FCA Follow Up",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "83666077800",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/how-to-market-private-label-supplements\" style=\"color: #3366ff;\">How to Market Private Label S",
+   "h=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/how-to-market-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   ";k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-market-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "83994096527",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   " #3366ff;\"><a href=\"https://blog.davincilabs.com/blog/how-to-market-private-label-supplements\" style=\"color: #3366ff;\">How to Market Private Label S",
+   "h=\"100%\"> <a href=\"https://blog.davincilabs.com/blog/how-to-market-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   ";k=14&amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-market-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "85627992593",
+  "name": "Blog: Custom vs. Private Label Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ng <a href=\"https://blog.davincilabs.com/blog/custom-supplements-vs.-private-label-supplements\" rel=\"noopener\">professional custom formulations</a>.<",
+   "8}, \"link\": \"https://blog.davincilabs.com/blog/custom-supplements-vs.-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\"",
+   "stination\": \"https://blog.davincilabs.com/blog/custom-supplements-vs.-private-label-supplements\", \"font_style\": {\"color\": \"#ffffff\", \"font\": \"Arial, sans"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "85628111226",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"><a href=\"https://blog.davincilabs.com/blog/custom-supplements-vs.-private-label-supplements\" style=\"color: #3366ff;\">Custom Supplements vs. Privat",
+   "\"> <a href=\"https://blog.davincilabs.com/blog/custom-supplements-vs.-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   ";r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fcustom-supplements-vs.-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "86063605295",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"><a href=\"https://blog.davincilabs.com/blog/custom-supplements-vs.-private-label-supplements\" style=\"color: #3366ff;\">Custom Supplements vs. Privat",
+   "\"> <a href=\"https://blog.davincilabs.com/blog/custom-supplements-vs.-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   ";r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fcustom-supplements-vs.-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "86659909204",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "\"><a href=\"https://blog.davincilabs.com/blog/custom-supplements-vs.-private-label-supplements\" style=\"color: #3366ff;\">Custom Supplements vs. Privat",
+   "\"> <a href=\"https://blog.davincilabs.com/blog/custom-supplements-vs.-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   ";r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fcustom-supplements-vs.-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "87213572630",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ref=\"https://blog.davincilabs.com/blog/do-you-need-insurance-to-sell-private-label-supplements\" style=\"color: #3366ff;\">Do You Need Insurance to Sell",
+   "ref=\"https://blog.davincilabs.com/blog/do-you-need-insurance-to-sell-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "s%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fdo-you-need-insurance-to-sell-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "87585337720",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ref=\"https://blog.davincilabs.com/blog/do-you-need-insurance-to-sell-private-label-supplements\" style=\"color: #3366ff;\">Do You Need Insurance to Sell",
+   "ref=\"https://blog.davincilabs.com/blog/do-you-need-insurance-to-sell-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "s%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fdo-you-need-insurance-to-sell-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "88912620692",
+  "name": "Blog: Building a private label sports nutrition brand",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\" rel=\"noopener\">great-tasting sports supplements</a> w",
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\"",
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\", \"font_style\": {\"color\": \"#ffffff\", \"font\": \"Arial, sans"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "89306162811",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\" style=\"color: #3366ff;\">How to Build a Sports Nutriti",
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "g.davincilabs.com%2Fblog%2Fhow-to-build-a-sports-nutrition-brand-with-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "89398845528",
+  "name": "Daily notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\" style=\"color: #3366ff;\">How to Build a Sports Nutriti",
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "g.davincilabs.com%2Fblog%2Fhow-to-build-a-sports-nutrition-brand-with-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "90020780885",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\" style=\"color: #3366ff;\">How to Build a Sports Nutriti",
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "g.davincilabs.com%2Fblog%2Fhow-to-build-a-sports-nutrition-brand-with-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "90134163512",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\" style=\"color: #3366ff;\">How to Build a Sports Nutriti",
+   "/blog.davincilabs.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "g.davincilabs.com%2Fblog%2Fhow-to-build-a-sports-nutrition-brand-with-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "91221716603",
+  "name": "Blog: Managing Risks When Selling PL Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\" target=\"_blank\" rel=\"noopener\">unnecessary risks</a",
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\", \"module_id\": 1367093}, \"child_css\": {}, \"css\": {}, \"id\"",
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\", \"font_style\": {\"color\": \"#ffffff\", \"font\": \"Arial, sans"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "91625112367",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ff;\"><a href=\"https://blog.davincilabs.com/blog/how-to-promote-your-private-label-supplements-on-social-media\" style=\"color: #3366ff;\">How to Promot",
+   "x;\"> <a href=\"https://blog.davincilabs.com/blog/how-to-promote-your-private-label-supplements-on-social-media\" title=\"\" class=\"hs-featured-image-li",
+   "amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-promote-your-private-label-supplements-on-social-media&amp;bu=https%3A%2F%2Fblog.davincilabs.com"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "91754478171",
+  "name": "Daily notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ff;\"><a href=\"https://blog.davincilabs.com/blog/how-to-promote-your-private-label-supplements-on-social-media\" style=\"color: #3366ff;\">How to Promot",
+   "0%\"> <a href=\"https://blog.davincilabs.com/blog/how-to-promote-your-private-label-supplements-on-social-media\" title=\"\" class=\"hs-featured-image-li",
+   "amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-promote-your-private-label-supplements-on-social-media&amp;bu=https%3A%2F%2Fblog.davincilabs.com"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "91771340197",
+  "name": "Blog: How to Use Social Media for PL Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "u can <a href=\"https://blog.davincilabs.com/blog/how-to-promote-your-private-label-supplements-on-social-media\" target=\"_blank\" rel=\"noopener\">use ",
+   " 558}, \"link\": \"https://blog.davincilabs.com/blog/how-to-promote-your-private-label-supplements-on-social-media\", \"module_id\": 1367093}, \"child_css\": {},",
+   "\"destination\": \"https://blog.davincilabs.com/blog/how-to-promote-your-private-label-supplements-on-social-media\", \"font_style\": {\"color\": \"#ffffff\", \"fon"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "92507896200",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "ff;\"><a href=\"https://blog.davincilabs.com/blog/how-to-promote-your-private-label-supplements-on-social-media\" style=\"color: #3366ff;\">How to Promot",
+   "0%\"> <a href=\"https://blog.davincilabs.com/blog/how-to-promote-your-private-label-supplements-on-social-media\" title=\"\" class=\"hs-featured-image-li",
+   "amp;r=https%3A%2F%2Fblog.davincilabs.com%2Fblog%2Fhow-to-promote-your-private-label-supplements-on-social-media&amp;bu=https%3A%2F%2Fblog.davincilabs.com"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "93497192019",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\" style=\"color: #3366ff;\">Managing the Top 3 Risks when",
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "2Fblog.davincilabs.com%2Fblog%2Fmanaging-the-top-3-risks-when-selling-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "93629951531",
+  "name": "Daily notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\" style=\"color: #3366ff;\">Managing the Top 3 Risks When",
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "2Fblog.davincilabs.com%2Fblog%2Fmanaging-the-top-3-risks-when-selling-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "93761616193",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\" style=\"color: #3366ff;\">Managing the Top 3 Risks When",
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "2Fblog.davincilabs.com%2Fblog%2Fmanaging-the-top-3-risks-when-selling-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "94174356893",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\" style=\"color: #3366ff;\">Managing the Top 3 Risks When",
+   "tps://blog.davincilabs.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "2Fblog.davincilabs.com%2Fblog%2Fmanaging-the-top-3-risks-when-selling-private-label-supplements&amp;bu=https%3A%2F%2Fblog.davincilabs.com%2Fblog&amp;bvt="
+  ],
+  "trackers": []
+ },
+ {
+  "id": "94337609260",
+  "name": "Blog: Challenges and Opportunities with Private Label Supplements",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "href=\"https://blog.davincilabs.com/blog/challenges-and-opportunities-private-label-supplements\" rel=\"noopener\">launching a private label supplement l",
+   "px\", \"padding-right\": \"20px\", \"padding-top\": \"10px\"}, \"img\": {\"alt\": \"private-label-supplements-1\", \"height\": 298, \"loading\": \"disabled\", \"src\": \"https:/",
+   " \"src\": \"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label-supplements-1.png\", \"width\": 558}, \"link\": \"https://blog.davincilabs."
+  ],
+  "trackers": []
+ },
+ {
+  "id": "94498399241",
+  "name": "DV: PL Guide_MoF_Danielle_Liposomal_Technology_WhitePaper",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "94781596693",
+  "name": "DV: PL_Guide_MoF_Danielle_Liquid_Supplements",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "94781602442",
+  "name": "DV: PL_Guide_MoF_Danielle_PL Answers",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "http://blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "94781614879",
+  "name": "DV: PL_Guide_MoF_Danielle_Liquid_Products",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "94787196523",
+  "name": "DV: PL_Guide_MoF_Danielle_Get Started",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started",
+   "https://www.davincilabs.com/private-labeling"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "95498158724",
+  "name": "A4M 2022 Follow Up Vegas",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "96322929843",
+  "name": "Instant notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "href=\"https://blog.davincilabs.com/blog/challenges-and-opportunities-private-label-supplements\" style=\"color: #3366ff;\">Challenges and Opportunities ",
+   "href=\"https://blog.davincilabs.com/blog/challenges-and-opportunities-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "mg src=\"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label-supplements-1.png\" width=\"300\" height=\"160\" data-filemanager-ups"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "96399409765",
+  "name": "Daily notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "href=\"https://blog.davincilabs.com/blog/challenges-and-opportunities-private-label-supplements\" style=\"color: #3366ff;\">Challenges and Opportunities ",
+   "href=\"https://blog.davincilabs.com/blog/challenges-and-opportunities-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "mg src=\"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label-supplements-1.png\" width=\"600\" height=\"320\" data-filemanager-ups"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "96534579384",
+  "name": "Weekly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "href=\"https://blog.davincilabs.com/blog/challenges-and-opportunities-private-label-supplements\" style=\"color: #3366ff;\">Challenges and Opportunities ",
+   "href=\"https://blog.davincilabs.com/blog/challenges-and-opportunities-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "mg src=\"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label-supplements-1.png\" width=\"600\" height=\"320\" data-filemanager-ups"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "97050327414",
+  "name": "Monthly notification email for blog \"DaVinci Blog\"",
+  "state": "PUBLISHED",
+  "verdict": "TOKEN",
+  "pl_urls": [],
+  "token_context": [
+   "href=\"https://blog.davincilabs.com/blog/challenges-and-opportunities-private-label-supplements\" style=\"color: #3366ff;\">Challenges and Opportunities ",
+   "href=\"https://blog.davincilabs.com/blog/challenges-and-opportunities-private-label-supplements\" title=\"\" class=\"hs-featured-image-link\" style=\"mar",
+   "mg src=\"https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label-supplements-1.png\" width=\"600\" height=\"320\" data-filemanager-ups"
+  ],
+  "trackers": []
+ },
+ {
+  "id": "97970421127",
+  "name": "Blog: Should Your Wellness Businesses Sell Private Label Supplements?",
+  "state": "PUBLISHED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://blog.davincilabs.com/private-label/why-wellness-businesses-should-sell-private-label-supplements"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "98433354038",
+  "name": "DV WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A",
+  "state": "AUTOMATED_AB",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "98434461352",
+  "name": "DV WF: PL Guide_BoF_Danielle Design & Branding #2 Subject A",
+  "state": "AUTOMATED_LOSER_ABVARIANT",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ },
+ {
+  "id": "98445556270",
+  "name": "DV WF: PL Guide_BoF_Danielle Quick Turnaround #3",
+  "state": "AUTOMATED",
+  "verdict": "LINK",
+  "pl_urls": [
+   "https://www.davincilabs.com/private-label-get-started"
+  ],
+  "token_context": [],
+  "trackers": []
+ }
+]
