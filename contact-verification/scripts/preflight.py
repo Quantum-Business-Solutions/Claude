@@ -155,6 +155,33 @@ if 'ai__contact_evidence' in props:
     ml=(props['ai__contact_evidence'] or {}).get('maxLength')
     if ml and int(ml)<990: warn.append("ai__contact_evidence maxLength "+str(ml)+" < the 990 the writers assume")
 
+# ---------- 6. LinkedIn transport: RUN it, do not print prose at the model ----------------
+# This used to be a sentence at the end telling the model to run the self-test itself. Preflight
+# exited 0 regardless, so a routine whose Unipile key had rotated - or which simply had no key on
+# the environment - passed, reached the batch loop, failed every read, and recorded an environment
+# misconfiguration as dozens of findings about people. The one dependency an unattended run
+# actually lacks was the one thing preflight did not verify.
+# SKIP_TRANSPORT=1 exists for schema-only checks; it warns loudly and never passes silently.
+if os.environ.get('SKIP_TRANSPORT'):
+    warn.append("transport check SKIPPED by SKIP_TRANSPORT - this preflight does NOT prove that "
+                "LinkedIn is reachable, so it cannot clear an unattended run")
+else:
+    try:
+        r=subprocess.run([sys.executable,os.path.join(HERE,'unipile.py'),'selftest'],
+                         capture_output=True,text=True,timeout=300)
+        rc=r.returncode; head=((r.stdout or '')+(r.stderr or '')).strip().split('\n')[0][:150]
+    except Exception as e:
+        rc=2; head='selftest could not be launched: '+type(e).__name__
+    if rc==0:
+        print("ok   linkedin transport: "+head)
+    else:
+        print("HALT: no LinkedIn transport (unipile.py selftest exit "+str(rc)+")")
+        print("      "+head)
+        print("      exit 2 = no reachable path | exit 3 = reachable but returned nothing usable.")
+        print("      Run `python3 unipile.py probe` for the per-endpoint reason. Do NOT proceed:")
+        print("      an outage written as `unreadable` verdicts is a durable lie about the data.")
+        sys.exit(2)
+
 # ---------- verdict -----------------------------------------------------------------------
 for w in warn: print("WARN "+w)
 if fail:
@@ -163,9 +190,4 @@ if fail:
     sys.exit(3)
 print("\nPREFLIGHT PASSED for list "+lid+" - safe to run.")
 print("Still required before writing:")
-print("  - `python3 unipile.py selftest` - a real read of a known-good profile that comes back")
-print("    with DATED experience rows. It runs the v2-first ladder and prints which rung carried")
-print("    it. Only Shawn's own accounts are permitted: acc_01m19mb99wfzvsb68etkn5n87x on v2,")
-print("    S6ua4SfUT4SMRFZFOmyUzQ / 7lBoyXuETqKdiJYLj5HBGA on v1. Every other account on that")
-print("    tenant is a CLIENT identity.")
 print("  - listanatomy.py "+lid+" to map which gating properties this run will move")
