@@ -16,7 +16,7 @@ import json,os,sys,urllib.request,urllib.error
 T=os.environ["TOKEN"]
 LOGO="https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
 LOGO_W="https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo%20White.png"
-HERO_IMG="https://info.davincilabs.com/hubfs/private-label/shutterstock_1565452774.jpg"
+HERO_IMG="https://www.pettechlabs.com/hubfs/Praxera/email/praxera-product-lineup-hero.png"
 
 INK="#231F20"; BODY="#44483F"; MUTE="#7B8177"
 DEEP="#24501A"; BRIGHT="#76BC43"; PALE="#BFDF97"; RULE="#E4E7E0"
@@ -87,43 +87,77 @@ def footer():
             f'<span style="color:#9AA093;">Draft placeholder built by Quantum Business Solutions '
             f'&mdash; do not send.</span></td></tr></table>')
 
+
+def article(title,blurb,href,kicker):
+    """One newsletter item. A Pulse implies several -- one block under a masthead
+    that says 'issue' is a cheque the body does not cash."""
+    return (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" '
+            f'style="border-collapse:collapse;border-top:1px solid {RULE};">'
+            f'<tr><td style="padding:18px 0 0;">'
+            f'<p style="margin:0 0 7px;font-family:{SANS};font-size:10px;letter-spacing:.2em;'
+            f'text-transform:uppercase;color:{BRIGHT};">{kicker}</p>'
+            f'<a href="{href}" style="text-decoration:none;">'
+            f'<h3 style="margin:0 0 8px;font-family:{SERIF};font-size:19px;line-height:1.3;'
+            f'color:{INK};font-weight:normal;">{title}</h3></a>'
+            f'<p style="margin:0 0 10px;font-family:{SANS};font-size:14px;line-height:1.65;'
+            f'color:{BODY};">{blurb}</p>'
+            f'<a href="{href}" style="font-family:{SANS};font-size:13px;font-weight:bold;'
+            f'color:{DEEP};text-decoration:none;letter-spacing:.03em;">Read it &rarr;</a>'
+            f'</td></tr></table>')
+
 # ---------------------------------------------------------------- newsletter
 def newsletter_widgets():
-    # The masthead already carries the logo 60px above this. Repeating it here was
-    # the weakest thing in the layout, so the hero leads with type instead.
-    hero=(eyebrow("Your brand. Our standards.",PALE) +
+    hero=(eyebrow("Issue 01 &nbsp;&middot;&nbsp; Your brand. Our standards.",PALE) +
           f'<h1 style="margin:0 0 14px;font-family:{SERIF};font-size:31px;line-height:1.16;'
-          f'color:#ffffff;font-weight:normal;max-width:430px;">Private label supplements '
-          f'for the brands you&rsquo;re building.</h1>'
-          f'<p style="margin:0;font-family:{SANS};font-size:14px;line-height:1.6;'
-          f'color:{PALE};max-width:410px;">Formulated in Vermont since 1976. Your name '
-          f'on the label, our standards behind it.</p>')
-    body=(eyebrow("In this issue",BRIGHT) +
-          f'<h2 style="margin:0 0 20px;font-family:{SERIF};font-size:27px;line-height:1.2;'
-          f'color:{INK};font-weight:normal;">Build your line with Praxera</h2>'
-          f'<p style="margin:0 0 16px;font-family:{SANS};font-size:15px;line-height:1.7;'
-          f'color:{BODY};">Hi there,</p>'
-          f'<p style="margin:0 0 16px;font-family:{SANS};font-size:15px;line-height:1.7;'
-          f'color:{BODY};">This is the newsletter template. Every block is its own '
-          f'drag-and-drop module, so the hero, the headline, the copy and the button can each '
-          f'be edited in HubSpot without opening HTML.</p>'
-          f'<h2 style="margin:30px 0 12px;font-family:{SERIF};font-size:20px;line-height:1.3;'
-          f'color:{INK};font-weight:normal;">What sets your brand apart?</h2>'
-          f'<p style="margin:0;font-family:{SANS};font-size:15px;line-height:1.7;color:{BODY};">'
-          f'Placeholder copy. Real messaging comes from the approved Praxera positioning, '
-          f'not from this draft.</p>')
-    return {"px_masthead":rich(pad(masthead("The Praxera Pulse"))),
+          f'color:#ffffff;font-weight:normal;max-width:430px;">Introducing Praxera</h1>'
+          f'<p style="margin:0;font-family:{SANS};font-size:15px;line-height:1.65;'
+          f'color:{PALE};max-width:430px;">Private label supplements for the brands '
+          f'you&rsquo;re building &mdash; formulated in Vermont, made to your label, '
+          f'backed by fifty years of manufacturing standards.</p>')
+
+    lead=(eyebrow("The short version",BRIGHT) +
+          f'<h2 style="margin:0 0 18px;font-family:{SERIF};font-size:26px;line-height:1.22;'
+          f'color:{INK};font-weight:normal;">A new name for a programme you already know</h2>'
+          f'<p style="margin:0 0 15px;font-family:{SANS};font-size:15px;line-height:1.75;'
+          f'color:{BODY};">Same formulations. Same facility. Same team on the phone. '
+          f'What changes is the name on the programme and the standard of the experience '
+          f'around it &mdash; a clearer catalogue, faster quoting, and a design service that '
+          f'takes your label from sketch to shelf.</p>'
+          f'<p style="margin:0;font-family:{SANS};font-size:15px;line-height:1.75;color:{BODY};">'
+          f'Below: three questions we are asked in almost every first call.</p>')
+
+    items=(article("How much does it cost to start a private label supplement line?",
+             "The honest ranges for minimums, tooling, label design and first production run "
+             "&mdash; and where new brands usually underestimate.",
+             "https://www.praxerasupplements.com/blog/how-much-to-start-a-private-label-supplement-business",
+             "Costs") +
+           article("USP, NSF, GMP and FDA: which certifications actually matter",
+             "A buyer&rsquo;s guide to what each mark covers, what it does not, and which ones "
+             "your retail partners will ask about.",
+             "https://www.praxerasupplements.com/blog/supplement-certifications-usp-nsf-gmp-fda",
+             "Compliance") +
+           article("Contract manufacturing or private label &mdash; which do you need?",
+             "They are not the same service and the wrong choice costs months. A short guide "
+             "to telling them apart before you request a quote.",
+             "https://www.praxerasupplements.com/blog/contract-manufacturing-vs-private-labeling-supplements",
+             "Getting started"))
+
+    return {"px_masthead":rich(pad(masthead("The Praxera Pulse &nbsp;&middot;&nbsp; Issue 01"))),
             "px_hero":rich(pad(hero)),
-            "px_body":rich(pad(body)),
+            "px_heroimg":image(HERO_IMG,"Praxera private label supplement range",600),
+            "px_body":rich(pad(lead)),
+            "px_items":rich(pad(items)),
             "px_cta":rich(pad(button("Book a consultation",
                      "https://www.praxerasupplements.com/en/pl-demo-book-consultation"))),
             "px_footer":rich(pad(footer()))}
 
 def newsletter_sections(extra):
-    s=[sect("section_mast",["px_masthead"],None,"28px","22px"),
-       sect("section_hero",["px_hero"],DEEP,"40px","40px"),
-       sect("section_body",["px_body"],None,"36px","10px"),
-       sect("section_cta", ["px_cta"], None,"18px","34px"),
+    s=[sect("section_mast",["px_masthead"],None,"28px","20px"),
+       sect("section_hero",["px_hero"],DEEP,"40px","36px"),
+       sect("section_img",["px_heroimg"],DEEP,"0px","0px"),
+       sect("section_body",["px_body"],None,"34px","6px"),
+       sect("section_items",["px_items"],None,"10px","10px"),
+       sect("section_cta", ["px_cta"], None,"22px","34px"),
        sect("section_foot",["px_footer"],None,"6px","14px")]
     if extra: s.append(sect("section_spam",["email_can_spam"],None,"4px","22px"))
     return s
