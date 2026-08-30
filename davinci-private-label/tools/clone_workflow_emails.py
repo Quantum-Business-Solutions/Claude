@@ -109,6 +109,14 @@ def main():
             ids.setdefault(eid,{"live":False,"wfs":set()})
             ids[eid]["wfs"].add(w["name"])
             if w["live"]: ids[eid]["live"]=True
+    # The verified-PL set is not the same as the set a workflow actually SENDS.
+    # A flow can send an email that never links to a PL page, and a clone of that
+    # flow would point straight back at the DaVinci original -- so the send list
+    # is the authority here, not the link evidence.
+    extra="reference/extra_emails_to_clone.json"
+    if os.path.exists(extra):
+        for eid in json.load(open(extra)):
+            ids.setdefault(eid,{"live":True,"wfs":{"(send action in a live core workflow)"}})
     print(f"emails to clone: {len(ids)}   mode: {'APPLY' if go else 'DRY RUN'}\n")
 
     done=[]

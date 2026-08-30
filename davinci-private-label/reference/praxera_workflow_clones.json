@@ -1,0 +1,122 @@
+[
+ {
+  "source_id": "1652783782",
+  "source_name": "Brand / Private Label - Segmentation",
+  "clone_id": "1875339651",
+  "clone_name": "Praxera - Brand / Private Label - Segmentation",
+  "enabled": false,
+  "emails_repointed": 0,
+  "forms_repointed": 0,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "311967650",
+  "source_name": "DV: PL Guide_BoF_Danielle",
+  "clone_id": "1875338045",
+  "clone_name": "Praxera - PL Guide_BoF_Danielle",
+  "enabled": false,
+  "emails_repointed": 3,
+  "forms_repointed": 2,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "335276358",
+  "source_name": "DV: PL Guide_BoF_Paul",
+  "clone_id": "1875338809",
+  "clone_name": "Praxera - PL Guide_BoF_Paul",
+  "enabled": false,
+  "emails_repointed": 3,
+  "forms_repointed": 2,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "1685642843",
+  "source_name": "DV: Private Label - High Priority",
+  "clone_id": "1875317584",
+  "clone_name": "Praxera - Private Label - High Priority",
+  "enabled": false,
+  "emails_repointed": 8,
+  "forms_repointed": 2,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "589741064",
+  "source_name": "DV: Private Label Guide_MoF_Paul",
+  "clone_id": "1875338811",
+  "clone_name": "Praxera - Private Label Guide_MoF_Paul",
+  "enabled": false,
+  "emails_repointed": 13,
+  "forms_repointed": 2,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "55131036",
+  "source_name": "DV: Private Label Guide_ToF_Danielle_Nurture",
+  "clone_id": "1875320616",
+  "clone_name": "Praxera - Private Label Guide_ToF_Danielle_Nurture",
+  "enabled": false,
+  "emails_repointed": 9,
+  "forms_repointed": 3,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "63730093",
+  "source_name": "DV: Private Label Guide_ToF_Paul_Nurture",
+  "clone_id": "1875339655",
+  "clone_name": "Praxera - Private Label Guide_ToF_Paul_Nurture",
+  "enabled": false,
+  "emails_repointed": 8,
+  "forms_repointed": 3,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "587253915",
+  "source_name": "DV: Private Label_MoF_Danielle",
+  "clone_id": "1875319813",
+  "clone_name": "Praxera - Private Label_MoF_Danielle",
+  "enabled": false,
+  "emails_repointed": 13,
+  "forms_repointed": 2,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "33007370",
+  "source_name": "DV: Retargeting: Visited Private Label Page & Didn't Convert",
+  "clone_id": "1875338813",
+  "clone_name": "Praxera - Retargeting: Visited Private Label Page & Didn't Convert",
+  "enabled": false,
+  "emails_repointed": 1,
+  "forms_repointed": 1,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "341434631",
+  "source_name": "DV: Welcome to D4HCP_BoF_Danielle/HCP",
+  "clone_id": "1875319815",
+  "clone_name": "Praxera - Welcome to D4HCP_BoF_Danielle/HCP",
+  "enabled": false,
+  "emails_repointed": 4,
+  "forms_repointed": 0,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "583504536",
+  "source_name": "DV: White_Label_World Expo: Post_Event_Nurture",
+  "clone_id": "1875319816",
+  "clone_name": "Praxera - White_Label_World Expo: Post_Event_Nurture",
+  "enabled": false,
+  "emails_repointed": 12,
+  "forms_repointed": 0,
+  "unmapped_emails": []
+ },
+ {
+  "source_id": "1824975380",
+  "source_name": "DVL // Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)",
+  "clone_id": "1875338815",
+  "clone_name": "Praxera - Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)",
+  "enabled": false,
+  "emails_repointed": 3,
+  "forms_repointed": 1,
+  "unmapped_emails": []
+ }
+]
