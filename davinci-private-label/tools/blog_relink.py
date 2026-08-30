@@ -51,15 +51,24 @@ def build_map():
 FIELDS=("widgets","layoutSections","postBody","postSummary","metaDescription")
 DV=re.compile(r"https?://(?:www\.|blog\.|info\.)?davincilabs\.com[^\"'<>\s\\)]*",re.I)
 
-def target(url,px,um):
+HOME="https://www.praxerasupplements.com/"
+
+def target(url,px,um,fallback=False):
+    """A real equivalent if one exists, else optionally the Praxera home page.
+
+    The fallback is a holding position, not a mapping. A link to a DaVinci SKU
+    page has no Praxera counterpart, so sending it home is the honest placeholder
+    until someone decides what it should say -- and it is reversible, because
+    every rewritten URL is recorded."""
     base=url.split("?")[0].split("#")[0]
     if base in um: return um[base]
     s=slug(base)
     if s in px: return px[s]
-    return None
+    return HOME if fallback else None
 
 def main():
     go="--go" in sys.argv
+    fb="--fallback-home" in sys.argv
     px,um=build_map()
     posts=[];u="/cms/v3/blogs/posts?limit=100&archived=false"
     while u:
@@ -71,6 +80,7 @@ def main():
 
     changed=skipped=0
     left=collections.Counter()
+    sent_home=collections.Counter()
     for p in drafts:
         body={}
         hits=0
@@ -80,9 +90,10 @@ def main():
             blob=json.dumps(v)
             new=blob
             for url in sorted(set(DV.findall(blob)),key=len,reverse=True):
-                t=target(url,px,um)
+                t=target(url,px,um,fb)
                 if t:
                     n=new.count(url); new=new.replace(url,t); hits+=n
+                    if t==HOME: sent_home[url.split("?")[0]]+=n
                 else: left[url.split("?")[0]]+=1
             if new!=blob: body[f]=json.loads(new)
         if not body:
@@ -108,7 +119,11 @@ def main():
     print(f"\nLINKS LEFT ALONE (no Praxera equivalent): "
           f"{len(left)} targets, {sum(left.values())} links")
     for u_,n in left.most_common(20): print(f"   {n:>3}x  {u_[:88]}")
-    json.dump({k:v for k,v in left.items()},
+    if sent_home:
+        print(f"\nSENT TO THE PRAXERA HOME PAGE (placeholder): "
+              f"{len(sent_home)} targets, {sum(sent_home.values())} links")
+        for u_,n in sent_home.most_common(15): print(f"   {n:>3}x  {u_[:88]}")
+    json.dump({"unresolved":dict(left),"sent_home":dict(sent_home)},
               open("reference/blog_links_unresolved.json","w"),indent=1)
 
 if __name__=="__main__": main()
