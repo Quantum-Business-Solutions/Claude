@@ -39,10 +39,20 @@ if not KEY:
 if ACC not in OK_ACCOUNTS:
     sys.stderr.write("HALT: account_id "+ACC+" is not one of Shawn's authorized accounts.\n"); sys.exit(2)
 
+RELAY=(os.environ.get('UNIPILE_RELAY_URL') or
+       'https://ladhdgwedwynmdmeeena.supabase.co/functions/v1/unipile-relay').rstrip('/')
+RELAY_TOKEN=os.environ.get('UNIPILE_RELAY_TOKEN')
+
 def candidates():
     """Every endpoint worth trying, best first. A tenant DSN often carries a non-standard port
-    that this environment cannot reach, so the same host on 443 is always tried as well."""
-    out=[]; raw=(os.environ.get('UNIPILE_DSN') or '').strip().rstrip('/')
+    that this environment cannot reach, so the same host on 443 is always tried as well.
+
+    The relay comes FIRST because it is the only REST path that works from a cloud session: it
+    sits on 443 and forwards to the tenant's :16072. It needs UNIPILE_RELAY_TOKEN (the Supabase
+    publishable key) in the environment - deliberately not committed, since this repo is public."""
+    out=[]
+    if RELAY_TOKEN: out.append(RELAY)
+    raw=(os.environ.get('UNIPILE_DSN') or '').strip().rstrip('/')
     if raw:
         u=raw if '://' in raw else 'https://'+raw
         out.append(u)
@@ -68,9 +78,12 @@ def reachable(url):
 
 def get(base,path):
     url=base+path+('&' if '?' in path else '?')+'account_id='+ACC
-    o=subprocess.run(['curl','-s','--max-time','40','-w','\n%{http_code}',
-                      '-H','X-API-KEY: '+KEY,'-H','accept: application/json',url],
-                     capture_output=True,text=True).stdout
+    cmd=['curl','-s','--max-time','40','-w','\n%{http_code}',
+         '-H','X-API-KEY: '+KEY,'-H','accept: application/json']
+    # The relay is a Supabase Edge Function with JWT verification left ON, so it needs a bearer
+    # of its own. It never sees a stored credential - the Unipile key above is forwarded through.
+    if base==RELAY and RELAY_TOKEN: cmd+=['-H','Authorization: Bearer '+RELAY_TOKEN]
+    o=subprocess.run(cmd+[url],capture_output=True,text=True).stdout
     body,_,code=o.rpartition('\n'); return body,code.strip()
 
 def rows(base,slug):

@@ -14,12 +14,26 @@ Two things about that session are not what you would assume, and both were measu
 - **It has NO MCP connector tools.** This is not a bug and not an outage; it is a property of how
   the Routine was created. `create_trigger` warns in plain text: *"this trigger stores no MCP
   connectors, so the sessions it fires will run without connector (`mcp__<server>__*`) tools."*
-  Its `connectors` parameter is rejected outright for this organization. Since Unipile's tenant API
-  sits on port 16072 and cloud egress reaches port 443 only, **the MCP connector is the only path
-  to LinkedIn**, and a programmatically-created Routine cannot verify a single contact.
-  **A Routine that needs LinkedIn must be created from the Routines UI on claude.ai**, where the
-  connector can be attached. HubSpot-only work is unaffected: `QBS_HUBSPOT_TOKEN` is set on the
-  environment and `api.hubapi.com` is on 443.
+  Its `connectors` parameter is rejected outright for this organization, and the Routines UI on
+  claude.ai lists only first-party connectors, not custom MCP servers like Unipile. So there is
+  **no way to give a Routine the Unipile connector.**
+
+**This is why the relay exists, and it is now the primary path.** Unipile serves its tenant API on
+port 16072; cloud egress reaches 443 only. A Supabase Edge Function on 443 forwards to it, so the
+scripts reach Unipile over ordinary HTTPS with no connector involved — identically from an
+interactive session, a Routine, a Cowork task or cron. Source: `contact-verification/relay/`.
+
+    https://ladhdgwedwynmdmeeena.supabase.co/functions/v1/unipile-relay
+
+It stores **no credential**: the caller forwards its own `X-API-KEY`. Verified guards, tested live:
+`POST`/`DELETE` → 405 `read_only` (so it can read profiles and can never send an invite, DM or
+InMail) · a non-allowlisted `account_id` → 403 `account_not_allowed` (the five client identities on
+this tenant are blocked in the relay, not merely by convention) · no key → 400 `missing_api_key`.
+Supabase JWT verification is left **on**, so `UNIPILE_RELAY_TOKEN` must be set on the environment —
+it is deliberately not committed, because this repository is public.
+
+HubSpot-only work never had this problem: `QBS_HUBSPOT_TOKEN` is set on the environment and
+`api.hubapi.com` is on 443.
 
 ## The rule that matters
 
@@ -52,12 +66,20 @@ has ever had presented as a confident clean bill of health:
 
    Halt on a clone failure and report the exact git error. Use `$REPO` in every path that follows.
 
-0b. **Confirm a LinkedIn transport exists before doing anything else.** `ToolSearch` for
-   `select:mcp__Unipile__execute-request`. No match means this session has no connector tools and
-   therefore no path to LinkedIn at all. **Halt immediately**, name the cause (Routine created
-   programmatically, so no connector grant was stored) and the fix (recreate it from the Routines
-   UI on claude.ai). Do **not** fall back to curl, and do **not** write `unreadable` verdicts —
-   an outage recorded as verdicts is a durable lie about the data; a halt is not.
+0b. **Confirm a LinkedIn transport before doing anything else.**
+
+   ```
+   UNIPILE_RELAY_TOKEN=... python3 $REPO/contact-verification/scripts/unipile.py selftest
+   ```
+
+   Exit 0 means a path returned **dated** experience rows — the only thing that makes a verdict
+   possible. Exit 2 is no reachable path; exit 3 is reachable but returned nothing usable.
+
+   The relay is tried first and is the path that works unattended. If it fails, the MCP connector
+   is the fallback **when one exists** (interactive sessions only — `ToolSearch` for
+   `select:mcp__Unipile__execute-request`). **Halt only if both fail, and say which failed and
+   how.** Never write `unreadable` verdicts to represent an outage: an outage recorded as verdicts
+   is a durable lie about the data that survives long after the outage ends; a halt is not.
 
 1. `TOKEN=... python3 $REPO/contact-verification/scripts/preflight.py <listId>` — **stop the run on
    any non-zero exit and report the reason.** Do not continue and do not "try anyway".
