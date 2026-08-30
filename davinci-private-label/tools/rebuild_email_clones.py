@@ -39,16 +39,27 @@ def call(m,u,body=None,tr=4):
             if i==tr-1: raise
             time.sleep(2*(i+1))
 
-BRAND=re.compile(r"DaVinci Laboratories of Vermont|DaVinci Laboratories|DaVinci Labs|"
-                 r"DaVinci for Healthcare Professionals|DaVinci",re.I)
+# The words are not always separated by a plain space: the signature block uses
+# DaVinci&nbsp;Laboratories, which a literal " " never matches, so the two-word
+# form fell through to the one-word form and left "Laboratories" stranded.
+SEP=r"(?:\s|&nbsp;|&#160;|\u00a0)+"
+BRAND=re.compile(
+    "DaVinci"+SEP+"Laboratories"+SEP+"of"+SEP+"Vermont"
+    "|DaVinci"+SEP+"Laboratories"
+    "|DaVinci"+SEP+"Labs"
+    "|DaVinci"+SEP+"for"+SEP+"Healthcare"+SEP+"Professionals"
+    "|DaVinci", re.I)
 CLAIM=re.compile(
     r"(handles?\s+(?:the\s+)?(?:formulation|manufactur\w*|bottling|quality)"
     r"|we\s+(?:manufacture|produce|make|formulate|bottle|blend|handle)\w*"
-    r"|our\s+(?:manufactur\w*|facility|facilities|plant|production|lab|labs|formulators?)"
+    r"|\bour\s+(?:manufactur\w*|facilit(?:y|ies)|plant|production|labs?\b|formulators?)"
     r"|manufactured\s+(?:in|at|by)\s+our|family[- ]owned\s+company"
     r"|in[- ]house\s+(?:manufactur\w*|production|formulation)"
     r"|from\s+(?:formulation|concept)\s+(?:through|to)\s+delivery"
-    r"|doable\s+within\s+DSHEA|c?GMP[- ]certified\s+facilit\w*)",re.I)
+    r"|doable\s+within\s+DSHEA|c?GMP[- ]certified\s+facilit\w*"
+    r"|not\s+just\s+manufacturers?|we(?:'re| are)\s+manufacturers?"
+    r"|\bour\s+products?\s+(?:contain|are\s+made|are\s+manufactured)"
+    r"|we\s+guarantee)",re.I)
 ADDR=re.compile(r"929 Harvest Lane[^<]*",re.I)
 DV_HOST=re.compile(r"^https?://(?:www\.|blog\.|info\.)?davincilabs\.com",re.I)
 LOGOS=("Immune%20Bundle%20Blast/DaVinci-Logo.png","hubfs/4087538/Logo.png",
@@ -59,6 +70,8 @@ MARK='<span style="background:#FFF3CD;border-bottom:2px solid #8A6300;" data-pra
 CMARK='<span style="background:#F8DDD9;border-bottom:2px solid #9B3B31;" data-praxera-review="claim">'
 CLOSE='</span>'
 TOKEN=re.compile(r"(<[^>]*>)")
+# a stranded descriptor left behind when the brand name was swapped across markup
+ORPHAN=re.compile(r"^\s*(?:Laboratories|Labs|Laboratories of Vermont)\b",re.I)
 ATTR=re.compile(r'(\b(?:href|src|alt)\s*=\s*")([^"]*)(")',re.I)
 
 def load_maps():
@@ -111,6 +124,9 @@ def transform(h,px,um,slug,stats):
         def bs(m):
             stats["brand"]+=1; return MARK+"Praxera"+CLOSE
         part=BRAND.sub(bs,part)
+        # "DaVinci</strong> Laboratories" leaves Laboratories stranded once the
+        # first half is swapped, and "Praxera Laboratories" is not the brand.
+        part=ORPHAN.sub(lambda m: (stats.__setitem__("orphan",stats["orphan"]+1) or ""),part)
         out.append(part)
     return "".join(out)
 

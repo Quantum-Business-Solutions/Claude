@@ -3,16 +3,16 @@
   "id": "220685976450",
   "name": "Praxera - Chiropractor WF: Final Email ALL",
   "live_source": true,
-  "height": 846,
-  "chars": 1443,
+  "height": 828,
+  "chars": 1385,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Neck%20Rub-2.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Neck%20Rub-2.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -21,17 +21,17 @@
   "id": "220688283270",
   "name": "Praxera - WF: PL Guide_BoF_Danielle Quick Turnaround #3",
   "live_source": true,
-  "height": 591,
-  "chars": 832,
+  "height": 573,
+  "chars": 774,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Emails/Email%20Graphics/FDA_Disclaimer.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-895683186%20(1).jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-895683186%20(1).jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -40,10 +40,10 @@
   "id": "220688283273",
   "name": "Praxera - Private Label: High Priority - Reach out",
   "live_source": true,
-  "height": 1087,
-  "chars": 1871,
+  "height": 951,
+  "chars": 1049,
   "davinci_visible": 0,
-  "brand_marks": 10,
+  "brand_marks": 2,
   "claim_marks": 0,
   "imgs": 6,
   "broken": [],
@@ -61,16 +61,16 @@
   "id": "220688283275",
   "name": "Praxera - Private Label: High Priority - 6 Benefits",
   "live_source": true,
-  "height": 920,
-  "chars": 1818,
+  "height": 902,
+  "chars": 1702,
   "davinci_visible": 0,
-  "brand_marks": 5,
+  "brand_marks": 3,
   "claim_marks": 1,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://cdn2.hubspot.net/hubfs/4087538/New%20Logo.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Imported_Blog_Media/2privatelabel.jpg"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/Imported_Blog_Media/2privatelabel.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -79,10 +79,10 @@
   "id": "220685976453",
   "name": "Praxera - Private Label: High Priority - Client Onboarding",
   "live_source": true,
-  "height": 1452,
-  "chars": 2603,
+  "height": 1483,
+  "chars": 1727,
   "davinci_visible": 0,
-  "brand_marks": 9,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 5,
   "broken": [],
@@ -100,16 +100,16 @@
   "id": "220688283279",
   "name": "Praxera - Private Label: High Priority Intro",
   "live_source": true,
-  "height": 1205,
-  "chars": 2047,
+  "height": 1169,
+  "chars": 1853,
   "davinci_visible": 0,
-  "brand_marks": 6,
+  "brand_marks": 2,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/trademarked%20ingredients.png",
-   "https://cdn2.hubspot.net/hubfs/4087538/New%20Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -118,18 +118,18 @@
   "id": "220685976456",
   "name": "Praxera - Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Praxera",
   "live_source": true,
-  "height": 1256,
-  "chars": 1607,
+  "height": 1220,
+  "chars": 1527,
   "davinci_visible": 0,
-  "brand_marks": 7,
+  "brand_marks": 5,
   "claim_marks": 2,
   "imgs": 4,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CTAs/Private%20Label%20BoF_Paul-1.jpg",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Private%20Label%20(DaVinci)/Private-Labeling-Done-Right_Resized-2.jpg",
-   "https://cdn2.hubspot.net/hubfs/4087538/New%20Logo.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Build%20Your%20Brand.jpg"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/Build%20Your%20Brand.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -138,16 +138,16 @@
   "id": "220688283283",
   "name": "Praxera - Private Label MOF 2_Paul_1ngredients Guide",
   "live_source": true,
-  "height": 737,
-  "chars": 1191,
+  "height": 719,
+  "chars": 1075,
   "davinci_visible": 0,
-  "brand_marks": 4,
+  "brand_marks": 2,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Private%20Label%20(DaVinci)/Private%20Label%20Supplements%20Guide/Ingredients%20Guide%20Cover.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -156,16 +156,16 @@
   "id": "220688283282",
   "name": "Praxera - MOF_WF_Paul_2_Capsule",
   "live_source": true,
-  "height": 723,
-  "chars": 1242,
+  "height": 687,
+  "chars": 1066,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shopping-supplements.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shopping-supplements.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -174,16 +174,16 @@
   "id": "220688283288",
   "name": "Praxera - MOF_WF_Paul_Final_All",
   "live_source": true,
-  "height": 637,
-  "chars": 1072,
+  "height": 619,
+  "chars": 987,
   "davinci_visible": 0,
-  "brand_marks": 4,
+  "brand_marks": 3,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shoppingsupplements2.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shoppingsupplements2.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -192,16 +192,16 @@
   "id": "220685976459",
   "name": "Praxera - MOF_WF_Paul_2_Powder",
   "live_source": true,
-  "height": 777,
-  "chars": 1333,
+  "height": 741,
+  "chars": 1157,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shopping-supplements.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shopping-supplements.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -210,16 +210,16 @@
   "id": "220688283291",
   "name": "Praxera - MOF_WF_Paul_2_Tablet",
   "live_source": true,
-  "height": 655,
-  "chars": 1162,
+  "height": 619,
+  "chars": 986,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shopping-supplements.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shopping-supplements.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -236,8 +236,8 @@
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Liposomal-1.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Liposomal-1.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -246,16 +246,16 @@
   "id": "220688283295",
   "name": "Praxera - Private Label MOF 2_Paul_Supplement Formats",
   "live_source": true,
-  "height": 795,
-  "chars": 1409,
+  "height": 723,
+  "chars": 1051,
   "davinci_visible": 0,
-  "brand_marks": 5,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/blank%20supplement%20bottles.png"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/blank%20supplement%20bottles.png",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -264,16 +264,16 @@
   "id": "220688283300",
   "name": "Praxera - MOF_WF_Paul_2_Chewables",
   "live_source": true,
-  "height": 761,
-  "chars": 1430,
+  "height": 725,
+  "chars": 1254,
   "davinci_visible": 0,
-  "brand_marks": 3,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shopping-supplements.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shopping-supplements.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -282,18 +282,18 @@
   "id": "220685976462",
   "name": "Praxera - Private_Label_Guide_ToF_Benefits_Private_Label_With_Praxera",
   "live_source": true,
-  "height": 816,
-  "chars": 1378,
+  "height": 780,
+  "chars": 1298,
   "davinci_visible": 0,
-  "brand_marks": 5,
+  "brand_marks": 3,
   "claim_marks": 1,
   "imgs": 4,
   "broken": [],
   "img_srcs": [
-   "https://cdn2.hubspot.net/hubfs/4087538/New%20Logo.png",
    "https://f.hubspotusercontent30.net/hubfs/4087538/Build%20Your%20Brand.jpg",
    "https://f.hubspotusercontent30.net/hubfs/4087538/CTAs/BoF%20CTAs/Private%20Label%20BoF_Danielle.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/private-label-supplements-affordable.jpg"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/private-label-supplements-affordable.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -302,17 +302,17 @@
   "id": "220688283303",
   "name": "Praxera - 1 Private_Label_Guide_ToF_Danielle_TY",
   "live_source": true,
-  "height": 810,
-  "chars": 1269,
+  "height": 787,
+  "chars": 1133,
   "davinci_visible": 0,
-  "brand_marks": 4,
+  "brand_marks": 2,
   "claim_marks": 0,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://f.hubspotusercontent30.net/hubfs/4087538/DAV_PrivateLabel-BottleStats-Updated.jpeg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/PL-hero2.jpeg"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/PL-hero2.jpeg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -321,16 +321,16 @@
   "id": "220685976465",
   "name": "Praxera - 2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
   "live_source": true,
-  "height": 956,
-  "chars": 1262,
+  "height": 916,
+  "chars": 1077,
   "davinci_visible": 0,
-  "brand_marks": 4,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/iStock-1219393937.jpg"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/iStock-1219393937.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -339,17 +339,17 @@
   "id": "220688283306",
   "name": "Praxera - 1: Private Label Guide ToF Paul_TY",
   "live_source": true,
-  "height": 655,
-  "chars": 1424,
+  "height": 669,
+  "chars": 1032,
   "davinci_visible": 0,
-  "brand_marks": 4,
+  "brand_marks": 2,
   "claim_marks": 0,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://f.hubspotusercontent30.net/hubfs/4087538/DAV_PrivateLabel-BottleStats-Updated.jpeg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/PL-hero2.jpeg"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/PL-hero2.jpeg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -358,16 +358,16 @@
   "id": "220688283309",
   "name": "Praxera - Private Label MOF 2_Danielle_Supplement Formats",
   "live_source": true,
-  "height": 899,
-  "chars": 1626,
+  "height": 827,
+  "chars": 1238,
   "davinci_visible": 0,
-  "brand_marks": 8,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/blank%20supplement%20bottles.png"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/blank%20supplement%20bottles.png",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -384,8 +384,8 @@
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Liposomal-1.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Liposomal-1.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -394,16 +394,16 @@
   "id": "220685976468",
   "name": "Praxera - Private Label MOF_Danielle_Final All",
   "live_source": true,
-  "height": 909,
-  "chars": 2184,
+  "height": 855,
+  "chars": 1964,
   "davinci_visible": 0,
-  "brand_marks": 8,
+  "brand_marks": 3,
   "claim_marks": 1,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/page_8_img_0.jpeg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/page_8_img_0.jpeg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -412,16 +412,16 @@
   "id": "220688283315",
   "name": "Praxera - Private Label MOF_Danielle_Powder 2",
   "live_source": true,
-  "height": 637,
-  "chars": 1198,
+  "height": 601,
+  "chars": 1022,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2188588635.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2188588635.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -430,16 +430,16 @@
   "id": "220688283317",
   "name": "Praxera - Private Label MOF_Danielle_Capsule 2",
   "live_source": true,
-  "height": 653,
-  "chars": 1161,
+  "height": 617,
+  "chars": 985,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2188588635.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2188588635.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -448,16 +448,16 @@
   "id": "220688283320",
   "name": "Praxera - Private Label MOF_Danielle_Tablets 2",
   "live_source": true,
-  "height": 601,
-  "chars": 1011,
+  "height": 565,
+  "chars": 835,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2188588635.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2188588635.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -466,20 +466,20 @@
   "id": "220685976471",
   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro",
   "live_source": true,
-  "height": 1728,
-  "chars": 3663,
+  "height": 1656,
+  "chars": 3323,
   "davinci_visible": 0,
-  "brand_marks": 13,
+  "brand_marks": 3,
   "claim_marks": 0,
   "imgs": 6,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Emails/Email%20Graphics/FDA_Disclaimer.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1227175497.jpg",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1249939216.jpg",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1263853381.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1284091216.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1284091216.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -488,10 +488,10 @@
   "id": "220685976474",
   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio",
   "live_source": true,
-  "height": 1357,
-  "chars": 2171,
+  "height": 1321,
+  "chars": 2069,
   "davinci_visible": 0,
-  "brand_marks": 4,
+  "brand_marks": 2,
   "claim_marks": 0,
   "imgs": 6,
   "broken": [],
@@ -500,8 +500,8 @@
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/020079c.060-_f_-1.webp",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Capture-Mar-07-2023-06-08-37-8672-PM.png",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Emails/Email%20Graphics/FDA_Disclaimer.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1320683076.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1320683076.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -510,10 +510,10 @@
   "id": "220685976476",
   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #3 GI",
   "live_source": true,
-  "height": 1390,
-  "chars": 2368,
+  "height": 1372,
+  "chars": 2270,
   "davinci_visible": 0,
-  "brand_marks": 3,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 6,
   "broken": [],
@@ -522,8 +522,8 @@
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/0221479.030-_f__1.webp",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Capture-Mar-07-2023-06-49-47-2462-PM.png",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Emails/Email%20Graphics/FDA_Disclaimer.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1348052156.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1348052156.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -532,10 +532,10 @@
   "id": "220688283394",
   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health",
   "live_source": true,
-  "height": 1569,
-  "chars": 2608,
+  "height": 1551,
+  "chars": 2512,
   "davinci_visible": 0,
-  "brand_marks": 3,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 6,
   "broken": [],
@@ -544,8 +544,8 @@
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/0200395.012-_f_-1.webp",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Capture-Mar-07-2023-06-57-09-2703-PM.png",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Emails/Email%20Graphics/FDA_Disclaimer.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1224770135.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-1224770135.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -554,16 +554,16 @@
   "id": "220685976478",
   "name": "Praxera - White_Label_World_Expo Email #1",
   "live_source": true,
-  "height": 765,
-  "chars": 1105,
+  "height": 747,
+  "chars": 1020,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 1,
   "claim_marks": 1,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Private%20Label%20(DaVinci)/Private-Labeling-Done-Right_Resized-2.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -572,16 +572,16 @@
   "id": "220688283397",
   "name": "Praxera - White_Label_World_Expo Email #2",
   "live_source": true,
-  "height": 815,
-  "chars": 1553,
+  "height": 689,
+  "chars": 1008,
   "davinci_visible": 0,
-  "brand_marks": 5,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private_labeling.png"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private_labeling.png",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -590,16 +590,16 @@
   "id": "220688283399",
   "name": "Praxera - White_Label_World_Expo Email Definitive_Guide_Click #1",
   "live_source": true,
-  "height": 757,
-  "chars": 1194,
+  "height": 721,
+  "chars": 1055,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/supplement%20shopper.png"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/supplement%20shopper.png",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -608,16 +608,16 @@
   "id": "220688283401",
   "name": "Praxera - White_Label_World_Expo Email Definitive_Guide_Click #2",
   "live_source": true,
-  "height": 659,
-  "chars": 1243,
+  "height": 623,
+  "chars": 1119,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1999648550.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1999648550.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -626,16 +626,16 @@
   "id": "220685976483",
   "name": "Praxera - White_Label_World_Expo Email PL_Shipping_Inventory_Click #2",
   "live_source": true,
-  "height": 689,
-  "chars": 1163,
+  "height": 671,
+  "chars": 1037,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Smiling%20woman%20in%20living%20room%20shopping%20online.jpeg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Smiling%20woman%20in%20living%20room%20shopping%20online.jpeg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -644,16 +644,16 @@
   "id": "220688283406",
   "name": "Praxera - White_Label_World_Expo Email PL_Shipping_Inventory_Click #1",
   "live_source": true,
-  "height": 707,
-  "chars": 1137,
+  "height": 689,
+  "chars": 1015,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1080163670.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1080163670.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -662,16 +662,16 @@
   "id": "220685976486",
   "name": "Praxera - White_Label_World_Expo Final Email ALL",
   "live_source": true,
-  "height": 879,
-  "chars": 1455,
+  "height": 843,
+  "chars": 1326,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 1,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Private%20Label%20(DaVinci)/Private-Labeling-Done-Right_Resized-2.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -680,16 +680,16 @@
   "id": "220688283409",
   "name": "Praxera - White_Label_World_Expo Email How_To_Make_Money_Click #1",
   "live_source": true,
-  "height": 779,
-  "chars": 1434,
+  "height": 743,
+  "chars": 1320,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2316472331.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2316472331.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -698,16 +698,16 @@
   "id": "220688283411",
   "name": "Praxera - White_Label_World_Expo Email How_To_Make_Money_Click #2",
   "live_source": true,
-  "height": 661,
-  "chars": 1220,
+  "height": 643,
+  "chars": 1081,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL.png",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -716,16 +716,16 @@
   "id": "220688283415",
   "name": "Praxera - White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1",
   "live_source": true,
-  "height": 847,
-  "chars": 1501,
+  "height": 829,
+  "chars": 1355,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/page_8_img_0.jpeg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/page_8_img_0.jpeg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -734,16 +734,16 @@
   "id": "220685976489",
   "name": "Praxera - White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2",
   "live_source": true,
-  "height": 711,
-  "chars": 1365,
+  "height": 675,
+  "chars": 1241,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2316472331.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2316472331.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -752,16 +752,16 @@
   "id": "220688283418",
   "name": "Praxera - White_Label_World_Expo Email Did_Not_Click_Resource",
   "live_source": true,
-  "height": 769,
-  "chars": 1321,
+  "height": 733,
+  "chars": 1135,
   "davinci_visible": 0,
-  "brand_marks": 4,
+  "brand_marks": 2,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Private%20Label%20(DaVinci)/Private-Labeling-Done-Right_Resized-2.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -770,15 +770,15 @@
   "id": "220688283420",
   "name": "Praxera - Private Label Lead - First Contact",
   "live_source": true,
-  "height": 606,
-  "chars": 989,
+  "height": 588,
+  "chars": 928,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 1,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -799,9 +799,9 @@
    "https://f.hubspotusercontent30.net/hubfs/4087538/Emails/DAV_EcommWeb_TruthInLabeling_2.jpg",
    "https://f.hubspotusercontent30.net/hubfs/4087538/Emails/Email%20Graphics/Learn%20More_Button%20Green.png",
    "https://f.hubspotusercontent30.net/hubfs/4087538/Emails/localinvolvement_betterliveshere.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png",
    "https://f.hubspotusercontent30.net/hubfs/4087538/PRIVATELABEL_LabelDesigns.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/davinci%20banner%201.jpg"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/davinci%20banner%201.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -822,9 +822,9 @@
    "https://f.hubspotusercontent30.net/hubfs/4087538/Emails/DAV_EcommWeb_TruthInLabeling_2.jpg",
    "https://f.hubspotusercontent30.net/hubfs/4087538/Emails/Email%20Graphics/Learn%20More_Button%20Green.png",
    "https://f.hubspotusercontent30.net/hubfs/4087538/Emails/localinvolvement_betterliveshere.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png",
    "https://f.hubspotusercontent30.net/hubfs/4087538/PRIVATELABEL_LabelDesigns.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/davinci%20banner%201.jpg"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/davinci%20banner%201.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -833,19 +833,20 @@
   "id": "220685976492",
   "name": "Praxera - # High Priority (Branded) 5Rs",
   "live_source": false,
-  "height": 2455,
-  "chars": 7024,
+  "height": 2297,
+  "chars": 2078,
   "davinci_visible": 0,
-  "brand_marks": 43,
+  "brand_marks": 5,
   "claim_marks": 0,
   "imgs": 13,
-  "broken": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/<span style=",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/croud_<span style="
-  ],
+  "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/<span style=",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/croud_<span style=",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/croud_davinci-logo.png",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/croud_davinci-logo_gray.png",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/davinci-social_fb.png",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/davinci-social_ig.png",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/davinci-social_li.png",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/davinci-social_yt.png",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Screenshot%202025-10-14%20at%209.19.04%20AM.png"
   ],
   "placeholder": 2,
@@ -855,19 +856,20 @@
   "id": "220685976494",
   "name": "Praxera - #3 High Priority (Branded) Top-Sellers",
   "live_source": false,
-  "height": 2287,
-  "chars": 6548,
+  "height": 2021,
+  "chars": 1425,
   "davinci_visible": 0,
-  "brand_marks": 42,
+  "brand_marks": 3,
   "claim_marks": 0,
   "imgs": 13,
-  "broken": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/<span style=",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/croud_<span style="
-  ],
+  "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/<span style=",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/croud_<span style=",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/croud_davinci-logo.png",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/croud_davinci-logo_gray.png",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/davinci-social_fb.png",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/davinci-social_ig.png",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/davinci-social_li.png",
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/CROUD%20ASSETS/davinci-social_yt.png",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label-supplements.png"
   ],
   "placeholder": 2,
@@ -877,16 +879,16 @@
   "id": "220688836174",
   "name": "Praxera - High Priority (Branded) - Reach out",
   "live_source": false,
-  "height": 764,
-  "chars": 975,
+  "height": 728,
+  "chars": 852,
   "davinci_visible": 0,
-  "brand_marks": 6,
+  "brand_marks": 2,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/davinci-abandon-cart-hero.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -895,16 +897,16 @@
   "id": "220688836176",
   "name": "Praxera - Client_Onboarding_BoF_Danielle_#1",
   "live_source": false,
-  "height": 1244,
-  "chars": 2312,
+  "height": 1190,
+  "chars": 2163,
   "davinci_visible": 0,
-  "brand_marks": 4,
+  "brand_marks": 2,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2358787199-1.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2358787199-1.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -913,16 +915,16 @@
   "id": "220685976500",
   "name": "Praxera - Client_Onboarding_BoF_Danielle_#3",
   "live_source": false,
-  "height": 961,
-  "chars": 1644,
+  "height": 943,
+  "chars": 1586,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 3,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1346151299-1.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1346151299-1.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -931,16 +933,16 @@
   "id": "220685976498",
   "name": "Praxera - Client_Onboarding_BoF_Danielle_#2",
   "live_source": false,
-  "height": 1006,
-  "chars": 1708,
+  "height": 988,
+  "chars": 1623,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 1,
   "claim_marks": 2,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2150436145-1.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2150436145-1.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -949,16 +951,16 @@
   "id": "220685976504",
   "name": "Praxera - Client_Onboarding_BoF_Danielle_#4",
   "live_source": false,
-  "height": 975,
-  "chars": 1884,
+  "height": 939,
+  "chars": 1799,
   "davinci_visible": 0,
-  "brand_marks": 4,
+  "brand_marks": 3,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2133647203-1.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2133647203-1.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -968,15 +970,15 @@
   "name": "Praxera - Client_Onboarding_BoF_Danielle_From_MoF_#1",
   "live_source": false,
   "height": 944,
-  "chars": 1437,
+  "chars": 1379,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/brain-diet-what-to-eat.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/brain-diet-what-to-eat.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -986,15 +988,15 @@
   "name": "Praxera - Client_Onboarding_BoF_Paul_#1",
   "live_source": false,
   "height": 650,
-  "chars": 867,
+  "chars": 809,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/brain-diet-what-to-eat.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/brain-diet-what-to-eat.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1003,16 +1005,16 @@
   "id": "220688836183",
   "name": "Praxera - Client_Onboarding_BoF_Paul_#3",
   "live_source": false,
-  "height": 826,
-  "chars": 1122,
+  "height": 790,
+  "chars": 936,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 2,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1346151299-1.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1346151299-1.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1021,16 +1023,16 @@
   "id": "220688836186",
   "name": "Praxera - Client_Onboarding_BoF_Paul_#4",
   "live_source": false,
-  "height": 701,
-  "chars": 911,
+  "height": 683,
+  "chars": 826,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2133647203-1.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2133647203-1.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1039,16 +1041,16 @@
   "id": "220688836188",
   "name": "Praxera - Client_Onboarding_BoF_Paul_#2",
   "live_source": false,
-  "height": 774,
-  "chars": 1059,
+  "height": 756,
+  "chars": 974,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 1,
   "claim_marks": 2,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2150436145-1.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2150436145-1.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1058,15 +1060,15 @@
   "name": "Praxera - Client_Onboarding_BoF_Paul_From_MoF_#1",
   "live_source": false,
   "height": 944,
-  "chars": 1435,
+  "chars": 1377,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/brain-diet-what-to-eat.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/brain-diet-what-to-eat.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1084,7 +1086,7 @@
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Liposomal-1.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1093,10 +1095,10 @@
   "id": "220688836194",
   "name": "Praxera - PL_Guide_MoF_Danielle_Liquid_Products",
   "live_source": false,
-  "height": 1281,
-  "chars": 1283,
+  "height": 1022,
+  "chars": 1013,
   "davinci_visible": 0,
-  "brand_marks": 3,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 6,
   "broken": [],
@@ -1105,8 +1107,8 @@
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/liquid%20supplement%20on%20spoon.png",
    "https://f.hubspotusercontent30.net/hubfs/4087538/ACUTE%20IMMUNE%20BENEFITS%E2%84%A2%20LIQUID.jpg",
    "https://f.hubspotusercontent30.net/hubfs/4087538/LIPOSOMAL%20ELDERBERRY.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/SCALE%20DOWN.jpg"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/SCALE%20DOWN.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1115,17 +1117,17 @@
   "id": "220688836197",
   "name": "Praxera - PL_Guide_MoF_Danielle_Get Started",
   "live_source": false,
-  "height": 1087,
-  "chars": 1468,
+  "height": 1051,
+  "chars": 1315,
   "davinci_visible": 0,
-  "brand_marks": 5,
+  "brand_marks": 3,
   "claim_marks": 0,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/DAV_PrivateLabel-BottleStats-Updated.jpeg",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL_LabelDesigns.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1134,10 +1136,10 @@
   "id": "220688836199",
   "name": "Praxera - Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)",
   "live_source": false,
-  "height": 1249,
-  "chars": 1442,
+  "height": 1035,
+  "chars": 1124,
   "davinci_visible": 0,
-  "brand_marks": 6,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 6,
   "broken": [],
@@ -1146,8 +1148,8 @@
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/liquid%20supplement%20on%20spoon.png",
    "https://f.hubspotusercontent30.net/hubfs/4087538/ACUTE%20IMMUNE%20BENEFITS%E2%84%A2%20LIQUID.jpg",
    "https://f.hubspotusercontent30.net/hubfs/4087538/LIPOSOMAL%20ELDERBERRY.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/SCALE%20DOWN.jpg"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/SCALE%20DOWN.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1156,16 +1158,16 @@
   "id": "220688836204",
   "name": "Praxera - Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
   "live_source": false,
-  "height": 761,
-  "chars": 1333,
+  "height": 725,
+  "chars": 1152,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PL%20liquids.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1183,7 +1185,7 @@
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Liposomal-1.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1192,17 +1194,17 @@
   "id": "220688836209",
   "name": "Praxera - Private_Label_Guide_MoF_Paul_Get Started",
   "live_source": false,
-  "height": 1050,
-  "chars": 1511,
+  "height": 1014,
+  "chars": 1358,
   "davinci_visible": 0,
-  "brand_marks": 5,
+  "brand_marks": 3,
   "claim_marks": 0,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/DAV_PrivateLabel-BottleStats-Updated.jpeg",
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PRIVATELABEL_LabelDesigns.jpg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1211,10 +1213,10 @@
   "id": "220685976583",
   "name": "Praxera - L // PM - Automated Email: PL 5rs #5",
   "live_source": false,
-  "height": 2606,
-  "chars": 3950,
+  "height": 2641,
+  "chars": 3123,
   "davinci_visible": 0,
-  "brand_marks": 9,
+  "brand_marks": 1,
   "claim_marks": 0,
   "imgs": 9,
   "broken": [],
@@ -1236,10 +1238,10 @@
   "id": "220688836213",
   "name": "Praxera - L // PM - Automated Email: PL 5rs #6",
   "live_source": false,
-  "height": 2719,
-  "chars": 4465,
+  "height": 2827,
+  "chars": 3653,
   "davinci_visible": 0,
-  "brand_marks": 9,
+  "brand_marks": 1,
   "claim_marks": 1,
   "imgs": 10,
   "broken": [],
@@ -1262,17 +1264,17 @@
   "id": "220685976586",
   "name": "Praxera - 1: Private Label Guide: High-Priority",
   "live_source": false,
-  "height": 1053,
-  "chars": 2763,
+  "height": 1089,
+  "chars": 2060,
   "davinci_visible": 0,
-  "brand_marks": 5,
+  "brand_marks": 1,
   "claim_marks": 2,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/AI-Generated%20Media/Images/Create%20a%20bold%20strategic%20blogemail%20header%20image%20for%20the%20article%20Private%20Label%20vs%20Custom%20Supplement%20Formulation%20Whats%20Right%20for%20Your%20Pet%20BrandVisual%20Concept%20Two%20distinct%20roads%20or%20production%20lines%20diverging%20from%20a%20shared%20starting%20pointLeft%20side%20labeled.jpeg",
    "https://f.hubspotusercontent30.net/hubfs/4087538/DAV_PrivateLabel-BottleStats-Updated.jpeg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1281,16 +1283,16 @@
   "id": "220688836216",
   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #3",
   "live_source": false,
-  "height": 595,
-  "chars": 746,
+  "height": 577,
+  "chars": 625,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2036186195.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2036186195.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1307,8 +1309,8 @@
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2188588635.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2188588635.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1325,8 +1327,8 @@
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2143824131.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2143824131.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1343,8 +1345,8 @@
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2089997875.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2089997875.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1353,16 +1355,16 @@
   "id": "220685976591",
   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #3",
   "live_source": false,
-  "height": 595,
-  "chars": 730,
+  "height": 577,
+  "chars": 609,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1999648550.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1999648550.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1379,8 +1381,8 @@
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2189534237.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_2189534237.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1389,17 +1391,17 @@
   "id": "220688836360",
   "name": "Praxera - WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B",
   "live_source": true,
-  "height": 727,
-  "chars": 979,
+  "height": 709,
+  "chars": 921,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Emails/Email%20Graphics/FDA_Disclaimer.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-692931318%20(1).jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-692931318%20(1).jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1408,17 +1410,17 @@
   "id": "220688836231",
   "name": "Praxera - WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A",
   "live_source": true,
-  "height": 677,
-  "chars": 875,
+  "height": 659,
+  "chars": 817,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Emails/Email%20Graphics/FDA_Disclaimer.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-953623576.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-953623576.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1427,17 +1429,17 @@
   "id": "220688836363",
   "name": "Praxera - WF: PL Guide_BoF_Paul #1 Build Product Line Subject A",
   "live_source": true,
-  "height": 677,
-  "chars": 875,
+  "height": 659,
+  "chars": 817,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Emails/Email%20Graphics/FDA_Disclaimer.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-953623576.jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-953623576.jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1446,17 +1448,17 @@
   "id": "220688836233",
   "name": "Praxera - WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A",
   "live_source": true,
-  "height": 609,
-  "chars": 878,
+  "height": 591,
+  "chars": 820,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Emails/Email%20Graphics/FDA_Disclaimer.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-895683186%20(1).jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-895683186%20(1).jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1465,17 +1467,17 @@
   "id": "220688836366",
   "name": "Praxera - WF: PL Guide_BoF_Paul #2 Design & Branding Subject A",
   "live_source": true,
-  "height": 659,
-  "chars": 846,
+  "height": 641,
+  "chars": 788,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 3,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Emails/Email%20Graphics/FDA_Disclaimer.jpg",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/DaVinci-Logo.png",
-   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-692931318%20(1).jpg"
+   "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/iStock-692931318%20(1).jpg",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1484,16 +1486,16 @@
   "id": "220688836239",
   "name": "Praxera - 4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
   "live_source": true,
-  "height": 890,
-  "chars": 1329,
+  "height": 854,
+  "chars": 1173,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 1,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/PL%20shipping%20and%20inventory.png"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/PL%20shipping%20and%20inventory.png",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1502,16 +1504,16 @@
   "id": "220688836237",
   "name": "Praxera - 2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
   "live_source": true,
-  "height": 754,
-  "chars": 1176,
+  "height": 709,
+  "chars": 1059,
   "davinci_visible": 0,
-  "brand_marks": 2,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/make-money-private-label-supplements.png"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/make-money-private-label-supplements.png",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1520,16 +1522,16 @@
   "id": "220688836243",
   "name": "Praxera - 5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
   "live_source": true,
-  "height": 764,
-  "chars": 1052,
+  "height": 728,
+  "chars": 884,
   "davinci_visible": 0,
-  "brand_marks": 5,
+  "brand_marks": 2,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Questions.png"
+   "https://f.hubspotusercontent30.net/hubfs/4087538/Questions.png",
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1547,7 +1549,7 @@
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PL%20liquids.png",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
@@ -1556,16 +1558,16 @@
   "id": "220688836248",
   "name": "Praxera - PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A",
   "live_source": false,
-  "height": 687,
-  "chars": 983,
+  "height": 669,
+  "chars": 849,
   "davinci_visible": 0,
-  "brand_marks": 1,
+  "brand_marks": 0,
   "claim_marks": 0,
   "imgs": 2,
   "broken": [],
   "img_srcs": [
    "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/DAV_PrivateLabel-BottleStats-Updated.jpeg",
-   "https://f.hubspotusercontent30.net/hubfs/4087538/Logo.png"
+   "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png"
   ],
   "placeholder": 0,
   "js_errors": []
