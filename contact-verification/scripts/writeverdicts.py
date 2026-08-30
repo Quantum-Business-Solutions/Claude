@@ -18,7 +18,7 @@ RULES enforced here so no caller can bypass them:
   - verdict 'yes'  -> NEVER writes hs_lead_status (must stay ConnectandSell Prospect or the
                       contact drops off the calling list). An 'ls' on a yes is refused.
   - lead status    -> only these literals allowed: No Longer with Company / Need Updated Info /
-                      Retired - Remove from All Lists / Not Decision Maker
+                      Retired - Remove from All Lists   (NOT 'Not Decision Maker')
   - ai__job_title  -> always written when `title` is given (AI-owned, uncontested).
   - jobtitle       -> the NATIVE title field is written only when title_conf >= 0.90 AND the
                       verdict is `yes` AND the evidence carries no ambiguity marker. Fails CLOSED:
@@ -36,7 +36,14 @@ import json,subprocess,os,sys,re,tempfile
 T=os.environ['TOKEN']
 D=os.environ.get('DATE') or subprocess.run(['date','-u','+%Y-%m-%d'],capture_output=True,text=True).stdout.strip()
 lid=sys.argv[1]; V=json.load(open(sys.argv[2]))
-LS_OK={"No Longer with Company","Need Updated Info","Retired - Remove from All Lists","Not Decision Maker"}
+# "Not Decision Maker" is deliberately NOT here. This process reads dated employment history,
+# which establishes WHERE somebody works and cannot establish whether they can authorise a
+# purchase. That judgement was being inferred from title strings and it ejected people who were
+# demonstrably still in seat - a Founder-CEO, an Executive Chairman, a VP of Sales. It was also
+# written alongside verdict `no`, which asserts the person has LEFT, collapsing two different
+# questions into the one field the retry and staleness logic keys on. Buyability is a human call.
+LS_OK={"No Longer with Company","Need Updated Info","Retired - Remove from All Lists"}
+LS_RETIRED={"Not Decision Maker"}   # recognised only so it can be refused with a real reason
 # The portal defines five values. `moved` is reserved for the mover pipeline (movepipe reconciles to
 # `yes`), so a batch may write four. Splitting `no_profile` out of `unreadable` matters: a person with
 # no LinkedIn profile is PERMANENTLY unverifiable by this method and re-reading them forever is waste,
@@ -71,7 +78,7 @@ def slug(u):
 def validated_of(verdict,ls):
     if verdict=='yes': return "Yes"
     if verdict=='no' and ls=='Retired - Remove from All Lists': return "Retired"
-    return "Needs Updated"   # any 'no' (moved / not DM / need info) or 'unreadable' -> a human should look
+    return "Needs Updated"   # any other 'no' (moved / need info) or 'unreadable' -> a human should look
 TITLE_CONF_MIN=0.90
 # Hedge words in the evidence mean the title is not a 90% call, whatever number the caller passed.
 AMBIG=("caution","ambig","uncertain","unclear","probably","possibly","perhaps","assumed","appears to",
@@ -109,6 +116,10 @@ for r in V:
         refused.append((r['id'],"unknown verdict '"+str(verdict)+"' - RECORD DROPPED")); continue
     if ls and verdict=='yes':
         refused.append((r['id'],"ls on a yes verdict - RECORD DROPPED")); continue
+    if ls in LS_RETIRED:
+        refused.append((r['id'],"'"+str(ls)+"' is no longer written by this process - RECORD DROPPED. "
+                        "Employment dates cannot establish buying authority; leave the lead status "
+                        "alone and raise an issue for a human if the persona looks wrong.")); continue
     if ls and ls not in LS_OK:
         refused.append((r['id'],"bad ls '"+str(ls)+"' - RECORD DROPPED")); continue
     # EJECTION GATE. Every literal in LS_OK removes a human being from every calling list, and this

@@ -136,7 +136,10 @@ if missing: fail.append("SCHEMA missing written properties: "+", ".join(missing)
 else: print("ok   schema: all "+str(len(WRITES))+" written properties exist")
 
 # the four lead-status literals are the only way a departed contact leaves a calling list.
-LS_OK={"No Longer with Company","Need Updated Info","Retired - Remove from All Lists","Not Decision Maker"}
+# Only the literals this process actually writes. "Not Decision Maker" was removed from the
+# writable set - it still exists in the portal for human use, but a missing option there can no
+# longer break a run, so requiring it would fail the preflight for no reason.
+LS_OK={"No Longer with Company","Need Updated Info","Retired - Remove from All Lists"}
 opts={o['value'] for o in (props.get('hs_lead_status') or {}).get('options',[])}
 lost=sorted(LS_OK-opts)
 if lost: fail.append("SCHEMA hs_lead_status lost literal(s): "+", ".join(lost)+" - movers cannot be ejected")

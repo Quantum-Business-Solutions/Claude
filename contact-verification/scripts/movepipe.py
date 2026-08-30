@@ -5,7 +5,9 @@ one HubSpot transaction per contact, with the qbs-list-verification conventions.
 movers.json = [{"id","newco",
                 "domain"(optional - verified company domain; find-or-create by it),
                 "dm"(optional bool - is the person a decision-maker at newco?),
-                "ls"(optional lead status override; default: dm->ConnectandSell Prospect else Not Decision Maker),
+                "ls"(optional lead status override; default: ConnectandSell Prospect. This
+                     process does NOT write "Not Decision Maker" - see the note at the
+                     lead-status assignment for why),
                 "title"(optional - current title -> ai__job_title),
                 "title_conf"(optional float 0-1 - >=0.90 AND a resolved domain ALSO writes native
                              `jobtitle`. Absent = no native write, ever),
@@ -27,6 +29,11 @@ T=os.environ['TOKEN']; D=os.environ.get('DATE') or subprocess.run(['date','-u','
 lid=sys.argv[1]; M=json.load(open(sys.argv[2]))
 TMP=tempfile.NamedTemporaryFile('w',suffix='.json',delete=False).name
 MARKER="RE-"+"ASSOCIATED"   # built at runtime so the source file cannot seed the filter token
+# HubSpot has no URL property type - every URL field in this portal (hs_linkedin_url, website,
+# previous__company_domain_name) is plain string/text, and the UI renders any http value as a
+# link. So a text property holding this prefix + a record id IS the clickable link.
+PORTAL=os.environ.get("HS_PORTAL_ID","20682069")
+PORTAL_RECORD_URL="https://app.hubspot.com/contacts/"+PORTAL+"/company/"
 def call(m,url,body=None,fatal=True):
     """Returns (data, ok). A timeout or 4xx must never look like an empty result set - that is how
     a failed associations read turns into 'there was nothing stale to remove'."""
@@ -120,11 +127,31 @@ for m in M:
         log.append({"id":cid,"newco":newco,"ok":False,"err":"associations read failed: "+str(assoc)[:80]})
         print("FAIL  "+cid+" associations read failed - contact left untouched"); continue
     old=[a['toObjectId'] for a in assoc.get('results',[]) if str(a['toObjectId'])!=str(coid)]
+    # Capture the company we are about to detach BEFORE detaching it. Re-association used to
+    # destroy this outright: the association was deleted and the only trace left was a company
+    # NAME written into previous__company_domain_name (a domain field), so nobody could get back
+    # to the record. Keep the id, the name and the real domain.
+    prev_co_id=prev_co_name=prev_co_domain=None
+    if old:
+        oc=call('GET',f"https://api.hubapi.com/crm/v3/objects/companies/{old[0]}?properties=name,domain",
+                fatal=False)
+        if 'id' in oc:
+            prev_co_id=str(oc['id'])
+            prev_co_name=(oc.get('properties') or {}).get('name')
+            prev_co_domain=(oc.get('properties') or {}).get('domain')
     for o in old: call('DELETE',f"https://api.hubapi.com/crm/v4/objects/contacts/{cid}/associations/companies/{o}")
     call('PUT',f"https://api.hubapi.com/crm/v4/objects/contacts/{cid}/associations/companies/{coid}",
       [{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":1},{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":279}])
     # 3. reconcile contact
-    ls=m.get('ls') or ("ConnectandSell Prospect" if dm else "Not Decision Maker")
+    # THIS PROCESS NO LONGER WRITES "Not Decision Maker". It reads dated employment history, which
+    # can establish WHERE somebody works and cannot establish whether they can authorise a purchase.
+    # That judgement was being derived from title strings - "Chairman", "Founder", "Advisor" - and
+    # it ejected a Founder-CEO, an Executive Chairman, a VP of Sales and a Regional Sales Manager
+    # who were all still in seat. Worse, it was written alongside verdict `no`, which asserts the
+    # person has LEFT: two different questions collapsed into one field, corrupting the one the
+    # retry and staleness logic keys on. A re-associated mover is a valid prospect at their new
+    # employer; buyability is a human's call.
+    ls=m.get('ls') or "ConnectandSell Prospect"
     wt,wt_why=title_ok(m,dom)
     if m.get('title') and not wt: print("      no-jobtitle "+cid+": "+wt_why+" (ai__job_title still written)")
     tnote=""
@@ -137,7 +164,7 @@ for m in M:
           f"{'ai__job_title set; ' if m.get('title') else ''}"
           f"{tnote}"
           f"{'LinkedIn URL corrected; ' if m.get('li_url') else ''}"
-          f"{'decision-maker' if dm else 'not a decision-maker'} at new company.")
+          f"previous employer record {prev_co_id or 'unknown'} preserved.")
     head=f"Verified - {D} - "
     ev=head+str(m.get('ev',''))[:max(0,900-len(head)-len(tail))]+tail
     if prev_ev: ev=(ev+" || "+prev_ev)[:990]
@@ -148,7 +175,7 @@ for m in M:
        "ai__reassociated_on":D,
        "ai__sources_confirming":m.get('sources',1),
        "ai__contact_evidence":ev,"hs_lead_status":ls,
-       "validated__linkedin_or_manually":("Yes" if dm else "Needs Updated")}
+       "validated__linkedin_or_manually":"Yes"}
     if m.get('title'): p["ai__job_title"]=m['title']
     if wt: p["jobtitle"]=m['title']
     if not dom:
@@ -165,7 +192,13 @@ for m in M:
     # can be aged. Write it only when the caller actually judged recency.
     if m.get('role_change') in ('yes','no'): p["ai__li_recent_role_change"]=m['role_change']
     if m.get('li_url'): p["hs_linkedin_url"]=m['li_url']
-    if prev_company and prev_company!=newco: p["previous__company_domain_name"]=prev_company
+    # previous__company_domain_name is a DOMAIN field; it was being given a company NAME.
+    if prev_co_domain: p["previous__company_domain_name"]=prev_co_domain
+    if prev_co_id:
+        p["ai__previously_associated_company_id"]=prev_co_id
+        p["ai__previously_associated_company"]=PORTAL_RECORD_URL+prev_co_id
+    if prev_co_name or prev_company:
+        p["ai__previously_associated_company_name"]=prev_co_name or prev_company
     u=call('PATCH',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}",{"properties":p}); ok='id' in u
     t_held=None
     if ok and wt:
