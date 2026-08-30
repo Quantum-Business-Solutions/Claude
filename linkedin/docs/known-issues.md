@@ -348,3 +348,67 @@ reporting SUCCEEDED while accomplishing nothing.
 
 Until one of them lands, anything needing LinkedIn runs from an interactive
 session, and no schedule should be trusted to do it.
+
+## RESOLVED: Unipile is reachable over 443 after all
+
+2026-08-30. Everything above about needing a connector grant, a support ticket,
+or a different DSN is **superseded**. Unipile documents this exact case and
+supports it today:
+
+> "If custom ports are blocked in your environment, you can use `port` as a
+> query parameter to stay on standard 443."
+> — https://developer.unipile.com/docs/api-usage
+
+```
+https://api30.unipile.com:16072/api/v1/accounts        -> connection reset
+https://api30.unipile.com/api/v1/accounts?port=16072   -> HTTP 200
+```
+
+Move the tenant port out of the host and into the query string. Same key, same
+data, straight from a cloud container with no MCP connector involved.
+
+### Verified live on every call both programs make
+
+| Endpoint | Result |
+|---|---|
+| `/accounts` | 200 — 7 accounts, identity asserted |
+| `/users/{id}?linkedin_sections=experience` | 200 — 11 dated rows |
+| `/users/{id}/comments` | 200 — **2,775 comments over 26 pages** |
+| `/users/{id}/posts` | 200 — posts with `parsed_datetime` |
+
+Full pipeline end to end, using only the environment secret:
+
+```
+identity asserted: Shawn Peterson | S6ua4SfUT4SMRFZFOmyUzQ
+Reading Rule     : yes (1.5y) — current role 'Chief Marketing Officer'
+dedupe set       : 2448 posts, from 2775 comments (fully paged)
+post pipeline    : 5 fetched, 1 eligible in a 30d window
+```
+
+### What this changes
+
+- **No connector grant needed.** Routine-fired sessions still have no MCP
+  tools, and it no longer matters.
+- **No support ticket needed.** The capability already exists.
+- **The environment secret becomes sufficient**, which is what it looked like
+  it should be all along.
+- **Response headers are readable again** — the MCP HAR passthrough returned
+  the body only, so `Retry-After` and `X-RateLimit-*` were invisible. Over
+  direct HTTPS they are not.
+- **The verification routine is unblocked too.** Same one-line change to
+  `contact-verification/scripts/unipile.py`: drop the port from the host and
+  add it as a parameter. That routine has been halting since June.
+
+### A note on the dedupe cost
+
+Shawn's comment feed is **2,775 comments across 26 pages**, and the dedupe set
+must be complete or it silently re-comments on older posts. That is 26
+sequential calls per engagement run — slow but correct. Worth revisiting only
+if run time becomes a problem; correctness is not negotiable here.
+
+### The lesson worth keeping
+
+The port block was real and correctly diagnosed. The mistake was reaching for
+the workaround (an MCP relay) instead of reading the vendor's documentation
+for the constraint. `unipile.py` already tried the same host on 443 — it just
+never tried it *with the port as a parameter*, which is the documented form.
