@@ -75,7 +75,13 @@ def validated_of(verdict,ls):
 TITLE_CONF_MIN=0.90
 # Hedge words in the evidence mean the title is not a 90% call, whatever number the caller passed.
 AMBIG=("caution","ambig","uncertain","unclear","probably","possibly","perhaps","assumed","appears to",
-       "may be","might be","succession","dormant","not updated","stale profile","conflict","unsure","?")
+       "may be","might be","succession","dormant","not updated","stale profile","conflict","unsure","?",
+       # Added from evidence strings found in the live portal that hedged and were acted on anyway.
+       # Deliberately phrase-matched, not word-matched: bare "confirm"/"verify" would collide with
+       # "CONFIRMED" and "Verified -", which open most GOOD evidence strings.
+       "cannot confirm","confirm before","confirm on","verify before","second check","needs a second",
+       "review persona","human review","wrong-link","unresolved","suspect","only moderate",
+       "not conclusive","suggestive")
 def title_ok(r):
     """Native `jobtitle` is written ONLY on an explicit >=0.90 flag. ai__sources_confirming is NOT a
     proxy for confidence - it is populated liberally and would wave nearly everything through."""
@@ -105,6 +111,23 @@ for r in V:
         refused.append((r['id'],"ls on a yes verdict - RECORD DROPPED")); continue
     if ls and ls not in LS_OK:
         refused.append((r['id'],"bad ls '"+str(ls)+"' - RECORD DROPPED")); continue
+    # EJECTION GATE. Every literal in LS_OK removes a human being from every calling list, and this
+    # write used to carry NO confidence requirement at all - while the reversible, cosmetic
+    # `jobtitle` write was gated behind title_conf >= 0.90 AND this same hedge scan. The asymmetry
+    # was exactly backwards: the consequential write was the unguarded one.
+    # Observed in production (contact 1286948): evidence hedged three separate ways - "PROBABLY
+    # MOVED ... suggestive, not conclusive ... needs a second check" - ejected the contact exactly
+    # as hard as a certainty would have. A caveat in prose must not fire a hard action.
+    # Refuse the whole record rather than write the verdict without the ejection: a `no` with no
+    # lead status is the dialable-but-departed state the check below already refuses, and it would
+    # also bank a verdict that stops queue.py ever surfacing the contact again.
+    if ls:
+        blob=((r.get('ev') or '')+' '+(r.get('changed') or '')).lower()
+        hedge=[t for t in AMBIG if t in blob]
+        if hedge:
+            refused.append((r['id'],"ejecting ls '"+ls+"' on hedged evidence ("+", ".join(hedge[:3])
+                            +") - RECORD DROPPED. Firm up the evidence or file an issue for a human."))
+            continue
     if verdict=='no' and not ls:
         # a `no` with no lead status never ejects the contact, and queue.py will never surface it
         # again because it now carries a verdict -> a dialable record proven to have left. Refuse.

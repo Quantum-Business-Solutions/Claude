@@ -21,10 +21,14 @@ failure; a rep discovering the truth on a call is the expensive one.
 ## Credentials & access
 - HubSpot: `export TOKEN=<PAT>` (see `qbs-hubspot-private-app`). Portal 20682069 unless told otherwise.
 - NeverBounce: `export NB=<key>` (email rung only).
-- LinkedIn: **Unipile MCP tool only** (`mcp__Unipile__execute-request`, harRequest form). Direct
-  curl to the Unipile port is blocked by egress. **Allowlist — use ONLY these account_id values:**
-  `S6ua4SfUT4SMRFZFOmyUzQ` and `7lBoyXuETqKdiJYLj5HBGA`. The other connected accounts are CLIENT
-  identities; reading prospect profiles through them is not recoverable. Fail closed on anything else.
+- LinkedIn: **`scripts/unipile.py`**, which runs a v2-first ladder over plain HTTPS on port 443.
+  Prefer it everywhere — it is the ONLY path that works in a Routine-fired session, because those
+  get no MCP connector tools at all. `mcp__Unipile__execute-request` still works interactively and
+  is a fallback, not the default. (v1 sits on port 16072, which cloud egress cannot reach; it is
+  reached through the Supabase relay in `relay/` and needs `UNIPILE_RELAY_TOKEN`.)
+  **Allowlist — use ONLY these account_id values:** `acc_01m19mb99wfzvsb68etkn5n87x` on v2, or
+  `S6ua4SfUT4SMRFZFOmyUzQ` / `7lBoyXuETqKdiJYLj5HBGA` on v1. Every other account on that tenant is
+  a CLIENT identity; reading prospect profiles through one is not recoverable. Fail closed.
 - ZoomInfo / NeverBounce via their MCP/REST tools for fallbacks.
 
 ## Modes
@@ -158,8 +162,13 @@ measure coverage against the intake snapshot, never against live membership.
 - **no** = that company's row has an end date, or a different employer is current. Set lead status
   to exactly one literal: `No Longer with Company` (moved) / `Need Updated Info` (moved, destination
   ambiguous/fractional) / `Retired - Remove from All Lists` / `Not Decision Maker` (employed, cannot buy).
-- **unreadable** = a TRANSIENT failure to read: 422/locked, rate-limited, a profile that would not
-  load. Worth retrying in days. Name what was tried.
+- **unreadable** = a TRANSIENT failure to read a profile that EXISTS: 422/locked, a profile that would not
+  load for this account. It is a statement about ONE contact.
+  **A rate limit is NOT an unreadable.** A 429, a transport error, an auth failure or an outage is a
+  statement about the INSTRUMENT, not about any person. Back off and retry; if reads keep failing,
+  HALT the run and report it. Writing an outage as verdicts creates durable lies about real people
+  that outlive the outage by 14 days each and are indistinguishable from genuine findings.
+  A genuine `unreadable` is worth retrying in days. Name every source that was tried.
 - **no_profile** = there is no LinkedIn profile to read, or a real profile carries no dated history.
   This is PERMANENT for this method — retrying costs a read and buys nothing. Splitting it out of
   `unreadable` is what lets the queue retry the two at different intervals (14 days vs 180) and

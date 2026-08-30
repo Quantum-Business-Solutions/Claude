@@ -47,10 +47,14 @@ REQUIRED={
 # 'linkedin_sections=experience' is a substring of 'linkedin_sections=experience_preview',
 # so a checkout still asking for the preview would satisfy the positive marker while
 # quietly truncating employment history.
-# Match the REQUEST form, not the bare word - unipile.py's docstring documents the preview
-# and the measured row counts on purpose, and that prose must not trip the guard.
+# Matched as a REGEX against the request form, not as a bare word - unipile.py's docstring
+# documents the preview and its measured row counts on purpose, and that prose must not trip the
+# guard. The first version of this check matched the literal 'sections=experience_preview', which
+# caught only the v1 spelling and let the v2 form ('with_sections=linkedin_experience_preview')
+# straight through - i.e. it defended the deprecated fallback while the primary transport, which
+# carries every run, stayed wide open.
 FORBIDDEN={
- 'unipile.py':      [('sections=experience_preview',
+ 'unipile.py':      [(r'sections\s*=\s*[\'"]?[a-z_]*experience_preview',
                       'the truncating preview section. It returned 5 rows where the full '
                       'section returns 15, so a current employer can fall outside it, read '
                       'as departed, and eject a real contact as "No Longer with Company"')],
@@ -65,8 +69,9 @@ for fn,checks in FORBIDDEN.items():
     p=os.path.join(HERE,fn)
     if not os.path.exists(p): continue
     src=open(p).read()
-    for token,why in checks:
-        if token in src: fail.append("CODE  "+fn+" still contains "+repr(token)+" - "+why)
+    for pat,why in checks:
+        m=re.search(pat,src)
+        if m: fail.append("CODE  "+fn+" still requests "+repr(m.group(0))+" - "+why)
 if any(f.startswith("CODE") for f in fail):
     print("\n".join(fail))
     print("\nHALT: this checkout predates the verification QA fixes. A run from here would")
