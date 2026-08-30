@@ -2104,7 +2104,10 @@
    "verified_emails": [],
    "evidence": "a PL URL appears in a workflow action",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "599206302",
@@ -2119,7 +2122,10 @@
    ],
    "evidence": "a PL URL appears in a workflow action; sends 1 verified PL email(s), e.g. \"DV: Chiropractor WF: Final Email ALL\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "TOUCHES",
+   "action": "update the PL link only -- not a PL asset"
   },
   {
    "id": "311967650",
@@ -2142,7 +2148,10 @@
    ],
    "evidence": "a PL URL appears in a workflow action; sends 3 verified PL email(s), e.g. \"DV WF: PL Guide_BoF_Danielle Design & Branding #2 \"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "335276358",
@@ -2165,7 +2174,10 @@
    ],
    "evidence": "sends 3 verified PL email(s), e.g. \"DV WF: PL Guide_BoF_Paul #1 Build Product Line Sub\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "1685642843",
@@ -2196,7 +2208,10 @@
    ],
    "evidence": "sends 5 verified PL email(s), e.g. \"Private Label: High Priority - Reach out\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "589741064",
@@ -2239,7 +2254,10 @@
    ],
    "evidence": "sends 8 verified PL email(s), e.g. \"DV: Private Label MOF 2_Paul_1ngredients Guide\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "55131036",
@@ -2266,7 +2284,10 @@
    ],
    "evidence": "a PL URL appears in a workflow action; sends 4 verified PL email(s), e.g. \"4: Private_Label_Guide_ToF_Danielle_ Step-by-step \"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "63730093",
@@ -2293,7 +2314,10 @@
    ],
    "evidence": "a PL URL appears in a workflow action; sends 4 verified PL email(s), e.g. \"2: Private_Label_Guide_ToF_Paul_How to Make Money \"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "587253915",
@@ -2328,7 +2352,10 @@
    ],
    "evidence": "sends 6 verified PL email(s), e.g. \"DV: Private Label MOF 2_Danielle_Supplement Format\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "33007370",
@@ -2338,7 +2365,10 @@
    "verified_emails": [],
    "evidence": "a PL URL appears in a workflow action",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "341434631",
@@ -2365,7 +2395,10 @@
    ],
    "evidence": "sends 4 verified PL email(s), e.g. \"DV WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro\"",
    "strength": "STRONG",
-   "cross_brand": true
+   "cross_brand": true,
+   "named_pl": false,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "583504536",
@@ -2424,7 +2457,10 @@
    ],
    "evidence": "a PL URL appears in a workflow action; sends 12 verified PL email(s), e.g. \"DV: White_Label_World_Expo Email #1\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "1824975380",
@@ -2439,7 +2475,10 @@
    ],
    "evidence": "sends 1 verified PL email(s), e.g. \"Private Label Lead - First Contact\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "clone + restage for Praxera"
   },
   {
    "id": "56533623",
@@ -2454,7 +2493,10 @@
    ],
    "evidence": "sends 1 verified PL email(s), e.g. \"Danielle: DV Mission & Register\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "TOUCHES",
+   "action": "update the PL link only -- not a PL asset"
   },
   {
    "id": "1781779258",
@@ -2464,7 +2506,10 @@
    "verified_emails": [],
    "evidence": "a PL URL appears in a workflow action",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "TOUCHES",
+   "action": "update the PL link only -- not a PL asset"
   },
   {
    "id": "31800626",
@@ -2479,7 +2524,10 @@
    ],
    "evidence": "sends 1 verified PL email(s), e.g. \"Paul: DV Mission & Register\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "TOUCHES",
+   "action": "update the PL link only -- not a PL asset"
   },
   {
    "id": "4270851",
@@ -2494,7 +2542,10 @@
    ],
    "evidence": "sends 1 verified PL email(s), e.g. \"Danielle: DV Mission & Register\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "TOUCHES",
+   "action": "update the PL link only -- not a PL asset"
   },
   {
    "id": "1736919684",
@@ -2504,7 +2555,10 @@
    "verified_emails": [],
    "evidence": "a PL URL appears in a workflow action",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "TOUCHES",
+   "action": "update the PL link only -- not a PL asset"
   },
   {
    "id": "56533624",
@@ -2519,7 +2573,10 @@
    ],
    "evidence": "sends 1 verified PL email(s), e.g. \"Paul: DV Mission & Register\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "TOUCHES",
+   "action": "update the PL link only -- not a PL asset"
   },
   {
    "id": "1738782378",
@@ -2542,7 +2599,10 @@
    ],
    "evidence": "sends 3 verified PL email(s), e.g. \"DV: # High Priority (Branded) 5Rs\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "601906285",
@@ -2565,7 +2625,10 @@
    ],
    "evidence": "a PL URL appears in a workflow action; sends 3 verified PL email(s), e.g. \"DV WF: PL Guide_BoF_Danielle Design & Branding #2 \"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "605308598",
@@ -2592,7 +2655,10 @@
    ],
    "evidence": "sends 4 verified PL email(s), e.g. \"DV: Client_Onboarding_BoF_Danielle_#1\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "605627546",
@@ -2619,7 +2685,10 @@
    ],
    "evidence": "sends 4 verified PL email(s), e.g. \"DV: Client_Onboarding_BoF_Danielle_#3\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "605315207",
@@ -2646,7 +2715,10 @@
    ],
    "evidence": "sends 4 verified PL email(s), e.g. \"DV: Client_Onboarding_BoF_Paul_#1\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "605629536",
@@ -2673,7 +2745,10 @@
    ],
    "evidence": "sends 4 verified PL email(s), e.g. \"DV: Client_Onboarding_BoF_Paul_#3\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "293599037",
@@ -2704,7 +2779,10 @@
    ],
    "evidence": "sends 5 verified PL email(s), e.g. \"DV: PL_Guide_MoF_Danielle_Liquid_Supplements (CRO \"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "171646332",
@@ -2731,7 +2809,10 @@
    ],
    "evidence": "a PL URL appears in a workflow action; sends 4 verified PL email(s), e.g. \"Private_Label_Guide_MoF_Paul_Liquid_Products (Clon\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "1774406954",
@@ -2758,7 +2839,10 @@
    ],
    "evidence": "sends 4 verified PL email(s), e.g. \"Private Label: High Priority - Reach out\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "1728134585",
@@ -2785,7 +2869,10 @@
    ],
    "evidence": "sends 4 verified PL email(s), e.g. \"2: Private_Label_Guide_ToF_Paul_How to Make Money \"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "567755323",
@@ -2820,7 +2907,10 @@
    ],
    "evidence": "a PL URL appears in a workflow action; sends 6 verified PL email(s), e.g. \"DV WF: Private Label Supplements: Ingredients, Tes\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "45505050",
@@ -2835,7 +2925,10 @@
    ],
    "evidence": "sends 1 verified PL email(s), e.g. \"Private Label Lead - First Contact\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "56533618",
@@ -2850,7 +2943,10 @@
    ],
    "evidence": "sends 1 verified PL email(s), e.g. \"Danielle: DV Mission & Register\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "TOUCHES",
+   "action": "update the PL link only -- not a PL asset"
   },
   {
    "id": "56533609",
@@ -2865,7 +2961,10 @@
    ],
    "evidence": "sends 1 verified PL email(s), e.g. \"Danielle: DV Mission & Register\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "TOUCHES",
+   "action": "update the PL link only -- not a PL asset"
   },
   {
    "id": "20196437",
@@ -2875,7 +2974,10 @@
    "verified_emails": [],
    "evidence": "name only -- no PL link and no verified PL email",
    "strength": "WEAK",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "20072677",
@@ -2885,7 +2987,10 @@
    "verified_emails": [],
    "evidence": "name only -- no PL link and no verified PL email",
    "strength": "WEAK",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": true,
+   "tier": "CORE",
+   "action": "archive/ignore (already off)"
   },
   {
    "id": "56535712",
@@ -2900,7 +3005,10 @@
    ],
    "evidence": "sends 1 verified PL email(s), e.g. \"Paul: DV Mission & Register\"",
    "strength": "STRONG",
-   "cross_brand": false
+   "cross_brand": false,
+   "named_pl": false,
+   "tier": "TOUCHES",
+   "action": "update the PL link only -- not a PL asset"
   }
  ],
  "forms_on_new_site": [
