@@ -255,14 +255,27 @@ def check_ledger_alive(token: str, rep: Report) -> None:
         per_run=caps.target_high,
         ledger_writes_in_window=recent,
         ledger_writes_ever=ever,
+        # Preflight reads HubSpot only; the independent count comes from
+        # Unipile and belongs to the routine that actually sends.
+        independent_count=None,
     )
-    rep.add(
-        "ledger", not decision.halted,
-        f"{today} today / {recent} in {LEDGER_STALE_DAYS}d / {ever:,} since "
-        f"epoch {LEDGER_EPOCH} "
-        f"-> {decision.reason}",
-        EXIT_ENV if decision.halted else None,
-    )
+    state = (f"{today} today / {recent} in {LEDGER_STALE_DAYS}d / {ever:,} "
+             f"since epoch {LEDGER_EPOCH}")
+    if decision.needs_independent_count:
+        # Not a portal fault and not preflight's to settle. Say exactly whose
+        # job it is rather than passing silently or failing the whole run.
+        rep.add(
+            "ledger", True,
+            f"{state} -> ledger is empty since the epoch. Preflight cannot "
+            "tell 'nothing sent' from 'not recording' without a Unipile "
+            "count. NOT CLEARED TO SEND: the send path must supply one and "
+            "will halt if it cannot.",
+        )
+    else:
+        rep.add(
+            "ledger", not decision.halted, f"{state} -> {decision.reason}",
+            EXIT_ENV if decision.halted else None,
+        )
 
 
 def check_watch_list(token: str, rep: Report) -> None:
@@ -283,6 +296,68 @@ def check_watch_list(token: str, rep: Report) -> None:
         rep.add("watch_list", False, str(exc), EXIT_ENV)
 
 
+def check_send_account(rep: Report) -> None:
+    """Reconcile the send account across both Unipile versions.
+
+    Shawn is connected twice on v1 and both sessions are live on one LinkedIn
+    login. They share his immutable member id, so `assert_identity` cannot
+    separate them — only the account id can, which makes `SHAWN_ACCOUNT_ID`
+    load-bearing and makes a silent divergence between the versions dangerous.
+
+    Skipped rather than failed when no Unipile key is present: a HubSpot-only
+    run (watch-sync, verification) legitimately does not need one, and a check
+    that cannot run must say so instead of passing.
+    """
+    key = os.environ.get("UNIPILE_V2_API_KEY", "").strip()
+    if not key:
+        rep.add("send_account", True,
+                "SKIPPED - no UNIPILE_V2_API_KEY. The v1/v2 account "
+                "reconciliation did not run; do not send on this preflight.")
+        return
+
+    from qbs_linkedin.transport import V2_BASE, V2_ACCOUNT_ID
+    try:
+        req = urllib.request.Request(
+            f"{V2_BASE}/accounts/{V2_ACCOUNT_ID}",
+            headers={"X-API-KEY": key, "accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            acct = json.loads(resp.read() or b"{}")
+    except Exception as exc:
+        rep.add("send_account", False, f"v2 account read failed: {exc}", EXIT_ENV)
+        return
+
+    member = acct.get("user_id")
+    mapped = (acct.get("metadata") or {}).get("v1_account_id")
+
+    if member != cfg.SHAWN_PROVIDER_ID:
+        rep.add("send_account", False,
+                f"v2 account {V2_ACCOUNT_ID} belongs to member {member}, "
+                f"expected {cfg.SHAWN_PROVIDER_ID} - refusing to act as "
+                "someone else", EXIT_ENV)
+        return
+
+    if mapped not in cfg.SHAWN_V1_ACCOUNT_IDS:
+        rep.add("send_account", False,
+                f"v2 maps to v1 account {mapped!r}, which is not one of the "
+                f"known pair {cfg.SHAWN_V1_ACCOUNT_IDS}. The account picture "
+                "has changed under the config - reconcile before sending",
+                EXIT_SCHEMA)
+        return
+
+    if mapped != cfg.SHAWN_ACCOUNT_ID:
+        # Not a fault, but the two transports are pointed at different
+        # sessions of the same person, and only one of them should survive.
+        rep.add("send_account", True,
+                f"member id matches. NOTE: v2 uses {mapped}, config sends as "
+                f"{cfg.SHAWN_ACCOUNT_ID} - two live sessions on one LinkedIn "
+                "login. Both work; pick one and disconnect the other before "
+                "the first send (errors/multiple_sessions is a HALT).")
+        return
+
+    rep.add("send_account", True,
+            f"v1 and v2 agree on {mapped}, member {member}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--json", action="store_true", help="machine-readable output")
@@ -300,6 +375,7 @@ def main() -> int:
         check_property_schema(token, rep)
         check_pool(token, rep)
         check_ledger_alive(token, rep)
+        check_send_account(rep)
         if not args.skip_watch_list:
             check_watch_list(token, rep)
 

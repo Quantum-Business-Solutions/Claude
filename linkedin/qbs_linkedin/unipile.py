@@ -37,7 +37,11 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from .config import SHAWN_ACCOUNT_ID, assert_send_account
+from .config import (
+    PROFILE_SECTIONS_PARAM,
+    SHAWN_ACCOUNT_ID,
+    assert_send_account,
+)
 from .errors import Action, Verdict, classify
 
 DEFAULT_DSN = "api30.unipile.com:16072"
@@ -158,7 +162,8 @@ class Unipile:
             return account
         raise UnipileError(f"account {self.account_id} not found on this key")
 
-    def profile(self, identifier: str, sections: str = "experience") -> dict:
+    def profile(self, identifier: str,
+                sections: str = PROFILE_SECTIONS_PARAM) -> dict:
         """Fetch a profile WITH dated experience rows.
 
         `sections` is not optional in practice: omitting it returns HTTP 200

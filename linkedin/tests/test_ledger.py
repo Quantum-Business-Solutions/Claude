@@ -98,17 +98,20 @@ class TestCapFailsClosed:
 
     def test_normal_run_gets_its_allowance(self):
         d = decide_allowance(posted_today=3, per_day=12, per_run=2,
-                             ledger_writes_in_window=9, ledger_writes_ever=150)
+                             ledger_writes_in_window=9, ledger_writes_ever=150,
+                             independent_count=None)
         assert d.allowance == 2 and not d.halted and bool(d)
 
     def test_allowance_is_clamped_by_remaining_daily_capacity(self):
         d = decide_allowance(posted_today=11, per_day=12, per_run=2,
-                             ledger_writes_in_window=9, ledger_writes_ever=150)
+                             ledger_writes_in_window=9, ledger_writes_ever=150,
+                             independent_count=None)
         assert d.allowance == 1
 
     def test_daily_cap_reached(self):
         d = decide_allowance(posted_today=12, per_day=12, per_run=2,
-                             ledger_writes_in_window=9, ledger_writes_ever=150)
+                             ledger_writes_in_window=9, ledger_writes_ever=150,
+                             independent_count=None)
         assert d.allowance == 0 and not bool(d)
         assert "daily cap reached" in d.reason
 
@@ -116,16 +119,43 @@ class TestCapFailsClosed:
         # The live condition: 153 historic tasks, none since 2026-06-01. A
         # naive reading is "0 sent today, full capacity available".
         d = decide_allowance(posted_today=0, per_day=12, per_run=2,
-                             ledger_writes_in_window=0, ledger_writes_ever=153)
+                             ledger_writes_in_window=0, ledger_writes_ever=153,
+                             independent_count=None)
         assert d.allowance == 0
         assert d.halted
         assert "not recording" in d.reason
 
-    def test_a_genuinely_new_ledger_is_not_treated_as_dead(self):
-        # No history and no recent writes is a first run, not a failure.
+    def test_a_genuinely_new_ledger_proceeds_ONLY_on_a_second_opinion(self):
+        # No history and no recent writes is ambiguous: a first run and a
+        # ledger that has never recorded anything read identically. Unipile
+        # confirming zero sends is what separates them.
         d = decide_allowance(posted_today=0, per_day=12, per_run=2,
-                             ledger_writes_in_window=0, ledger_writes_ever=0)
+                             ledger_writes_in_window=0, ledger_writes_ever=0,
+                             independent_count=0)
         assert d.allowance == 2 and not d.halted
+
+    def test_an_empty_ledger_without_a_second_opinion_refuses_to_send(self):
+        # The hole this closed: omitting independent_count used to grant a
+        # full day's capacity out of a ledger that had never recorded a
+        # single send. Send 20, lose every write, read 0, send 20 more.
+        d = decide_allowance(posted_today=0, per_day=12, per_run=2,
+                             ledger_writes_in_window=0, ledger_writes_ever=0,
+                             independent_count=None)
+        assert d.allowance == 0 and d.halted
+        assert d.needs_independent_count
+        assert "refusing to send blind" in d.reason
+
+    def test_an_empty_ledger_contradicted_by_unipile_halts(self):
+        d = decide_allowance(posted_today=0, per_day=12, per_run=2,
+                             ledger_writes_in_window=0, ledger_writes_ever=0,
+                             independent_count=20)
+        assert d.halted and not d.needs_independent_count
+
+    def test_independent_count_has_no_default(self):
+        # It was optional once, which made the fail-closed guarantee opt-in.
+        import inspect
+        sig = inspect.signature(decide_allowance)
+        assert sig.parameters["independent_count"].default is inspect.Parameter.empty
 
     def test_divergence_from_an_independent_count_halts(self):
         # Unipile shows 9 sends today, the ledger shows 1. The ledger is
@@ -148,13 +178,15 @@ class TestCapFailsClosed:
         # A dead ledger with a plausible-looking count is still a halt: the
         # count cannot be trusted, so neither can "under the cap".
         d = decide_allowance(posted_today=4, per_day=12, per_run=2,
-                             ledger_writes_in_window=0, ledger_writes_ever=153)
+                             ledger_writes_in_window=0, ledger_writes_ever=153,
+                             independent_count=None)
         assert d.halted
 
     @pytest.mark.parametrize("posted", [0, 1, 5, 11, 12, 50])
     def test_allowance_is_never_negative_or_above_per_run(self, posted):
         d = decide_allowance(posted_today=posted, per_day=12, per_run=2,
-                             ledger_writes_in_window=9, ledger_writes_ever=150)
+                             ledger_writes_in_window=9, ledger_writes_ever=150,
+                             independent_count=None)
         assert 0 <= d.allowance <= 2
 
     def test_decision_is_falsy_when_it_blocks(self):
@@ -197,20 +229,24 @@ class TestLedgerEpoch:
         # What the pre-epoch behaviour did: 153 historic, none recent -> halt,
         # on every run, with no way out.
         d = decide_allowance(posted_today=0, per_day=60, per_run=20,
-                             ledger_writes_in_window=0, ledger_writes_ever=153)
+                             ledger_writes_in_window=0, ledger_writes_ever=153,
+                             independent_count=None)
         assert d.halted
 
     def test_scoped_to_the_epoch_the_first_run_proceeds(self):
         # Same portal, same day — but history counted from LEDGER_EPOCH is 0,
-        # which is a fresh ledger rather than a dead one.
+        # which is a fresh ledger rather than a dead one. It still needs
+        # Unipile to confirm the zero before it may send.
         d = decide_allowance(posted_today=0, per_day=60, per_run=20,
-                             ledger_writes_in_window=0, ledger_writes_ever=0)
+                             ledger_writes_in_window=0, ledger_writes_ever=0,
+                             independent_count=0)
         assert not d.halted and d.allowance == 20
 
     def test_the_standard_applies_again_from_the_second_run(self):
         # Once post-epoch writes exist, silence is a fault once more.
         d = decide_allowance(posted_today=0, per_day=60, per_run=20,
-                             ledger_writes_in_window=0, ledger_writes_ever=8)
+                             ledger_writes_in_window=0, ledger_writes_ever=8,
+                             independent_count=None)
         assert d.halted
 
     def test_epoch_is_a_date_not_a_datetime(self):

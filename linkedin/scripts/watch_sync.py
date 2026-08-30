@@ -223,13 +223,45 @@ def write_back(token: str, resolved: list[dict], dry_run: bool) -> dict:
     written = 0
     if updates and not dry_run:
         for i in range(0, len(updates), 100):
-            _request("POST", "/crm/v3/objects/contacts/batch/update", token,
-                     {"inputs": updates[i:i + 100]})
-            written += len(updates[i:i + 100])
+            chunk = updates[i:i + 100]
+            resp = _request("POST", "/crm/v3/objects/contacts/batch/update",
+                            token, {"inputs": chunk})
+            # HubSpot batch endpoints answer 207 Multi-Status with per-input
+            # errors, and urllib treats 207 as success. Counting len(chunk)
+            # here reported every input written when half had failed — a
+            # uniqueness conflict on the URL key surfaces exactly this way.
+            # Count what came BACK, and account for every input that did not.
+            results = resp.get("results") or []
+            written += len(results)
+
+            returned = {str(r.get("id")) for r in results}
+            explained = set()
+            for err in resp.get("errors") or []:
+                cid = str((err.get("context") or {}).get("id") or "")
+                explained.add(cid)
+                rejected.append({
+                    "contact_id": cid or None,
+                    "reason": f"HubSpot: {err.get('message', err)}",
+                })
+            # Anything neither accepted nor explained vanished without a
+            # reason, which still must not read as written.
+            for item in chunk:
+                if item["id"] not in returned and item["id"] not in explained:
+                    rejected.append({
+                        "contact_id": item["id"],
+                        "reason": "submitted but absent from the HubSpot "
+                                  f"response (batch status "
+                                  f"{resp.get('status', 'unknown')!r})",
+                    })
 
     return {
         "written": written,
         "would_write": len(updates) if dry_run else 0,
+        "submitted": len(updates),
+        # Loud when the two disagree. A routine that says "56 written" while
+        # HubSpot accepted 31 is the failure this whole program exists to
+        # prevent, one layer down.
+        "complete": dry_run or written == len(updates),
         "rejected": rejected,
         "dry_run": dry_run,
     }

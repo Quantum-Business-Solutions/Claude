@@ -8,6 +8,11 @@ from datetime import date
 
 import pytest
 
+from qbs_linkedin.config import (
+    VERDICT_MOVED,
+    VERDICT_UNREADABLE,
+    VERDICT_YES,
+)
 from qbs_linkedin.errors import Action, classify, should_abort_run
 from qbs_linkedin.verify import (
     InstrumentError,
@@ -251,3 +256,100 @@ class TestErrorTaxonomy:
     def test_error_budget(self):
         assert not should_abort_run(2)
         assert should_abort_run(3)
+
+
+class TestAnUnreadableEndDateIsNeverAVerdict:
+    """LinkedIn emits end-date forms parse_li_date does not accept.
+
+    `is_current` was `end is None`, so an unparseable end read as "still
+    there": verdict `yes`, a fabricated tenure, and an evidence string
+    asserting "no end date" about a role that finished years earlier. A rep
+    then dials the old employer — the outcome this program exists to prevent.
+    """
+
+    ENDED = {"work_experience": [
+        {"company": "Acme Corp", "position": "VP Sales",
+         "start": "1/1/2019", "end": "Jan 2023"},
+    ]}
+
+    def test_an_unparseable_end_is_unreadable_not_yes(self):
+        v = verify_employment(self.ENDED, "Acme Corp", today=date(2026, 8, 30))
+        assert v.verdict == VERDICT_UNREADABLE
+        assert "could not be parsed" in v.evidence
+        assert "'Jan 2023'" in v.evidence
+
+    def test_it_never_reports_a_tenure_it_cannot_support(self):
+        v = verify_employment(self.ENDED, "Acme Corp", today=date(2026, 8, 30))
+        assert v.tenure_years is None
+
+    def test_an_absent_end_still_means_current(self):
+        # The fix must not break the ordinary case it sits next to.
+        v = verify_employment(
+            {"work_experience": [{"company": "Acme Corp", "position": "VP Sales",
+                                  "start": "1/1/2019", "end": None}]},
+            "Acme Corp", today=date(2026, 8, 30))
+        assert v.verdict == VERDICT_YES
+        assert v.tenure_years == 7.7
+
+    def test_a_role_with_an_unreadable_end_cannot_be_a_destination(self):
+        # It must not surface as "now at X" either.
+        v = verify_employment(
+            {"work_experience": [
+                {"company": "Mystery Co", "position": "CEO",
+                 "start": "1/1/2020", "end": "sometime"},
+                {"company": "Acme Corp", "position": "VP Sales",
+                 "start": "1/1/2015", "end": "5/1/2024"}]},
+            "Acme Corp", today=date(2026, 8, 30))
+        assert v.destination is None
+
+
+class TestDestinationRanking:
+    """`moved` drives re-association, so the destination must be the person's
+    actual job — not whichever role the array happens to list first."""
+
+    MOVED = {"work_experience": [
+        {"company": "Riverside Youth Baseball", "position": "Board Member",
+         "start": "3/1/2018", "end": None},
+        {"company": "Globex", "position": "Chief Revenue Officer",
+         "start": "6/1/2024", "end": None},
+        {"company": "Acme Corp", "position": "VP Sales",
+         "start": "1/1/2019", "end": "5/1/2024"},
+    ]}
+
+    def test_a_senior_role_outranks_a_longer_held_board_seat(self):
+        v = verify_employment(self.MOVED, "Acme Corp", today=date(2026, 8, 30))
+        assert v.verdict == VERDICT_MOVED
+        assert v.destination.company == "Globex"
+        assert v.destination_ambiguous is False
+
+    def test_array_order_does_not_decide(self):
+        reversed_profile = {"work_experience":
+                            list(reversed(self.MOVED["work_experience"]))}
+        v = verify_employment(reversed_profile, "Acme Corp",
+                              today=date(2026, 8, 30))
+        assert v.destination.company == "Globex"
+
+    def test_two_equal_senior_roles_are_flagged_for_a_human(self):
+        v = verify_employment(
+            {"work_experience": [
+                {"company": "Globex", "position": "Chief Revenue Officer",
+                 "start": "6/1/2024", "end": None},
+                {"company": "Initech", "position": "Chief Operating Officer",
+                 "start": "6/1/2024", "end": None},
+                {"company": "Acme Corp", "position": "VP Sales",
+                 "start": "1/1/2019", "end": "5/1/2024"}]},
+            "Acme Corp", today=date(2026, 8, 30))
+        assert v.destination_ambiguous is True
+        assert "needs a human" in v.evidence
+
+    def test_the_absent_company_path_ranks_too(self):
+        # The other branch that used to take current[0] blindly.
+        v = verify_employment(
+            {"work_experience": [
+                {"company": "Riverside Youth Baseball", "position": "Board Member",
+                 "start": "3/1/2018", "end": None},
+                {"company": "Globex", "position": "Chief Revenue Officer",
+                 "start": "6/1/2024", "end": None}]},
+            "Nowhere Ltd", today=date(2026, 8, 30))
+        assert v.verdict == VERDICT_MOVED
+        assert v.destination.company == "Globex"

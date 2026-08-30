@@ -26,6 +26,7 @@ from datetime import date, datetime
 
 from .config import (
     COMPANY_SUFFIXES,
+    SENIOR_TITLE_TOKENS,
     VERDICT_MOVED,
     VERDICT_NO,
     VERDICT_NO_PROFILE,
@@ -100,10 +101,53 @@ class Role:
     position: str
     start: date | None
     end: date | None
+    #: The raw `end` string when one was present but unparseable. LinkedIn
+    #: emits forms `parse_li_date` does not accept ("Jan 2023"), and an
+    #: absent end and an unreadable end mean opposite things: the first says
+    #: "still there", the second says "we do not know".
+    end_raw: str | None = None
+
+    @property
+    def end_unreadable(self) -> bool:
+        return self.end is None and self.end_raw is not None
 
     @property
     def is_current(self) -> bool:
-        return self.end is None
+        # An unreadable end must NEVER read as current. Doing so reported a
+        # role that finished three years ago as the person's present job,
+        # with a fabricated tenure and an evidence string asserting
+        # "no end date" as fact.
+        return self.end is None and not self.end_unreadable
+
+    @property
+    def is_senior(self) -> bool:
+        return any(tok in self.position.lower() for tok in SENIOR_TITLE_TOKENS)
+
+
+def _rank(role: Role) -> tuple[int, date]:
+    """Sort key for choosing someone's primary job among several current ones.
+
+    Seniority first, then most recent start. A board seat held since 2018
+    must not outrank a CRO role started last year simply by appearing first
+    in the array -- `work_experience` is not in chronological order.
+    """
+    return (1 if role.is_senior else 0, role.start or date.min)
+
+
+def choose_destination(current: tuple[Role, ...]) -> tuple[Role | None, bool]:
+    """The role that best represents where someone works now.
+
+    Returns (role, ambiguous). `ambiguous` is True when the top two cannot be
+    told apart, which is a queue-for-a-human signal rather than a reason to
+    pick one: a `moved` verdict drives re-association, so guessing here binds
+    the CRM record to the wrong employer.
+    """
+    if not current:
+        return None, False
+    ranked = sorted(current, key=_rank, reverse=True)
+    best = ranked[0]
+    ambiguous = len(ranked) > 1 and _rank(ranked[1]) == _rank(best)
+    return best, ambiguous
 
 
 def read_roles(profile: dict) -> list[Role]:
@@ -125,6 +169,9 @@ def read_roles(profile: dict) -> list[Role]:
             position=(entry.get("position") or "").strip(),
             start=parse_li_date(entry.get("start")),
             end=parse_li_date(entry.get("end")),
+            end_raw=(entry.get("end")
+                     if entry.get("end") and parse_li_date(entry.get("end")) is None
+                     else None),
         )
         for entry in entries
         if entry.get("company")
@@ -139,6 +186,12 @@ class Verification:
     tenure_years: float | None = None
     tenure_confident: bool = True
     current_roles: tuple[Role, ...] = field(default_factory=tuple)
+    #: The role this person appears to hold now, used as the re-association
+    #: target on a `moved` verdict.
+    destination: Role | None = None
+    #: True when the destination could not be told apart from another current
+    #: role. Queue these; never re-associate on a coin flip.
+    destination_ambiguous: bool = False
 
 
 def verify_employment(
@@ -162,6 +215,24 @@ def verify_employment(
         )
 
     current = tuple(r for r in roles if r.is_current)
+
+    # An end date we could not read on the very employer being checked means
+    # we cannot say whether they are still there. That is an unreadable
+    # profile, not a finding -- the same rule as a missing section.
+    if hubspot_company:
+        unreadable = next(
+            (r for r in roles
+             if r.end_unreadable and companies_match(r.company, hubspot_company)),
+            None,
+        )
+        if unreadable:
+            return Verification(
+                VERDICT_UNREADABLE,
+                f"role at '{unreadable.company}' carries an end date LinkedIn "
+                f"returned as {unreadable.end_raw!r}, which could not be "
+                "parsed — cannot tell whether it is current",
+                current_roles=current,
+            )
 
     if not hubspot_company:
         return Verification(
@@ -191,12 +262,17 @@ def verify_employment(
          and companies_match(r.company, hubspot_company)), None
     )
     if past:
-        destination = current[0].company if current else None
+        dest, ambiguous = choose_destination(current)
         return Verification(
-            VERDICT_MOVED if destination else VERDICT_NO,
+            VERDICT_MOVED if dest else VERDICT_NO,
             f"role at '{past.company}' ended {past.end}"
-            + (f"; now at '{destination}'" if destination else "; no current role listed"),
+            + (f"; now at '{dest.company}' ({dest.position})" if dest
+               else "; no current role listed")
+            + ("; SEVERAL current roles rank equally — destination needs a "
+               "human before re-associating" if ambiguous else ""),
             current_roles=current,
+            destination=dest,
+            destination_ambiguous=ambiguous,
         )
 
     if not current:
@@ -209,11 +285,16 @@ def verify_employment(
 
     # The CRM company is nowhere in a readable history. They are employed
     # elsewhere, so this is a move rather than an unreadable profile.
+    dest, ambiguous = choose_destination(current)
     return Verification(
         VERDICT_MOVED,
         f"CRM company '{hubspot_company}' absent from history; currently at "
-        f"'{current[0].company}'",
+        f"'{dest.company}' ({dest.position})"
+        + ("; SEVERAL current roles rank equally — destination needs a human "
+           "before re-associating" if ambiguous else ""),
         current_roles=current,
+        destination=dest,
+        destination_ambiguous=ambiguous,
     )
 
 

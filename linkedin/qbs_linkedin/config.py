@@ -16,7 +16,11 @@ from zoneinfo import ZoneInfo
 HUBSPOT_PORTAL_ID = "20682069"
 SHAWN_OWNER_ID = "103243559"
 
-UNIPILE_BASE = "https://api30.unipile.com:16072/api/v1"
+# NOTE: there is deliberately no UNIPILE_BASE constant here. The tenant DSN
+# carries a non-standard port (16072) that this environment cannot reach, and
+# a constant in that form is what kept both routines dark for twelve weeks.
+# The base URL is built by `unipile.base_url()`, which puts the host on 443
+# and moves the port into a `?port=` query parameter.
 
 #: The only account either routine may send or comment from.
 SHAWN_ACCOUNT_ID = "S6ua4SfUT4SMRFZFOmyUzQ"
@@ -24,14 +28,25 @@ SHAWN_ACCOUNT_ID = "S6ua4SfUT4SMRFZFOmyUzQ"
 SHAWN_PROVIDER_ID = "ACoAAAGv8WABzhfWcURPIaBDzbgiEWX5e781Etw"
 SHAWN_PUBLIC_IDENTIFIER = "shawnpetersonquantum"
 
-#: Shawn's LinkedIn is connected to Unipile TWICE, both sessions live on one
-#: login — a restriction risk in itself (the API's 401 enum includes
-#: errors/multiple_sessions). Live GET /accounts shows both carry
-#: premiumFeatures ["sales_navigator"] and premiumContractId 2014060643, so
-#: the watch-sync audit's claim that the classic account lacks the Sales Nav
-#: entitlement is FALSE. There is no reason to keep the second account and no
-#: code may reference it. Recommend disconnecting 7lBoyXuETqKdiJYLj5HBGA.
-DUPLICATE_ACCOUNT_TO_DISCONNECT = "7lBoyXuETqKdiJYLj5HBGA"
+#: Shawn's LinkedIn is connected to Unipile TWICE and both sessions are live
+#: on one login — a restriction risk in itself, since the API's 401 enum
+#: includes errors/multiple_sessions (which `errors.FATAL` treats as
+#: page-a-human).
+#:
+#: Verified live 2026-08-30: both ids resolve, both return his seven dated
+#: roles, and both report the same immutable member id — so `assert_identity`
+#: cannot tell them apart. Only the id itself distinguishes them:
+#:
+#:     S6ua4SfUT4SMRFZFOmyUzQ   created 2026-03-09   <- SHAWN_ACCOUNT_ID
+#:     7lBoyXuETqKdiJYLj5HBGA   created 2026-05-10   <- v2 metadata.v1_account_id
+#:
+#: An earlier constant here recommended disconnecting 7lBoy… That is now
+#: WRONG and must not be acted on: v2 maps to that account, so disconnecting
+#: it breaks the primary transport.
+#:
+#: WHICH ONE SURVIVES IS SHAWN'S CALL and is deliberately not encoded here.
+#: Preflight asserts the two stay reconciled rather than letting them drift.
+SHAWN_V1_ACCOUNT_IDS = ("S6ua4SfUT4SMRFZFOmyUzQ", "7lBoyXuETqKdiJYLj5HBGA")
 
 #: Colleagues' accounts in the same Unipile workspace. Sending from one of
 #: these puts QBS outreach out under someone else's name.
@@ -99,21 +114,10 @@ SKIP_REPOSTS = True
 #: and a None-comparison crash waiting to happen.
 SKIP_POST_URN_PREFIXES = ("urn:li:groupPost:",)
 
-#: Comment.post_id matches the NUMERIC TAIL OF social_id, never the post's
-#: own `id`. Verified: social_id urn:li:ugcPost:7495561989247856640 has
-#: id 7495561990287826944 — different numbers. Joining on `id` silently
-#: returns False for every ugcPost and groupPost (~half of a typical feed).
-def post_join_key(social_id: str) -> str:
-    """Derive the id that Comment.post_id will carry."""
-    return social_id.rsplit(":", 1)[-1]
+# NOTE: `post_join_key` lives in `posts.py`. The copy here lacked that one's
+# None guard and raised AttributeError where the live version returns None.
 
-#: Match Shawn on the comment author's provider id. Comment-level
-#: network_distance uses a DIFFERENT vocabulary from the profile endpoint
-#: (DISTANCE_1/2/3 vs FIRST_DEGREE/…), the published schema documents it
-#: wrongly, and Shawn's own comment reports DISTANCE_3 for himself. Never
-#: route or identify off comment-level distance; never match on name or slug
-#: (author_details carries no public_identifier).
-COMMENT_SELF_MATCH_FIELD = "author_details.id"
+# NOTE: the comment self-match field lives in `posts.SELF_MATCH_FIELD`.
 
 #: Free, provider-side idempotency check that does not depend on the HubSpot
 #: logging path being alive — which matters, since that path has been dead
@@ -122,20 +126,11 @@ COMMENT_SELF_MATCH_FIELD = "author_details.id"
 #: and routes to FREE_INMAIL today because the CRM guard property is empty.
 SKIP_ON_PENDING_INVITATION = True
 
-#: Unipile error taxonomy. Anything not listed is treated as a hard stop.
-UNIPILE_BENIGN = ("already_invited_recently", "already_connected")
-UNIPILE_RETRYABLE = ("provider_error", "request_timeout")
-UNIPILE_STOP_FOR_DAY = ("too_many_requests", "limit_exceeded")
-UNIPILE_HARD_STOP = (
-    "account_restricted", "checkpoint_error",
-    "disconnected_account", "multiple_sessions",
-)
-#: A 200 invite response carries `usage` — a percentage of provider quota that
-#: fires at 50/75/90/95. It is the only authoritative throttle signal, and it
-#: is in the SUCCESS body: a send path that checks status codes only throws it
-#: away. Note the MCP passthrough returns body only, no response headers, so
-#: header-based limits are unreadable on the only transport that works here.
-UNIPILE_USAGE_STOP_THRESHOLD = 90
+# NOTE: the Unipile error taxonomy lives in `errors.py` and ONLY there. A
+# second copy sat here and disagreed with it — 2 retryable slugs against 6,
+# 4 fatal against 25 — i.e. two sources of truth for the most safety-critical
+# classification in the system, with the dead copy being the wrong one.
+# `errors.py` is checked against the published enum by tests/test_errors.py.
 
 # --- HubSpot task types ---------------------------------------------------
 
@@ -194,13 +189,8 @@ COMPANY_SUFFIXES = (
 
 # --- Screening ------------------------------------------------------------
 
-#: Shortened forms accepted when matching a LinkedIn slug to a first name.
-NICKNAMES = {
-    "chuck": "charles", "mike": "michael", "bob": "robert",
-    "danny": "daniel", "zach": "zachary", "ken": "kenneth",
-    "bill": "william", "jim": "james", "dave": "david",
-    "rick": "richard", "steve": "steven", "tom": "thomas",
-}
+# NOTE: NICKNAMES lives in `normalize.py`, which holds 45 entries against the
+# 12 duplicated here. normalize's is the one slug matching actually uses.
 
 #: 'partner' was previously excluded here but accepted by SENIOR_TITLE_TOKENS
 #: — 557 CAS Prospect contacts sit in that gap. Included, since the title

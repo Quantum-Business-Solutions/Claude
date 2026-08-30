@@ -28,7 +28,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 
-from .config import SKIP_POST_URN_PREFIXES
+from .config import (
+    POST_TIMESTAMP_FIELD,
+    SKIP_POST_URN_PREFIXES,
+    SKIP_REPOSTS,
+)
 
 #: Comment-level `network_distance` uses DISTANCE_1/2/3 while the profile
 #: endpoint uses FIRST_DEGREE/…, the published schema documents it wrongly,
@@ -103,7 +107,7 @@ def evaluate_post(
     already_commented: set[str],
     freshness_hours: int,
     now: datetime | None = None,
-    skip_reposts: bool = True,
+    skip_reposts: bool = SKIP_REPOSTS,
 ) -> PostDecision:
     """Decide whether a post is worth commenting on.
 
@@ -145,7 +149,7 @@ def evaluate_post(
             key,
         )
 
-    posted = parse_post_time(post.get("parsed_datetime"))
+    posted = parse_post_time(post.get(POST_TIMESTAMP_FIELD))
     if posted is None:
         # Never infer freshness from the relative `date` string.
         return PostDecision(False, "no parsable parsed_datetime", key)

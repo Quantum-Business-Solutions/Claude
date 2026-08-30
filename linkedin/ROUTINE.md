@@ -30,42 +30,75 @@ QBS_HUBSPOT_TOKEN=$TOKEN python3 scripts/preflight.py [--skip-watch-list]
 - **exit 3** — schema drift. The portal changed under the code. A human must
   reconcile the two before any run is trusted.
 
-**Then the Unipile self-test, which preflight cannot do.** Unipile sits behind
-port 16072 and the agent proxy does not carry non-443 ports, so Python cannot
-reach it — all Unipile calls go through the **Unipile MCP**, never curl.
-
-Read one profile known to carry dated experience rows:
+**Then the Unipile self-test, which preflight cannot fully do.** Read one
+profile known to carry dated experience rows:
 
 ```
-GET /users/michelinenijmeh?account_id=S6ua4SfUT4SMRFZFOmyUzQ&linkedin_sections=experience
+GET /users/michelinenijmeh?account_id=<send account>&linkedin_sections=experience
 ```
 
 Assert `work_experience` is present and rows carry `start`. **If it is absent,
 HALT.** Omitting `linkedin_sections` returns HTTP 200 with no `work_experience`
 key at all — every contact then scores unreadable, or worse `no`, and the run
 writes "No Longer with Company" across the CRM. A missing key is an instrument
-failure, never a verdict.
+failure, never a verdict. `verify.read_roles` raises `InstrumentError` on it.
+
+**Use the code, not the MCP.** An earlier version of this document required
+every Unipile call to go through the Unipile MCP connector, because the tenant
+DSN sits on port 16072 and this environment reaches 443 only. That is no
+longer true, and following it now would make a routine refuse the only
+transport that works unattended:
+
+- `unipile.base_url()` puts the host on 443 and moves the port into `?port=`.
+- `transport.UnipileClient` prefers v2 (plain host, no workaround) and falls
+  back to v1 automatically, recording which answered in `route`.
+- **Routine-fired sessions have no MCP connectors at all** (measured), so an
+  MCP-only rule guarantees a schedule can never touch LinkedIn. That is
+  precisely how both programs stayed dark for twelve weeks.
+
+Report the `route` in the run summary. A silent degrade to v1 is how a version
+problem stays invisible.
+
+**`profile()` is pinned to v1 and must not be "upgraded".** v2 returns HTTP
+200 with zero experience rows — retested 2026-08-30 under every array syntax,
+against a v1 control returning seven dated roles for the same person. A
+healthy-looking v2 profile is the exact shape that writes "No Longer with
+Company" across the CRM.
 
 ## Identity — assert before anything writes
 
-Only `S6ua4SfUT4SMRFZFOmyUzQ` (Shawn Peterson) may send or comment. Assert
-`connection_params.im.id == ACoAAAGv8WABzhfWcURPIaBDzbgiEWX5e781Etw` — member
-IDs are immutable, slugs are not.
+Only `config.SHAWN_ACCOUNT_ID` may send or comment, enforced by
+`config.assert_send_account()` — an **allowlist**. Never replace it with a
+blocklist: one API key spans seven accounts and five people, so a blocklist
+passes for anyone newly connected.
 
-One API key spans **seven accounts and five people**. The others are colleague
-and client identities. `config.assert_send_account()` is an allowlist; never
-replace it with a blocklist, which passes for anyone newly connected.
+Assert the member id `ACoAAAGv8WABzhfWcURPIaBDzbgiEWX5e781Etw` as well. Member
+ids are immutable; slugs are user-changeable.
 
-**Sales Navigator is currently unusable through Unipile.** Every Sales Nav
-route returns `401 errors/invalid_credentials` on both of Shawn's accounts
-while Classic routes return 200 — the entitlement is present, the session is
-not. Do not build on Sales Nav until that is reconnected.
+**Shawn is connected twice and both sessions are live.** They share that
+member id, so the identity assertion cannot separate them — only the account
+id can. v2 maps to `7lBoyXuETqKdiJYLj5HBGA`; config sends as
+`S6ua4SfUT4SMRFZFOmyUzQ`. Both work today. `preflight.check_send_account`
+reports the split on every run. Two live sessions on one LinkedIn login is a
+documented provider error (`errors/multiple_sessions`, classified HALT), so
+**one must be disconnected before the first send** — and that choice is
+Shawn's, not a routine's.
+
+**Sales Navigator: reports healthy on v2, never exercised.** On v1 every
+Sales Nav route returned `401 errors/invalid_credentials` on both of Shawn's
+accounts while Classic returned 200 — entitlement present, session not. On v2
+the account reports `sales_navigator: running`. That is a claim from the
+provider, not a verified capability: nothing has been read through it end to
+end. Treat it as unproven and verify before building on it.
 
 ## Never, unattended
 
 - Send or comment while the send ledger is stale. A dead ledger reads zero
   sends today, and zero reads as full capacity — the over-send direction, which
   is what gets an account restricted.
+- Call `ledger.decide_allowance` without a real `independent_count`. It is a
+  required argument with no default, because an empty ledger cannot tell
+  "nothing sent" from "nothing recorded". Passing `None` halts, by design.
 - Treat a comment-fetch error as "no prior comment". Skip the post instead.
 - Map a missing `work_experience` to `no`.
 - Write `hs_lead_status` on a `yes`.

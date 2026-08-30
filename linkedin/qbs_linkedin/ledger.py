@@ -119,6 +119,11 @@ class CapDecision:
     posted_today: int
     reason: str
     halted: bool = False
+    #: True when the halt is only because no second opinion was supplied.
+    #: A HubSpot-only caller (preflight) legitimately cannot produce one, and
+    #: must report that as its own scope limit rather than as portal damage —
+    #: while the send path, which CAN produce one, still halts.
+    needs_independent_count: bool = False
 
     def __bool__(self) -> bool:
         return self.allowance > 0
@@ -131,7 +136,7 @@ def decide_allowance(
     per_run: int,
     ledger_writes_in_window: int,
     ledger_writes_ever: int,
-    independent_count: int | None = None,
+    independent_count: int | None,
     stale_days: int = LEDGER_STALE_DAYS,
     tolerance: int = RECONCILE_TOLERANCE,
 ) -> CapDecision:
@@ -141,6 +146,13 @@ def decide_allowance(
     engagement, Shawn's own comments from Unipile; for outreach, pending
     invitations. When it materially exceeds the ledger, the ledger is not
     recording sends and the run must stop rather than trust a low number.
+
+    It is a REQUIRED argument with no default, deliberately. It was optional
+    once, and that made the whole fail-closed guarantee opt-in: a caller who
+    simply omitted it got full capacity out of a dead ledger. Pass ``None``
+    only when a second opinion is genuinely unobtainable, and expect to be
+    halted in the one state where it is the only thing that can distinguish
+    "nothing sent" from "not recording".
     """
     # A dead ledger reads zero, and zero reads as full capacity. That is the
     # over-send direction, so it is the one case that must never pass.
@@ -156,6 +168,23 @@ def decide_allowance(
             "A zero count here means 'unknown', not 'nothing sent'.",
             halted=True,
         )
+
+    # The blind spot the epoch created. Before LEDGER_EPOCH there is history
+    # to reason about; after it, an empty ledger is ambiguous -- a genuinely
+    # fresh ledger and one that has never recorded a single send both read
+    # `ever == 0, window == 0`. Only an outside count can separate them, so
+    # without one this state must halt rather than grant full capacity.
+    if ledger_writes_ever == 0 and ledger_writes_in_window == 0:
+        if independent_count is None:
+            return CapDecision(
+                0, posted_today,
+                "the ledger holds no records at all since "
+                f"{LEDGER_EPOCH}, so 'nothing has been sent' and 'nothing is "
+                "being recorded' are the same reading. An independent count "
+                "is required to tell them apart; refusing to send blind.",
+                halted=True,
+                needs_independent_count=True,
+            )
 
     if independent_count is not None and independent_count - posted_today > tolerance:
         return CapDecision(

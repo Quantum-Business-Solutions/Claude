@@ -47,24 +47,46 @@ class Verdict:
 
 
 #: Not failures. The action already happened, or cannot be repeated.
-BENIGN = {"already_invited_recently", "already_connected", "already_invited"}
+BENIGN = {"already_invited_recently", "already_connected",
+          "action_already_performed"}
 
 #: Transient provider-side problems.
 RETRYABLE = {"provider_error", "request_timeout", "service_unavailable",
-             "network_down", "no_client_session", "no_channel"}
+             "network_down", "no_client_session", "no_channel", "no_handler",
+             "unexpected_error"}
 
 #: Provider is refusing volume. Stop sending today; do not retry.
-LIMIT = {"too_many_requests", "limit_exceeded"}
+LIMIT = {"too_many_requests", "limit_exceeded", "insufficient_credits",
+         "insufficient_job_slot"}
 
 #: Session or account problems. A human must intervene; retrying makes it worse.
 FATAL = {"account_restricted", "checkpoint_error", "disconnected_account",
          "multiple_sessions", "invalid_credentials", "expired_credentials",
          "insufficient_privileges", "invalid_checkpoint_solution",
-         "account_mismatch", "wrong_account", "disconnected_feature"}
+         "account_mismatch", "wrong_account", "disconnected_feature",
+         "missing_credentials", "invalid_proxy_credentials", "expired_link",
+         "invalid_credentials_but_valid_account_imap",
+         "insufficient_permissions", "session_mismatch", "feature_not_subscribed",
+         "subscription_required", "unknown_authentication_context",
+         "action_required", "resource_access_restricted", "invalid_account",
+         "feature_not_implemented", "authentication_intent_error"}
 
-#: This candidate cannot be actioned, but the run is fine.
+#: This candidate cannot be actioned, but the run is fine. Getting these
+#: wrong is expensive in the other direction: every one of them used to fall
+#: through to HALT, so a single post with comments turned off ended the run.
 SKIPPABLE = {"invalid_recipient", "resource_not_found",
-             "invalid_resource_identifier", "cant_resend_yet"}
+             "invalid_resource_identifier", "cannot_resend_yet",
+             "cannot_resend_within_24hrs", "no_connection_with_recipient",
+             "blocked_recipient", "user_unreachable", "not_allowed_inmail",
+             "cannot_invite_attendee", "comments_disabled", "invalid_post",
+             "invalid_message", "unprocessable_entity", "payment_error"}
+
+#: Everything above, checked against the full enum in Unipile's OpenAPI spec.
+#: `test_errors.py` fails if the spec grows a code we do not classify, so a
+#: new failure mode surfaces as a test failure rather than as a halted run.
+SPEC_ERROR_SLUGS = frozenset(
+    BENIGN | RETRYABLE | LIMIT | FATAL | SKIPPABLE
+)
 
 #: Quota percentage at which to stop volunteering for more.
 USAGE_STOP_THRESHOLD = 90
