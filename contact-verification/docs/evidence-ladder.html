@@ -1,0 +1,873 @@
+<title>The Evidence Ladder</title>
+<style>
+  :root{
+    --ink:#131C25; --ink-2:#2C3B47; --muted:#5E6F7B; --faint:#8B9AA4;
+    --paper:#F1F4F5; --surface:#FFFFFF; --sunk:#E4E9EB; --rule:#CBD5D9;
+    --accent:#0F6E7A; --accent-soft:#DDEBED; --accent-ink:#0A4A53;
+    --ok:#2E7248; --ok-soft:#DDEBE1;
+    --warn:#9E6612; --warn-soft:#F3E8D4;
+    --bad:#9C3630; --bad-soft:#F2DDDB;
+    --shadow:0 1px 2px rgba(19,28,37,.06),0 8px 24px rgba(19,28,37,.05);
+    --display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --body:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#E8EEF0; --ink-2:#C3D0D6; --muted:#94A5AE; --faint:#6E808A;
+      --paper:#0F1519; --surface:#161F25; --sunk:#1D282F; --rule:#2C3A42;
+      --accent:#4FB3BE; --accent-soft:#123034; --accent-ink:#8FD3DA;
+      --ok:#6FBF8C; --ok-soft:#14291C;
+      --warn:#D9A959; --warn-soft:#2C2313;
+      --bad:#E0847C; --bad-soft:#2E1917;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#E8EEF0; --ink-2:#C3D0D6; --muted:#94A5AE; --faint:#6E808A;
+    --paper:#0F1519; --surface:#161F25; --sunk:#1D282F; --rule:#2C3A42;
+    --accent:#4FB3BE; --accent-soft:#123034; --accent-ink:#8FD3DA;
+    --ok:#6FBF8C; --ok-soft:#14291C;
+    --warn:#D9A959; --warn-soft:#2C2313;
+    --bad:#E0847C; --bad-soft:#2E1917;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--body); font-size:16.5px; line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:53rem; margin:0 auto; padding:4rem 1.5rem 6rem}
+  @media(max-width:640px){ .wrap{padding:2.5rem 1.1rem 4rem} }
+
+  .eyebrow{
+    font-family:var(--mono); font-size:.7rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 1rem;
+  }
+  h1{
+    font-family:var(--display); font-weight:600; font-size:clamp(2.4rem,6vw,3.6rem);
+    line-height:1.04; letter-spacing:-.02em; margin:0 0 1.1rem; text-wrap:balance;
+  }
+  .standfirst{
+    font-size:1.16rem; color:var(--ink-2); max-width:38rem; margin:0 0 .5rem;
+    text-wrap:pretty;
+  }
+  .meta{
+    font-family:var(--mono); font-size:.75rem; color:var(--faint);
+    margin-top:1.6rem; padding-top:1rem; border-top:1px solid var(--rule);
+    display:flex; flex-wrap:wrap; gap:.4rem 1.5rem;
+  }
+
+  h2{
+    font-family:var(--display); font-weight:600; font-size:clamp(1.5rem,3.4vw,1.95rem);
+    line-height:1.15; letter-spacing:-.012em; margin:0 0 .9rem; text-wrap:balance;
+  }
+  h3{
+    font-size:1rem; font-weight:650; margin:0 0 .5rem; color:var(--ink);
+    letter-spacing:-.005em;
+  }
+  section{margin-top:3.6rem}
+  p{margin:0 0 1rem; max-width:40rem; text-wrap:pretty}
+  strong{font-weight:650; color:var(--ink)}
+  code{
+    font-family:var(--mono); font-size:.855em; background:var(--sunk);
+    padding:.1em .38em; border-radius:3px; color:var(--accent-ink);
+    word-break:break-word;
+  }
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:2px}
+
+  /* ---- thesis panel ---- */
+  .thesis{
+    background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--accent);
+    border-radius:4px; padding:1.5rem 1.6rem; box-shadow:var(--shadow); margin:0 0 1rem;
+  }
+  .thesis p{margin:0; font-size:1.06rem; color:var(--ink-2)}
+  .thesis p + p{margin-top:.7rem}
+
+  /* ---- ladder ---- */
+  .ladder{display:flex; flex-direction:column; gap:.55rem; margin:1.6rem 0 0}
+  .rung{
+    display:grid; grid-template-columns:2.5rem 1fr auto; gap:1rem; align-items:baseline;
+    background:var(--surface); border:1px solid var(--rule); border-radius:4px;
+    padding:.95rem 1.1rem; box-shadow:var(--shadow);
+  }
+  .rung .tier{
+    font-family:var(--mono); font-size:1.05rem; font-weight:600; color:var(--accent);
+    font-variant-numeric:tabular-nums;
+  }
+  .rung .what{font-size:.95rem}
+  .rung .what b{display:block; font-weight:650; margin-bottom:.15rem}
+  .rung .what span{color:var(--muted); font-size:.875rem}
+  .rung .trust{
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.09em; text-transform:uppercase;
+    padding:.22rem .5rem; border-radius:99px; white-space:nowrap;
+  }
+  .t-first{background:var(--ok-soft); color:var(--ok)}
+  .t-obs{background:var(--accent-soft); color:var(--accent-ink)}
+  .t-vendor{background:var(--warn-soft); color:var(--warn)}
+  .t-infer{background:var(--bad-soft); color:var(--bad)}
+  @media(max-width:640px){
+    .rung{grid-template-columns:2rem 1fr; }
+    .rung .trust{grid-column:2; justify-self:start; margin-top:.4rem}
+  }
+
+  /* ---- case study ---- */
+  .case{
+    background:var(--surface); border:1px solid var(--rule); border-radius:4px;
+    overflow:hidden; box-shadow:var(--shadow); margin-top:1.4rem;
+  }
+  .case-head{
+    padding:1.1rem 1.3rem; border-bottom:1px solid var(--rule); background:var(--sunk);
+  }
+  .case-head b{font-family:var(--display); font-size:1.2rem; font-weight:600; display:block}
+  .case-head span{font-family:var(--mono); font-size:.74rem; color:var(--muted)}
+  .case-body{padding:.4rem 0}
+  .cmp{
+    display:grid; grid-template-columns:8.5rem 1fr 1fr; gap:1rem;
+    padding:.85rem 1.3rem; border-bottom:1px solid var(--rule); align-items:start;
+  }
+  .cmp:last-child{border-bottom:none}
+  .cmp .lbl{
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--faint); padding-top:.15rem;
+  }
+  .cmp .crm{color:var(--bad); font-family:var(--mono); font-size:.86rem; word-break:break-word}
+  .cmp .real{color:var(--ok); font-family:var(--mono); font-size:.86rem; word-break:break-word}
+  .cmp .note{grid-column:1/-1; font-size:.87rem; color:var(--muted); margin-top:.1rem}
+  @media(max-width:640px){ .cmp{grid-template-columns:1fr; gap:.25rem} .cmp .lbl{padding-top:0} }
+
+  /* ---- stages ---- */
+  .stages{counter-reset:st; margin-top:1.5rem}
+  .stage{
+    position:relative; padding-left:3.2rem; padding-bottom:1.9rem;
+    border-left:1px solid var(--rule); margin-left:1rem;
+  }
+  .stage:last-child{border-left-color:transparent; padding-bottom:0}
+  .stage::before{
+    counter-increment:st; content:counter(st);
+    position:absolute; left:-1rem; top:-.1rem; width:2rem; height:2rem;
+    background:var(--accent); color:var(--paper); border-radius:50%;
+    display:grid; place-items:center;
+    font-family:var(--mono); font-size:.82rem; font-weight:600;
+  }
+  .stage .cost{
+    font-family:var(--mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent); display:block; margin-bottom:.2rem;
+  }
+  .stage p{margin-bottom:.5rem}
+  .stage p:last-child{margin-bottom:0}
+
+  /* ---- tables ---- */
+  .tbl-scroll{overflow-x:auto; margin:1.2rem 0; border:1px solid var(--rule); border-radius:4px; background:var(--surface)}
+  table{border-collapse:collapse; width:100%; font-size:.9rem; min-width:30rem}
+  th,td{padding:.62rem .9rem; text-align:left; border-bottom:1px solid var(--rule); vertical-align:top}
+  th{
+    font-family:var(--mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); background:var(--sunk); font-weight:600; white-space:nowrap;
+  }
+  tr:last-child td{border-bottom:none}
+  td.num{font-family:var(--mono); font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap}
+  td code{background:transparent; padding:0}
+
+  .pill{
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase;
+    padding:.18rem .45rem; border-radius:3px; white-space:nowrap;
+  }
+  .p-ok{background:var(--ok-soft); color:var(--ok)}
+  .p-warn{background:var(--warn-soft); color:var(--warn)}
+  .p-bad{background:var(--bad-soft); color:var(--bad)}
+
+  /* ---- errors ---- */
+  .errs{display:flex; flex-direction:column; gap:.7rem; margin-top:1.4rem}
+  .err{
+    background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--bad);
+    border-radius:4px; padding:.95rem 1.1rem;
+  }
+  .err b{display:block; font-weight:650; margin-bottom:.25rem; font-size:.95rem}
+  .err p{margin:0; font-size:.9rem; color:var(--muted); max-width:none}
+  .err .rule{
+    display:block; margin-top:.5rem; padding-top:.5rem; border-top:1px dashed var(--rule);
+    font-size:.875rem; color:var(--ink-2);
+  }
+  .err .rule::before{
+    content:"RULE"; font-family:var(--mono); font-size:.64rem; letter-spacing:.1em;
+    color:var(--accent); margin-right:.5rem;
+  }
+
+  .callout{
+    background:var(--accent-soft); border-radius:4px; padding:1.2rem 1.3rem; margin:1.4rem 0;
+    border:1px solid var(--rule);
+  }
+  .callout p{margin:0; color:var(--ink-2)}
+  .callout p+p{margin-top:.6rem}
+
+  figure{margin:1.8rem 0; padding:0}
+  figure svg{max-width:100%; height:auto; display:block; margin:0 auto; color:var(--ink-2)}
+  .figwrap{background:var(--surface); border:1px solid var(--rule); border-radius:4px;
+    padding:1.4rem 1.1rem .8rem; box-shadow:var(--shadow); overflow-x:auto}
+  figcaption{font-size:.86rem; color:var(--muted); margin-top:.9rem; text-align:left;
+    max-width:44rem; padding-top:.7rem; border-top:1px solid var(--rule)}
+  figcaption b{color:var(--ink)}
+  .d-node{fill:var(--surface); stroke:currentColor; stroke-width:1.4}
+  .d-dec{fill:var(--sunk); stroke:currentColor; stroke-width:1.4}
+  .d-out{fill:var(--sunk); stroke:currentColor; stroke-width:1}
+  .d-t{fill:var(--ink); font-size:12px; font-family:system-ui,sans-serif}
+  .d-tb{fill:var(--ink); font-size:12px; font-weight:650; font-family:system-ui,sans-serif}
+  .d-s{fill:var(--muted); font-size:10.5px; font-family:ui-monospace,monospace;
+    letter-spacing:.04em; text-transform:uppercase}
+  .d-line{stroke:currentColor; stroke-width:1.4; fill:none}
+  .d-hot{stroke:var(--bad); stroke-width:1.8; fill:none}
+  .d-hott{fill:var(--bad); font-size:11px; font-weight:650; font-family:system-ui,sans-serif}
+  .d-gate{fill:var(--bad-soft); stroke:var(--bad); stroke-width:1.4}
+  .d-good{fill:var(--ok-soft); stroke:var(--ok); stroke-width:1.4}
+
+  ul{margin:0 0 1rem; padding-left:1.2rem; max-width:40rem}
+  li{margin-bottom:.4rem}
+  li::marker{color:var(--faint)}
+
+  footer{
+    margin-top:4.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
+    font-family:var(--mono); font-size:.74rem; color:var(--faint);
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+</style>
+
+<div class="wrap">
+
+  <p class="eyebrow">QBS · Contact Data Operations</p>
+  <h1>The Evidence Ladder</h1>
+  <p class="standfirst">A repeatable process for validating any calling list — built from what a real list taught us, including the contact it nearly deleted.</p>
+  <div class="meta">
+    <span>Portal 20682069</span>
+    <span>Pilot: list 3625 · CAS Deal Follow up</span>
+    <span>183 contacts</span>
+    <span>17 Aug 2026</span>
+  </div>
+
+  <section>
+    <h2>The thesis</h2>
+    <div class="thesis">
+      <p><strong>Rank your evidence before you spend money on it.</strong> Every contact question — is this person still here, does this number work, is this email real — has answers at four very different levels of trust. The cheapest and most reliable answers are already inside your own systems. The expensive ones are the least trustworthy.</p>
+      <p>The pilot run got this backwards, and it nearly cost a live deal. Fixing the order <em>is</em> the process.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Four tiers of proof</h2>
+    <p>Work top down. Stop as soon as the question is answered. Never let a lower tier overrule a higher one.</p>
+
+    <div class="ladder">
+      <div class="rung">
+        <span class="tier">1</span>
+        <span class="what"><b>Your own interactions</b><span>Outlook mail and calendar, meeting recaps, ConnectAndSell session reports, logged calls. Email signatures carry corrected phones and addresses.</span></span>
+        <span class="trust t-first">First-party</span>
+      </div>
+      <div class="rung">
+        <span class="tier">2</span>
+        <span class="what"><b>Recorded outcomes &amp; sibling records</b><span>Hard bounces, dial dispositions, reply history — facts about what happened when you tried. Plus the email convention of every colleague at the same domain, which validates or refutes any address for free.</span></span>
+        <span class="trust t-obs">Observed</span>
+      </div>
+      <div class="rung">
+        <span class="tier">3</span>
+        <span class="what"><b>The person's own page — once identity is proven</b><span>LinkedIn and Sales Navigator answer "still in this seat." But a stored LinkedIn URL is usually a <em>guess</em> made by an enrichment tool. Corroborate the profile against title, employer and city before believing a word of it. 2 of the first 13 checked were a different human entirely.</span></span>
+        <span class="trust t-obs">Observed</span>
+      </div>
+      <div class="rung">
+        <span class="tier">4</span>
+        <span class="what"><b>Purchased data — the fallback, not the check</b><span>Reach for it only once tier 3 is <em>exhausted</em>: the profile is locked, or there is no profile at all. Never use it to verify data it supplied in the first place — that is circular, and the same vendor writing your <code>jobtitle</code> is the one oscillating it. When you do use it, read <code>contactAccuracyScore</code>, <code>validDate</code> and <code>lastUpdatedDate</code>, and treat a match with no current company as "departed, destination unknown".</span></span>
+        <span class="trust t-vendor">Vendor</span>
+      </div>
+      <div class="rung">
+        <span class="tier">5</span>
+        <span class="what"><b>Guesses dressed as findings</b><span>Field is blank so the fact is absent. Area code differs so the number is wrong. A record looks thin so it's junk. Never a verdict.</span></span>
+        <span class="trust t-infer">Inference</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The case that rewrote the process</h2>
+    <p>The pilot flagged this contact as junk on three counts and queued him for deletion. Tier-1 evidence — sitting in the founder's own inbox — reversed every one.</p>
+
+    <div class="case">
+      <div class="case-head">
+        <b>Contact B</b>
+        <span>Chief Revenue Officer · Proven IT · Tinley Park, IL · contact 119401</span>
+      </div>
+      <div class="case-body">
+        <div class="cmp">
+          <span class="lbl">Email</span>
+          <span class="crm">firstlast@provenit.com</span>
+          <span class="real">flast@provenit.com</span>
+          <span class="note">The CRM guessed a <code>first.last</code> pattern. That guess is the entire reason the address hard-bounced — which the pipeline then read as evidence the <em>person</em> was gone. His correct address appears in every reply he has ever sent.</span>
+        </div>
+        <div class="cmp">
+          <span class="lbl">Phone</span>
+          <span class="crm">+1 312-961-7578 · mobile, DNC-flagged</span>
+          <span class="real">708-407-2422 · direct line</span>
+          <span class="note">His direct dial has been in his email signature since January. The CRM holds only the flagged mobile, duplicated across both phone fields, so he looked unreachable.</span>
+        </div>
+        <div class="cmp">
+          <span class="lbl">Employment</span>
+          <span class="crm">inferred departed</span>
+          <span class="real">CRO since April 2021 · no end date</span>
+          <span class="note">Five years in seat. First-degree connection with 25 shared connections.</span>
+        </div>
+        <div class="cmp">
+          <span class="lbl">Relationship</span>
+          <span class="crm">no company association</span>
+          <span class="real">two meetings · asked to continue</span>
+          <span class="note">Met 28 Jan 2026 — recap records him discussing Proven IT's HubSpot usage, CRM integration problems, and bringing in their CTO. Met again 4 Feb. He rescheduled once with "I definitely want to revisit your…" and appears in the 8 Jul ConnectAndSell session report.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>What this proves.</strong> Three vendor and inference signals all pointed one direction and all three were wrong. One tier-1 source — an email signature — held both the corrected email and the missing phone number.</p>
+      <p>He is not a record to clean. He is an engaged CRO at a real dealer who has asked twice to keep talking, and the right next move is neither a dial nor an email to the bounced address: it is a LinkedIn message, where the connection already exists.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The second case: contamination flows downhill</h2>
+    <p>Contact B showed that vendor data can be wrong. This one shows something worse — that a <em>guessed</em> field can overwrite a <em>correct</em> one, and then be mistaken for evidence.</p>
+
+    <div class="case">
+      <div class="case-head">
+        <b>Michael Macri</b>
+        <span>VP of Sales · Fraser Advanced Information Systems · Bala Cynwyd, PA · contact 89730991232</span>
+      </div>
+      <div class="case-body">
+        <div class="cmp">
+          <span class="lbl">Company</span>
+          <span class="crm">i-Path Media</span>
+          <span class="real">Fraser Advanced Information Systems</span>
+          <span class="note">An enrichment integration matched him to <code>/in/michael-macri</code> — a different Michael Macri, VP at a pharma-marketing firm in Doylestown, PA. Same name, same state. That wrong profile's employer then <strong>overwrote the company field</strong>.</span>
+        </div>
+        <div class="cmp">
+          <span class="lbl">LinkedIn</span>
+          <span class="crm">/in/michael-macri</span>
+          <span class="real">/in/michael-macri-06580025</span>
+          <span class="note">The real profile reads "Vice President of Sales at Fraser Advanced Information Systems," located Bala-Cynwyd PA — matching this record's own city field, with 29 shared connections.</span>
+        </div>
+        <div class="cmp">
+          <span class="lbl">Email</span>
+          <span class="crm">flagged as wrong company</span>
+          <span class="real">contactMac@fraser-ais.com — correct</span>
+          <span class="note">It matches Fraser's <code>flast</code> convention, used by 18+ colleagues. The address was right all along; the bounce is a mailbox problem, not a wrong address and not a departure.</span>
+        </div>
+        <div class="cmp">
+          <span class="lbl">Job title</span>
+          <span class="crm">read as truncated</span>
+          <span class="real">"Vice President, Sales — Fraser Advanced Information Systems"</span>
+          <span class="note">The field named the right employer the entire time. It was clipped to 25 characters in the triage output, so nobody read it.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Asserted fields versus derived fields.</strong> Some fields are asserted — a human typed them, or they came from a real exchange: the email someone replied from, the title they gave, the city on their record. Others are derived — an integration inferred them. Here a derived field silently overwrote an asserted one, and the corruption then looked like evidence.</p>
+      <p>This is the concrete form of a problem already recorded against this portal: enrichment automation overwriting verified data. Any hygiene process that does not know which of its fields are asserted and which are derived will keep laundering guesses into facts.</p>
+    </div>
+
+    <figure>
+      <div class="figwrap">
+        <svg viewBox="0 0 790 300" role="img" aria-label="Contamination path: an enrichment integration guesses a LinkedIn URL, matches the wrong person, overwrites the company field with that person's employer, and the corrupted field is then read as evidence that the correct email is wrong. Three asserted fields naming the real employer sat untouched below.">
+          <defs>
+            <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+            </marker>
+            <marker id="ar2b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--bad)"/>
+            </marker>
+          </defs>
+
+          <text class="d-s" x="12" y="34">the guess becomes the fact</text>
+
+          <rect class="d-node" x="12" y="70" width="155" height="52" rx="4"/>
+          <text class="d-t" x="89" y="92" text-anchor="middle">Enrichment</text>
+          <text class="d-t" x="89" y="107" text-anchor="middle">integration</text>
+
+          <line class="d-line" x1="167" y1="96" x2="201" y2="96" marker-end="url(#ar2)"/>
+          <text class="d-s" x="184" y="88" text-anchor="middle">guesses</text>
+
+          <rect class="d-node" x="205" y="70" width="155" height="52" rx="4"/>
+          <text class="d-t" x="282" y="86" text-anchor="middle">/in/michael-macri</text>
+          <text class="d-t" x="282" y="101" text-anchor="middle">wrong human,</text>
+          <text class="d-t" x="282" y="116" text-anchor="middle">same name + state</text>
+
+          <line class="d-hot" x1="360" y1="96" x2="394" y2="96" marker-end="url(#ar2b)"/>
+          <text class="d-s" x="377" y="88" text-anchor="middle">writes</text>
+
+          <rect class="d-gate" x="398" y="70" width="155" height="52" rx="4"/>
+          <text class="d-t" x="475" y="86" text-anchor="middle">company field</text>
+          <text class="d-hott" x="475" y="102" text-anchor="middle">i-Path Media</text>
+          <text class="d-t" x="475" y="117" text-anchor="middle">(overwritten)</text>
+
+          <line class="d-line" x1="553" y1="96" x2="587" y2="96" marker-end="url(#ar2)"/>
+          <text class="d-s" x="570" y="88" text-anchor="middle">reads</text>
+
+          <rect class="d-node" x="591" y="70" width="155" height="52" rx="4"/>
+          <text class="d-t" x="668" y="86" text-anchor="middle">&#8220;his email is</text>
+          <text class="d-t" x="668" y="101" text-anchor="middle">the wrong</text>
+          <text class="d-t" x="668" y="116" text-anchor="middle">company&#8221;</text>
+
+          <line class="d-hot" x1="475" y1="122" x2="475" y2="186" stroke-dasharray="5 4" marker-end="url(#ar2b)"/>
+          <line class="d-hot" x1="465" y1="145" x2="485" y2="165"/>
+          <line class="d-hot" x1="485" y1="145" x2="465" y2="165"/>
+          <text class="d-hott" x="497" y="159">a derived field must never</text>
+          <text class="d-hott" x="497" y="173">overwrite an asserted one</text>
+
+          <rect class="d-good" x="150" y="190" width="325" height="94" rx="4"/>
+          <text class="d-s" x="166" y="210">asserted — all three name fraser</text>
+          <text class="d-t" x="166" y="232">email · contactMac@fraser-ais.com</text>
+          <text class="d-t" x="166" y="251">title · &#8220;VP, Sales — Fraser Advanced&#8221;</text>
+          <text class="d-t" x="166" y="270">city · Bala Cynwyd, PA</text>
+        </svg>
+      </div>
+      <figcaption><b>The corruption travels left to right, and the truth was sitting underneath the whole time.</b> Three fields on the record — the address he replies from, the title he gave, the city he works in — all named Fraser. The only wrong field was the one an integration invented, and it was the one the analysis trusted. Marking fields as asserted or derived, and forbidding the second from overwriting the first, stops this class of error outright.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>The decision, contact by contact</h2>
+    <p>Every contact walks the same five questions. Each one that answers early costs nothing further — that is the whole economy of the thing.</p>
+
+    <figure>
+      <div class="figwrap">
+        <svg viewBox="0 0 790 630" role="img" aria-label="Decision flow: each contact is tested against five questions in order — freshness, first-party evidence, contradictions, LinkedIn identity, and employment — exiting to a routing outcome at whichever question answers first.">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+            </marker>
+            <marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--bad)"/>
+            </marker>
+          </defs>
+
+          <rect class="d-node" x="185" y="18" width="230" height="38" rx="19"/>
+          <text class="d-tb" x="300" y="42" text-anchor="middle">One contact from the list</text>
+          <line class="d-line" x1="300" y1="56" x2="300" y2="70" marker-end="url(#ar)"/>
+
+          <polygon class="d-dec" points="300,72 430,110 300,148 170,110"/>
+          <text class="d-t" x="300" y="106" text-anchor="middle">Stamped verified</text>
+          <text class="d-t" x="300" y="121" text-anchor="middle">within 60 days?</text>
+          <line class="d-line" x1="430" y1="110" x2="496" y2="110" marker-end="url(#ar)"/>
+          <text class="d-s" x="452" y="102" text-anchor="middle">yes</text>
+          <rect class="d-out" x="500" y="90" width="270" height="40" rx="4"/>
+          <text class="d-t" x="512" y="115">Skip. Costs nothing. This is the refresh.</text>
+          <line class="d-line" x1="300" y1="148" x2="300" y2="165" marker-end="url(#ar)"/>
+          <text class="d-s" x="288" y="161" text-anchor="end">no</text>
+
+          <polygon class="d-dec" points="300,167 430,205 300,243 170,205"/>
+          <text class="d-t" x="300" y="201" text-anchor="middle">Have we met, called</text>
+          <text class="d-t" x="300" y="216" text-anchor="middle">or exchanged mail?</text>
+          <line class="d-line" x1="430" y1="205" x2="496" y2="205" marker-end="url(#ar)"/>
+          <text class="d-s" x="452" y="197" text-anchor="middle">yes</text>
+          <rect class="d-good" x="500" y="185" width="270" height="40" rx="4"/>
+          <text class="d-t" x="512" y="203">Verified. Harvest the signature</text>
+          <text class="d-t" x="512" y="218">for a better email and direct dial.</text>
+          <line class="d-line" x1="300" y1="243" x2="300" y2="260" marker-end="url(#ar)"/>
+          <text class="d-s" x="288" y="256" text-anchor="end">no</text>
+
+          <polygon class="d-dec" points="300,262 430,300 300,338 170,300"/>
+          <text class="d-t" x="300" y="296" text-anchor="middle">Does anything</text>
+          <text class="d-t" x="300" y="311" text-anchor="middle">contradict?</text>
+          <line class="d-line" x1="430" y1="300" x2="496" y2="300" marker-end="url(#ar)"/>
+          <text class="d-s" x="452" y="292" text-anchor="middle">no</text>
+          <rect class="d-out" x="500" y="280" width="270" height="40" rx="4"/>
+          <text class="d-t" x="512" y="298">Dial it — but label it unexamined,</text>
+          <text class="d-t" x="512" y="313">never &#8220;verified.&#8221;</text>
+          <line class="d-line" x1="300" y1="338" x2="300" y2="355" marker-end="url(#ar)"/>
+          <text class="d-s" x="288" y="352" text-anchor="end">yes</text>
+
+          <polygon class="d-dec" points="300,357 430,395 300,433 170,395"/>
+          <text class="d-t" x="300" y="384" text-anchor="middle">LinkedIn profile —</text>
+          <text class="d-t" x="300" y="399" text-anchor="middle">and does title, employer</text>
+          <text class="d-t" x="300" y="414" text-anchor="middle">and city all match?</text>
+          <line class="d-line" x1="430" y1="395" x2="496" y2="395" marker-end="url(#ar)"/>
+          <text class="d-s" x="452" y="387" text-anchor="middle">no</text>
+          <rect class="d-out" x="500" y="375" width="270" height="40" rx="4"/>
+          <text class="d-t" x="512" y="393">Research queue. An uncorroborated</text>
+          <text class="d-t" x="512" y="408">URL is a guess, not a source.</text>
+          <line class="d-line" x1="300" y1="433" x2="300" y2="450" marker-end="url(#ar)"/>
+          <text class="d-s" x="288" y="447" text-anchor="end">yes</text>
+
+          <polygon class="d-dec" points="300,452 430,490 300,528 170,490"/>
+          <text class="d-t" x="300" y="486" text-anchor="middle">Still in the seat?</text>
+          <text class="d-t" x="300" y="501" text-anchor="middle">(no end date)</text>
+          <line class="d-hot" x1="430" y1="490" x2="496" y2="490" marker-end="url(#arb)"/>
+          <text class="d-s" x="452" y="482" text-anchor="middle">no</text>
+          <rect class="d-gate" x="500" y="470" width="270" height="40" rx="4"/>
+          <text class="d-hott" x="512" y="488">Departed → HUMAN GATE</text>
+          <text class="d-t" x="512" y="503">Stamp the evidence. Never suppress alone.</text>
+
+          <line class="d-line" x1="300" y1="528" x2="300" y2="552" marker-end="url(#ar)"/>
+          <text class="d-s" x="288" y="546" text-anchor="end">yes</text>
+          <rect class="d-good" x="140" y="554" width="320" height="52" rx="4"/>
+          <text class="d-tb" x="300" y="574" text-anchor="middle">Repair the channel, stamp, route</text>
+          <text class="d-t" x="300" y="592" text-anchor="middle">dial · linkedin_first · email_only</text>
+        </svg>
+      </div>
+      <figcaption><b>Each question is a stopping point, not a step.</b> Questions 1 and 2 cost nothing and settle most rows. Only what falls through reaches metered LinkedIn at question 4, and only what survives that reaches paid vendor data. The single red path is the only outcome a human must approve — because suppressing a real person's record is the one decision that is expensive to get wrong.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>The pipeline</h2>
+    <p>Six stages. Stages 1 and 2 are free and answer most questions. Everything paid runs only on what survives them.</p>
+
+    <div class="stages">
+      <div class="stage">
+        <span class="cost">Free · no external calls</span>
+        <h3>Harvest first-party evidence</h3>
+        <p>Search Outlook mail and calendar for every name and domain on the list. Parse email signatures for direct dials, titles, and addresses. Pull logged meetings and the ConnectAndSell session reports that arrive from <code>system.reports@connectandsell.com</code>.</p>
+        <p>Anyone you have met or exchanged mail with is <strong>verified by definition</strong> — no vendor needed. This stage was skipped in the pilot and is the single largest change.</p>
+      </div>
+
+      <div class="stage">
+        <span class="cost">Free · two batch reads</span>
+        <h3>Read what the CRM already knows</h3>
+        <p>Presence of email, phone, and LinkedIn per channel. Bounce history. Dial dispositions from associated call records — the pilot list has <strong>22,971 logged calls across 181 of its 183 contacts</strong>, an untouched record of which numbers actually connect.</p>
+        <p>Read <em>every</em> field that can carry a fact before concluding one is missing. Check <code>company</code> as well as <code>associatedcompanyid</code>.</p>
+        <p><strong>Derive the domain's email convention from its sibling contacts.</strong> Twelve of the thirteen contacts at <code>provenit.com</code> use first-initial-plus-lastname; the one exception was the bounced record. An address that breaks its own domain's pattern is suspect before any vendor is consulted, and the pattern usually supplies the correction.</p>
+      </div>
+
+      <div class="stage">
+        <span class="cost">Metered · Sales Navigator</span>
+        <h3>Confirm the seat on LinkedIn</h3>
+        <p>Only for contacts stages 1–2 left unresolved, and only through the authorized account. Answers still-in-seat, tenure, and recent moves; writes <code>ai__li_still_at_company</code>, <code>ai__li_recent_role_change</code>, <code>ai__li_tenure_years</code>.</p>
+        <p>On the pilot list, <strong>51 of the 60 unresolved contacts carry a LinkedIn URL</strong> — so one metered pass settles 85% of the questionable third.</p>
+      </div>
+
+      <div class="stage">
+        <span class="cost">Metered · vendor credits</span>
+        <h3>Fill the remaining gaps — websites before vendors</h3>
+        <p>Only the handful nothing above could answer, and in the order the census actually proved out: <strong>the company's own website first</strong>, then BBB's business-management block, then state and county contract PDFs, then Secretary of State filings, and <em>only then</em> ZoomInfo.</p>
+        <p>That ordering is not a preference, it is a measurement. The census sourced 294 new contacts across 124 dealers with company websites as the most productive source, while <strong>ZoomInfo failed to return an email for 121 of 150 decision-makers</strong> — an 81% miss on the one field that mattered most. Apply the rejection rules regardless: a company-only match scoring zero is empty, and a domain mismatch overrides any confidence number.</p>
+        <p>Websites lie too, just differently. One dealer's team page carried invented staff — "Robert Smith", "Christine Eve", "Mike Hardson" — theme placeholder text left live. Corroborate a name found on a website before trusting it.</p>
+      </div>
+
+      <div class="stage">
+        <span class="cost">Write · read-back verified</span>
+        <h3>Stamp and route</h3>
+        <p>Auto-write corrected emails, phones, titles, and the <code>ai__</code> stamps — each read back and compared, because batch writes have reported success while silently failing. Queue for human sign-off: anything marking a person departed, and any delete or merge.</p>
+        <p>Set <code>ai__contact_verified_date</code> on everything touched. That date is what makes stage 6 cheap.</p>
+      </div>
+
+      <div class="stage">
+        <span class="cost">Free · the payoff</span>
+        <h3>Emit channels, then re-run</h3>
+        <p>Output a routing decision per contact, not a score. On the next run, stage 2 skips anything stamped inside the freshness window, so only new members and aged-out records cost anything. The first pass is the expensive one; every pass after is maintenance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The output is a channel, not a score</h2>
+    <p>A single quality grade forces bad decisions. A hard-bounced email says nothing about a phone; a flagged mobile says nothing about a direct line. Route each contact to the channel that is actually open.</p>
+
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr><th>Verdict</th><th>Means</th><th>Written by</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>dial_now</code></td><td>Number confirmed by a prior connect or first-party source</td><td><span class="pill p-ok">Auto</span></td></tr>
+          <tr><td><code>linkedin_first</code></td><td>Person confirmed in seat, but phone or email is closed — Contact B's case</td><td><span class="pill p-ok">Auto</span></td></tr>
+          <tr><td><code>email_only</code></td><td>Address verified, no usable number on file</td><td><span class="pill p-ok">Auto</span></td></tr>
+          <tr><td><code>needs_research</code></td><td>Unresolved after all five tiers</td><td><span class="pill p-warn">Auto, queued</span></td></tr>
+          <tr><td><code>departed_confirmed</code></td><td>Left the company, per tier 1–3 only</td><td><span class="pill p-bad">Human</span></td></tr>
+          <tr><td><code>do_not_contact</code></td><td>Suppressed</td><td><span class="pill p-bad">Human</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Two new contact properties carry this: <code>ai__dial_verdict</code> as an enumeration of the six values above, and <code>ai__dial_blockers</code> as a reason-code string. Everything else reuses the verdict layer the dealer census already built.</p>
+  </section>
+
+  <section>
+    <h2>Pilot findings — provisional</h2>
+    <p>These are the pilot's tiers 2–5 results on list 3625, <strong>before</strong> stage 1 ran. Contact B demonstrates that first-party evidence moves records between buckets, so treat every number here as an upper bound on the problem, not a measurement of it.</p>
+
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Signal</th><th class="num">Count</th><th class="num">Share</th><th>Reading</th></tr></thead>
+        <tbody>
+          <tr><td>No known problem</td><td class="num">107</td><td class="num">58%</td><td>Absence of evidence, not evidence of health</td></tr>
+          <tr><td>Something contradicts</td><td class="num">60</td><td class="num">33%</td><td>51 resolvable on LinkedIn</td></tr>
+          <tr><td>NeverBounce vs ZoomInfo disagree</td><td class="num">43</td><td class="num">23%</td><td>Two paid sources, opposite answers</td></tr>
+          <tr><td>Hard bounce on record</td><td class="num">15</td><td class="num">8%</td><td>A departure <em>hint</em> — or a wrong-pattern guess, as with Contact B</td></tr>
+          <tr><td>Email domain ≠ company domain</td><td class="num">12</td><td class="num">7%</td><td>Catches rebrands, aliases, and malformed fields</td></tr>
+          <tr><td>No LinkedIn URL</td><td class="num">11</td><td class="num">6%</td><td>Needs tier 4</td></tr>
+          <tr><td>No phone at all</td><td class="num">1</td><td class="num">1%</td><td>The only contact with no open channel</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Also found and worth separate attention: one company stores a full URL in its <code>domain</code> field, one contact has a LinkedIn headline pasted into <code>company</code>, and 72 records show raw numeric <code>lifecyclestage</code> IDs that will look broken in any rep-facing export.</p>
+
+    <h3 style="margin-top:2rem">What tier 3 actually returned</h3>
+    <p>Fifteen contacts then went through LinkedIn. The results are the reason none of the numbers above should be treated as verdicts.</p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Outcome</th><th class="num">Count</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Still in seat</td><td class="num">8</td><td>Including one <em>promoted</em> in June, and one still there since 1991</td></tr>
+          <tr><td>Genuinely departed</td><td class="num">4</td><td>All four with a known new employer</td></tr>
+          <tr><td>Wrong person's profile on the record</td><td class="num">2</td><td>Name collisions, both same-state</td></tr>
+          <tr><td>No profile to check</td><td class="num">2</td><td>Unresolved after all tiers</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Of the eleven flagged "likely departed" by the bounce heuristic, ten were checkable and <strong>three had actually left</strong>. Six were employed with a broken address. Two of the four confirmed email "fixes" were withdrawn once LinkedIn contradicted the pattern — one because the man had left the company, one because the evidence was too thin to write.</p>
+  </section>
+
+  <section>
+    <h2>Rules earned by getting it wrong</h2>
+    <p>Each of these came from a real mistake in the pilot. They are the guardrails, and they are the reason the process is worth writing down.</p>
+
+    <div class="errs">
+      <div class="err">
+        <b>Claimed a phone was "fine" having never checked one</b>
+        <p>Presence of a phone string was reported as reachability. Nothing in the run validated a single number.</p>
+        <span class="rule">State the source for every claim, or state that there is none. "Present" and "verified" are different words.</span>
+      </div>
+      <div class="err">
+        <b>Declared three contacts to have no company</b>
+        <p>The check read <code>associatedcompanyid</code> and ignored the populated <code>company</code> field. All three were wrong; the true count was zero.</p>
+        <span class="rule">Before concluding a fact is absent, read every field that could hold it.</span>
+      </div>
+      <div class="err">
+        <b>Read an email bounce as a departed person</b>
+        <p>Contact B's address bounced because the CRM had invented the wrong pattern, not because he left.</p>
+        <span class="rule">A channel failure is evidence about the channel. Only tiers 1–3 speak to employment.</span>
+      </div>
+      <div class="err">
+        <b>Consulted the inbox last instead of first</b>
+        <p>Outlook held the corrected email, the missing direct dial, and two meeting recaps — after vendor data had already been used to condemn the record.</p>
+        <span class="rule">First-party evidence runs first, every time. It is free, and it outranks everything purchased.</span>
+      </div>
+      <div class="err">
+        <b>Presented a sample record as clean without checking it</b>
+        <p>The illustrative "clean" example turned out to have a flagged mobile as its only number.</p>
+        <span class="rule">Never hold up a record as representative until it has been through the same checks as the rest.</span>
+      </div>
+      <div class="err">
+        <b>Trusted a stored LinkedIn URL as if it were proof of identity</b>
+        <p>Two of the first thirteen profiles checked were different people with the same name — a pharma VP standing in for a copier dealer's sales VP, and a Mars Petcare maintenance supervisor standing in for a ClearScale executive.</p>
+        <span class="rule">A profile is evidence only after its identity is corroborated on at least two of title, employer and city. Until then the URL is a guess, not a source.</span>
+      </div>
+      <div class="err">
+        <b>Truncated a field, then reasoned from the fragment</b>
+        <p>Macri's job title named his real employer. It was clipped to 25 characters for display, and the answer was invisible for the rest of the investigation.</p>
+        <span class="rule">Never judge from a truncated value. Display short, decide on the full field.</span>
+      </div>
+      <div class="err">
+        <b>Derived a field from another derived field</b>
+        <p>Personas are assigned from job titles by workflow. But the title field itself is written by enrichment automation that contradicts itself — one contact's title was rewritten four times in four months, flipping between two different jobs twice. Four separate workflows then compete to write the persona, two of them re-enrolling, and on several records two of them wrote different personas on the same day.</p>
+        <span class="rule">Never derive from a field you have not verified. Correcting the output of an unstable pipeline is wasted work — the pipeline overwrites it. Fix field ownership first, then the rules, then the records.</span>
+      </div>
+      <div class="err">
+        <b>Broke on an apostrophe</b>
+        <p>A name-derivation routine crashed on "O'Dell" — the apostrophe terminated a string literal. In a bulk run it would have silently skipped every O'Brien, O'Neill and D'Angelo on the list.</p>
+        <span class="rule">Names contain apostrophes, hyphens, accents and single letters. Any routine that parses them needs a hostile test set before it touches a whole list.</span>
+      </div>
+      <div class="err">
+        <b>Published a heuristic before measuring it</b>
+        <p>"Bounce plus a correctly-patterned address means the person left" was offered as a finding. Of ten checkable cases it was right three times. Six were still employed; one was the wrong person.</p>
+        <span class="rule">A heuristic prioritises what to look at. It never fills in the verdict column.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Diagnose the disease before choosing the treatment</h2>
+    <p>Two lists were run through this pipeline and they failed in completely different ways. Reaching for the same tools on both would have wasted money on one and missed the problem on the other.</p>
+
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Symptom pattern</th><th>Disease</th><th>What actually helps</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Addresses that break their own domain's convention · records built by integrations · bounces on invented patterns</td>
+            <td><b>Dirty</b></td>
+            <td>Domain-convention repair, then one verification call per derived address. Cheap and high-yield.</td>
+          </tr>
+          <tr>
+            <td>Old list, filters never revisited · large never-contacted share · high-churn personas · bounces on <em>correctly</em> formed addresses</td>
+            <td><b>Stale</b></td>
+            <td>Employment verification only. Email tooling cannot touch this — the addresses are fine and the people have moved.</td>
+          </tr>
+          <tr>
+            <td>Titles that don't match the list's stated persona · members no filter should admit</td>
+            <td><b>Mis-scoped</b></td>
+            <td>Fix the list definition or the field it filters on. Needs no lookups at all — the cheapest of the three.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The tell that separates dirty from stale is subtle and worth naming: <strong>a bounce on a well-formed, convention-matching address means the person is gone; a bounce on a malformed one means the record is wrong.</strong> Same symptom, opposite cause, opposite treatment.</p>
+
+    <h3>Where email verification actually belongs</h3>
+    <p>An email verifier answers one question well — <em>does this mailbox exist?</em> — and cannot answer the one that matters most: <em>will mail reach this human?</em> Tested against three addresses that had genuinely hard-bounced, it returned "valid" for two of them; their mailboxes exist and still rejected real mail.</p>
+    <p>So never spend credits re-checking an address you already hold bounce data for. The bounce is ground truth and no verifier overrides it. <strong>Spend them validating addresses you just derived.</strong> On the one case that mattered it was decisive: it called the CRM's invented address <code>invalid</code> and the pattern-derived replacement <code>valid</code>, turning a guess into a verified address for a single credit. That is the whole job, and it is worth doing.</p>
+  </section>
+
+  <section>
+    <h2>Carried over from the dealer census</h2>
+    <p>The census ran this pipeline against 3,011 dealer contacts before it had a name. Four of its findings are load-bearing here.</p>
+
+    <h3>Research that isn't stamped does not exist</h3>
+    <p><strong>262 dealer companies carry written verification notes and no <code>ai__dealer_verdict</code>.</strong> The work was done, the conclusion was reached, and every filter in the portal still reports them as unknown. That single number is the argument for stage 5: the verdict field, not the note, is the deliverable. A note is where you show your reasoning; the enum is what the next run reads.</p>
+
+    <h3>Validation tools measure syntax, not employment</h3>
+    <p>NeverBounce returned results for 2,912 of 3,011 contacts: 2,074 valid, 450 unknown, 386 catch-all — and <strong>2 invalid</strong>. Two, out of nearly three thousand. That is not a clean list, it is a tool answering a different question than the one asked. It can tell you an address is well-formed and the domain accepts mail; it cannot tell you the person reading it left in March.</p>
+
+    <h3>Some records are not yours to touch</h3>
+    <p>53–56 companies are client accounts under hard hold and must not be modified without explicit sign-off, and 15 non-US dealer records are out of scope entirely. Any sweep that runs across a whole portal needs this exclusion list loaded <em>before</em> the first write, not discovered afterwards.</p>
+
+    <h3>Name resolvers fail loudly in one direction and quietly in the other</h3>
+    <p>The census recorded its name-based resolver producing large false-negative sets twice — reporting people missing who were present. This run added the mirror-image failure: name matches returning the wrong human, twice in thirteen. A resolver that can do both needs corroboration on every hit and a second pass on every miss.</p>
+  </section>
+
+  <section>
+    <h2>The runbook</h2>
+    <p>Everything below cost trial and error to find. It is here so the next run starts where this one finished.</p>
+
+    <h3>Reading a LinkedIn profile — signals ranked by strength</h3>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Signal</th><th>Strength</th><th>What it means</th></tr></thead>
+        <tbody>
+          <tr><td>Headline contains <b>"Former"</b> or <b>"Ex-"</b></td><td><span class="pill p-ok">Decisive</span></td><td>A self-declared departure. The cleanest signal available — three of nine in one batch.</td></tr>
+          <tr><td>Headline <b>names an employer</b></td><td><span class="pill p-ok">Decisive</span></td><td>Authoritative. Compare it to your record and act on the difference.</td></tr>
+          <tr><td>Work experience: role with <b>no end date</b></td><td><span class="pill p-ok">Decisive</span></td><td>Still in seat. Costs the extra <code>linkedin_sections=experience</code> parameter.</td></tr>
+          <tr><td>Headline names <b>no employer at all</b></td><td><span class="pill p-warn">Suggestive</span></td><td>Correlates with being between roles. Not proof — pull the experience payload.</td></tr>
+          <tr><td><code>websites</code> field</td><td><span class="pill p-bad">Unreliable</span></td><td>User-maintained and rots. It still showed SnapLogic for someone at Front, Hiya for someone at IFS Loops, WebFilings for a current Workiva employee.</td></tr>
+          <tr><td>Thin profile: single job, &lt;50 followers, out-of-network</td><td><span class="pill p-bad">Reject</span></td><td>Placeholder or scraped. One such profile claimed a VP title at a major vendor with two followers.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Do not drop the experience parameter to save payload.</strong> Tried it; two of six came back indeterminate and needed a second call. The saving is false.</p>
+
+    <h3>Measured source hit rates — the reason for the ordering</h3>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Source</th><th>Resolved</th><th>Failure mode</th></tr></thead>
+        <tbody>
+          <tr><td><b>LinkedIn</b> (authorised account only)</td><td><b>7 of 9</b></td><td>Locked profiles (HTTP 422); no URL on record; ~12.5% of stored URLs are the wrong human</td></tr>
+          <tr><td><b>ZoomInfo</b> batch enrich</td><td><b>2 of the same 9</b> · ~30% of 40 overall</td><td><code>COMPANY_ONLY_MATCH</code> with accuracy <code>0.0</code> on 35%; one confident wrong-person match (queried Emily, returned <em>Emma</em> at another company)</td></tr>
+          <tr><td><b>Email verifier</b></td><td>mailbox existence only</td><td>Marks genuinely-bouncing addresses <code>valid</code>; free-mail always passes; a former employer's server still accepts mail</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>ZoomInfo went blind on six people LinkedIn resolved outright, including a 14-year Workiva veteran. <strong>Vendor silence is not evidence of absence.</strong> Reach for it only when a profile is locked or missing — and never to check data it supplied.</p>
+
+    <h3>CRM write mechanics that will waste an hour otherwise</h3>
+    <ul>
+      <li><strong>Associations need two type IDs.</strong> <code>PUT /crm/v4/objects/contacts/{id}/associations/default/companies/{cid}</code> sets only typeId <code>279</code> on a fresh link. Without typeId <code>1</code> the calculated <code>associatedcompanyid</code> stays empty and the contact reads as orphaned. Send both explicitly: <code>[{associationTypeId:1},{associationTypeId:279}]</code>.</li>
+      <li><strong>Calculated fields lag.</strong> <code>associatedcompanyid</code> can take 20+ seconds to reflect a new association. Re-read before concluding a write failed.</li>
+      <li><strong>Batch read does not accept <code>propertiesWithHistory</code> at 100 records.</strong> Drop to 25 per call, or the whole response returns null.</li>
+      <li><strong>Property history is the audit trail.</strong> <code>?propertiesWithHistory=jobtitle</code> reveals every writer and timestamp — the only way to catch two systems fighting over one field.</li>
+      <li><strong>Verify every write by reading it back.</strong> Batch update returns <code>COMPLETE</code> with zero errors and can still not apply.</li>
+    </ul>
+
+    <h3>Write vocabulary — where a verdict goes</h3>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Finding</th><th>Lead status</th><th>Effect</th></tr></thead>
+        <tbody>
+          <tr><td>Confirmed in seat</td><td>leave as prospect</td><td>Stamp <code>ai__li_still_at_company = yes</code> — this is the callable list</td></tr>
+          <tr><td>Departed, destination known and in portal</td><td>leave as prospect</td><td>Reassociate, then they stay callable at the <em>right</em> company</td></tr>
+          <tr><td>Departed, destination known but not in portal</td><td><code>Need Updated Info</code></td><td>Off the dial queue until the company exists</td></tr>
+          <tr><td>Departed, destination unknown</td><td><code>No Longer with Company</code></td><td>Off the dial queue</td></tr>
+          <tr><td>Retired</td><td><code>Retired - Remove from All Lists</code></td><td>Off every list</td></tr>
+          <tr><td>Unresolvable after all tiers</td><td>leave, but <em>do not stamp a verified date</em></td><td>Stays in the unverified queue for the next pass</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Withholding the verification stamp is the mechanism that makes the next run cheap <em>and</em> honest: refreshes skip what is stamped, so anything unresolved comes back around instead of quietly passing as clean.</p>
+
+    <h3>Don't create these company records</h3>
+    <p>Movers frequently land at solo advisory firms, fractional practices and one-person consultancies. Creating a company record for each adds exactly the junk the exercise exists to remove, and none of them are prospects. Record the destination in the evidence field and suppress the contact. Create a company only when the destination is a real target — and get its domain from the LinkedIn company page (<code>website</code> field) so the record is matchable later, never a name-only stub.</p>
+
+    <h3>Disambiguating a destination before you move anyone</h3>
+    <p>An email-domain change looks like a job change and usually isn't. Of 49 domain mismatches on one list, <strong>37 were aliases</strong> — <code>thomsonreuters.com</code>/<code>tr.com</code>, <code>pb.com</code>/<code>pitneybowes.com</code>, former names like <code>soxhub.com</code> for AuditBoard, and five staff of one team on their league's shared domain. String similarity catches renames that look alike and misses the ones that don't; short domains and former names need a lookup. And never pick between same-named companies — three "Rally" records, six "PrismPath" records: suppress rather than guess.</p>
+  </section>
+
+
+  <section>
+    <h2>Finding the address at the new employer</h2>
+    <p class="meta">Added after the 5243 pass, when 42 of 70 re-associated movers turned out to have either no email at all or a dead one at the employer they had left. ZoomInfo could not supply a single one of them — it returned <code>COMPANY_ONLY_MATCH</code>, or a full match whose email field was simply absent. A vendor miss is where this ladder starts, not where it ends.</p>
+
+    <h3>Rung 1 — look in the record you already have</h3>
+    <p>Before deriving anything, sweep the other address fields on the contact: <code>hs_additional_emails</code>, <code>email_2</code>, <code>email_other</code>, <code>work_email</code>, <code>linkedin__email</code>. Two of the four hardest cases were solved here for the cost of one batch read. Contact S's <code>contactS@aidoc.com</code> had been sitting in <code>hs_additional_emails</code> the entire time while the primary Email field held a dead <code>healthwise.org</code> address. The CRM already knew.</p>
+
+    <h3>Rung 2 — learn the company's format from a colleague you already trust</h3>
+    <p>Search your own portal for a known-good address on the exact domain:</p>
+    <pre class="crm">POST /crm/v3/objects/contacts/search
+  filter: email CONTAINS_TOKEN "*@thedomain.com"</pre>
+    <p>Score those samples against a pattern table — <code>first.last</code>, <code>flast</code>, <code>first</code>, <code>firstlast</code>, <code>f.last</code>, <code>firstl</code> — and keep only the patterns that actually explain a real sample. This solved 22 of 42 domains from data already owned, with zero external calls. Where the samples disagree, the domain has no single convention and you must not pretend otherwise.</p>
+
+    <h3>Rung 3 — construct, then make the mail server answer</h3>
+    <p>NeverBounce <code>/v4/single/check</code> is the arbiter. The four results are not shades of the same thing:</p>
+    <ul>
+      <li><strong>valid</strong> — the mailbox exists. Write it.</li>
+      <li><strong>catchall</strong> — the domain accepts everything; the person is unconfirmed. Write it, flag it, never call it proven.</li>
+      <li><strong>unknown</strong> — the server refuses verification altogether (Workday, Zendesk, Microsoft, UKG, dell.org). This proves nothing in either direction. Write only when the pattern is unambiguous from two or more samples, and stamp it UNVERIFIED.</li>
+      <li><strong>invalid</strong> — a real negative, but <em>only</em> when that domain answers other probes. Then it is evidence, not a dead end.</li>
+    </ul>
+    <p class="meta">Run these concurrently and in the background. A serial loop over forty contacts will exceed a two-minute shell timeout and teach you nothing except patience.</p>
+
+    <h3>Rung 4 — read the negatives</h3>
+    <p>An <code>invalid</code> from a domain that answers is a finding. Two cases, opposite conclusions:</p>
+    <ul>
+      <li><strong>Contact T.</strong> Every pattern invalid at <code>domino.ai</code>. The company had rebranded from Domino Data Lab and kept the old mail domain — <code>contactT@dominodatalab.com</code> is valid.</li>
+      <li><strong>Contact M.</strong> Every pattern invalid at <code>celigo.com</code>, which answers. Five rejections and one acceptance later: she goes by <em>Kris</em>, not Kristin. When the server discriminates, keep trying nickname variants — the negatives are the map.</li>
+    </ul>
+
+    <h3>The hard rule, and the only two ways around it</h3>
+    <p>An address is written only if its domain is the employer LinkedIn confirmed. A vendor-supplied address on the previous employer's domain is exactly the failure this whole process exists to prevent. Two exceptions, and they are not equally strong:</p>
+    <ul>
+      <li><strong>Same company, different domain.</strong> Accept when ZoomInfo resolves the alias to the <em>identical</em> company id — <code>dominodatalab.com</code> and <code>domino.ai</code> are both id 358094550.</li>
+      <li><strong>Parent and division.</strong> Different ids, so weaker. <code>hexagon.com</code> is id 17662709; <code>hexagonmi.com</code> is id 396535383. A group that size runs one corporate mail domain, so accept — but only with a <code>valid</code> result and a note recording the weaker tier.</li>
+    </ul>
+
+    <h3>Where the old address goes</h3>
+    <p>Never leave a former employer's address in the Email field and never simply delete it. Move it to <code>previous__email</code>, and its domain to <code>previous__company_domain_name</code> — which is a <em>URL-type</em> property and rejects a bare domain with <code>INVALID_URL</code>, so prefix <code>https://</code>. Read the existing value first and leave it alone if already set. And clearing a primary address takes two writes in order: empty <code>hs_additional_emails</code>, then empty <code>email</code>; otherwise HubSpot refuses with <em>"Remove all secondary emails first."</em></p>
+    <p class="meta">Result on the 70 movers: 56 hold a confirmed current-employer address, 14 hold none with the old one filed, and none carry a prior employer's address. Before this pass, 18 did.</p>
+  </section>
+
+  <section>
+    <h2>Two ways a good record still fails to reach a rep</h2>
+    <p>Verification is not delivery. Both of these were discovered after the list was reported complete, which is the argument for reading membership back out of the list rather than trusting a local queue.</p>
+
+    <h3>A filter token is a control character, not prose</h3>
+    <p>The calling list excludes anyone whose evidence field contains the persona-exclusion token. When seven people were correctly reinstated as decision makers, the note explaining the reinstatement quoted that token verbatim — so the filter went on matching, and seven qualified prospects stayed invisible. Write the token only when you mean it, build it at runtime in scripts, and phrase every removal note without it.</p>
+
+    <h3>Re-association can walk a contact off the source list</h3>
+    <p>The calling list gates on membership in the source list, and the source list requires a known phone, a marketing persona, and membership in both <em>HubSpot Tech Used</em> and <em>ZoomInfo — Contacts</em> — the latter being <code>currently_use_zoominfo_ = Yes</code>. Move a contact to a new employer and they leave the ICP, so 46 of 70 movers dropped off. That is mostly the filter working: a marketing leader at a company using neither product is a different campaign.</p>
+    <p>The distinction that matters is between <em>disqualified</em> and <em>unexamined</em>. Of those 46, eighteen sit on enriched companies genuinely lacking the signal. Twenty-seven sit on company records created during the pass, whose ICP flags were never enriched at all — unproven, not negative. Creating a company record silently drops its occupants out of every tech-signal list until someone enriches it. Enrich on create, or accept that you are hiding people you just finished verifying.</p>
+  </section>
+
+  <section>
+    <h2>Running it on the next list</h2>
+    <p>The process takes a list ID and nothing else. It is deliberately indifferent to what the list is for — the reachability bar is a parameter, not a constant, because a cold prospecting list and a deal-follow-up list fail in different ways.</p>
+    <ul>
+      <li><strong>Scope.</strong> 1,634 lists in the portal, 189 carrying the <code>CAS -</code> prefix. Sizes range from 880 down to zero.</li>
+      <li><strong>Start small.</strong> Prove a pass on a few hundred, inspect it, then scale. The pilot's corrections came from one contact being challenged.</li>
+      <li><strong>Empty lists are their own defect.</strong> Five follow-up lists sit at zero members. That is broken filter logic, not bad data, and reps opening them see nothing.</li>
+      <li><strong>Duplicates first.</strong> Lists 3625 and 4637 both hold exactly 183; 3274 and 4087 both hold 190. Validating the same population twice is pure waste.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Built from list 3625, extended by the full 5243 pass · Quantum Business Solutions · verdict layer extends the copier dealer census schema
+  </footer>
+
+</div>

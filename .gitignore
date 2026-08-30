@@ -9,3 +9,24 @@ __pycache__/
 .pytest_cache/
 .venv/
 scratch/
+
+# Run data — contact-level PII. These land in whatever directory a run is started from,
+# and the routine starts from the repo ROOT, so the rules cannot be scoped to scripts/.
+# This repo is PUBLIC; an untracked file here is one `git add -A` away from being published.
+mem_*.txt
+li_verdicts_*.json
+pending_movers_*.json
+reassoc_*_log.json
+dedupe_review_*.json
+icp_queue_*.json
+list_anatomy_*.json
+phone_*.json
+email_*.json
+no_dial.json
+twolists.json
+listb.json
+b*.json
+_*.json
+*.tmp
+queue.json
+resolved.json

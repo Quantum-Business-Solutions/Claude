@@ -242,3 +242,55 @@ so it is LinkedIn's bot detection on headless Chromium, not egress policy.
 
 Not worth pursuing: the Unipile API returns comment and post content directly,
 which is authoritative rather than a rendering of it.
+
+## No REST path to Unipile exists — measured, not assumed
+
+Asked on 2026-08-30 whether the LinkedIn work could simply be configured the
+way `contact-verification` is, so that it works. It cannot, and
+`contact-verification/scripts/unipile.py` is what proves it. Running its own
+`probe` against the live key:
+
+```
+unreachable  https://api30.unipile.com:16072   tcp 51.159.14.128:16072 TimeoutError
+REACHABLE    https://api30.unipile.com         GET /accounts -> HTTP 502
+REACHABLE    https://api.unipile.com           GET /accounts -> HTTP 404
+REACHABLE    https://api1.unipile.com          GET /accounts -> HTTP 502
+```
+
+Port 443 is reachable at the network level; **no host serves the tenant API
+there.** The tenant port `16072` times out. So the environment secret
+`UNIPILE_API_KEY` is sufficient credentials and insufficient access — the key
+was never the problem.
+
+This matches what `contact-verification/ROUTINE.md` already states, and means
+both programs share one dependency: **the `mcp__Unipile__*` connector must be
+present in the fired session.** That is a claude.ai connector grant, not an
+environment variable, and the two are not interchangeable.
+
+### Consequence for the verification routine
+
+`trig_01B3hA6TUzMWE7tYR7d25mkD` fired 2026-08-30 14:13 UTC and reported
+`SUCCEEDED`. Its prompt states that `ai__li_last_attempt_date`,
+`ai__verification_issue` and `ai__li_tenure_years` were set on **zero** records
+and that exercising them was the point of the capped run. Measured afterwards:
+
+| Property | Populated |
+|---|---|
+| `ai__li_last_attempt_date` | 0 |
+| `ai__verification_issue` | 0 |
+
+Consistent with the run halting cleanly at its Unipile self-test — correct
+behaviour under the contract ("a halted run is a successful routine"), but the
+effect is a routine reporting success while writing nothing. Exactly the
+failure class both programs exist to eliminate.
+
+### The durable fix
+
+Ask Unipile whether the account can be served on **port 443**. If it can,
+`unipile.py`'s existing candidate list finds it with no code change, the REST
+path starts working, the environment secret becomes sufficient, the MCP
+connector stops being a dependency for either program, and response **headers**
+become readable — which the MCP HAR passthrough does not return, so
+`Retry-After` and `X-RateLimit-*` are currently invisible.
+
+One support ticket, versus a per-routine configuration constraint forever.

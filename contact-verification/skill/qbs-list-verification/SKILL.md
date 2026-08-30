@@ -1,0 +1,1 @@
+../../../.claude/skills/qbs-list-verification/SKILL.md
