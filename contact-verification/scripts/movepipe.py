@@ -26,7 +26,8 @@ a unique-value collision means a duplicate/wrong-linked contact -> logged, not f
 Env: TOKEN. DATE=YYYY-MM-DD optional. Appends to reassoc_<listId>_log.json; clears pending_movers_<listId>.json."""
 import json,subprocess,os,sys,re,tempfile
 T=os.environ['TOKEN']; D=os.environ.get('DATE') or subprocess.run(['date','-u','+%Y-%m-%d'],capture_output=True,text=True).stdout.strip()
-lid=sys.argv[1]; M=json.load(open(sys.argv[2]))
+lid=sys.argv[1]
+FROM_HS=(len(sys.argv)>2 and sys.argv[2]=='--from-hubspot')
 TMP=tempfile.NamedTemporaryFile('w',suffix='.json',delete=False).name
 MARKER="RE-"+"ASSOCIATED"   # built at runtime so the source file cannot seed the filter token
 # HubSpot has no URL property type - every URL field in this portal (hs_linkedin_url, website,
@@ -50,6 +51,27 @@ def call(m,url,body=None,fatal=True):
         return {"__http":code}
     try: return json.loads(body_txt) if body_txt.strip() else {}
     except Exception: return {}
+if FROM_HS:
+    # Rebuild the queue from the CRM instead of a local file. pending_movers_<lid>.json does not
+    # survive a scheduled container, and a lost queue leaves real people ejected at the employer
+    # they left with no record of where they went. ai__pending_mover_to does survive.
+    M=[]; after=None
+    while True:
+        body={"filterGroups":[{"filters":[{"propertyName":"ai__pending_mover_to","operator":"HAS_PROPERTY"}]}],
+              "properties":["ai__pending_mover_to","ai__contact_evidence"],"limit":100}
+        if after: body["after"]=after
+        r=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/search',body)
+        for x in r.get('results',[]):
+            dest=(x['properties'] or {}).get('ai__pending_mover_to')
+            if dest: M.append({"id":x['id'],"newco":dest,
+                               "ev":"Queue rebuilt from ai__pending_mover_to (the local queue file "
+                                    "did not survive the container that wrote the verdict)."})
+        after=((r.get('paging') or {}).get('next') or {}).get('after')
+        if not after: break
+    print("rebuilt "+str(len(M))+" pending mover(s) from HubSpot")
+    if not M: sys.exit(0)
+else:
+    M=json.load(open(sys.argv[2]))
 TITLE_CONF_MIN=0.90
 AMBIG=("caution","ambig","uncertain","unclear","probably","possibly","perhaps","assumed","appears to",
        "may be","might be","succession","dormant","not updated","stale profile","conflict","unsure","?")
@@ -71,13 +93,12 @@ for m in M:
     cid=str(m['id'])
     if cid in done: continue
     newco=m['newco']; dom=m.get('domain')
-    if 'dm' not in m:
-        # absent dm used to fall through to "Not Decision Maker", silently ejecting a verified
-        # executive from the calling list. Failing closed means "don't write", not "write the
-        # ejecting value".
-        log.append({"id":cid,"newco":newco,"ok":False,"err":"dm not supplied - refusing to guess"})
-        print("SKIP  "+cid+" no dm supplied"); continue
-    dm=m['dm']
+    # `dm` is now OPTIONAL and drives no write. It used to be mandatory because an absent value
+    # fell through to "Not Decision Maker", silently ejecting a verified executive - so refusing to
+    # run was the right call then. This process no longer writes that status at all, so the
+    # requirement only blocked queues rebuilt from HubSpot (which carry no dm) from processing at
+    # all. It is still recorded in the log when supplied.
+    dm=m.get('dm')
     if MARKER in (m.get('ev') or ''):
         log.append({"id":cid,"newco":newco,"ok":False,"err":"ev contains the filter token"})
         print("SKIP  "+cid+" evidence contains the mover filter token"); continue
@@ -175,6 +196,9 @@ for m in M:
        "ai__reassociated_on":D,
        "ai__sources_confirming":m.get('sources',1),
        "ai__contact_evidence":ev,"hs_lead_status":ls,
+       # the contact has now BEEN moved: clear the pending marker so a later run does not
+       # re-process them, and so the outstanding-mover count means what it says.
+       "ai__pending_mover_to":"",
        "validated__linkedin_or_manually":"Yes"}
     if m.get('title'): p["ai__job_title"]=m['title']
     if wt: p["jobtitle"]=m['title']

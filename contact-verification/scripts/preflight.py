@@ -32,10 +32,13 @@ REQUIRED={
                      ('title_conf',              'jobtitle confidence gate'),
                      ('RECORD DROPPED',          'rule refusals'),
                      ('VERDICT_OK',              'verdict vocabulary enforcement'),
-                     ('ai__li_last_attempt_date','attempt vs confirmed date split')],
- 'movepipe.py':     [('dm not supplied',         'no silent Not-Decision-Maker default'),
-                     ('associations read failed','associations guard'),
-                     ('ai__reassociated_on',     'mover marker as a date, not a substring')],
+                     ('ai__li_last_attempt_date','attempt vs confirmed date split'),
+                     ('GUARDRAIL (pre-write)',  'guardrails evaluated BEFORE the batch write'),
+                     ('ai__pending_mover_to',   'mover destination stamped on the contact')],
+ 'movepipe.py':     [('associations read failed','associations guard'),
+                     ('ai__reassociated_on',     'mover marker as a date, not a substring'),
+                     ('ai__pending_mover_to',    'mover queue survives the container'),
+                     ('ai__previously_associated_company','previous employer preserved on re-association')],
  'twolists.py':     [('ai__reassociated_on',     'Moved-Companies filters the date')],
  'phoneaudit.py':   [("reassoc_'+str(lid)",     'per-list log filename')],
  'verifyphone.py':  [("reassoc_'+str(lid)",     'per-list log filename')],
@@ -54,6 +57,13 @@ REQUIRED={
 # straight through - i.e. it defended the deprecated fallback while the primary transport, which
 # carries every run, stayed wide open.
 FORBIDDEN={
+ 'writeverdicts.py':[(r'LS_OK\s*=\s*\{[^}]*Not Decision Maker',
+                      'the "Not Decision Maker" literal back in the WRITABLE lead-status set. '
+                      'Employment dates cannot establish buying authority; inferring it from title '
+                      'strings ejected a Founder-CEO, an Executive Chairman and a VP of Sales who '
+                      'were all still in seat')],
+ 'movepipe.py':     [(r'or\s*["\']Not Decision Maker',
+                      'the "Not Decision Maker" fallback restored as a mover default')],
  'unipile.py':      [(r'sections\s*=\s*[\'"]?[a-z_]*experience_preview',
                       'the truncating preview section. It returned 5 rows where the full '
                       'section returns 15, so a current employer can fall outside it, read '
@@ -146,7 +156,9 @@ if not ids:
 print("ok   membership probe: "+str(len(ids))+" member(s) readable, e.g. "+str(ids[0]))
 
 # ---------- 4. every property this process writes must still exist ------------------------
-WRITES=['ai__li_still_at_company','ai__contact_evidence','ai__contact_verified_date',
+WRITES=['ai__pending_mover_to','ai__previously_associated_company',
+        'ai__previously_associated_company_id','ai__previously_associated_company_name',
+        'ai__li_still_at_company','ai__contact_evidence','ai__contact_verified_date',
         'ai__li_last_attempt_date','ai__reassociated_on','ai__li_tenure_years',
         'ai__li_recent_role_change','ai__sources_confirming','ai__job_title',
         'validated__linkedin_or_manually','hs_linkedin_url','linkedin_profile_url__unique_value',

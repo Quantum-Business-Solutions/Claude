@@ -184,6 +184,11 @@ for r in V:
         p["ai__verification_issue"]=r['issue']; p["ai__verification_issue_on"]=D
         if r.get('issue_note'): p["ai__verification_issue_note"]=str(r['issue_note'])[:900]
     if ls: p["hs_lead_status"]=ls
+    # A mover's destination goes on the CONTACT, not only into pending_movers_<lid>.json. That
+    # file dies with a scheduled container, and once the verdict is banked queue.py never surfaces
+    # the contact again - so a lost queue leaves a real person ejected at the employer they left,
+    # with nothing anywhere recording where they went. movepipe clears this when it re-associates.
+    if r['verdict']=='no' and r.get('newco'): p["ai__pending_mover_to"]=str(r['newco'])[:200]
     if r.get('title'): p["ai__job_title"]=r['title']            # AI-owned title, always safe to write
     if wt: p["jobtitle"]=r['title']; titlewrite.append((str(r['id']),r['title'],old_title))
     if r.get('li_url'): p["hs_linkedin_url"]=r['li_url']; urlfix.append((str(r['id']),r['li_url']))
@@ -205,6 +210,32 @@ if mv:
     pend+=[x for x in mv if x['id'] not in have]
     tmp=pf+'.tmp'; json.dump(pend,open(tmp,'w'),indent=1); os.replace(tmp,pf)
     print("queued "+str(len(mv))+" movers -> "+pf+" (total "+str(len(pend))+")")
+    print("      also stamped ai__pending_mover_to on each, so the queue survives this container")
+# ---------- PRE-WRITE GUARDRAILS -------------------------------------------------------
+# These used to live at the BOTTOM of this file, after batch/update had already committed, and
+# they only evaluated once the accumulated log passed n>=50. That log is a local file that does
+# not survive a routine container, so at 15-60 verdicts a run `n` never reached 50 and the
+# guardrails NEVER EXECUTED - not once - while SKILL.md advertised them as ENFORCED.
+# This block runs BEFORE the write and measures THIS batch, so a bad batch is refused rather
+# than reported. The lifetime check further down still runs, but it is now the second line of
+# defence rather than the only one.
+# A ceiling breach here almost always means the INSTRUMENT failed, not that the data is bad:
+# LinkedIn rate-limiting or an auth failure turns every read into an `unreadable`.
+from collections import Counter as _C
+_bc=_C(r['verdict'] for r in accepted); _bn=len(accepted)
+if _bn>=8:      # below this a single record swings the share; too noisy to act on
+    for _v,_ceil,_why in (('unreadable',0.50,'a transport or rate-limit failure, not a finding about these people'),
+                          ('no_profile',0.60,'a statement about the SOURCE of this data, not about individuals'),
+                          ('no',0.80,'a judge ejecting nearly everyone, or a list pointed at the wrong cohort')):
+        _sh=_bc.get(_v,0)/_bn
+        if _sh>_ceil:
+            print("GUARDRAIL (pre-write): '%s' is %.0f%% of this batch of %d - above %.0f%%."
+                  %(_v,_sh*100,_bn,_ceil*100))
+            print("  Refusing to write. That share usually means "+_why+".")
+            print("  NOTHING was written. Fix the cause and re-run this batch.")
+            sys.exit(3)
+    print("ok   pre-write guardrails: batch of %d %s"%(_bn,dict(_bc)))
+
 # chunk at 100 (HubSpot batch cap), diff requested vs returned
 applied=0
 for i in range(0,len(inputs),100):
@@ -264,14 +295,38 @@ print("li_verdicts_"+lid+" total "+str(len(log))+" "+str(dict(Counter(x['verdict
 # rubber-stamping `yes` on a FIRST pass, and on a refresh it fires on correct behaviour. Ceilings
 # still apply in both modes: they detect the instrument failing, which mode does not excuse.
 MODE=os.environ.get('MODE','first_pass')
-c=Counter(x['verdict'] for x in log); n=len(log)
+# Count from HUBSPOT, not from the local log. The log is a file in the working directory and a
+# routine-fired container is destroyed after every run, so `n` restarted from zero on every fire
+# and never reached the 50 this block requires - which is why these checks had never once run.
+# Scope: everything this run has touched TODAY (ai__li_last_attempt_date == D), which survives a
+# container restart, spans however many batches the run took, and is exactly the population these
+# ratios are meant to describe.
+def _today_counts():
+    out={}
+    for v in ('yes','no','unreadable','no_profile'):
+        r=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/search',
+               {"filterGroups":[{"filters":[
+                   {"propertyName":"ai__li_last_attempt_date","operator":"EQ","value":D},
+                   {"propertyName":"ai__li_still_at_company","operator":"EQ","value":v}]}],
+                "limit":1},fatal=False)
+        if '__http' in r: return None
+        out[v]=r.get('total',0)
+    return out
+_hs=_today_counts()
+if _hs is None:
+    print("WARN could not read today's verdict counts from HubSpot - falling back to the local log,")
+    print("     which does NOT survive a routine container and may understate the run.")
+    c=Counter(x['verdict'] for x in log); n=len(log)
+else:
+    c=Counter(_hs); n=sum(_hs.values())
+    print("run-to-date (attempt date "+D+", read from HubSpot): "+str(n)+" "+str(dict(_hs)))
 if n>=50:
     no_share=c.get('no',0)/n; un_share=c.get('unreadable',0)/n; np_share=c.get('no_profile',0)/n
     if MODE=='refresh' and no_share<0.05:
         print("note: 'no' share %.1f%% - floor not applied in MODE=refresh (re-confirming known-good records)"%(no_share*100))
         no_share=0.10
     if no_share>0.60 or no_share<0.05:
-        print("GUARDRAIL: 'no' share %.0f%% over %d verdicts - outside 5-60%%. HALT and report."%(no_share*100,n)); sys.exit(3)
+        print("GUARDRAIL: 'no' share %.0f%% over %d verdicts today - outside 5-60%%. HALT and report."%(no_share*100,n)); sys.exit(3)
     if un_share>0.20:
         print("GUARDRAIL: 'unreadable' share %.1f%% over %d verdicts - above 20%%. HALT and report."%(un_share*100,n))
         print("  'unreadable' is a TRANSIENT read failure. A high share means the instrument is")
