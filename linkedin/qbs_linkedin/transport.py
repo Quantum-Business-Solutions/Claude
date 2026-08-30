@@ -51,6 +51,21 @@ from .unipile import Unipile, UnipileError
 
 V2_BASE = "https://api.unipile.com/v2"
 
+#: The v2 key, by every name it has been stored under. The cloud environment
+#: holds it as UNIPILE_V2_KEY; earlier docs here asked for UNIPILE_V2_API_KEY.
+#: A mismatch is silent and expensive — the client simply reports "no v2 key
+#: configured" and every call degrades to the v1 fallback, so the migration
+#: looks done while nothing actually routes to v2.
+V2_KEY_ENV_NAMES = ("UNIPILE_V2_KEY", "UNIPILE_V2_API_KEY")
+
+
+def v2_key_from_env() -> str:
+    for name in V2_KEY_ENV_NAMES:
+        value = os.environ.get(name, "").strip()
+        if value:
+            return value
+    return ""
+
 #: Shawn's v2 account. Maps to legacy v1 id 7lBoyXuETqKdiJYLj5HBGA.
 V2_ACCOUNT_ID = "acc_01m19mb99wfzvsb68etkn5n87x"
 
@@ -126,7 +141,7 @@ class UnipileClient:
         v2_account: str = V2_ACCOUNT_ID,
         prefer: str = "v2",
     ):
-        self.v2_key = v2_key or os.environ.get("UNIPILE_V2_API_KEY", "").strip()
+        self.v2_key = v2_key or v2_key_from_env()
         self.v2_account = os.environ.get("UNIPILE_V2_ACCOUNT_ID", v2_account).strip()
         self.prefer = prefer
         self._v1: Unipile | None = None

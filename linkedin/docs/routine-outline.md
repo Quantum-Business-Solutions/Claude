@@ -138,13 +138,17 @@ unusable; that was true on v1, where every Sales Nav route returned
 exercised end to end — treat "running" as a claim to verify, not a capability
 to build on.
 
-**Unresolved:** v1 still lists 7 accounts and two of them are Shawn, both
-live, both returning his 7 dated roles:
+v1 still lists 7 accounts and two of them are Shawn, both live, both
+returning his 7 dated roles:
 
 ```
-S6ua4SfUT4SMRFZFOmyUzQ   created 2026-03-09   <- config.SHAWN_ACCOUNT_ID
-7lBoyXuETqKdiJYLj5HBGA   created 2026-05-10   <- what v2 maps to
+7lBoyXuETqKdiJYLj5HBGA   created 2026-05-10   <- v2 maps here; SHAWN_ACCOUNT_ID
+S6ua4SfUT4SMRFZFOmyUzQ   created 2026-03-09   <- stale, v1 only, unreferenced
 ```
+
+**Resolved 2026-08-30:** `SHAWN_ACCOUNT_ID` was aligned to v2's mapping, so
+the primary transport and the v1 fallback drive one session rather than two.
+Disconnecting the stale record is housekeeping and blocks nothing.
 
 They share the immutable member id, so `assert_identity` cannot tell them
 apart and a write from either publishes as Shawn — this is not a

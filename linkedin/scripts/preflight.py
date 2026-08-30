@@ -308,14 +308,19 @@ def check_send_account(rep: Report) -> None:
     run (watch-sync, verification) legitimately does not need one, and a check
     that cannot run must say so instead of passing.
     """
-    key = os.environ.get("UNIPILE_V2_API_KEY", "").strip()
+    from qbs_linkedin.transport import (
+        V2_ACCOUNT_ID,
+        V2_BASE,
+        V2_KEY_ENV_NAMES,
+        v2_key_from_env,
+    )
+    key = v2_key_from_env()
     if not key:
         rep.add("send_account", True,
-                "SKIPPED - no UNIPILE_V2_API_KEY. The v1/v2 account "
+                "SKIPPED - no v2 key in the environment (looked for "
+                f"{' or '.join(V2_KEY_ENV_NAMES)}). The v1/v2 account "
                 "reconciliation did not run; do not send on this preflight.")
         return
-
-    from qbs_linkedin.transport import V2_BASE, V2_ACCOUNT_ID
     try:
         req = urllib.request.Request(
             f"{V2_BASE}/accounts/{V2_ACCOUNT_ID}",

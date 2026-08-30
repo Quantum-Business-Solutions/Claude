@@ -66,6 +66,20 @@ class FakeV1:
                            "sources": [{"id": "LINKEDIN_MESSAGING", "status": "OK"}]}]}
 
 
+@pytest.fixture(autouse=True)
+def no_ambient_v2_key(monkeypatch):
+    """Isolate every test in this module from the real environment.
+
+    `UnipileClient` falls back to the env when no key is passed, so without
+    this a machine that has UNIPILE_V2_KEY set turns "no key configured" tests
+    into live HTTP calls against Unipile — which is how a unit suite starts
+    depending on the network and on someone's credentials.
+    """
+    from qbs_linkedin.transport import V2_KEY_ENV_NAMES
+    for name in V2_KEY_ENV_NAMES:
+        monkeypatch.delenv(name, raising=False)
+
+
 def client(fake=None, v2_key="v2-key", **kw):
     c = UnipileClient(v2_key=v2_key, **kw)
     c._v1 = fake or FakeV1()
@@ -300,3 +314,29 @@ class TestHealthPrefersV2:
         c = client(fake)
         with pytest.raises(UnipileError, match="not found on either version"):
             c.health()
+
+
+class TestTheKeyIsReadUnderEveryNameItIsStoredAs:
+    """The cloud environment holds it as UNIPILE_V2_KEY; earlier docs here
+    asked for UNIPILE_V2_API_KEY. That mismatch does not raise — the client
+    reports "no v2 key configured" and quietly degrades every call to v1, so
+    the migration looks complete while nothing routes to v2."""
+
+    def test_the_name_the_environment_actually_uses(self, monkeypatch):
+        from qbs_linkedin.transport import v2_key_from_env
+        monkeypatch.setenv("UNIPILE_V2_KEY", "from-v2-key")
+        assert v2_key_from_env() == "from-v2-key"
+
+    def test_the_name_the_docs_asked_for(self, monkeypatch):
+        from qbs_linkedin.transport import v2_key_from_env
+        monkeypatch.setenv("UNIPILE_V2_API_KEY", "from-api-key")
+        assert v2_key_from_env() == "from-api-key"
+
+    def test_neither_set_is_empty_not_an_exception(self):
+        from qbs_linkedin.transport import v2_key_from_env
+        assert v2_key_from_env() == ""
+
+    def test_a_client_with_no_key_anywhere_routes_to_v1(self):
+        c = client(v2_key="")
+        assert c.posts("ACoAAA") == [{"social_id": "v1"}]
+        assert c.route == Route("v1", "no v2 key configured")

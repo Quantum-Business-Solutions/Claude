@@ -29,7 +29,8 @@ Seven LinkedIn accounts, all `status: OK`, belonging to five people:
 
 | Account ID | Person | Sales Nav | Role here |
 |---|---|---|---|
-| `S6ua4SfUT4SMRFZFOmyUzQ` | **Shawn Peterson** | ✅ | **The only send/comment account** |
+| `7lBoyXuETqKdiJYLj5HBGA` | **Shawn Peterson** | ✅ | **The only send/comment account** — what v2 maps to |
+| `S6ua4SfUT4SMRFZFOmyUzQ` | Shawn Peterson | — | stale duplicate, v1 only, no code references it |
 | `7lBoyXuETqKdiJYLj5HBGA` | Shawn Peterson (dup) | ✅ | Redundant — recommend disconnecting |
 | `4fi7iaAuRRmRpzl4G8Dqjg` | Isaac Hernandez | — | Never use |
 | `9eK50zZlT2qVr0oCo0NJVg` | Keven Ellison | — | Never use |

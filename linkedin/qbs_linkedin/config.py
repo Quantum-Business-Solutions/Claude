@@ -23,7 +23,14 @@ SHAWN_OWNER_ID = "103243559"
 # and moves the port into a `?port=` query parameter.
 
 #: The only account either routine may send or comment from.
-SHAWN_ACCOUNT_ID = "S6ua4SfUT4SMRFZFOmyUzQ"
+#:
+#: Aligned to v2 on 2026-08-30. v2 is the primary transport and lists exactly
+#: ONE Shawn account, whose metadata.v1_account_id is this value — so pinning
+#: it here makes the v1 fallback drive the same LinkedIn session v2 drives.
+#: It previously pinned S6ua4SfUT4SMRFZFOmyUzQ, which meant the two transports
+#: acted as two different sessions of the same person: the shape that produces
+#: errors/multiple_sessions, which `errors.FATAL` classifies as page-a-human.
+SHAWN_ACCOUNT_ID = "7lBoyXuETqKdiJYLj5HBGA"
 #: Member IDs are immutable; slugs are user-changeable. Assert on both.
 SHAWN_PROVIDER_ID = "ACoAAAGv8WABzhfWcURPIaBDzbgiEWX5e781Etw"
 SHAWN_PUBLIC_IDENTIFIER = "shawnpetersonquantum"
@@ -37,15 +44,16 @@ SHAWN_PUBLIC_IDENTIFIER = "shawnpetersonquantum"
 #: roles, and both report the same immutable member id — so `assert_identity`
 #: cannot tell them apart. Only the id itself distinguishes them:
 #:
-#:     S6ua4SfUT4SMRFZFOmyUzQ   created 2026-03-09   <- SHAWN_ACCOUNT_ID
-#:     7lBoyXuETqKdiJYLj5HBGA   created 2026-05-10   <- v2 metadata.v1_account_id
+#:     7lBoyXuETqKdiJYLj5HBGA   created 2026-05-10   <- v2 maps here; we send here
+#:     S6ua4SfUT4SMRFZFOmyUzQ   created 2026-03-09   <- STALE, safe to disconnect
 #:
 #: An earlier constant here recommended disconnecting 7lBoy… That is now
 #: WRONG and must not be acted on: v2 maps to that account, so disconnecting
 #: it breaks the primary transport.
 #:
-#: WHICH ONE SURVIVES IS SHAWN'S CALL and is deliberately not encoded here.
-#: Preflight asserts the two stay reconciled rather than letting them drift.
+#: v2 settles which one the code uses; disconnecting the other is Shawn's
+#: action and does not block anything. Preflight reconciles the two versions
+#: on every run so a future divergence is loud rather than silent.
 SHAWN_V1_ACCOUNT_IDS = ("S6ua4SfUT4SMRFZFOmyUzQ", "7lBoyXuETqKdiJYLj5HBGA")
 
 #: Colleagues' accounts in the same Unipile workspace. Sending from one of

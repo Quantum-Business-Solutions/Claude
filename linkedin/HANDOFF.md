@@ -29,8 +29,11 @@ have already leaked into transcripts and should be rotated.
 - `QBS_HUBSPOT_TOKEN` — HubSpot private-app token, portal `20682069`, 144
   scopes, **verified working**
 - `UNIPILE_API_KEY` — Unipile **v1** key
-- Unipile **v2** key is separate and not yet in the environment — add it as
-  `UNIPILE_V2_API_KEY` when you migrate
+- Unipile **v2** key is separate and IS in the environment, stored as
+  **`UNIPILE_V2_KEY`**. `transport.v2_key_from_env()` accepts that or
+  `UNIPILE_V2_API_KEY`; a name mismatch here is silent and expensive, because
+  the client just reports "no v2 key configured" and degrades every call to
+  the v1 fallback while looking migrated
 
 ## THE JOB: migrate to Unipile v2
 

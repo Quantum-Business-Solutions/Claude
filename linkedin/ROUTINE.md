@@ -75,14 +75,16 @@ passes for anyone newly connected.
 Assert the member id `ACoAAAGv8WABzhfWcURPIaBDzbgiEWX5e781Etw` as well. Member
 ids are immutable; slugs are user-changeable.
 
-**Shawn is connected twice and both sessions are live.** They share that
+**Shawn appears twice on v1 and once on v2.** Both v1 records share his
 member id, so the identity assertion cannot separate them — only the account
-id can. v2 maps to `7lBoyXuETqKdiJYLj5HBGA`; config sends as
-`S6ua4SfUT4SMRFZFOmyUzQ`. Both work today. `preflight.check_send_account`
-reports the split on every run. Two live sessions on one LinkedIn login is a
-documented provider error (`errors/multiple_sessions`, classified HALT), so
-**one must be disconnected before the first send** — and that choice is
-Shawn's, not a routine's.
+id can. v2 lists exactly one Shawn, and its `metadata.v1_account_id` is
+`7lBoyXuETqKdiJYLj5HBGA`, so that is what `SHAWN_ACCOUNT_ID` pins: the primary
+transport and the fallback now drive the same LinkedIn session.
+
+`S6ua4SfUT4SMRFZFOmyUzQ` is the stale v1 record. It still resolves and no code
+references it. Disconnecting it is housekeeping, not a blocker.
+`preflight.check_send_account` reconciles the two versions every run, so a
+future divergence is loud rather than silent.
 
 **Sales Navigator: reports healthy on v2, never exercised.** On v1 every
 Sales Nav route returned `401 errors/invalid_credentials` on both of Shawn's
