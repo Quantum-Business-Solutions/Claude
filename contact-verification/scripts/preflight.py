@@ -39,6 +39,21 @@ REQUIRED={
  'twolists.py':     [('ai__reassociated_on',     'Moved-Companies filters the date')],
  'phoneaudit.py':   [("reassoc_'+str(lid)",     'per-list log filename')],
  'verifyphone.py':  [("reassoc_'+str(lid)",     'per-list log filename')],
+ 'unipile.py':      [('with_sections=linkedin_experience','v2 full-history read'),
+                     ("'ver':2",                'v2-first transport ladder')],
+}
+
+# Tokens whose PRESENCE is the bug. A positive check cannot catch this one:
+# 'linkedin_sections=experience' is a substring of 'linkedin_sections=experience_preview',
+# so a checkout still asking for the preview would satisfy the positive marker while
+# quietly truncating employment history.
+# Match the REQUEST form, not the bare word - unipile.py's docstring documents the preview
+# and the measured row counts on purpose, and that prose must not trip the guard.
+FORBIDDEN={
+ 'unipile.py':      [('sections=experience_preview',
+                      'the truncating preview section. It returned 5 rows where the full '
+                      'section returns 15, so a current employer can fall outside it, read '
+                      'as departed, and eject a real contact as "No Longer with Company"')],
 }
 for fn,checks in REQUIRED.items():
     p=os.path.join(HERE,fn)
@@ -46,6 +61,12 @@ for fn,checks in REQUIRED.items():
     src=open(p).read()
     for token,why in checks:
         if token not in src: fail.append("CODE  "+fn+" lacks "+repr(token)+" - "+why)
+for fn,checks in FORBIDDEN.items():
+    p=os.path.join(HERE,fn)
+    if not os.path.exists(p): continue
+    src=open(p).read()
+    for token,why in checks:
+        if token in src: fail.append("CODE  "+fn+" still contains "+repr(token)+" - "+why)
 if any(f.startswith("CODE") for f in fail):
     print("\n".join(fail))
     print("\nHALT: this checkout predates the verification QA fixes. A run from here would")
@@ -133,7 +154,10 @@ if fail:
     print("\nHALT: preflight failed. Do NOT run the pass; report this instead.")
     sys.exit(3)
 print("\nPREFLIGHT PASSED for list "+lid+" - safe to run.")
-print("Still required before writing, and NOT checkable from here:")
-print("  - a Unipile read of a known-good profile that returns dated experience rows")
-print("    (only Shawn's accounts S6ua4SfUT4SMRFZFOmyUzQ / 7lBoyXuETqKdiJYLj5HBGA)")
+print("Still required before writing:")
+print("  - `python3 unipile.py selftest` - a real read of a known-good profile that comes back")
+print("    with DATED experience rows. It runs the v2-first ladder and prints which rung carried")
+print("    it. Only Shawn's own accounts are permitted: acc_01m19mb99wfzvsb68etkn5n87x on v2,")
+print("    S6ua4SfUT4SMRFZFOmyUzQ / 7lBoyXuETqKdiJYLj5HBGA on v1. Every other account on that")
+print("    tenant is a CLIENT identity.")
 print("  - listanatomy.py "+lid+" to map which gating properties this run will move")
