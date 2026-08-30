@@ -1,0 +1,1101 @@
+[
+ {
+  "source_id": "176178321480",
+  "source_name": "DV: Chiropractor WF: Final Email ALL",
+  "clone_id": "220685976450",
+  "clone_name": "Praxera - Chiropractor WF: Final Email ALL",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Chiropractor Workflow"
+  ]
+ },
+ {
+  "source_id": "98445556270",
+  "source_name": "DV WF: PL Guide_BoF_Danielle Quick Turnaround #3",
+  "clone_id": "220688283270",
+  "clone_name": "Praxera - WF: PL Guide_BoF_Danielle Quick Turnaround #3",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Danielle",
+   "DV: PL Guide_BoF_Danielle"
+  ]
+ },
+ {
+  "source_id": "200467328115",
+  "source_name": "Private Label: High Priority - Reach out",
+  "clone_id": "220688283273",
+  "clone_name": "Praxera - Private Label: High Priority - Reach out",
+  "state": "DRAFT",
+  "brand_marks": 8,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label - 5Rs Lead Nurture",
+   "DV: Private Label - High Priority"
+  ]
+ },
+ {
+  "source_id": "200492727649",
+  "source_name": "Private Label: High Priority - 6 Benefits",
+  "clone_id": "220688283275",
+  "clone_name": "Praxera - Private Label: High Priority - 6 Benefits",
+  "state": "DRAFT",
+  "brand_marks": 4,
+  "claim_marks": 1,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label - High Priority"
+  ]
+ },
+ {
+  "source_id": "202135105656",
+  "source_name": "Private Label: High Priority - Client Onboarding",
+  "clone_id": "220685976453",
+  "clone_name": "Praxera - Private Label: High Priority - Client Onboarding",
+  "state": "DRAFT",
+  "brand_marks": 7,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label - 5Rs Lead Nurture",
+   "DV: Private Label - High Priority"
+  ]
+ },
+ {
+  "source_id": "202221725195",
+  "source_name": "Private Label: High Priority Intro",
+  "clone_id": "220688283279",
+  "clone_name": "Praxera - Private Label: High Priority Intro",
+  "state": "DRAFT",
+  "brand_marks": 4,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label - High Priority"
+  ]
+ },
+ {
+  "source_id": "44289895090",
+  "source_name": "Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Davinci",
+  "clone_id": "220685976456",
+  "clone_name": "Praxera - Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Praxera",
+  "state": "DRAFT",
+  "brand_marks": 6,
+  "claim_marks": 2,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label - High Priority",
+   "DV: Private Label 6-12 month",
+   "DV: Private Label Guide_ToF_Paul_Nurture"
+  ]
+ },
+ {
+  "source_id": "170705675687",
+  "source_name": "DV: Private Label MOF 2_Paul_1ngredients Guide",
+  "clone_id": "220688283283",
+  "clone_name": "Praxera - Private Label MOF 2_Paul_1ngredients Guide",
+  "state": "DRAFT",
+  "brand_marks": 4,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "170707073088",
+  "source_name": "DV: MOF_WF_Paul_2_Capsule",
+  "clone_id": "220688283282",
+  "clone_name": "Praxera - MOF_WF_Paul_2_Capsule",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "170707748955",
+  "source_name": "DV: MOF_WF_Paul_Final_All",
+  "clone_id": "220688283288",
+  "clone_name": "Praxera - MOF_WF_Paul_Final_All",
+  "state": "DRAFT",
+  "brand_marks": 5,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "170707864724",
+  "source_name": "DV: MOF_WF_Paul_2_Powder",
+  "clone_id": "220685976459",
+  "clone_name": "Praxera - MOF_WF_Paul_2_Powder",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "170707887656",
+  "source_name": "DV: MOF_WF_Paul_2_Tablet",
+  "clone_id": "220688283291",
+  "clone_name": "Praxera - MOF_WF_Paul_2_Tablet",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "170707894911",
+  "source_name": "DV: MOF_WF_Paul_1_Liquid",
+  "clone_id": "220688283293",
+  "clone_name": "Praxera - MOF_WF_Paul_1_Liquid",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "170710869815",
+  "source_name": "DV: Private Label MOF 2_Paul_Supplement Formats",
+  "clone_id": "220688283295",
+  "clone_name": "Praxera - Private Label MOF 2_Paul_Supplement Formats",
+  "state": "DRAFT",
+  "brand_marks": 5,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "170710874146",
+  "source_name": "DV: MOF_WF_Paul_2_Chewables",
+  "clone_id": "220688283300",
+  "clone_name": "Praxera - MOF_WF_Paul_2_Chewables",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "41919076196",
+  "source_name": "Private_Label_Guide_ToF_Benefits_Private_Label_With_Davinci",
+  "clone_id": "220685976462",
+  "clone_name": "Praxera - Private_Label_Guide_ToF_Benefits_Private_Label_With_Praxera",
+  "state": "DRAFT",
+  "brand_marks": 5,
+  "claim_marks": 1,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_ToF_Danielle_Nurture"
+  ]
+ },
+ {
+  "source_id": "59544811350",
+  "source_name": "1 Private_Label_Guide_ToF_Danielle_TY",
+  "clone_id": "220688283303",
+  "clone_name": "Praxera - 1 Private_Label_Guide_ToF_Danielle_TY",
+  "state": "DRAFT",
+  "brand_marks": 4,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_ToF_Danielle_Nurture"
+  ]
+ },
+ {
+  "source_id": "59545104541",
+  "source_name": "2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
+  "clone_id": "220685976465",
+  "clone_name": "Praxera - 2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_ToF_Danielle_Nurture"
+  ]
+ },
+ {
+  "source_id": "59783395966",
+  "source_name": "1: Private Label Guide ToF Paul_TY",
+  "clone_id": "220688283306",
+  "clone_name": "Praxera - 1: Private Label Guide ToF Paul_TY",
+  "state": "DRAFT",
+  "brand_marks": 4,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_ToF_Paul_Nurture"
+  ]
+ },
+ {
+  "source_id": "170301274240",
+  "source_name": "DV: Private Label MOF 2_Danielle_Supplement Formats",
+  "clone_id": "220688283309",
+  "clone_name": "Praxera - Private Label MOF 2_Danielle_Supplement Formats",
+  "state": "DRAFT",
+  "brand_marks": 5,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label_MoF_Danielle"
+  ]
+ },
+ {
+  "source_id": "170574586726",
+  "source_name": "DV: Private Label MOF_Danielle_Liquid 1",
+  "clone_id": "220688283311",
+  "clone_name": "Praxera - Private Label MOF_Danielle_Liquid 1",
+  "state": "DRAFT",
+  "brand_marks": 0,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label_MoF_Danielle"
+  ]
+ },
+ {
+  "source_id": "170653396775",
+  "source_name": "DV: Private Label MOF_Danielle_Final All",
+  "clone_id": "220685976468",
+  "clone_name": "Praxera - Private Label MOF_Danielle_Final All",
+  "state": "DRAFT",
+  "brand_marks": 6,
+  "claim_marks": 1,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label_MoF_Danielle"
+  ]
+ },
+ {
+  "source_id": "170692005796",
+  "source_name": "DV: Private Label MOF_Danielle_Powder 2",
+  "clone_id": "220688283315",
+  "clone_name": "Praxera - Private Label MOF_Danielle_Powder 2",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label_MoF_Danielle"
+  ]
+ },
+ {
+  "source_id": "170699789844",
+  "source_name": "DV: Private Label MOF_Danielle_Capsule 2",
+  "clone_id": "220688283317",
+  "clone_name": "Praxera - Private Label MOF_Danielle_Capsule 2",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label_MoF_Danielle"
+  ]
+ },
+ {
+  "source_id": "172303705387",
+  "source_name": "DV: Private Label MOF_Danielle_Tablets 2",
+  "clone_id": "220688283320",
+  "clone_name": "Praxera - Private Label MOF_Danielle_Tablets 2",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label_MoF_Danielle"
+  ]
+ },
+ {
+  "source_id": "105464472904",
+  "source_name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro",
+  "clone_id": "220685976471",
+  "clone_name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro",
+  "state": "DRAFT",
+  "brand_marks": 13,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Welcome to D4HCP_BoF_Danielle/HCP"
+  ]
+ },
+ {
+  "source_id": "106298774045",
+  "source_name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio",
+  "clone_id": "220685976474",
+  "clone_name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Welcome to D4HCP_BoF_Danielle/HCP"
+  ]
+ },
+ {
+  "source_id": "106495770510",
+  "source_name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #3 GI",
+  "clone_id": "220685976476",
+  "clone_name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #3 GI",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Welcome to D4HCP_BoF_Danielle/HCP"
+  ]
+ },
+ {
+  "source_id": "106618393216",
+  "source_name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health",
+  "clone_id": "220688283394",
+  "clone_name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Welcome to D4HCP_BoF_Danielle/HCP"
+  ]
+ },
+ {
+  "source_id": "169091513764",
+  "source_name": "DV: White_Label_World_Expo Email #1",
+  "clone_id": "220685976478",
+  "clone_name": "Praxera - White_Label_World_Expo Email #1",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 1,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169091679551",
+  "source_name": "DV: White_Label_World_Expo Email #2",
+  "clone_id": "220688283397",
+  "clone_name": "Praxera - White_Label_World_Expo Email #2",
+  "state": "DRAFT",
+  "brand_marks": 5,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169176113508",
+  "source_name": "DV: White_Label_World_Expo Email Definitive_Guide_Click #1",
+  "clone_id": "220688283399",
+  "clone_name": "Praxera - White_Label_World_Expo Email Definitive_Guide_Click #1",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169176644880",
+  "source_name": "DV: White_Label_World_Expo Email Definitive_Guide_Click #2",
+  "clone_id": "220688283401",
+  "clone_name": "Praxera - White_Label_World_Expo Email Definitive_Guide_Click #2",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169177165674",
+  "source_name": "DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #2",
+  "clone_id": "220685976483",
+  "clone_name": "Praxera - White_Label_World_Expo Email PL_Shipping_Inventory_Click #2",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169177167901",
+  "source_name": "DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #1",
+  "clone_id": "220688283406",
+  "clone_name": "Praxera - White_Label_World_Expo Email PL_Shipping_Inventory_Click #1",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169179039283",
+  "source_name": "DV: White_Label_World_Expo Final Email ALL",
+  "clone_id": "220685976486",
+  "clone_name": "Praxera - White_Label_World_Expo Final Email ALL",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 1,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169179941519",
+  "source_name": "DV: White_Label_World_Expo Email How_To_Make_Money_Click #1",
+  "clone_id": "220688283409",
+  "clone_name": "Praxera - White_Label_World_Expo Email How_To_Make_Money_Click #1",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169179942786",
+  "source_name": "DV: White_Label_World_Expo Email How_To_Make_Money_Click #2",
+  "clone_id": "220688283411",
+  "clone_name": "Praxera - White_Label_World_Expo Email How_To_Make_Money_Click #2",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169188381366",
+  "source_name": "DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1",
+  "clone_id": "220688283415",
+  "clone_name": "Praxera - White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169188947470",
+  "source_name": "DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2",
+  "clone_id": "220685976489",
+  "clone_name": "Praxera - White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "169188948539",
+  "source_name": "DV: White_Label_World_Expo Email Did_Not_Click_Resource",
+  "clone_id": "220688283418",
+  "clone_name": "Praxera - White_Label_World_Expo Email Did_Not_Click_Resource",
+  "state": "DRAFT",
+  "brand_marks": 5,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ]
+ },
+ {
+  "source_id": "208438457715",
+  "source_name": "Private Label Lead - First Contact",
+  "clone_id": "220688283420",
+  "clone_name": "Praxera - Private Label Lead - First Contact",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DVL // Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)",
+   "DVL // Sales Qualified Leads: Private Label: Assign Contacts to Sales (OLD - DO NOT USE)"
+  ]
+ },
+ {
+  "source_id": "41411614625",
+  "source_name": "Danielle: DV Mission & Register",
+  "clone_id": "220688836168",
+  "clone_name": "Praxera - Danielle: DV Mission & Register",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "Danielle: DV Mission & Register",
+   "Danielle: DV Mission & Register in 2/21",
+   "Hyperstimulation Stress Response Guide_ToF_Danielle"
+  ]
+ },
+ {
+  "source_id": "42170019437",
+  "source_name": "Paul: DV Mission & Register",
+  "clone_id": "220688836170",
+  "clone_name": "Praxera - Paul: DV Mission & Register",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "High Cortisol-Low Thyroid Guide_ToF: Business Owners",
+   "Paul: DV Mission & Register",
+   "Paul: DV Mission & Register in 2/21"
+  ]
+ },
+ {
+  "source_id": "202100373636",
+  "source_name": "DV: # High Priority (Branded) 5Rs",
+  "clone_id": "220685976492",
+  "clone_name": "Praxera - # High Priority (Branded) 5Rs",
+  "state": "DRAFT",
+  "brand_marks": 46,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Branded - High Priority"
+  ]
+ },
+ {
+  "source_id": "202102714909",
+  "source_name": "DV: #3 High Priority (Branded) Top-Sellers",
+  "clone_id": "220685976494",
+  "clone_name": "Praxera - #3 High Priority (Branded) Top-Sellers",
+  "state": "DRAFT",
+  "brand_marks": 45,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Branded - High Priority"
+  ]
+ },
+ {
+  "source_id": "202109114549",
+  "source_name": "DV: High Priority (Branded) - Reach out",
+  "clone_id": "220688836174",
+  "clone_name": "Praxera - High Priority (Branded) - Reach out",
+  "state": "DRAFT",
+  "brand_marks": 5,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Branded - High Priority"
+  ]
+ },
+ {
+  "source_id": "175783065195",
+  "source_name": "DV: Client_Onboarding_BoF_Danielle_#1",
+  "clone_id": "220688836176",
+  "clone_name": "Praxera - Client_Onboarding_BoF_Danielle_#1",
+  "state": "DRAFT",
+  "brand_marks": 4,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Danielle_From Download"
+  ]
+ },
+ {
+  "source_id": "175803720782",
+  "source_name": "DV: Client_Onboarding_BoF_Danielle_#3",
+  "clone_id": "220685976500",
+  "clone_name": "Praxera - Client_Onboarding_BoF_Danielle_#3",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 3,
+  "live_source": false,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Danielle_From Download",
+   "DV: Client_Onboarding_BoF_Danielle_From MoF WF"
+  ]
+ },
+ {
+  "source_id": "175803754509",
+  "source_name": "DV: Client_Onboarding_BoF_Danielle_#2",
+  "clone_id": "220685976498",
+  "clone_name": "Praxera - Client_Onboarding_BoF_Danielle_#2",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 2,
+  "live_source": false,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Danielle_From Download",
+   "DV: Client_Onboarding_BoF_Danielle_From MoF WF"
+  ]
+ },
+ {
+  "source_id": "175804493334",
+  "source_name": "DV: Client_Onboarding_BoF_Danielle_#4",
+  "clone_id": "220685976504",
+  "clone_name": "Praxera - Client_Onboarding_BoF_Danielle_#4",
+  "state": "DRAFT",
+  "brand_marks": 4,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Danielle_From Download",
+   "DV: Client_Onboarding_BoF_Danielle_From MoF WF"
+  ]
+ },
+ {
+  "source_id": "176962698073",
+  "source_name": "DV: Client_Onboarding_BoF_Danielle_From_MoF_#1",
+  "clone_id": "220688836180",
+  "clone_name": "Praxera - Client_Onboarding_BoF_Danielle_From_MoF_#1",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Danielle_From MoF WF"
+  ]
+ },
+ {
+  "source_id": "175814575650",
+  "source_name": "DV: Client_Onboarding_BoF_Paul_#1",
+  "clone_id": "220685976577",
+  "clone_name": "Praxera - Client_Onboarding_BoF_Paul_#1",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Paul_From Download"
+  ]
+ },
+ {
+  "source_id": "175814579079",
+  "source_name": "DV: Client_Onboarding_BoF_Paul_#3",
+  "clone_id": "220688836183",
+  "clone_name": "Praxera - Client_Onboarding_BoF_Paul_#3",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 3,
+  "live_source": false,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Paul_From Download",
+   "DV: Client_Onboarding_BoF_Paul_From MoF WF New"
+  ]
+ },
+ {
+  "source_id": "175814580344",
+  "source_name": "DV: Client_Onboarding_BoF_Paul_#4",
+  "clone_id": "220688836186",
+  "clone_name": "Praxera - Client_Onboarding_BoF_Paul_#4",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Paul_From Download",
+   "DV: Client_Onboarding_BoF_Paul_From MoF WF New"
+  ]
+ },
+ {
+  "source_id": "175817721770",
+  "source_name": "DV: Client_Onboarding_BoF_Paul_#2",
+  "clone_id": "220688836188",
+  "clone_name": "Praxera - Client_Onboarding_BoF_Paul_#2",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 3,
+  "live_source": false,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Paul_From Download",
+   "DV: Client_Onboarding_BoF_Paul_From MoF WF New"
+  ]
+ },
+ {
+  "source_id": "176962326198",
+  "source_name": "DV: Client_Onboarding_BoF_Paul_From_MoF_#1",
+  "clone_id": "220685976580",
+  "clone_name": "Praxera - Client_Onboarding_BoF_Paul_From_MoF_#1",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Paul_From MoF WF New"
+  ]
+ },
+ {
+  "source_id": "94498399241",
+  "source_name": "DV: PL Guide_MoF_Danielle_Liposomal_Technology_WhitePaper",
+  "clone_id": "220688836192",
+  "clone_name": "Praxera - PL Guide_MoF_Danielle_Liposomal_Technology_WhitePaper",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: OLD Private Label Guide_MoF_Danielle "
+  ]
+ },
+ {
+  "source_id": "94781614879",
+  "source_name": "DV: PL_Guide_MoF_Danielle_Liquid_Products",
+  "clone_id": "220688836194",
+  "clone_name": "Praxera - PL_Guide_MoF_Danielle_Liquid_Products",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: OLD Private Label Guide_MoF_Danielle "
+  ]
+ },
+ {
+  "source_id": "94787196523",
+  "source_name": "DV: PL_Guide_MoF_Danielle_Get Started",
+  "clone_id": "220688836197",
+  "clone_name": "Praxera - PL_Guide_MoF_Danielle_Get Started",
+  "state": "DRAFT",
+  "brand_marks": 5,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: OLD Private Label Guide_MoF_Danielle "
+  ]
+ },
+ {
+  "source_id": "107853244512",
+  "source_name": "Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)",
+  "clone_id": "220688836199",
+  "clone_name": "Praxera - Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: OLD Private_Label_Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "107857959470",
+  "source_name": "Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
+  "clone_id": "220688836204",
+  "clone_name": "Praxera - Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
+  "state": "DRAFT",
+  "brand_marks": 2,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: OLD Private_Label_Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "65781098136",
+  "source_name": "Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper",
+  "clone_id": "220688836207",
+  "clone_name": "Praxera - Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: OLD Private_Label_Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "65892871439",
+  "source_name": "Private_Label_Guide_MoF_Paul_Get Started",
+  "clone_id": "220688836209",
+  "clone_name": "Praxera - Private_Label_Guide_MoF_Paul_Get Started",
+  "state": "DRAFT",
+  "brand_marks": 5,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: OLD Private_Label_Guide_MoF_Paul"
+  ]
+ },
+ {
+  "source_id": "207281829171",
+  "source_name": "DVL // PM - Automated Email: PL 5rs #5",
+  "clone_id": "220685976583",
+  "clone_name": "Praxera - L // PM - Automated Email: PL 5rs #5",
+  "state": "DRAFT",
+  "brand_marks": 6,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Private Label - 5Rs Lead Nurture"
+  ]
+ },
+ {
+  "source_id": "207282028161",
+  "source_name": "DVL // PM - Automated Email: PL 5rs #6",
+  "clone_id": "220688836213",
+  "clone_name": "Praxera - L // PM - Automated Email: PL 5rs #6",
+  "state": "DRAFT",
+  "brand_marks": 6,
+  "claim_marks": 1,
+  "live_source": false,
+  "workflows": [
+   "DV: Private Label - 5Rs Lead Nurture"
+  ]
+ },
+ {
+  "source_id": "200441586176",
+  "source_name": "1: Private Label Guide: High-Priority",
+  "clone_id": "220685976586",
+  "clone_name": "Praxera - 1: Private Label Guide: High-Priority",
+  "state": "DRAFT",
+  "brand_marks": 3,
+  "claim_marks": 2,
+  "live_source": false,
+  "workflows": [
+   "DV: Private Label 6-12 month"
+  ]
+ },
+ {
+  "source_id": "161749534521",
+  "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #3",
+  "clone_id": "220688836216",
+  "clone_name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #3",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ]
+ },
+ {
+  "source_id": "161752044560",
+  "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #1",
+  "clone_id": "220688836219",
+  "clone_name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #1",
+  "state": "DRAFT",
+  "brand_marks": 0,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ]
+ },
+ {
+  "source_id": "161752065795",
+  "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #2",
+  "clone_id": "220688836222",
+  "clone_name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #2",
+  "state": "DRAFT",
+  "brand_marks": 0,
+  "claim_marks": 1,
+  "live_source": false,
+  "workflows": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ]
+ },
+ {
+  "source_id": "163117309280",
+  "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #1",
+  "clone_id": "220685976589",
+  "clone_name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #1",
+  "state": "DRAFT",
+  "brand_marks": 0,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ]
+ },
+ {
+  "source_id": "163117313546",
+  "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #3",
+  "clone_id": "220685976591",
+  "clone_name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #3",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ]
+ },
+ {
+  "source_id": "163299221838",
+  "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #2",
+  "clone_id": "220688836225",
+  "clone_name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #2",
+  "state": "DRAFT",
+  "brand_marks": 0,
+  "claim_marks": 1,
+  "live_source": false,
+  "workflows": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ]
+ },
+ {
+  "source_id": "100477229840",
+  "source_name": "DV WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B",
+  "clone_id": "220688836360",
+  "clone_name": "Praxera - WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Danielle",
+   "DV: PL Guide_BoF_Danielle"
+  ]
+ },
+ {
+  "source_id": "98433354038",
+  "source_name": "DV WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A",
+  "clone_id": "220688836231",
+  "clone_name": "Praxera - WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Client_Onboarding_BoF_Danielle",
+   "DV: PL Guide_BoF_Danielle"
+  ]
+ },
+ {
+  "source_id": "104026063464",
+  "source_name": "DV WF: PL Guide_BoF_Paul #1 Build Product Line Subject A",
+  "clone_id": "220688836363",
+  "clone_name": "Praxera - WF: PL Guide_BoF_Paul #1 Build Product Line Subject A",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: PL Guide_BoF_Paul"
+  ]
+ },
+ {
+  "source_id": "104027076626",
+  "source_name": "DV WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A",
+  "clone_id": "220688836233",
+  "clone_name": "Praxera - WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: PL Guide_BoF_Paul"
+  ]
+ },
+ {
+  "source_id": "104027204444",
+  "source_name": "DV WF: PL Guide_BoF_Paul #2 Design & Branding Subject A",
+  "clone_id": "220688836366",
+  "clone_name": "Praxera - WF: PL Guide_BoF_Paul #2 Design & Branding Subject A",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: PL Guide_BoF_Paul"
+  ]
+ },
+ {
+  "source_id": "159564033066",
+  "source_name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
+  "clone_id": "220688836239",
+  "clone_name": "Praxera - 4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 1,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label Guide_ToF_Danielle_Nurture"
+  ]
+ },
+ {
+  "source_id": "159534087563",
+  "source_name": "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
+  "clone_id": "220688836237",
+  "clone_name": "Praxera - 2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label 6-12 month",
+   "DV: Private Label Guide_ToF_Paul_Nurture"
+  ]
+ },
+ {
+  "source_id": "159557448722",
+  "source_name": "5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
+  "clone_id": "220688836243",
+  "clone_name": "Praxera - 5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
+  "state": "DRAFT",
+  "brand_marks": 5,
+  "claim_marks": 0,
+  "live_source": true,
+  "workflows": [
+   "DV: Private Label 6-12 month",
+   "DV: Private Label Guide_ToF_Paul_Nurture"
+  ]
+ },
+ {
+  "source_id": "142152416879",
+  "source_name": "DV: PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) A",
+  "clone_id": "220688836246",
+  "clone_name": "Praxera - PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) A",
+  "state": "DRAFT",
+  "brand_marks": 0,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: OLD Private Label Guide_MoF_Danielle "
+  ]
+ },
+ {
+  "source_id": "142153078660",
+  "source_name": "DV: PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A",
+  "clone_id": "220688836248",
+  "clone_name": "Praxera - PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A",
+  "state": "DRAFT",
+  "brand_marks": 1,
+  "claim_marks": 0,
+  "live_source": false,
+  "workflows": [
+   "DV: OLD Private Label Guide_MoF_Danielle "
+  ]
+ }
+]
