@@ -294,3 +294,57 @@ become readable — which the MCP HAR passthrough does not return, so
 `Retry-After` and `X-RateLimit-*` are currently invisible.
 
 One support ticket, versus a per-routine configuration constraint forever.
+
+## MEASURED: routine-fired sessions have no MCP connectors at all
+
+Settled 2026-08-30 by firing a diagnostic routine that reported its findings
+into a HubSpot task (the only channel a fired session was known to have).
+
+```
+VERDICT: UNIPILE MCP IS NOT AVAILABLE
+Visible mcp__ tools: none
+  (a broad ToolSearch for "mcp__" also returned no matches)
+UNIPILE_API_KEY env var: present
+```
+
+**Not a Unipile-specific gap — fired sessions get zero connectors of any kind.**
+The environment secret is correctly configured and sitting there unusable,
+because the session has no tool that can reach a non-443 port.
+
+This explains, without inference:
+
+| Run | Outcome |
+|---|---|
+| `qbs-linkedin-watch-sync` test fire | 0 provider IDs resolved |
+| Verification routine, 2026-08-30 14:13 | `SUCCEEDED`, 0 writes to its target fields |
+| Connector probe v1 | ran, produced nothing |
+| Connector probe v2 | reported the verdict above |
+
+All four are the same cause. Both programs halt correctly at their Unipile
+self-test — which is the contract working — but the visible result is a routine
+reporting SUCCEEDED while accomplishing nothing.
+
+### What this rules in and out
+
+- **Not** the API key. Present and valid; it works from an interactive session
+  and from a laptop.
+- **Not** the curl command or the DSN. Both correct.
+- **Not** environment secrets. Correctly set; secrets and connectors are
+  different mechanisms and one cannot substitute for the other.
+- **It is** that scheduled sessions carry no connectors in this organization.
+  `create_trigger` refuses the `connectors` parameter outright:
+  *"not available for this organization."*
+
+### The two ways out
+
+1. **Port 443 from Unipile.** If the tenant can be served on 443, REST works
+   directly from any container, the environment secret becomes sufficient, and
+   connectors stop mattering for either program. `unipile.py` already probes
+   for it, so no code changes. This is the durable fix — it removes the
+   dependency rather than provisioning around it.
+2. **Enable connectors for scheduled sessions**, if that is grantable at the
+   organization level. The API path is closed, so this is a claude.ai-side
+   change.
+
+Until one of them lands, anything needing LinkedIn runs from an interactive
+session, and no schedule should be trusted to do it.
