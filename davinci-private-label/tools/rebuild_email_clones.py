@@ -63,8 +63,19 @@ CLAIM=re.compile(
 ADDR=re.compile(r"929 Harvest Lane[^<]*",re.I)
 DV_HOST=re.compile(r"^https?://(?:www\.|blog\.|info\.)?davincilabs\.com",re.I)
 LOGOS=("Immune%20Bundle%20Blast/DaVinci-Logo.png","hubfs/4087538/Logo.png",
-       "hubfs/4087538/New%20Logo.png")
-NO_EQUIV=re.compile(r"(DV_Footer|DaVinci-Churn|schedule-a-time-headline|Download%20Offers/DaVinci)",re.I)
+       "hubfs/4087538/New%20Logo.png","Newsletters/January%2026/DV-logo-header.jpg")
+PX="https://www.pettechlabs.com/hubfs/Praxera/email/"
+# Only four of the thirteen flagged assets actually carried DaVinci branding.
+# The rest have DaVinci in the filename and nothing DaVinci in the pixels, which
+# is the same trap the page imagery set: a calendar icon, a text banner, a plain
+# white bottle. Replacing those would be churn, so they are left alone.
+ASSET_MAP={
+ "DV_Footer-1.jpg":            PX+"praxera-email-footer.png",
+ "Group-Product-Shot.jpg":     PX+"praxera-group-product-shot.png",
+ "DaVinci-PL_22.jpg":          PX+"praxera-two-bottle-yourname.png",
+}
+# genuinely has no replacement yet -> reported, never guessed
+NO_EQUIV=re.compile(r"(DaVinci-Churn|schedule-a-time-headline)",re.I)
 
 MARK='<span style="background:#FFF3CD;border-bottom:2px solid #8A6300;" data-praxera-review="brand">'
 CMARK='<span style="background:#F8DDD9;border-bottom:2px solid #9B3B31;" data-praxera-review="claim">'
@@ -111,6 +122,9 @@ def transform(h,px,um,slug,stats):
                     for frag in LOGOS:
                         if frag in val:
                             stats["logo"]+=1; return key+PX_LOGO+q
+                    for frag,rep in ASSET_MAP.items():
+                        if frag in val:
+                            stats["asset"]+=1; return key+rep+q
                     if NO_EQUIV.search(val): stats["flagged"].add(val)
                 elif k.startswith("alt"):
                     if BRAND.search(val):
@@ -149,6 +163,9 @@ def main():
                 for frag in LOGOS:
                     if frag in s:
                         b["img"]["src"]=PX_LOGO; b["img"]["alt"]="Praxera"; st["logo"]+=1
+                for frag,rep in ASSET_MAP.items():
+                    if frag in (b["img"].get("src") or ""):
+                        b["img"]["src"]=rep; st["asset"]+=1
                 if NO_EQUIV.search(b["img"].get("src") or ""): st["flagged"].add(b["img"]["src"])
                 if isinstance(b["img"].get("alt"),str) and BRAND.search(b["img"]["alt"]):
                     b["img"]["alt"]=BRAND.sub("Praxera",b["img"]["alt"]); st["alt"]+=1
@@ -157,7 +174,7 @@ def main():
                     b[f]=transform(b[f],px,um,slug,st)
         r={"clone_id":c["clone_id"],"name":c["clone_name"],
            "brand":st["brand"],"claim":st["claim"],"logo":st["logo"],"alt":st["alt"],
-           "link_mapped":st["link_mapped"],"link_home":st["link_home"],
+           "link_mapped":st["link_mapped"],"link_home":st["link_home"],"asset":st["asset"],
            "flagged":sorted(st["flagged"])}
         if go:
             res=call("PATCH",f"/marketing/v3/emails/{c['clone_id']}",{"content":cc})
@@ -177,6 +194,7 @@ def main():
     print(f"claim flags     : {tot('claim')}")
     print(f"logos swapped   : {tot('logo')}")
     print(f"alt text fixed  : {tot('alt')}")
+    print(f"graphics swapped: {tot('asset')}")
     print(f"links -> Praxera page : {tot('link_mapped')}")
     print(f"links -> home holding : {tot('link_home')}")
     fl=collections.Counter(u for r in out for u in r.get("flagged",[]))
