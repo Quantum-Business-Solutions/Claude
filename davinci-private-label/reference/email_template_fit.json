@@ -1,0 +1,1430 @@
+[
+ {
+  "id": "176178321480",
+  "name": "DV: Chiropractor WF: Final Email ALL",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Chiropractor Workflow"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 793,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "100477229840",
+  "name": "DV WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B",
+  "state": "AUTOMATED_AB",
+  "live": true,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Danielle",
+   "DV: PL Guide_BoF_Danielle"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 807,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "98433354038",
+  "name": "DV WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A",
+  "state": "AUTOMATED_AB",
+  "live": true,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Danielle",
+   "DV: PL Guide_BoF_Danielle"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 782,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "98445556270",
+  "name": "DV WF: PL Guide_BoF_Danielle Quick Turnaround #3",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Danielle",
+   "DV: PL Guide_BoF_Danielle"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 769,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "104026063464",
+  "name": "DV WF: PL Guide_BoF_Paul #1 Build Product Line Subject A",
+  "state": "AUTOMATED_AB",
+  "live": true,
+  "wfs": [
+   "DV: PL Guide_BoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 781,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "104027076626",
+  "name": "DV WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A",
+  "state": "AUTOMATED_AB",
+  "live": true,
+  "wfs": [
+   "DV: PL Guide_BoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 780,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "104027204444",
+  "name": "DV WF: PL Guide_BoF_Paul #2 Design & Branding Subject A",
+  "state": "AUTOMATED_AB",
+  "live": true,
+  "wfs": [
+   "DV: PL Guide_BoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 789,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "200467328115",
+  "name": "Private Label: High Priority - Reach out",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label - 5Rs Lead Nurture",
+   "DV: Private Label - High Priority"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 5,
+  "btns": 0,
+  "words": 1541,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "200492727649",
+  "name": "Private Label: High Priority - 6 Benefits",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label - High Priority"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 963,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "202135105656",
+  "name": "Private Label: High Priority - Client Onboarding",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label - 5Rs Lead Nurture",
+   "DV: Private Label - High Priority"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 5,
+  "btns": 0,
+  "words": 1710,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "202221725195",
+  "name": "Private Label: High Priority Intro",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label - High Priority"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 892,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "44289895090",
+  "name": "Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Davinci",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label - High Priority",
+   "DV: Private Label 6-12 month"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 4,
+  "btns": 0,
+  "words": 1175,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170705675687",
+  "name": "DV: Private Label MOF 2_Paul_1ngredients Guide",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 759,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170707073088",
+  "name": "DV: MOF_WF_Paul_2_Capsule",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 739,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170707748955",
+  "name": "DV: MOF_WF_Paul_Final_All",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 708,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170707864724",
+  "name": "DV: MOF_WF_Paul_2_Powder",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 751,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170707887656",
+  "name": "DV: MOF_WF_Paul_2_Tablet",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 734,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170707894911",
+  "name": "DV: MOF_WF_Paul_1_Liquid",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 762,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170710869815",
+  "name": "DV: Private Label MOF 2_Paul_Supplement Formats",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 7,
+  "btns": 0,
+  "words": 744,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170710874146",
+  "name": "DV: MOF_WF_Paul_2_Chewables",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 766,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "159564033066",
+  "name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
+  "state": "AUTOMATED_AB",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_ToF_Danielle_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 958,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "41919076196",
+  "name": "Private_Label_Guide_ToF_Benefits_Private_Label_With_Davinci",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_ToF_Danielle_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 1021,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "59544811350",
+  "name": "1 Private_Label_Guide_ToF_Danielle_TY",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_ToF_Danielle_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 1140,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "59545104541",
+  "name": "2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_ToF_Danielle_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 1007,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "159534087563",
+  "name": "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
+  "state": "AUTOMATED_AB",
+  "live": true,
+  "wfs": [
+   "DV: Private Label 6-12 month",
+   "DV: Private Label Guide_ToF_Paul_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 1015,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "159557448722",
+  "name": "5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
+  "state": "AUTOMATED_AB",
+  "live": true,
+  "wfs": [
+   "DV: Private Label 6-12 month",
+   "DV: Private Label Guide_ToF_Paul_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 958,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "59783395966",
+  "name": "1: Private Label Guide ToF Paul_TY",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label Guide_ToF_Paul_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 1119,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170301274240",
+  "name": "DV: Private Label MOF 2_Danielle_Supplement Formats",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label_MoF_Danielle"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 7,
+  "btns": 0,
+  "words": 848,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170574586726",
+  "name": "DV: Private Label MOF_Danielle_Liquid 1",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label_MoF_Danielle"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 765,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170653396775",
+  "name": "DV: Private Label MOF_Danielle_Final All",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label_MoF_Danielle"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 3,
+  "btns": 0,
+  "words": 928,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170692005796",
+  "name": "DV: Private Label MOF_Danielle_Powder 2",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label_MoF_Danielle"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 732,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "170699789844",
+  "name": "DV: Private Label MOF_Danielle_Capsule 2",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label_MoF_Danielle"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 728,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "172303705387",
+  "name": "DV: Private Label MOF_Danielle_Tablets 2",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Private Label_MoF_Danielle"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 710,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "105464472904",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Welcome to D4HCP_BoF_Danielle/HCP"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 5,
+  "btns": 0,
+  "words": 1457,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "106298774045",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Welcome to D4HCP_BoF_Danielle/HCP"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 1640,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "106495770510",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #3 GI",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Welcome to D4HCP_BoF_Danielle/HCP"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 1679,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "106618393216",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: Welcome to D4HCP_BoF_Danielle/HCP"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 1677,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169091513764",
+  "name": "DV: White_Label_World_Expo Email #1",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 753,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169091679551",
+  "name": "DV: White_Label_World_Expo Email #2",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 5,
+  "btns": 0,
+  "words": 746,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169176113508",
+  "name": "DV: White_Label_World_Expo Email Definitive_Guide_Click #1",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 738,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169176644880",
+  "name": "DV: White_Label_World_Expo Email Definitive_Guide_Click #2",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 751,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169177165674",
+  "name": "DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #2",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 754,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169177167901",
+  "name": "DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #1",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 735,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169179039283",
+  "name": "DV: White_Label_World_Expo Final Email ALL",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 793,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169179941519",
+  "name": "DV: White_Label_World_Expo Email How_To_Make_Money_Click #1",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 773,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169179942786",
+  "name": "DV: White_Label_World_Expo Email How_To_Make_Money_Click #2",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 754,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169188381366",
+  "name": "DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 780,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169188947470",
+  "name": "DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 773,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "169188948539",
+  "name": "DV: White_Label_World_Expo Email Did_Not_Click_Resource",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DV: White_Label_World Expo: Post_Event_Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 776,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "208438457715",
+  "name": "Private Label Lead - First Contact",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "DVL // Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)",
+   "DVL // Sales Qualified Leads: Private Label: Assign Contacts to Sales (OLD - DO NOT USE)"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 444,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "41411614625",
+  "name": "Danielle: DV Mission & Register",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "Danielle: DV Mission & Register",
+   "Danielle: DV Mission & Register in 2/21"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 1550,
+  "rep": true,
+  "fit": "needs a rep-note template"
+ },
+ {
+  "id": "42170019437",
+  "name": "Paul: DV Mission & Register",
+  "state": "AUTOMATED",
+  "live": true,
+  "wfs": [
+   "High Cortisol-Low Thyroid Guide_ToF: Business Owners",
+   "Paul: DV Mission & Register"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 1551,
+  "rep": true,
+  "fit": "needs a rep-note template"
+ },
+ {
+  "id": "202100373636",
+  "name": "DV: # High Priority (Branded) 5Rs",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Branded - High Priority"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 12,
+  "links": 30,
+  "btns": 11,
+  "words": 1745,
+  "rep": false,
+  "fit": "Pulse (newsletter)"
+ },
+ {
+  "id": "202102714909",
+  "name": "DV: #3 High Priority (Branded) Top-Sellers",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Branded - High Priority"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Start_from_scratch.html",
+  "imgs": 12,
+  "links": 30,
+  "btns": 11,
+  "words": 1657,
+  "rep": false,
+  "fit": "Pulse (newsletter)"
+ },
+ {
+  "id": "202109114549",
+  "name": "DV: High Priority (Branded) - Reach out",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Branded - High Priority"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 1038,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "175783065195",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#1",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Danielle_From Download"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 899,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "175803720782",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#3",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Danielle_From Download",
+   "DV: Client_Onboarding_BoF_Danielle_From MoF WF"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 834,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "175803754509",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#2",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Danielle_From Download",
+   "DV: Client_Onboarding_BoF_Danielle_From MoF WF"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 833,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "175804493334",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#4",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Danielle_From Download",
+   "DV: Client_Onboarding_BoF_Danielle_From MoF WF"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 846,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "176962698073",
+  "name": "DV: Client_Onboarding_BoF_Danielle_From_MoF_#1",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Danielle_From MoF WF"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 795,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "175814575650",
+  "name": "DV: Client_Onboarding_BoF_Paul_#1",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Paul_From Download"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 714,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "175814579079",
+  "name": "DV: Client_Onboarding_BoF_Paul_#3",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Paul_From Download",
+   "DV: Client_Onboarding_BoF_Paul_From MoF WF New"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 723,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "175814580344",
+  "name": "DV: Client_Onboarding_BoF_Paul_#4",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Paul_From Download",
+   "DV: Client_Onboarding_BoF_Paul_From MoF WF New"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 708,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "175817721770",
+  "name": "DV: Client_Onboarding_BoF_Paul_#2",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Paul_From Download",
+   "DV: Client_Onboarding_BoF_Paul_From MoF WF New"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 733,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "176962326198",
+  "name": "DV: Client_Onboarding_BoF_Paul_From_MoF_#1",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Client_Onboarding_BoF_Paul_From MoF WF New"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 795,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "142152416879",
+  "name": "DV: PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) A",
+  "state": "AUTOMATED_AB",
+  "live": false,
+  "wfs": [
+   "DV: OLD Private Label Guide_MoF_Danielle "
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 0,
+  "btns": 0,
+  "words": 895,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "142153078660",
+  "name": "DV: PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A",
+  "state": "AUTOMATED_AB",
+  "live": false,
+  "wfs": [
+   "DV: OLD Private Label Guide_MoF_Danielle "
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 832,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "94498399241",
+  "name": "DV: PL Guide_MoF_Danielle_Liposomal_Technology_WhitePaper",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: OLD Private Label Guide_MoF_Danielle "
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 1028,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "94781614879",
+  "name": "DV: PL_Guide_MoF_Danielle_Liquid_Products",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: OLD Private Label Guide_MoF_Danielle "
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 3,
+  "btns": 0,
+  "words": 1418,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "94787196523",
+  "name": "DV: PL_Guide_MoF_Danielle_Get Started",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: OLD Private Label Guide_MoF_Danielle "
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 1150,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "107853244512",
+  "name": "Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: OLD Private_Label_Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 3,
+  "btns": 0,
+  "words": 1559,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "107857959470",
+  "name": "Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: OLD Private_Label_Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 889,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "65781098136",
+  "name": "Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: OLD Private_Label_Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 1036,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "65892871439",
+  "name": "Private_Label_Guide_MoF_Paul_Get Started",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: OLD Private_Label_Guide_MoF_Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 2,
+  "btns": 0,
+  "words": 1125,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "207281829171",
+  "name": "DVL // PM - Automated Email: PL 5rs #5",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Private Label - 5Rs Lead Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 5,
+  "btns": 0,
+  "words": 2554,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "207282028161",
+  "name": "DVL // PM - Automated Email: PL 5rs #6",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Private Label - 5Rs Lead Nurture"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 5,
+  "btns": 0,
+  "words": 2652,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "200441586176",
+  "name": "1: Private Label Guide: High-Priority",
+  "state": "AUTOMATED",
+  "live": false,
+  "wfs": [
+   "DV: Private Label 6-12 month"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/promotion.html",
+  "imgs": 0,
+  "links": 3,
+  "btns": 0,
+  "words": 1446,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "161749534521",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #3",
+  "state": "AUTOMATED_DRAFT",
+  "live": false,
+  "wfs": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 697,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "161752044560",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #1",
+  "state": "AUTOMATED_DRAFT",
+  "live": false,
+  "wfs": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 0,
+  "btns": 0,
+  "words": 747,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "161752065795",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #2",
+  "state": "AUTOMATED_DRAFT",
+  "live": false,
+  "wfs": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 0,
+  "btns": 0,
+  "words": 759,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "163117309280",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #1",
+  "state": "AUTOMATED_DRAFT",
+  "live": false,
+  "wfs": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 0,
+  "btns": 0,
+  "words": 740,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "163117313546",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #3",
+  "state": "AUTOMATED_DRAFT",
+  "live": false,
+  "wfs": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 1,
+  "btns": 0,
+  "words": 695,
+  "rep": false,
+  "fit": "needs review"
+ },
+ {
+  "id": "163299221838",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #2",
+  "state": "AUTOMATED_DRAFT",
+  "live": false,
+  "wfs": [
+   "DV: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle & Paul"
+  ],
+  "mode": "DRAG_AND_DROP",
+  "tpl": "@hubspot/email/dnd/Plain_Text.html",
+  "imgs": 0,
+  "links": 0,
+  "btns": 0,
+  "words": 760,
+  "rep": false,
+  "fit": "needs review"
+ }
+]

@@ -1,0 +1,749 @@
+[
+ {
+  "id": "176178321480",
+  "name": "DV: Chiropractor WF: Final Email ALL",
+  "live": true,
+  "dv": 2,
+  "chars": 1502,
+  "tokens": 1,
+  "sample": " and are considering how these products can enhance your practice. At DaVinci Labs, our mission is to support you in delivering the highest quality care to your"
+ },
+ {
+  "id": "100477229840",
+  "name": "DV WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B",
+  "live": true,
+  "dv": 0,
+  "chars": 1034,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "98433354038",
+  "name": "DV WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A",
+  "live": true,
+  "dv": 0,
+  "chars": 922,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "98445556270",
+  "name": "DV WF: PL Guide_BoF_Danielle Quick Turnaround #3",
+  "live": true,
+  "dv": 0,
+  "chars": 891,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "104026063464",
+  "name": "DV WF: PL Guide_BoF_Paul #1 Build Product Line Subject A",
+  "live": true,
+  "dv": 0,
+  "chars": 924,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "104027076626",
+  "name": "DV WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A",
+  "live": true,
+  "dv": 0,
+  "chars": 946,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "104027204444",
+  "name": "DV WF: PL Guide_BoF_Paul #2 Design & Branding Subject A",
+  "live": true,
+  "dv": 0,
+  "chars": 905,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "200467328115",
+  "name": "Private Label: High Priority - Reach out",
+  "live": true,
+  "dv": 3,
+  "chars": 1162,
+  "tokens": 2,
+  "sample": "ivate label supplements fit into your business plans - thankfully the DaVinci team is here to help and get your answers. At DaVinci, we have years of experience"
+ },
+ {
+  "id": "200492727649",
+  "name": "Private Label: High Priority - 6 Benefits",
+  "live": true,
+  "dv": 3,
+  "chars": 1799,
+  "tokens": 1,
+  "sample": "rom discovery through delivery. Plus, you're not gambling on quality; DaVinci handles the formulation, sourcing, and compliance so you don't have to. The barrie"
+ },
+ {
+  "id": "202135105656",
+  "name": "Private Label: High Priority - Client Onboarding",
+  "live": true,
+  "dv": 2,
+  "chars": 1761,
+  "tokens": 2,
+  "sample": "lines, and a dedicated rep to guide your private label launch . Best, DaVinci Laboratories Private Label Team Let's Discuss Health Protocols That Will Best Supp"
+ },
+ {
+  "id": "202221725195",
+  "name": "Private Label: High Priority Intro",
+  "live": true,
+  "dv": 2,
+  "chars": 1943,
+  "tokens": 1,
+  "sample": "r hand and said you were interested in private label supplements with DaVinci . You were right to look into it. Low MOQs, an organized onboarding process, and s"
+ },
+ {
+  "id": "44289895090",
+  "name": "Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Davinci",
+  "live": true,
+  "dv": 5,
+  "chars": 1645,
+  "tokens": 1,
+  "sample": "nching your own private label supplement brand and maximizing profit. DaVinci Laboratories is a family-owned company, dedicated to higher integrity and superior"
+ },
+ {
+  "id": "170705675687",
+  "name": "DV: Private Label MOF 2_Paul_1ngredients Guide",
+  "live": true,
+  "dv": 2,
+  "chars": 1204,
+  "tokens": 1,
+  "sample": " years, truth in labeling has been a foundational principle for us at DaVinci Labs. We want you to know exactly what you are getting if you choose to private la"
+ },
+ {
+  "id": "170707073088",
+  "name": "DV: MOF_WF_Paul_2_Capsule",
+  "live": true,
+  "dv": 0,
+  "chars": 1126,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "170707748955",
+  "name": "DV: MOF_WF_Paul_Final_All",
+  "live": true,
+  "dv": 4,
+  "chars": 1080,
+  "tokens": 1,
+  "sample": "ustomers, we want to highlight the unique benefits of partnering with DaVinci Labs for private labeling your supplements. Quality Assurance: At DaVinci Labs, we"
+ },
+ {
+  "id": "170707864724",
+  "name": "DV: MOF_WF_Paul_2_Powder",
+  "live": true,
+  "dv": 0,
+  "chars": 1227,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "170707887656",
+  "name": "DV: MOF_WF_Paul_2_Tablet",
+  "live": true,
+  "dv": 0,
+  "chars": 1061,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "170707894911",
+  "name": "DV: MOF_WF_Paul_1_Liquid",
+  "live": true,
+  "dv": 1,
+  "chars": 1359,
+  "tokens": 1,
+  "sample": ", you won't have to enter any additional information.* Specialists at DaVinci Labs will help you brand and market top-tier supplements as your own, setting you "
+ },
+ {
+  "id": "170710869815",
+  "name": "DV: Private Label MOF 2_Paul_Supplement Formats",
+  "live": true,
+  "dv": 0,
+  "chars": 1111,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "170710874146",
+  "name": "DV: MOF_WF_Paul_2_Chewables",
+  "live": true,
+  "dv": 1,
+  "chars": 1321,
+  "tokens": 1,
+  "sample": "t line. Branded Supplements: By partnering with our design experts at Davinci Labs, your business can provide chewable supplements with unique labels that refle"
+ },
+ {
+  "id": "159564033066",
+  "name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
+  "live": true,
+  "dv": 0,
+  "chars": 1275,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "41919076196",
+  "name": "Private_Label_Guide_ToF_Benefits_Private_Label_With_Davinci",
+  "live": true,
+  "dv": 4,
+  "chars": 1437,
+  "tokens": 1,
+  "sample": "ess is critical to launching your own private label supplement brand. DaVinci Laboratories is a family-owned company, dedicated to higher integrity and superior"
+ },
+ {
+  "id": "59544811350",
+  "name": "1 Private_Label_Guide_ToF_Danielle_TY",
+  "live": true,
+  "dv": 2,
+  "chars": 1228,
+  "tokens": 1,
+  "sample": "ulations designed specifically to capture current market demands. The DaVinci team will be with you every step of the way. When you private label with DaVinci, "
+ },
+ {
+  "id": "59545104541",
+  "name": "2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
+  "live": true,
+  "dv": 1,
+  "chars": 1188,
+  "tokens": 1,
+  "sample": "RTIFICIAL FLAVORS Or browse all private label solutions \u2192 https://www.davincilabs.com/private-labeling Your supplement brand represents you and your business. E"
+ },
+ {
+  "id": "159534087563",
+  "name": "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
+  "live": true,
+  "dv": 0,
+  "chars": 1178,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "159557448722",
+  "name": "5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
+  "live": true,
+  "dv": 3,
+  "chars": 997,
+  "tokens": 1,
+  "sample": "ivate label supplements fit into your business plans - thankfully the DaVinci team is here to help and get your answers. At DaVinci, we have years of experience"
+ },
+ {
+  "id": "59783395966",
+  "name": "1: Private Label Guide ToF Paul_TY",
+  "live": true,
+  "dv": 2,
+  "chars": 1133,
+  "tokens": 1,
+  "sample": "rmulations explicitly designed to capture current market demands. The DaVinci team will be with you every step of the way. Private labeling is an exciting and p"
+ },
+ {
+  "id": "170301274240",
+  "name": "DV: Private Label MOF 2_Danielle_Supplement Formats",
+  "live": true,
+  "dv": 0,
+  "chars": 1321,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "170574586726",
+  "name": "DV: Private Label MOF_Danielle_Liquid 1",
+  "live": true,
+  "dv": 0,
+  "chars": 1381,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "170653396775",
+  "name": "DV: Private Label MOF_Danielle_Final All",
+  "live": true,
+  "dv": 3,
+  "chars": 2075,
+  "tokens": 1,
+  "sample": "practice, we want to highlight the unique benefits of partnering with DaVinci Labs. Vast Selection: With access to DaVinci\u00ae's extensive portfolio of wholesale p"
+ },
+ {
+  "id": "170692005796",
+  "name": "DV: Private Label MOF_Danielle_Powder 2",
+  "live": true,
+  "dv": 0,
+  "chars": 1091,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "170699789844",
+  "name": "DV: Private Label MOF_Danielle_Capsule 2",
+  "live": true,
+  "dv": 0,
+  "chars": 1049,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "172303705387",
+  "name": "DV: Private Label MOF_Danielle_Tablets 2",
+  "live": true,
+  "dv": 0,
+  "chars": 901,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "105464472904",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro",
+  "live": true,
+  "dv": 5,
+  "chars": 3451,
+  "tokens": 4,
+  "sample": " Hey {{ contact.firstname }}, Thank you for choosing DaVinci! Now let us introduce you to DaVinci for Healthcare Professionals . We appreciate "
+ },
+ {
+  "id": "106298774045",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio",
+  "live": true,
+  "dv": 2,
+  "chars": 2163,
+  "tokens": 1,
+  "sample": "able across your network. We've even suggested some products from our DaVinci line that will help support your patients' cardiovascular health. Remind Your Pati"
+ },
+ {
+  "id": "106495770510",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #3 GI",
+  "live": true,
+  "dv": 1,
+  "chars": 2390,
+  "tokens": 1,
+  "sample": " can help them regulate their GI tract.* Don't forget, as a member of DaVinci for Healthcare Professionals you can provide these supplements with low minimum or"
+ },
+ {
+  "id": "106618393216",
+  "name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health",
+  "live": true,
+  "dv": 1,
+  "chars": 2634,
+  "tokens": 1,
+  "sample": "e you didn't see it before, we want to remind you that as a member of DaVinci for Healthcare Professionals you can provide these supplements with low minimum or"
+ },
+ {
+  "id": "169091513764",
+  "name": "DV: White_Label_World_Expo Email #1",
+  "live": true,
+  "dv": 1,
+  "chars": 1109,
+  "tokens": 1,
+  "sample": "We enjoyed meeting you and discussing your private labeling goals. At DaVinci Laboratories, we are committed to providing top-notch private labeling services th"
+ },
+ {
+  "id": "169091679551",
+  "name": "DV: White_Label_World_Expo Email #2",
+  "live": true,
+  "dv": 0,
+  "chars": 1098,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "169176113508",
+  "name": "DV: White_Label_World_Expo Email Definitive_Guide_Click #1",
+  "live": true,
+  "dv": 0,
+  "chars": 1106,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "169176644880",
+  "name": "DV: White_Label_World_Expo Email Definitive_Guide_Click #2",
+  "live": true,
+  "dv": 0,
+  "chars": 1191,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "169177165674",
+  "name": "DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #2",
+  "live": true,
+  "dv": 0,
+  "chars": 1115,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "169177167901",
+  "name": "DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #1",
+  "live": true,
+  "dv": 0,
+  "chars": 1095,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "169179039283",
+  "name": "DV: White_Label_World_Expo Final Email ALL",
+  "live": true,
+  "dv": 1,
+  "chars": 1426,
+  "tokens": 1,
+  "sample": "ty to work with you and support your journey to success! Discover how DaVinci Labs can help you succeed in your private labeling supplement journey. Schedule a "
+ },
+ {
+  "id": "169179941519",
+  "name": "DV: White_Label_World_Expo Email How_To_Make_Money_Click #1",
+  "live": true,
+  "dv": 0,
+  "chars": 1384,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "169179942786",
+  "name": "DV: White_Label_World_Expo Email How_To_Make_Money_Click #2",
+  "live": true,
+  "dv": 0,
+  "chars": 1214,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "169188381366",
+  "name": "DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1",
+  "live": true,
+  "dv": 0,
+  "chars": 1458,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "169188947470",
+  "name": "DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2",
+  "live": true,
+  "dv": 0,
+  "chars": 1338,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "169188948539",
+  "name": "DV: White_Label_World_Expo Email Did_Not_Click_Resource",
+  "live": true,
+  "dv": 3,
+  "chars": 1230,
+  "tokens": 1,
+  "sample": "ike to provide more information about the benefits of partnering with DaVinci. The Benefits of Private Labeling with DaVinci: Brand Ownership : Create and contr"
+ },
+ {
+  "id": "208438457715",
+  "name": "Private Label Lead - First Contact",
+  "live": true,
+  "dv": 1,
+  "chars": 995,
+  "tokens": 3,
+  "sample": "onal') }}, Thanks for your interest in Private Label supplements with DaVinci Laboratories. We help healthcare professionals launch their own branded product li"
+ },
+ {
+  "id": "41411614625",
+  "name": "Danielle: DV Mission & Register",
+  "live": true,
+  "dv": 3,
+  "chars": 3257,
+  "tokens": 1,
+  "sample": "y disease. Hi {{ contact.firstname }}, Thank you for your interest in DaVinci Laboratories! As a practitioner who is passionate about helping people take charge"
+ },
+ {
+  "id": "42170019437",
+  "name": "Paul: DV Mission & Register",
+  "live": true,
+  "dv": 3,
+  "chars": 3261,
+  "tokens": 1,
+  "sample": "y disease. Hi {{ contact.firstname }}, Thank you for your interest in DaVinci Laboratories! As a wellness professional who is passionate about helping people ta"
+ },
+ {
+  "id": "202100373636",
+  "name": "DV: # High Priority (Branded) 5Rs",
+  "live": false,
+  "dv": 5,
+  "chars": 3995,
+  "tokens": 12,
+  "sample": " Quality | Learn 929 Harvest Lane, Williston, VT 05495 \u00a9 2024\u2013Present DaVinci Laboratories of Vermont. All rights reserved. privacy policy | update preferences "
+ },
+ {
+  "id": "202102714909",
+  "name": "DV: #3 High Priority (Branded) Top-Sellers",
+  "live": false,
+  "dv": 3,
+  "chars": 3377,
+  "tokens": 12,
+  "sample": " Quality | Learn 929 Harvest Lane, Williston, VT 05495 \u00a9 2024\u2013Present DaVinci Laboratories of Vermont. All rights reserved. privacy policy | update preferences "
+ },
+ {
+  "id": "202109114549",
+  "name": "DV: High Priority (Branded) - Reach out",
+  "live": false,
+  "dv": 3,
+  "chars": 995,
+  "tokens": 1,
+  "sample": "Hi {{ contact.firstname }}, You may have a lot of questions about how DaVinci's supplements fit into your business. Thankfully, our team is here to help and get"
+ },
+ {
+  "id": "175783065195",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#1",
+  "live": false,
+  "dv": 2,
+  "chars": 2232,
+  "tokens": 1,
+  "sample": "ing any questions you might have. Products of Interest & Launch Date: DaVinci\u00ae Laboratories has more than 250 unique products, all of which are available for pr"
+ },
+ {
+  "id": "175803720782",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#3",
+  "live": false,
+  "dv": 0,
+  "chars": 1689,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "175803754509",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#2",
+  "live": false,
+  "dv": 1,
+  "chars": 1742,
+  "tokens": 1,
+  "sample": "rtesy before a charge is incurred. Labels are not sent to print until DaVinci has received your final approval. Once your label is finalized, it's time to confi"
+ },
+ {
+  "id": "175804493334",
+  "name": "DV: Client_Onboarding_BoF_Danielle_#4",
+  "live": false,
+  "dv": 3,
+  "chars": 1935,
+  "tokens": 1,
+  "sample": "seen how easy it is to create a line of high-quality supplements with DaVinci Labs. We start with a discovery call that helps us understand your practice and pa"
+ },
+ {
+  "id": "176962698073",
+  "name": "DV: Client_Onboarding_BoF_Danielle_From_MoF_#1",
+  "live": false,
+  "dv": 2,
+  "chars": 1441,
+  "tokens": 1,
+  "sample": "nversation is a collaborative dialogue designed to help you decide if DaVinci Labs is the right fit for you. Step 1: Discovery Call Every great partnership begi"
+ },
+ {
+  "id": "175814575650",
+  "name": "DV: Client_Onboarding_BoF_Paul_#1",
+  "live": false,
+  "dv": 2,
+  "chars": 883,
+  "tokens": 1,
+  "sample": "mbark on an exciting journey to create your own supplement brand with DaVinci Labs\u2014and we're here to make it simple, efficient, and successful. Step 1: Discover"
+ },
+ {
+  "id": "175814579079",
+  "name": "DV: Client_Onboarding_BoF_Paul_#3",
+  "live": false,
+  "dv": 0,
+  "chars": 997,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "175814580344",
+  "name": "DV: Client_Onboarding_BoF_Paul_#4",
+  "live": false,
+  "dv": 1,
+  "chars": 892,
+  "tokens": 1,
+  "sample": "ted through the key steps to launching your own supplement brand with DaVinci Labs. Here\u2019s a quick recap: Discovery Call: Tailoring our process to your vision. "
+ },
+ {
+  "id": "175817721770",
+  "name": "DV: Client_Onboarding_BoF_Paul_#2",
+  "live": false,
+  "dv": 1,
+  "chars": 1040,
+  "tokens": 1,
+  "sample": "me to make your brand visually stand out. The label design process at DaVinci Labs is where your vision becomes reality. What We Offer: Custom Branding: Our des"
+ },
+ {
+  "id": "176962326198",
+  "name": "DV: Client_Onboarding_BoF_Paul_From_MoF_#1",
+  "live": false,
+  "dv": 2,
+  "chars": 1439,
+  "tokens": 1,
+  "sample": "nversation is a collaborative dialogue designed to help you decide if DaVinci Labs is the right fit for you. Step 1: Discovery Call Every great partnership begi"
+ },
+ {
+  "id": "142152416879",
+  "name": "DV: PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) A",
+  "live": false,
+  "dv": 0,
+  "chars": 1298,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "142153078660",
+  "name": "DV: PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A",
+  "live": false,
+  "dv": 0,
+  "chars": 938,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "94498399241",
+  "name": "DV: PL Guide_MoF_Danielle_Liposomal_Technology_WhitePaper",
+  "live": false,
+  "dv": 1,
+  "chars": 1678,
+  "tokens": 1,
+  "sample": "nformation.* NO FILLERS, BINDERS OR ARTIFICIAL FLAVORS Specialists at DaVinci will help you brand and market top-tier supplements as your own, setting you apart"
+ },
+ {
+  "id": "94781614879",
+  "name": "DV: PL_Guide_MoF_Danielle_Liquid_Products",
+  "live": false,
+  "dv": 0,
+  "chars": 1133,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "94787196523",
+  "name": "DV: PL_Guide_MoF_Danielle_Get Started",
+  "live": false,
+  "dv": 3,
+  "chars": 1400,
+  "tokens": 1,
+  "sample": "tarted with private labeling for your practice. Private labeling with DaVinci is easy and we've developed our wholesale private label supplement program and pro"
+ },
+ {
+  "id": "107853244512",
+  "name": "Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)",
+  "live": false,
+  "dv": 0,
+  "chars": 1226,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "107857959470",
+  "name": "Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
+  "live": false,
+  "dv": 0,
+  "chars": 1253,
+  "tokens": 0,
+  "sample": ""
+ },
+ {
+  "id": "65781098136",
+  "name": "Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper",
+  "live": false,
+  "dv": 1,
+  "chars": 1858,
+  "tokens": 1,
+  "sample": "nformation.* NO FILLERS, BINDERS OR ARTIFICIAL FLAVORS Specialists at DaVinci will help you brand and market top-tier supplements as your own, setting you apart"
+ },
+ {
+  "id": "65892871439",
+  "name": "Private_Label_Guide_MoF_Paul_Get Started",
+  "live": false,
+  "dv": 3,
+  "chars": 1455,
+  "tokens": 1,
+  "sample": "take your existing business to the next level.. Private labeling with DaVinci is easy and we've developed our wholesale private label supplement program and pro"
+ },
+ {
+  "id": "207281829171",
+  "name": "DVL // PM - Automated Email: PL 5rs #5",
+  "live": false,
+  "dv": 1,
+  "chars": 3156,
+  "tokens": 2,
+  "sample": "r \u2014 the next-level . What Repair Looks Like in a Real Product Line At DaVinci, two formulas live in this Repair slot: GI Benefits\u00ae \u2192 a gut-lining support formul"
+ },
+ {
+  "id": "207282028161",
+  "name": "DVL // PM - Automated Email: PL 5rs #6",
+  "live": false,
+  "dv": 1,
+  "chars": 3652,
+  "tokens": 2,
+  "sample": "he gut-brain axis your more educated customers already talk about. At DaVinci, we offer formulas like: Clear GI\u2122 \u2013 a targeted formula that supports GI comfort w"
+ },
+ {
+  "id": "200441586176",
+  "name": "1: Private Label Guide: High-Priority",
+  "live": false,
+  "dv": 1,
+  "chars": 2083,
+  "tokens": 1,
+  "sample": "ore their first order ships NO FILLERS, BINDERS OR ARTIFICIAL FLAVORS DaVinci has been doing this for brands at every stage\u2014first product, scaling their fifth l"
+ },
+ {
+  "id": "161749534521",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #3",
+  "live": false,
+  "dv": 0,
+  "chars": 746,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "161752044560",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #1",
+  "live": false,
+  "dv": 0,
+  "chars": 1125,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "161752065795",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #2",
+  "live": false,
+  "dv": 0,
+  "chars": 1205,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "163117309280",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #1",
+  "live": false,
+  "dv": 0,
+  "chars": 1067,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "163117313546",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #3",
+  "live": false,
+  "dv": 0,
+  "chars": 730,
+  "tokens": 1,
+  "sample": ""
+ },
+ {
+  "id": "163299221838",
+  "name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #2",
+  "live": false,
+  "dv": 0,
+  "chars": 1196,
+  "tokens": 1,
+  "sample": ""
+ }
+]
