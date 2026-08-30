@@ -412,3 +412,55 @@ The port block was real and correctly diagnosed. The mistake was reaching for
 the workaround (an MCP relay) instead of reading the vendor's documentation
 for the constraint. `unipile.py` already tried the same host on 443 — it just
 never tried it *with the port as a parameter*, which is the documented form.
+
+## Transport decision: v2 preferred, v1 fallback, per call
+
+Shawn's call, 2026-08-30: run v2 with v1 as the fallback rather than migrating
+outright. `qbs_linkedin/transport.py` implements it — same shape as
+`contact-verification/scripts/unipile.py`: try the preferred path, fall back,
+halt only when none works, and always report which answered.
+
+**But the preference is per call, not global**, because measurement showed v2
+is not a complete replacement:
+
+| Call | Path | Why |
+|---|---|---|
+| `health()` | **v2** | Only v2 has `products_connection_status` (classic / company / sales_navigator). v1's `sources[].status` reports MESSAGING only and says OK while Sales Navigator is dead — that is how it went undiagnosed |
+| `posts()` | v2, falls back | Works on both; v2's composite id is reshaped to a v1 `social_id` |
+| `self_comments()` | v2, falls back | Works on both |
+| `profile()` | **v1 ONLY** | v2 does not return work experience at all |
+
+### v2 does not return work_experience
+
+Measured against `/v2/{acc}/users/michelinenijmeh` with six parameter variants
+— none, `linkedin_sections=experience`, `sections=experience`,
+`linkedin_sections=*`, `include=experience`, and `linkedin_api=classic` — all
+returned **HTTP 200 with zero rows** and no experience-shaped key anywhere.
+`specifics.throttled_sections` is present and empty, so the mechanism may exist
+and simply not be wired up during beta.
+
+`profile()` therefore does **not** fall back to v2 under any circumstance. A v2
+profile looks completely healthy and is missing the only field the Reading Rule
+reads — precisely the shape that writes "No Longer with Company" across the CRM.
+
+### The guard caught this on a live migration
+
+The first v2-preferred run raised:
+
+```
+InstrumentError: profile has no work_experience key — the request almost
+certainly omitted linkedin_sections=experience. This is an instrument failure
+and must not be scored as a verdict.
+```
+
+Written for a missing query parameter; fired on an API version change nobody
+anticipated. Without it, the migration would have scored every contact as a
+mover. This is the strongest argument in the codebase for never letting an
+instrument failure become a finding.
+
+### Route reporting is mandatory
+
+`UnipileClient.route` records which version served each call and why. A run
+that silently degrades to v1 without saying so is how a version problem stays
+invisible for weeks — the same failure mode as a routine reporting SUCCEEDED
+while writing nothing. Report the route in every run summary.
