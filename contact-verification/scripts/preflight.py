@@ -99,6 +99,31 @@ if not code.startswith('2'):
     sys.exit(2)
 print("ok   hubspot auth: HTTP "+code)
 
+# ---------- 2b. WHICH portal is this token for? ------------------------------------------
+# Nothing here used to assert it. The scripts take a list id as an argument and are otherwise
+# portal-agnostic, so pointing TOKEN at a different portal and passing a list id that exists in
+# both writes to the WRONG CRM - silently, and with no way to tell from the output. That is a
+# footnote internally and unrecoverable on a client portal.
+# Set EXPECT_PORTAL to the hub id you intend to write to. Refusing to run without it would break
+# every existing caller, so an absent value WARNS and names the portal it found.
+txt,code=call('GET','https://api.hubapi.com/account-info/v3/details')
+hub=str((json.loads(txt) if code.startswith('2') else {}).get('portalId') or '')
+want=(os.environ.get('EXPECT_PORTAL') or '').strip()
+if not hub:
+    warn.append("could not read the portal id from this token - cannot confirm WHICH CRM this "
+                "run would write to")
+elif not want:
+    warn.append("this token belongs to portal "+hub+" and EXPECT_PORTAL is not set. Set "
+                "EXPECT_PORTAL="+hub+" to make a wrong-portal run impossible.")
+    print("ok   portal: "+hub+" (unasserted - see WARN)")
+elif hub!=want:
+    print("HALT: this token belongs to portal "+hub+", but EXPECT_PORTAL="+want+".")
+    print("      Refusing to run. Writing verification verdicts into the wrong CRM is not")
+    print("      something a later pass can find or undo.")
+    sys.exit(2)
+else:
+    print("ok   portal: "+hub+" matches EXPECT_PORTAL")
+
 # ---------- 3. the self-test rule: prove a query returns a KNOWN answer -------------------
 # Never trust a null from a query that has not been shown to return something.
 txt,code=call('GET','https://api.hubapi.com/crm/v3/lists/'+lid)
