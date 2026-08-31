@@ -1,11 +1,11 @@
 [
  "<!--sec:closed-->",
  "<!--sec:redirects-->",
- "<!--sec:stack-->",
+ "<!--sec:parallel-->",
  "<!--sec:forms-->",
  "<!--sec:workflows-->",
  "<!--sec:recheck-->",
  "<!--sec:open-->",
- "<!--sec:sequence-->",
- "<!--sec:method-->"
+ "<!--sec:order-->",
+ "<!--sec:provenance-->"
 ]

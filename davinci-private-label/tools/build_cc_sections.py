@@ -55,13 +55,14 @@ def S(key,label,body):
     """The body carries its own heading; the renderer's injected <h2>{label}</h2>
     is hidden by CSS. The label still names the block in ClientCommand's editor,
     which is what a person picks a section by."""
-    head=(f'<div class="shead"><h2>{label}</h2></div>' if key!="intro"
-          else f'<h1>{label}</h1>')
+    HERO="The Praxera stack is built. Nothing is switched on."
+    head=(f'<div class="shead"><h2>{label}</h2></div>' if key!="status"
+          else f'<h1>{HERO}</h1>')
     SECTIONS.append({"block_key":key,"label":label,
                      "body":f"<!--sec:{key}-->\n{head}\n{body.strip()}"})
 
 # -- intro carries the stylesheet, the hero and the metrics -----------------
-S("intro","The Praxera stack is built. Nothing is switched on.", f'''
+S("status","Where this stands", f'''
 <style>{CSS}</style>
 <p class="brandline"><span class="dot"></span>FoodScience LLC &middot; HubSpot 4087538
 &middot; Private Label &rarr; Praxera</p>
@@ -85,7 +86,7 @@ the asset ledger and sign off asset by asset &rarr;</a></p>
 assets individually, each with Approve, Needs work and a comment thread, saved and attributed.</p>
 ''')
 
-S("closed","Two of the ten open items are done", f'''
+S("closed","What closed since the last version", f'''
 <p class="eyebrow">Re-checked against the live drafts today</p>
 <p>Checking the 30 August Launch Guide&rsquo;s list against the site as it stands, two items are
 complete and one is still open exactly as described.</p>
@@ -107,7 +108,7 @@ misspelled <code>prexera</code> four times &mdash; three on the home page, one o
 &mdash; a different instance from the page titles, and still open.</p>
 ''')
 
-S("redirects","The redirect plan", f'''
+S("redirects","Redirect plan", f'''
 <p class="eyebrow">Cutover</p>
 <p>Each DaVinci private-label page the Praxera set replaces becomes a redirect to its
 replacement, so the pairing is not just provenance &mdash; it is the redirect table.
@@ -159,7 +160,7 @@ cards=[("pages",N["pages"],"website pages","all draft","acc",
         f"All {sends} email sends point at a Praxera email. None is enabled."),
        ("tpl",2,"email templates","draft","acc",
         "Pulse newsletter and product/category, both drag-and-drop editable in HubSpot.")]
-S("stack","The parallel stack",
+S("parallel","Parallel stack",
   '<p class="eyebrow">What exists today &mdash; and which side is authoritative</p>'
   '<div class="call warn"><h3>Until cutover, DaVinci is the live system and Praxera is the '
   'draft</h3><p>Both stacks exist right now, which means the expensive mistake is editing the one '
@@ -178,7 +179,7 @@ frows="".join(
   f'<td class="num">{sum(1 for w in wf for x in w["enrol_forms"] if x["id"]==f["id"])}</td>'
   f'<td class="ev">{", ".join(sorted(on)[:5])+(" …" if len(on)>5 else "") if on else "&mdash;"}</td></tr>'
   for f in sorted(state["praxera_forms"],key=lambda x:x["name"]))
-S("forms","Forms, and where they sit", f'''
+S("forms","Forms and placement", f'''
 <p class="eyebrow">Entry points</p>
 <div class="tscroll"><table><thead><tr><th>Praxera form</th><th>Placement</th>
 <th class="num">Flows enrolling</th><th>Pages</th></tr></thead><tbody>{frows}</tbody></table></div>
@@ -198,8 +199,8 @@ def wrow(f):
     name=f["name"].replace("Praxera - ","")
     return (f'<tr><td class="nm">{esc(name)}</td><td class="num">{f["sends"]}</td>'
             f'<td>{chip("off","ok")}</td><td>{" ".join(out) or chip("clear","acc")}</td></tr>')
-S("workflows",f'The {N["flows"]} workflow clones', f'''
-<p class="eyebrow">Automation</p>
+S("workflows","Workflows and automation", f'''
+<p class="eyebrow">The 12 Praxera workflow clones &mdash; none enabled</p>
 <div class="tscroll"><table><thead><tr><th>Praxera workflow</th><th class="num">Email sends</th>
 <th>Enabled</th><th>Outstanding</th></tr></thead><tbody>
 {"".join(wrow(f) for f in sorted(wf,key=lambda x:-x["sends"]))}</tbody></table></div>
@@ -252,8 +253,8 @@ schema markup and internal-linking changes from separate SEO work.</p>
 pl-demo pages, so the pending global-module edits cannot change a live page.</p></div>
 ''')
 
-S("open","What has to happen before launch", f'''
-<p class="eyebrow">Still open</p>
+S("open","Open items", f'''
+<p class="eyebrow">Severity ordered &mdash; the first four block cutover</p>
 <div class="call bad"><h3>Manufacturing claims &mdash; {len(page_claims)} pages,
 {len(blog_claims)} posts, {len(mail_claims)} emails</h3>
 <p>Praxera cannot present itself as the manufacturer. Verbatim, from the rendered drafts:
@@ -296,8 +297,8 @@ the DaVinci domain</h3>
 because they break if that domain is disconnected at cutover.</p></div>
 ''')
 
-S("sequence","Order of operations", f'''
-<p class="eyebrow">Sequence</p>
+S("order","Order of operations", f'''
+<p class="eyebrow">The cutover sequence &mdash; the last two steps are the irreversible ones</p>
 <ol class="steps">
 <li><strong>The manufacturing-claim copy pass</strong> across {len(page_claims)} pages,
 {len(blog_claims)} posts and {len(mail_claims)} emails. The only compliance risk; nothing else
@@ -324,14 +325,28 @@ the originals are redirected rather than deleted.</li>
 </ol>
 ''')
 
-S("method","Classified by address, not by topic", '''
-<p class="eyebrow">How the private-label set was identified</p>
-<p>DaVinci sells supplements under its own name to practitioners <em>and</em> runs a private-label
-business, from one portal, on one contact list, and the phrase &ldquo;private label&rdquo; appears
-on both sides. PetTechLabs, a separate brand in the same portal, runs its own private-label pet
-line. So nothing was classified by what it is about. It was classified by the address it lives at
-&mdash; the <code>/private-label/</code> blog group, an
-<code>info.davincilabs.com/private-label*</code> slug, the <code>pl-demo-*</code> pages.</p>
+S("provenance","How the asset set was identified", '''
+<p class="eyebrow">Provenance</p>
+<p><strong>Source:</strong> HubSpot portal <code>4087538</code>, read through the CMS, Marketing
+and Automation v4 APIs on <strong>'''+STAMP+'''</strong>. Every figure on this page was produced
+by that pass, not carried forward from an earlier version. Two things about how it was read matter,
+because they are where an audit of this portal goes wrong:</p>
+<ul class="tight">
+<li><strong>Drafts, not published records.</strong> All of this work lives in drafts, so the
+<code>/draft</code> record is the only one that shows it. Reading the base record shows the site as
+it was before the migration started &mdash; which is how an earlier pass concluded that no Praxera
+page carried a Praxera form.</li>
+<li><strong>Whole records, not filtered fields.</strong> Passing a <code>property</code> filter to
+the CMS list endpoints silently drops <code>slug</code> and <code>url</code>, which returns an
+empty result set that looks like a finding.</li>
+</ul>
+<p><strong>Classified by address, not by topic.</strong> DaVinci sells supplements under its own
+name to practitioners <em>and</em> runs a private-label business, from one portal, on one contact
+list, and the phrase &ldquo;private label&rdquo; appears on both sides. PetTechLabs, a separate
+brand in the same portal, runs its own private-label pet line. So nothing was classified by what it
+is about &mdash; it was classified by the address it lives at: the <code>/private-label/</code>
+blog group, an <code>info.davincilabs.com/private-label*</code> slug, the <code>pl-demo-*</code>
+pages.</p>
 <p>The first pass matched the string <code>private-label</code> anywhere in an email and returned
 <strong>394</strong> hits. Requiring an actual <code>&lt;a href&gt;</code> pointing at a
 private-label URL &mdash; rather than the token appearing in an image filename or a CSS class
@@ -339,6 +354,8 @@ private-label URL &mdash; rather than the token appearing in an image filename o
 eight weeks earlier, found 183. They agree on 179.</p>
 <p>Twenty-five posts are about private label but sit in PetTechLabs&rsquo; namespace. Topically
 they qualify; structurally they are another brand&rsquo;s, and none was moved.</p>
+<p class="note">The scripts that produced these counts are in the project repository, so any figure
+here can be re-run against the portal and checked rather than taken on trust.</p>
 ''')
 
 json.dump(SECTIONS,open("deliverables/cc_sections.json","w"),indent=1)
