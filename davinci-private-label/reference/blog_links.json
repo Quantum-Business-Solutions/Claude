@@ -1,0 +1,627 @@
+{
+ "buckets": {
+  "home fallback": 129,
+  "davinci": 0,
+  "specific praxera": 142,
+  "external": 148
+ },
+ "posts_with_davinci_links": [],
+ "recoverable": [
+  {
+   "slug": "blog/how-to-enhance-customer-journey-with-private-label-supplements",
+   "home_links": 4,
+   "resolvable": [
+    {
+     "was": "https://blog.davincilabs.com/private-label/how-private-label-supplements-set-you-apart-from-competition",
+     "should_be": "https://www.praxerasupplements.com/blog/how-private-label-supplements-set-you-apart-from-competition"
+    }
+   ],
+   "n_resolvable": 1
+  },
+  {
+   "slug": "blog/how-to-get-started-with-dropshipping-supplements",
+   "home_links": 1,
+   "resolvable": [
+    {
+     "was": "https://blog.davincilabs.com/private-label/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+     "should_be": "https://www.praxerasupplements.com/blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media"
+    }
+   ],
+   "n_resolvable": 1
+  },
+  {
+   "slug": "blog/how-to-private-label-protein-supplements",
+   "home_links": 1,
+   "resolvable": [
+    {
+     "was": "https://blog.davincilabs.com/private-label/what-qualifications-do-you-need-to-sell-private-label-supplements",
+     "should_be": "https://www.praxerasupplements.com/blog/what-qualifications-do-you-need-to-sell-private-label-supplements"
+    }
+   ],
+   "n_resolvable": 1
+  },
+  {
+   "slug": "blog/how-private-label-supplements-can-increase-revenue-fast",
+   "home_links": 7,
+   "resolvable": [
+    {
+     "was": "https://blog.davincilabs.com/private-label/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+     "should_be": "https://www.praxerasupplements.com/blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media"
+    }
+   ],
+   "n_resolvable": 1
+  },
+  {
+   "slug": "blog/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
+   "home_links": 6,
+   "resolvable": [
+    {
+     "was": "https://blog.davincilabs.com/private-label/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+     "should_be": "https://www.praxerasupplements.com/blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media"
+    },
+    {
+     "was": "https://blog.davincilabs.com/private-label/how-to-choose-a-private-label-supplement-provider",
+     "should_be": "https://www.praxerasupplements.com/blog/how-to-choose-a-private-label-supplement-provider"
+    }
+   ],
+   "n_resolvable": 2
+  },
+  {
+   "slug": "blog/make-your-own-supplement-brand-the-easy-way",
+   "home_links": 2,
+   "resolvable": [
+    {
+     "was": "https://blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024",
+     "should_be": "https://www.praxerasupplements.com/blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026"
+    },
+    {
+     "was": "https://blog.davincilabs.com/private-label/does-the-fda-approve-supplements",
+     "should_be": "https://www.praxerasupplements.com/blog/does-the-fda-approve-supplements"
+    }
+   ],
+   "n_resolvable": 2
+  },
+  {
+   "slug": "blog/top-private-label-protein-powders-for-your-brand",
+   "home_links": 2,
+   "resolvable": [
+    {
+     "was": "https://blog.davincilabs.com/private-label/how-is-protein-powder-made",
+     "should_be": "https://www.praxerasupplements.com/blog/how-is-protein-powder-made"
+    },
+    {
+     "was": "https://blog.davincilabs.com/private-label/how-to-private-label-protein-supplements",
+     "should_be": "https://www.praxerasupplements.com/blog/how-to-private-label-protein-supplements"
+    }
+   ],
+   "n_resolvable": 2
+  }
+ ],
+ "per_post": [
+  {
+   "slug": "blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
+   "home": 11,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/how-to-compare-dietary-supplement-providers",
+   "home": 2,
+   "davinci": 0,
+   "specific": 0,
+   "external": 2
+  },
+  {
+   "slug": "blog/tips-for-selling-private-label-supplements-on-amazon",
+   "home": 1,
+   "davinci": 0,
+   "specific": 2,
+   "external": 2
+  },
+  {
+   "slug": "blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
+   "home": 0,
+   "davinci": 0,
+   "specific": 0,
+   "external": 0
+  },
+  {
+   "slug": "blog/how-to-develop-private-label-brand",
+   "home": 0,
+   "davinci": 0,
+   "specific": 0,
+   "external": 0
+  },
+  {
+   "slug": "blog/dev-blog/private-label-supplements-more-than-just-a-trend",
+   "home": 0,
+   "davinci": 0,
+   "specific": 0,
+   "external": 1
+  },
+  {
+   "slug": "blog/tips-for-selling-private-label-supplements-for-immunity",
+   "home": 0,
+   "davinci": 0,
+   "specific": 1,
+   "external": 2
+  },
+  {
+   "slug": "blog/trending-private-label-supplements-for-2022",
+   "home": 3,
+   "davinci": 0,
+   "specific": 0,
+   "external": 5
+  },
+  {
+   "slug": "blog/how-to-choose-the-best-private-label-manufacturer",
+   "home": 1,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/challenges-and-opportunities-private-label-supplements",
+   "home": 2,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/how-private-label-beauty-supplements-can-increase-revenue-fast",
+   "home": 9,
+   "davinci": 0,
+   "specific": 1,
+   "external": 1
+  },
+  {
+   "slug": "blog/how-to-enhance-customer-journey-with-private-label-supplements",
+   "home": 4,
+   "davinci": 0,
+   "specific": 2,
+   "external": 0
+  },
+  {
+   "slug": "blog/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "home": 2,
+   "davinci": 0,
+   "specific": 0,
+   "external": 1
+  },
+  {
+   "slug": "blog/supplement-dropshipping-can-it-boost-profitability",
+   "home": 1,
+   "davinci": 0,
+   "specific": 2,
+   "external": 4
+  },
+  {
+   "slug": "blog/does-the-fda-approve-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 6,
+   "external": 5
+  },
+  {
+   "slug": "blog/how-to-get-started-with-dropshipping-supplements",
+   "home": 1,
+   "davinci": 0,
+   "specific": 1,
+   "external": 5
+  },
+  {
+   "slug": "blog/how-to-manage-private-label-supplement-packaging",
+   "home": 1,
+   "davinci": 0,
+   "specific": 2,
+   "external": 2
+  },
+  {
+   "slug": "blog/how-to-private-label-protein-supplements",
+   "home": 1,
+   "davinci": 0,
+   "specific": 2,
+   "external": 2
+  },
+  {
+   "slug": "blog/how-to-evaluate-supplement-suppliers-in-the-us",
+   "home": 3,
+   "davinci": 0,
+   "specific": 1,
+   "external": 1
+  },
+  {
+   "slug": "blog/white-label-supplements-vs.-private-label-what-is-the-difference",
+   "home": 1,
+   "davinci": 0,
+   "specific": 2,
+   "external": 3
+  },
+  {
+   "slug": "blog/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
+   "home": 0,
+   "davinci": 0,
+   "specific": 7,
+   "external": 3
+  },
+  {
+   "slug": "blog/must-have-private-label-probiotics-to-expand-your-product-line",
+   "home": 4,
+   "davinci": 0,
+   "specific": 2,
+   "external": 1
+  },
+  {
+   "slug": "blog/5-best-private-label-supplements-for-sleep-on-the-market",
+   "home": 8,
+   "davinci": 0,
+   "specific": 0,
+   "external": 1
+  },
+  {
+   "slug": "blog/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+   "home": 5,
+   "davinci": 0,
+   "specific": 0,
+   "external": 8
+  },
+  {
+   "slug": "blog/tips-for-selling-private-label-supplements-on-amazon-0",
+   "home": 1,
+   "davinci": 0,
+   "specific": 2,
+   "external": 5
+  },
+  {
+   "slug": "blog/tips-for-selling-private-label-supplements-on-amazon-0-1",
+   "home": 0,
+   "davinci": 0,
+   "specific": 2,
+   "external": 3
+  },
+  {
+   "slug": "blog/what-is-a-nutraceutical-supplement",
+   "home": 0,
+   "davinci": 0,
+   "specific": 5,
+   "external": 4
+  },
+  {
+   "slug": "blog/supplement-certifications-usp-nsf-gmp-fda",
+   "home": 0,
+   "davinci": 0,
+   "specific": 5,
+   "external": 4
+  },
+  {
+   "slug": "blog/how-much-to-start-a-private-label-supplement-business",
+   "home": 0,
+   "davinci": 0,
+   "specific": 5,
+   "external": 4
+  },
+  {
+   "slug": "blog/how-to-choose-a-private-label-supplement-provider",
+   "home": 0,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/private-label-supplements-how-to-get-superior-quality-at-low-cost",
+   "home": 2,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/how-do-i-start-a-private-label-supplement-business",
+   "home": 0,
+   "davinci": 0,
+   "specific": 2,
+   "external": 2
+  },
+  {
+   "slug": "blog/top-selling-private-label-supplements-for-2021",
+   "home": 3,
+   "davinci": 0,
+   "specific": 2,
+   "external": 3
+  },
+  {
+   "slug": "blog/how-to-create-exclusivity-for-private-label-supplements",
+   "home": 1,
+   "davinci": 0,
+   "specific": 2,
+   "external": 1
+  },
+  {
+   "slug": "blog/tips-for-buying-wholesale-private-label-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/private-labeling-liquid-vitamins",
+   "home": 0,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/how-to-spot-high-quality-private-label-supplements",
+   "home": 2,
+   "davinci": 0,
+   "specific": 0,
+   "external": 0
+  },
+  {
+   "slug": "blog/why-branded-ingredients-are-important-to-private-label-supplements",
+   "home": 2,
+   "davinci": 0,
+   "specific": 0,
+   "external": 0
+  },
+  {
+   "slug": "blog/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
+   "home": 1,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/custom-supplements-vs.-private-label-supplements",
+   "home": 1,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+   "home": 0,
+   "davinci": 0,
+   "specific": 3,
+   "external": 3
+  },
+  {
+   "slug": "blog/managing-the-top-3-risks-when-selling-private-label-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/2023-trends-in-vitamin-and-supplement-industry",
+   "home": 4,
+   "davinci": 0,
+   "specific": 0,
+   "external": 10
+  },
+  {
+   "slug": "blog/how-private-label-supplements-can-increase-revenue-fast",
+   "home": 7,
+   "davinci": 0,
+   "specific": 3,
+   "external": 4
+  },
+  {
+   "slug": "blog/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
+   "home": 6,
+   "davinci": 0,
+   "specific": 4,
+   "external": 0
+  },
+  {
+   "slug": "blog/how-is-protein-powder-made",
+   "home": 2,
+   "davinci": 0,
+   "specific": 1,
+   "external": 3
+  },
+  {
+   "slug": "blog/how-find-right-supplement-wholesaler-for-your-business",
+   "home": 0,
+   "davinci": 0,
+   "specific": 2,
+   "external": 1
+  },
+  {
+   "slug": "blog/make-your-own-supplement-brand-the-easy-way",
+   "home": 2,
+   "davinci": 0,
+   "specific": 5,
+   "external": 3
+  },
+  {
+   "slug": "blog/an-introduction-to-sports-supplement-manufacturing",
+   "home": 7,
+   "davinci": 0,
+   "specific": 2,
+   "external": 2
+  },
+  {
+   "slug": "blog/top-private-label-protein-powders-for-your-brand",
+   "home": 2,
+   "davinci": 0,
+   "specific": 5,
+   "external": 5
+  },
+  {
+   "slug": "blog/top-private-label-herbal-supplements-and-their-key-benefits",
+   "home": 1,
+   "davinci": 0,
+   "specific": 1,
+   "external": 5
+  },
+  {
+   "slug": "blog/tips-for-buying-wholesale-private-label-supplements-0",
+   "home": 0,
+   "davinci": 0,
+   "specific": 1,
+   "external": 3
+  },
+  {
+   "slug": "blog/tips-for-selling-private-label-supplements-on-amazon-0-0",
+   "home": 0,
+   "davinci": 0,
+   "specific": 2,
+   "external": 3
+  },
+  {
+   "slug": "blog/contract-manufacturing-vs-private-labeling-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 5,
+   "external": 4
+  },
+  {
+   "slug": "blog/are-private-label-supplements-profitable",
+   "home": 1,
+   "davinci": 0,
+   "specific": 2,
+   "external": 0
+  },
+  {
+   "slug": "blog/how-physicians-can-get-better-private-labeling-for-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/benefits-of-selling-private-label-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 2,
+   "external": 1
+  },
+  {
+   "slug": "blog/private-label-supplements-how-to-make-money",
+   "home": 1,
+   "davinci": 0,
+   "specific": 1,
+   "external": 1
+  },
+  {
+   "slug": "blog/what-qualifications-do-you-need-to-sell-private-label-supplements",
+   "home": 1,
+   "davinci": 0,
+   "specific": 0,
+   "external": 0
+  },
+  {
+   "slug": "blog/best-private-label-supplements-for-gut-health",
+   "home": 6,
+   "davinci": 0,
+   "specific": 1,
+   "external": 1
+  },
+  {
+   "slug": "blog/top-questions-consumers-have-about-private-label-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 1,
+   "external": 0
+  },
+  {
+   "slug": "blog/how-to-market-private-label-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 0,
+   "external": 0
+  },
+  {
+   "slug": "blog/do-you-need-insurance-to-sell-private-label-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 0,
+   "external": 0
+  },
+  {
+   "slug": "blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements",
+   "home": 5,
+   "davinci": 0,
+   "specific": 0,
+   "external": 0
+  },
+  {
+   "slug": "blog/why-wellness-businesses-should-sell-private-label-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 4,
+   "external": 1
+  },
+  {
+   "slug": "blog/how-to-scale-your-business-with-private-label-supplements",
+   "home": 4,
+   "davinci": 0,
+   "specific": 2,
+   "external": 2
+  },
+  {
+   "slug": "blog/how-private-label-supplements-set-you-apart-from-competition",
+   "home": 0,
+   "davinci": 0,
+   "specific": 7,
+   "external": 0
+  },
+  {
+   "slug": "blog/private-label-supplements-secret-to-surpassing-sales-goals",
+   "home": 2,
+   "davinci": 0,
+   "specific": 0,
+   "external": 0
+  },
+  {
+   "slug": "blog/how-to-sell-supplements",
+   "home": 0,
+   "davinci": 0,
+   "specific": 0,
+   "external": 4
+  },
+  {
+   "slug": "blog/liquid-supplement-manufacturing-benefits-vs.-costs",
+   "home": 3,
+   "davinci": 0,
+   "specific": 1,
+   "external": 6
+  },
+  {
+   "slug": "blog/are-private-label-vitamins-a-profitable-business",
+   "home": 0,
+   "davinci": 0,
+   "specific": 0,
+   "external": 1
+  },
+  {
+   "slug": "blog/supplement-dropshipping-5-best-tips-for-success",
+   "home": 0,
+   "davinci": 0,
+   "specific": 5,
+   "external": 3
+  },
+  {
+   "slug": "blog/powder-supplement-manufacturing-essential-tips-for-private-labelers",
+   "home": 0,
+   "davinci": 0,
+   "specific": 7,
+   "external": 3
+  },
+  {
+   "slug": "blog/top-10-mistakes-to-avoid-with-supplement-manufacturing",
+   "home": 2,
+   "davinci": 0,
+   "specific": 3,
+   "external": 0
+  },
+  {
+   "slug": "blog/healthcare-practitioner-supplement-line-guide",
+   "home": 0,
+   "davinci": 0,
+   "specific": 5,
+   "external": 4
+  }
+ ]
+}
