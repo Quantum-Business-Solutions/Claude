@@ -30,9 +30,10 @@ strip=lambda n:PFX.sub("",n or "")
 host=lambda u:re.sub(r"^https?://","",u) if u else ""
 
 rows=[]
-def add(k,rid,name,replaces,issues,full=""):
+def add(k,rid,name,replaces,issues,full="",new=False):
     r={"k":k,"id":rid,"n":name,"r":replaces,"i":issues}
     if full and full!=replaces: r["t"]=full
+    if new: r["new"]=1
     rows.append(r)
 
 # ---- pages ---------------------------------------------------------------
@@ -45,9 +46,8 @@ for p in sorted(pairs["pages"],key=lambda x:x["slug"] or ""):
     if p["slug"] in embeds["pages_with_no_form"]: i.append(["mute","no form"])
     if h.get("foreign_images"):
         n=len(h["foreign_images"]); i.append(["mute",f"{n} asset"+("s" if n>1 else "")+" off-domain"])
-    if not p["source_url"]: i.append(["mute","nothing redirects here"])
     add("p",p["slug"] or "home",p["slug"] or "(home)",
-        host(p["source_url"]) or "\u2014 new for Praxera",i)
+        host(p["source_url"]),i,new=not p["source_url"])
 
 # ---- blog ----------------------------------------------------------------
 for b in sorted(pairs["blog"],key=lambda x:x["slug"] or ""):
@@ -60,9 +60,7 @@ for b in sorted(pairs["blog"],key=lambda x:x["slug"] or ""):
     src=host(b["source_url"])
     seg=src.split("/")
     short=(seg[0]+"/\u2026/"+seg[-1]) if len(seg)>2 else src
-    if not b["source_url"]: i.append(["mute","nothing redirects here"])
-    add("b",b["slug"],(b["name"] or "")[:88],
-        short or "\u2014 new for Praxera",i,src)
+    add("b",b["slug"],(b["name"] or "")[:88],short,i,src,new=not b["source_url"])
 
 # ---- emails --------------------------------------------------------------
 for e in sorted(pairs["emails"],key=lambda x:x["name"]):

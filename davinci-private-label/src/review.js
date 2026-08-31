@@ -171,7 +171,8 @@ function rowHtml(r){
   var h='<tr class="'+cls+'" data-k="'+E(k)+'">'
     +'<td class="nm">'+E(r.n)+by+"</td>"
     +'<td class="ev"'+(r.t?' title="'+E(r.t)+'"':"")+">"
-      +(r.r?E(r.r):"&mdash;")+"</td>"
+      +(r.new?'<span class="chip c-ok">new page</span>'
+             :(r.r?E(r.r):"&mdash;"))+"</td>"
     +"<td>"+chips+"</td>"
     +'<td class="act"><span class="rv">'
       +'<button class="ok" data-a="ok" aria-pressed="'+(st==="ok")+'"'
@@ -246,9 +247,9 @@ function headerHtml(){
     +'<p class="sub">For pages and posts the second column is the DaVinci URL that will '
     +"<strong>redirect here</strong> at cutover \u2014 "+R.pairs+" redirects in all ("
     +R.by_kind.page+" pages, "+R.by_kind.blog+" posts). "
-    +R.orphan_sources.length+" published DaVinci guide pages have no Praxera equivalent to "
-    +"redirect to yet, and "+R.orphan_targets+" Praxera pages are new, so nothing "
-    +"redirects to them.</p>"
+    +"A row marked <strong>new page</strong> has no DaVinci original and needs no redirect. "
+    +R.orphan_sources.length+" published DaVinci guide pages still have no Praxera equivalent "
+    +"to redirect to.</p>"
     +'<div class="prog"><div class="bar"><i class="a" style="width:'+pa+'%"></i>'
       +'<i class="f" style="width:'+pf+'%"></i></div>'
       +'<div class="lg"><span><i class="k a"></i>Approved <b>'+t.ok+"</b></span>"
