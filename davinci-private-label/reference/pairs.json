@@ -1,0 +1,2054 @@
+{
+ "pages": [
+  {
+   "slug": "",
+   "name": "Private Label - Page - Home - Private Label Supplements",
+   "url": "https://praxerasupplements.com",
+   "source_name": "PTL: Home",
+   "source_url": "https://www.pettechlabs.com",
+   "source_state": "PUBLISHED"
+  },
+  {
+   "slug": "about",
+   "name": "Private Label - Page - About Us",
+   "url": "https://praxerasupplements.com/about",
+   "source_name": "Private Label - Page - About Us \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-about-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "aging",
+   "name": "Private Label - Page - Aging Supplements",
+   "url": "https://praxerasupplements.com/aging",
+   "source_name": "Private Label - Page - Aging Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-aging-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "alp/ads-contract-mfg",
+   "name": "Private Label - Ads LP - Supplement Contract Manufacturer",
+   "url": "https://praxerasupplements.com/alp/ads-contract-mfg",
+   "source_name": "Private Label - Ads LP - Supplement Contract Manufacturer \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-ads-contract-mfg-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "alp/ads-custom",
+   "name": "Private Label - Ads LP - Custom Formulation Supplements",
+   "url": "https://praxerasupplements.com/alp/ads-custom",
+   "source_name": "Private Label - Ads LP - Custom Formulation Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-ads-custom-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "alp/ads-mfg-usa",
+   "name": "Private Label - Ads LP - Supplement Manufacturer USA",
+   "url": "https://praxerasupplements.com/alp/ads-mfg-usa",
+   "source_name": "Private Label - Ads LP - Supplement Manufacturer USA \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-ads-mfg-usa-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "alp/ads-pl-mfg",
+   "name": "Private Label - Ads LP - Private Label Supplement Provider",
+   "url": "https://praxerasupplements.com/alp/ads-pl-mfg",
+   "source_name": "Private Label - Ads LP - Private Label Supplement Manufacturer \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-ads-pl-mfg-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "book-consultation",
+   "name": "Private Label - Page - Book a Consultation",
+   "url": "https://praxerasupplements.com/book-consultation",
+   "source_name": "Private Label - Page - Book a Consultation \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-book-consultation-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "capsules",
+   "name": "Private Label - Page - Capsules",
+   "url": "https://praxerasupplements.com/capsules",
+   "source_name": "Private Label - Page - Capsules \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-capsules-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "case-studies",
+   "name": "Private Label - Page - Case Studies",
+   "url": "https://praxerasupplements.com/case-studies",
+   "source_name": "Private Label - Page - Case Studies \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-case-studies-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "certifications",
+   "name": "Private Label - Page - Certifications",
+   "url": "https://praxerasupplements.com/certifications",
+   "source_name": "Private Label - Page - Certifications \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-certifications-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "chewables",
+   "name": "Private Label - Page - Chewables",
+   "url": "https://praxerasupplements.com/chewables",
+   "source_name": "Private Label - Page - Chewables \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-chewables-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "cognitive",
+   "name": "Private Label - Page - Cognitive Support Supplements",
+   "url": "https://praxerasupplements.com/cognitive",
+   "source_name": "Private Label - Page - Cognitive Support Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-cognitive-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "contact",
+   "name": "Private Label - Page - Contact",
+   "url": "https://praxerasupplements.com/contact",
+   "source_name": "Private Label - Page - Contact \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-contact-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "custom-formulation",
+   "name": "Private Label - Page - Custom Formulation",
+   "url": "https://praxerasupplements.com/custom-formulation",
+   "source_name": "Private Label - Page - Custom Formulation \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-custom-formulation-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "customer-art",
+   "name": "Private Label - Page - Customer-Supplied Art Guidelines",
+   "url": "https://praxerasupplements.com/customer-art",
+   "source_name": "Private Label - Page - Customer-Supplied Art Guidelines \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-customer-art-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "design-services",
+   "name": "Private Label - Standard Page - Design Services Hub",
+   "url": "https://praxerasupplements.com/design-services",
+   "source_name": "Private Label - Standard Page - Design Services Hub \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-design-services-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "design-team",
+   "name": "Private Label - Page - Working With Our Design Team",
+   "url": "https://praxerasupplements.com/design-team",
+   "source_name": "Private Label - Page - Working With Our Design Team \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-design-team-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "detox",
+   "name": "Private Label - Page - Detox & Liver Support Supplements",
+   "url": "https://praxerasupplements.com/detox",
+   "source_name": "Private Label - Page - Detox & Liver Support Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-detox-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "dropshipping",
+   "name": "Private Label - Standard Page - Dropshipping for Private Label",
+   "url": "https://praxerasupplements.com/dropshipping",
+   "source_name": "Private Label - Standard Page - Dropshipping for Private Label \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-dropshipping-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "energy",
+   "name": "Private Label - Page - Energy & Vitality Supplements",
+   "url": "https://praxerasupplements.com/energy",
+   "source_name": "Private Label - Page - Energy & Vitality Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-energy-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "facility",
+   "name": "Private Label - Page - Our Facility",
+   "url": "https://praxerasupplements.com/facility",
+   "source_name": "Private Label - Page - Our Facility \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-facility-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "faq",
+   "name": "Private Label - Page - FAQ",
+   "url": "https://praxerasupplements.com/faq",
+   "source_name": "Private Label - Page - FAQ \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-faq-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "fitness",
+   "name": "Private Label - Page - Fitness Supplements",
+   "url": "https://praxerasupplements.com/fitness",
+   "source_name": "Private Label - Page - Fitness Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-fitness-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "get-started",
+   "name": "Private Label - Page - Get Started",
+   "url": "https://praxerasupplements.com/get-started",
+   "source_name": "Private Label - Page - Get Started \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-get-started-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "guides",
+   "name": "Private Label - Page - Guides Library",
+   "url": "https://praxerasupplements.com/guides",
+   "source_name": "Private Label - Page - Guides Library \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-guides-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "gummies",
+   "name": "Private Label - Page - Gummies",
+   "url": "https://praxerasupplements.com/gummies",
+   "source_name": "Private Label - Page - Gummies \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-gummies-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "heart-health",
+   "name": "Private Label - Page - Heart Health Supplements",
+   "url": "https://praxerasupplements.com/heart-health",
+   "source_name": "Private Label - Page - Heart Health Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-heart-health-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "herbal",
+   "name": "Private Label - Page - Herbal Supplements",
+   "url": "https://praxerasupplements.com/herbal",
+   "source_name": "Private Label - Page - Herbal Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-herbal-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "how-to-sell-supplements",
+   "name": "Private Label - Standard Page - How to Sell Private Label Supplements",
+   "url": "https://praxerasupplements.com/how-to-sell-supplements",
+   "source_name": "Private Label - Standard Page - How to Sell Private Label Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-how-to-sell-supplements-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "immune-support",
+   "name": "Private Label - Page - Immune Support Supplements",
+   "url": "https://praxerasupplements.com/immune-support",
+   "source_name": "Private Label - Page - Immune Support Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-immune-support-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "ingredient-sourcing",
+   "name": "Private Label - Page - Ingredient Sourcing",
+   "url": "https://praxerasupplements.com/ingredient-sourcing",
+   "source_name": "Private Label - Page - Ingredient Sourcing \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-ingredient-sourcing-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "joint-support",
+   "name": "Private Label - Page - Joint Support Supplements",
+   "url": "https://praxerasupplements.com/joint-support",
+   "source_name": "Private Label - Page - Joint Support Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-joint-support-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "learning/definitive-guide",
+   "name": "Private Label - Page - Definitive Guide",
+   "url": "https://praxerasupplements.com/learning/definitive-guide",
+   "source_name": "Private Label - Page - Definitive Guide \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-definitive-guide-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "learning/definitive-guide-ty",
+   "name": "Private Label - Page - TY - Guide Download",
+   "url": "https://praxerasupplements.com/learning/definitive-guide-ty",
+   "source_name": null,
+   "source_url": null,
+   "source_state": null
+  },
+  {
+   "slug": "learning/ingredients-testing",
+   "name": "Private Label - Page - Ingredients & Testing Guide",
+   "url": "https://praxerasupplements.com/learning/ingredients-testing",
+   "source_name": "Private Label - Page - Ingredients & Testing Guide \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-ingredients-testing-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "learning/onboarding-guide",
+   "name": "Private Label - Page - Onboarding Guide",
+   "url": "https://praxerasupplements.com/learning/onboarding-guide",
+   "source_name": "Private Label - Page - Onboarding Guide \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-onboarding-guide-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "learning/onboarding-guide-ty",
+   "name": "Private Label - Page - TY - Onboarding",
+   "url": "https://praxerasupplements.com/learning/onboarding-guide-ty",
+   "source_name": null,
+   "source_url": null,
+   "source_state": null
+  },
+  {
+   "slug": "liquids",
+   "name": "Private Label - Page - Liquids",
+   "url": "https://praxerasupplements.com/liquids",
+   "source_name": "Private Label - Page - Liquids \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-liquids-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "mens-health",
+   "name": "Private Label - Page - Men's Health Supplements",
+   "url": "https://praxerasupplements.com/mens-health",
+   "source_name": "Private Label - Page - Men's Health Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-mens-health-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "multivitamin",
+   "name": "Private Label - Page - Multivitamin Supplements",
+   "url": "https://praxerasupplements.com/multivitamin",
+   "source_name": "Private Label - Page - Multivitamin Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-multivitamin-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "our-process",
+   "name": "Private Label - Page - Our Process",
+   "url": "https://praxerasupplements.com/our-process",
+   "source_name": "Private Label - Page - Our Process \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-our-process-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "packaging",
+   "name": "Private Label - Page - Packaging",
+   "url": "https://praxerasupplements.com/packaging",
+   "source_name": "Private Label - Page - Packaging \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-packaging-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "pediatric",
+   "name": "Private Label - Page - Pediatric Supplements",
+   "url": "https://praxerasupplements.com/pediatric",
+   "source_name": "Private Label - Page - Pediatric Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-pediatric-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "powders",
+   "name": "Private Label - Page - Powders",
+   "url": "https://praxerasupplements.com/powders",
+   "source_name": "Private Label - Page - Powders \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-powders-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "prenatal",
+   "name": "Private Label - Page - Prenatal Supplements",
+   "url": "https://praxerasupplements.com/prenatal",
+   "source_name": "Private Label - Page - Prenatal Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-prenatal-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "privacy",
+   "name": "Private Label - Page - Privacy Policy",
+   "url": "https://praxerasupplements.com/privacy",
+   "source_name": "Private Label - Page - Privacy Policy \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-privacy-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "probiotics",
+   "name": "Private Label - Page - Probiotic Supplements",
+   "url": "https://praxerasupplements.com/probiotics",
+   "source_name": "Private Label - Page - Probiotic Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-probiotics-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "quality-standards",
+   "name": "Private Label - Page - Quality Standards",
+   "url": "https://praxerasupplements.com/quality-standards",
+   "source_name": "Private Label - Page - Quality Standards \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-quality-standards-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "request-quote",
+   "name": "Private Label - Page - Request a Quote",
+   "url": "https://praxerasupplements.com/request-quote",
+   "source_name": "Private Label - Page - Request a Quote \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-request-quote-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "resources",
+   "name": "Private Label - Page - Resources Hub",
+   "url": "https://praxerasupplements.com/resources",
+   "source_name": "Private Label - Page - Resources Hub \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-resources-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "sell-sheets",
+   "name": "Private Label - Page - Sell Sheets",
+   "url": "https://praxerasupplements.com/sell-sheets",
+   "source_name": "Private Label - Page - Sell Sheets \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-sell-sheets-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "sleep",
+   "name": "Private Label - Page - Sleep Supplements",
+   "url": "https://praxerasupplements.com/sleep",
+   "source_name": "Private Label - Page - Sleep Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-sleep-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "soft-gels",
+   "name": "Private Label - Page - Soft Gels",
+   "url": "https://praxerasupplements.com/soft-gels",
+   "source_name": "Private Label - Page - Soft Gels \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-soft-gels-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "tablets",
+   "name": "Private Label - Page - Tablets",
+   "url": "https://praxerasupplements.com/tablets",
+   "source_name": "Private Label - Page - Tablets \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-tablets-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "terms",
+   "name": "Private Label - Page - Terms of Service",
+   "url": "https://praxerasupplements.com/terms",
+   "source_name": "Private Label - Page - Terms of Service \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-terms-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "testing",
+   "name": "Private Label - Page - Testing Protocols",
+   "url": "https://praxerasupplements.com/testing",
+   "source_name": "Private Label - Page - Testing Protocols \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-testing-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "ty-consultation",
+   "name": "Private Label - Page - TY - Consultation Booked",
+   "url": "https://praxerasupplements.com/ty-consultation",
+   "source_name": "Private Label - Page - TY - Consultation Booked \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-ty-consultation-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "ty-quote",
+   "name": "Private Label - Page - TY - Quote Request Submitted",
+   "url": "https://praxerasupplements.com/ty-quote",
+   "source_name": "Private Label - Page - TY - Quote Request Submitted \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/en/pl-demo-ty-quote-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "ty-sell-sheets",
+   "name": "Private Label - Page - TY - Sell Sheets Requested",
+   "url": "https://praxerasupplements.com/ty-sell-sheets",
+   "source_name": "Private Label - Page - TY - Sell Sheets Requested \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-ty-sell-sheets-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "weight-management",
+   "name": "Private Label - Page - Weight Management Supplements",
+   "url": "https://praxerasupplements.com/weight-management",
+   "source_name": "Private Label - Page - Weight Management Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-weight-management-v3",
+   "source_state": "DRAFT"
+  },
+  {
+   "slug": "womens-health",
+   "name": "Private Label - Page - Women's Health Supplements",
+   "url": "https://praxerasupplements.com/womens-health",
+   "source_name": "Private Label - Page - Women's Health Supplements \u2014 V3 (New Modules)",
+   "source_url": "https://info.davincilabs.com/pl-demo-womens-health-v3",
+   "source_state": "DRAFT"
+  }
+ ],
+ "blog": [
+  {
+   "slug": "blog/2023-trends-in-vitamin-and-supplement-industry",
+   "name": "2023 Trends in the Vitamin and Supplement Industry",
+   "source_name": "2023 Trends in the Vitamin and Supplement Industry",
+   "source_url": "https://blog.davincilabs.com/private-label/2023-trends-in-vitamin-and-supplement-industry",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+   "name": "4 Tips to Select the Best Gummy Vitamins for Integrative & Functional Practice",
+   "source_name": "4 Tips to Select the Best Gummy Vitamins for Integrative & Functional Practice",
+   "source_url": "https://blog.davincilabs.com/private-label/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/5-best-private-label-supplements-for-sleep-on-the-market",
+   "name": "5 Best Private Label Supplements For Sleep",
+   "source_name": "5 Best Private Label Supplements For Sleep",
+   "source_url": "https://blog.davincilabs.com/private-label/5-best-private-label-supplements-for-sleep-on-the-market",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/an-introduction-to-sports-supplement-manufacturing",
+   "name": "An Introduction to Sports Supplement Manufacturing",
+   "source_name": "An Introduction to Sports Supplement Manufacturing",
+   "source_url": "https://blog.davincilabs.com/private-label/an-introduction-to-sports-supplement-manufacturing",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/are-private-label-supplements-profitable",
+   "name": "Are Private Label Supplements Profitable?",
+   "source_name": "Are Private Label Supplements Profitable?",
+   "source_url": "https://blog.davincilabs.com/private-label/are-private-label-supplements-profitable",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/are-private-label-vitamins-a-profitable-business",
+   "name": "Are Private-Label Vitamins a Profitable Business?",
+   "source_name": "Are Private-Label Vitamins a Profitable Business?",
+   "source_url": "https://blog.davincilabs.com/private-label/are-private-label-vitamins-a-profitable-business",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/benefits-of-selling-private-label-supplements",
+   "name": "Six Benefits of Selling Private Label Supplements",
+   "source_name": "Six Benefits of Selling Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/best-private-label-supplements-for-gut-health",
+   "name": "Best Private Label Supplements for Gut Health",
+   "source_name": "Best Private Label Supplements for Gut Health",
+   "source_url": "https://blog.davincilabs.com/private-label/best-private-label-supplements-for-gut-health",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/challenges-and-opportunities-private-label-supplements",
+   "name": "Challenges and Opportunities in Private Label Supplements",
+   "source_name": "Challenges and Opportunities in Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/challenges-and-opportunities-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/contract-manufacturing-vs-private-labeling-supplements",
+   "name": "Contract Manufacturing vs Private Labeling: Which Supplement Service Is Right for Your Brand?",
+   "source_name": "Contract Manufacturing vs Private Labeling: Which Supplement Service Is Right for Your Brand?",
+   "source_url": "https://blog.davincilabs.com/private-label/contract-manufacturing-vs-private-labeling-supplements",
+   "source_state": "DRAFT",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/custom-supplements-vs.-private-label-supplements",
+   "name": "Custom Supplements vs. Private Label Supplements",
+   "source_name": "Custom Supplements vs. Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/custom-supplements-vs.-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+   "name": "How to Promote Your Private Label Supplements on Social Media",
+   "source_name": "How to Promote Your Private Label Supplements on Social Media",
+   "source_url": "https://blog.davincilabs.com/private-label/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/dev-blog/private-label-supplements-more-than-just-a-trend",
+   "name": "Are Private Label Supplements More Than Just a Trend?",
+   "source_name": "Are Private Label Supplements More Than Just a Trend?",
+   "source_url": "https://blog.davincilabs.com/private-label/dev-blog/private-label-supplements-more-than-just-a-trend",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/do-you-need-insurance-to-sell-private-label-supplements",
+   "name": "Do You Need Insurance to Sell Private Label Supplements?",
+   "source_name": "Do You Need Insurance to Sell Private Label Supplements?",
+   "source_url": "https://blog.davincilabs.com/private-label/do-you-need-insurance-to-sell-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/does-the-fda-approve-supplements",
+   "name": "Does the FDA Approve Supplements?",
+   "source_name": "Does the FDA Approve Supplements?",
+   "source_url": "https://blog.davincilabs.com/private-label/does-the-fda-approve-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/healthcare-practitioner-supplement-line-guide",
+   "name": "How Healthcare Practitioners Build a Private Label Supplement Line for Their Practice",
+   "source_name": "How Healthcare Practitioners Build a Private Label Supplement Line for Their Practice",
+   "source_url": "https://blog.davincilabs.com/private-label/healthcare-practitioner-supplement-line-guide",
+   "source_state": "DRAFT",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-do-i-start-a-private-label-supplement-business",
+   "name": "How to Start a Private Label Supplement Business in 7 Simple Steps",
+   "source_name": "How to Start a Private Label Supplement Business in 7 Simple Steps",
+   "source_url": "https://blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-find-right-supplement-wholesaler-for-your-business",
+   "name": "How to Find the Right Supplement Wholesaler for Your Business",
+   "source_name": "How to Find the Right Supplement Wholesaler for Your Business",
+   "source_url": "https://blog.davincilabs.com/private-label/how-find-right-supplement-wholesaler-for-your-business",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-is-protein-powder-made",
+   "name": "How Is Protein Powder Made?",
+   "source_name": "How Is Protein Powder Made?",
+   "source_url": "https://blog.davincilabs.com/private-label/how-is-protein-powder-made",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-much-to-start-a-private-label-supplement-business",
+   "name": "How Much Does It Cost to Start a Private Label Supplement Business? (2026 Guide)",
+   "source_name": "How Much Does It Cost to Start a Private Label Supplement Business? (2026 Guide)",
+   "source_url": "https://blog.davincilabs.com/private-label/how-much-to-start-a-private-label-supplement-business",
+   "source_state": "DRAFT",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-physicians-can-get-better-private-labeling-for-supplements",
+   "name": "How Physicians Can Get Better Private Labeling for Supplements",
+   "source_name": "How Physicians Can Get Better Private Labeling for Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-physicians-can-get-better-private-labeling-for-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-private-label-beauty-supplements-can-increase-revenue-fast",
+   "name": "How Private Label Beauty Supplements Can Increase Revenue Fast",
+   "source_name": "How Private Label Beauty Supplements Can Increase Revenue Fast",
+   "source_url": "https://blog.davincilabs.com/private-label/how-private-label-beauty-supplements-can-increase-revenue-fast",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-private-label-supplements-can-increase-revenue-fast",
+   "name": "How Private Label Supplements Can Increase Revenue Fast",
+   "source_name": "How Private Label Supplements Can Increase Revenue Fast",
+   "source_url": "https://blog.davincilabs.com/private-label/how-private-label-supplements-can-increase-revenue-fast",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-private-label-supplements-set-you-apart-from-competition",
+   "name": "How Private Label Supplements Set You Apart from the Competition",
+   "source_name": "How Private Label Supplements Set You Apart from the Competition",
+   "source_url": "https://blog.davincilabs.com/private-label/how-private-label-supplements-set-you-apart-from-competition",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements",
+   "name": "How to Build a Sports Nutrition Brand with Private Label Supplements",
+   "source_name": "How to Build a Sports Nutrition Brand with Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-build-a-sports-nutrition-brand-with-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-choose-a-private-label-supplement-provider",
+   "name": "How to Choose a Private Label Supplement Company",
+   "source_name": "How to Choose a Private Label Supplement Company",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-choose-a-private-label-supplement-provider",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-choose-the-best-private-label-manufacturer",
+   "name": "How to Choose the Best Private Label Manufacturer",
+   "source_name": "How to Choose the Best Private Label Manufacturer",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-choose-the-best-private-label-manufacturer",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-compare-dietary-supplement-providers",
+   "name": "How to Compare Dietary Supplement Providers",
+   "source_name": "How to Compare Dietary Supplement Providers",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-compare-dietary-supplement-providers",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-create-exclusivity-for-private-label-supplements",
+   "name": "How to Create Exclusivity for Private Label Supplements",
+   "source_name": "How to Create Exclusivity for Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-create-exclusivity-for-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-develop-private-label-brand",
+   "name": "How to Develop a brand for Private Label Supplements",
+   "source_name": "How to Develop a brand for Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-develop-private-label-brand",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-enhance-customer-journey-with-private-label-supplements",
+   "name": "How to Enhance the Customer Journey with Private Label Supplements",
+   "source_name": "How to Enhance the Customer Journey with Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-enhance-customer-journey-with-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-evaluate-supplement-suppliers-in-the-us",
+   "name": "How To Evaluate Supplement Suppliers in the US",
+   "source_name": "How To Evaluate Supplement Suppliers in the US",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-evaluate-supplement-suppliers-in-the-us",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-get-started-with-dropshipping-supplements",
+   "name": "How to Get Started With Dropshipping Supplements",
+   "source_name": "How to Get Started With Dropshipping Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-get-started-with-dropshipping-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
+   "name": "Make Money in the Fitness Industry with Private Label Supplements",
+   "source_name": "Make Money in the Fitness Industry with Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-manage-private-label-supplement-packaging",
+   "name": "How To Manage Private Label Supplement Packaging",
+   "source_name": "How To Manage Private Label Supplement Packaging",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-manage-private-label-supplement-packaging",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-market-private-label-supplements",
+   "name": "How to Market Private Label Supplements",
+   "source_name": "How to Market Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-market-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-private-label-protein-supplements",
+   "name": "How To Private Label Protein Supplements",
+   "source_name": "How To Private Label Protein Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-private-label-protein-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-scale-your-business-with-private-label-supplements",
+   "name": "How to Scale Your Business With Private Label Supplements",
+   "source_name": "How to Scale Your Business With Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-scale-your-business-with-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-sell-supplements",
+   "name": "How To Sell Supplements",
+   "source_name": "How To Sell Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-sell-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/how-to-spot-high-quality-private-label-supplements",
+   "name": "How to Spot High-Quality Private Label Supplements",
+   "source_name": "How to Spot High-Quality Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/how-to-spot-high-quality-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/liquid-supplement-manufacturing-benefits-vs.-costs",
+   "name": "Liquid Supplement Manufacturing: Benefits vs. Costs",
+   "source_name": "Liquid Supplement Manufacturing: Benefits vs. Costs",
+   "source_url": "https://blog.davincilabs.com/private-label/liquid-supplement-manufacturing-benefits-vs.-costs",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/make-your-own-supplement-brand-the-easy-way",
+   "name": "Make Your Own Supplement Brand The Easy Way",
+   "source_name": "Make Your Own Supplement Brand The Easy Way",
+   "source_url": "https://blog.davincilabs.com/private-label/make-your-own-supplement-brand-the-easy-way",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
+   "name": "Managing Private Label Shipping and Inventory: A Step-by-Step Guide",
+   "source_name": "Managing Private Label Shipping and Inventory: A Step-by-Step Guide",
+   "source_url": "https://blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/managing-the-top-3-risks-when-selling-private-label-supplements",
+   "name": "Managing the Top 3 Risks When Selling Private Label Supplements",
+   "source_name": "Managing the Top 3 Risks When Selling Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
+   "name": "Mastering Supplement Branding: Design Private Label Packaging in 5 Steps",
+   "source_name": "Mastering Supplement Branding: Design Private Label Packaging in 5 Steps",
+   "source_url": "https://blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/must-have-private-label-probiotics-to-expand-your-product-line",
+   "name": "Must-Have Private-Label Probiotics To Expand Your Product Line",
+   "source_name": "Must-Have Private-Label Probiotics To Expand Your Product Line",
+   "source_url": "https://blog.davincilabs.com/private-label/must-have-private-label-probiotics-to-expand-your-product-line",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "name": "NAD+ Activate: Your Blueprint for Sustained Energy and a Booming Business*",
+   "source_name": "NAD+ Activate: Your Blueprint for Sustained Energy and a Booming Business*",
+   "source_url": "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/powder-supplement-manufacturing-essential-tips-for-private-labelers",
+   "name": "Powder Supplement Manufacturing: Essential Tips For Private Labelers",
+   "source_name": "Powder Supplement Manufacturing: Essential Tips For Private Labelers",
+   "source_url": "https://blog.davincilabs.com/private-label/powder-supplement-manufacturing-essential-tips-for-private-labelers",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/private-label-supplements-how-to-get-superior-quality-at-low-cost",
+   "name": "Private Label Supplements: How to Get Superior-Quality at Low Cost",
+   "source_name": "Private Label Supplements: How to Get Superior-Quality at Low Cost",
+   "source_url": "https://blog.davincilabs.com/private-label/private-label-supplements-how-to-get-superior-quality-at-low-cost",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/private-label-supplements-how-to-make-money",
+   "name": "Private Label Supplements: How to Make Money",
+   "source_name": "Private Label Supplements: How to Make Money",
+   "source_url": "https://blog.davincilabs.com/private-label/private-label-supplements-how-to-make-money",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/private-label-supplements-secret-to-surpassing-sales-goals",
+   "name": "Private Label Supplements: The Secret to Surpassing Sales Goals",
+   "source_name": "Private Label Supplements: The Secret to Surpassing Sales Goals",
+   "source_url": "https://blog.davincilabs.com/private-label/private-label-supplements-secret-to-surpassing-sales-goals",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/private-labeling-liquid-vitamins",
+   "name": "Private Labeling Liquid Vitamins",
+   "source_name": "Private Labeling Liquid Vitamins",
+   "source_url": "https://blog.davincilabs.com/private-label/private-labeling-liquid-vitamins",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/supplement-certifications-usp-nsf-gmp-fda",
+   "name": "USP, NSF, GMP, and FDA: A Buyer's Guide to Supplement Certifications That Actually Matter",
+   "source_name": "USP, NSF, GMP, and FDA: A Buyer's Guide to Supplement Certifications That Actually Matter",
+   "source_url": "https://blog.davincilabs.com/private-label/supplement-certifications-usp-nsf-gmp-fda",
+   "source_state": "DRAFT",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/supplement-dropshipping-5-best-tips-for-success",
+   "name": "Supplement Dropshipping: 5 Best Tips for Success",
+   "source_name": "Supplement Dropshipping: 5 Best Tips for Success",
+   "source_url": "https://blog.davincilabs.com/private-label/supplement-dropshipping-5-best-tips-for-success",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/supplement-dropshipping-can-it-boost-profitability",
+   "name": "SUPPLEMENT DROPSHIPPING: CAN IT BOOST PROFITABILITY?",
+   "source_name": "SUPPLEMENT DROPSHIPPING: CAN IT BOOST PROFITABILITY?",
+   "source_url": "https://blog.davincilabs.com/private-label/supplement-dropshipping-can-it-boost-profitability",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/tips-for-buying-wholesale-private-label-supplements",
+   "name": "Tips for Buying Wholesale Private Label Supplements",
+   "source_name": "Tips for Buying Wholesale Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/tips-for-buying-wholesale-private-label-supplements-0",
+   "name": "Tips for Buying Wholesale Private Label Supplements",
+   "source_name": "Tips for Buying Wholesale Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements-0",
+   "source_state": "DRAFT",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/tips-for-selling-private-label-supplements-for-immunity",
+   "name": "Tips for Selling Private Label Supplements for Immunity",
+   "source_name": "Tips for Selling Private Label Supplements for Immunity",
+   "source_url": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-for-immunity",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/tips-for-selling-private-label-supplements-on-amazon",
+   "name": "Tips for Selling Private Label Supplements on Amazon",
+   "source_name": "Tips for Selling Private Label Supplements on Amazon",
+   "source_url": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/tips-for-selling-private-label-supplements-on-amazon-0",
+   "name": "Tips for Selling Private Label Supplements on Amazon",
+   "source_name": "Tips for Selling Private Label Supplements on Amazon",
+   "source_url": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0",
+   "source_state": "DRAFT",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/tips-for-selling-private-label-supplements-on-amazon-0-0",
+   "name": "Tips for Selling Private Label Supplements on Amazon",
+   "source_name": "Tips for Selling Private Label Supplements on Amazon",
+   "source_url": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0-0",
+   "source_state": "DRAFT",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/tips-for-selling-private-label-supplements-on-amazon-0-1",
+   "name": "Tips for Selling Private Label Supplements on Amazon",
+   "source_name": "Tips for Selling Private Label Supplements on Amazon",
+   "source_url": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0-1",
+   "source_state": "DRAFT",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/top-10-mistakes-to-avoid-with-supplement-manufacturing",
+   "name": "Top 10 Mistakes to Avoid With Supplement Manufacturing",
+   "source_name": "Top 10 Mistakes to Avoid With Supplement Manufacturing",
+   "source_url": "https://blog.davincilabs.com/private-label/top-10-mistakes-to-avoid-with-supplement-manufacturing",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/top-private-label-herbal-supplements-and-their-key-benefits",
+   "name": "Top Private Label Herbal Supplements And Their Key Benefits",
+   "source_name": "Top Private Label Herbal Supplements And Their Key Benefits",
+   "source_url": "https://blog.davincilabs.com/private-label/top-private-label-herbal-supplements-and-their-key-benefits",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/top-private-label-protein-powders-for-your-brand",
+   "name": "Top Private Label Protein Powders for Your Brand",
+   "source_name": "Top Private Label Protein Powders for Your Brand",
+   "source_url": "https://blog.davincilabs.com/private-label/top-private-label-protein-powders-for-your-brand",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/top-questions-consumers-have-about-private-label-supplements",
+   "name": "Answers to Your Top Questions About Private Label Supplements",
+   "source_name": "Answers to Your Top Questions About Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/top-selling-private-label-supplements-for-2021",
+   "name": "Top Selling Private Label Supplements for 2026",
+   "source_name": "Top Selling Private Label Supplements for 2026",
+   "source_url": "https://blog.davincilabs.com/private-label/top-selling-private-label-supplements-for-2021",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/trending-private-label-supplements-for-2022",
+   "name": "Trending Private Label Supplements for 2023",
+   "source_name": "Trending Private Label Supplements for 2023",
+   "source_url": "https://blog.davincilabs.com/private-label/trending-private-label-supplements-for-2022",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
+   "name": "Truth in Labeling: Ingredient Break Down of Private Label Supplements",
+   "source_name": "Truth in Labeling: Ingredient Break Down of Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
+   "name": "Vitamin Manufacturing: 10 Top Sellers to Consider in 2026",
+   "source_name": null,
+   "source_url": null,
+   "source_state": null,
+   "publishDate": "2026-08-29T01:08:47Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/what-is-a-nutraceutical-supplement",
+   "name": "What Is a Nutraceutical? A Buyer's Guide to Private Label Nutraceutical Supplements",
+   "source_name": "What Is a Nutraceutical? A Buyer's Guide to Private Label Nutraceutical Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/what-is-a-nutraceutical-supplement",
+   "source_state": "DRAFT",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/what-qualifications-do-you-need-to-sell-private-label-supplements",
+   "name": "What Qualifications Do You Need to Sell Private Label Supplements?",
+   "source_name": "What Qualifications Do You Need to Sell Private Label Supplements?",
+   "source_url": "https://blog.davincilabs.com/private-label/what-qualifications-do-you-need-to-sell-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/white-label-supplements-vs.-private-label-what-is-the-difference",
+   "name": "White Label Supplements vs. Private Label: What Is the Difference?",
+   "source_name": "White Label Supplements vs. Private Label: What Is the Difference?",
+   "source_url": "https://blog.davincilabs.com/private-label/white-label-supplements-vs.-private-label-what-is-the-difference",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/why-branded-ingredients-are-important-to-private-label-supplements",
+   "name": "Why Branded Ingredients Are Important for Private Label Supplements",
+   "source_name": "Why Branded Ingredients Are Important for Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/why-branded-ingredients-are-important-to-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  },
+  {
+   "slug": "blog/why-wellness-businesses-should-sell-private-label-supplements",
+   "name": "Why Wellness Businesses Should Sell Private Label Supplements",
+   "source_name": "Why Wellness Businesses Should Sell Private Label Supplements",
+   "source_url": "https://blog.davincilabs.com/private-label/why-wellness-businesses-should-sell-private-label-supplements",
+   "source_state": "PUBLISHED",
+   "publishDate": "1970-01-01T00:00:00Z",
+   "tags": 0
+  }
+ ],
+ "emails": [
+  {
+   "id": "220684191815",
+   "name": "Praxera - TEST - Pulse layout draft (QBS, do not send)",
+   "source_name": null,
+   "source_id": null,
+   "source_state": null
+  },
+  {
+   "id": "220685976450",
+   "name": "Praxera - Chiropractor WF: Final Email ALL",
+   "source_name": "DV: Chiropractor WF: Final Email ALL",
+   "source_id": "176178321480",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976453",
+   "name": "Praxera - Private Label: High Priority - Client Onboarding",
+   "source_name": "Private Label: High Priority - Client Onboarding",
+   "source_id": "202135105656",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976456",
+   "name": "Praxera - Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Praxera",
+   "source_name": "Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Davinci",
+   "source_id": "44289895090",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976459",
+   "name": "Praxera - MOF_WF_Paul_2_Powder",
+   "source_name": "DV: MOF_WF_Paul_2_Powder",
+   "source_id": "170707864724",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976462",
+   "name": "Praxera - Private_Label_Guide_ToF_Benefits_Private_Label_With_Praxera",
+   "source_name": "Private_Label_Guide_ToF_Benefits_Private_Label_With_Davinci",
+   "source_id": "41919076196",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976465",
+   "name": "Praxera - 2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
+   "source_name": "2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
+   "source_id": "59545104541",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976468",
+   "name": "Praxera - Private Label MOF_Danielle_Final All",
+   "source_name": "DV: Private Label MOF_Danielle_Final All",
+   "source_id": "170653396775",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976471",
+   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro",
+   "source_name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro",
+   "source_id": "105464472904",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976474",
+   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio",
+   "source_name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio",
+   "source_id": "105453679752",
+   "source_state": "DRAFT"
+  },
+  {
+   "id": "220685976476",
+   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #3 GI",
+   "source_name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #3 GI",
+   "source_id": "106495770510",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976478",
+   "name": "Praxera - White_Label_World_Expo Email #1",
+   "source_name": "DV: White_Label_World_Expo Email #1",
+   "source_id": "169091513764",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976483",
+   "name": "Praxera - White_Label_World_Expo Email PL_Shipping_Inventory_Click #2",
+   "source_name": "DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #2",
+   "source_id": "169177165674",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976486",
+   "name": "Praxera - White_Label_World_Expo Final Email ALL",
+   "source_name": "DV: White_Label_World_Expo Final Email ALL",
+   "source_id": "169179039283",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976489",
+   "name": "Praxera - White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2",
+   "source_name": "DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2",
+   "source_id": "169188947470",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976492",
+   "name": "Praxera - # High Priority (Branded) 5Rs",
+   "source_name": "DV: # High Priority (Branded) 5Rs",
+   "source_id": "202100373636",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976494",
+   "name": "Praxera - #3 High Priority (Branded) Top-Sellers",
+   "source_name": "DV: #3 High Priority (Branded) Top-Sellers",
+   "source_id": "202102714909",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976498",
+   "name": "Praxera - Client_Onboarding_BoF_Danielle_#2",
+   "source_name": "DV: Client_Onboarding_BoF_Danielle_#2",
+   "source_id": "175803754509",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976500",
+   "name": "Praxera - Client_Onboarding_BoF_Danielle_#3",
+   "source_name": "DV: Client_Onboarding_BoF_Danielle_#3",
+   "source_id": "175803720782",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976504",
+   "name": "Praxera - Client_Onboarding_BoF_Danielle_#4",
+   "source_name": "DV: Client_Onboarding_BoF_Danielle_#4",
+   "source_id": "175804493334",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976577",
+   "name": "Praxera - Client_Onboarding_BoF_Paul_#1",
+   "source_name": "DV: Client_Onboarding_BoF_Paul_#1",
+   "source_id": "175814575650",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976580",
+   "name": "Praxera - Client_Onboarding_BoF_Paul_From_MoF_#1",
+   "source_name": "DV: Client_Onboarding_BoF_Paul_From_MoF_#1",
+   "source_id": "176962326198",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976583",
+   "name": "Praxera - L // PM - Automated Email: PL 5rs #5",
+   "source_name": "DVL // PM - Automated Email: PL 5rs #5",
+   "source_id": "207281829171",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976586",
+   "name": "Praxera - 1: Private Label Guide: High-Priority",
+   "source_name": "1: Private Label Guide: High-Priority",
+   "source_id": "200441586176",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220685976589",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #1",
+   "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #1",
+   "source_id": "163117309280",
+   "source_state": "AUTOMATED_DRAFT"
+  },
+  {
+   "id": "220685976591",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #3",
+   "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #3",
+   "source_id": "163117313546",
+   "source_state": "AUTOMATED_DRAFT"
+  },
+  {
+   "id": "220687535413",
+   "name": "Praxera - TEMPLATE - Product / Category (QBS, do not send)",
+   "source_name": null,
+   "source_id": null,
+   "source_state": null
+  },
+  {
+   "id": "220688283270",
+   "name": "Praxera - WF: PL Guide_BoF_Danielle Quick Turnaround #3",
+   "source_name": "DV WF: PL Guide_BoF_Danielle Quick Turnaround #3",
+   "source_id": "98445556270",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283273",
+   "name": "Praxera - Private Label: High Priority - Reach out",
+   "source_name": "Private Label: High Priority - Reach out",
+   "source_id": "200467328115",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283275",
+   "name": "Praxera - Private Label: High Priority - 6 Benefits",
+   "source_name": "Private Label: High Priority - 6 Benefits",
+   "source_id": "200492727649",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283279",
+   "name": "Praxera - Private Label: High Priority Intro",
+   "source_name": "Private Label: High Priority Intro",
+   "source_id": "202221725195",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283282",
+   "name": "Praxera - MOF_WF_Paul_2_Capsule",
+   "source_name": "DV: MOF_WF_Paul_2_Capsule",
+   "source_id": "170707073088",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283283",
+   "name": "Praxera - Private Label MOF 2_Paul_1ngredients Guide",
+   "source_name": "DV: Private Label MOF 2_Paul_1ngredients Guide",
+   "source_id": "170705675687",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283288",
+   "name": "Praxera - MOF_WF_Paul_Final_All",
+   "source_name": "DV: MOF_WF_Paul_Final_All",
+   "source_id": "170707748955",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283291",
+   "name": "Praxera - MOF_WF_Paul_2_Tablet",
+   "source_name": "DV: MOF_WF_Paul_2_Tablet",
+   "source_id": "170707887656",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283293",
+   "name": "Praxera - MOF_WF_Paul_1_Liquid",
+   "source_name": "DV: MOF_WF_Paul_1_Liquid",
+   "source_id": "170707894911",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283295",
+   "name": "Praxera - Private Label MOF 2_Paul_Supplement Formats",
+   "source_name": "DV: Private Label MOF 2_Paul_Supplement Formats",
+   "source_id": "170710869815",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283300",
+   "name": "Praxera - MOF_WF_Paul_2_Chewables",
+   "source_name": "DV: MOF_WF_Paul_2_Chewables",
+   "source_id": "170710874146",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283303",
+   "name": "Praxera - 1 Private_Label_Guide_ToF_Danielle_TY",
+   "source_name": "1 Private_Label_Guide_ToF_Danielle_TY",
+   "source_id": "59544811350",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283306",
+   "name": "Praxera - 1: Private Label Guide ToF Paul_TY",
+   "source_name": "1: Private Label Guide ToF Paul_TY",
+   "source_id": "59783395966",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283309",
+   "name": "Praxera - Private Label MOF 2_Danielle_Supplement Formats",
+   "source_name": "DV: Private Label MOF 2_Danielle_Supplement Formats",
+   "source_id": "170301274240",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283311",
+   "name": "Praxera - Private Label MOF_Danielle_Liquid 1",
+   "source_name": "DV: Private Label MOF_Danielle_Liquid 1",
+   "source_id": "170574586726",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283315",
+   "name": "Praxera - Private Label MOF_Danielle_Powder 2",
+   "source_name": "DV: Private Label MOF_Danielle_Powder 2",
+   "source_id": "170692005796",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283317",
+   "name": "Praxera - Private Label MOF_Danielle_Capsule 2",
+   "source_name": "DV: Private Label MOF_Danielle_Capsule 2",
+   "source_id": "170699789844",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283320",
+   "name": "Praxera - Private Label MOF_Danielle_Tablets 2",
+   "source_name": "DV: Private Label MOF_Danielle_Tablets 2",
+   "source_id": "172303705387",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283394",
+   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health",
+   "source_name": "DV WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health",
+   "source_id": "106618393216",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283397",
+   "name": "Praxera - White_Label_World_Expo Email #2",
+   "source_name": "DV: White_Label_World_Expo Email #2",
+   "source_id": "169091679551",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283399",
+   "name": "Praxera - White_Label_World_Expo Email Definitive_Guide_Click #1",
+   "source_name": "DV: White_Label_World_Expo Email Definitive_Guide_Click #1",
+   "source_id": "169176113508",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283401",
+   "name": "Praxera - White_Label_World_Expo Email Definitive_Guide_Click #2",
+   "source_name": "DV: White_Label_World_Expo Email Definitive_Guide_Click #2",
+   "source_id": "169176644880",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283406",
+   "name": "Praxera - White_Label_World_Expo Email PL_Shipping_Inventory_Click #1",
+   "source_name": "DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #1",
+   "source_id": "169177167901",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283409",
+   "name": "Praxera - White_Label_World_Expo Email How_To_Make_Money_Click #1",
+   "source_name": "DV: White_Label_World_Expo Email How_To_Make_Money_Click #1",
+   "source_id": "169179941519",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283411",
+   "name": "Praxera - White_Label_World_Expo Email How_To_Make_Money_Click #2",
+   "source_name": "DV: White_Label_World_Expo Email How_To_Make_Money_Click #2",
+   "source_id": "169179942786",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283415",
+   "name": "Praxera - White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1",
+   "source_name": "DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1",
+   "source_id": "169188381366",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283418",
+   "name": "Praxera - White_Label_World_Expo Email Did_Not_Click_Resource",
+   "source_name": "DV: White_Label_World_Expo Email Did_Not_Click_Resource",
+   "source_id": "169188948539",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688283420",
+   "name": "Praxera - Private Label Lead - First Contact",
+   "source_name": "Private Label Lead - First Contact",
+   "source_id": "98966094737",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836168",
+   "name": "Praxera - Danielle: DV Mission & Register",
+   "source_name": "Danielle: DV Mission & Register",
+   "source_id": "41411614625",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836170",
+   "name": "Praxera - Paul: DV Mission & Register",
+   "source_name": "Paul: DV Mission & Register",
+   "source_id": "42170019437",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836174",
+   "name": "Praxera - High Priority (Branded) - Reach out",
+   "source_name": "DV: High Priority (Branded) - Reach out",
+   "source_id": "202109114549",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836176",
+   "name": "Praxera - Client_Onboarding_BoF_Danielle_#1",
+   "source_name": "DV: Client_Onboarding_BoF_Danielle_#1",
+   "source_id": "175783065195",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836180",
+   "name": "Praxera - Client_Onboarding_BoF_Danielle_From_MoF_#1",
+   "source_name": "DV: Client_Onboarding_BoF_Danielle_From_MoF_#1",
+   "source_id": "176962698073",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836183",
+   "name": "Praxera - Client_Onboarding_BoF_Paul_#3",
+   "source_name": "DV: Client_Onboarding_BoF_Paul_#3",
+   "source_id": "175814579079",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836186",
+   "name": "Praxera - Client_Onboarding_BoF_Paul_#4",
+   "source_name": "DV: Client_Onboarding_BoF_Paul_#4",
+   "source_id": "175814580344",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836188",
+   "name": "Praxera - Client_Onboarding_BoF_Paul_#2",
+   "source_name": "DV: Client_Onboarding_BoF_Paul_#2",
+   "source_id": "175817721770",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836192",
+   "name": "Praxera - PL Guide_MoF_Danielle_Liposomal_Technology_WhitePaper",
+   "source_name": "DV: PL Guide_MoF_Danielle_Liposomal_Technology_WhitePaper",
+   "source_id": "94498399241",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836194",
+   "name": "Praxera - PL_Guide_MoF_Danielle_Liquid_Products",
+   "source_name": "DV: PL_Guide_MoF_Danielle_Liquid_Products",
+   "source_id": "94781614879",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836197",
+   "name": "Praxera - PL_Guide_MoF_Danielle_Get Started",
+   "source_name": "DV: PL_Guide_MoF_Danielle_Get Started",
+   "source_id": "94787196523",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836199",
+   "name": "Praxera - Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)",
+   "source_name": "Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)",
+   "source_id": "107853244512",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836204",
+   "name": "Praxera - Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
+   "source_name": "Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
+   "source_id": "107857959470",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836207",
+   "name": "Praxera - Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper",
+   "source_name": "Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper",
+   "source_id": "65781098136",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836209",
+   "name": "Praxera - Private_Label_Guide_MoF_Paul_Get Started",
+   "source_name": "Private_Label_Guide_MoF_Paul_Get Started",
+   "source_id": "65892871439",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836213",
+   "name": "Praxera - L // PM - Automated Email: PL 5rs #6",
+   "source_name": "DVL // PM - Automated Email: PL 5rs #6",
+   "source_id": "207282028161",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220688836216",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #3",
+   "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #3",
+   "source_id": "161749534521",
+   "source_state": "AUTOMATED_DRAFT"
+  },
+  {
+   "id": "220688836219",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #1",
+   "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #1",
+   "source_id": "161752044560",
+   "source_state": "AUTOMATED_DRAFT"
+  },
+  {
+   "id": "220688836222",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #2",
+   "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #2",
+   "source_id": "161752065795",
+   "source_state": "AUTOMATED_DRAFT"
+  },
+  {
+   "id": "220688836225",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #2",
+   "source_name": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #2",
+   "source_id": "163299221838",
+   "source_state": "AUTOMATED_DRAFT"
+  },
+  {
+   "id": "220688836231",
+   "name": "Praxera - WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A",
+   "source_name": "DV WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A",
+   "source_id": "98433354038",
+   "source_state": "AUTOMATED_AB"
+  },
+  {
+   "id": "220688836233",
+   "name": "Praxera - WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A",
+   "source_name": "DV WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A",
+   "source_id": "104027076626",
+   "source_state": "AUTOMATED_AB"
+  },
+  {
+   "id": "220688836237",
+   "name": "Praxera - 2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
+   "source_name": "2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
+   "source_id": "159534087563",
+   "source_state": "AUTOMATED_AB"
+  },
+  {
+   "id": "220688836239",
+   "name": "Praxera - 4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
+   "source_name": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
+   "source_id": "159564033066",
+   "source_state": "AUTOMATED_AB"
+  },
+  {
+   "id": "220688836243",
+   "name": "Praxera - 5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
+   "source_name": "5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
+   "source_id": "159557448722",
+   "source_state": "AUTOMATED_AB"
+  },
+  {
+   "id": "220688836246",
+   "name": "Praxera - PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) A",
+   "source_name": "DV: PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) A",
+   "source_id": "142152416879",
+   "source_state": "AUTOMATED_AB"
+  },
+  {
+   "id": "220688836248",
+   "name": "Praxera - PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A",
+   "source_name": "DV: PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A",
+   "source_id": "142153078660",
+   "source_state": "AUTOMATED_AB"
+  },
+  {
+   "id": "220688836360",
+   "name": "Praxera - WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B",
+   "source_name": "DV WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B",
+   "source_id": "100477229840",
+   "source_state": "AUTOMATED_AB"
+  },
+  {
+   "id": "220688836363",
+   "name": "Praxera - WF: PL Guide_BoF_Paul #1 Build Product Line Subject A",
+   "source_name": "DV WF: PL Guide_BoF_Paul #1 Build Product Line Subject A",
+   "source_id": "104026063464",
+   "source_state": "AUTOMATED_AB"
+  },
+  {
+   "id": "220688836366",
+   "name": "Praxera - WF: PL Guide_BoF_Paul #2 Design & Branding Subject A",
+   "source_name": "DV WF: PL Guide_BoF_Paul #2 Design & Branding Subject A",
+   "source_id": "104027204444",
+   "source_state": "AUTOMATED_AB"
+  },
+  {
+   "id": "220692678021",
+   "name": "Praxera - Private Label: High Priority - how to make money",
+   "source_name": "Private Label: High Priority - how to make money",
+   "source_id": "200467327777",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678023",
+   "name": "Praxera - 3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Inventory",
+   "source_name": "3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Inventory",
+   "source_id": "59790992173",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678025",
+   "name": "Praxera - MOF_WF_Paul_1_Chewables",
+   "source_name": "DV: MOF_WF_Paul_1_Chewables",
+   "source_id": "170706107030",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678030",
+   "name": "Praxera - MOF_WF_Paul_1_Tablet",
+   "source_name": "DV: MOF_WF_Paul_1_Tablet",
+   "source_id": "170713567649",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678032",
+   "name": "Praxera - MOF_WF_Paul_2_Liquid",
+   "source_name": "DV: MOF_WF_Paul_2_Liquid",
+   "source_id": "170713574748",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678036",
+   "name": "Praxera - Private_Label_Guide_ToF_Danielle_Top_Selling_PL_Supplements_2021",
+   "source_name": "Private_Label_Guide_ToF_Danielle_Top_Selling_PL_Supplements_2021",
+   "source_id": "41523978161",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678039",
+   "name": "Praxera - Private_Label_Guide_ToF_Danielle_How to_start-PL_Business_7steps",
+   "source_name": "Private_Label_Guide_ToF_Danielle_How to_start-PL_Business_7steps",
+   "source_id": "41918398828",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678042",
+   "name": "Praxera - 5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice (Test Clone)",
+   "source_name": "5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice (Test Clone)",
+   "source_id": "112278594413",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678044",
+   "name": "Praxera - Private_Label_Guide_ToF_Paul_6_Benefits of Selling PL",
+   "source_name": "Private_Label_Guide_ToF_Paul_6_Benefits of Selling PL",
+   "source_id": "44286486907",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678048",
+   "name": "Praxera - Private Label MOF 1_Danielle_Ingredients Guide",
+   "source_name": "DV: Private Label MOF 1_Danielle_Ingredients Guide",
+   "source_id": "170295027506",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678051",
+   "name": "Praxera - Private MOF_Danielle_Chewables 2",
+   "source_name": "DV: Private MOF_Danielle_Chewables 2",
+   "source_id": "170598263946",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678053",
+   "name": "Praxera - Private Label MOF_Danielle_Liquid 2",
+   "source_name": "DV: Private Label MOF_Danielle_Liquid 2",
+   "source_id": "170688239627",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678057",
+   "name": "Praxera - Private Label MOF_Danielle_Powder 1",
+   "source_name": "DV: Private Label MOF_Danielle_Powder 1",
+   "source_id": "170691955519",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678059",
+   "name": "Praxera - Private Label MOF_Danielle_Capsule 1",
+   "source_name": "DV: Private Label MOF_Danielle_Capsule 1",
+   "source_id": "170697251962",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678063",
+   "name": "Praxera - Custom Formulation - Auto-responder",
+   "source_name": "Custom Formulation - Auto-responder",
+   "source_id": "207515963514",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220692678065",
+   "name": "Praxera - L // HCP Lead - International - Reject",
+   "source_name": "DVL // HCP Lead - International - Reject",
+   "source_id": "211452534860",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220693084758",
+   "name": "Praxera - Private Label: High Priority - Top Selling Products",
+   "source_name": "Private Label: High Priority - Top Selling Products",
+   "source_id": "200504417306",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220693084761",
+   "name": "Praxera - MOF_WF_Paul_1_Powder",
+   "source_name": "DV: MOF_WF_Paul_1_Powder",
+   "source_id": "170712048474",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220693084763",
+   "name": "Praxera - MOF_WF_Paul_1_Capsule",
+   "source_name": "DV: MOF_WF_Paul_1_Capsule",
+   "source_id": "170707730980",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220693084767",
+   "name": "Praxera - Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL",
+   "source_name": "Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL",
+   "source_id": "41523214478",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220693084770",
+   "name": "Praxera - 3 Private_Label_Guide_ToF_Danielle_How_to_create_exclusivity",
+   "source_name": "3 Private_Label_Guide_ToF_Danielle_How_to_create_exclusivity",
+   "source_id": "59545111816",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220693084773",
+   "name": "Praxera - Private_Label_Guide_ToF_Paul_How to_start-PL_Business_7steps",
+   "source_name": "Private_Label_Guide_ToF_Paul_How to_start-PL_Business_7steps",
+   "source_id": "44289135702",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220693084775",
+   "name": "Praxera - Private_Label_Guide_ToF_Paul_Top_Selling_PL_Supplements",
+   "source_name": "Private_Label_Guide_ToF_Paul_Top_Selling_PL_Supplements",
+   "source_id": "44287869499",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220693084779",
+   "name": "Praxera - Private Label MOF_Danielle_Chewables 1",
+   "source_name": "DV: Private Label MOF_Danielle_Chewables 1",
+   "source_id": "170597492141",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220693084782",
+   "name": "Praxera - Private Label MOF_Danielle_Tablets 1",
+   "source_name": "DV: Private Label MOF_Danielle_Tablets 1",
+   "source_id": "172303247235",
+   "source_state": "AUTOMATED"
+  },
+  {
+   "id": "220693084785",
+   "name": "Praxera - Retargeting Workflow #1: Come Back & Register!",
+   "source_name": "Retargeting Workflow #1: Come Back & Register!",
+   "source_id": "31490030482",
+   "source_state": "AUTOMATED"
+  }
+ ],
+ "workflows": [
+  {
+   "id": "1875317584",
+   "name": "Praxera - Private Label - High Priority",
+   "enabled": false,
+   "source_name": "DV: Private Label - High Priority",
+   "source_id": "1685642843",
+   "source_enabled": true
+  },
+  {
+   "id": "1875319813",
+   "name": "Praxera - Private Label_MoF_Danielle",
+   "enabled": false,
+   "source_name": "DV: Private Label_MoF_Danielle",
+   "source_id": "587253915",
+   "source_enabled": true
+  },
+  {
+   "id": "1875319815",
+   "name": "Praxera - Welcome to D4HCP_BoF_Danielle/HCP",
+   "enabled": false,
+   "source_name": "DV: Welcome to D4HCP_BoF_Danielle/HCP",
+   "source_id": "341434631",
+   "source_enabled": true
+  },
+  {
+   "id": "1875319816",
+   "name": "Praxera - White_Label_World Expo: Post_Event_Nurture",
+   "enabled": false,
+   "source_name": "DV: White_Label_World Expo: Post_Event_Nurture",
+   "source_id": "583504536",
+   "source_enabled": true
+  },
+  {
+   "id": "1875320616",
+   "name": "Praxera - Private Label Guide_ToF_Danielle_Nurture",
+   "enabled": false,
+   "source_name": "DV: Private Label Guide_ToF_Danielle_Nurture",
+   "source_id": "55131036",
+   "source_enabled": true
+  },
+  {
+   "id": "1875338045",
+   "name": "Praxera - PL Guide_BoF_Danielle",
+   "enabled": false,
+   "source_name": "DV: PL Guide_BoF_Danielle",
+   "source_id": "311967650",
+   "source_enabled": true
+  },
+  {
+   "id": "1875338809",
+   "name": "Praxera - PL Guide_BoF_Paul",
+   "enabled": false,
+   "source_name": "DV: PL Guide_BoF_Paul",
+   "source_id": "335276358",
+   "source_enabled": true
+  },
+  {
+   "id": "1875338811",
+   "name": "Praxera - Private Label Guide_MoF_Paul",
+   "enabled": false,
+   "source_name": "DV: Private Label Guide_MoF_Paul",
+   "source_id": "589741064",
+   "source_enabled": true
+  },
+  {
+   "id": "1875338813",
+   "name": "Praxera - Retargeting: Visited Private Label Page & Didn't Convert",
+   "enabled": false,
+   "source_name": "DV: Retargeting: Visited Private Label Page & Didn't Convert",
+   "source_id": "33007370",
+   "source_enabled": true
+  },
+  {
+   "id": "1875338815",
+   "name": "Praxera - Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)",
+   "enabled": false,
+   "source_name": null,
+   "source_id": null,
+   "source_enabled": null
+  },
+  {
+   "id": "1875339651",
+   "name": "Praxera - Brand / Private Label - Segmentation",
+   "enabled": false,
+   "source_name": "Brand / Private Label - Segmentation",
+   "source_id": "1652783782",
+   "source_enabled": true
+  },
+  {
+   "id": "1875339655",
+   "name": "Praxera - Private Label Guide_ToF_Paul_Nurture",
+   "enabled": false,
+   "source_name": "DV: Private Label Guide_ToF_Paul_Nurture",
+   "source_id": "63730093",
+   "source_enabled": true
+  }
+ ]
+}

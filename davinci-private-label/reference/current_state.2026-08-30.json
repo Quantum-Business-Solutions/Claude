@@ -1,0 +1,31 @@
+{
+ "pages": {
+  "n": 65,
+  "states": {
+   "DRAFT": 65
+  }
+ },
+ "blog": {
+  "n": 75,
+  "states": {
+   "DRAFT": 75
+  }
+ },
+ "emails": {
+  "clones": 109,
+  "states": {
+   "DRAFT": 109
+  },
+  "templates": 2,
+  "portal_total": 3073
+ },
+ "forms": {
+  "clones": 11,
+  "portal_total": 263
+ },
+ "workflows": {
+  "clones": 12,
+  "enabled": 0,
+  "portal_total": 523
+ }
+}

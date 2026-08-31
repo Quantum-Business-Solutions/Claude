@@ -1,0 +1,344 @@
+[
+ {
+  "id": "1875317584",
+  "name": "Praxera - Private Label - High Priority",
+  "enabled": false,
+  "sends": 8,
+  "unknown_email_ids": [],
+  "praxera_sends": 8,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [],
+  "branch_forms": [
+   {
+    "id": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+    "name": "Praxera - Main Lead Form",
+    "praxera": true
+   },
+   {
+    "id": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+    "name": "Contact Us NEW",
+    "praxera": false
+   },
+   {
+    "id": "6c7c9a78-0291-4fb4-8d61-c1c2e1f0f63f",
+    "name": "Contact Us",
+    "praxera": false
+   },
+   {
+    "id": "a1a03dc0-7650-478e-8d4c-f84d84106c15",
+    "name": "(deleted)",
+    "praxera": false
+   },
+   {
+    "id": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+    "name": "Praxera - Main Lead Form (legacy field set)",
+    "praxera": true
+   }
+  ],
+  "dead_workflow_list_clauses": 0,
+  "suppression_lists": 1
+ },
+ {
+  "id": "1875319813",
+  "name": "Praxera - Private Label_MoF_Danielle",
+  "enabled": false,
+  "sends": 18,
+  "unknown_email_ids": [],
+  "praxera_sends": 18,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [
+   {
+    "id": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+    "name": "Praxera - Main Lead Form",
+    "praxera": true
+   },
+   {
+    "id": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+    "name": "Contact Us NEW",
+    "praxera": false
+   }
+  ],
+  "branch_forms": [
+   {
+    "id": "6c7c9a78-0291-4fb4-8d61-c1c2e1f0f63f",
+    "name": "Contact Us",
+    "praxera": false
+   },
+   {
+    "id": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+    "name": "Praxera - Main Lead Form (legacy field set)",
+    "praxera": true
+   }
+  ],
+  "dead_workflow_list_clauses": 5,
+  "suppression_lists": 2
+ },
+ {
+  "id": "1875319815",
+  "name": "Praxera - Welcome to D4HCP_BoF_Danielle/HCP",
+  "enabled": false,
+  "sends": 4,
+  "unknown_email_ids": [],
+  "praxera_sends": 4,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [],
+  "branch_forms": [],
+  "dead_workflow_list_clauses": 3,
+  "suppression_lists": 1
+ },
+ {
+  "id": "1875319816",
+  "name": "Praxera - White_Label_World Expo: Post_Event_Nurture",
+  "enabled": false,
+  "sends": 16,
+  "unknown_email_ids": [],
+  "praxera_sends": 16,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [],
+  "branch_forms": [],
+  "dead_workflow_list_clauses": 0,
+  "suppression_lists": 0
+ },
+ {
+  "id": "1875320616",
+  "name": "Praxera - Private Label Guide_ToF_Danielle_Nurture",
+  "enabled": false,
+  "sends": 9,
+  "unknown_email_ids": [],
+  "praxera_sends": 9,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [
+   {
+    "id": "dd7328fc-f1b0-4d3f-84ac-d762af1add57",
+    "name": "Praxera - Supplements Guide",
+    "praxera": true
+   }
+  ],
+  "branch_forms": [
+   {
+    "id": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+    "name": "Praxera - Main Lead Form",
+    "praxera": true
+   }
+  ],
+  "dead_workflow_list_clauses": 3,
+  "suppression_lists": 1
+ },
+ {
+  "id": "1875338045",
+  "name": "Praxera - PL Guide_BoF_Danielle",
+  "enabled": false,
+  "sends": 3,
+  "unknown_email_ids": [],
+  "praxera_sends": 3,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [
+   {
+    "id": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+    "name": "Praxera - Main Lead Form",
+    "praxera": true
+   },
+   {
+    "id": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+    "name": "Contact Us NEW",
+    "praxera": false
+   },
+   {
+    "id": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+    "name": "Praxera - Main Lead Form (legacy field set)",
+    "praxera": true
+   }
+  ],
+  "branch_forms": [
+   {
+    "id": "6c7c9a78-0291-4fb4-8d61-c1c2e1f0f63f",
+    "name": "Contact Us",
+    "praxera": false
+   }
+  ],
+  "dead_workflow_list_clauses": 1,
+  "suppression_lists": 1
+ },
+ {
+  "id": "1875338809",
+  "name": "Praxera - PL Guide_BoF_Paul",
+  "enabled": false,
+  "sends": 3,
+  "unknown_email_ids": [],
+  "praxera_sends": 3,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [
+   {
+    "id": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+    "name": "Praxera - Main Lead Form",
+    "praxera": true
+   },
+   {
+    "id": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+    "name": "Contact Us NEW",
+    "praxera": false
+   },
+   {
+    "id": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+    "name": "Praxera - Main Lead Form (legacy field set)",
+    "praxera": true
+   }
+  ],
+  "branch_forms": [],
+  "dead_workflow_list_clauses": 4,
+  "suppression_lists": 1
+ },
+ {
+  "id": "1875338811",
+  "name": "Praxera - Private Label Guide_MoF_Paul",
+  "enabled": false,
+  "sends": 18,
+  "unknown_email_ids": [],
+  "praxera_sends": 18,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [
+   {
+    "id": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+    "name": "Praxera - Main Lead Form",
+    "praxera": true
+   },
+   {
+    "id": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+    "name": "Contact Us NEW",
+    "praxera": false
+   }
+  ],
+  "branch_forms": [
+   {
+    "id": "6c7c9a78-0291-4fb4-8d61-c1c2e1f0f63f",
+    "name": "Contact Us",
+    "praxera": false
+   },
+   {
+    "id": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+    "name": "Praxera - Main Lead Form (legacy field set)",
+    "praxera": true
+   }
+  ],
+  "dead_workflow_list_clauses": 7,
+  "suppression_lists": 2
+ },
+ {
+  "id": "1875338813",
+  "name": "Praxera - Retargeting: Visited Private Label Page & Didn't Convert",
+  "enabled": false,
+  "sends": 1,
+  "unknown_email_ids": [],
+  "praxera_sends": 1,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [],
+  "branch_forms": [
+   {
+    "id": "445712ed-8359-4352-bb5a-08748c4da315",
+    "name": "Register for an account (Doctors)",
+    "praxera": false
+   }
+  ],
+  "dead_workflow_list_clauses": 0,
+  "suppression_lists": 0
+ },
+ {
+  "id": "1875338815",
+  "name": "Praxera - Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)",
+  "enabled": false,
+  "sends": 6,
+  "unknown_email_ids": [],
+  "praxera_sends": 6,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [
+   {
+    "id": "4045368e-9f04-4f20-ad5e-4d8ea6795219",
+    "name": "(deleted)",
+    "praxera": false
+   },
+   {
+    "id": "609424d0-33e9-4857-9ca0-27c8ebdf599e",
+    "name": "Brand Development Call  (Inactive)",
+    "praxera": false
+   },
+   {
+    "id": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+    "name": "Praxera - Main Lead Form",
+    "praxera": true
+   },
+   {
+    "id": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+    "name": "Contact Us NEW",
+    "praxera": false
+   }
+  ],
+  "branch_forms": [],
+  "dead_workflow_list_clauses": 0,
+  "suppression_lists": 0
+ },
+ {
+  "id": "1875339651",
+  "name": "Praxera - Brand / Private Label - Segmentation",
+  "enabled": false,
+  "sends": 0,
+  "unknown_email_ids": [],
+  "praxera_sends": 0,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [],
+  "branch_forms": [],
+  "dead_workflow_list_clauses": 0,
+  "suppression_lists": 0
+ },
+ {
+  "id": "1875339655",
+  "name": "Praxera - Private Label Guide_ToF_Paul_Nurture",
+  "enabled": false,
+  "sends": 8,
+  "unknown_email_ids": [],
+  "praxera_sends": 8,
+  "davinci_sends": 0,
+  "davinci_send_names": [],
+  "enrol_forms": [
+   {
+    "id": "dd7328fc-f1b0-4d3f-84ac-d762af1add57",
+    "name": "Praxera - Supplements Guide",
+    "praxera": true
+   }
+  ],
+  "branch_forms": [
+   {
+    "id": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+    "name": "Praxera - Main Lead Form",
+    "praxera": true
+   },
+   {
+    "id": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+    "name": "Contact Us NEW",
+    "praxera": false
+   },
+   {
+    "id": "6c7c9a78-0291-4fb4-8d61-c1c2e1f0f63f",
+    "name": "Contact Us",
+    "praxera": false
+   },
+   {
+    "id": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+    "name": "Praxera - Main Lead Form (legacy field set)",
+    "praxera": true
+   }
+  ],
+  "dead_workflow_list_clauses": 0,
+  "suppression_lists": 1
+ }
+]

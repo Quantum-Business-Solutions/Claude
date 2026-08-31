@@ -1,31 +1,311 @@
 {
- "pages": {
-  "n": 65,
-  "states": {
-   "DRAFT": 65
-  }
- },
- "blog": {
-  "n": 75,
-  "states": {
-   "DRAFT": 75
-  }
- },
- "emails": {
-  "clones": 109,
-  "states": {
-   "DRAFT": 109
+ "forms_total": 263,
+ "praxera_forms": [
+  {
+   "id": "2e55f9cc-3476-4cee-b4d7-95f6bc1f5569",
+   "name": "Praxera - Ingredients & Testing Guide (page form)"
   },
-  "templates": 2,
-  "portal_total": 3073
+  {
+   "id": "471fb48f-63c1-4bae-bc17-65edebfedcea",
+   "name": "Praxera - Ingredients, Testing & Certification Guide"
+  },
+  {
+   "id": "4b8af922-efce-478b-be6a-ec150098ae8d",
+   "name": "Praxera - Contact Us"
+  },
+  {
+   "id": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+   "name": "Praxera - Main Lead Form"
+  },
+  {
+   "id": "6d4066c8-92f5-400c-a556-4265b62ec96b",
+   "name": "Praxera - Onboarding Guide"
+  },
+  {
+   "id": "81f2906b-f93a-40b7-aa3e-f075660d4beb",
+   "name": "Praxera - Client Onboarding Guide"
+  },
+  {
+   "id": "c82c667f-219d-4f12-96ce-7aaff98245fa",
+   "name": "Praxera - Schedule a Consultation (Ads pages)"
+  },
+  {
+   "id": "d8dfdd90-98f1-4cba-bedf-181dd9286ca1",
+   "name": "Private Label (Praxera) - Schedule a Consultation"
+  },
+  {
+   "id": "dd7328fc-f1b0-4d3f-84ac-d762af1add57",
+   "name": "Praxera - Supplements Guide"
+  },
+  {
+   "id": "df8b7a41-df30-4e60-9b8a-d76b651bab20",
+   "name": "Praxera - Our Design Services"
+  },
+  {
+   "id": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+   "name": "Praxera - Main Lead Form (legacy field set)"
+  },
+  {
+   "id": "f240cb7b-4613-47dd-98df-4b334f858b19",
+   "name": "Praxera - Request a Quote"
+  }
+ ],
+ "site_pages_total": 187,
+ "praxera_pages": 62,
+ "praxera_pages_published": 0,
+ "form_embeds": {
+  "d8dfdd90-98f1-4cba-bedf-181dd9286ca1": [
+   "",
+   "aging",
+   "cognitive",
+   "design-services",
+   "detox",
+   "dropshipping",
+   "energy",
+   "fitness",
+   "get-started",
+   "heart-health",
+   "herbal",
+   "how-to-sell-supplements",
+   "immune-support",
+   "joint-support",
+   "learning/onboarding-guide-ty",
+   "mens-health",
+   "multivitamin",
+   "pediatric",
+   "prenatal",
+   "probiotics",
+   "sleep",
+   "weight-management",
+   "womens-health"
+  ]
  },
- "forms": {
-  "clones": 11,
-  "portal_total": 263
- },
- "workflows": {
-  "clones": 12,
-  "enabled": 0,
-  "portal_total": 523
- }
+ "praxera_pages_without_praxera_form": [
+  {
+   "slug": "capsules",
+   "other_form_ids": []
+  },
+  {
+   "slug": "our-process",
+   "other_form_ids": []
+  },
+  {
+   "slug": "quality-standards",
+   "other_form_ids": []
+  },
+  {
+   "slug": "chewables",
+   "other_form_ids": []
+  },
+  {
+   "slug": "liquids",
+   "other_form_ids": []
+  },
+  {
+   "slug": "design-team",
+   "other_form_ids": []
+  },
+  {
+   "slug": "customer-art",
+   "other_form_ids": []
+  },
+  {
+   "slug": "resources",
+   "other_form_ids": []
+  },
+  {
+   "slug": "learning/ingredients-testing",
+   "other_form_ids": []
+  },
+  {
+   "slug": "about",
+   "other_form_ids": []
+  },
+  {
+   "slug": "custom-formulation",
+   "other_form_ids": []
+  },
+  {
+   "slug": "packaging",
+   "other_form_ids": []
+  },
+  {
+   "slug": "tablets",
+   "other_form_ids": []
+  },
+  {
+   "slug": "soft-gels",
+   "other_form_ids": []
+  },
+  {
+   "slug": "powders",
+   "other_form_ids": []
+  },
+  {
+   "slug": "gummies",
+   "other_form_ids": []
+  },
+  {
+   "slug": "certifications",
+   "other_form_ids": []
+  },
+  {
+   "slug": "testing",
+   "other_form_ids": []
+  },
+  {
+   "slug": "ingredient-sourcing",
+   "other_form_ids": []
+  },
+  {
+   "slug": "faq",
+   "other_form_ids": []
+  },
+  {
+   "slug": "guides",
+   "other_form_ids": []
+  },
+  {
+   "slug": "contact",
+   "other_form_ids": []
+  },
+  {
+   "slug": "alp/ads-mfg-usa",
+   "other_form_ids": []
+  },
+  {
+   "slug": "alp/ads-contract-mfg",
+   "other_form_ids": []
+  },
+  {
+   "slug": "alp/ads-custom",
+   "other_form_ids": []
+  },
+  {
+   "slug": "ty-consultation",
+   "other_form_ids": []
+  },
+  {
+   "slug": "learning/definitive-guide",
+   "other_form_ids": []
+  },
+  {
+   "slug": "learning/onboarding-guide",
+   "other_form_ids": []
+  },
+  {
+   "slug": "privacy",
+   "other_form_ids": []
+  },
+  {
+   "slug": "learning/definitive-guide-ty",
+   "other_form_ids": []
+  },
+  {
+   "slug": "sell-sheets",
+   "other_form_ids": []
+  },
+  {
+   "slug": "facility",
+   "other_form_ids": []
+  },
+  {
+   "slug": "case-studies",
+   "other_form_ids": []
+  },
+  {
+   "slug": "request-quote",
+   "other_form_ids": []
+  },
+  {
+   "slug": "book-consultation",
+   "other_form_ids": []
+  },
+  {
+   "slug": "alp/ads-pl-mfg",
+   "other_form_ids": []
+  },
+  {
+   "slug": "ty-quote",
+   "other_form_ids": []
+  },
+  {
+   "slug": "ty-sell-sheets",
+   "other_form_ids": []
+  },
+  {
+   "slug": "terms",
+   "other_form_ids": []
+  }
+ ],
+ "blog_total": 1001,
+ "praxera_blog": 75,
+ "praxera_blog_published": 0,
+ "emails_total": 3073,
+ "praxera_emails": 111,
+ "praxera_emails_not_draft": [],
+ "workflows_total": 523,
+ "praxera_workflows": [
+  {
+   "id": "1875317584",
+   "name": "Praxera - Private Label - High Priority",
+   "enabled": false
+  },
+  {
+   "id": "1875319813",
+   "name": "Praxera - Private Label_MoF_Danielle",
+   "enabled": false
+  },
+  {
+   "id": "1875319815",
+   "name": "Praxera - Welcome to D4HCP_BoF_Danielle/HCP",
+   "enabled": false
+  },
+  {
+   "id": "1875319816",
+   "name": "Praxera - White_Label_World Expo: Post_Event_Nurture",
+   "enabled": false
+  },
+  {
+   "id": "1875320616",
+   "name": "Praxera - Private Label Guide_ToF_Danielle_Nurture",
+   "enabled": false
+  },
+  {
+   "id": "1875338045",
+   "name": "Praxera - PL Guide_BoF_Danielle",
+   "enabled": false
+  },
+  {
+   "id": "1875338809",
+   "name": "Praxera - PL Guide_BoF_Paul",
+   "enabled": false
+  },
+  {
+   "id": "1875338811",
+   "name": "Praxera - Private Label Guide_MoF_Paul",
+   "enabled": false
+  },
+  {
+   "id": "1875338813",
+   "name": "Praxera - Retargeting: Visited Private Label Page & Didn't Convert",
+   "enabled": false
+  },
+  {
+   "id": "1875338815",
+   "name": "Praxera - Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)",
+   "enabled": false
+  },
+  {
+   "id": "1875339651",
+   "name": "Praxera - Brand / Private Label - Segmentation",
+   "enabled": false
+  },
+  {
+   "id": "1875339655",
+   "name": "Praxera - Private Label Guide_ToF_Paul_Nurture",
+   "enabled": false
+  }
+ ],
+ "praxera_workflows_enabled": 0
 }

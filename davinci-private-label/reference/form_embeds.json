@@ -1,0 +1,582 @@
+{
+ "pages": [
+  {
+   "slug": "how-to-sell-supplements",
+   "url": "https://praxerasupplements.com/how-to-sell-supplements",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "design-services",
+   "url": "https://praxerasupplements.com/design-services",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "fitness",
+   "url": "https://praxerasupplements.com/fitness",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "dropshipping",
+   "url": "https://praxerasupplements.com/dropshipping",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "capsules",
+   "url": "https://praxerasupplements.com/capsules",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "our-process",
+   "url": "https://praxerasupplements.com/our-process",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "quality-standards",
+   "url": "https://praxerasupplements.com/quality-standards",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "chewables",
+   "url": "https://praxerasupplements.com/chewables",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "liquids",
+   "url": "https://praxerasupplements.com/liquids",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "weight-management",
+   "url": "https://praxerasupplements.com/weight-management",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "mens-health",
+   "url": "https://praxerasupplements.com/mens-health",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "herbal",
+   "url": "https://praxerasupplements.com/herbal",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "aging",
+   "url": "https://praxerasupplements.com/aging",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "sleep",
+   "url": "https://praxerasupplements.com/sleep",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "womens-health",
+   "url": "https://praxerasupplements.com/womens-health",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "probiotics",
+   "url": "https://praxerasupplements.com/probiotics",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "design-team",
+   "url": "https://praxerasupplements.com/design-team",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "df8b7a41-df30-4e60-9b8a-d76b651bab20"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "customer-art",
+   "url": "https://praxerasupplements.com/customer-art",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "immune-support",
+   "url": "https://praxerasupplements.com/immune-support",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "cognitive",
+   "url": "https://praxerasupplements.com/cognitive",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "prenatal",
+   "url": "https://praxerasupplements.com/prenatal",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "multivitamin",
+   "url": "https://praxerasupplements.com/multivitamin",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "pediatric",
+   "url": "https://praxerasupplements.com/pediatric",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "joint-support",
+   "url": "https://praxerasupplements.com/joint-support",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "heart-health",
+   "url": "https://praxerasupplements.com/heart-health",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "detox",
+   "url": "https://praxerasupplements.com/detox",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "energy",
+   "url": "https://praxerasupplements.com/energy",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "",
+   "url": "https://praxerasupplements.com",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "resources",
+   "url": "https://praxerasupplements.com/resources",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "learning/ingredients-testing",
+   "url": "https://praxerasupplements.com/learning/ingredients-testing",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "about",
+   "url": "https://praxerasupplements.com/about",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "custom-formulation",
+   "url": "https://praxerasupplements.com/custom-formulation",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "packaging",
+   "url": "https://praxerasupplements.com/packaging",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "tablets",
+   "url": "https://praxerasupplements.com/tablets",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "soft-gels",
+   "url": "https://praxerasupplements.com/soft-gels",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "powders",
+   "url": "https://praxerasupplements.com/powders",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "gummies",
+   "url": "https://praxerasupplements.com/gummies",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "certifications",
+   "url": "https://praxerasupplements.com/certifications",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "testing",
+   "url": "https://praxerasupplements.com/testing",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "ingredient-sourcing",
+   "url": "https://praxerasupplements.com/ingredient-sourcing",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "faq",
+   "url": "https://praxerasupplements.com/faq",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "guides",
+   "url": "https://praxerasupplements.com/guides",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "contact",
+   "url": "https://praxerasupplements.com/contact",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "4b8af922-efce-478b-be6a-ec150098ae8d"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "alp/ads-mfg-usa",
+   "url": "https://praxerasupplements.com/alp/ads-mfg-usa",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "c82c667f-219d-4f12-96ce-7aaff98245fa"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "alp/ads-contract-mfg",
+   "url": "https://praxerasupplements.com/alp/ads-contract-mfg",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "c82c667f-219d-4f12-96ce-7aaff98245fa"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "alp/ads-custom",
+   "url": "https://praxerasupplements.com/alp/ads-custom",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "c82c667f-219d-4f12-96ce-7aaff98245fa"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "ty-consultation",
+   "url": "https://praxerasupplements.com/ty-consultation",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "learning/definitive-guide",
+   "url": "https://praxerasupplements.com/learning/definitive-guide",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "learning/onboarding-guide",
+   "url": "https://praxerasupplements.com/learning/onboarding-guide",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "6d4066c8-92f5-400c-a556-4265b62ec96b"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "get-started",
+   "url": "https://praxerasupplements.com/get-started",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "privacy",
+   "url": "https://praxerasupplements.com/privacy",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "learning/definitive-guide-ty",
+   "url": "https://praxerasupplements.com/learning/definitive-guide-ty",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "learning/onboarding-guide-ty",
+   "url": "https://praxerasupplements.com/learning/onboarding-guide-ty",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "d8dfdd90-98f1-4cba-bedf-181dd9286ca1"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "sell-sheets",
+   "url": "https://praxerasupplements.com/sell-sheets",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "facility",
+   "url": "https://praxerasupplements.com/facility",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "case-studies",
+   "url": "https://praxerasupplements.com/case-studies",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "request-quote",
+   "url": "https://praxerasupplements.com/request-quote",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "f240cb7b-4613-47dd-98df-4b334f858b19"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "book-consultation",
+   "url": "https://praxerasupplements.com/book-consultation",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "alp/ads-pl-mfg",
+   "url": "https://praxerasupplements.com/alp/ads-pl-mfg",
+   "state": "DRAFT",
+   "praxera_forms": [
+    "c82c667f-219d-4f12-96ce-7aaff98245fa"
+   ],
+   "other_forms": []
+  },
+  {
+   "slug": "ty-quote",
+   "url": "https://praxerasupplements.com/ty-quote",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "ty-sell-sheets",
+   "url": "https://praxerasupplements.com/ty-sell-sheets",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  },
+  {
+   "slug": "terms",
+   "url": "https://praxerasupplements.com/terms",
+   "state": "DRAFT",
+   "praxera_forms": [],
+   "other_forms": []
+  }
+ ],
+ "by_form": {
+  "Private Label (Praxera) - Schedule a Consultation": [
+   "",
+   "aging",
+   "cognitive",
+   "design-services",
+   "detox",
+   "dropshipping",
+   "energy",
+   "fitness",
+   "get-started",
+   "heart-health",
+   "herbal",
+   "how-to-sell-supplements",
+   "immune-support",
+   "joint-support",
+   "learning/onboarding-guide-ty",
+   "mens-health",
+   "multivitamin",
+   "pediatric",
+   "prenatal",
+   "probiotics",
+   "sleep",
+   "weight-management",
+   "womens-health"
+  ],
+  "Praxera - Our Design Services": [
+   "design-team"
+  ],
+  "Praxera - Contact Us": [
+   "contact"
+  ],
+  "Praxera - Schedule a Consultation (Ads pages)": [
+   "alp/ads-contract-mfg",
+   "alp/ads-custom",
+   "alp/ads-mfg-usa",
+   "alp/ads-pl-mfg"
+  ],
+  "Praxera - Onboarding Guide": [
+   "learning/onboarding-guide"
+  ],
+  "Praxera - Request a Quote": [
+   "request-quote"
+  ]
+ },
+ "pages_with_no_form": [
+  "about",
+  "book-consultation",
+  "capsules",
+  "case-studies",
+  "certifications",
+  "chewables",
+  "custom-formulation",
+  "customer-art",
+  "facility",
+  "faq",
+  "guides",
+  "gummies",
+  "ingredient-sourcing",
+  "learning/definitive-guide",
+  "learning/definitive-guide-ty",
+  "learning/ingredients-testing",
+  "liquids",
+  "our-process",
+  "packaging",
+  "powders",
+  "privacy",
+  "quality-standards",
+  "resources",
+  "sell-sheets",
+  "soft-gels",
+  "tablets",
+  "terms",
+  "testing",
+  "ty-consultation",
+  "ty-quote",
+  "ty-sell-sheets"
+ ],
+ "pages_with_non_praxera_form": [],
+ "n_pages": 62,
+ "n_pages_with_praxera_form": 31,
+ "n_published": 0
+}

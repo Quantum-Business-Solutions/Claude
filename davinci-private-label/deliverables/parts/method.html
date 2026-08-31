@@ -1,0 +1,29 @@
+<section id="method">
+  <div class="shead"><p class="eyebrow">How the two audits check each other</p>
+    <h2>Where they agree, believe the number</h2></div>
+  <div class="measure">
+  <p>Patrick&rsquo;s June audit scanned URLs and links. This scan read form GUIDs, flow definitions
+  and email bodies across all 511 workflows and 2,962 emails in the portal. Different instruments,
+  same portal, eight weeks apart.</p>
+  <p>The first pass matched the string <code>private-label</code> anywhere in an email payload and
+  returned <strong>394</strong> hits &mdash; more than double Patrick&rsquo;s count. That gap was
+  the tell. Requiring an actual <code>&lt;a href&gt;</code> pointing at a private-label URL, rather
+  than the token appearing in an image filename or a CSS class, drops it to <strong>184</strong>.
+  Patrick found 183.</p>
+  </div>
+  <div class="tscroll" style="margin-top:20px"><table>
+    <thead><tr><th>Reconciliation</th><th class="num">Count</th><th>Reading</th></tr></thead>
+    <tbody>
+      <tr><td class="nm">Both audits agree</td><td class="num">179</td>
+        <td class="ev">the trustworthy core of the email list</td></tr>
+      <tr><td class="nm">Patrick only</td><td class="num">4</td>
+        <td class="ev">unpublished, deleted, or the link was removed since June</td></tr>
+      <tr><td class="nm">Live scan only</td><td class="num">5</td>
+        <td class="ev">created since June, or Praxera-era</td></tr>
+      <tr><td class="nm">Rejected as token-only</td><td class="num">210</td>
+        <td class="ev">the string appears, no link does &mdash; incl. PetTechLabs&rsquo; own
+        private-label pages, a different brand in the same portal</td></tr>
+    </tbody></table></div>
+  <p class="note">Rejecting 210 rows matters more than finding 184. A PetTechLabs nurture on a
+  DaVinci migration list is how the wrong emails get rewritten.</p>
+</section>
