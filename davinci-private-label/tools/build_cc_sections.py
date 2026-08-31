@@ -160,7 +160,14 @@ cards=[("pages",N["pages"],"website pages","all draft","acc",
        ("tpl",2,"email templates","draft","acc",
         "Pulse newsletter and product/category, both drag-and-drop editable in HubSpot.")]
 S("stack","The parallel stack",
-  '<p class="eyebrow">What exists today</p><div class="stack">'
+  '<p class="eyebrow">What exists today &mdash; and which side is authoritative</p>'
+  '<div class="call warn"><h3>Until cutover, DaVinci is the live system and Praxera is the '
+  'draft</h3><p>Both stacks exist right now, which means the expensive mistake is editing the one '
+  'nobody is going to keep. <strong>Every Praxera asset below is a draft and is the side that will '
+  'survive</strong> &mdash; so new work goes there. <strong>The DaVinci originals are still serving '
+  'real traffic</strong> and must not be edited for brand reasons; at cutover they become '
+  'redirects, not deletions.</p></div>'
+  '<div class="stack">'
   +"".join(f'<div class="card"><b>{n}</b><div class="lbl">{lbl}</div>'
            f'<div class="st">{chip(st,k)}</div><p>{txt}</p></div>'
            for _,n,lbl,st,k,txt in cards)+"</div>")
