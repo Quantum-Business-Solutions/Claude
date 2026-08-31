@@ -46,6 +46,8 @@ replyto=sum(1 for r in emailh.values() if r["reply_to"]=="enews@davincilabs.com"
 CSS=re.sub(r"/\*.*?\*/","",open("src/cc_sections.css").read(),flags=re.S)
 CSS=re.sub(r"\n{2,}","\n",CSS).strip()
 
+import html as _h
+esc=_h.escape
 def chip(t,k): return f'<span class="chip c-{k}">{t}</span>'
 
 SECTIONS=[]
@@ -164,7 +166,7 @@ S("stack","The parallel stack",
            for _,n,lbl,st,k,txt in cards)+"</div>")
 
 frows="".join(
-  f'<tr><td class="nm">{f["name"].strip()}</td>'
+  f'<tr><td class="nm">{esc(f["name"].strip())}</td>'
   f'<td>{chip(f"on {len(on)} page"+("s" if len(on)>1 else ""),"acc") if (on:=[x or "(home)" for x in embeds["by_form"].get(f["name"].strip(),[])]) else chip("on no page","bad")}</td>'
   f'<td class="num">{sum(1 for w in wf for x in w["enrol_forms"] if x["id"]==f["id"])}</td>'
   f'<td class="ev">{", ".join(sorted(on)[:5])+(" …" if len(on)>5 else "") if on else "&mdash;"}</td></tr>'
@@ -181,13 +183,13 @@ def wrow(f):
     bad=sorted({x["name"] for x in f["enrol_forms"] if not x["praxera"]})
     out=[]
     if f["davinci_sends"]: out.append(chip(f'{f["davinci_sends"]} DaVinci send',"bad"))
-    if bad: out.append(chip("enrols on "+", ".join(bad[:2]),"bad"))
+    if bad: out.append(chip("enrols on "+esc(", ".join(bad[:2])),"bad"))
     if not f["enrol_forms"]: out.append(chip("no form enrolment","warn"))
     if f["dead_workflow_list_clauses"]:
         n=f["dead_workflow_list_clauses"]
         out.append(chip(f'{n} dead clause'+("s" if n>1 else ""),"mute"))
     name=f["name"].replace("Praxera - ","")
-    return (f'<tr><td class="nm">{name}</td><td class="num">{f["sends"]}</td>'
+    return (f'<tr><td class="nm">{esc(name)}</td><td class="num">{f["sends"]}</td>'
             f'<td>{chip("off","ok")}</td><td>{" ".join(out) or chip("clear","acc")}</td></tr>')
 S("workflows",f'The {N["flows"]} workflow clones', f'''
 <p class="eyebrow">Automation</p>
@@ -279,7 +281,7 @@ booking widget.</p></div>
 needs its own sending domain authenticated before any of this can send.</p></div>
 <div class="call warn"><h3>Blog housekeeping and the domain root</h3>
 <p>74 of {N["blog"]} posts carry publish date <code>1970-01-01</code>, none has tags, and the
-original CTAs did not survive the clone. 149 blog links point at
+original CTAs did not survive the clone. 129 blog links still point at
 <code>praxerasupplements.com/</code> and nothing is there yet.</p></div>
 <div class="call good"><h3>{len(foreign_pg)} pages and {len(foreign_ml)} emails load assets from
 the DaVinci domain</h3>
