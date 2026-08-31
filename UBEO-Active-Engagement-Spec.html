@@ -114,22 +114,36 @@
     <h3>Tier 1 &mdash; Attempt</h3>
     <p>Dialed, nobody reached: voicemail, no answer, IVR, closed office, failed connection.
        Also every dialer task stub.</p>
-    <p><strong>91.1%</strong> of the 11,035 calls at the target accounts.</p>
+    <p><strong>84.0%</strong> of all 34,354 engagements at the target accounts.</p>
   </div>
   <div class="tier t2">
     <h3>Tier 2 &mdash; Contact made</h3>
     <p>A human answered and nothing came of it. A gatekeeper took a message; a flat
        "not interested" with nothing behind it. The phone connected. That is all it means.</p>
-    <p><strong>4.0%</strong> of calls. <strong>76 accounts have never got past this tier.</strong></p>
+    <p><strong>6.1%</strong> of engagements. <strong>13 accounts have never got past this tier.</strong></p>
   </div>
   <div class="tier t3">
     <h3>Tier 3 &mdash; Substantive &middot; this is Active Engagement</h3>
     <p>They told us something we did not already know, or a next step was agreed: their lease,
        vendor, equipment or timing; who decides; a callback, a meeting, or send-me-information.</p>
-    <p><strong>4.9%</strong> of calls &mdash; 541 in total. Plus every email reply and every meeting,
-       which are substantive by definition.</p>
+    <p><strong>10.0%</strong> &mdash; 3,426 in total. Inbound emails and held meetings count here by
+       definition, without any text test.</p>
   </div>
 
+  <p><strong>Measured across every object, not just calls.</strong> An earlier pass read calls
+     only &mdash; 32% of the record &mdash; and undercounted badly. Tasks carry the richest rep
+     writing in this portal and produced <strong>2,421 substantive records against the calls'
+     591</strong>.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Object</th><th style="text-align:right">Attempt</th><th style="text-align:right">Contact</th><th style="text-align:right">Substantive</th></tr></thead>
+    <tbody>
+      <tr><td>Tasks</td><td class="num">13,796</td><td class="num">1,627</td><td class="num">2,421</td></tr>
+      <tr><td>Calls</td><td class="num">10,027</td><td class="num">422</td><td class="num">591</td></tr>
+      <tr><td>Emails</td><td class="num">4,855</td><td class="num">30</td><td class="num">211</td></tr>
+      <tr><td>Meetings</td><td class="num">3</td><td class="num">0</td><td class="num">189</td></tr>
+      <tr><td>Notes</td><td class="num">160</td><td class="num">6</td><td class="num">14</td></tr>
+    </tbody>
+  </table></div>
   <p>A brush-off only counts as Tier 3 if it carries information. <em>"Not interested"</em> is
      Tier 2. <em>"Not interested, we have two years left on the lease"</em> is Tier 3 &mdash; it
      just gave us the date.</p>
@@ -152,64 +166,78 @@
 </section>
 
 <section>
-  <h2>Schema</h2>
-  <p class="sub">Mirrors the QBS Active Engagement Package shape &mdash; tracked on the contact,
-     rolled to the company &mdash; with the tiering above layered on. Nothing here writes to a
-     native HubSpot field.</p>
+  <h2>Schema &mdash; and what actually needs AI</h2>
+  <p class="sub">Most of this is native HubSpot mechanics and should be built that way: it is
+     self-maintaining, auditable by the client, and does not depend on us re-running anything.
+     Only one thing in the whole design genuinely requires reading text.</p>
 
-  <h3>Contact properties</h3>
+  <h3>Layer 1 &mdash; already exists, use as-is</h3>
   <div class="tw"><table>
-    <thead><tr><th>Property</th><th>Type</th><th>How it is set</th></tr></thead>
+    <thead><tr><th>Native property</th><th style="text-align:right">Fill on UBEO</th><th>Use</th></tr></thead>
     <tbody>
-      <tr><td><code>ai__last_attempt_date</code></td><td>date</td>
-          <td>Most recent Tier 1+ touch of any kind. Answers "when did we last try".</td></tr>
-      <tr><td><code>ai__last_contact_made_date</code></td><td>date</td>
-          <td>Most recent Tier 2+ &mdash; last time a human answered.</td></tr>
-      <tr><td><code>ai__last_conversation_date</code></td><td>date</td>
-          <td>Most recent Tier 3 call.</td></tr>
-      <tr><td><code>ai__active_engagement_date</code></td><td>date</td>
-          <td><strong>The headline.</strong> MAX of last conversation, sales email reply
-              (<code>hs_sales_email_last_replied</code>) and meeting
-              (<code>hs_latest_meeting_activity</code>).</td></tr>
-      <tr><td><code>ai__active_engagement_type</code></td><td>select</td>
-          <td>Conversation / Email reply / Meeting / None &mdash; which of the three produced the date.</td></tr>
-      <tr><td><code>ai__days_since_active_engagement</code></td><td>number</td>
-          <td>Days since the above. The segmentation field.</td></tr>
-      <tr><td><code>ai__engagement_tier</code></td><td>select</td>
-          <td>Substantive / Contact only / Attempts only / Never touched.</td></tr>
+      <tr><td><code>notes_last_contacted</code></td><td class="num">21.1%</td><td>Last outbound touch. No new field needed.</td></tr>
+      <tr><td><code>hs_sales_email_last_replied</code></td><td class="num">1.8%</td><td>Email reply input.</td></tr>
+      <tr><td><code>hs_latest_meeting_activity</code></td><td class="num">1.2%</td><td>Meeting input.</td></tr>
+      <tr><td><code>hs_last_sales_activity_type</code></td><td class="num">5.2%</td><td>Context only &mdash; it counts EMAIL_OPEN as engagement, so never use it as the engagement test.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Three of the seven properties originally proposed here were duplicating these. They are
+     dropped.</p>
+
+  <h3>Layer 2 &mdash; native build, no AI</h3>
+  <p>Workflows and calculated properties. This is the Active Engagement Package pattern, and it
+     covers the large majority of the design.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Property</th><th>Object</th><th>Mechanism &mdash; no AI</th></tr></thead>
+    <tbody>
+      <tr><td>Most Recent Conversation Date</td><td>contact</td>
+          <td><strong>Workflow.</strong> Enroll on call created where <code>hs_call_disposition</code>
+              is one of the two verified connected outcomes; stamp the date. 91% of calls carry an
+              outcome, so this populates far more than the 1.8% the reply field reaches today.</td></tr>
+      <tr><td>Most Recent Email Reply Date</td><td>contact</td>
+          <td><strong>Workflow.</strong> Enroll on email created where
+              <code>hs_email_direction = INCOMING</code>. A reply is a reply &mdash; no text analysis.</td></tr>
+      <tr><td>Most Recent Meeting Date</td><td>contact</td>
+          <td><strong>Copy</strong> of <code>hs_latest_meeting_activity</code>, or a workflow on
+              meeting outcome if past-vs-booked needs separating.</td></tr>
+      <tr><td>Active Engagement Date</td><td>contact</td>
+          <td><strong>Calculated property.</strong> MAX of the three above. This is the headline field.</td></tr>
+      <tr><td>Time Since Active Engagement</td><td>contact</td>
+          <td><strong>Calculated property.</strong> Days since. The segmentation field.</td></tr>
+      <tr><td>Active Engagement Date / Time Since</td><td>company</td>
+          <td><strong>Sync properties.</strong> Roll the contact values to the company, as the
+              existing package does.</td></tr>
     </tbody>
   </table></div>
 
-  <h3>Company properties</h3>
-  <div class="tw"><table>
-    <thead><tr><th>Property</th><th>Type</th><th>How it is set</th></tr></thead>
-    <tbody>
-      <tr><td><code>ai__active_engagement_date</code></td><td>date</td>
-          <td>MAX across the company's own engagements and all its contacts.</td></tr>
-      <tr><td><code>ai__active_engagement_type</code></td><td>select</td><td>As above, at company level.</td></tr>
-      <tr><td><code>ai__days_since_active_engagement</code></td><td>number</td><td>Days since.</td></tr>
-      <tr><td><code>ai__engagement_verdict</code></td><td>select</td>
-          <td>Ready (decision maker known) / Engaged (real conversation) / Reached, nothing learned /
-              Attempts only / Never called.</td></tr>
-      <tr><td><code>ai__engagement_overview</code></td><td>textarea</td>
-          <td>The narrative a rep reads. Attempts, contacts and conversations stated separately,
-              never merged into one "touches" number.</td></tr>
-      <tr><td><code>ai__outreach_attempts</code></td><td>number</td><td>Tier 1 count &mdash; dial volume, labelled as such.</td></tr>
-      <tr><td><code>ai__conversations</code></td><td>number</td><td>Tier 3 count.</td></tr>
-    </tbody>
-  </table></div>
+  <div class="box ok">
+    <h3>The only field that needs AI</h3>
+    <p>A call outcome tells you the phone connected. It cannot tell you whether anything was
+       <em>said</em>. Separating Tier 2 from Tier 3 &mdash; a receptionist taking a message versus a
+       prospect disclosing their lease, naming who decides, or agreeing a next step &mdash; requires
+       reading the note. Nothing native can do it.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Property</th><th>Object</th><th>Why AI</th></tr></thead>
+      <tbody>
+        <tr><td><code>ai__engagement_tier</code></td><td>contact / company</td>
+            <td>Substantive / Contact only / Attempts only / Never touched. The substance judgement.</td></tr>
+        <tr><td><code>ai__engagement_overview</code></td><td>company</td>
+            <td>The plain-language read a rep acts on, with attempts, contacts and conversations
+                stated separately.</td></tr>
+        <tr><td><code>ai__engagement_verdict</code></td><td>company</td>
+            <td>Combines the tier with decision-maker state and lease timing &mdash; cross-object,
+                so no single workflow produces it.</td></tr>
+      </tbody>
+    </table></div>
+    <p><strong>Three AI fields, not seven.</strong> Everything else is native and maintains itself.</p>
+  </div>
 
   <div class="box q">
-    <h3>Decision needed: derived now, or native workflows?</h3>
-    <p>The QBS package builds this with <em>calculated properties, workflows and sync properties</em>,
-       so HubSpot maintains it going forward. What is proposed here is computed once and written in,
-       which is faster to prove but goes stale.</p>
-    <p><strong>Recommendation:</strong> deploy the derived version now to prove the definition on real
-       accounts, then convert the durable parts to workflows &mdash; specifically a
-       <code>Most Recent Conversation Date</code> workflow keyed on call outcome plus a
-       contact&rarr;company sync, matching the existing package. If we can get a PAT for a portal that
-       already has it (PUL or TSG), the property and workflow definitions should be cloned rather
-       than re-derived.</p>
+    <h3>Consequence worth noting</h3>
+    <p>Layer 2 is worth building on its own merits even if the AI layer is never deployed. UBEO
+       currently has an engagement signal on 7.5% of contacts, and the two fields that mean
+       anything real sit at 1.8% and 1.2%. The conversation workflow alone would change that,
+       because the input it keys on is present on 91% of calls.</p>
   </div>
 </section>
 
@@ -235,8 +263,10 @@
     <li>A passive signal is never described as activity.</li>
     <li>Sample 15 records by hand against the HubSpot timeline. Every earlier defect in this
         engagement was found this way and none by aggregate checks.</li>
-    <li>Verdict distribution is sane &mdash; if "Engaged" exceeds ~45% of accounts, the Tier 3
-        rule has gone loose.</li>
+    <li><strong>Hand-verify the task rule before trusting it.</strong> Tasks produced 2,421
+        substantive records and drove "engaged" to 87% of accounts, well above the ~45% ceiling
+        originally assumed. Either the assumption was wrong or the rule is loose on tasks &mdash;
+        read 30 substantive tasks against their timelines and settle it before any deploy.</li>
   </ul>
 </section>
 
@@ -245,19 +275,19 @@
   <div class="tw"><table>
     <thead><tr><th>Verdict</th><th style="text-align:right">Accounts</th><th>Meaning</th></tr></thead>
     <tbody>
-      <tr><td>Engaged &mdash; real conversation on record</td><td class="num">302</td>
+      <tr><td>Engaged &mdash; substantive on record</td><td class="num">654</td>
           <td>Someone has told us something. Warmest group.</td></tr>
-      <tr><td>Attempts only &mdash; never reached anyone</td><td class="num">210</td>
+      <tr><td>Attempts only &mdash; never reached anyone</td><td class="num">82</td>
           <td>Dialed repeatedly, never connected. Channel problem, not an interest problem.</td></tr>
-      <tr><td>Never called</td><td class="num">157</td>
+      <tr><td>Never called</td><td class="num">0</td>
           <td>Lease expiring, effectively untouched.</td></tr>
-      <tr><td>Reached, nothing learned</td><td class="num">76</td>
+      <tr><td>Reached, nothing learned</td><td class="num">13</td>
           <td>Got a human every time and learned nothing. Script or targeting problem.</td></tr>
       <tr><td>Ready &mdash; decision maker known</td><td class="num">4</td><td>Callable today.</td></tr>
     </tbody>
   </table></div>
   <p>Those four groups need four different plays, which is the point of separating them. The
-     210 "attempts only" and the 76 "reached, nothing learned" are invisible under any current
+     82 "attempts only" and the 13 "reached, nothing learned" are invisible under any current
      report &mdash; both look like active accounts.</p>
 </section>
 
