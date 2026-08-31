@@ -653,13 +653,17 @@ qualify; structurally they are another brand's, and none was moved.</p>
 </section>
 
 <section id="detail">
-<div class="shead"><p class="eyebrow">The row-by-row version</p><h2>Every asset, individually</h2></div>
-<div class="measure"><p>The full ledger pairs each of the {N["pages"]} pages,
-{N["blog"]} posts, {N["emails"]} emails, {N["forms"]} forms and {N["flows"]} workflows with the
-DaVinci asset it replaces and what is outstanding on it, filterable by whether it needs a fix.
-It is too long to sit inside this page and lives here:</p>
-<p><a href="https://claude.ai/code/artifact/5ed16bf6-6612-4867-9584-bb2face0631d">Praxera
-Migration Asset Ledger &mdash; full per-asset detail &rarr;</a></p></div>
+<div class="shead"><p class="eyebrow">Sign-off</p><h2>Approve the assets one at a time</h2></div>
+<div class="measure"><p>The full ledger lists all {N["pages"]}&nbsp;pages, {N["blog"]}&nbsp;posts,
+{N["emails"]}&nbsp;emails, {N["forms"]}&nbsp;forms and {N["flows"]}&nbsp;workflows, each paired
+with the DaVinci asset it replaces and what is outstanding on it. Every row carries
+<strong>Approve</strong> and <strong>Needs work</strong>, and a comment thread for the cases where
+the reason matters.</p>
+<p>Reviews are saved into the page itself and attributed to whoever left them, so this is the
+record rather than a copy of one &mdash; open it, put your name in, and work down the list.
+Progress shows per group and overall.</p>
+<p><a href="https://claude.ai/code/artifact/5ed16bf6-6612-4867-9584-bb2face0631d">Open the asset
+ledger and start signing off &rarr;</a></p></div>
 </section>
 
 </div>

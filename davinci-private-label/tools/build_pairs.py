@@ -41,6 +41,10 @@ for s,p in dv.items():
 rows=[]
 for s,p in sorted(px.items()):
     cand=dv_by_tail.get(tail(s),[])
+    # A tail match across brands is the trap this project keeps hitting: the
+    # Praxera home has an empty slug and so does PetTechLabs', so they matched.
+    # Only a DaVinci-hosted page can be what a Praxera page replaces.
+    cand=[x for x in cand if "davincilabs" in (x.get("url") or "")]
     cand=sorted(cand,key=lambda x:"info.davincilabs" not in (x.get("url") or ""))
     src=cand[0] if cand else None
     rows.append({"slug":s,"name":p.get("name"),"url":p.get("url"),
@@ -59,6 +63,7 @@ leaf=lambda s:(s or "").rstrip("/").split("/")[-1]
 dvb={}
 for b in bp:
     if b in pxb: continue
+    if "davincilabs" not in (b.get("url") or ""): continue
     dvb.setdefault(leaf(b.get("slug")),b)
 rows=[]
 for b in sorted(pxb,key=lambda x:x.get("slug") or ""):
