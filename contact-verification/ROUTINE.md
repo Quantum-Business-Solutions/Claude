@@ -90,40 +90,27 @@ has ever had presented as a confident clean bill of health:
 
    Halt on a clone failure and report the exact git error. Use `$REPO` in every path that follows.
 
-0b. **Confirm a LinkedIn transport before doing anything else.**
+0b. **The transport check is no longer a separate step — `preflight.py` runs it.**
 
-   ```
-   UNIPILE_RELAY_TOKEN=... python3 $REPO/contact-verification/scripts/unipile.py selftest
-   ```
+   It shells out to `unipile.py selftest` and exits 2 when no rung returns dated rows. It used to
+   be a sentence at the end of preflight telling the model to run the self-test itself, and
+   preflight exited 0 either way — so a routine whose key had rotated passed, reached the batch
+   loop, failed every read, and recorded an environment misconfiguration as findings about people.
+   `SKIP_TRANSPORT=1` exists for schema-only checks and warns loudly.
 
-   Exit 0 means a path returned **dated** experience rows — the only thing that makes a verdict
-   possible. Exit 2 is no reachable path; exit 3 is reachable but returned nothing usable.
-
-   The relay is tried first and is the path that works unattended. If it fails, the MCP connector
-   is the fallback **when one exists** (interactive sessions only — `ToolSearch` for
-   `select:mcp__Unipile__execute-request`). **Halt only if both fail, and say which failed and
-   how.** Never write `unreadable` verdicts to represent an outage: an outage recorded as verdicts
-   is a durable lie about the data that survives long after the outage ends; a halt is not.
+   If you need to see it directly: `python3 $REPO/contact-verification/scripts/unipile.py selftest`
+   (exit 0 = a rung returned dated rows · 2 = no reachable path · 3 = reachable but nothing usable),
+   and `unipile.py probe` for the per-endpoint reason. Never write `unreadable` verdicts to
+   represent an outage — that is a durable lie about the data which outlives the outage; a halt is
+   not.
 
 1. `TOKEN=... python3 $REPO/contact-verification/scripts/preflight.py <listId>` — **stop the run on
    any non-zero exit and report the reason.** Do not continue and do not "try anyway".
-2. **Unipile self-test — try BOTH transports before halting.** They fail independently:
-   - **MCP connector** — routes via Anthropic's `mcp-proxy`, so it ignores the egress firewall.
-     Currently the only path measured working from a cloud session. It also drops and reconnects.
-   - **REST** — `python3 scripts/unipile.py selftest`. Measured from a cloud session: the agent
-     proxy establishes the CONNECT tunnel and returns 200, the TLS handshake is then reset, and a
-     direct socket times out on the tenant's non-standard port while 443 is open on the same IP.
-     Outbound egress here reaches standard ports only, and no 443 host serves the tenant API. This
-     is a property of the ENVIRONMENT, not of the DSN or the key — `unipile.py probe` shows it.
-
-   Use only Shawn's accounts (`S6ua4SfUT4SMRFZFOmyUzQ` / `7lBoyXuETqKdiJYLj5HBGA`); every other
-   account on that tenant is a client identity. **HALT only if both transports fail, and name
-   which one did.** An outage written as several hundred `unreadable` verdicts is a lie about the
-   data, not a finding about the contacts — and the verdict is durable while the outage is not.
-3. `TOKEN=... python3 scripts/listanatomy.py <listId>` — map the gate chain. It exits 3 on a
+2. `TOKEN=... python3 scripts/listanatomy.py <listId>` — map the gate chain. It exits 3 on a
    non-contact or non-dynamic list, and warns when the list gates on properties this process
-   writes (the run changes membership underneath itself).
-4. `TOKEN=... STALE_DAYS=90 python3 scripts/queue.py <listId>` — work queue + intake snapshot.
+   writes (the run changes membership underneath itself). It exits 0 with an EMPTY map on an API
+   failure, so a map naming no gates on a list you know is gated is a FAILURE, not a finding.
+3. `TOKEN=... STALE_DAYS=90 python3 scripts/queue.py <listId>` — work queue + intake snapshot.
    Three intervals, not one: `STALE_DAYS` (90) for a confirmed verdict, `RETRY_DAYS` (14) for a
    transient `unreadable`, `NOPROFILE_DAYS` (180) for `no_profile`. Records come back in a strict
    **work order** — band 0 never verified, 1 verdict stale, 2 unreadable retry, 3 no_profile
@@ -131,14 +118,14 @@ has ever had presented as a confident clean bill of health:
    guarantee: nothing is skipped forever, and a band that never drains is a capacity fact the
    printed depths make visible rather than something hidden by interleaving.
 
-4b. **Choose MODE from what queue.py reports; do not assume.** `MODE=refresh` drops the `no`-share
+3b. **Choose MODE from what queue.py reports; do not assume.** `MODE=refresh` drops the `no`-share
    FLOOR, which is the only automated check against a judge rubber-stamping `yes`. That is correct
    when the queue is mostly stale re-confirmations and wrong when it is mostly never-verified
    records — a list can be a first pass wearing a refresh label. The ceilings apply in both modes.
    Set it on every writeverdicts call: `MODE=first_pass|refresh python3 scripts/writeverdicts.py …`
-5. Batch loop per SKILL.md. `writeverdicts.py` exits 1 on read-back mismatch, 2 on HTTP failure,
+4. Batch loop per SKILL.md. `writeverdicts.py` exits 1 on read-back mismatch, 2 on HTTP failure,
    3 on a guardrail breach. **Any non-zero exit ends the run and gets reported.**
-6. Movers, then output lists.
+5. Movers, then output lists.
 
 ## Reporting contract
 
