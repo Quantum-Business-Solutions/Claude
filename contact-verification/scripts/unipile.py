@@ -36,7 +36,7 @@ tenant is a CLIENT identity, and reading from one spends a client's LinkedIn sea
 Env: UNIPILE_V2_KEY and/or (UNIPILE_API_KEY + UNIPILE_RELAY_TOKEN). At least one complete set is
      required. Optional: UNIPILE_V2_ACCOUNT_ID, UNIPILE_ACCOUNT_ID, UNIPILE_DSN, SELFTEST_SLUG.
 Exit: 0 a path works | 2 no path reachable | 3 reachable but returned nothing usable."""
-import json,subprocess,os,sys,re,socket,time
+import json,subprocess,os,sys,re,socket,time,tempfile
 
 # ---- v2 ---------------------------------------------------------------------------------
 V2_KEY=os.environ.get('UNIPILE_V2_KEY')
@@ -93,14 +93,43 @@ def reachable(base):
         return False,"tcp "+ip+":"+str(port)+" "+type(e).__name__+" (egress here reaches 443 only)"
     finally: s.close()
 
+# Unipile publishes its budget in response headers, and states it plainly in a 429 body:
+#   x-ratelimit-limit: 100   x-ratelimit-remaining: N   retry-after: <seconds>
+# Measured 2026-08-31: 100 requests per ~16-minute rolling window, i.e. ~375/hour, ~9,000/day.
+# That is far more headroom than a fixed sleep suggests - but a fixed sleep gets it wrong in BOTH
+# directions: 3.5s spends the whole budget in six minutes and then stalls, while a "safe" 10s
+# throttles a run that could have gone faster. Read the headers and pace to the actual budget.
+RATE={'limit':None,'remaining':None,'reset':None}
 def fetch(c,url):
-    cmd=['curl','-s','--max-time','40','-w','\n%{http_code}',
+    hdr=tempfile.NamedTemporaryFile('w',suffix='.hdr',delete=False).name
+    cmd=['curl','-s','--max-time','40','-D',hdr,'-w','\n%{http_code}',
          '-H','X-API-KEY: '+c['key'],'-H','accept: application/json']
     # The relay is a Supabase Edge Function with JWT verification left ON, so it needs a bearer
     # of its own. It never stores a credential - the Unipile key above is forwarded through.
     if c['base']==RELAY and RELAY_TOKEN: cmd+=['-H','Authorization: Bearer '+RELAY_TOKEN]
     o=subprocess.run(cmd+[url],capture_output=True,text=True).stdout
+    try:
+        for line in open(hdr,errors='replace'):
+            k,_,v=line.partition(':'); k=k.strip().lower(); v=v.strip()
+            if k=='x-ratelimit-limit':     RATE['limit']=int(v) if v.isdigit() else None
+            elif k=='x-ratelimit-remaining':RATE['remaining']=int(v) if v.isdigit() else None
+            elif k in ('retry-after','x-ratelimit-reset'): RATE['reset']=int(v) if v.isdigit() else None
+    except Exception: pass
+    finally:
+        try: os.unlink(hdr)
+        except Exception: pass
     body,_,code=o.rpartition('\n'); return body,code.strip()
+
+def pace():
+    """Sleep only as long as the remaining budget actually requires. Called between reads by
+    callers doing many; returns the seconds waited so a run can report its own pacing."""
+    rem,rst=RATE['remaining'],RATE['reset']
+    if rem is None or rst is None: return 0
+    if rem<=0:
+        time.sleep(rst+2); return rst+2
+    # spread what is left evenly across the window that remains, with a small floor
+    w=max(1.0,float(rst)/max(rem,1))
+    time.sleep(w); return w
 
 def accounts_url(c):
     return c['base']+('/v2/accounts' if c['ver']==2 else '/api/v1/accounts?account_id='+c['acc'])
@@ -126,9 +155,12 @@ def rows(c,slug):
         body,code=fetch(c,profile_url(c,slug))
         if code not in RATE_LIMIT_CODES: break
         if attempt<3:
-            sys.stderr.write("  rate-limited on v%d (HTTP %s), backing off %ds\n"
-                             %(c['ver'],code,6*(attempt+1)))
-            time.sleep(6*(attempt+1))
+            # Honour the server's own retry-after rather than an invented backoff. Guessing short
+            # burns retries against a window that has not reset; guessing long wastes the run.
+            wait=RATE['reset'] if RATE['reset'] else 6*(attempt+1)
+            sys.stderr.write("  rate-limited on v%d (HTTP %s), server says retry in %ds "
+                             "(limit %s/window)\n"%(c['ver'],code,wait,RATE['limit']))
+            time.sleep(min(wait+2,1200))
     if code in RATE_LIMIT_CODES: return None,'RATE-LIMITED (HTTP '+code+') - not a transport failure'
     if not code.startswith('2'): return None,code
     try: d=json.loads(body)

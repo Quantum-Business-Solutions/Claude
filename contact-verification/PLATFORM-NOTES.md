@@ -59,14 +59,28 @@ own credential so the relay stores none.
 | row shape | `{company, position, start, end}` | `{company:{id,name}, job_title, started_on, ended_on}` |
 | current role | `end: null` | `ended_on` **absent** |
 | company id | no | **yes** — use it to disambiguate same-name companies |
+| search | `POST /api/v1/linkedin/search` with `api:"sales_navigator"` | `POST /v2/{acc}/linkedin/search` takes a **search URL**; Sales Navigator URLs are rejected by its parser |
 
 **The trap:** a v2 profile request without `with_sections` returns **HTTP 200 with no experience at
 all**. Not an error, not an empty array — the keys simply aren't there. v1 behaves the same way
 without `linkedin_sections`. Any code that treats "no rows" as "no history" will fabricate results.
 Assert the section is present before judging anything.
 
-**Rate limits are tight.** Roughly 11 rapid profile reads triggered HTTP 429. Pace at ~3.5s with
-exponential backoff. Never record a 429 as a finding about the record you were reading.
+**Rate limits are published — read them, don't guess.** Every response carries
+`x-ratelimit-limit`, `x-ratelimit-remaining` and `retry-after`, and a 429 body states it in words:
+*"We only allow 100 requests. Retry in 16 minutes."*
+
+Measured 2026-08-31: **100 requests per ~16-minute rolling window** — about 375/hour, ~9,000/day.
+That is far more headroom than a fixed sleep implies, and a fixed sleep gets it wrong in *both*
+directions: 3.5s spends the entire budget in six minutes and then stalls for ten, while a
+defensive 10s throttles a run that had room to move. `unipile.py` now spreads the remaining
+budget across the remaining window (`pace()`), and on a 429 sleeps the server's own
+`retry-after` rather than an invented backoff.
+
+Sizing that follows from it: **815 unverified contacts ≈ 2.2 hours of wall clock**, not weeks.
+
+Never record a 429 as a finding about the record you were reading — and never let one demote your
+transport either; see §3.
 
 **v2 account IDs are unrelated to v1 account IDs.** Re-derive the allowlist; don't translate it.
 

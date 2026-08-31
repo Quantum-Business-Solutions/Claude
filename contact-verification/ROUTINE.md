@@ -28,6 +28,17 @@ version-tagged ladder and reports which rung carried the run:
 2. **Unipile v1 via the relay** — kept as a fallback while v2 is in beta. Needs `UNIPILE_API_KEY`
    plus `UNIPILE_RELAY_TOKEN`.
 
+**Pace to the published budget, not a guess.** Unipile allows **100 requests per ~16-minute
+window** (`x-ratelimit-limit` / `x-ratelimit-remaining` / `retry-after` on every response).
+`unipile.py` reads those headers and spreads the remaining budget across the remaining window, so
+the correct sustained rate is ~9.6s per profile — roughly **375/hour**. Size a run from that: a
+250-contact pass is about 40 minutes of reads. Do NOT hard-code a sleep; 3.5s burns the whole
+budget in six minutes and then stalls.
+
+Company-based search does not help this data: measured on list 5243, 815 unverified contacts span
+**753 distinct companies**, 711 of them with a single contact. One profile read per contact is the
+real shape of the work.
+
 **Always request the FULL experience section, never `experience_preview`.** Measured 2026-08-30 —
 Sandberg 5 rows vs 15, Weiner 7 vs 24 — and a CRM company falling outside a truncated preview reads
 as departed, ejecting a real contact as "No Longer with Company".
