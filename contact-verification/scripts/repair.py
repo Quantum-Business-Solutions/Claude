@@ -234,14 +234,26 @@ elif FIX=='ejections':
     rows=search([{"propertyName":"ai__li_still_at_company","operator":"EQ","value":"no"}],
                 ["firstname","lastname","company","hs_lead_status","hs_linkedin_url",
                  "linkedin_profile_url__unique_value","ai__contact_evidence"])
-    print("\nre-reading %d banked 'no' verdict(s) against FULL history..."%len(rows))
-    out=[];checked=0;skipped=0
+    # RESUMABLE. Unipile rate-limits hard enough that 431 reads cannot be done in one pass, and a
+    # container restart already destroyed one attempt. Both the findings and the set of ids
+    # already looked at are persisted, so re-running continues where it stopped rather than
+    # re-spending the quota on contacts that were already cleared.
+    SEEN='/tmp/ejection_checked.json'
+    out=json.load(open(PROP)) if os.path.exists(PROP) else []
+    seen=set(json.load(open(SEEN))) if os.path.exists(SEEN) else set()
+    LIMIT=int(os.environ.get('EJECTION_LIMIT','120'))
+    PACE=float(os.environ.get('EJECTION_PACE','6'))
+    todo=[x for x in rows if x['id'] not in seen]
+    print("\n%d banked 'no' verdict(s) | already checked %d | this pass will read up to %d at %.1fs"
+          %(len(rows),len(seen),min(LIMIT,len(todo)),PACE))
+    rows=todo[:LIMIT]
+    checked=0;skipped=0
     for i,x in enumerate(rows):
         p=x['properties']
         m=re.search(r'/in/([^/?#]+)',(p.get('hs_linkedin_url') or p.get('linkedin_profile_url__unique_value') or ''))
         if not m or not p.get('company'): skipped+=1; continue
         exp,err=prof(m.group(1))
-        if err: skipped+=1; time.sleep(3.5); continue
+        if err: skipped+=1; seen.add(x['id']); time.sleep(PACE); continue
         checked+=1
         cur=[e for e in exp if not e.get('ended_on')]
         hit=[e for e in cur if same((e.get('company') or {}).get('name'),p['company'])]
@@ -253,9 +265,12 @@ elif FIX=='ejections':
                         "old_ev":(p.get('ai__contact_evidence') or '')[:600]})
             print("   WRONG  %s  %s still at %s as %s since %s  [was %s]"
                   %(x['id'],out[-1]['who'],p['company'],e.get('job_title'),e.get('started_on'),p.get('hs_lead_status')))
-        if (i+1)%50==0: print("   ...%d/%d read, %d wrong so far"%(i+1,len(rows),len(out)))
-        time.sleep(3.5)
-    json.dump(out,open(PROP,'w'),indent=1)
+        seen.add(x['id'])
+        if (i+1)%25==0:
+            json.dump(out,open(PROP,'w'),indent=1); json.dump(sorted(seen),open(SEEN,'w'))
+            print("   ...%d/%d read this pass, %d wrong in total"%(i+1,len(rows),len(out)))
+        time.sleep(PACE)
+    json.dump(out,open(PROP,'w'),indent=1); json.dump(sorted(seen),open(SEEN,'w'))
     print("\nchecked %d | could not check %d | WRONGLY EJECTED %d  (%.0f%%)"
           %(checked,skipped,len(out),100.0*len(out)/max(checked,1)))
     print("proposal written to "+PROP+" - review it, then re-run with --apply")

@@ -36,7 +36,7 @@ tenant is a CLIENT identity, and reading from one spends a client's LinkedIn sea
 Env: UNIPILE_V2_KEY and/or (UNIPILE_API_KEY + UNIPILE_RELAY_TOKEN). At least one complete set is
      required. Optional: UNIPILE_V2_ACCOUNT_ID, UNIPILE_ACCOUNT_ID, UNIPILE_DSN, SELFTEST_SLUG.
 Exit: 0 a path works | 2 no path reachable | 3 reachable but returned nothing usable."""
-import json,subprocess,os,sys,re,socket
+import json,subprocess,os,sys,re,socket,time
 
 # ---- v2 ---------------------------------------------------------------------------------
 V2_KEY=os.environ.get('UNIPILE_V2_KEY')
@@ -110,6 +110,7 @@ def profile_url(c,slug):
         return c['base']+'/v2/'+c['acc']+'/users/'+slug+'?with_sections=linkedin_experience'
     return c['base']+'/api/v1/users/'+slug+'?linkedin_sections=experience&account_id='+c['acc']
 
+RATE_LIMIT_CODES={'429','503'}
 def rows(c,slug):
     """Dated employment rows, normalised across both API versions.
 
@@ -117,7 +118,18 @@ def rows(c,slug):
     ended_on} and OMITS ended_on for a current role. v1 returns work_experience as
     {company, position, start, end} with end=None for a current role. Both collapse to the
     same shape here, with company_id carried through when the version supplies it."""
-    body,code=fetch(c,profile_url(c,slug))
+    # A 429 means "slow down", NOT "this transport is broken". Falling straight through on one
+    # would silently demote every run to the fallback rung the moment we were merely throttled -
+    # and on this ladder that means quietly using v1, whose history the caller may then judge on.
+    # Back off and retry before giving up on the rung.
+    for attempt in range(4):
+        body,code=fetch(c,profile_url(c,slug))
+        if code not in RATE_LIMIT_CODES: break
+        if attempt<3:
+            sys.stderr.write("  rate-limited on v%d (HTTP %s), backing off %ds\n"
+                             %(c['ver'],code,6*(attempt+1)))
+            time.sleep(6*(attempt+1))
+    if code in RATE_LIMIT_CODES: return None,'RATE-LIMITED (HTTP '+code+') - not a transport failure'
     if not code.startswith('2'): return None,code
     try: d=json.loads(body)
     except Exception: return None,'unparseable'
