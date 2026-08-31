@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Praxera Asset Sign-off</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+</head><body>
+<section id="app">
+<h2>Sign-off</h2>
+<style>:root{
+  --paper:#F6F7F4; --surface:#FFFFFF; --sunk:#EEF0EA;
+  --ink:#191B17; --body:#3A3F36; --muted:#6E7369; --rule:#DDE0D8;
+  --accent:#65A11B; --accent-soft:#EAF2DC;
+  --ok:#3D5A80; --ok-soft:#E4EAF2;
+  --warn:#8A6300; --warn-soft:#F6EDD8;
+  --bad:#9B3B31; --bad-soft:#F5E3E0;
+  --shadow:0 1px 2px rgba(25,27,23,.05), 0 8px 24px -16px rgba(25,27,23,.28);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#141613; --surface:#1C1F1B; --sunk:#22261F;
+  --ink:#E9EBE4; --body:#C3C8BB; --muted:#8B9184; --rule:#2F342B;
+  --accent:#8CC63F; --accent-soft:#25301A;
+  --ok:#8FB4DC; --ok-soft:#1B2632;
+  --warn:#D9A93F; --warn-soft:#2E2716;
+  --bad:#DE8378; --bad-soft:#331F1C;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+}}
+:root[data-theme="dark"]{
+  --paper:#141613; --surface:#1C1F1B; --sunk:#22261F;
+  --ink:#E9EBE4; --body:#C3C8BB; --muted:#8B9184; --rule:#2F342B;
+  --accent:#8CC63F; --accent-soft:#25301A;
+  --ok:#8FB4DC; --ok-soft:#1B2632;
+  --warn:#D9A93F; --warn-soft:#2E2716;
+  --bad:#DE8378; --bad-soft:#331F1C;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--body);font-size:16px;line-height:1.6;
+font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px 110px}
+.measure{max-width:68ch}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;color:var(--ink);font-weight:500;margin:0;
+text-wrap:balance}
+h1{font-size:clamp(1.9rem,4.6vw,2.7rem);line-height:1.08;letter-spacing:-.015em}
+h2{font-size:clamp(1.35rem,3vw,1.7rem);line-height:1.18;margin:0 0 .3rem}
+h3{font-size:1.02rem;font-weight:600;line-height:1.3}
+p{margin:0 0 1rem}
+a{color:var(--accent);text-underline-offset:3px}
+code{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:.85em;
+background:var(--sunk);padding:1px 5px;border-radius:2px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.67rem;
+letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .5rem}
+header.top{background:var(--surface);border-bottom:1px solid var(--rule);margin-bottom:34px}
+header.top .wrap{padding-top:36px;padding-bottom:28px}
+.brandline{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+.brandline span{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.69rem;
+letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.sub{font-size:1.02rem;margin-top:13px;max-width:64ch}
+.note{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:10px}
+.prog{margin-top:24px;border:1px solid var(--rule);border-radius:3px;
+background:var(--surface);overflow:hidden}
+.prog .bar{display:flex;height:7px;background:var(--sunk)}
+.prog .bar i{display:block;height:100%}
+.prog .bar .a{background:var(--accent)}
+.prog .bar .f{background:var(--bad)}
+.prog .lg{display:flex;flex-wrap:wrap;gap:18px;padding:12px 16px;
+font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.06em;
+text-transform:uppercase;color:var(--muted)}
+.prog .lg b{color:var(--ink);font-variant-numeric:tabular-nums;font-weight:500}
+.prog .lg .k{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px}
+.prog .lg .k.a{background:var(--accent)}.prog .lg .k.f{background:var(--bad)}
+.prog .lg .k.u{background:var(--rule)}
+.idbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px;
+padding:12px 16px;background:var(--sunk);border:1px solid var(--rule);border-radius:3px}
+.idbar label{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;
+letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.idbar input{font:inherit;font-size:.85rem;color:var(--ink);background:var(--surface);
+border:1px solid var(--rule);border-radius:2px;padding:5px 9px;min-width:190px}
+.save{margin-left:auto;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;
+letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.save.on{color:var(--accent)}.save.err{color:var(--bad)}
+.ro{background:var(--warn-soft);color:var(--warn);border-color:var(--warn)}
+section{margin-top:50px;scroll-margin-top:16px}
+.shead{border-top:2px solid var(--ink);padding-top:13px;margin-bottom:16px}
+.jump{display:flex;flex-wrap:wrap;gap:1px;background:var(--rule);
+border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.jump a{flex:1 1 auto;text-align:center;background:var(--surface);padding:9px 14px;
+font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.1em;
+text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+.jump a:hover,.jump a:focus-visible{background:var(--sunk);color:var(--ink)}
+.jump a b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
+.tsub{display:flex;align-items:baseline;gap:9px;margin:0 0 10px;
+font-family:Newsreader,Georgia,serif;font-size:1.15rem;font-weight:500;color:var(--ink)}
+.tct{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;letter-spacing:.09em;
+color:var(--muted);background:var(--sunk);padding:2px 7px;border-radius:2px;
+font-variant-numeric:tabular-nums}
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:9px}
+.filters .srch{flex:0 1 220px;display:flex}
+.filters input[type=search]{width:100%;font:inherit;font-size:.79rem;color:var(--ink);
+background:var(--surface);border:1px solid var(--rule);border-radius:2px;padding:5px 9px}
+.filters input[type=search]::placeholder{color:var(--muted)}
+button.f{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.65rem;
+letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--surface);
+border:1px solid var(--rule);border-radius:2px;padding:5px 10px;cursor:pointer}
+button.f:hover{color:var(--ink);background:var(--sunk)}
+button.f[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent);
+border-color:var(--accent)}
+.filters .count{margin-left:auto;font-family:"IBM Plex Mono",ui-monospace,monospace;
+font-size:.66rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tscroll{overflow-x:auto;border:1px solid var(--rule);border-radius:3px;
+background:var(--surface);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:940px;font-size:.85rem}
+th{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.63rem;letter-spacing:.11em;
+text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:10px 13px;
+border-bottom:1px solid var(--rule);background:var(--sunk);white-space:nowrap}
+td{padding:9px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody tr.r:last-child td{border-bottom:0}
+tbody tr.r:hover{background:var(--sunk)}
+td.nm{color:var(--ink);font-weight:500;min-width:170px}
+td.ev{max-width:40ch;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.73rem;
+color:var(--muted);line-height:1.45;overflow-wrap:anywhere}
+td.act{white-space:nowrap;width:1%}
+.chip{display:inline-block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62rem;
+letter-spacing:.09em;text-transform:uppercase;padding:2px 7px;border-radius:2px;
+white-space:nowrap;margin:1px 3px 1px 0}
+.c-ok{background:var(--ok-soft);color:var(--ok)}
+.c-warn{background:var(--warn-soft);color:var(--warn)}
+.c-bad{background:var(--bad-soft);color:var(--bad)}
+.c-acc{background:var(--accent-soft);color:var(--accent)}
+.c-mute{background:var(--sunk);color:var(--muted)}
+.rv{display:inline-flex;gap:0;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.rv button{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.63rem;
+letter-spacing:.06em;text-transform:uppercase;background:var(--surface);color:var(--muted);
+border:0;border-right:1px solid var(--rule);padding:5px 9px;cursor:pointer;white-space:nowrap}
+.rv button:last-child{border-right:0}
+.rv button:hover{background:var(--sunk);color:var(--ink)}
+.rv button[aria-pressed="true"].ok{background:var(--accent);color:#fff}
+.rv button[aria-pressed="true"].fix{background:var(--bad);color:#fff}
+button.cm{margin-left:6px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.63rem;
+background:var(--surface);color:var(--muted);border:1px solid var(--rule);border-radius:2px;
+padding:5px 9px;cursor:pointer;white-space:nowrap}
+button.cm:hover{background:var(--sunk);color:var(--ink)}
+button.cm.has{background:var(--ok-soft);color:var(--ok);border-color:var(--ok)}
+tr.r.done td.nm{color:var(--muted)}
+tr.r.flag td.nm{color:var(--bad)}
+.by{display:block;margin-top:4px;font-family:"IBM Plex Mono",ui-monospace,monospace;
+font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+tr.th>td{background:var(--sunk);padding:14px 16px}
+.thread{max-width:78ch}
+.cmt{border-left:2px solid var(--rule);padding:0 0 0 12px;margin-bottom:11px}
+.cmt .who{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62rem;
+letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cmt .txt{font-size:.86rem;color:var(--body);white-space:pre-wrap;margin-top:2px}
+.thread textarea{width:100%;font:inherit;font-size:.86rem;color:var(--ink);
+background:var(--surface);border:1px solid var(--rule);border-radius:2px;padding:8px 10px;
+min-height:62px;resize:vertical}
+.thread .row{display:flex;gap:8px;align-items:center;margin-top:8px}
+.thread .row button{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.65rem;
+letter-spacing:.08em;text-transform:uppercase;border-radius:2px;padding:6px 12px;cursor:pointer;
+border:1px solid var(--accent);background:var(--accent);color:#fff}
+.thread .row button.gh{background:var(--surface);color:var(--muted);border-color:var(--rule)}
+.thread .empty{font-size:.83rem;color:var(--muted);font-style:italic;margin-bottom:10px}
+.call{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);
+border-radius:0 3px 3px 0;padding:18px 20px;margin:18px 0;box-shadow:var(--shadow)}
+.call.bad{border-left-color:var(--bad)}.call.warn{border-left-color:var(--warn)}
+.call.good{border-left-color:var(--ok)}
+.call h3{margin-bottom:.4rem}.call p:last-child{margin-bottom:0}
+:is(button,input,a,textarea):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+section>h2:first-child{display:none}</style>
+<div id="root"></div>
+</section>
+<section id="data1">
+<h2>Data 1</h2>
+<script type="application/json" class="rowdata">[
+{"k":"p","id":"home","n":"(home)","r":"","i":[0,1,2],"new":1},
+{"k":"p","id":"about","n":"about","r":"info.davincilabs.com/pl-demo-about-v3","i":[1,3,4]},
+{"k":"p","id":"aging","n":"aging","r":"info.davincilabs.com/en/pl-demo-aging-v3","i":[1,5]},
+{"k":"p","id":"alp/ads-contract-mfg","n":"alp/ads-contract-mfg","r":"info.davincilabs.com/pl-demo-ads-contract-mfg-v3","i":[6,7]},
+{"k":"p","id":"alp/ads-custom","n":"alp/ads-custom","r":"info.davincilabs.com/pl-demo-ads-custom-v3","i":[6,7]},
+{"k":"p","id":"alp/ads-mfg-usa","n":"alp/ads-mfg-usa","r":"info.davincilabs.com/pl-demo-ads-mfg-usa-v3","i":[6,7]},
+{"k":"p","id":"alp/ads-pl-mfg","n":"alp/ads-pl-mfg","r":"info.davincilabs.com/pl-demo-ads-pl-mfg-v3","i":[6,7]},
+{"k":"p","id":"book-consultation","n":"book-consultation","r":"info.davincilabs.com/en/pl-demo-book-consultation-v3","i":[6,3,7]},
+{"k":"p","id":"capsules","n":"capsules","r":"info.davincilabs.com/pl-demo-capsules-v3","i":[1,3]},
+{"k":"p","id":"case-studies","n":"case-studies","r":"info.davincilabs.com/pl-demo-case-studies-v3","i":[6,3,7]},
+{"k":"p","id":"certifications","n":"certifications","r":"info.davincilabs.com/pl-demo-certifications-v3","i":[3,8]},
+{"k":"p","id":"chewables","n":"chewables","r":"info.davincilabs.com/pl-demo-chewables-v3","i":[3,2]},
+{"k":"p","id":"cognitive","n":"cognitive","r":"info.davincilabs.com/pl-demo-cognitive-v3","i":[9]},
+{"k":"p","id":"contact","n":"contact","r":"info.davincilabs.com/pl-demo-contact-v3","i":[6,4]},
+{"k":"p","id":"custom-formulation","n":"custom-formulation","r":"info.davincilabs.com/pl-demo-custom-formulation-v3","i":[3,7]},
+{"k":"p","id":"customer-art","n":"customer-art","r":"info.davincilabs.com/en/pl-demo-customer-art-v3","i":[3,7]},
+{"k":"p","id":"design-services","n":"design-services","r":"info.davincilabs.com/en/pl-demo-design-services-v3","i":[10,1,11]},
+{"k":"p","id":"design-team","n":"design-team","r":"info.davincilabs.com/en/pl-demo-design-team-v3","i":[12]},
+{"k":"p","id":"detox","n":"detox","r":"info.davincilabs.com/pl-demo-detox-v3","i":[2]},
+{"k":"p","id":"dropshipping","n":"dropshipping","r":"info.davincilabs.com/en/pl-demo-dropshipping-v3","i":[10,1,13]},
+{"k":"p","id":"energy","n":"energy","r":"info.davincilabs.com/pl-demo-energy-v3","i":[14]},
+{"k":"p","id":"facility","n":"facility","r":"info.davincilabs.com/pl-demo-facility-v3","i":[6,3,7]},
+{"k":"p","id":"faq","n":"faq","r":"info.davincilabs.com/pl-demo-faq-v3","i":[3,7]},
+{"k":"p","id":"fitness","n":"fitness","r":"info.davincilabs.com/pl-demo-fitness-v3","i":[15]},
+{"k":"p","id":"get-started","n":"get-started","r":"info.davincilabs.com/en/pl-demo-get-started-v3","i":[7]},
+{"k":"p","id":"guides","n":"guides","r":"info.davincilabs.com/pl-demo-guides-v3","i":[3,7]},
+{"k":"p","id":"gummies","n":"gummies","r":"info.davincilabs.com/pl-demo-gummies-v3","i":[1,3,7]},
+{"k":"p","id":"heart-health","n":"heart-health","r":"info.davincilabs.com/pl-demo-heart-health-v3","i":[1,16]},
+{"k":"p","id":"herbal","n":"herbal","r":"info.davincilabs.com/en/pl-demo-herbal-v3","i":[15]},
+{"k":"p","id":"how-to-sell-supplements","n":"how-to-sell-supplements","r":"info.davincilabs.com/en/pl-demo-how-to-sell-supplements-v3","i":[10,1,17]},
+{"k":"p","id":"immune-support","n":"immune-support","r":"info.davincilabs.com/pl-demo-immune-support-v3","i":[2]},
+{"k":"p","id":"ingredient-sourcing","n":"ingredient-sourcing","r":"info.davincilabs.com/pl-demo-ingredient-sourcing-v3","i":[3]},
+{"k":"p","id":"joint-support","n":"joint-support","r":"info.davincilabs.com/pl-demo-joint-support-v3","i":[15]},
+{"k":"p","id":"learning/definitive-guide","n":"learning/definitive-guide","r":"info.davincilabs.com/en/pl-demo-definitive-guide-v3","i":[10,1,3,8]},
+{"k":"p","id":"learning/definitive-guide-ty","n":"learning/definitive-guide-ty","r":"","i":[1,3,4],"new":1},
+{"k":"p","id":"learning/ingredients-testing","n":"learning/ingredients-testing","r":"info.davincilabs.com/pl-demo-ingredients-testing-v3","i":[3]},
+{"k":"p","id":"learning/onboarding-guide","n":"learning/onboarding-guide","r":"info.davincilabs.com/en/pl-demo-onboarding-guide-v3","i":[1,8]},
+{"k":"p","id":"learning/onboarding-guide-ty","n":"learning/onboarding-guide-ty","r":"","i":[1,7],"new":1},
+{"k":"p","id":"liquids","n":"liquids","r":"info.davincilabs.com/en/pl-demo-liquids-v3","i":[1,3]},
+{"k":"p","id":"mens-health","n":"mens-health","r":"info.davincilabs.com/pl-demo-mens-health-v3","i":[1,15]},
+{"k":"p","id":"multivitamin","n":"multivitamin","r":"info.davincilabs.com/pl-demo-multivitamin-v3","i":[2]},
+{"k":"p","id":"our-process","n":"our-process","r":"info.davincilabs.com/pl-demo-our-process-v3","i":[3,11]},
+{"k":"p","id":"packaging","n":"packaging","r":"info.davincilabs.com/pl-demo-packaging-v3","i":[6,3,7]},
+{"k":"p","id":"pediatric","n":"pediatric","r":"info.davincilabs.com/en/pl-demo-pediatric-v3","i":[1,18]},
+{"k":"p","id":"powders","n":"powders","r":"info.davincilabs.com/pl-demo-powders-v3","i":[1,3]},
+{"k":"p","id":"prenatal","n":"prenatal","r":"info.davincilabs.com/pl-demo-prenatal-v3","i":[1,16]},
+{"k":"p","id":"privacy","n":"privacy","r":"info.davincilabs.com/en/pl-demo-privacy-v3","i":[6,3]},
+{"k":"p","id":"probiotics","n":"probiotics","r":"info.davincilabs.com/pl-demo-probiotics-v3","i":[1,16]},
+{"k":"p","id":"quality-standards","n":"quality-standards","r":"info.davincilabs.com/pl-demo-quality-standards-v3","i":[1,3,8]},
+{"k":"p","id":"request-quote","n":"request-quote","r":"info.davincilabs.com/pl-demo-request-quote-v3","i":[6,7]},
+{"k":"p","id":"resources","n":"resources","r":"info.davincilabs.com/en/pl-demo-resources-v3","i":[19,1,3,20]},
+{"k":"p","id":"sell-sheets","n":"sell-sheets","r":"info.davincilabs.com/pl-demo-sell-sheets-v3","i":[3,7]},
+{"k":"p","id":"sleep","n":"sleep","r":"info.davincilabs.com/pl-demo-sleep-v3","i":[2]},
+{"k":"p","id":"soft-gels","n":"soft-gels","r":"info.davincilabs.com/pl-demo-soft-gels-v3","i":[1,3]},
+{"k":"p","id":"tablets","n":"tablets","r":"info.davincilabs.com/pl-demo-tablets-v3","i":[1,3]},
+{"k":"p","id":"terms","n":"terms","r":"info.davincilabs.com/pl-demo-terms-v3","i":[3]},
+{"k":"p","id":"testing","n":"testing","r":"info.davincilabs.com/pl-demo-testing-v3","i":[3,7]},
+{"k":"p","id":"ty-consultation","n":"ty-consultation","r":"info.davincilabs.com/en/pl-demo-ty-consultation-v3","i":[1,3,11]},
+{"k":"p","id":"ty-quote","n":"ty-quote","r":"info.davincilabs.com/en/pl-demo-ty-quote-v3","i":[1,3,8]},
+{"k":"p","id":"ty-sell-sheets","n":"ty-sell-sheets","r":"info.davincilabs.com/pl-demo-ty-sell-sheets-v3","i":[3,7]},
+{"k":"p","id":"weight-management","n":"weight-management","r":"info.davincilabs.com/pl-demo-weight-management-v3","i":[13]},
+{"k":"p","id":"womens-health","n":"womens-health","r":"info.davincilabs.com/pl-demo-womens-health-v3","i":[15]},
+{"k":"b","id":"blog/2023-trends-in-vitamin-and-supplement-industry","n":"2023 Trends in the Vitamin and Supplement Industry","r":"blog.davincilabs.com/\u2026/2023-trends-in-vitamin-and-supplement-industry","i":[21,22],"t":"blog.davincilabs.com/private-label/2023-trends-in-vitamin-and-supplement-industry"},
+{"k":"b","id":"blog/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice","n":"4 Tips to Select the Best Gummy Vitamins for Integrative & Functional Practice","r":"blog.davincilabs.com/\u2026/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice","i":[1,21,22],"t":"blog.davincilabs.com/private-label/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice"},
+{"k":"b","id":"blog/5-best-private-label-supplements-for-sleep-on-the-market","n":"5 Best Private Label Supplements For Sleep","r":"blog.davincilabs.com/\u2026/5-best-private-label-supplements-for-sleep-on-the-market","i":[21,22],"t":"blog.davincilabs.com/private-label/5-best-private-label-supplements-for-sleep-on-the-market"},
+{"k":"b","id":"blog/an-introduction-to-sports-supplement-manufacturing","n":"An Introduction to Sports Supplement Manufacturing","r":"blog.davincilabs.com/\u2026/an-introduction-to-sports-supplement-manufacturing","i":[21,22],"t":"blog.davincilabs.com/private-label/an-introduction-to-sports-supplement-manufacturing"},
+{"k":"b","id":"blog/are-private-label-supplements-profitable","n":"Are Private Label Supplements Profitable?","r":"blog.davincilabs.com/\u2026/are-private-label-supplements-profitable","i":[21,22],"t":"blog.davincilabs.com/private-label/are-private-label-supplements-profitable"},
+{"k":"b","id":"blog/are-private-label-vitamins-a-profitable-business","n":"Are Private-Label Vitamins a Profitable Business?","r":"blog.davincilabs.com/\u2026/are-private-label-vitamins-a-profitable-business","i":[21,22],"t":"blog.davincilabs.com/private-label/are-private-label-vitamins-a-profitable-business"}
+]</script>
+</section>
+<section id="data2">
+<h2>Data 2</h2>
+<script type="application/json" class="rowdata">[
+{"k":"b","id":"blog/benefits-of-selling-private-label-supplements","n":"Six Benefits of Selling Private Label Supplements","r":"blog.davincilabs.com/\u2026/benefits-of-selling-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements"},
+{"k":"b","id":"blog/best-private-label-supplements-for-gut-health","n":"Best Private Label Supplements for Gut Health","r":"blog.davincilabs.com/\u2026/best-private-label-supplements-for-gut-health","i":[21,22],"t":"blog.davincilabs.com/private-label/best-private-label-supplements-for-gut-health"},
+{"k":"b","id":"blog/challenges-and-opportunities-private-label-supplements","n":"Challenges and Opportunities in Private Label Supplements","r":"blog.davincilabs.com/\u2026/challenges-and-opportunities-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/challenges-and-opportunities-private-label-supplements"},
+{"k":"b","id":"blog/contract-manufacturing-vs-private-labeling-supplements","n":"Contract Manufacturing vs Private Labeling: Which Supplement Service Is Right for Your B","r":"blog.davincilabs.com/\u2026/contract-manufacturing-vs-private-labeling-supplements","i":[23,21,22],"t":"blog.davincilabs.com/private-label/contract-manufacturing-vs-private-labeling-supplements"},
+{"k":"b","id":"blog/custom-supplements-vs.-private-label-supplements","n":"Custom Supplements vs. Private Label Supplements","r":"blog.davincilabs.com/\u2026/custom-supplements-vs.-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/custom-supplements-vs.-private-label-supplements"},
+{"k":"b","id":"blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media","n":"How to Promote Your Private Label Supplements on Social Media","r":"blog.davincilabs.com/\u2026/how-to-promote-your-private-label-supplements-on-social-media","i":[21,22],"t":"blog.davincilabs.com/private-label/dev-blog/how-to-promote-your-private-label-supplements-on-social-media"},
+{"k":"b","id":"blog/dev-blog/private-label-supplements-more-than-just-a-trend","n":"Are Private Label Supplements More Than Just a Trend?","r":"blog.davincilabs.com/\u2026/private-label-supplements-more-than-just-a-trend","i":[1,21,22],"t":"blog.davincilabs.com/private-label/dev-blog/private-label-supplements-more-than-just-a-trend"},
+{"k":"b","id":"blog/do-you-need-insurance-to-sell-private-label-supplements","n":"Do You Need Insurance to Sell Private Label Supplements?","r":"blog.davincilabs.com/\u2026/do-you-need-insurance-to-sell-private-label-supplements","i":[1,21,22],"t":"blog.davincilabs.com/private-label/do-you-need-insurance-to-sell-private-label-supplements"},
+{"k":"b","id":"blog/does-the-fda-approve-supplements","n":"Does the FDA Approve Supplements?","r":"blog.davincilabs.com/\u2026/does-the-fda-approve-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/does-the-fda-approve-supplements"},
+{"k":"b","id":"blog/healthcare-practitioner-supplement-line-guide","n":"How Healthcare Practitioners Build a Private Label Supplement Line for Their Practice","r":"blog.davincilabs.com/\u2026/healthcare-practitioner-supplement-line-guide","i":[21,22],"t":"blog.davincilabs.com/private-label/healthcare-practitioner-supplement-line-guide"},
+{"k":"b","id":"blog/how-do-i-start-a-private-label-supplement-business","n":"How to Start a Private Label Supplement Business in 7 Simple Steps","r":"blog.davincilabs.com/\u2026/how-do-i-start-a-private-label-supplement-business","i":[21,22],"t":"blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business"},
+{"k":"b","id":"blog/how-find-right-supplement-wholesaler-for-your-business","n":"How to Find the Right Supplement Wholesaler for Your Business","r":"blog.davincilabs.com/\u2026/how-find-right-supplement-wholesaler-for-your-business","i":[21,22],"t":"blog.davincilabs.com/private-label/how-find-right-supplement-wholesaler-for-your-business"},
+{"k":"b","id":"blog/how-is-protein-powder-made","n":"How Is Protein Powder Made?","r":"blog.davincilabs.com/\u2026/how-is-protein-powder-made","i":[21,22],"t":"blog.davincilabs.com/private-label/how-is-protein-powder-made"},
+{"k":"b","id":"blog/how-much-to-start-a-private-label-supplement-business","n":"How Much Does It Cost to Start a Private Label Supplement Business? (2026 Guide)","r":"blog.davincilabs.com/\u2026/how-much-to-start-a-private-label-supplement-business","i":[23,21,22],"t":"blog.davincilabs.com/private-label/how-much-to-start-a-private-label-supplement-business"},
+{"k":"b","id":"blog/how-physicians-can-get-better-private-labeling-for-supplements","n":"How Physicians Can Get Better Private Labeling for Supplements","r":"blog.davincilabs.com/\u2026/how-physicians-can-get-better-private-labeling-for-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-physicians-can-get-better-private-labeling-for-supplements"},
+{"k":"b","id":"blog/how-private-label-beauty-supplements-can-increase-revenue-fast","n":"How Private Label Beauty Supplements Can Increase Revenue Fast","r":"blog.davincilabs.com/\u2026/how-private-label-beauty-supplements-can-increase-revenue-fast","i":[21,22],"t":"blog.davincilabs.com/private-label/how-private-label-beauty-supplements-can-increase-revenue-fast"},
+{"k":"b","id":"blog/how-private-label-supplements-can-increase-revenue-fast","n":"How Private Label Supplements Can Increase Revenue Fast","r":"blog.davincilabs.com/\u2026/how-private-label-supplements-can-increase-revenue-fast","i":[23,21,22],"t":"blog.davincilabs.com/private-label/how-private-label-supplements-can-increase-revenue-fast"},
+{"k":"b","id":"blog/how-private-label-supplements-set-you-apart-from-competition","n":"How Private Label Supplements Set You Apart from the Competition","r":"blog.davincilabs.com/\u2026/how-private-label-supplements-set-you-apart-from-competition","i":[21,22],"t":"blog.davincilabs.com/private-label/how-private-label-supplements-set-you-apart-from-competition"},
+{"k":"b","id":"blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements","n":"How to Build a Sports Nutrition Brand with Private Label Supplements","r":"blog.davincilabs.com/\u2026/how-to-build-a-sports-nutrition-brand-with-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-build-a-sports-nutrition-brand-with-private-label-supplements"},
+{"k":"b","id":"blog/how-to-choose-a-private-label-supplement-provider","n":"How to Choose a Private Label Supplement Company","r":"blog.davincilabs.com/\u2026/how-to-choose-a-private-label-supplement-provider","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-choose-a-private-label-supplement-provider"},
+{"k":"b","id":"blog/how-to-choose-the-best-private-label-manufacturer","n":"How to Choose the Best Private Label Manufacturer","r":"blog.davincilabs.com/\u2026/how-to-choose-the-best-private-label-manufacturer","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-choose-the-best-private-label-manufacturer"},
+{"k":"b","id":"blog/how-to-compare-dietary-supplement-providers","n":"How to Compare Dietary Supplement Providers","r":"blog.davincilabs.com/\u2026/how-to-compare-dietary-supplement-providers","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-compare-dietary-supplement-providers"},
+{"k":"b","id":"blog/how-to-create-exclusivity-for-private-label-supplements","n":"How to Create Exclusivity for Private Label Supplements","r":"blog.davincilabs.com/\u2026/how-to-create-exclusivity-for-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-create-exclusivity-for-private-label-supplements"},
+{"k":"b","id":"blog/how-to-develop-private-label-brand","n":"How to Develop a brand for Private Label Supplements","r":"blog.davincilabs.com/\u2026/how-to-develop-private-label-brand","i":[1,21,22],"t":"blog.davincilabs.com/private-label/how-to-develop-private-label-brand"},
+{"k":"b","id":"blog/how-to-enhance-customer-journey-with-private-label-supplements","n":"How to Enhance the Customer Journey with Private Label Supplements","r":"blog.davincilabs.com/\u2026/how-to-enhance-customer-journey-with-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-enhance-customer-journey-with-private-label-supplements"},
+{"k":"b","id":"blog/how-to-evaluate-supplement-suppliers-in-the-us","n":"How To Evaluate Supplement Suppliers in the US","r":"blog.davincilabs.com/\u2026/how-to-evaluate-supplement-suppliers-in-the-us","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-evaluate-supplement-suppliers-in-the-us"},
+{"k":"b","id":"blog/how-to-get-started-with-dropshipping-supplements","n":"How to Get Started With Dropshipping Supplements","r":"blog.davincilabs.com/\u2026/how-to-get-started-with-dropshipping-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-get-started-with-dropshipping-supplements"},
+{"k":"b","id":"blog/how-to-make-money-in-the-fitness-industry-with-private-label-supplements","n":"Make Money in the Fitness Industry with Private Label Supplements","r":"blog.davincilabs.com/\u2026/how-to-make-money-in-the-fitness-industry-with-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-make-money-in-the-fitness-industry-with-private-label-supplements"},
+{"k":"b","id":"blog/how-to-manage-private-label-supplement-packaging","n":"How To Manage Private Label Supplement Packaging","r":"blog.davincilabs.com/\u2026/how-to-manage-private-label-supplement-packaging","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-manage-private-label-supplement-packaging"},
+{"k":"b","id":"blog/how-to-market-private-label-supplements","n":"How to Market Private Label Supplements","r":"blog.davincilabs.com/\u2026/how-to-market-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-market-private-label-supplements"},
+{"k":"b","id":"blog/how-to-private-label-protein-supplements","n":"How To Private Label Protein Supplements","r":"blog.davincilabs.com/\u2026/how-to-private-label-protein-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-private-label-protein-supplements"},
+{"k":"b","id":"blog/how-to-scale-your-business-with-private-label-supplements","n":"How to Scale Your Business With Private Label Supplements","r":"blog.davincilabs.com/\u2026/how-to-scale-your-business-with-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-scale-your-business-with-private-label-supplements"},
+{"k":"b","id":"blog/how-to-sell-supplements","n":"How To Sell Supplements","r":"blog.davincilabs.com/\u2026/how-to-sell-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-sell-supplements"},
+{"k":"b","id":"blog/how-to-spot-high-quality-private-label-supplements","n":"How to Spot High-Quality Private Label Supplements","r":"blog.davincilabs.com/\u2026/how-to-spot-high-quality-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/how-to-spot-high-quality-private-label-supplements"},
+{"k":"b","id":"blog/liquid-supplement-manufacturing-benefits-vs.-costs","n":"Liquid Supplement Manufacturing: Benefits vs. Costs","r":"blog.davincilabs.com/\u2026/liquid-supplement-manufacturing-benefits-vs.-costs","i":[21,22],"t":"blog.davincilabs.com/private-label/liquid-supplement-manufacturing-benefits-vs.-costs"},
+{"k":"b","id":"blog/make-your-own-supplement-brand-the-easy-way","n":"Make Your Own Supplement Brand The Easy Way","r":"blog.davincilabs.com/\u2026/make-your-own-supplement-brand-the-easy-way","i":[1,21,22],"t":"blog.davincilabs.com/private-label/make-your-own-supplement-brand-the-easy-way"},
+{"k":"b","id":"blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide","n":"Managing Private Label Shipping and Inventory: A Step-by-Step Guide","r":"blog.davincilabs.com/\u2026/managing-private-label-shipping-and-inventory-a-step-by-step-guide","i":[21,22],"t":"blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide"},
+{"k":"b","id":"blog/managing-the-top-3-risks-when-selling-private-label-supplements","n":"Managing the Top 3 Risks When Selling Private Label Supplements","r":"blog.davincilabs.com/\u2026/managing-the-top-3-risks-when-selling-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements"},
+{"k":"b","id":"blog/mastering-supplement-branding-design-private-label-packaging-in-5-steps","n":"Mastering Supplement Branding: Design Private Label Packaging in 5 Steps","r":"blog.davincilabs.com/\u2026/mastering-supplement-branding-design-private-label-packaging-in-5-steps","i":[21,22],"t":"blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps"},
+{"k":"b","id":"blog/must-have-private-label-probiotics-to-expand-your-product-line","n":"Must-Have Private-Label Probiotics To Expand Your Product Line","r":"blog.davincilabs.com/\u2026/must-have-private-label-probiotics-to-expand-your-product-line","i":[1,21,22],"t":"blog.davincilabs.com/private-label/must-have-private-label-probiotics-to-expand-your-product-line"},
+{"k":"b","id":"blog/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business","n":"NAD+ Activate: Your Blueprint for Sustained Energy and a Booming Business*","r":"blog.davincilabs.com/\u2026/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business","i":[21,22],"t":"blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"},
+{"k":"b","id":"blog/powder-supplement-manufacturing-essential-tips-for-private-labelers","n":"Powder Supplement Manufacturing: Essential Tips For Private Labelers","r":"blog.davincilabs.com/\u2026/powder-supplement-manufacturing-essential-tips-for-private-labelers","i":[21,22],"t":"blog.davincilabs.com/private-label/powder-supplement-manufacturing-essential-tips-for-private-labelers"},
+{"k":"b","id":"blog/private-label-supplements-how-to-get-superior-quality-at-low-cost","n":"Private Label Supplements: How to Get Superior-Quality at Low Cost","r":"blog.davincilabs.com/\u2026/private-label-supplements-how-to-get-superior-quality-at-low-cost","i":[21,22],"t":"blog.davincilabs.com/private-label/private-label-supplements-how-to-get-superior-quality-at-low-cost"},
+{"k":"b","id":"blog/private-label-supplements-how-to-make-money","n":"Private Label Supplements: How to Make Money","r":"blog.davincilabs.com/\u2026/private-label-supplements-how-to-make-money","i":[1,21,22],"t":"blog.davincilabs.com/private-label/private-label-supplements-how-to-make-money"},
+{"k":"b","id":"blog/private-label-supplements-secret-to-surpassing-sales-goals","n":"Private Label Supplements: The Secret to Surpassing Sales Goals","r":"blog.davincilabs.com/\u2026/private-label-supplements-secret-to-surpassing-sales-goals","i":[21,22],"t":"blog.davincilabs.com/private-label/private-label-supplements-secret-to-surpassing-sales-goals"},
+{"k":"b","id":"blog/private-labeling-liquid-vitamins","n":"Private Labeling Liquid Vitamins","r":"blog.davincilabs.com/\u2026/private-labeling-liquid-vitamins","i":[21,22],"t":"blog.davincilabs.com/private-label/private-labeling-liquid-vitamins"},
+{"k":"b","id":"blog/supplement-certifications-usp-nsf-gmp-fda","n":"USP, NSF, GMP, and FDA: A Buyer's Guide to Supplement Certifications That Actually Matte","r":"blog.davincilabs.com/\u2026/supplement-certifications-usp-nsf-gmp-fda","i":[21,22],"t":"blog.davincilabs.com/private-label/supplement-certifications-usp-nsf-gmp-fda"},
+{"k":"b","id":"blog/supplement-dropshipping-5-best-tips-for-success","n":"Supplement Dropshipping: 5 Best Tips for Success","r":"blog.davincilabs.com/\u2026/supplement-dropshipping-5-best-tips-for-success","i":[1,21,22],"t":"blog.davincilabs.com/private-label/supplement-dropshipping-5-best-tips-for-success"},
+{"k":"b","id":"blog/supplement-dropshipping-can-it-boost-profitability","n":"SUPPLEMENT DROPSHIPPING: CAN IT BOOST PROFITABILITY?","r":"blog.davincilabs.com/\u2026/supplement-dropshipping-can-it-boost-profitability","i":[21,22],"t":"blog.davincilabs.com/private-label/supplement-dropshipping-can-it-boost-profitability"},
+{"k":"b","id":"blog/tips-for-buying-wholesale-private-label-supplements","n":"Tips for Buying Wholesale Private Label Supplements","r":"blog.davincilabs.com/\u2026/tips-for-buying-wholesale-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements"},
+{"k":"b","id":"blog/tips-for-buying-wholesale-private-label-supplements-0","n":"Tips for Buying Wholesale Private Label Supplements","r":"blog.davincilabs.com/\u2026/tips-for-buying-wholesale-private-label-supplements-0","i":[21,22],"t":"blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements-0"},
+{"k":"b","id":"blog/tips-for-selling-private-label-supplements-for-immunity","n":"Tips for Selling Private Label Supplements for Immunity","r":"blog.davincilabs.com/\u2026/tips-for-selling-private-label-supplements-for-immunity","i":[21,22],"t":"blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-for-immunity"},
+{"k":"b","id":"blog/tips-for-selling-private-label-supplements-on-amazon","n":"Tips for Selling Private Label Supplements on Amazon","r":"blog.davincilabs.com/\u2026/tips-for-selling-private-label-supplements-on-amazon","i":[21,22],"t":"blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon"},
+{"k":"b","id":"blog/tips-for-selling-private-label-supplements-on-amazon-0","n":"Tips for Selling Private Label Supplements on Amazon","r":"blog.davincilabs.com/\u2026/tips-for-selling-private-label-supplements-on-amazon-0","i":[21,22],"t":"blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0"},
+{"k":"b","id":"blog/tips-for-selling-private-label-supplements-on-amazon-0-0","n":"Tips for Selling Private Label Supplements on Amazon","r":"blog.davincilabs.com/\u2026/tips-for-selling-private-label-supplements-on-amazon-0-0","i":[21,22],"t":"blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0-0"},
+{"k":"b","id":"blog/tips-for-selling-private-label-supplements-on-amazon-0-1","n":"Tips for Selling Private Label Supplements on Amazon","r":"blog.davincilabs.com/\u2026/tips-for-selling-private-label-supplements-on-amazon-0-1","i":[21,22],"t":"blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0-1"},
+{"k":"b","id":"blog/top-10-mistakes-to-avoid-with-supplement-manufacturing","n":"Top 10 Mistakes to Avoid With Supplement Manufacturing","r":"blog.davincilabs.com/\u2026/top-10-mistakes-to-avoid-with-supplement-manufacturing","i":[21,22],"t":"blog.davincilabs.com/private-label/top-10-mistakes-to-avoid-with-supplement-manufacturing"},
+{"k":"b","id":"blog/top-private-label-herbal-supplements-and-their-key-benefits","n":"Top Private Label Herbal Supplements And Their Key Benefits","r":"blog.davincilabs.com/\u2026/top-private-label-herbal-supplements-and-their-key-benefits","i":[1,21,22],"t":"blog.davincilabs.com/private-label/top-private-label-herbal-supplements-and-their-key-benefits"},
+{"k":"b","id":"blog/top-private-label-protein-powders-for-your-brand","n":"Top Private Label Protein Powders for Your Brand","r":"blog.davincilabs.com/\u2026/top-private-label-protein-powders-for-your-brand","i":[21,22],"t":"blog.davincilabs.com/private-label/top-private-label-protein-powders-for-your-brand"},
+{"k":"b","id":"blog/top-questions-consumers-have-about-private-label-supplements","n":"Answers to Your Top Questions About Private Label Supplements","r":"blog.davincilabs.com/\u2026/top-questions-consumers-have-about-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements"},
+{"k":"b","id":"blog/top-selling-private-label-supplements-for-2021","n":"Top Selling Private Label Supplements for 2026","r":"blog.davincilabs.com/\u2026/top-selling-private-label-supplements-for-2021","i":[21,22],"t":"blog.davincilabs.com/private-label/top-selling-private-label-supplements-for-2021"},
+{"k":"b","id":"blog/trending-private-label-supplements-for-2022","n":"Trending Private Label Supplements for 2023","r":"blog.davincilabs.com/\u2026/trending-private-label-supplements-for-2022","i":[21,22],"t":"blog.davincilabs.com/private-label/trending-private-label-supplements-for-2022"},
+{"k":"b","id":"blog/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements","n":"Truth in Labeling: Ingredient Break Down of Private Label Supplements","r":"blog.davincilabs.com/\u2026/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements"},
+{"k":"b","id":"blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026","n":"Vitamin Manufacturing: 10 Top Sellers to Consider in 2026","r":"blog.davincilabs.com/\u2026/vitamin-manufacturing-10-top-sellers-to-consider-in-2024","i":[21],"t":"blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024"},
+{"k":"b","id":"blog/what-is-a-nutraceutical-supplement","n":"What Is a Nutraceutical? A Buyer's Guide to Private Label Nutraceutical Supplements","r":"blog.davincilabs.com/\u2026/what-is-a-nutraceutical-supplement","i":[21,22],"t":"blog.davincilabs.com/private-label/what-is-a-nutraceutical-supplement"},
+{"k":"b","id":"blog/what-qualifications-do-you-need-to-sell-private-label-supplements","n":"What Qualifications Do You Need to Sell Private Label Supplements?","r":"blog.davincilabs.com/\u2026/what-qualifications-do-you-need-to-sell-private-label-supplements","i":[1,21,22],"t":"blog.davincilabs.com/private-label/what-qualifications-do-you-need-to-sell-private-label-supplements"},
+{"k":"b","id":"blog/white-label-supplements-vs.-private-label-what-is-the-difference","n":"White Label Supplements vs. Private Label: What Is the Difference?","r":"blog.davincilabs.com/\u2026/white-label-supplements-vs.-private-label-what-is-the-difference","i":[21,22],"t":"blog.davincilabs.com/private-label/white-label-supplements-vs.-private-label-what-is-the-difference"},
+{"k":"b","id":"blog/why-branded-ingredients-are-important-to-private-label-supplements","n":"Why Branded Ingredients Are Important for Private Label Supplements","r":"blog.davincilabs.com/\u2026/why-branded-ingredients-are-important-to-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/why-branded-ingredients-are-important-to-private-label-supplements"}
+]</script>
+</section>
+<section id="data3">
+<h2>Data 3</h2>
+<script type="application/json" class="rowdata">[
+{"k":"b","id":"blog/why-wellness-businesses-should-sell-private-label-supplements","n":"Why Wellness Businesses Should Sell Private Label Supplements","r":"blog.davincilabs.com/\u2026/why-wellness-businesses-should-sell-private-label-supplements","i":[21,22],"t":"blog.davincilabs.com/private-label/why-wellness-businesses-should-sell-private-label-supplements"},
+{"k":"e","id":"220685976492","n":"# High Priority (Branded) 5Rs","r":"DV: # High Priority (Branded) 5Rs","i":[24,25]},
+{"k":"e","id":"220685976494","n":"#3 High Priority (Branded) Top-Sellers","r":"DV: #3 High Priority (Branded) Top-Sellers","i":[24,25]},
+{"k":"e","id":"220688283303","n":"1 Private_Label_Guide_ToF_Danielle_TY","r":"1 Private_Label_Guide_ToF_Danielle_TY","i":[26,25,27]},
+{"k":"e","id":"220688283306","n":"1: Private Label Guide ToF Paul_TY","r":"1: Private Label Guide ToF Paul_TY","i":[26,25,27]},
+{"k":"e","id":"220685976586","n":"1: Private Label Guide: High-Priority","r":"1: Private Label Guide: High-Priority","i":[26,1,25,27]},
+{"k":"e","id":"220685976465","n":"2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b","r":"2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Suppl","i":[25,27]},
+{"k":"e","id":"220688836237","n":"2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B","r":"2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B","i":[28,25,27]},
+{"k":"e","id":"220693084770","n":"3 Private_Label_Guide_ToF_Danielle_How_to_create_exclusivity","r":"3 Private_Label_Guide_ToF_Danielle_How_to_create_exclusivity","i":[25,27]},
+{"k":"e","id":"220692678023","n":"3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Invento","r":"3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping","i":[25,27]},
+{"k":"e","id":"220688836239","n":"4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inv","r":"4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing ship","i":[25,27]},
+{"k":"e","id":"220692678042","n":"5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice (Test Clo","r":"5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practi","i":[25,27]},
+{"k":"e","id":"220688836243","n":"5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A","r":"5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A","i":[28,25,27]},
+{"k":"e","id":"220685976450","n":"Chiropractor WF: Final Email ALL","r":"DV: Chiropractor WF: Final Email ALL","i":[28,25,27]},
+{"k":"e","id":"220688836176","n":"Client_Onboarding_BoF_Danielle_#1","r":"DV: Client_Onboarding_BoF_Danielle_#1","i":[28,25,27]},
+{"k":"e","id":"220685976498","n":"Client_Onboarding_BoF_Danielle_#2","r":"DV: Client_Onboarding_BoF_Danielle_#2","i":[28,25,27]},
+{"k":"e","id":"220685976500","n":"Client_Onboarding_BoF_Danielle_#3","r":"DV: Client_Onboarding_BoF_Danielle_#3","i":[28,1,25,27]},
+{"k":"e","id":"220685976504","n":"Client_Onboarding_BoF_Danielle_#4","r":"DV: Client_Onboarding_BoF_Danielle_#4","i":[28,25,27]},
+{"k":"e","id":"220688836180","n":"Client_Onboarding_BoF_Danielle_From_MoF_#1","r":"DV: Client_Onboarding_BoF_Danielle_From_MoF_#1","i":[28,1,25,27]},
+{"k":"e","id":"220685976577","n":"Client_Onboarding_BoF_Paul_#1","r":"DV: Client_Onboarding_BoF_Paul_#1","i":[28,25,27]},
+{"k":"e","id":"220688836188","n":"Client_Onboarding_BoF_Paul_#2","r":"DV: Client_Onboarding_BoF_Paul_#2","i":[28,25,27]},
+{"k":"e","id":"220688836183","n":"Client_Onboarding_BoF_Paul_#3","r":"DV: Client_Onboarding_BoF_Paul_#3","i":[28,1,25,27]},
+{"k":"e","id":"220688836186","n":"Client_Onboarding_BoF_Paul_#4","r":"DV: Client_Onboarding_BoF_Paul_#4","i":[28,25,27]},
+{"k":"e","id":"220685976580","n":"Client_Onboarding_BoF_Paul_From_MoF_#1","r":"DV: Client_Onboarding_BoF_Paul_From_MoF_#1","i":[28,1,25,27]},
+{"k":"e","id":"220692678063","n":"Custom Formulation - Auto-responder","r":"Custom Formulation - Auto-responder","i":[25]},
+{"k":"e","id":"220688836168","n":"Danielle: DV Mission & Register","r":"Danielle: DV Mission & Register","i":[25,27]},
+{"k":"e","id":"220688836174","n":"High Priority (Branded) - Reach out","r":"DV: High Priority (Branded) - Reach out","i":[28,25,27]},
+{"k":"e","id":"220692678065","n":"L // HCP Lead - International - Reject","r":"DVL // HCP Lead - International - Reject","i":[25,27]},
+{"k":"e","id":"220685976583","n":"L // PM - Automated Email: PL 5rs #5","r":"DVL // PM - Automated Email: PL 5rs #5","i":[27]},
+{"k":"e","id":"220688836213","n":"L // PM - Automated Email: PL 5rs #6","r":"DVL // PM - Automated Email: PL 5rs #6","i":[27]},
+{"k":"e","id":"220693084763","n":"MOF_WF_Paul_1_Capsule","r":"DV: MOF_WF_Paul_1_Capsule","i":[28,25,27]},
+{"k":"e","id":"220692678025","n":"MOF_WF_Paul_1_Chewables","r":"DV: MOF_WF_Paul_1_Chewables","i":[28,25,27]},
+{"k":"e","id":"220688283293","n":"MOF_WF_Paul_1_Liquid","r":"DV: MOF_WF_Paul_1_Liquid","i":[28,25,27]},
+{"k":"e","id":"220693084761","n":"MOF_WF_Paul_1_Powder","r":"DV: MOF_WF_Paul_1_Powder","i":[28,25,27]},
+{"k":"e","id":"220692678030","n":"MOF_WF_Paul_1_Tablet","r":"DV: MOF_WF_Paul_1_Tablet","i":[28,25,27]},
+{"k":"e","id":"220688283282","n":"MOF_WF_Paul_2_Capsule","r":"DV: MOF_WF_Paul_2_Capsule","i":[28,25,27]},
+{"k":"e","id":"220688283300","n":"MOF_WF_Paul_2_Chewables","r":"DV: MOF_WF_Paul_2_Chewables","i":[28,25,27]},
+{"k":"e","id":"220692678032","n":"MOF_WF_Paul_2_Liquid","r":"DV: MOF_WF_Paul_2_Liquid","i":[28,25,27]},
+{"k":"e","id":"220685976459","n":"MOF_WF_Paul_2_Powder","r":"DV: MOF_WF_Paul_2_Powder","i":[28,25,27]},
+{"k":"e","id":"220688283291","n":"MOF_WF_Paul_2_Tablet","r":"DV: MOF_WF_Paul_2_Tablet","i":[28,25,27]},
+{"k":"e","id":"220688283288","n":"MOF_WF_Paul_Final_All","r":"DV: MOF_WF_Paul_Final_All","i":[28,25,27]},
+{"k":"e","id":"220688836192","n":"PL Guide_MoF_Danielle_Liposomal_Technology_WhitePaper","r":"DV: PL Guide_MoF_Danielle_Liposomal_Technology_WhitePaper","i":[28,25,27]},
+{"k":"e","id":"220688836197","n":"PL_Guide_MoF_Danielle_Get Started","r":"DV: PL_Guide_MoF_Danielle_Get Started","i":[28,25,27]},
+{"k":"e","id":"220688836194","n":"PL_Guide_MoF_Danielle_Liquid_Products","r":"DV: PL_Guide_MoF_Danielle_Liquid_Products","i":[28,25,27]},
+{"k":"e","id":"220688836246","n":"PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) A","r":"DV: PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) A","i":[28,25,27]},
+{"k":"e","id":"220688836248","n":"PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A","r":"DV: PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A","i":[28,25,27]},
+{"k":"e","id":"220688836170","n":"Paul: DV Mission & Register","r":"Paul: DV Mission & Register","i":[25,27]},
+{"k":"e","id":"220688283420","n":"Private Label Lead - First Contact","r":"Private Label Lead - First Contact","i":[27]},
+{"k":"e","id":"220692678048","n":"Private Label MOF 1_Danielle_Ingredients Guide","r":"DV: Private Label MOF 1_Danielle_Ingredients Guide","i":[28,1,25,27]},
+{"k":"e","id":"220688283309","n":"Private Label MOF 2_Danielle_Supplement Formats","r":"DV: Private Label MOF 2_Danielle_Supplement Formats","i":[28,25,27]},
+{"k":"e","id":"220688283283","n":"Private Label MOF 2_Paul_1ngredients Guide","r":"DV: Private Label MOF 2_Paul_1ngredients Guide","i":[28,25,27]},
+{"k":"e","id":"220688283295","n":"Private Label MOF 2_Paul_Supplement Formats","r":"DV: Private Label MOF 2_Paul_Supplement Formats","i":[28,25,27]},
+{"k":"e","id":"220692678059","n":"Private Label MOF_Danielle_Capsule 1","r":"DV: Private Label MOF_Danielle_Capsule 1","i":[28,25,27]},
+{"k":"e","id":"220688283317","n":"Private Label MOF_Danielle_Capsule 2","r":"DV: Private Label MOF_Danielle_Capsule 2","i":[28,25,27]},
+{"k":"e","id":"220693084779","n":"Private Label MOF_Danielle_Chewables 1","r":"DV: Private Label MOF_Danielle_Chewables 1","i":[28,1,25,27]},
+{"k":"e","id":"220685976468","n":"Private Label MOF_Danielle_Final All","r":"DV: Private Label MOF_Danielle_Final All","i":[28,25,27]},
+{"k":"e","id":"220688283311","n":"Private Label MOF_Danielle_Liquid 1","r":"DV: Private Label MOF_Danielle_Liquid 1","i":[28,25,27]},
+{"k":"e","id":"220692678053","n":"Private Label MOF_Danielle_Liquid 2","r":"DV: Private Label MOF_Danielle_Liquid 2","i":[28,1,25,27]},
+{"k":"e","id":"220692678057","n":"Private Label MOF_Danielle_Powder 1","r":"DV: Private Label MOF_Danielle_Powder 1","i":[28,25,27]},
+{"k":"e","id":"220688283315","n":"Private Label MOF_Danielle_Powder 2","r":"DV: Private Label MOF_Danielle_Powder 2","i":[28,25,27]},
+{"k":"e","id":"220693084782","n":"Private Label MOF_Danielle_Tablets 1","r":"DV: Private Label MOF_Danielle_Tablets 1","i":[28,25,27]},
+{"k":"e","id":"220688283320","n":"Private Label MOF_Danielle_Tablets 2","r":"DV: Private Label MOF_Danielle_Tablets 2","i":[28,25,27]},
+{"k":"e","id":"220688283275","n":"Private Label: High Priority - 6 Benefits","r":"Private Label: High Priority - 6 Benefits","i":[25,27]},
+{"k":"e","id":"220685976453","n":"Private Label: High Priority - Client Onboarding","r":"Private Label: High Priority - Client Onboarding","i":[28,25,27]},
+{"k":"e","id":"220688283273","n":"Private Label: High Priority - Reach out","r":"Private Label: High Priority - Reach out","i":[28,25,27]},
+{"k":"e","id":"220693084758","n":"Private Label: High Priority - Top Selling Products","r":"Private Label: High Priority - Top Selling Products","i":[25,27]},
+{"k":"e","id":"220692678021","n":"Private Label: High Priority - how to make money","r":"Private Label: High Priority - how to make money","i":[28,25,27]},
+{"k":"e","id":"220688283279","n":"Private Label: High Priority Intro","r":"Private Label: High Priority Intro","i":[25,27]}
+]</script>
+</section>
+<section id="data4">
+<h2>Data 4</h2>
+<script type="application/json" class="rowdata">[
+{"k":"e","id":"220692678051","n":"Private MOF_Danielle_Chewables 2","r":"DV: Private MOF_Danielle_Chewables 2","i":[28,25,27]},
+{"k":"e","id":"220688836209","n":"Private_Label_Guide_MoF_Paul_Get Started","r":"Private_Label_Guide_MoF_Paul_Get Started","i":[28,25,27]},
+{"k":"e","id":"220688836207","n":"Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper","r":"Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper","i":[28,25,27]},
+{"k":"e","id":"220688836199","n":"Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)","r":"Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)","i":[28,25,27]},
+{"k":"e","id":"220688836204","n":"Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)","r":"Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template","i":[28,25,27]},
+{"k":"e","id":"220685976462","n":"Private_Label_Guide_ToF_Benefits_Private_Label_With_Praxera","r":"Private_Label_Guide_ToF_Benefits_Private_Label_With_Davinci","i":[25,27]},
+{"k":"e","id":"220693084767","n":"Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL","r":"Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL","i":[25,27]},
+{"k":"e","id":"220692678039","n":"Private_Label_Guide_ToF_Danielle_How to_start-PL_Business_7steps","r":"Private_Label_Guide_ToF_Danielle_How to_start-PL_Business_7steps","i":[25,27]},
+{"k":"e","id":"220692678036","n":"Private_Label_Guide_ToF_Danielle_Top_Selling_PL_Supplements_2021","r":"Private_Label_Guide_ToF_Danielle_Top_Selling_PL_Supplements_2021","i":[25,27]},
+{"k":"e","id":"220692678044","n":"Private_Label_Guide_ToF_Paul_6_Benefits of Selling PL","r":"Private_Label_Guide_ToF_Paul_6_Benefits of Selling PL","i":[25,27]},
+{"k":"e","id":"220685976456","n":"Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Praxera","r":"Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Davinci","i":[1,25,27]},
+{"k":"e","id":"220693084773","n":"Private_Label_Guide_ToF_Paul_How to_start-PL_Business_7steps","r":"Private_Label_Guide_ToF_Paul_How to_start-PL_Business_7steps","i":[25,27]},
+{"k":"e","id":"220693084775","n":"Private_Label_Guide_ToF_Paul_Top_Selling_PL_Supplements","r":"Private_Label_Guide_ToF_Paul_Top_Selling_PL_Supplements","i":[25,27]},
+{"k":"e","id":"220693084785","n":"Retargeting Workflow #1: Come Back & Register!","r":"Retargeting Workflow #1: Come Back & Register!","i":[25]},
+{"k":"e","id":"220687535413","n":"TEMPLATE - Product / Category (QBS, do not send)","r":"new for Praxera","i":[25,27]},
+{"k":"e","id":"220684191815","n":"TEST - Pulse layout draft (QBS, do not send)","r":"new for Praxera","i":[25,27]},
+{"k":"e","id":"220688836231","n":"WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A","r":"DV WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A","i":[28,25,27]},
+{"k":"e","id":"220688836360","n":"WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B","r":"DV WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B","i":[28,25,27]},
+{"k":"e","id":"220688283270","n":"WF: PL Guide_BoF_Danielle Quick Turnaround #3","r":"DV WF: PL Guide_BoF_Danielle Quick Turnaround #3","i":[28,25,27]},
+{"k":"e","id":"220688836363","n":"WF: PL Guide_BoF_Paul #1 Build Product Line Subject A","r":"DV WF: PL Guide_BoF_Paul #1 Build Product Line Subject A","i":[28,25,27]},
+{"k":"e","id":"220688836366","n":"WF: PL Guide_BoF_Paul #2 Design & Branding Subject A","r":"DV WF: PL Guide_BoF_Paul #2 Design & Branding Subject A","i":[28,25,27]},
+{"k":"e","id":"220688836233","n":"WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A","r":"DV WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A","i":[28,25,27]},
+{"k":"e","id":"220688836219","n":"WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture","r":"DV WF: Private Label Supplements: Ingredients, Testing And Certification","i":[28,25,27]},
+{"k":"e","id":"220688836225","n":"WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture","r":"DV WF: Private Label Supplements: Ingredients, Testing And Certification","i":[28,25,27]},
+{"k":"e","id":"220688836216","n":"WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture","r":"DV WF: Private Label Supplements: Ingredients, Testing And Certification","i":[28,25,27]},
+{"k":"e","id":"220685976589","n":"WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture","r":"DV WF: Private Label Supplements: Ingredients, Testing And Certification","i":[28,25,27]},
+{"k":"e","id":"220688836222","n":"WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture","r":"DV WF: Private Label Supplements: Ingredients, Testing And Certification","i":[28,25,27]},
+{"k":"e","id":"220685976591","n":"WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture","r":"DV WF: Private Label Supplements: Ingredients, Testing And Certification","i":[28,25,27]},
+{"k":"e","id":"220685976471","n":"WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro","r":"DV WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro","i":[28,25,27]},
+{"k":"e","id":"220685976474","n":"WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio","r":"DV WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio","i":[28,25,27]},
+{"k":"e","id":"220685976476","n":"WF: Welcome to D4D_BoF_Danielle/HCP #3 GI","r":"DV WF: Welcome to D4D_BoF_Danielle/HCP #3 GI","i":[28,25,27]},
+{"k":"e","id":"220688283394","n":"WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health","r":"DV WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health","i":[28,25,27]},
+{"k":"e","id":"220685976478","n":"White_Label_World_Expo Email #1","r":"DV: White_Label_World_Expo Email #1","i":[28,25,27]},
+{"k":"e","id":"220688283397","n":"White_Label_World_Expo Email #2","r":"DV: White_Label_World_Expo Email #2","i":[28,25,27]},
+{"k":"e","id":"220688283399","n":"White_Label_World_Expo Email Definitive_Guide_Click #1","r":"DV: White_Label_World_Expo Email Definitive_Guide_Click #1","i":[28,25,27]},
+{"k":"e","id":"220688283401","n":"White_Label_World_Expo Email Definitive_Guide_Click #2","r":"DV: White_Label_World_Expo Email Definitive_Guide_Click #2","i":[28,25,27]},
+{"k":"e","id":"220688283418","n":"White_Label_World_Expo Email Did_Not_Click_Resource","r":"DV: White_Label_World_Expo Email Did_Not_Click_Resource","i":[28,25,27]},
+{"k":"e","id":"220688283409","n":"White_Label_World_Expo Email How_To_Make_Money_Click #1","r":"DV: White_Label_World_Expo Email How_To_Make_Money_Click #1","i":[28,25,27]},
+{"k":"e","id":"220688283411","n":"White_Label_World_Expo Email How_To_Make_Money_Click #2","r":"DV: White_Label_World_Expo Email How_To_Make_Money_Click #2","i":[28,25,27]},
+{"k":"e","id":"220688283415","n":"White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1","r":"DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1","i":[28,25,27]},
+{"k":"e","id":"220685976489","n":"White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2","r":"DV: White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2","i":[28,25,27]},
+{"k":"e","id":"220688283406","n":"White_Label_World_Expo Email PL_Shipping_Inventory_Click #1","r":"DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #1","i":[28,25,27]},
+{"k":"e","id":"220685976483","n":"White_Label_World_Expo Email PL_Shipping_Inventory_Click #2","r":"DV: White_Label_World_Expo Email PL_Shipping_Inventory_Click #2","i":[28,25,27]},
+{"k":"e","id":"220685976486","n":"White_Label_World_Expo Final Email ALL","r":"DV: White_Label_World_Expo Final Email ALL","i":[28,25,27]},
+{"k":"f","id":"81f2906b-f93a-40b7-aa3e-f075660d4beb","n":"Praxera - Client Onboarding Guide","r":"on no page","i":[29]},
+{"k":"f","id":"4b8af922-efce-478b-be6a-ec150098ae8d","n":"Praxera - Contact Us","r":"on 1 page: contact","i":[]},
+{"k":"f","id":"2e55f9cc-3476-4cee-b4d7-95f6bc1f5569","n":"Praxera - Ingredients & Testing Guide (page form)","r":"on no page","i":[29]},
+{"k":"f","id":"471fb48f-63c1-4bae-bc17-65edebfedcea","n":"Praxera - Ingredients, Testing & Certification Guide","r":"on no page","i":[29]},
+{"k":"f","id":"6ae15824-5e47-4745-918b-c3406ab5e7b7","n":"Praxera - Main Lead Form","r":"on no page","i":[29,30]},
+{"k":"f","id":"e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd","n":"Praxera - Main Lead Form (legacy field set)","r":"on no page","i":[29,31]},
+{"k":"f","id":"6d4066c8-92f5-400c-a556-4265b62ec96b","n":"Praxera - Onboarding Guide","r":"on 1 page: learning/onboarding-guide","i":[]},
+{"k":"f","id":"df8b7a41-df30-4e60-9b8a-d76b651bab20","n":"Praxera - Our Design Services","r":"on 1 page: design-team","i":[]},
+{"k":"f","id":"f240cb7b-4613-47dd-98df-4b334f858b19","n":"Praxera - Request a Quote","r":"on 1 page: request-quote","i":[]},
+{"k":"f","id":"c82c667f-219d-4f12-96ce-7aaff98245fa","n":"Praxera - Schedule a Consultation (Ads pages)","r":"on 4 pages: alp/ads-contract-mfg, alp/ads-custom, alp/ads-mfg-usa, alp/ads-pl-mfg","i":[]},
+{"k":"f","id":"dd7328fc-f1b0-4d3f-84ac-d762af1add57","n":"Praxera - Supplements Guide","r":"on no page","i":[29,31]},
+{"k":"f","id":"d8dfdd90-98f1-4cba-bedf-181dd9286ca1","n":"Private Label (Praxera) - Schedule a Consultation","r":"on 23 pages: (home), aging, cognitive, design-services, detox \u2026","i":[]},
+{"k":"w","id":"1875319813","n":"Private Label_MoF_Danielle","r":"18 email sends \u00b7 disabled","i":[32,33]},
+{"k":"w","id":"1875338811","n":"Private Label Guide_MoF_Paul","r":"18 email sends \u00b7 disabled","i":[32,34]},
+{"k":"w","id":"1875319816","n":"White_Label_World Expo: Post_Event_Nurture","r":"16 email sends \u00b7 disabled","i":[35]},
+{"k":"w","id":"1875320616","n":"Private Label Guide_ToF_Danielle_Nurture","r":"9 email sends \u00b7 disabled","i":[36]},
+{"k":"w","id":"1875317584","n":"Private Label - High Priority","r":"8 email sends \u00b7 disabled","i":[35]},
+{"k":"w","id":"1875339655","n":"Private Label Guide_ToF_Paul_Nurture","r":"8 email sends \u00b7 disabled","i":[]},
+{"k":"w","id":"1875338815","n":"Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)","r":"6 email sends \u00b7 disabled","i":[37]},
+{"k":"w","id":"1875319815","n":"Welcome to D4HCP_BoF_Danielle/HCP","r":"4 email sends \u00b7 disabled","i":[35,36]},
+{"k":"w","id":"1875338045","n":"PL Guide_BoF_Danielle","r":"3 email sends \u00b7 disabled","i":[32,38]},
+{"k":"w","id":"1875338809","n":"PL Guide_BoF_Paul","r":"3 email sends \u00b7 disabled","i":[32,39]},
+{"k":"w","id":"1875338813","n":"Retargeting: Visited Private Label Page & Didn't Convert","r":"1 email sends \u00b7 disabled","i":[35]},
+{"k":"w","id":"1875339651","n":"Brand / Private Label - Segmentation","r":"0 email sends \u00b7 disabled","i":[35]}
+]</script>
+</section>
+<section id="boot">
+<h2>Boot</h2>
+<script type="application/json" id="meta">{"stamp":"31 August 2026","groups":[["p","Website pages","Redirects from at cutover"],["b","Blog posts","Redirects from at cutover"],["e","Marketing emails","Replaces"],["f","Forms","Placement"],["w","Workflows","Detail"]],"labels":[["bad","1 DaVinci link"],["bad","manufacturing claim"],["mute","13 assets off-domain"],["mute","no form"],["mute","4 assets off-domain"],["mute","16 assets off-domain"],["warn","placeholder copy"],["mute","1 asset off-domain"],["mute","3 assets off-domain"],["mute","11 assets off-domain"],["bad","3 DaVinci links"],["mute","2 assets off-domain"],["mute","6 assets off-domain"],["mute","8 assets off-domain"],["mute","15 assets off-domain"],["mute","14 assets off-domain"],["mute","12 assets off-domain"],["mute","23 assets off-domain"],["mute","17 assets off-domain"],["bad","19 DaVinci links"],["mute","7 assets off-domain"],["warn","no tags"],["warn","1970 date"],["warn","literal \"None\""],["bad","3 DaVinci social links"],["warn","DaVinci reply-to"],["bad","1 DaVinci social link"],["mute","assets off-domain"],["bad","2 DaVinci social links"],["bad","on no page"],["mute","5 flows enrol on it"],["mute","2 flows enrol on it"],["bad","enrols on Contact Us NEW"],["mute","5 dead clauses"],["mute","7 dead clauses"],["warn","no form enrolment"],["mute","3 dead clauses"],["bad","enrols on (deleted), Brand Development Call  (Inactive)"],["mute","1 dead clause"],["mute","4 dead clauses"]],"redirects":{"pairs":134,"by_kind":{"page":59,"blog":75}}}</script>
+<script>/* Per-asset sign-off, hosted in the ClientCommand portal.
+ *
+ * State lives in portal_document_state through window.ClientCommand, not in
+ * localStorage: the portal renders this page in a sandboxed iframe without
+ * allow-same-origin, so localStorage THROWS and the usual try/catch swallows it
+ * -- a page that looks like it saved and did not.
+ *
+ * Three things about that store shape this file:
+ *   shared   one row per (document, state_key), no user in the key, so every
+ *            viewer reads and writes the same decisions.
+ *   last-write-wins  no merge, no conflict detection. State is partitioned one
+ *            key per asset group so two reviewers working different groups
+ *            cannot overwrite each other; inside a group they still can.
+ *   attributed per ROW, not per item. 272 assets under one key would record a
+ *            single writer, so each decision carries its own reviewer name.
+ */
+(function(){
+"use strict";
+/* Rows arrive in several islands so the payload can cross into the portal in
+   verifiable pieces; metadata is separate and small. */
+var DATA=JSON.parse(document.getElementById("meta").textContent);
+DATA.rows=[];
+[].forEach.call(document.querySelectorAll("script.rowdata"),function(el){
+  DATA.rows=DATA.rows.concat(JSON.parse(el.textContent));
+});
+var GROUPS=DATA.groups, ROWS=DATA.rows, R=DATA.redirects||{by_kind:{}};
+/* Issue labels are interned: a row carries indices into DATA.labels. */
+var LABELS=DATA.labels||[];
+ROWS.forEach(function(r){
+  r.i=(r.i||[]).map(function(x){return typeof x==="number"?LABELS[x]:x;});
+});
+var KEYPREFIX="assets:";                 /* assets:website-pages, … */
+var CAP=256*1024;                        /* per-row limit, enforced server-side */
+
+var state={};                            /* groupKey -> {itemId:{s,by,at,c[]}} */
+GROUPS.forEach(function(g){ state[g[0]]={}; });
+
+var bridge=(typeof window.ClientCommand!=="undefined");
+var who="", dirty={}, timer={}, msg="ready", cls="";
+
+function E(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function keyOf(g){return KEYPREFIX+g;}
+function slug(g){var m={p:"website-pages",b:"blog-posts",e:"emails",
+  f:"forms",w:"workflows"};return KEYPREFIX+(m[g]||g);}
+
+/* ---- saving ------------------------------------------------------------- */
+function flag(t,k){msg=t;cls=k||"";var el=document.getElementById("save");
+  if(el){el.textContent=t;el.className="save "+(k||"");}}
+
+function save(g){
+  if(!bridge){flag("not saved — open this page inside the portal","err");return;}
+  dirty[g]=true;
+  clearTimeout(timer[g]);
+  flag("saving…");
+  /* The host already coalesces at 600ms; this batches a run of clicks on one
+     group into a single write rather than one per click. */
+  timer[g]=setTimeout(function(){commit(g);},700);
+}
+
+function commit(g){
+  var payload=JSON.stringify(state[g]);
+  if(payload.length>CAP){
+    flag("this group is too large to save — tell QBS","err");return;
+  }
+  try{ window.ClientCommand.save(state[g],slug(g)); dirty[g]=false; }
+  catch(e){ flag("save failed — "+(e&&e.message||"unknown"),"err"); }
+}
+
+/* ---- review mutations ---------------------------------------------------- */
+function item(g,id){var s=state[g];if(!s[id])s[id]={};return s[id];}
+function setStatus(g,id,v){
+  var it=item(g,id);
+  if(it.s===v){delete it.s;delete it.by;delete it.at;}
+  else{it.s=v;it.by=who||"unnamed";it.at=new Date().toISOString();}
+  if(!it.s&&!(it.c&&it.c.length))delete state[g][id];
+  save(g);render();
+}
+function addComment(g,id,text){
+  text=(text||"").trim();if(!text)return;
+  var it=item(g,id);if(!it.c)it.c=[];
+  it.c.push({n:who||"unnamed",t:text,at:new Date().toISOString()});
+  save(g);render();
+}
+
+/* ---- per-viewer view state (never written to the shared row) ------------- */
+var view={},open={};
+GROUPS.forEach(function(g){view[g[0]]={f:"all",q:""};});
+
+function statusOf(r){var it=state[r.k][r.id];return it&&it.s?it.s:"";}
+function severity(r){
+  for(var i=0;i<r.i.length;i++)if(r.i[i][0]==="bad")return "blocked";
+  return r.i.length?"tidy":"clear";
+}
+function matches(r,f,q){
+  if(q){var hay=(r.n+" "+r.r+" "+(r.t||"")+" "+
+    r.i.map(function(x){return x[1];}).join(" ")).toLowerCase();
+    if(hay.indexOf(q)<0)return false;}
+  if(f==="all")return true;
+  if(f==="ok"||f==="fix")return statusOf(r)===f;
+  if(f==="todo")return !statusOf(r);
+  return severity(r)===f;
+}
+function when(iso){try{return new Date(iso).toLocaleDateString(undefined,
+  {month:"short",day:"numeric"});}catch(e){return "";}}
+
+/* ---- rendering ----------------------------------------------------------- */
+function rowHtml(r){
+  var it=state[r.k][r.id]||{},st=it.s||"",cn=(it.c||[]).length;
+  var cls2="r"+(st==="ok"?" done":"")+(st==="fix"?" flag":"");
+  var chips=r.i.length?r.i.map(function(x){
+      return '<span class="chip c-'+x[0]+'">'+E(x[1])+"</span>";}).join("")
+    :'<span class="chip c-acc">clear</span>';
+  var by=st?'<span class="by">'+(st==="ok"?"approved":"flagged")+" by "
+    +E(it.by||"unnamed")+" · "+when(it.at)+"</span>":"";
+  var h='<tr class="'+cls2+'" data-g="'+r.k+'" data-i="'+E(r.id)+'">'
+    +'<td class="nm">'+E(r.n)+by+"</td>"
+    +'<td class="ev"'+(r.t?' title="'+E(r.t)+'"':"")+">"
+      +(r.new?'<span class="chip c-ok">new page</span>':(r.r?E(r.r):"&mdash;"))+"</td>"
+    +"<td>"+chips+"</td>"
+    +'<td class="act"><span class="rv">'
+      +'<button class="ok" data-a="ok" aria-pressed="'+(st==="ok")+'">✓ Approve</button>'
+      +'<button class="fix" data-a="fix" aria-pressed="'+(st==="fix")+'">Needs work</button>'
+      +"</span>"
+    +'<button class="cm'+(cn?" has":"")+'" data-a="cm">'
+      +(cn?cn+" comment"+(cn>1?"s":""):"Comment")+"</button></td></tr>";
+  if(open[r.k+":"+r.id])h+=threadHtml(r,it);
+  return h;
+}
+function threadHtml(r,it){
+  var list=(it.c||[]).map(function(c){
+    return '<div class="cmt"><div class="who">'+E(c.n)+" · "+when(c.at)
+      +'</div><div class="txt">'+E(c.t)+"</div></div>";}).join("");
+  if(!list)list='<p class="empty">No comments on this asset yet.</p>';
+  return '<tr class="th" data-g="'+r.k+'" data-i="'+E(r.id)+'"><td colspan="4">'
+    +'<div class="thread">'+list
+    +'<textarea data-a="txt" aria-label="Comment" placeholder="Add a comment about '
+    +E(r.n)+'…"></textarea>'
+    +'<div class="row"><button data-a="post">Post comment</button>'
+    +'<button class="gh" data-a="close">Close</button></div></div></td></tr>';
+}
+function tally(rows){var t={ok:0,fix:0,todo:0};
+  rows.forEach(function(r){var s=statusOf(r);
+    t[s==="ok"?"ok":s==="fix"?"fix":"todo"]++;});return t;}
+
+var FILTERS=[["all","All"],["todo","Not reviewed"],["ok","Approved"],
+             ["fix","Needs work"],["blocked","Has a defect"]];
+
+function groupHtml(g){
+  var gk=g[0],rows=ROWS.filter(function(r){return r.k===gk;});
+  var v=view[gk],shown=rows.filter(function(r){return matches(r,v.f,v.q);});
+  var t=tally(rows);
+  var btns=FILTERS.map(function(f){
+    return '<button class="f" data-g="'+gk+'" data-f="'+f[0]+'" aria-pressed="'
+      +(v.f===f[0])+'">'+E(f[1])+"</button>";}).join("");
+  return '<section id="g-'+gk+'"><div class="shead"><p class="eyebrow">'
+    +t.ok+" approved · "+t.fix+" need work · "+t.todo+" not yet reviewed"
+    +' · saved under <code>'+slug(gk)+"</code></p><h2>"+E(g[1])+"</h2></div>"
+    +'<div class="filters"><label class="srch"><input type="search" data-g="'+gk
+      +'" value="'+E(v.q)+'" placeholder="Filter…" aria-label="Filter '+E(g[1])
+      +'"></label>'+btns+'<span class="count">'+shown.length+" of "+rows.length
+      +"</span></div>"
+    +'<div class="tscroll"><table><thead><tr><th>Praxera asset</th><th>'
+      +E(g[2]||"Replaces")+"</th><th>Outstanding</th><th>Your review</th>"
+      +"</tr></thead><tbody>"
+      +(shown.length?shown.map(rowHtml).join("")
+        :'<tr class="r"><td colspan="4" class="ev">Nothing matches this filter.</td></tr>')
+      +"</tbody></table></div></section>";
+}
+
+function headerHtml(){
+  var t=tally(ROWS),n=ROWS.length;
+  var pa=(t.ok/n*100).toFixed(2),pf=(t.fix/n*100).toFixed(2);
+  var nav=GROUPS.map(function(g){
+    var rs=ROWS.filter(function(r){return r.k===g[0];}),tt=tally(rs);
+    return '<a href="#g-'+g[0]+'">'+E(g[1])+" <b>"+tt.ok+"/"+rs.length+"</b></a>";
+  }).join("");
+  return '<header class="top"><div class="wrap">'
+    +'<p class="brandline"><span class="dot"></span>FoodScience LLC · HubSpot 4087538'
+    +' · Private Label → Praxera</p>'
+    +"<h1>Sign off the Praxera stack,<br>one asset at a time.</h1>"
+    +'<p class="lede">All '+n+" assets exist in Praxera form, in draft, alongside the "
+    +"original. Approve the ones that are right, flag the ones that are not, and leave a "
+    +"comment where the reason matters. Everything is saved to this portal against this "
+    +"page, so the next person to open it sees it — no login beyond the portal link.</p>"
+    +'<p class="lede">For pages and posts the second column is the DaVinci URL that will '
+    +"<strong>redirect here</strong> at cutover — "+R.pairs+" redirects in all ("
+    +R.by_kind.page+" pages, "+R.by_kind.blog+" posts). A row marked <strong>new page</strong> "
+    +"has no DaVinci original and needs no redirect.</p>"
+    +'<div class="prog"><div class="bar"><i class="a" style="width:'+pa+'%"></i>'
+      +'<i class="f" style="width:'+pf+'%"></i></div><div class="lg">'
+      +'<span><i class="k a"></i>Approved <b>'+t.ok+"</b></span>"
+      +'<span><i class="k f"></i>Needs work <b>'+t.fix+"</b></span>"
+      +'<span><i class="k u"></i>Not reviewed <b>'+t.todo+"</b></span>"
+      +"<span>Total <b>"+n+"</b></span></div></div>"
+    +'<div class="idbar'+(bridge?"":" ro")+'" id="idbar">'
+      +'<label for="who">Reviewing as</label>'
+      +'<input id="who" value="'+E(who)+'" placeholder="Your name" autocomplete="name">'
+      +'<span class="save '+cls+'" id="save">'+E(msg)+"</span>"
+      +(bridge?"":'<span class="save err">This page is not running inside the portal, '
+        +"so nothing is saved.</span>")+"</div>"
+    +'<p class="note">Two people can review at once, but a group is saved as one record '
+    +"and the last save wins — so take a group each rather than the same one. "
+    +"Asset state re-read from the live portal on "+E(DATA.stamp)+"; nothing is published, "
+    +"nothing is enabled.</p>"
+    +'</div></header><div class="wrap"><nav class="jump">'+nav+"</nav>"
+    +GROUPS.map(groupHtml).join("")+"</div>";
+}
+function render(){var y=window.scrollY;
+  document.getElementById("root").innerHTML=headerHtml();window.scrollTo(0,y);}
+
+/* ---- events -------------------------------------------------------------- */
+var root=document.getElementById("root");
+root.addEventListener("click",function(ev){
+  var b=ev.target.closest("button");if(!b)return;
+  if(b.classList.contains("f")){view[b.dataset.g].f=b.dataset.f;render();return;}
+  var tr=b.closest("tr");if(!tr)return;
+  var g=tr.dataset.g,id=tr.dataset.i,a=b.dataset.a,k=g+":"+id;
+  if(a==="ok"||a==="fix"){setStatus(g,id,a);return;}
+  if(a==="cm"){open[k]=!open[k];render();
+    if(open[k]){var ta=root.querySelector('tr.th[data-g="'+g+'"] textarea');
+      if(ta)ta.focus();}
+    return;}
+  if(a==="close"){open[k]=false;render();return;}
+  if(a==="post"){var box=tr.querySelector("textarea");
+    if(box&&box.value.trim()){addComment(g,id,box.value);open[k]=true;render();}
+    return;}
+});
+root.addEventListener("input",function(ev){
+  var t=ev.target;
+  if(t.id==="who"){who=t.value.trim();return;}
+  if(t.type==="search"){var g=t.dataset.g,pos=t.selectionStart;
+    view[g].q=t.value.trim().toLowerCase();render();
+    var again=root.querySelector('input[type=search][data-g="'+g+'"]');
+    if(again){again.focus();try{again.setSelectionRange(pos,pos);}catch(e){}}}
+});
+root.addEventListener("keydown",function(ev){
+  if(ev.key==="Enter"&&(ev.metaKey||ev.ctrlKey)&&ev.target.tagName==="TEXTAREA"){
+    var tr=ev.target.closest("tr");
+    if(tr)addComment(tr.dataset.g,tr.dataset.i,ev.target.value);}
+});
+
+/* ---- boot ---------------------------------------------------------------- */
+render();
+if(bridge){
+  window.ClientCommand.onSaved=function(ok,err){
+    var pending=GROUPS.some(function(g){return dirty[g[0]];});
+    flag(ok?(pending?"saving…":"saved to the portal"):
+      ("not saved"+(err?" — "+err:"")),ok?"on":"err");
+  };
+  /* One load per group: the store is partitioned so two reviewers working
+     different groups never overwrite one another. */
+  GROUPS.forEach(function(g){
+    window.ClientCommand.load(slug(g[0]),function(v){
+      if(v&&typeof v==="object"){state[g[0]]=v;render();}
+    });
+  });
+}else{
+  flag("not saved — open this page inside the portal","err");
+}
+})();
+</script>
+</section>
+</body></html>
