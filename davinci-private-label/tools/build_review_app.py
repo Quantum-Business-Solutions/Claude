@@ -17,11 +17,13 @@ consequences shape the whole design:
 import json,html,re,datetime
 
 R=lambda n:json.load(open(f"reference/{n}.json"))
+redir=None
 state=R("current_state"); embeds=R("form_embeds"); pairs=R("pairs")
 pageh={r["slug"]:r for r in R("page_health")}
 blogh={r["slug"]:r for r in R("blog_health")}
 emailh={r["id"]:r for r in R("email_clones")}
 wf=R("workflow_clones")
+redir=R("redirects")
 STAMP=datetime.date.today().strftime("%-d %B %Y")
 PFX=re.compile(r"^Praxera\s*-\s*")
 strip=lambda n:PFX.sub("",n or "")
@@ -43,8 +45,9 @@ for p in sorted(pairs["pages"],key=lambda x:x["slug"] or ""):
     if p["slug"] in embeds["pages_with_no_form"]: i.append(["mute","no form"])
     if h.get("foreign_images"):
         n=len(h["foreign_images"]); i.append(["mute",f"{n} asset"+("s" if n>1 else "")+" off-domain"])
+    if not p["source_url"]: i.append(["mute","nothing redirects here"])
     add("p",p["slug"] or "home",p["slug"] or "(home)",
-        host(p["source_url"]) or "new for Praxera \u2014 no DaVinci original",i)
+        host(p["source_url"]) or "\u2014 new for Praxera",i)
 
 # ---- blog ----------------------------------------------------------------
 for b in sorted(pairs["blog"],key=lambda x:x["slug"] or ""):
@@ -57,8 +60,9 @@ for b in sorted(pairs["blog"],key=lambda x:x["slug"] or ""):
     src=host(b["source_url"])
     seg=src.split("/")
     short=(seg[0]+"/\u2026/"+seg[-1]) if len(seg)>2 else src
+    if not b["source_url"]: i.append(["mute","nothing redirects here"])
     add("b",b["slug"],(b["name"] or "")[:88],
-        short or "new for Praxera \u2014 no DaVinci original",i,src)
+        short or "\u2014 new for Praxera",i,src)
 
 # ---- emails --------------------------------------------------------------
 for e in sorted(pairs["emails"],key=lambda x:x["name"]):
@@ -95,11 +99,17 @@ for f in sorted(wf,key=lambda x:-x["sends"]):
     add("w",str(f["id"]),strip(f["name"])[:70],
         f'{f["sends"]} email sends · '+("enabled" if f["enabled"] else "disabled"),i)
 
+RD="Redirects from at cutover"
 DATA={"stamp":STAMP,"rows":rows,
-      "groups":[["p","Website pages"],["b","Blog posts"],["e","Marketing emails"],
-                ["f","Forms"],["w","Workflows"]]}
+      "groups":[["p","Website pages",RD],["b","Blog posts",RD],
+                ["e","Marketing emails","Replaces"],["f","Forms","Placement"],
+                ["w","Workflows","Detail"]],
+      "redirects":{"pairs":redir["counts"]["redirects"],
+                   "by_kind":redir["counts"]["by_kind"],
+                   "orphan_sources":[s["url"] for s in redir["orphan_sources"]],
+                   "orphan_targets":redir["counts"]["orphan_targets"]}}
 json.dump(DATA,open("reference/ledger_rows.json","w"),indent=1)
-print("rows:",len(rows),{g:sum(1 for r in rows if r['k']==g) for g,_ in DATA["groups"]})
+print("rows:",len(rows),{g:sum(1 for r in rows if r['k']==g) for g,*_ in DATA["groups"]})
 
 # ---------------------------------------------------------------------------
 # Assemble two shapes of the same page.

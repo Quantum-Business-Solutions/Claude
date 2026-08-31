@@ -13,6 +13,7 @@ pageh={r["slug"]:r for r in R("page_health")}
 blogh={r["slug"]:r for r in R("blog_health")}
 emailh={r["id"]:r for r in R("email_clones")}
 wf=R("workflow_clones")
+redir=R("redirects")
 E=html.escape
 # f-strings cannot hold a backslash, so the prefix strip lives here
 PFX=re.compile(r"^Praxera\s*-\s*")
@@ -35,6 +36,7 @@ dv_sends=sum(f["davinci_sends"] for f in wf)
 enrol=[x for f in wf for x in f["enrol_forms"]]
 enrol_bad=[x for x in enrol if not x["praxera"]]
 dead=sum(f["dead_workflow_list_clauses"] for f in wf)
+RC=redir["counts"]; ORPH=redir["orphan_sources"]
 
 page_claims=[r for r in R("page_health") if r["claims"]]
 blog_claims=[r for r in R("blog_health") if r["claims"]]

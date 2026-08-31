@@ -10,7 +10,7 @@ var DATA   = JSON.parse(document.getElementById("data").textContent);
 var review = JSON.parse(document.getElementById("review").textContent);
 if(!review.items) review.items={};
 
-var GROUPS=DATA.groups, ROWS=DATA.rows;
+var GROUPS=DATA.groups, ROWS=DATA.rows, R=DATA.redirects||{by_kind:{}};
 var key=function(r){return r.k+":"+r.id;};
 var E=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});};
@@ -220,7 +220,8 @@ function groupHtml(g){
       +'<input type="search" data-g="'+gk+'" value="'+E(v.q)+'" placeholder="Filter\u2026"'
       +' aria-label="Filter '+E(g[1])+'"></label>'+btns
       +'<span class="count">'+shown.length+" of "+rows.length+"</span></div>"
-    +'<div class="tscroll"><table><thead><tr><th>Praxera asset</th><th>Replaces</th>'
+    +'<div class="tscroll"><table><thead><tr><th>Praxera asset</th><th>'
+      +E(g[2]||"Replaces")+"</th>"
       +"<th>Outstanding</th><th>Your review</th></tr></thead><tbody>"
       +(shown.length?shown.map(rowHtml).join("")
         :'<tr class="r"><td colspan="4" class="ev">Nothing matches this filter.</td></tr>')
@@ -242,6 +243,12 @@ function headerHtml(){
     +"original. Approve the ones that are right, flag the ones that are not, and leave a "
     +"comment where the reason matters. Everything you do here is saved into the page "
     +"itself, so the next person to open it sees it.</p>"
+    +'<p class="sub">For pages and posts the second column is the DaVinci URL that will '
+    +"<strong>redirect here</strong> at cutover \u2014 "+R.pairs+" redirects in all ("
+    +R.by_kind.page+" pages, "+R.by_kind.blog+" posts). "
+    +R.orphan_sources.length+" published DaVinci guide pages have no Praxera equivalent to "
+    +"redirect to yet, and "+R.orphan_targets+" Praxera pages are new, so nothing "
+    +"redirects to them.</p>"
     +'<div class="prog"><div class="bar"><i class="a" style="width:'+pa+'%"></i>'
       +'<i class="f" style="width:'+pf+'%"></i></div>'
       +'<div class="lg"><span><i class="k a"></i>Approved <b>'+t.ok+"</b></span>"

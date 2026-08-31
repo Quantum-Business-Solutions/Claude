@@ -5,7 +5,7 @@
    "k": "p",
    "id": "home",
    "n": "(home)",
-   "r": "new for Praxera \u2014 no DaVinci original",
+   "r": "\u2014 new for Praxera",
    "i": [
     [
      "bad",
@@ -18,6 +18,10 @@
     [
      "mute",
      "13 assets off-domain"
+    ],
+    [
+     "mute",
+     "nothing redirects here"
     ]
    ]
   },
@@ -553,7 +557,7 @@
    "k": "p",
    "id": "learning/definitive-guide-ty",
    "n": "learning/definitive-guide-ty",
-   "r": "new for Praxera \u2014 no DaVinci original",
+   "r": "\u2014 new for Praxera",
    "i": [
     [
      "bad",
@@ -566,6 +570,10 @@
     [
      "mute",
      "4 assets off-domain"
+    ],
+    [
+     "mute",
+     "nothing redirects here"
     ]
    ]
   },
@@ -601,7 +609,7 @@
    "k": "p",
    "id": "learning/onboarding-guide-ty",
    "n": "learning/onboarding-guide-ty",
-   "r": "new for Praxera \u2014 no DaVinci original",
+   "r": "\u2014 new for Praxera",
    "i": [
     [
      "bad",
@@ -610,6 +618,10 @@
     [
      "mute",
      "1 asset off-domain"
+    ],
+    [
+     "mute",
+     "nothing redirects here"
     ]
    ]
   },
@@ -2226,13 +2238,14 @@
    "k": "b",
    "id": "blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
    "n": "Vitamin Manufacturing: 10 Top Sellers to Consider in 2026",
-   "r": "new for Praxera \u2014 no DaVinci original",
+   "r": "blog.davincilabs.com/\u2026/vitamin-manufacturing-10-top-sellers-to-consider-in-2024",
    "i": [
     [
      "warn",
      "no tags"
     ]
-   ]
+   ],
+   "t": "blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024"
   },
   {
    "k": "b",
@@ -4736,23 +4749,41 @@
  "groups": [
   [
    "p",
-   "Website pages"
+   "Website pages",
+   "Redirects from at cutover"
   ],
   [
    "b",
-   "Blog posts"
+   "Blog posts",
+   "Redirects from at cutover"
   ],
   [
    "e",
-   "Marketing emails"
+   "Marketing emails",
+   "Replaces"
   ],
   [
    "f",
-   "Forms"
+   "Forms",
+   "Placement"
   ],
   [
    "w",
-   "Workflows"
+   "Workflows",
+   "Detail"
   ]
- ]
+ ],
+ "redirects": {
+  "pairs": 134,
+  "by_kind": {
+   "page": 59,
+   "blog": 75
+  },
+  "orphan_sources": [
+   "https://info.davincilabs.com/private-label-supplements-guide",
+   "https://info.davincilabs.com/private-label-supplements-resource-center",
+   "https://info.davincilabs.com/private-label-supplements-client-onboarding"
+  ],
+  "orphan_targets": 3
+ }
 }

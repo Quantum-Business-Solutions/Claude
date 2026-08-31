@@ -1,0 +1,872 @@
+{
+ "redirects": [
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-about-v3",
+   "to": "https://praxerasupplements.com/about",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-aging-v3",
+   "to": "https://praxerasupplements.com/aging",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-ads-contract-mfg-v3",
+   "to": "https://praxerasupplements.com/alp/ads-contract-mfg",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-ads-custom-v3",
+   "to": "https://praxerasupplements.com/alp/ads-custom",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-ads-mfg-usa-v3",
+   "to": "https://praxerasupplements.com/alp/ads-mfg-usa",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-ads-pl-mfg-v3",
+   "to": "https://praxerasupplements.com/alp/ads-pl-mfg",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-book-consultation-v3",
+   "to": "https://praxerasupplements.com/book-consultation",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-capsules-v3",
+   "to": "https://praxerasupplements.com/capsules",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-case-studies-v3",
+   "to": "https://praxerasupplements.com/case-studies",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-certifications-v3",
+   "to": "https://praxerasupplements.com/certifications",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-chewables-v3",
+   "to": "https://praxerasupplements.com/chewables",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-cognitive-v3",
+   "to": "https://praxerasupplements.com/cognitive",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-contact-v3",
+   "to": "https://praxerasupplements.com/contact",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-custom-formulation-v3",
+   "to": "https://praxerasupplements.com/custom-formulation",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-customer-art-v3",
+   "to": "https://praxerasupplements.com/customer-art",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-design-services-v3",
+   "to": "https://praxerasupplements.com/design-services",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-design-team-v3",
+   "to": "https://praxerasupplements.com/design-team",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-detox-v3",
+   "to": "https://praxerasupplements.com/detox",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-dropshipping-v3",
+   "to": "https://praxerasupplements.com/dropshipping",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-energy-v3",
+   "to": "https://praxerasupplements.com/energy",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-facility-v3",
+   "to": "https://praxerasupplements.com/facility",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-faq-v3",
+   "to": "https://praxerasupplements.com/faq",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-fitness-v3",
+   "to": "https://praxerasupplements.com/fitness",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-get-started-v3",
+   "to": "https://praxerasupplements.com/get-started",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-guides-v3",
+   "to": "https://praxerasupplements.com/guides",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-gummies-v3",
+   "to": "https://praxerasupplements.com/gummies",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-heart-health-v3",
+   "to": "https://praxerasupplements.com/heart-health",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-herbal-v3",
+   "to": "https://praxerasupplements.com/herbal",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-how-to-sell-supplements-v3",
+   "to": "https://praxerasupplements.com/how-to-sell-supplements",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-immune-support-v3",
+   "to": "https://praxerasupplements.com/immune-support",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-ingredient-sourcing-v3",
+   "to": "https://praxerasupplements.com/ingredient-sourcing",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-joint-support-v3",
+   "to": "https://praxerasupplements.com/joint-support",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-definitive-guide-v3",
+   "to": "https://praxerasupplements.com/learning/definitive-guide",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-ingredients-testing-v3",
+   "to": "https://praxerasupplements.com/learning/ingredients-testing",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-onboarding-guide-v3",
+   "to": "https://praxerasupplements.com/learning/onboarding-guide",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-liquids-v3",
+   "to": "https://praxerasupplements.com/liquids",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-mens-health-v3",
+   "to": "https://praxerasupplements.com/mens-health",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-multivitamin-v3",
+   "to": "https://praxerasupplements.com/multivitamin",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-our-process-v3",
+   "to": "https://praxerasupplements.com/our-process",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-packaging-v3",
+   "to": "https://praxerasupplements.com/packaging",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-pediatric-v3",
+   "to": "https://praxerasupplements.com/pediatric",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-powders-v3",
+   "to": "https://praxerasupplements.com/powders",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-prenatal-v3",
+   "to": "https://praxerasupplements.com/prenatal",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-privacy-v3",
+   "to": "https://praxerasupplements.com/privacy",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-probiotics-v3",
+   "to": "https://praxerasupplements.com/probiotics",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-quality-standards-v3",
+   "to": "https://praxerasupplements.com/quality-standards",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-request-quote-v3",
+   "to": "https://praxerasupplements.com/request-quote",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-resources-v3",
+   "to": "https://praxerasupplements.com/resources",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-sell-sheets-v3",
+   "to": "https://praxerasupplements.com/sell-sheets",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-sleep-v3",
+   "to": "https://praxerasupplements.com/sleep",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-soft-gels-v3",
+   "to": "https://praxerasupplements.com/soft-gels",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-tablets-v3",
+   "to": "https://praxerasupplements.com/tablets",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-terms-v3",
+   "to": "https://praxerasupplements.com/terms",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-testing-v3",
+   "to": "https://praxerasupplements.com/testing",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-ty-consultation-v3",
+   "to": "https://praxerasupplements.com/ty-consultation",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/en/pl-demo-ty-quote-v3",
+   "to": "https://praxerasupplements.com/ty-quote",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-ty-sell-sheets-v3",
+   "to": "https://praxerasupplements.com/ty-sell-sheets",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-weight-management-v3",
+   "to": "https://praxerasupplements.com/weight-management",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "page",
+   "from": "https://info.davincilabs.com/pl-demo-womens-health-v3",
+   "to": "https://praxerasupplements.com/womens-health",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/2023-trends-in-vitamin-and-supplement-industry",
+   "to": "https://www.praxerasupplements.com/blog/2023-trends-in-vitamin-and-supplement-industry",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+   "to": "https://www.praxerasupplements.com/blog/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/5-best-private-label-supplements-for-sleep-on-the-market",
+   "to": "https://www.praxerasupplements.com/blog/5-best-private-label-supplements-for-sleep-on-the-market",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/an-introduction-to-sports-supplement-manufacturing",
+   "to": "https://www.praxerasupplements.com/blog/an-introduction-to-sports-supplement-manufacturing",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/are-private-label-supplements-profitable",
+   "to": "https://www.praxerasupplements.com/blog/are-private-label-supplements-profitable",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/are-private-label-vitamins-a-profitable-business",
+   "to": "https://www.praxerasupplements.com/blog/are-private-label-vitamins-a-profitable-business",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/benefits-of-selling-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/best-private-label-supplements-for-gut-health",
+   "to": "https://www.praxerasupplements.com/blog/best-private-label-supplements-for-gut-health",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/challenges-and-opportunities-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/challenges-and-opportunities-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/contract-manufacturing-vs-private-labeling-supplements",
+   "to": "https://www.praxerasupplements.com/blog/contract-manufacturing-vs-private-labeling-supplements",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/custom-supplements-vs.-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/custom-supplements-vs.-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+   "to": "https://www.praxerasupplements.com/blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/dev-blog/private-label-supplements-more-than-just-a-trend",
+   "to": "https://www.praxerasupplements.com/blog/dev-blog/private-label-supplements-more-than-just-a-trend",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/do-you-need-insurance-to-sell-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/do-you-need-insurance-to-sell-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/does-the-fda-approve-supplements",
+   "to": "https://www.praxerasupplements.com/blog/does-the-fda-approve-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/healthcare-practitioner-supplement-line-guide",
+   "to": "https://www.praxerasupplements.com/blog/healthcare-practitioner-supplement-line-guide",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business",
+   "to": "https://www.praxerasupplements.com/blog/how-do-i-start-a-private-label-supplement-business",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-find-right-supplement-wholesaler-for-your-business",
+   "to": "https://www.praxerasupplements.com/blog/how-find-right-supplement-wholesaler-for-your-business",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-is-protein-powder-made",
+   "to": "https://www.praxerasupplements.com/blog/how-is-protein-powder-made",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-much-to-start-a-private-label-supplement-business",
+   "to": "https://www.praxerasupplements.com/blog/how-much-to-start-a-private-label-supplement-business",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-physicians-can-get-better-private-labeling-for-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-physicians-can-get-better-private-labeling-for-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-private-label-beauty-supplements-can-increase-revenue-fast",
+   "to": "https://www.praxerasupplements.com/blog/how-private-label-beauty-supplements-can-increase-revenue-fast",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-private-label-supplements-can-increase-revenue-fast",
+   "to": "https://www.praxerasupplements.com/blog/how-private-label-supplements-can-increase-revenue-fast",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-private-label-supplements-set-you-apart-from-competition",
+   "to": "https://www.praxerasupplements.com/blog/how-private-label-supplements-set-you-apart-from-competition",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-build-a-sports-nutrition-brand-with-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-choose-a-private-label-supplement-provider",
+   "to": "https://www.praxerasupplements.com/blog/how-to-choose-a-private-label-supplement-provider",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-choose-the-best-private-label-manufacturer",
+   "to": "https://www.praxerasupplements.com/blog/how-to-choose-the-best-private-label-manufacturer",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-compare-dietary-supplement-providers",
+   "to": "https://www.praxerasupplements.com/blog/how-to-compare-dietary-supplement-providers",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-create-exclusivity-for-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-to-create-exclusivity-for-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-develop-private-label-brand",
+   "to": "https://www.praxerasupplements.com/blog/how-to-develop-private-label-brand",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-enhance-customer-journey-with-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-to-enhance-customer-journey-with-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-evaluate-supplement-suppliers-in-the-us",
+   "to": "https://www.praxerasupplements.com/blog/how-to-evaluate-supplement-suppliers-in-the-us",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-get-started-with-dropshipping-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-to-get-started-with-dropshipping-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-manage-private-label-supplement-packaging",
+   "to": "https://www.praxerasupplements.com/blog/how-to-manage-private-label-supplement-packaging",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-market-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-to-market-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-private-label-protein-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-to-private-label-protein-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-scale-your-business-with-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-to-scale-your-business-with-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-sell-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-to-sell-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/how-to-spot-high-quality-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/how-to-spot-high-quality-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/liquid-supplement-manufacturing-benefits-vs.-costs",
+   "to": "https://www.praxerasupplements.com/blog/liquid-supplement-manufacturing-benefits-vs.-costs",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/make-your-own-supplement-brand-the-easy-way",
+   "to": "https://www.praxerasupplements.com/blog/make-your-own-supplement-brand-the-easy-way",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
+   "to": "https://www.praxerasupplements.com/blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/managing-the-top-3-risks-when-selling-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
+   "to": "https://www.praxerasupplements.com/blog/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/must-have-private-label-probiotics-to-expand-your-product-line",
+   "to": "https://www.praxerasupplements.com/blog/must-have-private-label-probiotics-to-expand-your-product-line",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "to": "https://www.praxerasupplements.com/blog/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/powder-supplement-manufacturing-essential-tips-for-private-labelers",
+   "to": "https://www.praxerasupplements.com/blog/powder-supplement-manufacturing-essential-tips-for-private-labelers",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/private-label-supplements-how-to-get-superior-quality-at-low-cost",
+   "to": "https://www.praxerasupplements.com/blog/private-label-supplements-how-to-get-superior-quality-at-low-cost",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/private-label-supplements-how-to-make-money",
+   "to": "https://www.praxerasupplements.com/blog/private-label-supplements-how-to-make-money",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/private-label-supplements-secret-to-surpassing-sales-goals",
+   "to": "https://www.praxerasupplements.com/blog/private-label-supplements-secret-to-surpassing-sales-goals",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/private-labeling-liquid-vitamins",
+   "to": "https://www.praxerasupplements.com/blog/private-labeling-liquid-vitamins",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/supplement-certifications-usp-nsf-gmp-fda",
+   "to": "https://www.praxerasupplements.com/blog/supplement-certifications-usp-nsf-gmp-fda",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/supplement-dropshipping-5-best-tips-for-success",
+   "to": "https://www.praxerasupplements.com/blog/supplement-dropshipping-5-best-tips-for-success",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/supplement-dropshipping-can-it-boost-profitability",
+   "to": "https://www.praxerasupplements.com/blog/supplement-dropshipping-can-it-boost-profitability",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/tips-for-buying-wholesale-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements-0",
+   "to": "https://www.praxerasupplements.com/blog/tips-for-buying-wholesale-private-label-supplements-0",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-for-immunity",
+   "to": "https://www.praxerasupplements.com/blog/tips-for-selling-private-label-supplements-for-immunity",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon",
+   "to": "https://www.praxerasupplements.com/blog/tips-for-selling-private-label-supplements-on-amazon",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0",
+   "to": "https://www.praxerasupplements.com/blog/tips-for-selling-private-label-supplements-on-amazon-0",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0-0",
+   "to": "https://www.praxerasupplements.com/blog/tips-for-selling-private-label-supplements-on-amazon-0-0",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0-1",
+   "to": "https://www.praxerasupplements.com/blog/tips-for-selling-private-label-supplements-on-amazon-0-1",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/top-10-mistakes-to-avoid-with-supplement-manufacturing",
+   "to": "https://www.praxerasupplements.com/blog/top-10-mistakes-to-avoid-with-supplement-manufacturing",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/top-private-label-herbal-supplements-and-their-key-benefits",
+   "to": "https://www.praxerasupplements.com/blog/top-private-label-herbal-supplements-and-their-key-benefits",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/top-private-label-protein-powders-for-your-brand",
+   "to": "https://www.praxerasupplements.com/blog/top-private-label-protein-powders-for-your-brand",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/top-questions-consumers-have-about-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/top-selling-private-label-supplements-for-2021",
+   "to": "https://www.praxerasupplements.com/blog/top-selling-private-label-supplements-for-2021",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/trending-private-label-supplements-for-2022",
+   "to": "https://www.praxerasupplements.com/blog/trending-private-label-supplements-for-2022",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024",
+   "to": "https://www.praxerasupplements.com/blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/what-is-a-nutraceutical-supplement",
+   "to": "https://www.praxerasupplements.com/blog/what-is-a-nutraceutical-supplement",
+   "from_state": "DRAFT"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/what-qualifications-do-you-need-to-sell-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/what-qualifications-do-you-need-to-sell-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/white-label-supplements-vs.-private-label-what-is-the-difference",
+   "to": "https://www.praxerasupplements.com/blog/white-label-supplements-vs.-private-label-what-is-the-difference",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/why-branded-ingredients-are-important-to-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/why-branded-ingredients-are-important-to-private-label-supplements",
+   "from_state": "PUBLISHED"
+  },
+  {
+   "kind": "blog",
+   "from": "https://blog.davincilabs.com/private-label/why-wellness-businesses-should-sell-private-label-supplements",
+   "to": "https://www.praxerasupplements.com/blog/why-wellness-businesses-should-sell-private-label-supplements",
+   "from_state": "PUBLISHED"
+  }
+ ],
+ "orphan_sources": [
+  {
+   "kind": "landing page",
+   "url": "https://info.davincilabs.com/private-label-supplements-guide",
+   "name": "LP: Private Label Supplements Guide",
+   "slug": "private-label-supplements-guide",
+   "state": "PUBLISHED"
+  },
+  {
+   "kind": "landing page",
+   "url": "https://info.davincilabs.com/private-label-supplements-resource-center",
+   "name": "Private Label Supplements | Resource Center",
+   "slug": "private-label-supplements-resource-center",
+   "state": "PUBLISHED"
+  },
+  {
+   "kind": "landing page",
+   "url": "https://info.davincilabs.com/private-label-supplements-client-onboarding",
+   "name": "DV LP: Private Label Supplements: Client Onboarding",
+   "slug": "private-label-supplements-client-onboarding",
+   "state": "PUBLISHED"
+  }
+ ],
+ "orphan_sources_ignored": [
+  "private-label-test",
+  "en/pl-demo-pillar-v3",
+  "pl-demo-capsules-v1ref",
+  "pl-demo-tablets-v1ref",
+  "pl-demo-soft-gels-v1ref",
+  "pl-demo-liquids-v1ref",
+  "en/pl-demo-pillar-v1ref",
+  "pl-demo-gummies-v1ref",
+  "pl-demo-powders-v1ref",
+  "en/pl-demo-ty-guide-v3",
+  "en/pl-demo-ty-onboarding-v3",
+  "en/pl-demo-ads-contract-mfg-v3"
+ ],
+ "orphan_targets": [
+  {
+   "kind": "page",
+   "to": "https://praxerasupplements.com",
+   "slug": ""
+  },
+  {
+   "kind": "page",
+   "to": "https://praxerasupplements.com/learning/definitive-guide-ty",
+   "slug": "learning/definitive-guide-ty"
+  },
+  {
+   "kind": "page",
+   "to": "https://praxerasupplements.com/learning/onboarding-guide-ty",
+   "slug": "learning/onboarding-guide-ty"
+  }
+ ],
+ "counts": {
+  "redirects": 134,
+  "by_kind": {
+   "page": 59,
+   "blog": 75
+  },
+  "davinci_pl_assets_found": 149,
+  "orphan_sources": 3,
+  "orphan_targets": 3
+ }
+}

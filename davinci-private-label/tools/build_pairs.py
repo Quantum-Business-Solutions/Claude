@@ -67,7 +67,15 @@ for b in bp:
     dvb.setdefault(leaf(b.get("slug")),b)
 rows=[]
 for b in sorted(pxb,key=lambda x:x.get("slug") or ""):
-    src=dvb.get(leaf(b.get("slug")))
+    lf=leaf(b.get("slug"))
+    src=dvb.get(lf)
+    if src is None:
+        # A refreshed post keeps its wording and moves the year:
+        # ...top-sellers-to-consider-in-2024 became ...-in-2026. Same post.
+        generic=re.sub(r"\b(19|20)\d{2}\b","YYYY",lf)
+        if generic!=lf:
+            for k,v in dvb.items():
+                if re.sub(r"\b(19|20)\d{2}\b","YYYY",k)==generic: src=v;break
     rows.append({"slug":b.get("slug"),"name":b.get("name"),
         "source_name":src.get("name") if src else None,
         "source_url":src.get("url") if src else None,
