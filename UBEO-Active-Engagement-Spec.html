@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active Engagement Build Spec</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --paper:#F5F6F4; --card:#FFFFFF; --ink:#131A20; --ink-2:#3B474F; --muted:#68757E;
+    --rule:#DCE0DC; --rule-2:#EAEDEA; --quote-bg:#EEF0ED;
+    --go:#1B6552; --go-bg:#E6EFEB; --stop:#9A3C24; --stop-bg:#F6E7E1;
+    --wait:#7E6014; --wait-bg:#F3EDDC;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#0F1418; --card:#161D22; --ink:#E7EBE6; --ink-2:#B6C0C4; --muted:#8B979D;
+    --rule:#283238; --rule-2:#1F282E; --quote-bg:#141B20;
+    --go:#67C3A6; --go-bg:#132A24; --stop:#E08B6C; --stop-bg:#2B1912;
+    --wait:#D9B462; --wait-bg:#2A2213;}}
+  :root[data-theme="dark"]{
+    --paper:#0F1418; --card:#161D22; --ink:#E7EBE6; --ink-2:#B6C0C4; --muted:#8B979D;
+    --rule:#283238; --rule-2:#1F282E; --quote-bg:#141B20;
+    --go:#67C3A6; --go-bg:#132A24; --stop:#E08B6C; --stop-bg:#2B1912;
+    --wait:#D9B462; --wait-bg:#2A2213;}
+  *{box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);margin:0;font-size:15.5px;line-height:1.6;
+       font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 26px 88px}
+  @media(max-width:640px){.wrap{padding:0 16px 56px}}
+  header{padding:56px 0 26px;border-bottom:2px solid var(--ink)}
+  .kick{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
+        text-transform:uppercase;color:var(--muted);display:flex;gap:8px 18px;flex-wrap:wrap;margin-bottom:20px}
+  h1{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:clamp(1.9rem,4.6vw,2.7rem);
+     line-height:1.1;letter-spacing:-.02em;margin:0 0 16px;text-wrap:balance}
+  .lede{font-size:1.08rem;color:var(--ink-2);max-width:64ch;margin:0}
+  .lede strong{color:var(--ink);font-weight:600}
+  section{padding-top:46px}
+  h2{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:1.5rem;
+     letter-spacing:-.012em;margin:0 0 6px;text-wrap:balance}
+  .sub{color:var(--muted);font-size:.93rem;margin:0 0 24px;max-width:66ch}
+  h3{font-size:1rem;font-weight:600;margin:30px 0 10px}
+  p{max-width:68ch;margin:0 0 15px}
+  ul,ol{max-width:68ch;padding-left:20px;margin:0 0 15px}
+  li{margin-bottom:6px} li::marker{color:var(--muted)}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.85em;background:var(--quote-bg);
+       padding:1.5px 5px;border-radius:3px}
+  .tw{overflow-x:auto;margin:0 0 20px;border:1px solid var(--rule);border-radius:3px}
+  table{width:100%;border-collapse:collapse;font-size:.87rem;background:var(--card)}
+  th,td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--rule-2);vertical-align:top}
+  thead th{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;
+           text-transform:uppercase;color:var(--muted);font-weight:500;
+           border-bottom:1px solid var(--rule);white-space:nowrap}
+  tbody tr:last-child td{border-bottom:none}
+  td.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+  td code{white-space:nowrap}
+  .tier{border:1px solid var(--rule);border-radius:3px;background:var(--card);
+        padding:18px 20px;margin:0 0 12px;border-left:3px solid var(--muted)}
+  .tier.t3{border-left-color:var(--go)} .tier.t2{border-left-color:var(--wait)}
+  .tier.t1{border-left-color:var(--stop)}
+  .tier h3{margin:0 0 6px;font-family:"IBM Plex Mono",monospace;font-size:.82rem;
+           letter-spacing:.08em;text-transform:uppercase}
+  .tier.t3 h3{color:var(--go)} .tier.t2 h3{color:var(--wait)} .tier.t1 h3{color:var(--stop)}
+  .tier p{margin:0 0 8px;font-size:.93rem} .tier p:last-child{margin:0}
+  .box{border:1px solid var(--rule);border-top:3px solid var(--stop);background:var(--card);
+       border-radius:3px;padding:20px 22px;margin:0 0 16px}
+  .box.q{border-top-color:var(--wait)} .box.ok{border-top-color:var(--go)}
+  .box h3{margin-top:0}  .box p:last-child{margin-bottom:0}
+  .ev{background:var(--quote-bg);border-left:2.5px solid var(--muted);padding:13px 16px;
+      margin:0 0 14px;border-radius:0 3px 3px 0}
+  .ev p{font-family:"IBM Plex Mono",monospace;font-size:.8rem;line-height:1.6;margin:0 0 5px;max-width:none}
+  .ev p:last-child{margin:0}
+  footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--rule);color:var(--muted);font-size:.84rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kick"><span>Quantum Business Solutions</span><span>UBEO &middot; portal 516382</span>
+    <span>Build spec &mdash; review before deploy</span><span>August 2026</span></div>
+  <h1>Active Engagement: build spec</h1>
+  <p class="lede">A proposal, not a deployment. It defines what counts as engagement, the exact
+     properties to create, how each is calculated, and the order of work &mdash; and it flags the
+     four properties already written to 749 company records that this <strong>replaces</strong>.</p>
+</header>
+
+<section>
+  <h2>Why this needs a rewrite, not a patch</h2>
+  <p>A first version is live on 749 companies. It defined meaningful engagement as
+     <em>an email reply or a meeting</em>, and it was wrong on three counts:</p>
+  <ul>
+    <li><strong>It ignored phone calls.</strong> A logged call where somebody talked is engagement,
+        and for this team it is the primary channel. 28% of the accounts labelled
+        "NO TWO-WAY ENGAGEMENT" had a real conversation on record.</li>
+    <li><strong>It counted the wrong things as touches.</strong> 52% of the 34,351 total were tasks,
+        and roughly four in five tasks are dialer bookkeeping ("LVM", "no answer").</li>
+    <li><strong>It read passive signals as activity.</strong> Half the accounts sampled had
+        <code>EMAIL_OPEN</code> as their last activity &mdash; the prospect's mail client, often a
+        security scanner, not anyone doing anything.</li>
+  </ul>
+  <p><strong>Under the corrected definition, 745 of 749 verdicts change.</strong> That is a
+     replacement, so it is worth agreeing the definition first.</p>
+</section>
+
+<section>
+  <h2>The definition</h2>
+  <p class="sub">Three tiers. The middle one is where the flattery lives &mdash; a dashboard that
+     counts "connected" calls as engagement will show an account as worked when every call was a
+     receptionist saying he is not in.</p>
+
+  <div class="tier t1">
+    <h3>Tier 1 &mdash; Attempt</h3>
+    <p>Dialed, nobody reached: voicemail, no answer, IVR, closed office, failed connection.
+       Also every dialer task stub.</p>
+    <p><strong>91.1%</strong> of the 11,035 calls at the target accounts.</p>
+  </div>
+  <div class="tier t2">
+    <h3>Tier 2 &mdash; Contact made</h3>
+    <p>A human answered and nothing came of it. A gatekeeper took a message; a flat
+       "not interested" with nothing behind it. The phone connected. That is all it means.</p>
+    <p><strong>4.0%</strong> of calls. <strong>76 accounts have never got past this tier.</strong></p>
+  </div>
+  <div class="tier t3">
+    <h3>Tier 3 &mdash; Substantive &middot; this is Active Engagement</h3>
+    <p>They told us something we did not already know, or a next step was agreed: their lease,
+       vendor, equipment or timing; who decides; a callback, a meeting, or send-me-information.</p>
+    <p><strong>4.9%</strong> of calls &mdash; 541 in total. Plus every email reply and every meeting,
+       which are substantive by definition.</p>
+  </div>
+
+  <p>A brush-off only counts as Tier 3 if it carries information. <em>"Not interested"</em> is
+     Tier 2. <em>"Not interested, we have two years left on the lease"</em> is Tier 3 &mdash; it
+     just gave us the date.</p>
+
+  <div class="box">
+    <h3>Why call outcome alone will not do this</h3>
+    <p>91% of UBEO's 1.5M calls carry an outcome, so it is tempting to key off it. Checking the
+       outcome values against what the notes actually say:</p>
+    <div class="ev">
+      <p>73a0d17f…   860,755 calls   11% are conversations</p>
+      <p>b2cf5968…   261,290 calls    8% are conversations</p>
+      <p>9d9162e7…    32,212 calls   40% are conversations</p>
+      <p>a4c4c377…    27,388 calls   94% are conversations</p>
+      <p>a091f579…     7,884 calls   97% are conversations</p>
+    </div>
+    <p>The dominant outcome, on 860,755 calls, is 89% voicemail. Only two values are reliable,
+       covering ~35,000 calls. <strong>Outcome is a useful input, not the answer</strong> &mdash; and
+       it must be verified per portal, never assumed from HubSpot's defaults.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Schema</h2>
+  <p class="sub">Mirrors the QBS Active Engagement Package shape &mdash; tracked on the contact,
+     rolled to the company &mdash; with the tiering above layered on. Nothing here writes to a
+     native HubSpot field.</p>
+
+  <h3>Contact properties</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Property</th><th>Type</th><th>How it is set</th></tr></thead>
+    <tbody>
+      <tr><td><code>ai__last_attempt_date</code></td><td>date</td>
+          <td>Most recent Tier 1+ touch of any kind. Answers "when did we last try".</td></tr>
+      <tr><td><code>ai__last_contact_made_date</code></td><td>date</td>
+          <td>Most recent Tier 2+ &mdash; last time a human answered.</td></tr>
+      <tr><td><code>ai__last_conversation_date</code></td><td>date</td>
+          <td>Most recent Tier 3 call.</td></tr>
+      <tr><td><code>ai__active_engagement_date</code></td><td>date</td>
+          <td><strong>The headline.</strong> MAX of last conversation, sales email reply
+              (<code>hs_sales_email_last_replied</code>) and meeting
+              (<code>hs_latest_meeting_activity</code>).</td></tr>
+      <tr><td><code>ai__active_engagement_type</code></td><td>select</td>
+          <td>Conversation / Email reply / Meeting / None &mdash; which of the three produced the date.</td></tr>
+      <tr><td><code>ai__days_since_active_engagement</code></td><td>number</td>
+          <td>Days since the above. The segmentation field.</td></tr>
+      <tr><td><code>ai__engagement_tier</code></td><td>select</td>
+          <td>Substantive / Contact only / Attempts only / Never touched.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Company properties</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Property</th><th>Type</th><th>How it is set</th></tr></thead>
+    <tbody>
+      <tr><td><code>ai__active_engagement_date</code></td><td>date</td>
+          <td>MAX across the company's own engagements and all its contacts.</td></tr>
+      <tr><td><code>ai__active_engagement_type</code></td><td>select</td><td>As above, at company level.</td></tr>
+      <tr><td><code>ai__days_since_active_engagement</code></td><td>number</td><td>Days since.</td></tr>
+      <tr><td><code>ai__engagement_verdict</code></td><td>select</td>
+          <td>Ready (decision maker known) / Engaged (real conversation) / Reached, nothing learned /
+              Attempts only / Never called.</td></tr>
+      <tr><td><code>ai__engagement_overview</code></td><td>textarea</td>
+          <td>The narrative a rep reads. Attempts, contacts and conversations stated separately,
+              never merged into one "touches" number.</td></tr>
+      <tr><td><code>ai__outreach_attempts</code></td><td>number</td><td>Tier 1 count &mdash; dial volume, labelled as such.</td></tr>
+      <tr><td><code>ai__conversations</code></td><td>number</td><td>Tier 3 count.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="box q">
+    <h3>Decision needed: derived now, or native workflows?</h3>
+    <p>The QBS package builds this with <em>calculated properties, workflows and sync properties</em>,
+       so HubSpot maintains it going forward. What is proposed here is computed once and written in,
+       which is faster to prove but goes stale.</p>
+    <p><strong>Recommendation:</strong> deploy the derived version now to prove the definition on real
+       accounts, then convert the durable parts to workflows &mdash; specifically a
+       <code>Most Recent Conversation Date</code> workflow keyed on call outcome plus a
+       contact&rarr;company sync, matching the existing package. If we can get a PAT for a portal that
+       already has it (PUL or TSG), the property and workflow definitions should be cloned rather
+       than re-derived.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Deployment order</h2>
+  <ol>
+    <li><strong>Agree the definition above.</strong> Nothing else matters if Tier 3 is drawn in the
+        wrong place.</li>
+    <li><strong>Retire v1.</strong> Four properties are live on 749 companies under the old
+        definition. Clear them before writing, so no record briefly carries both.</li>
+    <li><strong>Dry run on 25 accounts</strong> spanning all five verdicts. Read every one by hand
+        against its timeline before any bulk write.</li>
+    <li><strong>Deploy to the 749</strong> accounts with a lease inside 12 months.</li>
+    <li><strong>QA gates</strong> below, then extend to the full 2,676 with a lease date.</li>
+    <li><strong>Convert to workflows</strong> so it maintains itself.</li>
+  </ol>
+
+  <h3>QA gates, each blocking</h3>
+  <ul>
+    <li>No date renders as a negative interval &mdash; booked meetings are in the future.</li>
+    <li>No account is described as having no conversation when a Tier 3 call exists on it.</li>
+    <li>Attempts, contacts and conversations are reported separately in every overview.</li>
+    <li>A passive signal is never described as activity.</li>
+    <li>Sample 15 records by hand against the HubSpot timeline. Every earlier defect in this
+        engagement was found this way and none by aggregate checks.</li>
+    <li>Verdict distribution is sane &mdash; if "Engaged" exceeds ~45% of accounts, the Tier 3
+        rule has gone loose.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>What this produces</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Verdict</th><th style="text-align:right">Accounts</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>Engaged &mdash; real conversation on record</td><td class="num">302</td>
+          <td>Someone has told us something. Warmest group.</td></tr>
+      <tr><td>Attempts only &mdash; never reached anyone</td><td class="num">210</td>
+          <td>Dialed repeatedly, never connected. Channel problem, not an interest problem.</td></tr>
+      <tr><td>Never called</td><td class="num">157</td>
+          <td>Lease expiring, effectively untouched.</td></tr>
+      <tr><td>Reached, nothing learned</td><td class="num">76</td>
+          <td>Got a human every time and learned nothing. Script or targeting problem.</td></tr>
+      <tr><td>Ready &mdash; decision maker known</td><td class="num">4</td><td>Callable today.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Those four groups need four different plays, which is the point of separating them. The
+     210 "attempts only" and the 76 "reached, nothing learned" are invisible under any current
+     report &mdash; both look like active accounts.</p>
+</section>
+
+<footer>
+  <p>Prepared by Quantum Business Solutions &middot; UBEO, HubSpot portal 516382 &middot; August 2026.
+     Counts measured live from the portal across the 749 companies with a lease ending within twelve
+     months and the 11,035 calls associated with them. Internal build spec &mdash; not for client
+     distribution in this form.</p>
+</footer>
+
+</div>
+</body>
+</html>
