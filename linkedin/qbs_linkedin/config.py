@@ -406,6 +406,16 @@ TASK_SUBJECT_PREFIX = "LinkedIn Engagement —"
 #: Count on THIS instead — a structural marker written into the task body that
 #: no human types by hand. Cheap, needs no new property, and is exact.
 TASK_LEDGER_MARKER = "qbs-ledger:engage-v1"
+
+#: Comment caps. Separate from the outreach caps: a comment is far lower risk
+#: than an invite or InMail, but it is still a public action under Shawn's
+#: name, and LinkedIn throttles comment volume independently.
+COMMENTS_PER_DAY = 8
+COMMENTS_PER_RUN = 4
+
+#: Local posting window, checked PER ACTION rather than once per run — a run
+#: starting at 17:55 must not place its next comment at 18:02 after a pause.
+ACTIVE_HOURS = (7, 18)
 OUTREACH_LEDGER_MARKER = "qbs-ledger:outreach-v1"
 
 #: HubSpot sets hs_createdate and it cannot be wrong. hs_timestamp is the DUE

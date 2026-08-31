@@ -33,6 +33,7 @@ import json
 import os
 import re
 import time
+import uuid
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -45,6 +46,28 @@ from .config import (
 from .errors import Action, Verdict, classify
 
 DEFAULT_DSN = "api30.unipile.com:16072"
+
+#: Provider limit on comment text, from the published request schema.
+COMMENT_MAX_CHARS = 1250
+
+
+def _multipart(fields: dict[str, str]) -> tuple[bytes, str]:
+    """Encode fields as multipart/form-data.
+
+    Hand-rolled because the comment route requires multipart and the standard
+    library has no encoder for it. Written out rather than pulled in as a
+    dependency, since an unattended routine should not acquire one for this.
+    """
+    boundary = "----qbs" + uuid.uuid4().hex
+    parts: list[bytes] = []
+    for name, value in fields.items():
+        parts.append(
+            f"--{boundary}\r\n"
+            f'Content-Disposition: form-data; name="{name}"\r\n\r\n'
+            f"{value}\r\n".encode()
+        )
+    parts.append(f"--{boundary}--\r\n".encode())
+    return b"".join(parts), f"multipart/form-data; boundary={boundary}"
 
 
 class UnipileError(RuntimeError):
@@ -195,30 +218,77 @@ class Unipile:
                 return items
 
     def post_comment(self, post_social_id: str, text: str) -> dict:
-        """Post a comment. The only write this client performs."""
+        """Post a comment. The only write this client performs.
+
+        Three details come straight from the published spec for
+        ``POST /api/v1/posts/{post_id}/comments`` and each one was wrong in
+        the first version of this method, which had never been called:
+
+        * the body is **multipart/form-data**, not urlencoded;
+        * ``account_id`` is a required **body** field, not a query parameter;
+        * success is **201** with ``{"object": "CommentSent", ...}``.
+
+        ``post_id`` must be the post's ``social_id``. The spec is explicit
+        that the id visible in a LinkedIn URL "will not work in all case".
+        """
         assert_send_account(self.account_id)
-        url = self._url(f"/posts/{urllib.parse.quote(post_social_id, safe='')}/comments")
-        body = urllib.parse.urlencode({"text": text}).encode()
+
+        text = (text or "").strip()
+        if not text:
+            raise UnipileError("refusing to post an empty comment")
+        if len(text) > COMMENT_MAX_CHARS:
+            # The provider truncates or rejects; either way a comment that
+            # stops mid-sentence goes out publicly under Shawn's name.
+            raise UnipileError(
+                f"comment is {len(text)} chars, over the provider's "
+                f"{COMMENT_MAX_CHARS}-char limit"
+            )
+        if not post_social_id or ":" not in post_social_id:
+            raise UnipileError(
+                f"{post_social_id!r} is not a social_id (expected "
+                "urn:li:activity:… or urn:li:ugcPost:…). The numeric id from "
+                "a LinkedIn URL does not work on this route."
+            )
+
+        body, content_type = _multipart({
+            "account_id": self.account_id,
+            "text": text,
+        })
+        url = f"{self.base}/posts/{urllib.parse.quote(post_social_id, safe='')}/comments"
+        if self.port:
+            url += f"?port={self.port}"
+
         req = urllib.request.Request(
             url, data=body, method="POST",
             headers={
                 "X-API-KEY": self.api_key,
                 "accept": "application/json",
-                "content-type": "application/x-www-form-urlencoded",
+                "content-type": content_type,
             },
         )
         try:
             with urllib.request.urlopen(req, timeout=self.timeout) as resp:
                 payload = json.loads(resp.read() or b"{}")
+                status = resp.status
         except urllib.error.HTTPError as exc:
             try:
                 payload = json.loads(exc.read() or b"{}")
             except Exception:
                 payload = {"status": exc.code, "type": "errors/unknown"}
+            status = exc.code
 
         verdict = classify(payload)
         if verdict.action is not Action.PROCEED:
             raise UnipileError(f"comment on {post_social_id}: {verdict.reason}", verdict)
+
+        # A 2xx that is not the documented CommentSent shape means something
+        # other than "comment posted" happened, and reporting it as a send
+        # would put a phantom entry in the ledger.
+        if payload.get("object") != "CommentSent":
+            raise UnipileError(
+                f"comment on {post_social_id}: HTTP {status} but the response "
+                f"is not CommentSent — got {payload!r}. Not recording a send."
+            )
         return payload
 
 

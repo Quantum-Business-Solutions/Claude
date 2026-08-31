@@ -46,7 +46,9 @@ import os
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
+from datetime import datetime
 
+from .config import assert_send_account
 from .unipile import Unipile, UnipileError
 
 V2_BASE = "https://api.unipile.com/v2"
@@ -240,6 +242,53 @@ class UnipileClient:
 
         return self._try(_v2, lambda: self.v1.self_comments(provider_id, limit),
                          "self_comments")
+
+    def post_comment(self, post_social_id: str, text: str) -> dict:
+        """Post a comment as Shawn. **The only write in this program.**
+
+        Pinned to v1 and deliberately never routed to v2:
+
+        * v1's comment route is the one with a published request schema we
+          have read and matched (multipart, account_id in the body, 201
+          CommentSent). v2's write surface is BETA and unverified here.
+        * a fallback is wrong for a write. If the primary path fails after
+          the comment may already have landed, retrying on another version
+          risks a DOUBLE comment on a prospect's post, under Shawn's name,
+          publicly. A read can be retried; this cannot.
+
+        So this raises rather than degrading. `assert_send_account` runs
+        inside the v1 client too — belt and braces, because the cost of
+        getting the identity wrong is a comment published as someone else.
+        """
+        assert_send_account(self.v1.account_id)
+        self.route = Route("v1", "writes are never routed to v2 or retried")
+        return self.v1.post_comment(post_social_id, text)
+
+    def comments_today(self, provider_id: str, day_start_ms: int,
+                       day_end_ms: int) -> int:
+        """Shawn's own comments inside a Chicago day, counted from Unipile.
+
+        This is the `independent_count` that `ledger.decide_allowance`
+        requires. Its whole purpose is to be a source the HubSpot ledger
+        cannot corrupt: if the ledger says nothing was posted today and this
+        says otherwise, the ledger is not recording and the run must stop.
+
+        Counted from the fully-paged comment feed, so a paging failure
+        surfaces as an exception rather than as a comfortable low number.
+        """
+        count = 0
+        for c in self.self_comments(provider_id):
+            stamp = c.get("date") or c.get("created_at")
+            if not stamp:
+                continue
+            try:
+                when = datetime.fromisoformat(str(stamp).replace("Z", "+00:00"))
+            except ValueError:
+                continue
+            ms = int(when.timestamp() * 1000)
+            if day_start_ms <= ms < day_end_ms:
+                count += 1
+        return count
 
     def health(self) -> dict:
         """Per-feature connection status.
