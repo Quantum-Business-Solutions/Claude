@@ -335,6 +335,67 @@ dropped, not rolled again. Applying this at UBEO cut the elapsed-term set from
 roll-forward; a CALCULATED date that has been moved by an assumed renewal is no
 longer calculated. This alone moved 275 UBEO records out of CALCULATED.
 
+## 14. Anchoring a relative term to the engagement timestamp
+
+The single most dangerous bug in the extractor, because the output looks
+completely reasonable.
+
+Rules like *"just signed"*, *"renewed for N"* and *"N years left"* compute a
+date by adding the term to the engagement's `hs_timestamp`. That is correct only
+when the statement was made **about the moment the record was logged**. It very
+often is not:
+
+| what the record says | logged | extractor said | truth |
+|---|---|---|---|
+| `New lease just signed 5/2018` | 2022-2024 | 2027-2029 | 2023 |
+| `Signed a new lease in 2018 for 3 yrs` | 2024 | 2027 | 2021 |
+| `renewed for 60 mos beginning JAN 2024` | 2027 | 2031 | 2029 |
+| `Just signed leases with Cannon Direct in January` | 04/2022 | 04/2027 | 01/2027 |
+| `Briefly chatted back in 2023 and at the time you had 2-3 years left` | 2025 | 2028 | 2025-2026 |
+
+Every one of these states its own anchor, in the same sentence, and the
+extractor stepped over it.
+
+**Rule: if the sentence carries an explicit start month or year, that is the
+anchor. The engagement timestamp is the fallback, never the default.** Only
+genuinely present-tense phrasing ("just signed", "we renewed last month") may
+anchor to the record date, and "last month" means the record date minus one
+month, not the record date.
+
+Measured at UBEO: of 1,687 signals whose date was anchored to the timestamp,
+**71 (4.2%) state an earlier anchor the extractor ignored** — 67 of them on
+tasks, where the legacy CRM's stamped account headers repeat old strategy notes
+for years. Each is wrong by 2 to 8 years.
+
+## 15. Stamped account headers inflate a "new findings" count
+
+The legacy CRM stamps one account-strategy header onto every task for that
+account. A single 2018 note — *"Part of Northrop Realty. New lease just signed
+5/2018"* — reappeared on **17 separate tasks** spanning 2022 to 2024 and was
+counted as 17 findings.
+
+Deduplicate on `(company, normalised body)` **before** reporting any count, and
+treat a header that repeats across years as one determination dated to the
+header, not to each task.
+
+At UBEO this was the difference between reporting 30 new lease determinations
+and the true figure of 10: 17 were one account's header, 1 was a duplicate
+phrasing, and 2 were mis-anchored past-dated leases that read as future.
+
+## 16. "New" findings on accounts that already have the field
+
+A gap analysis that scans engagements at accounts *selected because they already
+have a lease date* finds engagement-level gaps, not new accounts. All 10 UBEO
+determinations landed on companies that already carried a company-level date:
+3 corroborated it, 7 contradicted it.
+
+That is still worth writing — the engagement now carries its own citation, and a
+contradiction is a lead to resolve — but it is **not** net-new pipeline. Say
+which it is before anyone builds a forecast on the number.
+
+**Never roll a single engagement up over an existing company date to resolve a
+contradiction.** Surface the conflict; let a human pick.
+
 ## Infrastructure failures
 
 Not data bugs, but they cost hours.
