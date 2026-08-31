@@ -49,9 +49,16 @@ LS_RETIRED={"Not Decision Maker"}   # recognised only so it can be refused with 
 # no LinkedIn profile is PERMANENTLY unverifiable by this method and re-reading them forever is waste,
 # while `unreadable` is a transient failure worth retrying. Collapsing them hid both facts.
 VERDICT_OK={"yes","no","unreadable","no_profile"}
+# Must match the portal's ai__verification_issue options EXACTLY. An unknown value passes the
+# local check, reaches batch/update, and HubSpot 400s - which is fatal here and loses the whole
+# 100-record chunk AFTER the movers were queued. preflight now compares the two sets.
 ISSUE_OK={"wrong_link_suspected","identity_unresolved","no_identifier","ambiguous_destination",
           "company_ambiguous","succession_conflict","duplicate_contact","division_scope_unclear",
-          "persona_review","title_conflict","phone_unverified","email_unprovable","retired_headline"}
+          "persona_review","title_conflict","phone_unverified","email_unprovable","retired_headline",
+          # departed but carrying live pipeline - eject and you delete a warm re-target
+          "departed_with_pipeline",
+          # the verdict does not match its own evidence (e.g. a persona call filed as employment)
+          "verdict_not_employment"}
 CONFIRMED={"yes","no"}      # only these two justify stamping a "verified" date
 TMP=tempfile.NamedTemporaryFile('w',suffix='.json',delete=False).name
 def call(m,url,body=None,fatal=True):
@@ -348,8 +355,15 @@ if _hs is None:
     print("     which does NOT survive a routine container and may understate the run.")
     c=Counter(x['verdict'] for x in log); n=len(log)
 else:
+    # HubSpot's search index is EVENTUALLY consistent - measured ~1-3 minutes behind a write. The
+    # batch we just committed is therefore invisible to the query above, which reported 0 verdicts
+    # seconds after six were written. Add this batch's own counts, which we know locally, so the
+    # guardrail sees the run it is supposed to be supervising instead of trailing it by a batch.
+    _mine=Counter(r['verdict'] for r in accepted if str(r['id']) in cset)
+    for _v,_k in _mine.items(): _hs[_v]=_hs.get(_v,0)+_k
     c=Counter(_hs); n=sum(_hs.values())
-    print("run-to-date (attempt date "+D+", read from HubSpot): "+str(n)+" "+str(dict(_hs)))
+    print("run-to-date (attempt date "+D+"): "+str(n)+" "+str(dict(_hs))
+          +"  [HubSpot search + this batch; the index lags a write by 1-3 min]")
 if n>=50:
     no_share=c.get('no',0)/n; un_share=c.get('unreadable',0)/n; np_share=c.get('no_profile',0)/n
     if MODE=='refresh' and no_share<0.05:

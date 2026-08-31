@@ -188,6 +188,24 @@ vopts={o['value'] for o in (props.get('ai__li_still_at_company') or {}).get('opt
 vlost=sorted(VERDICTS_NEEDED-vopts)
 if vlost: fail.append("SCHEMA ai__li_still_at_company lost option(s): "+", ".join(vlost))
 else: print("ok   verdict vocabulary: "+", ".join(sorted(VERDICTS_NEEDED))+" all present")
+# The issue register's vocabulary must match the code, or a batch using a value the portal does
+# not define gets a fatal 400 that loses the whole chunk - after the movers were queued to a file
+# that dies with the container. Nothing checked this before.
+_issue_opts={o['value'] for o in (props.get('ai__verification_issue') or {}).get('options',[])}
+_code_issues=set()
+try:
+    import re as _re
+    _m=_re.search(r'ISSUE_OK=\{(.*?)\}',open(os.path.join(HERE,'writeverdicts.py')).read(),_re.S)
+    _code_issues={x.strip().strip('"\'') for x in _re.findall(r'"([a-z_]+)"',_m.group(1))}
+except Exception: pass
+if _code_issues:
+    _missing=sorted(_code_issues-_issue_opts)
+    if _missing:
+        fail.append("SCHEMA ai__verification_issue is missing option(s) the code can write: "
+                    +", ".join(_missing)+" - a batch using one would 400 and lose the chunk")
+    else:
+        print("ok   issue vocabulary: all "+str(len(_code_issues))+" code values exist in the portal")
+
 if 'ai__contact_evidence' in props:
     ml=(props['ai__contact_evidence'] or {}).get('maxLength')
     if ml and int(ml)<990: warn.append("ai__contact_evidence maxLength "+str(ml)+" < the 990 the writers assume")
