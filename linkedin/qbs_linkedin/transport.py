@@ -265,7 +265,7 @@ class UnipileClient:
         return self.v1.post_comment(post_social_id, text)
 
     def comments_today(self, provider_id: str, day_start_ms: int,
-                       day_end_ms: int) -> int:
+                       day_end_ms: int, feed: list[dict] | None = None) -> int:
         """Shawn's own comments inside a Chicago day, counted from Unipile.
 
         This is the `independent_count` that `ledger.decide_allowance`
@@ -275,9 +275,14 @@ class UnipileClient:
 
         Counted from the fully-paged comment feed, so a paging failure
         surfaces as an exception rather than as a comfortable low number.
+
+        Pass ``feed`` when the caller already holds it. Shawn's feed is ~2,775
+        comments over ~28 pages; fetching it twice in one run (once here, once
+        for the dedupe set) doubled the LinkedIn read volume and was enough on
+        its own to push a run past a ten-minute budget.
         """
         count = 0
-        for c in self.self_comments(provider_id):
+        for c in (feed if feed is not None else self.self_comments(provider_id)):
             stamp = c.get("date") or c.get("created_at")
             if not stamp:
                 continue

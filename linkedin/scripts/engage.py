@@ -69,6 +69,17 @@ FRESHNESS_HOURS = 48
 READ_PAUSE_SECONDS = (4, 9)
 
 
+def _note(msg: str) -> None:
+    """Progress to stderr, so a run that dies still shows how far it got.
+
+    The report is a single JSON document on stdout, which means a crash or an
+    external kill loses all of it — which is exactly what happened on the
+    first live run of this script. These lines are the difference between
+    "stopped at contact 9 of 12" and no information whatsoever.
+    """
+    print(msg, file=sys.stderr, flush=True)
+
+
 def _token() -> str:
     tok = os.environ.get("QBS_HUBSPOT_TOKEN", "").strip()
     if not tok:
@@ -192,14 +203,31 @@ def plan(args) -> int:
     report = {"generated_at": datetime.now(timezone.utc).isoformat(),
               "candidates": [], "skipped": [], "halted": None}
 
-    # 1. The cap, before any LinkedIn read. No point reading if we cannot post.
+    # 1. The cap, before any per-contact read. No point reading if we cannot post.
     today, recent, ever = ledger_counts(token)
     day_start, day_end = chicago_day_bounds()
+    _note(f"ledger: {today} today / {recent} in 3d / {ever} since epoch")
+
+    # ONE fetch of Shawn's comment feed, used for BOTH the independent count
+    # and the dedupe set. It is ~2,775 comments over ~28 pages, and fetching
+    # it twice was enough on its own to push a run past its time budget.
     try:
-        independent = client.comments_today(cfg.SHAWN_PROVIDER_ID, day_start, day_end)
+        _note("paging Shawn's comment feed (the slow step)...")
+        feed = client.self_comments(cfg.SHAWN_PROVIDER_ID)
+        # Record it here: client.route holds only the MOST RECENT call, so a
+        # single `route` field at the end of the report describes whichever
+        # call happened last and quietly misdescribes every other one.
+        report["route_self_comments"] = (
+            client.route.version if client.route else None)
+        _note(f"  feed: {len(feed)} comments via "
+              f"{report['route_self_comments']}")
+        independent = client.comments_today(cfg.SHAWN_PROVIDER_ID, day_start,
+                                           day_end, feed=feed)
+        _note(f"  independent count today: {independent}")
     except Exception as exc:
-        print(f"HALT: could not obtain an independent comment count: {exc}",
-              file=sys.stderr)
+        _note(f"HALT: could not obtain an independent comment count: {exc}")
+        report["halted"] = f"independent count unavailable: {exc}"
+        print(json.dumps(report, indent=2))
         return EXIT_HALT
 
     caps = cfg.OutreachCaps()
@@ -218,18 +246,30 @@ def plan(args) -> int:
         print(json.dumps(report, indent=2))
         return EXIT_HALT if decision.halted else EXIT_OK
 
-    # 2. Shawn's own comment history, fully paged, as the dedupe set.
-    self_comments = client.self_comments(cfg.SHAWN_PROVIDER_ID)
-    already = commented_post_ids(self_comments)
+    # 2. The dedupe set, from the feed already in hand.
+    already = commented_post_ids(feed)
     report["dedupe_set_size"] = len(already)
+    _note(f"dedupe set: {len(already)} posts already commented on")
 
     # 3. Walk the roster until the allowance is filled.
     roster = load_roster(token, args.list_id, args.limit)
     report["roster_size"] = len(roster)
+    _note(f"roster: {len(roster)} contacts, allowance {decision.allowance}")
     errors = 0
+    deadline = time.monotonic() + args.max_seconds
 
-    for row in roster:
+    for n, row in enumerate(roster, 1):
         if len(report["candidates"]) >= decision.allowance:
+            break
+        if time.monotonic() > deadline:
+            # Stop on our own terms and still print the report. A run killed
+            # by an external timeout loses every line of it, which is the
+            # silent failure this whole program exists to prevent.
+            report["halted"] = (
+                f"time budget of {args.max_seconds}s reached after "
+                f"{n - 1} contacts — a partial result, not a failure"
+            )
+            _note(report["halted"])
             break
         props = row.get("properties", {})
         pid = props.get(cfg.SECONDARY_MATCH_PROPERTY)
@@ -273,9 +313,11 @@ def plan(args) -> int:
             })
             break   # at most one post per person per run
 
+        _note(f"  [{n}/{len(roster)}] {name}: "
+              f"{len(report['candidates'])} candidate(s) so far")
         time.sleep(random.uniform(*READ_PAUSE_SECONDS))
 
-    report["route"] = client.route.version if client.route else None
+    report["route_posts"] = client.route.version if client.route else None
     print(json.dumps(report, indent=2))
     return EXIT_HALT if report["halted"] else EXIT_OK
 
@@ -365,6 +407,9 @@ def main() -> int:
     p = sub.add_parser("plan", help="emit eligible posts; writes nothing")
     p.add_argument("--list-id", default="8308")
     p.add_argument("--limit", type=int)
+    p.add_argument("--max-seconds", type=int, default=420,
+                   help="stop and report a partial result rather than be "
+                        "killed by an external timeout")
     p.set_defaults(fn=plan)
     w = sub.add_parser("post", help="publish drafted comments")
     w.add_argument("--input", required=True, help="JSON file, or - for stdin")
