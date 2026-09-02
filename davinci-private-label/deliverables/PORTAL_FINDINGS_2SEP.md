@@ -74,3 +74,71 @@ necessarily permanent, but do not hammer it; stop and tell the user.
 **Do not use ClientCommand's `call_hubspot_as_client` for this client.** Portals DaVinci Labs,
 FoodScience and Pet Tech Labs all return `[]` for stored credentials, so it falls back to QBS's
 global token and would write to portal **20682069** instead of the client's **4087538**.
+
+---
+
+# Second batch — client call and fixes, 2 September (evening)
+
+Also queued for Hindsight; the retain failed again on `Insufficient credits. Balance: $-0.01`.
+
+## LAUNCH IS 14 SEPTEMBER, NOT 30 SEPTEMBER
+
+From the 2 Sep call. Sarah: *"targeting the 14th for a core site launch"*; Patrick agreed.
+Remaining pages updated by the 30th. Tammy's reasoning: all DaVinci branded sites go live
+9/30 and her team will have no capacity to troubleshoot Praxera that week, so Praxera
+launches quietly first — *"Nobody even knows what the hell Praxera is… a tree falling in the
+woods."* Patrick added it buys an SEO head start: both sites live, canonical switched to
+Praxera, then wind DaVinci private-label content out of the nav.
+
+Tammy reports on-track weekly to her CEO and cannot report a slip a week out.
+
+## Three defects fixed — 39 pages, all backed up and verified
+
+1. **AND MORE tiles were broken, not unlinked.** Patrick told Tammy on the call *"that's not
+   linked anywhere yet."* Wrong — all 20 pointed at `/pl-demo-pillar`, which does not exist
+   on praxerasupplements.com, so they would 404. Repointed to `/learning/definitive-guide`.
+   **Lesson: "not linked" and "linked to a dead slug" look identical in the editor.**
+2. **The literal "None"** Tammy caught under Frequently Asked Questions is a Python `None`
+   that a build script stringified into the FAQ module's `section_subhead` as
+   `<p style="…">None</p>`. It was on **22 pages**, not the two she saw. Cleared to `""`.
+   If a stray "None" reappears, look for a generator writing `str(None)`.
+3. **Removed the "Dropship Private Label Supplements" link** from the resources card. It was
+   also a DaVinci outbound link, so resources dropped 19 → 18.
+
+## Dropshipping
+
+Tammy: *"We do not want to offer drop shipping… this can't go live like this."* The page is
+built on the service end to end — fulfilment claims, "built-in dropshipping infrastructure",
+a full FAQ on fulfilment times and international dropshipping, and the meta description.
+Rewriting it as informational is a full rewrite. It is DRAFT, so the pre-launch action is
+simply **do not publish it** — put it on the launch checklist as an explicit exclusion.
+
+**Still open:** `our-process` reads *"Inventory ships to your warehouse or we dropship direct
+to your customers."* That contradicts her instruction but is reading copy on a page she did
+not review, so it needs her word.
+
+## Settled — stop asking
+
+- **Email:** one address, `info@praxerasupplements.com`. John (IT) setting it up. No per-rep
+  addresses. The three people are Mindy, Arielle, Lindsey.
+- **Blogs** come to Praxera, not the new DaVinci site. Dan asked, Sarah confirmed.
+- **Praxera contact form:** no topic dropdown — every enquiry is private label. Same shared
+  inbox. On the DaVinci side "private label" and "set up an account" come off at split.
+- **Consumer traffic** to Shopify/Klaviyo 9/30; practitioners stay in HubSpot.
+- **Blog stays a subdirectory.** No `blog.` subdomain.
+- **The theme is not being renamed.** Shawn: *"just leave the theme alone."*
+
+## Still open from the call
+
+Design Services overpromises — remove "Talk to a designer" (no capacity), merge the two boxes;
+Tammy pasted replacement copy into the Zoom chat that **only Patrick has**. Chewables and
+capsules images washed out — natural tones, explicitly not bright red or blue because *"those
+bright colours are synthetics"*. Amazon icon unrecognised — replace with an add-to-cart bag.
+Stray caret on resources. Widow words. Guides: add Ariel's YouTube clips, refresh the 2024 CRN
+survey, reattribute the old testimonial to **Melinda Elmadjian, Contract Manufacturing
+Business Leader** — *"it's not corporation, it's LLC."*
+
+## Correction to the call
+
+Sarah said the privacy page still has `[BRAND_TBD]`. **It does not** — zero `BRAND_TBD`, zero
+`[ALL_CAPS]` placeholders, zero bare "TBD". Confirm with her so it is not chased twice.
