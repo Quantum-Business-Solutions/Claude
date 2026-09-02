@@ -1,4 +1,4 @@
-# Custom Formulation removal — prepared, NOT yet applied
+# Custom Formulation removal — change 2 DONE, change 1 outstanding
 
 Authorised by Shawn on 2 Sep 2026: "They are not offering custom formulation..
 remove it from capabilities and delete the Praxera custom formulation page."
@@ -58,3 +58,31 @@ Removing the *service* from the site is a bigger job than these two calls:
 99 prose sentences on 26 pages, 55 mentions across 14 blog posts, 8 across
 5 emails, the "Praxera - Custom Formulation - Auto-responder" email, and a
 field option on Praxera - Main Lead Form.
+
+
+---
+
+## Update, 2 Sep 2026 (later)
+
+**Change 2 is done.** Shawn deleted the Praxera `custom-formulation` page, and
+`alp/ads-custom` with it. Verified: both gone, and zero links to either remain
+across 60 Praxera pages, 75 Praxera blog posts, and all forms.
+
+Shawn also deleted the `pl-demo-*-v3` set. The portal went from 185 site pages
+to 120.
+
+**Change 1 is still outstanding** — the footer entry. Its blast radius is now
+smaller:
+
+| content | count | state |
+|---|---|---|
+| Praxera site pages | 60 | DRAFT |
+| Praxera blog posts | 75 | DRAFT |
+| DaVinci drafts still on the template (6 are `pl-demo-*-v1ref`) | 10 | DRAFT |
+| **Published, any brand** | **0** | — |
+
+Confirmed across all three content types that no live page renders this module.
+Only the Praxera Supplements Blog uses a Private Label theme template
+(`Praxera - Blog Post.html`); every DaVinci blog is on `DaVinci_2023` or
+`DaVinci_new_2019`, PetTech on `Pet_Tech_Labs`, VetriScience on `VetriScience`.
+The theme is named for DaVinci but no live DaVinci content uses it.

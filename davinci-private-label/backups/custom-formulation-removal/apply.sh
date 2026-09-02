@@ -1,60 +1,50 @@
 #!/usr/bin/env bash
-# Custom Formulation removal — the two writes, and nothing else.
-# Authorised by Shawn, 2 Sep 2026. Run from davinci-private-label/.
+# Custom Formulation removal — the ONE remaining write.
 #
-# Change 1: drop the "Custom Formulation" entry from the footer Capabilities column.
-# Change 2: delete the Praxera custom-formulation page.
-# Both targets are DRAFT. Nothing published is touched.
+# Change 2 (delete the Praxera custom-formulation page) was done by Shawn on
+# 2 Sep 2026, along with alp/ads-custom. Verified gone, and nothing links to
+# either from any page, blog post or form. Only the footer entry is left.
+#
+# Change 1: drop "Custom Formulation" from the footer Capabilities column.
+# Blast radius: 60 Praxera pages + 75 Praxera blog posts + 10 DaVinci drafts.
+# All DRAFT. Nothing published on any brand renders this module.
 set -euo pipefail
 
 PAT="${HUBSPOT_PAT:?export HUBSPOT_PAT=pat-na1-... first}"
 DIR="$(cd "$(dirname "$0")" && pwd)"
 API="https://api.hubapi.com"
 MOD="Private%20Label/Modules/Global%20Footer.module/fields.json"
-PAGE_ID="216189433487"
 
-echo "== pre-flight: the file we are about to replace =="
-curl -sS -H "Authorization: Bearer $PAT" \
-  "$API/cms/v3/source-code/published/content/$MOD" \
-  | python3 -c 'import sys,json;j=json.load(sys.stdin)
+show() { python3 -c 'import sys,json
+j=json.load(sys.stdin)
 def f(n):
  if isinstance(n,dict):
   if n.get("headline")=="Capabilities":
-   print("   BEFORE:",[i.get("linkLabel") for i in n.get("simplemenu_field",[])])
+   print("   ","'"$1"'",[i.get("linkLabel") for i in n.get("simplemenu_field",[])])
   [f(v) for v in n.values()]
  elif isinstance(n,list): [f(v) for v in n]
-f(j)'
+f(j)'; }
 
-echo "== change 1: footer =="
+echo "== before =="
+curl -sS -H "Authorization: Bearer $PAT" \
+  "$API/cms/v3/source-code/published/content/$MOD" | show "BEFORE:"
+
+echo "== writing =="
 curl -sS -w '   HTTP %{http_code}\n' -X PUT \
   -H "Authorization: Bearer $PAT" \
   -F "file=@$DIR/fields.json.after;filename=fields.json;type=application/json" \
   "$API/cms/v3/source-code/published/content/$MOD" -o /dev/null
 
-echo "== verify footer =="
+echo "== after =="
 curl -sS -H "Authorization: Bearer $PAT" \
   "$API/cms/v3/source-code/published/content/$MOD" \
-  | python3 -c 'import sys,json;j=json.load(sys.stdin)
-def f(n):
- if isinstance(n,dict):
-  if n.get("headline")=="Capabilities":
-   l=[i.get("linkLabel") for i in n.get("simplemenu_field",[])]
-   print("   AFTER :",l)
-   assert not any("ustom" in (x or "") and "ormulation" in (x or "") for x in l), "STILL PRESENT"
-   print("   OK - Custom Formulation gone")
-  [f(v) for v in n.values()]
- elif isinstance(n,list): [f(v) for v in n]
-f(j)'
-
-echo "== change 2: delete the page =="
-curl -sS -w '   HTTP %{http_code}\n' -X DELETE \
-  -H "Authorization: Bearer $PAT" \
-  "$API/cms/v3/pages/site-pages/$PAGE_ID" -o /dev/null
-
-echo "== verify page =="
-code=$(curl -sS -o /dev/null -w '%{http_code}' \
-  -H "Authorization: Bearer $PAT" "$API/cms/v3/pages/site-pages/$PAGE_ID")
-echo "   GET page -> HTTP $code   (404 = gone, 200 = still there)"
-
+  | tee /tmp/_ff.json | show "AFTER :"
+python3 - <<'PY'
+import json,re
+j=json.load(open("/tmp/_ff.json"))
+s=json.dumps(j)
+assert not re.search(r"custom[\s\-_]{0,3}formulation",s,re.I), "STILL PRESENT - write did not take"
+print("   OK - Custom Formulation gone from the module")
+PY
 echo
-echo "Done. Nothing else was touched."
+echo "Done. The footer entry only. Nothing else touched."
