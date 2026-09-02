@@ -1,0 +1,734 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Marko Ajder",
+ "categoryId": 1,
+ "contentTypeCategory": 4,
+ "createdAt": "2026-06-30T18:12:27.306Z",
+ "createdById": "26261533",
+ "currentState": "DRAFT",
+ "domain": "praxerasupplements.com",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "htmlTitle": "Custom Formulation Services | [BRAND_TBD] Private Label",
+ "id": "216189433487",
+ "language": "en",
+ "layoutSections": {
+  "main_content": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "name": "main_content",
+   "params": {},
+   "rowMetaData": [
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    }
+   ],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_0",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_0",
+         "name": "module_0",
+         "params": {
+          "align": "center",
+          "background_image": {
+           "alt": "",
+           "loading": "lazy",
+           "src": "https://info.davincilabs.com/hubfs/private-label/DV_PL_HeroBackground_2.jpg"
+          },
+          "background_screen": {
+           "color": "#C9DBE2",
+           "opacity": 85
+          },
+          "button_padding": "16px 38px",
+          "button_size": 16,
+          "buttons": [
+           {
+            "link": {
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Discuss a Custom Formulation"
+           }
+          ],
+          "css_class": "dnd-module",
+          "eyebrow": "BEYOND PRIVATE LABEL",
+          "eyebrow_color": "heading",
+          "eyebrow_size": 13,
+          "headline": "<h1>Custom formulation when our stock catalog doesn't fit.</h1>",
+          "headline_size": 48,
+          "max_width": 900,
+          "module_id": 218939846507,
+          "style": {
+           "background_color": {
+            "color": "#C9DBE2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "subhead": "<p>If you need something we don't already make, our R&D team can develop custom formulations to your specifications. Higher minimums, longer timeline, full proprietary ownership.</p>",
+          "subhead_size": 19,
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_1",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_1",
+         "name": "module_1",
+         "params": {
+          "align": "left",
+          "body_size": 18,
+          "content": "<h2 style=\"color: #012638; font-size: 32px; font-weight: 700; line-height: 1.25; margin: 0 0 26px\">Private label gets you to market in weeks. Custom formulation gets you a moat.</h2><p>Most brands launch with private label. It's the fastest path to market and the lowest-risk way to validate audience and channel. As brands scale, some develop signature products that need proprietary formulations: a unique blend, a specific delivery format, an ingredient combination that doesn't exist elsewhere.</p><p>Our R&D team can develop those for you. The trade-off is timeline (6 to 12 months for full development), minimums (significantly higher than private label), and shared development cost. But the result is yours: a proprietary product that competitors cannot copy from our catalog.</p>",
+          "css_class": "dnd-module",
+          "heading_size": 32,
+          "max_width": 810,
+          "module_id": 218940115784,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "top_border": false
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_2",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_2",
+         "name": "module_2",
+         "params": {
+          "body_color": {
+           "color": "#555555",
+           "opacity": 100
+          },
+          "body_size": 15,
+          "card_align": "left",
+          "card_style": "card",
+          "cards": [
+           {
+            "content": "<p style=\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\">Same R&D process that builds DaVinci's own product line. Doctor formulators, clinical research, ingredient sourcing, prototype development, and stability testing.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "src": "https://info.davincilabs.com/hubfs/private-label/icons/pl-icon-04cb8f7fc7.svg"
+            },
+            "title": "Doctor-formulated R&D"
+           },
+           {
+            "content": "<p style=\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\">Custom formulations belong to your brand. They are not added to our private label catalog. Competitors cannot copy them from us.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "src": "https://info.davincilabs.com/hubfs/private-label/icons/pl-icon-30d8dc8a51.svg"
+            },
+            "title": "Proprietary ownership"
+           },
+           {
+            "content": "<p style=\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\">Capsules, tablets, powders, softgels, chewables, liquids, oral sprays. Format selection driven by your formulation needs.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "src": "https://info.davincilabs.com/hubfs/private-label/icons/pl-icon-6f572adbe4.svg"
+            },
+            "title": "Full format flexibility"
+           }
+          ],
+          "css_class": "dnd-module",
+          "gap": 28,
+          "header_width": 1100,
+          "headline_lh": "1.25",
+          "headline_size": 32,
+          "max_width": 1100,
+          "min_column_width": 260,
+          "module_id": 218940115759,
+          "section_eyebrow": "",
+          "section_headline": "",
+          "section_subhead": "",
+          "style": {
+           "background_color": {
+            "color": "#F7F7F6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 20
+           }
+          },
+          "subhead_size": 17,
+          "subhead_width": 0,
+          "text_color": "dark",
+          "title_lh": "normal",
+          "title_size": 19,
+          "title_style": "heading"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_3",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_3",
+         "name": "module_3",
+         "params": {
+          "align": "center",
+          "css_class": "dnd-module",
+          "eyebrow": "WHEN TO CHOOSE CUSTOM",
+          "headline": "Is custom formulation right for you?",
+          "headline_lh": "1.2",
+          "headline_size": 34,
+          "max_width": 900,
+          "module_id": 218940115771,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 30,
+            "padding_top": 70
+           }
+          },
+          "subhead": "",
+          "subhead_color": {
+           "color": "#555555",
+           "opacity": 100
+          },
+          "subhead_size": 17,
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_4",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_4",
+         "name": "module_4",
+         "params": {
+          "align": "left",
+          "body_size": 16,
+          "content": "<div style=\"display: flex; align-items: flex-start; gap: 14px; margin: 0 0 18px;\">\n      <div style=\"flex-shrink: 0; width: 26px; height: 26px; background: #6BA644; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;\">&#10003;</div>\n      <p style=\"color: #333; font-size: 16px; line-height: 1.6; margin: 0;\">You have an established brand with proven private label momentum</p>\n    </div><div style=\"display: flex; align-items: flex-start; gap: 14px; margin: 0 0 18px;\">\n      <div style=\"flex-shrink: 0; width: 26px; height: 26px; background: #6BA644; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;\">&#10003;</div>\n      <p style=\"color: #333; font-size: 16px; line-height: 1.6; margin: 0;\">Your customers are asking for something that does not exist in our catalog</p>\n    </div><div style=\"display: flex; align-items: flex-start; gap: 14px; margin: 0 0 18px;\">\n      <div style=\"flex-shrink: 0; width: 26px; height: 26px; background: #6BA644; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;\">&#10003;</div>\n      <p style=\"color: #333; font-size: 16px; line-height: 1.6; margin: 0;\">You have validated audience and channel demand for a specific product</p>\n    </div><div style=\"display: flex; align-items: flex-start; gap: 14px; margin: 0 0 18px;\">\n      <div style=\"flex-shrink: 0; width: 26px; height: 26px; background: #6BA644; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;\">&#10003;</div>\n      <p style=\"color: #333; font-size: 16px; line-height: 1.6; margin: 0;\">You want a moat against competitors copying your hero SKU</p>\n    </div><div style=\"display: flex; align-items: flex-start; gap: 14px; margin: 0 0 18px;\">\n      <div style=\"flex-shrink: 0; width: 26px; height: 26px; background: #6BA644; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;\">&#10003;</div>\n      <p style=\"color: #333; font-size: 16px; line-height: 1.6; margin: 0;\">You can commit to higher minimums and a 6 to 12 month development timeline</p>\n    </div><div style=\"display: flex; align-items: flex-start; gap: 14px; margin: 0 0 18px;\">\n      <div style=\"flex-shrink: 0; width: 26px; height: 26px; background: #6BA644; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;\">&#10003;</div>\n      <p style=\"color: #333; font-size: 16px; line-height: 1.6; margin: 0;\">You want proprietary ownership of the formulation</p>\n    </div>",
+          "css_class": "dnd-module",
+          "heading_size": 32,
+          "max_width": 800,
+          "module_id": 218940115784,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 10
+           }
+          },
+          "text_color": "dark",
+          "top_border": false
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_5",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_5",
+         "name": "module_5",
+         "params": {
+          "button_padding": "16px 40px",
+          "button_size": 16,
+          "buttons": [
+           {
+            "link": {
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Schedule a Consultation"
+           }
+          ],
+          "content": "<p style=\"color: #333; font-size: 17px; line-height: 1.55\">Schedule a consultation. We will walk through your audience, the right formulations for them, branding options, and the timeline.</p>",
+          "content_color": {
+           "color": "#333333",
+           "opacity": 100
+          },
+          "content_size": 17,
+          "css_class": "dnd-module",
+          "eyebrow": "",
+          "headline": "Ready to launch your private label supplement line?",
+          "headline_lh": "1.25",
+          "headline_size": 32,
+          "max_width": 720,
+          "module_id": 218940115731,
+          "style": {
+           "background_color": {
+            "color": "#E6E5E3",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_6",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_6",
+         "name": "module_6",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218944099153
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_7",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_7",
+         "name": "module_7",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218944099156
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_8",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_8",
+         "name": "module_8",
+         "params": {
+          "answer_size": 15,
+          "css_class": "dnd-module",
+          "headline_lh": "normal",
+          "headline_size": 32,
+          "items": [
+           {
+            "answer": "Custom formulation makes sense when you need a formulation that doesn't exist in our catalog, when you want proprietary ownership of the formula, when you're targeting a specific clinical outcome that requires specific dosages, or when you have a defensible insight about an ingredient combination. For most first-time brands, private label is the right starting point.",
+            "question": "When does custom formulation make sense instead of private label?"
+           },
+           {
+            "answer": "12 to 16 weeks from concept to production-ready, depending on complexity. The phases: formulation development, ingredient sourcing, stability testing, final formulation lock, manufacturing scale-up, and first production run. Some categories take longer because of stability testing requirements.",
+            "question": "What are typical timelines for custom formulation?"
+           },
+           {
+            "answer": "Higher than private label, because we need to amortize R&D, ingredient sourcing, and stability testing investments. Typical custom minimums start in the low thousands of bottles per SKU. We give you specific numbers during the scoping conversation.",
+            "question": "What are the minimums for custom formulation?"
+           },
+           {
+            "answer": "You do. Custom formulations are your proprietary IP. We document the formula in a way that you could (in theory) take to another manufacturer, though we hope you won't. The development relationship is transparent: you see the rationale, the testing, and the final spec.",
+            "question": "Who owns the custom formula we develop together?"
+           },
+           {
+            "answer": "Yes. We have supplier relationships with most major branded ingredient companies. Branded ingredients add cost but give you marketing leverage (the brand story, the published research). We help you decide where branded ingredients are worth the premium and where they aren't.",
+            "question": "Can custom formulations contain branded ingredients (Sensoril, NKO, etc.)?"
+           }
+          ],
+          "max_width": 820,
+          "module_id": 218940115739,
+          "open_first": false,
+          "question_size": 17,
+          "section_eyebrow": "",
+          "section_headline": "Frequently asked questions",
+          "section_subhead": "<p style=\"color: #555; font-size: 17px; line-height: 27px\">None</p>",
+          "style": {
+           "background_color": {
+            "color": "#F7F7F6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_9",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_9",
+         "name": "module_9",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218942529652
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "type": "cell",
+   "w": 0,
+   "x": 0
+  }
+ },
+ "linkRelCanonicalUrl": "https://www.praxerasupplements.com/custom-formulation",
+ "metaDescription": "Beyond private label: custom formulation when our stock catalog doesn't fit. Higher minimums, longer timeline, full proprietary ownership of the result.",
+ "name": "Private Label - Page - Custom Formulation",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "1970-01-01T00:00:00Z",
+ "published": false,
+ "slug": "custom-formulation",
+ "state": "DRAFT",
+ "subcategory": "site_page",
+ "templatePath": "Private Label/Templates/Page - DND.html",
+ "translations": {},
+ "updatedAt": "2026-08-30T22:14:26.446Z",
+ "updatedById": "52613719",
+ "url": "https://praxerasupplements.com/custom-formulation",
+ "useFeaturedImage": false,
+ "widgetContainers": {},
+ "widgets": {}
+}

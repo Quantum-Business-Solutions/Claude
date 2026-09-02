@@ -1,0 +1,476 @@
+[ {
+  "id" : "fb07726d-eb6a-0977-7a7b-55219f9ad8ca",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "94491a36-9e7e-296c-39d0-0a138f97805d",
+    "name" : "padding",
+    "label" : "Padding",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "7e7149fd-b1e5-ef0e-5a9a-4fc225437f1c",
+      "name" : "padding_top",
+      "label" : "Padding Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 500,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    }, {
+      "id" : "f223cdd0-e2be-6189-8a26-ff03c700eade",
+      "name" : "padding_bottom",
+      "label" : "Padding Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 500,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "padding_top" : 50,
+      "padding_bottom" : 50
+    }
+  }, {
+    "id" : "47ed1557-8b5c-b3db-2292-acdf7ba3b17d",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#323232",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "padding" : {
+      "padding_top" : 50,
+      "padding_bottom" : 50
+    },
+    "background_color" : {
+      "color" : "#323232",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "c272644a-5b63-e1e7-963c-7b8f19fd32a7",
+  "name" : "footer_logo",
+  "label" : "Footer Logo",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Praxera/Praxera%20Logo%20White.png",
+    "alt" : "Praxera Logo White",
+    "loading" : "lazy",
+    "width" : 612,
+    "height" : 208,
+    "max_width" : 612,
+    "max_height" : 208
+  }
+}, {
+  "id" : "bc01c9a2-f729-ab93-7730-87f28563dd33",
+  "name" : "caption",
+  "label" : "Caption",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h3>About Private Label</h3>\n<p>Private-label supplement manufacturing for brands ready to own their formulations. Sibling brand to FoodScience Corporation and DaVinci Laboratories.</p>"
+}, {
+  "id" : "27aeb62b-328e-fc2e-2257-b8821dbba976",
+  "name" : "footer_menu",
+  "label" : "Footer Menu",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 3,
+    "sorting_label_field" : "3bd97bef-44ac-45a6-4b68-f47a3c804afa",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "3bd97bef-44ac-45a6-4b68-f47a3c804afa",
+    "name" : "headline",
+    "label" : "Headline",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Footer Headline"
+  }, {
+    "id" : "5ab7d38e-435a-e2f7-f9a2-fc025b626c9a",
+    "name" : "simplemenu_field",
+    "label" : "Simple menu",
+    "required" : false,
+    "locked" : false,
+    "type" : "simplemenu",
+    "display_width" : null,
+    "default" : [ {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : 5451037108,
+      "pageLinkName" : "DaVinci Blog",
+      "isDeleted" : false,
+      "categoryId" : 3,
+      "subCategory" : null,
+      "contentType" : "blog",
+      "state" : "PUBLISHED",
+      "linkLabel" : "About Us",
+      "linkUrl" : null,
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "PAGE_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : 5451037108,
+      "pageLinkName" : "DaVinci Blog",
+      "isDeleted" : false,
+      "categoryId" : 3,
+      "subCategory" : null,
+      "contentType" : "blog",
+      "state" : "PUBLISHED",
+      "linkLabel" : "Careers",
+      "linkUrl" : null,
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "PAGE_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : 5451037108,
+      "pageLinkName" : "DaVinci Blog",
+      "isDeleted" : false,
+      "categoryId" : 3,
+      "subCategory" : null,
+      "contentType" : "blog",
+      "state" : "PUBLISHED",
+      "linkLabel" : "Our Team",
+      "linkUrl" : null,
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "PAGE_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : 5451037108,
+      "pageLinkName" : "DaVinci Blog",
+      "isDeleted" : false,
+      "categoryId" : 3,
+      "subCategory" : null,
+      "contentType" : "blog",
+      "state" : "PUBLISHED",
+      "linkLabel" : "Mission & Vision",
+      "linkUrl" : null,
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "PAGE_LINK",
+      "children" : [ ]
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "headline" : "Capabilities",
+    "simplemenu_field" : [ {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Private Label Supplements",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    },  {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Our Process",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Design Services",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    } ]
+  }, {
+    "headline" : "Resources",
+    "simplemenu_field" : [ {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Resource Center",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Guides",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "FAQ",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Blog",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    } ]
+  }, {
+    "headline" : "About",
+    "simplemenu_field" : [ {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Quality & Trust",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Health Categories",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Supplement Forms",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : true,
+      "pageLinkId" : null,
+      "contentGroupId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : false,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Contact",
+      "linkUrl" : "#",
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "URL_LINK",
+      "children" : [ ]
+    } ]
+  } ]
+}, {
+  "id" : "c3f594b2-4a86-ff69-a14e-d1e340eeea0b",
+  "name" : "address",
+  "label" : "Address",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h3>Address</h3>\n<p>Operational address TBD.<br>Awaiting brand lock.</p>\n<p>Private Label is part of the FoodScience® family of brands. We are guided by a commitment to the highest standards of excellence in nutritional supplements, customer care, and community involvement. Learn more at foodsciencecorp.com</p>"
+}, {
+  "id" : "21d206e3-01ae-9fd5-c3e6-911b154b33bc",
+  "name" : "social_urls",
+  "label" : "Social URLs",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "20ba3525-3635-940c-a8be-d51e94e50c20",
+    "name" : "facebook_url",
+    "label" : "Facebook URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "26a6c656-e273-0651-0c62-7c1f887f8e2d",
+    "name" : "twitter_url",
+    "label" : "Twitter URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "47ffeec9-ee96-00ff-d47c-72e0ac1e9d72",
+    "name" : "linkedin_url",
+    "label" : "Linkedin URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "facebook_url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "twitter_url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "linkedin_url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+} ]
