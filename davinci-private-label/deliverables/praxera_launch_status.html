@@ -1,0 +1,166 @@
+<title>Praxera Launch Status</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>:root{--paper:#F6F7F4;--surface:#fff;--sunk:#EEF0EA;--ink:#191B17;--body:#3A3F36;--muted:#6E7369;--rule:#DDE0D8;--accent:#65A11B;--accent-soft:#EAF2DC;--ok:#3D5A80;--ok-soft:#E4EAF2;--warn:#8A6300;--warn-soft:#F6EDD8;--bad:#9B3B31;--bad-soft:#F5E3E0;--shadow:0 1px 2px rgba(25,27,23,.05),0 8px 24px -16px rgba(25,27,23,.28)}@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#141613;--surface:#1C1F1B;--sunk:#22261F;--ink:#E9EBE4;--body:#C3C8BB;--muted:#8B9184;--rule:#2F342B;--accent:#8CC63F;--accent-soft:#25301A;--ok:#8FB4DC;--ok-soft:#1B2632;--warn:#D9A93F;--warn-soft:#2E2716;--bad:#DE8378;--bad-soft:#331F1C;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8)}}:root[data-theme="dark"]{--paper:#141613;--surface:#1C1F1B;--sunk:#22261F;--ink:#E9EBE4;--body:#C3C8BB;--muted:#8B9184;--rule:#2F342B;--accent:#8CC63F;--accent-soft:#25301A;--ok:#8FB4DC;--ok-soft:#1B2632;--warn:#D9A93F;--warn-soft:#2E2716;--bad:#DE8378;--bad-soft:#331F1C;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8)}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--body);font-size:16px;line-height:1.6;font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}.wrap{max-width:1060px;margin:0 auto;padding:0 26px 90px}.measure{max-width:68ch}h1,h2,h3{font-family:Newsreader,Georgia,serif;color:var(--ink);font-weight:500;margin:0;text-wrap:balance}h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.08;letter-spacing:-.015em}h2{font-size:clamp(1.4rem,3vw,1.8rem);line-height:1.18;margin:0 0 .3rem}h3{font-size:1.05rem;font-weight:600;line-height:1.3}p{margin:0 0 1rem}a{color:var(--accent);text-underline-offset:3px}code{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:.85em;background:var(--sunk);padding:1px 5px;border-radius:2px}.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .5rem}header.top{background:var(--surface);border-bottom:1px solid var(--rule);margin-bottom:40px}header.top .wrap{padding-top:38px;padding-bottom:30px}.brandline{display:flex;align-items:center;gap:10px;margin-bottom:18px}.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}.brandline span{font-family:"IBM Plex Mono",monospace;font-size:.69rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}.sub{font-size:1.04rem;margin-top:14px;max-width:62ch}.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(138px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:26px}.metric{background:var(--surface);padding:14px 16px}.metric b{display:block;font-family:Newsreader,serif;font-size:1.85rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;font-weight:500}.metric.good b{color:var(--accent)}.metric.bad b{color:var(--bad)}.metric.warn b{color:var(--warn)}.metric small{display:block;margin-top:6px;font-size:.68rem;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;font-family:"IBM Plex Mono",monospace}section{margin-top:56px;scroll-margin-top:16px}.shead{border-top:2px solid var(--ink);padding-top:13px;margin-bottom:18px}.call{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:0 3px 3px 0;padding:18px 20px;margin:18px 0;box-shadow:var(--shadow)}.call.bad{border-left-color:var(--bad)}.call.warn{border-left-color:var(--warn)}.call.good{border-left-color:var(--ok)}.call h3{margin-bottom:.4rem}.call p:last-child{margin-bottom:0}.chip{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;padding:2px 7px;border-radius:2px;white-space:nowrap}.c-ok{background:var(--ok-soft);color:var(--ok)}.c-warn{background:var(--warn-soft);color:var(--warn)}.c-bad{background:var(--bad-soft);color:var(--bad)}.c-acc{background:var(--accent-soft);color:var(--accent)}.c-mute{background:var(--sunk);color:var(--muted)}.tscroll{overflow-x:auto;border:1px solid var(--rule);border-radius:3px;background:var(--surface);box-shadow:var(--shadow)}table{border-collapse:collapse;width:100%;font-size:.85rem}th{font-family:"IBM Plex Mono",monospace;font-size:.63rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:10px 13px;border-bottom:1px solid var(--rule);background:var(--sunk);white-space:nowrap}td{padding:9px 13px;border-bottom:1px solid var(--rule);vertical-align:top}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:var(--sunk)}td.num{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}td.nm{color:var(--ink);font-weight:500;min-width:180px}ul.tight{margin:0 0 1rem;padding-left:1.15rem}ul.tight li{margin-bottom:.42rem}.note{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:10px}.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:18px 0}.card{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:15px 17px;box-shadow:var(--shadow)}.card b{display:block;font-family:Newsreader,serif;font-size:1.6rem;color:var(--ink);line-height:1}.card .lbl{font-family:"IBM Plex Mono",monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}.card .st{margin-top:9px}@media(prefers-reduced-motion:reduce){*{transition:none!important}}</style>
+<style>.tct{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;letter-spacing:.09em;color:var(--muted);background:var(--sunk);padding:2px 7px;border-radius:2px;font-variant-numeric:tabular-nums}td .chip+.chip{margin-left:4px}</style>
+<style></style>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Praxera &middot; FoodScience LLC &middot; portal 4087538</div>
+  <h1>Launch status</h1>
+  <p class="measure sub">Verified against all 63 Praxera drafts on 3 September. This page replaces
+  the 31 August snapshot for call purposes: the launch date moved, and several items on the older
+  Launch Guide are now out of date.</p>
+</header>
+<section>
+  <div class="metrics">
+    <div class="metric"><b>14 Sep</b><small>core site launch</small></div>
+    <div class="metric"><b>11</b><small>days remaining</small></div>
+    <div class="metric"><b>63</b><small>Praxera pages, all draft</small></div>
+    <div class="metric"><b>7</b><small>decisions needed from you</small></div>
+  </div>
+  <p class="note">Launch moved from 30 September to 14 September on the 2 September call, so Praxera
+  goes live before the DaVinci sites and the team has capacity to troubleshoot. Remaining pages
+  still follow by the 30th.</p>
+</section>
+<section>
+  <h2>Decisions we need on this call</h2>
+  <p class="measure sub">Each of these is blocked on your word, not on build time.</p>
+      <div class="call bad">
+      <h3><span class="chip c-bad">Blocks launch</span> Custom Formulation still appears on 11 pages</h3>
+      <p>Sarah confirmed Praxera does not offer this. The footer link is gone and the dedicated page
+      is deleted, but <b>23 sentences remain in page copy</b>. They split two ways, and we need to know
+      how far to go.</p>
+      <p><b>Hard offers (16)</b> &mdash; these promise a service that does not exist:
+      &ldquo;Custom formulation projects typically take 12 to 16 weeks&rdquo; (sleep, prenatal),
+      &ldquo;We charge separately for custom formulation projects&rdquo; (design services),
+      &ldquo;higher minimums than private label&rdquo; and the whole IP question
+      (contract manufacturing ad page), plus a <b>Discuss a Custom Formulation</b> button.</p>
+      <p><b>Definitions (7)</b> &mdash; these only explain the industry term, and arguably help buyers:
+      &ldquo;What&rsquo;s the difference between private label and custom formulation?&rdquo; in the FAQ,
+      one line in the definitive guide, and a stability-testing note.</p>
+      <p><b>Our recommendation:</b> strip all 16 offers, keep the 7 definitions. Say the word and it is
+      done the same day.</p>
+    </div>
+    <div class="call bad">
+      <h3><span class="chip c-bad">Blocks launch</span> Eight manufacturing claims still say &ldquo;we&rdquo;</h3>
+      <p>Under Sarah&rsquo;s rule Praxera cannot claim to be the manufacturer. Two of the ten she flagged
+      are already fixed; <b>eight remain</b>, on home, about, certifications, chewables and the
+      consultation thank-you page. The strongest is
+      &ldquo;we are one of the most trusted dietary supplement manufacturers.&rdquo;</p>
+      <p>Replacement wording is drafted for all eight, keeping the approved
+      &ldquo;Manufactured in Vermont, U.S.A.&rdquo; provenance untouched. We need Sarah&rsquo;s yes on the
+      wording, then it is one pass.</p>
+    </div>
+    <div class="call warn">
+      <h3><span class="chip c-warn">Confirm</span> Dropshipping is excluded from the 14th</h3>
+      <p>Tammy: <i>&ldquo;We do not want to offer drop shipping&hellip; this can&rsquo;t go live like this.&rdquo;</i>
+      The page is built on the service end to end, 31 references, so rewriting it is a post-launch job.
+      It stays a draft and goes on the do-not-publish list at cutover. The green
+      <b>Dropship Private Label</b> button is already off the resources page.</p>
+      <p><b>Still open:</b> one sentence on <b>our process</b> reads &ldquo;we dropship direct to your
+      customers.&rdquo; We are holding until Tammy gives us the replacement wording, since that page
+      describes how fulfilment actually works.</p>
+    </div>
+    <div class="call warn">
+      <h3><span class="chip c-warn">Waiting on you</span> Design Services rewrite</h3>
+      <p>Sarah asked to remove <b>Talk to a designer</b> (&ldquo;we don&rsquo;t have capacity&rdquo;) and to soften
+      <b>Work with our design team</b>, merging the two boxes into one that links through to templates.
+      Tammy pasted replacement copy into the Zoom chat &mdash; <b>Patrick has it, we do not.</b> Sending
+      that across unblocks the whole page.</p>
+    </div>
+    <div class="call warn">
+      <h3><span class="chip c-warn">Waiting on you</span> Four image and icon swaps</h3>
+      <p>Chewables and capsules on the home page are washed out, white on white. Tammy wants natural
+      tones, <i>&ldquo;like our prebiotic mushroom, a light brown&rdquo;</i>, explicitly not bright colours
+      because <i>&ldquo;all those bright colours are synthetics.&rdquo;</i> Same reason for the bright pills
+      bottle on the artwork page. On how to sell, Sarah does not recognise the Amazon icon and wants
+      an add-to-cart bag instead.</p>
+      <p>These need the assets Tammy promised on 2 September: bottle images for top sellers, sell
+      sheets, and her page layouts.</p>
+    </div>
+    <div class="call warn">
+      <h3><span class="chip c-warn">Confirm</span> Guides page updates</h3>
+      <p>Add Ariel&rsquo;s YouTube clips, refresh the 2024 CRN Consumer Survey if a newer one exists, and
+      move the 50-page-guide call to action higher. The old testimonial gets reattributed to
+      <b>Melinda Elmadjian, Contract Manufacturing Business Leader</b>. We need the clips and
+      confirmation on the survey year.</p>
+    </div>
+    <div class="call">
+      <h3><span class="chip c-ok">Correction</span> The privacy page is already clean</h3>
+      <p>Sarah raised that privacy still shows <span class="tct">[BRAND_TBD]</span>. We checked the live
+      draft: <b>zero occurrences</b> of that or any other bracket placeholder, on privacy or anywhere
+      else in the 63 pages. It was likely a cached or DaVinci-side copy. Flagging so it is not chased twice.</p>
+    </div>
+</section>
+<section>
+  <h2>Cleared since the last call</h2>
+  <p class="measure sub">All re-verified against the live drafts this morning, not carried over from notes.</p>
+  <div class="tscroll">
+  <table>
+    <thead><tr><th>What was wrong</th><th>Scale</th><th>Now</th></tr></thead>
+    <tbody>
+      <tr><td>Pages could not be published at all</td><td>62 pages</td><td><span class="chip c-ok">Fixed</span> They were on the apex domain, which is a redirect. Moved to www.</td></tr>
+      <tr><td><b>AND MORE</b> tiles pointed at a page that does not exist</td><td>20 pages</td><td><span class="chip c-ok">Fixed</span> Repointed to the definitive guide. Zero broken links remain.</td></tr>
+      <tr><td>Literal word <b>None</b> printed on the page</td><td>22 pages</td><td><span class="chip c-ok">Fixed</span> Zero remain.</td></tr>
+      <tr><td>Stray caret and plus-sign glyphs</td><td>2 pages</td><td><span class="chip c-ok">Fixed</span> Resources and the home gummies tile.</td></tr>
+      <tr><td>Custom Formulation in the footer menu</td><td>127 pages</td><td><span class="chip c-ok">Fixed</span> One module edit cleared every page. Dedicated page deleted.</td></tr>
+      <tr><td>Supplement formats grid stranded a single tile</td><td>fitness</td><td><span class="chip c-ok">Fixed</span> Balanced to three and three.</td></tr>
+      <tr><td>Green <b>Dropship Private Label</b> button</td><td>resources</td><td><span class="chip c-ok">Fixed</span> Removed.</td></tr>
+      <tr><td>Editor sidebar showed &ldquo;Card 1, Card 2, Card 3&rdquo;</td><td>theme</td><td><span class="chip c-ok">Fixed</span> Cards now name themselves by their headline.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+<section>
+  <h2>Two things worth knowing, neither urgent</h2>
+      <div class="call">
+      <h3>No customer-facing page mentions DaVinci</h3>
+      <p>We checked all 63. There are 146 hits on the word, but <b>144 are image filenames</b> that a
+      visitor never sees. The only visible DaVinci text sits on an internal module library page that
+      will not be published. Separately, 280 image URLs point at pettechlabs.com &mdash; that is simply
+      the shared file-storage address the portal has used since 2017, and it changes nothing on the
+      Pet Tech site.</p>
+    </div>
+    <div class="call">
+      <h3>The Launch Guide page is out of date</h3>
+      <p>It still shows the old figures and the 30 September date. It was written as a point-in-time
+      meeting artifact on 31 August, so we have left it alone rather than rewriting history. Use this
+      page for current status.</p>
+    </div>
+</section>
+<section>
+  <h2>Who owes what</h2>
+  <div class="tscroll">
+  <table>
+    <thead><tr><th>Owner</th><th>Item</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Tammy</td><td>Bottle images for top sellers, sell sheets, page layouts</td><td><span class="chip c-warn">Promised 2 Sep</span></td></tr>
+      <tr><td>Tammy</td><td>Replacement wording for the dropship line on our process</td><td><span class="chip c-warn">Open</span></td></tr>
+      <tr><td>Tammy</td><td>Design Services copy, currently in the Zoom chat</td><td><span class="chip c-warn">With Patrick</span></td></tr>
+      <tr><td>Sarah</td><td>Sign-off on the eight manufacturing rewrites</td><td><span class="chip c-bad">Blocks launch</span></td></tr>
+      <tr><td>Sarah</td><td>How far to go on Custom Formulation</td><td><span class="chip c-bad">Blocks launch</span></td></tr>
+      <tr><td>Tammy</td><td>Category page review, highest traffic</td><td><span class="chip c-warn">By Tue</span></td></tr>
+      <tr><td>Mindy</td><td>Content review</td><td><span class="chip c-warn">By Tue</span></td></tr>
+      <tr><td>Sarah</td><td>QA pass</td><td><span class="chip c-warn">By Tue</span></td></tr>
+      <tr><td>QBS</td><td>Apply the two copy sweeps once approved</td><td><span class="chip c-acc">Same day</span></td></tr>
+      <tr><td>QBS</td><td>Widow words on customer art and how to sell</td><td><span class="chip c-acc">Queued</span></td></tr>
+      <tr><td>QBS</td><td>Hand new URLs to Local IQ near launch</td><td><span class="chip c-acc">Patrick</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+<section>
+  <h2>Settled, for the record</h2>
+  <ul>
+    <li><b>Email:</b> one address, info@praxerasupplements.com. John is setting it up. No individual rep addresses.</li>
+    <li><b>Blogs:</b> private-label blogs come to Praxera, not to the new DaVinci site.</li>
+    <li><b>Blog URLs:</b> staying at praxerasupplements.com/blog as a subdirectory, not a separate blog subdomain, so the SEO stays consolidated.</li>
+    <li><b>Contact form:</b> no topic dropdown, since every enquiry is private label. Feeds the same shared inbox.</li>
+    <li><b>Consumer traffic:</b> moves to Shopify and Klaviyo on 30 September. Practitioners stay in HubSpot.</li>
+    <li><b>Nothing is published.</b> All 63 pages are drafts and stay that way until cutover.</li>
+  </ul>
+</section>
+</div>
+</body></html>
