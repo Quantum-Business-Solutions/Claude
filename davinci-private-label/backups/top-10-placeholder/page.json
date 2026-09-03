@@ -1,0 +1,585 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Marko Ajder",
+ "categoryId": 1,
+ "contentTypeCategory": 4,
+ "createdAt": "2026-09-03T18:27:26.650Z",
+ "createdById": "52613719",
+ "currentState": "DRAFT",
+ "domain": "www.praxerasupplements.com",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "htmlTitle": "Our Top 10 Private Label Supplements | Praxera",
+ "id": "221054149244",
+ "layoutSections": {
+  "main_content": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "name": "main_content",
+   "params": {},
+   "rowMetaData": [
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    }
+   ],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_0",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_0",
+         "name": "module_0",
+         "params": {
+          "align": "center",
+          "background_image": {
+           "alt": "",
+           "loading": "lazy",
+           "src": "https://info.davincilabs.com/hubfs/private-label/DV_PL_HeroBackground_2.jpg"
+          },
+          "background_screen": {
+           "color": "#C9DBE2",
+           "opacity": 85
+          },
+          "button_padding": "16px 38px",
+          "button_size": 16,
+          "buttons": [
+           {
+            "link": {
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Request a Sell Sheet"
+           }
+          ],
+          "css_class": "dnd-module",
+          "eyebrow": "TOP SELLERS",
+          "eyebrow_color": "heading",
+          "eyebrow_size": 13,
+          "headline": "The ten products our private label partners order most",
+          "headline_size": 48,
+          "max_width": 900,
+          "module_id": 218939846507,
+          "style": {
+           "background_color": {
+            "color": "#C9DBE2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "subhead": "<p>Placeholder. Awaiting Tammy\u2019s chosen layout and the bottle images and sell sheets she prepared for the top sellers. Ten slots are set up below \u2014 product name, short description and image \u2014 ready to be filled.</p>",
+          "subhead_size": 19,
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_1",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_1",
+         "name": "module_1",
+         "params": {
+          "align": "left",
+          "body_size": 18,
+          "content": "<h2 style=\"color: #012638; font-size: 32px; font-weight: 700; line-height: 1.25; margin: 0 0 26px\">The selling tool brands use to close retail and wholesale deals.</h2><p>When you walk into a retailer, present at a trade show, or pitch a healthcare professional, you need a one-page document that summarizes your product line, key ingredients, dosing, claims, and how to order. A branded sell sheet does that.</p><p>We provide pre-built sell sheet templates that you can customize with your brand identity, or work with our design team for fully custom sell sheets matched to your overall brand system.</p>",
+          "css_class": "dnd-module",
+          "heading_size": 32,
+          "max_width": 810,
+          "module_id": 218940115784,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "top_border": false
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_2",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_2",
+         "name": "module_2",
+         "params": {
+          "body_color": {
+           "color": "#555555",
+           "opacity": 100
+          },
+          "body_size": 15,
+          "card_align": "left",
+          "card_style": "card",
+          "cards": [
+           {
+            "content": "<p><em>Product name, one-line benefit, and link to its sell sheet. Awaiting content from Tammy.</em></p>",
+            "icon": {
+             "alt": "Product 1 bottle image \u2014 to be supplied",
+             "loading": "lazy",
+             "src": ""
+            },
+            "title": "Product 1"
+           },
+           {
+            "content": "<p><em>Product name, one-line benefit, and link to its sell sheet. Awaiting content from Tammy.</em></p>",
+            "icon": {
+             "alt": "Product 2 bottle image \u2014 to be supplied",
+             "loading": "lazy",
+             "src": ""
+            },
+            "title": "Product 2"
+           },
+           {
+            "content": "<p><em>Product name, one-line benefit, and link to its sell sheet. Awaiting content from Tammy.</em></p>",
+            "icon": {
+             "alt": "Product 3 bottle image \u2014 to be supplied",
+             "loading": "lazy",
+             "src": ""
+            },
+            "title": "Product 3"
+           },
+           {
+            "content": "<p><em>Product name, one-line benefit, and link to its sell sheet. Awaiting content from Tammy.</em></p>",
+            "icon": {
+             "alt": "Product 4 bottle image \u2014 to be supplied",
+             "loading": "lazy",
+             "src": ""
+            },
+            "title": "Product 4"
+           },
+           {
+            "content": "<p><em>Product name, one-line benefit, and link to its sell sheet. Awaiting content from Tammy.</em></p>",
+            "icon": {
+             "alt": "Product 5 bottle image \u2014 to be supplied",
+             "loading": "lazy",
+             "src": ""
+            },
+            "title": "Product 5"
+           },
+           {
+            "content": "<p><em>Product name, one-line benefit, and link to its sell sheet. Awaiting content from Tammy.</em></p>",
+            "icon": {
+             "alt": "Product 6 bottle image \u2014 to be supplied",
+             "loading": "lazy",
+             "src": ""
+            },
+            "title": "Product 6"
+           },
+           {
+            "content": "<p><em>Product name, one-line benefit, and link to its sell sheet. Awaiting content from Tammy.</em></p>",
+            "icon": {
+             "alt": "Product 7 bottle image \u2014 to be supplied",
+             "loading": "lazy",
+             "src": ""
+            },
+            "title": "Product 7"
+           },
+           {
+            "content": "<p><em>Product name, one-line benefit, and link to its sell sheet. Awaiting content from Tammy.</em></p>",
+            "icon": {
+             "alt": "Product 8 bottle image \u2014 to be supplied",
+             "loading": "lazy",
+             "src": ""
+            },
+            "title": "Product 8"
+           },
+           {
+            "content": "<p><em>Product name, one-line benefit, and link to its sell sheet. Awaiting content from Tammy.</em></p>",
+            "icon": {
+             "alt": "Product 9 bottle image \u2014 to be supplied",
+             "loading": "lazy",
+             "src": ""
+            },
+            "title": "Product 9"
+           },
+           {
+            "content": "<p><em>Product name, one-line benefit, and link to its sell sheet. Awaiting content from Tammy.</em></p>",
+            "icon": {
+             "alt": "Product 10 bottle image \u2014 to be supplied",
+             "loading": "lazy",
+             "src": ""
+            },
+            "title": "Product 10"
+           }
+          ],
+          "css_class": "dnd-module",
+          "gap": 28,
+          "header_width": 1100,
+          "headline_lh": "1.25",
+          "headline_size": 32,
+          "max_width": 1100,
+          "min_column_width": 340,
+          "module_id": 218940115759,
+          "section_eyebrow": "",
+          "section_headline": "",
+          "section_subhead": "",
+          "style": {
+           "background_color": {
+            "color": "#F7F7F6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 20
+           }
+          },
+          "subhead_size": 17,
+          "subhead_width": 0,
+          "text_color": "dark",
+          "title_lh": "normal",
+          "title_size": 19,
+          "title_style": "heading"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_3",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_3",
+         "name": "module_3",
+         "params": {
+          "button_padding": "16px 40px",
+          "button_size": 16,
+          "buttons": [
+           {
+            "link": {
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#get-started",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Schedule a Consultation"
+           }
+          ],
+          "content": "<p style=\"color: #333; font-size: 17px; line-height: 1.55\">Schedule a consultation. We will walk through your audience, the right formulations for them, branding options, and the timeline.</p>",
+          "content_color": {
+           "color": "#333333",
+           "opacity": 100
+          },
+          "content_size": 17,
+          "css_class": "dnd-module",
+          "eyebrow": "",
+          "headline": "Ready to build your private label supplement line?",
+          "headline_lh": "1.25",
+          "headline_size": 32,
+          "max_width": 720,
+          "module_id": 218940115731,
+          "style": {
+           "background_color": {
+            "color": "#E6E5E3",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_4",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_4",
+         "name": "module_4",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218944099153
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_5",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_5",
+         "name": "module_5",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218944099156
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_7",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_7",
+         "name": "module_7",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218942529652
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "type": "cell",
+   "w": 0,
+   "x": 0
+  }
+ },
+ "linkRelCanonicalUrl": "https://www.praxerasupplements.com/top-10-products",
+ "metaDescription": "The ten private label supplements Praxera customers order most, with sell sheets and bottle imagery for each.",
+ "name": "Private Label - Page - Top 10 Products (PLACEHOLDER)",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "1970-01-01T00:00:00Z",
+ "published": false,
+ "slug": "top-10-products",
+ "state": "DRAFT",
+ "subcategory": "site_page",
+ "templatePath": "Private Label/Templates/Page - DND.html",
+ "translations": {},
+ "updatedAt": "2026-09-03T18:28:07.419Z",
+ "updatedById": "52613719",
+ "url": "https://www.praxerasupplements.com/top-10-products",
+ "useFeaturedImage": false,
+ "widgetContainers": {},
+ "widgets": {}
+}
