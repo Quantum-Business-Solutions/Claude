@@ -188,11 +188,41 @@ measure coverage against the intake snapshot, never against live membership.
   `division_scope_unclear`, `persona_review`, `title_conflict`, `phone_unverified`,
   `email_unprovable`, `retired_headline`. This is the durable exception register — a judgement call
   queued only to a session scratch file is a judgement call nobody ever sees.
+- **A `no` verdict must say where they went, or why nowhere.** Pass `newco` (the destination) or
+  `no_destination` (>=25 characters describing what the profile showed instead: a genuine gap, a
+  career break, retirement, only self-employment or board seats). `writeverdicts.py` **refuses**
+  a `no` that has neither, and a refused record stays in the queue where the next pass will pick
+  it up. This is not bureaucracy: 446 contacts in this portal carry `no` with no destination
+  recorded anywhere, 274 of them with no company association at all, because a portal workflow
+  detaches the company twenty seconds after the ejection status is written. Those people were read,
+  confirmed departed, and left pointing nowhere — and the destination was visible in the very same
+  profile read that produced the verdict. **Record it while you have it.**
+- **The mover step runs in the same pass as the verdicts.** `movepipe.py <listId> --from-hubspot`
+  rebuilds the queue from `ai__pending_mover_to`, so it needs no local file and works in a fresh
+  container. A pass that banks `no` verdicts and stops has not finished the job — it has created
+  the backlog described above.
+- **Do not call a mover a prospect at a company you already know.** A confirmed mover is a
+  `ConnectandSell Prospect` at their new employer *unless* that employer is a current client, a
+  former client, has an open deal, or has a meeting booked. `movepipe.dest_status()` checks
+  `lifecyclestage`, `type`, associated deals and upcoming meetings, writes that company's real
+  status instead, and raises `destination_is_account`. An open deal outranks a stale
+  `lifecyclestage`; a booked meeting outranks both.
+- **`wrong_link_suspected` is now raised automatically, and you should still raise it yourself.**
+  `writeverdicts.py` compares the slug it read against `firstname`/`lastname` on the record and,
+  when the slug carries neither name, raises the issue and refuses the native `jobtitle` write.
+  Found the hard way on the first validation pass: CRM *Matt Eberhart* (`matt@query.ai`) carried
+  slug `manthony`, which is **Matt Anthony**, a genuine Query advisor — so every dated row checked
+  out and the run banked a confident `yes` and a title about a different human. The check is
+  advisory by design (vanity slugs, maiden names and initials are all legitimate; 63 of 66 matched
+  on the measured run), so it flags for a person rather than deciding. It cannot see a wrong link
+  whose slug happens to contain the right name — if the profile's headline, location or history
+  reads like someone else, raise the issue yourself and do not bank a verdict.
 
 ## Fields this process writes (repeatable conventions)
 - **Evidence format** (`ai__contact_evidence`): always `Verified - <date> - <evidence> - Changed: <what changed in HubSpot>`. writeverdicts.py builds this; the `Changed:` clause auto-summarises flag/lead-status/title/URL/mover unless you pass an explicit `changed`.
 - **`ai__job_title`** (AI-owned title field): write the current LinkedIn-verified title here via the batch `title` field. Always safe — nothing else writes it.
-- **`jobtitle`** (native title field, ≥90% confidence only): pass `title_conf` (0-1) alongside `title`. At `title_conf >= 0.90` the batch ALSO writes the native `jobtitle`, so reps see the corrected title in the sidebar, screen-pop and exports without a view change. The gate is enforced in code and **fails closed** — no `title_conf`, no native write — and additionally requires verdict `yes` (movers: a resolved employer domain) and evidence free of hedge words (`probably`, `CAUTION`, `succession`, `may be`, …). Do NOT use `ai__sources_confirming` as the confidence signal; it is a count, populated liberally, and would wave nearly everything through. **What ≥0.90 means:** a dated LinkedIn row for THIS employer whose title string you are reading directly, `end: null`, no competing row, no division/parent ambiguity — i.e. you are reading the title, not inferring it. A headline-only title, a people-search hit, or a vendor title is never ≥0.90.
+  **Write the FULL form, never an abbreviation, and never append the employer.** Measured on one day's 169 `yes` verdicts: 88 already matched the native field, 37 disagreed with it — and most of those disagreements were this file's own fault, `ai__job_title` saying "CMO" where the native field already said "Chief Marketing Officer", or "CMO, Finovifi" with the company glued on. The company has its own field. Only ~10 of the 37 were genuine changes a rep would want. A further **40 captured no title at all**, which is the real gap.
+- **`jobtitle`** (native title field, ≥95% confidence only): pass `title_conf` (0-1) alongside `title`. At `title_conf >= 0.95` the batch ALSO writes the native `jobtitle`, so reps see the corrected title in the sidebar, screen-pop and exports without a view change. The gate is enforced in code and **fails closed** — no `title_conf`, no native write — and additionally requires verdict `yes` (movers: a resolved employer domain) and evidence free of hedge words (`probably`, `CAUTION`, `succession`, `may be`, …). Do NOT use `ai__sources_confirming` as the confidence signal; it is a count, populated liberally, and would wave nearly everything through. **What ≥0.95 means:** a dated LinkedIn row for THIS employer whose title string you are reading directly, `end: null`, no competing row, no division/parent ambiguity — i.e. you are reading the title, not inferring it. **When that is true, pass `title_conf` 0.95 — it is the DEFAULT, not an exception.** The gate was not the problem; nobody was passing the flag, so the native field kept a title the rep then read out loud. A headline-only title, a people-search hit, or a vendor title is never ≥0.95.
   Two things make the write reversible and honest: the prior `jobtitle` value is recorded in the evidence string (`jobtitle was 'X' -> 'Y' (conf 0.95)`), and the write is **read back**. `jobtitle` has 3 competing integration writers (~38% oscillation, confirmed reverting a `movepipe` write), so expect some reverts: the scripts print `held on read-back N/M`. A revert is a competing integration, not a failed write — `ai__job_title` still holds the truth, and making the native field stick durably is a HubSpot-admin change to the integration field mappings (Shawn only).
   **One revert is deterministic, not random contention.** A portal workflow **blanks `jobtitle` within ~20 seconds of `hs_lead_status` being set to `Retired - Remove from All Lists` or `No Longer with Company`** — observed on contact 136222503544, title written 18:22:04 by the integration and cleared 18:22:24 by AUTOMATION_PLATFORM. So on any contact you EJECT, expect the native title to vanish shortly after, and preserve the title-at-departure in the evidence string rather than trusting the field. It also means a read-back performed immediately after the write will report "held" and still be wrong; only a re-read ≥30s later is meaningful for ejected contacts. Whether that workflow is still enabled is worth re-testing before relying on either outcome.
 - **`validated__linkedin_or_manually`** (select): set every verified record — `yes`->`Yes`, `no`+Retired->`Retired`, any other `no`/`unreadable`/`no_profile`->`Needs Updated`. (`Delete` is human-only, for bogus records.)
@@ -245,7 +275,7 @@ measure coverage against the intake snapshot, never against live membership.
    `validated__linkedin_or_manually` (`Yes` if a live decision-maker, else `Needs Updated`); append
    evidence in the `Verified - <date> - ... - Changed: RE-ASSOCIATED to <newco> ...` format (never
    overwrite it, and it must contain `RE-ASSOCIATED` so the Moved-Companies list picks it up). Native
-   `jobtitle` is written only when `title_conf >= 0.90` AND the new employer's domain resolved.
+   `jobtitle` is written only when `title_conf >= 0.95` AND the new employer's domain resolved.
 5. **Carry the phone in the same transaction.** `business_phone` predates the move so it is the old
    employer's line - overwrite with the new company's number, or CLEAR it if the company has none.
    Never touch `mobilephone`. Touch `phone` only when an exact-digit match proves it belongs to a
@@ -332,7 +362,7 @@ boundaries, so prose guardrails in an autonomous run are decoration):
   reconstructible; a ceiling check is still owed.*
 
 ## Never touch
-`mobilephone`; `jobtitle` **below the 0.90 confidence gate** (3 competing writers, ~38% oscillation - `ai__job_title` is always the trustworthy copy, and the prior native value is preserved in the evidence);
+`mobilephone`; `jobtitle` **below the 0.95 confidence gate** (3 competing writers, ~38% oscillation - `ai__job_title` is always the trustworthy copy, and the prior native value is preserved in the evidence);
 `hs_persona` without approval; `hs_lead_status` on a `yes`; a populated `previous__email`; any
 contact outside the intake snapshot; `email`/`phone` on a non-mover you have not PROVEN wrong
 (non-mover phone conflicts are flag-only). Do not suppress the lead-status workflow - it is by design
@@ -397,6 +427,6 @@ Two properties of an unattended run to design against:
   code rather than in prose — prose is advice to the judge, an exit code is not.
 
 ## Non-goals
-Does not write `hs_persona`; does not write native `jobtitle` below `title_conf` 0.90 (`ai__job_title` is always written); does not blank what it did not prove wrong; does not
+Does not write `hs_persona`; does not write native `jobtitle` below `title_conf` 0.95 (`ai__job_title` is always written); does not blank what it did not prove wrong; does not
 create/edit lists as part of a verdict run; does not verify a phone actually dials (the largest
 open gap - flagged, not solved).

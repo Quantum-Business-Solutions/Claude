@@ -100,6 +100,40 @@ def reachable(base):
 # directions: 3.5s spends the whole budget in six minutes and then stalls, while a "safe" 10s
 # throttles a run that could have gone faster. Read the headers and pace to the actual budget.
 RATE={'limit':None,'remaining':None,'reset':None}
+# The rate budget has to survive the PROCESS, not just the function. Callers invoke this script once
+# per contact - `unipile.py profile <slug>` - so RATE was re-initialised to None on every single
+# read and pace() was never reached at all. The documented behaviour ("spreads the remaining budget
+# across the remaining window") was therefore not happening in the way the script is actually used:
+# nothing paced anything, and throttling was handled only reactively, once the wall was already hit.
+# That is why v2 exhausted itself mid-run on 2026-09-03. A tiny state file makes the pacing real.
+RATE_STATE=os.environ.get('UNIPILE_RATE_STATE') or '/tmp/.unipile_rate.json'
+def _load_rate(ver):
+    # RESET FIRST. RATE is module-level and the ladder walks several rungs in one process, so
+    # without this the next rung inherits the previous rung's budget - observed live: v2 came back
+    # spent, and v1 was then demoted "per the last read's headers" using v2's numbers, taking the
+    # whole ladder down over a limit that did not apply to it.
+    RATE['limit']=RATE['remaining']=RATE['reset']=None
+    try:
+        d=json.load(open(RATE_STATE)).get(str(ver))
+        if not d: return
+        # A stale record is worse than none: it would pace against a window that has already
+        # reopened. Anything older than its own reset window is discarded.
+        if time.time()-d.get('at',0) > max(d.get('reset') or 0,60)+30: return
+        elapsed=time.time()-d['at']
+        RATE['limit']=d.get('limit'); RATE['remaining']=d.get('remaining')
+        RATE['reset']=None if d.get('reset') is None else max(0,int(d['reset']-elapsed))
+    except Exception:
+        pass          # no state, unreadable state, or a concurrent write: pace from scratch
+def _save_rate(ver):
+    try:
+        try: all_=json.load(open(RATE_STATE))
+        except Exception: all_={}
+        all_[str(ver)]={'limit':RATE['limit'],'remaining':RATE['remaining'],
+                        'reset':RATE['reset'],'at':time.time()}
+        tmp=RATE_STATE+'.tmp'
+        json.dump(all_,open(tmp,'w')); os.replace(tmp,RATE_STATE)
+    except Exception:
+        pass          # pacing is an optimisation; never fail a read because state could not persist
 def fetch(c,url):
     hdr=tempfile.NamedTemporaryFile('w',suffix='.hdr',delete=False).name
     cmd=['curl','-s','--max-time','40','-D',hdr,'-w','\n%{http_code}',
@@ -120,16 +154,58 @@ def fetch(c,url):
         except Exception: pass
     body,_,code=o.rpartition('\n'); return body,code.strip()
 
+# A single sleep must never be able to swallow a whole run. Measured 2026-09-03: v2 reported its
+# budget spent and the run's evidence recorded "exhausted for ~23h" - and pace() slept the server's
+# reset value with NO upper bound, so a 23-hour reset meant a 23-hour sleep inside a scheduled job
+# with a three-hour budget. That is not a pause, it is a silent stall, and a silent stall is the
+# failure this whole process is built to prevent.
+PACE_CAP=90          # the longest any single pacing sleep may take
+RUNG_SPENT_AFTER=300 # a reset longer than this means the rung is done for now, not "wait"
 def pace():
-    """Sleep only as long as the remaining budget actually requires. Called between reads by
-    callers doing many; returns the seconds waited so a run can report its own pacing."""
+    """Sleep only as long as the remaining budget actually requires, and never longer than
+    PACE_CAP. Returns (seconds_waited, rung_spent). `rung_spent` is True when the server's own
+    reset says the window will not reopen soon enough to be worth waiting for - the caller should
+    demote to the next rung on the ladder rather than sit there, which is the entire point of
+    having a ladder."""
     rem,rst=RATE['remaining'],RATE['reset']
-    if rem is None or rst is None: return 0
+    if rem is None or rst is None: return 0,False
     if rem<=0:
-        time.sleep(rst+2); return rst+2
+        if rst>RUNG_SPENT_AFTER: return 0,True     # do NOT sleep it off - demote instead
+        w=min(rst+2,PACE_CAP); time.sleep(w); return w,False
     # spread what is left evenly across the window that remains, with a small floor
-    w=max(1.0,float(rst)/max(rem,1))
-    time.sleep(w); return w
+    w=min(max(1.0,float(rst)/max(rem,1)),PACE_CAP)
+    time.sleep(w); return w,False
+
+def company_url(c,ident):
+    return (c['base']+'/v2/'+c['acc']+'/linkedin/company/'+ident if c['ver']==2
+            else c['base']+'/api/v1/linkedin/company/'+ident+'?account_id='+c['acc'])
+def company(c,ident):
+    """LinkedIn's own company page for a dated employment row: name, WEBSITE, industry, size.
+
+    This is the answer to "when we see where someone works, can we click the company and find the
+    website?" - yes, and it is better than a third-party lookup because it is the company's own
+    declared site, read from the same source as the employment row. Measured 2026-09-03: LinkedIn
+    returns pivot180.ai for Pivot180 where ZoomInfo returned pivot180.com.
+
+    `ident` is a LinkedIn company PUBLIC IDENTIFIER or ID - not a display name. On v2 every
+    experience row carries company.id, so a mover's destination resolves deterministically; on v1
+    the rows carry no id, so a slugified name is a guess and the caller must check the returned
+    `name` before trusting it.
+
+    Also returned and worth using: `employee_count` (a two-person company is somebody's own firm,
+    not an ICP account) and `acquired_by` (which is how a rename like Market Resource Partners ->
+    pharosIQ stops reading as a departure)."""
+    body,code=fetch(c,company_url(c,ident))
+    if not code.startswith('2'): return None,code
+    try: d=json.loads(body)
+    except Exception: return None,'unparseable'
+    d=d.get('data') if isinstance(d.get('data'),dict) else d
+    return {'name':d.get('name'),'website':d.get('website'),
+            'public_identifier':d.get('public_identifier'),'id':d.get('id'),
+            'industry':(d.get('industry') or [None])[0],
+            'employee_count':d.get('employee_count'),
+            'organization_type':d.get('organization_type'),
+            'acquired_by':(d.get('acquired_by') or {}).get('name')},None
 
 def accounts_url(c):
     return c['base']+('/v2/accounts' if c['ver']==2 else '/api/v1/accounts?account_id='+c['acc'])
@@ -151,16 +227,34 @@ def rows(c,slug):
     # would silently demote every run to the fallback rung the moment we were merely throttled -
     # and on this ladder that means quietly using v1, whose history the caller may then judge on.
     # Back off and retry before giving up on the rung.
+    _load_rate(c['ver'])
+    waited,spent=pace()
+    if spent:
+        sys.stderr.write("  v%d budget is already spent per the last read's headers "
+                         "(reset %ss); demoting without spending a request\n"
+                         %(c['ver'],RATE['reset']))
+        return None,'RUNG-SPENT (from cached headers, reset %ss)'%RATE['reset']
+    if waited: sys.stderr.write("  paced %.1fs on v%d (remaining %s, reset %ss)\n"
+                                %(waited,c['ver'],RATE['remaining'],RATE['reset']))
     for attempt in range(4):
         body,code=fetch(c,profile_url(c,slug))
+        _save_rate(c['ver'])
         if code not in RATE_LIMIT_CODES: break
+        wait=RATE['reset'] if RATE['reset'] else 6*(attempt+1)
+        if wait>RUNG_SPENT_AFTER:
+            # The window will not reopen inside this run. Waiting it out used to be capped at 1200s
+            # per attempt - up to 80 minutes across four attempts, against a run that has three
+            # hours in total. Demote now and let the next rung carry the read.
+            sys.stderr.write("  v%d is SPENT (HTTP %s, server says %ds - beyond the %ds worth "
+                             "waiting for); demoting to the next rung\n"
+                             %(c['ver'],code,wait,RUNG_SPENT_AFTER))
+            return None,'RUNG-SPENT (HTTP %s, reset %ds)'%(code,wait)
         if attempt<3:
             # Honour the server's own retry-after rather than an invented backoff. Guessing short
             # burns retries against a window that has not reset; guessing long wastes the run.
-            wait=RATE['reset'] if RATE['reset'] else 6*(attempt+1)
             sys.stderr.write("  rate-limited on v%d (HTTP %s), server says retry in %ds "
                              "(limit %s/window)\n"%(c['ver'],code,wait,RATE['limit']))
-            time.sleep(min(wait+2,1200))
+            time.sleep(min(wait+2,RUNG_SPENT_AFTER))
     if code in RATE_LIMIT_CODES: return None,'RATE-LIMITED (HTTP '+code+') - not a transport failure'
     if not code.startswith('2'): return None,code
     try: d=json.loads(body)
@@ -187,6 +281,17 @@ def rows(c,slug):
 cmd=sys.argv[1] if len(sys.argv)>1 else 'selftest'
 SLUG=(sys.argv[2] if cmd=='profile' and len(sys.argv)>2 else
       os.environ.get('SELFTEST_SLUG') or 'williamhgates')
+
+if cmd=='company':
+    ident=sys.argv[2] if len(sys.argv)>2 else sys.exit("usage: unipile.py company <slug-or-id>")
+    for c in candidates():
+        ok,_=reachable(c['base'])
+        if not ok: continue
+        d,err=company(c,ident)
+        if d and d.get('name'):
+            d['api_version']=c['ver']; print(json.dumps(d,indent=1)); sys.exit(0)
+        sys.stderr.write("  v%d: %s\n"%(c['ver'],err or 'no company in the response'))
+    print("COMPANY LOOKUP FAILED for "+repr(ident)+" on every reachable rung"); sys.exit(3)
 
 if cmd=='probe':
     print("v2 account "+(V2_ACC if V2_KEY else "(no UNIPILE_V2_KEY)")+

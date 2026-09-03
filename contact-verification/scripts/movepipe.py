@@ -72,7 +72,12 @@ if FROM_HS:
     if not M: sys.exit(0)
 else:
     M=json.load(open(sys.argv[2]))
-TITLE_CONF_MIN=0.90
+TITLE_CONF_MIN=0.95   # Shawn's number, raised from 0.90 on 2026-09-03. The native `jobtitle`
+                      # field is what reps see in the sidebar, the screen-pop and every export, so
+                      # the bar is "I am reading this title off a dated, end-null row for THIS
+                      # employer", not "I am fairly sure". `ai__job_title` still gets every
+                      # verified title regardless - nothing else writes that field, so it is the
+                      # lossless record and the native write is the opinionated one.
 AMBIG=("caution","ambig","uncertain","unclear","probably","possibly","perhaps","assumed","appears to",
        "may be","might be","succession","dormant","not updated","stale profile","conflict","unsure","?")
 def title_ok(m,dom):
@@ -86,6 +91,71 @@ def title_ok(m,dom):
     hit=[t for t in AMBIG if t in str(m.get('ev','')).lower()]
     if hit: return (False,"ambiguity marker in evidence: "+", ".join(hit[:3]))
     return (True,None)
+def dest_status(coid,default):
+    """What lead status is honest for a mover landing at THIS company?
+
+    A confirmed mover is a prospect at their new employer - unless the new employer is already
+    somebody in the pipeline, in which case calling them a fresh ConnectandSell Prospect is wrong
+    twice over: it mislabels an existing relationship, and it drops the contact into cold-calling
+    lists that gate on that status. Shawn's rule, and it is the right one: the only reasons NOT to
+    write prospect are that the destination is a current client, a former client, or has a meeting
+    or an open deal in flight.
+
+    Returns (lead_status, reason). Reads only the destination company, so it costs at most three
+    calls per mover and cannot be skipped by forgetting - it is on the write path.
+
+    Every status returned here is an EXISTING value in this portal's hs_lead_status vocabulary; a
+    guard that invents an option writes nothing and returns HTTP 400 mid-pass."""
+    c=call('GET',"https://api.hubapi.com/crm/v3/objects/companies/"+str(coid)
+                 +"?properties=name,lifecyclestage,type,num_associated_deals",fatal=False)
+    p=(c.get('properties') or {})
+    life=(p.get('lifecyclestage') or '').lower(); typ=(p.get('type') or '')
+    if life=='customer' or typ=='Current Client':
+        return ("Current Client","destination %r is a CURRENT CLIENT (lifecyclestage=%s type=%s)"
+                %((p.get('name') or coid)[:40],life or '-',typ or '-'))
+    if life=='evangelist':
+        return ("Current Client","destination %r is marked evangelist - an existing advocate, not a "
+                "cold prospect"%(p.get('name') or coid)[:40])
+    # open deal beats a stale lifecycle stage: lifecyclestage is edited by hand and goes stale,
+    # a deal in an open stage is somebody actively working the account right now.
+    try: nd=int(float(p.get('num_associated_deals') or 0))
+    except Exception: nd=0
+    if nd>0:
+        da=call('GET',"https://api.hubapi.com/crm/v4/objects/companies/"+str(coid)+"/associations/deals",fatal=False)
+        dids=[str(a['toObjectId']) for a in (da.get('results') or [])][:100]
+        if dids:
+            dr=call('POST','https://api.hubapi.com/crm/v3/objects/deals/batch/read',
+                    {"inputs":[{"id":i} for i in dids],
+                     "properties":["dealname","dealstage","hs_is_closed","hs_is_closed_won"]},fatal=False)
+            res=dr.get('results') or []
+            openx=[x for x in res if (x['properties'].get('hs_is_closed') or 'false')=='false']
+            won  =[x for x in res if (x['properties'].get('hs_is_closed_won') or 'false')=='true']
+            if openx:
+                return ("Open Opportunity","destination %r has %d OPEN deal(s) - e.g. %r"
+                        %((p.get('name') or coid)[:40],len(openx),
+                          (openx[0]['properties'].get('dealname') or '')[:40]))
+            if won:
+                return ("Current Client","destination %r has a closed-won deal - existing client"
+                        %(p.get('name') or coid)[:40])
+            if res:
+                return ("Former Client","destination %r has %d closed-lost deal(s) and none open"
+                        %((p.get('name') or coid)[:40],len(res)))
+    # a meeting already on the calendar outranks any status derived from stage or deal
+    ma=call('GET',"https://api.hubapi.com/crm/v4/objects/companies/"+str(coid)+"/associations/meetings",fatal=False)
+    mids=[str(a['toObjectId']) for a in (ma.get('results') or [])][-100:]
+    if mids:
+        mr=call('POST','https://api.hubapi.com/crm/v3/objects/meetings/batch/read',
+                {"inputs":[{"id":i} for i in mids],
+                 "properties":["hs_meeting_title","hs_meeting_start_time"]},fatal=False)
+        now=subprocess.run(['date','-u','+%Y-%m-%dT%H:%M:%SZ'],capture_output=True,text=True).stdout.strip()
+        up=[x for x in (mr.get('results') or [])
+            if (x['properties'].get('hs_meeting_start_time') or '')>now]
+        if up:
+            up.sort(key=lambda x:x['properties']['hs_meeting_start_time'])
+            return ("ConnectandSell Meeting Set","destination %r has an UPCOMING meeting %s %r"
+                    %((p.get('name') or coid)[:40],up[0]['properties']['hs_meeting_start_time'][:16],
+                      (up[0]['properties'].get('hs_meeting_title') or '')[:30]))
+    return (default,None)
 logf='reassoc_'+lid+'_log.json'
 log=json.load(open(logf)) if os.path.exists(logf) else []
 done={x['id'] for x in log if x.get('ok')}
@@ -153,13 +223,31 @@ for m in M:
     # NAME written into previous__company_domain_name (a domain field), so nobody could get back
     # to the record. Keep the id, the name and the real domain.
     prev_co_id=prev_co_name=prev_co_domain=None
-    if old:
-        oc=call('GET',f"https://api.hubapi.com/crm/v3/objects/companies/{old[0]}?properties=name,domain",
+    recovered=False
+    src=old[0] if old else None
+    if src is None:
+        # There may be nothing left to detach, and that is NOT the same as "never had an employer".
+        # A portal workflow enrolls on hs_lead_status = 'No Longer with Company' and, ~20 seconds
+        # later, REMOVES THE COMPANY ASSOCIATION and blanks native `jobtitle`. Measured on contact
+        # 12002674829: status written 14:41:32 by INTEGRATION, associatedcompanyid -> '' at
+        # 14:41:52 (CALCULATED), jobtitle -> '' at 14:41:52 (AUTOMATION_PLATFORM). So by the time a
+        # mover reaches this script - minutes or a day after the verdict - the employer they left is
+        # already gone from the record, and reading only live associations loses the one fact this
+        # whole property exists to preserve. The value survives in property HISTORY; take it from
+        # there so the previous-employer link is written for movers processed after the ejection.
+        h=call('GET',"https://api.hubapi.com/crm/v3/objects/contacts/"+cid
+                     +"?propertiesWithHistory=associatedcompanyid",fatal=False)
+        for e in ((h.get('propertiesWithHistory') or {}).get('associatedcompanyid') or []):
+            if (e.get('value') or '').strip():
+                src=e['value'].strip(); recovered=True; break
+    if src:
+        oc=call('GET',f"https://api.hubapi.com/crm/v3/objects/companies/{src}?properties=name,domain",
                 fatal=False)
         if 'id' in oc:
             prev_co_id=str(oc['id'])
             prev_co_name=(oc.get('properties') or {}).get('name')
             prev_co_domain=(oc.get('properties') or {}).get('domain')
+            if recovered: print("      previous employer recovered from history: "+prev_co_id+" "+str(prev_co_name))
     for o in old: call('DELETE',f"https://api.hubapi.com/crm/v4/objects/contacts/{cid}/associations/companies/{o}")
     call('PUT',f"https://api.hubapi.com/crm/v4/objects/contacts/{cid}/associations/companies/{coid}",
       [{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":1},{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":279}])
@@ -173,6 +261,10 @@ for m in M:
     # retry and staleness logic keys on. A re-associated mover is a valid prospect at their new
     # employer; buyability is a human's call.
     ls=m.get('ls') or "ConnectandSell Prospect"
+    ls_reason=None
+    if not m.get('ls'):
+        ls,ls_reason=dest_status(coid,ls)
+        if ls_reason: print("      destination check: "+ls_reason+" -> lead status '"+ls+"'")
     wt,wt_why=title_ok(m,dom)
     if m.get('title') and not wt: print("      no-jobtitle "+cid+": "+wt_why+" (ai__job_title still written)")
     tnote=""
@@ -181,11 +273,13 @@ for m in M:
               "'"+m['title']+"' (conf %.2f); "%m['title_conf']
     domnote=dom if dom else "UNRESOLVED (verify/enrich)"
     tail=(f" - Changed: {MARKER} to {newco} ({domnote}); was '{prev_company}' (assoc {old}); flag->yes; "
-          f"lead status='{ls}'; phone carried (verify before dialing); "
+          f"lead status='{ls}'"+(f" NOT prospect because {ls_reason}" if ls_reason else "")+f"; "
+          f"phone carried (verify before dialing); "
           f"{'ai__job_title set; ' if m.get('title') else ''}"
           f"{tnote}"
           f"{'LinkedIn URL corrected; ' if m.get('li_url') else ''}"
-          f"previous employer record {prev_co_id or 'unknown'} preserved.")
+          f"previous employer record {prev_co_id or 'unknown'} preserved"
+          f"{' (recovered from property history - the ejection workflow had already detached it)' if recovered else ''}.")
     head=f"Verified - {D} - "
     ev=head+str(m.get('ev',''))[:max(0,900-len(head)-len(tail))]+tail
     if prev_ev: ev=(ev+" || "+prev_ev)[:990]
@@ -202,12 +296,24 @@ for m in M:
        "validated__linkedin_or_manually":"Yes"}
     if m.get('title'): p["ai__job_title"]=m['title']
     if wt: p["jobtitle"]=m['title']
+    if ls_reason:
+        # The status is now a claim about the RELATIONSHIP, not about employment, and this process
+        # is not entitled to make that claim silently. Surface it.
+        p["ai__verification_issue"]="destination_is_account"; p["ai__verification_issue_on"]=D
+        p["ai__verification_issue_note"]=("Re-associated, but NOT set to prospect: "+ls_reason
+                                          +". Lead status set to '"+ls+"' - confirm with whoever "
+                                          "owns the account.")[:900]
     if not dom:
         # re-associated without a proven domain: the company record has no ICP fields and the
         # contact silently leaves every gated list. Surface it rather than let it vanish.
         p["ai__verification_issue"]="ambiguous_destination"; p["ai__verification_issue_on"]=D
-        p["ai__verification_issue_note"]=("Re-associated to %r with no verified domain - confirm "
-                                          "the employer and fill the ICP fields."%newco[:60])
+        # one property, two possible findings: keep both rather than letting the later write erase
+        # the earlier one - a relationship warning silently replaced by a domain warning is how a
+        # contact ends up mislabelled with nobody able to see why.
+        _n=("Re-associated to %r with no verified domain - confirm the employer and fill the ICP "
+            "fields."%newco[:60])
+        if ls_reason: _n+=" ALSO: not set to prospect - "+ls_reason+" (status '"+ls+"')."
+        p["ai__verification_issue_note"]=_n[:900]
     if isinstance(m.get('tenure'),(int,float)) and not isinstance(m.get('tenure'),bool):
         p["ai__li_tenure_years"]=m['tenure']
     # Deliberately NOT hardcoded to "yes". Nothing in this process ever writes it back to "no",
@@ -217,7 +323,13 @@ for m in M:
     if m.get('role_change') in ('yes','no'): p["ai__li_recent_role_change"]=m['role_change']
     if m.get('li_url'): p["hs_linkedin_url"]=m['li_url']
     # previous__company_domain_name is a DOMAIN field; it was being given a company NAME.
-    if prev_co_domain: p["previous__company_domain_name"]=prev_co_domain
+    # It ALSO enforces URL validation despite reporting fieldType 'text' in
+    # /crm/v3/properties/contacts - a bare domain returns HTTP 400 INVALID_URL ("No protocol
+    # found"), which is fatal here and halted a whole mover pass on its first contact. Send a
+    # protocol. Measured 2026-09-03 on 1316587 with 'fictiv.com'.
+    if prev_co_domain:
+        d=prev_co_domain.strip()
+        p["previous__company_domain_name"]=d if d.lower().startswith(('http://','https://')) else 'https://'+d
     if prev_co_id:
         p["ai__previously_associated_company_id"]=prev_co_id
         # Rich text (fieldType html), so this renders as a real anchor with the company NAME as the
@@ -229,6 +341,22 @@ for m in M:
             '<a href="'+PORTAL_RECORD_URL+prev_co_id+'">'+_label+'</a>')
     if prev_co_name or prev_company:
         p["ai__previously_associated_company_name"]=prev_co_name or prev_company
+    # The previous employer must not BE the destination. Measured 2026-09-03: 5 of 86
+    # re-associations recorded the new company as the one they left, because a failed earlier
+    # attempt had already written the destination into associatedcompanyid history and the
+    # history-recovery path then read it back. That destroys the single field that would let a
+    # human notice a wrong re-association - so refuse to write it rather than write it wrong.
+    _pn=(p.get("ai__previously_associated_company_name") or '').strip().lower()
+    if _pn and _pn==str(newco).strip().lower():
+        for _k in ("ai__previously_associated_company","ai__previously_associated_company_id",
+                   "ai__previously_associated_company_name","previous__company_domain_name"):
+            p.pop(_k,None)
+        p["ai__verification_issue"]="ambiguous_destination"; p["ai__verification_issue_on"]=D
+        p["ai__verification_issue_note"]=("The recovered previous employer was the SAME company as "
+            "the destination (%r), which means the history had already been written by an earlier "
+            "attempt. Left blank rather than recorded wrongly - the employer they left is not "
+            "known from this run."%str(newco)[:60])[:900]
+        print("      previous employer == destination on "+cid+" - left blank, issue raised")
     u=call('PATCH',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}",{"properties":p}); ok='id' in u
     t_held=None
     if ok and wt:

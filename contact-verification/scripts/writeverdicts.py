@@ -58,7 +58,7 @@ ISSUE_OK={"wrong_link_suspected","identity_unresolved","no_identifier","ambiguou
           # departed but carrying live pipeline - eject and you delete a warm re-target
           "departed_with_pipeline",
           # the verdict does not match its own evidence (e.g. a persona call filed as employment)
-          "verdict_not_employment"}
+          "verdict_not_employment","destination_is_account"}
 CONFIRMED={"yes","no"}      # only these two justify stamping a "verified" date
 TMP=tempfile.NamedTemporaryFile('w',suffix='.json',delete=False).name
 def call(m,url,body=None,fatal=True):
@@ -96,7 +96,12 @@ def validated_of(verdict,ls):
     if verdict=='yes': return "Yes"
     if verdict=='no' and ls=='Retired - Remove from All Lists': return "Retired"
     return "Needs Updated"   # any other 'no' (moved / need info) or 'unreadable' -> a human should look
-TITLE_CONF_MIN=0.90
+TITLE_CONF_MIN=0.95   # Shawn's number, raised from 0.90 on 2026-09-03. The native `jobtitle`
+                      # field is what reps see in the sidebar, the screen-pop and every export, so
+                      # the bar is "I am reading this title off a dated, end-null row for THIS
+                      # employer", not "I am fairly sure". `ai__job_title` still gets every
+                      # verified title regardless - nothing else writes that field, so it is the
+                      # lossless record and the native write is the opinionated one.
 # Hedge words in the evidence mean the title is not a 90% call, whatever number the caller passed.
 AMBIG=("caution","ambig","uncertain","unclear","probably","possibly","perhaps","assumed","appears to",
        "may be","might be","succession","dormant","not updated","stale profile","conflict","unsure","?",
@@ -117,15 +122,57 @@ def title_ok(r):
     blob=((r.get('ev') or '')+' '+(r.get('changed') or '')).lower()
     hit=[t for t in AMBIG if t in blob]
     if hit: return (False,"ambiguity marker in evidence: "+", ".join(hit[:3]))
+    if identity_doubt(r): return (False,"slug does not carry this contact's name - whose title is it")
     return (True,None)
-inputs=[];refused=[];urlfix=[];accepted=[];titlewrite=[];title_skip=[]
+def identity_doubt(r):
+    """Does the LinkedIn slug we read carry this contact's name at all?
+
+    A wrong-linked profile produces a verdict that is perfectly reasoned about the WRONG HUMAN.
+    Found on the first validation pass: CRM 'Matt Eberhart / matt@query.ai' carried the slug
+    `manthony`, which resolves to Matt Anthony - a real Query advisor, so every dated row checked
+    out and the run banked a confident `yes` plus a title write about someone else entirely.
+    SKILL.md has documented this failure mode ("1.3% of contacts carry URLs pointing at different
+    people") and named an issue value for it since the beginning, but nothing ever CHECKED - it was
+    prose, and prose does not run.
+
+    Deliberately advisory, not fatal. Custom vanity slugs, maiden names and initials are all
+    legitimate, and 63 of 66 slugs matched on the measured run - so a mismatch is rare but is not
+    proof of anything. It raises the issue for a human and blocks the native title write, because
+    the 0.90 gate should fail closed on doubt about WHOSE title it is."""
+    pr=prior.get(str(r['id'])) or {}
+    # the URL this verdict was actually read from: a corrected one if supplied, else what is stored
+    sl=(slug(r.get('li_url')) or slug(pr.get('hs_linkedin_url'))
+        or slug(pr.get('linkedin_profile_url__unique_value')))
+    if not sl: return None
+    body=re.sub(r'[^a-z]','',sl)
+    fn=re.sub(r'[^a-z]','',(pr.get('firstname') or '').lower())
+    ln=re.sub(r'[^a-z]','',(pr.get('lastname') or '').lower())
+    if not (fn or ln): return None            # nothing to compare against
+    # THE SURNAME IS THE TEST. A first-name match is not evidence of identity and letting it clear
+    # the doubt is how `michaeldaecher` passed for Michael Stella: they share a first name, so the
+    # guard saw 'michael' inside the slug, cleared, and the run ejected him on a stranger's
+    # profile whose old employer AND title happened to match his record. First names are shared by
+    # millions of people; that check could never have worked.
+    if ln and len(ln)>=4:
+        return None if ln in body else (
+            "slug %r does not carry the surname %r on this record - the profile may belong to a "
+            "different person, which would make every dated row correct and the verdict about the "
+            "wrong human. A shared FIRST name is not evidence of identity."%(sl,ln))
+    # No usable surname (single-word name, initials): fall back to the first name, and say so.
+    if fn and len(fn)>=3 and fn in body: return None
+    return ("slug %r carries neither a usable surname nor the first name on this record - identity "
+            "is not established"%sl)
+
+
+inputs=[];refused=[];urlfix=[];accepted=[];titlewrite=[];title_skip=[];idflag=[];nodest=[]
 # Read prior evidence AND prior jobtitle before building anything: the evidence string records the
 # native title we are about to overwrite, so the overwrite stays reversible with no new field.
 prior={}
 for i in range(0,len(V),100):
     pr=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/batch/read',
             {"inputs":[{"id":str(x['id'])} for x in V[i:i+100]],
-             "properties":["ai__contact_evidence","jobtitle"]})
+             "properties":["ai__contact_evidence","jobtitle","firstname","lastname",
+                           "hs_linkedin_url","linkedin_profile_url__unique_value"]})
     for x in pr.get('results',[]): prior[str(x['id'])]=x['properties'] or {}
 # Fail CLOSED on anything the prior read could not return. Writing a contact whose prior evidence
 # we never saw would replace that history rather than append to it - silently, and unrecoverably.
@@ -207,6 +254,42 @@ for r in V:
     if r.get('role_change') in ('yes','no'): p["ai__li_recent_role_change"]=r['role_change']
     # The durable exception register. Session scratch files do not survive a scheduled run, so a
     # queued judgement call that lives only in a local JSON is a queued judgement call nobody sees.
+    _doubt=identity_doubt(r)
+    if _doubt and not r.get('identity_ok'):
+        # BINDING, not advisory. This used to raise the issue and refuse the native title while
+        # letting the verdict through, and the inconsistency showed up in one run: Matt Eberhart
+        # (slug `manthony`) correctly came out `unreadable` and stayed callable, while Michael
+        # Stella (slug `michaeldaecher`) was EJECTED on a stranger's profile whose old employer and
+        # title happened to match the CRM record. Whether the guard bound the outcome was left to
+        # the judge, so it bound one and not the other.
+        #
+        # If we cannot say whose profile was read, we know nothing about this person's employment -
+        # so the only honest verdict is `unreadable`, never `yes` and never `no`. A wrong `no` is
+        # the expensive one: it ejects a callable contact and detaches their company.
+        #
+        # Escape hatch, because ~3% of slugs are legitimately unrecognisable (maiden names,
+        # initials, handles like `woody53`): pass `identity_ok: true` WITH an `identity_note`
+        # saying how the profile was confirmed to be this person - headline, location, employer
+        # history matching the record. It must be a positive check, not an assumption.
+        if r['verdict'] in ('yes','no'):
+            r=dict(r); r['verdict']='unreadable'
+            verdict='unreadable'
+            p["ai__li_still_at_company"]='unreadable'
+            # BLANK, do not pop. Omitting a property leaves whatever is already on the record, so
+            # popping left a stale verified date from the earlier wrong run - the record read as
+            # freshly confirmed while its verdict said the opposite. Same for the title: it held a
+            # different person's job.
+            p["ai__contact_verified_date"]=""
+            p["validated__linkedin_or_manually"]="Needs Updated"
+            p["ai__job_title"]=""
+            wt=False                                   # and no title claim survives it
+        else:
+            r=dict(r)
+        r['issue']=r.get('issue') or 'wrong_link_suspected'
+        r['issue_note']=(_doubt+" Verdict forced to `unreadable`: identity not established, so no "
+                         "employment claim can be made. Find a URL that belongs to this contact, "
+                         "or pass identity_ok with a note saying how the profile was confirmed.")[:900]
+        idflag.append((str(r['id']),_doubt[:80]))
     if r.get('issue'):
         if r['issue'] not in ISSUE_OK:
             refused.append((r['id'],"unknown issue '"+str(r['issue'])+"' - RECORD DROPPED")); continue
@@ -218,12 +301,48 @@ for r in V:
     # the contact again - so a lost queue leaves a real person ejected at the employer they left,
     # with nothing anywhere recording where they went. movepipe clears this when it re-associates.
     if r['verdict']=='no' and r.get('newco'): p["ai__pending_mover_to"]=str(r['newco'])[:200]
+    # A `no` with no destination and no stated reason is a DROPPED PERSON, not a finding.
+    # Measured 2026-09-03: 450 contacts across the portal carry verdict `no`; 446 of them have
+    # neither ai__reassociated_on nor ai__pending_mover_to, and 274 have no company association at
+    # all - the ejection workflow detached it. Those people were read on LinkedIn, seen to have
+    # left, and left in the CRM pointing nowhere. The destination was almost always visible in the
+    # very same profile read; earlier passes simply did not record it.
+    #
+    # So `no` now REQUIRES one of two things: a destination, or an explicit `no_destination`
+    # reason saying what was looked at and why nothing was found (genuinely absent current row,
+    # career break, retired, only self-employment). Absent both, the record is refused rather than
+    # banked - a refusal keeps the contact in the queue for the next pass, and a banked verdict
+    # never surfaces again.
+    if r['verdict']=='no' and not r.get('newco'):
+        nd=str(r.get('no_destination') or '').strip()
+        if len(nd)<25:
+            refused.append((r['id'],"verdict 'no' with no `newco` and no `no_destination` reason "
+                            "(>=25 chars saying what the profile showed instead) - RECORD DROPPED, "
+                            "contact stays in the queue")); continue
+        p["ai__verification_issue"]=p.get("ai__verification_issue") or "ambiguous_destination"
+        p["ai__verification_issue_on"]=D
+        _pn=p.get("ai__verification_issue_note")
+        p["ai__verification_issue_note"]=((_pn+" ALSO: " if _pn else "")
+            +"left the CRM employer with no destination found: "+nd)[:900]
+        nodest.append((str(r['id']),nd[:70]))
     if r.get('title'): p["ai__job_title"]=r['title']            # AI-owned title, always safe to write
     if wt: p["jobtitle"]=r['title']; titlewrite.append((str(r['id']),r['title'],old_title))
     if r.get('li_url'): p["hs_linkedin_url"]=r['li_url']; urlfix.append((str(r['id']),r['li_url']))
     inputs.append({"id":str(r['id']),"properties":p}); accepted.append(r)
+# One id twice in a batch is HTTP 400 "Duplicate IDs found in batch input", which is fatal and
+# takes the whole pass down - and a duplicate is easy to produce when a queue is assembled from
+# more than one source, or a contact appears twice in a list. Keep the FIRST occurrence and say so.
+_seen=set(); _dupes=[]; _in2=[]; _acc2=[]
+for _it,_r in zip(inputs,accepted):
+    if _it['id'] in _seen: _dupes.append(_it['id']); continue
+    _seen.add(_it['id']); _in2.append(_it); _acc2.append(_r)
+if _dupes:
+    print("DUPLICATE ids in this batch, first occurrence kept: "+", ".join(sorted(set(_dupes))))
+    inputs,accepted=_in2,_acc2
 for cid,why in refused: print("REFUSED",cid,why)
 for cid,why in title_skip: print("NO-JOBTITLE",cid,why,"(ai__job_title still written)")
+for cid,why in idflag: print("IDENTITY",cid,why,"-> wrong_link_suspected raised")
+for cid,why in nodest: print("NO-DESTINATION",cid,why,"-> flagged; they left and we found nowhere")
 # append, never overwrite: prior entries carry the mover marker, phone-correction notes and
 # human flags that two production lists filter on.
 for it in inputs:
