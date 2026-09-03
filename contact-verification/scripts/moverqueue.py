@@ -35,13 +35,14 @@ import os,sys,json,subprocess,tempfile
 T=os.environ['TOKEN']
 DRY=os.environ.get('DRY')=='1'
 TMP=tempfile.NamedTemporaryFile('w',suffix='.json',delete=False).name
-OUT='movers.json'; OVER={}; PRECLEAR=True
+OUT='movers.json'; OVER={}; PRECLEAR=True; NO_LI=False
 a=sys.argv[1:]
 while a:
     k=a.pop(0)
     if k=='--out': OUT=a.pop(0)
     elif k=='--overrides': OVER=json.load(open(a.pop(0)))
     elif k=='--no-preclear': PRECLEAR=False
+    elif k=='--no-linkedin': NO_LI=True      # HubSpot-only, for a run with no read budget
     else: sys.exit("unknown argument "+k)
 def call(m,url,body=None,fatal=True):
     c=['curl','-s','--max-time','30','-w','\n%{http_code}','-X',m,
@@ -72,6 +73,43 @@ while True:
     if not after: break
 print("pending movers in HubSpot: "+str(len(M)))
 if not M: sys.exit(0)
+# --- LinkedIn company lookup: the destination's OWN declared website ------------------------
+# Asked and answered 2026-09-03: when a dated row tells you where somebody works, you CAN click
+# through to the company and read its website. GET /linkedin/company/<public_identifier> returns
+# it, and it beats a third-party lookup because it is the company's own site, from the same source
+# as the employment row - LinkedIn returned pivot180.ai where ZoomInfo returned pivot180.com.
+#
+# The catch: the endpoint wants a LinkedIn public identifier, not a display name. On v2 every
+# experience row carries company.id and resolves deterministically. Here we only have the name the
+# verdict step banked, so a slug is a GUESS - which is why the returned `name` is checked against
+# the destination before the website is accepted. A wrong company record is worse than none.
+SLUGGISH=re.compile(r"[^a-z0-9]+")
+def slugs(name):
+    n=name.strip().lower()
+    n=re.sub(r"\b(inc|llc|ltd|limited|corp|corporation|co|company|group|holdings|plc|gmbh|sa|nv|"
+             r"the)\b",' ',n)
+    core=SLUGGISH.sub('-',n).strip('-')
+    out=[core, core.replace('-',''), SLUGGISH.sub('-',name.strip().lower()).strip('-')]
+    seen=set(); return [x for x in out if x and not (x in seen or seen.add(x))]
+def norm(x): return SLUGGISH.sub('',(x or '').lower())
+def li_website(name):
+    """(domain, why-not). Only accepts a company whose returned NAME matches what we asked for."""
+    here=os.path.dirname(os.path.abspath(__file__))
+    for sl in slugs(name):
+        o=subprocess.run(['python3',os.path.join(here,'unipile.py'),'company',sl],
+                         capture_output=True,text=True)
+        if o.returncode!=0: continue
+        try: d=json.loads(o.stdout)
+        except Exception: continue
+        got,site=d.get('name') or '',d.get('website') or ''
+        if not site: continue
+        a,b=norm(got),norm(name)
+        if not (a==b or a.startswith(b) or b.startswith(a)):
+            return (None,"LinkedIn slug %r is company %r, which is not %r"%(sl,got[:40],name[:40]))
+        dom=re.sub(r"^https?://",'',site).split('/')[0].lstrip('.')
+        dom=re.sub(r"^www\.",'',dom)
+        if dom: return (dom,None)
+    return (None,"no LinkedIn company page matched %r"%name[:40])
 cache={}
 def resolve(name):
     """(domain, why-not). Exactly one named record carrying a domain, or nothing."""
@@ -89,6 +127,15 @@ def resolve(name):
         out=(None,"HubSpot company %s (%r) carries no domain"%(res[0]['id'],name))
     else:
         out=((res[0]['properties']['domain'] or '').strip(),None)
+    # Nothing in HubSpot, or a record with no domain: ask LinkedIn for the company's own website
+    # before giving up. This is what removes the manual enrichment step for most destinations.
+    if out[0] is None and not NO_LI:
+        dom,why=li_website(name)
+        if dom:
+            print("      LinkedIn company page gives %r -> %s"%(name[:34],dom))
+            out=(dom,None)
+        else:
+            out=(None,(out[1] or '')+"; "+why)
     cache[name]=out; return out
 queue=[];unres=[];preclear=[]
 for x in M:

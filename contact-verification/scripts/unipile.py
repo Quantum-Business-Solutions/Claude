@@ -176,6 +176,37 @@ def pace():
     w=min(max(1.0,float(rst)/max(rem,1)),PACE_CAP)
     time.sleep(w); return w,False
 
+def company_url(c,ident):
+    return (c['base']+'/v2/'+c['acc']+'/linkedin/company/'+ident if c['ver']==2
+            else c['base']+'/api/v1/linkedin/company/'+ident+'?account_id='+c['acc'])
+def company(c,ident):
+    """LinkedIn's own company page for a dated employment row: name, WEBSITE, industry, size.
+
+    This is the answer to "when we see where someone works, can we click the company and find the
+    website?" - yes, and it is better than a third-party lookup because it is the company's own
+    declared site, read from the same source as the employment row. Measured 2026-09-03: LinkedIn
+    returns pivot180.ai for Pivot180 where ZoomInfo returned pivot180.com.
+
+    `ident` is a LinkedIn company PUBLIC IDENTIFIER or ID - not a display name. On v2 every
+    experience row carries company.id, so a mover's destination resolves deterministically; on v1
+    the rows carry no id, so a slugified name is a guess and the caller must check the returned
+    `name` before trusting it.
+
+    Also returned and worth using: `employee_count` (a two-person company is somebody's own firm,
+    not an ICP account) and `acquired_by` (which is how a rename like Market Resource Partners ->
+    pharosIQ stops reading as a departure)."""
+    body,code=fetch(c,company_url(c,ident))
+    if not code.startswith('2'): return None,code
+    try: d=json.loads(body)
+    except Exception: return None,'unparseable'
+    d=d.get('data') if isinstance(d.get('data'),dict) else d
+    return {'name':d.get('name'),'website':d.get('website'),
+            'public_identifier':d.get('public_identifier'),'id':d.get('id'),
+            'industry':(d.get('industry') or [None])[0],
+            'employee_count':d.get('employee_count'),
+            'organization_type':d.get('organization_type'),
+            'acquired_by':(d.get('acquired_by') or {}).get('name')},None
+
 def accounts_url(c):
     return c['base']+('/v2/accounts' if c['ver']==2 else '/api/v1/accounts?account_id='+c['acc'])
 
@@ -250,6 +281,17 @@ def rows(c,slug):
 cmd=sys.argv[1] if len(sys.argv)>1 else 'selftest'
 SLUG=(sys.argv[2] if cmd=='profile' and len(sys.argv)>2 else
       os.environ.get('SELFTEST_SLUG') or 'williamhgates')
+
+if cmd=='company':
+    ident=sys.argv[2] if len(sys.argv)>2 else sys.exit("usage: unipile.py company <slug-or-id>")
+    for c in candidates():
+        ok,_=reachable(c['base'])
+        if not ok: continue
+        d,err=company(c,ident)
+        if d and d.get('name'):
+            d['api_version']=c['ver']; print(json.dumps(d,indent=1)); sys.exit(0)
+        sys.stderr.write("  v%d: %s\n"%(c['ver'],err or 'no company in the response'))
+    print("COMPANY LOOKUP FAILED for "+repr(ident)+" on every reachable rung"); sys.exit(3)
 
 if cmd=='probe':
     print("v2 account "+(V2_ACC if V2_KEY else "(no UNIPILE_V2_KEY)")+

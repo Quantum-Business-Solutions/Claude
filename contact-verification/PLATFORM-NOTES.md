@@ -397,3 +397,68 @@ Two mechanical notes from making it bind:
   record means the same wrong human is read again tomorrow.** Contact 3247359 carried
   `anna-koblish-89a169134`, a freelance photographer, with the evidence noting "URL corrected to
   antony-koblish-28515643" — a correction that was never written to a field.
+
+## 17. Yes — you can click through to the company and read its website
+
+Asked directly: when a dated row tells you where somebody works, can you follow the company and
+find its site? **Yes, and it is the better source.**
+
+```
+GET /api/v1/linkedin/company/{public_identifier}?account_id=...     (v1, via the relay)
+GET /v2/{acc}/linkedin/company/{public_identifier}                   (v2)
+```
+
+Returns `website`, `industry`, `employee_count`, `locations`, `organization_type` and — usefully —
+`acquired_by`. Verified live through the relay:
+
+| destination | LinkedIn says | ZoomInfo said |
+|---|---|---|
+| Pivot180 | **pivot180.ai** | pivot180.com |
+| Havoc | **havoc.co** | NO_MATCH |
+| PADT, Inc | padtinc.com | padtinc.com |
+| What Chefs Want! | whatchefswant.com | whatchefswant.com |
+
+It beats a third-party lookup for the obvious reason: it is the company's own declared site, read
+from the same source as the employment row, so it cannot disagree with the row that produced the
+verdict. It also caught a case ZoomInfo got wrong (`.ai` not `.com`) and one it could not resolve
+at all.
+
+**The catch is the identifier.** The endpoint wants a LinkedIn public identifier or ID, not a
+display name. On **v2 every experience row carries `company.id`**, so a mover's destination resolves
+deterministically — capture it during the profile read and the lookup is exact. On v1 the rows carry
+no id (`company_id: null`), so a slugified name is a GUESS: `moverqueue.li_website()` therefore
+checks the returned `name` against the destination before accepting the website, because a wrong
+company record is worse than none. Measured hit rate from names alone: 5 of 8 hard cases.
+
+Two further fields worth wiring in and not yet used:
+- `employee_count` — a two-person company is somebody's own consultancy, not an ICP account. That
+  is currently inferred from stop-words in prose ("his own firm"), which is exactly the kind of
+  guess this replaces with a number.
+- `acquired_by` — how a rename like Market Resource Partners → pharosIQ stops reading as a
+  departure, without a human recognising the brand.
+
+## 18. The native job title is not written because nobody passes the flag
+
+The mechanism has been correct for a while: `title_conf >= 0.95` plus verdict `yes` writes native
+`jobtitle`, and it holds on read-back. Measured across one day's 169 `yes` verdicts:
+
+| | |
+|---|---|
+| native `jobtitle` already matches `ai__job_title` | 88 |
+| `ai__job_title` set, native **differs** — a rep reads the stale one | 37 |
+| `ai__job_title` set, native blank | 4 |
+| **no `ai__job_title` captured at all** | **40** |
+
+Of the 37 differences, most are not stale data — they are **abbreviation noise the wrong way
+round**: `ai__job_title` said "CMO" where the native field already said "Chief Marketing Officer",
+or "Vice President Marketing" against "Vice President, Marketing". One appended the employer to the
+title ("CMO, Finovifi"). Only about ten are genuine changes a rep would want (a VP who is now an
+SVP, and one who is now a Digital Product Manager — a step DOWN, which matters just as much).
+
+So the fix is not in the gate. **On a `yes` verdict where the title was read off the end-null row,
+`title_conf` 0.95 is the DEFAULT, not an exception** — that is precisely what the 0.95 definition
+already says, and the judge simply wasn't passing the flag. Two rules go with it, because the native
+field is what appears in the sidebar, the screen-pop and every export:
+
+- Write the **full form**, never the abbreviation. "Chief Marketing Officer", not "CMO".
+- Never append the employer to the title. The company has its own field.

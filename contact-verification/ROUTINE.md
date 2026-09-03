@@ -155,8 +155,30 @@ has ever had presented as a confident clean bill of health:
    2. If that fails, clone `https://github.com/Quantum-Business-Solutions/Claude` instead, and say
       so **at the top of the run report**, with the commit SHA and the words "FELL BACK TO THE
       MIRROR". The mirror is hand-maintained and may lag.
-   3. Preflight will refuse stale code either way. Do not skip it, and do not run with
-      `SKIP_TRANSPORT` set.
+   3. **Do not rely on `preflight.py` to detect a stale checkout. It cannot.** Its code-version
+      guard ships INSIDE the checkout it is guarding, so an old checkout brings its own old guard
+      and passes itself. Verified 2026-09-03: the Claude repo's `main` at `f4169ed` — missing the
+      identity check, the no-destination rule, the destination-account check, the URL protocol fix
+      and the rate-limit fixes — runs its own preflight and prints "code version: all QA fixes
+      present", then PREFLIGHT PASSED. A guard on the inside cannot tell you the outside is wrong.
+
+      So the staleness check has to live **outside** the artifact, in the routine prompt, which is
+      versioned separately. Step 0 greps the checkout for markers of the fixes that must be there:
+
+      ```
+      for M in 'RUNG_SPENT_AFTER' 'def identity_doubt(' 'def dest_status(' \
+               'no_destination' 'propertiesWithHistory=associatedcompanyid'; do
+        grep -rqF "$M" $REPO/contact-verification/scripts/ \
+          || { echo "HALT: checkout is missing $M - stale code"; exit 1; }
+      done
+      ```
+
+      Add a marker whenever a fix lands that a run must not silently do without. This is the same
+      lesson as everything else here in a new place: a rule that lives inside the thing it governs
+      is not a guarantee.
+
+      Do not skip preflight either — it still catches auth, portal, schema and transport. Never run
+      with `SKIP_TRANSPORT` set.
 
    This is a temporary bridge. It ends when `QBS_GIT_TOKEN` exists on the environment, or the new
    repository is made public - at which point delete the fallback rather than leaving it to rot
@@ -213,8 +235,19 @@ has ever had presented as a confident clean bill of health:
    - **Checks what the destination already is** before writing `ConnectandSell Prospect`:
      a current client, former client, open deal or upcoming meeting gets that company's real status
      instead, plus a `destination_is_account` flag for a human.
+   - **Resolves the destination's domain from LinkedIn itself.** `moverqueue.py` asks
+     `unipile.py company <slug>` for the company's own declared website when HubSpot has no record
+     with a domain. This is better than a third-party lookup - same source as the employment row -
+     and it removed the manual enrichment step: LinkedIn returned `pivot180.ai` where ZoomInfo
+     returned `pivot180.com`, and resolved `havoc.co` which ZoomInfo could not. It accepts the
+     website only when the company NAME it gets back matches the destination, because from a
+     display name the slug is a guess. `--no-linkedin` skips it for a run with no read budget.
    - **Writes native `jobtitle`** at `title_conf >= 0.95` with a resolved employer domain, and
-     reads it back.
+     reads it back. **On a `yes` read off the end-null row, 0.95 is the default, not the
+     exception** - measured on one day, 40 of 169 `yes` verdicts captured no title at all and 37
+     more left the native field disagreeing with `ai__job_title`, because the judge never passed
+     the flag. Write the FULL form ("Chief Marketing Officer", not "CMO") and never append the
+     employer: that field is what reps read in the sidebar and every export.
    - **Sets `validated__linkedin_or_manually` = `Yes`**, because the record has now been checked
      against a dated source and corrected.
 
