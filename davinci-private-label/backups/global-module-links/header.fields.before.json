@@ -1,0 +1,83 @@
+[ {
+  "id" : "7649d1da-4990-fa94-91f9-e35b87aea40e",
+  "name" : "menu_field",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu",
+  "display_width" : null,
+  "default" : 215784846432
+}, {
+  "id" : "35bba933-b455-8ada-a4b2-e2f173d86f4e",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "831e51c6-de95-885e-d801-1cef24339348",
+    "name" : "link_field",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "0ba9742c-ad52-875f-cc76-ad805a3a147c",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Praxera/Praxera%20Logo.png",
+      "alt" : "Praxera Logo",
+      "loading" : "lazy",
+      "width" : 612,
+      "height" : 208,
+      "max_width" : 612,
+      "max_height" : 208
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Praxera/Praxera%20Logo.png",
+      "alt" : "Praxera Logo",
+      "loading" : "lazy",
+      "width" : 612,
+      "height" : 208,
+      "max_width" : 612,
+      "max_height" : 208
+    }
+  }
+} ]
