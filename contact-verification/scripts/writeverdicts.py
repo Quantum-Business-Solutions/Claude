@@ -148,11 +148,21 @@ def identity_doubt(r):
     fn=re.sub(r'[^a-z]','',(pr.get('firstname') or '').lower())
     ln=re.sub(r'[^a-z]','',(pr.get('lastname') or '').lower())
     if not (fn or ln): return None            # nothing to compare against
-    if ln and len(ln)>=4 and ln in body: return None
+    # THE SURNAME IS THE TEST. A first-name match is not evidence of identity and letting it clear
+    # the doubt is how `michaeldaecher` passed for Michael Stella: they share a first name, so the
+    # guard saw 'michael' inside the slug, cleared, and the run ejected him on a stranger's
+    # profile whose old employer AND title happened to match his record. First names are shared by
+    # millions of people; that check could never have worked.
+    if ln and len(ln)>=4:
+        return None if ln in body else (
+            "slug %r does not carry the surname %r on this record - the profile may belong to a "
+            "different person, which would make every dated row correct and the verdict about the "
+            "wrong human. A shared FIRST name is not evidence of identity."%(sl,ln))
+    # No usable surname (single-word name, initials): fall back to the first name, and say so.
     if fn and len(fn)>=3 and fn in body: return None
-    return ("slug %r carries neither the first nor the last name on this record - the profile may "
-            "belong to a different person, which would make every dated row correct and the "
-            "verdict about the wrong human"%sl)
+    return ("slug %r carries neither a usable surname nor the first name on this record - identity "
+            "is not established"%sl)
+
 
 inputs=[];refused=[];urlfix=[];accepted=[];titlewrite=[];title_skip=[];idflag=[];nodest=[]
 # Read prior evidence AND prior jobtitle before building anything: the evidence string records the
@@ -245,8 +255,40 @@ for r in V:
     # The durable exception register. Session scratch files do not survive a scheduled run, so a
     # queued judgement call that lives only in a local JSON is a queued judgement call nobody sees.
     _doubt=identity_doubt(r)
-    if _doubt and not r.get('issue'):
-        r=dict(r); r['issue']='wrong_link_suspected'; r['issue_note']=_doubt[:900]
+    if _doubt and not r.get('identity_ok'):
+        # BINDING, not advisory. This used to raise the issue and refuse the native title while
+        # letting the verdict through, and the inconsistency showed up in one run: Matt Eberhart
+        # (slug `manthony`) correctly came out `unreadable` and stayed callable, while Michael
+        # Stella (slug `michaeldaecher`) was EJECTED on a stranger's profile whose old employer and
+        # title happened to match the CRM record. Whether the guard bound the outcome was left to
+        # the judge, so it bound one and not the other.
+        #
+        # If we cannot say whose profile was read, we know nothing about this person's employment -
+        # so the only honest verdict is `unreadable`, never `yes` and never `no`. A wrong `no` is
+        # the expensive one: it ejects a callable contact and detaches their company.
+        #
+        # Escape hatch, because ~3% of slugs are legitimately unrecognisable (maiden names,
+        # initials, handles like `woody53`): pass `identity_ok: true` WITH an `identity_note`
+        # saying how the profile was confirmed to be this person - headline, location, employer
+        # history matching the record. It must be a positive check, not an assumption.
+        if r['verdict'] in ('yes','no'):
+            r=dict(r); r['verdict']='unreadable'
+            verdict='unreadable'
+            p["ai__li_still_at_company"]='unreadable'
+            # BLANK, do not pop. Omitting a property leaves whatever is already on the record, so
+            # popping left a stale verified date from the earlier wrong run - the record read as
+            # freshly confirmed while its verdict said the opposite. Same for the title: it held a
+            # different person's job.
+            p["ai__contact_verified_date"]=""
+            p["validated__linkedin_or_manually"]="Needs Updated"
+            p["ai__job_title"]=""
+            wt=False                                   # and no title claim survives it
+        else:
+            r=dict(r)
+        r['issue']=r.get('issue') or 'wrong_link_suspected'
+        r['issue_note']=(_doubt+" Verdict forced to `unreadable`: identity not established, so no "
+                         "employment claim can be made. Find a URL that belongs to this contact, "
+                         "or pass identity_ok with a note saying how the profile was confirmed.")[:900]
         idflag.append((str(r['id']),_doubt[:80]))
     if r.get('issue'):
         if r['issue'] not in ISSUE_OK:

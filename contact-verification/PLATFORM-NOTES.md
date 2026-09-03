@@ -298,3 +298,102 @@ down over a limit that did not apply to it. `_load_rate()` now resets the dict b
 **Operational consequence worth knowing:** v2 carries a ~22-hour lockout once spent. A run that
 exhausts it has no v2 for the next day, and the relay is the only remaining rung. There is no
 third. Report the rung split every run.
+
+## 14. A version guard that ships inside the artifact cannot detect that the artifact is stale
+
+`preflight.py` has a code-version guard: a table of markers every script must contain, and it
+exits 3 if any is missing. It was built after a routine ran three-day-old code and reported a clean
+list, and it has been described — by me, repeatedly, including in a routine prompt written this
+afternoon — as the backstop that makes a fallback to an older repo safe.
+
+It is not, and the test is trivial. The Claude repo's `main` at `f4169ed` predates the identity
+check, the no-destination rule, the destination-account check, the `previous__company_domain_name`
+protocol fix and the rate-limit fixes. Running **its own** preflight against the live portal:
+
+```
+ok   code version: all QA fixes present
+...
+PREFLIGHT PASSED for list 5243 - safe to run.
+```
+
+Of course it passes. The guard and the code are the same artifact, so an old checkout arrives with
+an old list of requirements and satisfies it perfectly. The only visible difference was one line —
+"issue vocabulary: all **15** code values" against 16 — which is a pass either way.
+
+**The check has to live outside the thing it checks.** For a Routine that means the prompt, which
+is versioned separately from the repository: grep the checkout for markers of the fixes that must
+be present, and halt if any is missing. Markers currently required: `RUNG_SPENT_AFTER`,
+`def identity_doubt(`, `def dest_status(`, `no_destination`,
+`propertiesWithHistory=associatedcompanyid`.
+
+This one nearly shipped as a footgun. An hour before finding it I had rewritten the routine to
+permit a "loud fallback" to the older repo *specifically because* preflight would catch stale code.
+It would not have caught it — and stale code plus a spent v2 budget is the 22-hour sleep from §13.
+
+## 15. Mining a destination out of prose read negations as destinations
+
+A QA pass re-read fifteen of one day's verdicts against LinkedIn: nine correct, four wrong, two
+unverifiable. Every error traced to one place, and none of them to the employment judgement — on
+the twelve records where dated rows could be compared against the reasoning, the reading of end
+dates was right every time, including hard fractional-CMO cases.
+
+`recoverdest.py` mines a departed contact's destination out of the prose in
+`ai__contact_evidence`. Its pattern crossed sentence boundaries, so:
+
+```
+"...experience_preview: NOT at Digital Hands"   -> ('Digital Hands', None)
+"No longer CEO at Laborie."                     -> ('Laborie',       None)
+"LEFT NRI North America 06/2026. Do not call at NRI."  -> ('NRI',    None)
+```
+
+**It read a negation as a destination.** `moverqueue` and `movepipe` then attached three real
+people to the employer they had just left, flipped the verdict from `no` to `yes`, stamped
+`validated__linkedin_or_manually = Yes`, set lead status `ConnectandSell Prospect` and carried the
+phone. One of them had "Do not call at NRI" in the same field. That is worse than doing nothing: it
+hands an SDR a dial at the company the person left and marks it verified on the way out, so nobody
+re-checks. Three of eighty-six in one day; indistinguishable in the CRM from a correct
+re-association.
+
+**Two failed fixes before the working one**, both worth keeping because the shapes recur:
+
+- Judging the whole evidence string flags nearly every genuine mover — "LEFT `<old>`, then `<x>`,
+  now `<new>`" contains a negation by construction.
+- "A positive marker anywhere in the left window beats a negation" let a distant *"Now board chair
+  roles only"* excuse an adjacent *"No longer CEO at Laborie"*.
+
+What works is **nearest marker wins**: scan back 90 characters and take whichever of negation or
+positive sits closest to the capture — plus a separate rule that a capture *containing* a negation
+is never an employer name, since a positive marker can precede it ("Current row: NOT at ...").
+
+One more trap, found the same way: **a trailing `\b` in an alternation silently kills any branch
+ending in a non-word character.** `\b(?:now|...|mover\s*->)\b` never matches `Mover ->`, so a real
+destination was rejected as negated. Spell the boundaries per-branch.
+
+## 16. An advisory guard binds inconsistently, which is the same as not binding
+
+The identity check (§9) raised `wrong_link_suspected` and refused the native title, but left the
+verdict to the judge. In one run that produced both outcomes: Matt Eberhart (`manthony`) came out
+`unreadable` and stayed callable, while **Michael Stella was EJECTED on a stranger's profile** —
+slug `michaeldaecher`, whose Thought Industries CMO row matched Stella's company *and* title. The
+guard fired identically in both cases; only the judge differed.
+
+It now forces the verdict to `unreadable` — never `yes`, never `no` — because if you cannot say
+whose profile you read, you know nothing about that person's employment. `identity_ok: true` plus
+an `identity_note` is the escape hatch for the ~5% of slugs that are legitimately unrecognisable,
+and it requires a positive check (headline, location, employer history matching the record), not
+an assumption.
+
+**And the check itself was nearly useless, for a reason worth internalising: it accepted a FIRST
+name match.** `michael` is a substring of `michaeldaecher`, so the guard cleared the very record it
+existed to catch. First names are shared by millions of people. The surname is the test.
+
+Two mechanical notes from making it bind:
+
+- **Blank a property, never omit it.** Omitting `ai__contact_verified_date` leaves whatever is
+  already there, so a record forced to `unreadable` kept a verified date from the earlier wrong run
+  and read as freshly confirmed while its verdict said otherwise. Same for `ai__job_title`, which
+  held a different person's job.
+- When a guard spots a wrong URL, **writing the finding into prose and leaving the wrong URL on the
+  record means the same wrong human is read again tomorrow.** Contact 3247359 carried
+  `anna-koblish-89a169134`, a freelance photographer, with the evidence noting "URL corrected to
+  antony-koblish-28515643" — a correction that was never written to a field.

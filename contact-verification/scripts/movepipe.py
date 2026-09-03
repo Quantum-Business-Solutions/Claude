@@ -341,6 +341,22 @@ for m in M:
             '<a href="'+PORTAL_RECORD_URL+prev_co_id+'">'+_label+'</a>')
     if prev_co_name or prev_company:
         p["ai__previously_associated_company_name"]=prev_co_name or prev_company
+    # The previous employer must not BE the destination. Measured 2026-09-03: 5 of 86
+    # re-associations recorded the new company as the one they left, because a failed earlier
+    # attempt had already written the destination into associatedcompanyid history and the
+    # history-recovery path then read it back. That destroys the single field that would let a
+    # human notice a wrong re-association - so refuse to write it rather than write it wrong.
+    _pn=(p.get("ai__previously_associated_company_name") or '').strip().lower()
+    if _pn and _pn==str(newco).strip().lower():
+        for _k in ("ai__previously_associated_company","ai__previously_associated_company_id",
+                   "ai__previously_associated_company_name","previous__company_domain_name"):
+            p.pop(_k,None)
+        p["ai__verification_issue"]="ambiguous_destination"; p["ai__verification_issue_on"]=D
+        p["ai__verification_issue_note"]=("The recovered previous employer was the SAME company as "
+            "the destination (%r), which means the history had already been written by an earlier "
+            "attempt. Left blank rather than recorded wrongly - the employer they left is not "
+            "known from this run."%str(newco)[:60])[:900]
+        print("      previous employer == destination on "+cid+" - left blank, issue raised")
     u=call('PATCH',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}",{"properties":p}); ok='id' in u
     t_held=None
     if ok and wt:

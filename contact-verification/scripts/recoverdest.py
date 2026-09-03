@@ -84,12 +84,54 @@ def clean(c):
     c=TRAIL.sub('',c.strip())
     c=re.sub(r"^(the\s+)?",'',c,flags=re.I).strip()
     return c
+# A negation immediately before a company name means the person is NOT there. The first version of
+# this file read "NOT at Digital Hands", "No longer CEO at Laborie" and "LEFT NRI North America" as
+# DESTINATIONS, and three real contacts were then attached to the employer they had just left, with
+# the verdict flipped from no to yes, validated__linkedin_or_manually stamped Yes and lead status
+# set to ConnectandSell Prospect. One of them carried "Do not call at NRI" in the same field. That
+# is worse than doing nothing: it hands an SDR a dial at the company the person left, and marks it
+# as verified on the way out so nobody re-checks it.
+NEGATION=re.compile(r"(?:\bnot\b|\bno longer\b|\bnever\b|\bleft\b|\bleaving\b|\bdeparted\b|"
+                    r"\bdeparting\b|\bdo not call\b|\bex-|\bformer(?:ly)?\b|\bresigned\b|"
+                    r"\bexited\b|\bout at\b|\bno current\b|\bended\b|ENDED)",re.I)
+POSITIVE=re.compile(r"(?:\bnow\b|\bcurrent(?:ly)?\b|\bpresent\b|end.null|\bjoined\b|"
+                    r"\bjoining\b|\bsince\b|mover\s*->|\bmoved to\b|\bnew employer\b)",re.I)
+def negated(e,start):
+    """Is the capture governed by a negation rather than by a 'now/current' marker?
+
+    NEAREST MARKER WINS. Two earlier attempts at this were wrong in opposite directions and both
+    are worth remembering, because the shapes recur:
+
+    - Judging on the whole evidence string flags nearly every genuine mover, since "LEFT <old>,
+      then <x>, now <new>" contains a negation by construction.
+    - Judging on "a positive anywhere in the left window beats a negation" let a distant "Now board
+      chair roles only" excuse an adjacent "No longer CEO at Laborie", and re-attached a man to the
+      company he had left.
+
+    So scan backwards and take whichever marker sits CLOSEST to the capture. Note the regexes
+    deliberately spell their own word boundaries: a trailing \b in an alternation silently kills
+    any branch ending in a non-word character, which is how `mover\s*->` never matched and a real
+    destination was rejected as negated."""
+    w=e[max(0,start-90):start]
+    n=[m.end() for m in NEGATION.finditer(w)]
+    q=[m.end() for m in POSITIVE.finditer(w)]
+    if not n: return False
+    if not q: return True
+    return max(n)>max(q)      # the negation is the closer of the two
 def extract(ev):
     e=ev or ''
     for p in PATS:
         m=p.search(e)
         if not m: continue
+        if negated(e,m.start(1)):
+            return (None,"the capture sits behind a negation (%r) - this names the employer they "
+                         "LEFT, not where they went"%e[max(0,m.start(1)-46):m.start(1)].strip()[-46:])
         co=clean(m.group(1))
+        # A negation INSIDE the capture is decisive regardless of what precedes it: "NOT at Digital
+        # Hands" is not the name of an employer. Checked separately from the surrounding context
+        # because a positive marker can sit immediately before it ("Current row: NOT at ...").
+        if NEGATION.search(co):
+            return (None,"the capture %r contains a negation - it is not an employer name"%co[:40])
         if not (3<=len(co)<=60): return (None,"capture %r failed the length check"%co[:40])
         if TITLES.match(co): return (None,"capture %r is a job title, not an employer"%co[:40])
         if DANGLE.search(co): return (None,"capture %r ends mid-phrase"%co[:40])
