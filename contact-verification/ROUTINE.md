@@ -31,9 +31,20 @@ version-tagged ladder and reports which rung carried the run:
 **Pace to the published budget, not a guess.** Unipile allows **100 requests per ~16-minute
 window** (`x-ratelimit-limit` / `x-ratelimit-remaining` / `retry-after` on every response).
 `unipile.py` reads those headers and spreads the remaining budget across the remaining window, so
-the correct sustained rate is ~9.6s per profile — roughly **375/hour**. Size a run from that: a
-250-contact pass is about 40 minutes of reads. Do NOT hard-code a sleep; 3.5s burns the whole
-budget in six minutes and then stalls.
+the API permits roughly **375 reads/hour**. Do NOT hard-code a sleep; 3.5s burns the whole budget
+in six minutes and then stalls.
+
+**But do not size a run from 375/hour — size it from measured end-to-end throughput.** The
+2026-09-03 run wrote **230 verdicts in 95 minutes: ~159/hour**, less than half the API ceiling,
+because the bottleneck is the judgement per contact, not the request. At that rate a 250-contact
+pass is ~1.6 hours and a 500-contact pass is **~3.1 hours**, not the 40 and 80 minutes an
+API-derived estimate suggests. Plan the session length from 159/hour and treat 375 as the
+constraint you must stay under, not the speed you will achieve.
+
+**v2 can exhaust mid-run, and the relay is what saves it.** On that same run v2 reported its
+budget spent "for ~23h" partway through, and the v1 relay carried 86 of the reads to v2's 80 with
+the run never stalling. That is the fallback earning its keep — and a warning: there is no third
+rung. A longer run that exhausts both has nowhere to go, so report the rung split every time.
 
 Company-based search does not help this data: measured on list 5243, 815 unverified contacts span
 **753 distinct companies**, 711 of them with a single contact. One profile read per contact is the
@@ -84,44 +95,72 @@ has ever had presented as a confident clean bill of health:
 0. **Get the code.** Never assume a checkout exists:
 
    ```
+   REPO_URL=https://github.com/Quantum-Business-Solutions/qbs-contact-verification
    if [ -d /home/user/Claude/contact-verification ]; then REPO=/home/user/Claude
-   else cd /tmp && rm -rf qbsrepo \
-        && git clone --depth 1 --branch main \
-             https://github.com/Quantum-Business-Solutions/Claude qbsrepo \
-        && REPO=/tmp/qbsrepo
+   else
+     cd /tmp && rm -rf qbsrepo
+     # This repository is PRIVATE, so an unauthenticated clone fails in a fired session (see
+     # below). Try each credential the environment might carry, and NEVER echo one.
+     for TOK in "$QBS_GIT_TOKEN" "$GH_TOKEN" "$GITHUB_TOKEN"; do
+       [ -n "$TOK" ] || continue
+       git clone --depth 1 --branch main \
+           "https://x-access-token:${TOK}@github.com/Quantum-Business-Solutions/qbs-contact-verification" \
+           qbsrepo >/dev/null 2>&1 && break
+       rm -rf qbsrepo
+     done
+     # last resort: unauthenticated, which works only if the repo has been made public
+     [ -d qbsrepo/.git ] || git clone --depth 1 --branch main "$REPO_URL" qbsrepo
+     REPO=/tmp/qbsrepo
    fi
+   [ -d "$REPO/contact-verification/scripts" ] || {
+     echo "HALT: could not obtain the code. Cloned nothing from $REPO_URL."; exit 1; }
+   git -C "$REPO" log --oneline -1 2>/dev/null || echo "(no git metadata - verify the checkout)"
    ```
 
-   **This clone command deliberately still points at THIS repo, even though
-   `Quantum-Business-Solutions/qbs-contact-verification` is now the home for this process.**
+   **Report the commit SHA that last line prints, in the run summary.** It is the only evidence of
+   *which* code a fire actually ran, and a stale checkout reporting a clean list is this process's
+   single most expensive failure mode — on 2026-09-01 the routine cloned a `main` three days
+   behind, found no reachable transport, and halted having written nothing.
 
-   The code was extracted to its own repository because `main` here is whatever session merged
-   last: on 2026-09-01 the routine cloned a `main` three days stale, found no reachable transport,
-   and correctly halted having written nothing. A workspace is a bad release channel.
+   Never redirect a credential into a log, an evidence string or a commit message. The loop above
+   sends clone output to `/dev/null` for exactly that reason: git echoes the remote URL, and the
+   URL contains the token.
 
-   **The extraction is not finished, for one measured reason: the new repository is PRIVATE and a
-   routine-fired session has no credential for it.** A clone from an interactive session succeeds
-   and proves nothing — git read access there is served by the session's git proxy for repos
-   attached to that session. A fresh session spawned into the same environment
-   (`env_01TxD1DB6PTzpB6nQpEiFy88`), which is what a Routine gets, returned:
+   **Why the token loop exists, measured 2026-09-03.** This repository is private, and a
+   routine-fired session gets no credential from the git proxy. A clone from an *interactive*
+   session succeeds and proves nothing — there, the proxy serves repos attached to that session. A
+   fresh session spawned into the same environment a Routine fires into
+   (`env_01TxD1DB6PTzpB6nQpEiFy88`) returned:
 
    ```
    git clone https://github.com/Quantum-Business-Solutions/qbs-contact-verification
    -> exit 128: could not read Username for 'https://github.com': no credentials for HTTPS
    ```
 
-   Until one of these is done, the trigger clones THIS repo and **every change must land in both**:
+   So the URL must carry a token, or the repository must be public. If none of the three variables
+   is set in the environment, add a fine-grained PAT with **read-only** access to this one
+   repository as `QBS_GIT_TOKEN` (cloud icon above the message box at claude.ai/code — variables
+   are injected at container start, so a fire after that picks it up; a session already running
+   never sees it).
 
-   1. **Make the new repository public** (recommended). Nothing contact-level is tracked in it and
-      its `.gitignore` files cover every filename the scripts produce, so an unauthenticated clone
-      would then work exactly as this repo's does today.
-   2. Attach the new repository to the environment so fired sessions inherit a credential. Keeps it
-      private, and needs a real test fire to confirm — environment sources propagating to
-      trigger-fired sessions is unverified.
+   **A fallback to the old repo is permitted, but only a LOUD one.** Earlier today this said to
+   halt outright, on the grounds that falling back to `Quantum-Business-Solutions/Claude` is the
+   2026-09-01 staleness bug with extra steps. That reasoning was half right. What made that bug
+   expensive was that it was SILENT — the run reported a clean list against three-day-old code.
+   A fallback that announces itself is a different thing, and `preflight.py`'s code-version guard
+   is exactly the backstop that makes it safe: if the mirror is missing any of the required
+   markers it exits 3 and the run stops. So:
 
-   Do **not** paper over it with a fallback that silently clones the old repo on failure. That is
-   the 2026-09-01 staleness bug with extra steps: the run would succeed, against the wrong code,
-   and say nothing. Halt on a clone failure and report the exact git error.
+   1. Try the new repo with each available credential.
+   2. If that fails, clone `https://github.com/Quantum-Business-Solutions/Claude` instead, and say
+      so **at the top of the run report**, with the commit SHA and the words "FELL BACK TO THE
+      MIRROR". The mirror is hand-maintained and may lag.
+   3. Preflight will refuse stale code either way. Do not skip it, and do not run with
+      `SKIP_TRANSPORT` set.
+
+   This is a temporary bridge. It ends when `QBS_GIT_TOKEN` exists on the environment, or the new
+   repository is made public - at which point delete the fallback rather than leaving it to rot
+   into the thing it was guarding against.
 
    Halt on a clone failure and report the exact git error. Use `$REPO` in every path that follows.
 

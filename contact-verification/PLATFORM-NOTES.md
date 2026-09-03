@@ -264,3 +264,37 @@ diverted; today's eighteen mover destinations all came back clean prospects.
 
 An open deal outranks `lifecyclestage`, which is hand-edited and goes stale. An upcoming meeting
 outranks both.
+
+## 13. The pacing that was documented was never running
+
+`unipile.py` has a `pace()` function that reads `x-ratelimit-remaining` / `retry-after` and spreads
+the remaining budget across the remaining window. `ROUTINE.md` described that behaviour as the
+reason a run stays inside Unipile's limit. Both were wrong about what actually happened, for a dull
+reason: **callers invoke the script once per contact**, so `RATE` was re-initialised to `None` on
+every read and `pace()` was never called at all. Nothing paced anything. Throttling was handled
+only *reactively*, by `rows()` honouring a 429 after the wall had already been hit.
+
+That is why v2 exhausted itself partway through the 2026-09-03 run. Fixed by persisting the budget
+to a small state file (`/tmp/.unipile_rate.json`, overridable with `UNIPILE_RATE_STATE`) so the
+next invocation paces against the last one.
+
+**Two bugs sat behind it, both of the same shape — an unbounded wait.**
+
+`pace()` did `time.sleep(reset+2)` with no cap. Measured live: v2's reset came back as **79,751
+seconds — 22.2 hours.** So the "correct" behaviour was to sleep 22 hours inside a scheduled job
+with a three-hour budget. Not a pause: a silent stall, which is the precise failure this process
+exists to prevent. `rows()` had the milder version of it, capping each retry at 1200s and so
+waiting up to 80 minutes across four attempts.
+
+The fix is not a smaller sleep, it is a different decision. **A reset longer than
+`RUNG_SPENT_AFTER` (300s) means the rung is spent, not that you should wait** — so the ladder
+demotes to the next rung immediately, which is the entire reason a ladder exists. Any single
+pacing sleep is additionally capped at `PACE_CAP` (90s).
+
+And a bug the fix itself introduced, caught by running it: `RATE` is module-level while the ladder
+walks several rungs in one process, so v1 inherited v2's spent budget and the whole ladder went
+down over a limit that did not apply to it. `_load_rate()` now resets the dict before loading.
+
+**Operational consequence worth knowing:** v2 carries a ~22-hour lockout once spent. A run that
+exhausts it has no v2 for the next day, and the relay is the only remaining rung. There is no
+third. Report the rung split every run.
