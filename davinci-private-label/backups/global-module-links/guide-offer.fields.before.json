@@ -1,0 +1,199 @@
+[ {
+  "id" : "style",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "style.padding",
+    "name" : "padding",
+    "label" : "Padding",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.padding.padding_top",
+      "name" : "padding_top",
+      "label" : "Padding Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 500,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 90
+    }, {
+      "id" : "style.padding.padding_bottom",
+      "name" : "padding_bottom",
+      "label" : "Padding Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 500,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 90
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "style.background_color",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "text_color",
+  "name" : "text_color",
+  "label" : "Text Color",
+  "help_text" : "Choose Light when this section sits on a dark background. All text colour in this module derives from this field.",
+  "required" : false,
+  "locked" : true,
+  "display" : "select",
+  "choices" : [ [ "dark", "Dark text (for light backgrounds)" ], [ "light", "Light text (for dark backgrounds)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "dark"
+}, {
+  "id" : "max_width",
+  "name" : "max_width",
+  "label" : "Content Max Width",
+  "help_text" : "Max width of the two-column block in px. V1 uses 1100. Set 0 for no constraint.",
+  "required" : false,
+  "locked" : true,
+  "display" : "text",
+  "min" : 0,
+  "max" : 1600,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 1100
+}, {
+  "id" : "eyebrow",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "help_text" : "Small uppercase kicker above the headline.",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "NEW TO PRIVATE LABEL"
+}, {
+  "id" : "headline",
+  "name" : "headline",
+  "label" : "Headline",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get the free Definitive Guide to Private Labeling"
+}, {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Body Copy",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>If you are new to private labeling supplements and want to learn more about how to build your brand with our manufacturing team, download our free Definitive Guide. You will get answers to the most frequently asked questions about private labeling, plus tips and step-by-step instructions to make your new product launch easy, successful, and profitable.</p>"
+}, {
+  "id" : "image",
+  "name" : "image",
+  "label" : "Guide Cover Image",
+  "help_text" : "Sits in the first column. V1 renders it full-width with an 8px radius and a soft drop shadow.",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/Private%20Label%20Guide%20ToF.jpg",
+    "alt" : "The Definitive Guide to Private Labeling Supplements",
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "button",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "button.link",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "/guide-definitive-private-label"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "button.text",
+    "name" : "text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Download the Guide"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "ratio",
+  "name" : "ratio",
+  "label" : "Column Ratio",
+  "help_text" : "grid-template-columns for image / copy. V1 uses 1fr 1.2fr.",
+  "required" : false,
+  "locked" : true,
+  "display" : "select",
+  "choices" : [ [ "1fr 1.2fr", "1fr 1.2fr (V1 - copy wider)" ], [ "1fr 1fr", "1fr 1fr (equal)" ], [ "1.2fr 1fr", "1.2fr 1fr (image wider)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "1fr 1.2fr"
+} ]
