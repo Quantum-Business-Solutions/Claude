@@ -188,6 +188,16 @@ measure coverage against the intake snapshot, never against live membership.
   `division_scope_unclear`, `persona_review`, `title_conflict`, `phone_unverified`,
   `email_unprovable`, `retired_headline`. This is the durable exception register — a judgement call
   queued only to a session scratch file is a judgement call nobody ever sees.
+- **`wrong_link_suspected` is now raised automatically, and you should still raise it yourself.**
+  `writeverdicts.py` compares the slug it read against `firstname`/`lastname` on the record and,
+  when the slug carries neither name, raises the issue and refuses the native `jobtitle` write.
+  Found the hard way on the first validation pass: CRM *Matt Eberhart* (`matt@query.ai`) carried
+  slug `manthony`, which is **Matt Anthony**, a genuine Query advisor — so every dated row checked
+  out and the run banked a confident `yes` and a title about a different human. The check is
+  advisory by design (vanity slugs, maiden names and initials are all legitimate; 63 of 66 matched
+  on the measured run), so it flags for a person rather than deciding. It cannot see a wrong link
+  whose slug happens to contain the right name — if the profile's headline, location or history
+  reads like someone else, raise the issue yourself and do not bank a verdict.
 
 ## Fields this process writes (repeatable conventions)
 - **Evidence format** (`ai__contact_evidence`): always `Verified - <date> - <evidence> - Changed: <what changed in HubSpot>`. writeverdicts.py builds this; the `Changed:` clause auto-summarises flag/lead-status/title/URL/mover unless you pass an explicit `changed`.

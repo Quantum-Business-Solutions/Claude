@@ -169,3 +169,29 @@ transcripts. Anything pasted into a conversation is burned.
   and it turned out to be something else entirely.
 - **Distinguish "I ran it" from "I read it."** Most of the expensive errors in this project came
   from confident claims that were never executed.
+
+## 9. A verdict can be perfectly reasoned about the wrong person
+
+Measured 2026-09-03, on the first attempt to validate live output against reality. Of 66 contacts
+the routine had just verified, **63 carried a LinkedIn slug containing their own first or last
+name; one did not**: CRM *Matt Eberhart* (`matt@query.ai`, Query.AI) carried slug `manthony`, which
+resolves to **Matt Anthony** — a real Query advisor with dated, current rows at Query. So every
+check the pipeline makes passed: the employer matched, the row was current, no competing role. It
+banked a confident `yes` and wrote a native job title, all of it about a different human.
+
+Nothing about the *verification* logic was wrong. The identity was wrong, upstream, in the CRM.
+
+Two things worth carrying to any enrichment work:
+
+- **Confidence in a match is not confidence in the subject.** Any pipeline keyed on a stored
+  external identifier inherits every bad identifier in the source, and inherits it *silently* —
+  bad-link errors do not look like errors, they look like your best results.
+- **The failure mode was already documented and still shipped.** The skill file named this exact
+  case and named an issue value for it. Prose does not run. It is now a function
+  (`identity_doubt()` in `writeverdicts.py`) that preflight refuses to run without.
+
+The check is deliberately advisory: vanity slugs, maiden names, initials and post-marriage handles
+are all legitimate, so a mismatch raises `wrong_link_suspected` for a person and blocks the native
+title write, rather than deciding. It also cannot catch a wrong link whose slug happens to carry
+the right name — a `John Smith` URL pointing at the wrong John Smith passes. Sampling against
+reality is still the only way to find those.

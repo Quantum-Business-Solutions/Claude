@@ -117,15 +117,47 @@ def title_ok(r):
     blob=((r.get('ev') or '')+' '+(r.get('changed') or '')).lower()
     hit=[t for t in AMBIG if t in blob]
     if hit: return (False,"ambiguity marker in evidence: "+", ".join(hit[:3]))
+    if identity_doubt(r): return (False,"slug does not carry this contact's name - whose title is it")
     return (True,None)
-inputs=[];refused=[];urlfix=[];accepted=[];titlewrite=[];title_skip=[]
+def identity_doubt(r):
+    """Does the LinkedIn slug we read carry this contact's name at all?
+
+    A wrong-linked profile produces a verdict that is perfectly reasoned about the WRONG HUMAN.
+    Found on the first validation pass: CRM 'Matt Eberhart / matt@query.ai' carried the slug
+    `manthony`, which resolves to Matt Anthony - a real Query advisor, so every dated row checked
+    out and the run banked a confident `yes` plus a title write about someone else entirely.
+    SKILL.md has documented this failure mode ("1.3% of contacts carry URLs pointing at different
+    people") and named an issue value for it since the beginning, but nothing ever CHECKED - it was
+    prose, and prose does not run.
+
+    Deliberately advisory, not fatal. Custom vanity slugs, maiden names and initials are all
+    legitimate, and 63 of 66 slugs matched on the measured run - so a mismatch is rare but is not
+    proof of anything. It raises the issue for a human and blocks the native title write, because
+    the 0.90 gate should fail closed on doubt about WHOSE title it is."""
+    pr=prior.get(str(r['id'])) or {}
+    # the URL this verdict was actually read from: a corrected one if supplied, else what is stored
+    sl=(slug(r.get('li_url')) or slug(pr.get('hs_linkedin_url'))
+        or slug(pr.get('linkedin_profile_url__unique_value')))
+    if not sl: return None
+    body=re.sub(r'[^a-z]','',sl)
+    fn=re.sub(r'[^a-z]','',(pr.get('firstname') or '').lower())
+    ln=re.sub(r'[^a-z]','',(pr.get('lastname') or '').lower())
+    if not (fn or ln): return None            # nothing to compare against
+    if ln and len(ln)>=4 and ln in body: return None
+    if fn and len(fn)>=3 and fn in body: return None
+    return ("slug %r carries neither the first nor the last name on this record - the profile may "
+            "belong to a different person, which would make every dated row correct and the "
+            "verdict about the wrong human"%sl)
+
+inputs=[];refused=[];urlfix=[];accepted=[];titlewrite=[];title_skip=[];idflag=[]
 # Read prior evidence AND prior jobtitle before building anything: the evidence string records the
 # native title we are about to overwrite, so the overwrite stays reversible with no new field.
 prior={}
 for i in range(0,len(V),100):
     pr=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/batch/read',
             {"inputs":[{"id":str(x['id'])} for x in V[i:i+100]],
-             "properties":["ai__contact_evidence","jobtitle"]})
+             "properties":["ai__contact_evidence","jobtitle","firstname","lastname",
+                           "hs_linkedin_url","linkedin_profile_url__unique_value"]})
     for x in pr.get('results',[]): prior[str(x['id'])]=x['properties'] or {}
 # Fail CLOSED on anything the prior read could not return. Writing a contact whose prior evidence
 # we never saw would replace that history rather than append to it - silently, and unrecoverably.
@@ -207,6 +239,10 @@ for r in V:
     if r.get('role_change') in ('yes','no'): p["ai__li_recent_role_change"]=r['role_change']
     # The durable exception register. Session scratch files do not survive a scheduled run, so a
     # queued judgement call that lives only in a local JSON is a queued judgement call nobody sees.
+    _doubt=identity_doubt(r)
+    if _doubt and not r.get('issue'):
+        r=dict(r); r['issue']='wrong_link_suspected'; r['issue_note']=_doubt[:900]
+        idflag.append((str(r['id']),_doubt[:80]))
     if r.get('issue'):
         if r['issue'] not in ISSUE_OK:
             refused.append((r['id'],"unknown issue '"+str(r['issue'])+"' - RECORD DROPPED")); continue
@@ -224,6 +260,7 @@ for r in V:
     inputs.append({"id":str(r['id']),"properties":p}); accepted.append(r)
 for cid,why in refused: print("REFUSED",cid,why)
 for cid,why in title_skip: print("NO-JOBTITLE",cid,why,"(ai__job_title still written)")
+for cid,why in idflag: print("IDENTITY",cid,why,"-> wrong_link_suspected raised")
 # append, never overwrite: prior entries carry the mover marker, phone-correction notes and
 # human flags that two production lists filter on.
 for it in inputs:
