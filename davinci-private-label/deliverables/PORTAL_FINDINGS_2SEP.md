@@ -1,7 +1,9 @@
 # Portal findings, 2 September 2026
 
-Queued for Hindsight — the retain failed on `Insufficient credits. Balance: $-0.01`.
-Push this into Hindsight once the account is topped up.
+Retained to the QBS Hindsight bank on 3 Sep 2026 after credits were topped up, in two
+batches: this document (technical findings and client rules), and the 2 Sep call outcomes,
+fixes and open items from `CALL_ACTIONS_2SEP.md`. Operation IDs
+`2a66aa8a-c89a-46ab-b98d-74ca830255ba` and `c4f08282-0eb8-44ae-9e6f-0d5c1d655c84`.
 
 ## The apex-redirect bug — the one that blocked publishing
 
