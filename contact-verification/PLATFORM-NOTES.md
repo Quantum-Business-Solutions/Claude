@@ -195,3 +195,66 @@ are all legitimate, so a mismatch raises `wrong_link_suspected` for a person and
 title write, rather than deciding. It also cannot catch a wrong link whose slug happens to carry
 the right name — a `John Smith` URL pointing at the wrong John Smith passes. Sampling against
 reality is still the only way to find those.
+
+## 10. The ejection workflow does more than blank a title — it detaches the company
+
+Measured 2026-09-03 on contacts 12002674829 and 1316559, from property history:
+
+| when | property | new value | who |
+|---|---|---|---|
+| 14:41:32 | `hs_lead_status` | `No Longer with Company` | `INTEGRATION` (us) |
+| 14:41:52 | `associatedcompanyid` | `''` | `CALCULATED` |
+| 14:41:52 | `jobtitle` | `''` | `AUTOMATION_PLATFORM` |
+
+So a portal workflow enrolls on that lead status and, twenty seconds later, **removes the company
+association**. §6 recorded the title-blanking half of this; the association half is worse, because
+it destroys the only pointer to the employer the person just left — and the mover pipeline reads
+*live* associations to decide what to preserve. A mover processed even a minute after the verdict
+therefore had nothing to detach, and `previous employer record unknown` was written as if the
+contact had never had one.
+
+Portal-wide effect, measured the same day: **450 contacts carry verdict `no`; 446 have neither
+`ai__reassociated_on` nor `ai__pending_mover_to`, and 274 have no company association at all.**
+Real people, read on LinkedIn, seen to have left, left pointing nowhere.
+
+Two fixes, both in code:
+
+- `movepipe.py` falls back to `propertiesWithHistory=associatedcompanyid` and takes the most recent
+  non-empty value, so the previous employer is recovered after the workflow has detached it.
+- `writeverdicts.py` **refuses** a `no` verdict that carries neither a destination (`newco`) nor an
+  explicit `no_destination` reason. A refused record stays in the queue; a banked one never
+  surfaces again, which is exactly how 446 people went quiet.
+
+Sequencing that follows: set the lead status **away from** the ejected value before re-associating,
+or the workflow may act on the write you are in the middle of making.
+
+## 11. `previous__company_domain_name` validates as a URL while reporting `fieldType: text`
+
+`GET /crm/v3/properties/contacts/previous__company_domain_name` returns `type=string`,
+`fieldType=text`. Writing `fictiv.com` to it returns **HTTP 400**:
+
+```
+INVALID_URL  No protocol found. URL must start with 'http://' or 'https://'.
+```
+
+`https://fictiv.com` is accepted. So property metadata does not tell you the whole validation
+story, and a bare-domain write is fatal — it took down a mover pass on its first contact.
+
+**Correction to §6**, which said this property is "not URL-typed". The metadata says text; the API
+validates a URL. Shawn was right that the portal has URL-ish fields and I was reading the schema
+instead of testing the write. Test the write.
+
+## 12. A mover's new employer may already be someone you know
+
+A confirmed mover is a fresh prospect at their new employer — **unless the new employer is already
+a current client, a former client, or has a meeting or open deal in flight**, in which case
+stamping `ConnectandSell Prospect` mislabels an existing relationship and drops the contact into
+cold-calling lists. `movepipe.dest_status()` reads the destination company's `lifecyclestage`,
+`type`, associated deals and upcoming meetings, and returns one of the portal's own existing
+statuses (`Current Client`, `Former Client`, `Open Opportunity`, `ConnectandSell Meeting Set`),
+raising `destination_is_account` so a person confirms it. Verified firing in both directions: a
+customer with six deals, a `type=Current Client` record and two companies with open deals all
+diverted; today's eighteen mover destinations all came back clean prospects.
+
+An open deal outranks `lifecyclestage`, which is hand-edited and goes stale. An upcoming meeting
+outranks both.

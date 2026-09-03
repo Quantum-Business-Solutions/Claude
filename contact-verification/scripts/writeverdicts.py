@@ -58,7 +58,7 @@ ISSUE_OK={"wrong_link_suspected","identity_unresolved","no_identifier","ambiguou
           # departed but carrying live pipeline - eject and you delete a warm re-target
           "departed_with_pipeline",
           # the verdict does not match its own evidence (e.g. a persona call filed as employment)
-          "verdict_not_employment"}
+          "verdict_not_employment","destination_is_account"}
 CONFIRMED={"yes","no"}      # only these two justify stamping a "verified" date
 TMP=tempfile.NamedTemporaryFile('w',suffix='.json',delete=False).name
 def call(m,url,body=None,fatal=True):
@@ -96,7 +96,12 @@ def validated_of(verdict,ls):
     if verdict=='yes': return "Yes"
     if verdict=='no' and ls=='Retired - Remove from All Lists': return "Retired"
     return "Needs Updated"   # any other 'no' (moved / need info) or 'unreadable' -> a human should look
-TITLE_CONF_MIN=0.90
+TITLE_CONF_MIN=0.95   # Shawn's number, raised from 0.90 on 2026-09-03. The native `jobtitle`
+                      # field is what reps see in the sidebar, the screen-pop and every export, so
+                      # the bar is "I am reading this title off a dated, end-null row for THIS
+                      # employer", not "I am fairly sure". `ai__job_title` still gets every
+                      # verified title regardless - nothing else writes that field, so it is the
+                      # lossless record and the native write is the opinionated one.
 # Hedge words in the evidence mean the title is not a 90% call, whatever number the caller passed.
 AMBIG=("caution","ambig","uncertain","unclear","probably","possibly","perhaps","assumed","appears to",
        "may be","might be","succession","dormant","not updated","stale profile","conflict","unsure","?",
@@ -149,7 +154,7 @@ def identity_doubt(r):
             "belong to a different person, which would make every dated row correct and the "
             "verdict about the wrong human"%sl)
 
-inputs=[];refused=[];urlfix=[];accepted=[];titlewrite=[];title_skip=[];idflag=[]
+inputs=[];refused=[];urlfix=[];accepted=[];titlewrite=[];title_skip=[];idflag=[];nodest=[]
 # Read prior evidence AND prior jobtitle before building anything: the evidence string records the
 # native title we are about to overwrite, so the overwrite stays reversible with no new field.
 prior={}
@@ -254,13 +259,48 @@ for r in V:
     # the contact again - so a lost queue leaves a real person ejected at the employer they left,
     # with nothing anywhere recording where they went. movepipe clears this when it re-associates.
     if r['verdict']=='no' and r.get('newco'): p["ai__pending_mover_to"]=str(r['newco'])[:200]
+    # A `no` with no destination and no stated reason is a DROPPED PERSON, not a finding.
+    # Measured 2026-09-03: 450 contacts across the portal carry verdict `no`; 446 of them have
+    # neither ai__reassociated_on nor ai__pending_mover_to, and 274 have no company association at
+    # all - the ejection workflow detached it. Those people were read on LinkedIn, seen to have
+    # left, and left in the CRM pointing nowhere. The destination was almost always visible in the
+    # very same profile read; earlier passes simply did not record it.
+    #
+    # So `no` now REQUIRES one of two things: a destination, or an explicit `no_destination`
+    # reason saying what was looked at and why nothing was found (genuinely absent current row,
+    # career break, retired, only self-employment). Absent both, the record is refused rather than
+    # banked - a refusal keeps the contact in the queue for the next pass, and a banked verdict
+    # never surfaces again.
+    if r['verdict']=='no' and not r.get('newco'):
+        nd=str(r.get('no_destination') or '').strip()
+        if len(nd)<25:
+            refused.append((r['id'],"verdict 'no' with no `newco` and no `no_destination` reason "
+                            "(>=25 chars saying what the profile showed instead) - RECORD DROPPED, "
+                            "contact stays in the queue")); continue
+        p["ai__verification_issue"]=p.get("ai__verification_issue") or "ambiguous_destination"
+        p["ai__verification_issue_on"]=D
+        _pn=p.get("ai__verification_issue_note")
+        p["ai__verification_issue_note"]=((_pn+" ALSO: " if _pn else "")
+            +"left the CRM employer with no destination found: "+nd)[:900]
+        nodest.append((str(r['id']),nd[:70]))
     if r.get('title'): p["ai__job_title"]=r['title']            # AI-owned title, always safe to write
     if wt: p["jobtitle"]=r['title']; titlewrite.append((str(r['id']),r['title'],old_title))
     if r.get('li_url'): p["hs_linkedin_url"]=r['li_url']; urlfix.append((str(r['id']),r['li_url']))
     inputs.append({"id":str(r['id']),"properties":p}); accepted.append(r)
+# One id twice in a batch is HTTP 400 "Duplicate IDs found in batch input", which is fatal and
+# takes the whole pass down - and a duplicate is easy to produce when a queue is assembled from
+# more than one source, or a contact appears twice in a list. Keep the FIRST occurrence and say so.
+_seen=set(); _dupes=[]; _in2=[]; _acc2=[]
+for _it,_r in zip(inputs,accepted):
+    if _it['id'] in _seen: _dupes.append(_it['id']); continue
+    _seen.add(_it['id']); _in2.append(_it); _acc2.append(_r)
+if _dupes:
+    print("DUPLICATE ids in this batch, first occurrence kept: "+", ".join(sorted(set(_dupes))))
+    inputs,accepted=_in2,_acc2
 for cid,why in refused: print("REFUSED",cid,why)
 for cid,why in title_skip: print("NO-JOBTITLE",cid,why,"(ai__job_title still written)")
 for cid,why in idflag: print("IDENTITY",cid,why,"-> wrong_link_suspected raised")
+for cid,why in nodest: print("NO-DESTINATION",cid,why,"-> flagged; they left and we found nowhere")
 # append, never overwrite: prior entries carry the mover marker, phone-correction notes and
 # human flags that two production lists filter on.
 for it in inputs:

@@ -74,6 +74,10 @@ has ever had presented as a confident clean bill of health:
 | LinkedIn unreadable | every contact scores `unreadable` | Unipile self-test, below (model step) |
 | No repository in the fired session | run ends in minutes having written nothing | step 0 clone, below |
 | No MCP connector in the fired session | same silent 3-minute no-op | step 0b transport check, below |
+| A `no` verdict with nowhere to go | contact ejected, destination lost, never resurfaces | `writeverdicts.py` refuses it, exit-code-free refusal keeps them queued |
+| Ejection workflow detached the old employer | `previous employer record unknown` | `movepipe.py` reads `associatedcompanyid` history |
+| Mover's new employer is an existing account | an active client relabelled a cold prospect | `movepipe.dest_status()` + `destination_is_account` |
+| A LinkedIn URL pointing at a different person | a confident verdict about the wrong human | `writeverdicts.identity_doubt()` |
 
 ## Required order for any unattended run
 
@@ -125,7 +129,26 @@ has ever had presented as a confident clean bill of health:
    Set it on every writeverdicts call: `MODE=first_pass|refresh python3 scripts/writeverdicts.py …`
 4. Batch loop per SKILL.md. `writeverdicts.py` exits 1 on read-back mismatch, 2 on HTTP failure,
    3 on a guardrail breach. **Any non-zero exit ends the run and gets reported.**
-5. Movers, then output lists.
+5. **Movers — this step is not optional, and a run that skips it leaves people stranded.**
+   `movepipe.py <listId> --from-hubspot` rebuilds the queue from `ai__pending_mover_to`, so it
+   works in a fresh container that never saw the verdict batch. Run it in the SAME fire as the
+   verdicts. What it now does, and why each part exists:
+
+   - **Sets the lead status away from the ejected value first.** A portal workflow enrolls on
+     `hs_lead_status = No Longer with Company` and, ~20 seconds later, removes the company
+     association and blanks native `jobtitle`. Re-associating while that status is still on the
+     record races the workflow.
+   - **Recovers the previous employer from property history** when the live association is already
+     gone (`propertiesWithHistory=associatedcompanyid`). This is the normal case, not the edge case.
+   - **Checks what the destination already is** before writing `ConnectandSell Prospect`:
+     a current client, former client, open deal or upcoming meeting gets that company's real status
+     instead, plus a `destination_is_account` flag for a human.
+   - **Writes native `jobtitle`** at `title_conf >= 0.95` with a resolved employer domain, and
+     reads it back.
+   - **Sets `validated__linkedin_or_manually` = `Yes`**, because the record has now been checked
+     against a dated source and corrected.
+
+   Then output lists.
 
 ## Reporting contract
 
@@ -149,7 +172,13 @@ Post one summary whatever happens, and never round a failure up to a success:
 - decide anything a human should decide. Pass `issue` + `issue_note` on the batch item — it writes
   `ai__verification_issue`, `_note` and `_on`, which live in HubSpot and survive this container.
   A judgement call queued only to a session scratch file is one nobody will ever see
-- write native `jobtitle` below the `title_conf` 0.90 gate (the gate is enforced in code)
+- write native `jobtitle` below the `title_conf` 0.95 gate (the gate is enforced in code)
+- bank a `no` verdict with no destination and no `no_destination` reason. `writeverdicts.py`
+  refuses it. 446 contacts across the portal are in exactly that state from earlier passes: read,
+  confirmed departed, and left pointing at nothing. A refused record stays in the queue; a banked
+  one never comes back
+- write `ConnectandSell Prospect` on a mover whose destination is a current client, former client,
+  open opportunity or has a meeting booked (`dest_status()` enforces this)
 - write `hs_lead_status` on a `yes`
 - guess `dm` on a mover, or pick `results[0]` from an ambiguous company search
 - touch ZoomInfo do-not-call properties (out of scope)
