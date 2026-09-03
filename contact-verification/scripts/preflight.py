@@ -32,13 +32,42 @@ REQUIRED={
                      ('title_conf',              'jobtitle confidence gate'),
                      ('RECORD DROPPED',          'rule refusals'),
                      ('VERDICT_OK',              'verdict vocabulary enforcement'),
-                     ('ai__li_last_attempt_date','attempt vs confirmed date split')],
- 'movepipe.py':     [('dm not supplied',         'no silent Not-Decision-Maker default'),
-                     ('associations read failed','associations guard'),
-                     ('ai__reassociated_on',     'mover marker as a date, not a substring')],
+                     ('ai__li_last_attempt_date','attempt vs confirmed date split'),
+                     ('GUARDRAIL (pre-write)',  'guardrails evaluated BEFORE the batch write'),
+                     ('ai__pending_mover_to',   'mover destination stamped on the contact')],
+ 'movepipe.py':     [('associations read failed','associations guard'),
+                     ('ai__reassociated_on',     'mover marker as a date, not a substring'),
+                     ('ai__pending_mover_to',    'mover queue survives the container'),
+                     ('ai__previously_associated_company','previous employer preserved on re-association')],
  'twolists.py':     [('ai__reassociated_on',     'Moved-Companies filters the date')],
  'phoneaudit.py':   [("reassoc_'+str(lid)",     'per-list log filename')],
  'verifyphone.py':  [("reassoc_'+str(lid)",     'per-list log filename')],
+ 'unipile.py':      [('with_sections=linkedin_experience','v2 full-history read'),
+                     ("'ver':2",                'v2-first transport ladder')],
+}
+
+# Tokens whose PRESENCE is the bug. A positive check cannot catch this one:
+# 'linkedin_sections=experience' is a substring of 'linkedin_sections=experience_preview',
+# so a checkout still asking for the preview would satisfy the positive marker while
+# quietly truncating employment history.
+# Matched as a REGEX against the request form, not as a bare word - unipile.py's docstring
+# documents the preview and its measured row counts on purpose, and that prose must not trip the
+# guard. The first version of this check matched the literal 'sections=experience_preview', which
+# caught only the v1 spelling and let the v2 form ('with_sections=linkedin_experience_preview')
+# straight through - i.e. it defended the deprecated fallback while the primary transport, which
+# carries every run, stayed wide open.
+FORBIDDEN={
+ 'writeverdicts.py':[(r'LS_OK\s*=\s*\{[^}]*Not Decision Maker',
+                      'the "Not Decision Maker" literal back in the WRITABLE lead-status set. '
+                      'Employment dates cannot establish buying authority; inferring it from title '
+                      'strings ejected a Founder-CEO, an Executive Chairman and a VP of Sales who '
+                      'were all still in seat')],
+ 'movepipe.py':     [(r'or\s*["\']Not Decision Maker',
+                      'the "Not Decision Maker" fallback restored as a mover default')],
+ 'unipile.py':      [(r'sections\s*=\s*[\'"]?[a-z_]*experience_preview',
+                      'the truncating preview section. It returned 5 rows where the full '
+                      'section returns 15, so a current employer can fall outside it, read '
+                      'as departed, and eject a real contact as "No Longer with Company"')],
 }
 for fn,checks in REQUIRED.items():
     p=os.path.join(HERE,fn)
@@ -46,6 +75,13 @@ for fn,checks in REQUIRED.items():
     src=open(p).read()
     for token,why in checks:
         if token not in src: fail.append("CODE  "+fn+" lacks "+repr(token)+" - "+why)
+for fn,checks in FORBIDDEN.items():
+    p=os.path.join(HERE,fn)
+    if not os.path.exists(p): continue
+    src=open(p).read()
+    for pat,why in checks:
+        m=re.search(pat,src)
+        if m: fail.append("CODE  "+fn+" still requests "+repr(m.group(0))+" - "+why)
 if any(f.startswith("CODE") for f in fail):
     print("\n".join(fail))
     print("\nHALT: this checkout predates the verification QA fixes. A run from here would")
@@ -73,6 +109,31 @@ if not code.startswith('2'):
     sys.exit(2)
 print("ok   hubspot auth: HTTP "+code)
 
+# ---------- 2b. WHICH portal is this token for? ------------------------------------------
+# Nothing here used to assert it. The scripts take a list id as an argument and are otherwise
+# portal-agnostic, so pointing TOKEN at a different portal and passing a list id that exists in
+# both writes to the WRONG CRM - silently, and with no way to tell from the output. That is a
+# footnote internally and unrecoverable on a client portal.
+# Set EXPECT_PORTAL to the hub id you intend to write to. Refusing to run without it would break
+# every existing caller, so an absent value WARNS and names the portal it found.
+txt,code=call('GET','https://api.hubapi.com/account-info/v3/details')
+hub=str((json.loads(txt) if code.startswith('2') else {}).get('portalId') or '')
+want=(os.environ.get('EXPECT_PORTAL') or '').strip()
+if not hub:
+    warn.append("could not read the portal id from this token - cannot confirm WHICH CRM this "
+                "run would write to")
+elif not want:
+    warn.append("this token belongs to portal "+hub+" and EXPECT_PORTAL is not set. Set "
+                "EXPECT_PORTAL="+hub+" to make a wrong-portal run impossible.")
+    print("ok   portal: "+hub+" (unasserted - see WARN)")
+elif hub!=want:
+    print("HALT: this token belongs to portal "+hub+", but EXPECT_PORTAL="+want+".")
+    print("      Refusing to run. Writing verification verdicts into the wrong CRM is not")
+    print("      something a later pass can find or undo.")
+    sys.exit(2)
+else:
+    print("ok   portal: "+hub+" matches EXPECT_PORTAL")
+
 # ---------- 3. the self-test rule: prove a query returns a KNOWN answer -------------------
 # Never trust a null from a query that has not been shown to return something.
 txt,code=call('GET','https://api.hubapi.com/crm/v3/lists/'+lid)
@@ -95,7 +156,9 @@ if not ids:
 print("ok   membership probe: "+str(len(ids))+" member(s) readable, e.g. "+str(ids[0]))
 
 # ---------- 4. every property this process writes must still exist ------------------------
-WRITES=['ai__li_still_at_company','ai__contact_evidence','ai__contact_verified_date',
+WRITES=['ai__pending_mover_to','ai__previously_associated_company',
+        'ai__previously_associated_company_id','ai__previously_associated_company_name',
+        'ai__li_still_at_company','ai__contact_evidence','ai__contact_verified_date',
         'ai__li_last_attempt_date','ai__reassociated_on','ai__li_tenure_years',
         'ai__li_recent_role_change','ai__sources_confirming','ai__job_title',
         'validated__linkedin_or_manually','hs_linkedin_url','linkedin_profile_url__unique_value',
@@ -110,7 +173,10 @@ if missing: fail.append("SCHEMA missing written properties: "+", ".join(missing)
 else: print("ok   schema: all "+str(len(WRITES))+" written properties exist")
 
 # the four lead-status literals are the only way a departed contact leaves a calling list.
-LS_OK={"No Longer with Company","Need Updated Info","Retired - Remove from All Lists","Not Decision Maker"}
+# Only the literals this process actually writes. "Not Decision Maker" was removed from the
+# writable set - it still exists in the portal for human use, but a missing option there can no
+# longer break a run, so requiring it would fail the preflight for no reason.
+LS_OK={"No Longer with Company","Need Updated Info","Retired - Remove from All Lists"}
 opts={o['value'] for o in (props.get('hs_lead_status') or {}).get('options',[])}
 lost=sorted(LS_OK-opts)
 if lost: fail.append("SCHEMA hs_lead_status lost literal(s): "+", ".join(lost)+" - movers cannot be ejected")
@@ -122,9 +188,54 @@ vopts={o['value'] for o in (props.get('ai__li_still_at_company') or {}).get('opt
 vlost=sorted(VERDICTS_NEEDED-vopts)
 if vlost: fail.append("SCHEMA ai__li_still_at_company lost option(s): "+", ".join(vlost))
 else: print("ok   verdict vocabulary: "+", ".join(sorted(VERDICTS_NEEDED))+" all present")
+# The issue register's vocabulary must match the code, or a batch using a value the portal does
+# not define gets a fatal 400 that loses the whole chunk - after the movers were queued to a file
+# that dies with the container. Nothing checked this before.
+_issue_opts={o['value'] for o in (props.get('ai__verification_issue') or {}).get('options',[])}
+_code_issues=set()
+try:
+    import re as _re
+    _m=_re.search(r'ISSUE_OK=\{(.*?)\}',open(os.path.join(HERE,'writeverdicts.py')).read(),_re.S)
+    _code_issues={x.strip().strip('"\'') for x in _re.findall(r'"([a-z_]+)"',_m.group(1))}
+except Exception: pass
+if _code_issues:
+    _missing=sorted(_code_issues-_issue_opts)
+    if _missing:
+        fail.append("SCHEMA ai__verification_issue is missing option(s) the code can write: "
+                    +", ".join(_missing)+" - a batch using one would 400 and lose the chunk")
+    else:
+        print("ok   issue vocabulary: all "+str(len(_code_issues))+" code values exist in the portal")
+
 if 'ai__contact_evidence' in props:
     ml=(props['ai__contact_evidence'] or {}).get('maxLength')
     if ml and int(ml)<990: warn.append("ai__contact_evidence maxLength "+str(ml)+" < the 990 the writers assume")
+
+# ---------- 6. LinkedIn transport: RUN it, do not print prose at the model ----------------
+# This used to be a sentence at the end telling the model to run the self-test itself. Preflight
+# exited 0 regardless, so a routine whose Unipile key had rotated - or which simply had no key on
+# the environment - passed, reached the batch loop, failed every read, and recorded an environment
+# misconfiguration as dozens of findings about people. The one dependency an unattended run
+# actually lacks was the one thing preflight did not verify.
+# SKIP_TRANSPORT=1 exists for schema-only checks; it warns loudly and never passes silently.
+if os.environ.get('SKIP_TRANSPORT'):
+    warn.append("transport check SKIPPED by SKIP_TRANSPORT - this preflight does NOT prove that "
+                "LinkedIn is reachable, so it cannot clear an unattended run")
+else:
+    try:
+        r=subprocess.run([sys.executable,os.path.join(HERE,'unipile.py'),'selftest'],
+                         capture_output=True,text=True,timeout=300)
+        rc=r.returncode; head=((r.stdout or '')+(r.stderr or '')).strip().split('\n')[0][:150]
+    except Exception as e:
+        rc=2; head='selftest could not be launched: '+type(e).__name__
+    if rc==0:
+        print("ok   linkedin transport: "+head)
+    else:
+        print("HALT: no LinkedIn transport (unipile.py selftest exit "+str(rc)+")")
+        print("      "+head)
+        print("      exit 2 = no reachable path | exit 3 = reachable but returned nothing usable.")
+        print("      Run `python3 unipile.py probe` for the per-endpoint reason. Do NOT proceed:")
+        print("      an outage written as `unreadable` verdicts is a durable lie about the data.")
+        sys.exit(2)
 
 # ---------- verdict -----------------------------------------------------------------------
 for w in warn: print("WARN "+w)
@@ -133,7 +244,5 @@ if fail:
     print("\nHALT: preflight failed. Do NOT run the pass; report this instead.")
     sys.exit(3)
 print("\nPREFLIGHT PASSED for list "+lid+" - safe to run.")
-print("Still required before writing, and NOT checkable from here:")
-print("  - a Unipile read of a known-good profile that returns dated experience rows")
-print("    (only Shawn's accounts S6ua4SfUT4SMRFZFOmyUzQ / 7lBoyXuETqKdiJYLj5HBGA)")
+print("Still required before writing:")
 print("  - listanatomy.py "+lid+" to map which gating properties this run will move")

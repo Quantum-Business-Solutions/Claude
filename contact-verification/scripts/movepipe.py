@@ -5,7 +5,9 @@ one HubSpot transaction per contact, with the qbs-list-verification conventions.
 movers.json = [{"id","newco",
                 "domain"(optional - verified company domain; find-or-create by it),
                 "dm"(optional bool - is the person a decision-maker at newco?),
-                "ls"(optional lead status override; default: dm->ConnectandSell Prospect else Not Decision Maker),
+                "ls"(optional lead status override; default: ConnectandSell Prospect. This
+                     process does NOT write "Not Decision Maker" - see the note at the
+                     lead-status assignment for why),
                 "title"(optional - current title -> ai__job_title),
                 "title_conf"(optional float 0-1 - >=0.90 AND a resolved domain ALSO writes native
                              `jobtitle`. Absent = no native write, ever),
@@ -24,9 +26,15 @@ a unique-value collision means a duplicate/wrong-linked contact -> logged, not f
 Env: TOKEN. DATE=YYYY-MM-DD optional. Appends to reassoc_<listId>_log.json; clears pending_movers_<listId>.json."""
 import json,subprocess,os,sys,re,tempfile
 T=os.environ['TOKEN']; D=os.environ.get('DATE') or subprocess.run(['date','-u','+%Y-%m-%d'],capture_output=True,text=True).stdout.strip()
-lid=sys.argv[1]; M=json.load(open(sys.argv[2]))
+lid=sys.argv[1]
+FROM_HS=(len(sys.argv)>2 and sys.argv[2]=='--from-hubspot')
 TMP=tempfile.NamedTemporaryFile('w',suffix='.json',delete=False).name
 MARKER="RE-"+"ASSOCIATED"   # built at runtime so the source file cannot seed the filter token
+# HubSpot has no URL property type - every URL field in this portal (hs_linkedin_url, website,
+# previous__company_domain_name) is plain string/text, and the UI renders any http value as a
+# link. So a text property holding this prefix + a record id IS the clickable link.
+PORTAL=os.environ.get("HS_PORTAL_ID","20682069")
+PORTAL_RECORD_URL="https://app.hubspot.com/contacts/"+PORTAL+"/company/"
 def call(m,url,body=None,fatal=True):
     """Returns (data, ok). A timeout or 4xx must never look like an empty result set - that is how
     a failed associations read turns into 'there was nothing stale to remove'."""
@@ -43,6 +51,27 @@ def call(m,url,body=None,fatal=True):
         return {"__http":code}
     try: return json.loads(body_txt) if body_txt.strip() else {}
     except Exception: return {}
+if FROM_HS:
+    # Rebuild the queue from the CRM instead of a local file. pending_movers_<lid>.json does not
+    # survive a scheduled container, and a lost queue leaves real people ejected at the employer
+    # they left with no record of where they went. ai__pending_mover_to does survive.
+    M=[]; after=None
+    while True:
+        body={"filterGroups":[{"filters":[{"propertyName":"ai__pending_mover_to","operator":"HAS_PROPERTY"}]}],
+              "properties":["ai__pending_mover_to","ai__contact_evidence"],"limit":100}
+        if after: body["after"]=after
+        r=call('POST','https://api.hubapi.com/crm/v3/objects/contacts/search',body)
+        for x in r.get('results',[]):
+            dest=(x['properties'] or {}).get('ai__pending_mover_to')
+            if dest: M.append({"id":x['id'],"newco":dest,
+                               "ev":"Queue rebuilt from ai__pending_mover_to (the local queue file "
+                                    "did not survive the container that wrote the verdict)."})
+        after=((r.get('paging') or {}).get('next') or {}).get('after')
+        if not after: break
+    print("rebuilt "+str(len(M))+" pending mover(s) from HubSpot")
+    if not M: sys.exit(0)
+else:
+    M=json.load(open(sys.argv[2]))
 TITLE_CONF_MIN=0.90
 AMBIG=("caution","ambig","uncertain","unclear","probably","possibly","perhaps","assumed","appears to",
        "may be","might be","succession","dormant","not updated","stale profile","conflict","unsure","?")
@@ -64,13 +93,12 @@ for m in M:
     cid=str(m['id'])
     if cid in done: continue
     newco=m['newco']; dom=m.get('domain')
-    if 'dm' not in m:
-        # absent dm used to fall through to "Not Decision Maker", silently ejecting a verified
-        # executive from the calling list. Failing closed means "don't write", not "write the
-        # ejecting value".
-        log.append({"id":cid,"newco":newco,"ok":False,"err":"dm not supplied - refusing to guess"})
-        print("SKIP  "+cid+" no dm supplied"); continue
-    dm=m['dm']
+    # `dm` is now OPTIONAL and drives no write. It used to be mandatory because an absent value
+    # fell through to "Not Decision Maker", silently ejecting a verified executive - so refusing to
+    # run was the right call then. This process no longer writes that status at all, so the
+    # requirement only blocked queues rebuilt from HubSpot (which carry no dm) from processing at
+    # all. It is still recorded in the log when supplied.
+    dm=m.get('dm')
     if MARKER in (m.get('ev') or ''):
         log.append({"id":cid,"newco":newco,"ok":False,"err":"ev contains the filter token"})
         print("SKIP  "+cid+" evidence contains the mover filter token"); continue
@@ -120,11 +148,31 @@ for m in M:
         log.append({"id":cid,"newco":newco,"ok":False,"err":"associations read failed: "+str(assoc)[:80]})
         print("FAIL  "+cid+" associations read failed - contact left untouched"); continue
     old=[a['toObjectId'] for a in assoc.get('results',[]) if str(a['toObjectId'])!=str(coid)]
+    # Capture the company we are about to detach BEFORE detaching it. Re-association used to
+    # destroy this outright: the association was deleted and the only trace left was a company
+    # NAME written into previous__company_domain_name (a domain field), so nobody could get back
+    # to the record. Keep the id, the name and the real domain.
+    prev_co_id=prev_co_name=prev_co_domain=None
+    if old:
+        oc=call('GET',f"https://api.hubapi.com/crm/v3/objects/companies/{old[0]}?properties=name,domain",
+                fatal=False)
+        if 'id' in oc:
+            prev_co_id=str(oc['id'])
+            prev_co_name=(oc.get('properties') or {}).get('name')
+            prev_co_domain=(oc.get('properties') or {}).get('domain')
     for o in old: call('DELETE',f"https://api.hubapi.com/crm/v4/objects/contacts/{cid}/associations/companies/{o}")
     call('PUT',f"https://api.hubapi.com/crm/v4/objects/contacts/{cid}/associations/companies/{coid}",
       [{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":1},{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":279}])
     # 3. reconcile contact
-    ls=m.get('ls') or ("ConnectandSell Prospect" if dm else "Not Decision Maker")
+    # THIS PROCESS NO LONGER WRITES "Not Decision Maker". It reads dated employment history, which
+    # can establish WHERE somebody works and cannot establish whether they can authorise a purchase.
+    # That judgement was being derived from title strings - "Chairman", "Founder", "Advisor" - and
+    # it ejected a Founder-CEO, an Executive Chairman, a VP of Sales and a Regional Sales Manager
+    # who were all still in seat. Worse, it was written alongside verdict `no`, which asserts the
+    # person has LEFT: two different questions collapsed into one field, corrupting the one the
+    # retry and staleness logic keys on. A re-associated mover is a valid prospect at their new
+    # employer; buyability is a human's call.
+    ls=m.get('ls') or "ConnectandSell Prospect"
     wt,wt_why=title_ok(m,dom)
     if m.get('title') and not wt: print("      no-jobtitle "+cid+": "+wt_why+" (ai__job_title still written)")
     tnote=""
@@ -137,7 +185,7 @@ for m in M:
           f"{'ai__job_title set; ' if m.get('title') else ''}"
           f"{tnote}"
           f"{'LinkedIn URL corrected; ' if m.get('li_url') else ''}"
-          f"{'decision-maker' if dm else 'not a decision-maker'} at new company.")
+          f"previous employer record {prev_co_id or 'unknown'} preserved.")
     head=f"Verified - {D} - "
     ev=head+str(m.get('ev',''))[:max(0,900-len(head)-len(tail))]+tail
     if prev_ev: ev=(ev+" || "+prev_ev)[:990]
@@ -148,7 +196,10 @@ for m in M:
        "ai__reassociated_on":D,
        "ai__sources_confirming":m.get('sources',1),
        "ai__contact_evidence":ev,"hs_lead_status":ls,
-       "validated__linkedin_or_manually":("Yes" if dm else "Needs Updated")}
+       # the contact has now BEEN moved: clear the pending marker so a later run does not
+       # re-process them, and so the outstanding-mover count means what it says.
+       "ai__pending_mover_to":"",
+       "validated__linkedin_or_manually":"Yes"}
     if m.get('title'): p["ai__job_title"]=m['title']
     if wt: p["jobtitle"]=m['title']
     if not dom:
@@ -165,7 +216,19 @@ for m in M:
     # can be aged. Write it only when the caller actually judged recency.
     if m.get('role_change') in ('yes','no'): p["ai__li_recent_role_change"]=m['role_change']
     if m.get('li_url'): p["hs_linkedin_url"]=m['li_url']
-    if prev_company and prev_company!=newco: p["previous__company_domain_name"]=prev_company
+    # previous__company_domain_name is a DOMAIN field; it was being given a company NAME.
+    if prev_co_domain: p["previous__company_domain_name"]=prev_co_domain
+    if prev_co_id:
+        p["ai__previously_associated_company_id"]=prev_co_id
+        # Rich text (fieldType html), so this renders as a real anchor with the company NAME as the
+        # link text rather than a bare URL. Escape the name - a company called "Smith & Jones <Co>"
+        # would otherwise break the markup or, worse, inject it.
+        import html as _html
+        _label=_html.escape(prev_co_name or ("company "+prev_co_id))
+        p["ai__previously_associated_company"]=(
+            '<a href="'+PORTAL_RECORD_URL+prev_co_id+'">'+_label+'</a>')
+    if prev_co_name or prev_company:
+        p["ai__previously_associated_company_name"]=prev_co_name or prev_company
     u=call('PATCH',f"https://api.hubapi.com/crm/v3/objects/contacts/{cid}",{"properties":p}); ok='id' in u
     t_held=None
     if ok and wt:

@@ -1,8 +1,63 @@
 # Running this process as a Routine (unattended)
 
-A Routine fires into a **fresh cloud session** that **clones the default branch** and runs with
-**no permission prompts** and nobody watching. That changes what the process must do — not what
-it decides, but how loudly it fails.
+A Routine fires into a **fresh cloud session** with **no permission prompts** and nobody watching.
+That changes what the process must do — not what it decides, but how loudly it fails.
+
+Two things about that session are not what you would assume, and both were measured on
+2026-08-30 after two fires of the 5243 routine completed in ~3 minutes and wrote nothing at all:
+
+- **It does NOT clone the repository.** An interactive session carries `session_context.sources`;
+  a routine-fired session's context has no `sources` at all, so `contact-verification/scripts/…`
+  does not exist and every step referencing it fails at the first command. The routine prompt must
+  therefore clone the code itself. The repository is public, so an unauthenticated
+  `git clone --depth 1 --branch main` works with no credentials — verified.
+- **It has NO MCP connector tools.** This is not a bug and not an outage; it is a property of how
+  the Routine was created. `create_trigger` warns in plain text: *"this trigger stores no MCP
+  connectors, so the sessions it fires will run without connector (`mcp__<server>__*`) tools."*
+  Its `connectors` parameter is rejected outright for this organization, and the Routines UI on
+  claude.ai lists only first-party connectors, not custom MCP servers like Unipile. So there is
+  **no way to give a Routine the Unipile connector.**
+
+**So LinkedIn is reached over plain HTTPS instead, never a connector.** `unipile.py` runs a
+version-tagged ladder and reports which rung carried the run:
+
+1. **Unipile v2** — `https://api.unipile.com/v2/{acc}/users/{slug}?with_sections=linkedin_experience`.
+   Port 443, no relay, no connector. This is the primary path and the reason a Routine can work at
+   all. Needs `UNIPILE_V2_KEY`. It also returns LinkedIn **company IDs**, which resolve a mover's
+   destination far better than a company-name string.
+2. **Unipile v1 via the relay** — kept as a fallback while v2 is in beta. Needs `UNIPILE_API_KEY`
+   plus `UNIPILE_RELAY_TOKEN`.
+
+**Pace to the published budget, not a guess.** Unipile allows **100 requests per ~16-minute
+window** (`x-ratelimit-limit` / `x-ratelimit-remaining` / `retry-after` on every response).
+`unipile.py` reads those headers and spreads the remaining budget across the remaining window, so
+the correct sustained rate is ~9.6s per profile — roughly **375/hour**. Size a run from that: a
+250-contact pass is about 40 minutes of reads. Do NOT hard-code a sleep; 3.5s burns the whole
+budget in six minutes and then stalls.
+
+Company-based search does not help this data: measured on list 5243, 815 unverified contacts span
+**753 distinct companies**, 711 of them with a single contact. One profile read per contact is the
+real shape of the work.
+
+**Always request the FULL experience section, never `experience_preview`.** Measured 2026-08-30 —
+Sandberg 5 rows vs 15, Weiner 7 vs 24 — and a CRM company falling outside a truncated preview reads
+as departed, ejecting a real contact as "No Longer with Company".
+
+**The relay** exists because Unipile serves *v1* on port 16072 while cloud egress reaches 443 only.
+A Supabase Edge Function on 443 forwards to it. v2 needs no such thing; the relay is now fallback
+infrastructure only, and can be deleted with v1. Source: `contact-verification/relay/`.
+
+    https://ladhdgwedwynmdmeeena.supabase.co/functions/v1/unipile-relay
+
+It stores **no credential**: the caller forwards its own `X-API-KEY`. Verified guards, tested live:
+`POST`/`DELETE` → 405 `read_only` (so it can read profiles and can never send an invite, DM or
+InMail) · a non-allowlisted `account_id` → 403 `account_not_allowed` (the five client identities on
+this tenant are blocked in the relay, not merely by convention) · no key → 400 `missing_api_key`.
+Supabase JWT verification is left **on**, so `UNIPILE_RELAY_TOKEN` must be set on the environment —
+it is deliberately not committed, because this repository is public.
+
+HubSpot-only work never had this problem: `QBS_HUBSPOT_TOKEN` is set on the environment and
+`api.hubapi.com` is on 443.
 
 ## The rule that matters
 
@@ -17,28 +72,45 @@ has ever had presented as a confident clean bill of health:
 | A written property renamed | writes land nowhere, run reports applied | `preflight.py` schema check, exit 3 |
 | `hs_lead_status` lost a literal | movers cannot be ejected; 400s mid-run | `preflight.py` vocabulary check, exit 3 |
 | LinkedIn unreadable | every contact scores `unreadable` | Unipile self-test, below (model step) |
+| No repository in the fired session | run ends in minutes having written nothing | step 0 clone, below |
+| No MCP connector in the fired session | same silent 3-minute no-op | step 0b transport check, below |
 
 ## Required order for any unattended run
 
-1. `TOKEN=... python3 scripts/preflight.py <listId>` — **stop the run on any non-zero exit and
-   report the reason.** Do not continue and do not "try anyway".
-2. **Unipile self-test — try BOTH transports before halting.** They fail independently:
-   - **MCP connector** — routes via Anthropic's `mcp-proxy`, so it ignores the egress firewall.
-     Currently the only path measured working from a cloud session. It also drops and reconnects.
-   - **REST** — `python3 scripts/unipile.py selftest`. Measured from a cloud session: the agent
-     proxy establishes the CONNECT tunnel and returns 200, the TLS handshake is then reset, and a
-     direct socket times out on the tenant's non-standard port while 443 is open on the same IP.
-     Outbound egress here reaches standard ports only, and no 443 host serves the tenant API. This
-     is a property of the ENVIRONMENT, not of the DSN or the key — `unipile.py probe` shows it.
+0. **Get the code.** Never assume a checkout exists:
 
-   Use only Shawn's accounts (`S6ua4SfUT4SMRFZFOmyUzQ` / `7lBoyXuETqKdiJYLj5HBGA`); every other
-   account on that tenant is a client identity. **HALT only if both transports fail, and name
-   which one did.** An outage written as several hundred `unreadable` verdicts is a lie about the
-   data, not a finding about the contacts — and the verdict is durable while the outage is not.
-3. `TOKEN=... python3 scripts/listanatomy.py <listId>` — map the gate chain. It exits 3 on a
+   ```
+   if [ -d /home/user/Claude/contact-verification ]; then REPO=/home/user/Claude
+   else cd /tmp && rm -rf qbsrepo \
+        && git clone --depth 1 --branch main \
+             https://github.com/Quantum-Business-Solutions/Claude qbsrepo \
+        && REPO=/tmp/qbsrepo
+   fi
+   ```
+
+   Halt on a clone failure and report the exact git error. Use `$REPO` in every path that follows.
+
+0b. **The transport check is no longer a separate step — `preflight.py` runs it.**
+
+   It shells out to `unipile.py selftest` and exits 2 when no rung returns dated rows. It used to
+   be a sentence at the end of preflight telling the model to run the self-test itself, and
+   preflight exited 0 either way — so a routine whose key had rotated passed, reached the batch
+   loop, failed every read, and recorded an environment misconfiguration as findings about people.
+   `SKIP_TRANSPORT=1` exists for schema-only checks and warns loudly.
+
+   If you need to see it directly: `python3 $REPO/contact-verification/scripts/unipile.py selftest`
+   (exit 0 = a rung returned dated rows · 2 = no reachable path · 3 = reachable but nothing usable),
+   and `unipile.py probe` for the per-endpoint reason. Never write `unreadable` verdicts to
+   represent an outage — that is a durable lie about the data which outlives the outage; a halt is
+   not.
+
+1. `TOKEN=... python3 $REPO/contact-verification/scripts/preflight.py <listId>` — **stop the run on
+   any non-zero exit and report the reason.** Do not continue and do not "try anyway".
+2. `TOKEN=... python3 scripts/listanatomy.py <listId>` — map the gate chain. It exits 3 on a
    non-contact or non-dynamic list, and warns when the list gates on properties this process
-   writes (the run changes membership underneath itself).
-4. `TOKEN=... STALE_DAYS=90 python3 scripts/queue.py <listId>` — work queue + intake snapshot.
+   writes (the run changes membership underneath itself). It exits 0 with an EMPTY map on an API
+   failure, so a map naming no gates on a list you know is gated is a FAILURE, not a finding.
+3. `TOKEN=... STALE_DAYS=90 python3 scripts/queue.py <listId>` — work queue + intake snapshot.
    Three intervals, not one: `STALE_DAYS` (90) for a confirmed verdict, `RETRY_DAYS` (14) for a
    transient `unreadable`, `NOPROFILE_DAYS` (180) for `no_profile`. Records come back in a strict
    **work order** — band 0 never verified, 1 verdict stale, 2 unreadable retry, 3 no_profile
@@ -46,14 +118,14 @@ has ever had presented as a confident clean bill of health:
    guarantee: nothing is skipped forever, and a band that never drains is a capacity fact the
    printed depths make visible rather than something hidden by interleaving.
 
-4b. **Choose MODE from what queue.py reports; do not assume.** `MODE=refresh` drops the `no`-share
+3b. **Choose MODE from what queue.py reports; do not assume.** `MODE=refresh` drops the `no`-share
    FLOOR, which is the only automated check against a judge rubber-stamping `yes`. That is correct
    when the queue is mostly stale re-confirmations and wrong when it is mostly never-verified
    records — a list can be a first pass wearing a refresh label. The ceilings apply in both modes.
    Set it on every writeverdicts call: `MODE=first_pass|refresh python3 scripts/writeverdicts.py …`
-5. Batch loop per SKILL.md. `writeverdicts.py` exits 1 on read-back mismatch, 2 on HTTP failure,
+4. Batch loop per SKILL.md. `writeverdicts.py` exits 1 on read-back mismatch, 2 on HTTP failure,
    3 on a guardrail breach. **Any non-zero exit ends the run and gets reported.**
-6. Movers, then output lists.
+5. Movers, then output lists.
 
 ## Reporting contract
 

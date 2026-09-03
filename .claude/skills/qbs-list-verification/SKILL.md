@@ -21,10 +21,14 @@ failure; a rep discovering the truth on a call is the expensive one.
 ## Credentials & access
 - HubSpot: `export TOKEN=<PAT>` (see `qbs-hubspot-private-app`). Portal 20682069 unless told otherwise.
 - NeverBounce: `export NB=<key>` (email rung only).
-- LinkedIn: **Unipile MCP tool only** (`mcp__Unipile__execute-request`, harRequest form). Direct
-  curl to the Unipile port is blocked by egress. **Allowlist — use ONLY these account_id values:**
-  `S6ua4SfUT4SMRFZFOmyUzQ` and `7lBoyXuETqKdiJYLj5HBGA`. The other connected accounts are CLIENT
-  identities; reading prospect profiles through them is not recoverable. Fail closed on anything else.
+- LinkedIn: **`scripts/unipile.py`**, which runs a v2-first ladder over plain HTTPS on port 443.
+  Prefer it everywhere — it is the ONLY path that works in a Routine-fired session, because those
+  get no MCP connector tools at all. `mcp__Unipile__execute-request` still works interactively and
+  is a fallback, not the default. (v1 sits on port 16072, which cloud egress cannot reach; it is
+  reached through the Supabase relay in `relay/` and needs `UNIPILE_RELAY_TOKEN`.)
+  **Allowlist — use ONLY these account_id values:** `acc_01m19mb99wfzvsb68etkn5n87x` on v2, or
+  `S6ua4SfUT4SMRFZFOmyUzQ` / `7lBoyXuETqKdiJYLj5HBGA` on v1. Every other account on that tenant is
+  a CLIENT identity; reading prospect profiles through one is not recoverable. Fail closed.
 - ZoomInfo / NeverBounce via their MCP/REST tools for fallbacks.
 
 ## Modes
@@ -117,14 +121,30 @@ measure coverage against the intake snapshot, never against live membership.
 
 ## The batch loop (write after EVERY batch - reps dial while it runs)
 1. `python3 scripts/queue.py <listId> 6` -> next 6 unverified with their LinkedIn identifier.
-2. ~6 parallel `mcp__Unipile__execute-request` reads, harRequest form, allowlisted account_id,
-   `linkedin_sections=experience_preview`. Identifier hygiene: strip `?trk=`, URL-encode non-ASCII,
-   never send `*experience`.
+2. ~6 parallel profile reads. Prefer `python3 scripts/unipile.py profile <slug>`: it runs the
+   v2-first ladder over plain HTTPS, so the SAME command works in a Routine-fired session, which
+   has no MCP connector tools at all. Where the connector does exist,
+   `mcp__Unipile__execute-request` (harRequest form, allowlisted account_id) is equivalent for v1.
+
+   **ALWAYS ask for the FULL experience section** - `with_sections=linkedin_experience` on v2,
+   `linkedin_sections=experience` on v1. **Never `experience_preview`.** It truncates: measured
+   2026-08-30, Sandberg returned 5 rows vs 15 and Weiner 7 vs 24. The judge decides "still there?"
+   by finding a row matching the CRM company, so a company sitting outside a truncated preview
+   reads as departed and ejects a real, callable contact as "No Longer with Company". Asking for
+   the full section makes that failure impossible instead of something the judge must remember to
+   check for on every single contact.
+
+   Identifier hygiene: strip `?trk=`, URL-encode non-ASCII, never send `*experience`.
    - No URL on file, or 422/locked -> fallback ladder: ZoomInfo `externalUrls` (try each returned
      URL; the first is often dead) -> LinkedIn people search on name+company -> only then `unreadable`,
      naming every source tried.
-   - CRM company absent AND `work_experience_total_count` exceeds rows returned -> re-pull with
-     `linkedin_sections=experience` BEFORE judging. Skipping this makes confident wrong "no"s.
+   - The old rule here was "if the CRM company is absent AND `work_experience_total_count` exceeds
+     rows returned, re-pull the full section before judging". That guard is retired: the full
+     section is now always requested, so there is nothing left to re-pull. If you ever find
+     yourself reaching for the preview again, this is the bug you are reintroducing.
+   - On v2 each row also carries the LinkedIn `company.id`. Prefer it over the company NAME when
+     resolving a mover's destination - it is what distinguishes two genuinely different companies
+     that share a name, which is otherwise an `ambiguous_destination` for a human to settle.
 3. Judge each into a verdict (below).
 4. Write the batch: `python3 scripts/writeverdicts.py <listId> batch.json`. It enforces the
    lead-status rules, chunks at 100, diffs requested-vs-returned, reads back to confirm, appends to
@@ -141,9 +161,20 @@ measure coverage against the intake snapshot, never against live membership.
   the calling list. (writeverdicts.py refuses an `ls` on a yes.)
 - **no** = that company's row has an end date, or a different employer is current. Set lead status
   to exactly one literal: `No Longer with Company` (moved) / `Need Updated Info` (moved, destination
-  ambiguous/fractional) / `Retired - Remove from All Lists` / `Not Decision Maker` (employed, cannot buy).
-- **unreadable** = a TRANSIENT failure to read: 422/locked, rate-limited, a profile that would not
-  load. Worth retrying in days. Name what was tried.
+  ambiguous/fractional) / `Retired - Remove from All Lists`.
+  **`Not Decision Maker` is NOT written by this process** and `writeverdicts.py` refuses it. This
+  process reads dated employment history, which establishes WHERE someone works and cannot
+  establish whether they can authorise a purchase. Inferred from title strings it ejected a
+  Founder-CEO, an Executive Chairman, a VP of Sales and a Regional Sales Manager who were all still
+  in seat - and it was written alongside verdict `no`, which asserts they had LEFT. If the persona
+  looks wrong, write the employment verdict truthfully and raise `persona_review` for a human.
+- **unreadable** = a TRANSIENT failure to read a profile that EXISTS: 422/locked, a profile that would not
+  load for this account. It is a statement about ONE contact.
+  **A rate limit is NOT an unreadable.** A 429, a transport error, an auth failure or an outage is a
+  statement about the INSTRUMENT, not about any person. Back off and retry; if reads keep failing,
+  HALT the run and report it. Writing an outage as verdicts creates durable lies about real people
+  that outlive the outage by 14 days each and are indistinguishable from genuine findings.
+  A genuine `unreadable` is worth retrying in days. Name every source that was tried.
 - **no_profile** = there is no LinkedIn profile to read, or a real profile carries no dated history.
   This is PERMANENT for this method — retrying costs a read and buys nothing. Splitting it out of
   `unreadable` is what lets the queue retry the two at different intervals (14 days vs 180) and
@@ -163,6 +194,7 @@ measure coverage against the intake snapshot, never against live membership.
 - **`ai__job_title`** (AI-owned title field): write the current LinkedIn-verified title here via the batch `title` field. Always safe — nothing else writes it.
 - **`jobtitle`** (native title field, ≥90% confidence only): pass `title_conf` (0-1) alongside `title`. At `title_conf >= 0.90` the batch ALSO writes the native `jobtitle`, so reps see the corrected title in the sidebar, screen-pop and exports without a view change. The gate is enforced in code and **fails closed** — no `title_conf`, no native write — and additionally requires verdict `yes` (movers: a resolved employer domain) and evidence free of hedge words (`probably`, `CAUTION`, `succession`, `may be`, …). Do NOT use `ai__sources_confirming` as the confidence signal; it is a count, populated liberally, and would wave nearly everything through. **What ≥0.90 means:** a dated LinkedIn row for THIS employer whose title string you are reading directly, `end: null`, no competing row, no division/parent ambiguity — i.e. you are reading the title, not inferring it. A headline-only title, a people-search hit, or a vendor title is never ≥0.90.
   Two things make the write reversible and honest: the prior `jobtitle` value is recorded in the evidence string (`jobtitle was 'X' -> 'Y' (conf 0.95)`), and the write is **read back**. `jobtitle` has 3 competing integration writers (~38% oscillation, confirmed reverting a `movepipe` write), so expect some reverts: the scripts print `held on read-back N/M`. A revert is a competing integration, not a failed write — `ai__job_title` still holds the truth, and making the native field stick durably is a HubSpot-admin change to the integration field mappings (Shawn only).
+  **One revert is deterministic, not random contention.** A portal workflow **blanks `jobtitle` within ~20 seconds of `hs_lead_status` being set to `Retired - Remove from All Lists` or `No Longer with Company`** — observed on contact 136222503544, title written 18:22:04 by the integration and cleared 18:22:24 by AUTOMATION_PLATFORM. So on any contact you EJECT, expect the native title to vanish shortly after, and preserve the title-at-departure in the evidence string rather than trusting the field. It also means a read-back performed immediately after the write will report "held" and still be wrong; only a re-read ≥30s later is meaningful for ejected contacts. Whether that workflow is still enabled is worth re-testing before relying on either outcome.
 - **`validated__linkedin_or_manually`** (select): set every verified record — `yes`->`Yes`, `no`+Retired->`Retired`, any other `no`/`unreadable`/`no_profile`->`Needs Updated`. (`Delete` is human-only, for bogus records.)
 - **`ai__contact_verified_date`** = the last date employment was actually CONFIRMED. Written **only**
   on `yes` or `no`. **`ai__li_last_attempt_date`** = every touch, including a failed read. Stamping a
@@ -326,9 +358,9 @@ AND IN_LIST <source> (add a dedicated exclusion marker property if you gate on o
 - **The stored LinkedIn slug is often WRONG-LINKED (a different same-name person).** A very common failure mode, separate from "no URL" and "locked": the `hs_linkedin_url` resolves to a real profile, but it's a *different human* with the same name (on 3675: a record saying "CEO of an IT-finance firm" was linked to a same-name CEO of an unrelated consultancy; another "CEO, agri-science" was linked to a same-name hospitality CEO in a different state). **Trigger:** the linked profile's current company does not match the HubSpot company. **Rule:** do NOT trust a name-only match — run a people-search by `name + company` and accept a hit ONLY when an independent corroborator lines up (profile location = company HQ region, industry, or role). Corroborated → judge on that profile AND write the corrected slug back via `li_url` (both URL fields). No corroborator → `unreadable` + `Need Updated Info`, never guess. This is why "yes" needs a company match, not just an open profile.
 - **HubSpot titles are frequently wrong even when employment is current** — several "President"/"CEO" records were actually Marketing/VP/Director on LinkedIn (one "President" had only ever been a Marketing Director at that company; one "President & CEO" had been VP Sales). Judge employment and persona from the **dated LinkedIn history, never the HubSpot title string**; capture the real title in `ai__job_title` so the correction is visible.
 - **"CEO / role with no end date" after an acquisition is ambiguous, not automatically current.** Watch for the company logo/name having changed to an acquirer. If LinkedIn still shows the role active (`end: null`), judge `yes` but NOTE the acquisition in evidence so the rep knows who actually owns the line now.
-- **Former-CEO-now-Board/Advisor is NOT a buyer.** A "Former CEO"/"Board Advisor"/"Board Member" who stepped out of the operating seat (one 3675 record had ended the CEO role a year earlier and held only a board-advisor seat) is still affiliated with the company but is no longer the decision-maker → `Not Decision Maker`, not `yes`.
+- **Former-CEO-now-Board/Advisor: answer the employment question, not the buying question.** Someone who ended the CEO role and holds only a board-advisor seat is STILL AT the company - the dated row says so - so the verdict is `yes`. This rule used to say `Not Decision Maker`, and that is how a Founder-CEO, an Executive Chairman and a Vice Chairman & Co-Founder all got ejected while still in seat. Whether a chairman can buy depends on the company, the deal and the product; it is not derivable from a title string. Write `yes`, note the role shape in the evidence, and raise `persona_review` if the list persona genuinely no longer fits.
 - **Measure cleanliness honestly each run**: report members, and the split of verified-yes / unverified(no verdict) / unreadable-still-on-list / no-LinkedIn-URL / wrong-linked-slug — not just "coverage of the intake snapshot," which goes stale the moment new members arrive.
-- **The list count WILL crater, and most of it is the process working.** Expect the owner to ask "why did my list drop?" Have the arithmetic ready before they ask: on 3675, 389 of 1,680 verdicts carried a lead status (216 No Longer with Company / 94 Not Decision Maker / 48 Need Updated Info / 31 Retired) and each one correctly ejects the contact. Report intended removals and unintended ones separately — never as one number.
+- **The list count WILL crater, and most of it is the process working.** Expect the owner to ask "why did my list drop?" Have the arithmetic ready before they ask: on 3675, 389 of 1,680 verdicts carried a lead status (216 No Longer with Company / 94 Not Decision Maker / 48 Need Updated Info / 31 Retired) and each one ejects the contact. That count is HISTORICAL: the 94 `Not Decision Maker` writes are exactly the category this process no longer makes, and an audit found people still in seat among them - so quote it as what happened, never as a target. Report intended removals and unintended ones separately — never as one number.
 - **Never diagnose a membership drop by assertion — run the attribution.** The procedure, in order: (1) pull current membership; (2) intersect with your verdict log to find verified-`yes` contacts that fell off; (3) read their `hs_lead_status`, phone fields, `number_of_associated_companies` — this rules the process in or out; (4) test them against EACH upstream `IN_LIST` gate separately; (5) only then look at the ASSOCIATION (company) filters. On 3675 this proved 487 verified-good CEOs fell off, and that **zero** of the 308 that failed the CEO gate had been touched by our pipeline — they fail `hs_persona = persona_1` (163 blank, 140 `persona_14`), a field this process is forbidden to write. Without the attribution that looks exactly like self-inflicted damage.
 - **`hs_persona` is the silent ICP gate.** A calling list keyed on a persona value cannot see a contact whose persona is blank or wrong, no matter how cleanly verified they are. 163 contacts on 3675 are confirmed current CEOs with a blank persona — invisible to the CEO list. Surface this as a headline finding with counts; it is usually the single biggest recoverable pool on the list, and fixing it is a persona decision (human-approved), never a silent write.
 - **Do not trust a membership count taken during recalculation.** After a few hundred property writes HubSpot re-evaluates dynamic lists asynchronously; list 3675 read 964, then 112, then 87, then 576 within one hour, all while `processingStatus` said COMPLETE. Take counts twice, several minutes apart, and report a settled number or explicitly label it as still moving.
@@ -344,7 +376,7 @@ AND IN_LIST <source> (add a dedicated exclusion marker property if you gate on o
 - **Spinoff and rebrand: the person is current, only the company NAME is stale.** An operating unit spun out of its parent (its own experience rows will say so — "spun off from <parent>, <date>"); a company trading under a new name with the old website still on the profile. **Rule:** `yes`, set `ai__job_title` to the current entity, and put the rename/spinoff in the `changed` clause so nobody re-verifies it next quarter. Do NOT queue these as movers — there is no new employer.
 - **The HubSpot title often belongs to a DIFFERENT employer than the HubSpot company.** Distinct from "the title is simply wrong": the title is real, it just came from a side business or a prior firm. Seen: "Managing Partner" that described a one-person drone venture while the CRM company was a large reseller where the person was an account executive; "Independent Business Owner" that belonged to a side business, not the CRM employer; "President" carried over from a firm the person sold years earlier; "Co-Owner" from a pre-acquisition partnership. **Rule:** when the CRM title doesn't match the current row, scan the WHOLE history for where that title actually came from — it usually names another row exactly, and that identifies the record as mis-titled rather than the person as mis-employed.
 - **Division / regional president is not company president — capture the scope.** "President, Consulting Division", "President - West Division", "President - Alabama", "Regional CEO, <function>", "President, <segment>", "CEO, Property & Casualty". All are genuine `yes` verdicts and genuine buyers, but a rep who opens with "as President of <company>" is wrong on the first sentence. Always write the qualified scope into `ai__job_title`.
-- **University / student-organization titles are junk records, and they cluster.** "SBA President" (Student Bar Association), "President, <subject> Society", "Director, <named award> Program" — all at one university, all captured as though they were company executives. One had already graduated into a law firm. The title alone is dispositive: no buying authority under any reading. `Not Decision Maker`, and report them as a SOURCE problem (recommend deletion from calling lists), not as three unlucky individuals.
+- **University / student-organization titles are junk records, and they cluster.** "SBA President" (Student Bar Association), "President, <subject> Society", "Director, <named award> Program" — all at one university, all captured as though they were company executives. One had already graduated into a law firm. The title alone is dispositive: no buying authority under any reading. Even here, do NOT write `Not Decision Maker` - this process no longer writes it and the script refuses it. Raise `persona_review` with the title quoted in the note, and report them as a SOURCE problem (recommend deletion from calling lists), not as three unlucky individuals. Deleting junk records is a human's call, and one made once about the source beats 40 made one contact at a time.
 - **Verdict-log IDs go stale.** A contact stamped earlier in the run can be deleted or merged before the final report (1 of 1,069 on this run no longer resolved). Read-backs will silently return fewer records than you asked for — compare the counts and mention the gap rather than reporting the log length as if it were live membership.
 
 - **Persona remediation is a proposal workflow, and it belongs at the end of a run.** Because `hs_persona` is often the real ICP gate and this process must not write it, the deliverable is an evidence-backed candidate list: contacts you verified `yes` whose `ai__job_title` shows a C-level/owner title but whose persona is blank or wrong. Emit `persona1_candidates.json` (id, current persona, LinkedIn-verified title) and hand it over. Exclude former-CEO/board-advisor titles - they are affiliation, not authority. Never apply it silently; a persona write redefines list membership.
