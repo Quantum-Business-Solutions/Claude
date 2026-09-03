@@ -416,6 +416,41 @@ COMMENTS_PER_RUN = 4
 #: Local posting window, checked PER ACTION rather than once per run — a run
 #: starting at 17:55 must not place its next comment at 18:02 after a pause.
 ACTIVE_HOURS = (7, 18)
+
+#: Posts we must NEVER comment on, and why this exists.
+#:
+#: The first live run of engage.py surfaced, as an eligible candidate, a VP of
+#: Marketing's post reading "After 12 years, today is my last day at Thomson
+#: Reuters." Every mechanical guard passed: fresh, original, not yet
+#: commented, comments enabled. A HubSpot-RevOps comment under that post
+#: would have been tone-deaf in public, under Shawn's name, on a prospect.
+#:
+#: Freshness and dedupe are necessary and not sufficient. A post can be
+#: perfectly eligible and completely wrong to engage with, so content is
+#: screened too. These patterns are phrase-level rather than keyword-level:
+#: "last day" alone also matches "last day of the quarter".
+#:
+#: A departure post is ALSO the most valuable enrichment signal LinkedIn
+#: gives us -- the person is a mover before any CRM knows it -- so these are
+#: FLAGGED for the record rather than merely skipped.
+SENSITIVE_POST_PATTERNS = (
+    (r"\b(?:my )?last day (?:at|with|working)\b", "departure"),
+    (r"\bI(?:'m| am) leaving\b", "departure"),
+    (r"\bafter \d+ (?:great |wonderful |incredible |amazing )?years? (?:at|with)\b",
+     "departure"),
+    (r"\b(?:accepted|starting|joining|joined) (?:a |my )?new (?:role|chapter|"
+     r"journey|position|adventure)\b", "job change"),
+    (r"\bnext chapter\b", "job change"),
+    (r"\b(?:laid off|impacted by (?:the )?(?:recent )?layoffs?|"
+     r"part of the layoffs?|role was eliminated)\b", "layoff"),
+    (r"\b(?:open to work|seeking new opportunities|looking for my next)\b",
+     "job seeking"),
+    (r"\b(?:passed away|passing of|in loving memory|rest in peace)\b",
+     "bereavement"),
+    (r"\b(?:my|his|her|their) (?:cancer|diagnosis|chemo|surgery)\b", "health"),
+    (r"\b(?:we are|we're|I am|I'm) (?:heartbroken|devastated|grieving)\b",
+     "bereavement"),
+)
 OUTREACH_LEDGER_MARKER = "qbs-ledger:outreach-v1"
 
 #: HubSpot sets hs_createdate and it cannot be wrong. hs_timestamp is the DUE

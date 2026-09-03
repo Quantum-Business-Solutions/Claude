@@ -52,16 +52,30 @@ from qbs_linkedin.ledger import (
     decide_allowance,
     within_active_hours,
 )
-from qbs_linkedin.posts import commented_post_ids, evaluate_post
+from qbs_linkedin.posts import (
+    commented_post_ids,
+    evaluate_post,
+    parse_post_time,
+)
 from qbs_linkedin.transport import UnipileClient
 from qbs_linkedin.unipile import COMMENT_MAX_CHARS, UnipileError
 
 API = "https://api.hubapi.com"
 EXIT_OK, EXIT_ENV, EXIT_HALT = 0, 2, 4
 
-#: Posts newer than this are worth commenting on. Older and a comment reads
-#: as archaeology rather than engagement.
-FRESHNESS_HOURS = 48
+#: Posts newer than this are worth commenting on. Set from MEASUREMENT, not
+#: taste — `engage.py scan` over the whole 57-person roster on 2026-08-31:
+#:
+#:     within  2d :  5 of 57        within 30d : 19
+#:     within  7d :  7             within 60d : 27
+#:     within 14d : 14             within 90d : 29
+#:
+#: At 48h the roster yields ~5 eligible people at any moment and roughly one
+#: NEW post a day across all 57 — which is why the first live run found zero.
+#: A week is the honest window: still recent enough that a comment reads as
+#: engagement rather than archaeology, and it roughly doubles the pool.
+#: Widening further is not the fix for volume — a bigger roster is.
+FRESHNESS_HOURS = 24 * 7
 
 #: Pause between LinkedIn reads. v2 returns 429 after roughly four rapid
 #: profile reads, so this is not politeness — it is the difference between a
@@ -201,7 +215,7 @@ def plan(args) -> int:
     token = _token()
     client = UnipileClient()
     report = {"generated_at": datetime.now(timezone.utc).isoformat(),
-              "candidates": [], "skipped": [], "halted": None}
+              "candidates": [], "flagged": [], "skipped": [], "halted": None}
 
     # 1. The cap, before any per-contact read. No point reading if we cannot post.
     today, recent, ever = ledger_counts(token)
@@ -295,6 +309,27 @@ def plan(args) -> int:
 
         for post in posts:
             d = evaluate_post(post, already, FRESHNESS_HOURS)
+            if d.sensitive:
+                # Never comment — but a departure or job change is the
+                # earliest mover signal LinkedIn gives us, ahead of any CRM.
+                # Dropping it silently throws away the most valuable thing
+                # this read found.
+                report["flagged"].append({
+                    "contact_id": row["id"], "name": name,
+                    "company": props.get("company"),
+                    "signal": d.sensitive,
+                    "post_url": f"https://www.linkedin.com/feed/update/{post.get('social_id')}/",
+                    "posted_at": post.get("parsed_datetime"),
+                    "excerpt": (post.get("text") or "")[:300],
+                    "suggested_action": (
+                        "re-verify employment via the Reading Rule and, if it "
+                        "confirms, write ai__verification_issue rather than "
+                        "engaging"
+                        if d.sensitive in ("departure", "job change", "layoff")
+                        else "no outreach; human review"
+                    ),
+                })
+                continue
             if not d.eligible:
                 report["skipped"].append({"contact_id": row["id"], "name": name,
                                           "post": post.get("social_id"),
@@ -320,6 +355,136 @@ def plan(args) -> int:
     report["route_posts"] = client.route.version if client.route else None
     print(json.dumps(report, indent=2))
     return EXIT_HALT if report["halted"] else EXIT_OK
+
+
+# --- scan -----------------------------------------------------------------
+
+def prune_from(args) -> int:
+    """Prune the roster using a scan report already on disk.
+
+    Separate from `scan --prune` so the measurement and the list edit are
+    independently reviewable: a scan takes minutes of paced LinkedIn reads,
+    and re-running it just to apply a decision already made wastes the read
+    budget it exists to protect.
+    """
+    token = _token()
+    report = json.load(open(args.input))
+    dead = [str(r["contact_id"]) for r in report.get("rows", [])
+            if r.get("contact_id") and
+            (r.get("newest_original_days") is None or
+             r["newest_original_days"] > args.keep_days)]
+    if not dead:
+        print(json.dumps({"pruned": 0, "reason": "nothing older than "
+                          f"{args.keep_days}d"}, indent=2))
+        return EXIT_OK
+    if args.dry_run:
+        print(json.dumps({"would_prune": len(dead), "contact_ids": dead,
+                          "dry_run": True}, indent=2))
+        return EXIT_OK
+    out = _hs("PUT", f"/crm/v3/lists/{args.list_id}/memberships/remove",
+              token, [int(c) for c in dead])
+    removed = out.get("recordIdsRemoved", [])
+    print(json.dumps({"submitted": len(dead), "removed": len(removed),
+                      "complete": len(removed) == len(dead)}, indent=2))
+    return EXIT_OK
+
+
+def scan(args) -> int:
+    """Measure how recently each roster member actually posts.
+
+    THE PROBLEM THIS SOLVES. The roster was seeded from the verified-callable
+    list, which is a CALLING list: it selects for "this person still works
+    there and a rep can dial them", not for "this person posts on LinkedIn".
+    The first live plan examined 81 posts across 10 of them and found nothing
+    eligible — 21 reshares and the rest months old. A daily engagement routine
+    against that roster runs forever and finds nothing, which looks exactly
+    like the silent failure this program was built to end.
+
+    So the freshness window and the roster are set from measurement, not from
+    a guess. This reports, per contact, the age of their newest ORIGINAL post
+    (reshares excluded, since we skip those anyway) so the cut can be made on
+    evidence.
+    """
+    token = _token()
+    client = UnipileClient()
+    roster = load_roster(token, args.list_id, args.limit)
+    _note(f"scanning {len(roster)} contacts for real posting activity")
+
+    rows, errors = [], 0
+    now = datetime.now(timezone.utc)
+    for n, row in enumerate(roster, 1):
+        props = row.get("properties", {})
+        pid = props.get(cfg.SECONDARY_MATCH_PROPERTY)
+        name = " ".join(x for x in (props.get("firstname"), props.get("lastname")) if x)
+        if not pid or not pid.startswith(("ACo", "ADo")):
+            rows.append({"contact_id": row["id"], "name": name,
+                         "error": "no valid member id"})
+            continue
+        try:
+            posts = client.posts(pid, limit=20)
+        except UnipileError as exc:
+            errors += 1
+            rows.append({"contact_id": row["id"], "name": name, "error": str(exc)[:90]})
+            verdict = exc.verdict
+            if verdict and verdict.action in (Action.HALT, Action.STOP_FOR_DAY):
+                _note(f"HALT at {name}: {exc}")
+                break
+            if should_abort_run(errors, 5):
+                _note(f"{errors} read errors — stopping the scan")
+                break
+            time.sleep(random.uniform(*READ_PAUSE_SECONDS))
+            continue
+
+        ages, originals = [], 0
+        for post in posts:
+            if post.get("is_repost"):
+                continue
+            when = parse_post_time(post.get(cfg.POST_TIMESTAMP_FIELD))
+            if when:
+                originals += 1
+                ages.append((now - when).days)
+        rows.append({
+            "contact_id": row["id"], "name": name,
+            "company": props.get("company"),
+            "provider_id": pid,
+            "posts_returned": len(posts),
+            "originals": originals,
+            "reposts": len(posts) - originals,
+            "newest_original_days": min(ages) if ages else None,
+        })
+        _note(f"  [{n}/{len(roster)}] {name}: newest original "
+              f"{rows[-1]['newest_original_days']}d, {originals} originals")
+        time.sleep(random.uniform(*READ_PAUSE_SECONDS))
+
+    usable = [r for r in rows if r.get("newest_original_days") is not None]
+    dead = [r for r in rows
+            if r.get("newest_original_days") is None or
+            r["newest_original_days"] > args.keep_days]
+    report = {
+        "scanned": len(rows),
+        "with_original_posts": len(usable),
+        "keep_days": args.keep_days,
+        "would_prune": [{"contact_id": r["contact_id"], "name": r["name"],
+                         "newest_original_days": r.get("newest_original_days")}
+                        for r in dead],
+        "distribution_days": sorted(r["newest_original_days"] for r in usable),
+        "rows": rows,
+    }
+
+    if args.prune and dead:
+        # Every dead entry costs a Unipile read on every future run, for
+        # someone who does not post. Removing them is what keeps a daily run
+        # inside its rate budget as the roster grows.
+        ids = [int(r["contact_id"]) for r in dead if r.get("contact_id")]
+        _hs("PUT", f"/crm/v3/lists/{args.list_id}/memberships/remove", token, ids)
+        report["pruned"] = len(ids)
+        _note(f"pruned {len(ids)} contacts who have not posted in "
+              f"{args.keep_days}d")
+    else:
+        report["pruned"] = 0
+
+    print(json.dumps(report, indent=2))
+    return EXIT_OK
 
 
 # --- post -----------------------------------------------------------------
@@ -411,6 +576,21 @@ def main() -> int:
                    help="stop and report a partial result rather than be "
                         "killed by an external timeout")
     p.set_defaults(fn=plan)
+    sc = sub.add_parser("scan", help="measure who actually posts; writes nothing")
+    sc.add_argument("--list-id", default="8308")
+    sc.add_argument("--limit", type=int)
+    sc.add_argument("--keep-days", type=int, default=90,
+                    help="a contact whose newest original post is older than "
+                         "this is dead weight on the roster")
+    sc.add_argument("--prune", action="store_true",
+                    help="actually remove them from the list")
+    sc.set_defaults(fn=scan)
+    pr = sub.add_parser("prune", help="apply a scan report to list membership")
+    pr.add_argument("--input", required=True, help="a scan report JSON")
+    pr.add_argument("--list-id", default="8308")
+    pr.add_argument("--keep-days", type=int, default=90)
+    pr.add_argument("--dry-run", action="store_true")
+    pr.set_defaults(fn=prune_from)
     w = sub.add_parser("post", help="publish drafted comments")
     w.add_argument("--input", required=True, help="JSON file, or - for stdin")
     w.add_argument("--dry-run", action="store_true")

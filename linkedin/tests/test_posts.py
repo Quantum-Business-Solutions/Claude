@@ -13,6 +13,7 @@ from qbs_linkedin.posts import (
     evaluate_post,
     parse_post_time,
     post_join_key,
+    screen_content,
 )
 
 NOW = datetime(2026, 8, 29, 12, 0, tzinfo=timezone.utc)
@@ -162,3 +163,73 @@ class TestDedupeCompleteness:
 
     def test_unknown_page_count_does_not_block(self):
         assert commented_post_ids([{"post_id": "1"}]) == {"1"}
+
+
+class TestSensitiveContentIsNeverCommentedOn:
+    """From the first live engage run.
+
+    A VP of Marketing's post — "After 12 years, today is my last day at
+    Thomson Reuters" — passed every mechanical guard: fresh, original, not yet
+    commented, comments enabled. It was offered as a candidate. A
+    HubSpot-RevOps comment under that post publishes, under Shawn's name, on a
+    prospect, as tone-deaf as this program can get. Freshness and dedupe are
+    necessary and not sufficient.
+    """
+
+    from datetime import datetime, timezone
+    NOW = datetime(2026, 9, 3, 12, 0, tzinfo=timezone.utc)
+
+    def _post(self, text):
+        return {"social_id": "urn:li:activity:999",
+                "parsed_datetime": "2026-09-03T09:00:00Z", "text": text}
+
+    def test_the_live_departure_post_is_refused(self):
+        d = evaluate_post(self._post(
+            "After 12 years, today is my last day at Thomson Reuters. "
+            "I want to start by thanking Jeff Harrell and Tobias Lee."),
+            set(), 168, now=self.NOW)
+        assert d.eligible is False
+        assert d.sensitive == "departure"
+        assert "never comment" in d.reason
+
+    @pytest.mark.parametrize("text,label", [
+        ("Today is my last day at Acme after a wonderful ride", "departure"),
+        ("After 7 great years at Globex, I'm moving on", "departure"),
+        ("Excited to share I am starting a new role at Initech", "job change"),
+        ("On to the next chapter!", "job change"),
+        ("I was laid off in the recent layoffs and am open to work", "layoff"),
+        ("In loving memory of my mother, who passed away on Sunday", "bereavement"),
+        ("Sharing my cancer diagnosis with you all today", "health"),
+    ])
+    def test_each_category_is_caught(self, text, label):
+        assert screen_content(text) == label
+
+    @pytest.mark.parametrize("text", [
+        "Today is the last day of the quarter — push hard team!",
+        "At Actian we have an incredible portfolio of products and customers.",
+        "Watch this 30-second tutorial to transform any image into footage.",
+        "35 seats. 130+ requests. That was Bengaluru. Round 2 is here.",
+        "Our new chapter on data governance is live in the docs.",
+        "",
+        None,
+    ])
+    def test_ordinary_marketing_content_is_not_flagged(self, text):
+        # False positives cost real engagement opportunities, so the patterns
+        # are phrase-level: "last day" alone matches "last day of the quarter".
+        assert screen_content(text) is None
+
+    def test_a_sensitive_post_is_still_given_its_join_key(self):
+        # The caller records the flag against the post, so it needs the key.
+        d = evaluate_post(self._post("today is my last day at Acme"),
+                          set(), 168, now=self.NOW)
+        assert d.join_key == "999"
+
+    def test_mechanical_exclusions_still_run_first(self):
+        # A stale sensitive post reports staleness, not sensitivity: the cheap
+        # checks come first and there is no need to screen what we skip anyway.
+        old = self._post("today is my last day at Acme")
+        old["parsed_datetime"] = "2025-01-01T00:00:00Z"
+        d = evaluate_post(old, set(), 168, now=self.NOW)
+        assert d.eligible is False
+        assert d.sensitive is None
+        assert "older than" in d.reason

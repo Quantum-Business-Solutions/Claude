@@ -28,11 +28,36 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 
+import re
+
 from .config import (
     POST_TIMESTAMP_FIELD,
+    SENSITIVE_POST_PATTERNS,
     SKIP_POST_URN_PREFIXES,
     SKIP_REPOSTS,
 )
+
+_SENSITIVE = tuple(
+    (re.compile(pattern, re.IGNORECASE), label)
+    for pattern, label in SENSITIVE_POST_PATTERNS
+)
+
+
+def screen_content(text: str | None) -> str | None:
+    """Return a sensitivity label if this post must not be commented on.
+
+    Freshness and dedupe are necessary and not sufficient: a post can pass
+    every mechanical guard and still be the wrong thing to engage with. The
+    live case was a VP of Marketing announcing their last day -- fresh,
+    original, un-commented, comments enabled -- and a marketing comment under
+    it would have been publicly tone-deaf under Shawn's name.
+    """
+    if not text:
+        return None
+    for pattern, label in _SENSITIVE:
+        if pattern.search(text):
+            return label
+    return None
 
 #: Comment-level `network_distance` uses DISTANCE_1/2/3 while the profile
 #: endpoint uses FIRST_DEGREE/…, the published schema documents it wrongly,
@@ -100,6 +125,10 @@ class PostDecision:
     eligible: bool
     reason: str
     join_key: str | None = None
+    #: Set when the post was refused on CONTENT rather than mechanics. A
+    #: departure or job-change post is the earliest mover signal LinkedIn
+    #: gives us, so the caller should record it rather than just drop it.
+    sensitive: str | None = None
 
 
 def evaluate_post(
@@ -165,5 +194,14 @@ def evaluate_post(
 
     if post.get("permissions", {}).get("can_post_comments") is False:
         return PostDecision(False, "comments disabled on this post", key)
+
+    # Content last: the cheap mechanical exclusions run first, but a post
+    # that clears every one of them can still be one we must not touch.
+    label = screen_content(post.get("text"))
+    if label:
+        return PostDecision(
+            False, f"sensitive content ({label}) — never comment; flag instead",
+            key, sensitive=label,
+        )
 
     return PostDecision(True, f"fresh ({age}) and not yet commented", key)
