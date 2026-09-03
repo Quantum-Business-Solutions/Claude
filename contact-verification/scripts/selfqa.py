@@ -93,19 +93,34 @@ if today_n>=25:
 # Backlogs: work that exists, is known, and is not being drained.
 b_pending=total([HAS('ai__pending_mover_to')])
 b_nodest=total([V('no'),NOT('ai__pending_mover_to'),NOT('ai__reassociated_on')])
+# Split it: a `no` with no destination is only STRANDED while it still carries a verified date,
+# because queue.py returns a `no` for re-reading once that date goes stale. Clearing the date is
+# how a suspect verdict is sent back for another look, so counting those as stranded overstates
+# the backlog and - worse - describes work that IS scheduled as work that will never happen.
+b_requeue=total([V('no'),NOT('ai__pending_mover_to'),NOT('ai__reassociated_on'),
+                 NOT('ai__contact_verified_date')])
+b_stranded=None if (b_nodest is None or b_requeue is None) else b_nodest-b_requeue
 b_issue=total([HAS('ai__verification_issue')])
 b_wrong=total([{"propertyName":"ai__verification_issue","operator":"EQ","value":"wrong_link_suspected"}])
 b_stale=total([V('yes'),{"propertyName":"validated__linkedin_or_manually","operator":"EQ","value":"Needs Updated"}])
-metrics.update(pending_movers=b_pending,no_destination=b_nodest,open_issues=b_issue,
+metrics.update(pending_movers=b_pending,no_destination=b_nodest,
+               no_destination_requeued=b_requeue,no_destination_stranded=b_stranded,open_issues=b_issue,
                wrong_link=b_wrong,stale_validated_flag=b_stale)
 print("   METRIC movers queued but not re-associated  %s"%b_pending)
-print("   METRIC `no` verdicts with nowhere to go     %s"%b_nodest)
+print("   METRIC `no` verdicts with nowhere to go     %s  (of which %s already re-queued for a "
+      "re-read, %s stranded)"%(b_nodest,b_requeue,b_stranded))
 print("   METRIC records flagged for a human          %s (wrong_link_suspected %s)"%(b_issue,b_wrong))
 print("   METRIC verified `yes` still flagged stale   %s"%b_stale)
 if b_pending: backlog.append("%s mover(s) carry a destination and were never re-associated - run "
                              "moverqueue.py then movepipe.py IN THIS FIRE, not tomorrow"%b_pending)
-if b_nodest: backlog.append("%s contact(s) verified as departed with no destination and no reason "
-                            "recorded - they will never resurface on their own; they need a re-read"%b_nodest)
+if b_stranded: backlog.append("%s contact(s) verified as departed with no destination and a "
+                              "verified date still set - queue.py will not return them for %s days, "
+                              "so they will NOT resurface on their own. Recover the destination from "
+                              "their evidence (recoverdest.py) or clear the verified date to re-read "
+                              "them."%(b_stranded,os.environ.get('STALE_DAYS','90')))
+if b_requeue: notes.append("%s departed contact(s) have no destination but have had their verified "
+                           "date cleared, so the next pass will re-read them. That is the intended "
+                           "state for a verdict under suspicion - not a backlog."%b_requeue)
 if b_stale: backlog.append("%s contact(s) verified present but still flagged 'Needs Updated' - the "
                            "flag is lying about work that is finished"%b_stale)
 if b_wrong and b_wrong>=5: backlog.append("%s contact(s) carry wrong_link_suspected - each is a "
