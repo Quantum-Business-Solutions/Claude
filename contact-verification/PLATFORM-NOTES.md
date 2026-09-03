@@ -16,8 +16,14 @@ naively-written automation fail **silently in about three minutes**:
 routine-fired session's context has no `sources` key at all. Any step referencing a repo path dies
 on the first command.
 
-> Fix: clone it yourself. The repo is public, so this needs no credentials and is verified working:
-> `git clone --depth 1 --branch main https://github.com/Quantum-Business-Solutions/Claude`
+> Fix: clone it yourself:
+> `git clone --depth 1 --branch main https://github.com/Quantum-Business-Solutions/qbs-contact-verification`
+>
+> Note what changed here on 2026-09-03: this repository is **private**, and an earlier version of
+> this note asserted "the repo is public, so this needs no credentials." A clone from an
+> interactive session still succeeds with no token in the environment - git read access is served
+> by the session's git proxy, not by a credential you can see - so a local test proves nothing
+> about a fired session's access. Do not assume; the clone step must halt loudly on failure.
 
 **It has no MCP connector tools.** Not a bug, not an outage — a property of how the Routine was
 created. `create_trigger` says so outright:

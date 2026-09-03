@@ -92,6 +92,37 @@ has ever had presented as a confident clean bill of health:
    fi
    ```
 
+   **This clone command deliberately still points at THIS repo, even though
+   `Quantum-Business-Solutions/qbs-contact-verification` is now the home for this process.**
+
+   The code was extracted to its own repository because `main` here is whatever session merged
+   last: on 2026-09-01 the routine cloned a `main` three days stale, found no reachable transport,
+   and correctly halted having written nothing. A workspace is a bad release channel.
+
+   **The extraction is not finished, for one measured reason: the new repository is PRIVATE and a
+   routine-fired session has no credential for it.** A clone from an interactive session succeeds
+   and proves nothing — git read access there is served by the session's git proxy for repos
+   attached to that session. A fresh session spawned into the same environment
+   (`env_01TxD1DB6PTzpB6nQpEiFy88`), which is what a Routine gets, returned:
+
+   ```
+   git clone https://github.com/Quantum-Business-Solutions/qbs-contact-verification
+   -> exit 128: could not read Username for 'https://github.com': no credentials for HTTPS
+   ```
+
+   Until one of these is done, the trigger clones THIS repo and **every change must land in both**:
+
+   1. **Make the new repository public** (recommended). Nothing contact-level is tracked in it and
+      its `.gitignore` files cover every filename the scripts produce, so an unauthenticated clone
+      would then work exactly as this repo's does today.
+   2. Attach the new repository to the environment so fired sessions inherit a credential. Keeps it
+      private, and needs a real test fire to confirm — environment sources propagating to
+      trigger-fired sessions is unverified.
+
+   Do **not** paper over it with a fallback that silently clones the old repo on failure. That is
+   the 2026-09-01 staleness bug with extra steps: the run would succeed, against the wrong code,
+   and say nothing. Halt on a clone failure and report the exact git error.
+
    Halt on a clone failure and report the exact git error. Use `$REPO` in every path that follows.
 
 0b. **The transport check is no longer a separate step — `preflight.py` runs it.**
@@ -149,6 +180,29 @@ has ever had presented as a confident clean bill of health:
      against a dated source and corrected.
 
    Then output lists.
+
+6. **`selfqa.py` — last, always, whatever happened.**
+
+   ```
+   TOKEN=... python3 $REPO/contact-verification/scripts/selfqa.py --days 14
+   ```
+
+   It recomputes today's numbers from HubSpot and sets them beside the trailing 14-day baseline:
+   verdict mix drift, absolute ceilings on `unreadable`/`no_profile`, movers queued but never
+   re-associated, `no` verdicts with nowhere to go, records awaiting a human, and months-to-finish
+   at today's pace. Exit 1 means something is out of band and belongs in the run summary; it is
+   deliberately NOT a halt, because turning a report into an outage teaches everyone to skip it.
+
+   Two properties of this step matter more than the metrics:
+
+   - **It grades the run from the CRM, not from the run's own log.** A pass that reads its own
+     output cannot detect that its output is wrong. The 93.4% `unreadable` baseline it reported on
+     first use is the Aug 30–31 transport outage, sitting in the data as findings about people.
+   - **It proposes; it never changes anything.** If a run concludes the process should work
+     differently, that goes in the summary as a proposal for a human. A scheduled job permitted to
+     edit its own rules, thresholds or prompts can drift a long way while reporting that all is
+     well, and it is unrecoverable because the yardstick moved with it. **Never grant the routine
+     write access to its own definition of success.**
 
 ## Reporting contract
 
