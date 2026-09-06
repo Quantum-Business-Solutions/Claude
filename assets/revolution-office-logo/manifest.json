@@ -1,0 +1,737 @@
+{
+  "layout": {
+    "x0": 285.0,
+    "name_w": 774.4680000000001,
+    "off_track": 101.06360000000001,
+    "tag": "A Managed Print Company",
+    "tag_track": 8.884363636363638,
+    "y_name": 105.6,
+    "y_office": 176.6,
+    "y_tag": 232.0,
+    "cy": 135.0,
+    "width": 1089.468,
+    "height": 272.08000000000004
+  },
+  "files": [
+    {
+      "variant": "01-original-orange-black",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_01-original-orange-black.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_01-original-orange-black_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_01-original-orange-black_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_01-original-orange-black_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "01-original-orange-black",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_01-original-orange-black.svg",
+      "svg_bg": "stacked/revolution-office_stacked_01-original-orange-black_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_01-original-orange-black_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_01-original-orange-black_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "01-original-orange-black",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_01-original-orange-black.svg",
+      "svg_bg": "icon/revolution-office_icon_01-original-orange-black_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_01-original-orange-black_transparent.png",
+      "png_bg": "icon/revolution-office_icon_01-original-orange-black_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "02-all-black",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_02-all-black.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_02-all-black_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_02-all-black_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_02-all-black_bg.png",
+      "colours": {
+        "accent": "#141414",
+        "mark": "#141414",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "02-all-black",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_02-all-black.svg",
+      "svg_bg": "stacked/revolution-office_stacked_02-all-black_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_02-all-black_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_02-all-black_bg.png",
+      "colours": {
+        "accent": "#141414",
+        "mark": "#141414",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "02-all-black",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_02-all-black.svg",
+      "svg_bg": "icon/revolution-office_icon_02-all-black_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_02-all-black_transparent.png",
+      "png_bg": "icon/revolution-office_icon_02-all-black_bg.png",
+      "colours": {
+        "accent": "#141414",
+        "mark": "#141414",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "03-all-white",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_03-all-white.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_03-all-white_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_03-all-white_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_03-all-white_bg.png",
+      "colours": {
+        "accent": "#FFFFFF",
+        "mark": "#FFFFFF",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#141414"
+    },
+    {
+      "variant": "03-all-white",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_03-all-white.svg",
+      "svg_bg": "stacked/revolution-office_stacked_03-all-white_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_03-all-white_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_03-all-white_bg.png",
+      "colours": {
+        "accent": "#FFFFFF",
+        "mark": "#FFFFFF",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#141414"
+    },
+    {
+      "variant": "03-all-white",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_03-all-white.svg",
+      "svg_bg": "icon/revolution-office_icon_03-all-white_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_03-all-white_transparent.png",
+      "png_bg": "icon/revolution-office_icon_03-all-white_bg.png",
+      "colours": {
+        "accent": "#FFFFFF",
+        "mark": "#FFFFFF",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#141414"
+    },
+    {
+      "variant": "04-orange-white",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_04-orange-white.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_04-orange-white_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_04-orange-white_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_04-orange-white_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#141414"
+    },
+    {
+      "variant": "04-orange-white",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_04-orange-white.svg",
+      "svg_bg": "stacked/revolution-office_stacked_04-orange-white_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_04-orange-white_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_04-orange-white_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#141414"
+    },
+    {
+      "variant": "04-orange-white",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_04-orange-white.svg",
+      "svg_bg": "icon/revolution-office_icon_04-orange-white_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_04-orange-white_transparent.png",
+      "png_bg": "icon/revolution-office_icon_04-orange-white_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#141414"
+    },
+    {
+      "variant": "05-navy-orange",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_05-navy-orange.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_05-navy-orange_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_05-navy-orange_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_05-navy-orange_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#1B2A4A",
+        "office": "#1B2A4A",
+        "tag": "#1B2A4A"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "05-navy-orange",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_05-navy-orange.svg",
+      "svg_bg": "stacked/revolution-office_stacked_05-navy-orange_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_05-navy-orange_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_05-navy-orange_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#1B2A4A",
+        "office": "#1B2A4A",
+        "tag": "#1B2A4A"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "05-navy-orange",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_05-navy-orange.svg",
+      "svg_bg": "icon/revolution-office_icon_05-navy-orange_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_05-navy-orange_transparent.png",
+      "png_bg": "icon/revolution-office_icon_05-navy-orange_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#1B2A4A",
+        "office": "#1B2A4A",
+        "tag": "#1B2A4A"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "06-charcoal-orange",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_06-charcoal-orange.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_06-charcoal-orange_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_06-charcoal-orange_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_06-charcoal-orange_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#3A3A3A",
+        "office": "#3A3A3A",
+        "tag": "#3A3A3A"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "06-charcoal-orange",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_06-charcoal-orange.svg",
+      "svg_bg": "stacked/revolution-office_stacked_06-charcoal-orange_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_06-charcoal-orange_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_06-charcoal-orange_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#3A3A3A",
+        "office": "#3A3A3A",
+        "tag": "#3A3A3A"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "06-charcoal-orange",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_06-charcoal-orange.svg",
+      "svg_bg": "icon/revolution-office_icon_06-charcoal-orange_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_06-charcoal-orange_transparent.png",
+      "png_bg": "icon/revolution-office_icon_06-charcoal-orange_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#3A3A3A",
+        "office": "#3A3A3A",
+        "tag": "#3A3A3A"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "07-all-orange",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_07-all-orange.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_07-all-orange_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_07-all-orange_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_07-all-orange_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#E8872B",
+        "office": "#E8872B",
+        "tag": "#E8872B"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "07-all-orange",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_07-all-orange.svg",
+      "svg_bg": "stacked/revolution-office_stacked_07-all-orange_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_07-all-orange_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_07-all-orange_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#E8872B",
+        "office": "#E8872B",
+        "tag": "#E8872B"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "07-all-orange",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_07-all-orange.svg",
+      "svg_bg": "icon/revolution-office_icon_07-all-orange_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_07-all-orange_transparent.png",
+      "png_bg": "icon/revolution-office_icon_07-all-orange_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#E8872B",
+        "office": "#E8872B",
+        "tag": "#E8872B"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "08-grey-black",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_08-grey-black.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_08-grey-black_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_08-grey-black_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_08-grey-black_bg.png",
+      "colours": {
+        "accent": "#8A8F98",
+        "mark": "#8A8F98",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "08-grey-black",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_08-grey-black.svg",
+      "svg_bg": "stacked/revolution-office_stacked_08-grey-black_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_08-grey-black_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_08-grey-black_bg.png",
+      "colours": {
+        "accent": "#8A8F98",
+        "mark": "#8A8F98",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "08-grey-black",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_08-grey-black.svg",
+      "svg_bg": "icon/revolution-office_icon_08-grey-black_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_08-grey-black_transparent.png",
+      "png_bg": "icon/revolution-office_icon_08-grey-black_bg.png",
+      "colours": {
+        "accent": "#8A8F98",
+        "mark": "#8A8F98",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "09-teal-black",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_09-teal-black.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_09-teal-black_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_09-teal-black_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_09-teal-black_bg.png",
+      "colours": {
+        "accent": "#0E8A8A",
+        "mark": "#0E8A8A",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "09-teal-black",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_09-teal-black.svg",
+      "svg_bg": "stacked/revolution-office_stacked_09-teal-black_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_09-teal-black_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_09-teal-black_bg.png",
+      "colours": {
+        "accent": "#0E8A8A",
+        "mark": "#0E8A8A",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "09-teal-black",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_09-teal-black.svg",
+      "svg_bg": "icon/revolution-office_icon_09-teal-black_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_09-teal-black_transparent.png",
+      "png_bg": "icon/revolution-office_icon_09-teal-black_bg.png",
+      "colours": {
+        "accent": "#0E8A8A",
+        "mark": "#0E8A8A",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "10-blue-black",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_10-blue-black.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_10-blue-black_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_10-blue-black_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_10-blue-black_bg.png",
+      "colours": {
+        "accent": "#1F5FBF",
+        "mark": "#1F5FBF",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "10-blue-black",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_10-blue-black.svg",
+      "svg_bg": "stacked/revolution-office_stacked_10-blue-black_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_10-blue-black_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_10-blue-black_bg.png",
+      "colours": {
+        "accent": "#1F5FBF",
+        "mark": "#1F5FBF",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "10-blue-black",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_10-blue-black.svg",
+      "svg_bg": "icon/revolution-office_icon_10-blue-black_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_10-blue-black_transparent.png",
+      "png_bg": "icon/revolution-office_icon_10-blue-black_bg.png",
+      "colours": {
+        "accent": "#1F5FBF",
+        "mark": "#1F5FBF",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "11-green-black",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_11-green-black.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_11-green-black_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_11-green-black_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_11-green-black_bg.png",
+      "colours": {
+        "accent": "#2E8B57",
+        "mark": "#2E8B57",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "11-green-black",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_11-green-black.svg",
+      "svg_bg": "stacked/revolution-office_stacked_11-green-black_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_11-green-black_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_11-green-black_bg.png",
+      "colours": {
+        "accent": "#2E8B57",
+        "mark": "#2E8B57",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "11-green-black",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_11-green-black.svg",
+      "svg_bg": "icon/revolution-office_icon_11-green-black_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_11-green-black_transparent.png",
+      "png_bg": "icon/revolution-office_icon_11-green-black_bg.png",
+      "colours": {
+        "accent": "#2E8B57",
+        "mark": "#2E8B57",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "12-red-black",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_12-red-black.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_12-red-black_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_12-red-black_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_12-red-black_bg.png",
+      "colours": {
+        "accent": "#C8402E",
+        "mark": "#C8402E",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "12-red-black",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_12-red-black.svg",
+      "svg_bg": "stacked/revolution-office_stacked_12-red-black_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_12-red-black_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_12-red-black_bg.png",
+      "colours": {
+        "accent": "#C8402E",
+        "mark": "#C8402E",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "12-red-black",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_12-red-black.svg",
+      "svg_bg": "icon/revolution-office_icon_12-red-black_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_12-red-black_transparent.png",
+      "png_bg": "icon/revolution-office_icon_12-red-black_bg.png",
+      "colours": {
+        "accent": "#C8402E",
+        "mark": "#C8402E",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#FFFFFF"
+    },
+    {
+      "variant": "13-orange-on-navy",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_13-orange-on-navy.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_13-orange-on-navy_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_13-orange-on-navy_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_13-orange-on-navy_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#1B2A4A"
+    },
+    {
+      "variant": "13-orange-on-navy",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_13-orange-on-navy.svg",
+      "svg_bg": "stacked/revolution-office_stacked_13-orange-on-navy_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_13-orange-on-navy_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_13-orange-on-navy_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#1B2A4A"
+    },
+    {
+      "variant": "13-orange-on-navy",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_13-orange-on-navy.svg",
+      "svg_bg": "icon/revolution-office_icon_13-orange-on-navy_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_13-orange-on-navy_transparent.png",
+      "png_bg": "icon/revolution-office_icon_13-orange-on-navy_bg.png",
+      "colours": {
+        "accent": "#E8872B",
+        "mark": "#E8872B",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#1B2A4A"
+    },
+    {
+      "variant": "14-black-on-orange",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_14-black-on-orange.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_14-black-on-orange_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_14-black-on-orange_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_14-black-on-orange_bg.png",
+      "colours": {
+        "accent": "#141414",
+        "mark": "#141414",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#E8872B"
+    },
+    {
+      "variant": "14-black-on-orange",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_14-black-on-orange.svg",
+      "svg_bg": "stacked/revolution-office_stacked_14-black-on-orange_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_14-black-on-orange_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_14-black-on-orange_bg.png",
+      "colours": {
+        "accent": "#141414",
+        "mark": "#141414",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#E8872B"
+    },
+    {
+      "variant": "14-black-on-orange",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_14-black-on-orange.svg",
+      "svg_bg": "icon/revolution-office_icon_14-black-on-orange_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_14-black-on-orange_transparent.png",
+      "png_bg": "icon/revolution-office_icon_14-black-on-orange_bg.png",
+      "colours": {
+        "accent": "#141414",
+        "mark": "#141414",
+        "name": "#141414",
+        "office": "#141414",
+        "tag": "#141414"
+      },
+      "bg": "#E8872B"
+    },
+    {
+      "variant": "15-white-on-orange",
+      "layout": "horizontal",
+      "svg": "horizontal/revolution-office_horizontal_15-white-on-orange.svg",
+      "svg_bg": "horizontal/revolution-office_horizontal_15-white-on-orange_bg.svg",
+      "png_transparent": "horizontal/revolution-office_horizontal_15-white-on-orange_transparent.png",
+      "png_bg": "horizontal/revolution-office_horizontal_15-white-on-orange_bg.png",
+      "colours": {
+        "accent": "#FFFFFF",
+        "mark": "#FFFFFF",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#E8872B"
+    },
+    {
+      "variant": "15-white-on-orange",
+      "layout": "stacked",
+      "svg": "stacked/revolution-office_stacked_15-white-on-orange.svg",
+      "svg_bg": "stacked/revolution-office_stacked_15-white-on-orange_bg.svg",
+      "png_transparent": "stacked/revolution-office_stacked_15-white-on-orange_transparent.png",
+      "png_bg": "stacked/revolution-office_stacked_15-white-on-orange_bg.png",
+      "colours": {
+        "accent": "#FFFFFF",
+        "mark": "#FFFFFF",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#E8872B"
+    },
+    {
+      "variant": "15-white-on-orange",
+      "layout": "icon",
+      "svg": "icon/revolution-office_icon_15-white-on-orange.svg",
+      "svg_bg": "icon/revolution-office_icon_15-white-on-orange_bg.svg",
+      "png_transparent": "icon/revolution-office_icon_15-white-on-orange_transparent.png",
+      "png_bg": "icon/revolution-office_icon_15-white-on-orange_bg.png",
+      "colours": {
+        "accent": "#FFFFFF",
+        "mark": "#FFFFFF",
+        "name": "#FFFFFF",
+        "office": "#FFFFFF",
+        "tag": "#FFFFFF"
+      },
+      "bg": "#E8872B"
+    }
+  ]
+}
