@@ -1,0 +1,82 @@
+[
+ {
+  "page": "packaging",
+  "url": "https://www.praxerasupplements.com/packaging",
+  "page_id": "216189433489",
+  "state": "LIVE",
+  "owner": "Justin + Patrick",
+  "note": "[PLACEHOLDER FOR JUSTIN: Insert detailed packaging options content. Bottle sizes by SKU, closure types, label finishes, sustainable options, and pricing implications. Patrick or Tammy can provide standard packaging catalog.]"
+ },
+ {
+  "page": "alp/ads-mfg-usa",
+  "url": "https://www.praxerasupplements.com/alp/ads-mfg-usa",
+  "page_id": "216192983652",
+  "state": "LIVE",
+  "owner": "Justin",
+  "note": "[PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]"
+ },
+ {
+  "page": "alp/ads-contract-mfg",
+  "url": "https://www.praxerasupplements.com/alp/ads-contract-mfg",
+  "page_id": "216192983654",
+  "state": "LIVE",
+  "owner": "Justin",
+  "note": "[PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]"
+ },
+ {
+  "page": "facility",
+  "url": "https://www.praxerasupplements.com/facility",
+  "page_id": "216194811691",
+  "state": "LIVE",
+  "owner": "Justin + Patrick",
+  "note": "[PLACEHOLDER FOR JUSTIN/PATRICK: Insert facility detail content. Square footage, production capacity, format-specific equipment, quality lab description, warehouse and fulfillment capacity. Photos from facility tour would significantly enhance this page.]"
+ },
+ {
+  "page": "case-studies",
+  "url": "https://www.praxerasupplements.com/case-studies",
+  "page_id": "216194811714",
+  "state": "LIVE",
+  "owner": "Justin",
+  "note": "[PLACEHOLDER FOR JUSTIN: Case study content coming]"
+ },
+ {
+  "page": "case-studies",
+  "url": "https://www.praxerasupplements.com/case-studies",
+  "page_id": "216194811714",
+  "state": "LIVE",
+  "owner": "Patrick",
+  "note": "[PLACEHOLDER: Case study tiles to be added once Patrick / Tammy provide a list of client brands willing to be featured. Should include: industry, what they launched, timeline, results. Many Praxera private label clients prefer to stay anonymous, so we may need permission-based featuring.]"
+ },
+ {
+  "page": "request-quote",
+  "url": "https://www.praxerasupplements.com/request-quote",
+  "page_id": "216194811716",
+  "state": "LIVE",
+  "owner": "Justin",
+  "note": "[PLACEHOLDER FOR JUSTIN: HubSpot form embed goes here once form is created. Form fields should include: name, email, phone, business name, products of interest (multi-select), estimated order volume, target launch date, additional notes.]"
+ },
+ {
+  "page": "book-consultation",
+  "url": "https://www.praxerasupplements.com/book-consultation",
+  "page_id": "216194811718",
+  "state": "LIVE",
+  "owner": "Justin",
+  "note": "[PLACEHOLDER FOR JUSTIN: Calendar booking widget embed here. HubSpot Meetings link or third-party scheduler.]"
+ },
+ {
+  "page": "alp/ads-pl-mfg",
+  "url": "https://www.praxerasupplements.com/alp/ads-pl-mfg",
+  "page_id": "216194811734",
+  "state": "LIVE",
+  "owner": "Justin",
+  "note": "[PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]"
+ },
+ {
+  "page": "contact",
+  "url": "https://www.praxerasupplements.com/contact",
+  "page_id": "216192983650",
+  "state": "DRAFT",
+  "owner": "Justin + Patrick",
+  "note": "[PLACEHOLDER FOR JUSTIN: HubSpot contact form embed here. Phone, email, and physical address details below should be confirmed with Patrick.]"
+ }
+]
