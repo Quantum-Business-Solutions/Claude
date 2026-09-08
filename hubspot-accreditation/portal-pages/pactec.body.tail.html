@@ -1,0 +1,70 @@
+<div class="cap">Figure 1 &mdash; PacTec integration architecture. ZoomInfo supplies intent and prospect data into HubSpot's property model; HubSpot clusters, scores and routes it; HubSpot exchanges records bidirectionally with Salesforce, which remains the system of record.</div>
+
+<h3 class="sub">Object coverage and sync direction</h3>
+<table>
+<tr><th>Object</th><th>HubSpot &rarr; Salesforce</th><th>Salesforce &rarr; HubSpot</th><th>Notes</th></tr>
+<tr><td>Contacts</td><td>Yes</td><td>Yes</td><td>Bidirectional with selective sync rules</td></tr>
+<tr><td>Leads</td><td>Yes</td><td>&mdash;</td><td>Qualified leads carrying the HubSpot Summary field</td></tr>
+<tr><td>Deals / Opportunities</td><td>&mdash;</td><td>Yes</td><td>Newly wired; previously not configured</td></tr>
+<tr><td>Tasks</td><td>Yes</td><td>&mdash;</td><td>Intent-triggered creation with dual routing</td></tr>
+<tr><td>Activities</td><td>&mdash;</td><td>Yes</td><td>Restored after outage, plus historical backfill</td></tr>
+</table>
+<h3 class="sub">How it was implemented</h3>
+<ul>
+<li>Connector installed; object alignment defined across contacts, leads, deals, tasks and activities</li>
+<li>Field mapping, sync rules and inclusion criteria configured; selective sync with explicit decisions on what must <i>not</i> synchronise</li>
+<li>Pipeline stages aligned between the two systems</li>
+<li>Salesforce-sourced HubSpot properties created; fourteen missing standard integration properties gap-filled</li>
+<li>The 5 February 2026 failure root-caused and the activity sync restored, with historical activity data imported to backfill the gap</li>
+<li>Salesforce&rarr;HubSpot deal sync wired for the first time</li>
+<li>HubSpot&rarr;Salesforce task creation investigated, remediated, then extended to dual routing for intent triggers</li>
+<li>Custom HubSpot Summary field mapped and validated end to end with live test contacts</li>
+</ul>
+
+<h2 class="sec">Use case 2 &mdash; ZoomInfo marketplace integration</h2><div class="rule"></div>
+<h3 class="sub">The problem</h3>
+<p>PacTec was paying for ZoomInfo buyer intent that could not reach a seller. No property model to receive the signals, no segmentation to act on them, no alerting, and no path from an intent spike to a Salesforce opportunity. The spend could not be justified because no line connected a signal to revenue.</p>
+<h3 class="sub">What was built</h3>
+<table>
+<tr><th>Component</th><th>Delivered</th></tr>
+<tr><td>Intent property model</td><td><b>47 intent topics deployed as 423 HubSpot properties</b> &mdash; five properties for each of 48 contact-level signals, plus four company-level properties</td></tr>
+<tr><td>Data export</td><td>Automated ZoomInfo&rarr;HubSpot export; the same property model then replicated into Salesforce alongside the client's administrator</td></tr>
+<tr><td>Targeting</td><td>ZoomInfo saved searches aligned to the defined ideal customer profile</td></tr>
+<tr><td>Alerting</td><td>Intent signal &rarr; HubSpot workflow &rarr; real-time sales alert</td></tr>
+<tr><td>Cross-system path</td><td>ZoomInfo prospect &rarr; HubSpot lead &rarr; Salesforce opportunity, tested end to end with dummy contacts before go-live</td></tr>
+<tr><td>Personas</td><td>Five personas with properties, segments and workflows: Head of Organization, Head of Operations, Head of Procurement, Industrial Waste Management, Nuclear Waste Management</td></tr>
+<tr><td>Clustering</td><td>30 intent cluster lists &mdash; 15 marketing email and 15 master; Facilities Management activated as pilot</td></tr>
+<tr><td>Commercial governance</td><td>ZoomInfo subscription audited for seats against bulk credits; account-level intent delivery escalated to ZoomInfo support</td></tr>
+<tr><td>Reporting</td><td>Intent dashboard &mdash; volume, clusters, customer vs non-customer &mdash; plus an intent-to-revenue attribution process</td></tr>
+</table>
+<p>The clustering model matters: sellers receive coherent themes rather than forty-seven separate signal types. That is the difference between intent data being available and intent data being used.</p>
+
+<h2 class="sec">Delivery record</h2><div class="rule"></div>
+<table>
+<tr><th>Phase</th><th>Tasks</th><th>Complete</th></tr>
+<tr><td>Phase 0 &mdash; Kick-Off and Discovery</td><td>19</td><td>100%</td></tr>
+<tr><td>Phase 1 &mdash; HubSpot Foundational Configuration</td><td>8</td><td>100%</td></tr>
+<tr><td>Phase 2 &mdash; Contact and List Import, Lifecycle, MQL/SQL</td><td>7</td><td>100%</td></tr>
+<tr><td>Phase 3 &mdash; Marketing Hub Configuration</td><td>12</td><td>100%</td></tr>
+<tr><td>Phase 4 &mdash; ZoomInfo and HubSpot Integration</td><td>7</td><td>100%</td></tr>
+<tr><td>Phase 5 &mdash; Salesforce and HubSpot Integration</td><td>9</td><td>100%</td></tr>
+<tr><td>Phase 6 &mdash; Revenue Efficiency Model Build</td><td>4</td><td>100%</td></tr>
+<tr><td>Phase 7 &mdash; Training and Wrap-Up</td><td>5</td><td>80%</td></tr>
+<tr><td><b>Total</b></td><td><b>71</b></td><td><b>98.6%</b></td></tr>
+</table>
+<p>Discovery ran as a genuine technical audit across website, email, HubSpot, ZoomInfo and Salesforce, with PacTec's Salesforce administrator exporting a complete field inventory before any mapping began.</p>
+<p><span class="pill g">28 calls</span><span class="pill g">115 emails</span><span class="pill g">37 meetings</span><span class="pill g">21 transcripts</span></p>
+
+<div class="box risk"><div class="t">Before this is sent to HubSpot &mdash; outstanding items</div>
+<p><b>1. Sales Hub tier (blocking).</b> Confirm with the PDM. Working assumption should be that PacTec has no Sales Hub Professional licence until proven otherwise.</p>
+<p><b>2. Quantified results (blocking).</b> Item 2 requires quantified improvements &mdash; efficiency, data accuracy, conversion, cost. Suggested measures: activity records backfilled; sync error rate before and after; opportunities now visible in HubSpot that previously were not; seller response time to intent-triggered tasks; intent-sourced pipeline value. Capture at the next monthly strategic review with Katie Lanoix and Christina Reckard.</p>
+<p><b>3. HubSpot Portal ID.</b> PacTec's own portal ID is required.</p>
+<p><b>4. Open delivery task.</b> Close the QA and Go-Live Readiness Review to present a 100% complete plan rather than 98.6%.</p>
+<p><b>5. MSA clearance.</b> Confirm the PacTec MSA permits sharing engagement documents with HubSpot.</p>
+</div>
+
+<div class="box gap"><div class="t">Note on the Custom Integration accreditation</div>
+<p>This engagement is <b>not</b> a Custom Integration candidate. That accreditation's hard gate explicitly rejects marketplace and native connectors; PacTec is the native HubSpot&ndash;Salesforce connector plus the native ZoomInfo integration &mdash; expertly configured and remediated, but configuration nonetheless. The nearest qualifying assets are the XPRT Premium API feasibility work with an n8n recommendation, and research into batch Salesforce property creation via API. Both are research, not shipped builds.</p></div>
+
+<div class="foot">Quantum Business Solutions &middot; HubSpot Solutions Partner Accreditation casework &middot; Onboarding submission item 2 (may profile a different customer from items 1 and 3, but the same Pro-or-above subscription rule applies).<br>Sources: Client Command portal records and the 50-hour integration plan, HubSpot portal 20682069, Zoom recordings and transcripts May&ndash;September 2026. Every unverified figure is marked rather than estimated.</div>
+</div>

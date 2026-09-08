@@ -1,0 +1,261 @@
+<style>
+:root{--navy:#0A1F44;--gold:#C9A227;--grey:#5A6470;--light:#F4F5F7;--border:#D8DDE3;--ink:#1A1A1A;--red:#8B1E1E;--green:#2F6B4F}
+*{box-sizing:border-box}
+.qbs{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.62;font-size:15px;max-width:1080px;margin:0 auto;padding:0 4px}
+.qbs h1,.qbs h2,.qbs h3{line-height:1.25;margin:0}
+.hero{background:linear-gradient(135deg,#0A1F44 0%,#15305e 100%);color:#fff;padding:38px 40px;border-radius:14px;margin-bottom:26px}
+.hero .tag{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
+.hero h1{font-size:31px;font-weight:750;letter-spacing:-.02em;margin-bottom:10px}
+.hero .sub{font-size:15.5px;color:#C6D0E0;font-weight:400}
+.hero .meta{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:26px}
+.hero .meta div{font-size:12.5px;color:#9FB0C9}
+.hero .meta b{display:block;font-size:15px;color:#fff;font-weight:650;margin-top:3px}
+h2.sec{font-size:21px;color:var(--navy);font-weight:700;margin:38px 0 6px;letter-spacing:-.01em}
+h2.sec+.rule{height:3px;width:52px;background:var(--gold);border-radius:2px;margin-bottom:16px}
+h3.sub{font-size:16px;color:#2E4057;font-weight:680;margin:24px 0 8px}
+p{margin:0 0 13px}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 6px}
+.stat{flex:1 1 150px;background:var(--light);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:9px;padding:15px 17px}
+.stat .n{font-size:25px;font-weight:750;color:var(--navy);letter-spacing:-.02em;line-height:1.15}
+.stat .l{font-size:12px;color:var(--grey);margin-top:5px;line-height:1.4}
+table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:14px}
+th{background:var(--navy);color:#fff;text-align:left;padding:10px 13px;font-weight:640;font-size:13px}
+td{padding:10px 13px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:#FAFBFC}
+td.k{font-weight:640;color:var(--navy);width:30%;background:var(--light)!important}
+.box{border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid;border-left-width:5px}
+.box .t{font-weight:700;font-size:14px;margin-bottom:6px}
+.box p{font-size:14px;margin:0 0 7px}.box p:last-child{margin:0}
+.ok{background:#EDF5F0;border-color:var(--green)}.ok .t{color:var(--green)}
+.gap{background:#FDF6E3;border-color:var(--gold)}.gap .t{color:#8A6D18}
+.risk{background:#FBEEEE;border-color:var(--red)}.risk .t{color:var(--red)}
+ul{margin:0 0 14px;padding-left:20px}li{margin-bottom:6px}
+.pill{display:inline-block;font-size:11.5px;font-weight:670;padding:3px 10px;border-radius:20px;margin-right:6px}
+.pill.g{background:#E3F0E8;color:var(--green)}.pill.a{background:#FBF1D6;color:#8A6D18}.pill.r{background:#F8E2E2;color:var(--red)}
+.foot{margin-top:38px;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--grey)}
+.diagram{margin:18px 0;padding:14px;background:#fff;border:1px solid var(--border);border-radius:10px;overflow-x:auto}
+.diagram svg{width:100%;height:auto;min-width:900px}
+.cap{font-size:12.5px;color:var(--grey);font-style:italic;text-align:center;margin-top:6px}
+@media(max-width:640px){.hero{padding:26px 22px}.hero h1{font-size:24px}}
+</style>
+<div class="qbs">
+<div class="hero">
+<div class="tag">HubSpot Solutions Partner Accreditation &middot; Onboarding &middot; Item 2</div>
+<h1>PacTec: reconnecting a three-system revenue stack</h1>
+<div class="sub">Integration Documentation &mdash; Salesforce and ZoomInfo &mdash; Quantum Business Solutions, May&ndash;September 2026</div>
+<div class="meta">
+<div>Integrations<b>Salesforce + ZoomInfo</b></div>
+<div>Company size<b>200 employees</b></div>
+<div>Scope<b>50 hours</b></div>
+<div>Delivery<b>70 of 71 tasks</b></div>
+<div>Intent properties<b>423 deployed</b></div>
+</div>
+</div>
+
+<div class="box risk"><div class="t">Subscription gate &mdash; unresolved</div>
+<p>Item 2 requires the profiled customer to hold both Marketing Hub and Sales Hub at Professional or above. <b>Marketing Hub Professional is confirmed. The Sales Hub tier is not</b>, and cannot be assumed: PacTec runs Salesforce as their system of record and entered the engagement on free-tier HubSpot.</p>
+<p>Confirm with the Partner Development Manager before submitting. If PacTec does not hold Sales Hub Professional or above, item 2 needs a different customer &mdash; A.N. Deringer and ScyllaDB are the identified alternatives.</p></div>
+
+<h2 class="sec">The situation</h2><div class="rule"></div>
+<p>PacTec runs a three-system revenue stack: <b>Salesforce</b> as the CRM of record, <b>ZoomInfo</b> for prospect data and buyer intent, and <b>HubSpot</b> for marketing and demand generation. The three were not exchanging usable data.</p>
+<div class="stats">
+<div class="stat"><div class="n">5 months</div><div class="l">Salesforce activity sync dead before we found the cause</div></div>
+<div class="stat"><div class="n">0</div><div class="l">Deal sync configured &mdash; it had never been set up</div></div>
+<div class="stat"><div class="n">14</div><div class="l">Standard Salesforce integration properties missing</div></div>
+<div class="stat"><div class="n">47</div><div class="l">Intent topics stranded with no route to a seller</div></div>
+</div>
+<p>Marketing could not see what closed, sales could not see marketing context, and neither system could be trusted for reporting. PacTec was paying for buyer intent data that could not reach a human being.</p>
+
+<h2 class="sec">Use case 1 &mdash; Salesforce integration</h2><div class="rule"></div>
+<h3 class="sub">The problem</h3>
+<ul>
+<li>Salesforce&rarr;HubSpot activity sync had stopped on <b>5 February 2026</b> and the cause had never been established</li>
+<li><b>Deal sync had never been configured at all</b>, so marketing had no visibility of revenue outcomes and no basis for attribution</li>
+<li><b>Fourteen standard Salesforce integration properties were missing</b> from HubSpot, silently breaking field mapping and reporting</li>
+</ul>
+<h3 class="sub">The solution, and what we chose not to do</h3>
+<p>The integration was designed under a strict constraint: <b>Salesforce remains the system of record</b>. The governing question was therefore not how much data could be synchronised, but what deliberately must not be &mdash; protecting Salesforce from HubSpot-side noise while giving marketing the revenue visibility it lacked.</p>
+<p><b>Alternatives considered.</b> A middleware or iPaaS layer was assessed and rejected for this use case: the native integration met the object and directional requirements, and inserting middleware between two systems that already had a reliability problem would have added a failure point rather than removed one. Separately, an upgrade to Salesforce integration version 2 was researched and its duplicate-record exposure assessed <i>before</i> any decision &mdash; not upgraded blind.</p>
+<div class="box gap"><div class="t">The design decision that defines this build</div>
+<p>Rather than replicating 423 intent properties into Salesforce, we built a single condensed custom field &mdash; <b>HubSpot Summary</b> &mdash; mapped bidirectionally, carrying the intent narrative into the Salesforce record where the seller actually works. Field sprawl traded for usable context, then validated end to end with live test contacts before release.</p></div>
+
+<h3 class="sub">Data flow</h3>
+<div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" width="1640" height="1010" viewBox="0 0 1640 1010" font-family="Helvetica, Arial, sans-serif">
+<rect width="1640" height="1010" fill="#ffffff"/>
+<text x="40" y="42" font-size="25" font-weight="bold" fill="#1a1a1a">PacTec — ZoomInfo / HubSpot / Salesforce Data Flow</text>
+<text x="40" y="68" font-size="14" fill="#555">Delivered by Quantum Business Solutions, May–September 2026. Salesforce remains the system of record.</text>
+
+<!-- ZoomInfo -->
+<rect x="40" y="180" width="330" height="380" rx="10" fill="#FBEAEC" stroke="#C8102E" stroke-width="2"/>
+<rect x="40" y="140" width="300" height="34" rx="6" fill="#C8102E"/>
+<text x="56" y="163" font-size="14" font-weight="bold" fill="#fff">ZoomInfo — Data and Intent Source</text>
+<rect x="70" y="215" width="270" height="72" rx="6" fill="#fff" stroke="#C8102E"/>
+<text x="86" y="243" font-size="13" font-weight="bold" fill="#1a1a1a">Buyer Intent Signals</text>
+<text x="86" y="263" font-size="12" fill="#444">47 topics / 48 contact signals</text>
+<rect x="70" y="312" width="270" height="72" rx="6" fill="#fff" stroke="#C8102E"/>
+<text x="86" y="340" font-size="13" font-weight="bold" fill="#1a1a1a">Prospect and Contact Data</text>
+<text x="86" y="360" font-size="12" fill="#444">Firmographic enrichment</text>
+<rect x="70" y="409" width="270" height="72" rx="6" fill="#fff" stroke="#C8102E"/>
+<text x="86" y="437" font-size="13" font-weight="bold" fill="#1a1a1a">Saved Searches</text>
+<text x="86" y="457" font-size="12" fill="#444">Aligned to defined ICP</text>
+
+<!-- HubSpot -->
+<rect x="540" y="180" width="390" height="720" rx="10" fill="#FFF1EC" stroke="#FF7A59" stroke-width="2"/>
+<rect x="540" y="140" width="330" height="34" rx="6" fill="#FF7A59"/>
+<text x="556" y="163" font-size="14" font-weight="bold" fill="#fff">HubSpot — Marketing and Intent Engine</text>
+<rect x="570" y="205" width="330" height="76" rx="6" fill="#fff" stroke="#FF7A59"/>
+<text x="586" y="228" font-size="13" font-weight="bold" fill="#1a1a1a">Intent Property Model</text>
+<text x="586" y="247" font-size="12" fill="#444">423 properties: 48 signals x 5 fields</text>
+<text x="586" y="265" font-size="12" fill="#444">plus 4 company-level fields</text>
+<rect x="570" y="300" width="330" height="66" rx="6" fill="#fff" stroke="#FF7A59"/>
+<text x="586" y="325" font-size="13" font-weight="bold" fill="#1a1a1a">Contacts and Companies</text>
+<text x="586" y="345" font-size="12" fill="#444">Core CRM objects</text>
+<rect x="570" y="385" width="330" height="66" rx="6" fill="#fff" stroke="#FF7A59"/>
+<text x="586" y="410" font-size="13" font-weight="bold" fill="#1a1a1a">Intent Cluster Lists</text>
+<text x="586" y="430" font-size="12" fill="#444">30 lists: 15 marketing + 15 master</text>
+<rect x="570" y="470" width="330" height="66" rx="6" fill="#fff" stroke="#FF7A59"/>
+<text x="586" y="495" font-size="13" font-weight="bold" fill="#1a1a1a">Persona Segments</text>
+<text x="586" y="515" font-size="12" fill="#444">5 personas with properties and workflows</text>
+<rect x="570" y="555" width="330" height="66" rx="6" fill="#fff" stroke="#FF7A59"/>
+<text x="586" y="580" font-size="13" font-weight="bold" fill="#1a1a1a">Intent Workflows</text>
+<text x="586" y="600" font-size="12" fill="#444">Real-time seller alerts and task triggers</text>
+<rect x="570" y="640" width="330" height="66" rx="6" fill="#fff" stroke="#FF7A59"/>
+<text x="586" y="665" font-size="13" font-weight="bold" fill="#1a1a1a">Lead Scoring</text>
+<text x="586" y="685" font-size="12" fill="#444">MQL / SQL criteria and handoff</text>
+<rect x="570" y="725" width="330" height="80" rx="6" fill="#fff" stroke="#FF7A59"/>
+<text x="586" y="750" font-size="13" font-weight="bold" fill="#1a1a1a">Intent Dashboard</text>
+<text x="586" y="769" font-size="12" fill="#444">Volume, clusters, customer vs non-customer</text>
+<text x="586" y="787" font-size="12" fill="#444">Intent-to-revenue attribution</text>
+
+<!-- Salesforce -->
+<rect x="1120" y="180" width="360" height="560" rx="10" fill="#E6F5FC" stroke="#00A1E0" stroke-width="2"/>
+<rect x="1120" y="140" width="290" height="34" rx="6" fill="#00A1E0"/>
+<text x="1136" y="163" font-size="14" font-weight="bold" fill="#fff">Salesforce — System of Record</text>
+<rect x="1150" y="215" width="300" height="62" rx="6" fill="#fff" stroke="#00A1E0"/>
+<text x="1166" y="252" font-size="13" font-weight="bold" fill="#1a1a1a">Leads</text>
+<rect x="1150" y="302" width="300" height="62" rx="6" fill="#fff" stroke="#00A1E0"/>
+<text x="1166" y="339" font-size="13" font-weight="bold" fill="#1a1a1a">Contacts</text>
+<rect x="1150" y="389" width="300" height="62" rx="6" fill="#fff" stroke="#00A1E0"/>
+<text x="1166" y="426" font-size="13" font-weight="bold" fill="#1a1a1a">Opportunities</text>
+<rect x="1150" y="500" width="300" height="62" rx="6" fill="#fff" stroke="#00A1E0"/>
+<text x="1166" y="537" font-size="13" font-weight="bold" fill="#1a1a1a">Tasks</text>
+<rect x="1150" y="611" width="300" height="62" rx="6" fill="#fff" stroke="#00A1E0"/>
+<text x="1166" y="648" font-size="13" font-weight="bold" fill="#1a1a1a">Activity History</text>
+
+<defs>
+<marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#C8102E"/></marker>
+<marker id="ab" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#00A1E0"/></marker>
+<marker id="abr" markerWidth="9" markerHeight="9" refX="1" refY="4.5" orient="auto"><path d="M9,0 L0,4.5 L9,9 z" fill="#00A1E0"/></marker>
+<marker id="ao" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#B0642E"/></marker>
+</defs>
+
+<!-- ZoomInfo to HubSpot -->
+<path d="M340,251 L455,251 L455,243 L570,243" fill="none" stroke="#C8102E" stroke-width="2" marker-end="url(#ar)"/>
+<text x="360" y="240" font-size="11" fill="#333">Automated export: topic, date, score</text>
+<path d="M340,348 L455,348 L455,333 L570,333" fill="none" stroke="#C8102E" stroke-width="2" marker-end="url(#ar)"/>
+<text x="360" y="368" font-size="11" fill="#333">Prospect enrichment</text>
+<path d="M340,445 L490,445 L490,418 L570,418" fill="none" stroke="#C8102E" stroke-width="2" marker-end="url(#ar)"/>
+<text x="360" y="465" font-size="11" fill="#333">ICP-matched records</text>
+
+<!-- internal HubSpot flow -->
+<path d="M735,281 L735,297" stroke="#B0642E" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ao)"/>
+<path d="M735,366 L735,382" stroke="#B0642E" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ao)"/>
+<path d="M735,451 L735,467" stroke="#B0642E" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ao)"/>
+<path d="M735,536 L735,552" stroke="#B0642E" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ao)"/>
+<path d="M735,621 L735,637" stroke="#B0642E" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ao)"/>
+<path d="M735,706 L735,722" stroke="#B0642E" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ao)"/>
+
+<!-- HubSpot to Salesforce -->
+<path d="M900,315 L1020,315 L1020,246 L1150,246" fill="none" stroke="#00A1E0" stroke-width="2" marker-end="url(#ab)"/>
+<text x="930" y="308" font-size="11" fill="#333">Qualified lead + HubSpot Summary field</text>
+<path d="M900,352 L1060,352 L1060,333 L1150,333" fill="none" stroke="#00A1E0" stroke-width="2" marker-end="url(#ab)" marker-start="url(#abr)"/>
+<text x="930" y="372" font-size="11" fill="#333">Contact sync — bidirectional, selective</text>
+<path d="M900,588 L1020,588 L1020,531 L1150,531" fill="none" stroke="#00A1E0" stroke-width="2" marker-end="url(#ab)"/>
+<text x="915" y="581" font-size="11" fill="#333">Intent-triggered task creation, dual routing</text>
+<path d="M1150,420 L1060,420 L1060,752 L900,752" fill="none" stroke="#00A1E0" stroke-width="2" marker-end="url(#ab)"/>
+<text x="1000" y="413" font-size="11" fill="#333">Deal sync — newly wired</text>
+<path d="M1150,642 L1100,642 L1100,782 L900,782" fill="none" stroke="#00A1E0" stroke-width="2" marker-end="url(#ab)"/>
+<text x="930" y="805" font-size="11" fill="#333">Activity history restored, plus historical backfill</text>
+
+<!-- notes -->
+<rect x="40" y="855" width="700" height="105" rx="8" fill="#FFF9E6" stroke="#D9A441"/>
+<text x="58" y="882" font-size="12.5" font-weight="bold" fill="#1a1a1a">Key design decision — the HubSpot Summary field</text>
+<text x="58" y="903" font-size="11.5" fill="#444">Rather than replicating 423 intent properties into Salesforce, QBS built a single condensed</text>
+<text x="58" y="921" font-size="11.5" fill="#444">custom field carrying the intent narrative into the Salesforce record where the seller works.</text>
+<text x="58" y="939" font-size="11.5" fill="#444">Field sprawl traded for usable context.</text>
+<rect x="780" y="855" width="700" height="105" rx="8" fill="#EDF7ED" stroke="#4C9A4C"/>
+<text x="798" y="882" font-size="12.5" font-weight="bold" fill="#1a1a1a">Remediation delivered</text>
+<text x="798" y="903" font-size="11.5" fill="#444">Salesforce activity sync had been dead since 5 February 2026 — root-caused and restored.</text>
+<text x="798" y="921" font-size="11.5" fill="#444">Deal sync had never been configured — wired for the first time. 14 missing standard</text>
+<text x="798" y="939" font-size="11.5" fill="#444">Salesforce integration properties gap-filled.</text>
+</svg>
+</div><div class="cap">Figure 1 &mdash; PacTec integration architecture. ZoomInfo supplies intent and prospect data into HubSpot's property model; HubSpot clusters, scores and routes it; HubSpot exchanges records bidirectionally with Salesforce, which remains the system of record.</div>
+
+<h3 class="sub">Object coverage and sync direction</h3>
+<table>
+<tr><th>Object</th><th>HubSpot &rarr; Salesforce</th><th>Salesforce &rarr; HubSpot</th><th>Notes</th></tr>
+<tr><td>Contacts</td><td>Yes</td><td>Yes</td><td>Bidirectional with selective sync rules</td></tr>
+<tr><td>Leads</td><td>Yes</td><td>&mdash;</td><td>Qualified leads carrying the HubSpot Summary field</td></tr>
+<tr><td>Deals / Opportunities</td><td>&mdash;</td><td>Yes</td><td>Newly wired; previously not configured</td></tr>
+<tr><td>Tasks</td><td>Yes</td><td>&mdash;</td><td>Intent-triggered creation with dual routing</td></tr>
+<tr><td>Activities</td><td>&mdash;</td><td>Yes</td><td>Restored after outage, plus historical backfill</td></tr>
+</table>
+<h3 class="sub">How it was implemented</h3>
+<ul>
+<li>Connector installed; object alignment defined across contacts, leads, deals, tasks and activities</li>
+<li>Field mapping, sync rules and inclusion criteria configured; selective sync with explicit decisions on what must <i>not</i> synchronise</li>
+<li>Pipeline stages aligned between the two systems</li>
+<li>Salesforce-sourced HubSpot properties created; fourteen missing standard integration properties gap-filled</li>
+<li>The 5 February 2026 failure root-caused and the activity sync restored, with historical activity data imported to backfill the gap</li>
+<li>Salesforce&rarr;HubSpot deal sync wired for the first time</li>
+<li>HubSpot&rarr;Salesforce task creation investigated, remediated, then extended to dual routing for intent triggers</li>
+<li>Custom HubSpot Summary field mapped and validated end to end with live test contacts</li>
+</ul>
+
+<h2 class="sec">Use case 2 &mdash; ZoomInfo marketplace integration</h2><div class="rule"></div>
+<h3 class="sub">The problem</h3>
+<p>PacTec was paying for ZoomInfo buyer intent that could not reach a seller. No property model to receive the signals, no segmentation to act on them, no alerting, and no path from an intent spike to a Salesforce opportunity. The spend could not be justified because no line connected a signal to revenue.</p>
+<h3 class="sub">What was built</h3>
+<table>
+<tr><th>Component</th><th>Delivered</th></tr>
+<tr><td>Intent property model</td><td><b>47 intent topics deployed as 423 HubSpot properties</b> &mdash; five properties for each of 48 contact-level signals, plus four company-level properties</td></tr>
+<tr><td>Data export</td><td>Automated ZoomInfo&rarr;HubSpot export; the same property model then replicated into Salesforce alongside the client's administrator</td></tr>
+<tr><td>Targeting</td><td>ZoomInfo saved searches aligned to the defined ideal customer profile</td></tr>
+<tr><td>Alerting</td><td>Intent signal &rarr; HubSpot workflow &rarr; real-time sales alert</td></tr>
+<tr><td>Cross-system path</td><td>ZoomInfo prospect &rarr; HubSpot lead &rarr; Salesforce opportunity, tested end to end with dummy contacts before go-live</td></tr>
+<tr><td>Personas</td><td>Five personas with properties, segments and workflows: Head of Organization, Head of Operations, Head of Procurement, Industrial Waste Management, Nuclear Waste Management</td></tr>
+<tr><td>Clustering</td><td>30 intent cluster lists &mdash; 15 marketing email and 15 master; Facilities Management activated as pilot</td></tr>
+<tr><td>Commercial governance</td><td>ZoomInfo subscription audited for seats against bulk credits; account-level intent delivery escalated to ZoomInfo support</td></tr>
+<tr><td>Reporting</td><td>Intent dashboard &mdash; volume, clusters, customer vs non-customer &mdash; plus an intent-to-revenue attribution process</td></tr>
+</table>
+<p>The clustering model matters: sellers receive coherent themes rather than forty-seven separate signal types. That is the difference between intent data being available and intent data being used.</p>
+
+<h2 class="sec">Delivery record</h2><div class="rule"></div>
+<table>
+<tr><th>Phase</th><th>Tasks</th><th>Complete</th></tr>
+<tr><td>Phase 0 &mdash; Kick-Off and Discovery</td><td>19</td><td>100%</td></tr>
+<tr><td>Phase 1 &mdash; HubSpot Foundational Configuration</td><td>8</td><td>100%</td></tr>
+<tr><td>Phase 2 &mdash; Contact and List Import, Lifecycle, MQL/SQL</td><td>7</td><td>100%</td></tr>
+<tr><td>Phase 3 &mdash; Marketing Hub Configuration</td><td>12</td><td>100%</td></tr>
+<tr><td>Phase 4 &mdash; ZoomInfo and HubSpot Integration</td><td>7</td><td>100%</td></tr>
+<tr><td>Phase 5 &mdash; Salesforce and HubSpot Integration</td><td>9</td><td>100%</td></tr>
+<tr><td>Phase 6 &mdash; Revenue Efficiency Model Build</td><td>4</td><td>100%</td></tr>
+<tr><td>Phase 7 &mdash; Training and Wrap-Up</td><td>5</td><td>80%</td></tr>
+<tr><td><b>Total</b></td><td><b>71</b></td><td><b>98.6%</b></td></tr>
+</table>
+<p>Discovery ran as a genuine technical audit across website, email, HubSpot, ZoomInfo and Salesforce, with PacTec's Salesforce administrator exporting a complete field inventory before any mapping began.</p>
+<p><span class="pill g">28 calls</span><span class="pill g">115 emails</span><span class="pill g">37 meetings</span><span class="pill g">21 transcripts</span></p>
+
+<div class="box risk"><div class="t">Before this is sent to HubSpot &mdash; outstanding items</div>
+<p><b>1. Sales Hub tier (blocking).</b> Confirm with the PDM. Working assumption should be that PacTec has no Sales Hub Professional licence until proven otherwise.</p>
+<p><b>2. Quantified results (blocking).</b> Item 2 requires quantified improvements &mdash; efficiency, data accuracy, conversion, cost. Suggested measures: activity records backfilled; sync error rate before and after; opportunities now visible in HubSpot that previously were not; seller response time to intent-triggered tasks; intent-sourced pipeline value. Capture at the next monthly strategic review with Katie Lanoix and Christina Reckard.</p>
+<p><b>3. HubSpot Portal ID.</b> PacTec's own portal ID is required.</p>
+<p><b>4. Open delivery task.</b> Close the QA and Go-Live Readiness Review to present a 100% complete plan rather than 98.6%.</p>
+<p><b>5. MSA clearance.</b> Confirm the PacTec MSA permits sharing engagement documents with HubSpot.</p>
+</div>
+
+<div class="box gap"><div class="t">Note on the Custom Integration accreditation</div>
+<p>This engagement is <b>not</b> a Custom Integration candidate. That accreditation's hard gate explicitly rejects marketplace and native connectors; PacTec is the native HubSpot&ndash;Salesforce connector plus the native ZoomInfo integration &mdash; expertly configured and remediated, but configuration nonetheless. The nearest qualifying assets are the XPRT Premium API feasibility work with an n8n recommendation, and research into batch Salesforce property creation via API. Both are research, not shipped builds.</p></div>
+
+<div class="foot">Quantum Business Solutions &middot; HubSpot Solutions Partner Accreditation casework &middot; Onboarding submission item 2 (may profile a different customer from items 1 and 3, but the same Pro-or-above subscription rule applies).<br>Sources: Client Command portal records and the 50-hour integration plan, HubSpot portal 20682069, Zoom recordings and transcripts May&ndash;September 2026. Every unverified figure is marked rather than estimated.</div>
+</div>

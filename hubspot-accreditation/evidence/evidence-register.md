@@ -61,6 +61,26 @@ carries hub data for ~7 portals. Until that exists, the other 43 portals are inv
 Surfaced from Zoom meeting history — **none have been screened against the gates.**
 Screen before relying on any of them.
 
+### 🔴 New evidence on PacTec's tier (2026-09-08)
+
+Two facts found in the Hindsight memory bank materially raise the risk that PacTec
+fails the item 2 subscription gate:
+
+1. **"PacTec uses a fragmented tech stack consisting of Salesforce, a free tier of
+   HubSpot, and unstructured ZoomInfo."** PacTec entered the engagement on **free-tier
+   HubSpot**.
+2. The engagement was scoped as **"HubSpot Marketing Hub Pro onboarding, ZoomInfo
+   integration, and Salesforce bidirectional sync"** — Marketing Hub Pro is named;
+   Sales Hub is not.
+
+Taken with PacTec running Salesforce as system of record, the working assumption should
+be that **PacTec has no Sales Hub Professional licence** until the PDM confirms
+otherwise. A Hindsight entry dated 2026-08-12 already records this as the blocker on the
+Onboarding accreditation and names the PDM as the person who must clarify it.
+
+**Plan accordingly: line up a replacement customer for item 2 in parallel rather than
+waiting on the answer.**
+
 ### If PacTec fails the Sales Hub gate (Onboarding item 2)
 Item 2 needs a customer with Marketing **and** Sales Hub Pro+ who received both a
 Salesforce integration and a marketplace/iPaaS integration. Candidates seen delivering
@@ -84,11 +104,33 @@ Stronger candidates than either primary:
 
 | Candidate | Evidence | Source system | Screened? |
 |---|---|---|---|
-| A.N. Deringer | *Infor-to-HubSpot Migration Sync*, recurring Jun 2026 | Infor — **[VERIFY]** it counts as a leading CRM | ❌ |
+| **A.N. Deringer** | **Sustained Infor→HubSpot migration programme — weekly working sessions 29 Jun through 24 Aug 2026, plus field-mapping confirmation, test data sync, a migration processes/automations master list, and a 17-page customer-card integration brief** | Infor — **[VERIFY]** it counts as a leading CRM | ⚠️ partially |
 | Ricova | *Data Migration*, Jul 2026 | Unknown | ❌ |
 | DMP | *HubSpot Data Sync*, Aug 2026 | Unknown. Tier known: Sales Starter / Service Pro / Marketing Starter | ❌ |
 
 ⚠️ *HubSpot to GoHighLevel Migration* (Jul 2026) is **out of** HubSpot and does not count.
+
+#### A.N. Deringer — the strongest untapped candidate
+
+Portal `5971c6cd-99c1-4541-84a1-0c99c5c40509`, 500 employees, logistics and supply chain.
+Master plan *AND - AN Deringer 2026 Plan*, 165 of 221 tasks complete.
+
+- **Sales Hub Professional is confirmed** — a client-success meeting record notes the
+  team working around Sales Hub Professional's lack of native permission sets. That
+  clears half the Onboarding subscription gate; Marketing Hub tier still **[VERIFY]**.
+- **A real, sustained migration project**, not an import: Infor to HubSpot, weekly
+  working sessions across three months, confirmed field mapping, tested data sync, and a
+  documented processes/automations master list. This is exactly the "standard objects
+  plus contextual data" the Data Migration gate demands, and the opposite of the
+  native-import-only experience it rejects.
+- **Possible non-Zapier iPaaS work** — the plan carries a *Zapier/N8N Cobblestone
+  Integration Check* and a *Deringer/Revenue Vessel HubSpot Integration* meeting. If an
+  n8n build actually shipped, this is also the **Custom Integration** candidate QBS
+  currently lacks.
+
+**Recommended next action: screen A.N. Deringer properly.** It is plausibly the answer to
+three separate gaps — Data Migration project 1, a replacement for Onboarding item 2, and
+Custom Integration.
 
 ### Onboarding items 1 & 3 alternatives
 Other 2026 onboarding kickoffs, unscreened: SIE, Ackerman (Marketing Hub), IMS Tech
