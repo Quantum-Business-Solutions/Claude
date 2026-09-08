@@ -1,0 +1,287 @@
+/* PL - Tile Grid
+   repeat(auto-fit, minmax(180px, 1fr)) / gap 24 — the small linked tile grid
+   used 31 times across the Private Label pages. A fixed column count is also
+   available (V1's category grid is repeat(4, 1fr)). Unlike Five Column Icons
+   and Premium Products, every tile can carry its own link.
+
+   All text colour comes from the module's text_color field via the
+   .pl_tiles--dark / .pl_tiles--light modifier.
+
+   Numeric targets:
+     tile      border-radius 10px, box-shadow 0 4px 16px rgba(1,38,56,.08)
+     label     15px / 700
+     h2        32px / 700 / 1.25
+     subhead   17px / 1.65 */
+
+.pl_tiles {
+  --pl-tile-heading: #012638;
+  --pl-tile-sub: #555555;
+  --pl-tile-card-bg: #FFFFFF;
+  --pl-tile-label: #012638;
+  --pl-tile-label-hover: #6BA644;
+  --pl-tile-shadow: 0 4px 16px rgba(1, 38, 56, .08);
+  --pl-tile-shadow-hover: 0 8px 30px rgba(1, 38, 56, .15);
+  --pl-tile-accent: #6BA644;
+}
+
+.pl_tiles.pl_tiles--light {
+  --pl-tile-heading: #FFFFFF;
+  --pl-tile-sub: rgba(255, 255, 255, .88);
+  --pl-tile-card-bg: rgba(255, 255, 255, .06);
+  --pl-tile-label: #FFFFFF;
+  --pl-tile-label-hover: #8FC96A;
+  --pl-tile-shadow: 0 4px 16px rgba(0, 0, 0, .22);
+  --pl-tile-shadow-hover: 0 8px 30px rgba(0, 0, 0, .34);
+  --pl-tile-accent: #6BA644;
+}
+
+.pl_tiles {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ---------- section header ---------- */
+
+.pl_tiles_head {
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.pl_tiles_headline {
+  color: var(--pl-tile-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+.pl_tiles_subhead {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Same reason as the tile label: V1's section subhead is a plain <p> and takes
+   Main.css's p{line-height:27px}. */
+.pl_tiles_subhead,
+.pl_tiles_subhead p {
+  color: var(--pl-tile-sub);
+  font-size: 17px;
+}
+
+.pl_tiles_subhead p {
+  margin: 0 0 12px;
+}
+
+.pl_tiles_subhead > *:last-child {
+  margin-bottom: 0;
+}
+
+.pl_tiles_subhead a {
+  color: var(--pl-tile-accent);
+}
+
+/* ---------- grid ---------- */
+/* grid-template-columns, gap and image height are written by the module's
+   scoped CSS from the columns / min_column_width / gap / image_height fields. */
+
+.pl_tile_grid {
+  display: grid;
+}
+
+.pl_tile {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- tile chrome ---------- */
+
+.pl_tile_card {
+  height: 100%;
+  overflow: hidden;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.pl_tiles--card .pl_tile_card {
+  background: var(--pl-tile-card-bg);
+  border-radius: 10px;
+  box-shadow: var(--pl-tile-shadow);
+}
+
+/* V1's "other supplement forms" tiles: no card, no shadow. */
+.pl_tiles--plain .pl_tile_card {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* ---------- hover: linked tiles only ---------- */
+
+.pl_tile--linked .pl_tile_card {
+  cursor: pointer;
+}
+
+.pl_tiles--card .pl_tile--linked:hover .pl_tile_card,
+.pl_tiles--card .pl_tile--linked:focus-visible .pl_tile_card {
+  box-shadow: var(--pl-tile-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.pl_tile--linked:hover .pl_tile_label,
+.pl_tile--linked:focus-visible .pl_tile_label {
+  color: var(--pl-tile-label-hover);
+}
+
+.pl_tile--linked:focus-visible {
+  outline: 2px solid var(--pl-tile-accent);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+.pl_tiles--fit-cover .pl_tile--linked:hover .pl_tile_img,
+.pl_tiles--fit-cover .pl_tile--linked:focus-visible .pl_tile_img {
+  transform: scale(1.04);
+}
+
+/* ---------- media ---------- */
+
+.pl_tile_media {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.pl_tile_img {
+  display: block;
+  width: 100%;
+  transition: transform .35s ease;
+}
+
+.pl_tiles--fit-cover .pl_tile_img {
+  object-fit: cover;
+}
+
+/* Contain never crops. Used for the portrait product shots. */
+.pl_tiles--fit-contain .pl_tile_img {
+  object-fit: contain;
+}
+
+.pl_tiles--plain.pl_tiles--fit-contain .pl_tile_media {
+  padding: 0;
+}
+
+/* ---------- caption below image ---------- */
+
+.pl_tile_caption {
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.pl_tiles--plain .pl_tile_caption {
+  padding: 14px 0 0;
+}
+
+/* No line-height here on purpose. The tile label is a <p>, and the site's own
+   Main.css sets p{line-height:27px} as a length, which is what V1's labels
+   render at -- V1 never declares a line-height on them. Declaring 1.4 here
+   overrode that inheritance and made every label 3px shorter than V1, which
+   walks the tile rows out of alignment down the grid. The overlaid variant is a
+   <span>, gets no p rule, and keeps its own value below. */
+.pl_tile_label {
+  color: var(--pl-tile-label);
+  font-weight: 700;
+  margin: 0;
+  transition: color .2s ease;
+}
+
+/* ---------- label overlaid on image ---------- */
+
+.pl_tile_scrim {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40%;
+  background: linear-gradient(to bottom, rgba(1, 38, 56, 0), rgba(1, 38, 56, .78));
+  pointer-events: none;
+}
+
+.pl_tile_label--over {
+  line-height: 1.4;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  padding: 16px 18px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.pl_tiles--overlay .pl_tile--linked:hover .pl_tile_label--over,
+.pl_tiles--overlay .pl_tile--linked:focus-visible .pl_tile_label--over {
+  color: #FFFFFF;
+}
+
+/* When the overlay variant has no image, the caption bar is used instead and
+   keeps the field-driven label colour. */
+
+/* ---------- responsive ---------- */
+/* --- V1 parity: accent-glyph tile + tile sub-label --- */
+.pl_tile_card--glyph{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.pl_tile_glyph{
+  color: #6BA644;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 0 8px;
+}
+.pl_tile_card--glyph .pl_tile_caption{
+  padding-top: 0;
+}
+.pl_tile_card--light .pl_tile_label{
+  color: #FFFFFF;
+}
+.pl_tile_sublabel{
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  opacity: .6;
+}
+
+/* Same reason again: V1's eyebrow is a plain <p> at the theme's 27px. */
+.pl_tiles_eyebrow{
+  margin: 0 0 12px;
+  color: var(--pl-tile-accent, #6BA644);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------------------
+   V1 fidelity -- the theme's container inset.
+
+   Main.css insets .bodyContainer / .contentContainer / .smallContentContainer
+   by 35px per side below 1300 / 1000 / 880px. V1's own sections use a flat 20px
+   gutter at every width, so inheriting the theme's inset made this section
+   30px narrower than V1 on a tablet and a phone and re-wrapped its paragraphs.
+   Main.css belongs to the live site, so the inset is cancelled here instead and
+   V1's own gutter supplied in its place.
+   --------------------------------------------------------------------------- */
+.pl_tiles .bodyContainer{
+  padding-left: 20px;
+  padding-right: 20px;
+  /* the module's own max_width field is the bound, not the
+     theme's 1250/950/850 -- which is declared !important. */
+  max-width: none !important;
+}
+

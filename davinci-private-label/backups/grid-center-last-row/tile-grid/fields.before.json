@@ -1,0 +1,659 @@
+[ {
+  "id" : "style",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.padding",
+    "name" : "padding",
+    "label" : "Padding",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.padding.padding_top",
+      "name" : "padding_top",
+      "label" : "Padding Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 500,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 90
+    }, {
+      "id" : "style.padding.padding_bottom",
+      "name" : "padding_bottom",
+      "label" : "Padding Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 500,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 90
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "padding_top" : 90,
+      "padding_bottom" : 90
+    }
+  }, {
+    "id" : "style.background_color",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "padding" : {
+      "padding_top" : 90,
+      "padding_bottom" : 90
+    },
+    "background_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "text_color",
+  "name" : "text_color",
+  "label" : "Text Color",
+  "help_text" : "Choose Light when this section sits on a dark background (for example navy #012638).",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "dark", "Dark text (for light backgrounds)" ], [ "light", "Light text (for dark backgrounds)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "dark"
+}, {
+  "id" : "section_eyebrow",
+  "name" : "section_eyebrow",
+  "label" : "Eyebrow",
+  "help_text" : "Small uppercase kicker above the headline.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "section_headline",
+  "name" : "section_headline",
+  "label" : "Section Headline",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Browse our categories"
+}, {
+  "id" : "headline_size",
+  "name" : "headline_size",
+  "label" : "Section Headline Size",
+  "help_text" : "V1 uses 32px on most pages and 42px on the home page.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 12,
+  "max" : 80,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 32
+}, {
+  "id" : "headline_lh",
+  "name" : "headline_lh",
+  "label" : "Headline line height",
+  "help_text" : "Blank keeps the module's own value. V1 writes 1.2 on some tile headings and nothing at all on others, which is `normal`.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "subhead_size",
+  "name" : "subhead_size",
+  "label" : "Subhead Size",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 8,
+  "max" : 90,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 17
+}, {
+  "id" : "subhead_color",
+  "name" : "subhead_color",
+  "label" : "Subhead colour",
+  "help_text" : "Blank uses the standard grey.",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "",
+    "opacity" : 100
+  }
+}, {
+  "id" : "subhead_width",
+  "name" : "subhead_width",
+  "label" : "Subhead max width (px)",
+  "help_text" : "0 uses the standard 760px cap.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 1400,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 0
+}, {
+  "id" : "header_width",
+  "name" : "header_width",
+  "label" : "Header Width",
+  "help_text" : "Max width of the headline block. 0 = match the grid width.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 1600,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 0
+}, {
+  "id" : "section_subhead",
+  "name" : "section_subhead",
+  "label" : "Section Subhead",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Pick a category to see the products available for private label.</p>"
+}, {
+  "id" : "min_column_width",
+  "name" : "min_column_width",
+  "label" : "Minimum Column Width",
+  "help_text" : "Tiles wrap automatically. 180px matches the existing category grids.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 100,
+  "max" : 600,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 180
+}, {
+  "id" : "columns",
+  "name" : "columns",
+  "label" : "Columns",
+  "help_text" : "Auto keeps repeat(auto-fit, minmax(min width, 1fr)). A number emits repeat(N, 1fr) - V1's category grid is repeat(4, 1fr).",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "auto", "Auto-fit (wraps on min width)" ], [ "2", "2" ], [ "3", "3" ], [ "4", "4" ], [ "5", "5" ], [ "6", "6" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "auto"
+}, {
+  "id" : "gap",
+  "name" : "gap",
+  "label" : "Grid Gap",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 100,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 24
+}, {
+  "id" : "max_width",
+  "name" : "max_width",
+  "label" : "Content Max Width",
+  "help_text" : "Max width of the grid in px. V1 uses 1200. Set 0 to fall back to the theme container.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 1600,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 1200
+}, {
+  "id" : "label_size",
+  "name" : "label_size",
+  "label" : "Tile Label Size",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 10,
+  "max" : 40,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 17
+}, {
+  "id" : "label_weight",
+  "name" : "label_weight",
+  "label" : "Tile Label Weight",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "400", "Normal" ], [ "600", "Semibold" ], [ "700", "Bold" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "700"
+}, {
+  "id" : "row_gap",
+  "name" : "row_gap",
+  "label" : "Row Gap",
+  "help_text" : "Vertical gap between rows. Set 0 to match the column gap.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 120,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 0
+}, {
+  "id" : "image_radius",
+  "name" : "image_radius",
+  "label" : "Tile Image Radius",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 40,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 8
+}, {
+  "id" : "show_labels_over_image",
+  "name" : "show_labels_over_image",
+  "label" : "Show labels over the image",
+  "help_text" : "Overlays the label on the image instead of placing it in a caption bar below.",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "tile_style",
+  "name" : "tile_style",
+  "label" : "Tile Style",
+  "help_text" : "V1's 'other supplement forms' tiles are plain.",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "card", "Card (background, radius, shadow)" ], [ "plain", "Plain (no chrome)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "card"
+}, {
+  "id" : "image_fit",
+  "name" : "image_fit",
+  "label" : "Image Fit",
+  "help_text" : "Use Contain for portrait product shots that must not be cropped.",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "cover", "Cover (crop to fill)" ], [ "contain", "Contain (fit whole image)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "cover"
+}, {
+  "id" : "image_height",
+  "name" : "image_height",
+  "label" : "Image Height",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 40,
+  "max" : 600,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 160
+}, {
+  "id" : "image_max_width",
+  "name" : "image_max_width",
+  "label" : "Image Max Width",
+  "help_text" : "0 = full tile width. Useful with Contain to keep product shots from stretching.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 1000,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 0
+}, {
+  "id" : "caption_padding",
+  "name" : "caption_padding",
+  "label" : "Caption padding",
+  "help_text" : "Blank keeps the module's own 18px 20px. A CSS padding shorthand, e.g. `10px 12px`, for pages whose V1 caption box is not the usual one.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "tiles",
+  "name" : "tiles",
+  "label" : "Tiles",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 24,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "tiles.image",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "",
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "tiles.tile_label",
+    "name" : "tile_label",
+    "label" : "Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Category"
+  }, {
+    "id" : "tiles.link",
+    "name" : "link",
+    "label" : "Link",
+    "help_text" : "Where the tile goes when clicked. Leave empty for a non-clickable tile.",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "tiles.accent_glyph",
+    "name" : "accent_glyph",
+    "label" : "Accent Glyph",
+    "help_text" : "Optional large accent character shown instead of an image (V1 uses \"+\" on the AND MORE tile). Leave blank for normal tiles.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "tiles.glyph_size",
+    "name" : "glyph_size",
+    "label" : "Glyph Size",
+    "help_text" : "Font size of the accent glyph in px.",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 8,
+    "max" : 200,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 56
+  }, {
+    "id" : "tiles.sublabel",
+    "name" : "sublabel",
+    "label" : "Sub-label",
+    "help_text" : "Small uppercase line beneath the tile label (V1 uses \"AND MORE\").",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "tiles.tile_bg",
+    "name" : "tile_bg",
+    "label" : "Tile Background",
+    "help_text" : "Per-tile background colour. Set opacity to 0 to inherit the grid's tile style.",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 0
+    }
+  }, {
+    "id" : "tiles.tile_text_color",
+    "name" : "tile_text_color",
+    "label" : "Tile Text Color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "dark", "Dark text" ], [ "light", "Light text" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "dark"
+  }, {
+    "id" : "tiles.label_size",
+    "name" : "label_size",
+    "label" : "Label size (px)",
+    "help_text" : "0 uses the grid's label size. V1 gives the '+ AND MORE' tile its own.",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "max" : 60,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  }, {
+    "id" : "tiles.label_weight",
+    "name" : "label_weight",
+    "label" : "Label weight",
+    "help_text" : "Blank uses the grid's label weight.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "",
+      "loading" : "lazy"
+    },
+    "tile_label" : "Category",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "accent_glyph" : "",
+    "glyph_size" : 56,
+    "sublabel" : "",
+    "tile_bg" : {
+      "color" : "#FFFFFF",
+      "opacity" : 0
+    },
+    "tile_text_color" : "dark"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "",
+      "loading" : "lazy"
+    },
+    "tile_label" : "Category",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "accent_glyph" : "",
+    "glyph_size" : 56,
+    "sublabel" : "",
+    "tile_bg" : {
+      "color" : "#FFFFFF",
+      "opacity" : 0
+    },
+    "tile_text_color" : "dark"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "",
+      "loading" : "lazy"
+    },
+    "tile_label" : "Category",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "accent_glyph" : "",
+    "glyph_size" : 56,
+    "sublabel" : "",
+    "tile_bg" : {
+      "color" : "#FFFFFF",
+      "opacity" : 0
+    },
+    "tile_text_color" : "dark"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "",
+      "loading" : "lazy"
+    },
+    "tile_label" : "Category",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "accent_glyph" : "",
+    "glyph_size" : 56,
+    "sublabel" : "",
+    "tile_bg" : {
+      "color" : "#FFFFFF",
+      "opacity" : 0
+    },
+    "tile_text_color" : "dark"
+  } ]
+} ]
