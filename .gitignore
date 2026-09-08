@@ -17,3 +17,7 @@ listb.json
 b*.json
 _*.json
 *.tmp
+
+# npm deps for the docx generator — rebuild with `npm install docx`
+node_modules/
+package-lock.json
