@@ -177,10 +177,22 @@
 .hiddenNestedMobile{
   display: none;    
 }
-
-/* Sticky header - approved Shawn/Tammy 8 Sep 2026 */
 #hs_cos_wrapper_global_header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  background-color: #ffffff;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
