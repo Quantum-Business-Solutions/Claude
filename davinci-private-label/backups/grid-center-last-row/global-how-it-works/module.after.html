@@ -1,0 +1,75 @@
+{% set pl_tc = module.text_color == 'light' ? 'pl-hiw--light' : 'pl-hiw--dark' %}
+
+<div class="moduleStyles pl-hiw {{ pl_tc }}">
+  <div class="pl-hiw__bound">
+
+    {% if module.eyebrow %}
+      <p class="pl-hiw__eyebrow">{{ module.eyebrow }}</p>
+    {% endif %}
+
+    {% if module.headline %}
+      <h2 class="pl-hiw__headline">{{ module.headline }}</h2>
+    {% endif %}
+
+    {% if module.cards %}
+      <div class="pl-hiw__grid">
+        {% for card in module.cards %}
+          {% if card.number or card.title or card.content %}
+            <div class="pl-hiw__card">
+              {% if card.number %}
+                <p class="pl-hiw__number">{{ card.number }}</p>
+              {% endif %}
+              {% if card.title %}
+                <p class="pl-hiw__title">{{ card.title }}</p>
+              {% endif %}
+              {% if card.content %}
+                <div class="pl-hiw__content">{{ card.content }}</div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+{% require_css %}
+  <style>
+
+    {% scope_css %}
+
+      .moduleStyles{
+        padding-top: {{ module.style.padding.padding_top }}px;
+        padding-bottom: {{ module.style.padding.padding_bottom }}px;
+        background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity / 100 }});
+      }
+
+      {% if module.max_width and module.max_width > 0 %}
+        .pl-hiw__bound{
+          max-width: {{ module.max_width }}px;
+        }
+      {% endif %}
+
+      {# Centre an uneven last row - standing rule, Shawn 8 Sep 2026. Flex gives every
+         item the width it would have in a full row; the row still wraps at
+         min_column_width (auto-fit's behaviour) and nothing grows past its neighbours. #}
+      {% set pl_min = module.min_column_width|default(260) %}
+      {% set pl_gap = module.gap|default(40) %}
+      {% set pl_fit = (((module.max_width|default(1100, true)) + pl_gap) / (pl_min + pl_gap))|int %}
+      {% if pl_fit < 1 %}{% set pl_fit = 1 %}{% endif %}
+      .pl-hiw__grid{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: {{ pl_gap }}px;
+      }
+      .pl-hiw__grid > .pl-hiw__card{
+        flex: 1 1 {{ pl_min }}px;
+        max-width: calc((100% - {{ (pl_fit - 1) * pl_gap }}px) / {{ pl_fit }});
+      }
+
+    {% end_scope_css %}
+
+  </style>
+{% end_require_css %}

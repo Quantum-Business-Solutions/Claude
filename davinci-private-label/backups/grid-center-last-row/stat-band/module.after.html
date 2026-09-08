@@ -1,0 +1,146 @@
+{% set pl_align = module.align == 'left' ? 'pl-stat--align-left' : 'pl-stat--align-center' %}
+{% set pl_cs = module.card_style == 'card' ? 'pl-stat--card' : 'pl-stat--plain' %}
+{% set pl_badge = module.icon_badge is none or module.icon_badge ? 'pl-stat--icon-badge' : 'pl-stat--icon-plain' %}
+{% set pl_accent_hex = module.accent_color.color|default('#012638', true) %}
+{% set pl_accent_op = module.accent_color.opacity|default(100) / 100 %}
+
+<div class="moduleStyles pl-stat pl-stat--{{ module.text_color }} {{ pl_align }} {{ pl_cs }} {{ pl_badge }}">
+  <div class="bodyContainer pl-stat__inner">
+    <div class="pl-stat__bound">
+
+      {% if module.section_headline %}
+        <h2 class="pl-stat__headline">{% inline_text field="section_headline" value="{{ module.section_headline }}" %}</h2>
+      {% endif %}
+
+      {% if module.section_subhead %}
+        <div class="pl-stat__subhead">{% inline_rich_text field="section_subhead" value="{{ module.section_subhead }}" %}</div>
+      {% endif %}
+
+      {% if module.stats %}
+        <div class="pl-stat__grid">
+          {% for stat in module.stats %}
+            <div class="pl-stat__item">
+              {% if stat.icon.src %}
+                <span class="pl-stat__icon"><img src="{{ stat.icon.src }}" alt="{{ stat.icon.alt }}"{% if stat.icon.loading != 'disabled' %} loading="{{ stat.icon.loading|default('lazy', true) }}"{% endif %}></span>
+              {% endif %}
+              {% if stat.value %}
+                <p class="pl-stat__value">{{ stat.value }}</p>
+              {% endif %}
+              {% if stat.stat_label %}
+                <p class="pl-stat__label">{{ stat.stat_label }}</p>
+              {% endif %}
+              {% if stat.description %}
+                <div class="pl-stat__desc">{{ stat.description }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+{% require_css %}
+  <style>
+
+    {% scope_css %}
+
+      .moduleStyles{
+        padding-top: {{ module.style.padding.padding_top }}px;
+        padding-bottom: {{ module.style.padding.padding_bottom }}px;
+        background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity / 100 }});
+      }
+
+      {% if module.max_width and module.max_width > 0 %}
+        .pl-stat__bound{
+          max-width: {{ module.max_width }}px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      {% endif %}
+
+      {# Centre an uneven last row - standing rule, Shawn 8 Sep 2026. Flex gives every
+         item the width it would have in a full row; the row still wraps at
+         min_column_width (auto-fit's behaviour) and nothing grows past its neighbours. #}
+      {% set pl_min = module.min_column_width %}
+      {% set pl_gap = module.gap %}
+      {% set pl_fit = (((module.max_width|default(1250, true)) + pl_gap) / (pl_min + pl_gap))|int %}
+      {% if pl_fit < 1 %}{% set pl_fit = 1 %}{% endif %}
+      .pl-stat__grid{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: {{ pl_gap }}px;
+      }
+      .pl-stat__grid > .pl-stat__item{
+        flex: 1 1 {{ pl_min }}px;
+        max-width: calc((100% - {{ (pl_fit - 1) * pl_gap }}px) / {{ pl_fit }});
+      }
+
+      .pl-stat__label{
+        font-size: {{ module.label_size|default(14, true) }}px;
+        font-weight: {{ module.label_weight|default(700, true) }};
+      }
+
+      .pl-stat__value{
+        font-size: {{ module.value_size|default(48, true) }}px;
+        {% if module.value_lh %}line-height: {{ module.value_lh }};{% endif %}
+      }
+
+      {% if module.label_lh %}
+        .pl-stat__label{ line-height: {{ module.label_lh }}; }
+      {% endif %}
+
+      {% if module.section_subhead %}
+        /* V1 pulls the heading in to 16px when a sentence follows it, and puts
+           the 48px under the sentence instead. */
+        .pl-stat__headline{ margin-bottom: 16px; }
+
+        .pl-stat__subhead,
+        .pl-stat__subhead p{
+          color: rgba({{ module.subhead_color.color|default('#555555', true)|convert_rgb }}, {{ module.subhead_color.opacity|default(100) / 100 }});
+          font-size: {{ module.subhead_size|default(17, true) }}px;
+        }
+
+        {% if module.subhead_width and module.subhead_width > 0 %}
+          .pl-stat__subhead{ max-width: {{ module.subhead_width }}px; }
+        {% endif %}
+      {% endif %}
+
+      .pl-stat.pl-stat--icon-badge .pl-stat__icon{
+        background-color: rgba({{ module.icon_badge_color.color|default('#c9dbe2', true)|convert_rgb }}, {{ module.icon_badge_color.opacity|default(100) / 100 }});
+      }
+
+      {# One class heavier than module.css so this wins on specificity, not order. #}
+      .pl-stat.pl-stat--card .pl-stat__item{
+        border-top: 4px solid rgba({{ pl_accent_hex|convert_rgb }}, {{ pl_accent_op }});
+      }
+
+    
+      /* hold V1 type at every width */
+      @media screen and (max-width: 900px){
+        {% if module.headline_size %}.pl-stat__headline{ font-size: {{ module.headline_size }}px; }{% endif %}
+        {% if module.value_size %}.pl-stat__value{ font-size: {{ module.value_size }}px; }{% endif %}
+        {% if module.label_size %}.pl-stat__label{ font-size: {{ module.label_size }}px; }{% endif %}
+      }
+      @media screen and (max-width: 600px){
+        {% if module.headline_size %}.pl-stat__headline{ font-size: {{ module.headline_size }}px; }{% endif %}
+        {% if module.value_size %}.pl-stat__value{ font-size: {{ module.value_size }}px; }{% endif %}
+        {% if module.label_size %}.pl-stat__label{ font-size: {{ module.label_size }}px; }{% endif %}
+      }
+
+
+      {% if module.headline_lh %}
+        .pl-stat__headline{ line-height: {{ module.headline_lh }}; }
+      {% endif %}
+
+
+      {% if module.card_shadow == false %}
+        .pl-stat.pl-stat--card .pl-stat__item{ box-shadow: none; }
+      {% endif %}
+
+    {% end_scope_css %}
+
+  </style>
+{% end_require_css %}
