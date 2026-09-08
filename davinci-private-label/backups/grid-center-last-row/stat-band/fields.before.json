@@ -1,0 +1,472 @@
+[ {
+  "id" : "style",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.padding",
+    "name" : "padding",
+    "label" : "Padding",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.padding.padding_top",
+      "name" : "padding_top",
+      "label" : "Padding Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 500,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 70
+    }, {
+      "id" : "style.padding.padding_bottom",
+      "name" : "padding_bottom",
+      "label" : "Padding Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 500,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 70
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "padding_top" : 70,
+      "padding_bottom" : 70
+    }
+  }, {
+    "id" : "style.background_color",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#012638",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "padding" : {
+      "padding_top" : 70,
+      "padding_bottom" : 70
+    },
+    "background_color" : {
+      "color" : "#012638",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "text_color",
+  "name" : "text_color",
+  "label" : "Text Color",
+  "help_text" : "Choose Light when the band sits on a dark background. Never hard-coded in CSS.",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "dark", "Dark text (light background)" ], [ "light", "Light text (dark background)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "light"
+}, {
+  "id" : "section_headline",
+  "name" : "section_headline",
+  "label" : "Section Headline",
+  "help_text" : "Optional heading above the metric row.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "max_width",
+  "name" : "max_width",
+  "label" : "Content Max Width",
+  "help_text" : "Max width of the content block in px. Defaults to this module's current theme container so nothing shifts. V1 uses 1100 for splits/stat bands, 720 for CTA bands, 820 for FAQ and 900 for hero copy.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 1600,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 1250
+}, {
+  "id" : "headline_size",
+  "name" : "headline_size",
+  "label" : "Headline size (px)",
+  "help_text" : "32 matches the standard headline.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 12,
+  "max" : 80,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 32
+}, {
+  "id" : "align",
+  "name" : "align",
+  "label" : "Alignment",
+  "help_text" : "V1's spec cards are left-aligned; plain stat rows are centred.",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "center", "Center" ], [ "left", "Left" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "center"
+}, {
+  "id" : "card_style",
+  "name" : "card_style",
+  "label" : "Stat Style",
+  "help_text" : "Card reproduces V1's spec cards.",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "plain", "Plain (no chrome)" ], [ "card", "Card (white, radius, accent rule)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "plain"
+}, {
+  "id" : "icon_badge",
+  "name" : "icon_badge",
+  "label" : "Icon Badge",
+  "help_text" : "Wrap each icon in V1's 56x56 pale-blue rounded tile.",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "icon_badge_color",
+  "name" : "icon_badge_color",
+  "label" : "Icon Badge Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#c9dbe2",
+    "opacity" : 100
+  }
+}, {
+  "id" : "accent_color",
+  "name" : "accent_color",
+  "label" : "Card Accent Color",
+  "help_text" : "Colour of the 4px top rule on card-style stats.",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#012638",
+    "opacity" : 100
+  }
+}, {
+  "id" : "value_size",
+  "name" : "value_size",
+  "label" : "Value Font Size",
+  "help_text" : "48 for headline stat rows, 28 for V1's spec cards.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 12,
+  "max" : 120,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 48
+}, {
+  "id" : "label_size",
+  "name" : "label_size",
+  "label" : "Label size (px)",
+  "help_text" : "14 matches the standard stat label.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 8,
+  "max" : 30,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 14
+}, {
+  "id" : "label_weight",
+  "name" : "label_weight",
+  "label" : "Label weight",
+  "help_text" : "700 matches the standard stat label.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "700"
+}, {
+  "id" : "min_column_width",
+  "name" : "min_column_width",
+  "label" : "Minimum Column Width",
+  "help_text" : "Grid uses repeat(auto-fit, minmax(<this>px, 1fr)).",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 100,
+  "max" : 600,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 180
+}, {
+  "id" : "gap",
+  "name" : "gap",
+  "label" : "Column Gap",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 120,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 24
+}, {
+  "id" : "stats",
+  "name" : "stats",
+  "label" : "Stats",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 8,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "stats.icon",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "",
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "stats.value",
+    "name" : "value",
+    "label" : "Value",
+    "help_text" : "The big number, e.g. 3-4 Weeks, 250+, 50+.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "250+"
+  }, {
+    "id" : "stats.stat_label",
+    "name" : "stat_label",
+    "label" : "Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Ready formulations"
+  }, {
+    "id" : "stats.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "value" : "3-4 Weeks",
+    "stat_label" : "From label approval",
+    "description" : "<p>To product in-hand and shipping</p>",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "",
+      "loading" : "lazy"
+    }
+  }, {
+    "value" : "8-12 Weeks",
+    "stat_label" : "Total",
+    "description" : "<p>From first call to first shipped order</p>",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "",
+      "loading" : "lazy"
+    }
+  }, {
+    "value" : "250+",
+    "stat_label" : "Ready formulations",
+    "description" : "<p>Available for private label today</p>",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "",
+      "loading" : "lazy"
+    }
+  }, {
+    "value" : "50+",
+    "stat_label" : "Years experience",
+    "description" : "<p>In dietary supplement manufacturing</p>",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "",
+      "loading" : "lazy"
+    }
+  } ]
+}, {
+  "id" : "section_subhead",
+  "name" : "section_subhead",
+  "label" : "Section subhead",
+  "help_text" : "V1's spec rows carry a centred sentence under the heading.",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "subhead_size",
+  "name" : "subhead_size",
+  "label" : "Subhead size",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 200,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 17
+}, {
+  "id" : "subhead_color",
+  "name" : "subhead_color",
+  "label" : "Subhead colour",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#555555",
+    "opacity" : 100
+  }
+}, {
+  "id" : "subhead_width",
+  "name" : "subhead_width",
+  "label" : "Subhead measure",
+  "help_text" : "0 for no cap. V1 caps the centred sentence at 760px.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 1600,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 760
+}, {
+  "id" : "value_lh",
+  "name" : "value_lh",
+  "label" : "Value line height",
+  "help_text" : "Blank keeps 1.1. V1 writes its own -- a bare <p> takes the theme's 27px.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "label_lh",
+  "name" : "label_lh",
+  "label" : "Label line height",
+  "help_text" : "Blank keeps 1.35. V1 writes its own -- a bare <p> takes the theme's 27px.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "headline_lh",
+  "name" : "headline_lh",
+  "label" : "Headline line height",
+  "help_text" : "Blank keeps the module's own value. V1 writes 1.25 on some headings and nothing at all on others, which is `normal`.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "card_shadow",
+  "name" : "card_shadow",
+  "label" : "Card shadow",
+  "help_text" : "V1's facility spec cards carry a top rule and no shadow.",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+} ]

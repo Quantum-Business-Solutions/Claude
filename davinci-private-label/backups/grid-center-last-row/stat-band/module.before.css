@@ -1,0 +1,201 @@
+/* PL - Stat Band — static rules. Grid sizing, value size, card accent rule,
+   max width, padding and background live in module.html scope_css.
+
+   Numeric targets:
+     value        48px / 800 / #6BA644   (28px on V1's spec cards, via value_size)
+     stat_label   14px / 700 / uppercase / letter-spacing 1.5px
+     description  15px / 1.6 muted
+     gap          24px
+     h2           32px / 700 / 1.25
+     card         white, radius 8px, border-top 4px solid <accent_color>,
+                  padding 28px 26px, box-shadow 0 2px 12px rgba(1,38,56,.06) */
+
+.pl-stat {
+  font-family: 'Open Sans', sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Text colour is driven ENTIRELY by the text_color field. */
+.pl-stat--dark {
+  --pl-stat-heading: #012638;
+  --pl-stat-label: #012638;
+  --pl-stat-desc: #555555;
+  --pl-stat-accent: #6BA644;
+  --pl-stat-card-bg: #FFFFFF;
+  --pl-stat-card-shadow: 0 2px 12px rgba(1, 38, 56, .06);
+}
+
+.pl-stat--light {
+  --pl-stat-heading: #FFFFFF;
+  --pl-stat-label: #FFFFFF;
+  --pl-stat-desc: rgba(255, 255, 255, .8);
+  --pl-stat-accent: #6BA644;
+  --pl-stat-card-bg: rgba(255, 255, 255, .07);
+  --pl-stat-card-shadow: none;
+}
+
+.pl-stat__headline {
+  color: var(--pl-stat-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.pl-stat__grid {
+  display: grid;
+}
+
+/* ---------- alignment ---------- */
+
+.pl-stat--align-center .pl-stat__item {
+  text-align: center;
+}
+
+.pl-stat--align-left .pl-stat__item {
+  text-align: left;
+}
+
+/* ---------- card style (V1 spec cards) ---------- */
+/* border-top colour comes from accent_color via the scoped CSS. */
+
+.pl-stat--plain .pl-stat__item {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pl-stat--card .pl-stat__item {
+  background: var(--pl-stat-card-bg);
+  padding: 32px 26px;
+  border-radius: 8px;
+  box-shadow: var(--pl-stat-card-shadow);
+}
+
+/* ---------- icon ---------- */
+/* V1 wraps each icon in a 56x56 #c9dbe2 tile, radius 12, margin 0 0 18px.
+   Background colour comes from icon_badge_color via the scoped CSS. */
+
+.pl-stat__icon {
+  display: block;
+  margin: 0 0 16px;
+  line-height: 0;
+}
+
+.pl-stat--icon-badge .pl-stat__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 14px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  margin: 0 0 18px;
+}
+
+.pl-stat--icon-badge .pl-stat__icon img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 28px;
+  max-height: 28px;
+}
+
+.pl-stat--icon-plain .pl-stat__icon img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 48px;
+}
+
+.pl-stat--align-center.pl-stat--icon-plain .pl-stat__icon img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- value / label / description ---------- */
+/* font-size comes from value_size via the scoped CSS. */
+
+.pl-stat__value {
+  color: var(--pl-stat-accent);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.pl-stat__label {
+  color: var(--pl-stat-label);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.35;
+  margin: 12px 0 0;
+}
+
+.pl-stat__desc,
+.pl-stat__desc p,
+.pl-stat__desc li {
+  color: var(--pl-stat-desc);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.pl-stat__desc {
+  margin: 14px 0 0;
+}
+
+.pl-stat__desc p {
+  margin: 0 0 8px;
+}
+
+.pl-stat__desc > *:last-child {
+  margin-bottom: 0;
+}
+
+.pl-stat__desc a {
+  color: var(--pl-stat-accent);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+   V1 fidelity -- the theme's container inset.
+
+   Main.css insets .bodyContainer / .contentContainer / .smallContentContainer
+   by 35px per side below 1300 / 1000 / 880px. V1's own sections use a flat 20px
+   gutter at every width, so inheriting the theme's inset made this section
+   30px narrower than V1 on a tablet and a phone and re-wrapped its paragraphs.
+   Main.css belongs to the live site, so the inset is cancelled here instead and
+   V1's own gutter supplied in its place.
+   --------------------------------------------------------------------------- */
+.pl-stat .bodyContainer{
+  padding-left: 0;
+  padding-right: 0;
+  /* the module's own max_width field is the bound, not the
+     theme's 1250/950/850 -- which is declared !important. */
+  max-width: none !important;
+}
+
+/* ---------- section subhead ---------- */
+/* V1's spec rows set a centred 17px sentence between the heading and the grid,
+   capped at 760px with 48px under it. Size, colour and measure come from the
+   fields; a bare <p> in V1 takes Main.css's p{line-height:27px}, so nothing
+   here declares a line-height. */
+
+.pl-stat__subhead{
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.pl-stat__subhead p{
+  margin: 0 0 12px;
+}
+
+.pl-stat__subhead p:last-child{
+  margin-bottom: 0;
+}

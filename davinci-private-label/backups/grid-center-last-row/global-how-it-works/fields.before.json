@@ -1,0 +1,209 @@
+[ {
+  "id" : "style",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "style.padding",
+    "name" : "padding",
+    "label" : "Padding",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.padding.padding_top",
+      "name" : "padding_top",
+      "label" : "Padding Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 500,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 70
+    }, {
+      "id" : "style.padding.padding_bottom",
+      "name" : "padding_bottom",
+      "label" : "Padding Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 500,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 70
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "style.background_color",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#c9dbe2",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "text_color",
+  "name" : "text_color",
+  "label" : "Text Color",
+  "help_text" : "Choose Light when this section sits on a dark background. All text colour in this module derives from this field.",
+  "required" : false,
+  "locked" : true,
+  "display" : "select",
+  "choices" : [ [ "dark", "Dark text (for light backgrounds)" ], [ "light", "Light text (for dark backgrounds)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "dark"
+}, {
+  "id" : "max_width",
+  "name" : "max_width",
+  "label" : "Content Max Width",
+  "help_text" : "Max width of the step grid in px. V1 uses 1100. Set 0 for no constraint.",
+  "required" : false,
+  "locked" : true,
+  "display" : "text",
+  "min" : 0,
+  "max" : 1600,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 1100
+}, {
+  "id" : "eyebrow",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "help_text" : "Small uppercase kicker above the headline.",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "HOW IT WORKS"
+}, {
+  "id" : "headline",
+  "name" : "headline",
+  "label" : "Headline",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get to market faster with a partner who handles the heavy lifting."
+}, {
+  "id" : "cards",
+  "name" : "cards",
+  "label" : "Steps",
+  "help_text" : "V1 shows three numbered steps.",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 12,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "cards.number",
+    "name" : "number",
+    "label" : "Step Number",
+    "help_text" : "V1 uses 01, 02, 03 rendered at 56px.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "cards.title",
+    "name" : "title",
+    "label" : "Step Title",
+    "help_text" : "Rendered as uppercase caps at 15px.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "cards.content",
+    "name" : "content",
+    "label" : "Step Copy",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "number" : "01",
+    "title" : "BUILD YOUR PRODUCT LINE",
+    "content" : "<p>Direct access to over 250 doctor-formulated supplements with low minimums and no set-up fees. Choose what fits your audience and your timeline.</p>"
+  }, {
+    "number" : "02",
+    "title" : "DESIGN YOUR BRAND",
+    "content" : "<p>Use your existing logo, customize a new label, or pick from our professional templates. Our in-house design team brings your vision to life.</p>"
+  }, {
+    "number" : "03",
+    "title" : "START SELLING FAST",
+    "content" : "<p>Launch in as little as 3 to 4 weeks after approving your labels. Every product passes rigorous quality assurance before it ships.</p>"
+  } ]
+}, {
+  "id" : "min_column_width",
+  "name" : "min_column_width",
+  "label" : "Minimum Column Width",
+  "help_text" : "Minimum width of a step before the grid wraps. V1 uses 260.",
+  "required" : false,
+  "locked" : true,
+  "display" : "text",
+  "min" : 100,
+  "max" : 600,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 260
+}, {
+  "id" : "gap",
+  "name" : "gap",
+  "label" : "Grid Gap",
+  "help_text" : "V1 uses 40.",
+  "required" : false,
+  "locked" : true,
+  "display" : "text",
+  "min" : 0,
+  "max" : 120,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 40
+} ]

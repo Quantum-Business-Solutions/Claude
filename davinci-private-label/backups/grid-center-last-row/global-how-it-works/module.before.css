@@ -1,0 +1,125 @@
+/* PL - Global How It Works
+   GLOBAL module. V1 source: the "HOW IT WORKS" 01/02/03 step row that appears on
+   26 Private Label pages.
+
+   V1 measurements reproduced here:
+     band     background #c9dbe2, padding 70px 20px
+     bound    max-width 1100px, margin 0 auto
+     eyebrow  13px / 700 / letter-spacing 2px / #6BA644 / centred / margin 0 0 14px
+     h2       32px / 700 / line-height 1.2 / centred / margin 0 0 50px
+     grid     repeat(auto-fit, minmax(260px, 1fr)), gap 40px
+     step     left aligned, no card chrome (V1 draws these as plain steps)
+     numeral  56px / 800 / line-height 1 / #6BA644 / margin 0 0 14px
+     title    15px / 700 / letter-spacing 1.5px / margin 0 0 14px
+     copy     15px / line-height 1.6 / margin 0 / navy at 85% */
+
+.pl-hiw--dark{
+  --pl-hiw-heading: #012638;
+  --pl-hiw-title: #012638;
+  --pl-hiw-body: rgba(1, 38, 56, .85);
+  --pl-hiw-accent: #6BA644;
+}
+
+.pl-hiw--light{
+  --pl-hiw-heading: #FFFFFF;
+  --pl-hiw-title: #FFFFFF;
+  --pl-hiw-body: rgba(255, 255, 255, .85);
+  --pl-hiw-accent: #6BA644;
+}
+
+.pl-hiw{
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* V1 puts the 20px gutter on the band, outside the measure. */
+.pl-hiw{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pl-hiw__bound{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 27px line-height: V1 sets none, so the eyebrow inherits the theme's p rule. */
+.pl-hiw__eyebrow{
+  margin: 0 0 14px;
+  color: var(--pl-hiw-accent);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.pl-hiw__headline{
+  margin: 0 0 50px;
+  color: var(--pl-hiw-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* grid-template-columns and gap come from min_column_width and gap. */
+.pl-hiw__grid{
+  display: grid;
+}
+
+.pl-hiw__card{
+  min-width: 0;
+  text-align: left;
+}
+
+.pl-hiw__number{
+  margin: 0 0 14px;
+  color: var(--pl-hiw-accent);
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* 27px line-height: V1 sets none, so the title inherits the theme's p rule. */
+.pl-hiw__title{
+  margin: 0 0 14px;
+  color: var(--pl-hiw-title);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.pl-hiw__content,
+.pl-hiw__content p,
+.pl-hiw__content li{
+  color: var(--pl-hiw-body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.pl-hiw__content p{
+  margin: 0 0 12px;
+}
+
+.pl-hiw__content p:last-child,
+.pl-hiw__content ul:last-child,
+.pl-hiw__content ol:last-child{
+  margin-bottom: 0;
+}
+
+.pl-hiw__content a{
+  color: var(--pl-hiw-accent);
+  font-weight: 700;
+}
+
+@media screen and (max-width: 800px){
+
+  .pl-hiw__headline{
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+}

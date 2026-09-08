@@ -1,0 +1,62 @@
+{% set pl_tc = module.text_color == 'light' ? 'pl-hiw--light' : 'pl-hiw--dark' %}
+
+<div class="moduleStyles pl-hiw {{ pl_tc }}">
+  <div class="pl-hiw__bound">
+
+    {% if module.eyebrow %}
+      <p class="pl-hiw__eyebrow">{{ module.eyebrow }}</p>
+    {% endif %}
+
+    {% if module.headline %}
+      <h2 class="pl-hiw__headline">{{ module.headline }}</h2>
+    {% endif %}
+
+    {% if module.cards %}
+      <div class="pl-hiw__grid">
+        {% for card in module.cards %}
+          {% if card.number or card.title or card.content %}
+            <div class="pl-hiw__card">
+              {% if card.number %}
+                <p class="pl-hiw__number">{{ card.number }}</p>
+              {% endif %}
+              {% if card.title %}
+                <p class="pl-hiw__title">{{ card.title }}</p>
+              {% endif %}
+              {% if card.content %}
+                <div class="pl-hiw__content">{{ card.content }}</div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+{% require_css %}
+  <style>
+
+    {% scope_css %}
+
+      .moduleStyles{
+        padding-top: {{ module.style.padding.padding_top }}px;
+        padding-bottom: {{ module.style.padding.padding_bottom }}px;
+        background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity / 100 }});
+      }
+
+      {% if module.max_width and module.max_width > 0 %}
+        .pl-hiw__bound{
+          max-width: {{ module.max_width }}px;
+        }
+      {% endif %}
+
+      .pl-hiw__grid{
+        grid-template-columns: repeat(auto-fit, minmax({{ module.min_column_width|default(260) }}px, 1fr));
+        gap: {{ module.gap|default(40) }}px;
+      }
+
+    {% end_scope_css %}
+
+  </style>
+{% end_require_css %}

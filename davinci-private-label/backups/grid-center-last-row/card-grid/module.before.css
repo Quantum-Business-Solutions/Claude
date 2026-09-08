@@ -1,0 +1,456 @@
+/* PL - Card Grid
+   Palette is driven by the text_color field. Never hard-code a text colour
+   outside of the two palette blocks below.
+
+   Numeric targets are V1's measured values:
+     card body       padding 28px 26px
+     accent card     border-top 4px solid <accent>, radius 6px,
+                     box-shadow 0 2px 12px rgba(1,38,56,.06)
+     plain card      radius 10px, box-shadow 0 4px 16px rgba(1,38,56,.08)
+     icon badge      inline-flex 56x56, #c9dbe2, radius 12px, margin 0 0 18px
+     number badge    40px circle, #6BA644 fill, white text, radius 100px
+     number          56px / 800 / #6BA644
+     eyebrow         13px / 700 / uppercase / letter-spacing 2px / #6BA644
+     eyebrow pill    11px / 700 / 1.5px / white on #6BA644 / 4px 12px / radius 100px
+     title           24px / 700   (or 15px / 700 / 1.5px caps)
+     body            17px / 1.65
+     grid gap        28px
+
+   Card render order: photo -> number badge -> icon badge -> number/eyebrow ->
+   title -> body -> link text. Every part is individually optional. */
+
+.pl-cg--dark{
+  --pl-cg-heading: #012638;
+  --pl-cg-body: #555555;
+  --pl-cg-accent: #6BA644;
+  --pl-cg-card-bg: #FFFFFF;
+  --pl-cg-card-border: rgba(1, 38, 56, .08);
+  --pl-cg-card-shadow: 0 4px 16px rgba(1, 38, 56, .08);
+  --pl-cg-card-shadow-hover: 0 8px 30px rgba(1, 38, 56, .15);
+  --pl-cg-badge-bg: #c9dbe2;
+  --pl-cg-on-accent: #FFFFFF;
+}
+
+.pl-cg--light{
+  --pl-cg-heading: #FFFFFF;
+  --pl-cg-body: rgba(255, 255, 255, .88);
+  --pl-cg-accent: #6BA644;
+  --pl-cg-card-bg: rgba(255, 255, 255, .07);
+  --pl-cg-card-border: rgba(255, 255, 255, .12);
+  --pl-cg-card-shadow: none;
+  --pl-cg-card-shadow-hover: 0 8px 30px rgba(0, 0, 0, .22);
+  --pl-cg-badge-bg: #c9dbe2;
+  --pl-cg-on-accent: #FFFFFF;
+}
+
+.pl-cg{
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ---------- section header ---------- */
+
+.pl-cg__header{
+  max-width: 900px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.pl-cg__section-eyebrow{
+  margin: 0 0 14px;
+  color: var(--pl-cg-accent);
+  font-size: 13px;
+  font-weight: 700;
+  /* bare <p> in V1 -- Main.css's p{line-height:27px} applies. */
+  line-height: 27px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.pl-cg__section-headline{
+  margin: 0;
+  color: var(--pl-cg-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.pl-cg__section-subhead{
+  margin-top: 16px;
+  color: var(--pl-cg-body);
+}
+
+.pl-cg__section-subhead p{
+  margin: 0 0 12px;
+  color: var(--pl-cg-body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.pl-cg__section-subhead p:last-child{
+  margin-bottom: 0;
+}
+
+/* ---------- grid ---------- */
+/* grid-template-columns and gap come from min_column_width and gap. */
+
+.pl-cg__grid{
+  display: grid;
+  align-items: stretch;
+}
+
+/* ---------- card shell ---------- */
+
+.pl-cg__card{
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.pl-cg--align-left .pl-cg__card{
+  text-align: left;
+}
+
+.pl-cg--align-center .pl-cg__card{
+  text-align: center;
+}
+
+/* Padding lives on the inner body so a card photo can run full-bleed to the
+   card edge. border-top / radius / shadow are re-declared by the module's
+   scoped CSS when the accent rule is on (4px accent, radius 6, softer shadow). */
+.pl-cg--boxed .pl-cg__card{
+  padding: 0;
+  overflow: hidden;
+  background: var(--pl-cg-card-bg);
+  border: 1px solid var(--pl-cg-card-border);
+  border-radius: 10px;
+  box-shadow: var(--pl-cg-card-shadow);
+}
+
+.pl-cg--boxed .pl-cg__body{
+  display: block;
+  padding: 34px 30px;
+}
+
+.pl-cg--plain .pl-cg__card{
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pl-cg--plain .pl-cg__body{
+  display: block;
+  padding: 0;
+}
+
+.pl-cg--plain .pl-cg__card--has-photo .pl-cg__body{
+  padding-top: 20px;
+}
+
+.pl-cg__card--clickable{
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.pl-cg--boxed .pl-cg__card--clickable:hover,
+.pl-cg--boxed .pl-cg__card--clickable:focus-visible{
+  box-shadow: var(--pl-cg-card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.pl-cg--plain .pl-cg__card--clickable:hover .pl-cg__title,
+.pl-cg--plain .pl-cg__card--clickable:focus-visible .pl-cg__title{
+  color: var(--pl-cg-accent);
+}
+
+/* ---------- 1. card photograph ---------- */
+
+.pl-cg__photo{
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.pl-cg__photo img{
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .35s ease;
+}
+
+.pl-cg__card--clickable:hover .pl-cg__photo img,
+.pl-cg__card--clickable:focus-visible .pl-cg__photo img{
+  transform: scale(1.03);
+}
+
+/* ---------- 2. circular number badge ---------- */
+/* Fill colour comes from accent_color via the scoped CSS. */
+
+.pl-cg__numbadge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  margin: 0 0 16px;
+  background-color: var(--pl-cg-accent);
+  color: var(--pl-cg-on-accent);
+  border-radius: 100px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .2px;
+}
+
+/* ---------- 3. icon ---------- */
+/* V1 badge, exact: inline-flex / 56x56 / #c9dbe2 / radius 12 / margin 0 0 18px.
+   Background colour comes from icon_badge_color via the scoped CSS. */
+
+.pl-cg--icon-badge .pl-cg__icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 14px;
+  box-sizing: border-box;
+  background-color: var(--pl-cg-badge-bg);
+  border-radius: 12px;
+  margin: 0 0 18px;
+}
+
+.pl-cg--icon-badge .pl-cg__icon img{
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 28px;
+  max-height: 28px;
+}
+
+/* V1's timeline steps: 72px white circle with a 3px accent ring.
+   Border colour comes from accent_color via the scoped CSS. */
+.pl-cg--icon-ring .pl-cg__icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  padding: 18px;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  margin: 0 0 18px;
+}
+
+.pl-cg--icon-ring .pl-cg__icon img{
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 30px;
+  max-height: 30px;
+}
+
+/* Badge off: bare image, sized by max_icon_height (cert logos need 80). */
+.pl-cg--icon-plain .pl-cg__icon{
+  display: block;
+  margin: 0 0 18px;
+}
+
+.pl-cg--icon-plain .pl-cg__icon img{
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 56px;
+}
+
+.pl-cg--align-center.pl-cg--icon-plain .pl-cg__icon img{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- 4. number / eyebrow ---------- */
+
+.pl-cg__number{
+  display: block;
+  margin: 0 0 14px;
+  color: var(--pl-cg-accent);
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.pl-cg--eyebrow-text .pl-cg__eyebrow{
+  display: block;
+  margin: 0 0 12px;
+  color: var(--pl-cg-accent);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* V1's "STEP 01" chip. */
+.pl-cg--eyebrow-pill .pl-cg__eyebrow{
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 4px 12px;
+  background-color: var(--pl-cg-accent);
+  color: var(--pl-cg-on-accent);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ---------- 5. title ---------- */
+
+.pl-cg__title{
+  margin: 0 0 12px;
+  color: var(--pl-cg-heading);
+  transition: color .2s ease;
+}
+
+.pl-cg--title-heading .pl-cg__title{
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.pl-cg--title-caps .pl-cg__title{
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ---------- 6. body ---------- */
+
+.pl-cg__content,
+.pl-cg__content p,
+.pl-cg__content li{
+  color: var(--pl-cg-body);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.pl-cg__content p{
+  margin: 0 0 12px;
+}
+
+.pl-cg__content p:last-child,
+.pl-cg__content ul:last-child,
+.pl-cg__content ol:last-child{
+  margin-bottom: 0;
+}
+
+.pl-cg__content a{
+  color: var(--pl-cg-accent);
+  font-weight: 700;
+}
+
+/* ---------- 7. link line ---------- */
+
+.pl-cg__linktext{
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--pl-cg-accent);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+
+.pl-cg__card--clickable:hover .pl-cg__linktext,
+.pl-cg__card--clickable:focus-visible .pl-cg__linktext{
+  text-decoration: underline;
+}
+
+/* ---------- responsive ---------- */
+/* --- V1 product-list card: tighter box, smaller icon tile, full hairline border --- */
+.pl-cg--compact.pl-cg--boxed .pl-cg__body{
+  padding: 28px 26px;
+}
+.pl-cg--compact.pl-cg--boxed .pl-cg__card{
+  border-radius: 8px;
+  box-shadow: none;
+}
+.pl-cg--compact .pl-cg__icon{
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 0 0 16px;
+}
+.pl-cg--compact .pl-cg__icon img{
+  max-width: 24px;
+  max-height: 24px;
+}
+.pl-cg--compact.pl-cg--title-heading .pl-cg__title{
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+.pl-cg--compact .pl-cg__content,
+.pl-cg--compact .pl-cg__content p,
+.pl-cg--compact .pl-cg__content li{
+  font-size: 14px;
+  line-height: 1.55;
+}
+.pl-cg--compact .pl-cg__eyebrow{
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  margin: 0 0 8px;
+}
+
+/* --- V1 product-card pill tags --- */
+.pl-cg__tags{
+  display: block;
+  margin: 16px 0 0;
+}
+.pl-cg__tag{
+  display: inline-block;
+  background: #f7f7f6;
+  color: #012638;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin: 0 4px 6px 0;
+}
+.pl-cg--light .pl-cg__tag{
+  background: rgba(255,255,255,.12);
+  color: #FFFFFF;
+}
+
+/* V1 caps the section subhead at 760px and centres it, inside a wider header. */
+.pl-cg__section-subhead{
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------------------------------------------------------------------------
+   V1 fidelity -- the theme's container inset.
+
+   Main.css insets .bodyContainer / .contentContainer / .smallContentContainer
+   by 35px per side below 1300 / 1000 / 880px. V1's own sections use a flat 20px
+   gutter at every width, so inheriting the theme's inset made this section
+   30px narrower than V1 on a tablet and a phone and re-wrapped its paragraphs.
+   Main.css belongs to the live site, so the inset is cancelled here instead and
+   V1's own gutter supplied in its place.
+   --------------------------------------------------------------------------- */
+.pl-cg .bodyContainer{
+  padding-left: 20px;
+  padding-right: 20px;
+  /* the module's own max_width field is the bound, not the
+     theme's 1250/950/850 -- which is declared !important. */
+  max-width: none !important;
+}
+
