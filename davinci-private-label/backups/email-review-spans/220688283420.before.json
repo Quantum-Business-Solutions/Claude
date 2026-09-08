@@ -1,0 +1,299 @@
+{
+ "activeDomain": "info.petnaturals.com",
+ "archived": false,
+ "businessUnitId": "0",
+ "campaign": "c17cd5da-4986-4654-b550-1feced4cee23",
+ "content": {
+  "flexAreas": {
+   "main": {
+    "boxFirstElementIndex": 0,
+    "boxLastElementIndex": 1,
+    "boxed": true,
+    "isSingleColumnFullWidth": false,
+    "sections": [
+     {
+      "columns": [
+       {
+        "id": "column_0_0",
+        "widgets": [
+         "logo_image"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_0",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1_0",
+        "widgets": [
+         "module_153978623046969"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_2_0",
+        "widgets": [
+         "email_can_spam"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_2",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "10px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "10px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     }
+    ]
+   }
+  },
+  "styleSettings": {
+   "backgroundColor": "#f2f2f2",
+   "backgroundImageType": "REPEAT",
+   "bodyBorderColor": "#cccccc",
+   "bodyBorderColorChoice": "BORDER_MANUAL",
+   "bodyBorderWidth": 1.0,
+   "bodyColor": "#ffffff",
+   "headingOneFont": {
+    "font": "Arial, sans-serif",
+    "size": 24
+   },
+   "headingTwoFont": {
+    "size": 22
+   },
+   "linksFont": {},
+   "primaryFont": "Arial, sans-serif",
+   "primaryFontColor": "#444444",
+   "primaryFontSize": 15.0
+  },
+  "templatePath": "@hubspot/email/dnd/Start_from_scratch.html",
+  "widgets": {
+   "email_can_spam": {
+    "body": {
+     "align": "center",
+     "hs_enable_module_padding": false,
+     "module_id": 2869621
+    },
+    "child_css": {},
+    "css": {},
+    "id": "email_can_spam",
+    "label": null,
+    "module_id": 2869621,
+    "name": "email_can_spam",
+    "order": 4,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "logo_image": {
+    "body": {
+     "alignment": "left",
+     "css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "hs_enable_module_padding": true,
+     "img": {
+      "alt": "Praxera",
+      "height": 98,
+      "src": "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png",
+      "width": 250
+     },
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "logo_image",
+    "label": null,
+    "module_id": 1367093,
+    "name": "logo_image",
+    "order": 1,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_153978623046969": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "html": "<div>{{ personalization_token('contact.firstname', 'Healthcare Professional') }},</div>\n<p>Thanks for your interest in Private Label supplements with <span style=\"background:#FFF3CD;border-bottom:2px solid #8A6300;\" data-praxera-review=\"brand\">Praxera</span>.</p>\n<p>&nbsp;</p>\n<div data-olk-copy-source=\"MessageBody\">We help healthcare professionals launch their own branded product lines using the same clinically formulated supplements trusted by 30,000+ practitioners.</div>\n<div data-olk-copy-source=\"MessageBody\">&nbsp;</div>\n<div>Your next step is a quick discovery call with me. I\u2019d love to learn more about your goals and walk you through how the process works. It\u2019s a quick, informal conversation with no pressure.</div>\n<div>&nbsp;</div>\n<div>If you\u2019d like a preview of what to expect, you can take a look at our <a href=\"https://www.praxerasupplements.com/en/pl-demo-onboarding-guide\">Private Label Client Onboarding Guide.</a>&nbsp;It walks through every step from discovery call to first shipment.</div>\n<p>&nbsp;</p>\n<p>Ready to get started? Please grab a time that works for you here:</p>\n<p>{{ personalization_token('contact.hubspot_owner_id.meetings_link', 'My Calendar') }}</p>\n<div>\n<p>&nbsp;</p>\n<div>Thank you, and I&nbsp;look forward to working with you!&nbsp;</div>\n<div>&nbsp;</div>\n<div><em>- {{ contact.hubspot_owner_id.fullname }}</em></div>\n</div>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_153978623046969",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_153978623046969",
+    "order": 3,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "preview_text": {
+    "body": {
+     "value": "We're excited to help you bring your own branded supplement line to life."
+    },
+    "child_css": {},
+    "css": {},
+    "id": "preview_text",
+    "label": "Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
+    "name": "preview_text",
+    "order": 0,
+    "smart_type": null,
+    "styles": {},
+    "type": "text"
+   }
+  }
+ },
+ "createdAt": "2026-08-30T19:52:50.862Z",
+ "createdById": "52613719",
+ "emailTemplateMode": "DRAG_AND_DROP",
+ "from": {
+  "fromName": "Praxera",
+  "replyTo": "{{ contact.hubspot_owner_id.email }}"
+ },
+ "id": "220688283420",
+ "isAb": false,
+ "isPublished": false,
+ "isTransactional": false,
+ "jitterSendTime": true,
+ "language": "en",
+ "name": "Praxera - Private Label Lead - First Contact",
+ "previewKey": "spkNTosV",
+ "publishDate": "2026-08-30T21:44:11Z",
+ "sendOnPublish": true,
+ "state": "DRAFT",
+ "subcategory": "batch",
+ "subject": "Let's Build Your Supplement Brand",
+ "subscriptionDetails": {
+  "officeLocationId": "5451098384",
+  "subscriptionId": "72618287",
+  "subscriptionName": "HCP LEAD"
+ },
+ "to": {
+  "contactIds": {
+   "exclude": [],
+   "include": []
+  },
+  "contactIlsLists": {
+   "exclude": [],
+   "include": []
+  },
+  "contactLists": {
+   "exclude": [],
+   "include": []
+  },
+  "suppressGraymail": true
+ },
+ "type": "BATCH_EMAIL",
+ "updatedAt": "2026-08-30T21:44:11.548Z",
+ "updatedById": "52613719",
+ "webversion": {
+  "domain": "info.petnaturals.com",
+  "enabled": false,
+  "isPageRedirected": false,
+  "slug": "-temporary-slug-15df0da7-51fd-4526-9c82-dc32ec4f50f0-1"
+ }
+}

@@ -1,0 +1,299 @@
+{
+ "activeDomain": "info.petnaturals.com",
+ "archived": false,
+ "businessUnitId": "0",
+ "campaign": "c17cd5da-4986-4654-b550-1feced4cee23",
+ "content": {
+  "flexAreas": {
+   "main": {
+    "boxFirstElementIndex": 0,
+    "boxLastElementIndex": 1,
+    "boxed": true,
+    "isSingleColumnFullWidth": false,
+    "sections": [
+     {
+      "columns": [
+       {
+        "id": "column_0_0",
+        "widgets": [
+         "logo_image"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_0",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1_0",
+        "widgets": [
+         "module_153978623046969"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_2_0",
+        "widgets": [
+         "email_can_spam"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_2",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "10px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "10px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     }
+    ]
+   }
+  },
+  "styleSettings": {
+   "backgroundColor": "#f2f2f2",
+   "backgroundImageType": "REPEAT",
+   "bodyBorderColor": "#cccccc",
+   "bodyBorderColorChoice": "BORDER_MANUAL",
+   "bodyBorderWidth": 1.0,
+   "bodyColor": "#ffffff",
+   "headingOneFont": {
+    "font": "Arial, sans-serif",
+    "size": 24
+   },
+   "headingTwoFont": {
+    "size": 22
+   },
+   "linksFont": {},
+   "primaryFont": "Arial, sans-serif",
+   "primaryFontColor": "#444444",
+   "primaryFontSize": 15.0
+  },
+  "templatePath": "@hubspot/email/dnd/Start_from_scratch.html",
+  "widgets": {
+   "email_can_spam": {
+    "body": {
+     "align": "center",
+     "hs_enable_module_padding": false,
+     "module_id": 2869621
+    },
+    "child_css": {},
+    "css": {},
+    "id": "email_can_spam",
+    "label": null,
+    "module_id": 2869621,
+    "name": "email_can_spam",
+    "order": 4,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "logo_image": {
+    "body": {
+     "alignment": "left",
+     "css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "hs_enable_module_padding": true,
+     "img": {
+      "alt": "Praxera",
+      "height": 98,
+      "src": "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png",
+      "width": 250
+     },
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "logo_image",
+    "label": null,
+    "module_id": 1367093,
+    "name": "logo_image",
+    "order": 1,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_153978623046969": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "html": "<div>{{ contact.firstname }},</div>\n<p data-olk-copy-source=\"MessageBody\">Thank you for your interest in <span style=\"background:#FFF3CD;border-bottom:2px solid #8A6300;\" data-praxera-review=\"brand\">Praxera</span> and for reaching out through our website.</p>\n<p data-olk-copy-source=\"MessageBody\">&nbsp;</p>\n<p>We are not currently pursuing new international partnerships or opening new international accounts. As a result, we are unable to move forward with your request.</p>\n<p>&nbsp;</p>\n<p>We appreciate your interest in our products and company and will keep your information on file should our international strategy change in the future.</p>\n<p>&nbsp;</p>\n<p>Thank you again for contacting us and for your understanding.</p>\n<p>&nbsp;</p>\n<p>Sincerely,</p>\n<div><span style=\"background:#FFF3CD;border-bottom:2px solid #8A6300;\" data-praxera-review=\"brand\">Praxera</span></div>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_153978623046969",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_153978623046969",
+    "order": 3,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "preview_text": {
+    "body": {
+     "value": "We are not currently pursuing new international partnerships or opening new international accounts at this time."
+    },
+    "child_css": {},
+    "css": {},
+    "id": "preview_text",
+    "label": "Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
+    "name": "preview_text",
+    "order": 0,
+    "smart_type": null,
+    "styles": {},
+    "type": "text"
+   }
+  }
+ },
+ "createdAt": "2026-08-30T21:43:44.611Z",
+ "createdById": "52613719",
+ "emailTemplateMode": "DRAG_AND_DROP",
+ "from": {
+  "fromName": "Praxera",
+  "replyTo": "enews@davincilabs.com"
+ },
+ "id": "220692678065",
+ "isAb": false,
+ "isPublished": false,
+ "isTransactional": false,
+ "jitterSendTime": true,
+ "language": "en",
+ "name": "Praxera - L // HCP Lead - International - Reject",
+ "previewKey": "CuhiKBxj",
+ "publishDate": "2026-08-30T21:44:19Z",
+ "sendOnPublish": true,
+ "state": "DRAFT",
+ "subcategory": "batch",
+ "subject": "Thank you for you interest in Praxera",
+ "subscriptionDetails": {
+  "officeLocationId": "5451098384",
+  "subscriptionId": "72618287",
+  "subscriptionName": "HCP LEAD"
+ },
+ "to": {
+  "contactIds": {
+   "exclude": [],
+   "include": []
+  },
+  "contactIlsLists": {
+   "exclude": [],
+   "include": []
+  },
+  "contactLists": {
+   "exclude": [],
+   "include": []
+  },
+  "suppressGraymail": true
+ },
+ "type": "BATCH_EMAIL",
+ "updatedAt": "2026-08-30T21:44:19.866Z",
+ "updatedById": "52613719",
+ "webversion": {
+  "domain": "info.petnaturals.com",
+  "enabled": false,
+  "isPageRedirected": false,
+  "slug": "-temporary-slug-38654299-3c5a-460c-aa92-0f6aca8d2656-1"
+ }
+}

@@ -1,0 +1,1730 @@
+{
+ "activeDomain": "info.petnaturals.com",
+ "archived": false,
+ "businessUnitId": "0",
+ "campaign": "d77ba5a6-32ce-4a0d-a1bc-694b63aaa474",
+ "content": {
+  "flexAreas": {
+   "main": {
+    "boxFirstElementIndex": 0,
+    "boxLastElementIndex": 0,
+    "boxed": false,
+    "isSingleColumnFullWidth": false,
+    "sections": [
+     {
+      "columns": [
+       {
+        "id": "column_1764972496936_0",
+        "widgets": [
+         "module_17649725026809"
+        ],
+        "width": 5
+       },
+       {
+        "id": "column_1764972496936_1",
+        "widgets": [
+         "module_17650502932511"
+        ],
+        "width": 7
+       }
+      ],
+      "id": "section_1764972496936",
+      "path": null,
+      "style": {
+       "backgroundColor": "#231f20",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#231f20",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1765566901539_0",
+        "widgets": [
+         "module_17712510371311",
+         "module_17655670162284"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1765566901538",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414042",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": null,
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1764972705545_0",
+        "widgets": [
+         "module_176497274944512"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1764972705545",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1770741165179_0",
+        "widgets": [
+         "module_17655668085781"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1770741165178",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414043",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414043",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column-1770745381292-0",
+        "widgets": [
+         "module_17707453812922",
+         "module_17707453812923"
+        ],
+        "width": 9
+       },
+       {
+        "id": "column-1770745381292-1",
+        "widgets": [
+         "module_17707453812924"
+        ],
+        "width": 3
+       }
+      ],
+      "id": "section_17707453812925",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414042",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1770741100527_0",
+        "widgets": [
+         "module_177074122334616"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1770741100524",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1769464991982_0",
+        "widgets": [
+         "module_176946499197910"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1769464991982",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1765566794309_0",
+        "widgets": [
+         "module_17694638787491"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1765566794309",
+      "path": null,
+      "style": {
+       "backgroundColor": "#FFFFFF",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#FFFFFF",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1770741982192_0",
+        "widgets": [
+         "module_176497296095613",
+         "module_177074156285817"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1762524415880",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1765051966233_0",
+        "widgets": [
+         "module_17650512700142"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1765051966232",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414042",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": "20px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "20px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1765051468314_0",
+        "widgets": [
+         "module_17650515641683"
+        ],
+        "width": 4
+       },
+       {
+        "id": "column_1765051468314_1",
+        "widgets": [
+         "module_17650516170734"
+        ],
+        "width": 8
+       }
+      ],
+      "id": "section_1765051468314",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414042",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1759531828340_0",
+        "widgets": [
+         "module_176946542710612"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1759531828340",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414042",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1742593202121_0",
+        "widgets": [
+         "module_17425932020968",
+         "module_17650532333947",
+         "module_17650529016126",
+         "module_17696220496641"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1742593202121",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "builtin_column_1-0",
+        "widgets": [
+         "footer_module"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "builtin_section-1",
+      "path": null,
+      "style": {
+       "backgroundColor": "#FAFAFA",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#FAFAFA",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "9px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "9px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     }
+    ]
+   }
+  },
+  "styleSettings": {
+   "backgroundColor": "#FAFAFA",
+   "backgroundImage": "",
+   "backgroundImageType": "REPEAT",
+   "bodyBorderWidth": 1.0,
+   "bodyColor": "#ffffff",
+   "buttonStyleSettings": {
+    "backgroundColor": "#76bc43",
+    "cornerRadius": 0,
+    "fontStyle": {
+     "bold": false,
+     "color": "#ffffff",
+     "font": "Arial, sans-serif",
+     "italic": false,
+     "size": 24,
+     "underline": false
+    }
+   },
+   "dividerStyleSettings": {
+    "color": {
+     "color": "#000000",
+     "opacity": 100
+    },
+    "height": 1
+   },
+   "headingOneFont": {
+    "size": 28
+   },
+   "headingTwoFont": {
+    "size": 22
+   },
+   "linksFont": {
+    "bold": false,
+    "color": "#76bc43",
+    "italic": false,
+    "underline": true
+   },
+   "primaryFont": "Arial, sans-serif",
+   "primaryFontColor": "#000000",
+   "primaryFontSize": 18.0,
+   "secondaryFont": "Arial, sans-serif",
+   "secondaryFontColor": "#23496d",
+   "secondaryFontSize": 12.0
+  },
+  "templatePath": "@hubspot/email/dnd/Plain_Text.html",
+  "widgets": {
+   "footer_module": {
+    "body": {
+     "align": "center",
+     "font": {
+      "color": "#19332f",
+      "font": "Arial, sans-serif",
+      "size": {
+       "units": "px",
+       "value": 12
+      }
+     },
+     "hs_enable_module_padding": true,
+     "link_font": {
+      "color": "#76bc43",
+      "font": "Helvetica,Arial,sans-serif",
+      "size": {
+       "units": "px",
+       "value": 12
+      },
+      "styles": {
+       "bold": false,
+       "italic": false,
+       "underline": true
+      }
+     },
+     "module_id": 2869621,
+     "path": "@hubspot/email_footer",
+     "unsubscribe_link_type": "both"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "footer_module",
+    "label": null,
+    "module_id": 2869621,
+    "name": "footer_module",
+    "order": 39,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17425932020968": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "hs_wrapper_css": {},
+     "img": {
+      "alt": "Our focus is on improving lives by producing quality, doctor-formulated supplements.  Learn More at praxerasupplements.com",
+      "height": 333,
+      "loading": "disabled",
+      "src": "https://www.pettechlabs.com/hubfs/Praxera/email/praxera-email-footer.png",
+      "width": 600
+     },
+     "link": "https://meetings.hubspot.com/lschencker-carroll/round-robbin-?uuid=bd5b6aef-f02f-4cd4-9973-10f64fe58a64",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17425932020968",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17425932020968",
+    "order": 34,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17649725026809": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "0px"
+     },
+     "img": {
+      "alt": "Praxera",
+      "height": 86,
+      "src": "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png",
+      "width": 210
+     },
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17649725026809",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17649725026809",
+    "order": 1,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_176497274944512": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "20px",
+      "padding-left": "30px",
+      "padding-right": "30px",
+      "padding-top": "20px"
+     },
+     "html": "<p style=\"line-height: 150%; text-align: left; font-size: 16px;\">{{ contact.firstname }},</p>\n<p style=\"line-height: 150%; text-align: left; font-size: 16px;\">&nbsp;</p>\n<p>You\u2019ve seen how the first four Rs of Gut Health line up:</p>\n<ul>\n<li aria-level=\"1\"><strong>Remove</strong> \u2013 clear what doesn\u2019t belong</li>\n<li aria-level=\"1\"><strong>Replace</strong> \u2013 help the body actually break food down</li>\n<li aria-level=\"1\"><strong>Reinoculate</strong> \u2013 rebuild the microbiome</li>\n<li aria-level=\"1\"><strong>Repair</strong> \u2013 support the gut barrier and go deeper<br><br></li>\n</ul>\n<p><em>Now we\u2019ve made it to the final \u2018R\u2019,&nbsp; <strong>Rebalance</strong>.<br><br></em></p>\n<p>This is where the concern for your gut health goes beyond digestion and starts looking at stress, mood, and resilience.<br><em><br></em></p>\n<p><em>Rebalance is where you get to say: </em>\u201cWe\u2019re not just supporting your gut. We\u2019re supporting how you feel, think, and function day to day.\u201d<br><br></p>\n<p>That\u2019s a much bigger story.</p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_176497274944512",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_176497274944512",
+    "order": 8,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_176497296095613": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "padding-right": "0px",
+      "padding-top": "0px"
+     },
+     "img": {
+      "alt": "manufacturer-question2",
+      "height": 299,
+      "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Newsletters/December%2025/manufacturer-question2.jpg",
+      "width": 600
+     },
+     "link": "https://www.praxerasupplements.com/en/pl-demo-about",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_176497296095613",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_176497296095613",
+    "order": 20,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17650502932511": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "45px"
+     },
+     "html": "<p style=\"font-size: 14px; line-height: 164%; text-align: right;\"><span style=\"color: #ffffff;\"><a href=\"https://www.praxerasupplements.com/\" style=\"color: #ffffff; text-decoration: none;\" rel=\"noopener\">OUR QUALITY</a>&nbsp; &nbsp;<span style=\"color: #6ca439;\">|&nbsp;</span> &nbsp;<a href=\"https://www.praxerasupplements.com/\" style=\"color: #ffffff; text-decoration: none;\" rel=\"noopener\">SHOP</a>&nbsp; <span style=\"color: #6ca439;\">&nbsp;|&nbsp;</span> &nbsp;<a href=\"https://www.praxerasupplements.com/\" style=\"color: #ffffff; text-decoration: none;\" rel=\"noopener\">LEARN</a></span></p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650502932511",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_17650502932511",
+    "order": 3,
+    "smart_type": null,
+    "styles": {
+     "breakpointStyles": {
+      "mobile": {
+       "hidden": true
+      }
+     }
+    },
+    "type": "module"
+   },
+   "module_17650512700142": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "Schedule a Time to Connect.",
+      "height": 90,
+      "src": "https://www.pettechlabs.com/hubfs/Download%20Offers/DaVinci%20Labs/Newsletters/schedule-a-time-headline_01.jpg",
+      "width": 560
+     },
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650512700142",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17650512700142",
+    "order": 29,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17650515641683": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "",
+      "height": 150,
+      "src": "https://www.pettechlabs.com/hubfs/Download%20Offers/DaVinci%20Labs/Newsletters/DaVinci-Churn_26.jpg",
+      "width": 160
+     },
+     "module_id": 1367093,
+     "style": {
+      "corner_radius": 4,
+      "corner_radius_unit": "px"
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650515641683",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17650515641683",
+    "order": 30,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17650516170734": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "html": "<p style=\"line-height: 125%; font-size: 16px; font-weight: normal;\"><span style=\"color: #ffffff;\">Let's Discuss Health Protocols That Will Best Support Your Patients. Let's find a time that works for you. </span></p>\n<p style=\"line-height: 125%; font-size: 16px; font-weight: normal;\">&nbsp;</p>\n<p style=\"line-height: 125%; font-size: 16px; font-weight: normal;\"><span style=\"color: #ffffff;\">Email me at {{ contact.hubspot_owner_id.email }}, call 800-325-1776, or click the button below to confirm a time to meet. Thanks again, and I look forward to speaking with you!</span></p>\n<p style=\"line-height: 125%; font-size: 16px;\">&nbsp;</p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650516170734",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_17650516170734",
+    "order": 32,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17650529016126": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "15px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "15px"
+     },
+     "html": "<p style=\"font-size: 12px; line-height: 125%; text-align: center;\">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650529016126",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_17650529016126",
+    "order": 37,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17650532333947": {
+    "body": {
+     "color": {
+      "color": "#000000",
+      "opacity": 100
+     },
+     "height": 1,
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "padding-right": "0px",
+      "padding-top": "10px"
+     },
+     "line_type": null,
+     "module_id": 2191110,
+     "style": {
+      "width": 100
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650532333947",
+    "label": null,
+    "module_id": 2191110,
+    "name": "module_17650532333947",
+    "order": 35,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17655668085781": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "padding-right": "0px",
+      "padding-top": "0px"
+     },
+     "img": {
+      "alt": "The 5Rs Give You a Clear Purpose Behind Each Product.",
+      "height": 130,
+      "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Newsletters/January%2026/DaVinci-PL_04.jpg",
+      "width": 560
+     },
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17655668085781",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17655668085781",
+    "order": 10,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17655670162284": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "25px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "25px"
+     },
+     "html": "<h2 style=\"line-height: 125%; text-align: center;\"><span style=\"color: #ffffff;\"><strong>Step 5: Rebalance Gut Health\u2014 lock in long-term results</strong>.</span></h2>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17655670162284",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_17655670162284",
+    "order": 5,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17694638787491": {
+    "body": {
+     "background_color": "#76bc43",
+     "corner_radius": 0,
+     "font": "Arial, sans-serif",
+     "font_color": "#ffffff",
+     "font_size": 24,
+     "font_style": {
+      "color": "#ffffff",
+      "font": "Arial, sans-serif",
+      "size": {
+       "units": "px",
+       "value": 24
+      },
+      "styles": {
+       "bold": false,
+       "italic": false,
+       "underline": false
+      }
+     },
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "link_to": "meetings_link",
+     "meeting_field": "https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin",
+     "module_id": 1976948,
+     "style": {
+      "corner_radius": 6,
+      "font_style": {
+       "color": "#ffffff",
+       "font": "Arial, sans-serif",
+       "size": {
+        "units": "px",
+        "value": 18
+       },
+       "styles": {
+        "bold": true,
+        "font-weight": "bold",
+        "italic": false,
+        "underline": false
+       }
+      },
+      "inner_vertical_padding": 25
+     },
+     "text": "SCHEDULE A CALL WITH OUR \u0003PRIVATE LABEL TEAM \u2192"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17694638787491",
+    "label": null,
+    "module_id": 1976948,
+    "name": "module_17694638787491",
+    "order": 18,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_176946499197910": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "20px",
+      "padding-left": "30px",
+      "padding-right": "30px",
+      "padding-top": "20px"
+     },
+     "html": "<h2>What Rebalance Looks Like in a Real Product Line</h2>\n<p><span style=\"font-size: 16px;\">Rebalance products live at the intersection of gut and nervous system \u2013 the gut-brain axis your more educated customers already talk about.</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-size: 16px;\">At <span style=\"background:#FFF3CD;border-bottom:2px solid #8A6300;\" data-praxera-review=\"brand\">Praxera</span>, we offer formulas like:&nbsp;</span><span style=\"font-size: 16px;\"><a href=\"https://www.praxerasupplements.com/\" rel=\"noopener\"><strong>Clear GI\u2122</strong></a> \u2013 a targeted formula that supports GI comfort while also speaking to the gut-brain connection and stress-related gut patterns*</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-size: 16px;\">This supplement is essential for practitioners and business owners that acknowledge the gut doesn\u2019t live in isolation from the rest of life.</span></p>\n<p>&nbsp;</p>\n<p><em><span style=\"font-size: 16px;\">Think of your Repair SKU as:</span></em></p>\n<ul>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">The product for customers who have \u201ctried everything\u201d</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">The one that helps explain why the gut lining itself matters</span></li>\n</ul>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_176946499197910",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_176946499197910",
+    "order": 17,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_176946542710612": {
+    "body": {
+     "background_color": "#76bc43",
+     "corner_radius": 0,
+     "font": "Arial, sans-serif",
+     "font_color": "#ffffff",
+     "font_size": 24,
+     "font_style": {
+      "color": "#ffffff",
+      "font": "Arial, sans-serif",
+      "size": {
+       "units": "px",
+       "value": 24
+      },
+      "styles": {
+       "bold": false,
+       "italic": false,
+       "underline": false
+      }
+     },
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "50px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "module_id": 1976948,
+     "style": {
+      "corner_radius": 6,
+      "font_style": {
+       "color": "#ffffff",
+       "font": "Arial, sans-serif",
+       "size": {
+        "units": "px",
+        "value": 18
+       },
+       "styles": {
+        "bold": false,
+        "italic": false,
+        "underline": false
+       }
+      },
+      "inner_vertical_padding": 25
+     },
+     "text": "SCHEDULE A CALL WITH OUR \u0003PRIVATE LABEL TEAM \u2192"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_176946542710612",
+    "label": null,
+    "module_id": 1976948,
+    "name": "module_176946542710612",
+    "order": 33,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17696220496641": {
+    "body": {
+     "color": {
+      "color": "#000000",
+      "opacity": 100
+     },
+     "height": 1,
+     "hs_enable_module_padding": false,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "padding-right": "0px",
+      "padding-top": "0px"
+     },
+     "line_type": null,
+     "module_id": 2191110,
+     "style": {
+      "width": 100
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17696220496641",
+    "label": null,
+    "module_id": 2191110,
+    "name": "module_17696220496641",
+    "order": 38,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_177074122334616": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "Clear GI",
+      "height": 300,
+      "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Clear%20GI.jpg",
+      "width": 300
+     },
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_177074122334616",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_177074122334616",
+    "order": 15,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_177074156285817": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "html": "<h2>How to Talk About Rebalance&nbsp;</h2>\n<p>&nbsp;</p>\n<p><span style=\"font-size: 16px;\">You don\u2019t have to make wild claims to make this compelling: </span><span style=\"font-size: 16px;\"><br></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-size: 16px;\">\u201cOnce we\u2019ve cleared, rebuilt, and supported the gut, the next step is helping your system stay balanced\u2014especially under stress.\"</span><span style=\"font-size: 16px;\"><br><br></span></p>\n<p style=\"font-weight: bold;\"><em><span style=\"font-size: 16px;\">From there, Rebalance becomes:</span></em></p>\n<ul>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">The product you recommend for people whose gut flares when they\u2019re stressed</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">The add-on for customers who say \u201cmy digestion is better, but I still feel wired or drained\u201d</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">The Phase 2 product in your 12-week gut reset</span></li>\n</ul>\n<p><span style=\"font-size: 16px;\">This step in the framework&nbsp;acknowledges&nbsp;the reality your customers already live in: their gut and their stress are tied together.</span></p>\n<p>&nbsp;</p>\n<h2 style=\"font-size: 18px; line-height: 241%;\">If You Want to Build This Right, Your Manufacturer Matters</h2>\n<p><span style=\"font-size: 16px;\">Here\u2019s the thing: once you\u2019re talking about stress, gut-brain dynamics, and long-term protocols, you\u2019re in trust territory.</span><br><br></p>\n<p><span style=\"font-size: 16px;\">If you\u2019re serious about building a protocol-based gut line\u2014with all 5Rs represented\u2014you need a manufacturing partner who can back that up with real standards, transparency, and support.<br><br></span></p>\n<p><span style=\"font-size: 16px;\"><em>That\u2019s exactly what we built this guide to explain.</em><br><br></span></p>\n<p><span style=\"font-size: 16px;\">\ud83d\udc49 Read: <a href=\"https://www.praxerasupplements.com/en/pl-demo-about\" style=\"font-weight: bold;\" rel=\"noopener\">The Essential Guide to Partnering With a Trustworthy Manufacturer</a></span></p>\n<p><span style=\"font-size: 16px;\">&nbsp;</span></p>\n<p><span style=\"font-size: 16px;\">You\u2019ll get clear on:</span></p>\n<ul>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">What cGMP and FDA registration actually mean in practice</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">The questions smart brands ask \\</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">How to think about cost, timelines, and long-term partnership (not just one PO)</span><br><br></li>\n</ul>\n<h2><em><span style=\"font-size: 16px;\">Ready to Turn the 5Rs Into a Real Line?</span></em></h2>\n<p><span style=\"font-size: 16px;\">You\u2019ve now seen how each R maps to a product, a story, and a revenue lever:</span></p>\n<ul>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">R1: Hero problem-solver</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">R2: Quiet differentiator</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">R3: Subscription engine</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">R4: Credibility move</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">R5: Long-term loyalty and gut-brain story</span><br><br></li>\n</ul>\n<p><span style=\"font-size: 16px;\">If you want help turning that into an actual product map under your brand, we\u2019re here for you. Schedule a time to speak with someone from our team, and we will walk you through </span><span style=\"font-size: 16px;\">MOQs, formulas, bundles, and timelines.</span><span style=\"font-size: 16px;\"><br></span></p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_177074156285817",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_177074156285817",
+    "order": 23,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17707453812922": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "5px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "0px"
+     },
+     "img": {
+      "alt": "5 - Rebalance",
+      "height": 41,
+      "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Newsletters/January%2026/DaVinci-PL_25.jpg",
+      "width": 240
+     },
+     "lineNumber": 21,
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093,
+     "path": "@hubspot/image_email",
+     "startPosition": -528,
+     "style": {
+      "alignment": "left"
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17707453812922",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17707453812922",
+    "order": 11,
+    "smart_type": null,
+    "styles": {
+     "breakpointStyles": {
+      "default": {
+       "hidden": false
+      },
+      "mobile": {
+       "hidden": false
+      }
+     }
+    },
+    "type": "module"
+   },
+   "module_17707453812923": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "0px"
+     },
+     "html": "<p style=\"line-height: 125%;\"><span style=\"color: #ffffff; font-size: 16px;\">The long-term story: gut-brain, stress, mood, resilience.</span></p>",
+     "lineNumber": 29,
+     "module_id": 1155639,
+     "path": "@hubspot/rich_text",
+     "startPosition": -204
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17707453812923",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_17707453812923",
+    "order": 13,
+    "smart_type": null,
+    "styles": {
+     "breakpointStyles": {
+      "default": {
+       "hidden": false
+      },
+      "mobile": {
+       "hidden": false
+      }
+     }
+    },
+    "type": "module"
+   },
+   "module_17707453812924": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "",
+      "height": 89,
+      "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Newsletters/January%2026/DaVinci-water-glass.jpg",
+      "width": 110
+     },
+     "lineNumber": 48,
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093,
+     "path": "@hubspot/image_email",
+     "startPosition": -606,
+     "stretch_on_mobile": false,
+     "style": {
+      "alignment": "left",
+      "corner_radius": 4,
+      "corner_radius_unit": "px"
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17707453812924",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17707453812924",
+    "order": 14,
+    "smart_type": null,
+    "styles": {
+     "breakpointStyles": {
+      "default": {
+       "hidden": false
+      },
+      "mobile": {
+       "hidden": false
+      }
+     }
+    },
+    "type": "module"
+   },
+   "module_17712510371311": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "Group-Product-Shot",
+      "height": 344,
+      "src": "https://www.pettechlabs.com/hubfs/Praxera/email/praxera-group-product-shot.png",
+      "width": 560
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17712510371311",
+    "module_id": 1367093,
+    "name": "module_17712510371311",
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "preview_text": {
+    "body": {
+     "value": "Rebalance ties gut health to stress and mood and gives your brand a story people stay for."
+    },
+    "child_css": {},
+    "css": {},
+    "id": "preview_text",
+    "label": "Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
+    "name": "preview_text",
+    "order": 0,
+    "smart_type": null,
+    "styles": {},
+    "type": "text"
+   }
+  }
+ },
+ "createdAt": "2026-08-30T19:52:56.654Z",
+ "createdById": "52613719",
+ "emailTemplateMode": "DRAG_AND_DROP",
+ "from": {
+  "fromName": "Praxera",
+  "replyTo": "{{ contact.hubspot_owner_id.email }}"
+ },
+ "id": "220688836213",
+ "isAb": false,
+ "isPublished": false,
+ "isTransactional": false,
+ "jitterSendTime": false,
+ "language": "en",
+ "name": "Praxera - L // PM - Automated Email: PL 5rs #6",
+ "previewKey": "VmeIvtpw",
+ "publishDate": "2026-08-30T21:44:14Z",
+ "sendOnPublish": true,
+ "state": "DRAFT",
+ "subcategory": "batch",
+ "subject": "R5: Where your brand messaging turns into a life story.",
+ "subscriptionDetails": {
+  "officeLocationId": "5451098384",
+  "subscriptionId": "4588994",
+  "subscriptionName": "Marketing Information 1"
+ },
+ "to": {
+  "contactIds": {
+   "exclude": [],
+   "include": []
+  },
+  "contactIlsLists": {
+   "exclude": [],
+   "include": []
+  },
+  "contactLists": {
+   "exclude": [],
+   "include": []
+  },
+  "suppressGraymail": true
+ },
+ "type": "BATCH_EMAIL",
+ "updatedAt": "2026-08-30T21:44:14.272Z",
+ "updatedById": "52613719",
+ "webversion": {
+  "domain": "info.petnaturals.com",
+  "enabled": false,
+  "isPageRedirected": false,
+  "slug": "-temporary-slug-c52d2de3-244c-4307-960b-9d0da1ccd2d4-1"
+ }
+}

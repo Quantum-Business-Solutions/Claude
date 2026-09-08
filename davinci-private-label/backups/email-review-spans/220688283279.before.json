@@ -1,0 +1,484 @@
+{
+ "activeDomain": "info.petnaturals.com",
+ "archived": false,
+ "businessUnitId": "0",
+ "campaign": "f13e1c39-3a89-4f2d-8489-3cd644920d60",
+ "content": {
+  "flexAreas": {
+   "main": {
+    "boxFirstElementIndex": 0,
+    "boxLastElementIndex": 1,
+    "boxed": true,
+    "isSingleColumnFullWidth": false,
+    "sections": [
+     {
+      "columns": [
+       {
+        "id": "column-0-0",
+        "widgets": [
+         "module-0-0-0"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section-0",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column-1-0",
+        "widgets": [
+         "module_16540120915721",
+         "module_16524468462285",
+         "module_16524470334996",
+         "module_16524463828883",
+         "module_17653842777692",
+         "module_16539283587413",
+         "module_16524465759264",
+         "module_16539278561391"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section-1",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column-2-0",
+        "widgets": [
+         "module-2-0-0"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section-2",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "10px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "10px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     }
+    ]
+   }
+  },
+  "styleSettings": {
+   "backgroundColor": "#f2f2f2",
+   "backgroundImageType": "REPEAT",
+   "bodyBorderColor": "#cccccc",
+   "bodyBorderColorChoice": "BORDER_MANUAL",
+   "bodyBorderWidth": 1.0,
+   "bodyColor": "#ffffff",
+   "headingOneFont": {
+    "font": "Arial, sans-serif",
+    "size": 24
+   },
+   "headingTwoFont": {
+    "size": 22
+   },
+   "linksFont": {},
+   "primaryFont": "Arial, sans-serif",
+   "primaryFontColor": "#444444",
+   "primaryFontSize": 15.0
+  },
+  "templatePath": "@hubspot/email/dnd/Start_from_scratch.html",
+  "widgets": {
+   "module-0-0-0": {
+    "body": {
+     "alignment": "center",
+     "css_class": "dnd-module",
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "Praxera",
+      "height": 109,
+      "src": "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png",
+      "width": 250
+     },
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093,
+     "parent_widget_container": null,
+     "path": "@hubspot/image_email",
+     "schema_version": 2
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module-0-0-0",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module-0-0-0",
+    "order": 1,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module-2-0-0": {
+    "body": {
+     "align": "center",
+     "css_class": "dnd-module",
+     "hs_enable_module_padding": false,
+     "module_id": 2869621,
+     "parent_widget_container": null,
+     "path": "@hubspot/email_footer",
+     "schema_version": 2
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module-2-0-0",
+    "label": null,
+    "module_id": 2869621,
+    "name": "module-2-0-0",
+    "order": 17,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16524463828883": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "module_id": 2191110
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16524463828883",
+    "label": null,
+    "module_id": 2191110,
+    "name": "module_16524463828883",
+    "order": 10,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16524465759264": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "15px"
+     },
+     "html": "<h2 style=\"text-align: center;\">PRIVATE LABELING&nbsp;<span style=\"color: #76bc43;\">MADE EASY.</span></h2>\n<p style=\"text-align: center;\">We offer <span style=\"font-weight: bold;\">Custom Formulation </span><span style=\"font-weight: normal;\">and</span> more than 200 carefully chosen nutritional supplements so you can confidently optimize your product lines, all under your results-driven personal brand.</p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16524465759264",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_16524465759264",
+    "order": 9,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16524468462285": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "module_id": 2191110
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16524468462285",
+    "label": null,
+    "module_id": 2191110,
+    "name": "module_16524468462285",
+    "order": 5,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16524470334996": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "html": "<p>Hey {{ contact.firstname }}<br>At some point, you raised your hand and said you were interested in <span style=\"color: #6ca439;\"><a href=\"https://www.praxerasupplements.com/en/pl-demo-resources\" style=\"color: #6ca439;\" rel=\"noopener\"><strong>private label supplements with <span style=\"background:#FFF3CD;border-bottom:2px solid #8A6300;\" data-praxera-review=\"brand\">Praxera</span></strong>.</a></span></p>\n<p>&nbsp;</p>\n<p>You were right to look into it.</p>\n<p>&nbsp;</p>\n<p>Low MOQs, an organized onboarding process, and support with labeling and pricing strategies. But in today\u2019s market, that\u2019s just table stakes. What actually separates one private label partner from another is what your customers <em>can\u2019t</em> see on the shelf:</p>\n<ul>\n<li>\n<p>Where ingredients come from</p>\n</li>\n<li>\n<p>How they\u2019re tested</p>\n</li>\n<li>\n<p>Which certifications stand behind every bottle</p>\n</li>\n</ul>\n<p>That\u2019s exactly what we unpack in our&nbsp;guide,</p>\n<p><span style=\"color: #6ca439; font-weight: bold;\"><a href=\"https://www.praxerasupplements.com/en/pl-demo-ingredients-testing\" style=\"color: #6ca439;\" rel=\"noopener\">Private Label Supplements: Ingredients, Testing &amp; Certifications</a></span><strong>.</strong></p>\n<p>&nbsp;</p>\n<p>Inside, you\u2019ll see:</p>\n<ul>\n<li>\n<p><strong>How we source and verify ingredients</strong> for top <span style=\"background:#FFF3CD;border-bottom:2px solid #8A6300;\" data-praxera-review=\"brand\">Praxera</span>\u00ae formulas your brand can put its name on.</p>\n</li>\n<li>\n<p><strong>Truth in labeling in practice</strong> \u2013 therapeutic levels, no watered-down formulas, and doctor-formulated products backed by over 50 years in the industry.</p>\n</li>\n<li>\n<p><strong>Testing and certifications you can talk about</strong> \u2013 FDA-registered, GMP and NSF certifications, SQI oversight, plus internal QA, microbial testing, and heavy metal checks.</p>\n</li>\n<li>\n<p><strong>Real product examples</strong> (Tri-Mag 300, ADK, Daily Best Ultra\u2122, Mega Probiotic\u2122 ND, Omega 3 HP-D, Hair Effects\u2122, and more) with the kind of details your most discerning customers and retail partners ask about.</p>\n</li>\n</ul>\n<p>&nbsp;</p>\n<p>If you\u2019re going to put your brand on a supplement, you need more than a pretty label and a low minimum. You need a manufacturer whose quality story becomes <span style=\"font-weight: normal;\">your quality story.</span></p>\n<p>&nbsp;</p>\n<p>Take a look, highlight it for your team, and when you\u2019re ready to revisit your line, we\u2019ll be here to help you build something your customers can trust for the long term.</p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16524470334996",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_16524470334996",
+    "order": 7,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16539278561391": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "module_id": 2191110
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16539278561391",
+    "label": null,
+    "module_id": 2191110,
+    "name": "module_16539278561391",
+    "order": 16,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16539283587413": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "module_id": 2191110
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16539283587413",
+    "label": null,
+    "module_id": 2191110,
+    "name": "module_16539283587413",
+    "order": 13,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16540120915721": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "trademarked ingredients",
+      "height": 298,
+      "loading": "disabled",
+      "size_type": null,
+      "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/trademarked%20ingredients.png",
+      "width": 558
+     },
+     "link": "https://www.praxerasupplements.com/en/pl-demo-ingredients-testing",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16540120915721",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_16540120915721",
+    "order": 4,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17653842777692": {
+    "body": {
+     "background_color": "#76bc43",
+     "destination": "https://www.praxerasupplements.com/en/pl-demo-ingredients-testing",
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "text": "\ud83d\udc49 Download the Ingredients, Testing & Certification Guide Here:"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17653842777692",
+    "module_id": 1976948,
+    "name": "module_17653842777692",
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "preview_text": {
+    "body": {
+     "value": "Ingredient sourcing, testing, and certifications you can turn into a brand story, not just a label. Here's the guide."
+    },
+    "child_css": {},
+    "css": {},
+    "id": "preview_text",
+    "label": "Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
+    "name": "preview_text",
+    "order": 0,
+    "smart_type": null,
+    "styles": {},
+    "type": "text"
+   }
+  }
+ },
+ "createdAt": "2026-08-30T19:52:42.316Z",
+ "createdById": "52613719",
+ "emailTemplateMode": "DRAG_AND_DROP",
+ "from": {
+  "fromName": "Praxera",
+  "replyTo": "enews@davincilabs.com"
+ },
+ "id": "220688283279",
+ "isAb": false,
+ "isPublished": false,
+ "isTransactional": false,
+ "jitterSendTime": true,
+ "language": "en",
+ "name": "Praxera - Private Label: High Priority Intro",
+ "previewKey": "rvQDQfVl",
+ "publishDate": "2026-08-30T21:44:07Z",
+ "sendOnPublish": true,
+ "state": "DRAFT",
+ "subcategory": "batch",
+ "subject": "Private label only works if the quality is top-tier.",
+ "subscriptionDetails": {
+  "officeLocationId": "5451098384",
+  "subscriptionId": "4588994",
+  "subscriptionName": "Marketing Information 1"
+ },
+ "to": {
+  "contactIds": {
+   "exclude": [],
+   "include": []
+  },
+  "contactIlsLists": {
+   "exclude": [],
+   "include": []
+  },
+  "contactLists": {
+   "exclude": [],
+   "include": []
+  },
+  "suppressGraymail": true
+ },
+ "type": "BATCH_EMAIL",
+ "updatedAt": "2026-08-30T21:44:07.093Z",
+ "updatedById": "52613719",
+ "webversion": {
+  "domain": "info.petnaturals.com",
+  "enabled": false,
+  "isPageRedirected": false,
+  "slug": "-temporary-slug-119e821f-4bf1-4e13-a267-8c618691000a-1"
+ }
+}

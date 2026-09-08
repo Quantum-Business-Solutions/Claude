@@ -1,0 +1,226 @@
+{
+ "activeDomain": "info.petnaturals.com",
+ "archived": false,
+ "businessUnitId": "0",
+ "campaign": "39f1f0a5-2e5d-4b96-bcd7-8378a31af543",
+ "content": {
+  "templatePath": "generated_layouts/26082150726.html",
+  "widgets": {
+   "Social_Sharing": {
+    "body": {
+     "email": {
+      "custom_link_format": "",
+      "enabled": false,
+      "img_src": "https://static.hubspot.com/final/img/common/icons/social/email-24x24.png",
+      "network": "email"
+     },
+     "facebook": {
+      "custom_link_format": "",
+      "enabled": true,
+      "img_src": "https://static.hubspot.com/final/img/common/icons/social/facebook-24x24.png",
+      "network": "facebook"
+     },
+     "google_plus": {
+      "custom_link_format": "",
+      "enabled": false,
+      "img_src": "https://static.hubspot.com/final/img/common/icons/social/googleplus-24x24.png",
+      "network": "google_plus"
+     },
+     "link": "",
+     "linkedin": {
+      "custom_link_format": "",
+      "enabled": true,
+      "img_src": "https://static.hubspot.com/final/img/common/icons/social/linkedin-24x24.png",
+      "network": "linkedin"
+     },
+     "pinterest": {
+      "custom_link_format": "",
+      "enabled": false,
+      "img_src": "https://static.hubspot.com/final/img/common/icons/social/pinterest-24x24.png",
+      "network": "pinterest"
+     },
+     "twitter": {
+      "custom_link_format": "",
+      "enabled": false,
+      "img_src": "https://static.hubspot.com/final/img/common/icons/social/twitter-24x24.png",
+      "network": "twitter"
+     },
+     "use_page_url": true
+    },
+    "child_css": {},
+    "css": {},
+    "id": "Social_Sharing",
+    "label": "Social Sharing",
+    "name": "Social_Sharing",
+    "order": 4,
+    "smart_type": null,
+    "styles": {},
+    "type": "social_sharing"
+   },
+   "email_footer": {
+    "body": {
+     "can_spam_settings_id": 5451098384,
+     "value": ""
+    },
+    "deleted_at": 1618937683366,
+    "id": "email_footer",
+    "label": "Email Footer",
+    "name": "email_footer",
+    "type": "email_can_spam"
+   },
+   "hs_email_body": {
+    "body": {
+     "html": "<p>{{ contact.firstname }},</p>\n<p><span>Thank you for reaching out to us at <span style=\"background:#FFF3CD;border-bottom:2px solid #8A6300;\" data-praxera-review=\"brand\">Praxera</span>. </span></p>\n<p><span>We will review your custom formulation inquiry and get back to you within 5 business days on next steps.</span></p>\n<p>We will be in touch!</p>"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "hs_email_body",
+    "label": "Main Email Body",
+    "name": "hs_email_body",
+    "order": 3,
+    "smart_type": null,
+    "styles": {},
+    "type": "rich_text"
+   },
+   "logo_image": {
+    "body": {
+     "alt": "Adrenal_thumbnail",
+     "height": 296,
+     "link": "https://www.praxerasupplements.com/",
+     "override_inherited_src": true,
+     "src": "https://cdn2.hubspot.net/hubfs/4087538/Protocols/Adrenal/Adrenal_thumbnail.jpg",
+     "width": 510
+    },
+    "child_css": {},
+    "css": {},
+    "deleted_at": 1582668938883,
+    "id": "logo_image",
+    "label": "Logo",
+    "name": "logo_image",
+    "order": 1,
+    "type": "logo"
+   },
+   "module_158212607541991": {
+    "body": {
+     "logo_image": {
+      "alt": "New Logo",
+      "height": 59,
+      "src": "https://cdn2.hubspot.net/hubfs/4087538/New%20Logo.png",
+      "width": 150
+     },
+     "module_id": 26082073502,
+     "show_logo": true,
+     "widget_name": "Spoke Email Logo"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_158212607541991",
+    "label": "Spoke Email Logo",
+    "module_id": 26082073502,
+    "name": "module_158212607541991",
+    "order": 1,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_1582126235753102": {
+    "body": {
+     "header_image": {
+      "alt": "blog",
+      "height": 220,
+      "src": "https://cdn2.hubspot.net/hubfs/4087538/Blog/blog.png",
+      "width": 650
+     },
+     "module_id": 26082150870,
+     "widget_name": "Spoke Email Header"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_1582126235753102",
+    "label": "Spoke Email Header",
+    "module_id": 26082150870,
+    "name": "module_1582126235753102",
+    "order": 2,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "preview_text": {
+    "body": {
+     "value": "We will review your custom formulation inquiry and get back to you within 5 business days on next steps."
+    },
+    "child_css": {},
+    "css": {},
+    "id": "preview_text",
+    "label": "Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
+    "name": "preview_text",
+    "order": 0,
+    "smart_type": null,
+    "styles": {},
+    "type": "text"
+   },
+   "social_sharing_label": {
+    "body": {
+     "value": ""
+    },
+    "child_css": {},
+    "css": {},
+    "deleted_at": 1582668938883,
+    "id": "social_sharing_label",
+    "label": "Social Sharing Label",
+    "name": "social_sharing_label",
+    "order": 3,
+    "type": "text"
+   }
+  }
+ },
+ "createdAt": "2026-08-30T21:43:44.566Z",
+ "createdById": "52613719",
+ "emailTemplateMode": "DESIGN_MANAGER",
+ "from": {
+  "fromName": "Praxera",
+  "replyTo": "enews@davincilabs.com"
+ },
+ "id": "220692678063",
+ "isAb": false,
+ "isPublished": false,
+ "isTransactional": false,
+ "jitterSendTime": true,
+ "language": "en",
+ "name": "Praxera - Custom Formulation - Auto-responder",
+ "previewKey": "HbOEcTyx",
+ "publishDate": "2026-08-30T21:44:19Z",
+ "sendOnPublish": true,
+ "state": "DRAFT",
+ "subcategory": "batch",
+ "subject": "Thank you for your inquiry about custom formulations",
+ "subscriptionDetails": {
+  "officeLocationId": "5451098384",
+  "subscriptionId": "4588994",
+  "subscriptionName": "Marketing Information 1"
+ },
+ "to": {
+  "contactIds": {
+   "exclude": [],
+   "include": []
+  },
+  "contactIlsLists": {
+   "exclude": [],
+   "include": []
+  },
+  "contactLists": {
+   "exclude": [],
+   "include": []
+  },
+  "suppressGraymail": true
+ },
+ "type": "BATCH_EMAIL",
+ "updatedAt": "2026-08-30T21:44:19.494Z",
+ "updatedById": "52613719",
+ "webversion": {
+  "domain": "info.petnaturals.com",
+  "enabled": false,
+  "isPageRedirected": false,
+  "slug": "-temporary-slug-409c2fa7-aea3-4b4c-9b46-ef3e61f7bfc0-1"
+ }
+}

@@ -1,0 +1,1691 @@
+{
+ "activeDomain": "info.petnaturals.com",
+ "archived": false,
+ "businessUnitId": "0",
+ "campaign": "d77ba5a6-32ce-4a0d-a1bc-694b63aaa474",
+ "content": {
+  "flexAreas": {
+   "main": {
+    "boxFirstElementIndex": 0,
+    "boxLastElementIndex": 0,
+    "boxed": false,
+    "isSingleColumnFullWidth": false,
+    "sections": [
+     {
+      "columns": [
+       {
+        "id": "column_1764972496936_0",
+        "widgets": [
+         "module_17649725026809"
+        ],
+        "width": 5
+       },
+       {
+        "id": "column_1764972496936_1",
+        "widgets": [
+         "module_17650502932511"
+        ],
+        "width": 7
+       }
+      ],
+      "id": "section_1764972496936",
+      "path": null,
+      "style": {
+       "backgroundColor": "#231f20",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#231f20",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1765566901539_0",
+        "widgets": [
+         "module_17712502700841",
+         "module_17655670162284"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1765566901538",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414042",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": null,
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1764972705545_0",
+        "widgets": [
+         "module_176497274944512"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1764972705545",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1770741165179_0",
+        "widgets": [
+         "module_17655668085781"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1770741165178",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414043",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414043",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column-1770743562927-0",
+        "widgets": [
+         "module_17707435629272",
+         "module_17707435629273"
+        ],
+        "width": 9
+       },
+       {
+        "id": "column-1770743562927-1",
+        "widgets": [
+         "module_17707435629274"
+        ],
+        "width": 3
+       }
+      ],
+      "id": "section_17707435629275",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414042",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1769464991982_0",
+        "widgets": [
+         "module_176946499197910"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1769464991982",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1765566794309_0",
+        "widgets": [
+         "module_17694638787491"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1765566794309",
+      "path": null,
+      "style": {
+       "backgroundColor": "#FFFFFF",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#FFFFFF",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1770741982192_0",
+        "widgets": [
+         "module_176497296095613",
+         "module_177074169577820",
+         "module_177074156285817"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1762524415880",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1765051966233_0",
+        "widgets": [
+         "module_17650512700142"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1765051966232",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414042",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": "20px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "20px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1765051468314_0",
+        "widgets": [
+         "module_17650515641683"
+        ],
+        "width": 4
+       },
+       {
+        "id": "column_1765051468314_1",
+        "widgets": [
+         "module_17650516170734"
+        ],
+        "width": 8
+       }
+      ],
+      "id": "section_1765051468314",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414042",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1759531828340_0",
+        "widgets": [
+         "module_176946542710612"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1759531828340",
+      "path": null,
+      "style": {
+       "backgroundColor": "#414042",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#414042",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1742593202121_0",
+        "widgets": [
+         "module_17425932020968",
+         "module_17650532333947",
+         "module_17650529016126",
+         "module_17696220496641"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1742593202121",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "builtin_column_1-0",
+        "widgets": [
+         "footer_module"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "builtin_section-1",
+      "path": null,
+      "style": {
+       "backgroundColor": "#FAFAFA",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#FAFAFA",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "9px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": null,
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": null,
+         "paddingTop": null,
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "9px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     }
+    ]
+   }
+  },
+  "styleSettings": {
+   "backgroundColor": "#FAFAFA",
+   "backgroundImage": "",
+   "backgroundImageType": "REPEAT",
+   "bodyBorderWidth": 1.0,
+   "bodyColor": "#ffffff",
+   "buttonStyleSettings": {
+    "backgroundColor": "#76bc43",
+    "cornerRadius": 0,
+    "fontStyle": {
+     "bold": false,
+     "color": "#ffffff",
+     "font": "Arial, sans-serif",
+     "italic": false,
+     "size": 24,
+     "underline": false
+    }
+   },
+   "dividerStyleSettings": {
+    "color": {
+     "color": "#000000",
+     "opacity": 100
+    },
+    "height": 1
+   },
+   "headingOneFont": {
+    "size": 28
+   },
+   "headingTwoFont": {
+    "size": 22
+   },
+   "linksFont": {
+    "bold": false,
+    "color": "#76bc43",
+    "italic": false,
+    "underline": true
+   },
+   "primaryFont": "Arial, sans-serif",
+   "primaryFontColor": "#000000",
+   "primaryFontSize": 18.0,
+   "secondaryFont": "Arial, sans-serif",
+   "secondaryFontColor": "#23496d",
+   "secondaryFontSize": 12.0
+  },
+  "templatePath": "@hubspot/email/dnd/Plain_Text.html",
+  "widgets": {
+   "footer_module": {
+    "body": {
+     "align": "center",
+     "font": {
+      "color": "#19332f",
+      "font": "Arial, sans-serif",
+      "size": {
+       "units": "px",
+       "value": 12
+      }
+     },
+     "hs_enable_module_padding": true,
+     "link_font": {
+      "color": "#76bc43",
+      "font": "Helvetica,Arial,sans-serif",
+      "size": {
+       "units": "px",
+       "value": 12
+      },
+      "styles": {
+       "bold": false,
+       "italic": false,
+       "underline": true
+      }
+     },
+     "module_id": 2869621,
+     "path": "@hubspot/email_footer",
+     "unsubscribe_link_type": "both"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "footer_module",
+    "label": null,
+    "module_id": 2869621,
+    "name": "footer_module",
+    "order": 31,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17425932020968": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "hs_wrapper_css": {},
+     "img": {
+      "alt": "Our focus is on improving lives by producing quality, doctor-formulated supplements.  Learn More at praxerasupplements.com",
+      "height": 333,
+      "loading": "disabled",
+      "src": "https://www.pettechlabs.com/hubfs/Praxera/email/praxera-email-footer.png",
+      "width": 600
+     },
+     "link": "https://meetings.hubspot.com/lschencker-carroll/round-robbin-?uuid=bd5b6aef-f02f-4cd4-9973-10f64fe58a64",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17425932020968",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17425932020968",
+    "order": 26,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17649725026809": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "0px"
+     },
+     "img": {
+      "alt": "Praxera",
+      "height": 86,
+      "src": "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png",
+      "width": 210
+     },
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17649725026809",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17649725026809",
+    "order": 1,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_176497274944512": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "20px",
+      "padding-left": "30px",
+      "padding-right": "30px",
+      "padding-top": "20px"
+     },
+     "html": "<p style=\"line-height: 150%; text-align: left; font-size: 16px;\">{{ personalization_token('contact.firstname', 'Healthcare Professional') }},</p>\n<p style=\"line-height: 150%; text-align: left; font-size: 16px;\">&nbsp;</p>\n<p style=\"font-size: 16px; line-height: 175%;\">Now, we are diving deeper into the <span style=\"font-weight: normal;\">5Rs of Gut Health</span>. So far, we\u2019ve walked through:</p>\n<ul style=\"font-size: 16px; line-height: 175%;\">\n<li aria-level=\"1\"><strong>Remove</strong> <span style=\"font-size: 16px;\">\u2192 </span>clear what doesn\u2019t belong</li>\n<li aria-level=\"1\"><strong>Replace</strong> <span style=\"font-size: 16px;\">\u2192 </span>help the body actually break food down</li>\n<li aria-level=\"1\"><strong>Reinoculate</strong> <span style=\"font-size: 16px;\">\u2192 </span>rebuild the microbiome and drive subscriptions</li>\n</ul>\n<p style=\"font-size: 16px; line-height: 175%;\"><em>Now we\u2019re at the fourth \u2018R\u2019, <strong>Repair</strong>.</em></p>\n<p style=\"font-size: 16px; line-height: 175%;\">&nbsp;</p>\n<p style=\"font-size: 16px; line-height: 175%;\">Repair is about the gut barrier, the lining that decides what gets through and what doesn\u2019t. When patients say things like, \u201cEverything I eat seems to bother me\" or \u201cI\u2019m exhausted and puffy all the time,\u201d they are usually not just dealing with bugs or enzymes.</p>\n<p style=\"font-size: 16px; line-height: 175%;\">&nbsp;</p>\n<p style=\"font-size: 16px; line-height: 175%;\">They\u2019re dealing with a worn-out barrier that needs support.</p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_176497274944512",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_176497274944512",
+    "order": 8,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_176497296095613": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "padding-right": "0px",
+      "padding-top": "0px"
+     },
+     "img": {
+      "alt": "gut problems",
+      "height": 216,
+      "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/gut%20problems.png",
+      "width": 600
+     },
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_176497296095613",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_176497296095613",
+    "order": 17,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17650502932511": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "45px"
+     },
+     "html": "<p style=\"font-size: 14px; line-height: 164%; text-align: right;\"><span style=\"color: #ffffff;\"><a href=\"https://www.praxerasupplements.com/\" style=\"color: #ffffff; text-decoration: none;\" rel=\"noopener\">OUR QUALITY</a>&nbsp; &nbsp;<span style=\"color: #6ca439;\">|&nbsp;</span> &nbsp;<a href=\"https://www.praxerasupplements.com/\" style=\"color: #ffffff; text-decoration: none;\" rel=\"noopener\">SHOP</a>&nbsp; <span style=\"color: #6ca439;\">&nbsp;|&nbsp;</span> &nbsp;<a href=\"https://www.praxerasupplements.com/\" style=\"color: #ffffff; text-decoration: none;\" rel=\"noopener\">LEARN</a></span></p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650502932511",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_17650502932511",
+    "order": 3,
+    "smart_type": null,
+    "styles": {
+     "breakpointStyles": {
+      "mobile": {
+       "hidden": true
+      }
+     }
+    },
+    "type": "module"
+   },
+   "module_17650512700142": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "Schedule a Time to Connect.",
+      "height": 90,
+      "src": "https://www.pettechlabs.com/hubfs/Download%20Offers/DaVinci%20Labs/Newsletters/schedule-a-time-headline_01.jpg",
+      "width": 560
+     },
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650512700142",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17650512700142",
+    "order": 21,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17650515641683": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "",
+      "height": 150,
+      "src": "https://www.pettechlabs.com/hubfs/Download%20Offers/DaVinci%20Labs/Newsletters/DaVinci-Churn_26.jpg",
+      "width": 160
+     },
+     "module_id": 1367093,
+     "style": {
+      "corner_radius": 4,
+      "corner_radius_unit": "px"
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650515641683",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17650515641683",
+    "order": 22,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17650516170734": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "html": "<p style=\"line-height: 125%; font-size: 16px; font-weight: normal;\"><span style=\"color: #ffffff;\">Let's Discuss Health Protocols That Will Best Support Your Patients. Let's find a time that works for you. </span></p>\n<p style=\"line-height: 125%; font-size: 16px; font-weight: normal;\">&nbsp;</p>\n<p style=\"line-height: 125%; font-size: 16px; font-weight: normal;\"><span style=\"color: #ffffff;\">Email me at {{ contact.hubspot_owner_id.email }}, call 800-325-1776, or click the button below to confirm a time to meet. Thanks again, and I look forward to speaking with you!</span></p>\n<p style=\"line-height: 125%; font-size: 16px;\">&nbsp;</p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650516170734",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_17650516170734",
+    "order": 24,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17650529016126": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "15px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "15px"
+     },
+     "html": "<p style=\"font-size: 12px; line-height: 125%; text-align: center;\">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650529016126",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_17650529016126",
+    "order": 29,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17650532333947": {
+    "body": {
+     "color": {
+      "color": "#000000",
+      "opacity": 100
+     },
+     "height": 1,
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "padding-right": "0px",
+      "padding-top": "10px"
+     },
+     "line_type": null,
+     "module_id": 2191110,
+     "style": {
+      "width": 100
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17650532333947",
+    "label": null,
+    "module_id": 2191110,
+    "name": "module_17650532333947",
+    "order": 27,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17655668085781": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "padding-right": "0px",
+      "padding-top": "0px"
+     },
+     "img": {
+      "alt": "The 5Rs Give You a Clear Purpose Behind Each Product.",
+      "height": 130,
+      "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Newsletters/January%2026/DaVinci-PL_04.jpg",
+      "width": 560
+     },
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17655668085781",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17655668085781",
+    "order": 9,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17655670162284": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "25px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "25px"
+     },
+     "html": "<h2 style=\"line-height: 125%; text-align: center;\"><span style=\"color: #ffffff;\"><strong>Step 4: Repair \u2014 the next-level</strong>.</span></h2>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17655670162284",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_17655670162284",
+    "order": 6,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17694638787491": {
+    "body": {
+     "background_color": "#76bc43",
+     "corner_radius": 0,
+     "font": "Arial, sans-serif",
+     "font_color": "#ffffff",
+     "font_size": 24,
+     "font_style": {
+      "color": "#ffffff",
+      "font": "Arial, sans-serif",
+      "size": {
+       "units": "px",
+       "value": 24
+      },
+      "styles": {
+       "bold": false,
+       "italic": false,
+       "underline": false
+      }
+     },
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "link_to": "meetings_link",
+     "meeting_field": "https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin",
+     "module_id": 1976948,
+     "style": {
+      "corner_radius": 6,
+      "font_style": {
+       "color": "#ffffff",
+       "font": "Arial, sans-serif",
+       "size": {
+        "units": "px",
+        "value": 18
+       },
+       "styles": {
+        "bold": false,
+        "italic": false,
+        "underline": false
+       }
+      },
+      "inner_vertical_padding": 25
+     },
+     "text": "SCHEDULE A CALL WITH OUR \u0003PRIVATE LABEL TEAM \u2192"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17694638787491",
+    "label": null,
+    "module_id": 1976948,
+    "name": "module_17694638787491",
+    "order": 16,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_176946499197910": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "20px",
+      "padding-left": "30px",
+      "padding-right": "30px",
+      "padding-top": "20px"
+     },
+     "html": "<h2>What Repair Looks Like in a Real Product Line</h2>\n<p><em><span style=\"font-size: 16px;\">At <span style=\"background:#FFF3CD;border-bottom:2px solid #8A6300;\" data-praxera-review=\"brand\">Praxera</span>, two formulas live in this Repair slot:<br></span></em></p>\n<ul>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\"><a href=\"https://www.praxerasupplements.com/\" style=\"font-weight: bold;\" rel=\"noopener\">GI Benefits\u00ae</a><span style=\"font-weight: bold;\"> \u2192</span>&nbsp;a gut-lining support formula with ingredients to soothe and feed the GI tract*</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\"><a href=\"https://www.praxerasupplements.com/\" style=\"font-weight: bold;\" rel=\"noopener\">Immuno Benefits</a><span style=\"font-weight: bold;\"> \u2192 </span>a targeted amino acid that supports the integrity of the gut lining*</span></li>\n</ul>\n<p><span style=\"font-size: 16px;\">Think of your Repair SKU </span><em><span style=\"font-size: 16px;\">as t</span></em><span style=\"font-size: 16px;\">he product for customers who have \u201ctried everything,\u201d t</span><span style=\"font-size: 16px;\">he one that helps explain why the gut lining itself matters.</span></p>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_176946499197910",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_176946499197910",
+    "order": 15,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_176946542710612": {
+    "body": {
+     "background_color": "#76bc43",
+     "corner_radius": 0,
+     "font": "Arial, sans-serif",
+     "font_color": "#ffffff",
+     "font_size": 24,
+     "font_style": {
+      "color": "#ffffff",
+      "font": "Arial, sans-serif",
+      "size": {
+       "units": "px",
+       "value": 24
+      },
+      "styles": {
+       "bold": false,
+       "italic": false,
+       "underline": false
+      }
+     },
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "50px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "link_to": "meetings_link",
+     "meeting_field": "https://meetings.hubspot.com/art-monaghan/private-label-chatbot-round-robin",
+     "module_id": 1976948,
+     "style": {
+      "corner_radius": 6,
+      "font_style": {
+       "color": "#ffffff",
+       "font": "Arial, sans-serif",
+       "size": {
+        "units": "px",
+        "value": 18
+       },
+       "styles": {
+        "bold": false,
+        "italic": false,
+        "underline": false
+       }
+      },
+      "inner_vertical_padding": 25
+     },
+     "text": "SCHEDULE A CALL WITH OUR \u0003PRIVATE LABEL TEAM \u2192"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_176946542710612",
+    "label": null,
+    "module_id": 1976948,
+    "name": "module_176946542710612",
+    "order": 25,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17696220496641": {
+    "body": {
+     "color": {
+      "color": "#000000",
+      "opacity": 100
+     },
+     "height": 1,
+     "hs_enable_module_padding": false,
+     "hs_wrapper_css": {
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "padding-right": "0px",
+      "padding-top": "0px"
+     },
+     "line_type": null,
+     "module_id": 2191110,
+     "style": {
+      "width": 100
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17696220496641",
+    "label": null,
+    "module_id": 2191110,
+    "name": "module_17696220496641",
+    "order": 30,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_177074156285817": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "html": "<h2>How to Talk About Repair</h2>\n<p style=\"font-size: 16px; line-height: 175%;\">You don\u2019t need wild promises here. You need clear, simple language, like:</p>\n<p style=\"font-size: 16px; line-height: 175%;\">\u201cAfter you clean up the gut and support digestion, the next step is supporting the lining itself.\u201d</p>\n<p style=\"font-size: 16px; line-height: 175%;\">&nbsp;</p>\n<p style=\"font-size: 16px; line-height: 175%;\"><em>From there, your Repair product can be positioned as:</em></p>\n<ul style=\"font-size: 16px; line-height: 175%;\">\n<li aria-level=\"1\">The \u201cdeeper support\u201d option for customers who want more than basic probiotics</li>\n<li aria-level=\"1\">The upgrade inside a 12-week gut reset</li>\n<li aria-level=\"1\">The \u201cif you\u2019ve had gut issues for years, start here\u201d kind of product</li>\n</ul>\n<h2 style=\"font-size: 16px; line-height: 175%;\">Where Repair Fits in Bundles and Protocols</h2>\n<p style=\"font-size: 16px; line-height: 175%;\">Here\u2019s how smart brands slip Repair into their system:</p>\n<ul style=\"font-size: 16px; line-height: 175%;\">\n<li aria-level=\"1\"><strong><em>12-Week Gut Reset:</em></strong><br>\n<ul>\n<li aria-level=\"2\">Weeks 1\u20134: Remove + Replace</li>\n<li aria-level=\"2\">Weeks 3\u201312: Reinoculate</li>\n<li aria-level=\"2\">Weeks 5\u201312: Add Repair for barrier support<br><br></li>\n</ul>\n</li>\n<li aria-level=\"1\"><em><strong>Deep Gut Support Bundle:</strong></em><br>\n<ul>\n<li aria-level=\"2\">Reinoculate + Repair as a \u201cnext level\u201d stack for higher-ticket customers<br><br></li>\n</ul>\n</li>\n<li aria-level=\"1\"><em><strong>Practitioner or clinic channel:</strong></em><br>\n<ul>\n<li aria-level=\"2\">Repair becomes the product they recommend for more complex cases</li>\n<li aria-level=\"2\">You get credibility by association</li>\n</ul>\n</li>\n</ul>\n<p style=\"font-size: 16px; line-height: 175%;\"><em>The message is simple:<br><br></em></p>\n<p style=\"font-size: 16px; line-height: 175%;\">\u201cIf we\u2019re going to talk about gut health seriously, we don\u2019t stop at probiotics. We support the lining too.\u201d</p>\n<h2>&nbsp;</h2>\n<h2>Want Help Designing Your Repair SKU or Bundle?</h2>\n<p><span style=\"font-size: 16px;\">If you\u2019re looking at your catalog and realizing you have \u201cremove,\u201d \u201cprobiotic,\u201d maybe some enzymes\u2014but nothing that clearly sits in the Repair stage\u2014that\u2019s exactly what we can help you build. </span><span style=\"font-size: 16px;\">Our private label team can:</span></p>\n<ul>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">Show you which Repair-style formulas fit your audience</span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">Help you name and position them </span></li>\n<li aria-level=\"1\"><span style=\"font-size: 16px;\">Map where Repair fits into your 5R bundles&nbsp;<br></span></li>\n</ul>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_177074156285817",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_177074156285817",
+    "order": 20,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_177074169577820": {
+    "body": {
+     "color": {
+      "color": "#000000",
+      "opacity": 100
+     },
+     "height": 1,
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "line_type": null,
+     "module_id": 2191110
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_177074169577820",
+    "label": null,
+    "module_id": 2191110,
+    "name": "module_177074169577820",
+    "order": 18,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_17707435629272": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "5px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "0px"
+     },
+     "img": {
+      "alt": "4 - Repair",
+      "height": 41,
+      "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Download%20Offers/DaVinci%20Labs/Newsletters/January%2026/DaVinci-PL_21.jpg",
+      "width": 240
+     },
+     "lineNumber": 21,
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093,
+     "path": "@hubspot/image_email",
+     "startPosition": -525,
+     "style": {
+      "alignment": "left"
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17707435629272",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17707435629272",
+    "order": 10,
+    "smart_type": null,
+    "styles": {
+     "breakpointStyles": {
+      "default": {
+       "hidden": false
+      },
+      "mobile": {
+       "hidden": false
+      }
+     }
+    },
+    "type": "module"
+   },
+   "module_17707435629273": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "0px"
+     },
+     "html": "<p style=\"line-height: 125%;\"><span style=\"color: #ffffff; font-size: 16px;\">The next level that&nbsp;speaks to gut lining and deeper support.</span></p>",
+     "lineNumber": 29,
+     "module_id": 1155639,
+     "path": "@hubspot/rich_text",
+     "startPosition": -204
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17707435629273",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_17707435629273",
+    "order": 12,
+    "smart_type": null,
+    "styles": {
+     "breakpointStyles": {
+      "default": {
+       "hidden": false
+      },
+      "mobile": {
+       "hidden": false
+      }
+     }
+    },
+    "type": "module"
+   },
+   "module_17707435629274": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "",
+      "height": 89,
+      "src": "https://www.pettechlabs.com/hubfs/Praxera/email/praxera-two-bottle-yourname.png",
+      "width": 110
+     },
+     "lineNumber": 48,
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093,
+     "path": "@hubspot/image_email",
+     "startPosition": -600,
+     "stretch_on_mobile": false,
+     "style": {
+      "alignment": "left",
+      "corner_radius": 4,
+      "corner_radius_unit": "px"
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17707435629274",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17707435629274",
+    "order": 13,
+    "smart_type": null,
+    "styles": {
+     "breakpointStyles": {
+      "default": {
+       "hidden": false
+      },
+      "mobile": {
+       "hidden": false
+      }
+     }
+    },
+    "type": "module"
+   },
+   "module_17712502700841": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "Group-Product-Shot",
+      "height": 344,
+      "src": "https://www.pettechlabs.com/hubfs/Praxera/email/praxera-group-product-shot.png",
+      "width": 560
+     },
+     "link": "https://www.praxerasupplements.com/en/pl-demo-get-started",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_17712502700841",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_17712502700841",
+    "order": 4,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "preview_text": {
+    "body": {
+     "value": "Repair is about the gut barrier, the lining that decides what gets through and what doesn\u2019t.\u00a0"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "preview_text",
+    "label": "Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
+    "name": "preview_text",
+    "order": 0,
+    "smart_type": null,
+    "styles": {},
+    "type": "text"
+   }
+  }
+ },
+ "createdAt": "2026-08-30T19:52:56.187Z",
+ "createdById": "52613719",
+ "emailTemplateMode": "DRAG_AND_DROP",
+ "from": {
+  "fromName": "Praxera",
+  "replyTo": "{{ contact.hubspot_owner_id.email }}"
+ },
+ "id": "220685976583",
+ "isAb": false,
+ "isPublished": false,
+ "isTransactional": false,
+ "jitterSendTime": false,
+ "language": "en",
+ "name": "Praxera - L // PM - Automated Email: PL 5rs #5",
+ "previewKey": "CtXJhkbE",
+ "publishDate": "2026-08-30T21:44:14Z",
+ "sendOnPublish": true,
+ "state": "DRAFT",
+ "subcategory": "batch",
+ "subject": "Repair Stage of Gut Health: The \u201cNext Level\u201d",
+ "subscriptionDetails": {
+  "officeLocationId": "5451098384",
+  "subscriptionId": "4588994",
+  "subscriptionName": "Marketing Information 1"
+ },
+ "to": {
+  "contactIds": {
+   "exclude": [],
+   "include": []
+  },
+  "contactIlsLists": {
+   "exclude": [],
+   "include": []
+  },
+  "contactLists": {
+   "exclude": [],
+   "include": []
+  },
+  "suppressGraymail": true
+ },
+ "type": "BATCH_EMAIL",
+ "updatedAt": "2026-08-30T21:44:14.200Z",
+ "updatedById": "52613719",
+ "webversion": {
+  "domain": "info.petnaturals.com",
+  "enabled": false,
+  "isPageRedirected": false,
+  "slug": "-temporary-slug-1bd00c33-9e8a-45d8-ac46-185888d28b33-1"
+ }
+}
