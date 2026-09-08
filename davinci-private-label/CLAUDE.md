@@ -47,3 +47,8 @@ pages by 30 September. Read `deliverables/CALL_ACTIONS_2SEP.md` for the current 
   Formulation mentions, `domain_move.py` moved pages apex to www.
 - Key page IDs: home 216189433405, fitness 216179449410, design-services 216179449206,
   resources 216189433440, how-to-sell 216176671879, privacy 216194811650.
+
+## Design rules (standing, from Shawn 8 Sep 2026)
+- Any grid of like items (tiles, cards, steps, stats) whose last row is not full must centre that last row. Applies to every instance, not per page — implement in the module (PL - Tile Grid, PL - Card Grid, PL - Global How It Works, PL - Stat Band), never with per-page overrides.
+- Sticky header stays: `#hs_cos_wrapper_global_header` is position: sticky with a solid white background in Global Header module.css.
+- No links from Praxera to DaVinci, and no purchase path on Praxera (Tammy, 8 Sep). Product-guide style CTAs go to /get-started.
