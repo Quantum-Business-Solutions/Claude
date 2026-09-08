@@ -1,0 +1,1492 @@
+{
+ "id": "1875319813",
+ "isEnabled": false,
+ "flowType": "WORKFLOW",
+ "revisionId": "1",
+ "name": "Praxera - Private Label_MoF_Danielle",
+ "description": "Sends targeted emails based on supplement format link clicks and delays messages for contacts in specific lifecycle stages who engaged with private label forms or topics. [Praxera clone \u2014 staged for the brand migration. Disabled by design.]",
+ "createdAt": "2026-08-30T21:44:50.544Z",
+ "updatedAt": "2026-08-30T21:44:50.544Z",
+ "startActionId": "61",
+ "nextAvailableActionId": "62",
+ "actions": [
+  {
+   "actionId": "1",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "2"
+   },
+   "fields": {
+    "content_id": "220692678048"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "2",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "3"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "3",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "opportunity",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         },
+         {
+          "property": "topic",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6c7c9a78-0291-4fb4-8d61-c1c2e1f0f63f",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         },
+         {
+          "property": "topic",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "4"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "4",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "5"
+   },
+   "fields": {
+    "content_id": "220688283309"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "5",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "6"
+   },
+   "fields": {
+    "delta": "7200",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "6",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "opportunity",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         },
+         {
+          "property": "topic",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6c7c9a78-0291-4fb4-8d61-c1c2e1f0f63f",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         },
+         {
+          "property": "topic",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "17"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "17",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "level": "EMAIL_API_CAMPAIGN_GROUP",
+          "emailId": "311855508",
+          "appId": "2286",
+          "operator": "LINK_CLICKED",
+          "clickUrl": "bit.ly/davinci-chewable-supplements",
+          "filterType": "EMAIL_EVENT"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Chewables",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "19"
+     }
+    },
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "level": "EMAIL_API_CAMPAIGN_GROUP",
+          "emailId": "311855508",
+          "appId": "2286",
+          "operator": "LINK_CLICKED",
+          "clickUrl": "bit.ly/davinci-liquid-supplements",
+          "filterType": "EMAIL_EVENT"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Liquid",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "27"
+     }
+    },
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "level": "EMAIL_API_CAMPAIGN_GROUP",
+          "emailId": "311855508",
+          "appId": "2286",
+          "operator": "LINK_CLICKED",
+          "clickUrl": "bit.ly/davinci-powder-supplements",
+          "filterType": "EMAIL_EVENT"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Powder",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "36"
+     }
+    },
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "level": "EMAIL_API_CAMPAIGN_GROUP",
+          "emailId": "311855508",
+          "appId": "2286",
+          "operator": "LINK_CLICKED",
+          "clickUrl": "bit.ly/4eEAF9s",
+          "filterType": "EMAIL_EVENT"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Capsules",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "45"
+     }
+    },
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "level": "EMAIL_API_CAMPAIGN_GROUP",
+          "emailId": "311855508",
+          "appId": "2286",
+          "operator": "LINK_CLICKED",
+          "clickUrl": "bit.ly/3RM4c78",
+          "filterType": "EMAIL_EVENT"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Tablets",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "53"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "60"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "19",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "43"
+   },
+   "fields": {
+    "content_id": "220693084779"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "20",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "opportunity",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "22"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "22",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "24"
+   },
+   "fields": {
+    "content_id": "220692678051"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "23",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "25"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "24",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "23"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "25",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "fields": {
+    "content_id": "220685976468"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "27",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "34"
+   },
+   "fields": {
+    "content_id": "220688283311"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "28",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "opportunity",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "30"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "30",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "31"
+   },
+   "fields": {
+    "content_id": "220692678053"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "31",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "32"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "32",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "33"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "33",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "fields": {
+    "content_id": "220685976468"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "34",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "28"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "36",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "37"
+   },
+   "fields": {
+    "content_id": "220692678057"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "37",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "38"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "38",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "opportunity",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "39"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "39",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "40"
+   },
+   "fields": {
+    "content_id": "220688283315"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "40",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "41"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "41",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "42"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "42",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "fields": {
+    "content_id": "220685976468"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "43",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "20"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "45",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "46"
+   },
+   "fields": {
+    "content_id": "220692678059"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "46",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "47"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "47",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "opportunity",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "48"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "48",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "49"
+   },
+   "fields": {
+    "content_id": "220688283317"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "49",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "50"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "50",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "51"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "51",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "fields": {
+    "content_id": "220685976468"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "53",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "54"
+   },
+   "fields": {
+    "content_id": "220693084782"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "54",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "55"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "55",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "opportunity",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "56"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "56",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "57"
+   },
+   "fields": {
+    "content_id": "220688283320"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "57",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "58"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "58",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "59"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "59",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "fields": {
+    "content_id": "220685976468"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "60",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "fields": {
+    "content_id": "220685976468"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "61",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "1"
+   },
+   "fields": {
+    "delta": "5760",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  }
+ ],
+ "enrollmentCriteria": {
+  "shouldReEnroll": false,
+  "listFilterBranch": {
+   "filterBranches": [
+    {
+     "filterBranches": [],
+     "filters": [
+      {
+       "property": "lifecyclestage",
+       "operation": {
+        "operator": "IS_NONE_OF",
+        "includeObjectsWithNoValueSet": true,
+        "values": [
+         "opportunity",
+         "salesqualifiedlead",
+         "customer"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      },
+      {
+       "property": "hs_all_assigned_business_unit_ids",
+       "operation": {
+        "operator": "IS_ANY_OF",
+        "includeObjectsWithNoValueSet": false,
+        "values": [
+         "0"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      },
+      {
+       "listId": "1698",
+       "metadata": {
+        "id": "22357032",
+        "inListType": "WORKFLOWS_COMPLETED"
+       },
+       "operator": "IN_LIST",
+       "filterType": "IN_LIST"
+      },
+      {
+       "formId": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+       "operator": "NOT_FILLED_OUT",
+       "filterType": "FORM_SUBMISSION"
+      }
+     ],
+     "filterBranchType": "AND",
+     "filterBranchOperator": "AND"
+    },
+    {
+     "filterBranches": [],
+     "filters": [
+      {
+       "property": "lifecyclestage",
+       "operation": {
+        "operator": "IS_NONE_OF",
+        "includeObjectsWithNoValueSet": true,
+        "values": [
+         "opportunity",
+         "salesqualifiedlead",
+         "customer"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      },
+      {
+       "property": "hs_all_assigned_business_unit_ids",
+       "operation": {
+        "operator": "IS_ANY_OF",
+        "includeObjectsWithNoValueSet": false,
+        "values": [
+         "0"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      },
+      {
+       "listId": "1698",
+       "metadata": {
+        "id": "22357032",
+        "inListType": "WORKFLOWS_COMPLETED"
+       },
+       "operator": "IN_LIST",
+       "filterType": "IN_LIST"
+      },
+      {
+       "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+       "operator": "NOT_FILLED_OUT",
+       "filterType": "FORM_SUBMISSION"
+      },
+      {
+       "property": "topic",
+       "operation": {
+        "operator": "IS_ANY_OF",
+        "includeObjectsWithNoValueSet": false,
+        "values": [
+         "Private Label"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      }
+     ],
+     "filterBranchType": "AND",
+     "filterBranchOperator": "AND"
+    }
+   ],
+   "filters": [],
+   "filterBranchType": "OR",
+   "filterBranchOperator": "OR"
+  },
+  "unEnrollObjectsNotMeetingCriteria": false,
+  "reEnrollmentTriggersFilterBranches": [],
+  "type": "LIST_BASED"
+ },
+ "timeWindows": [
+  {
+   "day": "MONDAY",
+   "startTime": {
+    "hour": 15,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 16,
+    "minute": 30
+   }
+  },
+  {
+   "day": "TUESDAY",
+   "startTime": {
+    "hour": 15,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 16,
+    "minute": 30
+   }
+  },
+  {
+   "day": "WEDNESDAY",
+   "startTime": {
+    "hour": 15,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 16,
+    "minute": 30
+   }
+  },
+  {
+   "day": "THURSDAY",
+   "startTime": {
+    "hour": 15,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 16,
+    "minute": 30
+   }
+  },
+  {
+   "day": "FRIDAY",
+   "startTime": {
+    "hour": 15,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 16,
+    "minute": 30
+   }
+  },
+  {
+   "day": "SATURDAY",
+   "startTime": {
+    "hour": 12,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 19,
+    "minute": 0
+   }
+  },
+  {
+   "day": "SUNDAY",
+   "startTime": {
+    "hour": 12,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 19,
+    "minute": 0
+   }
+  }
+ ],
+ "blockedDates": [],
+ "customProperties": {},
+ "dataSources": [],
+ "crmObjectCreationStatus": "COMPLETE",
+ "suppressionListIds": [
+  1495,
+  1566
+ ],
+ "goalFilterBranch": {
+  "filterBranches": [
+   {
+    "filterBranches": [],
+    "filters": [
+     {
+      "formId": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+      "operator": "FILLED_OUT",
+      "filterType": "FORM_SUBMISSION"
+     },
+     {
+      "listId": "5370",
+      "metadata": {
+       "id": "60575002",
+       "inListType": "WORKFLOWS_ACTIVE"
+      },
+      "operator": "IN_LIST",
+      "filterType": "IN_LIST"
+     }
+    ],
+    "filterBranchType": "AND",
+    "filterBranchOperator": "AND"
+   },
+   {
+    "filterBranches": [],
+    "filters": [
+     {
+      "property": "lifecyclestage",
+      "operation": {
+       "operator": "IS_ANY_OF",
+       "includeObjectsWithNoValueSet": false,
+       "values": [
+        "opportunity",
+        "salesqualifiedlead",
+        "customer"
+       ],
+       "operationType": "ENUMERATION"
+      },
+      "filterType": "PROPERTY"
+     },
+     {
+      "listId": "5370",
+      "metadata": {
+       "id": "60575002",
+       "inListType": "WORKFLOWS_ACTIVE"
+      },
+      "operator": "IN_LIST",
+      "filterType": "IN_LIST"
+     }
+    ],
+    "filterBranchType": "AND",
+    "filterBranchOperator": "AND"
+   },
+   {
+    "filterBranches": [],
+    "filters": [
+     {
+      "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+      "operator": "FILLED_OUT",
+      "filterType": "FORM_SUBMISSION"
+     },
+     {
+      "property": "topic",
+      "operation": {
+       "operator": "IS_ANY_OF",
+       "includeObjectsWithNoValueSet": false,
+       "values": [
+        "Private Label"
+       ],
+       "operationType": "ENUMERATION"
+      },
+      "filterType": "PROPERTY"
+     },
+     {
+      "listId": "5370",
+      "metadata": {
+       "id": "60575002",
+       "inListType": "WORKFLOWS_ACTIVE"
+      },
+      "operator": "IN_LIST",
+      "filterType": "IN_LIST"
+     }
+    ],
+    "filterBranchType": "AND",
+    "filterBranchOperator": "AND"
+   }
+  ],
+  "filters": [],
+  "filterBranchType": "OR",
+  "filterBranchOperator": "OR"
+ },
+ "canEnrollFromSalesforce": false,
+ "type": "CONTACT_FLOW",
+ "objectTypeId": "0-1"
+}

@@ -1,0 +1,703 @@
+{
+ "id": "1875338809",
+ "isEnabled": false,
+ "flowType": "WORKFLOW",
+ "revisionId": "1",
+ "name": "Praxera - PL Guide_BoF_Paul",
+ "description": "Sends a series of emails about private label topics to contacts who submitted related forms and match lifecycle and brand criteria, with delays between messages. [Praxera clone \u2014 staged for the brand migration. Disabled by design.]",
+ "createdAt": "2026-08-30T21:44:40.694Z",
+ "updatedAt": "2026-08-30T21:44:40.694Z",
+ "startActionId": "2",
+ "nextAvailableActionId": "11",
+ "actions": [
+  {
+   "actionId": "2",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "3"
+   },
+   "fields": {
+    "content_id": "220688836363"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "3",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "4"
+   },
+   "fields": {
+    "delta": "7200",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "4",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "opportunity",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "topic",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         },
+         {
+          "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         },
+         {
+          "property": "topic",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "5"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "5",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "6"
+   },
+   "fields": {
+    "content_id": "220688836366"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "6",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "7"
+   },
+   "fields": {
+    "delta": "7200",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "7",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "opportunity",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "topic",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         },
+         {
+          "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         },
+         {
+          "property": "topic",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "pers"
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "8"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "8",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "9"
+   },
+   "fields": {
+    "content_id": "220688836233"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "9",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "10"
+   },
+   "fields": {
+    "delta": "10080",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "10",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "lifecyclestage",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "evangelist",
+            "opportunity",
+            "salesqualifiedlead",
+            "customer"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "topic",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         },
+         {
+          "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       },
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         },
+         {
+          "property": "topic",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "pers"
+    }
+   ],
+   "type": "LIST_BRANCH"
+  }
+ ],
+ "enrollmentCriteria": {
+  "shouldReEnroll": false,
+  "listFilterBranch": {
+   "filterBranches": [
+    {
+     "filterBranches": [],
+     "filters": [
+      {
+       "listId": "2063",
+       "metadata": {
+        "id": "31696824",
+        "inListType": "WORKFLOWS_COMPLETED"
+       },
+       "operator": "IN_LIST",
+       "filterType": "IN_LIST"
+      },
+      {
+       "listId": "2831",
+       "metadata": {
+        "id": "39617212",
+        "inListType": "WORKFLOWS_ENROLLMENT"
+       },
+       "operator": "NOT_IN_LIST",
+       "filterType": "IN_LIST"
+      },
+      {
+       "formId": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+       "coalescingRefineBy": {
+        "maxOccurrences": 0,
+        "type": "NUM_OCCURRENCES"
+       },
+       "operator": "FILLED_OUT",
+       "filterType": "FORM_SUBMISSION"
+      },
+      {
+       "formId": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+       "coalescingRefineBy": {
+        "maxOccurrences": 0,
+        "type": "NUM_OCCURRENCES"
+       },
+       "operator": "FILLED_OUT",
+       "filterType": "FORM_SUBMISSION"
+      },
+      {
+       "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+       "coalescingRefineBy": {
+        "maxOccurrences": 0,
+        "type": "NUM_OCCURRENCES"
+       },
+       "operator": "FILLED_OUT",
+       "filterType": "FORM_SUBMISSION"
+      },
+      {
+       "property": "hs_all_assigned_business_unit_ids",
+       "operation": {
+        "operator": "IS_ANY_OF",
+        "includeObjectsWithNoValueSet": false,
+        "values": [
+         "0"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      },
+      {
+       "property": "hs_all_assigned_business_unit_ids",
+       "operation": {
+        "operator": "IS_NONE_OF",
+        "includeObjectsWithNoValueSet": false,
+        "values": [
+         "295295",
+         "295296"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      },
+      {
+       "property": "lifecyclestage",
+       "operation": {
+        "operator": "IS_NONE_OF",
+        "includeObjectsWithNoValueSet": false,
+        "values": [
+         "evangelist",
+         "opportunity",
+         "salesqualifiedlead",
+         "customer"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      }
+     ],
+     "filterBranchType": "AND",
+     "filterBranchOperator": "AND"
+    }
+   ],
+   "filters": [],
+   "filterBranchType": "OR",
+   "filterBranchOperator": "OR"
+  },
+  "unEnrollObjectsNotMeetingCriteria": false,
+  "reEnrollmentTriggersFilterBranches": [],
+  "type": "LIST_BASED"
+ },
+ "timeWindows": [
+  {
+   "day": "MONDAY",
+   "startTime": {
+    "hour": 18,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 22,
+    "minute": 0
+   }
+  },
+  {
+   "day": "TUESDAY",
+   "startTime": {
+    "hour": 18,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 22,
+    "minute": 0
+   }
+  },
+  {
+   "day": "WEDNESDAY",
+   "startTime": {
+    "hour": 18,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 22,
+    "minute": 0
+   }
+  },
+  {
+   "day": "THURSDAY",
+   "startTime": {
+    "hour": 18,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 22,
+    "minute": 0
+   }
+  },
+  {
+   "day": "FRIDAY",
+   "startTime": {
+    "hour": 18,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 22,
+    "minute": 0
+   }
+  },
+  {
+   "day": "SATURDAY",
+   "startTime": {
+    "hour": 6,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 11,
+    "minute": 0
+   }
+  },
+  {
+   "day": "SUNDAY",
+   "startTime": {
+    "hour": 18,
+    "minute": 0
+   },
+   "endTime": {
+    "hour": 23,
+    "minute": 0
+   }
+  }
+ ],
+ "blockedDates": [],
+ "customProperties": {},
+ "dataSources": [],
+ "crmObjectCreationStatus": "COMPLETE",
+ "suppressionListIds": [
+  1566
+ ],
+ "goalFilterBranch": {
+  "filterBranches": [
+   {
+    "filterBranches": [],
+    "filters": [
+     {
+      "formId": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+      "pruningRefineBy": {
+       "rangeType": "BETWEEN",
+       "upperBoundOffset": {
+        "offsetDirection": "PAST",
+        "timeUnit": "DAYS",
+        "amount": 0
+       },
+       "lowerBoundOffset": {
+        "offsetDirection": "PAST",
+        "timeUnit": "DAYS",
+        "amount": 2
+       },
+       "type": "RELATIVE_RANGED"
+      },
+      "operator": "FILLED_OUT",
+      "filterType": "FORM_SUBMISSION"
+     },
+     {
+      "listId": "3296",
+      "metadata": {
+       "id": "40685399",
+       "inListType": "WORKFLOWS_ACTIVE"
+      },
+      "operator": "IN_LIST",
+      "filterType": "IN_LIST"
+     }
+    ],
+    "filterBranchType": "AND",
+    "filterBranchOperator": "AND"
+   },
+   {
+    "filterBranches": [],
+    "filters": [
+     {
+      "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+      "pruningRefineBy": {
+       "rangeType": "BETWEEN",
+       "upperBoundOffset": {
+        "offsetDirection": "PAST",
+        "timeUnit": "DAYS",
+        "amount": 0
+       },
+       "lowerBoundOffset": {
+        "offsetDirection": "PAST",
+        "timeUnit": "DAYS",
+        "amount": 2
+       },
+       "type": "RELATIVE_RANGED"
+      },
+      "operator": "FILLED_OUT",
+      "filterType": "FORM_SUBMISSION"
+     },
+     {
+      "listId": "3296",
+      "metadata": {
+       "id": "40685399",
+       "inListType": "WORKFLOWS_ACTIVE"
+      },
+      "operator": "IN_LIST",
+      "filterType": "IN_LIST"
+     }
+    ],
+    "filterBranchType": "AND",
+    "filterBranchOperator": "AND"
+   }
+  ],
+  "filters": [],
+  "filterBranchType": "OR",
+  "filterBranchOperator": "OR"
+ },
+ "canEnrollFromSalesforce": false,
+ "type": "CONTACT_FLOW",
+ "objectTypeId": "0-1"
+}

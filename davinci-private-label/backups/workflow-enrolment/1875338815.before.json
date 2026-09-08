@@ -1,0 +1,1669 @@
+{
+ "id": "1875338815",
+ "isEnabled": false,
+ "flowType": "WORKFLOW",
+ "revisionId": "1",
+ "name": "Praxera - Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)",
+ "description": "Assigns private label leads from DaVinci Laboratories to sales owners, updates lifecycle stages, creates follow-up calls and tasks, and routes leads based on product interest and form submissions. [Praxera clone \u2014 staged for the brand migration. Disabled by design.]",
+ "createdAt": "2026-08-30T21:44:57.833Z",
+ "updatedAt": "2026-08-30T21:44:57.833Z",
+ "startActionId": "12",
+ "nextAvailableActionId": "127",
+ "actions": [
+  {
+   "actionId": "1",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-11",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "34"
+   },
+   "fields": {
+    "user_ids": [
+     "12246712",
+     "5508380"
+    ],
+    "target_property": "hubspot_owner_id",
+    "overwrite_current_owner": "false"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "2",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-3",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "5"
+   },
+   "fields": {
+    "task_type": "CALL",
+    "subject": "Call New Private Label Lead {{ enrolled_object.primary_contact_name }}{{ enrolled_object.primary_contact_last_name }}",
+    "body": "",
+    "associations": [
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 8
+      },
+      "value": {
+       "sourceSpec": {
+        "associationCategory": "HUBSPOT_DEFINED",
+        "associationTypeId": 279
+       },
+       "type": "COPY_ASSOCIATION"
+      }
+     },
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 10
+      },
+      "value": {
+       "type": "ENROLLED_OBJECT"
+      }
+     }
+    ],
+    "use_explicit_associations": "true",
+    "owner_assignment": {
+     "value": {
+      "propertyName": "hubspot_owner_id",
+      "type": "OBJECT_PROPERTY"
+     },
+     "type": "CUSTOM"
+    },
+    "priority": "NONE",
+    "reminder_time": {
+     "delta": 0,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "4",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "2"
+   },
+   "fields": {
+    "content_id": "220688283420"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "5",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-3",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "6"
+   },
+   "fields": {
+    "task_type": "TODO",
+    "subject": "Enroll {{ enrolled_object.primary_contact_name }}{{ enrolled_object.primary_contact_last_name }} in PL SEQ\u00a0",
+    "body": "<p>If you are unable to connect with this lead on the first call- enroll in PL SEQ. </p>",
+    "associations": [
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 8
+      },
+      "value": {
+       "sourceSpec": {
+        "associationCategory": "HUBSPOT_DEFINED",
+        "associationTypeId": 279
+       },
+       "type": "COPY_ASSOCIATION"
+      }
+     },
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 10
+      },
+      "value": {
+       "type": "ENROLLED_OBJECT"
+      }
+     }
+    ],
+    "use_explicit_associations": "true",
+    "owner_assignment": {
+     "value": {
+      "propertyName": "hubspot_owner_id",
+      "type": "OBJECT_PROPERTY"
+     },
+     "type": "CUSTOM"
+    },
+    "priority": "NONE",
+    "reminder_time": {
+     "delta": 0,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "6",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-3",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "7"
+   },
+   "fields": {
+    "task_type": "CALL",
+    "subject": "Follow up call to Lead {{ enrolled_object.primary_contact_name }}{{ enrolled_object.primary_contact_last_name }}",
+    "body": "<p>Call to follow up on the how to make money blog that was sent.&nbsp; Can you get them to set a meeting? </p>",
+    "associations": [
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 8
+      },
+      "value": {
+       "sourceSpec": {
+        "associationCategory": "HUBSPOT_DEFINED",
+        "associationTypeId": 279
+       },
+       "type": "COPY_ASSOCIATION"
+      }
+     },
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 10
+      },
+      "value": {
+       "type": "ENROLLED_OBJECT"
+      }
+     }
+    ],
+    "use_explicit_associations": "true",
+    "owner_assignment": {
+     "value": {
+      "propertyName": "hubspot_owner_id",
+      "type": "OBJECT_PROPERTY"
+     },
+     "type": "CUSTOM"
+    },
+    "priority": "NONE",
+    "due_time": {
+     "delta": 2,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    },
+    "reminder_time": {
+     "delta": 0,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "7",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-3",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "8"
+   },
+   "fields": {
+    "task_type": "CALL",
+    "subject": "Follow up call to Lead {{ enrolled_object.primary_contact_name }}{{ enrolled_object.primary_contact_last_name }}",
+    "body": "<p>Call to see if they got the brand video from the sequence</p>",
+    "associations": [
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 8
+      },
+      "value": {
+       "sourceSpec": {
+        "associationCategory": "HUBSPOT_DEFINED",
+        "associationTypeId": 279
+       },
+       "type": "COPY_ASSOCIATION"
+      }
+     },
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 10
+      },
+      "value": {
+       "type": "ENROLLED_OBJECT"
+      }
+     }
+    ],
+    "use_explicit_associations": "true",
+    "owner_assignment": {
+     "value": {
+      "propertyName": "hubspot_owner_id",
+      "type": "OBJECT_PROPERTY"
+     },
+     "type": "CUSTOM"
+    },
+    "priority": "NONE",
+    "due_time": {
+     "delta": 11,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    },
+    "reminder_time": {
+     "delta": 11,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "8",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-3",
+   "fields": {
+    "task_type": "TODO",
+    "subject": "Close Opportunity\u00a0{{ enrolled_object.primary_contact_name }}{{ enrolled_object.primary_contact_last_name }}",
+    "body": "<p>If this lead has not responded please close lose this opportunity.</p><p>If you are in talks with them then keep doing what you are doing!</p>",
+    "associations": [
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 8
+      },
+      "value": {
+       "sourceSpec": {
+        "associationCategory": "HUBSPOT_DEFINED",
+        "associationTypeId": 279
+       },
+       "type": "COPY_ASSOCIATION"
+      }
+     },
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 10
+      },
+      "value": {
+       "type": "ENROLLED_OBJECT"
+      }
+     }
+    ],
+    "use_explicit_associations": "true",
+    "owner_assignment": {
+     "value": {
+      "propertyName": "hubspot_owner_id",
+      "type": "OBJECT_PROPERTY"
+     },
+     "type": "CUSTOM"
+    },
+    "priority": "NONE",
+    "due_time": {
+     "delta": 14,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    },
+    "reminder_time": {
+     "delta": 14,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": []
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "9",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "do_you_plan_to_export_the_products_to_another_country_outside_of_the_u_s__",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "No"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Domestic",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "1"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "37"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "11",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "124"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "salesqualifiedlead",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "12",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "47"
+   },
+   "fields": {
+    "property_name": "leadsource",
+    "value": {
+     "staticValue": "HubSpot",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "19",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "formId": "4045368e-9f04-4f20-ad5e-4d8ea6795219",
+          "operator": "FILLED_OUT",
+          "filterType": "FORM_SUBMISSION"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Scheduled Using Round Robin Link",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "24"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "9"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "20",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "11"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "24",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "48"
+   },
+   "fields": {
+    "delta": "5",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "25",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "27"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "27",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "123"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "salesqualifiedlead",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "34",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "20"
+   },
+   "fields": {
+    "delta": "5",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "36",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-11",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "49"
+   },
+   "fields": {
+    "user_ids": [
+     "12246712",
+     "5508380"
+    ],
+    "target_property": "hubspot_owner_id",
+    "overwrite_current_owner": "false"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "37",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-11",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "39"
+   },
+   "fields": {
+    "user_ids": [
+     "12246712",
+     "5508380"
+    ],
+    "target_property": "hubspot_owner_id",
+    "overwrite_current_owner": "false"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "38",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-3",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "41"
+   },
+   "fields": {
+    "task_type": "CALL",
+    "subject": "Call New Private Label Lead {{ enrolled_object.primary_contact_name }}{{ enrolled_object.primary_contact_last_name }}",
+    "body": "",
+    "associations": [
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 8
+      },
+      "value": {
+       "sourceSpec": {
+        "associationCategory": "HUBSPOT_DEFINED",
+        "associationTypeId": 279
+       },
+       "type": "COPY_ASSOCIATION"
+      }
+     },
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 10
+      },
+      "value": {
+       "type": "ENROLLED_OBJECT"
+      }
+     }
+    ],
+    "use_explicit_associations": "true",
+    "owner_assignment": {
+     "value": {
+      "propertyName": "hubspot_owner_id",
+      "type": "OBJECT_PROPERTY"
+     },
+     "type": "CUSTOM"
+    },
+    "priority": "NONE",
+    "reminder_time": {
+     "delta": 0,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "39",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "46"
+   },
+   "fields": {
+    "delta": "5",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "40",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "38"
+   },
+   "fields": {
+    "content_id": "220688283420"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "41",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-3",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "42"
+   },
+   "fields": {
+    "task_type": "TODO",
+    "subject": "Enroll {{ enrolled_object.primary_contact_name }}{{ enrolled_object.primary_contact_last_name }} in PL SEQ\u00a0",
+    "body": "<p>If you are unable to connect with this lead on the first call- enroll in PL SEQ. </p>",
+    "associations": [
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 8
+      },
+      "value": {
+       "sourceSpec": {
+        "associationCategory": "HUBSPOT_DEFINED",
+        "associationTypeId": 279
+       },
+       "type": "COPY_ASSOCIATION"
+      }
+     },
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 10
+      },
+      "value": {
+       "type": "ENROLLED_OBJECT"
+      }
+     }
+    ],
+    "use_explicit_associations": "true",
+    "owner_assignment": {
+     "value": {
+      "propertyName": "hubspot_owner_id",
+      "type": "OBJECT_PROPERTY"
+     },
+     "type": "CUSTOM"
+    },
+    "priority": "NONE",
+    "reminder_time": {
+     "delta": 0,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "42",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-3",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "43"
+   },
+   "fields": {
+    "task_type": "CALL",
+    "subject": "Follow up call to Lead {{ enrolled_object.primary_contact_name }}{{ enrolled_object.primary_contact_last_name }}",
+    "body": "<p>Call to follow up on the how to make money blog that was sent.&nbsp; Can you get them to set a meeting? </p>",
+    "associations": [
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 8
+      },
+      "value": {
+       "sourceSpec": {
+        "associationCategory": "HUBSPOT_DEFINED",
+        "associationTypeId": 279
+       },
+       "type": "COPY_ASSOCIATION"
+      }
+     },
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 10
+      },
+      "value": {
+       "type": "ENROLLED_OBJECT"
+      }
+     }
+    ],
+    "use_explicit_associations": "true",
+    "owner_assignment": {
+     "value": {
+      "propertyName": "hubspot_owner_id",
+      "type": "OBJECT_PROPERTY"
+     },
+     "type": "CUSTOM"
+    },
+    "priority": "NONE",
+    "due_time": {
+     "delta": 2,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    },
+    "reminder_time": {
+     "delta": 0,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "43",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-3",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "44"
+   },
+   "fields": {
+    "task_type": "CALL",
+    "subject": "Follow up call to Lead {{ enrolled_object.primary_contact_name }}{{ enrolled_object.primary_contact_last_name }}",
+    "body": "<p>Call to see if they got the brand video from the sequence</p>",
+    "associations": [
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 8
+      },
+      "value": {
+       "sourceSpec": {
+        "associationCategory": "HUBSPOT_DEFINED",
+        "associationTypeId": 279
+       },
+       "type": "COPY_ASSOCIATION"
+      }
+     },
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 10
+      },
+      "value": {
+       "type": "ENROLLED_OBJECT"
+      }
+     }
+    ],
+    "use_explicit_associations": "true",
+    "owner_assignment": {
+     "value": {
+      "propertyName": "hubspot_owner_id",
+      "type": "OBJECT_PROPERTY"
+     },
+     "type": "CUSTOM"
+    },
+    "priority": "NONE",
+    "due_time": {
+     "delta": 11,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    },
+    "reminder_time": {
+     "delta": 11,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "44",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-3",
+   "fields": {
+    "task_type": "TODO",
+    "subject": "Close Opportunity\u00a0{{ enrolled_object.primary_contact_name }}{{ enrolled_object.primary_contact_last_name }}",
+    "body": "<p>If this lead has not responded please close lose this opportunity.</p><p>If you are in talks with them then keep doing what you are doing!</p>",
+    "associations": [
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 8
+      },
+      "value": {
+       "sourceSpec": {
+        "associationCategory": "HUBSPOT_DEFINED",
+        "associationTypeId": 279
+       },
+       "type": "COPY_ASSOCIATION"
+      }
+     },
+     {
+      "target": {
+       "associationCategory": "HUBSPOT_DEFINED",
+       "associationTypeId": 10
+      },
+      "value": {
+       "type": "ENROLLED_OBJECT"
+      }
+     }
+    ],
+    "use_explicit_associations": "true",
+    "owner_assignment": {
+     "value": {
+      "propertyName": "hubspot_owner_id",
+      "type": "OBJECT_PROPERTY"
+     },
+     "type": "CUSTOM"
+    },
+    "priority": "NONE",
+    "due_time": {
+     "delta": 14,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+     ]
+    },
+    "reminder_time": {
+     "delta": 14,
+     "timeUnit": "DAYS",
+     "timeOfDay": {
+      "hour": 8,
+      "minute": 0
+     },
+     "daysOfWeek": []
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "45",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "125"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "salesqualifiedlead",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "46",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "45"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "47",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "58"
+   },
+   "fields": {
+    "delta": "2",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "48",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "hubspot_owner_id",
+          "operation": {
+           "operator": "IS_UNKNOWN",
+           "includeObjectsWithNoValueSet": false,
+           "operationType": "ALL_PROPERTY"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Contact Owner is Unknown",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "36"
+     }
+    }
+   ],
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "25"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "49",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "50"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "50",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "122"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "salesqualifiedlead",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "58",
+   "listBranches": [
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "what_best_describes_what_youre_looking_for",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Custom Formulation (new or modified formula) \u2014 requires R&D and longer timelines"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Custom Formulation",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "108"
+     }
+    },
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "what_best_describes_what_youre_looking_for",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Private Label (existing formula) \u2014 fastest path"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Private Label",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "19"
+     }
+    },
+    {
+     "filterBranch": {
+      "filterBranches": [
+       {
+        "filterBranches": [],
+        "filters": [
+         {
+          "property": "do_you_plan_to_export_the_products_to_another_country_outside_of_the_u_s__",
+          "operation": {
+           "operator": "IS_ANY_OF",
+           "includeObjectsWithNoValueSet": false,
+           "values": [
+            "Yes"
+           ],
+           "operationType": "ENUMERATION"
+          },
+          "filterType": "PROPERTY"
+         }
+        ],
+        "filterBranchType": "AND",
+        "filterBranchOperator": "AND"
+       }
+      ],
+      "filters": [],
+      "filterBranchType": "OR",
+      "filterBranchOperator": "OR"
+     },
+     "branchName": "Do You Plan to Export The Products?",
+     "connection": {
+      "edgeType": "STANDARD",
+      "nextActionId": "116"
+     }
+    }
+   ],
+   "defaultBranchName": "Unknown",
+   "defaultBranch": {
+    "edgeType": "STANDARD",
+    "nextActionId": "111"
+   },
+   "type": "LIST_BRANCH"
+  },
+  {
+   "actionId": "105",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "109"
+   },
+   "fields": {
+    "property_name": "hubspot_owner_id",
+    "value": {
+     "staticValue": "32038780",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "106",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-8",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "107"
+   },
+   "fields": {
+    "subject": "{{ enrolled_object.firstname }} from {{ fetched_objects.fetched_object_304178692.name }} has requested a custom formulation",
+    "body": "<p>{{ enrolled_object.firstname }} from {{ fetched_objects.fetched_object_304178692.name }} has requested a custom formulation.</p>\n<p>Please review their form submission and communicate next steps!</p>",
+    "owner_properties": [
+     "hubspot_owner_id"
+    ]
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "107",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "fields": {
+    "content_id": "220692678063"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "108",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "105"
+   },
+   "fields": {
+    "delta": "5",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "109",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "110"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "110",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "121"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "salesqualifiedlead",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "111",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-8",
+   "fields": {
+    "user_ids": [
+     "68291783"
+    ],
+    "subject": "PL Conversion: Opportunity Type Unknown",
+    "body": "<p>{{ enrolled_object.firstname }} {{ enrolled_object.lastname }} has filled out the PL form, but we haven't identified whether they are a PL lead or Custom Formula. Please check. </p>"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "112",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "fields": {
+    "content_id": "220688283420"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "113",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "fields": {
+    "content_id": "220688283420"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "116",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "117"
+   },
+   "fields": {
+    "delta": "5",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "117",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-4",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "118"
+   },
+   "fields": {
+    "content_id": "220692678065"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "118",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-1",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "119"
+   },
+   "fields": {
+    "delta": "5",
+    "time_unit": "MINUTES"
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "119",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "120"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "120",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "126"
+   },
+   "fields": {
+    "property_name": "lifecyclestage",
+    "value": {
+     "staticValue": "lead",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "121",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "106"
+   },
+   "fields": {
+    "property_name": "dvl_marketing_vertical",
+    "value": {
+     "staticValue": "Private Label",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "122",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "112"
+   },
+   "fields": {
+    "property_name": "dvl_marketing_vertical",
+    "value": {
+     "staticValue": "Private Label",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "123",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "113"
+   },
+   "fields": {
+    "property_name": "dvl_marketing_vertical",
+    "value": {
+     "staticValue": "Private Label",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "124",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "4"
+   },
+   "fields": {
+    "property_name": "dvl_marketing_vertical",
+    "value": {
+     "staticValue": "Private Label",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "125",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "connection": {
+    "edgeType": "STANDARD",
+    "nextActionId": "40"
+   },
+   "fields": {
+    "property_name": "dvl_marketing_vertical",
+    "value": {
+     "staticValue": "Private Label",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  },
+  {
+   "actionId": "126",
+   "actionTypeVersion": 0,
+   "actionTypeId": "0-5",
+   "fields": {
+    "property_name": "dvl_marketing_vertical",
+    "value": {
+     "staticValue": "Private Label",
+     "type": "STATIC_VALUE"
+    }
+   },
+   "type": "SINGLE_CONNECTION"
+  }
+ ],
+ "enrollmentCriteria": {
+  "shouldReEnroll": false,
+  "listFilterBranch": {
+   "filterBranches": [
+    {
+     "filterBranches": [
+      {
+       "filterBranches": [],
+       "filters": [
+        {
+         "property": "hs_ticket_category",
+         "operation": {
+          "operator": "IS_ANY_OF",
+          "includeObjectsWithNoValueSet": false,
+          "values": [
+           "Private Label"
+          ],
+          "operationType": "ENUMERATION"
+         },
+         "filterType": "PROPERTY"
+        },
+        {
+         "property": "customer_type_2_0",
+         "operation": {
+          "operator": "IS_NONE_OF",
+          "includeObjectsWithNoValueSet": false,
+          "values": [
+           "Consumer"
+          ],
+          "operationType": "ENUMERATION"
+         },
+         "filterType": "PROPERTY"
+        }
+       ],
+       "objectTypeId": "0-5",
+       "operator": "IN_LIST",
+       "associationTypeId": 15,
+       "associationCategory": "HUBSPOT_DEFINED",
+       "filterBranchType": "ASSOCIATION",
+       "filterBranchOperator": "AND"
+      }
+     ],
+     "filters": [
+      {
+       "property": "hs_all_assigned_business_unit_ids",
+       "operation": {
+        "operator": "IS_ANY_OF",
+        "includeObjectsWithNoValueSet": false,
+        "values": [
+         "0"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      },
+      {
+       "formId": "6bc37171-f2e2-4d47-8869-a1c51aceda7b",
+       "operator": "FILLED_OUT",
+       "filterType": "FORM_SUBMISSION"
+      }
+     ],
+     "filterBranchType": "AND",
+     "filterBranchOperator": "AND"
+    },
+    {
+     "filterBranches": [],
+     "filters": [
+      {
+       "formId": "4045368e-9f04-4f20-ad5e-4d8ea6795219",
+       "operator": "FILLED_OUT",
+       "filterType": "FORM_SUBMISSION"
+      },
+      {
+       "property": "hs_all_assigned_business_unit_ids",
+       "operation": {
+        "operator": "IS_ANY_OF",
+        "includeObjectsWithNoValueSet": false,
+        "values": [
+         "0"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      }
+     ],
+     "filterBranchType": "AND",
+     "filterBranchOperator": "AND"
+    },
+    {
+     "filterBranches": [],
+     "filters": [
+      {
+       "formId": "609424d0-33e9-4857-9ca0-27c8ebdf599e",
+       "operator": "FILLED_OUT",
+       "filterType": "FORM_SUBMISSION"
+      }
+     ],
+     "filterBranchType": "AND",
+     "filterBranchOperator": "AND"
+    },
+    {
+     "filterBranches": [],
+     "filters": [
+      {
+       "formId": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+       "operator": "FILLED_OUT",
+       "filterType": "FORM_SUBMISSION"
+      },
+      {
+       "property": "hs_all_assigned_business_unit_ids",
+       "operation": {
+        "operator": "IS_ANY_OF",
+        "includeObjectsWithNoValueSet": false,
+        "values": [
+         "0"
+        ],
+        "operationType": "ENUMERATION"
+       },
+       "filterType": "PROPERTY"
+      }
+     ],
+     "filterBranchType": "AND",
+     "filterBranchOperator": "AND"
+    }
+   ],
+   "filters": [],
+   "filterBranchType": "OR",
+   "filterBranchOperator": "OR"
+  },
+  "unEnrollObjectsNotMeetingCriteria": false,
+  "reEnrollmentTriggersFilterBranches": [],
+  "type": "LIST_BASED"
+ },
+ "timeWindows": [],
+ "blockedDates": [],
+ "customProperties": {},
+ "dataSources": [],
+ "crmObjectCreationStatus": "COMPLETE",
+ "suppressionListIds": [],
+ "canEnrollFromSalesforce": false,
+ "type": "CONTACT_FLOW",
+ "objectTypeId": "0-1"
+}
