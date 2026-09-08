@@ -11,18 +11,20 @@ Dates agreed on the call: **soft launch ~14 Sep** (already reachable, nobody poi
 - "Developed by us. Made for you." — one global module on every page with Mindy's text (20 pages converted, 0 inline copies left).
 - Dropshipping page — unpublished (draft), as confirmed on both calls.
 
+## Verified already in place (checked 8 Sep evening)
+- FDA disclaimer box: one identical version on every page that carries it (58 live pages), and it already begins with `*` as Mindy asked. An earlier draft of this sheet listed it as outstanding; that was a checking error on our side, not a site problem.
+
 ## A. Copy and consistency — QBS can do, no client decision needed
 
 | # | Item | Live now | Target (agreed) | Pages |
 |---|---|---|---|---|
-| A1 | FDA disclaimer box must start with `*` | One consistent box on all 59 pages, none starts with `*` | Prefix `*`; box identical everywhere | 59 (one global module) |
-| A2 | Formulations subheader standard | 5 pages "Our … formulations", 6 pages "Real Praxera … / These are actual products… Browse the full catalog" | Women's Health format: "Praxera's <category> formulations available for private label" / "A selection of our existing <category> supplement line, available for private label today." / "Schedule a consultation for the full catalog and custom options." on its own line | 11: fitness, herbal, aging*, sleep, weight-management, immune-support, cognitive, pediatric, heart-health, detox, energy |
-| A3 | Daily Best™ → Daily Best® | 8 mentions use ™ | Keep the ® (Tammy) | womens-health, probiotics, mens-health, prenatal, multivitamin |
-| A4 | Fitness product cards | "Vitamin C, B-Complex, Magnesium" card present; no vegan protein | Remove that card, add **Vegan Protein** (keeps 6 cards) | fitness |
-| A5 | Placeholder hero subheaders | "…are one of the most consistently in-demand categories in the wellness market…" | Regulatory-approved intro copy lifted from the matching davincilabs.com/shop-supplements page (Tammy approved on call) | 9: multivitamin, immune-support, cognitive, pediatric, joint-support, heart-health, detox, energy, mens-health |
-| A6 | Sticky navigation | No sticky rule anywhere | Header stays fixed on scroll (Shawn + Tammy) | theme: Global Header |
-| A7 | Gummies hero image | Off-centre | Centre the gummy | gummies |
-| A8 | Orphan single words on second line of headlines | Mindy adjusted several by hand | QA pass that nothing broke; fix stragglers by font size, not copy | site-wide |
+| A1 | Formulations subheader standard | 5 pages "Our … formulations", 6 pages "Real Praxera … / These are actual products… Browse the full catalog" | Women's Health format: "Praxera's <category> formulations available for private label" / "A selection of our existing <category> supplement line, available for private label today." / "Schedule a consultation for the full catalog and custom options." on its own line | 11: fitness, herbal, aging*, sleep, weight-management, immune-support, cognitive, pediatric, heart-health, detox, energy |
+| A2 | Daily Best™ → Daily Best® | 8 mentions use ™ | Keep the ® (Tammy) | womens-health, probiotics, mens-health, prenatal, multivitamin |
+| A3 | Fitness product cards | "Vitamin C, B-Complex, Magnesium" card present; no vegan protein | Remove that card, add **Vegan Protein** (keeps 6 cards) | fitness |
+| A4 | Placeholder hero subheaders | "…are one of the most consistently in-demand categories in the wellness market…" | Regulatory-approved intro copy lifted from the matching davincilabs.com/shop-supplements page (Tammy approved on call) | 9: multivitamin, immune-support, cognitive, pediatric, joint-support, heart-health, detox, energy, mens-health |
+| A5 | Sticky navigation | No sticky rule anywhere | Header stays fixed on scroll (Shawn + Tammy) | theme: Global Header |
+| A6 | Gummies hero image | Off-centre | Centre the gummy | gummies |
+| A7 | Orphan single words on second line of headlines | Mindy adjusted several by hand | QA pass that nothing broke; fix stragglers by font size, not copy | site-wide |
 
 \*Aging: Mindy believed she fixed it; HubSpot still holds "Our aging formulations". Her edit did not save.
 
