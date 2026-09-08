@@ -1,0 +1,570 @@
+{
+ "activeDomain": "info.petnaturals.com",
+ "archived": false,
+ "businessUnitId": "0",
+ "campaign": "d77ba5a6-32ce-4a0d-a1bc-694b63aaa474",
+ "content": {
+  "flexAreas": {
+   "main": {
+    "boxFirstElementIndex": 0,
+    "boxLastElementIndex": 0,
+    "boxed": false,
+    "isSingleColumnFullWidth": false,
+    "sections": [
+     {
+      "columns": [
+       {
+        "id": "column_1584731165184_0",
+        "widgets": [
+         "module_15847311651351"
+        ],
+        "width": 6
+       },
+       {
+        "id": "column_1678826135741_0",
+        "widgets": [],
+        "width": 6
+       }
+      ],
+      "id": "section_1584731165184",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1679343467969_0",
+        "widgets": [
+         "module_16794080275323"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1679343467969",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "column_1606831310496_0",
+        "widgets": [
+         "module_16068313189072"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_1606831310496",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "builtin_column_0-0",
+        "widgets": [
+         "module_16769045021651",
+         "module_16002742467202"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "builtin_section-0",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "20px",
+         "paddingTop": "20px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "20px",
+       "paddingTop": "20px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "builtin_column_1-0",
+        "widgets": [
+         "footer_module"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "builtin_section-1",
+      "path": null,
+      "style": {
+       "backgroundColor": "#EEEEEE",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#EEEEEE",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "9px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "9px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     }
+    ]
+   }
+  },
+  "styleSettings": {
+   "backgroundColor": "#EEEEEE",
+   "bodyBorderWidth": 1.0,
+   "bodyColor": "#ffffff",
+   "buttonStyleSettings": {
+    "backgroundColor": null,
+    "cornerRadius": 8,
+    "fontStyle": {
+     "bold": false,
+     "color": "#ffffff",
+     "font": "Arial, sans-serif",
+     "italic": false,
+     "size": 16,
+     "underline": false
+    }
+   },
+   "dividerStyleSettings": {
+    "color": {
+     "color": "#000000",
+     "opacity": 100
+    },
+    "height": 1
+   },
+   "headingOneFont": {
+    "size": 28
+   },
+   "headingTwoFont": {
+    "size": 22
+   },
+   "linksFont": {
+    "bold": false,
+    "color": "#00a4bd",
+    "italic": false,
+    "underline": true
+   },
+   "primaryFont": "Arial, sans-serif",
+   "primaryFontColor": "#23496d",
+   "primaryFontSize": 15.0,
+   "secondaryFont": "Arial, sans-serif",
+   "secondaryFontColor": "#23496d",
+   "secondaryFontSize": 12.0
+  },
+  "templatePath": "@hubspot/email/dnd/Plain_Text.html",
+  "widgets": {
+   "footer_module": {
+    "body": {
+     "align": "center",
+     "font": {
+      "color": "#23496d",
+      "font": "Arial, sans-serif",
+      "size": {
+       "units": "px",
+       "value": 12
+      }
+     },
+     "link_font": {
+      "color": "#00a4bd",
+      "font": "Helvetica,Arial,sans-serif",
+      "size": {
+       "units": "px",
+       "value": 12
+      },
+      "styles": {
+       "bold": false,
+       "italic": false,
+       "underline": true
+      }
+     },
+     "module_id": 2869621,
+     "path": "@hubspot/email_footer",
+     "unsubscribe_link_type": "both"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "footer_module",
+    "label": null,
+    "module_id": 2869621,
+    "name": "footer_module",
+    "order": 7,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_15847311651351": {
+    "body": {
+     "css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "hs_enable_module_padding": true,
+     "img": {
+      "alt": "Praxera",
+      "height": 102,
+      "src": "https://info.davincilabs.com/hs-fs/hubfs/Praxera/Praxera%20Logo.png",
+      "width": 260
+     },
+     "link": "https://www.praxerasupplements.com/",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_15847311651351",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_15847311651351",
+    "order": 1,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16002742467202": {
+    "body": {
+     "font_style": {
+      "color": "#00a4bd",
+      "font": "Helvetica,Arial,sans-serif",
+      "size": {
+       "units": "px",
+       "value": 14
+      },
+      "styles": {
+       "bold": false,
+       "italic": false,
+       "underline": true
+      }
+     },
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "module_id": 2763545,
+     "social": [
+      {
+       "network": "facebook",
+       "url": "https://www.facebook.com/101367606621989"
+      },
+      {
+       "network": "linkedin",
+       "url": "https://www.linkedin.com/company/3772707"
+      },
+      {
+       "network": "twitter",
+       "url": "https://twitter.com/Davincilabsvt"
+      },
+      {
+       "network": "instagram",
+       "url": "https://www.instagram.com/davincilaboratories"
+      }
+     ]
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16002742467202",
+    "label": null,
+    "module_id": 2763545,
+    "name": "module_16002742467202",
+    "order": 6,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16068313189072": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "html": "<p>Hi {{ contact.firstname }},</p>\n<div data-block-id=\"block-1b650049-baea-4309-ac66-f28753056020\">\n<p>Once you\u2019ve perfected your label for private labeling, it\u2019s time for production.</p>\n<p>&nbsp;</p>\n<p>This phase transforms your private label supplements from abstract concepts to actual products you can hold. It\u2019s one of the most exciting parts of the process for many people.&nbsp;</p>\n<p>&nbsp;</p>\n<p>Our <span style=\"font-weight: normal;\">order</span><strong> </strong><span style=\"font-weight: normal;\">placement</span> and manufacturing process is designed to ensure your products meet the highest standards, so you can confidently recommend them to your patients. Here is what you can expect:</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">Verify Your Order Details</span>: Your representative will review your order, confirming the products you want to private label, the quantities of each product, and your payment information.</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">Approve Label Printing</span>: After you verify your order, we\u2019ll send your labels to print. We can also provide private label tech sheets and bottle images for every product as well for no charge. The minimum label run is 300 labels with any print of your label. This may allow us to have extra labels readily available for your reorders.&nbsp; Most first orders will ship 14 to 15 days after we send the labels to print.</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">Inventory Management</span>: Your representative will check in to ensure you are satisfied with the product and reorder when needed. We can also inventory extra labels for you, which cuts down reorder shipping times.&nbsp;</p>\n<p>&nbsp;</p>\n<p>Lastly, we offer Finished Good Order Points for high volume customers who order ten or more cases per quarter. <span style=\"background:#F8DDD9;border-bottom:2px solid #9B3B31;\" data-praxera-review=\"claim\">We guarantee</span> that we\u2019ll always have these products bottled, labeled, and ready to ship within 24 hours.&nbsp;</p>\n<p><br>Ready to get started? <a href=\"https://www.praxerasupplements.com/en/pl-demo-get-started\" rel=\"noopener\">Contact one of our experts</a> today!</p>\n</div>",
+     "module_id": 1155639
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16068313189072",
+    "label": null,
+    "module_id": 1155639,
+    "name": "module_16068313189072",
+    "order": 4,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16769045021651": {
+    "body": {
+     "background_color": "#69A84F",
+     "corner_radius": 0,
+     "destination": "https://www.praxerasupplements.com/en/pl-demo-get-started",
+     "font": "Arial, sans-serif",
+     "font_color": "#ffffff",
+     "font_size": 16,
+     "font_style": {
+      "color": "#ffffff",
+      "font": "Arial, sans-serif",
+      "size": {
+       "units": "px",
+       "value": 21
+      },
+      "styles": {
+       "bold": true,
+       "font-weight": "bold",
+       "italic": false,
+       "underline": false
+      }
+     },
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "module_id": 1976948,
+     "text": "Get Started With Private Label Supplements"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16769045021651",
+    "label": null,
+    "module_id": 1976948,
+    "name": "module_16769045021651",
+    "order": 5,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "module_16794080275323": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "alt": "shutterstock_1346151299-1",
+      "height": 373,
+      "loading": "disabled",
+      "size_type": null,
+      "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/shutterstock_1346151299-1.jpg",
+      "width": 560
+     },
+     "link": "",
+     "module_id": 1367093
+    },
+    "child_css": {},
+    "css": {},
+    "id": "module_16794080275323",
+    "label": null,
+    "module_id": 1367093,
+    "name": "module_16794080275323",
+    "order": 2,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "preview_text": {
+    "body": {
+     "value": "Our collaboration doesn\u2019t end with your first order. We also provide comprehensive post-launch services to support your practice."
+    },
+    "child_css": {},
+    "css": {},
+    "id": "preview_text",
+    "label": "Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
+    "name": "preview_text",
+    "order": 0,
+    "smart_type": null,
+    "styles": {},
+    "type": "text"
+   }
+  }
+ },
+ "createdAt": "2026-08-30T19:52:52.650Z",
+ "createdById": "52613719",
+ "emailTemplateMode": "DRAG_AND_DROP",
+ "from": {
+  "fromName": "Praxera",
+  "replyTo": "enews@davincilabs.com"
+ },
+ "id": "220685976500",
+ "isAb": false,
+ "isPublished": false,
+ "isTransactional": false,
+ "jitterSendTime": true,
+ "language": "en",
+ "name": "Praxera - Client_Onboarding_BoF_Danielle_#3",
+ "previewKey": "JTHLfqZe",
+ "publishDate": "2026-09-08T21:48:25Z",
+ "sendOnPublish": true,
+ "state": "DRAFT",
+ "subcategory": "batch",
+ "subject": "Post-Launch Support For Private Label Supplement Success",
+ "subscriptionDetails": {
+  "officeLocationId": "5451098384",
+  "subscriptionId": "4588994",
+  "subscriptionName": "Marketing Information 1"
+ },
+ "to": {
+  "contactIds": {
+   "exclude": [],
+   "include": []
+  },
+  "contactIlsLists": {
+   "exclude": [],
+   "include": []
+  },
+  "contactLists": {
+   "exclude": [],
+   "include": []
+  },
+  "suppressGraymail": true
+ },
+ "type": "BATCH_EMAIL",
+ "updatedAt": "2026-09-08T21:48:25.958Z",
+ "updatedById": "52613719",
+ "webversion": {
+  "domain": "info.petnaturals.com",
+  "enabled": false,
+  "isPageRedirected": false,
+  "slug": "-temporary-slug-066d7f6c-1b88-463f-86c8-1a54f414fcb0-1"
+ }
+}
