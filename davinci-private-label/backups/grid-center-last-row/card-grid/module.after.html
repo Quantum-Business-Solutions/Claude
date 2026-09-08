@@ -190,7 +190,11 @@
       }
       .pl-cg__grid > .pl-cg__card{
         flex: 1 1 {{ pl_min }}px;
-        max-width: calc((100% - {{ (pl_fit - 1) * pl_gap }}px) / {{ pl_fit }});
+        max-width: max({{ pl_min }}px, calc((100% - {{ (pl_fit - 1) * pl_gap }}px) / {{ pl_fit }}));
+      }
+      {# Below two columns every item takes the full row, as auto-fit did. #}
+      @media screen and (max-width: {{ (pl_min * 2) + pl_gap + 40 }}px){
+        .pl-cg__grid > .pl-cg__card{ flex-basis: 100%; max-width: 100%; }
       }
 
       {# Selectors below are deliberately one class heavier than the matching rule in
@@ -228,10 +232,7 @@
          Forcing one column here doubled every card's width against V1. Only
          collapse once a single card can no longer fit beside another. #}
       @media screen and (max-width: {{ (module.min_column_width|default(260, true) * 2) + module.gap|default(24, true) + 40 }}px){
-        .pl-cg__grid{
-          grid-template-columns: 1fr;
-          gap: {{ module.gap }}px;
-        }
+        .pl-cg__grid > .pl-cg__card{ flex-basis: 100%; max-width: 100%; }
       }
 
     

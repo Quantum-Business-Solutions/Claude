@@ -66,7 +66,11 @@
       }
       .pl-hiw__grid > .pl-hiw__card{
         flex: 1 1 {{ pl_min }}px;
-        max-width: calc((100% - {{ (pl_fit - 1) * pl_gap }}px) / {{ pl_fit }});
+        max-width: max({{ pl_min }}px, calc((100% - {{ (pl_fit - 1) * pl_gap }}px) / {{ pl_fit }}));
+      }
+      {# Below two columns every item takes the full row, as auto-fit did. #}
+      @media screen and (max-width: {{ (pl_min * 2) + pl_gap + 40 }}px){
+        .pl-hiw__grid > .pl-hiw__card{ flex-basis: 100%; max-width: 100%; }
       }
 
     {% end_scope_css %}
