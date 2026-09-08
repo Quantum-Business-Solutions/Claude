@@ -11,6 +11,7 @@ Dates agreed on the call: **soft launch ~14 Sep** (already reachable, nobody poi
 - "Developed by us. Made for you." — one global module on every page with Mindy's text (20 pages converted, 0 inline copies left).
 - Dropshipping page — unpublished (draft), as confirmed on both calls.
 - Sticky navigation — global header now fixed on scroll with a solid white background (Global Header module.css). Shawn confirmed on screen 8 Sep evening.
+- Centred last rows — standing rule from Shawn (8 Sep): any grid of like items whose last row is not full now centres that row. Applied at module level to Tile Grid, Card Grid, How It Works and Stat Band; item widths stay equal to a full row, phones collapse to a single full-width column. The home format tiles render 4 + 3 with the 3 centred.
 - Product links → DaVinci — the "Explore the Product Guide" module on 26 pages now reads "Schedule a Consultation →" and goes to /get-started. Zero pages link to DaVinci for product info.
 
 ## Verified already in place (checked 8 Sep evening)
