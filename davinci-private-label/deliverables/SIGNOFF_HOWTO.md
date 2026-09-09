@@ -19,3 +19,13 @@ Send the client: https://clientcommand.thequantumleap.business/portal/2a5c361066
 
 Everything saves to the portal automatically ("saved to the portal" top right). Two people can
 work at the same time.
+
+## What changed on 9 Sep (v2.3)
+- Activity now sits at the top: who did what, when, newest first. "Show all" opens the full history.
+- Header tiles include Open comments and Resolved. A resolved comment is struck through with a
+  ✓ Resolved pill and "resolved by …"; Reopen brings it back.
+- "↗ Make global" on a row comment copies it into Global notes & rules (site-wide items such as the
+  manufacturing wording).
+- "Collapse all / Expand all" in the sticky bar; every section also has its own ▾ icon.
+- "Redirects from at cutover" is the real public DaVinci URL that will 301 to the page (click ↗ to see
+  the old page). Pages built new for Praxera show "nothing redirects here".
