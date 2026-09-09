@@ -11,6 +11,11 @@
      "warn",
      "first-person production wording",
      "Phrases to check: our catalog of doctor-formulated"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
    "new": true,
@@ -59,6 +64,13 @@
      "at": "2026-08-24T13:30:00-04:00",
      "t": "Website wide: maintain consistency when naming products (Nattokinase should be lower case). \"Some of the most popular formulations in our catalog include ADK, nattokinase, collagen, probiotics, sleep support, iron, magnesium, and full multivitamin lines.\"",
      "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:home:5",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "The \"and more\" tile does not link anywhere. Decide where it should go (no DaVinci link, no purchase path) and connect it.",
+     "src": "Call, 8 Sep"
     }
    ],
    "rv": [
@@ -69,14 +81,20 @@
    "k": "p",
    "id": "about",
    "n": "about",
-   "r": "info.davincilabs.com/pl-demo-about-v3",
+   "r": "www.davincilabs.com/private-labeling (+2 more)",
    "i": [
     [
      "warn",
      "first-person production wording",
      "Phrases to check: our Praxera private label clients access to manufacturing | our private label program to extend that same manufacturing | we have grown into a 190-plus product catalog manufactured | we source ingredients, how we formulate | we test, and how we label what is in the bottle"
+    ],
+    [
+     "mute",
+     "3 DaVinci URLs redirect here",
+     "At cutover all of these 301 to this page: www.davincilabs.com/private-labeling \u00b7 www.davincilabs.com/private-labeling-supplement-manufacturer \u00b7 www.davincilabs.com/private-labeling/"
     ]
    ],
+   "t": "www.davincilabs.com/private-labeling",
    "slug": "about",
    "hid": "216189433476",
    "y": "Other"
@@ -85,8 +103,15 @@
    "k": "p",
    "id": "aging",
    "n": "aging",
-   "r": "info.davincilabs.com/en/pl-demo-aging-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "aging",
    "hid": "216189432992",
    "y": "Category",
@@ -97,6 +122,13 @@
      "at": "2026-09-07T06:59:00-04:00",
      "t": "replace Liposomal with Heart and feature ADK / replace Foundation with Joint and feature Perna Pro / in the Omegas, feature Omega 3 HP-D / antioxidant - use Glutathione instead of Glutathione Bright",
      "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:aging:1",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "My edit to this page's formulations block did not save \u2014 please re-apply the Women's Health wording.",
+     "src": "Call, 8 Sep"
     }
    ],
    "rv": [
@@ -107,14 +139,20 @@
    "k": "p",
    "id": "alp/ads-contract-mfg",
    "n": "alp/ads-contract-mfg",
-   "r": "info.davincilabs.com/pl-demo-ads-contract-mfg-v3",
+   "r": "",
    "i": [
     [
      "warn",
      "placeholder copy",
      "Still shows: [PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "alp/ads-contract-mfg",
    "hid": "216192983654",
    "y": "Other"
@@ -123,14 +161,20 @@
    "k": "p",
    "id": "alp/ads-mfg-usa",
    "n": "alp/ads-mfg-usa",
-   "r": "info.davincilabs.com/pl-demo-ads-mfg-usa-v3",
+   "r": "",
    "i": [
     [
      "warn",
      "placeholder copy",
      "Still shows: [PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "alp/ads-mfg-usa",
    "hid": "216192983652",
    "y": "Other"
@@ -139,14 +183,20 @@
    "k": "p",
    "id": "alp/ads-pl-mfg",
    "n": "alp/ads-pl-mfg",
-   "r": "info.davincilabs.com/pl-demo-ads-pl-mfg-v3",
+   "r": "",
    "i": [
     [
      "warn",
      "placeholder copy",
      "Still shows: [PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "alp/ads-pl-mfg",
    "hid": "216194811734",
    "y": "Other"
@@ -155,14 +205,20 @@
    "k": "p",
    "id": "book-consultation",
    "n": "book-consultation",
-   "r": "info.davincilabs.com/en/pl-demo-book-consultation-v3",
+   "r": "",
    "i": [
     [
      "warn",
      "placeholder copy",
      "Still shows: [PLACEHOLDER FOR JUSTIN: Calendar booking widget embed here. HubSpot Meetings link or third-party scheduler.]"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "book-consultation",
    "hid": "216194811718",
    "y": "Other"
@@ -171,14 +227,20 @@
    "k": "p",
    "id": "capsules",
    "n": "capsules",
-   "r": "info.davincilabs.com/pl-demo-capsules-v3",
+   "r": "",
    "i": [
     [
      "warn",
      "first-person production wording",
      "Phrases to check: Our encapsulation"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "capsules",
    "hid": "216186379314",
    "y": "Other"
@@ -187,7 +249,7 @@
    "k": "p",
    "id": "case-studies",
    "n": "case-studies",
-   "r": "info.davincilabs.com/pl-demo-case-studies-v3",
+   "r": "",
    "i": [
     [
      "warn",
@@ -198,8 +260,14 @@
      "warn",
      "placeholder copy",
      "Still shows: [PLACEHOLDER FOR JUSTIN: Case study content coming], [PLACEHOLDER: Case study tiles to be added once Patrick / Tammy provide a list of client brands willing to be featured. Should include: industry, what they launched, timeline, results. Many Praxera private label clients prefer to stay anonymous, so we may need permission-based featuring.]"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "case-studies",
    "hid": "216194811714",
    "y": "Other"
@@ -208,8 +276,15 @@
    "k": "p",
    "id": "certifications",
    "n": "certifications",
-   "r": "info.davincilabs.com/pl-demo-certifications-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "certifications",
    "hid": "216192983597",
    "y": "Other"
@@ -218,8 +293,15 @@
    "k": "p",
    "id": "chewables",
    "n": "chewables",
-   "r": "info.davincilabs.com/pl-demo-chewables-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "chewables",
    "hid": "216188835864",
    "y": "Other"
@@ -228,11 +310,27 @@
    "k": "p",
    "id": "cognitive",
    "n": "cognitive",
-   "r": "info.davincilabs.com/pl-demo-cognitive-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "cognitive",
    "hid": "216189433251",
    "y": "Category",
+   "sc": [
+    {
+     "id": "hs:cognitive:0",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Hero subheader is still the generic placeholder (\"\u2026in-demand\u2026\"). Approved fix: lift the regulatory-approved intro from davincilabs.com/shop-supplements/cognitive.html and adapt it.",
+     "src": "Call, 8 Sep"
+    }
+   ],
    "rv": [
     1
    ]
@@ -241,8 +339,15 @@
    "k": "p",
    "id": "contact",
    "n": "contact",
-   "r": "info.davincilabs.com/pl-demo-contact-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "contact",
    "hid": "216192983650",
    "y": "Other"
@@ -251,8 +356,9 @@
    "k": "p",
    "id": "customer-art",
    "n": "customer-art",
-   "r": "info.davincilabs.com/en/pl-demo-customer-art-v3",
+   "r": "info.davincilabs.com/dv-pl-customer-supplied-art",
    "i": [],
+   "t": "info.davincilabs.com/dv-pl-customer-supplied-art",
    "slug": "customer-art",
    "hid": "216189433156",
    "y": "Design",
@@ -264,14 +370,20 @@
    "k": "p",
    "id": "design-services",
    "n": "design-services",
-   "r": "info.davincilabs.com/en/pl-demo-design-services-v3",
+   "r": "",
    "i": [
     [
      "warn",
      "first-person production wording",
      "Phrases to check: we produce"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "design-services",
    "hid": "216179449206",
    "y": "Core",
@@ -292,8 +404,9 @@
    "k": "p",
    "id": "design-team",
    "n": "design-team",
-   "r": "info.davincilabs.com/en/pl-demo-design-team-v3",
+   "r": "info.davincilabs.com/dv-pl-our-design-services",
    "i": [],
+   "t": "info.davincilabs.com/dv-pl-our-design-services",
    "slug": "design-team",
    "hid": "216189433139",
    "y": "Design",
@@ -305,11 +418,27 @@
    "k": "p",
    "id": "detox",
    "n": "detox",
-   "r": "info.davincilabs.com/pl-demo-detox-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "detox",
    "hid": "216189433375",
    "y": "Category",
+   "sc": [
+    {
+     "id": "hs:detox:0",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Hero subheader is still the generic placeholder (\"\u2026in-demand\u2026\"). Approved fix: lift the regulatory-approved intro from davincilabs.com/shop-supplements/detox.html and adapt it.",
+     "src": "Call, 8 Sep"
+    }
+   ],
    "rv": [
     1
    ]
@@ -318,7 +447,7 @@
    "k": "p",
    "id": "dropshipping",
    "n": "dropshipping",
-   "r": "info.davincilabs.com/en/pl-demo-dropshipping-v3",
+   "r": "www.davincilabs.com/private-labeling-dropship",
    "i": [
     [
      "warn",
@@ -336,6 +465,7 @@
      "Phrases to check: we offer 190+ doctor-formulated"
     ]
    ],
+   "t": "www.davincilabs.com/private-labeling-dropship",
    "slug": "dropshipping",
    "hid": "216186378936",
    "y": "Core",
@@ -346,6 +476,13 @@
      "at": "2026-09-02T12:00:00-04:00",
      "t": "Mindy: I don't believe we are dropshipping - need to check with Tammy on this page",
      "src": "Design Approval Sheet v6"
+    },
+    {
+     "id": "hs:dropshipping:0",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Confirmed: unpublish for launch. May come back later as an educational resource given the search volume, but it is not part of the active site.",
+     "src": "Call, 8 Sep"
     }
    ],
    "rv": [
@@ -356,11 +493,27 @@
    "k": "p",
    "id": "energy",
    "n": "energy",
-   "r": "info.davincilabs.com/pl-demo-energy-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "energy",
    "hid": "216189433390",
    "y": "Category",
+   "sc": [
+    {
+     "id": "hs:energy:0",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Hero subheader is still the generic placeholder (\"\u2026in-demand\u2026\"). Approved fix: lift the regulatory-approved intro from davincilabs.com/shop-supplements/energy.html and adapt it.",
+     "src": "Call, 8 Sep"
+    }
+   ],
    "rv": [
     1
    ]
@@ -369,7 +522,7 @@
    "k": "p",
    "id": "facility",
    "n": "facility",
-   "r": "info.davincilabs.com/pl-demo-facility-v3",
+   "r": "",
    "i": [
     [
      "warn",
@@ -380,8 +533,14 @@
      "warn",
      "placeholder copy",
      "Still shows: [PLACEHOLDER FOR JUSTIN/PATRICK: Insert facility detail content. Square footage, production capacity, format-specific equipment, quality lab description, warehouse and fulfillment capacity. Photos from facility tour would significantly enhance this page.]"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "facility",
    "hid": "216194811691",
    "y": "Other"
@@ -390,8 +549,15 @@
    "k": "p",
    "id": "faq",
    "n": "faq",
-   "r": "info.davincilabs.com/pl-demo-faq-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "faq",
    "hid": "216192983618",
    "y": "Other"
@@ -400,8 +566,15 @@
    "k": "p",
    "id": "fitness",
    "n": "fitness",
-   "r": "info.davincilabs.com/pl-demo-fitness-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "fitness",
    "hid": "216179449410",
    "y": "Category",
@@ -482,6 +655,27 @@
      "at": "2026-09-07T06:35:00-04:00",
      "t": "The blue FDA disclaimer box at the bottom should have an * at the very beginning",
      "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:fitness:10",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Product cards: remove the Vitamin C / B-Complex / Magnesium card and put Vegan Protein in its place \u2014 keep the balanced 6-card layout (Mindy: whey proteins were removed, vegan proteins fill the gap).",
+     "src": "Call, 8 Sep"
+    },
+    {
+     "id": "hs:fitness:11",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "The \"formulations available for private label\" block on this page did not take my edit \u2014 it still reads \"Our fitness formulations\u2026 a selection of Praxera's existing fitness\u2026\". Update to the Women's Health pattern: \"Praxera's Fitness Formulations Available for Private Label\" / \"A selection of our existing fitness supplement line, available for private label today.\" / \"Schedule a consultation\u2026\" on its own line.",
+     "src": "Call, 8 Sep"
+    },
+    {
+     "id": "hs:fitness:12",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Headline wrap: \"Build a fitness supplement line with proven formulations\" left \"formulations\" alone on the second line \u2014 rebalanced. Check no single word sits alone on a line anywhere.",
+     "src": "Call, 8 Sep"
     }
    ],
    "rv": [
@@ -492,8 +686,9 @@
    "k": "p",
    "id": "get-started",
    "n": "get-started",
-   "r": "info.davincilabs.com/en/pl-demo-get-started-v3",
+   "r": "www.davincilabs.com/private-label-get-started",
    "i": [],
+   "t": "www.davincilabs.com/private-label-get-started",
    "slug": "get-started",
    "hid": "216194811571",
    "y": "Core",
@@ -542,8 +737,9 @@
    "k": "p",
    "id": "guides",
    "n": "guides",
-   "r": "info.davincilabs.com/pl-demo-guides-v3",
+   "r": "info.davincilabs.com/private-label-supplements-guide",
    "i": [],
+   "t": "info.davincilabs.com/private-label-supplements-guide",
    "slug": "guides",
    "hid": "216192983627",
    "y": "Other"
@@ -552,21 +748,53 @@
    "k": "p",
    "id": "gummies",
    "n": "gummies",
-   "r": "info.davincilabs.com/pl-demo-gummies-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "gummies",
    "hid": "216192983401",
-   "y": "Other"
+   "y": "Other",
+   "sc": [
+    {
+     "id": "hs:gummies:0",
+     "n": "Shawn Peterson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Centre the gummy hero image.",
+     "src": "Call, 8 Sep"
+    }
+   ]
   },
   {
    "k": "p",
    "id": "heart-health",
    "n": "heart-health",
-   "r": "info.davincilabs.com/pl-demo-heart-health-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "heart-health",
    "hid": "216189433373",
    "y": "Category",
+   "sc": [
+    {
+     "id": "hs:heart-health:0",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Hero subheader is still the generic placeholder (\"\u2026in-demand\u2026\"). Approved fix: lift the regulatory-approved intro from davincilabs.com/shop-supplements/heart-health.html and adapt it.",
+     "src": "Call, 8 Sep"
+    }
+   ],
    "rv": [
     1
    ]
@@ -575,8 +803,15 @@
    "k": "p",
    "id": "herbal",
    "n": "herbal",
-   "r": "info.davincilabs.com/en/pl-demo-herbal-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "herbal",
    "hid": "216189432990",
    "y": "Category",
@@ -597,14 +832,20 @@
    "k": "p",
    "id": "how-to-sell-supplements",
    "n": "how-to-sell-supplements",
-   "r": "info.davincilabs.com/en/pl-demo-how-to-sell-supplements-v3",
+   "r": "www.davincilabs.com/private-labeling-how-to-sell-supplements (+1 more)",
    "i": [
     [
      "bad",
      "2 DaVinci links",
      "Links to: https://blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps; https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon"
+    ],
+    [
+     "mute",
+     "2 DaVinci URLs redirect here",
+     "At cutover all of these 301 to this page: www.davincilabs.com/private-labeling-how-to-sell-supplements \u00b7 blog.davincilabs.com/private-label/how-to-sell-supplements"
     ]
    ],
+   "t": "www.davincilabs.com/private-labeling-how-to-sell-supplements",
    "slug": "how-to-sell-supplements",
    "hid": "216176671879",
    "y": "Core",
@@ -664,6 +905,13 @@
      "at": "2026-09-08T11:45:00-04:00",
      "t": "Source high-quality supplements from a partner who can prove it. Didn't see this before now but under this title shows STEP 04 and some additional lines. Not sure if these are there for something to be added/linked so not comfortable deleting.",
      "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:how-to-sell-supplements:8",
+     "n": "Shawn Peterson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Steps section shows both numbers and icons \u2014 keep one or the other, not both.",
+     "src": "Call, 8 Sep"
     }
    ],
    "rv": [
@@ -674,11 +922,27 @@
    "k": "p",
    "id": "immune-support",
    "n": "immune-support",
-   "r": "info.davincilabs.com/pl-demo-immune-support-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "immune-support",
    "hid": "216189433236",
    "y": "Category",
+   "sc": [
+    {
+     "id": "hs:immune-support:0",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Hero subheader is still the generic placeholder (\"\u2026in-demand\u2026\"). Approved fix: lift the regulatory-approved intro from davincilabs.com/shop-supplements/immune-support.html and adapt it.",
+     "src": "Call, 8 Sep"
+    }
+   ],
    "rv": [
     1
    ]
@@ -687,8 +951,15 @@
    "k": "p",
    "id": "ingredient-sourcing",
    "n": "ingredient-sourcing",
-   "r": "info.davincilabs.com/pl-demo-ingredient-sourcing-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "ingredient-sourcing",
    "hid": "216192983616",
    "y": "Quality",
@@ -698,11 +969,27 @@
    "k": "p",
    "id": "joint-support",
    "n": "joint-support",
-   "r": "info.davincilabs.com/pl-demo-joint-support-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "joint-support",
    "hid": "216189433371",
    "y": "Category",
+   "sc": [
+    {
+     "id": "hs:joint-support:0",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Hero subheader is still the generic placeholder (\"\u2026in-demand\u2026\"). Approved fix: lift the regulatory-approved intro from davincilabs.com/shop-supplements/joint-support.html and adapt it.",
+     "src": "Call, 8 Sep"
+    }
+   ],
    "rv": [
     1
    ]
@@ -711,14 +998,20 @@
    "k": "p",
    "id": "learning/definitive-guide",
    "n": "learning/definitive-guide",
-   "r": "info.davincilabs.com/en/pl-demo-definitive-guide-v3",
+   "r": "",
    "i": [
     [
      "bad",
      "3 DaVinci links",
      "Links to: https://blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements; https://blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business; https://www.davincilabs.com"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "learning/definitive-guide",
    "hid": "216194811561",
    "y": "Guide",
@@ -743,6 +1036,13 @@
      "at": "2026-09-06T16:25:00-04:00",
      "t": "Under A Few things to Look For During the Vetting Process: unsure if there is such a thing as silver or gold CGMP certification (sentence highlighted)",
      "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:learning/definitive-guide:2",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Third-party testing / NSF / USP passages: this is existing, long-running educational content, not new copy \u2014 leave it in place as general industry information (Mindy's highlight can be cleared).",
+     "src": "Call, 8 Sep"
     }
    ],
    "rv": [
@@ -753,9 +1053,15 @@
    "k": "p",
    "id": "learning/definitive-guide-ty",
    "n": "learning/definitive-guide-ty",
-   "r": "",
-   "i": [],
-   "new": true,
+   "r": "info.davincilabs.com/thank-you-guide-private-labeling-supplements (+1 more)",
+   "i": [
+    [
+     "mute",
+     "2 DaVinci URLs redirect here",
+     "At cutover all of these 301 to this page: info.davincilabs.com/thank-you-guide-private-labeling-supplements \u00b7 info.davincilabs.com/thank-you-ingredients-testing-certification-guide"
+    ]
+   ],
+   "t": "info.davincilabs.com/thank-you-guide-private-labeling-supplements",
    "slug": "learning/definitive-guide-ty",
    "hid": "216194811652",
    "y": "Thank You",
@@ -767,8 +1073,9 @@
    "k": "p",
    "id": "learning/ingredients-testing",
    "n": "learning/ingredients-testing",
-   "r": "info.davincilabs.com/pl-demo-ingredients-testing-v3",
+   "r": "info.davincilabs.com/ingredients-testing-certification-guide",
    "i": [],
+   "t": "info.davincilabs.com/ingredients-testing-certification-guide",
    "slug": "learning/ingredients-testing",
    "hid": "216189433459",
    "y": "Guide",
@@ -780,8 +1087,9 @@
    "k": "p",
    "id": "learning/onboarding-guide",
    "n": "learning/onboarding-guide",
-   "r": "info.davincilabs.com/en/pl-demo-onboarding-guide-v3",
+   "r": "info.davincilabs.com/private-label-supplements-client-onboarding",
    "i": [],
+   "t": "info.davincilabs.com/private-label-supplements-client-onboarding",
    "slug": "learning/onboarding-guide",
    "hid": "216194811563",
    "y": "Guide",
@@ -793,9 +1101,9 @@
    "k": "p",
    "id": "learning/onboarding-guide-ty",
    "n": "learning/onboarding-guide-ty",
-   "r": "",
+   "r": "info.davincilabs.com/thank-you-client-onboarding",
    "i": [],
-   "new": true,
+   "t": "info.davincilabs.com/thank-you-client-onboarding",
    "slug": "learning/onboarding-guide-ty",
    "hid": "216194811659",
    "y": "Thank You",
@@ -807,8 +1115,15 @@
    "k": "p",
    "id": "liquids",
    "n": "liquids",
-   "r": "info.davincilabs.com/en/pl-demo-liquids-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "liquids",
    "hid": "216188835866",
    "y": "Other"
@@ -817,17 +1132,32 @@
    "k": "p",
    "id": "mens-health",
    "n": "mens-health",
-   "r": "info.davincilabs.com/pl-demo-mens-health-v3",
+   "r": "",
    "i": [
     [
      "warn",
      "first-person production wording",
      "Phrases to check: Our doctor-formulated"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "mens-health",
    "hid": "216188836114",
    "y": "Category",
+   "sc": [
+    {
+     "id": "hs:mens-health:0",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Hero subheader is still the generic placeholder (\"\u2026in-demand\u2026\"). Approved fix: lift the regulatory-approved intro from davincilabs.com/shop-supplements/mens-health.html and adapt it.",
+     "src": "Call, 8 Sep"
+    }
+   ],
    "rv": [
     1
    ]
@@ -836,11 +1166,27 @@
    "k": "p",
    "id": "multivitamin",
    "n": "multivitamin",
-   "r": "info.davincilabs.com/pl-demo-multivitamin-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "multivitamin",
    "hid": "216189433270",
    "y": "Category",
+   "sc": [
+    {
+     "id": "hs:multivitamin:0",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Hero subheader is still the generic placeholder (\"\u2026in-demand\u2026\"). Approved fix: lift the regulatory-approved intro from davincilabs.com/shop-supplements/multivitamin.html and adapt it.",
+     "src": "Call, 8 Sep"
+    }
+   ],
    "rv": [
     1
    ]
@@ -849,8 +1195,15 @@
    "k": "p",
    "id": "our-process",
    "n": "our-process",
-   "r": "info.davincilabs.com/pl-demo-our-process-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "our-process",
    "hid": "216186379326",
    "y": "Other"
@@ -859,14 +1212,20 @@
    "k": "p",
    "id": "packaging",
    "n": "packaging",
-   "r": "info.davincilabs.com/pl-demo-packaging-v3",
+   "r": "",
    "i": [
     [
      "warn",
      "placeholder copy",
      "Still shows: [PLACEHOLDER FOR JUSTIN: Insert detailed packaging options content. Bottle sizes by SKU, closure types, label finishes, sustainable options, and pricing implications. Patrick or Tammy can provide standard packaging catalog.]"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "packaging",
    "hid": "216189433489",
    "y": "Other"
@@ -875,8 +1234,15 @@
    "k": "p",
    "id": "pediatric",
    "n": "pediatric",
-   "r": "info.davincilabs.com/en/pl-demo-pediatric-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "pediatric",
    "hid": "216189433355",
    "y": "Category",
@@ -894,6 +1260,13 @@
      "at": "2026-09-07T16:41:00-04:00",
      "t": "remove kid omega and replace with immuni-z + elderberry with immune as the badge",
      "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:pediatric:2",
+     "n": "Tammy Johnson",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "Hero subheader is still the generic placeholder (\"\u2026in-demand\u2026\"). Approved fix: lift the regulatory-approved intro from davincilabs.com/shop-supplements/pediatric.html and adapt it \u2014 the pediatric original names Little DaVinci, so it cannot be used verbatim.",
+     "src": "Call, 8 Sep"
     }
    ],
    "rv": [
@@ -904,8 +1277,15 @@
    "k": "p",
    "id": "powders",
    "n": "powders",
-   "r": "info.davincilabs.com/pl-demo-powders-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "powders",
    "hid": "216192983382",
    "y": "Other"
@@ -914,14 +1294,20 @@
    "k": "p",
    "id": "prenatal",
    "n": "prenatal",
-   "r": "info.davincilabs.com/pl-demo-prenatal-v3",
+   "r": "",
    "i": [
     [
      "warn",
      "first-person production wording",
      "Phrases to check: Our doctor-formulated"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "prenatal",
    "hid": "216189433267",
    "y": "Category",
@@ -933,8 +1319,15 @@
    "k": "p",
    "id": "privacy",
    "n": "privacy",
-   "r": "info.davincilabs.com/en/pl-demo-privacy-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "privacy",
    "hid": "216194811650",
    "y": "Core",
@@ -955,8 +1348,15 @@
    "k": "p",
    "id": "probiotics",
    "n": "probiotics",
-   "r": "info.davincilabs.com/pl-demo-probiotics-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "probiotics",
    "hid": "216189433094",
    "y": "Category",
@@ -977,8 +1377,15 @@
    "k": "p",
    "id": "quality-standards",
    "n": "quality-standards",
-   "r": "info.davincilabs.com/pl-demo-quality-standards-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "quality-standards",
    "hid": "216186379328",
    "y": "Other"
@@ -987,14 +1394,20 @@
    "k": "p",
    "id": "request-quote",
    "n": "request-quote",
-   "r": "info.davincilabs.com/pl-demo-request-quote-v3",
+   "r": "",
    "i": [
     [
      "warn",
      "placeholder copy",
      "Still shows: [PLACEHOLDER FOR JUSTIN: HubSpot form embed goes here once form is created. Form fields should include: name, email, phone, business name, products of interest (multi-select), estimated order volume, target launch date, additional notes.]"
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
+   "new": true,
    "slug": "request-quote",
    "hid": "216194811716",
    "y": "Other"
@@ -1003,8 +1416,9 @@
    "k": "p",
    "id": "resources",
    "n": "resources",
-   "r": "info.davincilabs.com/en/pl-demo-resources-v3",
+   "r": "info.davincilabs.com/private-label-supplements-resource-center",
    "i": [],
+   "t": "info.davincilabs.com/private-label-supplements-resource-center",
    "slug": "resources",
    "hid": "216189433440",
    "y": "Core",
@@ -1032,8 +1446,15 @@
    "k": "p",
    "id": "sell-sheets",
    "n": "sell-sheets",
-   "r": "info.davincilabs.com/pl-demo-sell-sheets-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "sell-sheets",
    "hid": "216194811689",
    "y": "Other"
@@ -1042,8 +1463,15 @@
    "k": "p",
    "id": "sleep",
    "n": "sleep",
-   "r": "info.davincilabs.com/pl-demo-sleep-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "sleep",
    "hid": "216189433007",
    "y": "Category",
@@ -1064,8 +1492,15 @@
    "k": "p",
    "id": "soft-gels",
    "n": "soft-gels",
-   "r": "info.davincilabs.com/pl-demo-soft-gels-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "soft-gels",
    "hid": "216192983363",
    "y": "Other"
@@ -1074,8 +1509,15 @@
    "k": "p",
    "id": "tablets",
    "n": "tablets",
-   "r": "info.davincilabs.com/pl-demo-tablets-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "tablets",
    "hid": "216192983343",
    "y": "Other"
@@ -1084,8 +1526,15 @@
    "k": "p",
    "id": "terms",
    "n": "terms",
-   "r": "info.davincilabs.com/pl-demo-terms-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "terms",
    "hid": "216194811759",
    "y": "Other"
@@ -1094,8 +1543,15 @@
    "k": "p",
    "id": "testing",
    "n": "testing",
-   "r": "info.davincilabs.com/pl-demo-testing-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "testing",
    "hid": "216192983607",
    "y": "Other"
@@ -1104,8 +1560,15 @@
    "k": "p",
    "id": "ty-consultation",
    "n": "ty-consultation",
-   "r": "info.davincilabs.com/en/pl-demo-ty-consultation-v3",
-   "i": [],
+   "r": "info.davincilabs.com/thank-you-private-labeling (+2 more)",
+   "i": [
+    [
+     "mute",
+     "3 DaVinci URLs redirect here",
+     "At cutover all of these 301 to this page: info.davincilabs.com/thank-you-private-labeling \u00b7 info.davincilabs.com/thank-you-start-private-labeling \u00b7 info.davincilabs.com/ty-private-label-supplements"
+    ]
+   ],
+   "t": "info.davincilabs.com/thank-you-private-labeling",
    "slug": "ty-consultation",
    "hid": "216192983665",
    "y": "Thank You",
@@ -1117,8 +1580,15 @@
    "k": "p",
    "id": "ty-quote",
    "n": "ty-quote",
-   "r": "info.davincilabs.com/en/pl-demo-ty-quote-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "ty-quote",
    "hid": "216194811755",
    "y": "Thank You",
@@ -1130,8 +1600,15 @@
    "k": "p",
    "id": "ty-sell-sheets",
    "n": "ty-sell-sheets",
-   "r": "info.davincilabs.com/pl-demo-ty-sell-sheets-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "ty-sell-sheets",
    "hid": "216194811757",
    "y": "Thank You",
@@ -1141,8 +1618,15 @@
    "k": "p",
    "id": "weight-management",
    "n": "weight-management",
-   "r": "info.davincilabs.com/pl-demo-weight-management-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "weight-management",
    "hid": "216188836111",
    "y": "Category",
@@ -1191,8 +1675,15 @@
    "k": "p",
    "id": "womens-health",
    "n": "womens-health",
-   "r": "info.davincilabs.com/pl-demo-womens-health-v3",
-   "i": [],
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
+    ]
+   ],
+   "new": true,
    "slug": "womens-health",
    "hid": "216189433092",
    "y": "Category",
@@ -1217,6 +1708,13 @@
        "t": "Eventually these can link to products. But currently everything is DAVINCI PRODUCT PAGES. So for now, it's more like, things available, Contact Us"
       }
      ]
+    },
+    {
+     "id": "hs:womens-health:2",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-08T14:30:00-04:00",
+     "t": "This page's \"Praxera's Women's Health Formulations Available for Private Label\" block is the model every other category page should copy (confirmed on the call).",
+     "src": "Call, 8 Sep"
     }
    ],
    "rv": [
@@ -1238,6 +1736,11 @@
      "mute",
      "added since 31 Aug",
      "Not in the original migration pair list."
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
    "new": true,
@@ -1255,6 +1758,11 @@
      "mute",
      "added since 31 Aug",
      "Not in the original migration pair list."
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
    "new": true,
@@ -1277,6 +1785,11 @@
      "mute",
      "added since 31 Aug",
      "Not in the original migration pair list."
+    ],
+    [
+     "mute",
+     "nothing redirects here",
+     "No public DaVinci page maps to this one \u2014 it was built new for Praxera and only gets traffic from new links."
     ]
    ],
    "new": true,
@@ -4862,6 +5375,76 @@
     "at": "2026-09-08T09:24:00-04:00",
     "src": "Email, 8 Sep",
     "t": "When ready, I will review everything again and perhaps that should be done in parallel with Regulatory to provide page approvals."
+   },
+   {
+    "id": "gen:call:1",
+    "n": "Tammy Johnson",
+    "at": "2026-09-08T14:30:00-04:00",
+    "src": "Decision \u00b7 call, 8 Sep",
+    "t": "Keep the \u00ae after Daily Best everywhere (registered mark) \u2014 do not reduce to TM. Must be consistent on every page."
+   },
+   {
+    "id": "gen:call:2",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T14:30:00-04:00",
+    "src": "Standard \u00b7 call, 8 Sep",
+    "t": "Category-page \"formulations\" block \u2014 use Women's Health as the model on every category page: headline \"Praxera's <category> formulations available for private label\"; line 1 \"A selection of our existing <category> supplement line, available for private label today.\"; \"Schedule a consultation for the full catalog and custom options.\" on its own line. Replace the \"Our \u2026\", \"Real Praxera \u2026\", \"These are actual products \u2026 Browse the full catalog\" variants."
+   },
+   {
+    "id": "gen:call:3",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T14:30:00-04:00",
+    "src": "Decision \u00b7 call, 8 Sep",
+    "t": "\"Developed by Us, Made for You\" block must appear on every page with identical wording; add \"and tested ingredients\" after \"thoroughly researched\" (as on the home/pillar page). Only 43 assets use the global version and about half the pages were locked to Mindy \u2014 audit and standardise."
+   },
+   {
+    "id": "gen:call:4",
+    "n": "Tammy Johnson",
+    "at": "2026-09-08T14:30:00-04:00",
+    "src": "Decision \u00b7 call, 8 Sep",
+    "t": "Placeholder hero subheaders on the new category pages: lift the regulatory-approved intro copy from davincilabs.com/shop-supplements/<category>.html (Patrick's suggestion, Tammy: \"absolutely perfect, all approved by regulatory\"). Pediatric's original names Little DaVinci and cannot be reused verbatim."
+   },
+   {
+    "id": "gen:call:5",
+    "n": "Shawn Peterson",
+    "at": "2026-09-08T14:30:00-04:00",
+    "src": "Decision \u00b7 call, 8 Sep",
+    "t": "Navigation must stay fixed while scrolling (Tammy agreed). Sticky header shipped 8 Sep evening via Global Header module.css. Steps sections should show numbers OR icons, not both."
+   },
+   {
+    "id": "gen:call:6",
+    "n": "Tammy Johnson",
+    "at": "2026-09-08T14:30:00-04:00",
+    "src": "Process \u00b7 call, 8 Sep",
+    "t": "Regulatory needs ONE WEEK on the live-looking site (they have no HubSpot access \u2014 live URLs, not the editor). Soft launch ~14 Sep, nobody pointed at it; public by end of September. Friday 12 Sep touch-base added. QBS (Barb, Yelena, Patrick) checks Justin's changes before the client is asked to review again."
+   },
+   {
+    "id": "gen:call:7",
+    "n": "Shawn Peterson",
+    "at": "2026-09-08T14:30:00-04:00",
+    "src": "Process \u00b7 call, 8 Sep",
+    "t": "Emails & workflows: reply-to becomes info@praxerasupplements.com (Sarah confirmed the mailbox) \u2014 change at the last second, not before. Email footer is the universal DaVinci brand footer \u2014 DO NOT EDIT until Patrick builds the Praxera brand kit and re-clones. Audit CTAs/links in the 111 cloned emails; switch-over is DaVinci PL workflows off / Praxera on, same day. Barb + Justin QA the website, Yelena the other assets."
+   },
+   {
+    "id": "gen:call:8",
+    "n": "Tammy Johnson",
+    "at": "2026-09-08T14:30:00-04:00",
+    "src": "Decision \u00b7 call, 8 Sep",
+    "t": "Third-party-testing / NSF / USP passages in the Definitive Guide are long-running general educational content, not new copy \u2014 leave them alone. Dropshipping page comes out of the launch set (may return later as an educational resource)."
+   },
+   {
+    "id": "gen:patrick:1",
+    "n": "Patrick Dodge",
+    "at": "2026-09-09T09:00:00-04:00",
+    "src": "Plan \u00b7 email, 9 Sep",
+    "t": "Minimum viable product for the Regulatory hand-off next week: all core pages checked with label-claim asterisks in the right places; guides created and in place; menu navigation updates and links checked; blog populated (start the SEO switch). Until end of month: emails reviewed and corrected; CTAs checked and links confirmed; 301 redirects set up and Google Search Console; workflows tested. Expect an Awareness, Consideration and Decision-stage workflow, each with 6\u20138 emails. Progress check 4pm today."
+   },
+   {
+    "id": "gen:patrick:2",
+    "n": "Patrick Dodge",
+    "at": "2026-09-09T09:00:00-04:00",
+    "src": "Note \u00b7 email, 9 Sep",
+    "t": "We are getting mired in phrasing adjustments to copy that was already approved and published on the existing DaVinci site. Focus this week: tie up the few open pieces, then start QA on the automated emails and workflows."
    }
   ],
   "hs": {

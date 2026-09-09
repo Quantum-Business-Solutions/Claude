@@ -1,5 +1,5 @@
 {
- "source": "Site-wide points from Melinda's 8 Sep email to Patrick and Shawn",
+ "source": "Site-wide rules and decisions: HubSpot comments (Sarah, 24 Aug), Melinda's 8 Sep email, the 8 Sep call, Patrick's 9 Sep email",
  "comments": [
   {
    "id": "gen:rule:1",
@@ -84,6 +84,76 @@
    "at": "2026-09-08T09:24:00-04:00",
    "src": "Email, 8 Sep",
    "t": "When ready, I will review everything again and perhaps that should be done in parallel with Regulatory to provide page approvals."
+  },
+  {
+   "id": "gen:call:1",
+   "n": "Tammy Johnson",
+   "at": "2026-09-08T14:30:00-04:00",
+   "src": "Decision · call, 8 Sep",
+   "t": "Keep the ® after Daily Best everywhere (registered mark) — do not reduce to TM. Must be consistent on every page."
+  },
+  {
+   "id": "gen:call:2",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T14:30:00-04:00",
+   "src": "Standard · call, 8 Sep",
+   "t": "Category-page \"formulations\" block — use Women's Health as the model on every category page: headline \"Praxera's <category> formulations available for private label\"; line 1 \"A selection of our existing <category> supplement line, available for private label today.\"; \"Schedule a consultation for the full catalog and custom options.\" on its own line. Replace the \"Our …\", \"Real Praxera …\", \"These are actual products … Browse the full catalog\" variants."
+  },
+  {
+   "id": "gen:call:3",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T14:30:00-04:00",
+   "src": "Decision · call, 8 Sep",
+   "t": "\"Developed by Us, Made for You\" block must appear on every page with identical wording; add \"and tested ingredients\" after \"thoroughly researched\" (as on the home/pillar page). Only 43 assets use the global version and about half the pages were locked to Mindy — audit and standardise."
+  },
+  {
+   "id": "gen:call:4",
+   "n": "Tammy Johnson",
+   "at": "2026-09-08T14:30:00-04:00",
+   "src": "Decision · call, 8 Sep",
+   "t": "Placeholder hero subheaders on the new category pages: lift the regulatory-approved intro copy from davincilabs.com/shop-supplements/<category>.html (Patrick's suggestion, Tammy: \"absolutely perfect, all approved by regulatory\"). Pediatric's original names Little DaVinci and cannot be reused verbatim."
+  },
+  {
+   "id": "gen:call:5",
+   "n": "Shawn Peterson",
+   "at": "2026-09-08T14:30:00-04:00",
+   "src": "Decision · call, 8 Sep",
+   "t": "Navigation must stay fixed while scrolling (Tammy agreed). Sticky header shipped 8 Sep evening via Global Header module.css. Steps sections should show numbers OR icons, not both."
+  },
+  {
+   "id": "gen:call:6",
+   "n": "Tammy Johnson",
+   "at": "2026-09-08T14:30:00-04:00",
+   "src": "Process · call, 8 Sep",
+   "t": "Regulatory needs ONE WEEK on the live-looking site (they have no HubSpot access — live URLs, not the editor). Soft launch ~14 Sep, nobody pointed at it; public by end of September. Friday 12 Sep touch-base added. QBS (Barb, Yelena, Patrick) checks Justin's changes before the client is asked to review again."
+  },
+  {
+   "id": "gen:call:7",
+   "n": "Shawn Peterson",
+   "at": "2026-09-08T14:30:00-04:00",
+   "src": "Process · call, 8 Sep",
+   "t": "Emails & workflows: reply-to becomes info@praxerasupplements.com (Sarah confirmed the mailbox) — change at the last second, not before. Email footer is the universal DaVinci brand footer — DO NOT EDIT until Patrick builds the Praxera brand kit and re-clones. Audit CTAs/links in the 111 cloned emails; switch-over is DaVinci PL workflows off / Praxera on, same day. Barb + Justin QA the website, Yelena the other assets."
+  },
+  {
+   "id": "gen:call:8",
+   "n": "Tammy Johnson",
+   "at": "2026-09-08T14:30:00-04:00",
+   "src": "Decision · call, 8 Sep",
+   "t": "Third-party-testing / NSF / USP passages in the Definitive Guide are long-running general educational content, not new copy — leave them alone. Dropshipping page comes out of the launch set (may return later as an educational resource)."
+  },
+  {
+   "id": "gen:patrick:1",
+   "n": "Patrick Dodge",
+   "at": "2026-09-09T09:00:00-04:00",
+   "src": "Plan · email, 9 Sep",
+   "t": "Minimum viable product for the Regulatory hand-off next week: all core pages checked with label-claim asterisks in the right places; guides created and in place; menu navigation updates and links checked; blog populated (start the SEO switch). Until end of month: emails reviewed and corrected; CTAs checked and links confirmed; 301 redirects set up and Google Search Console; workflows tested. Expect an Awareness, Consideration and Decision-stage workflow, each with 6–8 emails. Progress check 4pm today."
+  },
+  {
+   "id": "gen:patrick:2",
+   "n": "Patrick Dodge",
+   "at": "2026-09-09T09:00:00-04:00",
+   "src": "Note · email, 9 Sep",
+   "t": "We are getting mired in phrasing adjustments to copy that was already approved and published on the existing DaVinci site. Focus this week: tie up the few open pieces, then start QA on the automated emails and workflows."
   }
  ]
 }

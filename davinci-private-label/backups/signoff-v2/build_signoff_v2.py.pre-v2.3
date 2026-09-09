@@ -17,21 +17,6 @@ import json,re,math,datetime,html
 R=lambda n:json.load(open(f"reference/{n}.json"))
 pairs=R("pairs"); ids=R("hubspot_ids"); sheet=R("design_sheet_v6"); hcom=R("hubspot_page_comments")
 pageh={r["slug"]:r for r in R("page_health")}; blogh={r["slug"]:r for r in R("blog_health")}
-# Public DaVinci URLs that will 301 to each Praxera page at cutover. The v1 "pl-demo" pages
-# are the SAME HubSpot records as today's Praxera pages (re-slugged, moved domain) and the -v3
-# pages were QBS working copies (now archived) — neither was ever public, so neither is an
-# "original". compare_pairs.json holds the true public sources; map them to current slugs.
-import glob as _g
-_v1={json.load(open(f))["slug"]:str(json.load(open(f))["id"]) for f in _g.glob("snapshots/v1-pre-promotion/*.json")}
-_byid={str(x["id"]):x["slug"] for x in ids["pages"]}
-ORIG={}
-for _d in R("compare_pairs"):
-    if _d["old"].get("state")=="GONE": continue
-    _cur=_byid.get(_v1.get(_d["new_slug"],""))
-    if _cur is None: continue
-    ORIG.setdefault(_cur,[]).append(_d["old_url"])
-_rank=lambda u:(0 if "//www." in u else 1 if "//info." in u else 2, u)
-for _k in ORIG: ORIG[_k]=sorted(dict.fromkeys(ORIG[_k]),key=_rank)
 emailh={str(r["id"]):r for r in R("email_clones")}; wf=R("workflow_clones"); embeds=R("form_embeds"); state=R("current_state")
 PORTAL="4087538"; SITE="https://www.praxerasupplements.com"
 SHARE="https://clientcommand.thequantumleap.business/portal/2a5c361066202d71fa47ee598d2bcb95/pages/94f31f00-08a7-4f9c-905e-fe4a5e6b8c7d"
@@ -71,7 +56,7 @@ def seeds_for(slug):
     s=sheetmap.get(slug)
     if s and s[4]: out.append({"id":f"sheet:{slug}","n":"Melinda Elmadjian","at":(s[3] or "2026-09-07")+"T12:00:00-04:00","t":s[4],"src":"Design Approval Sheet v6"})
     for n,c in enumerate(x for x in hcom["comments"] if x["slug"]==slug):
-        o={"id":f"hs:{slug}:{n}","n":c["n"],"at":c["at"],"t":c["t"],"src":c.get("src","HubSpot page comment")}
+        o={"id":f"hs:{slug}:{n}","n":c["n"],"at":c["at"],"t":c["t"],"src":"HubSpot page comment"}
         if c.get("re"): o["re"]=c["re"]
         out.append(o)
     return out
@@ -83,15 +68,11 @@ for p in sorted(pairs["pages"],key=lambda x:x["slug"] or ""):
     key=slug or "home"; s=sheetmap.get(key); i=health_chips(pageh.get(slug),"page")
     rv=[1] if (s and s[2]=="✓") else []
     rs=(s[2] if (s and s[2] and s[2]!="✓") else "")
-    olds=ORIG.get(slug,[])
-    if len(olds)>1: i.append(["mute",f"{len(olds)} DaVinci URLs redirect here","At cutover all of these 301 to this page: "+" · ".join(host(u) for u in olds)])
-    if not olds: i.append(["mute","nothing redirects here","No public DaVinci page maps to this one — it was built new for Praxera and only gets traffic from new links."])
-    add("p",slug or "home",slug or "(home)",r=(host(olds[0])+(f" (+{len(olds)-1} more)" if len(olds)>1 else "")) if olds else "",
-        t=host(olds[0]) if olds else "",i=i,new=not olds,
+    add("p",slug or "home",slug or "(home)",r=host(p["source_url"]),i=i,new=not p["source_url"],
         slug=slug,hid=str(hp["id"]),y=(s[1] if s else ("Blog landing" if slug.startswith("blog") else "Other")),sc=seeds_for(key),rv=rv,rs=rs)
 for slug,hp in hsp.items():
     if slug in seen or slug in ("pl-module-library","pl-global-blocks") or slug.startswith("-temporary"): continue
-    add("p",slug,slug,r="",i=health_chips(pageh.get(slug),"page")+[["mute","added since 31 Aug","Not in the original migration pair list."],["mute","nothing redirects here","No public DaVinci page maps to this one — it was built new for Praxera and only gets traffic from new links."]],
+    add("p",slug,slug,r="",i=health_chips(pageh.get(slug),"page")+[["mute","added since 31 Aug","Not in the original migration pair list."]],
         new=True,slug=slug,hid=str(hp["id"]),y="Thank You" if "ty-" in slug else "Other",sc=seeds_for(slug))
 # ---- blog posts -----------------------------------------------------------
 hsb={b["slug"]:b for b in ids["blog"]}
@@ -147,14 +128,7 @@ print("rows:",len(rows),{g:sum(1 for r in rows if r['k']==g) for g,*_ in META["g
       "seeded comments:",sum(len(r.get("sc",[])) for r in rows),
       "findings:",sum(1 for r in rows for x in r["i"] if x[0] in("bad","warn")))
 # ---- chunks -----------------------------------------------------------------
-# Seed the interned tables from the last build so indices in unchanged data sections stay valid
-# (a data section is only re-uploaded when its own bytes change).
-try:
-    _prev=[x for x in json.load(open("deliverables/signoff_chunks.json")) if x["block_key"]=="metadata"][0]["body"]
-    _prev=json.loads(re.search(r">(.*)</script>",_prev,re.S).group(1))
-    labels=[list(x) for x in _prev.get("labels",[])]; types=list(_prev.get("types",[]))
-except Exception: labels=[]; types=[]
-idx={tuple(x):n for n,x in enumerate(labels)}
+labels=[];idx={}
 for r in rows:
     out=[]
     for x in r["i"]:
@@ -163,6 +137,7 @@ for r in rows:
         out.append(idx[k])
     r["i"]=out
 META["labels"]=labels
+types=[]
 for r in rows:
     if r.get("y") and r["y"] not in types: types.append(r["y"])
     if r.get("y"): r["y"]=types.index(r["y"])

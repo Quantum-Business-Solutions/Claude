@@ -56,18 +56,12 @@ window.addEventListener("message",function(e){
     render();}
 });
 function requestState(k){post({type:"ready",key:k});}
-var wq=[],wbusy=false,wt=null;
 function writeState(k,v,cb){
   var s=JSON.stringify(v);
   if(s.length>CAP){flag("too much saved under "+k+" — tell QBS","err");return;}
-  wq=wq.filter(function(x){return x.k!==k;});wq.push({k:k,v:v,cb:cb});pump();
+  if(cb)saveCb[k]=cb;
+  post({type:"state:set",key:k,value:v});
 }
-/* One save in flight at a time. The host coalesces saves for 600ms; sending two
-   keys inside that window used to keep only the last one, so history went missing. */
-function pump(){if(wbusy||!wq.length)return;var x=wq.shift();wbusy=true;
-  saveCb[x.k]=function(ok,err){wbusy=false;clearTimeout(wt);if(x.cb)x.cb(ok,err);pump();};
-  post({type:"state:set",key:x.k,value:x.v});
-  wt=setTimeout(function(){wbusy=false;pump();},2500);}
 
 /* ---- state ------------------------------------------------------------ */
 var state={},edits={mod:{},add:{},del:{},chips:{}},log={e:[]};
@@ -169,7 +163,7 @@ function setRev(g,id,k){var r=findRow(g,id);if(!r)return;if(!side){askSide();ret
   logIt(on?"rev-clear":"rev-tick",g,id,r.n,"Rev "+k.slice(1));touch(gkey(g));}
 function comments(r){var it=state[r.k][r.id]||{},sr=it.sr||{};
   var seeds=(r.sc||[]).map(function(s){var o={id:s.id,n:s.n,at:s.at,t:s.t,src:s.src,seed:1};
-    var x=sr[s.id]||{};o.st=x.st||"open";o.rs=x.rs;o.gl=x.gl;o.re=(s.re||[]).map(function(r,i){return {id:s.id+":r"+i,n:r.n,t:r.t,at:r.at,seed:1};}).concat(x.re||[]);return o;});
+    var x=sr[s.id]||{};o.st=x.st||"open";o.rs=x.rs;o.re=(s.re||[]).map(function(r,i){return {id:s.id+":r"+i,n:r.n,t:r.t,at:r.at,seed:1};}).concat(x.re||[]);return o;});
   var mine=(it.cm||[]).map(function(c){var o={};for(var k in c)o[k]=c[k];o.st=o.st||"open";o.re=o.re||[];return o;});
   return seeds.concat(mine).sort(function(a,b){return (a.at||"")<(b.at||"")?-1:1;});}
 function openCount(r){return comments(r).filter(function(c){return c.st!=="done";}).length;}
@@ -203,12 +197,6 @@ function replyTo(g,id,cid,text){text=(text||"").trim();if(!text)return;
 function resolveComment(g,id,cid,done){var c=findComment(item(g,id),cid);
   c.st=done?"done":"open";c.rs={at:now(),by:me()};
   logIt(done?"resolve-comment":"reopen-comment",g,id,rowName(g,id));touch(gkey(g));}
-function makeGlobal(g,id,cid){var r=findRow(g,id);if(!r)return;if(!side){askSide();return;}
-  var c=comments(r).filter(function(x){return x.id===cid;})[0];if(!c)return;
-  var src=findComment(item(g,id),cid);if(src.gl)return;src.gl={at:now(),by:me()};
-  var gi=item("_","general");if(!gi.cm)gi.cm=[];
-  gi.cm.push({id:uid(),n:me(),sd:side,t:"[From "+r.n+" — "+c.n+"] "+c.t,at:now(),st:"open",re:[],from:{g:g,i:id,n:r.n}});
-  logIt("make-global",g,id,r.n,c.t.slice(0,140));touch(gkey(g));touch(KEY.gen);}
 function editRow(g,id,f){var m=edits.mod[g][id]||(edits.mod[g][id]={}),ch=[],cur=findRow(g,id)||{};
   for(var k in f){var v=(f[k]||"").trim();if(v!==(cur[k]||"")){m[k]={v:v,at:now(),by:me()};ch.push(k+": "+(v||"(blank)").slice(0,60));}}
   if(ch.length){logIt("edit",g,id,rowName(g,id),ch.join(" · "));touch(KEY.edits);}}
@@ -292,7 +280,7 @@ function exportXlsx(){if(!hosted){exportCsv();return;}flag("building the Excel f
   catch(e){flag("Excel failed — "+(e&&e.message||"")+" — sending CSV","err");exportCsv();}});}
 
 /* ---- view state (per viewer, never saved) ---------------------------------- */
-var view={},open={},editing={},confirmDel={},sel={},showDel={},showLog=false,addOpen={},replyOpen={},collapsed={log:false};var showAllLog=false;
+var view={},open={},editing={},confirmDel={},sel={},showDel={},showLog=false,addOpen={},replyOpen={},collapsed={log:true};
 function chev(g){return '<button class="chev" data-a="fold" data-g="'+g+'" aria-expanded="'+(!collapsed[g])+'" title="'+(collapsed[g]?"Expand":"Collapse")+'">'+(collapsed[g]?"▸":"▾")+"</button>";}
 GK.forEach(function(g){view[g]={f:"all",q:"",y:""};sel[g]={};});
 function E(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
@@ -313,27 +301,7 @@ var ACT={"qbs-approve":"QBS approved","qbs-unapprove":"removed QBS approval","cl
   "client-unapprove":"removed client approval","needs-work":"marked needs work","clear-flag":"cleared needs work",
   "comment":"commented on","reply":"replied on","resolve-comment":"resolved a comment on","reopen-comment":"reopened a comment on",
   "edit":"edited","add":"added","delete":"removed","restore":"restored","clear-chip":"cleared a finding on",
-  "rev-tick":"ticked a revision on","rev-clear":"cleared a revision on","make-global":"made a note global from"};
-
-/* ---- history: the log plus anything the saved stamps prove happened ---------- */
-function histEvents(){var seen={},out=[];
-  log.e.forEach(function(e){out.push(e);seen[e.a+"|"+e.g+"|"+e.i+"|"+String(e.at||"").slice(0,16)]=1;});
-  function add(a,g,i,n,at,by,sd,x){if(!at)return;var key=a+"|"+g+"|"+i+"|"+String(at).slice(0,16);if(seen[key])return;seen[key]=1;
-    out.push({id:"d:"+key,at:at,by:by||"",sd:sd||"",a:a,g:g,i:i,n:n,x:x||"",d:1});}
-  GK.concat(["_"]).forEach(function(g){var grp=state[g]||{};for(var id in grp){var it=grp[id],name=g==="_"?"Global notes":rowName(g,id);
-    [["q","qbs-approve","qbs-unapprove"],["c","client-approve","client-unapprove"],["f","needs-work","clear-flag"]].forEach(function(k){var st=it[k[0]];if(st&&st.at)add(st.x?k[2]:k[1],g,id,name,st.at,st.by,k[0]==="q"?"qbs":k[0]==="c"?"client":"");});
-    REVS.forEach(function(k){var st=it[k];if(st&&st.at)add(st.x?"rev-clear":"rev-tick",g,id,name,st.at,st.by,"","Rev "+k.slice(1));});
-    (it.cm||[]).forEach(function(c){add("comment",g,id,name,c.at,c.n,c.sd,(c.t||"").slice(0,140));(c.re||[]).forEach(function(r){add("reply",g,id,name,r.at,r.n,r.sd,(r.t||"").slice(0,140));});
-      if(c.rs&&c.rs.at)add(c.st==="done"?"resolve-comment":"reopen-comment",g,id,name,c.rs.at,c.rs.by,"");});
-    var sr=it.sr||{};for(var cid in sr){var x=sr[cid];(x.re||[]).forEach(function(r){add("reply",g,id,name,r.at,r.n,r.sd,(r.t||"").slice(0,140));});
-      if(x.rs&&x.rs.at)add(x.st==="done"?"resolve-comment":"reopen-comment",g,id,name,x.rs.at,x.rs.by,"");if(x.gl&&x.gl.at)add("make-global",g,id,name,x.gl.at,x.gl.by,"");}}});
-  GK.forEach(function(g){var m=edits.mod[g]||{};for(var id in m){for(var f in m[id]){var st=m[id][f];if(st&&st.at)add("edit",g,id,rowName(g,id),st.at,st.by,"",f+": "+String(st.v||"(blank)").slice(0,60));}}
-    (edits.add[g]||[]).forEach(function(o){add("add",g,o.id,o.n||"",o.at,o.by,"");});
-    var d=edits.del[g]||{};for(var id2 in d){var st2=d[id2];if(st2&&st2.at)add(st2.x?"restore":"delete",g,id2,rowName(g,id2),st2.at,st2.by,"");}
-    var ch=edits.chips[g]||{};for(var id3 in ch){for(var lb in ch[id3]){var st3=ch[id3][lb];if(st3&&st3.at)add("clear-chip",g,id3,rowName(g,id3),st3.at,st3.by,"",lb);}}});
-  out.sort(function(a,b){return (a.at||"")<(b.at||"")?1:-1;});return out;}
-function commentTotals(){var o=0,d=0;GK.forEach(function(g){rowsOf(g).forEach(function(r){if(r.deleted)return;comments(r).forEach(function(c){if(c.st==="done")d++;else o++;});});});
-  comments(GEN).forEach(function(c){if(c.st==="done")d++;else o++;});return {open:o,done:d};}
+  "rev-tick":"ticked a revision on","rev-clear":"cleared a revision on"};
 
 /* ---- rendering -------------------------------------------------------------- */
 /* Column widths per group (px); the checkbox column is fixed. Draggable. */
@@ -441,8 +409,8 @@ function cmtHtml(r,c){var re=(c.re||[]).map(function(x){return '<div class="re">
   return '<div class="cmt '+sideCls(c)+(c.st==="done"?" done":"")+'" data-c="'+E(c.id)+'"><div class="who"><span class="nm2">'+E(c.n)+"</span>"+(c.sd?"<span>"+(c.sd==="qbs"?"QBS":"client")+"</span>":"")+"<span>"+when(c.at)+"</span>"
     +(c.src?'<em>'+E(c.src)+"</em>":"")+(c.st==="done"?'<b>resolved by '+E(c.rs&&c.rs.by||"")+" "+when(c.rs&&c.rs.at)+"</b>":"")+"</div>"
     +'<div class="txt">'+E(c.t)+"</div>"+re
-    +'<div class="cact">'+(c.st==="done"?'<span class="pill done">✓ Resolved</span><button class="gh mini" data-a="reopen">Reopen</button>':'<span class="pill open">Open</span><button class="mini ok2" data-a="resolve">Resolve ✓</button>')
-    +'<button class="gh mini" data-a="reply">Reply</button>'+(r.k!=="_"?(c.gl?'<span class="pill gl" title="Copied to Global notes by '+E(c.gl.by||"")+'">↗ In Global notes</span>':'<button class="gh mini" data-a="mkglobal" title="Copy this to Global notes &amp; rules — it applies site-wide">↗ Make global</button>'):"")+"</div>"
+    +'<div class="cact">'+(c.st==="done"?'<button class="gh mini" data-a="reopen">Reopen</button>':'<button class="mini ok2" data-a="resolve">Resolve ✓</button>')
+    +'<button class="gh mini" data-a="reply">Reply</button></div>'
     +(replyOpen[rk]?'<div class="replybox"><textarea data-a="rtxt" placeholder="Reply…"></textarea><div class="row"><button class="mini" data-a="rpost">Post reply</button><button class="gh mini" data-a="rcancel">Cancel</button></div></div>':"")
     +"</div>";}
 
@@ -452,13 +420,12 @@ function genHtml(){var cs=comments(GEN),open_=cs.filter(function(c){return c.st!
     +'<p class="eyebrow" style="grid-column:1/-1;margin:0">Site-wide instructions and anything that is not about one asset — both sides can post, reply and resolve</p></div>'
     +(!collapsed._?'<div class="gen card thread" data-g="_" data-i="general">'+(cs.length?cs.map(function(c){return cmtHtml(GEN,c);}).join(""):'<p class="empty">Nothing here yet.</p>')
       +'<textarea data-a="txt" aria-label="Global note" placeholder="Add a site-wide note, rule or change…"></textarea><div class="row"><button data-a="post">Post</button></div></div>':"")+"</section>";}
-function logHtml(){var all=histEvents(),es=showAllLog?all:all.slice(0,10);
-  return '<section class="logsec" id="g-log"><div class="shead"><div class="hrow">'+chev("log")+'<h2>Activity</h2><span class="tct">'+all.length+" actions · everyone, every change</span></div>"
-    +'<div class="acts">'+(all.length>10?'<button class="gh mini" data-a="alllog">'+(showAllLog?"Show latest 10":"Show all "+all.length)+"</button>":"")+"</div></div>"
-    +(!collapsed.log?(es.length?'<ul class="log">'+es.map(function(e){return "<li"+(e.d?' class="derived" title="Recovered from the saved item"':"")+"><b>"+E(e.by)+"</b>"+(e.sd?' <i>'+(e.sd==="qbs"?"QBS":"client")+"</i>":"")+" "+E(ACT[e.a]||e.a)+" <em>"+E(e.n)+"</em>"
-      +(e.x?': <span>'+E(e.x)+"</span>":"")+"<time>"+when(e.at)+"</time></li>";}).join("")+"</ul>":'<p class="empty">Nothing recorded yet — approvals, comments, edits and resolves will show here as they happen.</p>'):"")+"</section>";}
-function headerHtml(){var all=[];GK.forEach(function(g){all=all.concat(rowsOf(g));});var t=tally(all),ct=commentTotals();
-  var anyOpen=!collapsed.log||!collapsed._||GK.some(function(g){return !collapsed[g];});
+function logHtml(){var es=log.e.slice(-60).reverse();
+  return '<section class="logsec" id="g-log"><div class="shead"><div class="hrow">'+chev("log")+'<h2>Activity</h2><span class="tct">'+log.e.length+" actions</span></div>"
+    +'<div class="acts"></div></div>'
+    +(!collapsed.log?(es.length?'<ul class="log">'+es.map(function(e){return "<li><b>"+E(e.by)+"</b>"+(e.sd?' <i>'+(e.sd==="qbs"?"QBS":"client")+"</i>":"")+" "+E(ACT[e.a]||e.a)+" <em>"+E(e.n)+"</em>"
+      +(e.x?': <span>'+E(e.x)+"</span>":"")+"<time>"+when(e.at)+"</time></li>";}).join("")+"</ul>":'<p class="empty">Nothing recorded yet.</p>'):"")+"</section>";}
+function headerHtml(){var all=[];GK.forEach(function(g){all=all.concat(rowsOf(g));});var t=tally(all);
   var nav='<a href="#g-general"><i></i>Global <b>'+comments(GEN).filter(function(c){return c.st!=="done";}).length+"</b></a>"+GROUPS.map(function(g){var tt=tally(rowsOf(g[0]));var st=tt.n&&tt.both===tt.n?" done":(tt.both||tt.q||tt.c?" part":"");
     return '<a class="'+st+'" href="#g-'+g[0]+'"><i></i>'+E(g[1])+" <b>"+tt.both+"/"+tt.n+"</b></a>";}).join("");
   var ident=user&&user.name?'<span class="me">Signed in as <b>'+E(user.name)+"</b>"+(side?'<span class="side">'+(side==="qbs"?"QBS":"Client")+"</span>":"")+"</span>"
@@ -470,15 +437,15 @@ function headerHtml(){var all=[];GK.forEach(function(g){all=all.concat(rowsOf(g)
     +'<span class="tools"><button class="gh" data-a="refresh">↻ Refresh</button><button class="gh" data-a="xlsx">↓ Excel</button>'
     +(hostv2?'<button class="gh" data-a="full">⤢ Full screen</button>':"")+"</span></div>"
     +'<div class="hrow"><h1>'+E(META.title)+'</h1><button class="gh mini" data-a="about">'+(showAbout?"Hide help":"How this works")+"</button></div>"+(META.intro&&showAbout?'<p class="lede">'+E(META.intro)+"</p>":"")
-    +'<div class="stats">'+tile("a",t.both,"Fully approved")+tile("q",t.q,"QBS approved")+tile("c",t.c,"Client approved")+tile("f",t.f,"Needs work")+tile("u",t.todo,"Not reviewed")+tile("o",ct.open,"Open comments")+tile("r",ct.done,"Resolved")+tile("t",t.n,"Assets")+"</div>"
+    +'<div class="stats">'+tile("a",t.both,"Fully approved")+tile("q",t.q,"QBS approved")+tile("c",t.c,"Client approved")+tile("f",t.f,"Needs work")+tile("u",t.todo,"Not reviewed")+tile("t",t.n,"Assets")+"</div>"
     +'<div class="prog">'+barHtml(t)+"</div>"
     +'<div class="idbar'+(hosted?"":" ro")+(needSide&&!side?" attn":"")+'" id="idbar">'+(user&&user.name?"":'<span class="step">'+(needSide&&!side?"First, tell the sheet who you are":"Who are you?")+"</span>")+ident
     +(hosted?"":'<span class="dim">Not inside the portal — nothing will save.</span>')+"</div>"
     +(META.share?'<div class="share-row"><span>Client share link (no login):</span><input class="share" readonly value="'+E(META.share)+'" onclick="this.select()"></div>':"")
     +(csvShown?'<div class="csvbox"><p class="note">Your browser could not save the file from here — select all and copy this into a spreadsheet. <button class="gh mini" data-a="csvclose">Close</button></p><textarea readonly onclick="this.select()">'+E(csvText())+"</textarea></div>":"")
     +'<p class="note">'+E(META.note||"")+" Asset list refreshed from HubSpot "+E(META.stamp)+".</p>"
-    +'</div></header><div class="wrap"><div class="navbar"><div class="navin"><nav class="jump">'+nav+'</nav><button class="gh mini" data-a="foldall" title="Open or close every section">'+(anyOpen?"▴ Collapse all":"▾ Expand all")+'</button><span class="save '+cls+'" id="save">'+E(msg)+"</span></div></div>"
-    +logHtml()+genHtml()+GROUPS.map(groupHtml).join("")+"</div>";}
+    +'</div></header><div class="wrap"><div class="navbar"><div class="navin"><nav class="jump">'+nav+'</nav><span class="save '+cls+'" id="save">'+E(msg)+"</span></div></div>"
+    +genHtml()+GROUPS.map(groupHtml).join("")+logHtml()+"</div>";}
 function fitPanels(){[].forEach.call(document.querySelectorAll(".tscroll"),function(sc){
   var w=sc.clientWidth-36;[].forEach.call(sc.querySelectorAll(".panel,.form"),function(p){p.style.width=w+"px";});});}
 window.addEventListener("resize",fitPanels);
@@ -490,7 +457,6 @@ var root=document.getElementById("root");
 /* ---- inline editing: double-click a value, Enter saves, Esc cancels --------- */
 var inl=null;
 root.addEventListener("dblclick",function(ev){
-  if(ev.target.closest("a"))return;             /* double-clicking a link follows it; edit from the text beside it */
   var cell=ev.target.closest("[data-f]");if(!cell||cell.tagName==="INPUT")return;
   var tr=cell.closest("tr.r");if(!tr||tr.classList.contains("gone"))return;
   var g=tr.dataset.g,id=tr.dataset.i,f=cell.dataset.f,r=findRow(g,id);if(!r)return;
@@ -529,8 +495,7 @@ root.addEventListener("click",function(ev){
   if(a==="xlsx"){exportXlsx();return;}
   if(a==="csvclose"){csvShown=false;render();return;}
   if(a==="fold"){collapsed[b.dataset.g]=!collapsed[b.dataset.g];render();return;}
-  if(a==="alllog"){showAllLog=!showAllLog;render();return;}
-  if(a==="foldall"){var any=!collapsed.log||!collapsed._||GK.some(function(g){return !collapsed[g];});["log","_"].concat(GK).forEach(function(g){collapsed[g]=any;});render();return;}
+  if(a==="togglegen"){showGen=!showGen;render();return;}
   if(a==="about"){showAbout=!showAbout;render();return;}
   if(a==="addopen"){addOpen[b.dataset.g]=true;render();return;}
   if(a==="addcancel"){addOpen[b.dataset.g]=false;render();return;}
@@ -564,7 +529,6 @@ root.addEventListener("click",function(ev){
   var cm=b.closest(".cmt");if(cm){var cid=cm.dataset.c,rk=k+":"+cid;
     if(a==="resolve"){resolveComment(g,id,cid,true);render();return;}
     if(a==="reopen"){resolveComment(g,id,cid,false);render();return;}
-    if(a==="mkglobal"){makeGlobal(g,id,cid);render();return;}
     if(a==="reply"){replyOpen[rk]=true;render();var rt=root.querySelector('.cmt[data-c="'+cid+'"] textarea');if(rt)rt.focus();return;}
     if(a==="rcancel"){replyOpen[rk]=false;render();return;}
     if(a==="rpost"){var rb=cm.querySelector("textarea");if(rb&&rb.value.trim()){replyTo(g,id,cid,rb.value);replyOpen[rk]=false;render();}return;}}
