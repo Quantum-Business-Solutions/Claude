@@ -1,55 +1,68 @@
-# Praxera Asset Sign-off — portal page
+# Praxera Asset Sign-off — portal page (v2, 9 Sep 2026)
 
 Portal: DaVinci Labs Portal (`6d797a44-e010-410f-b532-64ac42627d64`)
 Page:   slug `praxera-asset-signoff`, id `94f31f00-08a7-4f9c-905e-fe4a5e6b8c7d`
-Live:   client-visible since 31 Aug 2026
+Team:   https://clientcommand.thequantumleap.business/pages/94f31f00-08a7-4f9c-905e-fe4a5e6b8c7d
+Client share link (no login): https://clientcommand.thequantumleap.business/portal/2a5c361066202d71fa47ee598d2bcb95/pages/94f31f00-08a7-4f9c-905e-fe4a5e6b8c7d
 
-## Why the portal and not a Claude artifact
+## What v2 does (built for Shawn's asks of 9 Sep)
 
-An artifact needs a Claude account to open, and its state never reaches
-ClientCommand -- 272 approvals would have been unrecoverable. The portal page
-writes into `portal_document_state`, which the team can read back.
+- **Two approvals per item**: QBS ✓ (build) and Client ✓ (content), each stamped with who and when.
+  Needs work clears both. Fully approved = both ticks.
+- **Who you are**: when the ClientCommand host is on the new viewer build, the page knows the
+  signed-in user and their side (team / client) and only enables that side's button. Until then,
+  and always on the share link, the reviewer types a name and picks "I am QBS" / "I am the client".
+- **Comments are first-class**: each comment has Reply and Resolve/Reopen; resolved comments show who
+  resolved and when. 32 client comments are pre-loaded — 4 notes from Melinda's Design Approval Sheet
+  v6 and 28 HubSpot in-editor comments (Melinda, Sarah) — and can be replied to or resolved.
+- **Editable**: Edit any row (name, type, live link, HubSpot link, detail, note), Add a row per
+  group, Remove (two-step) and Restore. Findings chips can be cleared with ×.
+- **Links**: Live ↗ for every page and post, HubSpot ↗ (editor) for every page, post, email, form and
+  workflow.
+- **Findings with detail**: open a row to see *where* — the DaVinci URLs linked, the exact
+  first-person production phrases, the placeholder text. Scan re-run 9 Sep (`verify_content.py`).
+- **Multi-select + bulk**: tick rows (or select-all shown) → QBS approve / Client approve / Needs work /
+  Clear / Remove. Filters: status, type, search across names, notes, findings and comments.
+- **Activity log**: every action recorded (who, side, what, when); per-item history in the thread.
+- **Shared-doc behaviour**: facts carry timestamps and merge item-by-item; the page re-reads the
+  portal every 25 s and reads-before-it-writes, so two people working at once keep both changes.
+- **CSV**: Download CSV (needs the new viewer build; otherwise the CSV text is shown to copy).
+- **Full screen**: button posts to the host (new viewer build) — the host also has its own button.
 
-## Page shape
+## Page shape (7 sections)
 
-Six sections, in order. The renderer wraps each in `<section id="KEY">` and
-injects `<h2>{label}</h2>` as its first child, so the stylesheet carries
-`section>h2:first-child{display:none}` to suppress all six headings.
+| block_key | chars  | what it is |
+|-----------|--------|------------|
+| app       | 17,814 | stylesheet + `<div id="root">` |
+| data1–4   | 71,787 | row islands (`script.rowdata`), 270 rows |
+| meta      |  9,505 | `#meta` — title, groups, link templates, interned labels/types, share URL |
+| boot      | 25,599 | the app (minified from `src/signoff.js`) — must stay LAST |
 
-| block_key | chars  | what it is                              |
-|-----------|--------|-----------------------------------------|
-| app       | 10,502 | stylesheet + `<div id="root">`          |
-| data1     |  8,772 | row island: pages, first blog posts     |
-| data2     | 22,460 | row island: blog posts                  |
-| data3     |  9,682 | row island: last post, emails           |
-| data4     | 10,639 | row island: emails, forms, workflows    |
-| boot      | 14,243 | `<script id="meta">` + the application  |
+Rows: 63 pages (61 paired + top-10-products, learning/ty-ingredients-testing, ty-contact),
+72 posts (3 deleted Amazon duplicates dropped), 111 emails, 12 forms, 12 workflows. Two pages that
+were deliberately deleted (custom-formulation, alp/ads-custom) are no longer rows.
+Not rows on purpose: pl-module-library, pl-global-blocks (internal reference pages), a stray
+temporary-slug blog draft.
 
-`boot` must stay last: it reads `#meta`, every `script.rowdata` island and
-`#root`, all of which are earlier in the document.
+## State (portal_document_state)
 
-The page was created with `allow_scripts: true`. `upsert_document_section`
-does not reset page-level flags, so section edits keep it.
+`assets:website-pages|blog-posts|emails|forms|workflows` — `{itemId:{q,c,f,cm[],sr{}}}`
+(`q`/`c`/`f` = `{by,at}` or `{by,at,x:1}` when cleared; `cm` = comments; `sr` = replies/resolution
+on seeded comments). `assets:edits` — `{mod,add,del,chips}` per group. `assets:log` — `{e:[…]}`,
+capped at 800 entries. Size cap per key 256 KB (checked client-side at 250 KB).
 
-## Stored bytes differ from the emitted chunk, and that is correct
+## Rebuild
 
-The store decodes `\uXXXX` escapes: `…` (6 chars) lands as `…` (1).
-Every delta between `signoff_chunks.json` and the stored `body_chars` is
-exactly 5 per escape -- data2 68 ellipses = 340, data3 2 = 10, data4 13 = 65,
-data1 6 = 30. JSON semantics are unchanged, so the islands still parse.
+```
+python3 tools/build_signoff_v2.py        # reads reference/*.json, writes chunks + preview
+```
+then `upsert_document_section` × 7 (boot last). Verify with `list_document_sections` body_chars
+against the build's printed sizes; render locally with the mock host in the scratchpad
+(`host.html` + `run.js`, Playwright + bundled Chromium) before pushing.
 
-## State model
+## ClientCommand side (branch `claude/signoff-viewer-fullscreen`, not yet merged)
 
-One `state_key` per asset group -- `assets:website-pages`, `assets:blog-posts`,
-`assets:emails`, `assets:forms`, `assets:workflows`.
-
-The bridge row is shared, not per-viewer (`UNIQUE (document_id, state_key)`),
-and attributed per ROW via `auth.uid()`. Partitioning by group means two
-reviewers working different groups cannot overwrite each other; inside a group
-last-write-wins still applies, which the page says out loud. Because
-attribution is per row and not per item, each decision carries its own
-reviewer name in the value.
-
-localStorage is NOT a fallback here: the portal iframe has no
-allow-same-origin, so touching it throws, and a try/catch hides that as a
-save that never happened.
+PortalDocumentViewer: full-screen overlay + button, `whoami` identity message, `download` hand-off,
+taller frame for interactive pages; PortalDocumentPage: 1800px width for interactive pages.
+Until merged, the page works but: no full screen, no auto identity (type your name), CSV shows as
+text to copy.

@@ -1,5 +1,5 @@
 {
- "stamp": "31 August 2026",
+ "stamp": "9 September 2026",
  "rows": [
   {
    "k": "p",
@@ -8,19 +8,64 @@
    "r": "",
    "i": [
     [
-     "bad",
-     "1 DaVinci link"
+     "warn",
+     "first-person production wording",
+     "Phrases to check: our catalog of doctor-formulated"
     ],
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "13 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
    ],
-   "new": 1
+   "new": true,
+   "slug": "",
+   "hid": "216189433405",
+   "y": "Core",
+   "sc": [
+    {
+     "id": "sheet:home",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-06T12:00:00-04:00",
+     "t": "Use Developed by Us Made for You from this page on all",
+     "src": "Design Approval Sheet v6"
+    },
+    {
+     "id": "hs:home:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-08-17T14:15:00-04:00",
+     "t": "At the bottom under About Private Label, update FoodScience Corporation to FoodScience LLC or FoodScience\u00ae",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:home:1",
+     "n": "Melinda Elmadjian",
+     "at": "2026-08-17T14:16:00-04:00",
+     "t": "At the very top, recommend Praxera stand out more.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:home:2",
+     "n": "Melinda Elmadjian",
+     "at": "2026-08-17T15:33:00-04:00",
+     "t": "#3 Start Selling Fast \u2014 update Nattokinase to nattokinase so consistent with following items listed.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:home:3",
+     "n": "Sarah Miller",
+     "at": "2026-08-24T13:26:00-04:00",
+     "t": "Confirming that we need all instances of \"manufacturing\" replaced with Provider. Caveat - turnkey production, us manufacturing... is ok.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:home:4",
+     "n": "Sarah Miller",
+     "at": "2026-08-24T13:30:00-04:00",
+     "t": "Website wide: maintain consistency when naming products (Nattokinase should be lower case). \"Some of the most popular formulations in our catalog include ADK, nattokinase, collagen, probiotics, sleep support, iron, magnesium, and full multivitamin lines.\"",
+     "src": "HubSpot page comment"
+    }
+   ]
   },
   {
    "k": "p",
@@ -29,18 +74,14 @@
    "r": "info.davincilabs.com/pl-demo-about-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "4 assets off-domain"
+     "warn",
+     "first-person production wording",
+     "Phrases to check: our Praxera private label clients access to manufacturing | our private label program to extend that same manufacturing | we have grown into a 190-plus product catalog manufactured | we source ingredients, how we formulate | we test, and how we label what is in the bottle"
     ]
-   ]
+   ],
+   "slug": "about",
+   "hid": "216189433476",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -49,14 +90,14 @@
    "r": "info.davincilabs.com/en/pl-demo-aging-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "16 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "aging",
+   "hid": "216189432992",
+   "y": "Category"
   },
   {
    "k": "p",
@@ -66,29 +107,13 @@
    "i": [
     [
      "warn",
-     "placeholder copy"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "placeholder copy",
+     "Still shows: [PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]"
     ]
-   ]
-  },
-  {
-   "k": "p",
-   "id": "alp/ads-custom",
-   "n": "alp/ads-custom",
-   "r": "info.davincilabs.com/pl-demo-ads-custom-v3",
-   "i": [
-    [
-     "warn",
-     "placeholder copy"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
-    ]
-   ]
+   ],
+   "slug": "alp/ads-contract-mfg",
+   "hid": "216192983654",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -98,13 +123,13 @@
    "i": [
     [
      "warn",
-     "placeholder copy"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "placeholder copy",
+     "Still shows: [PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]"
     ]
-   ]
+   ],
+   "slug": "alp/ads-mfg-usa",
+   "hid": "216192983652",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -114,13 +139,13 @@
    "i": [
     [
      "warn",
-     "placeholder copy"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "placeholder copy",
+     "Still shows: [PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]"
     ]
-   ]
+   ],
+   "slug": "alp/ads-pl-mfg",
+   "hid": "216194811734",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -130,17 +155,13 @@
    "i": [
     [
      "warn",
-     "placeholder copy"
-    ],
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "placeholder copy",
+     "Still shows: [PLACEHOLDER FOR JUSTIN: Calendar booking widget embed here. HubSpot Meetings link or third-party scheduler.]"
     ]
-   ]
+   ],
+   "slug": "book-consultation",
+   "hid": "216194811718",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -149,14 +170,14 @@
    "r": "info.davincilabs.com/pl-demo-capsules-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
+     "warn",
+     "first-person production wording",
+     "Phrases to check: Our encapsulation"
     ]
-   ]
+   ],
+   "slug": "capsules",
+   "hid": "216186379314",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -166,49 +187,38 @@
    "i": [
     [
      "warn",
-     "placeholder copy"
+     "draft in HubSpot",
+     "Not published yet."
     ],
     [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "warn",
+     "placeholder copy",
+     "Still shows: [PLACEHOLDER FOR JUSTIN: Case study content coming], [PLACEHOLDER: Case study tiles to be added once Patrick / Tammy provide a list of client brands willing to be featured. Should include: industry, what they launched, timeline, results. Many Praxera private label clients prefer to stay anonymous, so we may need permission-based featuring.]"
     ]
-   ]
+   ],
+   "slug": "case-studies",
+   "hid": "216194811714",
+   "y": "Other"
   },
   {
    "k": "p",
    "id": "certifications",
    "n": "certifications",
    "r": "info.davincilabs.com/pl-demo-certifications-v3",
-   "i": [
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "3 assets off-domain"
-    ]
-   ]
+   "i": [],
+   "slug": "certifications",
+   "hid": "216192983597",
+   "y": "Other"
   },
   {
    "k": "p",
    "id": "chewables",
    "n": "chewables",
    "r": "info.davincilabs.com/pl-demo-chewables-v3",
-   "i": [
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "13 assets off-domain"
-    ]
-   ]
+   "i": [],
+   "slug": "chewables",
+   "hid": "216188835864",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -217,42 +227,24 @@
    "r": "info.davincilabs.com/pl-demo-cognitive-v3",
    "i": [
     [
-     "mute",
-     "11 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "cognitive",
+   "hid": "216189433251",
+   "y": "Category"
   },
   {
    "k": "p",
    "id": "contact",
    "n": "contact",
    "r": "info.davincilabs.com/pl-demo-contact-v3",
-   "i": [
-    [
-     "warn",
-     "placeholder copy"
-    ],
-    [
-     "mute",
-     "4 assets off-domain"
-    ]
-   ]
-  },
-  {
-   "k": "p",
-   "id": "custom-formulation",
-   "n": "custom-formulation",
-   "r": "info.davincilabs.com/pl-demo-custom-formulation-v3",
-   "i": [
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
-    ]
-   ]
+   "i": [],
+   "slug": "contact",
+   "hid": "216192983650",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -261,14 +253,14 @@
    "r": "info.davincilabs.com/en/pl-demo-customer-art-v3",
    "i": [
     [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "customer-art",
+   "hid": "216189433156",
+   "y": "Design"
   },
   {
    "k": "p",
@@ -277,17 +269,27 @@
    "r": "info.davincilabs.com/en/pl-demo-design-services-v3",
    "i": [
     [
-     "bad",
-     "3 DaVinci links"
+     "warn",
+     "first-person production wording",
+     "Phrases to check: we produce"
     ],
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "2 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
+   ],
+   "slug": "design-services",
+   "hid": "216179449206",
+   "y": "Core",
+   "sc": [
+    {
+     "id": "hs:design-services:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T16:48:00-04:00",
+     "t": "Remove Custom Formulation from bottom",
+     "src": "HubSpot page comment"
+    }
    ]
   },
   {
@@ -297,10 +299,14 @@
    "r": "info.davincilabs.com/en/pl-demo-design-team-v3",
    "i": [
     [
-     "mute",
-     "6 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "design-team",
+   "hid": "216189433139",
+   "y": "Design"
   },
   {
    "k": "p",
@@ -309,10 +315,14 @@
    "r": "info.davincilabs.com/pl-demo-detox-v3",
    "i": [
     [
-     "mute",
-     "13 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "detox",
+   "hid": "216189433375",
+   "y": "Category"
   },
   {
    "k": "p",
@@ -321,17 +331,37 @@
    "r": "info.davincilabs.com/en/pl-demo-dropshipping-v3",
    "i": [
     [
-     "bad",
-     "3 DaVinci links"
+     "warn",
+     "draft in HubSpot",
+     "Not published yet."
     ],
     [
      "bad",
-     "manufacturing claim"
+     "1 DaVinci link",
+     "Links to: https://blog.davincilabs.com/private-label/how-to-get-started-with-dropshipping-supplements"
     ],
     [
-     "mute",
-     "8 assets off-domain"
+     "warn",
+     "first-person production wording",
+     "Phrases to check: we offer 190+ doctor-formulated"
+    ],
+    [
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
+   ],
+   "slug": "dropshipping",
+   "hid": "216186378936",
+   "y": "Core",
+   "sc": [
+    {
+     "id": "sheet:dropshipping",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T12:00:00-04:00",
+     "t": "Mindy: I don't believe we are dropshipping - need to check with Tammy on this page",
+     "src": "Design Approval Sheet v6"
+    }
    ]
   },
   {
@@ -341,10 +371,14 @@
    "r": "info.davincilabs.com/pl-demo-energy-v3",
    "i": [
     [
-     "mute",
-     "15 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "energy",
+   "hid": "216189433390",
+   "y": "Category"
   },
   {
    "k": "p",
@@ -354,33 +388,28 @@
    "i": [
     [
      "warn",
-     "placeholder copy"
+     "draft in HubSpot",
+     "Not published yet."
     ],
     [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "warn",
+     "placeholder copy",
+     "Still shows: [PLACEHOLDER FOR JUSTIN/PATRICK: Insert facility detail content. Square footage, production capacity, format-specific equipment, quality lab description, warehouse and fulfillment capacity. Photos from facility tour would significantly enhance this page.]"
     ]
-   ]
+   ],
+   "slug": "facility",
+   "hid": "216194811691",
+   "y": "Other"
   },
   {
    "k": "p",
    "id": "faq",
    "n": "faq",
    "r": "info.davincilabs.com/pl-demo-faq-v3",
-   "i": [
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
-    ]
-   ]
+   "i": [],
+   "slug": "faq",
+   "hid": "216192983618",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -389,9 +418,78 @@
    "r": "info.davincilabs.com/pl-demo-fitness-v3",
    "i": [
     [
-     "mute",
-     "14 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
+   ],
+   "slug": "fitness",
+   "hid": "216179449410",
+   "y": "Category",
+   "sc": [
+    {
+     "id": "sheet:fitness",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T12:00:00-04:00",
+     "t": "Mindy: Comments added",
+     "src": "Design Approval Sheet v6"
+    },
+    {
+     "id": "hs:fitness:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T15:33:00-04:00",
+     "t": "Top header \"Nutritional Supplements that support fitness, performance, and recovery.\" May require an * with an FDA disclaimer box on the page. Mainly due to using the word recovery.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:fitness:1",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T15:38:00-04:00",
+     "t": "2nd paragraph under \"Build a fitness supplement line\" ends with \"...customize the branding, and we provide and fulfill.\" We do not want to give the impression that we provide fulfillment. Recommend \"...customize the branding, and we ship directly to you or your fulfillment center.\"",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:fitness:2",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T15:39:00-04:00",
+     "t": "How It Works - Get to market faster sentence. Think this would look better with more than the word \"lifting\" on the second line.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:fitness:3",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T15:42:00-04:00",
+     "t": "In the Outcome-driven value proposition, what does the last sentence starting with \"Less education means lower customer acquisition cost\" mean?",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:fitness:4",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T15:43:00-04:00",
+     "t": "DIMPRO should be all uppercase",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:fitness:5",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T15:46:00-04:00",
+     "t": "All of these product name boxes should have an * at the end of each sentence making a claim.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:fitness:6",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T15:47:00-04:00",
+     "t": "Under capabilities, remove Custom Formulation",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:fitness:7",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T16:25:00-04:00",
+     "t": "Right Wheys are being discontinued so both should be removed.",
+     "src": "HubSpot page comment"
+    }
    ]
   },
   {
@@ -401,9 +499,50 @@
    "r": "info.davincilabs.com/en/pl-demo-get-started-v3",
    "i": [
     [
-     "mute",
-     "1 asset off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
+   ],
+   "slug": "get-started",
+   "hid": "216194811571",
+   "y": "Core",
+   "sc": [
+    {
+     "id": "hs:get-started:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-08-17T14:18:00-04:00",
+     "t": "Under \"Ready to Get Started?\", update DaVinci to Praxera  (duplicate)",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:get-started:1",
+     "n": "Melinda Elmadjian",
+     "at": "2026-08-17T15:21:00-04:00",
+     "t": "Under \"Ready to Get Started?\", update DaVinci to Praxera",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:get-started:2",
+     "n": "Melinda Elmadjian",
+     "at": "2026-08-17T15:23:00-04:00",
+     "t": "At the bottom under Capabilities, remove Custom Formulation",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:get-started:3",
+     "n": "Melinda Elmadjian",
+     "at": "2026-08-17T15:23:00-04:00",
+     "t": "In \"50+ Years of Supplement Manufacturing\", are we rewording since we do not manufacture the majority of the line? In this title along with the paragraph under \"Developed by us. Made for you\"?",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:get-started:4",
+     "n": "Melinda Elmadjian",
+     "at": "2026-08-17T15:27:00-04:00",
+     "t": "At the bottom under About Private Label, suggest reworded to \"Providing Private Label supplements for brands ready to own their formulations\" (removing the word manufacturing). Next line, remove DaVinci and update to FoodScience (with or without LLC) but have matching in paragraph under address.",
+     "src": "HubSpot page comment"
+    }
    ]
   },
   {
@@ -411,36 +550,20 @@
    "id": "guides",
    "n": "guides",
    "r": "info.davincilabs.com/pl-demo-guides-v3",
-   "i": [
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
-    ]
-   ]
+   "i": [],
+   "slug": "guides",
+   "hid": "216192983627",
+   "y": "Other"
   },
   {
    "k": "p",
    "id": "gummies",
    "n": "gummies",
    "r": "info.davincilabs.com/pl-demo-gummies-v3",
-   "i": [
-    [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
-    ]
-   ]
+   "i": [],
+   "slug": "gummies",
+   "hid": "216192983401",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -449,14 +572,14 @@
    "r": "info.davincilabs.com/pl-demo-heart-health-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "12 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "heart-health",
+   "hid": "216189433373",
+   "y": "Category"
   },
   {
    "k": "p",
@@ -465,10 +588,14 @@
    "r": "info.davincilabs.com/en/pl-demo-herbal-v3",
    "i": [
     [
-     "mute",
-     "14 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "herbal",
+   "hid": "216189432990",
+   "y": "Category"
   },
   {
    "k": "p",
@@ -478,16 +605,68 @@
    "i": [
     [
      "bad",
-     "3 DaVinci links"
+     "2 DaVinci links",
+     "Links to: https://blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps; https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon"
     ],
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "23 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
+   ],
+   "slug": "how-to-sell-supplements",
+   "hid": "216176671879",
+   "y": "Core",
+   "sc": [
+    {
+     "id": "hs:how-to-sell-supplements:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-08-17T15:38:00-04:00",
+     "t": "Recommend all Steps be done with the green bubble like Step 05, and they not have the 0. Step 1, Step 2, etc.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:how-to-sell-supplements:1",
+     "n": "Melinda Elmadjian",
+     "at": "2026-08-17T15:40:00-04:00",
+     "t": "Under Step 1, middle box, update \"manufacturer\" to \"company\".",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:how-to-sell-supplements:2",
+     "n": "Sarah Miller",
+     "at": "2026-08-24T13:11:00-04:00",
+     "t": "LEARN THE SUPPLEMENTS YOU WILL OFFER - This section has been commented on in a past round. We cannot say \"manufacture\" or \"manufacturer\". You can say \"provider\". This section contains many things we cannot say or provide.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:how-to-sell-supplements:3",
+     "n": "Sarah Miller",
+     "at": "2026-08-24T13:13:00-04:00",
+     "t": "Website Wide: Remove any and all instances of \"Manufacturing\" \u2014 should say \"provider\" instead.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:how-to-sell-supplements:4",
+     "n": "Sarah Miller",
+     "at": "2026-08-24T13:16:00-04:00",
+     "t": "We shouldn't have single words sitting alone on a line. Please adjust margins to accommodate. (\"Developed by us. Made for you\" section.)",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:how-to-sell-supplements:5",
+     "n": "Sarah Miller",
+     "at": "2026-08-24T13:23:00-04:00",
+     "t": "WEBSITE WIDE: Remove any instance of \"custom formulation\". Update all instances of FoodScience Corp to FoodScience LLC. Update all instances of \"private label\" with \"Praxera\". The header is currently FPO, correct? Confirming the logo we sent over should be used. Footer: update \"Praxera is part of the FoodScience LLC family of brands. We are....\" Remove \"sibling brand\" sentence. Do not connect with DaVinci. Please remove any instances of that word.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:how-to-sell-supplements:6",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T16:39:00-04:00",
+     "t": "In the \"Source high-quality supplements\" box, recommend removing third-party testing. While we can provide testing results on our COAs, we do not share actual third-party testing result documents from our vendors. Instead update to: \"Ask any prospective partner for certificates of analysis with testing and documentation of being a GMP certified facility while also confirming the facility is FDA-registered.\"",
+     "src": "HubSpot page comment"
+    }
    ]
   },
   {
@@ -497,10 +676,14 @@
    "r": "info.davincilabs.com/pl-demo-immune-support-v3",
    "i": [
     [
-     "mute",
-     "13 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "immune-support",
+   "hid": "216189433236",
+   "y": "Category"
   },
   {
    "k": "p",
@@ -509,10 +692,14 @@
    "r": "info.davincilabs.com/pl-demo-ingredient-sourcing-v3",
    "i": [
     [
-     "mute",
-     "no form"
+     "warn",
+     "sheet: In Progress",
+     "Design Approval Sheet v6 status."
     ]
-   ]
+   ],
+   "slug": "ingredient-sourcing",
+   "hid": "216192983616",
+   "y": "Quality"
   },
   {
    "k": "p",
@@ -521,10 +708,14 @@
    "r": "info.davincilabs.com/pl-demo-joint-support-v3",
    "i": [
     [
-     "mute",
-     "14 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "joint-support",
+   "hid": "216189433371",
+   "y": "Category"
   },
   {
    "k": "p",
@@ -534,20 +725,26 @@
    "i": [
     [
      "bad",
-     "3 DaVinci links"
+     "3 DaVinci links",
+     "Links to: https://blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements; https://blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business; https://www.davincilabs.com"
     ],
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "3 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
+   ],
+   "slug": "learning/definitive-guide",
+   "hid": "216194811561",
+   "y": "Guide",
+   "sc": [
+    {
+     "id": "sheet:learning/definitive-guide",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-06T12:00:00-04:00",
+     "t": "Have some highlighted comments on this page",
+     "src": "Design Approval Sheet v6"
+    }
    ]
   },
   {
@@ -557,19 +754,15 @@
    "r": "",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "4 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
    ],
-   "new": 1
+   "new": true,
+   "slug": "learning/definitive-guide-ty",
+   "hid": "216194811652",
+   "y": "Thank You"
   },
   {
    "k": "p",
@@ -578,10 +771,14 @@
    "r": "info.davincilabs.com/pl-demo-ingredients-testing-v3",
    "i": [
     [
-     "mute",
-     "no form"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "learning/ingredients-testing",
+   "hid": "216189433459",
+   "y": "Guide"
   },
   {
    "k": "p",
@@ -590,14 +787,14 @@
    "r": "info.davincilabs.com/en/pl-demo-onboarding-guide-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "3 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "learning/onboarding-guide",
+   "hid": "216194811563",
+   "y": "Guide"
   },
   {
    "k": "p",
@@ -606,31 +803,25 @@
    "r": "",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
    ],
-   "new": 1
+   "new": true,
+   "slug": "learning/onboarding-guide-ty",
+   "hid": "216194811659",
+   "y": "Thank You"
   },
   {
    "k": "p",
    "id": "liquids",
    "n": "liquids",
    "r": "info.davincilabs.com/en/pl-demo-liquids-v3",
-   "i": [
-    [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ]
-   ]
+   "i": [],
+   "slug": "liquids",
+   "hid": "216188835866",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -639,14 +830,19 @@
    "r": "info.davincilabs.com/pl-demo-mens-health-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
+     "warn",
+     "first-person production wording",
+     "Phrases to check: Our doctor-formulated"
     ],
     [
-     "mute",
-     "14 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "mens-health",
+   "hid": "216188836114",
+   "y": "Category"
   },
   {
    "k": "p",
@@ -655,26 +851,24 @@
    "r": "info.davincilabs.com/pl-demo-multivitamin-v3",
    "i": [
     [
-     "mute",
-     "13 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "multivitamin",
+   "hid": "216189433270",
+   "y": "Category"
   },
   {
    "k": "p",
    "id": "our-process",
    "n": "our-process",
    "r": "info.davincilabs.com/pl-demo-our-process-v3",
-   "i": [
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "2 assets off-domain"
-    ]
-   ]
+   "i": [],
+   "slug": "our-process",
+   "hid": "216186379326",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -684,17 +878,13 @@
    "i": [
     [
      "warn",
-     "placeholder copy"
-    ],
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "placeholder copy",
+     "Still shows: [PLACEHOLDER FOR JUSTIN: Insert detailed packaging options content. Bottle sizes by SKU, closure types, label finishes, sustainable options, and pricing implications. Patrick or Tammy can provide standard packaging catalog.]"
     ]
-   ]
+   ],
+   "slug": "packaging",
+   "hid": "216189433489",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -703,30 +893,24 @@
    "r": "info.davincilabs.com/en/pl-demo-pediatric-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "17 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "pediatric",
+   "hid": "216189433355",
+   "y": "Category"
   },
   {
    "k": "p",
    "id": "powders",
    "n": "powders",
    "r": "info.davincilabs.com/pl-demo-powders-v3",
-   "i": [
-    [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ]
-   ]
+   "i": [],
+   "slug": "powders",
+   "hid": "216192983382",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -735,14 +919,19 @@
    "r": "info.davincilabs.com/pl-demo-prenatal-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
+     "warn",
+     "first-person production wording",
+     "Phrases to check: Our doctor-formulated"
     ],
     [
-     "mute",
-     "12 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "prenatal",
+   "hid": "216189433267",
+   "y": "Category"
   },
   {
    "k": "p",
@@ -751,13 +940,22 @@
    "r": "info.davincilabs.com/en/pl-demo-privacy-v3",
    "i": [
     [
-     "warn",
-     "placeholder copy"
-    ],
-    [
-     "mute",
-     "no form"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
+   ],
+   "slug": "privacy",
+   "hid": "216194811650",
+   "y": "Core",
+   "sc": [
+    {
+     "id": "hs:privacy:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T16:50:00-04:00",
+     "t": "Private Questions....updated FoodScience Corporation to FoodScience LLC / Also remove Custom Formulation from bottom.",
+     "src": "HubSpot page comment"
+    }
    ]
   },
   {
@@ -767,34 +965,24 @@
    "r": "info.davincilabs.com/pl-demo-probiotics-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "12 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "probiotics",
+   "hid": "216189433094",
+   "y": "Category"
   },
   {
    "k": "p",
    "id": "quality-standards",
    "n": "quality-standards",
    "r": "info.davincilabs.com/pl-demo-quality-standards-v3",
-   "i": [
-    [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "3 assets off-domain"
-    ]
-   ]
+   "i": [],
+   "slug": "quality-standards",
+   "hid": "216186379328",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -804,13 +992,13 @@
    "i": [
     [
      "warn",
-     "placeholder copy"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "placeholder copy",
+     "Still shows: [PLACEHOLDER FOR JUSTIN: HubSpot form embed goes here once form is created. Form fields should include: name, email, phone, business name, products of interest (multi-select), estimated order volume, target launch date, additional notes.]"
     ]
-   ]
+   ],
+   "slug": "request-quote",
+   "hid": "216194811716",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -819,21 +1007,22 @@
    "r": "info.davincilabs.com/en/pl-demo-resources-v3",
    "i": [
     [
-     "bad",
-     "19 DaVinci links"
-    ],
-    [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "7 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
+   ],
+   "slug": "resources",
+   "hid": "216189433440",
+   "y": "Core",
+   "sc": [
+    {
+     "id": "hs:resources:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-02T16:46:00-04:00",
+     "t": "Remove Custom Formulation from bottom",
+     "src": "HubSpot page comment"
+    }
    ]
   },
   {
@@ -841,16 +1030,10 @@
    "id": "sell-sheets",
    "n": "sell-sheets",
    "r": "info.davincilabs.com/pl-demo-sell-sheets-v3",
-   "i": [
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
-    ]
-   ]
+   "i": [],
+   "slug": "sell-sheets",
+   "hid": "216194811689",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -859,70 +1042,54 @@
    "r": "info.davincilabs.com/pl-demo-sleep-v3",
    "i": [
     [
-     "mute",
-     "13 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "sleep",
+   "hid": "216189433007",
+   "y": "Category"
   },
   {
    "k": "p",
    "id": "soft-gels",
    "n": "soft-gels",
    "r": "info.davincilabs.com/pl-demo-soft-gels-v3",
-   "i": [
-    [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ]
-   ]
+   "i": [],
+   "slug": "soft-gels",
+   "hid": "216192983363",
+   "y": "Other"
   },
   {
    "k": "p",
    "id": "tablets",
    "n": "tablets",
    "r": "info.davincilabs.com/pl-demo-tablets-v3",
-   "i": [
-    [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ]
-   ]
+   "i": [],
+   "slug": "tablets",
+   "hid": "216192983343",
+   "y": "Other"
   },
   {
    "k": "p",
    "id": "terms",
    "n": "terms",
    "r": "info.davincilabs.com/pl-demo-terms-v3",
-   "i": [
-    [
-     "mute",
-     "no form"
-    ]
-   ]
+   "i": [],
+   "slug": "terms",
+   "hid": "216194811759",
+   "y": "Other"
   },
   {
    "k": "p",
    "id": "testing",
    "n": "testing",
    "r": "info.davincilabs.com/pl-demo-testing-v3",
-   "i": [
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
-    ]
-   ]
+   "i": [],
+   "slug": "testing",
+   "hid": "216192983607",
+   "y": "Other"
   },
   {
    "k": "p",
@@ -931,18 +1098,14 @@
    "r": "info.davincilabs.com/en/pl-demo-ty-consultation-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "2 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "ty-consultation",
+   "hid": "216192983665",
+   "y": "Thank You"
   },
   {
    "k": "p",
@@ -951,18 +1114,14 @@
    "r": "info.davincilabs.com/en/pl-demo-ty-quote-v3",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "3 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "ty-quote",
+   "hid": "216194811755",
+   "y": "Thank You"
   },
   {
    "k": "p",
@@ -971,14 +1130,14 @@
    "r": "info.davincilabs.com/pl-demo-ty-sell-sheets-v3",
    "i": [
     [
-     "mute",
-     "no form"
-    ],
-    [
-     "mute",
-     "1 asset off-domain"
+     "warn",
+     "sheet: NEED INFO",
+     "Design Approval Sheet v6 status."
     ]
-   ]
+   ],
+   "slug": "ty-sell-sheets",
+   "hid": "216194811757",
+   "y": "Thank You"
   },
   {
    "k": "p",
@@ -987,10 +1146,14 @@
    "r": "info.davincilabs.com/pl-demo-weight-management-v3",
    "i": [
     [
-     "mute",
-     "8 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "weight-management",
+   "hid": "216188836111",
+   "y": "Category"
   },
   {
    "k": "p",
@@ -999,27 +1162,86 @@
    "r": "info.davincilabs.com/pl-demo-womens-health-v3",
    "i": [
     [
-     "mute",
-     "14 assets off-domain"
+     "ok",
+     "design rev 1 \u2713",
+     "Design Approval Sheet v6: revision 1 reviewed."
     ]
-   ]
+   ],
+   "slug": "womens-health",
+   "hid": "216189433092",
+   "y": "Category"
+  },
+  {
+   "k": "p",
+   "id": "top-10-products",
+   "n": "top-10-products",
+   "r": "",
+   "i": [
+    [
+     "warn",
+     "draft in HubSpot",
+     "Not published yet."
+    ],
+    [
+     "mute",
+     "added since 31 Aug",
+     "Not in the original migration pair list."
+    ]
+   ],
+   "new": true,
+   "slug": "top-10-products",
+   "hid": "221054149244",
+   "y": "Other"
+  },
+  {
+   "k": "p",
+   "id": "learning/ty-ingredients-testing",
+   "n": "learning/ty-ingredients-testing",
+   "r": "",
+   "i": [
+    [
+     "mute",
+     "added since 31 Aug",
+     "Not in the original migration pair list."
+    ]
+   ],
+   "new": true,
+   "slug": "learning/ty-ingredients-testing",
+   "hid": "221254623120",
+   "y": "Thank You"
+  },
+  {
+   "k": "p",
+   "id": "ty-contact",
+   "n": "ty-contact",
+   "r": "",
+   "i": [
+    [
+     "warn",
+     "draft in HubSpot",
+     "Not published yet."
+    ],
+    [
+     "mute",
+     "added since 31 Aug",
+     "Not in the original migration pair list."
+    ]
+   ],
+   "new": true,
+   "slug": "ty-contact",
+   "hid": "221402009880",
+   "y": "Thank You"
   },
   {
    "k": "b",
    "id": "blog/2023-trends-in-vitamin-and-supplement-industry",
    "n": "2023 Trends in the Vitamin and Supplement Industry",
    "r": "blog.davincilabs.com/\u2026/2023-trends-in-vitamin-and-supplement-industry",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/2023-trends-in-vitamin-and-supplement-industry"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/2023-trends-in-vitamin-and-supplement-industry",
+   "slug": "blog/2023-trends-in-vitamin-and-supplement-industry",
+   "hid": "220637279595",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1028,193 +1250,131 @@
    "r": "blog.davincilabs.com/\u2026/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
      "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "first-person production wording",
+     "Phrases to check: we\u2019ll explore the challenges with manufacturing"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice"
+   "t": "blog.davincilabs.com/private-label/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+   "slug": "blog/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+   "hid": "220637272693",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/5-best-private-label-supplements-for-sleep-on-the-market",
    "n": "5 Best Private Label Supplements For Sleep",
    "r": "blog.davincilabs.com/\u2026/5-best-private-label-supplements-for-sleep-on-the-market",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/5-best-private-label-supplements-for-sleep-on-the-market"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/5-best-private-label-supplements-for-sleep-on-the-market",
+   "slug": "blog/5-best-private-label-supplements-for-sleep-on-the-market",
+   "hid": "220637272691",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/an-introduction-to-sports-supplement-manufacturing",
    "n": "An Introduction to Sports Supplement Manufacturing",
    "r": "blog.davincilabs.com/\u2026/an-introduction-to-sports-supplement-manufacturing",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/an-introduction-to-sports-supplement-manufacturing"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/an-introduction-to-sports-supplement-manufacturing",
+   "slug": "blog/an-introduction-to-sports-supplement-manufacturing",
+   "hid": "220637279626",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/are-private-label-supplements-profitable",
    "n": "Are Private Label Supplements Profitable?",
    "r": "blog.davincilabs.com/\u2026/are-private-label-supplements-profitable",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/are-private-label-supplements-profitable"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/are-private-label-supplements-profitable",
+   "slug": "blog/are-private-label-supplements-profitable",
+   "hid": "220638601622",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/are-private-label-vitamins-a-profitable-business",
    "n": "Are Private-Label Vitamins a Profitable Business?",
    "r": "blog.davincilabs.com/\u2026/are-private-label-vitamins-a-profitable-business",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/are-private-label-vitamins-a-profitable-business"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/are-private-label-vitamins-a-profitable-business",
+   "slug": "blog/are-private-label-vitamins-a-profitable-business",
+   "hid": "220638601784",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/benefits-of-selling-private-label-supplements",
    "n": "Six Benefits of Selling Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/benefits-of-selling-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements",
+   "slug": "blog/benefits-of-selling-private-label-supplements",
+   "hid": "220638601646",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/best-private-label-supplements-for-gut-health",
    "n": "Best Private Label Supplements for Gut Health",
    "r": "blog.davincilabs.com/\u2026/best-private-label-supplements-for-gut-health",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/best-private-label-supplements-for-gut-health"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/best-private-label-supplements-for-gut-health",
+   "slug": "blog/best-private-label-supplements-for-gut-health",
+   "hid": "220638601741",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/challenges-and-opportunities-private-label-supplements",
    "n": "Challenges and Opportunities in Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/challenges-and-opportunities-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/challenges-and-opportunities-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/challenges-and-opportunities-private-label-supplements",
+   "slug": "blog/challenges-and-opportunities-private-label-supplements",
+   "hid": "220637272644",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/contract-manufacturing-vs-private-labeling-supplements",
-   "n": "Contract Manufacturing vs Private Labeling: Which Supplement Service Is Right for Your B",
+   "n": "Contract Manufacturing vs Private Labeling: Which Supplement Service Is Right for Your Brand?",
    "r": "blog.davincilabs.com/\u2026/contract-manufacturing-vs-private-labeling-supplements",
    "i": [
     [
      "warn",
-     "literal \"None\""
-    ],
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "literal \"None\"",
+     "The word None appears 1\u00d7 where a value should be."
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/contract-manufacturing-vs-private-labeling-supplements"
+   "t": "blog.davincilabs.com/private-label/contract-manufacturing-vs-private-labeling-supplements",
+   "slug": "blog/contract-manufacturing-vs-private-labeling-supplements",
+   "hid": "220637279650",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/custom-supplements-vs.-private-label-supplements",
    "n": "Custom Supplements vs. Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/custom-supplements-vs.-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/custom-supplements-vs.-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/custom-supplements-vs.-private-label-supplements",
+   "slug": "blog/custom-supplements-vs.-private-label-supplements",
+   "hid": "220637279586",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
    "n": "How to Promote Your Private Label Supplements on Social Media",
    "r": "blog.davincilabs.com/\u2026/how-to-promote-your-private-label-supplements-on-social-media",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/dev-blog/how-to-promote-your-private-label-supplements-on-social-media"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+   "slug": "blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media",
+   "hid": "220637279590",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1223,19 +1383,15 @@
    "r": "blog.davincilabs.com/\u2026/private-label-supplements-more-than-just-a-trend",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
      "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "first-person production wording",
+     "Phrases to check: our order minimum is just 36 bottles"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/dev-blog/private-label-supplements-more-than-just-a-trend"
+   "t": "blog.davincilabs.com/private-label/dev-blog/private-label-supplements-more-than-just-a-trend",
+   "slug": "blog/dev-blog/private-label-supplements-more-than-just-a-trend",
+   "hid": "220637272625",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1244,104 +1400,70 @@
    "r": "blog.davincilabs.com/\u2026/do-you-need-insurance-to-sell-private-label-supplements",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
      "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "first-person production wording",
+     "Phrases to check: our order minimum is just 36 bottles"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/do-you-need-insurance-to-sell-private-label-supplements"
+   "t": "blog.davincilabs.com/private-label/do-you-need-insurance-to-sell-private-label-supplements",
+   "slug": "blog/do-you-need-insurance-to-sell-private-label-supplements",
+   "hid": "220638601751",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/does-the-fda-approve-supplements",
    "n": "Does the FDA Approve Supplements?",
    "r": "blog.davincilabs.com/\u2026/does-the-fda-approve-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/does-the-fda-approve-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/does-the-fda-approve-supplements",
+   "slug": "blog/does-the-fda-approve-supplements",
+   "hid": "220637272663",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/healthcare-practitioner-supplement-line-guide",
    "n": "How Healthcare Practitioners Build a Private Label Supplement Line for Their Practice",
    "r": "blog.davincilabs.com/\u2026/healthcare-practitioner-supplement-line-guide",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/healthcare-practitioner-supplement-line-guide"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/healthcare-practitioner-supplement-line-guide",
+   "slug": "blog/healthcare-practitioner-supplement-line-guide",
+   "hid": "220640208499",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-do-i-start-a-private-label-supplement-business",
    "n": "How to Start a Private Label Supplement Business in 7 Simple Steps",
    "r": "blog.davincilabs.com/\u2026/how-do-i-start-a-private-label-supplement-business",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business",
+   "slug": "blog/how-do-i-start-a-private-label-supplement-business",
+   "hid": "220637279548",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-find-right-supplement-wholesaler-for-your-business",
    "n": "How to Find the Right Supplement Wholesaler for Your Business",
    "r": "blog.davincilabs.com/\u2026/how-find-right-supplement-wholesaler-for-your-business",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-find-right-supplement-wholesaler-for-your-business"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-find-right-supplement-wholesaler-for-your-business",
+   "slug": "blog/how-find-right-supplement-wholesaler-for-your-business",
+   "hid": "220637279614",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-is-protein-powder-made",
    "n": "How Is Protein Powder Made?",
    "r": "blog.davincilabs.com/\u2026/how-is-protein-powder-made",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-is-protein-powder-made"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-is-protein-powder-made",
+   "slug": "blog/how-is-protein-powder-made",
+   "hid": "220637279612",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1351,52 +1473,36 @@
    "i": [
     [
      "warn",
-     "literal \"None\""
-    ],
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "literal \"None\"",
+     "The word None appears 1\u00d7 where a value should be."
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/how-much-to-start-a-private-label-supplement-business"
+   "t": "blog.davincilabs.com/private-label/how-much-to-start-a-private-label-supplement-business",
+   "slug": "blog/how-much-to-start-a-private-label-supplement-business",
+   "hid": "220637272707",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-physicians-can-get-better-private-labeling-for-supplements",
    "n": "How Physicians Can Get Better Private Labeling for Supplements",
    "r": "blog.davincilabs.com/\u2026/how-physicians-can-get-better-private-labeling-for-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-physicians-can-get-better-private-labeling-for-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-physicians-can-get-better-private-labeling-for-supplements",
+   "slug": "blog/how-physicians-can-get-better-private-labeling-for-supplements",
+   "hid": "220638601642",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-private-label-beauty-supplements-can-increase-revenue-fast",
    "n": "How Private Label Beauty Supplements Can Increase Revenue Fast",
    "r": "blog.davincilabs.com/\u2026/how-private-label-beauty-supplements-can-increase-revenue-fast",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-private-label-beauty-supplements-can-increase-revenue-fast"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-private-label-beauty-supplements-can-increase-revenue-fast",
+   "slug": "blog/how-private-label-beauty-supplements-can-increase-revenue-fast",
+   "hid": "220637272650",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1406,120 +1512,80 @@
    "i": [
     [
      "warn",
-     "literal \"None\""
-    ],
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "literal \"None\"",
+     "The word None appears 1\u00d7 where a value should be."
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/how-private-label-supplements-can-increase-revenue-fast"
+   "t": "blog.davincilabs.com/private-label/how-private-label-supplements-can-increase-revenue-fast",
+   "slug": "blog/how-private-label-supplements-can-increase-revenue-fast",
+   "hid": "220637279599",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-private-label-supplements-set-you-apart-from-competition",
    "n": "How Private Label Supplements Set You Apart from the Competition",
    "r": "blog.davincilabs.com/\u2026/how-private-label-supplements-set-you-apart-from-competition",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-private-label-supplements-set-you-apart-from-competition"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-private-label-supplements-set-you-apart-from-competition",
+   "slug": "blog/how-private-label-supplements-set-you-apart-from-competition",
+   "hid": "220638601770",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements",
    "n": "How to Build a Sports Nutrition Brand with Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/how-to-build-a-sports-nutrition-brand-with-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-build-a-sports-nutrition-brand-with-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-build-a-sports-nutrition-brand-with-private-label-supplements",
+   "slug": "blog/how-to-build-a-sports-nutrition-brand-with-private-label-supplements",
+   "hid": "220638601755",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-choose-a-private-label-supplement-provider",
    "n": "How to Choose a Private Label Supplement Company",
    "r": "blog.davincilabs.com/\u2026/how-to-choose-a-private-label-supplement-provider",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-choose-a-private-label-supplement-provider"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-choose-a-private-label-supplement-provider",
+   "slug": "blog/how-to-choose-a-private-label-supplement-provider",
+   "hid": "220637279544",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-choose-the-best-private-label-manufacturer",
    "n": "How to Choose the Best Private Label Manufacturer",
    "r": "blog.davincilabs.com/\u2026/how-to-choose-the-best-private-label-manufacturer",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-choose-the-best-private-label-manufacturer"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-choose-the-best-private-label-manufacturer",
+   "slug": "blog/how-to-choose-the-best-private-label-manufacturer",
+   "hid": "220637272636",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-compare-dietary-supplement-providers",
    "n": "How to Compare Dietary Supplement Providers",
    "r": "blog.davincilabs.com/\u2026/how-to-compare-dietary-supplement-providers",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-compare-dietary-supplement-providers"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-compare-dietary-supplement-providers",
+   "slug": "blog/how-to-compare-dietary-supplement-providers",
+   "hid": "220637272604",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-create-exclusivity-for-private-label-supplements",
    "n": "How to Create Exclusivity for Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/how-to-create-exclusivity-for-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-create-exclusivity-for-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-create-exclusivity-for-private-label-supplements",
+   "slug": "blog/how-to-create-exclusivity-for-private-label-supplements",
+   "hid": "220637279555",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1528,53 +1594,37 @@
    "r": "blog.davincilabs.com/\u2026/how-to-develop-private-label-brand",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
      "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "first-person production wording",
+     "Phrases to check: our minimum order is just 36 bottles | we recommend a minimum of 144 bottles"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/how-to-develop-private-label-brand"
+   "t": "blog.davincilabs.com/private-label/how-to-develop-private-label-brand",
+   "slug": "blog/how-to-develop-private-label-brand",
+   "hid": "220637272616",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-enhance-customer-journey-with-private-label-supplements",
    "n": "How to Enhance the Customer Journey with Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/how-to-enhance-customer-journey-with-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-enhance-customer-journey-with-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-enhance-customer-journey-with-private-label-supplements",
+   "slug": "blog/how-to-enhance-customer-journey-with-private-label-supplements",
+   "hid": "220637272653",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-evaluate-supplement-suppliers-in-the-us",
    "n": "How To Evaluate Supplement Suppliers in the US",
    "r": "blog.davincilabs.com/\u2026/how-to-evaluate-supplement-suppliers-in-the-us",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-evaluate-supplement-suppliers-in-the-us"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-evaluate-supplement-suppliers-in-the-us",
+   "slug": "blog/how-to-evaluate-supplement-suppliers-in-the-us",
+   "hid": "220637272674",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1584,222 +1634,151 @@
    "i": [
     [
      "warn",
-     "no tags"
+     "draft in HubSpot",
+     "Not published yet."
     ],
     [
-     "warn",
-     "1970 date"
+     "bad",
+     "1 DaVinci link",
+     "Links to: https://blog.davincilabs.com/private-label/dev-blog/how-to-promote-your-private-label-supplements-on-social-media"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/how-to-get-started-with-dropshipping-supplements"
+   "t": "blog.davincilabs.com/private-label/how-to-get-started-with-dropshipping-supplements",
+   "slug": "blog/how-to-get-started-with-dropshipping-supplements",
+   "hid": "220637272666",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
    "n": "Make Money in the Fitness Industry with Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-make-money-in-the-fitness-industry-with-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
+   "slug": "blog/how-to-make-money-in-the-fitness-industry-with-private-label-supplements",
+   "hid": "220637279601",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-manage-private-label-supplement-packaging",
    "n": "How To Manage Private Label Supplement Packaging",
    "r": "blog.davincilabs.com/\u2026/how-to-manage-private-label-supplement-packaging",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-manage-private-label-supplement-packaging"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-manage-private-label-supplement-packaging",
+   "slug": "blog/how-to-manage-private-label-supplement-packaging",
+   "hid": "220637272668",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-market-private-label-supplements",
    "n": "How to Market Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/how-to-market-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-market-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-market-private-label-supplements",
+   "slug": "blog/how-to-market-private-label-supplements",
+   "hid": "220638601748",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-private-label-protein-supplements",
    "n": "How To Private Label Protein Supplements",
    "r": "blog.davincilabs.com/\u2026/how-to-private-label-protein-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-private-label-protein-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-private-label-protein-supplements",
+   "slug": "blog/how-to-private-label-protein-supplements",
+   "hid": "220637272671",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-scale-your-business-with-private-label-supplements",
    "n": "How to Scale Your Business With Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/how-to-scale-your-business-with-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-scale-your-business-with-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-scale-your-business-with-private-label-supplements",
+   "slug": "blog/how-to-scale-your-business-with-private-label-supplements",
+   "hid": "220638601764",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-sell-supplements",
    "n": "How To Sell Supplements",
    "r": "blog.davincilabs.com/\u2026/how-to-sell-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-sell-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-sell-supplements",
+   "slug": "blog/how-to-sell-supplements",
+   "hid": "220638601775",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/how-to-spot-high-quality-private-label-supplements",
    "n": "How to Spot High-Quality Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/how-to-spot-high-quality-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/how-to-spot-high-quality-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/how-to-spot-high-quality-private-label-supplements",
+   "slug": "blog/how-to-spot-high-quality-private-label-supplements",
+   "hid": "220637279573",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/liquid-supplement-manufacturing-benefits-vs.-costs",
    "n": "Liquid Supplement Manufacturing: Benefits vs. Costs",
    "r": "blog.davincilabs.com/\u2026/liquid-supplement-manufacturing-benefits-vs.-costs",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/liquid-supplement-manufacturing-benefits-vs.-costs"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/liquid-supplement-manufacturing-benefits-vs.-costs",
+   "slug": "blog/liquid-supplement-manufacturing-benefits-vs.-costs",
+   "hid": "220638601779",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/make-your-own-supplement-brand-the-easy-way",
    "n": "Make Your Own Supplement Brand The Easy Way",
    "r": "blog.davincilabs.com/\u2026/make-your-own-supplement-brand-the-easy-way",
-   "i": [
-    [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/make-your-own-supplement-brand-the-easy-way"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/make-your-own-supplement-brand-the-easy-way",
+   "slug": "blog/make-your-own-supplement-brand-the-easy-way",
+   "hid": "220637279623",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
    "n": "Managing Private Label Shipping and Inventory: A Step-by-Step Guide",
    "r": "blog.davincilabs.com/\u2026/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
+   "slug": "blog/managing-private-label-shipping-and-inventory-a-step-by-step-guide",
+   "hid": "220637272613",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/managing-the-top-3-risks-when-selling-private-label-supplements",
    "n": "Managing the Top 3 Risks When Selling Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/managing-the-top-3-risks-when-selling-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements",
+   "slug": "blog/managing-the-top-3-risks-when-selling-private-label-supplements",
+   "hid": "220637279592",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
    "n": "Mastering Supplement Branding: Design Private Label Packaging in 5 Steps",
    "r": "blog.davincilabs.com/\u2026/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
+   "slug": "blog/mastering-supplement-branding-design-private-label-packaging-in-5-steps",
+   "hid": "220637272684",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1808,70 +1787,48 @@
    "r": "blog.davincilabs.com/\u2026/must-have-private-label-probiotics-to-expand-your-product-line",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
      "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "first-person production wording",
+     "Phrases to check: our doctor-formulated"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/must-have-private-label-probiotics-to-expand-your-product-line"
+   "t": "blog.davincilabs.com/private-label/must-have-private-label-probiotics-to-expand-your-product-line",
+   "slug": "blog/must-have-private-label-probiotics-to-expand-your-product-line",
+   "hid": "220637272688",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
    "n": "NAD+ Activate: Your Blueprint for Sustained Energy and a Booming Business*",
    "r": "blog.davincilabs.com/\u2026/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "slug": "blog/nad-activate-your-blueprint-for-sustained-energy-and-a-booming-business",
+   "hid": "220637272656",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/powder-supplement-manufacturing-essential-tips-for-private-labelers",
    "n": "Powder Supplement Manufacturing: Essential Tips For Private Labelers",
    "r": "blog.davincilabs.com/\u2026/powder-supplement-manufacturing-essential-tips-for-private-labelers",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/powder-supplement-manufacturing-essential-tips-for-private-labelers"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/powder-supplement-manufacturing-essential-tips-for-private-labelers",
+   "slug": "blog/powder-supplement-manufacturing-essential-tips-for-private-labelers",
+   "hid": "220640208484",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/private-label-supplements-how-to-get-superior-quality-at-low-cost",
    "n": "Private Label Supplements: How to Get Superior-Quality at Low Cost",
    "r": "blog.davincilabs.com/\u2026/private-label-supplements-how-to-get-superior-quality-at-low-cost",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/private-label-supplements-how-to-get-superior-quality-at-low-cost"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/private-label-supplements-how-to-get-superior-quality-at-low-cost",
+   "slug": "blog/private-label-supplements-how-to-get-superior-quality-at-low-cost",
+   "hid": "220637279546",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1880,70 +1837,48 @@
    "r": "blog.davincilabs.com/\u2026/private-label-supplements-how-to-make-money",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
      "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "first-person production wording",
+     "Phrases to check: our order minimum is just 36 bottles"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/private-label-supplements-how-to-make-money"
+   "t": "blog.davincilabs.com/private-label/private-label-supplements-how-to-make-money",
+   "slug": "blog/private-label-supplements-how-to-make-money",
+   "hid": "220638601653",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/private-label-supplements-secret-to-surpassing-sales-goals",
    "n": "Private Label Supplements: The Secret to Surpassing Sales Goals",
    "r": "blog.davincilabs.com/\u2026/private-label-supplements-secret-to-surpassing-sales-goals",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/private-label-supplements-secret-to-surpassing-sales-goals"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/private-label-supplements-secret-to-surpassing-sales-goals",
+   "slug": "blog/private-label-supplements-secret-to-surpassing-sales-goals",
+   "hid": "220638601772",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/private-labeling-liquid-vitamins",
    "n": "Private Labeling Liquid Vitamins",
    "r": "blog.davincilabs.com/\u2026/private-labeling-liquid-vitamins",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/private-labeling-liquid-vitamins"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/private-labeling-liquid-vitamins",
+   "slug": "blog/private-labeling-liquid-vitamins",
+   "hid": "220637279562",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/supplement-certifications-usp-nsf-gmp-fda",
-   "n": "USP, NSF, GMP, and FDA: A Buyer's Guide to Supplement Certifications That Actually Matte",
+   "n": "USP, NSF, GMP, and FDA: A Buyer's Guide to Supplement Certifications That Actually Matter",
    "r": "blog.davincilabs.com/\u2026/supplement-certifications-usp-nsf-gmp-fda",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/supplement-certifications-usp-nsf-gmp-fda"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/supplement-certifications-usp-nsf-gmp-fda",
+   "slug": "blog/supplement-certifications-usp-nsf-gmp-fda",
+   "hid": "220637272704",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1952,19 +1887,25 @@
    "r": "blog.davincilabs.com/\u2026/supplement-dropshipping-5-best-tips-for-success",
    "i": [
     [
+     "warn",
+     "draft in HubSpot",
+     "Not published yet."
+    ],
+    [
      "bad",
-     "manufacturing claim"
+     "5 DaVinci links",
+     "Links to: https://blog.davincilabs.com/private-label/how-to-get-started-with-dropshipping-supplements; https://blog.davincilabs.com/private-label/supplement-dropshipping-can-it-boost-profitability; https://www.davincilabs.com/; https://www.davincilabs.com/private-label-get-started; https://www.davincilabs.com/shop-supplements.html"
     ],
     [
      "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "first-person production wording",
+     "Phrases to check: Our industry-leading manufacturing facilities produce"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/supplement-dropshipping-5-best-tips-for-success"
+   "t": "blog.davincilabs.com/private-label/supplement-dropshipping-5-best-tips-for-success",
+   "slug": "blog/supplement-dropshipping-5-best-tips-for-success",
+   "hid": "220638601792",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -1974,150 +1915,74 @@
    "i": [
     [
      "warn",
-     "no tags"
+     "draft in HubSpot",
+     "Not published yet."
     ],
     [
-     "warn",
-     "1970 date"
+     "bad",
+     "2 DaVinci links",
+     "Links to: https://www.davincilabs.com/; https://www.davincilabs.com/private-labeling"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/supplement-dropshipping-can-it-boost-profitability"
+   "t": "blog.davincilabs.com/private-label/supplement-dropshipping-can-it-boost-profitability",
+   "slug": "blog/supplement-dropshipping-can-it-boost-profitability",
+   "hid": "220637272659",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/tips-for-buying-wholesale-private-label-supplements",
    "n": "Tips for Buying Wholesale Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/tips-for-buying-wholesale-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements",
+   "slug": "blog/tips-for-buying-wholesale-private-label-supplements",
+   "hid": "220637279558",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/tips-for-buying-wholesale-private-label-supplements-0",
    "n": "Tips for Buying Wholesale Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/tips-for-buying-wholesale-private-label-supplements-0",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements-0"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/tips-for-buying-wholesale-private-label-supplements-0",
+   "slug": "blog/tips-for-buying-wholesale-private-label-supplements-0",
+   "hid": "220637279640",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/tips-for-selling-private-label-supplements-for-immunity",
    "n": "Tips for Selling Private Label Supplements for Immunity",
    "r": "blog.davincilabs.com/\u2026/tips-for-selling-private-label-supplements-for-immunity",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-for-immunity"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-for-immunity",
+   "slug": "blog/tips-for-selling-private-label-supplements-for-immunity",
+   "hid": "220637272631",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/tips-for-selling-private-label-supplements-on-amazon",
    "n": "Tips for Selling Private Label Supplements on Amazon",
    "r": "blog.davincilabs.com/\u2026/tips-for-selling-private-label-supplements-on-amazon",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon"
-  },
-  {
-   "k": "b",
-   "id": "blog/tips-for-selling-private-label-supplements-on-amazon-0",
-   "n": "Tips for Selling Private Label Supplements on Amazon",
-   "r": "blog.davincilabs.com/\u2026/tips-for-selling-private-label-supplements-on-amazon-0",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0"
-  },
-  {
-   "k": "b",
-   "id": "blog/tips-for-selling-private-label-supplements-on-amazon-0-0",
-   "n": "Tips for Selling Private Label Supplements on Amazon",
-   "r": "blog.davincilabs.com/\u2026/tips-for-selling-private-label-supplements-on-amazon-0-0",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0-0"
-  },
-  {
-   "k": "b",
-   "id": "blog/tips-for-selling-private-label-supplements-on-amazon-0-1",
-   "n": "Tips for Selling Private Label Supplements on Amazon",
-   "r": "blog.davincilabs.com/\u2026/tips-for-selling-private-label-supplements-on-amazon-0-1",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon-0-1"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon",
+   "slug": "blog/tips-for-selling-private-label-supplements-on-amazon",
+   "hid": "220637272610",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/top-10-mistakes-to-avoid-with-supplement-manufacturing",
    "n": "Top 10 Mistakes to Avoid With Supplement Manufacturing",
    "r": "blog.davincilabs.com/\u2026/top-10-mistakes-to-avoid-with-supplement-manufacturing",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/top-10-mistakes-to-avoid-with-supplement-manufacturing"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/top-10-mistakes-to-avoid-with-supplement-manufacturing",
+   "slug": "blog/top-10-mistakes-to-avoid-with-supplement-manufacturing",
+   "hid": "220640208488",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -2126,36 +1991,26 @@
    "r": "blog.davincilabs.com/\u2026/top-private-label-herbal-supplements-and-their-key-benefits",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
      "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "first-person production wording",
+     "Phrases to check: Our products are doctor-formulated"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/top-private-label-herbal-supplements-and-their-key-benefits"
+   "t": "blog.davincilabs.com/private-label/top-private-label-herbal-supplements-and-their-key-benefits",
+   "slug": "blog/top-private-label-herbal-supplements-and-their-key-benefits",
+   "hid": "220637279633",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/top-private-label-protein-powders-for-your-brand",
    "n": "Top Private Label Protein Powders for Your Brand",
    "r": "blog.davincilabs.com/\u2026/top-private-label-protein-powders-for-your-brand",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/top-private-label-protein-powders-for-your-brand"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/top-private-label-protein-powders-for-your-brand",
+   "slug": "blog/top-private-label-protein-powders-for-your-brand",
+   "hid": "220637279628",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -2165,95 +2020,74 @@
    "i": [
     [
      "warn",
-     "no tags"
+     "draft in HubSpot",
+     "Not published yet."
     ],
     [
-     "warn",
-     "1970 date"
+     "bad",
+     "1 DaVinci link",
+     "Links to: https://blog.davincilabs.com/blog/tips-for-selling-private-label-supplements-on-amazon"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements"
+   "t": "blog.davincilabs.com/private-label/top-questions-consumers-have-about-private-label-supplements",
+   "slug": "blog/top-questions-consumers-have-about-private-label-supplements",
+   "hid": "220638601745",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/top-selling-private-label-supplements-for-2021",
    "n": "Top Selling Private Label Supplements for 2026",
    "r": "blog.davincilabs.com/\u2026/top-selling-private-label-supplements-for-2021",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/top-selling-private-label-supplements-for-2021"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/top-selling-private-label-supplements-for-2021",
+   "slug": "blog/top-selling-private-label-supplements-for-2021",
+   "hid": "220637279552",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/trending-private-label-supplements-for-2022",
    "n": "Trending Private Label Supplements for 2023",
    "r": "blog.davincilabs.com/\u2026/trending-private-label-supplements-for-2022",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/trending-private-label-supplements-for-2022"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/trending-private-label-supplements-for-2022",
+   "slug": "blog/trending-private-label-supplements-for-2022",
+   "hid": "220637272633",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
    "n": "Truth in Labeling: Ingredient Break Down of Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
+   "slug": "blog/truth-in-labeling-breaking-down-ingredients-in-private-label-supplements",
+   "hid": "220637279578",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
    "n": "Vitamin Manufacturing: 10 Top Sellers to Consider in 2026",
    "r": "blog.davincilabs.com/\u2026/vitamin-manufacturing-10-top-sellers-to-consider-in-2024",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024",
+   "slug": "blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026",
+   "hid": "220598718505",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/what-is-a-nutraceutical-supplement",
    "n": "What Is a Nutraceutical? A Buyer's Guide to Private Label Nutraceutical Supplements",
    "r": "blog.davincilabs.com/\u2026/what-is-a-nutraceutical-supplement",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/what-is-a-nutraceutical-supplement"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/what-is-a-nutraceutical-supplement",
+   "slug": "blog/what-is-a-nutraceutical-supplement",
+   "hid": "220637272701",
+   "y": "Blog post"
   },
   {
    "k": "b",
@@ -2262,70 +2096,48 @@
    "r": "blog.davincilabs.com/\u2026/what-qualifications-do-you-need-to-sell-private-label-supplements",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
      "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
+     "first-person production wording",
+     "Phrases to check: we offer a 36-bottle"
     ]
    ],
-   "t": "blog.davincilabs.com/private-label/what-qualifications-do-you-need-to-sell-private-label-supplements"
+   "t": "blog.davincilabs.com/private-label/what-qualifications-do-you-need-to-sell-private-label-supplements",
+   "slug": "blog/what-qualifications-do-you-need-to-sell-private-label-supplements",
+   "hid": "220638601729",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/white-label-supplements-vs.-private-label-what-is-the-difference",
    "n": "White Label Supplements vs. Private Label: What Is the Difference?",
    "r": "blog.davincilabs.com/\u2026/white-label-supplements-vs.-private-label-what-is-the-difference",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/white-label-supplements-vs.-private-label-what-is-the-difference"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/white-label-supplements-vs.-private-label-what-is-the-difference",
+   "slug": "blog/white-label-supplements-vs.-private-label-what-is-the-difference",
+   "hid": "220637272677",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/why-branded-ingredients-are-important-to-private-label-supplements",
    "n": "Why Branded Ingredients Are Important for Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/why-branded-ingredients-are-important-to-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/why-branded-ingredients-are-important-to-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/why-branded-ingredients-are-important-to-private-label-supplements",
+   "slug": "blog/why-branded-ingredients-are-important-to-private-label-supplements",
+   "hid": "220637279576",
+   "y": "Blog post"
   },
   {
    "k": "b",
    "id": "blog/why-wellness-businesses-should-sell-private-label-supplements",
    "n": "Why Wellness Businesses Should Sell Private Label Supplements",
    "r": "blog.davincilabs.com/\u2026/why-wellness-businesses-should-sell-private-label-supplements",
-   "i": [
-    [
-     "warn",
-     "no tags"
-    ],
-    [
-     "warn",
-     "1970 date"
-    ]
-   ],
-   "t": "blog.davincilabs.com/private-label/why-wellness-businesses-should-sell-private-label-supplements"
+   "i": [],
+   "t": "blog.davincilabs.com/private-label/why-wellness-businesses-should-sell-private-label-supplements",
+   "slug": "blog/why-wellness-businesses-should-sell-private-label-supplements",
+   "hid": "220638601760",
+   "y": "Blog post"
   },
   {
    "k": "e",
@@ -2335,13 +2147,17 @@
    "i": [
     [
      "bad",
-     "3 DaVinci social links"
+     "3 DaVinci links",
+     "Links to: https://www.facebook.com/DaVinciLabs/?utm_source=HubSpot&utm_medium=Email&utm_campaign=general_Croud&utm_term=FooterLink; https://www.instagram.com/davincilaboratories/?utm_source=HubSpot&utm_medium=Email&utm_campaign=general_Croud&utm_term=FooterLink; https://www.linkedin.com/company/davinci-laboratories/?utm_source=HubSpot&utm_medium=Email&utm_campaign=general_Croud&utm_term=FooterLink"
     ],
     [
-     "warn",
-     "DaVinci reply-to"
+     "mute",
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976492",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2351,13 +2167,17 @@
    "i": [
     [
      "bad",
-     "3 DaVinci social links"
+     "3 DaVinci links",
+     "Links to: https://www.facebook.com/DaVinciLabs/?utm_source=HubSpot&utm_medium=Email&utm_campaign=general_Croud&utm_term=FooterLink; https://www.instagram.com/davincilaboratories/?utm_source=HubSpot&utm_medium=Email&utm_campaign=general_Croud&utm_term=FooterLink; https://www.linkedin.com/company/davinci-laboratories/?utm_source=HubSpot&utm_medium=Email&utm_campaign=general_Croud&utm_term=FooterLink"
     ],
     [
-     "warn",
-     "DaVinci reply-to"
+     "mute",
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976494",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2367,17 +2187,17 @@
    "i": [
     [
      "bad",
-     "1 DaVinci social link"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "1 DaVinci link",
+     "Links to: https://f.hubspotusercontent30.net/hubfs/4087538/Download%20Offers/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283303",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2387,17 +2207,17 @@
    "i": [
     [
      "bad",
-     "1 DaVinci social link"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "1 DaVinci link",
+     "Links to: https://f.hubspotusercontent30.net/hubfs/4087538/Download%20Offers/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf?__hstc=188311479.1aea57090ed0f264ae70825d79321e7c.1634762496996.1635978029454.1636666277608.11&amp;__hssc=188311479.2.1636666277608&amp;__hsfp=1032815725&amp;hsCtaTracking=5d9f8ac4-6537-4b72-8388-bf1635bb8978%7Ca3311ac4-2719-48ef-b371-56affa0ba28a"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283306",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2407,37 +2227,37 @@
    "i": [
     [
      "bad",
-     "1 DaVinci social link"
-    ],
-    [
-     "bad",
-     "manufacturing claim"
+     "1 DaVinci link",
+     "Links to: https://f.hubspotusercontent30.net/hubfs/4087538/Download%20Offers/Private%20Label%20Supplements%20Guide/DaVinci-Laboratories-Private-Label-Guide.pdf?__hstc=188311479.1aea57090ed0f264ae70825d79321e7c.1634762496996.1635978029454.1636666277608.11&amp;__hssc=188311479.2.1636666277608&amp;__hsfp=1032815725&amp;hsCtaTracking=5d9f8ac4-6537-4b72-8388-bf1635bb8978%7Ca3311ac4-2719-48ef-b371-56affa0ba28a"
     ],
     [
      "warn",
-     "DaVinci reply-to"
+     "first-person production wording",
+     "Phrases to check: We handle the manufacturing"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976586",
+   "y": "Marketing email"
   },
   {
    "k": "e",
    "id": "220685976465",
    "n": "2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
-   "r": "2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Suppl",
+   "r": "2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976465",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2447,17 +2267,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836237",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2466,62 +2286,58 @@
    "r": "3 Private_Label_Guide_ToF_Danielle_How_to_create_exclusivity",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220693084770",
+   "y": "Marketing email"
   },
   {
    "k": "e",
    "id": "220692678023",
-   "n": "3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Invento",
-   "r": "3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping",
+   "n": "3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Inventory",
+   "r": "3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Inv",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678023",
+   "y": "Marketing email"
   },
   {
    "k": "e",
    "id": "220688836239",
-   "n": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inv",
-   "r": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing ship",
+   "n": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory",
+   "r": "4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836239",
+   "y": "Marketing email"
   },
   {
    "k": "e",
    "id": "220692678042",
-   "n": "5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice (Test Clo",
-   "r": "5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practi",
+   "n": "5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice (Test Clone)",
+   "r": "5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice (Test",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678042",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2531,17 +2347,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836243",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2551,17 +2367,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976450",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -2571,17 +2387,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836176",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2591,17 +2407,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976498",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2611,21 +2427,22 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "bad",
-     "manufacturing claim"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "warn",
-     "DaVinci reply-to"
+     "first-person production wording",
+     "Phrases to check: Our order placement and manufacturing | We can also provide private label tech sheets and bottle | We guarantee that we\u2019ll always have these products bottled"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976500",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2635,17 +2452,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976504",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2655,21 +2472,22 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "bad",
-     "manufacturing claim"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "warn",
-     "DaVinci reply-to"
+     "first-person production wording",
+     "Phrases to check: our private label supplement manufacturing"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836180",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2679,17 +2497,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976577",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2699,17 +2517,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836188",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2719,21 +2537,22 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "bad",
-     "manufacturing claim"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "warn",
-     "DaVinci reply-to"
+     "first-person production wording",
+     "Phrases to check: Our order placement and manufacturing"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836183",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2743,17 +2562,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836186",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2763,21 +2582,22 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "bad",
-     "manufacturing claim"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "warn",
-     "DaVinci reply-to"
+     "first-person production wording",
+     "Phrases to check: our private label supplement manufacturing"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976580",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2786,10 +2606,13 @@
    "r": "Custom Formulation - Auto-responder",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
+     "mute",
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678063",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2798,14 +2621,13 @@
    "r": "Danielle: DV Mission & Register",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836168",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2815,17 +2637,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836174",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2834,38 +2656,31 @@
    "r": "DVL // HCP Lead - International - Reject",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678065",
+   "y": "Marketing email"
   },
   {
    "k": "e",
    "id": "220685976583",
    "n": "L // PM - Automated Email: PL 5rs #5",
    "r": "DVL // PM - Automated Email: PL 5rs #5",
-   "i": [
-    [
-     "mute",
-     "assets off-domain"
-    ]
-   ]
+   "i": [],
+   "hid": "220685976583",
+   "y": "Marketing email"
   },
   {
    "k": "e",
    "id": "220688836213",
    "n": "L // PM - Automated Email: PL 5rs #6",
    "r": "DVL // PM - Automated Email: PL 5rs #6",
-   "i": [
-    [
-     "mute",
-     "assets off-domain"
-    ]
-   ]
+   "i": [],
+   "hid": "220688836213",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2875,17 +2690,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220693084763",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2895,17 +2710,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678025",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2915,17 +2730,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283293",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2935,17 +2750,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220693084761",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2955,17 +2770,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678030",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2975,17 +2790,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283282",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -2995,17 +2810,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283300",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3015,17 +2830,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678032",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3035,17 +2850,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976459",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3055,17 +2870,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283291",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3075,17 +2890,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283288",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3095,17 +2910,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836192",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3115,17 +2930,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836197",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3135,17 +2950,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836194",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3155,17 +2970,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836246",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3175,17 +2990,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836248",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3194,26 +3009,22 @@
    "r": "Paul: DV Mission & Register",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836170",
+   "y": "Marketing email"
   },
   {
    "k": "e",
    "id": "220688283420",
    "n": "Private Label Lead - First Contact",
    "r": "Private Label Lead - First Contact",
-   "i": [
-    [
-     "mute",
-     "assets off-domain"
-    ]
-   ]
+   "i": [],
+   "hid": "220688283420",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3223,21 +3034,22 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "bad",
-     "manufacturing claim"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "warn",
-     "DaVinci reply-to"
+     "first-person production wording",
+     "Phrases to check: our doctor-formulated"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678048",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3247,17 +3059,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283309",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3267,17 +3079,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283283",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3287,17 +3099,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283295",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3307,17 +3119,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678059",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3327,17 +3139,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283317",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3347,21 +3159,22 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "bad",
-     "manufacturing claim"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "warn",
-     "DaVinci reply-to"
+     "first-person production wording",
+     "Phrases to check: Our doctor-formulated"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220693084779",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3371,17 +3184,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976468",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3391,17 +3204,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283311",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3411,21 +3224,22 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "bad",
-     "manufacturing claim"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "warn",
-     "DaVinci reply-to"
+     "first-person production wording",
+     "Phrases to check: Our doctor-formulated"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678053",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3435,17 +3249,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678057",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3455,17 +3269,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283315",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3475,17 +3289,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220693084782",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3495,17 +3309,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283320",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3514,14 +3328,13 @@
    "r": "Private Label: High Priority - 6 Benefits",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283275",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3531,17 +3344,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976453",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3551,17 +3364,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283273",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3570,14 +3383,13 @@
    "r": "Private Label: High Priority - Top Selling Products",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220693084758",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3587,17 +3399,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678021",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3606,14 +3418,13 @@
    "r": "Private Label: High Priority Intro",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283279",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3623,17 +3434,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678051",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3643,17 +3454,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836209",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3663,17 +3474,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836207",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3683,37 +3494,37 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836199",
+   "y": "Marketing email"
   },
   {
    "k": "e",
    "id": "220688836204",
    "n": "Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
-   "r": "Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template",
+   "r": "Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836204",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3722,14 +3533,13 @@
    "r": "Private_Label_Guide_ToF_Benefits_Private_Label_With_Davinci",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976462",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3738,14 +3548,13 @@
    "r": "Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220693084767",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3754,14 +3563,13 @@
    "r": "Private_Label_Guide_ToF_Danielle_How to_start-PL_Business_7steps",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678039",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3770,14 +3578,13 @@
    "r": "Private_Label_Guide_ToF_Danielle_Top_Selling_PL_Supplements_2021",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678036",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3786,14 +3593,13 @@
    "r": "Private_Label_Guide_ToF_Paul_6_Benefits of Selling PL",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220692678044",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3802,18 +3608,18 @@
    "r": "Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Davinci",
    "i": [
     [
-     "bad",
-     "manufacturing claim"
-    ],
-    [
      "warn",
-     "DaVinci reply-to"
+     "first-person production wording",
+     "Phrases to check: We\u2019re not just manufacturers"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976456",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3822,14 +3628,13 @@
    "r": "Private_Label_Guide_ToF_Paul_How to_start-PL_Business_7steps",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220693084773",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3838,14 +3643,13 @@
    "r": "Private_Label_Guide_ToF_Paul_Top_Selling_PL_Supplements",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220693084775",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3854,10 +3658,13 @@
    "r": "Retargeting Workflow #1: Come Back & Register!",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
+     "mute",
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220693084785",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3866,14 +3673,13 @@
    "r": "new for Praxera",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220687535413",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3882,14 +3688,13 @@
    "r": "new for Praxera",
    "i": [
     [
-     "warn",
-     "DaVinci reply-to"
-    ],
-    [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220684191815",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -3899,17 +3704,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836231",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -3919,17 +3724,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836360",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -3939,17 +3744,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283270",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -3959,17 +3764,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836363",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -3979,17 +3784,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836366",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -3999,137 +3804,137 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836233",
+   "y": "Workflow email"
   },
   {
    "k": "e",
    "id": "220688836219",
-   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture",
-   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certification",
+   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_D",
+   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide ",
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836219",
+   "y": "Workflow email"
   },
   {
    "k": "e",
    "id": "220688836225",
-   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture",
-   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certification",
+   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_D",
+   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide ",
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836225",
+   "y": "Workflow email"
   },
   {
    "k": "e",
    "id": "220688836216",
-   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture",
-   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certification",
+   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_D",
+   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide ",
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836216",
+   "y": "Workflow email"
   },
   {
    "k": "e",
    "id": "220685976589",
-   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture",
-   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certification",
+   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_P",
+   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide ",
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976589",
+   "y": "Workflow email"
   },
   {
    "k": "e",
    "id": "220688836222",
-   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture",
-   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certification",
+   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_P",
+   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide ",
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688836222",
+   "y": "Workflow email"
   },
   {
    "k": "e",
    "id": "220685976591",
-   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture",
-   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certification",
+   "n": "WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_P",
+   "r": "DV WF: Private Label Supplements: Ingredients, Testing And Certifications Guide ",
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976591",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -4139,17 +3944,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976471",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -4159,17 +3964,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976474",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -4179,17 +3984,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976476",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -4199,17 +4004,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283394",
+   "y": "Workflow email"
   },
   {
    "k": "e",
@@ -4219,17 +4024,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976478",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4239,17 +4044,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283397",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4259,17 +4064,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283399",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4279,17 +4084,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283401",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4299,17 +4104,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283418",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4319,17 +4124,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283409",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4339,17 +4144,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283411",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4359,17 +4164,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283415",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4379,17 +4184,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976489",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4399,17 +4204,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220688283406",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4419,17 +4224,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976483",
+   "y": "Marketing email"
   },
   {
    "k": "e",
@@ -4439,17 +4244,17 @@
    "i": [
     [
      "bad",
-     "2 DaVinci social links"
-    ],
-    [
-     "warn",
-     "DaVinci reply-to"
+     "2 DaVinci links",
+     "Links to: https://twitter.com/Davincilabsvt; https://www.instagram.com/davincilaboratories"
     ],
     [
      "mute",
-     "assets off-domain"
+     "DaVinci reply-to",
+     "Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."
     ]
-   ]
+   ],
+   "hid": "220685976486",
+   "y": "Marketing email"
   },
   {
    "k": "f",
@@ -4458,17 +4263,33 @@
    "r": "on no page",
    "i": [
     [
-     "bad",
-     "on no page"
+     "warn",
+     "on no page",
+     "No Praxera page embeds this form."
     ]
-   ]
+   ],
+   "hid": "81f2906b-f93a-40b7-aa3e-f075660d4beb",
+   "y": "Form"
   },
   {
    "k": "f",
    "id": "4b8af922-efce-478b-be6a-ec150098ae8d",
    "n": "Praxera - Contact Us",
-   "r": "on 1 page: contact",
-   "i": []
+   "r": "on no page",
+   "i": [
+    [
+     "warn",
+     "on no page",
+     "No Praxera page embeds this form."
+    ],
+    [
+     "mute",
+     "5 flows enrol on it",
+     "Workflow enrolment trigger uses this form."
+    ]
+   ],
+   "hid": "4b8af922-efce-478b-be6a-ec150098ae8d",
+   "y": "Form"
   },
   {
    "k": "f",
@@ -4477,10 +4298,13 @@
    "r": "on no page",
    "i": [
     [
-     "bad",
-     "on no page"
+     "warn",
+     "on no page",
+     "No Praxera page embeds this form."
     ]
-   ]
+   ],
+   "hid": "2e55f9cc-3476-4cee-b4d7-95f6bc1f5569",
+   "y": "Form"
   },
   {
    "k": "f",
@@ -4489,10 +4313,13 @@
    "r": "on no page",
    "i": [
     [
-     "bad",
-     "on no page"
+     "warn",
+     "on no page",
+     "No Praxera page embeds this form."
     ]
-   ]
+   ],
+   "hid": "471fb48f-63c1-4bae-bc17-65edebfedcea",
+   "y": "Form"
   },
   {
    "k": "f",
@@ -4501,240 +4328,333 @@
    "r": "on no page",
    "i": [
     [
-     "bad",
-     "on no page"
+     "warn",
+     "on no page",
+     "No Praxera page embeds this form."
     ],
     [
      "mute",
-     "5 flows enrol on it"
+     "5 flows enrol on it",
+     "Workflow enrolment trigger uses this form."
     ]
-   ]
+   ],
+   "hid": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+   "y": "Form"
   },
   {
    "k": "f",
    "id": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
    "n": "Praxera - Main Lead Form (legacy field set)",
-   "r": "on no page",
+   "r": "on 1 page: contact",
    "i": [
     [
-     "bad",
-     "on no page"
-    ],
-    [
      "mute",
-     "2 flows enrol on it"
+     "2 flows enrol on it",
+     "Workflow enrolment trigger uses this form."
     ]
-   ]
+   ],
+   "hid": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+   "y": "Form"
   },
   {
    "k": "f",
    "id": "6d4066c8-92f5-400c-a556-4265b62ec96b",
    "n": "Praxera - Onboarding Guide",
    "r": "on 1 page: learning/onboarding-guide",
-   "i": []
+   "i": [],
+   "hid": "6d4066c8-92f5-400c-a556-4265b62ec96b",
+   "y": "Form"
   },
   {
    "k": "f",
    "id": "df8b7a41-df30-4e60-9b8a-d76b651bab20",
    "n": "Praxera - Our Design Services",
    "r": "on 1 page: design-team",
-   "i": []
+   "i": [],
+   "hid": "df8b7a41-df30-4e60-9b8a-d76b651bab20",
+   "y": "Form"
   },
   {
    "k": "f",
    "id": "f240cb7b-4613-47dd-98df-4b334f858b19",
    "n": "Praxera - Request a Quote",
    "r": "on 1 page: request-quote",
-   "i": []
+   "i": [],
+   "hid": "f240cb7b-4613-47dd-98df-4b334f858b19",
+   "y": "Form"
   },
   {
    "k": "f",
    "id": "c82c667f-219d-4f12-96ce-7aaff98245fa",
    "n": "Praxera - Schedule a Consultation (Ads pages)",
-   "r": "on 4 pages: alp/ads-contract-mfg, alp/ads-custom, alp/ads-mfg-usa, alp/ads-pl-mfg",
-   "i": []
+   "r": "on 3 pages: alp/ads-contract-mfg, alp/ads-mfg-usa, alp/ads-pl-mfg",
+   "i": [],
+   "hid": "c82c667f-219d-4f12-96ce-7aaff98245fa",
+   "y": "Form"
   },
   {
    "k": "f",
    "id": "dd7328fc-f1b0-4d3f-84ac-d762af1add57",
    "n": "Praxera - Supplements Guide",
-   "r": "on no page",
+   "r": "on 1 page: learning/definitive-guide",
    "i": [
     [
-     "bad",
-     "on no page"
-    ],
-    [
      "mute",
-     "2 flows enrol on it"
+     "2 flows enrol on it",
+     "Workflow enrolment trigger uses this form."
     ]
-   ]
+   ],
+   "hid": "dd7328fc-f1b0-4d3f-84ac-d762af1add57",
+   "y": "Form"
   },
   {
    "k": "f",
    "id": "d8dfdd90-98f1-4cba-bedf-181dd9286ca1",
    "n": "Private Label (Praxera) - Schedule a Consultation",
-   "r": "on 23 pages: (home), aging, cognitive, design-services, detox \u2026",
-   "i": []
+   "r": "on 26 pages: (home), aging, cognitive, design-services, detox, dropshipping \u2026",
+   "i": [],
+   "hid": "d8dfdd90-98f1-4cba-bedf-181dd9286ca1",
+   "y": "Form"
   },
   {
    "k": "w",
    "id": "1875319813",
    "n": "Private Label_MoF_Danielle",
-   "r": "18 email sends \u00b7 disabled",
+   "r": "18 email sends",
    "i": [
     [
-     "bad",
-     "enrols on Contact Us NEW"
+     "mute",
+     "5 dead clauses",
+     "Inherited from the DaVinci original; references a list that no longer exists."
     ],
     [
      "mute",
-     "5 dead clauses"
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875319813",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875338811",
    "n": "Private Label Guide_MoF_Paul",
-   "r": "18 email sends \u00b7 disabled",
+   "r": "18 email sends",
    "i": [
     [
-     "bad",
-     "enrols on Contact Us NEW"
+     "mute",
+     "7 dead clauses",
+     "Inherited from the DaVinci original; references a list that no longer exists."
     ],
     [
      "mute",
-     "7 dead clauses"
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875338811",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875319816",
    "n": "White_Label_World Expo: Post_Event_Nurture",
-   "r": "16 email sends \u00b7 disabled",
+   "r": "16 email sends",
    "i": [
     [
-     "warn",
-     "no form enrolment"
+     "mute",
+     "no form enrolment",
+     "Enrolment is by list/property, not a form (left alone by decision, 8 Sep)."
+    ],
+    [
+     "mute",
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875319816",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875320616",
    "n": "Private Label Guide_ToF_Danielle_Nurture",
-   "r": "9 email sends \u00b7 disabled",
+   "r": "9 email sends",
    "i": [
     [
      "mute",
-     "3 dead clauses"
+     "3 dead clauses",
+     "Inherited from the DaVinci original; references a list that no longer exists."
+    ],
+    [
+     "mute",
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875320616",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875317584",
    "n": "Private Label - High Priority",
-   "r": "8 email sends \u00b7 disabled",
+   "r": "8 email sends",
    "i": [
     [
-     "warn",
-     "no form enrolment"
+     "mute",
+     "no form enrolment",
+     "Enrolment is by list/property, not a form (left alone by decision, 8 Sep)."
+    ],
+    [
+     "mute",
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875317584",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875339655",
    "n": "Private Label Guide_ToF_Paul_Nurture",
-   "r": "8 email sends \u00b7 disabled",
-   "i": []
+   "r": "8 email sends",
+   "i": [
+    [
+     "mute",
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
+    ]
+   ],
+   "hid": "1875339655",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875338815",
    "n": "Sales Qualified Leads: Private Label: Assign Contacts to Sales (NEW)",
-   "r": "6 email sends \u00b7 disabled",
+   "r": "6 email sends",
    "i": [
     [
      "bad",
-     "enrols on (deleted), Brand Development Call  (Inactive)"
+     "enrols on (deleted), Brand Development Call  (Inactive)",
+     "Enrolment trigger still names a non-Praxera form."
+    ],
+    [
+     "mute",
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875338815",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875319815",
    "n": "Welcome to D4HCP_BoF_Danielle/HCP",
-   "r": "4 email sends \u00b7 disabled",
+   "r": "4 email sends",
    "i": [
     [
-     "warn",
-     "no form enrolment"
+     "mute",
+     "no form enrolment",
+     "Enrolment is by list/property, not a form (left alone by decision, 8 Sep)."
     ],
     [
      "mute",
-     "3 dead clauses"
+     "3 dead clauses",
+     "Inherited from the DaVinci original; references a list that no longer exists."
+    ],
+    [
+     "mute",
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875319815",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875338045",
    "n": "PL Guide_BoF_Danielle",
-   "r": "3 email sends \u00b7 disabled",
+   "r": "3 email sends",
    "i": [
     [
-     "bad",
-     "enrols on Contact Us NEW"
+     "mute",
+     "1 dead clause",
+     "Inherited from the DaVinci original; references a list that no longer exists."
     ],
     [
      "mute",
-     "1 dead clause"
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875338045",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875338809",
    "n": "PL Guide_BoF_Paul",
-   "r": "3 email sends \u00b7 disabled",
+   "r": "3 email sends",
    "i": [
     [
-     "bad",
-     "enrols on Contact Us NEW"
+     "mute",
+     "4 dead clauses",
+     "Inherited from the DaVinci original; references a list that no longer exists."
     ],
     [
      "mute",
-     "4 dead clauses"
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875338809",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875338813",
    "n": "Retargeting: Visited Private Label Page & Didn't Convert",
-   "r": "1 email sends \u00b7 disabled",
+   "r": "1 email sends",
    "i": [
     [
-     "warn",
-     "no form enrolment"
+     "mute",
+     "no form enrolment",
+     "Enrolment is by list/property, not a form (left alone by decision, 8 Sep)."
+    ],
+    [
+     "mute",
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875338813",
+   "y": "Workflow"
   },
   {
    "k": "w",
    "id": "1875339651",
    "n": "Brand / Private Label - Segmentation",
-   "r": "0 email sends \u00b7 disabled",
+   "r": "0 email sends",
    "i": [
     [
-     "warn",
-     "no form enrolment"
+     "mute",
+     "no form enrolment",
+     "Enrolment is by list/property, not a form (left alone by decision, 8 Sep)."
+    ],
+    [
+     "mute",
+     "off",
+     "Workflow is switched off \u2014 turn on at cutover."
     ]
-   ]
+   ],
+   "hid": "1875339651",
+   "y": "Workflow"
   }
  ],
  "groups": [
@@ -4750,7 +4670,7 @@
   ],
   [
    "e",
-   "Marketing emails",
+   "Emails",
    "Replaces"
   ],
   [
@@ -4764,17 +4684,58 @@
    "Detail"
   ]
  ],
- "redirects": {
-  "pairs": 134,
-  "by_kind": {
-   "page": 59,
-   "blog": 75
-  },
-  "orphan_sources": [
-   "https://info.davincilabs.com/private-label-supplements-guide",
-   "https://info.davincilabs.com/private-label-supplements-resource-center",
-   "https://info.davincilabs.com/private-label-supplements-client-onboarding"
+ "meta": {
+  "stamp": "9 September 2026",
+  "title": "Praxera asset sign-off",
+  "file": "praxera-asset-signoff",
+  "brandline": "FoodScience LLC \u00b7 HubSpot 4087538 \u00b7 Private Label \u2192 Praxera",
+  "intro": "Every Praxera page, post, email, form and workflow, with two approvals per item: QBS signs off the build, the client signs off the content. Open a row to see findings, the client's comments (from the Design Approval Sheet and HubSpot), and the history of who did what. Edit, add or remove rows as the list changes; everything is saved to the portal and shared with everyone who opens this page.",
+  "note": "Several people can work at once \u2014 changes merge item by item and the page refreshes every 25 seconds.",
+  "share": "https://clientcommand.thequantumleap.business/portal/2a5c361066202d71fa47ee598d2bcb95/pages/94f31f00-08a7-4f9c-905e-fe4a5e6b8c7d",
+  "groups": [
+   [
+    "p",
+    "Website pages",
+    "Redirects from at cutover"
+   ],
+   [
+    "b",
+    "Blog posts",
+    "Redirects from at cutover"
+   ],
+   [
+    "e",
+    "Emails",
+    "Replaces"
+   ],
+   [
+    "f",
+    "Forms",
+    "Placement"
+   ],
+   [
+    "w",
+    "Workflows",
+    "Detail"
+   ]
   ],
-  "orphan_targets": 3
+  "keys": {
+   "p": "website-pages",
+   "b": "blog-posts",
+   "e": "emails",
+   "f": "forms",
+   "w": "workflows"
+  },
+  "hs": {
+   "p": "https://app.hubspot.com/pages/4087538/editor/{id}/content",
+   "b": "https://app.hubspot.com/blog/4087538/editor/{id}/content",
+   "e": "https://app.hubspot.com/email/4087538/details/{id}",
+   "f": "https://app.hubspot.com/forms/4087538/editor/{id}/edit/form",
+   "w": "https://app.hubspot.com/workflows/4087538/platform/flow/{id}/edit"
+  },
+  "live": {
+   "p": "https://www.praxerasupplements.com/{slug}",
+   "b": "https://www.praxerasupplements.com/{slug}"
+  }
  }
 }
