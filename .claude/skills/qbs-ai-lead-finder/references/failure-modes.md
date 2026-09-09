@@ -396,6 +396,38 @@ which it is before anyone builds a forecast on the number.
 **Never roll a single engagement up over an existing company date to resolve a
 contradiction.** Surface the conflict; let a human pick.
 
+## 17. "Active" lists built on fixed dates
+
+A list bucketing records by a date property is only worth building if it stays
+correct tomorrow. Both date-filtered lists already in the UBEO portal pin
+absolute calendar dates, which freezes the bucket on the day it was built.
+
+Anchor every boundary to TODAY with a day offset instead. HubSpot's indexed
+timepoints are **directional**, and the constraints are not documented together
+anywhere — each one costs a failed call to discover:
+
+| operator | accepts |
+|---|---|
+| `IS_AFTER` | offsets **>= 0** only, and `EXCLUSIVE` endpoint behavior only |
+| `IS_BEFORE` | offsets **<= 0** only |
+| `IS_BETWEEN` | only a `NOW` <-> `TODAY` endpoint pair, and `NOW` takes no offset |
+| `indexReference` | `{FISCAL_QUARTER, FISCAL_YEAR, MONTH, NOW, QUARTER, TODAY, WEEK, YEAR}`, as an object with a `referenceType` discriminator |
+
+So a forward-looking BAND cannot be a single `IS_BETWEEN`. Build it as two ANDed
+filters: `IS_AFTER today+lo` for the floor, `IS_BETWEEN now..today+hi` for the
+ceiling. And since `IS_AFTER` is exclusive-only, "on or after day N" is
+"after day N-1" — which fails outright at N=0, because the offset would be
+negative.
+
+**Reconcile the finished set before calling it done.** Pull every membership and
+check three things: the bands sum to the population, no record appears twice, and
+the difference from the source count is exactly what you deliberately excluded.
+At UBEO: 2,669 across seven bands, 2,669 distinct, 0 overlaps, 2 short of the
+2,671 dated companies — the two customers the lifecycle filter removes. An
+off-by-one in a boundary shows up here and nowhere else; the first build of the
+top band used `+366` where the one below ended at `+365`, leaving a one-day hole
+that no individual list size would have revealed.
+
 ## Infrastructure failures
 
 Not data bugs, but they cost hours.
