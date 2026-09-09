@@ -155,7 +155,7 @@ for i,p in enumerate(parts,1):
     secs.append((f"data{i}",f"Data {i}",f'<script type="application/json" class="rowdata">{body}</script>'))
 # meta and boot are separate sections so each stays small enough to send by hand;
 # boot (the app) must remain LAST — it reads #meta and every rowdata island.
-secs.append(("meta","Meta",f'<script type="application/json" id="meta">{esc(json.dumps(META,separators=(",",":"),ensure_ascii=False))}</script>'))
+secs.append(("metadata","Metadata",f'<script type="application/json" id="meta">{esc(json.dumps(META,separators=(",",":"),ensure_ascii=False))}</script>'))
 secs.append(("boot","Boot",f'<script>{JS}</script>'))
 json.dump([{"block_key":k,"label":l,"body":b} for k,l,b in secs],open("deliverables/signoff_chunks.json","w"),indent=1,ensure_ascii=False)
 prev="".join(f'<section id="{k}">\n<h2>{l}</h2>\n{b}\n</section>\n' for k,l,b in secs)

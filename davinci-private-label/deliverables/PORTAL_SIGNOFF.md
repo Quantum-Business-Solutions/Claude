@@ -35,7 +35,7 @@ Client share link (no login): https://clientcommand.thequantumleap.business/port
 |-----------|--------|------------|
 | app       | 17,814 | stylesheet + `<div id="root">` |
 | data1–4   | 71,787 | row islands (`script.rowdata`), 270 rows |
-| meta      |  9,505 | `#meta` — title, groups, link templates, interned labels/types, share URL |
+| metadata  |  9,505 | `#meta` — title, groups, link templates, interned labels/types, share URL |
 | boot      | 25,599 | the app (minified from `src/signoff.js`) — must stay LAST |
 
 Rows: 63 pages (61 paired + top-10-products, learning/ty-ingredients-testing, ty-contact),
