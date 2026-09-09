@@ -1,10 +1,10 @@
 """Create 'AI - Potential Lease End Date' on Company and backfill it from the
-date already stated at the front of ai__lease_information.
+date already stated at the front of ai_lease_information.
 
   PAT=<ubeo token> python3 lease_date_deploy.py            # dry run
   PAT=<ubeo token> python3 lease_date_deploy.py --go       # create + write
 
-Reads nothing but ai__lease_information. Never modifies that field.
+Reads nothing but ai_lease_information. Never modifies that field.
 """
 import json, os, sys, time, urllib.request, urllib.error, collections, socket
 from lease_date_parse import parse, to_hubspot
@@ -12,7 +12,7 @@ socket.setdefaulttimeout(60)
 
 GO = "--go" in sys.argv
 H = {"Authorization": "Bearer " + os.environ["PAT"], "Content-Type": "application/json"}
-PROP = "ai__potential_lease_end_date"
+PROP = "potential_prospect__lease_end_date"   # already exists in the portal, empty
 CONF = "ai__lease_date_confidence"
 
 def req(url, body=None, method="POST"):
@@ -30,12 +30,6 @@ def req(url, body=None, method="POST"):
     return None, "retries exhausted"
 
 DEFS = [
- {"name": PROP, "label": "AI - Potential Lease End Date", "type": "date", "fieldType": "date",
-  "groupName": "companyinformation",
-  "description": "The lease end date stated at the front of AI - Lease Information, as a real date so it can be "
-                 "sorted, filtered and used in lists and workflows. Set to the LAST day of the stated month. "
-                 "Read AI - Lease Information for the evidence and the confidence behind it - some of these "
-                 "dates are projections, not confirmed dates."},
  {"name": CONF, "label": "AI - Lease Date Confidence", "type": "enumeration", "fieldType": "select",
   "groupName": "companyinformation",
   "description": "How the Potential Lease End Date was arrived at. CONFIRMED and CALCULATED come from something "
@@ -70,8 +64,8 @@ for d in DEFS:
 # ---- 2. every company that carries a lease signal
 after, comps = None, {}
 while True:
-    body = {"limit": 200, "properties": ["name", "ai__lease_information", PROP],
-            "filterGroups": [{"filters": [{"propertyName": "ai__lease_information",
+    body = {"limit": 200, "properties": ["name", "ai_lease_information", PROP],
+            "filterGroups": [{"filters": [{"propertyName": "ai_lease_information",
                                            "operator": "HAS_PROPERTY"}]}]}
     if after: body["after"] = after
     d, e = req("https://api.hubapi.com/crm/v3/objects/companies/search", body)
@@ -80,11 +74,11 @@ while True:
     after = d.get("paging", {}).get("next", {}).get("after")
     if not after: break
     time.sleep(0.2)
-print("\ncompanies carrying ai__lease_information : %s" % format(len(comps), ","))
+print("\ncompanies carrying ai_lease_information : %s" % format(len(comps), ","))
 
 writes, skip_nodate, already, tiers = [], 0, 0, collections.Counter()
 for cid, p in comps.items():
-    r = parse(p.get("ai__lease_information"))
+    r = parse(p.get("ai_lease_information"))
     if r is None: skip_nodate += 1; continue
     d, tier, month_real = r
     b = bucket(tier, month_real); tiers[b] += 1
