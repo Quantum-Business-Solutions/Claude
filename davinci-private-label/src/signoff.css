@@ -363,7 +363,7 @@ border:1px solid var(--rule);border-radius:99px;padding:4px 8px;cursor:pointer;w
 .gen .cmt{margin:0;padding:8px 10px 8px 12px}
 .gen .cmt .txt{font-size:.82rem;line-height:1.45}
 .gen .cmt .who{font-size:.58rem}
-.gen textarea,.gen .row{grid-column:1/-1}
+.gen textarea,.gen .row,.gen .compose{grid-column:1/-1}
 .gen .empty{grid-column:1/-1}
 @media (max-width:1100px){.gen.card{grid-template-columns:1fr}}
 
@@ -374,3 +374,7 @@ border:1px solid var(--rule);border-radius:99px;padding:4px 8px;cursor:pointer;w
 .cact .pill.done{background:color-mix(in srgb,var(--ok) 14%,var(--surface));color:var(--ok);border-color:color-mix(in srgb,var(--ok) 40%,var(--rule))}
 .cact .pill.open{background:var(--sunk);color:var(--muted)}
 .cact .pill.gl{background:color-mix(in srgb,var(--accent) 12%,var(--surface));color:var(--accent);border-color:color-mix(in srgb,var(--accent) 40%,var(--rule))}
+.gen .compose{position:sticky;top:0;z-index:2;background:var(--surface);padding:6px 0 10px;margin-bottom:4px;border-bottom:1px solid var(--rule)}
+.gen .compose label{display:block;margin:0 0 4px}
+.gen .compose textarea{margin-top:0;min-height:52px}
+.gen .compose .row{margin-top:6px}

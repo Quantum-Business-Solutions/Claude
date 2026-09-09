@@ -29,3 +29,6 @@ work at the same time.
 - "Collapse all / Expand all" in the sticky bar; every section also has its own ▾ icon.
 - "Redirects from at cutover" is the real public DaVinci URL that will 301 to the page (click ↗ to see
   the old page). Pages built new for Praxera show "nothing redirects here".
+- The "Add a global note or rule" box now sits at the TOP of Global notes & rules and stays pinned
+  while you scroll the notes (it used to sit below all the notes inside the scroll box, so it was
+  easy to miss). Type, then Post (or Ctrl+Enter).

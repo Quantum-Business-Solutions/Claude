@@ -450,8 +450,9 @@ function genHtml(){var cs=comments(GEN),open_=cs.filter(function(c){return c.st!
   return '<section class="gensec" id="g-general"><div class="shead"><div class="hrow">'+chev("_")+'<h2>Global notes &amp; rules</h2><span class="tct">'+open_+" open · "+cs.length+"</span></div>"
     +'<div class="acts"></div>'
     +'<p class="eyebrow" style="grid-column:1/-1;margin:0">Site-wide instructions and anything that is not about one asset — both sides can post, reply and resolve</p></div>'
-    +(!collapsed._?'<div class="gen card thread" data-g="_" data-i="general">'+(cs.length?cs.map(function(c){return cmtHtml(GEN,c);}).join(""):'<p class="empty">Nothing here yet.</p>')
-      +'<textarea data-a="txt" aria-label="Global note" placeholder="Add a site-wide note, rule or change…"></textarea><div class="row"><button data-a="post">Post</button></div></div>':"")+"</section>";}
+    +(!collapsed._?'<div class="gen card thread" data-g="_" data-i="general">'
+      +'<div class="compose"><label class="eyebrow" for="gentxt">Add a global note or rule — applies to the whole site</label><textarea id="gentxt" data-a="txt" aria-label="Global note" placeholder="Type it here, then Post (or Ctrl+Enter)…"></textarea><div class="row"><button data-a="post">Post to Global notes</button></div></div>'
+      +(cs.length?cs.map(function(c){return cmtHtml(GEN,c);}).join(""):'<p class="empty">Nothing here yet.</p>')+"</div>":"")+"</section>";}
 function logHtml(){var all=histEvents(),es=showAllLog?all:all.slice(0,10);
   return '<section class="logsec" id="g-log"><div class="shead"><div class="hrow">'+chev("log")+'<h2>Activity</h2><span class="tct">'+all.length+" actions · everyone, every change</span></div>"
     +'<div class="acts">'+(all.length>10?'<button class="gh mini" data-a="alllog">'+(showAllLog?"Show latest 10":"Show all "+all.length)+"</button>":"")+"</div></div>"
