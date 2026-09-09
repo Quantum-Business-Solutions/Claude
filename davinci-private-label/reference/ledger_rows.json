@@ -11,11 +11,6 @@
      "warn",
      "first-person production wording",
      "Phrases to check: our catalog of doctor-formulated"
-    ],
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
     ]
    ],
    "new": true,
@@ -65,6 +60,9 @@
      "t": "Website wide: maintain consistency when naming products (Nattokinase should be lower case). \"Some of the most popular formulations in our catalog include ADK, nattokinase, collagen, probiotics, sleep support, iron, magnesium, and full multivitamin lines.\"",
      "src": "HubSpot page comment"
     }
+   ],
+   "rv": [
+    1
    ]
   },
   {
@@ -88,16 +86,22 @@
    "id": "aging",
    "n": "aging",
    "r": "info.davincilabs.com/en/pl-demo-aging-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "aging",
    "hid": "216189432992",
-   "y": "Category"
+   "y": "Category",
+   "sc": [
+    {
+     "id": "hs:aging:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T06:59:00-04:00",
+     "t": "replace Liposomal with Heart and feature ADK / replace Foundation with Joint and feature Perna Pro / in the Omegas, feature Omega 3 HP-D / antioxidant - use Glutathione instead of Glutathione Bright",
+     "src": "HubSpot page comment"
+    }
+   ],
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -225,16 +229,13 @@
    "id": "cognitive",
    "n": "cognitive",
    "r": "info.davincilabs.com/pl-demo-cognitive-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "cognitive",
    "hid": "216189433251",
-   "y": "Category"
+   "y": "Category",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -251,16 +252,13 @@
    "id": "customer-art",
    "n": "customer-art",
    "r": "info.davincilabs.com/en/pl-demo-customer-art-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "customer-art",
    "hid": "216189433156",
-   "y": "Design"
+   "y": "Design",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -272,11 +270,6 @@
      "warn",
      "first-person production wording",
      "Phrases to check: we produce"
-    ],
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
     ]
    ],
    "slug": "design-services",
@@ -290,6 +283,9 @@
      "t": "Remove Custom Formulation from bottom",
      "src": "HubSpot page comment"
     }
+   ],
+   "rv": [
+    1
    ]
   },
   {
@@ -297,32 +293,26 @@
    "id": "design-team",
    "n": "design-team",
    "r": "info.davincilabs.com/en/pl-demo-design-team-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "design-team",
    "hid": "216189433139",
-   "y": "Design"
+   "y": "Design",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "detox",
    "n": "detox",
    "r": "info.davincilabs.com/pl-demo-detox-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "detox",
    "hid": "216189433375",
-   "y": "Category"
+   "y": "Category",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -344,11 +334,6 @@
      "warn",
      "first-person production wording",
      "Phrases to check: we offer 190+ doctor-formulated"
-    ],
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
     ]
    ],
    "slug": "dropshipping",
@@ -362,6 +347,9 @@
      "t": "Mindy: I don't believe we are dropshipping - need to check with Tammy on this page",
      "src": "Design Approval Sheet v6"
     }
+   ],
+   "rv": [
+    1
    ]
   },
   {
@@ -369,16 +357,13 @@
    "id": "energy",
    "n": "energy",
    "r": "info.davincilabs.com/pl-demo-energy-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "energy",
    "hid": "216189433390",
-   "y": "Category"
+   "y": "Category",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -416,13 +401,7 @@
    "id": "fitness",
    "n": "fitness",
    "r": "info.davincilabs.com/pl-demo-fitness-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "fitness",
    "hid": "216179449410",
    "y": "Category",
@@ -489,7 +468,24 @@
      "at": "2026-09-02T16:25:00-04:00",
      "t": "Right Wheys are being discontinued so both should be removed.",
      "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:fitness:8",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T06:19:00-04:00",
+     "t": "Since whey proteins were removed, if there's room, Vegan proteins can be added.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:fitness:9",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T06:35:00-04:00",
+     "t": "The blue FDA disclaimer box at the bottom should have an * at the very beginning",
+     "src": "HubSpot page comment"
     }
+   ],
+   "rv": [
+    1
    ]
   },
   {
@@ -497,13 +493,7 @@
    "id": "get-started",
    "n": "get-started",
    "r": "info.davincilabs.com/en/pl-demo-get-started-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "get-started",
    "hid": "216194811571",
    "y": "Core",
@@ -543,6 +533,9 @@
      "t": "At the bottom under About Private Label, suggest reworded to \"Providing Private Label supplements for brands ready to own their formulations\" (removing the word manufacturing). Next line, remove DaVinci and update to FoodScience (with or without LLC) but have matching in paragraph under address.",
      "src": "HubSpot page comment"
     }
+   ],
+   "rv": [
+    1
    ]
   },
   {
@@ -570,32 +563,35 @@
    "id": "heart-health",
    "n": "heart-health",
    "r": "info.davincilabs.com/pl-demo-heart-health-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "heart-health",
    "hid": "216189433373",
-   "y": "Category"
+   "y": "Category",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "herbal",
    "n": "herbal",
    "r": "info.davincilabs.com/en/pl-demo-herbal-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "herbal",
    "hid": "216189432990",
-   "y": "Category"
+   "y": "Category",
+   "sc": [
+    {
+     "id": "hs:herbal:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T06:50:00-04:00",
+     "t": "For the immune badge, use our Olivir. Instead of energy, let's do calm and feature Valer-Amino.",
+     "src": "HubSpot page comment"
+    }
+   ],
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -607,11 +603,6 @@
      "bad",
      "2 DaVinci links",
      "Links to: https://blog.davincilabs.com/private-label/mastering-supplement-branding-design-private-label-packaging-in-5-steps; https://blog.davincilabs.com/private-label/tips-for-selling-private-label-supplements-on-amazon"
-    ],
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
     ]
    ],
    "slug": "how-to-sell-supplements",
@@ -666,7 +657,17 @@
      "at": "2026-09-02T16:39:00-04:00",
      "t": "In the \"Source high-quality supplements\" box, recommend removing third-party testing. While we can provide testing results on our COAs, we do not share actual third-party testing result documents from our vendors. Instead update to: \"Ask any prospective partner for certificates of analysis with testing and documentation of being a GMP certified facility while also confirming the facility is FDA-registered.\"",
      "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:how-to-sell-supplements:7",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-08T11:45:00-04:00",
+     "t": "Source high-quality supplements from a partner who can prove it. Didn't see this before now but under this title shows STEP 04 and some additional lines. Not sure if these are there for something to be added/linked so not comfortable deleting.",
+     "src": "HubSpot page comment"
     }
+   ],
+   "rv": [
+    1
    ]
   },
   {
@@ -674,48 +675,37 @@
    "id": "immune-support",
    "n": "immune-support",
    "r": "info.davincilabs.com/pl-demo-immune-support-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "immune-support",
    "hid": "216189433236",
-   "y": "Category"
+   "y": "Category",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "ingredient-sourcing",
    "n": "ingredient-sourcing",
    "r": "info.davincilabs.com/pl-demo-ingredient-sourcing-v3",
-   "i": [
-    [
-     "warn",
-     "sheet: In Progress",
-     "Design Approval Sheet v6 status."
-    ]
-   ],
+   "i": [],
    "slug": "ingredient-sourcing",
    "hid": "216192983616",
-   "y": "Quality"
+   "y": "Quality",
+   "rs": "In Progress"
   },
   {
    "k": "p",
    "id": "joint-support",
    "n": "joint-support",
    "r": "info.davincilabs.com/pl-demo-joint-support-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "joint-support",
    "hid": "216189433371",
-   "y": "Category"
+   "y": "Category",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -727,11 +717,6 @@
      "bad",
      "3 DaVinci links",
      "Links to: https://blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements; https://blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business; https://www.davincilabs.com"
-    ],
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
     ]
    ],
    "slug": "learning/definitive-guide",
@@ -744,7 +729,24 @@
      "at": "2026-09-06T12:00:00-04:00",
      "t": "Have some highlighted comments on this page",
      "src": "Design Approval Sheet v6"
+    },
+    {
+     "id": "hs:learning/definitive-guide:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-06T16:16:00-04:00",
+     "t": "@Tammy Johnson I suggest we do away with the first paragraph under Meeting Private Label Supplement Safety & Quality Standards. We can instead rewrite this around cGMP, SQF using researched & tested ingredients. Since we also don't hold certifications from NSF or USP, it would likely lead to questions and confusion.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:learning/definitive-guide:1",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-06T16:25:00-04:00",
+     "t": "Under A Few things to Look For During the Vetting Process: unsure if there is such a thing as silver or gold CGMP certification (sentence highlighted)",
+     "src": "HubSpot page comment"
     }
+   ],
+   "rv": [
+    1
    ]
   },
   {
@@ -752,66 +754,54 @@
    "id": "learning/definitive-guide-ty",
    "n": "learning/definitive-guide-ty",
    "r": "",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "new": true,
    "slug": "learning/definitive-guide-ty",
    "hid": "216194811652",
-   "y": "Thank You"
+   "y": "Thank You",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "learning/ingredients-testing",
    "n": "learning/ingredients-testing",
    "r": "info.davincilabs.com/pl-demo-ingredients-testing-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "learning/ingredients-testing",
    "hid": "216189433459",
-   "y": "Guide"
+   "y": "Guide",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "learning/onboarding-guide",
    "n": "learning/onboarding-guide",
    "r": "info.davincilabs.com/en/pl-demo-onboarding-guide-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "learning/onboarding-guide",
    "hid": "216194811563",
-   "y": "Guide"
+   "y": "Guide",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "learning/onboarding-guide-ty",
    "n": "learning/onboarding-guide-ty",
    "r": "",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "new": true,
    "slug": "learning/onboarding-guide-ty",
    "hid": "216194811659",
-   "y": "Thank You"
+   "y": "Thank You",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -833,32 +823,27 @@
      "warn",
      "first-person production wording",
      "Phrases to check: Our doctor-formulated"
-    ],
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
     ]
    ],
    "slug": "mens-health",
    "hid": "216188836114",
-   "y": "Category"
+   "y": "Category",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "multivitamin",
    "n": "multivitamin",
    "r": "info.davincilabs.com/pl-demo-multivitamin-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "multivitamin",
    "hid": "216189433270",
-   "y": "Category"
+   "y": "Category",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -891,16 +876,29 @@
    "id": "pediatric",
    "n": "pediatric",
    "r": "info.davincilabs.com/en/pl-demo-pediatric-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "pediatric",
    "hid": "216189433355",
-   "y": "Category"
+   "y": "Category",
+   "sc": [
+    {
+     "id": "hs:pediatric:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T16:40:00-04:00",
+     "t": "Add Liquid bubble to Sleep Tight and Calm",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:pediatric:1",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T16:41:00-04:00",
+     "t": "remove kid omega and replace with immuni-z + elderberry with immune as the badge",
+     "src": "HubSpot page comment"
+    }
+   ],
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -922,29 +920,21 @@
      "warn",
      "first-person production wording",
      "Phrases to check: Our doctor-formulated"
-    ],
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
     ]
    ],
    "slug": "prenatal",
    "hid": "216189433267",
-   "y": "Category"
+   "y": "Category",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "privacy",
    "n": "privacy",
    "r": "info.davincilabs.com/en/pl-demo-privacy-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "privacy",
    "hid": "216194811650",
    "y": "Core",
@@ -956,6 +946,9 @@
      "t": "Private Questions....updated FoodScience Corporation to FoodScience LLC / Also remove Custom Formulation from bottom.",
      "src": "HubSpot page comment"
     }
+   ],
+   "rv": [
+    1
    ]
   },
   {
@@ -963,16 +956,22 @@
    "id": "probiotics",
    "n": "probiotics",
    "r": "info.davincilabs.com/pl-demo-probiotics-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "probiotics",
    "hid": "216189433094",
-   "y": "Category"
+   "y": "Category",
+   "sc": [
+    {
+     "id": "hs:probiotics:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T07:56:00-04:00",
+     "t": "with the strains and enzymes badges, are you linking these to various products or do you want recommendations of products to feature here?",
+     "src": "HubSpot page comment"
+    }
+   ],
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -1005,13 +1004,7 @@
    "id": "resources",
    "n": "resources",
    "r": "info.davincilabs.com/en/pl-demo-resources-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "resources",
    "hid": "216189433440",
    "y": "Core",
@@ -1021,8 +1014,18 @@
      "n": "Melinda Elmadjian",
      "at": "2026-09-02T16:46:00-04:00",
      "t": "Remove Custom Formulation from bottom",
-     "src": "HubSpot page comment"
+     "src": "HubSpot page comment",
+     "re": [
+      {
+       "n": "Justin Hilbert",
+       "at": "2026-09-08T13:45:00-04:00",
+       "t": "done"
+      }
+     ]
     }
+   ],
+   "rv": [
+    1
    ]
   },
   {
@@ -1040,16 +1043,22 @@
    "id": "sleep",
    "n": "sleep",
    "r": "info.davincilabs.com/pl-demo-sleep-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "sleep",
    "hid": "216189433007",
-   "y": "Category"
+   "y": "Category",
+   "sc": [
+    {
+     "id": "hs:sleep:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T07:04:00-04:00",
+     "t": "with the botanical, feature valer-amino",
+     "src": "HubSpot page comment"
+    }
+   ],
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -1096,80 +1105,123 @@
    "id": "ty-consultation",
    "n": "ty-consultation",
    "r": "info.davincilabs.com/en/pl-demo-ty-consultation-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "ty-consultation",
    "hid": "216192983665",
-   "y": "Thank You"
+   "y": "Thank You",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "ty-quote",
    "n": "ty-quote",
    "r": "info.davincilabs.com/en/pl-demo-ty-quote-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "ty-quote",
    "hid": "216194811755",
-   "y": "Thank You"
+   "y": "Thank You",
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "ty-sell-sheets",
    "n": "ty-sell-sheets",
    "r": "info.davincilabs.com/pl-demo-ty-sell-sheets-v3",
-   "i": [
-    [
-     "warn",
-     "sheet: NEED INFO",
-     "Design Approval Sheet v6 status."
-    ]
-   ],
+   "i": [],
    "slug": "ty-sell-sheets",
    "hid": "216194811757",
-   "y": "Thank You"
+   "y": "Thank You",
+   "rs": "NEED INFO"
   },
   {
    "k": "p",
    "id": "weight-management",
    "n": "weight-management",
    "r": "info.davincilabs.com/pl-demo-weight-management-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "weight-management",
    "hid": "216188836111",
-   "y": "Category"
+   "y": "Category",
+   "sc": [
+    {
+     "id": "hs:weight-management:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T08:02:00-04:00",
+     "t": "We do not have any caffeine-based energy blends. This will need to be replaced. For the metabolic badge, use our Thermo-Set.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:weight-management:1",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T08:04:00-04:00",
+     "t": "we do not have any chitosan formulations. replace fat absorption with botanical and feature our Berberine Force.",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:weight-management:2",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T08:05:00-04:00",
+     "t": "Mango seed extract - feature our Mango-Plex",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:weight-management:3",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T08:06:00-04:00",
+     "t": "with the metabolic badge, feature Adipo-Leptin Benefits",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:weight-management:4",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T08:07:00-04:00",
+     "t": "with the GLP-1 Support link to the several products or do you need recommendations?",
+     "src": "HubSpot page comment"
+    }
+   ],
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
    "id": "womens-health",
    "n": "womens-health",
    "r": "info.davincilabs.com/pl-demo-womens-health-v3",
-   "i": [
-    [
-     "ok",
-     "design rev 1 \u2713",
-     "Design Approval Sheet v6: revision 1 reviewed."
-    ]
-   ],
+   "i": [],
    "slug": "womens-health",
    "hid": "216189433092",
-   "y": "Category"
+   "y": "Category",
+   "sc": [
+    {
+     "id": "hs:womens-health:0",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T07:19:00-04:00",
+     "t": "replace energy with heart and feature cholestsure",
+     "src": "HubSpot page comment"
+    },
+    {
+     "id": "hs:womens-health:1",
+     "n": "Melinda Elmadjian",
+     "at": "2026-09-07T07:20:00-04:00",
+     "t": "for the bone badge, will this link to various formulas or does this need a product recommended?",
+     "src": "HubSpot page comment",
+     "re": [
+      {
+       "n": "Justin Hilbert",
+       "at": "2026-09-08T13:47:00-04:00",
+       "t": "Eventually these can link to products. But currently everything is DAVINCI PRODUCT PAGES. So for now, it's more like, things available, Contact Us"
+      }
+     ]
+    }
+   ],
+   "rv": [
+    1
+   ]
   },
   {
    "k": "p",
@@ -4726,6 +4778,92 @@
    "f": "forms",
    "w": "workflows"
   },
+  "gc": [
+   {
+    "id": "gen:rule:1",
+    "n": "Sarah Miller",
+    "at": "2026-08-24T13:23:00-04:00",
+    "src": "Rule \u00b7 HubSpot comment, 24 Aug",
+    "t": "WEBSITE WIDE: Remove any instance of \"custom formulation\". Update all instances of FoodScience Corp to FoodScience LLC. Update all instances of \"private label\" with \"Praxera\". Footer: update \"Praxera is part of the FoodScience LLC family of brands\u2026\" and remove the \"sibling brand\" sentence. Do not connect with DaVinci \u2014 remove any instance of that word."
+   },
+   {
+    "id": "gen:rule:2",
+    "n": "Sarah Miller",
+    "at": "2026-08-24T13:26:00-04:00",
+    "src": "Rule \u00b7 HubSpot comment, 24 Aug",
+    "t": "Replace all instances of \"manufacturing\" / \"manufacturer\" with Provider language. Caveat: \"turnkey production\" and \"US manufacturing\" are OK."
+   },
+   {
+    "id": "gen:rule:3",
+    "n": "Tammy Johnson",
+    "at": "2026-09-08T14:30:00-04:00",
+    "src": "Rule \u00b7 call, 8 Sep",
+    "t": "No links from Praxera to DaVinci, and no purchase path / e-commerce on Praxera. Product-guide style CTAs go to Schedule a Consultation (/get-started)."
+   },
+   {
+    "id": "gen:rule:4",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T14:30:00-04:00",
+    "src": "Rule \u00b7 call, 8 Sep",
+    "t": "Praxera is never marketed as manufacturing. \"Manufactured in the U.S.\" and \"cGMP facility\" are approved; never \"we produce\", \"our facilities\", \"manufacturers\"."
+   },
+   {
+    "id": "gen:email:1",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T09:24:00-04:00",
+    "src": "Email, 8 Sep",
+    "t": "FDA Disclaimer box \u2014 should have an * at the very beginning and each page reflect the same box. Throughout the pages, many claims are made where I have added * which is why it needs to connect to the FDA disclaimer box."
+   },
+   {
+    "id": "gen:email:2",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T09:24:00-04:00",
+    "src": "Email, 8 Sep",
+    "t": "While likely already on your radar, the entire website will need to also be reviewed by our Regulatory team."
+   },
+   {
+    "id": "gen:email:3",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T09:24:00-04:00",
+    "src": "Email, 8 Sep",
+    "t": "TM \u2014 on some pages Daily Best products have TM after Daily Best and some pages do not. These should be consistent."
+   },
+   {
+    "id": "gen:email:4",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T09:24:00-04:00",
+    "src": "Email, 8 Sep",
+    "t": "Fish Oils & Omega Category Page \u2014 I recommend this be added as EFAs are a top category in our business along with some upcoming potential."
+   },
+   {
+    "id": "gen:email:5",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T09:24:00-04:00",
+    "src": "Email, 8 Sep",
+    "t": "Subheaders \u2014 several category pages still have the same general placeholder subheader. The 8 that need to be updated: Multis, Immune, Cognitive, Pediatric, Joint, Heart, Detox & Liver, Energy. I wrote Prenatal and (I believe) Men."
+   },
+   {
+    "id": "gen:email:6",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T09:24:00-04:00",
+    "src": "Email, 8 Sep",
+    "t": "Tagline \u2014 has marketing determined a tagline to have under Praxera? Taylor's options: \"Helping Practices Build More Than Patient Loyalty.\" / \"Applied Expertise. Built for Your Brand.\" / \"Expert Formulations. Your Brand.\" Essence: helping practitioners build successful supplement brands through expertise, partnership, and execution."
+   },
+   {
+    "id": "gen:email:7",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T09:24:00-04:00",
+    "src": "Email, 8 Sep",
+    "t": "Dropshipping \u2014 we have a page for it. @Tammy Johnson please confirm whether or not this should be included."
+   },
+   {
+    "id": "gen:email:8",
+    "n": "Melinda Elmadjian",
+    "at": "2026-09-08T09:24:00-04:00",
+    "src": "Email, 8 Sep",
+    "t": "When ready, I will review everything again and perhaps that should be done in parallel with Regulatory to provide page approvals."
+   }
+  ],
   "hs": {
    "p": "https://app.hubspot.com/pages/4087538/editor/{id}/content",
    "b": "https://app.hubspot.com/blog/4087538/editor/{id}/content",

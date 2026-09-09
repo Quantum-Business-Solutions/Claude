@@ -1,0 +1,89 @@
+{
+ "source": "Site-wide points from Melinda's 8 Sep email to Patrick and Shawn",
+ "comments": [
+  {
+   "id": "gen:rule:1",
+   "n": "Sarah Miller",
+   "at": "2026-08-24T13:23:00-04:00",
+   "src": "Rule · HubSpot comment, 24 Aug",
+   "t": "WEBSITE WIDE: Remove any instance of \"custom formulation\". Update all instances of FoodScience Corp to FoodScience LLC. Update all instances of \"private label\" with \"Praxera\". Footer: update \"Praxera is part of the FoodScience LLC family of brands…\" and remove the \"sibling brand\" sentence. Do not connect with DaVinci — remove any instance of that word."
+  },
+  {
+   "id": "gen:rule:2",
+   "n": "Sarah Miller",
+   "at": "2026-08-24T13:26:00-04:00",
+   "src": "Rule · HubSpot comment, 24 Aug",
+   "t": "Replace all instances of \"manufacturing\" / \"manufacturer\" with Provider language. Caveat: \"turnkey production\" and \"US manufacturing\" are OK."
+  },
+  {
+   "id": "gen:rule:3",
+   "n": "Tammy Johnson",
+   "at": "2026-09-08T14:30:00-04:00",
+   "src": "Rule · call, 8 Sep",
+   "t": "No links from Praxera to DaVinci, and no purchase path / e-commerce on Praxera. Product-guide style CTAs go to Schedule a Consultation (/get-started)."
+  },
+  {
+   "id": "gen:rule:4",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T14:30:00-04:00",
+   "src": "Rule · call, 8 Sep",
+   "t": "Praxera is never marketed as manufacturing. \"Manufactured in the U.S.\" and \"cGMP facility\" are approved; never \"we produce\", \"our facilities\", \"manufacturers\"."
+  },
+  {
+   "id": "gen:email:1",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T09:24:00-04:00",
+   "src": "Email, 8 Sep",
+   "t": "FDA Disclaimer box — should have an * at the very beginning and each page reflect the same box. Throughout the pages, many claims are made where I have added * which is why it needs to connect to the FDA disclaimer box."
+  },
+  {
+   "id": "gen:email:2",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T09:24:00-04:00",
+   "src": "Email, 8 Sep",
+   "t": "While likely already on your radar, the entire website will need to also be reviewed by our Regulatory team."
+  },
+  {
+   "id": "gen:email:3",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T09:24:00-04:00",
+   "src": "Email, 8 Sep",
+   "t": "TM — on some pages Daily Best products have TM after Daily Best and some pages do not. These should be consistent."
+  },
+  {
+   "id": "gen:email:4",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T09:24:00-04:00",
+   "src": "Email, 8 Sep",
+   "t": "Fish Oils & Omega Category Page — I recommend this be added as EFAs are a top category in our business along with some upcoming potential."
+  },
+  {
+   "id": "gen:email:5",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T09:24:00-04:00",
+   "src": "Email, 8 Sep",
+   "t": "Subheaders — several category pages still have the same general placeholder subheader. The 8 that need to be updated: Multis, Immune, Cognitive, Pediatric, Joint, Heart, Detox & Liver, Energy. I wrote Prenatal and (I believe) Men."
+  },
+  {
+   "id": "gen:email:6",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T09:24:00-04:00",
+   "src": "Email, 8 Sep",
+   "t": "Tagline — has marketing determined a tagline to have under Praxera? Taylor's options: \"Helping Practices Build More Than Patient Loyalty.\" / \"Applied Expertise. Built for Your Brand.\" / \"Expert Formulations. Your Brand.\" Essence: helping practitioners build successful supplement brands through expertise, partnership, and execution."
+  },
+  {
+   "id": "gen:email:7",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T09:24:00-04:00",
+   "src": "Email, 8 Sep",
+   "t": "Dropshipping — we have a page for it. @Tammy Johnson please confirm whether or not this should be included."
+  },
+  {
+   "id": "gen:email:8",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T09:24:00-04:00",
+   "src": "Email, 8 Sep",
+   "t": "When ready, I will review everything again and perhaps that should be done in parallel with Regulatory to provide page approvals."
+  }
+ ]
+}

@@ -1,6 +1,12 @@
 {
- "source": "HubSpot in-editor page comments, transcribed from notification emails 17 Aug \u2013 2 Sep 2026",
+ "source": "HubSpot in-editor page comments, transcribed from notification emails 17 Aug – 8 Sep 2026",
  "comments": [
+  {
+   "slug": "aging",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T06:59:00-04:00",
+   "t": "replace Liposomal with Heart and feature ADK / replace Foundation with Joint and feature Perna Pro / in the Omegas, feature Omega 3 HP-D / antioxidant - use Glutathione instead of Glutathione Bright"
+  },
   {
    "slug": "design-services",
    "n": "Melinda Elmadjian",
@@ -56,6 +62,18 @@
    "t": "Right Wheys are being discontinued so both should be removed."
   },
   {
+   "slug": "fitness",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T06:19:00-04:00",
+   "t": "Since whey proteins were removed, if there's room, Vegan proteins can be added."
+  },
+  {
+   "slug": "fitness",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T06:35:00-04:00",
+   "t": "The blue FDA disclaimer box at the bottom should have an * at the very beginning"
+  },
+  {
    "slug": "get-started",
    "n": "Melinda Elmadjian",
    "at": "2026-08-17T14:18:00-04:00",
@@ -86,10 +104,16 @@
    "t": "At the bottom under About Private Label, suggest reworded to \"Providing Private Label supplements for brands ready to own their formulations\" (removing the word manufacturing). Next line, remove DaVinci and update to FoodScience (with or without LLC) but have matching in paragraph under address."
   },
   {
+   "slug": "herbal",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T06:50:00-04:00",
+   "t": "For the immune badge, use our Olivir. Instead of energy, let's do calm and feature Valer-Amino."
+  },
+  {
    "slug": "home",
    "n": "Melinda Elmadjian",
    "at": "2026-08-17T14:15:00-04:00",
-   "t": "At the bottom under About Private Label, update FoodScience Corporation to FoodScience LLC or FoodScience\u00ae"
+   "t": "At the bottom under About Private Label, update FoodScience Corporation to FoodScience LLC or FoodScience®"
   },
   {
    "slug": "home",
@@ -101,7 +125,7 @@
    "slug": "home",
    "n": "Melinda Elmadjian",
    "at": "2026-08-17T15:33:00-04:00",
-   "t": "#3 Start Selling Fast \u2014 update Nattokinase to nattokinase so consistent with following items listed."
+   "t": "#3 Start Selling Fast — update Nattokinase to nattokinase so consistent with following items listed."
   },
   {
    "slug": "home",
@@ -137,7 +161,7 @@
    "slug": "how-to-sell-supplements",
    "n": "Sarah Miller",
    "at": "2026-08-24T13:13:00-04:00",
-   "t": "Website Wide: Remove any and all instances of \"Manufacturing\" \u2014 should say \"provider\" instead."
+   "t": "Website Wide: Remove any and all instances of \"Manufacturing\" — should say \"provider\" instead."
   },
   {
    "slug": "how-to-sell-supplements",
@@ -158,16 +182,114 @@
    "t": "In the \"Source high-quality supplements\" box, recommend removing third-party testing. While we can provide testing results on our COAs, we do not share actual third-party testing result documents from our vendors. Instead update to: \"Ask any prospective partner for certificates of analysis with testing and documentation of being a GMP certified facility while also confirming the facility is FDA-registered.\""
   },
   {
+   "slug": "how-to-sell-supplements",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-08T11:45:00-04:00",
+   "t": "Source high-quality supplements from a partner who can prove it. Didn't see this before now but under this title shows STEP 04 and some additional lines. Not sure if these are there for something to be added/linked so not comfortable deleting."
+  },
+  {
+   "slug": "learning/definitive-guide",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-06T16:16:00-04:00",
+   "t": "@Tammy Johnson I suggest we do away with the first paragraph under Meeting Private Label Supplement Safety & Quality Standards. We can instead rewrite this around cGMP, SQF using researched & tested ingredients. Since we also don't hold certifications from NSF or USP, it would likely lead to questions and confusion."
+  },
+  {
+   "slug": "learning/definitive-guide",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-06T16:25:00-04:00",
+   "t": "Under A Few things to Look For During the Vetting Process: unsure if there is such a thing as silver or gold CGMP certification (sentence highlighted)"
+  },
+  {
+   "slug": "pediatric",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T16:40:00-04:00",
+   "t": "Add Liquid bubble to Sleep Tight and Calm"
+  },
+  {
+   "slug": "pediatric",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T16:41:00-04:00",
+   "t": "remove kid omega and replace with immuni-z + elderberry with immune as the badge"
+  },
+  {
    "slug": "privacy",
    "n": "Melinda Elmadjian",
    "at": "2026-09-02T16:50:00-04:00",
    "t": "Private Questions....updated FoodScience Corporation to FoodScience LLC / Also remove Custom Formulation from bottom."
   },
   {
+   "slug": "probiotics",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T07:56:00-04:00",
+   "t": "with the strains and enzymes badges, are you linking these to various products or do you want recommendations of products to feature here?"
+  },
+  {
    "slug": "resources",
    "n": "Melinda Elmadjian",
    "at": "2026-09-02T16:46:00-04:00",
-   "t": "Remove Custom Formulation from bottom"
+   "t": "Remove Custom Formulation from bottom",
+   "re": [
+    {
+     "n": "Justin Hilbert",
+     "at": "2026-09-08T13:45:00-04:00",
+     "t": "done"
+    }
+   ]
+  },
+  {
+   "slug": "sleep",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T07:04:00-04:00",
+   "t": "with the botanical, feature valer-amino"
+  },
+  {
+   "slug": "weight-management",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T08:02:00-04:00",
+   "t": "We do not have any caffeine-based energy blends. This will need to be replaced. For the metabolic badge, use our Thermo-Set."
+  },
+  {
+   "slug": "weight-management",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T08:04:00-04:00",
+   "t": "we do not have any chitosan formulations. replace fat absorption with botanical and feature our Berberine Force."
+  },
+  {
+   "slug": "weight-management",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T08:05:00-04:00",
+   "t": "Mango seed extract - feature our Mango-Plex"
+  },
+  {
+   "slug": "weight-management",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T08:06:00-04:00",
+   "t": "with the metabolic badge, feature Adipo-Leptin Benefits"
+  },
+  {
+   "slug": "weight-management",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T08:07:00-04:00",
+   "t": "with the GLP-1 Support link to the several products or do you need recommendations?"
+  },
+  {
+   "slug": "womens-health",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T07:19:00-04:00",
+   "t": "replace energy with heart and feature cholestsure"
+  },
+  {
+   "slug": "womens-health",
+   "n": "Melinda Elmadjian",
+   "at": "2026-09-07T07:20:00-04:00",
+   "t": "for the bone badge, will this link to various formulas or does this need a product recommended?",
+   "re": [
+    {
+     "n": "Justin Hilbert",
+     "at": "2026-09-08T13:47:00-04:00",
+     "t": "Eventually these can link to products. But currently everything is DAVINCI PRODUCT PAGES. So for now, it's more like, things available, Contact Us"
+    }
+   ]
   }
  ]
 }

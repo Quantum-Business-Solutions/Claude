@@ -56,7 +56,9 @@ def seeds_for(slug):
     s=sheetmap.get(slug)
     if s and s[4]: out.append({"id":f"sheet:{slug}","n":"Melinda Elmadjian","at":(s[3] or "2026-09-07")+"T12:00:00-04:00","t":s[4],"src":"Design Approval Sheet v6"})
     for n,c in enumerate(x for x in hcom["comments"] if x["slug"]==slug):
-        out.append({"id":f"hs:{slug}:{n}","n":c["n"],"at":c["at"],"t":c["t"],"src":"HubSpot page comment"})
+        o={"id":f"hs:{slug}:{n}","n":c["n"],"at":c["at"],"t":c["t"],"src":"HubSpot page comment"}
+        if c.get("re"): o["re"]=c["re"]
+        out.append(o)
     return out
 for p in sorted(pairs["pages"],key=lambda x:x["slug"] or ""):
     slug=p["slug"] or ""
@@ -64,11 +66,10 @@ for p in sorted(pairs["pages"],key=lambda x:x["slug"] or ""):
     if not hp: continue                      # deleted since 31 Aug (custom-formulation, alp/ads-custom) — not an asset any more
     seen.add(slug)
     key=slug or "home"; s=sheetmap.get(key); i=health_chips(pageh.get(slug),"page")
-    if s:
-        if s[2]=="✓": i.append(["ok","design rev 1 ✓","Design Approval Sheet v6: revision 1 reviewed."])
-        elif s[2]: i.append(["warn","sheet: "+s[2],"Design Approval Sheet v6 status."])
+    rv=[1] if (s and s[2]=="✓") else []
+    rs=(s[2] if (s and s[2] and s[2]!="✓") else "")
     add("p",slug or "home",slug or "(home)",r=host(p["source_url"]),i=i,new=not p["source_url"],
-        slug=slug,hid=str(hp["id"]),y=(s[1] if s else ("Blog landing" if slug.startswith("blog") else "Other")),sc=seeds_for(key))
+        slug=slug,hid=str(hp["id"]),y=(s[1] if s else ("Blog landing" if slug.startswith("blog") else "Other")),sc=seeds_for(key),rv=rv,rs=rs)
 for slug,hp in hsp.items():
     if slug in seen or slug in ("pl-module-library","pl-global-blocks") or slug.startswith("-temporary"): continue
     add("p",slug,slug,r="",i=health_chips(pageh.get(slug),"page")+[["mute","added since 31 Aug","Not in the original migration pair list."]],
@@ -119,6 +120,7 @@ META={"stamp":STAMP,"title":"Praxera asset sign-off","file":"praxera-asset-signo
  "groups":[["p","Website pages","Redirects from at cutover"],["b","Blog posts","Redirects from at cutover"],
            ["e","Emails","Replaces"],["f","Forms","Placement"],["w","Workflows","Detail"]],
  "keys":{"p":"website-pages","b":"blog-posts","e":"emails","f":"forms","w":"workflows"},
+ "gc":R("general_comments")["comments"],
  "hs":{"p":hs_page("{id}"),"b":hs_post("{id}"),"e":hs_mail("{id}"),"f":hs_form("{id}"),"w":hs_flow("{id}")},
  "live":{"p":SITE+"/{slug}","b":SITE+"/{slug}"}}
 json.dump({"stamp":STAMP,"rows":rows,"groups":META["groups"],"meta":META},open("reference/ledger_rows.json","w"),indent=1)
