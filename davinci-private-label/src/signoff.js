@@ -47,7 +47,9 @@ window.addEventListener("message",function(e){
   else if(d.type==="saved"){var f=saveCb[d.key];if(f){delete saveCb[d.key];f(d.ok,d.error);}
     else flag(d.ok?"saved to the portal":("not saved"+(d.error?" — "+d.error:"")),d.ok?"on":"err");}
   else if(d.type==="downloaded"){clearTimeout(csvTimer);}
+  else if(d.type==="whoami"&&!(d.user&&typeof d.user==="object")){hostv2=true;render();}
   else if(d.type==="whoami"&&d.user&&typeof d.user==="object"){
+    hostv2=true;
     user={name:String(d.user.name||""),email:String(d.user.email||""),kind:String(d.user.kind||"")};
     if(user.name)who=user.name; if(user.kind==="team")side="qbs"; if(user.kind==="client")side="client";
     render();}
@@ -159,9 +161,14 @@ function openCount(r){return comments(r).filter(function(c){return c.st!=="done"
 
 /* ---- mutations ------------------------------------------------------------- */
 function can(k){if(!side)return false;if(k==="q")return side==="qbs";if(k==="c")return side==="client";return true;}
+function locked(k){return !!side&&!can(k);}   /* the other side's button */
+var needSide=false;
+function askSide(){needSide=true;render();var el=document.getElementById("idbar");
+  if(el){el.scrollIntoView({behavior:"smooth",block:"center"});var w=document.getElementById("who");if(w)w.focus();}}
 function setStatus(g,id,k){
   var r=findRow(g,id);if(!r)return;
-  if(!can(k)){flag(k==="q"?"only QBS can give the QBS approval":k==="c"?"only the client can give the client approval":"pick who you are first","err");return;}
+  if(!side){askSide();return;}
+  if(!can(k)){flag(k==="q"?"only QBS can give the QBS approval":k==="c"?"only the client can give the client approval":"","err");return;}
   var it=item(g,id),on=stat(it,k);
   if(on){it[k]={at:now(),by:me(),x:1};logIt(k==="q"?"qbs-unapprove":k==="c"?"client-unapprove":"clear-flag",g,id,r.n);}
   else{it[k]={at:now(),by:me()};
@@ -231,6 +238,10 @@ var ACT={"qbs-approve":"QBS approved","qbs-unapprove":"removed QBS approval","cl
   "edit":"edited","add":"added","delete":"removed","restore":"restored","clear-chip":"cleared a finding on"};
 
 /* ---- rendering -------------------------------------------------------------- */
+/* Column widths per group (px); the checkbox column is fixed. Draggable. */
+var COLS=[["ck",44],["nm",280],["lk",176],["ev",220],["st",230],["act",400]];
+var colw={};GK.forEach(function(g){colw[g]=COLS.map(function(c){return c[1];});});
+var hostv2=false;                        /* host answered whoami → new viewer build */
 function stampHtml(lbl,s,k){if(!s)return "";
   return '<span class="by '+k+'">'+lbl+" · "+E(s.by)+" · "+when(s.at)+"</span>";}
 function linkHtml(r){var h="";
@@ -246,20 +257,20 @@ function chipsHtml(r){
 function rowHtml(r){
   var s=statusOf(r.k,r.id),oc=openCount(r),cc=comments(r).length,k=r.k+":"+r.id;
   var cls2="r"+(s.q&&s.c?" done":"")+(s.f?" flag":"")+(r.deleted?" gone":"")+(sel[r.k][r.id]?" sel":"");
-  var nm='<td class="nm"><span class="ttl">'+E(r.n)+"</span>"+(r.y?'<span class="ty">'+E(r.y)+"</span>":"")
+  var nm='<td class="nm stk2"><span class="ttl">'+E(r.n)+"</span>"+(r.y?'<span class="ty">'+E(r.y)+"</span>":"")
     +(r.note?'<span class="nt">'+E(r.note)+"</span>":"")
-    +stampHtml("QBS ✓",s.q,"q")+stampHtml("Client ✓",s.c,"c")+stampHtml("Needs work",s.f,"f")+"</td>";
+    +(s.q||s.c||s.f?"<div>"+stampHtml("QBS",s.q,"q")+stampHtml("Client",s.c,"c")+stampHtml("Needs work",s.f,"f")+"</div>":"")+"</td>";
   var rv=r.deleted?'<td class="act"><button class="gh" data-a="restore">Restore</button></td>'
     :'<td class="act"><span class="rv">'
-      +'<button class="ok" data-a="q" aria-pressed="'+(!!s.q)+'"'+(can("q")?"":' disabled title="QBS side only"')+'>QBS ✓</button>'
-      +'<button class="ok cl" data-a="c" aria-pressed="'+(!!s.c)+'"'+(can("c")?"":' disabled title="Client side only"')+'>Client ✓</button>'
+      +'<button class="ok" data-a="q" aria-pressed="'+(!!s.q)+'"'+(locked("q")?' disabled title="QBS side only"':"")+'>QBS ✓</button>'
+      +'<button class="ok cl" data-a="c" aria-pressed="'+(!!s.c)+'"'+(locked("c")?' disabled title="Client side only"':"")+'>Client ✓</button>'
       +'<button class="fix" data-a="f" aria-pressed="'+(!!s.f)+'">Needs work</button></span>'
-      +'<button class="cm'+(oc?" has":cc?" all":"")+'" data-a="cm">'+(cc?(oc?oc+" open":"resolved")+" · "+cc:"Comment")+"</button>"
+      +'<button class="cm'+(oc?" has":cc?" all":"")+'" data-a="cm">'+(cc?(oc?"<b>"+oc+"</b> open":"resolved")+" · "+cc:"Comment")+"</button>"
       +'<button class="gh mini" data-a="edit" title="Edit this row">Edit</button>'
       +(confirmDel[k]?'<span class="del"><span>Remove?</span><button class="danger" data-a="delyes">Yes</button><button class="gh mini" data-a="delno">No</button></span>'
         :'<button class="gh mini" data-a="del" title="Remove this row">✕</button>')+"</td>";
   var h='<tr class="'+cls2+'" data-g="'+r.k+'" data-i="'+E(r.id)+'">'
-    +'<td class="ck"><input type="checkbox" data-a="sel"'+(sel[r.k][r.id]?" checked":"")+' aria-label="select"></td>'
+    +'<td class="ck stk1"><input type="checkbox" data-a="sel"'+(sel[r.k][r.id]?" checked":"")+' aria-label="select"></td>'
     +nm+'<td class="lk">'+linkHtml(r)+"</td>"
     +'<td class="ev"'+(r.t?' title="'+E(r.t)+'"':"")+">"+(r.r?E(r.r):'<span class="dim">—</span>')+"</td>"
     +"<td>"+chipsHtml(r)+"</td>"+rv+"</tr>";
@@ -277,13 +288,14 @@ function formHtml(r,g,ok,cancel,label,extra){var col=GROUPS.filter(function(x){r
 function lastEdit(r){var b={at:"",by:""};for(var f in r.edited)if(later(r.edited[f],b))b=r.edited[f];return b;}
 function editHtml(r){return '<tr class="th ed" data-g="'+r.k+'" data-i="'+E(r.id)+'"><td colspan="6">'
   +formHtml(r,r.k,"savedit","canceledit","Save changes",r.edited?'<span class="dim">last edited by '+E(lastEdit(r).by)+" · "+when(lastEdit(r).at)+"</span>":"")+"</td></tr>";}
+function sideCls(c){return c.sd==="qbs"?"qbs":(c.sd==="client"||c.seed)?"client":"";}
 function threadHtml(r){
-  var finds=r.i.filter(function(x){return x[2];}).map(function(x){return '<li><span class="chip c-'+x[0]+'">'+E(x[1])+"</span> "+E(x[2])+"</li>";}).join("");
+  var finds=r.i.filter(function(x){return x[2];}).map(function(x){return '<li><span class="chip c-'+x[0]+'">'+E(x[1])+"</span>"+E(x[2])+"</li>";}).join("");
   var list=comments(r).map(function(c){
-  var re=(c.re||[]).map(function(x){return '<div class="re"><div class="who">'+E(x.n)+(x.sd?" ("+(x.sd==="qbs"?"QBS":"client")+")":"")+" · "+when(x.at)+'</div><div class="txt">'+E(x.t)+"</div></div>";}).join("");
+  var re=(c.re||[]).map(function(x){return '<div class="re"><div class="who"><span class="nm2">'+E(x.n)+"</span>"+(x.sd?"<span>"+(x.sd==="qbs"?"QBS":"client")+"</span>":"")+"<span>"+when(x.at)+'</span></div><div class="txt">'+E(x.t)+"</div></div>";}).join("");
   var rk=r.k+":"+r.id+":"+c.id;
-  return '<div class="cmt'+(c.st==="done"?" done":"")+'" data-c="'+E(c.id)+'"><div class="who">'+E(c.n)+(c.sd?" ("+(c.sd==="qbs"?"QBS":"client")+")":"")+" · "+when(c.at)
-    +(c.src?' · <em>'+E(c.src)+"</em>":"")+(c.st==="done"?' · <b>resolved by '+E(c.rs&&c.rs.by||"")+" "+when(c.rs&&c.rs.at)+"</b>":"")+"</div>"
+  return '<div class="cmt '+sideCls(c)+(c.st==="done"?" done":"")+'" data-c="'+E(c.id)+'"><div class="who"><span class="nm2">'+E(c.n)+"</span>"+(c.sd?"<span>"+(c.sd==="qbs"?"QBS":"client")+"</span>":"")+"<span>"+when(c.at)+"</span>"
+    +(c.src?'<em>'+E(c.src)+"</em>":"")+(c.st==="done"?'<b>resolved by '+E(c.rs&&c.rs.by||"")+" "+when(c.rs&&c.rs.at)+"</b>":"")+"</div>"
     +'<div class="txt">'+E(c.t)+"</div>"+re
     +'<div class="cact">'+(c.st==="done"?'<button class="gh mini" data-a="reopen">Reopen</button>':'<button class="mini ok2" data-a="resolve">Resolve ✓</button>')
     +'<button class="gh mini" data-a="reply">Reply</button></div>'
@@ -292,59 +304,86 @@ function threadHtml(r){
   if(!list)list='<p class="empty">No comments on this item yet.</p>';
   var hist=log.e.filter(function(e){return e.g===r.k&&e.i===r.id;}).slice(-12).reverse().map(function(e){
     return '<li>'+E(e.by)+" "+E(ACT[e.a]||e.a)+(e.x?': <span>'+E(e.x)+"</span>":"")+' <time>'+when(e.at)+"</time></li>";}).join("");
-  return '<tr class="th" data-g="'+r.k+'" data-i="'+E(r.id)+'"><td colspan="6"><div class="thread">'
-    +(finds?'<div class="finds"><div class="who">Findings — where and what</div><ul>'+finds+"</ul></div>":"")+list
+  return '<tr class="th" data-g="'+r.k+'" data-i="'+E(r.id)+'"><td colspan="6"><div class="panel">'
+    +'<div class="card thread"><h4>Comments · '+comments(r).length+"</h4>"+list
     +'<textarea data-a="txt" aria-label="Comment" placeholder="Add a comment about '+E(r.n)+'…"></textarea>'
-    +'<div class="row"><button data-a="post">Post comment</button><button class="gh" data-a="close">Close</button></div>'
-    +(hist?'<details class="hist"><summary>History on this item</summary><ul>'+hist+"</ul></details>":"")+"</div></td></tr>";}
+    +'<div class="row"><button data-a="post">Post comment</button><button class="gh" data-a="close">Close</button></div></div>'
+    +'<div><div class="card finds"><h4>Findings — where and what</h4>'+(finds?"<ul>"+finds+"</ul>":'<p class="empty">Nothing outstanding on this item.</p>')+"</div>"
+    +'<div class="card hist" style="margin-top:12px"><h4>History</h4>'+(hist?"<ul>"+hist+"</ul>":'<p class="empty">No activity yet.</p>')+"</div></div>"
+    +"</div></td></tr>";}
 function tally(rows){var t={q:0,c:0,both:0,f:0,todo:0,n:0};rows.forEach(function(r){if(r.deleted)return;t.n++;var s=statusOf(r.k,r.id);
   if(s.q)t.q++;if(s.c)t.c++;if(s.q&&s.c)t.both++;if(s.f)t.f++;if(!s.q&&!s.c&&!s.f)t.todo++;});return t;}
+function barHtml(t){var n=t.n||1;return '<i class="a" style="width:'+(t.both/n*100).toFixed(1)+'%"></i><i class="q" style="width:'+((t.q-t.both)/n*100).toFixed(1)+'%"></i><i class="c" style="width:'+((t.c-t.both)/n*100).toFixed(1)+'%"></i><i class="f" style="width:'+(t.f/n*100).toFixed(1)+'%"></i>';}
 function selCount(g){var n=0;for(var k in sel[g])if(sel[g][k])n++;return n;}
 function groupHtml(g){var gk=g[0],rows=rowsOf(gk),v=view[gk];
   var live=rows.filter(function(r){return !r.deleted;}),delN=rows.length-live.length;
   var base=showDel[gk]?rows:live,shown=base.filter(function(r){return matches(r,v);});
   var t=tally(rows),types=[];live.forEach(function(r){if(r.y&&types.indexOf(r.y)<0)types.push(r.y);});types.sort();
   var btns=FILTERS.map(function(f){return '<button class="f" data-g="'+gk+'" data-f="'+f[0]+'" aria-pressed="'+(v.f===f[0])+'">'+E(f[1])+"</button>";}).join("");
-  var tsel=types.length?'<select data-g="'+gk+'" data-a="type" aria-label="Type"><option value="">All types</option>'+types.map(function(y){return '<option'+(v.y===y?" selected":"")+">"+E(y)+"</option>";}).join("")+"</select>":"";
+  var tsel=types.length>1?'<select data-g="'+gk+'" data-a="type" aria-label="Type"><option value="">All types</option>'+types.map(function(y){return '<option'+(v.y===y?" selected":"")+">"+E(y)+"</option>";}).join("")+"</select>":"";
   var ns=selCount(gk);
   var bulk=ns?'<div class="bulk"><b>'+ns+" selected</b>"
-    +'<button data-a="bq"'+(can("q")?"":" disabled")+'>QBS approve</button><button data-a="bc"'+(can("c")?"":" disabled")+'>Client approve</button>'
+    +'<button data-a="bq"'+(locked("q")?" disabled":"")+'>QBS approve</button><button data-a="bc"'+(locked("c")?" disabled":"")+'>Client approve</button>'
     +'<button data-a="bf">Needs work</button><button class="gh" data-a="bclear">Clear review</button><button class="gh" data-a="bdel">Remove</button>'
     +'<button class="gh" data-a="bnone">Deselect</button></div>':"";
   var addf=addOpen[gk]?formHtml({},gk,"addsave","addcancel","Add to "+E(g[1])):"";
-  return '<section id="g-'+gk+'" data-g="'+gk+'"><div class="shead"><p class="eyebrow">'+t.both+" fully approved · "+t.q+" QBS · "+t.c+" client · "+t.f+" need work · "+t.todo+" not yet reviewed"
-    +'</p><div class="hrow"><h2>'+E(g[1])+"</h2>"
-    +'<button class="gh" data-a="addopen" data-g="'+gk+'">+ Add a row</button>'
-    +(delN?'<button class="gh" data-a="showdel" data-g="'+gk+'">'+(showDel[gk]?"Hide":"Show")+" "+delN+" removed</button>":"")+"</div></div>"+addf
+  var w=colw[gk],cols='<colgroup>'+w.map(function(x){return '<col style="width:'+x+'px">';}).join("")+"</colgroup>";
+  var heads=[["ck",'<input type="checkbox" data-a="selall" aria-label="select all shown"'+(shown.length&&shown.every(function(r){return sel[gk][r.id];})?" checked":"")+'>'],
+    ["nm","Asset · approvals"],["lk","Links"],["ev",E(g[2]||"Detail")],["st","Status"],["act","Review"]];
+  var thead=heads.map(function(h,i){return '<th class="'+h[0]+(i===0?" stk1":i===1?" stk2":"")+'">'+h[1]+(i?'<span class="rz" data-c="'+i+'" title="Drag to resize"></span>':"")+"</th>";}).join("");
+  return '<section class="grp" id="g-'+gk+'" data-g="'+gk+'"><div class="shead"><div class="hrow"><h2>'+E(g[1])+'</h2>'
+    +'<span class="tct">'+t.both+" / "+t.n+" fully approved</span></div>"
+    +'<div class="acts"><button class="gh" data-a="addopen" data-g="'+gk+'">+ Add a row</button>'
+    +(delN?'<button class="gh" data-a="showdel" data-g="'+gk+'">'+(showDel[gk]?"Hide":"Show")+" "+delN+" removed</button>":"")+"</div>"
+    +'<p class="eyebrow" style="grid-column:1/-1;margin:0">'+t.q+" QBS · "+t.c+" client · "+t.f+" need work · "+t.todo+" not yet reviewed</p>"
+    +'<div class="gbar">'+barHtml(t)+"</div></div>"+addf
     +'<div class="filters"><label class="srch"><input type="search" data-g="'+gk+'" value="'+E(v.q)+'" placeholder="Search…" aria-label="Search '+E(g[1])+'"></label>'+tsel+btns
     +'<span class="count">'+shown.length+" of "+live.length+"</span></div>"+bulk
-    +'<div class="tscroll"><table><thead><tr><th class="ck"><input type="checkbox" data-a="selall" aria-label="select all shown"'+(shown.length&&shown.every(function(r){return sel[gk][r.id];})?" checked":"")+'></th>'
-    +'<th>Asset · approvals</th><th>Links</th><th>'+E(g[2]||"Detail")+"</th><th>Status</th><th>Review</th></tr></thead><tbody>"
+    +'<div class="tscroll"><table style="min-width:'+w.reduce(function(a,b){return a+b;},0)+'px">'+cols+"<thead><tr>"+thead+"</tr></thead><tbody>"
     +(shown.length?shown.map(rowHtml).join(""):'<tr class="r"><td colspan="6" class="ev">Nothing matches.</td></tr>')+"</tbody></table></div></section>";}
 function logHtml(){var es=log.e.slice(-60).reverse();
-  return '<section class="logsec"><div class="shead"><div class="hrow"><h2>Activity</h2><button class="gh" data-a="togglelog">'+(showLog?"Hide":"Show")+" ("+log.e.length+")</button></div></div>"
+  return '<section class="logsec"><div class="shead"><div class="hrow"><h2>Activity</h2><span class="tct">'+log.e.length+" actions</span></div>"
+    +'<div class="acts"><button class="gh" data-a="togglelog">'+(showLog?"Hide":"Show")+"</button></div></div>"
     +(showLog?(es.length?'<ul class="log">'+es.map(function(e){return "<li><b>"+E(e.by)+"</b>"+(e.sd?' <i>'+(e.sd==="qbs"?"QBS":"client")+"</i>":"")+" "+E(ACT[e.a]||e.a)+" <em>"+E(e.n)+"</em>"
       +(e.x?': <span>'+E(e.x)+"</span>":"")+"<time>"+when(e.at)+"</time></li>";}).join("")+"</ul>":'<p class="empty">Nothing recorded yet.</p>'):"")+"</section>";}
-function headerHtml(){var all=[];GK.forEach(function(g){all=all.concat(rowsOf(g));});var t=tally(all),n=t.n||1;
-  var nav=GROUPS.map(function(g){var tt=tally(rowsOf(g[0]));return '<a href="#g-'+g[0]+'">'+E(g[1])+" <b>"+tt.both+"/"+tt.n+"</b></a>";}).join("");
-  var ident=user&&user.name?'<span class="me">Signed in as <b>'+E(user.name)+"</b> · "+(side==="qbs"?"QBS":side==="client"?"Client":"")+"</span>"
-    :'<label for="who">Your name</label><input id="who" value="'+E(who)+'" placeholder="Your name" autocomplete="name">'
+function headerHtml(){var all=[];GK.forEach(function(g){all=all.concat(rowsOf(g));});var t=tally(all);
+  var nav=GROUPS.map(function(g){var tt=tally(rowsOf(g[0]));var st=tt.n&&tt.both===tt.n?" done":(tt.both||tt.q||tt.c?" part":"");
+    return '<a class="'+st+'" href="#g-'+g[0]+'"><i></i>'+E(g[1])+" <b>"+tt.both+"/"+tt.n+"</b></a>";}).join("");
+  var ident=user&&user.name?'<span class="me">Signed in as <b>'+E(user.name)+"</b>"+(side?'<span class="side">'+(side==="qbs"?"QBS":"Client")+"</span>":"")+"</span>"
+    :'<label for="who">Your name</label><input id="who" value="'+E(who)+'" placeholder="Type your name" autocomplete="name">'
      +'<span class="sideg"><button class="sd" data-s="qbs" aria-pressed="'+(side==="qbs")+'">I am QBS</button><button class="sd" data-s="client" aria-pressed="'+(side==="client")+'">I am the client</button></span>';
+  function tile(c,n,l){return '<div class="stat '+c+'"><span class="n">'+n+'</span><span class="l">'+l+"</span></div>";}
   return '<header class="top"><div class="wrap"><div class="hrow">'
-    +'<p class="brandline"><span class="dot"></span>'+E(META.brandline||"")+"</p>"
-    +'<span class="tools"><button class="gh" data-a="refresh">Refresh</button><button class="gh" data-a="csv">Download CSV</button><button class="gh" data-a="full">Full screen ⤢</button></span></div>'
+    +'<p class="brandline"><span class="dot"></span><span>'+E(META.brandline||"")+"</span></p>"
+    +'<span class="tools"><button class="gh" data-a="refresh">↻ Refresh</button><button class="gh" data-a="csv">↓ CSV</button>'
+    +(hostv2?'<button class="gh" data-a="full">⤢ Full screen</button>':"")+"</span></div>"
     +"<h1>"+E(META.title)+"</h1>"+(META.intro?'<p class="lede">'+E(META.intro)+"</p>":"")
-    +'<div class="prog"><div class="bar"><i class="a" style="width:'+(t.both/n*100).toFixed(1)+'%"></i><i class="q" style="width:'+((t.q-t.both)/n*100).toFixed(1)+'%"></i><i class="c" style="width:'+((t.c-t.both)/n*100).toFixed(1)+'%"></i><i class="f" style="width:'+(t.f/n*100).toFixed(1)+'%"></i></div>'
-    +'<div class="lg"><span><i class="k a"></i>Fully approved <b>'+t.both+"</b></span><span><i class=\"k q\"></i>QBS approved <b>"+t.q+"</b></span><span><i class=\"k c\"></i>Client approved <b>"+t.c
-    +"</b></span><span><i class=\"k f\"></i>Needs work <b>"+t.f+"</b></span><span><i class=\"k u\"></i>Not reviewed <b>"+t.todo+"</b></span><span>Total <b>"+t.n+"</b></span></div></div>"
-    +'<div class="idbar'+(hosted?"":" ro")+'">'+ident+'<span class="save '+cls+'" id="save">'+E(msg)+"</span></div>"
-    +(META.share?'<p class="note">Share link for the client (no login needed): <input class="share" readonly value="'+E(META.share)+'" onclick="this.select()"></p>':"")
+    +'<div class="stats">'+tile("a",t.both,"Fully approved")+tile("q",t.q,"QBS approved")+tile("c",t.c,"Client approved")+tile("f",t.f,"Needs work")+tile("u",t.todo,"Not reviewed")+tile("t",t.n,"Assets")+"</div>"
+    +'<div class="prog">'+barHtml(t)+"</div>"
+    +'<div class="idbar'+(hosted?"":" ro")+(needSide&&!side?" attn":"")+'" id="idbar">'+(user&&user.name?"":'<span class="step">'+(needSide&&!side?"First, tell the sheet who you are":"Who are you?")+"</span>")+ident
+    +(hosted?"":'<span class="dim">Not inside the portal — nothing will save.</span>')+"</div>"
+    +(META.share?'<div class="share-row"><span>Client share link (no login):</span><input class="share" readonly value="'+E(META.share)+'" onclick="this.select()"></div>':"")
     +(csvShown?'<div class="csvbox"><p class="note">Your browser could not save the file from here — select all and copy this into a spreadsheet. <button class="gh mini" data-a="csvclose">Close</button></p><textarea readonly onclick="this.select()">'+E(csvText())+"</textarea></div>":"")
     +'<p class="note">'+E(META.note||"")+" Asset list refreshed from HubSpot "+E(META.stamp)+".</p>"
-    +'</div></header><div class="wrap"><nav class="jump">'+nav+"</nav>"+logHtml()+GROUPS.map(groupHtml).join("")+"</div>";}
+    +'</div></header><div class="wrap"><div class="navbar"><div class="navin"><nav class="jump">'+nav+'</nav><span class="save '+cls+'" id="save">'+E(msg)+"</span></div></div>"
+    +logHtml()+GROUPS.map(groupHtml).join("")+"</div>";}
+function fitPanels(){[].forEach.call(document.querySelectorAll(".tscroll"),function(sc){
+  var w=sc.clientWidth-36;[].forEach.call(sc.querySelectorAll(".panel,.form"),function(p){p.style.width=w+"px";});});}
+window.addEventListener("resize",fitPanels);
 function render(){var y=window.scrollY,ae=document.activeElement,focusId=ae&&ae.id,pos=ae&&ae.selectionStart;
-  document.getElementById("root").innerHTML=headerHtml();window.scrollTo(0,y);
+  document.getElementById("root").innerHTML=headerHtml();window.scrollTo(0,y);fitPanels();
   if(focusId){var el=document.getElementById(focusId);if(el){el.focus();try{el.setSelectionRange(pos,pos);}catch(e){}}}}
+
+/* ---- column resizing (per viewer, in memory) ------------------------------- */
+var rz=null;
+document.addEventListener("mousedown",function(ev){var h=ev.target.closest(".rz");if(!h)return;
+  var sec=h.closest("section[data-g]"),g=sec.dataset.g,c=+h.dataset.c;
+  rz={g:g,c:c,x:ev.clientX,w:colw[g][c],table:sec.querySelector("table")};document.body.classList.add("resizing");ev.preventDefault();});
+document.addEventListener("mousemove",function(ev){if(!rz)return;
+  var w=Math.max(70,rz.w+ev.clientX-rz.x);colw[rz.g][rz.c]=w;
+  var col=rz.table.querySelectorAll("col")[rz.c];if(col)col.style.width=w+"px";
+  rz.table.style.minWidth=colw[rz.g].reduce(function(a,b){return a+b;},0)+"px";});
+document.addEventListener("mouseup",function(){if(rz){rz=null;document.body.classList.remove("resizing");}});
 
 /* ---- events -------------------------------------------------------------- */
 var root=document.getElementById("root");
@@ -352,7 +391,7 @@ function fields(scope){var o={};[].forEach.call(scope.querySelectorAll("input[da
 root.addEventListener("click",function(ev){
   var b=ev.target.closest("button");if(!b)return;var a=b.dataset.a;
   if(b.classList.contains("f")){view[b.dataset.g].f=b.dataset.f;render();return;}
-  if(b.classList.contains("sd")){side=b.dataset.s;render();return;}
+  if(b.classList.contains("sd")){side=b.dataset.s;needSide=false;render();return;}
   if(a==="refresh"){refresh();flag("refreshing…");return;}
   if(a==="full"){post({type:"fullscreen"});return;}
   if(a==="csv"){exportCsv();return;}
@@ -365,6 +404,7 @@ root.addEventListener("click",function(ev){
   var sec=b.closest("section[data-g]");
   if(a&&a.charAt(0)==="b"&&sec){var g=sec.dataset.g,ids=Object.keys(sel[g]).filter(function(k){return sel[g][k];});
     if(a==="bnone"){sel[g]={};render();return;}
+    if(!side&&(a==="bq"||a==="bc"||a==="bf")){askSide();return;}
     ids.forEach(function(id){var it=item(g,id),s=statusOf(g,id);
       if(a==="bq"&&!s.q&&can("q"))setStatus(g,id,"q");
       else if(a==="bc"&&!s.c&&can("c"))setStatus(g,id,"c");

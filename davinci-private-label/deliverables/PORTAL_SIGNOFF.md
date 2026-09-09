@@ -33,10 +33,10 @@ Client share link (no login): https://clientcommand.thequantumleap.business/port
 
 | block_key | chars  | what it is |
 |-----------|--------|------------|
-| app       | 17,814 | stylesheet + `<div id="root">` |
+| app       | 23,663 | Google Fonts link + stylesheet + `<div id="root">` |
 | data1–4   | 71,787 | row islands (`script.rowdata`), 270 rows |
 | metadata  |  9,505 | `#meta` — title, groups, link templates, interned labels/types, share URL |
-| boot      | 25,599 | the app (minified from `src/signoff.js`) — must stay LAST |
+| boot      | 28,235 | the app (minified from `src/signoff.js`) — must stay LAST |
 
 Rows: 63 pages (61 paired + top-10-products, learning/ty-ingredients-testing, ty-contact),
 72 posts (3 deleted Amazon duplicates dropped), 111 emails, 12 forms, 12 workflows. Two pages that
@@ -66,3 +66,15 @@ PortalDocumentViewer: full-screen overlay + button, `whoami` identity message, `
 taller frame for interactive pages; PortalDocumentPage: 1800px width for interactive pages.
 Until merged, the page works but: no full screen, no auto identity (type your name), CSV shows as
 text to copy.
+
+## v2.1 design pass (9 Sep, afternoon)
+
+Stylesheet moved to `src/signoff.css` (review.css is left for the older artifact ledger). Real
+typefaces (Newsreader / IBM Plex) via a Google Fonts link in the app section; stat tiles and a
+segmented progress bar in the header; sticky group nav carrying the save indicator; frozen first two
+columns (checkbox + asset); drag-to-resize column handles in the table header (per viewer, in memory);
+each table scrolls inside its own box (max 78 vh) with a sticky header row, so the horizontal
+scrollbar is always reachable; two-column detail panel (comments | findings + history), pinned so
+it never scrolls off with the wide table. Approval buttons are no longer disabled before a side is
+picked — clicking one jumps to the "Who are you?" bar and highlights it. The Full screen button
+only appears once the host answers `whoami` (new ClientCommand viewer build).

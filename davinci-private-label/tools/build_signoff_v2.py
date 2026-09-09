@@ -146,10 +146,12 @@ JSMIN=subprocess.run(["npx","terser","src/signoff.js","--compress","--mangle","-
 assert JSMIN.returncode==0,JSMIN.stderr
 JS=JSMIN.stdout.strip(); open("deliverables/signoff.min.js","w").write(JS)
 assert "</script" not in JS
-CSS=re.sub(r"/\*.*?\*/","",open("src/review.css").read(),flags=re.S); CSS=re.sub(r"\n{2,}","\n",CSS).strip()
+CSS=re.sub(r"/\*.*?\*/","",open("src/signoff.css").read(),flags=re.S); CSS=re.sub(r"\n{2,}","\n",CSS).strip()
 esc=lambda s:s.replace("<","\\u003c")
 CHUNKS=4; per=math.ceil(len(rows)/CHUNKS); parts=[rows[i*per:(i+1)*per] for i in range(CHUNKS)]
-secs=[("app","Sign-off",f"<style>{CSS}\nsection>h2:first-child{{display:none}}</style>\n<div id=\"root\"></div>")]
+FONTS=('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500'
+       '&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">')
+secs=[("app","Sign-off",FONTS+f"\n<style>{CSS}\nsection>h2:first-child{{display:none}}</style>\n<div id=\"root\"></div>")]
 for i,p in enumerate(parts,1):
     body=esc("[\n"+",\n".join(json.dumps(r,separators=(",",":"),ensure_ascii=False) for r in p)+"\n]")
     secs.append((f"data{i}",f"Data {i}",f'<script type="application/json" class="rowdata">{body}</script>'))
