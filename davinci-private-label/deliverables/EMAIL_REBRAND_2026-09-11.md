@@ -114,3 +114,38 @@ Remaining findings, all needing a decision rather than a fix:
 
 No HubSpot CTA objects are used in any Praxera email or page. Every button is a plain link, so there
 is nothing to clone; all destinations were checked.
+
+## Visual image scan (Playwright), 11 Sep
+
+Filenames and alt text do not reveal what a picture shows, so every image used in the Praxera assets was
+downloaded, laid out in contact sheets with Playwright, and looked at.
+
+| Where | Images checked | DaVinci-branded |
+| --- | --- | --- |
+| Emails | 118 | 31 |
+| Website pages and blog posts | 237 | 0 |
+
+The 31 in the emails were DaVinci-labelled bottles and powders, three blog link-preview cards showing
+blog.davincilabs.com, the DaVinci Laboratories logo, a 5R gut-health graphic carrying that logo, a
+FoodScience of Vermont private-label graphic, and a label sheet with one DaVinci bottle in it.
+
+Each was replaced with a Praxera private-label counterpart in the same format and with the same product
+name, generated to match the existing Praxera sell-sheet bottle style: white bottle, "YOUR LOGO GOES
+HERE", navy product name, lime rule. Twenty new images were produced and uploaded to /Praxera/email/ in
+the portal file manager. Alt text was rewritten on 65 images so it describes what is now shown.
+
+A second full visual pass over the 110 images now in the emails found no DaVinci branding anywhere.
+
+## Live site findings, 11 Sep
+
+| Finding | Scale | Status |
+| --- | --- | --- |
+| Images served from info.davincilabs.com on live Praxera pages | 74 references across 36 pages | Fixed: repointed to the Praxera domain, same files, 28 pages republished |
+| Form redirects sending visitors to google.com after submit | 23 live pages | Fixed: now go to /ty-consultation |
+| Form redirect sending visitors to a DaVinci thank-you page | learning/onboarding-guide | Fixed: now goes to /learning/onboarding-guide-ty |
+| HubSpot CTA objects | 2, embedded in 61 blog posts | Already Praxera-branded and pointing at live Praxera guides — no action |
+| NSF GMP-certified badge on certifications and quality-standards | 2 pages | Flagged: Mindy said we do not hold NSF or USP certification |
+| "2026 Guide" baked into a blog hero image | 1 post | Flagged: the title was made evergreen, the artwork was not |
+| Broken images | Praxera_Infographic.jpg and one guide image | Flagged |
+
+Backups of every page changed are in `backups/page-davinci-domain/` and `backups/form-redirects/`.
