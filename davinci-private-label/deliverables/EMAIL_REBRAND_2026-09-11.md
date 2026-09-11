@@ -182,3 +182,33 @@ Images whose file name says DaVinci were downloaded and looked at: all are brand
 | NSF GMP-certified badge on two live pages | Regulatory |
 | DaVinci's Hotjar tracking script runs on every Praxera page | Patrick |
 | Blog post "Top questions consumers have about private label supplements" is still a draft, so one email link 404s | Justin |
+
+## Site QA round two, 11 Sep
+
+A full crawl of the 57 published pages and 68 published blog posts, with pages rendered and reviewed.
+
+Passed: every page returns 200 with a sane title, the green Get Started button is in the header of all
+127 pages pointing at a live page, and 521 image URLs return a valid image.
+
+Fixed in this pass:
+
+| Finding | Scale | Fix |
+| --- | --- | --- |
+| Links to DaVinci blog articles in page copy | 5 links on 3 pages | Repointed to the same articles on the Praxera blog |
+| Links using the old /private-label/ blog path, which 404 | 52 links across 25 blog posts | Rewritten to /blog/, all 52 resolved to live Praxera posts |
+| A guide link pointing at a DaVinci CDN PDF | learning/definitive-guide | Now points at /design-services |
+| Malformed link "/eBay.com" | how-to-sell-supplements | Now a working eBay link |
+| Alt text reading "DaVinci Vermont manufacturing facility" | about | Rewritten |
+| Praxera blog images served from pettechlabs.com | 6 posts | Now served from the Praxera domain |
+
+### Needs a person
+
+| Finding | Why it is not mine to fix |
+| --- | --- |
+| DaVinci's Hotjar script runs on all 127 Praxera pages, recording visitors into DaVinci's analytics | It is a portal-level setting, not in any Praxera page or template. Removing it in the API would affect DaVinci pages. Justin should set a per-domain override in HubSpot |
+| The blog listing overflows the screen, 1571px wide on a 390px phone | The featured-image rule lives in a blog template stylesheet. Needs a one-line CSS rule and a check that the DaVinci blog does not share it |
+| Two broken images live: Praxera_Infographic.jpg on the scale-your-business post and Praxera.LitX (2).png on how-to-sell-supplements, plus the infographic PDF | The source files are missing. Someone has to supply them |
+| STEP 04 missing from how-to-sell-supplements, empty modules on certifications and quality-standards | Content, not configuration |
+| /pl-global-blocks is published and in the sitemap | It is an internal build page. Unpublishing is Justin's call |
+| Blog listing shows the byline "DaVinci Healthcare Expert" on one post | The author record may be shared with the DaVinci blog |
+| Twelve dead citation links pasted from Word on the gummy-vitamins post | Needs the real sources |
