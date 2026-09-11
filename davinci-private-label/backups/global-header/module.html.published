@@ -1,0 +1,120 @@
+
+{% set desktopMenu = menu(module.menu_field) %} 
+
+<div id="global_header_desktop" class="global_header_container">
+  <div class="bodyContainer">
+    <div class="main_navigation_wrapper">
+      <div class="main_navigation_left_area">
+        <ul class="navMenuLeft">
+          {% for child in desktopMenu.children %} 
+            {% if loop.index < 3 %} 
+              <li class="navMenuLeft__items"> <a class="navMenuLeft__links" href="{{ child.url }}"> {{ child.label }} </a>
+                {% if child.children %} 
+                  <ul class="desktop_nested_menu">
+                    {% for item in child.children %} 
+                      <li class="desktop_nested_menu_items"><a class="desktop_nested_menu_links" href="{{ item.url }}"> {{ item.label }} </a></li>
+                    {% endfor %} 
+                  </ul>
+                {% endif %} 
+              </li>
+            {% endif %} 
+          {% endfor %} 
+        </ul>
+      </div>
+      <div class="main_navigation_logo_area">
+        {% set href = module.logo.link_field.url.href %}
+        {% if module.logo.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+        <a href="{{ href }}"
+          {% if module.logo.link_field.open_in_new_tab %}target="_blank"{% endif %}
+          {% if module.logo.link_field.rel %}rel="{{ module.logo.link_field.rel }}"{% endif %}
+          >
+        {% if module.logo.image_field.src %}
+          {% set sizeAttrs = 'width="{{ module.logo.image_field.width }}" height="{{ module.logo.image_field.height }}"' %}
+          {% if module.logo.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.logo.image_field.width }}" height="{{ module.logo.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.logo.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.logo.image_field.max_width }}" height="{{ module.logo.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+           {% set loadingAttr = module.logo.image_field.loading != 'disabled' ? 'loading="{{ module.logo.image_field.loading }}"' : '' %}
+          <img class="globalLogo" src="{{ module.logo.image_field.src }}" alt="{{ module.logo.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        </a>
+      </div>
+      <div class="main_navigation_right_area">
+        <ul class="navMenuLeft">
+          {% for child in desktopMenu.children %} 
+            {% if loop.index > 2 %} 
+              <li class="navMenuLeft__items"> <a class="navMenuLeft__links" href="{{ child.url }}"> {{ child.label }} </a>
+                {% if child.children %} 
+                  <ul class="desktop_nested_menu">
+                    {% for item in child.children %} 
+                      <li class="desktop_nested_menu_items"><a class="desktop_nested_menu_links" href="{{ item.url }}"> {{ item.label }} </a></li>
+                    {% endfor %} 
+                  </ul>
+                {% endif %} 
+              </li>
+            {% endif %} 
+          {% endfor %} 
+        </ul>
+      </div>
+    </div>
+  </div>  
+</div>
+
+
+<div id="global_header_mobile">
+  <div class="bodyContainer">
+    <div class="global_mobile_menu_wrapper">
+      <div class="global_mobile_logo_area">
+        {% set href = module.logo.link_field.url.href %}
+        {% if module.logo.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+        <a href="{{ href }}"
+          {% if module.logo.link_field.open_in_new_tab %}target="_blank"{% endif %}
+          {% if module.logo.link_field.rel %}rel="{{ module.logo.link_field.rel }}"{% endif %}
+          >
+        {% if module.logo.image_field.src %}
+          {% set sizeAttrs = 'width="{{ module.logo.image_field.width }}" height="{{ module.logo.image_field.height }}"' %}
+          {% if module.logo.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.logo.image_field.width }}" height="{{ module.logo.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.logo.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.logo.image_field.max_width }}" height="{{ module.logo.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+           {% set loadingAttr = module.logo.image_field.loading != 'disabled' ? 'loading="{{ module.logo.image_field.loading }}"' : '' %}
+          <img class="globalLogo__Mobile" src="{{ module.logo.image_field.src }}" alt="{{ module.logo.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        </a>
+      </div>
+      <div class="global_mobile_bars_area">
+        <i class="MobileBars fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="menuExtendend HiddenExtended">
+  <div class="bodyContainer">
+    {% set mobileMenu = menu(module.menu_field) %} 
+    <ul class="mobile__menu__list">
+      {% for child in mobileMenu.children %} 
+        <li class="mobile__menu__list__item"><a class="mobile__menu__list__link" href="{{ child.url }}">{{ child.label }}</a>
+          {% if child.children %} <i class="MobileCarretDown fa-solid fa-caret-down"></i>
+            <ul class="nested_mobile_menu hiddenNestedMobile ">
+              {% for item in child.children %} 
+                <li class="nested_mobile_menu__items"><a class="nested_mobile_menu__links" href="{{ item.url }}"> {{ item.label }} </a></li>
+              {% endfor %} 
+            </ul>
+          {% endif %} 
+        </li>
+      {% endfor %} 
+    </ul>
+  </div>
+</div>
+
+
+

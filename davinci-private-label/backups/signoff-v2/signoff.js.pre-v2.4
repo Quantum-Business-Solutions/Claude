@@ -52,7 +52,7 @@ window.addEventListener("message",function(e){
   else if(d.type==="whoami"&&d.user&&typeof d.user==="object"){
     hostv2=true;
     user={name:String(d.user.name||""),email:String(d.user.email||""),kind:String(d.user.kind||"")};
-    if(user.name)who=user.name; if(user.kind==="team")side="qbs"; if(user.kind==="client"&&!side)side="client";
+    if(user.name)who=user.name; if(user.kind==="team")side="qbs"; if(user.kind==="client")side="client";
     render();}
 });
 function requestState(k){post({type:"ready",key:k});}
@@ -92,7 +92,7 @@ function mergeComment(a,b){var c=later(b,a)?b:a; var o={};for(var k in c)o[k]=c[
   o.st=later(b.rs,a.rs)?b.st:a.st; o.rs=mergeStamp(a.rs,b.rs);
   o.re=mergeList(a.re,b.re); return o;}
 function mergeItem(l,r){if(!l)return r;if(!r)return l;var o={};
-  o.q=mergeStamp(l.q,r.q);o.c=mergeStamp(l.c,r.c);o.g=mergeStamp(l.g,r.g);o.f=mergeStamp(l.f,r.f);
+  o.q=mergeStamp(l.q,r.q);o.c=mergeStamp(l.c,r.c);o.f=mergeStamp(l.f,r.f);
   o.r1=mergeStamp(l.r1,r.r1);o.r2=mergeStamp(l.r2,r.r2);o.r3=mergeStamp(l.r3,r.r3);
   o.cm=mergeList(l.cm,r.cm,mergeComment);
   o.sr={};var ks={};[l.sr,r.sr].forEach(function(s){for(var k in (s||{}))ks[k]=1;});
@@ -159,7 +159,7 @@ function findRow(g,id){if(g==="_")return GEN;return rowsOf(g).filter(function(x)
 function rowName(g,id){var r=findRow(g,id);return r?r.n:id;}
 function item(g,id){var s=state[g];if(!s[id])s[id]={};return s[id];}
 function stat(it,k){return it&&it[k]&&!it[k].x?it[k]:null;}
-function statusOf(g,id){var it=state[g][id]||{};return {q:stat(it,"q"),c:stat(it,"c"),g:stat(it,"g"),f:stat(it,"f")};}
+function statusOf(g,id){var it=state[g][id]||{};return {q:stat(it,"q"),c:stat(it,"c"),f:stat(it,"f")};}
 var REVS=["r1","r2","r3"];
 function revOf(r,k){var it=state[r.k][r.id]||{};if(it[k])return it[k].x?null:it[k];
   return (r.rv||[]).indexOf(+k.slice(1))>=0?{by:"Design Approval Sheet v6",at:"2026-09-07T12:00:00-04:00",sheet:1}:null;}
@@ -175,8 +175,7 @@ function comments(r){var it=state[r.k][r.id]||{},sr=it.sr||{};
 function openCount(r){return comments(r).filter(function(c){return c.st!=="done";}).length;}
 
 /* ---- mutations ------------------------------------------------------------- */
-function can(k){if(!side)return false;if(k==="q")return side==="qbs";if(k==="c")return side==="client";if(k==="g")return side==="reg"||side==="client";return true;}
-var SIDE={qbs:"QBS",client:"Client",reg:"Regulatory"};function sideName(x){return SIDE[x]||x||"";}
+function can(k){if(!side)return false;if(k==="q")return side==="qbs";if(k==="c")return side==="client";return true;}
 function locked(k){return !!side&&!can(k);}   /* the other side's button */
 var needSide=false;
 function askSide(){needSide=true;render();var el=document.getElementById("idbar");
@@ -184,13 +183,13 @@ function askSide(){needSide=true;render();var el=document.getElementById("idbar"
 function setStatus(g,id,k){
   var r=findRow(g,id);if(!r)return;
   if(!side){askSide();return;}
-  if(!can(k)){flag(k==="q"?"only QBS can give the QBS approval":k==="c"?"only the client can give the client approval":k==="g"?"only Regulatory (or the client) can give the Regulatory approval":"","err");return;}
+  if(!can(k)){flag(k==="q"?"only QBS can give the QBS approval":k==="c"?"only the client can give the client approval":"","err");return;}
   var it=item(g,id),on=stat(it,k);
-  if(on){it[k]={at:now(),by:me(),x:1};logIt(k==="q"?"qbs-unapprove":k==="c"?"client-unapprove":k==="g"?"reg-unapprove":"clear-flag",g,id,r.n);}
+  if(on){it[k]={at:now(),by:me(),x:1};logIt(k==="q"?"qbs-unapprove":k==="c"?"client-unapprove":"clear-flag",g,id,r.n);}
   else{it[k]={at:now(),by:me()};
-    if(k==="f"){["q","c","g"].forEach(function(o){if(stat(it,o))it[o]={at:now(),by:me(),x:1};});}
+    if(k==="f"){["q","c"].forEach(function(o){if(stat(it,o))it[o]={at:now(),by:me(),x:1};});}
     else if(stat(it,"f"))it.f={at:now(),by:me(),x:1};
-    logIt(k==="q"?"qbs-approve":k==="c"?"client-approve":k==="g"?"reg-approve":"needs-work",g,id,r.n);}
+    logIt(k==="q"?"qbs-approve":k==="c"?"client-approve":"needs-work",g,id,r.n);}
   touch(gkey(g));}
 function addComment(g,id,text){text=(text||"").trim();if(!text)return;
   var it=item(g,id);if(!it.cm)it.cm=[];
@@ -226,11 +225,11 @@ function dismissChip(g,id,label){var c=edits.chips[g][id]||(edits.chips[g][id]={
         download itself); if the host does not answer, show the text to copy. */
 var csvShown=false,csvTimer=null;
 function csvText(){var q=function(v){v=String(v==null?"":v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
-  var out=[["Group","Asset","Type","Live link","HubSpot link","Detail","Findings","QBS approved by","QBS approved at","Client approved by","Client approved at","Regulatory approved by","Regulatory approved at","Needs work by","Needs work at","Rev 1","Rev 2","Rev 3","Open comments","Comments","Note","Removed"].join(",")];
+  var out=[["Group","Asset","Type","Live link","HubSpot link","Detail","Findings","QBS approved by","QBS approved at","Client approved by","Client approved at","Needs work by","Needs work at","Rev 1","Rev 2","Rev 3","Open comments","Comments","Note","Removed"].join(",")];
   GROUPS.forEach(function(g){rowsOf(g[0]).forEach(function(r){var s=statusOf(r.k,r.id);
     var cs=comments(r).map(function(c){return c.n+" ("+when(c.at)+(c.st==="done"?", resolved":"")+"): "+c.t+(c.re||[]).map(function(x){return " | reply "+x.n+": "+x.t;}).join("");}).join("\n");
     out.push([g[1],r.n,r.y||"",r.u||"",r.h||"",r.r||"",r.i.map(function(x){return x[1]+(x[2]?" — "+x[2]:"");}).join("; "),
-      s.q?s.q.by:"",s.q?s.q.at:"",s.c?s.c.by:"",s.c?s.c.at:"",s.g?s.g.by:"",s.g?s.g.at:"",s.f?s.f.by:"",s.f?s.f.at:""].concat(REVS.map(function(k){var x=revOf(r,k);return x?"✓ "+x.by:"";})).concat([openCount(r),cs,r.note||"",r.deleted?"yes":""]).map(q).join(","));});});
+      s.q?s.q.by:"",s.q?s.q.at:"",s.c?s.c.by:"",s.c?s.c.at:"",s.f?s.f.by:"",s.f?s.f.at:""].concat(REVS.map(function(k){var x=revOf(r,k);return x?"✓ "+x.by:"";})).concat([openCount(r),cs,r.note||"",r.deleted?"yes":""]).map(q).join(","));});});
   return out.join("\n");}
 function exportCsv(){var name=(META.file||"asset-signoff")+"-"+new Date().toISOString().slice(0,10)+".csv";
   if(hosted){post({type:"download",name:name,mime:"text/csv",text:csvText()});
@@ -262,27 +261,27 @@ function xlsxBook(X){
   GROUPS.forEach(function(g){
     var rows=rowsOf(g[0]).filter(function(r){return !r.deleted;});
     var aoa=[[cell(META.title.toUpperCase()+" — "+g[1].toUpperCase(),T)],[cell((META.brandline||"")+"  |  exported "+new Date().toLocaleString()+"  |  Rev ticks and approvals as recorded in ClientCommand",S)],[],
-      ["Asset","Type","Live","HubSpot editor",g[2]||"Detail","Rev 1","Rev 2","Rev 3","QBS approved","Client approved","Regulatory approved","Needs work","Findings","Open comments","Comments","Note"].map(function(h){return cell(h,H);})];
+      ["Asset","Type","Live","HubSpot editor",g[2]||"Detail","Rev 1","Rev 2","Rev 3","QBS approved","Client approved","Needs work","Findings","Open comments","Comments","Note"].map(function(h){return cell(h,H);})];
     var byType={};rows.forEach(function(r){(byType[r.y||"Other"]=byType[r.y||"Other"]||[]).push(r);});
-    var types=Object.keys(byType).sort();var merges=[{s:{r:0,c:0},e:{r:0,c:15}},{s:{r:1,c:0},e:{r:1,c:15}}];
-    types.forEach(function(ty){if(types.length>1){aoa.push([cell("▸  "+ty.toUpperCase(),G)].concat(Array(15).fill(cell("",G))));merges.push({s:{r:aoa.length-1,c:0},e:{r:aoa.length-1,c:15}});}
+    var types=Object.keys(byType).sort();var merges=[{s:{r:0,c:0},e:{r:0,c:14}},{s:{r:1,c:0},e:{r:1,c:14}}];
+    types.forEach(function(ty){if(types.length>1){aoa.push([cell("▸  "+ty.toUpperCase(),G)].concat(Array(14).fill(cell("",G))));merges.push({s:{r:aoa.length-1,c:0},e:{r:aoa.length-1,c:14}});}
       byType[ty].forEach(function(r){var s=statusOf(r.k,r.id);var cs=comments(r);
         var rv=REVS.map(function(k){var x=revOf(r,k);return x?cell("✓",OK):cell("",B);});
         aoa.push([cell(r.n,B),cell(r.y||"",B),link(r.u,r.u?"Open":""),link(r.h,r.h?"Open in editor":""),cell(r.r||"",B)].concat(rv).concat([
-          s.q?cell("✓ "+stampTxt(s.q),OK):cell("",NO),s.c?cell("✓ "+stampTxt(s.c),OK):cell("",NO),s.g?cell("✓ "+stampTxt(s.g),OK):cell("",NO),s.f?cell(stampTxt(s.f),BAD):cell("",B),
+          s.q?cell("✓ "+stampTxt(s.q),OK):cell("",NO),s.c?cell("✓ "+stampTxt(s.c),OK):cell("",NO),s.f?cell(stampTxt(s.f),BAD):cell("",B),
           cell(r.i.map(function(x){return x[1]+(x[2]?" — "+x[2]:"");}).join("\n"),r.i.some(function(x){return x[0]==="bad";})?BAD:B),
           cell(openCount(r),B),cell(cs.map(function(c){return c.n+" ("+when(c.at)+(c.st==="done"?", resolved":"")+"): "+c.t+(c.re||[]).map(function(x){return "\n   ↳ "+x.n+": "+x.t;}).join("");}).join("\n"),B),cell(r.note||"",B)]));});});
     var ws=X.utils.aoa_to_sheet(aoa);ws["!merges"]=merges;ws["!freeze"]={xSplit:1,ySplit:4};
-    ws["!cols"]=[{wch:38},{wch:14},{wch:9},{wch:16},{wch:34},{wch:7},{wch:7},{wch:7},{wch:26},{wch:26},{wch:26},{wch:22},{wch:40},{wch:9},{wch:70},{wch:30}];
+    ws["!cols"]=[{wch:38},{wch:14},{wch:9},{wch:16},{wch:34},{wch:7},{wch:7},{wch:7},{wch:26},{wch:26},{wch:22},{wch:40},{wch:9},{wch:70},{wch:30}];
     ws["!rows"]=[{hpt:26},{hpt:16},{hpt:8},{hpt:22}];
     X.utils.book_append_sheet(wb,ws,g[1].slice(0,31));});
   var gc=comments(GEN);
   var ga=[[cell("GLOBAL NOTES & RULES",T)],[cell("Site-wide instructions from both sides",S)],[],["Who","Side","When","Source","Status","Note","Replies"].map(function(h){return cell(h,H);})];
-  gc.forEach(function(c){ga.push([cell(c.n,B),cell(c.sd==="qbs"?"QBS":c.sd==="reg"?"Regulatory":c.seed||c.sd==="client"?"Client":"",B),cell(when(c.at),B),cell(c.src||"",B),cell(c.st==="done"?"Resolved":"Open",c.st==="done"?OK:NO),cell(c.t,B),cell((c.re||[]).map(function(x){return x.n+": "+x.t;}).join("\n"),B)]);});
+  gc.forEach(function(c){ga.push([cell(c.n,B),cell(c.sd==="qbs"?"QBS":c.seed||c.sd==="client"?"Client":"",B),cell(when(c.at),B),cell(c.src||"",B),cell(c.st==="done"?"Resolved":"Open",c.st==="done"?OK:NO),cell(c.t,B),cell((c.re||[]).map(function(x){return x.n+": "+x.t;}).join("\n"),B)]);});
   var gs=X.utils.aoa_to_sheet(ga);gs["!cols"]=[{wch:22},{wch:8},{wch:16},{wch:22},{wch:10},{wch:90},{wch:50}];gs["!merges"]=[{s:{r:0,c:0},e:{r:0,c:6}},{s:{r:1,c:0},e:{r:1,c:6}}];gs["!freeze"]={ySplit:4};
   X.utils.book_append_sheet(wb,gs,"Global notes");
   var la=[[cell("ACTIVITY",T)],[cell("Who did what, most recent first",S)],[],["When","Who","Side","Action","Item","Detail"].map(function(h){return cell(h,H);})];
-  log.e.slice().reverse().forEach(function(e){la.push([cell(when(e.at),B),cell(e.by,B),cell(e.sd==="qbs"?"QBS":e.sd==="client"?"Client":e.sd==="reg"?"Regulatory":"",B),cell(ACT[e.a]||e.a,B),cell(e.n,B),cell(e.x||"",B)]);});
+  log.e.slice().reverse().forEach(function(e){la.push([cell(when(e.at),B),cell(e.by,B),cell(e.sd==="qbs"?"QBS":e.sd==="client"?"Client":"",B),cell(ACT[e.a]||e.a,B),cell(e.n,B),cell(e.x||"",B)]);});
   var ls=X.utils.aoa_to_sheet(la);ls["!cols"]=[{wch:16},{wch:22},{wch:8},{wch:26},{wch:40},{wch:60}];ls["!merges"]=[{s:{r:0,c:0},e:{r:0,c:5}},{s:{r:1,c:0},e:{r:1,c:5}}];
   X.utils.book_append_sheet(wb,ls,"Activity");
   return wb;}
@@ -304,13 +303,13 @@ function matches(r,v){var s=statusOf(r.k,r.id);
   if(v.q){var hay=(r.n+" "+(r.r||"")+" "+(r.t||"")+" "+(r.y||"")+" "+(r.note||"")+" "+r.i.map(function(x){return x[1]+" "+(x[2]||"");}).join(" ")
     +" "+comments(r).map(function(c){return c.t+" "+c.n;}).join(" ")).toLowerCase();if(hay.indexOf(v.q)<0)return false;}
   if(v.y&&(r.y||"")!==v.y)return false;
-  switch(v.f){case "all":return true;case "todo":return !s.q&&!s.c&&!s.f;case "qbs":return !!s.q;case "client":return !!s.c;case "reg":return !!s.g;
+  switch(v.f){case "all":return true;case "todo":return !s.q&&!s.c&&!s.f;case "qbs":return !!s.q;case "client":return !!s.c;
     case "both":return !!s.q&&!!s.c;case "fix":return !!s.f;case "open":return openCount(r)>0;
     case "issue":return r.i.some(function(x){return x[0]==="bad"||x[0]==="warn";});case "changed":return !!(r.edited||r.added);}
   return true;}
-var FILTERS=[["all","All"],["todo","Not reviewed"],["qbs","QBS approved"],["client","Client approved"],["reg","Regulatory approved"],["both","Fully approved"],
+var FILTERS=[["all","All"],["todo","Not reviewed"],["qbs","QBS approved"],["client","Client approved"],["both","Fully approved"],
   ["fix","Needs work"],["open","Open comments"],["issue","Has a finding"],["changed","Edited here"]];
-var ACT={"qbs-approve":"QBS approved","qbs-unapprove":"removed QBS approval","client-approve":"Client approved","reg-approve":"Regulatory approved","reg-unapprove":"removed Regulatory approval",
+var ACT={"qbs-approve":"QBS approved","qbs-unapprove":"removed QBS approval","client-approve":"Client approved",
   "client-unapprove":"removed client approval","needs-work":"marked needs work","clear-flag":"cleared needs work",
   "comment":"commented on","reply":"replied on","resolve-comment":"resolved a comment on","reopen-comment":"reopened a comment on",
   "edit":"edited","add":"added","delete":"removed","restore":"restored","clear-chip":"cleared a finding on",
@@ -322,7 +321,7 @@ function histEvents(){var seen={},out=[];
   function add(a,g,i,n,at,by,sd,x){if(!at)return;var key=a+"|"+g+"|"+i+"|"+String(at).slice(0,16);if(seen[key])return;seen[key]=1;
     out.push({id:"d:"+key,at:at,by:by||"",sd:sd||"",a:a,g:g,i:i,n:n,x:x||"",d:1});}
   GK.concat(["_"]).forEach(function(g){var grp=state[g]||{};for(var id in grp){var it=grp[id],name=g==="_"?"Global notes":rowName(g,id);
-    [["q","qbs-approve","qbs-unapprove"],["c","client-approve","client-unapprove"],["g","reg-approve","reg-unapprove"],["f","needs-work","clear-flag"]].forEach(function(k){var st=it[k[0]];if(st&&st.at)add(st.x?k[2]:k[1],g,id,name,st.at,st.by,k[0]==="q"?"qbs":k[0]==="c"?"client":k[0]==="g"?"reg":"");});
+    [["q","qbs-approve","qbs-unapprove"],["c","client-approve","client-unapprove"],["f","needs-work","clear-flag"]].forEach(function(k){var st=it[k[0]];if(st&&st.at)add(st.x?k[2]:k[1],g,id,name,st.at,st.by,k[0]==="q"?"qbs":k[0]==="c"?"client":"");});
     REVS.forEach(function(k){var st=it[k];if(st&&st.at)add(st.x?"rev-clear":"rev-tick",g,id,name,st.at,st.by,"","Rev "+k.slice(1));});
     (it.cm||[]).forEach(function(c){add("comment",g,id,name,c.at,c.n,c.sd,(c.t||"").slice(0,140));(c.re||[]).forEach(function(r){add("reply",g,id,name,r.at,r.n,r.sd,(r.t||"").slice(0,140));});
       if(c.rs&&c.rs.at)add(c.st==="done"?"resolve-comment":"reopen-comment",g,id,name,c.rs.at,c.rs.by,"");});
@@ -359,15 +358,14 @@ function revsHtml(r){if(r.deleted)return "<td></td>";
     +(r.rs?'<span class="chip c-warn" title="Design Approval Sheet v6">'+E(r.rs)+"</span>":"")+"</span></td>";}
 function rowHtml(r){
   var s=statusOf(r.k,r.id),oc=openCount(r),cc=comments(r).length,k=r.k+":"+r.id;
-  var cls2="r"+(s.q&&s.c&&s.g?" done":"")+(s.f?" flag":"")+(r.deleted?" gone":"")+(sel[r.k][r.id]?" sel":"");
+  var cls2="r"+(s.q&&s.c?" done":"")+(s.f?" flag":"")+(r.deleted?" gone":"")+(sel[r.k][r.id]?" sel":"");
   var nm='<td class="nm stk2" title="Double-click a value to edit it"><span class="ttl" data-f="n">'+E(r.n)+"</span>"+(r.y?'<span class="ty" data-f="y">'+E(r.y)+"</span>":'<span class="ty ghost" data-f="y">+ type</span>')
     +(r.note?'<span class="nt" data-f="note">'+E(r.note)+"</span>":'<span class="nt ghost" data-f="note">+ note</span>')
-    +(s.q||s.c||s.g||s.f?"<div>"+stampHtml("QBS",s.q,"q")+stampHtml("Client",s.c,"c")+stampHtml("Regulatory",s.g,"g")+stampHtml("Needs work",s.f,"f")+"</div>":"")+"</td>";
+    +(s.q||s.c||s.f?"<div>"+stampHtml("QBS",s.q,"q")+stampHtml("Client",s.c,"c")+stampHtml("Needs work",s.f,"f")+"</div>":"")+"</td>";
   var rv=r.deleted?'<td class="act"><button class="gh" data-a="restore">Restore</button></td>'
     :'<td class="act"><span class="rv">'
       +'<button class="ok" data-a="q" aria-pressed="'+(!!s.q)+'"'+(locked("q")?' disabled title="QBS side only"':"")+'>QBS ✓</button>'
       +'<button class="ok cl" data-a="c" aria-pressed="'+(!!s.c)+'"'+(locked("c")?' disabled title="Client side only"':"")+'>Client ✓</button>'
-      +'<button class="ok rg" data-a="g" aria-pressed="'+(!!s.g)+'"'+(locked("g")?' disabled title="Regulatory (or client) only"':"")+'>Regulatory ✓</button>'
       +'<button class="fix" data-a="f" aria-pressed="'+(!!s.f)+'">Needs work</button></span>'
       +'<button class="cm'+(oc?" has":cc?" all":"")+'" data-a="cm">'+(cc?(oc?"<b>"+oc+"</b> open":"resolved")+" · "+cc:"Comment")+"</button>"
       +'<button class="gh mini" data-a="edit" title="Edit this row">Edit</button>'
@@ -392,7 +390,7 @@ function formHtml(r,g,ok,cancel,label,extra){var col=GROUPS.filter(function(x){r
 function lastEdit(r){var b={at:"",by:""};for(var f in r.edited)if(later(r.edited[f],b))b=r.edited[f];return b;}
 function editHtml(r){return '<tr class="th ed" data-g="'+r.k+'" data-i="'+E(r.id)+'"><td colspan="7">'
   +formHtml(r,r.k,"savedit","canceledit","Save changes",r.edited?'<span class="dim">last edited by '+E(lastEdit(r).by)+" · "+when(lastEdit(r).at)+"</span>":"")+"</td></tr>";}
-function sideCls(c){return c.sd==="qbs"?"qbs":(c.sd==="client"||c.sd==="reg"||c.seed)?"client":"";}
+function sideCls(c){return c.sd==="qbs"?"qbs":(c.sd==="client"||c.seed)?"client":"";}
 function threadHtml(r){
   var finds=r.i.filter(function(x){return x[2];}).map(function(x){return '<li><span class="chip c-'+x[0]+'">'+E(x[1])+"</span>"+E(x[2])+"</li>";}).join("");
   var list=comments(r).map(function(c){return cmtHtml(r,c);}).join("");
@@ -406,9 +404,9 @@ function threadHtml(r){
     +'<div><div class="card finds"><h4>Findings — where and what</h4>'+(finds?"<ul>"+finds+"</ul>":'<p class="empty">Nothing outstanding on this item.</p>')+"</div>"
     +'<div class="card hist" style="margin-top:12px"><h4>History</h4>'+(hist?"<ul>"+hist+"</ul>":'<p class="empty">No activity yet.</p>')+"</div></div>"
     +"</div></td></tr>";}
-function tally(rows){var t={q:0,c:0,g:0,both:0,f:0,todo:0,n:0};rows.forEach(function(r){if(r.deleted)return;t.n++;var s=statusOf(r.k,r.id);
-  if(s.q)t.q++;if(s.c)t.c++;if(s.g)t.g++;if(s.q&&s.c&&s.g)t.both++;if(s.f)t.f++;if(!s.q&&!s.c&&!s.g&&!s.f)t.todo++;});return t;}
-function barHtml(t){var n=t.n||1;return '<i class="a" style="width:'+(t.both/n*100).toFixed(1)+'%"></i><i class="q" style="width:'+((t.q-t.both)/n*100).toFixed(1)+'%"></i><i class="c" style="width:'+(Math.max(0,t.c-t.both)/n*100).toFixed(1)+'%"></i><i class="g" style="width:'+(Math.max(0,t.g-t.both)/n*100).toFixed(1)+'%"></i><i class="f" style="width:'+(t.f/n*100).toFixed(1)+'%"></i>';}
+function tally(rows){var t={q:0,c:0,both:0,f:0,todo:0,n:0};rows.forEach(function(r){if(r.deleted)return;t.n++;var s=statusOf(r.k,r.id);
+  if(s.q)t.q++;if(s.c)t.c++;if(s.q&&s.c)t.both++;if(s.f)t.f++;if(!s.q&&!s.c&&!s.f)t.todo++;});return t;}
+function barHtml(t){var n=t.n||1;return '<i class="a" style="width:'+(t.both/n*100).toFixed(1)+'%"></i><i class="q" style="width:'+((t.q-t.both)/n*100).toFixed(1)+'%"></i><i class="c" style="width:'+((t.c-t.both)/n*100).toFixed(1)+'%"></i><i class="f" style="width:'+(t.f/n*100).toFixed(1)+'%"></i>';}
 function selCount(g){var n=0;for(var k in sel[g])if(sel[g][k])n++;return n;}
 function groupHtml(g){var gk=g[0],rows=rowsOf(gk),v=view[gk];
   var live=rows.filter(function(r){return !r.deleted;}),delN=rows.length-live.length;
@@ -418,7 +416,7 @@ function groupHtml(g){var gk=g[0],rows=rowsOf(gk),v=view[gk];
   var tsel=types.length>1?'<select data-g="'+gk+'" data-a="type" aria-label="Type"><option value="">All types</option>'+types.map(function(y){return '<option'+(v.y===y?" selected":"")+">"+E(y)+"</option>";}).join("")+"</select>":"";
   var ns=selCount(gk);
   var bulk=ns?'<div class="bulk"><b>'+ns+" selected</b>"
-    +'<button data-a="bq"'+(locked("q")?" disabled":"")+'>QBS approve</button><button data-a="bc"'+(locked("c")?" disabled":"")+'>Client approve</button><button data-a="bg"'+(locked("g")?" disabled":"")+'>Regulatory approve</button>'
+    +'<button data-a="bq"'+(locked("q")?" disabled":"")+'>QBS approve</button><button data-a="bc"'+(locked("c")?" disabled":"")+'>Client approve</button>'
     +'<button data-a="bf">Needs work</button><button class="gh" data-a="bclear">Clear review</button><button class="gh" data-a="bdel">Remove</button>'
     +'<button class="gh" data-a="bnone">Deselect</button></div>':"";
   var addf=addOpen[gk]?formHtml({},gk,"addsave","addcancel","Add to "+E(g[1])):"";
@@ -438,9 +436,9 @@ function groupHtml(g){var gk=g[0],rows=rowsOf(gk),v=view[gk];
     +'<p class="eyebrow" style="grid-column:1/-1;margin:0">'+t.q+" QBS · "+t.c+" client · "+t.f+" need work · "+t.todo+" not yet reviewed</p>"
     +'<div class="gbar">'+barHtml(t)+"</div></div>"+body+"</section>";}
 var showAbout=false;
-function cmtHtml(r,c){var re=(c.re||[]).map(function(x){return '<div class="re"><div class="who"><span class="nm2">'+E(x.n)+"</span>"+(x.sd?"<span>"+sideName(x.sd)+"</span>":"")+"<span>"+when(x.at)+'</span></div><div class="txt">'+E(x.t)+"</div></div>";}).join("");
+function cmtHtml(r,c){var re=(c.re||[]).map(function(x){return '<div class="re"><div class="who"><span class="nm2">'+E(x.n)+"</span>"+(x.sd?"<span>"+(x.sd==="qbs"?"QBS":"client")+"</span>":"")+"<span>"+when(x.at)+'</span></div><div class="txt">'+E(x.t)+"</div></div>";}).join("");
   var rk=r.k+":"+r.id+":"+c.id;
-  return '<div class="cmt '+sideCls(c)+(c.st==="done"?" done":"")+'" data-c="'+E(c.id)+'"><div class="who"><span class="nm2">'+E(c.n)+"</span>"+(c.sd?"<span>"+sideName(c.sd)+"</span>":"")+"<span>"+when(c.at)+"</span>"
+  return '<div class="cmt '+sideCls(c)+(c.st==="done"?" done":"")+'" data-c="'+E(c.id)+'"><div class="who"><span class="nm2">'+E(c.n)+"</span>"+(c.sd?"<span>"+(c.sd==="qbs"?"QBS":"client")+"</span>":"")+"<span>"+when(c.at)+"</span>"
     +(c.src?'<em>'+E(c.src)+"</em>":"")+(c.st==="done"?'<b>resolved by '+E(c.rs&&c.rs.by||"")+" "+when(c.rs&&c.rs.at)+"</b>":"")+"</div>"
     +'<div class="txt">'+E(c.t)+"</div>"+re
     +'<div class="cact">'+(c.st==="done"?'<span class="pill done">✓ Resolved</span><button class="gh mini" data-a="reopen">Reopen</button>':'<span class="pill open">Open</span><button class="mini ok2" data-a="resolve">Resolve ✓</button>')
@@ -458,22 +456,22 @@ function genHtml(){var cs=comments(GEN),open_=cs.filter(function(c){return c.st!
 function logHtml(){var all=histEvents(),es=showAllLog?all:all.slice(0,10);
   return '<section class="logsec" id="g-log"><div class="shead"><div class="hrow">'+chev("log")+'<h2>Activity</h2><span class="tct">'+all.length+" actions · everyone, every change</span></div>"
     +'<div class="acts">'+(all.length>10?'<button class="gh mini" data-a="alllog">'+(showAllLog?"Show latest 10":"Show all "+all.length)+"</button>":"")+"</div></div>"
-    +(!collapsed.log?(es.length?'<ul class="log">'+es.map(function(e){return "<li"+(e.d?' class="derived" title="Recovered from the saved item"':"")+"><b>"+E(e.by)+"</b>"+(e.sd?' <i>'+sideName(e.sd)+"</i>":"")+" "+E(ACT[e.a]||e.a)+" <em>"+E(e.n)+"</em>"
+    +(!collapsed.log?(es.length?'<ul class="log">'+es.map(function(e){return "<li"+(e.d?' class="derived" title="Recovered from the saved item"':"")+"><b>"+E(e.by)+"</b>"+(e.sd?' <i>'+(e.sd==="qbs"?"QBS":"client")+"</i>":"")+" "+E(ACT[e.a]||e.a)+" <em>"+E(e.n)+"</em>"
       +(e.x?': <span>'+E(e.x)+"</span>":"")+"<time>"+when(e.at)+"</time></li>";}).join("")+"</ul>":'<p class="empty">Nothing recorded yet — approvals, comments, edits and resolves will show here as they happen.</p>'):"")+"</section>";}
 function headerHtml(){var all=[];GK.forEach(function(g){all=all.concat(rowsOf(g));});var t=tally(all),ct=commentTotals();
   var anyOpen=!collapsed.log||!collapsed._||GK.some(function(g){return !collapsed[g];});
   var nav='<a href="#g-general"><i></i>Global <b>'+comments(GEN).filter(function(c){return c.st!=="done";}).length+"</b></a>"+GROUPS.map(function(g){var tt=tally(rowsOf(g[0]));var st=tt.n&&tt.both===tt.n?" done":(tt.both||tt.q||tt.c?" part":"");
     return '<a class="'+st+'" href="#g-'+g[0]+'"><i></i>'+E(g[1])+" <b>"+tt.both+"/"+tt.n+"</b></a>";}).join("");
-  var ident=user&&user.name?'<span class="me">Signed in as <b>'+E(user.name)+"</b>"+(side?'<span class="side">'+sideName(side)+"</span>":"")+"</span>"
+  var ident=user&&user.name?'<span class="me">Signed in as <b>'+E(user.name)+"</b>"+(side?'<span class="side">'+(side==="qbs"?"QBS":"Client")+"</span>":"")+"</span>"
     :'<label for="who">Your name</label><input id="who" value="'+E(who)+'" placeholder="Type your name" autocomplete="name">'
-     +'<span class="sideg"><button class="sd" data-s="qbs" aria-pressed="'+(side==="qbs")+'">I am QBS</button><button class="sd" data-s="client" aria-pressed="'+(side==="client")+'">I am the client</button><button class="sd" data-s="reg" aria-pressed="'+(side==="reg")+'">I am Regulatory</button></span>';
+     +'<span class="sideg"><button class="sd" data-s="qbs" aria-pressed="'+(side==="qbs")+'">I am QBS</button><button class="sd" data-s="client" aria-pressed="'+(side==="client")+'">I am the client</button></span>';
   function tile(c,n,l){return '<div class="stat '+c+'"><span class="n">'+n+'</span><span class="l">'+l+"</span></div>";}
   return '<header class="top"><div class="wrap"><div class="hrow">'
     +'<p class="brandline"><span class="dot"></span><span>'+E(META.brandline||"")+"</span></p>"
     +'<span class="tools"><button class="gh" data-a="refresh">↻ Refresh</button><button class="gh" data-a="xlsx">↓ Excel</button>'
     +(hostv2?'<button class="gh" data-a="full">⤢ Full screen</button>':"")+"</span></div>"
     +'<div class="hrow"><h1>'+E(META.title)+'</h1><button class="gh mini" data-a="about">'+(showAbout?"Hide help":"How this works")+"</button></div>"+(META.intro&&showAbout?'<p class="lede">'+E(META.intro)+"</p>":"")
-    +'<div class="stats">'+tile("a",t.both,"Fully approved")+tile("q",t.q,"QBS approved")+tile("c",t.c,"Client approved")+tile("g",t.g,"Regulatory approved")+tile("f",t.f,"Needs work")+tile("u",t.todo,"Not reviewed")+tile("o",ct.open,"Open comments")+tile("r",ct.done,"Resolved")+tile("t",t.n,"Assets")+"</div>"
+    +'<div class="stats">'+tile("a",t.both,"Fully approved")+tile("q",t.q,"QBS approved")+tile("c",t.c,"Client approved")+tile("f",t.f,"Needs work")+tile("u",t.todo,"Not reviewed")+tile("o",ct.open,"Open comments")+tile("r",ct.done,"Resolved")+tile("t",t.n,"Assets")+"</div>"
     +'<div class="prog">'+barHtml(t)+"</div>"
     +'<div class="idbar'+(hosted?"":" ro")+(needSide&&!side?" attn":"")+'" id="idbar">'+(user&&user.name?"":'<span class="step">'+(needSide&&!side?"First, tell the sheet who you are":"Who are you?")+"</span>")+ident
     +(hosted?"":'<span class="dim">Not inside the portal — nothing will save.</span>')+"</div>"
@@ -542,17 +540,16 @@ root.addEventListener("click",function(ev){
   var sec=b.closest("section[data-g]");
   if(a&&a.charAt(0)==="b"&&sec){var g=sec.dataset.g,ids=Object.keys(sel[g]).filter(function(k){return sel[g][k];});
     if(a==="bnone"){sel[g]={};render();return;}
-    if(!side&&(a==="bq"||a==="bc"||a==="bg"||a==="bf")){askSide();return;}
+    if(!side&&(a==="bq"||a==="bc"||a==="bf")){askSide();return;}
     ids.forEach(function(id){var it=item(g,id),s=statusOf(g,id);
       if(a==="bq"&&!s.q&&can("q"))setStatus(g,id,"q");
       else if(a==="bc"&&!s.c&&can("c"))setStatus(g,id,"c");
-      else if(a==="bg"&&!s.g&&can("g"))setStatus(g,id,"g");
       else if(a==="bf"&&!s.f)setStatus(g,id,"f");
-      else if(a==="bclear"){["q","c","g","f"].forEach(function(k){if(stat(it,k))it[k]={at:now(),by:me(),x:1};});logIt("clear-flag",g,id,rowName(g,id),"cleared all");touch(gkey(g));}
+      else if(a==="bclear"){["q","c","f"].forEach(function(k){if(stat(it,k))it[k]={at:now(),by:me(),x:1};});logIt("clear-flag",g,id,rowName(g,id),"cleared all");touch(gkey(g));}
       else if(a==="bdel")delRow(g,id);});
     sel[g]={};render();return;}
   var tr=b.closest("tr,.gen");if(!tr)return;var g=tr.dataset.g,id=tr.dataset.i,k=g+":"+id;
-  if(a==="q"||a==="c"||a==="g"||a==="f"){setStatus(g,id,a);render();return;}
+  if(a==="q"||a==="c"||a==="f"){setStatus(g,id,a);render();return;}
   if(a==="rev"){setRev(g,id,b.dataset.k);render();return;}
   if(a==="cm"){open[k]=!open[k];render();if(open[k]){var ta=root.querySelector('tr.th[data-g="'+g+'"][data-i="'+id+'"] textarea[data-a=txt]');if(ta)ta.focus();}return;}
   if(a==="close"){open[k]=false;render();return;}

@@ -1,0 +1,1556 @@
+{
+ "captured": "2026-09-11T13:41:35.985047Z",
+ "count": 111,
+ "emails": [
+  {
+   "id": "220684191815",
+   "name": "Praxera - TEST - Pulse layout draft (QBS, do not send)",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976450",
+   "name": "Praxera - Chiropractor WF: Final Email ALL",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976453",
+   "name": "Praxera - Private Label: High Priority - Client Onboarding",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976456",
+   "name": "Praxera - Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Praxera",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588996",
+    "subscriptionName": "DaVinci Blog Subscription"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976459",
+   "name": "Praxera - MOF_WF_Paul_2_Powder",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976462",
+   "name": "Praxera - Private_Label_Guide_ToF_Benefits_Private_Label_With_Praxera",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588996",
+    "subscriptionName": "DaVinci Blog Subscription"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976465",
+   "name": "Praxera - 2 Private_Label_Guide_ToF_Danielle_How Physician Can Get Better PL Supplements\u200b",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976468",
+   "name": "Praxera - Private Label MOF_Danielle_Final All",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976471",
+   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #1 Intro",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976474",
+   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #2 Cardio",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976476",
+   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #3 GI",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976478",
+   "name": "Praxera - White_Label_World_Expo Email #1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976483",
+   "name": "Praxera - White_Label_World_Expo Email PL_Shipping_Inventory_Click #2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976486",
+   "name": "Praxera - White_Label_World_Expo Final Email ALL",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976489",
+   "name": "Praxera - White_Label_World_Expo Email Ingredients_Testing_Cert_Click #2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976492",
+   "name": "Praxera - # High Priority (Branded) 5Rs",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "74020615469",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976494",
+   "name": "Praxera - #3 High Priority (Branded) Top-Sellers",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "74020615469",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976498",
+   "name": "Praxera - Client_Onboarding_BoF_Danielle_#2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976500",
+   "name": "Praxera - Client_Onboarding_BoF_Danielle_#3",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "221681937557",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "info@praxerasupplements.com"
+   }
+  },
+  {
+   "id": "220685976504",
+   "name": "Praxera - Client_Onboarding_BoF_Danielle_#4",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976577",
+   "name": "Praxera - Client_Onboarding_BoF_Paul_#1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976580",
+   "name": "Praxera - Client_Onboarding_BoF_Paul_From_MoF_#1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976583",
+   "name": "Praxera - L // PM - Automated Email: PL 5rs #5",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "{{ contact.hubspot_owner_id.email }}"
+   }
+  },
+  {
+   "id": "220685976586",
+   "name": "Praxera - 1: Private Label Guide: High-Priority",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976589",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220685976591",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #3",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220687535413",
+   "name": "Praxera - TEMPLATE - Product / Category (QBS, do not send)",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283270",
+   "name": "Praxera - WF: PL Guide_BoF_Danielle Quick Turnaround #3",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283273",
+   "name": "Praxera - Private Label: High Priority - Reach out",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283275",
+   "name": "Praxera - Private Label: High Priority - 6 Benefits",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283279",
+   "name": "Praxera - Private Label: High Priority Intro",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283282",
+   "name": "Praxera - MOF_WF_Paul_2_Capsule",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283283",
+   "name": "Praxera - Private Label MOF 2_Paul_1ngredients Guide",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283288",
+   "name": "Praxera - MOF_WF_Paul_Final_All",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283291",
+   "name": "Praxera - MOF_WF_Paul_2_Tablet",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283293",
+   "name": "Praxera - MOF_WF_Paul_1_Liquid",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283295",
+   "name": "Praxera - Private Label MOF 2_Paul_Supplement Formats",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283300",
+   "name": "Praxera - MOF_WF_Paul_2_Chewables",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283303",
+   "name": "Praxera - 1 Private_Label_Guide_ToF_Danielle_TY",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283306",
+   "name": "Praxera - 1: Private Label Guide ToF Paul_TY",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283309",
+   "name": "Praxera - Private Label MOF 2_Danielle_Supplement Formats",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283311",
+   "name": "Praxera - Private Label MOF_Danielle_Liquid 1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283315",
+   "name": "Praxera - Private Label MOF_Danielle_Powder 2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283317",
+   "name": "Praxera - Private Label MOF_Danielle_Capsule 2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283320",
+   "name": "Praxera - Private Label MOF_Danielle_Tablets 2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283394",
+   "name": "Praxera - WF: Welcome to D4D_BoF_Danielle/HCP #4 Immune Health",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283397",
+   "name": "Praxera - White_Label_World_Expo Email #2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283399",
+   "name": "Praxera - White_Label_World_Expo Email Definitive_Guide_Click #1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283401",
+   "name": "Praxera - White_Label_World_Expo Email Definitive_Guide_Click #2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283406",
+   "name": "Praxera - White_Label_World_Expo Email PL_Shipping_Inventory_Click #1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283409",
+   "name": "Praxera - White_Label_World_Expo Email How_To_Make_Money_Click #1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283411",
+   "name": "Praxera - White_Label_World_Expo Email How_To_Make_Money_Click #2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283415",
+   "name": "Praxera - White_Label_World_Expo Email Ingredients_Testing_Cert_Click #1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283418",
+   "name": "Praxera - White_Label_World_Expo Email Did_Not_Click_Resource",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688283420",
+   "name": "Praxera - Private Label Lead - First Contact",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "72618287",
+    "subscriptionName": "HCP LEAD"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "{{ contact.hubspot_owner_id.email }}"
+   }
+  },
+  {
+   "id": "220688836168",
+   "name": "Praxera - Danielle: DV Mission & Register",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836170",
+   "name": "Praxera - Paul: DV Mission & Register",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836174",
+   "name": "Praxera - High Priority (Branded) - Reach out",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836176",
+   "name": "Praxera - Client_Onboarding_BoF_Danielle_#1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836180",
+   "name": "Praxera - Client_Onboarding_BoF_Danielle_From_MoF_#1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836183",
+   "name": "Praxera - Client_Onboarding_BoF_Paul_#3",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836186",
+   "name": "Praxera - Client_Onboarding_BoF_Paul_#4",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836188",
+   "name": "Praxera - Client_Onboarding_BoF_Paul_#2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836192",
+   "name": "Praxera - PL Guide_MoF_Danielle_Liposomal_Technology_WhitePaper",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836194",
+   "name": "Praxera - PL_Guide_MoF_Danielle_Liquid_Products",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836197",
+   "name": "Praxera - PL_Guide_MoF_Danielle_Get Started",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836199",
+   "name": "Praxera - Private_Label_Guide_MoF_Paul_Liquid_Products (Clone for Test Template)",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836204",
+   "name": "Praxera - Private_Label_Guide_MoF_Paul_Liquid_Supplements (Clone for Test Template)",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836207",
+   "name": "Praxera - Private_Label_Guide_MoF_Paul_Liposomal_Technology_WhitePaper",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836209",
+   "name": "Praxera - Private_Label_Guide_MoF_Paul_Get Started",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836213",
+   "name": "Praxera - L // PM - Automated Email: PL 5rs #6",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "{{ contact.hubspot_owner_id.email }}"
+   }
+  },
+  {
+   "id": "220688836216",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #3",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836219",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836222",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Paul #2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836225",
+   "name": "Praxera - WF: Private Label Supplements: Ingredients, Testing And Certifications Guide Nurture_MoF_Danielle #2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836231",
+   "name": "Praxera - WF: PL Guide_BoF_Danielle Build Product Line #1 Subject A",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836233",
+   "name": "Praxera - WF: PL Guide_BoF_Paul #3 Truth in Labeling Subject A",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836237",
+   "name": "Praxera - 2: Private_Label_Guide_ToF_Paul_How to Make Money With PL (Test Clone) B",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836239",
+   "name": "Praxera - 4: Private_Label_Guide_ToF_Danielle_ Step-by-step Guide to managing shipping and Inventory (Test Clone) A",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836243",
+   "name": "Praxera - 5: Private_Label_Guide_ToF_Paul_Reach_Out (Test Clone) A",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836246",
+   "name": "Praxera - PL_Guide_MoF_Danielle_Liquid_Supplements (CRO Clone) A",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836248",
+   "name": "Praxera - PL_Guide_MoF_Danielle_PL Answers (CRO Clone) A",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836360",
+   "name": "Praxera - WF: PL Guide_BoF_Danielle Design & Branding #2 Subject B",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836363",
+   "name": "Praxera - WF: PL Guide_BoF_Paul #1 Build Product Line Subject A",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220688836366",
+   "name": "Praxera - WF: PL Guide_BoF_Paul #2 Design & Branding Subject A",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678021",
+   "name": "Praxera - Private Label: High Priority - how to make money",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678023",
+   "name": "Praxera - 3: Private_Label_Guide_ToF_Paul_ Step-by-step Guide to managing shipping and Inventory",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678025",
+   "name": "Praxera - MOF_WF_Paul_1_Chewables",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678030",
+   "name": "Praxera - MOF_WF_Paul_1_Tablet",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678032",
+   "name": "Praxera - MOF_WF_Paul_2_Liquid",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678036",
+   "name": "Praxera - Private_Label_Guide_ToF_Danielle_Top_Selling_PL_Supplements_2021",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588996",
+    "subscriptionName": "DaVinci Blog Subscription"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678039",
+   "name": "Praxera - Private_Label_Guide_ToF_Danielle_How to_start-PL_Business_7steps",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588996",
+    "subscriptionName": "DaVinci Blog Subscription"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678042",
+   "name": "Praxera - 5: Private_Label_Guide_ToF_Danielle_ Questions_About_PL_and _your_Practice (Test Clone)",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678044",
+   "name": "Praxera - Private_Label_Guide_ToF_Paul_6_Benefits of Selling PL",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678048",
+   "name": "Praxera - Private Label MOF 1_Danielle_Ingredients Guide",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678051",
+   "name": "Praxera - Private MOF_Danielle_Chewables 2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678053",
+   "name": "Praxera - Private Label MOF_Danielle_Liquid 2",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678057",
+   "name": "Praxera - Private Label MOF_Danielle_Powder 1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678059",
+   "name": "Praxera - Private Label MOF_Danielle_Capsule 1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678063",
+   "name": "Praxera - Custom Formulation - Auto-responder",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220692678065",
+   "name": "Praxera - L // HCP Lead - International - Reject",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "72618287",
+    "subscriptionName": "HCP LEAD"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220693084758",
+   "name": "Praxera - Private Label: High Priority - Top Selling Products",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588996",
+    "subscriptionName": "DaVinci Blog Subscription"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220693084761",
+   "name": "Praxera - MOF_WF_Paul_1_Powder",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220693084763",
+   "name": "Praxera - MOF_WF_Paul_1_Capsule",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220693084767",
+   "name": "Praxera - Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220693084770",
+   "name": "Praxera - 3 Private_Label_Guide_ToF_Danielle_How_to_create_exclusivity",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220693084773",
+   "name": "Praxera - Private_Label_Guide_ToF_Paul_How to_start-PL_Business_7steps",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588996",
+    "subscriptionName": "DaVinci Blog Subscription"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220693084775",
+   "name": "Praxera - Private_Label_Guide_ToF_Paul_Top_Selling_PL_Supplements",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588996",
+    "subscriptionName": "DaVinci Blog Subscription"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220693084779",
+   "name": "Praxera - Private Label MOF_Danielle_Chewables 1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220693084782",
+   "name": "Praxera - Private Label MOF_Danielle_Tablets 1",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  },
+  {
+   "id": "220693084785",
+   "name": "Praxera - Retargeting Workflow #1: Come Back & Register!",
+   "state": "DRAFT",
+   "subscriptionDetails": {
+    "officeLocationId": "5451098384",
+    "subscriptionId": "4588994",
+    "subscriptionName": "Marketing Information 1"
+   },
+   "from": {
+    "fromName": "Praxera",
+    "replyTo": "enews@davincilabs.com"
+   }
+  }
+ ]
+}
