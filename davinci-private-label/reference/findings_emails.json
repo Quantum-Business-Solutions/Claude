@@ -1,0 +1,308 @@
+[
+ {
+  "severity": "blocker",
+  "area": "emails",
+  "title": "Praxera email links prospects to a DaVinci Laboratories-branded PDF (5R Gut Health Protocol)",
+  "where": "Email 220685976492 'Praxera - # High Priority (Branded) 5Rs'; asset https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/5Rs-Design-B%20(1).pdf (HTTP 200, 3.19 MB)",
+  "evidence": "Anchor text is 'Download the 5R Framework Quick Deploy Kit'. I downloaded and rendered the PDF: page 1 carries the DaVinci Laboratories logo top-left, the footer reads 'to learn more visit D A V I N C I L A B S . C O M', and the product lists are DaVinci SKUs (VIRA-SHIELD, CANDID-AWAY(TM), OLIVIR(TM) 15, MEGA PROBIOTIC ND 50, DAILY BEST PROBIOTIC, DIGESTIVE ENZYMES PRO, ENZYME BENEFITS, S.I. BENEFITS, IMMUNO BENEFITS, CLEAR G.I.). PDF metadata contains 'DaVinci' x22 and 'FoodScience' x22.",
+  "proposed_fix": "Replace the href with a Praxera-branded 5R PDF, or remove the link/section until one exists. Do not re-host this file under a Praxera name - the artwork itself is DaVinci-branded.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/linked_pdfs_page1.png"
+ },
+ {
+  "severity": "blocker",
+  "area": "emails",
+  "title": "Two Praxera onboarding emails hand the prospect the PET TECH LABS client-onboarding PDF",
+  "where": "Emails 220685976580 'Praxera - Client_Onboarding_BoF_Paul_From_MoF_#1' and 220688836180 'Praxera - Client_Onboarding_BoF_Danielle_From_MoF_#1'; asset https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PTL_clientOnboarding_2024.pdf (HTTP 200, 2.34 MB)",
+  "evidence": "Link text in both emails is 'Please see our Client Onboarding Guide'. Rendered page 1 of the PDF shows the PET TECH LABS logo and the title 'Pet Supplement Contract Manufacturing Client Onboarding'. Extracted text contains 'Pet Tech' 4x in the first 4 pages; file metadata contains 'PetTech' x5 and 'FoodScience' x3.",
+  "proposed_fix": "Point both links at the Praxera guide that already exists and is correctly branded: https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-Client-Onboarding.pdf (verified 200, Praxera-branded cover).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/linked_pdfs_page1.png"
+ },
+ {
+  "severity": "blocker",
+  "area": "emails",
+  "title": "8 Praxera emails contain legacy HubSpot CTAs that redirect to blog.davincilabs.com",
+  "where": "Emails 220688283275, 220692678044 (CTA fa63e46f-2fd7-4795-b423-dd76ca27c486); 220692678036, 220693084758, 220693084775 (8d120211-a9f1-47ae-83e8-b4bbafeb64e6); 220692678039, 220693084773 (15c8c4d3-bddd-4302-837f-f5eb5199ec1c); 220693084767 (4143d452-b148-4b03-854b-0c6b50f2ffc4)",
+  "evidence": "These are cta_field / {{cta()}} modules, so the DaVinci URL never appears as a literal href in the email JSON and a plain string scan misses it. Fetching https://cta-redirect.hubspot.com/cta/redirect/4087538/<guid> returns a meta-refresh to: blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements (fa63e46f and 4143d452), blog.davincilabs.com/private-label/top-selling-private-label-supplements-for-2021 (8d120211), blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business (15c8c4d3). The rendered CTA buttons read 'See The 6 Benefits Now!', 'Explore Best-Selling Supplements!', 'Get the Full 7-Step Guide', 'Benefits of Selling Private Label Supplements'.",
+  "proposed_fix": "Replace each legacy CTA module with a plain button module pointing at the matching Praxera blog post already live: /blog/benefits-of-selling-private-label-supplements, /blog/top-selling-private-label-supplements-for-2021, /blog/how-do-i-start-a-private-label-supplement-business (all verified 200).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/cta_buttons.png"
+ },
+ {
+  "severity": "blocker",
+  "area": "emails",
+  "title": "Retargeting email CTA sends recipients to DaVinci's wholesale account registration",
+  "where": "Email 220693084785 'Praxera - Retargeting Workflow #1: Come Back & Register!'; HubL token {{cta('17c66250-fd70-4276-8f2d-dbf916fbf2c6')}} in the body under 'Want to try it out for yourself?'",
+  "evidence": "cta-redirect.hubspot.com/cta/redirect/4087538/17c66250-... resolves to https://www.fsc-live.com/dvapp/registration.php, which itself redirects (curl -L) to https://www.davincilabs.com/register. The email's own copy says 'you haven't completed your account registration on praxerasupplements.com', so the button contradicts the copy and hands the lead to DaVinci.",
+  "proposed_fix": "Replace the {{cta()}} token with a link to https://www.praxerasupplements.com/get-started (verified 200). Also note the email is signed '-Brandi' with no Praxera-side owner behind it.",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Two emails are built on the VetriScience email template, and both its desktop and mobile headers render at once",
+  "where": "Emails 220685976492 'Praxera - # High Priority (Branded) 5Rs' and 220685976494 'Praxera - #3 High Priority (Branded) Top-Sellers'",
+  "evidence": "The custom HTML modules contain the comment '<!-- // -------- VetriScience Custom Header - White - DESKTOP -->' and 24 distinct vs-* class names (vs-header, vs-header-desktop, vs-header-mobile, vs-footer, vs-footer-legal, vs-webfont*). VetriScience is on the forbidden-brand list. Separately, these emails contain 0 occurrences of 'display:none', 0 'mso-hide' and 0 max-width media queries - the only @media blocks are '@media screen' font declarations - so .vs-header-desktop and .vs-header-mobile both paint. My render shows two stacked nav+logo bars ('SHOP praxera FOR DOCTORS' then 'SHOP praxera DOCTORS').",
+  "proposed_fix": "Rebuild both emails on the Praxera DND header/footer used by the other 109 emails, or at minimum strip the VetriScience module and its vs-* CSS and keep a single header.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220685976492_vetriscience_double_header.png"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "'SHOP' navigation item (a purchase path Praxera does not have) in 6 emails; all nav links point at the homepage",
+  "where": "Emails 220685976453, 220685976492, 220685976494, 220685976583, 220688283273, 220688836213",
+  "evidence": "Header nav markup renders 'OUR QUALITY | SHOP | LEARN' (4 emails) or 'SHOP | praxera | FOR DOCTORS' (2 emails). Every one of the six anchors in 220685976453/220685976492/220685976583 resolves to the same URL, https://www.praxerasupplements.com/ - the labels do not match their destinations, and 'SHOP' promises an ecommerce path that does not exist on praxerasupplements.com.",
+  "proposed_fix": "Relabel to non-transactional wording and give each item a real destination, e.g. OUR QUALITY -> /quality-standards, LEARN -> /resources, FOR DOCTORS -> /get-started. Remove 'SHOP' entirely.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220685976453_shop_nav.png"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "DaVinci trademarked product names still in visible Praxera copy (13 emails)",
+  "where": "220685976476 & 220685976583 (GI Benefits(R)); 220688283279 (Tri-Mag 300, ADK, Daily Best Ultra(TM), Mega Probiotic(TM) ND, Omega 3 HP-D, Hair Effects(TM)); 220688283394 ('See Immune Benefits(TM)' button); 220688836194 & 220688836199 (ACUTE IMMUNE BENEFITS(TM) LIQUID, SCALE DOWN(R), LIPOSOMAL ELDERBERRY); 220688836213 (Clear GI(TM)); 220692678032 & 220692678053 (Scale Down(R), Behavior Balance-DMG(TM)); 220692678059, 220693084763, 220693084782 (Digestive Enzyme(TM)); 220685976468 & 220692678025 (ADK, Immuno-DMG)",
+  "evidence": "I pulled the DaVinci source emails these were cloned from and the same marks are present verbatim, proving they were inherited, not authored for Praxera: source 94781614879 has 'ACUTE IMMUNE BENEFITS(TM)' and 'SCALE DOWN(R)'; 170713574748 has 'Behavior Balance-DMG(TM)' and 'Scale Down(R)'; 202221725195 has 'DaVinci(R)', 'Daily Best Ultra(TM)', 'Hair Effects(TM)', 'Mega Probiotic(TM)'; 207281829171 has 'GI Benefits(R)'; 207282028161 has 'Clear GI(TM)'; 106618393216 has 'See Immune Benefits(TM)'. Example live line in 220688283279: 'Real product examples (Tri-Mag 300, ADK, Daily Best Ultra(TM), Mega Probiotic(TM) ND, Omega 3 HP-D, Hair Effects(TM), and more)'.",
+  "proposed_fix": "Replace every branded SKU name with a generic category descriptor (e.g. 'a gut-lining support formula', 'a DMG chewable', 'a liposomal elderberry liquid') and delete the (R)/(TM) marks. Note 220692678059/220693084763/220693084782 already show the rename artefact 'Digestive Enzyme(TM)' - a generic term carrying a trademark symbol (source said 'All-Zyme(TM)').",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "DaVinci product artwork survived the image swap - bottle-lineup photos still show DaVinci SKU labels",
+  "where": "PRIVATELABEL.png (10 emails: 220685976453, 220688283411, 220692678025, 220692678030, 220692678032, 220692678059, 220693084761, 220693084763, 220693084779, 220693084782); PRIVATELABEL_LabelDesigns.jpg (4: 220688836168, 220688836170, 220688836197, 220688836209); 'Build Your Brand.jpg' (2: 220685976456, 220685976462); 'Private Label BoF_Paul-1.jpg' / '_Danielle.jpg' / '_Danielle-1.jpg' (4 emails); 'private label supplement logo.jpg' (2: 220692678039, 220693084773); 'private-label-supplements-affordable.jpg' (220685976462); Mega_Probiotic_ND_50_Bottle.webp (2: 220685976468, 220688283415)",
+  "evidence": "I downloaded all 109 unique image files and inspected them. These photos are the DaVinci private-label sample lineup: the bottle labels legibly read TRI-MAG 300, CHOLESTSURE, ALL-ZYME, COMPLEX-75, HAIR EFFECTS and Mega Probiotic-ND, and several bottles carry the 'DR. CROSS' customer brand. Mega_Probiotic_ND_50_Bottle.webp is a single bottle reading 'Mega Probiotic(TM) ND 50 - A Nondairy Probiotic Supplement to Support Digestive Tract Health'. See contact sheets images_01.png (#1, #16/#18), images_02.png (#22, #23, #24, #36), images_03.png (#43, #52, #59).",
+  "proposed_fix": "Regenerate these with the Praxera mock-bottle set already in the library (praxera-group-product-shot.png, praxera-product-lineup-hero.png, px-*.png all use 'YOUR LOGO GOES HERE' generic labels) and swap the srcs.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/images_02.png"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Praxera-hosted image URLs expose the path /hubfs/Download Offers/DaVinci Labs/ and DaVinci filenames",
+  "where": "10 emails reference /hubfs/.../DaVinci%20Labs/... : 220685976453, 220685976456, 220685976478, 220685976486, 220685976583, 220688283273, 220688283283, 220688283418, 220688836213, 220692678048. 19 emails reference a file whose name contains 'davinci' or 'DAV_'.",
+  "evidence": "Live and returning 200: https://www.praxerasupplements.com/hubfs/Download%20Offers/DaVinci%20Labs/Newsletters/DaVinci-Churn_26.jpg and .../schedule-a-time-headline_01.jpg (4 emails each) - i.e. a praxerasupplements.com URL that literally spells DaVinci Labs. Also in use: davinci-abandon-cart-hero.jpg, DaVinci-PL_04.jpg, DaVinci-PL_21.jpg, DaVinci-PL_25.jpg, DaVinci-water-glass.jpg, DaVinci_Private_Label_Supplements.png, DAV_PrivateLabel-BottleStats-Updated.jpeg (6 emails), and a download link to .../Emails/Welcome%20to%20DaVinci%20Posts.zip in 220685976471.",
+  "proposed_fix": "Re-upload each file to a Praxera path (/hubfs/Praxera/email/...) with a neutral filename and repoint the srcs. Anyone who right-clicks an image or forwards the email sees the DaVinci path today.",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Contact-owner tokens and hardcoded meeting links expose @foodsciencecorp.com identities",
+  "where": "{{ contact.hubspot_owner_id.email }} in 220685976453, 220685976471, 220685976583, 220688283273, 220688836213; .fullname and .meetings_link in 220685976471 and 220688283420; hardcoded meetings.hubspot.com links in 220685976456, 220685976583, 220685976586, 220688283275, 220688836213, 220692678021, 220692678023, 220692678044",
+  "evidence": "I listed all 81 CRM owners in portal 4087538: 58 are @foodsciencecorp.com, 1 @davincilabs.com, 2 @vetriscience.com, 1 @petnaturals.com, 6 @thequantumleap.business - there is no praxerasupplements.com owner. The two hardcoded booking links resolve to owners Sam Fuller (sfuller@foodsciencecorp.com) and Lindsey Schencker-Carroll (lschencker-carroll@foodsciencecorp.com): https://meetings.hubspot.com/samantha-fuller/private-label-round-robin (200) and https://meetings.hubspot.com/lschencker-carroll/round-robbin-?uuid=bd5b6aef-... (200). So 220688283273 renders 'Email me at <owner>@foodsciencecorp.com'.",
+  "proposed_fix": "Create Praxera-domain HubSpot users (or a shared info@praxerasupplements.com owner) before these send, and replace the two hardcoded round-robin links with a Praxera-owned meetings link. Until then swap owner tokens for info@praxerasupplements.com.",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "DaVinci's toll-free number 800-325-1776 is printed in 4 Praxera emails",
+  "where": "220685976453, 220685976583, 220688283273, 220688836213 - in the 'Schedule a Time to Connect' block: 'Email me at {{ contact.hubspot_owner_id.email }}, call 800-325-1776, or click the button below to confirm a time to meet.'",
+  "evidence": "I fetched the DaVinci source emails these were cloned from: source 202135105656 and 200467328115 both contain the identical string 800-325-1776, so the number was carried over unchanged. No phone number appears anywhere on the praxerasupplements.com pages I fetched (/ , /get-started), so this number is not a published Praxera number. (I could not fetch davincilabs.com to confirm ownership - it returns 403 through the proxy - so 'DaVinci's number' is inferred from the source emails, not independently verified.)",
+  "proposed_fix": "Replace with Praxera's own number, or delete the phone sentence and keep the email + booking-link path.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220688283273_duplicate_and_overflow.png"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "105 of 111 emails stretch images: width/height attributes were kept from the DaVinci originals after the src was swapped",
+  "where": "Praxera Logo.png in 101 emails; praxera-email-footer.png in 4 (220685976453, 220685976583, 220688283273, 220688836213); praxera-product-lineup-hero.png in 5; Praxera Logo White.png in 4; Mega_Probiotic_ND_50_Bottle.webp in 2",
+  "evidence": "I measured every downloaded asset against the width/height stored on each image module. Praxera Logo.png is 612x208 (2.94:1) but is declared 260x102, 200x97, 230x112, 237x115, 174x68 or 200x78 - i.e. 15% to 43% too tall. praxera-email-footer.png is 1200x300 (4:1) declared 600x333 - 122% too tall. praxera-product-lineup-hero.png is 3168x1344 declared 489x362 - 74% too tall. Mega_Probiotic_ND_50_Bottle.webp is 1000x1000 declared 560x328 - squashed 41%. Proof it is inherited: source email 176178321480 declares the same 260x102 for DaVinci-Logo.png, and 202135105656 declares the same 600x333 for DV_Footer-1.jpg.",
+  "proposed_fix": "For every image module, either delete the height attribute (let it scale) or recompute height = round(width * intrinsic_h / intrinsic_w): logo 260x88 / 200x68 / 230x78, footer 600x150, lineup hero 489x207.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/logo_darkmode_and_stretch.png"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Forbidden manufacturer language in 5 emails",
+  "where": "220685976500 'Client_Onboarding_BoF_Danielle_#3'; 220688836183 'Client_Onboarding_BoF_Paul_#3'; 220685976580 'Client_Onboarding_BoF_Paul_From_MoF_#1'; 220685976583 'L // PM - Automated Email: PL 5rs #5'; 220688836176 'Client_Onboarding_BoF_Danielle_#1'",
+  "evidence": "Exact strings: 220685976500 - 'Our order placement and manufacturing process is designed to ensure your products meet the highest standards'. 220688836183 - 'Our order placement and manufacturing process is designed to be as effortless as possible' and 'We streamline the ordering process to get your products into production quickly'. 220685976580 - 'Along the way, we will teach you all about our private label supplement manufacturing services.' 220685976583 - 'Our focus is on improving lives by producing quality, doctor-formulated supplements.' 220688836176 - 'We'll use this information to understand your vision and offer turn-key manufacturing solutions.'",
+  "proposed_fix": "Rewrite to partner/coordination voice: 'our order placement process', 'we coordinate production with our manufacturing partners', 'our private label supplement programme', 'improving lives through quality, doctor-formulated supplements', 'turn-key private label solutions'.",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "'Praxera(R) Laboratories' - a find-and-replace artefact that presents Praxera as a laboratory/manufacturer",
+  "where": "220685976504 'Client_Onboarding_BoF_Danielle_#4' (2 occurrences) and 220688836176 'Client_Onboarding_BoF_Danielle_#1' (2 occurrences)",
+  "evidence": "Verbatim: heading 'Benefits of Private Labeling Supplements With Praxera(R) Laboratories'; body 'Low MOQs: Praxera(R) Laboratories has lower minimum order quantities than most private label supplement manufacturers'; 'Products of Interest & Launch Date: Praxera(R) Laboratories has more than 250 unique products'; 'Praxera(R) Laboratories has a minimum order quantity (MOQ) of 36 units per product'. The brand is 'Praxera' / praxerasupplements.com - 'Laboratories' is the leftover half of 'DaVinci(R) Laboratories'. The second sentence also groups Praxera with 'manufacturers'.",
+  "proposed_fix": "Replace all four occurrences with 'Praxera'. Rewrite the MOQ sentence as 'Praxera's minimum order quantities are lower than most private label programmes'.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220685976504_praxera_laboratories.png"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "50-year heritage claims transplanted onto a brand-new brand, and inconsistent with a 25-year claim elsewhere",
+  "where": "'over/more than 50 years' in 220685976456, 220685976486, 220688283279, 220688283283, 220688283397, 220688836168, 220688836170, 220688836231; 'over 25 years' in 220685976453; 'fifty years of manufacturing standards' in 220684191815",
+  "evidence": "Strongest wording, in 220688836168 and 220688836170: 'We are a rare breed, here at Praxera. We made a commitment to truth in labeling when we opened our doors more than 50 years ago, and it remains the founding principle behind every formula we offer today.' Also 220685976456: 'Praxera is a family-owned company, dedicated to higher integrity and superior-quality for over 50 years.' Meanwhile 220685976453 says 'a team that's been leading the private label space for over 25 years' - the two numbers contradict each other inside the same email set.",
+  "proposed_fix": "Pick one approved formulation and apply it everywhere, e.g. 'backed by a manufacturing partner with 50+ years in nutritional supplements'. At minimum, remove 'we opened our doors', 'family-owned company ... for over 50 years', and reconcile 25 vs 50.",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "6 Praxera emails are attached to the 'DaVinci Blog Subscription' subscription type",
+  "where": "220685976456, 220692678036, 220692678039, 220693084758, 220693084773, 220693084775 - subscriptionDetails.subscriptionId 4588996 / subscriptionName 'DaVinci Blog Subscription'",
+  "evidence": "Read from /marketing/v3/emails for all 111: 101 use 'Marketing Information 1' (4588994), 6 use 'DaVinci Blog Subscription' (4588996), 2 use 'HCP LEAD' (72618287), 2 (the QBS test drafts) have no subscription set. HubSpot prints the subscription name in the footer/preference centre, so recipients of those 6 would see the words 'DaVinci Blog Subscription'.",
+  "proposed_fix": "Move all 6 to the same subscription type the other 101 use (4588994), or create a Praxera-named subscription type and apply it to all 111.",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Dead link: /guides returns 404 (3 emails), and one blog link 301-redirects to a 404",
+  "where": "220685976589, 220688283397, 220688836219 link to https://www.praxerasupplements.com/guides. 220688836248 links to https://www.praxerasupplements.com/blog/top-questions-consumers-have-about-private-label-supplements",
+  "evidence": "curl -L with a browser UA over all 153 unique URLs in the set: /guides -> HTTP 404 (body is the 'Page not found' template). The blog URL returns 301 -> https://www.praxerasupplements.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements -> HTTP 404, so the redirect target does not exist. Everything else in the set returned 200 except foodsciencecorp.com (403).",
+  "proposed_fix": "Repoint /guides to https://www.praxerasupplements.com/resources (200). For the blog link, fix the /blog/top-questions... -> /private-label/... redirect rule (it points into the retired DaVinci path namespace) or link straight to a live Praxera post.",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Three emails render wider than 600px because a full-width image is parked in a half/third-width column",
+  "where": "220688283303 and 220688283306 (section_1608565034826: 6/6 split, left column holds a 560px image); 220688283273 (section_17755062257677: 4/8 split, the 4-wide column holds a 560px image plus a 160px image)",
+  "evidence": "Rendered at a 650px viewport with the real images localised, document scrollWidth is 720px (220688283303), 724px (220688283306) and 849px (220688283273) against a 600px email body; all 108 other emails stay at 650. Visible effect in 220688283306: the right-hand paragraph collapses to a ~90px column setting one word per line ('Private / labeling / is / an / exciting ...'), and a black band of section background shows to the right of the hero.",
+  "proposed_fix": "Either move the image to its own full-width section above the text, or set the image width to the real column width (about 280px for a 6/6 split, 190px for the 4-wide column) and recompute height from the intrinsic ratio.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220688283306_column_overflow.png"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Two emails carry DaVinci/FoodScience corporate mission content and link out to foodsciencecorp.com",
+  "where": "220688836168 'Praxera - Danielle: DV Mission & Register' and 220688836170 'Praxera - Paul: DV Mission & Register'",
+  "evidence": "Body copy: 'SUPPORTING HEALTHY COMMUNITIES. Our parent company, FoodScience(R) Corporation, has a proud tradition of supporting non-profit...' with an anchor to https://www.foodsciencecorp.com/ (returns 403 through the proxy, so I could not read the destination page - unverified what it shows). Both emails also use the image localinvolvement_betterliveshere.jpg, a crowd photo captioned 'better lives here' - FoodScience corporate-citizenship artwork. Email names still read 'DV Mission'.",
+  "proposed_fix": "Decide with the client whether the FoodScience parent relationship is on-message for Praxera. If not, cut the 'Supporting Healthy Communities' section, the foodsciencecorp.com link and the 'better lives here' image, and rename the emails off 'DV Mission'.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Primary logo is dark ink on a transparent PNG with no dark-mode handling anywhere in the set",
+  "where": "Praxera Logo.png (612x208) used in 107 of 111 emails; Praxera Logo White.png used in only 4 (220685976453, 220685976583, 220688283273, 220688836213, all of which have dark headers)",
+  "evidence": "The PNG has a full alpha channel (extrema 0-255) and its opaque pixels are #092637 navy plus #6CA843 green; only 7.7% of the canvas is opaque. Across all 111 emails there are 0 occurrences of 'prefers-color-scheme', 0 of 'color-scheme' and 0 of 'data-ogsc'. The logo modules sit in sections whose backgroundColor is #ffffff (68 placements) or #EEEEEE (33) - that inline cell colour protects Apple Mail but not clients that force-invert light grounds. Demo screenshot panel B shows the same PNG on #1b1b1b: the wordmark is effectively unreadable.",
+  "proposed_fix": "Flatten a white plate into the logo asset (or place the white-ink variant on an explicit dark plate) so the masthead survives inversion, and add a dark-mode block to the email template.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/logo_darkmode_and_stretch.png"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Alt text still says DaVinci",
+  "where": "alt='DV_Footer-1' on the Praxera footer graphic in 220685976453 and 220688283273; alt='DAV_PrivateLabel-BottleStats-Updated' in 220685976586, 220688283303, 220688283306, 220688836197, 220688836209, 220688836248; alt='Praxera-abandon-cart-hero' in 220688283273 and 220688836174",
+  "evidence": "Read directly from the image module bodies. Alt text is exactly what a recipient with images disabled reads, and it is what screen readers announce. praxera-email-footer.png carries alt 'DV_Footer-1' even though the image itself was correctly re-made.",
+  "proposed_fix": "Rewrite: 'Praxera - your brand, our standards' for the footer; 'Private label supplement bottle with low minimums, quick turnaround and no set-up fees' for the bottle-stats graphic; 'Woman running on the beach' (or replace the image - see the image/copy finding) for the hero.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Alt text describes a different product than the image shows (4 assets, 6 emails)",
+  "where": "px-cardio.png in 220685976474; Mega_Probiotic_ND_50_Bottle.webp in 220685976468 and 220688283415; px-active-folate.png and px-chewable-c.png in 220692678025 and 220693084779; px-zinc-lozenge.png in 220688283394",
+  "evidence": "I opened every image. px-cardio.png shows a black bottle labelled 'CARDIO SUPPORT' but alt='Praxera private label joint support bottle'. Mega_Probiotic_ND_50_Bottle.webp shows a probiotic bottle but alt='Praxera private label digestive enzyme bottle'. px-active-folate.png ('ACTIVE FOLATE B12 CHEWABLE', a tablet bottle) and px-chewable-c.png ('CHEWABLE C-300') both carry alt='Praxera private label gummy bottle'. px-zinc-lozenge.png ('ZINC LOZENGE + ELDERBERRY') carries alt='Praxera private label capsule bottle'.",
+  "proposed_fix": "Rewrite each alt to match the label on the bottle: 'Praxera private label cardiovascular support capsule bottle', 'Praxera private label probiotic capsule bottle', 'Praxera private label chewable tablet bottle' (x2), 'Praxera private label zinc lozenge bottle'.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/images_04.png"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Hero images that do not match the copy",
+  "where": "220693084767 'Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL'; 220688283273 and 220688836174 ('High Priority - Reach out'); 220692678063 'Custom Formulation - Auto-responder'",
+  "evidence": "220693084767: the masthead image is 'benefits of private label supplements.jpg' - an amateur snapshot of a clinic room with a wall sign reading 'CRYOTHERAPY' and a practitioner adjusting a patient on a table - above the headline 'Top Benefits of Private Label Supplements'. 220688283273/220688836174: the hero is davinci-abandon-cart-hero.jpg, a consumer fitness poster reading 'READY WHEN YOU ARE', on a B2B email whose copy is about private-label business plans. 220692678063: the header module image is https://cdn2.hubspot.net/hubfs/4087538/Blog/blog.png (alt 'blog'), a photo of an adult and child in a cornfield holding a pumpkin, on a custom-formulation auto-responder.",
+  "proposed_fix": "Swap all three for assets already in the Praxera library: praxera-group-product-shot.png, praxera-product-lineup-hero.png or shutterstock_2188588635.jpg (practitioner consultation). None of the three current images should ship.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220693084767_cryotherapy_hero.png"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Duplicate 'Schedule a Time to Connect' headline image in one email",
+  "where": "220688283273 'Praxera - Private Label: High Priority - Reach out' - widget module_17755065398904 in section_17755065398905 (full width) and widget module_17755064968112 in section_17755062257677 (4-of-12 column), both src .../schedule-a-time-headline_01.jpg at 560x90",
+  "evidence": "Two separate image widgets in two consecutive sections both point at the same headline graphic, so the phrase 'Schedule a Time to Connect.' prints twice in a row. The second copy is also the one causing the 849px overflow (560px image in a ~200px column). The other three emails using this graphic (220685976453, 220685976583, 220688836213) each have exactly one copy.",
+  "proposed_fix": "Delete widget module_17755064968112 from section_17755062257677 and leave the calendar icon + text columns.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220688283273_duplicate_and_overflow.png"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "All 111 emails resolve their web version to info.petnaturals.com, and 2 emails contain a 'view as page' link while web version is off",
+  "where": "activeDomain and webversion.domain = 'info.petnaturals.com' on all 111; webversion.enabled = false on all 111; {{view_as_page_url}} anchors in 220685976492 and 220685976494",
+  "evidence": "Read from /marketing/v3/emails. Pet Naturals is a sibling FoodScience brand. The web version is currently disabled so no URL is emitted today, but that also means the '{{view_as_page_url}}' anchors in 220685976492/220685976494 (next to 'update preferences') render with an empty href - a dead link. If anyone enables web version to fix that, the public URL becomes info.petnaturals.com/...",
+  "proposed_fix": "Point the email web-version domain at a Praxera-owned domain before enabling, and until then remove the two {{view_as_page_url}} anchors.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "26 emails still pull assets from the retired f.hubspotusercontent30.net CDN host and 2 from cdn2.hubspot.net",
+  "where": "f.hubspotusercontent30.net: 220685976456, 220685976462, 220685976465, 220685976586, 220688283293, 220688283303, 220688283306, 220688283311, 220688836168, 220688836170, 220688836192, 220688836207, 220688836237, 220688836239, 220688836243, 220692678021, 220692678023, 220692678036, 220692678039, 220692678042, 220693084758, 220693084767, 220693084770, 220693084773, 220693084775, 220693084785. cdn2.hubspot.net: 220692678063, 220693084785",
+  "evidence": "All of these currently return 200 (I curled every one), so nothing is broken today. They are legacy portal-CDN hostnames rather than the current 4087538.fs1.hubspotusercontent-na1.net / www.praxerasupplements.com hosts the rest of the set uses, and the group includes the whitepaper link https://f.hubspotusercontent30.net/hubfs/4087538/Liposomal%20Technology.pdf (4 emails).",
+  "proposed_fix": "Re-upload to the Praxera file host and repoint, so the assets do not depend on a hostname tied to the old portal configuration.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Stale campaign/date wording",
+  "where": "220685976492, 220685976494, 220692678036, 220693084758, 220693084775 (link/anchor to the 2021 top-sellers post); 220685976494 ('this year's top sellers'); 220693084758 and 220693084775 ('the coming year'); 220688836207 ('$90 billion by 2031') vs 220688836209 ('this $4 billion industry')",
+  "evidence": "Five emails link to https://www.praxerasupplements.com/blog/top-selling-private-label-supplements-for-2021 (200 - the slug is deliberately unchanged per the brief, but the surrounding copy dates the campaign). 220685976494's CTA reads 'View your breakdown of this year's top sellers' and 220693084758's copy reads 'the trends and unique challenges of the coming year' - neither is anchored to a year. The two liposomal/get-started emails quote market sizes that disagree by an order of magnitude ($40bn -> $90bn by 2031 vs 'this $4 billion industry').",
+  "proposed_fix": "Rewrite CTA/copy to evergreen wording ('our current best sellers', 'the year ahead'), and reconcile the two market-size figures against one cited source.",
+  "screenshot": ""
+ },
+ {
+  "severity": "low",
+  "area": "emails",
+  "title": "Dead '#' link",
+  "where": "220685976456 'Praxera - Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Praxera'",
+  "evidence": "One anchor in the body has href='#'. It is the only non-HubL, non-http href in the whole 111-email set.",
+  "proposed_fix": "Give it a real destination (most likely https://www.praxerasupplements.com/get-started) or unlink the text.",
+  "screenshot": ""
+ },
+ {
+  "severity": "low",
+  "area": "emails",
+  "title": "Four email names still carry the DaVinci code 'D4D', and several carry build-time suffixes",
+  "where": "220685976471, 220685976474, 220685976476, 220688283394 ('WF: Welcome to D4D_BoF_Danielle/HCP #1-#4'); 220688836248 '(CRO Clone) A'; 220692678042 '(Test Clone)'; 220688836243 '(Test Clone)'; 220688836168/170 'DV Mission & Register'",
+  "evidence": "Internal names only - recipients never see them - but they make the DaVinci lineage obvious to anyone browsing the Praxera email list in HubSpot, and '(Test Clone)' invites someone to assume the email is disposable.",
+  "proposed_fix": "Rename to Praxera-native names before handover, e.g. 'Praxera - Welcome BoF/HCP #1 Intro'.",
+  "screenshot": ""
+ },
+ {
+  "severity": "low",
+  "area": "emails",
+  "title": "Two QBS-authored template/test drafts sit inside the Praxera email set with literal placeholder copy",
+  "where": "220684191815 'Praxera - TEST - Pulse layout draft (QBS, do not send)' and 220687535413 'Praxera - TEMPLATE - Product / Category (QBS, do not send)'",
+  "evidence": "Rendered copy in 220687535413: 'Placeholder for the category pitch - what the format is, who it is for, and why it belongs in your customer's line', 'Minimum order Placeholder', 'Lead time Placeholder'. Both end with 'Draft placeholder built by Quantum Business Solutions - do not send.' Both are also the only 2 of 111 with no subscription type set, so they would fail a send anyway.",
+  "proposed_fix": "Fine to keep as internal templates, but move them out of the Praxera campaign or prefix them 'ZZ -' so they cannot be picked up by mistake at cutover.",
+  "screenshot": ""
+ },
+ {
+  "severity": "low",
+  "area": "emails",
+  "title": "5Rs email numbering is off by one against the step the email actually teaches",
+  "where": "220685976583 'L // PM - Automated Email: PL 5rs #5' contains the '04 REPAIR' banner and the headline 'Step 4: Repair - the next-level.'; 220688836213 '... PL 5rs #6' contains the '05 REBALANCE' banner and 'Step 5: Rebalance Gut Health'",
+  "evidence": "Read from the rendered bodies. Both were cloned from DVL-named sources with the same numbering (207281829171 '#5', 207282028161 '#6'), so the offset is inherited, not introduced.",
+  "proposed_fix": "Cosmetic/internal - confirm with the client whether email #n is meant to cover step n-1; rename if not.",
+  "screenshot": ""
+ },
+ {
+  "severity": "info",
+  "area": "emails",
+  "title": "One email id in the reference file no longer exists in the portal",
+  "where": "reference/praxera_email_assets.json points at email id 220687039325 with hero https://www.pettechlabs.com/hubfs/Praxera/email/praxera-product-lineup-hero.png",
+  "evidence": "GET /marketing/v3/emails/220687039325 returns HTTP 404, and the id appears in neither the 3087 non-archived nor the 34 archived emails. So the Pet Tech-hosted hero recorded in that reference file is not live in any email today. Flagging only because the reference file still points a Praxera asset at pettechlabs.com.",
+  "proposed_fix": "Delete or correct the stale entry in reference/praxera_email_assets.json so a later automation does not resurrect a pettechlabs.com asset URL.",
+  "screenshot": ""
+ },
+ {
+  "severity": "info",
+  "area": "emails",
+  "title": "Sender identity is clean across the whole set",
+  "where": "All 111 Praxera emails",
+  "evidence": "Verified from /marketing/v3/emails: fromName = 'Praxera' on 111/111, replyTo = info@praxerasupplements.com on 111/111, subscriptionDetails.officeLocationId = 221681937557 on 111/111. Note the v3 API returns only fromName and replyTo - there is no from-address field on the object - so the actual envelope sender could not be read from the API and is unverified here.",
+  "proposed_fix": "No change. Confirm the from-address in the HubSpot UI before cutover, since the API does not expose it.",
+  "screenshot": ""
+ },
+ {
+  "severity": "info",
+  "area": "emails",
+  "title": "No broken images, no JS errors, no empty content sections, no placeholder/lorem text outside the two QBS templates",
+  "where": "All 111 emails, rendered in headless Chromium at 650px with all 109 images downloaded locally",
+  "evidence": "0 of 109 unique image URLs failed to download (78 jpeg, 29 png, 2 webp; smallest 100+ bytes, all valid images). 0 images reported naturalWidth 0 in the DOM. 0 pageerror events. No section has zero columns and no column that carries content is empty (the 'empty column' entries in section_1584731165184 are the template's spacer columns, present identically in every email). No 'lorem ipsum' or HubSpot starter copy anywhere.",
+  "proposed_fix": "No action.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/sheet_01.png"
+ }
+]

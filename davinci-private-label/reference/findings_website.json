@@ -1,0 +1,155 @@
+[
+  {
+    "severity": "blocker",
+    "area": "website",
+    "title": "Homepage SEO title/meta/OG/Twitter tags all brand Praxera as a \"Manufacturer\"",
+    "where": "Home page, id 216189433405, https://www.praxerasupplements.com/ (also https://www.praxerasupplements.com/alp/ads-mfg-usa id 216192983652, https://www.praxerasupplements.com/alp/ads-contract-mfg id 216192983654, https://www.praxerasupplements.com/alp/ads-pl-mfg id 216194811734, https://www.praxerasupplements.com/certifications id 216192983597)",
+    "evidence": "Crawled live <title>/<meta>/og:*/tw:title (work/meta.json) for the home page: title = \"Private Label Supplement Manufacturer | Praxera Private Label\"; meta description = og:desc = tw:title-adjacent copy = \"50 years of supplement manufacturing. 250+ doctor-formulated products...\". Identical wording repeats in og:title and tw:title. This is the literal text Google, Facebook/LinkedIn share cards, and the browser tab show for the homepage. Same pattern on other pages: alp/ads-mfg-usa title=\"Supplement Manufacturer USA\", desc=\"...Vermont supplement manufacturer...\"; alp/ads-contract-mfg title=\"Supplement Contract Manufacturer\", desc=\"Your supplement brand. Our contract manufacturing...\"; alp/ads-pl-mfg title=\"Private Label Supplement Manufacturer\"; certifications title=\"Manufacturing Certifications\"; about desc=\"50 years of supplement manufacturing expertise.\". Verified by re-reading work/meta.json and cross-checking against work/praxera_pages.json htmlTitle field (matches live crawl).",
+    "proposed_fix": "Rewrite the HubSpot page-settings Meta Title and Meta Description (and, where a custom OG/Twitter override exists, those fields too) for: home, alp/ads-mfg-usa, alp/ads-contract-mfg, alp/ads-pl-mfg, certifications, about. Replace \"Manufacturer\"/\"manufacturing\" framing with \"private label supplement provider/partner\" language consistent with the brand rule. Get client sign-off before publishing per the read-only/sign-off rule.",
+    "screenshot": null
+  },
+  {
+    "severity": "blocker",
+    "area": "website",
+    "title": "Body copy states Praxera is literally \"produced by a manufacturer (us)\" on the homepage and health-categories page",
+    "where": "Home page, id 216189433405, https://www.praxerasupplements.com/ ; Health Categories page, id 221518507280, https://www.praxerasupplements.com/health-categories",
+    "evidence": "work/mfg_hits.json, phrase key \"produced by a manufacturer (us)\": exact sentence found verbatim on both pages: \"A private label supplement is a pre-formulated dietary supplement produced by a manufacturer (us) and sold under your brand name.\" This directly and unambiguously identifies Praxera as the manufacturer in the first person, on two of the highest-traffic pages on the site.",
+    "proposed_fix": "Edit the rich-text module on both pages: change \"produced by a manufacturer (us)\" to third-person language, e.g. \"produced by a manufacturing partner\" or \"produced on your behalf\" — remove the parenthetical \"(us)\" self-identification entirely.",
+    "screenshot": null
+  },
+  {
+    "severity": "high",
+    "area": "website",
+    "title": "\"We produce...\" forbidden manufacturer-framing sentence repeated across 15 category pages",
+    "where": "aging (216189432992), cognitive (216189433251), detox (216189433375), energy (216189433390), fitness (216179449410), health-categories (221518507280), heart-health (216189433373), herbal (216189432990), home (216189433405), immune-support (216189433236), joint-support (216189433371), mens-health (216188836114), multivitamin (216189433270), pediatric (216189433355), prenatal (216189433267), probiotics (216189433094), sleep (216189433007), weight-management (216188836111), womens-health (216189433092) — all under www.praxerasupplements.com/<slug>",
+    "evidence": "work/mfg_hits.json, phrase \"we produce\": 20 hits, e.g. \"You select the formulation from our catalog, design your label, and we produce the finished product ready to ship under your brand.\" (aging, cognitive, detox, energy, fitness, heart-health, herbal, immune-support, joint-support, mens-health, multivitamin, pediatric, prenatal, probiotics, sleep, weight-management, womens-health) and \"You select from existing formulations, design your label, and we produce finished inventory ready to ship under your brand.\" (home, health-categories). This is the exact forbidden phrase called out in the brief (\"we produce\" is explicitly NOT allowed).",
+    "proposed_fix": "This looks like one shared rich-text snippet reused across the category-page template. Update the source snippet once (if it's a global content block) or push the same edit to all 19 pages: replace \"we produce the finished product\" with something like \"it's produced and shipped ready for your brand\" (passive/third-person, no \"we/our\").",
+    "screenshot": null
+  },
+  {
+    "severity": "high",
+    "area": "website",
+    "title": "\"We handle production...\" forbidden manufacturer-framing sentence on 10 category pages",
+    "where": "aging (216189432992), cognitive (216189433251), detox (216189433375), energy (216189433390), fitness (216179449410), heart-health (216189433373), herbal (216189432990), immune-support (216189433236), joint-support (216189433371), mens-health (216188836114), multivitamin (216189433270), pediatric (216189433355), prenatal (216189433267), probiotics (216189433094), sleep (216189433007), weight-management (216188836111), womens-health (216189433092)",
+    "evidence": "work/mfg_hits.json, phrase \"we handle production\": 18 hits, e.g. \"We handle production, quality testing, and bottling.\" and on heart-health specifically also \"Choose from our catalog of ready-to-launch formulations, customize the branding, and we handle production and fulfillment.\" \"We handle production\" puts Praxera in the manufacturer's chair in the same spirit as the forbidden \"we manufacture\".",
+    "proposed_fix": "Replace with non-manufacturer framing, e.g. \"Production, quality testing, and bottling are handled for you.\" Same shared-snippet consideration as the \"we produce\" finding above — likely one edit propagates to all affected pages.",
+    "screenshot": null
+  },
+  {
+    "severity": "high",
+    "area": "website",
+    "title": "\"Our facility\" / \"our facilities\" used on About, Contact, Quality Standards, and Testing pages",
+    "where": "About (216189433476) /about ; Contact (216192983650) /contact ; Quality Standards (216186379328) /quality-standards ; Testing (216192983607) /testing",
+    "evidence": "work/mfg_hits.json, phrase \"our facility/facilities\": 7 hits — about: \"OUR FACILITY\" (section eyebrow) and \"Our facility in Williston, Vermont houses production lines for capsules, tablets, powders, softgels, chewables, liquids, and oral sprays.\"; contact: \"Our facility is at 929 Harvest Lane, Williston, VT 05495.\"; quality-standards: \"Here is what happens in our facility every day to maintain these standards.\", \"...an independent third party audits our facility to verify we actually do.\", \"Our facility is FDA-registered and has been inspected.\"; testing: \"Here's how testing works at our facility.\" \"Our facilities\" is explicitly named as forbidden in the brief (contrast: \"cGMP facility\" is allowed, \"our facility\" is not).",
+    "proposed_fix": "Reword to remove first-person facility ownership claims, e.g. \"The Williston, Vermont facility houses...\", \"The manufacturing facility is at 929 Harvest Lane...\", \"Here is what happens at the facility every day...\". Keep the address/certifications factual but drop \"our\".",
+    "screenshot": null
+  },
+  {
+    "severity": "medium",
+    "area": "website",
+    "title": "\"We formulate\" forbidden phrase on About page",
+    "where": "About page, id 216189433476, https://www.praxerasupplements.com/about",
+    "evidence": "work/mfg_hits.json, phrase \"we formulate\": \"That commitment shaped everything that came after: how we source ingredients, how we formulate, how we test, and how we label what is in the bottle.\" Listed explicitly in the brief as NOT allowed.",
+    "proposed_fix": "Reword to \"...how ingredients are sourced, formulated, tested, and labeled.\" or attribute formulation to a partner/R&D team rather than first-person \"we\".",
+    "screenshot": null
+  },
+  {
+    "severity": "low",
+    "area": "website",
+    "title": "\"Our production workflow\" on Customer Art page — borderline, context is print/label production not supplement manufacturing",
+    "where": "Customer Art page, id 216189433156, https://www.praxerasupplements.com/customer-art",
+    "evidence": "work/mfg_hits.json, phrase \"our production\": \"Those file types are not editable in our production workflow and will be rejected.\" and \"Do not send PDFs or JPEGs — those file types are not editable in our production workflow and will be rejected.\" Read in context this is about the label/artwork print production pipeline, not supplement manufacturing, but it literally matches the brief's forbidden-phrase list (\"our production\") so flagging for a human call.",
+    "proposed_fix": "If the brand rule is meant strictly (no \"our production\" anywhere), reword to \"...not editable in the production workflow...\". If the rule is only about supplement manufacturing claims, this one is likely fine to leave — recommend client/Shawn confirm intent before editing.",
+    "screenshot": null
+  },
+  {
+    "severity": "high",
+    "area": "website",
+    "title": "Organization schema (JSON-LD) on 19 pages points logo/image URLs at pettechlabs.com — a forbidden DaVinci-family domain",
+    "where": "aging, cognitive, detox, energy, fitness, health-categories, heart-health, herbal, home, immune-support, joint-support, mens-health, multivitamin, pediatric, prenatal, probiotics, sleep, weight-management, womens-health (19 of 56 published pages; ids listed above in the manufacturer-language findings). Example: home page https://www.praxerasupplements.com/",
+    "evidence": "Grepped site_html/*.html for \"pettechlabs\": found in the Organization @graph JSON-LD script on 19 pages: {\"@type\":\"Organization\",...,\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.pettechlabs.com/hubfs/Praxera/Praxera%20Logo.png\"},\"image\":\"https://www.pettechlabs.com/hubfs/Praxera/Praxera%20Logo.png\",...}. The same 19 pages also carry a leftover CSS rule from the same module family: \".cell-wrapper img[src*=\\\"pettechlabs\\\"] { height:180px !important; ... }\" inside a block commented \"<!-- DVL-PL-CAT:START/END -->\". Verified the pettechlabs.com URL itself resolves (200, image/png) via curl, confirming it is a real cross-domain reference, not a dead stub — i.e. Praxera's own structured data literally cites a DaVinci-family pet-supplement domain as the source of its logo. This is a direct violation of \"No links from Praxera assets to DaVinci properties ... pettechlabs\" (the rule doesn't carve out invisible/schema-only references). Not the already-known Hotjar/davincilabs.com item — that one is a <script> comment referencing davincilabs.com and is excluded per the brief; this is a separate, distinct bug in the Organization schema's logo/image fields.",
+    "proposed_fix": "Edit the custom module (the one whose HTML comments read \"DVL-PL-CAT\") that emits the Organization JSON-LD on these 19 templates: change both the \"logo\" and \"image\" fields' URL host from www.pettechlabs.com to www.praxerasupplements.com (same path otherwise: /hubfs/Praxera/Praxera%20Logo.png). Also remove/retarget the leftover `img[src*=\"pettechlabs\"]` CSS selector since it no longer applies to any real Praxera asset.",
+    "screenshot": null
+  },
+  {
+    "severity": "high",
+    "area": "website",
+    "title": "Literal internal placeholder copy is live on 3 published paid-traffic landing pages",
+    "where": "alp/ads-contract-mfg (216192983654) https://www.praxerasupplements.com/alp/ads-contract-mfg ; alp/ads-mfg-usa (216192983652) https://www.praxerasupplements.com/alp/ads-mfg-usa ; alp/ads-pl-mfg (216194811734) https://www.praxerasupplements.com/alp/ads-pl-mfg",
+    "evidence": "All three published pages contain, verbatim, in the body copy right under the \"What we do, in plain terms.\" heading: \"[PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]\" Confirmed in work/site_html/alp__ads-contract-mfg.html, alp__ads-mfg-usa.html, alp__ads-pl-mfg.html, and visible in the full-page screenshots (shots_site/alp__ads-contract-mfg/full_1440.png etc, and the contact sheet _sheet_full1440_0.png). These are all state PUBLISHED_OR_SCHEDULED / currentState PUBLISHED, i.e. live and (per their naming/URL pattern \"ads-*\") presumably receiving paid ad traffic right now.",
+    "proposed_fix": "Replace the placeholder paragraph on all three pages with real, keyword-specific value props/CTA copy (or remove the paragraph entirely if the section isn't needed). Get sign-off before publishing per the read-only rule; flag urgently since these look like active ad-destination pages showing internal notes to real visitors.",
+    "screenshot": "shots_site/alp__ads-contract-mfg/full_1440.png"
+  },
+  {
+    "severity": "high",
+    "area": "website",
+    "title": "Header: \"Quality & Trust\" nav link visually overlaps the Praxera logo wordmark from 801px to 968px viewport width (site-wide, every page)",
+    "where": "Global header module (appears on all 56 published pages) — verified on home page, https://www.praxerasupplements.com/",
+    "evidence": "Measured via work/gap.json (per-pixel sweep, 801–1600px, generated by rendering the localized home page offline per the brief's curl+file:// method): gapRight (distance from the visible right edge of the logo artwork to the left edge of \"Quality & Trust\") is NEGATIVE (i.e. overlapping) continuously from w=801 (–64px overlap) through w=968 (−1px), reaches 0 at w=969, and is clearly positive (74px clear) by w=1200+. Visually confirmed with shots_site/header_sweep/home_hdr_801.png and home_hdr_900.png — the text \"Quality & Trust\" is rendered directly on top of the \"praxera\" wordmark, illegible, at both widths; home_hdr_960.png still shows them touching with ~1px gap; home_hdr_970.png shows a clean, correctly-spaced header. Separately measured leftRows going from 1 to 2 (left nav wraps to two lines) somewhere between 900–952px, adding a second layout problem in roughly the same band. NOTE ON PRECISION: the offline reproduction's Google Font (Open Sans) failed to download during localization (confirmed — the cached .woff2 files for fonts.googleapis.com are actually Google's 404 HTML error page, not font binaries, so Chromium fell back to the system sans-serif font for this measurement). The qualitative defect (severe, illegible overlap across a wide desktop-nav-width band) is visually unambiguous and not in doubt, but the exact 801/968/969px crossover values could shift by roughly ±10–20px on the live site with the real Open Sans font metrics loaded. Recommend the developer confirm exact breakpoints against the live production site directly (not through this proxy-blocked-Playwright environment) before implementing a fix.\nSeparately checked and RULED OUT: the \"Get Started\" CTA button itself never collides with the logo or with \"Resources\" anywhere from 801–1600px — direct measurement (custom sweep script, not part of the original artifacts) shows a consistent 18–24px clear gap between the CTA and \"Resources\" throughout that whole range, and the CTA's left edge never overlaps the logo bounding box. The reported \"Get Started button collides\" concern does not reproduce; the real collision is logo-vs-\"Quality & Trust\" as described above.",
+    "proposed_fix": "Add/adjust a CSS breakpoint for the global header so the right-nav block doesn't render inline with the logo below ~970px — either collapse to the mobile hamburger menu earlier (e.g. move the existing 800px breakpoint up to ~970px) or reduce the nav's horizontal padding/font-size in that band so \"Quality & Trust\" clears the logo. Re-verify the exact px thresholds on the live site (real fonts) before finalizing the CSS change.",
+    "screenshot": "shots_site/header_sweep/home_hdr_900.png"
+  },
+  {
+    "severity": "high",
+    "area": "website",
+    "title": "/get-started causes ~350px of horizontal scroll on mobile (390px viewport) due to a hardcoded inline width",
+    "where": "Get Started page, id 216194811571, https://www.praxerasupplements.com/get-started",
+    "evidence": "work/measure.json at width=390 for slug get-started: hscroll=350, overflowCount=14, document.documentElement.scrollWidth=740 vs clientWidth=390. Traced to the exact cause in the page's rich-text module source (work/render/get-started/page.html, and live site_html copy): a hand-authored inline style `<div style=\"width: 45em; color: #231f20; background-color: #ffffff;\">` wraps the \"Build Your product line from over 190 supplements\" checklist block. 45em = 720px at the default 16px root font size, a fixed width that does not shrink for mobile, so the whole block (and everything after it in that column) is forced to 720px+20px offset regardless of viewport, producing the 350px of horizontal scroll measured at 390px width. Re-verified independently with a fresh Playwright pass against the offline render (not reusing the artifact's numbers blindly): confirms scrollWidth 740 / clientWidth 390, and identifies the 7 overflowing checklist rows plus their container div as the offenders, all left=20 right=740 width=720.",
+    "proposed_fix": "In the Get Started page's rich-text module content, remove the inline `style=\"width: 45em; ...\"` on that div (or change it to `max-width: 45em; width: 100%;`) so it scales down on narrow viewports. This is a single edit inside one rich-text field.",
+    "screenshot": null
+  },
+  {
+    "severity": "medium",
+    "area": "website",
+    "title": "Resources page links to a blog post whose URL 301-redirects to a page that 404s",
+    "where": "Resources page, id 216189433440, https://www.praxerasupplements.com/resources — broken link target chain: https://www.praxerasupplements.com/blog/top-questions-consumers-have-about-private-label-supplements → (301) → https://www.praxerasupplements.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements → 404",
+    "evidence": "work/link_status.json flagged this as the only non-200 among the 93 checked links: {\"href\":\".../blog/top-questions-consumers-have-about-private-label-supplements\", \"res\":\"404 https://www.praxerasupplements.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements\"}. Independently re-verified with curl -IL: first hop is HTTP/2 301 to the /private-label/... URL, and that URL returns HTTP/2 404. The link's anchor text on the Resources page (site_html/resources.html) reads \"Top Questions Consumers Have About Private Label ›\", a resource card meant to send visitors to a blog article.",
+    "proposed_fix": "Either fix the redirect target in HubSpot's URL redirects (point it at the blog post's current, correct slug) or update the Resources page's link to point directly at the live post URL. Coordinate with whoever owns the blog content group (blog slugs must not change per the brief, so the fix belongs on the redirect or on this link, not the blog post itself).",
+    "screenshot": null
+  },
+  {
+    "severity": "info",
+    "area": "website",
+    "title": "Confirmed: /how-to-sell-supplements STEP 04 body copy is still missing in the live HTML",
+    "where": "How to Sell Supplements page, id 216176671879, https://www.praxerasupplements.com/how-to-sell-supplements",
+    "evidence": "Re-checked per the brief's request. In work/site_html/how-to-sell-supplements.html, STEP 01–03 are pl-sh (section-header) modules that only carry an eyebrow label, each followed by a pl-cg card-grid module with full title/body content. STEP 04 (module_10, class pl-cs) has its eyebrow “STEP 04” and headline “Source high-quality supplements from a partner who can prove it.” rendered, but the body/subhead fields for that module are empty (no output at all where a subhead/body paragraph would render), and the very next module (module_11, a pl-rt rich-text block) is completely empty: `<div ... data-hs-cos-field=\"content\"></div>` with no content at all. This matches the already-known issue description — confirming it is still unresolved as of this crawl.",
+    "proposed_fix": "Add the missing STEP 04 body copy (and/or the empty rich-text module content) in the page editor. No code change needed, just a missing content field.",
+    "screenshot": null
+  },
+  {
+    "severity": "info",
+    "area": "website",
+    "title": "LocaliQ capture script coverage: present on all 56/56 published Praxera pages",
+    "where": "All published Praxera site pages, e.g. https://www.praxerasupplements.com/",
+    "evidence": "grep for \"cdn.rlets.com/capture_configs/402/6f3/e04\" across work/site_html/*.html (56 files, one per published page): 56/56 matched. Confirms full, consistent coverage of the (already-known, shared-with-DaVinci) LocaliQ script — no page is missing it and none has a stray/different config id.",
+    "proposed_fix": "No action needed for this check itself; the underlying data-commingling issue is already tracked per the brief.",
+    "screenshot": null
+  },
+  {
+    "severity": "info",
+    "area": "website",
+    "title": "Could not independently verify the owner-reported \"2 broken live images\" or \"missing infographic PDF\" — unverified",
+    "where": "All 68 Praxera pages / all image and PDF references found on the 56 published pages",
+    "evidence": "Exhaustively checked: (1) work/image_status.json (148 sampled image URLs) — all 200. (2) work/assets2_status.json (332 broader asset URLs incl. srcset width variants) — all 200. (3) Independently re-crawled every <img src>, srcset entry, and CSS url(...) reference across all 56 cached published-page HTML files (389 distinct URLs total) and curl-checked every one — all 200, none zero-byte. (4) Searched all cached HTML/other artifacts for the word \"infographic\" as a filename or link — it appears only as a plain word inside one sentence on /how-to-sell-supplements (\"Create blog posts, videos, and infographics...\"), not as a link to any PDF or asset, and no PDF or asset in the crawled data has \"infographic\" in its name. All PDFs referenced from the site (Definitive Guide, Ingredients Guide, 15 product Sell Sheets on /top-sellers) return 200. Separately, the screenshot pipeline appeared to show several blank/missing product or category images (aging.html's 7-tile category grid, detox.html's guide thumbnail, top-sellers.html's \"ADK\" bottle) — investigated these directly with a fresh Playwright pass: all of the underlying image files load fine (HTTP 200, valid image data) and render correctly once the page is scrolled so the image enters the viewport (naturalWidth confirmed non-zero after scroll+decode) — these are native `loading=\"lazy\"` images that simply had not been triggered yet when the prior QA pass's full-page screenshot was taken, not actually-broken images. Given all of this, the specific \"2 broken images\"/\"missing infographic PDF\" the owner has in mind were not found by any method available in this pass.",
+    "proposed_fix": "Ask the owner for the exact page URL(s) and, if possible, the specific image filename(s)/PDF they're thinking of — recommend checking whether they're on a blog post (out of this WEBSITE-scope crawl) rather than one of the 56 site pages, or whether the asset has since been fixed.",
+    "screenshot": null
+  },
+  {
+    "severity": "low",
+    "area": "website",
+    "title": "Leftover DaVinci-internal naming in HTML comments and CSS selectors (not visible to site visitors)",
+    "where": "19 category-template pages (same set as the pettechlabs JSON-LD finding, e.g. home, aging, detox, etc.)",
+    "evidence": "HTML source contains developer comments like `<!-- DVL-PL-CAT:START -->` / `<!-- DVL-PL-CAT:END -->` and `<!-- DVL-PL-FORMS:START -->`, and CSS selectors referencing filenames such as `img[src*=\"DV_PL_AS_Capsules\"]`. These are invisible to end users (comments/selectors only) but are leftover \"DaVinci Labs – Private Label\" internal build naming that should ideally be renamed for a clean handoff, distinct from the visible pettechlabs.com URL bug reported separately above.",
+    "proposed_fix": "Low priority: rename these internal comment/selector labels to a Praxera-neutral naming convention next time the module is touched. No user-facing impact today.",
+    "screenshot": null
+  },
+  {
+    "severity": "low",
+    "area": "website",
+    "title": "No og:image set on any of the 56 published pages",
+    "where": "All 56 published Praxera pages",
+    "evidence": "work/meta.json: og:image is null/empty for all 56 pages crawled. Social shares (Facebook, LinkedIn, Slack unfurls, etc.) of any Praxera page will show no preview image.",
+    "proposed_fix": "Set a default og:image (e.g. the Praxera logo or a branded share card) at the theme/template level, with page-specific overrides where a better image exists (e.g. product/category hero images).",
+    "screenshot": null
+  }
+]

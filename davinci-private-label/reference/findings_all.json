@@ -1,0 +1,1121 @@
+[
+ {
+  "severity": "blocker",
+  "area": "emails",
+  "title": "Praxera email links prospects to a DaVinci Laboratories-branded PDF (5R Gut Health Protocol)",
+  "where": "Email 220685976492 'Praxera - # High Priority (Branded) 5Rs'; asset https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/5Rs-Design-B%20(1).pdf (HTTP 200, 3.19 MB)",
+  "evidence": "Anchor text is 'Download the 5R Framework Quick Deploy Kit'. I downloaded and rendered the PDF: page 1 carries the DaVinci Laboratories logo top-left, the footer reads 'to learn more visit D A V I N C I L A B S . C O M', and the product lists are DaVinci SKUs (VIRA-SHIELD, CANDID-AWAY(TM), OLIVIR(TM) 15, MEGA PROBIOTIC ND 50, DAILY BEST PROBIOTIC, DIGESTIVE ENZYMES PRO, ENZYME BENEFITS, S.I. BENEFITS, IMMUNO BENEFITS, CLEAR G.I.). PDF metadata contains 'DaVinci' x22 and 'FoodScience' x22.",
+  "proposed_fix": "Replace the href with a Praxera-branded 5R PDF, or remove the link/section until one exists. Do not re-host this file under a Praxera name - the artwork itself is DaVinci-branded.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/linked_pdfs_page1.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "blocker",
+  "area": "emails",
+  "title": "Two Praxera onboarding emails hand the prospect the PET TECH LABS client-onboarding PDF",
+  "where": "Emails 220685976580 'Praxera - Client_Onboarding_BoF_Paul_From_MoF_#1' and 220688836180 'Praxera - Client_Onboarding_BoF_Danielle_From_MoF_#1'; asset https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/PTL_clientOnboarding_2024.pdf (HTTP 200, 2.34 MB)",
+  "evidence": "Link text in both emails is 'Please see our Client Onboarding Guide'. Rendered page 1 of the PDF shows the PET TECH LABS logo and the title 'Pet Supplement Contract Manufacturing Client Onboarding'. Extracted text contains 'Pet Tech' 4x in the first 4 pages; file metadata contains 'PetTech' x5 and 'FoodScience' x3.",
+  "proposed_fix": "Point both links at the Praxera guide that already exists and is correctly branded: https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-Client-Onboarding.pdf (verified 200, Praxera-branded cover).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/linked_pdfs_page1.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "blocker",
+  "area": "emails",
+  "title": "8 Praxera emails contain legacy HubSpot CTAs that redirect to blog.davincilabs.com",
+  "where": "Emails 220688283275, 220692678044 (CTA fa63e46f-2fd7-4795-b423-dd76ca27c486); 220692678036, 220693084758, 220693084775 (8d120211-a9f1-47ae-83e8-b4bbafeb64e6); 220692678039, 220693084773 (15c8c4d3-bddd-4302-837f-f5eb5199ec1c); 220693084767 (4143d452-b148-4b03-854b-0c6b50f2ffc4)",
+  "evidence": "These are cta_field / {{cta()}} modules, so the DaVinci URL never appears as a literal href in the email JSON and a plain string scan misses it. Fetching https://cta-redirect.hubspot.com/cta/redirect/4087538/<guid> returns a meta-refresh to: blog.davincilabs.com/private-label/benefits-of-selling-private-label-supplements (fa63e46f and 4143d452), blog.davincilabs.com/private-label/top-selling-private-label-supplements-for-2021 (8d120211), blog.davincilabs.com/private-label/how-do-i-start-a-private-label-supplement-business (15c8c4d3). The rendered CTA buttons read 'See The 6 Benefits Now!', 'Explore Best-Selling Supplements!', 'Get the Full 7-Step Guide', 'Benefits of Selling Private Label Supplements'.",
+  "proposed_fix": "Replace each legacy CTA module with a plain button module pointing at the matching Praxera blog post already live: /blog/benefits-of-selling-private-label-supplements, /blog/top-selling-private-label-supplements-for-2021, /blog/how-do-i-start-a-private-label-supplement-business (all verified 200).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/cta_buttons.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "blocker",
+  "area": "emails",
+  "title": "Retargeting email CTA sends recipients to DaVinci's wholesale account registration",
+  "where": "Email 220693084785 'Praxera - Retargeting Workflow #1: Come Back & Register!'; HubL token {{cta('17c66250-fd70-4276-8f2d-dbf916fbf2c6')}} in the body under 'Want to try it out for yourself?'",
+  "evidence": "cta-redirect.hubspot.com/cta/redirect/4087538/17c66250-... resolves to https://www.fsc-live.com/dvapp/registration.php, which itself redirects (curl -L) to https://www.davincilabs.com/register. The email's own copy says 'you haven't completed your account registration on praxerasupplements.com', so the button contradicts the copy and hands the lead to DaVinci.",
+  "proposed_fix": "Replace the {{cta()}} token with a link to https://www.praxerasupplements.com/get-started (verified 200). Also note the email is signed '-Brandi' with no Praxera-side owner behind it.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Two emails are built on the VetriScience email template, and both its desktop and mobile headers render at once",
+  "where": "Emails 220685976492 'Praxera - # High Priority (Branded) 5Rs' and 220685976494 'Praxera - #3 High Priority (Branded) Top-Sellers'",
+  "evidence": "The custom HTML modules contain the comment '<!-- // -------- VetriScience Custom Header - White - DESKTOP -->' and 24 distinct vs-* class names (vs-header, vs-header-desktop, vs-header-mobile, vs-footer, vs-footer-legal, vs-webfont*). VetriScience is on the forbidden-brand list. Separately, these emails contain 0 occurrences of 'display:none', 0 'mso-hide' and 0 max-width media queries - the only @media blocks are '@media screen' font declarations - so .vs-header-desktop and .vs-header-mobile both paint. My render shows two stacked nav+logo bars ('SHOP praxera FOR DOCTORS' then 'SHOP praxera DOCTORS').",
+  "proposed_fix": "Rebuild both emails on the Praxera DND header/footer used by the other 109 emails, or at minimum strip the VetriScience module and its vs-* CSS and keep a single header.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220685976492_vetriscience_double_header.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "'SHOP' navigation item (a purchase path Praxera does not have) in 6 emails; all nav links point at the homepage",
+  "where": "Emails 220685976453, 220685976492, 220685976494, 220685976583, 220688283273, 220688836213",
+  "evidence": "Header nav markup renders 'OUR QUALITY | SHOP | LEARN' (4 emails) or 'SHOP | praxera | FOR DOCTORS' (2 emails). Every one of the six anchors in 220685976453/220685976492/220685976583 resolves to the same URL, https://www.praxerasupplements.com/ - the labels do not match their destinations, and 'SHOP' promises an ecommerce path that does not exist on praxerasupplements.com.",
+  "proposed_fix": "Relabel to non-transactional wording and give each item a real destination, e.g. OUR QUALITY -> /quality-standards, LEARN -> /resources, FOR DOCTORS -> /get-started. Remove 'SHOP' entirely.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220685976453_shop_nav.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "DaVinci trademarked product names still in visible Praxera copy (13 emails)",
+  "where": "220685976476 & 220685976583 (GI Benefits(R)); 220688283279 (Tri-Mag 300, ADK, Daily Best Ultra(TM), Mega Probiotic(TM) ND, Omega 3 HP-D, Hair Effects(TM)); 220688283394 ('See Immune Benefits(TM)' button); 220688836194 & 220688836199 (ACUTE IMMUNE BENEFITS(TM) LIQUID, SCALE DOWN(R), LIPOSOMAL ELDERBERRY); 220688836213 (Clear GI(TM)); 220692678032 & 220692678053 (Scale Down(R), Behavior Balance-DMG(TM)); 220692678059, 220693084763, 220693084782 (Digestive Enzyme(TM)); 220685976468 & 220692678025 (ADK, Immuno-DMG)",
+  "evidence": "I pulled the DaVinci source emails these were cloned from and the same marks are present verbatim, proving they were inherited, not authored for Praxera: source 94781614879 has 'ACUTE IMMUNE BENEFITS(TM)' and 'SCALE DOWN(R)'; 170713574748 has 'Behavior Balance-DMG(TM)' and 'Scale Down(R)'; 202221725195 has 'DaVinci(R)', 'Daily Best Ultra(TM)', 'Hair Effects(TM)', 'Mega Probiotic(TM)'; 207281829171 has 'GI Benefits(R)'; 207282028161 has 'Clear GI(TM)'; 106618393216 has 'See Immune Benefits(TM)'. Example live line in 220688283279: 'Real product examples (Tri-Mag 300, ADK, Daily Best Ultra(TM), Mega Probiotic(TM) ND, Omega 3 HP-D, Hair Effects(TM), and more)'.",
+  "proposed_fix": "Replace every branded SKU name with a generic category descriptor (e.g. 'a gut-lining support formula', 'a DMG chewable', 'a liposomal elderberry liquid') and delete the (R)/(TM) marks. Note 220692678059/220693084763/220693084782 already show the rename artefact 'Digestive Enzyme(TM)' - a generic term carrying a trademark symbol (source said 'All-Zyme(TM)').",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "DaVinci product artwork survived the image swap - bottle-lineup photos still show DaVinci SKU labels",
+  "where": "PRIVATELABEL.png (10 emails: 220685976453, 220688283411, 220692678025, 220692678030, 220692678032, 220692678059, 220693084761, 220693084763, 220693084779, 220693084782); PRIVATELABEL_LabelDesigns.jpg (4: 220688836168, 220688836170, 220688836197, 220688836209); 'Build Your Brand.jpg' (2: 220685976456, 220685976462); 'Private Label BoF_Paul-1.jpg' / '_Danielle.jpg' / '_Danielle-1.jpg' (4 emails); 'private label supplement logo.jpg' (2: 220692678039, 220693084773); 'private-label-supplements-affordable.jpg' (220685976462); Mega_Probiotic_ND_50_Bottle.webp (2: 220685976468, 220688283415)",
+  "evidence": "I downloaded all 109 unique image files and inspected them. These photos are the DaVinci private-label sample lineup: the bottle labels legibly read TRI-MAG 300, CHOLESTSURE, ALL-ZYME, COMPLEX-75, HAIR EFFECTS and Mega Probiotic-ND, and several bottles carry the 'DR. CROSS' customer brand. Mega_Probiotic_ND_50_Bottle.webp is a single bottle reading 'Mega Probiotic(TM) ND 50 - A Nondairy Probiotic Supplement to Support Digestive Tract Health'. See contact sheets images_01.png (#1, #16/#18), images_02.png (#22, #23, #24, #36), images_03.png (#43, #52, #59).",
+  "proposed_fix": "Regenerate these with the Praxera mock-bottle set already in the library (praxera-group-product-shot.png, praxera-product-lineup-hero.png, px-*.png all use 'YOUR LOGO GOES HERE' generic labels) and swap the srcs.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/images_02.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Praxera-hosted image URLs expose the path /hubfs/Download Offers/DaVinci Labs/ and DaVinci filenames",
+  "where": "10 emails reference /hubfs/.../DaVinci%20Labs/... : 220685976453, 220685976456, 220685976478, 220685976486, 220685976583, 220688283273, 220688283283, 220688283418, 220688836213, 220692678048. 19 emails reference a file whose name contains 'davinci' or 'DAV_'.",
+  "evidence": "Live and returning 200: https://www.praxerasupplements.com/hubfs/Download%20Offers/DaVinci%20Labs/Newsletters/DaVinci-Churn_26.jpg and .../schedule-a-time-headline_01.jpg (4 emails each) - i.e. a praxerasupplements.com URL that literally spells DaVinci Labs. Also in use: davinci-abandon-cart-hero.jpg, DaVinci-PL_04.jpg, DaVinci-PL_21.jpg, DaVinci-PL_25.jpg, DaVinci-water-glass.jpg, DaVinci_Private_Label_Supplements.png, DAV_PrivateLabel-BottleStats-Updated.jpeg (6 emails), and a download link to .../Emails/Welcome%20to%20DaVinci%20Posts.zip in 220685976471.",
+  "proposed_fix": "Re-upload each file to a Praxera path (/hubfs/Praxera/email/...) with a neutral filename and repoint the srcs. Anyone who right-clicks an image or forwards the email sees the DaVinci path today.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Contact-owner tokens and hardcoded meeting links expose @foodsciencecorp.com identities",
+  "where": "{{ contact.hubspot_owner_id.email }} in 220685976453, 220685976471, 220685976583, 220688283273, 220688836213; .fullname and .meetings_link in 220685976471 and 220688283420; hardcoded meetings.hubspot.com links in 220685976456, 220685976583, 220685976586, 220688283275, 220688836213, 220692678021, 220692678023, 220692678044",
+  "evidence": "I listed all 81 CRM owners in portal 4087538: 58 are @foodsciencecorp.com, 1 @davincilabs.com, 2 @vetriscience.com, 1 @petnaturals.com, 6 @thequantumleap.business - there is no praxerasupplements.com owner. The two hardcoded booking links resolve to owners Sam Fuller (sfuller@foodsciencecorp.com) and Lindsey Schencker-Carroll (lschencker-carroll@foodsciencecorp.com): https://meetings.hubspot.com/samantha-fuller/private-label-round-robin (200) and https://meetings.hubspot.com/lschencker-carroll/round-robbin-?uuid=bd5b6aef-... (200). So 220688283273 renders 'Email me at <owner>@foodsciencecorp.com'.",
+  "proposed_fix": "Create Praxera-domain HubSpot users (or a shared info@praxerasupplements.com owner) before these send, and replace the two hardcoded round-robin links with a Praxera-owned meetings link. Until then swap owner tokens for info@praxerasupplements.com.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "DaVinci's toll-free number 800-325-1776 is printed in 4 Praxera emails",
+  "where": "220685976453, 220685976583, 220688283273, 220688836213 - in the 'Schedule a Time to Connect' block: 'Email me at {{ contact.hubspot_owner_id.email }}, call 800-325-1776, or click the button below to confirm a time to meet.'",
+  "evidence": "I fetched the DaVinci source emails these were cloned from: source 202135105656 and 200467328115 both contain the identical string 800-325-1776, so the number was carried over unchanged. No phone number appears anywhere on the praxerasupplements.com pages I fetched (/ , /get-started), so this number is not a published Praxera number. (I could not fetch davincilabs.com to confirm ownership - it returns 403 through the proxy - so 'DaVinci's number' is inferred from the source emails, not independently verified.)",
+  "proposed_fix": "Replace with Praxera's own number, or delete the phone sentence and keep the email + booking-link path.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220688283273_duplicate_and_overflow.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "105 of 111 emails stretch images: width/height attributes were kept from the DaVinci originals after the src was swapped",
+  "where": "Praxera Logo.png in 101 emails; praxera-email-footer.png in 4 (220685976453, 220685976583, 220688283273, 220688836213); praxera-product-lineup-hero.png in 5; Praxera Logo White.png in 4; Mega_Probiotic_ND_50_Bottle.webp in 2",
+  "evidence": "I measured every downloaded asset against the width/height stored on each image module. Praxera Logo.png is 612x208 (2.94:1) but is declared 260x102, 200x97, 230x112, 237x115, 174x68 or 200x78 - i.e. 15% to 43% too tall. praxera-email-footer.png is 1200x300 (4:1) declared 600x333 - 122% too tall. praxera-product-lineup-hero.png is 3168x1344 declared 489x362 - 74% too tall. Mega_Probiotic_ND_50_Bottle.webp is 1000x1000 declared 560x328 - squashed 41%. Proof it is inherited: source email 176178321480 declares the same 260x102 for DaVinci-Logo.png, and 202135105656 declares the same 600x333 for DV_Footer-1.jpg.",
+  "proposed_fix": "For every image module, either delete the height attribute (let it scale) or recompute height = round(width * intrinsic_h / intrinsic_w): logo 260x88 / 200x68 / 230x78, footer 600x150, lineup hero 489x207.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/logo_darkmode_and_stretch.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Forbidden manufacturer language in 5 emails",
+  "where": "220685976500 'Client_Onboarding_BoF_Danielle_#3'; 220688836183 'Client_Onboarding_BoF_Paul_#3'; 220685976580 'Client_Onboarding_BoF_Paul_From_MoF_#1'; 220685976583 'L // PM - Automated Email: PL 5rs #5'; 220688836176 'Client_Onboarding_BoF_Danielle_#1'",
+  "evidence": "Exact strings: 220685976500 - 'Our order placement and manufacturing process is designed to ensure your products meet the highest standards'. 220688836183 - 'Our order placement and manufacturing process is designed to be as effortless as possible' and 'We streamline the ordering process to get your products into production quickly'. 220685976580 - 'Along the way, we will teach you all about our private label supplement manufacturing services.' 220685976583 - 'Our focus is on improving lives by producing quality, doctor-formulated supplements.' 220688836176 - 'We'll use this information to understand your vision and offer turn-key manufacturing solutions.'",
+  "proposed_fix": "Rewrite to partner/coordination voice: 'our order placement process', 'we coordinate production with our manufacturing partners', 'our private label supplement programme', 'improving lives through quality, doctor-formulated supplements', 'turn-key private label solutions'.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "'Praxera(R) Laboratories' - a find-and-replace artefact that presents Praxera as a laboratory/manufacturer",
+  "where": "220685976504 'Client_Onboarding_BoF_Danielle_#4' (2 occurrences) and 220688836176 'Client_Onboarding_BoF_Danielle_#1' (2 occurrences)",
+  "evidence": "Verbatim: heading 'Benefits of Private Labeling Supplements With Praxera(R) Laboratories'; body 'Low MOQs: Praxera(R) Laboratories has lower minimum order quantities than most private label supplement manufacturers'; 'Products of Interest & Launch Date: Praxera(R) Laboratories has more than 250 unique products'; 'Praxera(R) Laboratories has a minimum order quantity (MOQ) of 36 units per product'. The brand is 'Praxera' / praxerasupplements.com - 'Laboratories' is the leftover half of 'DaVinci(R) Laboratories'. The second sentence also groups Praxera with 'manufacturers'.",
+  "proposed_fix": "Replace all four occurrences with 'Praxera'. Rewrite the MOQ sentence as 'Praxera's minimum order quantities are lower than most private label programmes'.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220685976504_praxera_laboratories.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "50-year heritage claims transplanted onto a brand-new brand, and inconsistent with a 25-year claim elsewhere",
+  "where": "'over/more than 50 years' in 220685976456, 220685976486, 220688283279, 220688283283, 220688283397, 220688836168, 220688836170, 220688836231; 'over 25 years' in 220685976453; 'fifty years of manufacturing standards' in 220684191815",
+  "evidence": "Strongest wording, in 220688836168 and 220688836170: 'We are a rare breed, here at Praxera. We made a commitment to truth in labeling when we opened our doors more than 50 years ago, and it remains the founding principle behind every formula we offer today.' Also 220685976456: 'Praxera is a family-owned company, dedicated to higher integrity and superior-quality for over 50 years.' Meanwhile 220685976453 says 'a team that's been leading the private label space for over 25 years' - the two numbers contradict each other inside the same email set.",
+  "proposed_fix": "Pick one approved formulation and apply it everywhere, e.g. 'backed by a manufacturing partner with 50+ years in nutritional supplements'. At minimum, remove 'we opened our doors', 'family-owned company ... for over 50 years', and reconcile 25 vs 50.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "6 Praxera emails are attached to the 'DaVinci Blog Subscription' subscription type",
+  "where": "220685976456, 220692678036, 220692678039, 220693084758, 220693084773, 220693084775 - subscriptionDetails.subscriptionId 4588996 / subscriptionName 'DaVinci Blog Subscription'",
+  "evidence": "Read from /marketing/v3/emails for all 111: 101 use 'Marketing Information 1' (4588994), 6 use 'DaVinci Blog Subscription' (4588996), 2 use 'HCP LEAD' (72618287), 2 (the QBS test drafts) have no subscription set. HubSpot prints the subscription name in the footer/preference centre, so recipients of those 6 would see the words 'DaVinci Blog Subscription'.",
+  "proposed_fix": "Move all 6 to the same subscription type the other 101 use (4588994), or create a Praxera-named subscription type and apply it to all 111.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Dead link: /guides returns 404 (3 emails), and one blog link 301-redirects to a 404",
+  "where": "220685976589, 220688283397, 220688836219 link to https://www.praxerasupplements.com/guides. 220688836248 links to https://www.praxerasupplements.com/blog/top-questions-consumers-have-about-private-label-supplements",
+  "evidence": "curl -L with a browser UA over all 153 unique URLs in the set: /guides -> HTTP 404 (body is the 'Page not found' template). The blog URL returns 301 -> https://www.praxerasupplements.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements -> HTTP 404, so the redirect target does not exist. Everything else in the set returned 200 except foodsciencecorp.com (403).",
+  "proposed_fix": "Repoint /guides to https://www.praxerasupplements.com/resources (200). For the blog link, fix the /blog/top-questions... -> /private-label/... redirect rule (it points into the retired DaVinci path namespace) or link straight to a live Praxera post.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "high",
+  "area": "emails",
+  "title": "Three emails render wider than 600px because a full-width image is parked in a half/third-width column",
+  "where": "220688283303 and 220688283306 (section_1608565034826: 6/6 split, left column holds a 560px image); 220688283273 (section_17755062257677: 4/8 split, the 4-wide column holds a 560px image plus a 160px image)",
+  "evidence": "Rendered at a 650px viewport with the real images localised, document scrollWidth is 720px (220688283303), 724px (220688283306) and 849px (220688283273) against a 600px email body; all 108 other emails stay at 650. Visible effect in 220688283306: the right-hand paragraph collapses to a ~90px column setting one word per line ('Private / labeling / is / an / exciting ...'), and a black band of section background shows to the right of the hero.",
+  "proposed_fix": "Either move the image to its own full-width section above the text, or set the image width to the real column width (about 280px for a 6/6 split, 190px for the 4-wide column) and recompute height from the intrinsic ratio.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220688283306_column_overflow.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Two emails carry DaVinci/FoodScience corporate mission content and link out to foodsciencecorp.com",
+  "where": "220688836168 'Praxera - Danielle: DV Mission & Register' and 220688836170 'Praxera - Paul: DV Mission & Register'",
+  "evidence": "Body copy: 'SUPPORTING HEALTHY COMMUNITIES. Our parent company, FoodScience(R) Corporation, has a proud tradition of supporting non-profit...' with an anchor to https://www.foodsciencecorp.com/ (returns 403 through the proxy, so I could not read the destination page - unverified what it shows). Both emails also use the image localinvolvement_betterliveshere.jpg, a crowd photo captioned 'better lives here' - FoodScience corporate-citizenship artwork. Email names still read 'DV Mission'.",
+  "proposed_fix": "Decide with the client whether the FoodScience parent relationship is on-message for Praxera. If not, cut the 'Supporting Healthy Communities' section, the foodsciencecorp.com link and the 'better lives here' image, and rename the emails off 'DV Mission'.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Primary logo is dark ink on a transparent PNG with no dark-mode handling anywhere in the set",
+  "where": "Praxera Logo.png (612x208) used in 107 of 111 emails; Praxera Logo White.png used in only 4 (220685976453, 220685976583, 220688283273, 220688836213, all of which have dark headers)",
+  "evidence": "The PNG has a full alpha channel (extrema 0-255) and its opaque pixels are #092637 navy plus #6CA843 green; only 7.7% of the canvas is opaque. Across all 111 emails there are 0 occurrences of 'prefers-color-scheme', 0 of 'color-scheme' and 0 of 'data-ogsc'. The logo modules sit in sections whose backgroundColor is #ffffff (68 placements) or #EEEEEE (33) - that inline cell colour protects Apple Mail but not clients that force-invert light grounds. Demo screenshot panel B shows the same PNG on #1b1b1b: the wordmark is effectively unreadable.",
+  "proposed_fix": "Flatten a white plate into the logo asset (or place the white-ink variant on an explicit dark plate) so the masthead survives inversion, and add a dark-mode block to the email template.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/logo_darkmode_and_stretch.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Alt text still says DaVinci",
+  "where": "alt='DV_Footer-1' on the Praxera footer graphic in 220685976453 and 220688283273; alt='DAV_PrivateLabel-BottleStats-Updated' in 220685976586, 220688283303, 220688283306, 220688836197, 220688836209, 220688836248; alt='Praxera-abandon-cart-hero' in 220688283273 and 220688836174",
+  "evidence": "Read directly from the image module bodies. Alt text is exactly what a recipient with images disabled reads, and it is what screen readers announce. praxera-email-footer.png carries alt 'DV_Footer-1' even though the image itself was correctly re-made.",
+  "proposed_fix": "Rewrite: 'Praxera - your brand, our standards' for the footer; 'Private label supplement bottle with low minimums, quick turnaround and no set-up fees' for the bottle-stats graphic; 'Woman running on the beach' (or replace the image - see the image/copy finding) for the hero.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Alt text describes a different product than the image shows (4 assets, 6 emails)",
+  "where": "px-cardio.png in 220685976474; Mega_Probiotic_ND_50_Bottle.webp in 220685976468 and 220688283415; px-active-folate.png and px-chewable-c.png in 220692678025 and 220693084779; px-zinc-lozenge.png in 220688283394",
+  "evidence": "I opened every image. px-cardio.png shows a black bottle labelled 'CARDIO SUPPORT' but alt='Praxera private label joint support bottle'. Mega_Probiotic_ND_50_Bottle.webp shows a probiotic bottle but alt='Praxera private label digestive enzyme bottle'. px-active-folate.png ('ACTIVE FOLATE B12 CHEWABLE', a tablet bottle) and px-chewable-c.png ('CHEWABLE C-300') both carry alt='Praxera private label gummy bottle'. px-zinc-lozenge.png ('ZINC LOZENGE + ELDERBERRY') carries alt='Praxera private label capsule bottle'.",
+  "proposed_fix": "Rewrite each alt to match the label on the bottle: 'Praxera private label cardiovascular support capsule bottle', 'Praxera private label probiotic capsule bottle', 'Praxera private label chewable tablet bottle' (x2), 'Praxera private label zinc lozenge bottle'.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/images_04.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Hero images that do not match the copy",
+  "where": "220693084767 'Private_Label_Guide_ToF_Danielle_6_Benefits of Selling PL'; 220688283273 and 220688836174 ('High Priority - Reach out'); 220692678063 'Custom Formulation - Auto-responder'",
+  "evidence": "220693084767: the masthead image is 'benefits of private label supplements.jpg' - an amateur snapshot of a clinic room with a wall sign reading 'CRYOTHERAPY' and a practitioner adjusting a patient on a table - above the headline 'Top Benefits of Private Label Supplements'. 220688283273/220688836174: the hero is davinci-abandon-cart-hero.jpg, a consumer fitness poster reading 'READY WHEN YOU ARE', on a B2B email whose copy is about private-label business plans. 220692678063: the header module image is https://cdn2.hubspot.net/hubfs/4087538/Blog/blog.png (alt 'blog'), a photo of an adult and child in a cornfield holding a pumpkin, on a custom-formulation auto-responder.",
+  "proposed_fix": "Swap all three for assets already in the Praxera library: praxera-group-product-shot.png, praxera-product-lineup-hero.png or shutterstock_2188588635.jpg (practitioner consultation). None of the three current images should ship.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220693084767_cryotherapy_hero.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Duplicate 'Schedule a Time to Connect' headline image in one email",
+  "where": "220688283273 'Praxera - Private Label: High Priority - Reach out' - widget module_17755065398904 in section_17755065398905 (full width) and widget module_17755064968112 in section_17755062257677 (4-of-12 column), both src .../schedule-a-time-headline_01.jpg at 560x90",
+  "evidence": "Two separate image widgets in two consecutive sections both point at the same headline graphic, so the phrase 'Schedule a Time to Connect.' prints twice in a row. The second copy is also the one causing the 849px overflow (560px image in a ~200px column). The other three emails using this graphic (220685976453, 220685976583, 220688836213) each have exactly one copy.",
+  "proposed_fix": "Delete widget module_17755064968112 from section_17755062257677 and leave the calendar icon + text columns.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/evidence_220688283273_duplicate_and_overflow.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "All 111 emails resolve their web version to info.petnaturals.com, and 2 emails contain a 'view as page' link while web version is off",
+  "where": "activeDomain and webversion.domain = 'info.petnaturals.com' on all 111; webversion.enabled = false on all 111; {{view_as_page_url}} anchors in 220685976492 and 220685976494",
+  "evidence": "Read from /marketing/v3/emails. Pet Naturals is a sibling FoodScience brand. The web version is currently disabled so no URL is emitted today, but that also means the '{{view_as_page_url}}' anchors in 220685976492/220685976494 (next to 'update preferences') render with an empty href - a dead link. If anyone enables web version to fix that, the public URL becomes info.petnaturals.com/...",
+  "proposed_fix": "Point the email web-version domain at a Praxera-owned domain before enabling, and until then remove the two {{view_as_page_url}} anchors.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "26 emails still pull assets from the retired f.hubspotusercontent30.net CDN host and 2 from cdn2.hubspot.net",
+  "where": "f.hubspotusercontent30.net: 220685976456, 220685976462, 220685976465, 220685976586, 220688283293, 220688283303, 220688283306, 220688283311, 220688836168, 220688836170, 220688836192, 220688836207, 220688836237, 220688836239, 220688836243, 220692678021, 220692678023, 220692678036, 220692678039, 220692678042, 220693084758, 220693084767, 220693084770, 220693084773, 220693084775, 220693084785. cdn2.hubspot.net: 220692678063, 220693084785",
+  "evidence": "All of these currently return 200 (I curled every one), so nothing is broken today. They are legacy portal-CDN hostnames rather than the current 4087538.fs1.hubspotusercontent-na1.net / www.praxerasupplements.com hosts the rest of the set uses, and the group includes the whitepaper link https://f.hubspotusercontent30.net/hubfs/4087538/Liposomal%20Technology.pdf (4 emails).",
+  "proposed_fix": "Re-upload to the Praxera file host and repoint, so the assets do not depend on a hostname tied to the old portal configuration.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "medium",
+  "area": "emails",
+  "title": "Stale campaign/date wording",
+  "where": "220685976492, 220685976494, 220692678036, 220693084758, 220693084775 (link/anchor to the 2021 top-sellers post); 220685976494 ('this year's top sellers'); 220693084758 and 220693084775 ('the coming year'); 220688836207 ('$90 billion by 2031') vs 220688836209 ('this $4 billion industry')",
+  "evidence": "Five emails link to https://www.praxerasupplements.com/blog/top-selling-private-label-supplements-for-2021 (200 - the slug is deliberately unchanged per the brief, but the surrounding copy dates the campaign). 220685976494's CTA reads 'View your breakdown of this year's top sellers' and 220693084758's copy reads 'the trends and unique challenges of the coming year' - neither is anchored to a year. The two liposomal/get-started emails quote market sizes that disagree by an order of magnitude ($40bn -> $90bn by 2031 vs 'this $4 billion industry').",
+  "proposed_fix": "Rewrite CTA/copy to evergreen wording ('our current best sellers', 'the year ahead'), and reconcile the two market-size figures against one cited source.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "low",
+  "area": "emails",
+  "title": "Dead '#' link",
+  "where": "220685976456 'Praxera - Private_Label_Guide_ToF_Paul_Get Started_Private_Label_With_Praxera'",
+  "evidence": "One anchor in the body has href='#'. It is the only non-HubL, non-http href in the whole 111-email set.",
+  "proposed_fix": "Give it a real destination (most likely https://www.praxerasupplements.com/get-started) or unlink the text.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "low",
+  "area": "emails",
+  "title": "Four email names still carry the DaVinci code 'D4D', and several carry build-time suffixes",
+  "where": "220685976471, 220685976474, 220685976476, 220688283394 ('WF: Welcome to D4D_BoF_Danielle/HCP #1-#4'); 220688836248 '(CRO Clone) A'; 220692678042 '(Test Clone)'; 220688836243 '(Test Clone)'; 220688836168/170 'DV Mission & Register'",
+  "evidence": "Internal names only - recipients never see them - but they make the DaVinci lineage obvious to anyone browsing the Praxera email list in HubSpot, and '(Test Clone)' invites someone to assume the email is disposable.",
+  "proposed_fix": "Rename to Praxera-native names before handover, e.g. 'Praxera - Welcome BoF/HCP #1 Intro'.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "low",
+  "area": "emails",
+  "title": "Two QBS-authored template/test drafts sit inside the Praxera email set with literal placeholder copy",
+  "where": "220684191815 'Praxera - TEST - Pulse layout draft (QBS, do not send)' and 220687535413 'Praxera - TEMPLATE - Product / Category (QBS, do not send)'",
+  "evidence": "Rendered copy in 220687535413: 'Placeholder for the category pitch - what the format is, who it is for, and why it belongs in your customer's line', 'Minimum order Placeholder', 'Lead time Placeholder'. Both end with 'Draft placeholder built by Quantum Business Solutions - do not send.' Both are also the only 2 of 111 with no subscription type set, so they would fail a send anyway.",
+  "proposed_fix": "Fine to keep as internal templates, but move them out of the Praxera campaign or prefix them 'ZZ -' so they cannot be picked up by mistake at cutover.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "low",
+  "area": "emails",
+  "title": "5Rs email numbering is off by one against the step the email actually teaches",
+  "where": "220685976583 'L // PM - Automated Email: PL 5rs #5' contains the '04 REPAIR' banner and the headline 'Step 4: Repair - the next-level.'; 220688836213 '... PL 5rs #6' contains the '05 REBALANCE' banner and 'Step 5: Rebalance Gut Health'",
+  "evidence": "Read from the rendered bodies. Both were cloned from DVL-named sources with the same numbering (207281829171 '#5', 207282028161 '#6'), so the offset is inherited, not introduced.",
+  "proposed_fix": "Cosmetic/internal - confirm with the client whether email #n is meant to cover step n-1; rename if not.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "info",
+  "area": "emails",
+  "title": "One email id in the reference file no longer exists in the portal",
+  "where": "reference/praxera_email_assets.json points at email id 220687039325 with hero https://www.pettechlabs.com/hubfs/Praxera/email/praxera-product-lineup-hero.png",
+  "evidence": "GET /marketing/v3/emails/220687039325 returns HTTP 404, and the id appears in neither the 3087 non-archived nor the 34 archived emails. So the Pet Tech-hosted hero recorded in that reference file is not live in any email today. Flagging only because the reference file still points a Praxera asset at pettechlabs.com.",
+  "proposed_fix": "Delete or correct the stale entry in reference/praxera_email_assets.json so a later automation does not resurrect a pettechlabs.com asset URL.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "info",
+  "area": "emails",
+  "title": "Sender identity is clean across the whole set",
+  "where": "All 111 Praxera emails",
+  "evidence": "Verified from /marketing/v3/emails: fromName = 'Praxera' on 111/111, replyTo = info@praxerasupplements.com on 111/111, subscriptionDetails.officeLocationId = 221681937557 on 111/111. Note the v3 API returns only fromName and replyTo - there is no from-address field on the object - so the actual envelope sender could not be read from the API and is unverified here.",
+  "proposed_fix": "No change. Confirm the from-address in the HubSpot UI before cutover, since the API does not expose it.",
+  "screenshot": "",
+  "_src": "emails"
+ },
+ {
+  "severity": "info",
+  "area": "emails",
+  "title": "No broken images, no JS errors, no empty content sections, no placeholder/lorem text outside the two QBS templates",
+  "where": "All 111 emails, rendered in headless Chromium at 650px with all 109 images downloaded locally",
+  "evidence": "0 of 109 unique image URLs failed to download (78 jpeg, 29 png, 2 webp; smallest 100+ bytes, all valid images). 0 images reported naturalWidth 0 in the DOM. 0 pageerror events. No section has zero columns and no column that carries content is empty (the 'empty column' entries in section_1584731165184 are the template's spacer columns, present identically in every email). No 'lorem ipsum' or HubSpot starter copy anywhere.",
+  "proposed_fix": "No action.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_emails/sheet_01.png",
+  "_src": "emails"
+ },
+ {
+  "severity": "blocker",
+  "area": "blogs",
+  "title": "Every 404 on the Praxera blog serves DaVinci Labs' old storefront page (DaVinci logo + 72 links to davincilabs.com, incl. 'Where to Buy')",
+  "where": "www.praxerasupplements.com 404 handler; reproduced at https://www.praxerasupplements.com/blog/zzz-does-not-exist-qa3 and reached from live blog link https://www.praxerasupplements.com/blog/top-questions-consumers-have-about-private-label-supplements",
+  "evidence": "curl of any non-existent /blog/ path returns HTTP 404 with a 41,668-byte body containing <img src=\"https://www.praxerasupplements.com/hubfs/DaVinciLabs_February2018/images/DV_2017Logo.png\"> and 72 anchors to davincilabs.com, including https://www.davincilabs.com/index.php?l=page_view&p=where_to_buy, .../p=buy, 24 product_list/product_detail shop URLs and http://www.facebook.com/DaVinciLabs. Page has an empty <title>. This breaches both 'no DaVinci brand/links in Praxera assets' and 'no direct purchase path'.",
+  "proposed_fix": "In HubSpot > Settings > Website > Pages > System pages, set the 404 page for the www.praxerasupplements.com domain to a Praxera-branded 404 template (the legacy DaVinci system page is currently inherited). Do not modify the DaVinci domain's system pages.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_blogs/system404_1440.png",
+  "_src": "blogs"
+ },
+ {
+  "severity": "blocker",
+  "area": "blogs",
+  "title": "One of the 72 posts is not live: 'Top Questions Consumers Have About Private Label Supplements' is still DRAFT and its URL is hijacked by a domain-less redirect into a 404",
+  "where": "Post 220638601745 https://www.praxerasupplements.com/blog/top-questions-consumers-have-about-private-label-supplements ; redirect rule 208573973878",
+  "evidence": "API: state=DRAFT, currentState=DRAFT, currentlyPublished=false, publishedAt=null (the other 71 are PUBLISHED). So the group is 71 published + 1 draft, not 72 published. curl without -L returns 301 to https://www.praxerasupplements.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements, which returns 404. The redirect is rule 208573973878 (created 2026-03-02), routePrefix '/blog/top-questions-consumers-have-about-private-label-supplements' with NO domain and isOnlyAfterNotFound=false, so it fires on praxerasupplements.com too. It is the only one of 255 domain-less rules that shadows a Praxera blog slug. Live post 220637279592 (managing-the-top-3-risks...) links to this dead URL twice.",
+  "proposed_fix": "(a) Scope redirect 208573973878 to blog.davincilabs.com (routePrefix 'http://blog.davincilabs.com/blog/top-questions-...') instead of a bare path, or delete it; (b) publish post 220638601745 once (a) is done; (c) re-point the two links in post 220637279592.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "blocker",
+  "area": "blogs",
+  "title": "No post renders the 'Praxera Team' byline \u2014 58 of 72 still show a named DaVinci/FoodScience person on the live page",
+  "where": "All 72 posts, hero module 'subhead' field. Examples: 220638601622 /blog/are-private-label-supplements-profitable (Aryel Wilbur); 220598718505 /blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026 (Melinda Elmadjian); 220637279546 /blog/private-label-supplements-how-to-get-superior-quality-at-low-cost (Dom Orlandi)",
+  "evidence": "API: all 72 have blogAuthorId=221710521902 and blog_author.display_name='Praxera Team', and the rendered JSON-LD says \"author\":{\"name\":\"Praxera Team\"} on all 71 published posts. But the VISIBLE byline comes from the per-post hero.subhead field and never says Praxera Team: Aryel Wilbur 27 posts, Melinda Elmadjian 20, Brandiann M. Kanya 7, Dr. Ramneek Bhogal 1, Dr. Charlie Ware. AP DOM 1, Jon Krouner 1, 'Dom Orlandi, President of Praxera' 1 (=58 named individuals; Aryel Wilbur = awilbur@foodsciencecorp.com and Brandiann Kanya = bkanya@foodsciencecorp.com in this portal's author list). Remaining 14 read 'By Praxera Healthcare Expert' (13) / 'By Praxera Industry Expert' (1). Rendered HTML e.g. 220638601622: <div class=\"pl-hero__subhead\">...<p>By Aryel Wilbur&nbsp; \u00b7&nbsp; Updated August 2026</p>. Structured data and visible byline therefore disagree on every post.",
+  "proposed_fix": "Bulk-edit the hero module 'subhead' rich-text on all 72 posts to 'By Praxera Team \u00b7 Updated <Month Year>'. Fix 220637279546 first: 'Dom Orlandi, President of Praxera' is factually false \u2014 Dom Orlandi is President of FoodScience Corp/DaVinci, not Praxera.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_blogs/post_220598718505_1440.png",
+  "_src": "blogs"
+ },
+ {
+  "severity": "high",
+  "area": "blogs",
+  "title": "10 live posts present Praxera as the manufacturer / owner of facilities \u2014 forbidden brand language",
+  "where": "220638601792 /blog/supplement-dropshipping-5-best-tips-for-success; 220637279628 /blog/top-private-label-protein-powders-for-your-brand; 220637272704 /blog/supplement-certifications-usp-nsf-gmp-fda; 220637279586 /blog/custom-supplements-vs.-private-label-supplements; 220637279650 /blog/contract-manufacturing-vs-private-labeling-supplements; 220637279599 /blog/how-private-label-supplements-can-increase-revenue-fast; 220637272707 /blog/how-much-to-start-a-private-label-supplement-business; 220640208499 /blog/healthcare-practitioner-supplement-line-guide; 220640208488 /blog/top-10-mistakes-to-avoid-with-supplement-manufacturing; 220637279633 /blog/top-private-label-herbal-supplements-and-their-key-benefits",
+  "evidence": "Verbatim from live post bodies: 220638601792 \u2014 'all of our facilities are FDA-certified. Our industry-leading manufacturing facilities produce over 250 doctor-formulated vitamins and supplements.'; 220637272704 \u2014 'Praxera operates an FDA-registered, NSF GMP 455-2 certified facility'; 220637279586 \u2014 'Custom liquid supplements ... are manufactured at Praxera to be GMP Certified'; 220637279650 \u2014 'Some manufacturers (like Praxera) specialize in private labeling' and 'Established private label manufacturers like Praxera offer 250+ ...'; 220637272707 \u2014 'using a low-MOQ manufacturer like Praxera'; 220640208499 \u2014 'Low-MOQ private label programs from manufacturers like Praxera'; 220637279599 \u2014 'With a manufacturing supplier like Praxera'; 220637279628 \u2014 'Praxera \u00ae Labs is a leader in nutrition, product development, and research. Our formulations develop from ...'; 220637279633 \u2014 'Our products are doctor-formulated'; 220640208488 \u2014 'At Praxera, we make sure to stay up-to-date on changing regulations'. Forbidden per brief: 'we produce', 'our facilities', 'we manufacture', 'our manufacturers'.",
+  "proposed_fix": "Rewrite to partner/supplier framing, e.g. 'Praxera partners with FDA-registered, NSF GMP 455-2 certified manufacturing facilities in the U.S.' and 'a private label partner like Praxera' instead of 'a manufacturer like Praxera'. Drop 'our facilities'/'our formulations'/'we produce'.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "high",
+  "area": "blogs",
+  "title": "'FDA-certified facility' claim on 2 posts (FDA does not certify facilities)",
+  "where": "220638601792 /blog/supplement-dropshipping-5-best-tips-for-success (body + FAQ answer); 220637279628 /blog/top-private-label-protein-powders-for-your-brand (body + FAQ answer)",
+  "evidence": "4 occurrences across 2 posts: 'all of our facilities are FDA-certified', 'Praxera offers over 50 years of experience, FDA-certified facilities...', 'Your manufacturer should ... have an FDA-certified facility', 'FDA-certified facilities, passing inspections...'. FDA registers and inspects dietary-supplement facilities; it does not certify them. Note post 220637272704 uses the correct phrasing ('FDA-registered').",
+  "proposed_fix": "Replace every 'FDA-certified' with 'FDA-registered' (and 'cGMP-certified' where a third-party GMP certification is meant).",
+  "_src": "blogs"
+ },
+ {
+  "severity": "high",
+  "area": "blogs",
+  "title": "The DaVinci Laboratories logo is the publisher logo in the structured data of all 71 published posts",
+  "where": "All published posts, JSON-LD BlogPosting block; image at https://www.praxerasupplements.com/hubfs/Logo.png",
+  "evidence": "Every published post page emits \"publisher\":{\"name\":\"FoodScience Corporation\",\"logo\":{\"url\":\"https://www.praxerasupplements.com/hubfs/Logo.png\"}}. I downloaded that file (HTTP 200, 1000x484 PNG) and it is the green-leaf 'DaVinci\u00ae Laboratories' wordmark. 71/72 pages reference hubfs/Logo.png. This is a DaVinci logo served from the Praxera domain and eligible to appear in Google rich results for Praxera articles.",
+  "proposed_fix": "In the blog post template ('Private Label/Templates/Praxera - Blog Post.html'), change the publisher name to 'Praxera' and point the publisher logo at the Praxera mark (e.g. /hubfs/Praxera/Praxera Logo.png). Do not delete /hubfs/Logo.png \u2014 DaVinci assets still use it.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "high",
+  "area": "links",
+  "title": "24 broken internal links/images (HTTP 404) across 20 live posts \u2014 mostly DaVinci consumer-blog URLs rewritten to the Praxera domain for posts that were never cloned",
+  "where": "20 posts; full list in /tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/work/blogs/broken_internal.json",
+  "evidence": "Curled every href and img src in all 72 postBody fields (252 unique URLs). 24 distinct internal URLs return 404, 30 link instances, 20 posts affected. Worst offender: /blog/how-do-i-start-a-private-label-supplement-business-0 (404) is linked from 7 posts (220637272616, 220637272631, 220637272644, 220637279573, 220638601729, 220638601748, 220638601760) \u2014 the live post is /blog/how-do-i-start-a-private-label-supplement-business (no -0). Other 404s: /blog/are-liquid-vitamins-better-than-pills, /blog/best-liquid-vitamins-for-kids, /blog/do-supplements-need-fda-approval, /blog/fda-and-selling-supplements-what-you-need-to-know, /blog/five-best-and-worst-foods-for-gut-health, /blog/how-dimpro-helps-support-hormone-weight-management, /blog/how-dmg-supports-mitochondrial-function, /blog/how-to-promote-your-private-label-supplements-on-social-media (live one is /blog/dev-blog/how-to-promote-...), /blog/is-elderberry-good-for-the-immune-system, /blog/liquid-vitamin-benefits-and-uses, /blog/what-supplements-should-you-take-for-common-sleep-disorders, /private-label, /private-labeling, /private-label-get-started, /shop-supplements.html. Three broken IMAGES/downloads (all HTTP 404): Praxera_Infographic.jpg and Praxera_Infographic (2).pdf in post 220638601764, Praxera.LitX (2).png in post 220638601775 \u2014 all on 4087538.fs1.hubspotusercontent-na1.net.",
+  "proposed_fix": "Per link: re-point to the live Praxera equivalent where one exists (e.g. -0 suffix removal, /blog/dev-blog/... path), otherwise remove the link and keep the anchor text. Re-upload the three missing files (Praxera_Infographic.jpg, Praxera_Infographic (2).pdf, Praxera.LitX (2).png) or remove the embeds from posts 220638601764 and 220638601775.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "high",
+  "area": "links",
+  "title": "Blog body still links to a consumer shop URL (/shop-supplements.html) \u2014 a purchase path, and it 404s",
+  "where": "Post 220638601792 https://www.praxerasupplements.com/blog/supplement-dropshipping-5-best-tips-for-success",
+  "evidence": "postBody contains <a href=\"https://www.praxerasupplements.com/shop-supplements.html\">; curl returns 404. Same post also links https://www.praxerasupplements.com/private-label-get-started (404).",
+  "proposed_fix": "Remove the /shop-supplements.html link entirely (no ecommerce path on Praxera) and re-point /private-label-get-started to the live Get Started page.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "high",
+  "area": "blogs",
+  "title": "Confirmed: the one slug that was changed (\u2026-in-2024 -> \u2026-in-2026) has no redirect, and there is no DaVinci->Praxera blog redirect coverage at all",
+  "where": "Praxera post 220598718505 https://www.praxerasupplements.com/blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2026 vs DaVinci original 167294822166 https://blog.davincilabs.com/private-label/vitamin-manufacturing-10-top-sellers-to-consider-in-2024",
+  "evidence": "Independently verified by slug-basename join of all 72 Praxera and all 75 DaVinci private-label posts: 71 basenames match exactly, this is the only mismatch. https://www.praxerasupplements.com/blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2024 returns HTTP 404; the DaVinci original still returns 200. Pulled all 537 portal url-redirects: zero rules mention 'vitamin-manufacturing', zero pattern redirects exist, and the ONLY DaVinci->Praxera rule in the whole portal is id 220592488537 (blog.davincilabs.com/praxera-supplements-blog -> www.praxerasupplements.com/blog, isOnlyAfterNotFound=true). So none of the 75 DaVinci private-label article URLs redirect to their Praxera clones.",
+  "proposed_fix": "(1) Add a 301 from /blog/vitamin-manufacturing-10-top-sellers-to-consider-in-2024 to the -2026 URL on the Praxera domain. (2) At cutover, add 301s for blog.davincilabs.com/private-label/<slug> -> www.praxerasupplements.com/blog/<slug> for all 75 slugs, and hand-map this one because a 1:1 pattern rule would send the -2024 URL to a 404.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "high",
+  "area": "blogs",
+  "title": "The 5 'evergreen' titles were only changed in the title/meta \u2014 the on-page H1 still shows the old dated headline",
+  "where": "220598718505, 220637272633, 220637272707, 220637279552, 220637279595",
+  "evidence": "post.name vs rendered hero H1: 220598718505 title 'Vitamin Manufacturing: 10 Top Sellers to Consider This Year' but H1 'Vitamin Manufacturing: 10 Top Sellers to Consider in 2026'; 220637272633 'Trending Private Label Supplements' vs H1 'Trending Private Label Supplements for 2023'; 220637272707 'How Much Does It Cost to Start a Private Label Supplement Business?' vs H1 '... (2026 Guide)'; 220637279552 'Top Selling Private Label Supplements' vs H1 '... for 2026'; 220637279595 'Trends in the Vitamin and Supplement Industry' vs H1 '2023 Trends in the Vitamin and Supplement Industry'. All 5 verified on the live rendered pages. These are exactly the 5 evergreen titles; the other 67 H1s match their titles.",
+  "proposed_fix": "Edit the hero module 'headline' field on those 5 posts to match the evergreen post title.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_blogs/post_220598718505_1440.png",
+  "_src": "blogs"
+ },
+ {
+  "severity": "medium",
+  "area": "blogs",
+  "title": "DaVinci Labs product names still used as Praxera products in post bodies and hero artwork",
+  "where": "220598718505 (tri-mag 300, ALL-ZYME\u2122, HAIR EFFECTS\u2122, DIMPRO\u00ae150 MG, ADK); 220637279552 (Tri-Mag, Vitamins ADK); 220637272691 (Tri-Mag 300); 220637272650 (Mango-Plex, DIMPro); 220637279555 (Praxera Lab's Black Elderberry); 220637279576 (Praxera' Dyglofit\u2122); 220637279601 (Perna)",
+  "evidence": "Verbatim: 220598718505 '10 top selling supplements in 2024 / tri-mag 300 ... ALL-ZYME\u2122 ... HAIR EFFECTS\u2122 ... DIMPRO\u00ae150 MG ... ADK'. 220637272650 'private label supplements like Mango-Plex or DIMPro'. These are DaVinci Laboratories SKUs. The shared hero/CTA artwork 'Private Label Header.jpg' and 'PRIVATELABEL.png' (used as the featured image on 220598718505 and 220637279614) shows bottle mock-ups labelled TRI-MAG 300, CHOLESTSURE, ALL-ZYME, COMPLEX-75, HAIR EFFECTS and Omega Probiotic-ND. Also note 'Praxera\u00ae Labs' / \"Praxera Lab's\" appears on 4 posts (220637272677, 220637272691, 220637279555, 220637279628) \u2014 a search-replace artefact of 'DaVinci\u00ae Labs'; no such entity exists.",
+  "proposed_fix": "Replace DaVinci SKU names with generic category names (e.g. 'a chelated magnesium blend', 'a digestive enzyme formula'). Replace 'Praxera\u00ae Labs' / \"Praxera Lab's\" with 'Praxera'. Commission Praxera-neutral bottle artwork to replace Private Label Header.jpg / PRIVATELABEL.png.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "medium",
+  "area": "blogs",
+  "title": "Duplicate article published: 'Tips for Buying Wholesale Private Label Supplements' exists twice, and DaVinci kept the second one unpublished",
+  "where": "220637279558 /blog/tips-for-buying-wholesale-private-label-supplements and 220637279640 /blog/tips-for-buying-wholesale-private-label-supplements-0",
+  "evidence": "Same post title, same H1, same featured image (wholesale-supplements-buying-tips.png), same opening sentence. Sentence-level diff: 30 of 37 sentences in the first post appear verbatim in the second (41 sentences). Both return HTTP 200 and both are state=PUBLISHED; the -0 version has publishDate 2026-05-13 and is the one surfaced on /blog page 1. On DaVinci the same pair exists \u2014 47886225552 (PUBLISHED) and 212806333313 (DRAFT, publishDate 1970-01-01) \u2014 i.e. DaVinci deliberately never published the -0 rewrite. Praxera published it.",
+  "proposed_fix": "Keep the newer rewrite (220637279640), unpublish 220637279558, and 301 /blog/tips-for-buying-wholesale-private-label-supplements -> /blog/tips-for-buying-wholesale-private-label-supplements-0 (or the reverse if the legacy URL's equity matters more). Do not leave both live.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "medium",
+  "area": "blogs",
+  "title": "6 Praxera posts are published whose DaVinci originals are still DRAFT \u2014 content DaVinci chose not to ship is now live for Praxera",
+  "where": "220637279650, 220640208499, 220637272707, 220637272704, 220637279640, 220637272701",
+  "evidence": "State comparison of the 71 matched clone pairs: 220637279650 (DaVinci 212811609383 DRAFT), 220640208499 (212811700300 DRAFT), 220637272707 (212811609387 DRAFT), 220637272704 (212811609381 DRAFT), 220637279640 (212806333313 DRAFT), 220637272701 (212809744662 DRAFT) are all PUBLISHED on Praxera. Conversely 220638601745 is DRAFT on Praxera while DaVinci's 82165855663 is PUBLISHED. Four of these six (220637279650, 220637272707, 220637272704, 220640208499) are also in the manufacturer-language finding above \u2014 they are the newest, unreviewed drafts.",
+  "proposed_fix": "Confirm with the client that these six were intended to go live; they have not been through DaVinci's own editorial sign-off. Hold them as drafts until reviewed, or accept them explicitly.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "medium",
+  "area": "blogs",
+  "title": "Blog listing pages emit no rel=canonical, and /blog and /blog/page/0 serve identical content",
+  "where": "https://www.praxerasupplements.com/blog and https://www.praxerasupplements.com/blog/page/0 (listing template 'Private Label/Templates/Praxera - Blog Listing.html')",
+  "evidence": "Neither /blog nor /blog/page/0 contains a <link rel=\"canonical\"> element (only the JS _hsq.push([\"setCanonicalUrl\",...]) analytics call, which search engines do not use). The two URLs return HTTP 200 with the same 23 post links. /blog/page/6 also returns 200 with 14 post links and /blog/page/7 returns 200 with 0 posts. Post detail pages DO carry a correct canonical (verified on all 71 published posts).",
+  "proposed_fix": "Add {{ standard_header_includes }}-driven canonical (or an explicit <link rel=\"canonical\" href=\"{{ content.absolute_url }}\">) to the listing template, and have /blog/page/0 301 to /blog.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "2 external citation links return 404",
+  "where": "https://healthcenter.uga.edu/protein-powder-the-what-why-how-to-choose/ in posts 220637279612 and 220637279628; https://www.sba.gov/business-guide/plan-your-business/calculate-startup-costs in post 220637272707",
+  "evidence": "curl -L with a browser User-Agent returns HTTP 404 for both.",
+  "proposed_fix": "Replace with current equivalents or remove the citation link.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "low",
+  "area": "links",
+  "title": "Two footnote links point at a HubSpot in-app preview URL for an old DaVinci content id",
+  "where": "Post 220637272631 https://www.praxerasupplements.com/blog/tips-for-selling-private-label-supplements-for-immunity",
+  "evidence": "Two hrefs in postBody point to 4087538.hubspotpreview-na1.com/_hcms/preview/content/76735951939 with an embedded preview_key. Preview URLs are not public pages and leak a preview key.",
+  "proposed_fix": "Remove both preview links (they are leftover footnote anchors) and re-point the footnote to an in-page #anchor.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "low",
+  "area": "links",
+  "title": "12 malformed links 'https://l%20' in one post",
+  "where": "Post 220637272693 https://www.praxerasupplements.com/blog/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+  "evidence": "12 anchors in postBody have href=\"https://l%20\" (curl returns 000 \u2014 host does not resolve). Looks like a truncated paste.",
+  "proposed_fix": "Remove or repair the 12 anchors in that post.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "low",
+  "area": "blogs",
+  "title": "All 72 posts have an FAQ module (3-8 Q&As) but emit no FAQPage structured data",
+  "where": "All 72 posts, module 'faq' in template 'Private Label/Templates/Praxera - Blog Post.html'",
+  "evidence": "Grep for 'FAQPage' across all 72 rendered pages: 0 hits. FAQ item counts per post: 3 items on 30 posts, 7 on 27, 8 on 14, 6 on 1.",
+  "proposed_fix": "Add FAQPage JSON-LD emission to the PL - FAQ module.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "low",
+  "area": "blogs",
+  "title": "Comments are enabled on the Praxera blog (they were disabled on the DaVinci source blog)",
+  "where": "Content group 220598739286 (Praxera Supplements Blog)",
+  "evidence": "/content/api/v2/blogs: Praxera allow_comments=true; DaVinci Private Label blog 20252938412 allow_comments=false. No comment markup currently renders on the post template, so nothing is visible today.",
+  "proposed_fix": "Set allow_comments=false on the Praxera blog to match the source and avoid a spam surface if a future template adds the comment module.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "info",
+  "area": "links",
+  "title": "28 external links return 403 and 6 return 401 to an automated request \u2014 bot protection, not verified broken",
+  "where": "Hosts: www.nsf.org (6), www.fda.gov (6), www.grandviewresearch.com (5), ods.od.nih.gov (3), www.usp.org (2), doi.org (2), plus 1 each for tandfonline, sciencedirect, researchgate, fortunebusinessinsights, forbes, cdc.gov, canva.com, asha.org, naturopathic.org",
+  "evidence": "curl -L with a desktop Chrome User-Agent returns 403/401. These are almost certainly WAF/bot blocks rather than dead pages. UNVERIFIED in a real browser.",
+  "proposed_fix": "No action; spot-check in a browser if the client wants certainty.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "info",
+  "area": "blogs",
+  "title": "API 'authorName' on all 72 Praxera posts reads 'Marko Ajder' \u2014 this is the last-editor field, not the byline",
+  "where": "All 72 posts, /cms/v3/blogs/posts authorName",
+  "evidence": "All 72 Praxera posts have authorName='Marko Ajder' while blogAuthorId=221710521902 (Praxera Team). On DaVinci the same field spreads across Shawn Peterson (29), Patrick Dodge (18), Justin Hilbert (14) etc. \u2014 i.e. it tracks the HubSpot user who last saved the post. Not a public-facing issue; flagged only so it is not mistaken for a byline defect.",
+  "proposed_fix": "None.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "high",
+  "area": "blogs",
+  "title": "Two in-body images are genuinely broken on the live pages (naturalWidth 0 in Chromium)",
+  "where": "220638601764 https://www.praxerasupplements.com/blog/how-to-scale-your-business-with-private-label-supplements (Praxera_Infographic.jpg + a Praxera_Infographic (2).pdf download link); 220638601775 https://www.praxerasupplements.com/blog/how-to-sell-supplements (Praxera.LitX (2).png)",
+  "evidence": "Playwright at 1440px and 390px reports naturalWidth=0/naturalHeight=0 for https://www.praxerasupplements.com/hs-fs/hubfs/Praxera_Infographic.jpg?width=6358&height=4913 (displayed at 190px) and https://www.praxerasupplements.com/hs-fs/hubfs/Praxera.LitX%20(2).png?width=750&height=400 (displayed at 142px). Direct curl of the source files on 4087538.fs1.hubspotusercontent-na1.net returns HTTP 404 for Praxera_Infographic.jpg, Praxera_Infographic (2).pdf and Praxera.LitX (2).png. Every other image on all 72 posts (71 unique featured/hero images + 12 in-body images + 3 CTA images) returned HTTP 200.",
+  "proposed_fix": "Re-upload the three files to the portal File Manager under the same hubfs paths, or remove the two <img> embeds and the PDF download link from those two posts.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_blogs/post_220638601764_1440.png",
+  "_src": "blogs"
+ },
+ {
+  "severity": "medium",
+  "area": "blogs",
+  "title": "Horizontal overflow on mobile in post 4-tips-to-select-the-best-gummy-vitamins\u2026: raw URLs used as link text push the page 425px wider than the viewport",
+  "where": "Post 220637272693 https://www.praxerasupplements.com/blog/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+  "evidence": "Chromium, 390px viewport: document.scrollWidth = 815 vs window.innerWidth = 390 (425px overflow). At 360px: scrollWidth = 815 (455px overflow). The overflowing elements are three <a> tags at left=42 with widths 773px, 606px and 407px \u2014 their link text is a bare URL, longest 145 chars ('https://www.consumerlab.com/reviews/multivitamin-review-comparisons/multivitamins/?search=80%20of%20gummy%20vitamins%20failed%20quality%20tests'). 4 other posts have the same raw-URL-as-anchor-text pattern and are likely affected but were not measured: 220637279633 (longest 123 chars), 220637272691 (97), 220637272633 (44), 220637279552 (44).",
+  "proposed_fix": "Replace the bare-URL anchor text with descriptive text (or the source name) on those 5 posts; optionally add 'overflow-wrap:anywhere' to .pl-rt__inner a in module_PL_-_Rich_Text.css as a safety net.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_blogs/post_220637272693_360.png",
+  "_src": "blogs"
+ },
+ {
+  "severity": "info",
+  "area": "blogs",
+  "title": "Re-checked the known 'blog listing overflows on mobile' \u2014 NOT reproducible on the current listing",
+  "where": "https://www.praxerasupplements.com/blog and https://www.praxerasupplements.com/blog/page/2",
+  "evidence": "Rendered the real HTML with the real stylesheets and the real Praxera logo, then measured in Chromium. /blog: scrollWidth == innerWidth at 1440 (1440), 900 (900), 390 (390), 375 (375) and 360 (360) \u2014 zero overflowing elements at every width. /blog/page/2: same, 390 and 1440 clean. 16 images on the listing, 0 broken. Cards stack to one column below ~900px and the featured hero image scales correctly.",
+  "proposed_fix": "Close the open 'mobile listing overflow' item, or re-test on a real device if the client saw it on a specific phone \u2014 I could not reproduce it at 360/375/390.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_blogs/listing_390.png",
+  "_src": "blogs"
+ },
+ {
+  "severity": "medium",
+  "area": "blogs",
+  "title": "The blog listing hero and several post heroes use DaVinci product artwork",
+  "where": "Listing hero / featured post image on https://www.praxerasupplements.com/blog (PRIVATELABEL.png); post 220598718505 and 220637279614 featured image; in-body image on the same artwork ('Private Label Header.jpg')",
+  "evidence": "The first thing on the blog listing at every width is a bottle line-up whose labels read TRI-MAG 300, CHOLESTSURE, ALL-ZYME, COMPLEX-75, HAIR EFFECTS and Omega Probiotic-ND \u2014 DaVinci Laboratories SKUs \u2014 alongside 'YOUR NAME GOES HERE' placeholders. Verified by downloading the source image (1200x372) and reading the labels.",
+  "proposed_fix": "Replace PRIVATELABEL.png / Private Label Header.jpg with bottle artwork carrying neutral or Praxera-placeholder labels.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_blogs/listing_1440.png",
+  "_src": "blogs"
+ },
+ {
+  "severity": "low",
+  "area": "blogs",
+  "title": "Hard-coded 'Updated August 2026' on all 72 post heroes, and listing dates render with seconds",
+  "where": "All 72 posts (hero subhead); https://www.praxerasupplements.com/blog listing cards",
+  "evidence": "All 72 hero subheads end '\u00b7 Updated August 2026' as literal text, while the API 'updated' timestamp for all 72 is 2026-09 \u2014 already wrong by a month and it will never self-update. Listing cards print e.g. 'May 13, 2026, 10:40:53 AM' \u2014 second-level precision on a blog card.",
+  "proposed_fix": "Drive the date from {{ content.updated }} in the hero module (or drop it), and change the listing card date format to '%B %e, %Y'.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_blogs/listing_1440.png",
+  "_src": "blogs"
+ },
+ {
+  "severity": "info",
+  "area": "blogs",
+  "title": "Clean: no links to DaVinci/VetriScience/PetTech/bit.ly and no images on DaVinci domains from any published post",
+  "where": "All 71 published posts",
+  "evidence": "Curled all 72 live URLs and scanned both the API postBody and the rendered HTML. Across the 71 published pages the only occurrence of 'davincilabs.com' is the Hotjar comment (known portal-level item). Zero matches for bit.ly, vetriscience, pettechlabs. All 237 unique body hrefs and all 15 unique body images plus 71 featured/hero images resolve to praxerasupplements.com, hubspotusercontent/cdn2.hubspot.net (portal 4087538 shared file host \u2014 known item) or third-party research sites. The 73 davincilabs.com anchors I found all come from the 404 page, reported separately.",
+  "proposed_fix": "None.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "info",
+  "area": "blogs",
+  "title": "Unverified: the mobile nav hamburger and dropdown carets depend on a Font Awesome kit \u2014 confirm praxerasupplements.com is on the kit's allowed-domain list",
+  "where": "Global header module on every blog page; https://kit.fontawesome.com/5e60ff1772.js",
+  "evidence": "The mobile menu button is <i class=\"MobileBars fa-solid fa-bars\"></i> and the submenu carets are fa-solid fa-caret-down; no CSS in the theme draws them. Font Awesome kits are domain-locked. I cannot verify the allowed-domain list: curl of the kit returns 403 'Not allowed for origin' with or without a praxerasupplements.com Referer, and a bogus kit id returns 403 too, so the response is not diagnostic. Headless Chromium cannot reach the live site through this proxy, so the icon did not render in my offline capture either \u2014 this is UNVERIFIED, not a confirmed defect.",
+  "proposed_fix": "Open https://www.praxerasupplements.com/blog on a phone; if the hamburger is invisible, add www.praxerasupplements.com to kit 5e60ff1772's allowed domains in the Font Awesome account.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "low",
+  "area": "blogs",
+  "title": "All 72 Praxera posts lost the topic tags their DaVinci originals carry",
+  "where": "All 72 posts (tagIds = [])",
+  "evidence": "Every Praxera post has tagIds = []. On DaVinci, 74 of 75 private-label posts are tagged (57 with 1 tag, 11 with 2, 5 with 3, 1 with 4). https://www.praxerasupplements.com/blog/tag/private-label-supplements returns 404 and the listing template does not link tag pages, so nothing is visibly broken today \u2014 but the taxonomy is gone.",
+  "proposed_fix": "If topic pages are planned, port the tag assignments from the DaVinci originals (read-only copy of tagIds, mapped to Praxera-named tags). Otherwise accept and close.",
+  "_src": "blogs"
+ },
+ {
+  "severity": "blocker",
+  "area": "links",
+  "title": "Praxera 404 page serves the legacy DaVinci Laboratories template (logo, nav, shop links)",
+  "where": "www.praxerasupplements.com system 404 template (portal 4087538). Reproduce at https://www.praxerasupplements.com/this-page-does-not-exist-qa3 or any bad URL",
+  "evidence": "curl -L of https://www.praxerasupplements.com/this-page-does-not-exist-qa3 and .../blog/nope-qa3 both return HTTP 404 with a 41KB body built on template 'DaVinciLabs_February2018'. The body contains <img src=\"https://www.praxerasupplements.com/hubfs/DaVinciLabs_February2018/images/DV_2017Logo.png\" alt=\"DaVinci Laboratories: Innovative by nature.\">, the footer string 'DaVinci Laboratories of Vermont (c) 2017', http://www.facebook.com/DaVinciLabs, and 57 distinct www.davincilabs.com links including a full ecommerce catalog (index.php?l=product_list&c=*, index.php?l=page_view&p=buy, index.php?l=page_view&p=where_to_buy) plus https://www.davincilabs.com/White_Paper/PROTOCOL_GUIDE_V2.pdf. This is served on the Praxera domain to any visitor hitting a bad URL, and at least one live internal link (Resources page) reaches it.",
+  "proposed_fix": "Set the Praxera domain's 404 (and 500) template in HubSpot Settings > Website > Pages > System pages to the Praxera theme's system template, then unpublish/re-point the DaVinciLabs_February2018 system template for www.praxerasupplements.com. Do not touch the template on davincilabs.com domains.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "blocker",
+  "area": "forms",
+  "title": "Contact page's email card points at a misspelled domain - mailto:info@praxerasuapplements.com",
+  "where": "Page 'Contact' https://www.praxerasupplements.com/contact (site page, PUBLISHED), contact-card module <a class=\"pl-cg__card pl-cg__card--clickable\" href=\"mailto:...\">",
+  "evidence": "Live HTML of /contact contains href=\"mailto:info@praxerasuapplements.com\" (note 'suapplements'). The correct address info@praxerasupplements.com appears 7x elsewhere in the same page. Any visitor clicking the Email card composes mail to a non-existent domain and the message bounces.",
+  "proposed_fix": "Change the card href to mailto:info@praxerasupplements.com (and the visible label if it repeats the typo).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/contact_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "blocker",
+  "area": "links",
+  "title": "All 11 global-footer navigation links are href=\"#\" on every published Praxera page",
+  "where": "Global Footer module 215777821974 (module_Global_Footer), rendered on all 126 live Praxera pages + blog posts",
+  "evidence": "Parsed the footer block of all 126 successfully-fetched live Praxera URLs: 1386 anchors total, every single one href='#' (Counter result: {'#': 1386}). Affected labels: Private Label Supplements, Our Process, Design Services, Resource Center, Guides, FAQ, Blog, Quality & Trust, Health Categories, Supplement Forms, Contact. The footer social container (.footer__social__container) is empty. There is no Privacy Policy or Terms link in the footer at all - /privacy and /terms are linked from nowhere on the site (0 inbound links found across 68 pages + 72 posts).",
+  "proposed_fix": "Populate the Global Footer module's link fields with the real URLs (/our-process, /design-services, /resources, /guides, /faq, /blog, /quality-standards, /health-categories, /contact, and a real target for 'Supplement Forms'), and add Privacy (/privacy) and Terms (/terms) links to the footer bottom tier.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/get-started_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "blocker",
+  "area": "forms",
+  "title": "Top Sellers form redirects leads to /ty-contact, which is an unpublished DRAFT page returning 404",
+  "where": "Page 'Top Sellers' https://www.praxerasupplements.com/top-sellers (PUBLISHED), form module 218940115793, form 'Private Label (Praxera) - Schedule a Consultation' d8dfdd90-98f1-4cba-bedf-181dd9286ca1; redirect target https://www.praxerasupplements.com/ty-contact",
+  "evidence": "Module config: {\"form_id\":\"d8dfdd90-...\",\"response_type\":\"redirect\",\"redirect_url\":\"https://www.praxerasupplements.com/ty-contact\"}. curl -L -A <browser UA> https://www.praxerasupplements.com/ty-contact returns 404 (the site page with slug 'ty-contact' is state=DRAFT). The submitter lands on the DaVinci-branded 404 page described above. Every other Praxera form redirect target returns 200.",
+  "proposed_fix": "Either publish the /ty-contact page, or change the Top Sellers form module redirect_url to https://www.praxerasupplements.com/ty-consultation (which returns 200 and is what the other 23 consultation forms use).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/top-sellers_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "high",
+  "area": "forms",
+  "title": "Three guide forms' GDPR privacy text links to https://www.Praxeralabs.com/... which does not resolve",
+  "where": "Forms 'Praxera - Client Onboarding Guide' 81f2906b-f93a-40b7-aa3e-f075660d4beb, 'Praxera - Ingredients & Testing Guide (page form)' 2e55f9cc-3476-4cee-b4d7-95f6bc1f5569, 'Praxera - Supplements Guide' dd7328fc-f1b0-4d3f-84ac-d762af1add57",
+  "evidence": "legalConsentOptions.privacyText on all three contains <a href=\"https://www.Praxeralabs.com/privacy-policy-cookie-restriction-mode\">Privacy Policy</a>. This is a find-and-replace artifact of davincilabs.com -> Praxeralabs.com. curl -L returns 000 (DNS does not resolve). 'Praxera - Supplements Guide' is the live form on /learning/definitive-guide; the other two are the ingredient/onboarding guide forms. The legitimate-interest consent notice therefore has a dead privacy-policy link.",
+  "proposed_fix": "Replace the href in all three forms' privacyText with https://www.praxerasupplements.com/privacy (returns 200).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/learning-definitive-guide_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "high",
+  "area": "forms",
+  "title": "Two guide forms' privacy text links to the relative path /pl-demo-privacy, which 404s on the Praxera domain",
+  "where": "Forms 'Praxera - Onboarding Guide' 6d4066c8-92f5-400c-a556-4265b62ec96b (live on /learning/onboarding-guide) and 'Praxera - Ingredients, Testing & Certification Guide' 471fb48f-63c1-4bae-bc17-65edebfedcea",
+  "evidence": "privacyText contains <a href=\"/pl-demo-privacy\">Privacy Policy</a>. curl -L https://www.praxerasupplements.com/pl-demo-privacy returns 404. /pl-demo-privacy is a legacy staging slug from the pre-rebrand build.",
+  "proposed_fix": "Replace with https://www.praxerasupplements.com/privacy in both forms.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/learning-onboarding-guide_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "high",
+  "area": "forms",
+  "title": "Form 471fb48f still shows the literal placeholder [BRAND_TBD] in its consent text",
+  "where": "Form 'Praxera - Ingredients, Testing & Certification Guide' 471fb48f-63c1-4bae-bc17-65edebfedcea",
+  "evidence": "legalConsentOptions.privacyText begins '<p>[BRAND_TBD] needs the contact information you provide to us to contact you about our products and services...'. The equivalent sibling forms were updated to 'Praxera'; this one was missed. Confirmed via /marketing/v3/forms and /forms/v2/forms - the placeholder is also in the live-rendered definition at https://forms.hsforms.com/embed/v3/form/4087538/471fb48f-.../json.",
+  "proposed_fix": "Replace '[BRAND_TBD]' with 'Praxera' in the form's privacy text (and fix its /pl-demo-privacy href in the same edit).",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "high",
+  "area": "forms",
+  "title": "Four Praxera forms - including the main live consultation form - notify nobody on submission",
+  "where": "Forms d8dfdd90-98f1-4cba-bedf-181dd9286ca1 (on 27 Praxera page placements), c82c667f-219d-4f12-96ce-7aaff98245fa (3 ads pages), 4b8af922-efce-478b-be6a-ec150098ae8d (Contact Us), f240cb7b-4613-47dd-98df-4b334f858b19 (Request a Quote)",
+  "evidence": "/forms/v2/forms/{guid} returns no notifyRecipients key for these four, and /marketing/v3/forms shows configuration.notifyContactOwner=false for all four. The remaining Praxera forms do have recipients. d8dfdd90 is the form used in 27 of the 35 form placements across the Praxera site, so the primary lead path generates no internal notification email. No followUpId / kickbackEmail is set on any of the 12 Praxera forms either.",
+  "proposed_fix": "Add the Praxera sales owner(s) to 'Send form notifications to' on these four forms, or enable notifyContactOwner, before cutover.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "high",
+  "area": "forms",
+  "title": "Form notification recipient 4990427 is no longer a user in portal 4087538 (dead notification address)",
+  "where": "Forms 'Praxera - Ingredients & Testing Guide (page form)' 2e55f9cc, 'Praxera - Ingredients, Testing & Certification Guide' 471fb48f, 'Praxera - Supplements Guide' dd7328fc, 'Praxera - Main Lead Form (legacy field set)' e88e8d00 (notifyRecipients '3256355,4990427'); 'Praxera - Our Design Services' df8b7a41 (notifyRecipients '4990427' only)",
+  "evidence": "Resolved notifyRecipients against /settings/v3/users (125 users): 3256355 = patrick@creativesidemarketing.com, 66293956 = ncampos@creativesidemarketing.com, 4990427 = not present in the user list. 'Praxera - Our Design Services' (live on /design-team) has 4990427 as its ONLY recipient, so its submissions notify nobody. Separately, every resolvable recipient belongs to an outside agency domain (creativesidemarketing.com) rather than Praxera/FoodScience.",
+  "proposed_fix": "Remove user 4990427 from all five forms and add current Praxera owners; decide deliberately whether creativesidemarketing.com addresses should keep receiving Praxera leads after cutover.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/design-team_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "high",
+  "area": "website",
+  "title": "Get Started page has a hard-coded width:45em div that forces 350px of horizontal overflow at 390px",
+  "where": "Page 'Get Started' https://www.praxerasupplements.com/get-started (PUBLISHED), rich-text module #hs_cos_wrapper_module_1, inline <div style=\"width: 45em; color: #231f20; background-color: #ffffff;\">",
+  "evidence": "Rendered the real page locally (curl'd HTML + all 11 of its real stylesheets + real logo/images) in headless Chromium at 390x844: document.documentElement.scrollWidth = 740 vs clientWidth = 390 (350px overflow), still 740 after scrolling the full page. Computed style on the offending DIV is width:720px inside a 350px-wide .pl-rt__inner. The nested 'Discuss your business goals...' flex rows add further 363-466px children. Screenshot get-started_390.png is 740px wide with ~350px of empty gutter. No other page of the 10 rendered overflows except /learning/definitive-guide (436px, 46px overflow, offending element not isolated).",
+  "proposed_fix": "In the Get Started rich-text module, change style=\"width: 45em\" to width:100%;max-width:45em (and add flex-wrap:wrap to the checklist rows).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/get-started_390.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "high",
+  "area": "links",
+  "title": "15 broken internal blog-to-blog links on live Praxera posts (legacy DaVinci slugs never remapped)",
+  "where": "Praxera blog (content group 220598739286), 14 referring posts; see the non-200 table",
+  "evidence": "Curl -L with a browser UA of every deduplicated outbound URL found in the 68 Praxera site pages, 72 Praxera blog posts and the global header/footer (546 absolute URLs). 23 praxerasupplements.com URLs returned non-200, of which 15 are /blog/* links to posts that do not exist on the Praxera blog, e.g. /blog/how-do-i-start-a-private-label-supplement-business-0 (404, linked from 7 posts), /blog/how-to-promote-your-private-label-supplements-on-social-media (404, 4 variants incl. two with stale __hstc tracking query strings), /blog/are-liquid-vitamins-better-than-pills, /blog/best-liquid-vitamins-for-kids, /blog/do-supplements-need-fda-approval, /blog/fda-and-selling-supplements-what-you-need-to-know, /blog/five-best-and-worst-foods-for-gut-health, /blog/how-dimpro-helps-support-hormone-weight-management, /blog/how-dmg-supports-mitochondrial-function, /blog/is-elderberry-good-for-the-immune-system, /blog/liquid-vitamin-benefits-and-uses, /blog/what-supplements-should-you-take-for-common-sleep-disorders. Every one of these currently lands on the DaVinci-branded 404 page.",
+  "proposed_fix": "For each, repoint to the surviving Praxera equivalent (e.g. ...-business-0 -> /blog/how-do-i-start-a-private-label-supplement-business, social-media -> /blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media) or remove the link; strip the __hstc/__hssc/__hsfp query strings. Do NOT change blog slugs.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "high",
+  "area": "links",
+  "title": "Redirect rule 208573973878 sends a Praxera blog URL to /private-label/... which 404s; the Resources page links to it",
+  "where": "URL redirect id 208573973878: /blog/top-questions-consumers-have-about-private-label-supplements -> /private-label/managing-the-top-3-risks-when-selling-private-label-supplements (301). Referrers: page 'Resources' https://www.praxerasupplements.com/resources and post /blog/managing-the-top-3-risks-when-selling-private-label-supplements",
+  "evidence": "curl -L of https://www.praxerasupplements.com/blog/top-questions-consumers-have-about-private-label-supplements: 1 redirect hop to https://www.praxerasupplements.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements, final status 404. The /private-label/ prefix is a DaVinci-era path that does not exist on the Praxera blog (the live post is at /blog/managing-the-top-3-risks-...). Separately, the source post 'Answers to Your Top Questions About Private Label Supplements' (id 220638601745) is state=DRAFT, so it is the only one of the 72 Praxera posts that 404s.",
+  "proposed_fix": "Edit redirect 208573973878's destination to /blog/managing-the-top-3-risks-when-selling-private-label-supplements, and decide whether to publish post 220638601745. Fix the /resources link either way.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "high",
+  "area": "links",
+  "title": "Praxera Organization JSON-LD declares its logo and image on www.pettechlabs.com (a sibling DaVinci-family domain)",
+  "where": "Homepage https://www.praxerasupplements.com/ and https://www.praxerasupplements.com/health-categories, inline application/ld+json Organization block",
+  "evidence": "Live HTML contains: \"@id\":\"https://www.praxerasupplements.com/#organization\",\"name\":\"Praxera\",\"legalName\":\"Praxera of Vermont\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.pettechlabs.com/hubfs/Praxera/Praxera%20Logo.png\"},\"image\":\"https://www.pettechlabs.com/hubfs/Praxera/Praxera%20Logo.png\". curl confirms that URL returns 200 image/png from pettechlabs.com. Search engines will therefore attribute Praxera's brand logo to a Pet Tech Labs URL. (Body <img> tags on these pages are correctly rewritten to praxerasupplements.com; only the structured data was missed.)",
+  "proposed_fix": "Change both logo and image in the Organization JSON-LD to https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Logo.png. Also review 'legalName':'Praxera of Vermont' - it mirrors 'DaVinci Laboratories of Vermont' and is probably not Praxera's legal name.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "forms",
+  "title": "Five of the twelve Praxera forms are orphans - embedded on no Praxera page",
+  "where": "Forms 'Praxera - Contact Us' 4b8af922-efce-478b-be6a-ec150098ae8d, 'Praxera - Main Lead Form' 6ae15824-5e47-4745-918b-c3406ab5e7b7, 'Praxera - Client Onboarding Guide' 81f2906b-f93a-40b7-aa3e-f075660d4beb, 'Praxera - Ingredients & Testing Guide (page form)' 2e55f9cc-3476-4cee-b4d7-95f6bc1f5569, 'Praxera - Ingredients, Testing & Certification Guide' 471fb48f-63c1-4bae-bc17-65edebfedcea",
+  "evidence": "Scanned the full layoutSections JSON of all 68 www.praxerasupplements.com site pages and all 72 Praxera blog posts for every form GUID in the portal. 35 form placements found, using only 7 distinct forms: d8dfdd90 (27 placements), c82c667f (3), e88e8d00 (1), df8b7a41 (1), dd7328fc (1), 6d4066c8 (1), f240cb7b (1, DRAFT page). The five forms above appear nowhere. Notably the live /contact page uses 'Praxera - Main Lead Form (legacy field set)' (16 fields, 8 required) instead of the purpose-built 'Praxera - Contact Us' (5 fields), and /learning/ingredients-testing uses the generic consultation form instead of either ingredients-guide form.",
+  "proposed_fix": "Decide per form: swap /contact to 4b8af922 (or confirm the 16-field legacy form is wanted), swap /learning/ingredients-testing to 2e55f9cc, and archive the three genuinely unused duplicates (471fb48f, 81f2906b, 6ae15824) so they cannot be picked by mistake.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/contact_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "forms",
+  "title": "/learning/ingredients-testing collects the wrong form and drops the guide's consent + subscription opt-in",
+  "where": "Page https://www.praxerasupplements.com/learning/ingredients-testing (PUBLISHED), form module 1155238 with form d8dfdd90 redirecting to /learning/ty-ingredients-testing",
+  "evidence": "The Ingredients & Testing guide landing page embeds 'Private Label (Praxera) - Schedule a Consultation' (firstname, lastname, email, phone, company, message; legalConsentOptions.type='none'; submit text 'Submit') and redirects to the guide thank-you page. The two purpose-built guide forms (2e55f9cc / 471fb48f) carry the 'What best describes you?', website, employee-count and blog-subscription fields plus the legitimate-interest consent block and the 'Download The Guide' button, and are used nowhere.",
+  "proposed_fix": "Swap the module's form_id to 2e55f9cc-3476-4cee-b4d7-95f6bc1f5569 (which already has the correct redirect and consent text once its Praxeralabs.com link is fixed).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/learning-ingredients-testing_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "forms",
+  "title": "Praxera guide-form consent subscribes leads to the shared portal-wide 'Marketing Information 1' subscription type",
+  "where": "Forms 81f2906b, 2e55f9cc, 471fb48f, 6d4066c8, dd7328fc - legalConsentOptions.subscriptionTypeIds = [4588994]",
+  "evidence": "/email/public/v1/subscriptions resolves 4588994 to {\"name\":\"Marketing Information 1\",\"internalName\":\"MARKETING_INFORMATION\",\"businessUnitId\":0,\"portalId\":4087538} - a generic, business-unit-0 subscription shared with DaVinci, not a Praxera-specific one. Praxera guide downloaders are opted into the same marketing subscription as DaVinci Labs contacts.",
+  "proposed_fix": "Create a Praxera-specific subscription type (or business unit) and point the five guide forms' legitimate-interest consent at it.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "forms",
+  "title": "Praxera forms write to DaVinci-named CRM properties (label says Praxera, property does not)",
+  "where": "Property 'i_would_like_to_subscribe_to_the_davinci_blog' on 8 of 12 Praxera forms; dependent property 'how_did_you_hear_about_davinci___other__please_specify_' on 'Praxera - Main Lead Form' 6ae15824",
+  "evidence": "Field definitions returned by /marketing/v3/forms: {\"name\":\"i_would_like_to_subscribe_to_the_davinci_blog\",\"label\":\"I would like to subscribe to the Praxera Blog\"}. On 'Praxera - Main Lead Form' and 'Praxera - Main Lead Form (legacy field set)' this checkbox is pre-checked (defaultValue 'true'). The 'How did you hear about Praxera?' dropdown's Other field is 'how_did_you_hear_about_davinci___other__please_specify_'. Front-end labels are correctly Praxera-branded; only the internal property names are DaVinci, so Praxera and DaVinci opt-ins land in the same CRM fields.",
+  "proposed_fix": "Either accept the shared property (and document it) or create praxera_blog_subscription / how_did_you_hear_about_praxera_other properties and re-map the forms. Also confirm the pre-checked blog opt-in is intentional under legitimate interest.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "website",
+  "title": "Contact page FAQ (visible text and FAQPage schema) and Terms page publish the wrong email domain info@praxera.com",
+  "where": "https://www.praxerasupplements.com/contact (FAQ accordion + application/ld+json FAQPage) and https://www.praxerasupplements.com/terms (module_17 inline rich text)",
+  "evidence": "Live HTML: /contact FAQ answer 'Email to info@praxera.com works but is slightly slower than the form.' appears twice (once in the visible accordion, once inside the FAQPage JSON-LD). /terms: 'Questions about these Terms of Service can be sent to info@praxera.com or mailed to Praxera, 929 Harvest Lane, Williston, VT 05495.' The brief's standard is info@praxerasupplements.com, which is what the rest of the site and the Organization schema use.",
+  "proposed_fix": "Replace all three occurrences of info@praxera.com with info@praxerasupplements.com.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/contact_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "website",
+  "title": "Contact page publishes DaVinci Laboratories' phone number as Praxera's",
+  "where": "https://www.praxerasupplements.com/contact - <a href=\"tel:1-800-325-1776\">1-800-325-1776</a>",
+  "evidence": "The only tel: link anywhere in the Praxera asset set is tel:1-800-325-1776. The same number appears as '(800) 325-1776' in the legacy DaVinciLabs_February2018 footer that the Praxera 404 page serves, alongside DaVinci's '(802) 878-0549'. So the number Praxera publishes for inbound calls is DaVinci Laboratories' published line.",
+  "proposed_fix": "Confirm with FoodScience whether 1-800-325-1776 is the intended Praxera line. If not, replace with the Praxera private-label number; if yes, note it in the cutover doc so call handling is briefed.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/contact_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "Live Praxera blog posts link to three Praxera asset files that 404, including a downloadable infographic PDF",
+  "where": "/blog/how-to-sell-supplements, /blog/how-to-scale-your-business-with-private-label-supplements",
+  "evidence": "curl -L with browser UA: https://www.praxerasupplements.com/hs-fs/hubfs/Praxera.LitX%20(2).png?width=750&height=400&name=Praxera.LitX%20(2).png -> 404; https://www.praxerasupplements.com/hs-fs/hubfs/Praxera_Infographic.jpg?width=6358&height=4913&name=Praxera_Infographic.jpg -> 404; https://www.praxerasupplements.com/hubfs/Praxera_Infographic%20(2).pdf -> 404. The first two are <img> sources (broken images in the post body), the third is a download link.",
+  "proposed_fix": "Re-upload the three files to the Praxera File Manager under the same paths, or repoint the img/href to the files that do exist.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "Praxera blog post links to a /shop-supplements.html purchase path (404) - conflicts with the no-ecommerce rule",
+  "where": "https://www.praxerasupplements.com/blog/supplement-dropshipping-5-best-tips-for-success",
+  "evidence": "Post body contains href to https://www.praxerasupplements.com/shop-supplements.html (curl -L -> 404) and https://www.praxerasupplements.com/private-label-get-started (404). Two more posts link to /private-label (404) and /private-labeling (404). These are legacy DaVinci-site paths; /shop-supplements.html is a direct purchase path, which the brand rules forbid on Praxera.",
+  "proposed_fix": "Replace /shop-supplements.html with /top-sellers (or remove the link), and repoint /private-label, /private-labeling and /private-label-get-started to /our-process and /get-started respectively.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "A live Praxera blog post contains a HubSpot editor preview link with an embedded preview key",
+  "where": "https://www.praxerasupplements.com/blog/tips-for-selling-private-label-supplements-for-immunity - two footnote anchors (#ftnt1 and #ftnt_ref1)",
+  "evidence": "Post body contains https://4087538.hubspotpreview-na1.com/_hcms/preview/content/76735951939?_preview=true&...&preview_key=<REDACTED>&...&hsEditorApp=blog_post. curl -L follows 2 hops to an app.hubspot.com login page. A public reader clicking a footnote is sent to a HubSpot login screen, and an internal preview key is published on a public page.",
+  "proposed_fix": "Replace both footnote anchors with the intended in-page #ftnt1 / #ftnt_ref1 fragments (or the real source URL) and remove the preview link entirely.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "Four external citations on live Praxera posts are genuinely dead or land on 'not found' pages",
+  "where": "See evidence - 4 referring blog posts",
+  "evidence": "Verified with a full browser header set (UA, Accept, Accept-Language, Sec-Fetch-*): https://healthcenter.uga.edu/protein-powder-the-what-why-how-to-choose/ -> 404 (cited by /blog/how-is-protein-powder-made and /blog/top-private-label-protein-powders-for-your-brand); https://www.sba.gov/business-guide/plan-your-business/calculate-startup-costs -> 404 (/blog/how-much-to-start-a-private-label-supplement-business); https://fimdefelice.org/about-fim/ -> connection fails, 000 (/blog/what-is-a-nutraceutical-supplement); https://www.linkedin.com/pulse/liquid-dietary-supplements-market-size-manufacturingcostanalysis-bzcwf/ -> 200 but redirects to https://www.linkedin.com/top-content/?trk=article_not_found (/blog/liquid-supplement-manufacturing-benefits-vs.-costs).",
+  "proposed_fix": "Replace each with a current source or remove the citation. sba.gov's replacement is https://www.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "Ten malformed Microsoft Word cross-reference artifacts published as links on one blog post",
+  "where": "https://www.praxerasupplements.com/blog/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+  "evidence": "Ten anchors with hrefs of the form l \"_enref_1\" \\o \"Cooperman, 2025 #4547 (also _enref_2,3,9,10,11,12,13,14,15). Browser-resolved these become https://l%20\"_enref_1\"%20/o%20%22Cooperman,%202025%20#4547 etc; all return 000 (host 'l' does not resolve). These are EndNote/Word field codes pasted into the body.",
+  "proposed_fix": "Delete the ten broken anchors from the post body (keep the citation text).",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "low",
+  "area": "links",
+  "title": "One unscoped href 'eBay.com' resolves as a relative path and 404s",
+  "where": "https://www.praxerasupplements.com/how-to-sell-supplements",
+  "evidence": "Live HTML contains href=\"eBay.com\" with no scheme; a browser resolves it to https://www.praxerasupplements.com/eBay.com, which hits the DaVinci-branded 404 page.",
+  "proposed_fix": "Change to https://www.ebay.com/ or unlink the word.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "low",
+  "area": "links",
+  "title": "One remaining http:// outbound link that supports https",
+  "where": "https://www.praxerasupplements.com/learning/definitive-guide and /blog/how-do-i-start-a-private-label-supplement-business",
+  "evidence": "href=\"http://atulgawande.com/book/the-checklist-manifesto/\". Verified https://atulgawande.com/book/the-checklist-manifesto/ returns 200, so the link can be upgraded. This is the only http:// link in the whole deduplicated set of 546 outbound URLs.",
+  "proposed_fix": "Change the scheme to https:// in both places.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "low",
+  "area": "website",
+  "title": "Leftover CSS selector img[src*=\"pettechlabs\"] on 17 health-category pages no longer matches anything",
+  "where": "Inline <style> block in 17 published Praxera pages (aging, cognitive, detox, energy, fitness, heart-health, herbal, immune-support, joint-support, mens-health, multivitamin, pediatric, prenatal, probiotics, sleep, weight-management, womens-health)",
+  "evidence": "Each page carries: .hs-image-widget img, .cell-wrapper img[src*=\"pettechlabs\"] { height:180px!important; max-height:180px!important; object-fit:cover!important; }. The page source still stores the images as https://www.pettechlabs.com/hubfs/... (312 occurrences across Praxera pages) but HubSpot rewrites them to www.praxerasupplements.com/hs-fs/hubfs/... at render time, so the src*=\"pettechlabs\" half of the selector never matches. Rendered health-categories and sleep at 1440 and 390 - the card images currently look correct, so this is dormant, not visibly broken.",
+  "proposed_fix": "Change the selector to img[src*=\"hubfs\"] (or a class) so the 180px constraint actually applies, and re-save the image fields so the stored URLs point at the Praxera domain.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/health-categories_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "low",
+  "area": "website",
+  "title": "Praxera image assets are named with the misspelling 'PREXERA'",
+  "where": "e.g. /hubfs/private-label/PREXERA-MENS.png, prexera-probiotic_supplements.png, sleep-prexera.png, cognitive-prexera.png, prexera-fitness_supplements.png, prexera-weight-supplements.png",
+  "evidence": "Filenames observed in the page source and in the live srcset of /mens-health, /probiotics, /sleep, /cognitive, /fitness, /weight-management. The files resolve (200) so nothing is broken; the misspelling is visible in image URLs and in alt/filename-derived SEO signals.",
+  "proposed_fix": "Optional: re-upload under correctly spelled filenames and update the modules. Cosmetic only - do not do this as part of cutover if time is short.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "info",
+  "area": "forms",
+  "title": "VERIFIED FIXED: the 24 page-level form redirects no longer point at google.com",
+  "where": "24 instances of HubSpot form module 1155238 across Praxera site pages",
+  "evidence": "Enumerated every form module on all 68 Praxera site pages: exactly 24 instances of module 1155238, of which 23 have response_type='redirect' and 1 (design-team) is inline - matching the reported '24 fixed, 23 had been sending leads to google.com'. All 23 redirect targets are on www.praxerasupplements.com: 22 -> /ty-consultation, 1 -> /learning/ty-ingredients-testing. Both return HTTP 200. A portal-wide scan of all 266 forms found zero postSubmitAction values containing google.com, and a scan of the full Praxera page + blog JSON found zero occurrences of 'google.com' and zero of 'bit.ly'.",
+  "proposed_fix": "No action. (The separate /ty-contact 404 is logged as its own blocker and is on a different module type, 218940115793.)",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "info",
+  "area": "links",
+  "title": "VERIFIED: no bit.ly or other shortener remains in any Praxera asset",
+  "where": "68 Praxera site pages, 72 Praxera blog posts, global header/footer, 3 CTAs",
+  "evidence": "Searched the 661 distinct raw href/src values (and the raw page/post JSON) for bit.ly, tinyurl, ow.ly, goo.gl, buff.ly, rebrand.ly, lnkd.in, hubs.ly, hubs.la, rb.gy, cutt.ly, is.gd, shorturl: zero matches. The 5 previously repointed shorteners are gone.",
+  "proposed_fix": "No action.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "info",
+  "area": "links",
+  "title": "VERIFIED: no Praxera page embeds a DaVinci form GUID",
+  "where": "All 68 www.praxerasupplements.com site pages and 72 Praxera blog posts",
+  "evidence": "Extracted every GUID from the full JSON of each page/post and intersected with the 266 forms in the portal. 35 form placements, all 7 distinct forms used are Praxera-named clones (d8dfdd90, c82c667f, e88e8d00, df8b7a41, dd7328fc, 6d4066c8, f240cb7b). No DaVinci-source form GUID appears on any Praxera asset. Blog posts embed no forms at all.",
+  "proposed_fix": "No action.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "info",
+  "area": "links",
+  "title": "CORRECTION to the brief: there are 3 legacy HubSpot CTA objects, not 2, and they appear on all 72 Praxera posts, not 61",
+  "where": "CTAs 38860f5a-b81c-4b80-9d84-c4d10eac2ce9 (46 posts), 6589611c-3a59-4d46-bc7f-025272e9e0fb (29 posts), 73ddd763-f3ad-4b29-bb88-db669d00feb4 (12 posts); union = 72 of 72 Praxera posts",
+  "evidence": "Counted hs-cta-wrapper / cta-redirect.hubspot.com occurrences in the widgets.article_body of all 72 posts. All three destinations verified: 38860f5a and 73ddd763 -> https://www.praxerasupplements.com/learning/definitive-guide (200); 6589611c -> https://www.praxerasupplements.com/learning/ingredients-testing (200). CTA images fetched from no-cache.hubspot.com (all 200): 38860f5a and 6589611c are fully Praxera-branded (praxera wordmark, navy/green palette, 'Get The Private Label Guide Here!' / 'Show Me') with no DaVinci artwork; 73ddd763 is a plain blue underlined text CTA reading 'See the Definitive Guide To Private Label Supplements. Ungated - No Information Needed' - correct copy but unstyled default HubSpot text-CTA look, not Praxera-branded. The 'ungated' claim checks out: /learning/definitive-guide serves the full guide text in the page body.",
+  "proposed_fix": "Optional: restyle CTA 73ddd763 to match the Praxera button style used elsewhere. No destination changes needed.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/cta_38860f5a.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "info",
+  "area": "forms",
+  "title": "HubSpot forms do not render from a local file - form visuals verified by definition + live render endpoint instead",
+  "where": "All 10 screenshotted Praxera pages",
+  "evidence": "Every Praxera page loads its form via <script src=\"/_hcms/forms/v2.js\"> + hbspt.forms.create({portalId:'4087538', formId:'...', formsBaseUrl:'/_hcms/forms/'}), so no form markup exists in the served HTML and nothing renders from file://. Workaround used: (1) confirmed each embed's form_id and redirect config in the page source, (2) curl'd https://forms.hsforms.com/embed/v3/form/4087538/{guid}/json for all 12 Praxera form GUIDs - ALL 12 returned HTTP 200 with a complete field/consent/submitText definition, so every GUID resolves live, (3) rebuilt each form's real fields, labels, consent text and submit button from that JSON and injected it into the localized page before screenshotting, so the screenshots show the true field list and button text. The form STYLING in the screenshots is approximate (HubSpot's own form CSS is applied at runtime); the field list, labels, order, consent text and button text are exact. Layout of everything outside the form is the real page with its real stylesheets and real logo.",
+  "proposed_fix": "No action - methodology note.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/get-started_1440.png",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "info",
+  "area": "links",
+  "title": "26 external links return 401/403 to a datacenter IP - almost certainly bot protection, not broken",
+  "where": "fda.gov (7 URLs, 401), nsf.org (6, 403), grandviewresearch.com (5, 403), usp.org (2), ods.od.nih.gov (3), plus canva.com, asha.org, cdc.gov, forbes.com, fortunebusinessinsights.com, researchgate.net, sciencedirect.com, tandfonline.com, and 2 doi.org links that resolve to sagepub/mdpi",
+  "evidence": "Retested with a full browser header set (UA + Accept + Accept-Language + Sec-Fetch-* + --compressed) and the codes did not change. UNVERIFIED whether they are reachable from a normal browser - I could not confirm either way from this environment. https://fonts.googleapis.com and https://fonts.gstatic.com also show 404 but are <link rel=preconnect> hints, not navigable links, and are not a defect.",
+  "proposed_fix": "Spot-check a handful from a normal browser before treating any as broken.",
+  "screenshot": "",
+  "_src": "forms_links"
+ },
+ {
+  "severity": "blocker",
+  "area": "website",
+  "title": "Homepage SEO title/meta/OG/Twitter tags all brand Praxera as a \"Manufacturer\"",
+  "where": "Home page, id 216189433405, https://www.praxerasupplements.com/ (also https://www.praxerasupplements.com/alp/ads-mfg-usa id 216192983652, https://www.praxerasupplements.com/alp/ads-contract-mfg id 216192983654, https://www.praxerasupplements.com/alp/ads-pl-mfg id 216194811734, https://www.praxerasupplements.com/certifications id 216192983597)",
+  "evidence": "Crawled live <title>/<meta>/og:*/tw:title (work/meta.json) for the home page: title = \"Private Label Supplement Manufacturer | Praxera Private Label\"; meta description = og:desc = tw:title-adjacent copy = \"50 years of supplement manufacturing. 250+ doctor-formulated products...\". Identical wording repeats in og:title and tw:title. This is the literal text Google, Facebook/LinkedIn share cards, and the browser tab show for the homepage. Same pattern on other pages: alp/ads-mfg-usa title=\"Supplement Manufacturer USA\", desc=\"...Vermont supplement manufacturer...\"; alp/ads-contract-mfg title=\"Supplement Contract Manufacturer\", desc=\"Your supplement brand. Our contract manufacturing...\"; alp/ads-pl-mfg title=\"Private Label Supplement Manufacturer\"; certifications title=\"Manufacturing Certifications\"; about desc=\"50 years of supplement manufacturing expertise.\". Verified by re-reading work/meta.json and cross-checking against work/praxera_pages.json htmlTitle field (matches live crawl).",
+  "proposed_fix": "Rewrite the HubSpot page-settings Meta Title and Meta Description (and, where a custom OG/Twitter override exists, those fields too) for: home, alp/ads-mfg-usa, alp/ads-contract-mfg, alp/ads-pl-mfg, certifications, about. Replace \"Manufacturer\"/\"manufacturing\" framing with \"private label supplement provider/partner\" language consistent with the brand rule. Get client sign-off before publishing per the read-only/sign-off rule.",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "blocker",
+  "area": "website",
+  "title": "Body copy states Praxera is literally \"produced by a manufacturer (us)\" on the homepage and health-categories page",
+  "where": "Home page, id 216189433405, https://www.praxerasupplements.com/ ; Health Categories page, id 221518507280, https://www.praxerasupplements.com/health-categories",
+  "evidence": "work/mfg_hits.json, phrase key \"produced by a manufacturer (us)\": exact sentence found verbatim on both pages: \"A private label supplement is a pre-formulated dietary supplement produced by a manufacturer (us) and sold under your brand name.\" This directly and unambiguously identifies Praxera as the manufacturer in the first person, on two of the highest-traffic pages on the site.",
+  "proposed_fix": "Edit the rich-text module on both pages: change \"produced by a manufacturer (us)\" to third-person language, e.g. \"produced by a manufacturing partner\" or \"produced on your behalf\" \u2014 remove the parenthetical \"(us)\" self-identification entirely.",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "high",
+  "area": "website",
+  "title": "\"We produce...\" forbidden manufacturer-framing sentence repeated across 15 category pages",
+  "where": "aging (216189432992), cognitive (216189433251), detox (216189433375), energy (216189433390), fitness (216179449410), health-categories (221518507280), heart-health (216189433373), herbal (216189432990), home (216189433405), immune-support (216189433236), joint-support (216189433371), mens-health (216188836114), multivitamin (216189433270), pediatric (216189433355), prenatal (216189433267), probiotics (216189433094), sleep (216189433007), weight-management (216188836111), womens-health (216189433092) \u2014 all under www.praxerasupplements.com/<slug>",
+  "evidence": "work/mfg_hits.json, phrase \"we produce\": 20 hits, e.g. \"You select the formulation from our catalog, design your label, and we produce the finished product ready to ship under your brand.\" (aging, cognitive, detox, energy, fitness, heart-health, herbal, immune-support, joint-support, mens-health, multivitamin, pediatric, prenatal, probiotics, sleep, weight-management, womens-health) and \"You select from existing formulations, design your label, and we produce finished inventory ready to ship under your brand.\" (home, health-categories). This is the exact forbidden phrase called out in the brief (\"we produce\" is explicitly NOT allowed).",
+  "proposed_fix": "This looks like one shared rich-text snippet reused across the category-page template. Update the source snippet once (if it's a global content block) or push the same edit to all 19 pages: replace \"we produce the finished product\" with something like \"it's produced and shipped ready for your brand\" (passive/third-person, no \"we/our\").",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "high",
+  "area": "website",
+  "title": "\"We handle production...\" forbidden manufacturer-framing sentence on 10 category pages",
+  "where": "aging (216189432992), cognitive (216189433251), detox (216189433375), energy (216189433390), fitness (216179449410), heart-health (216189433373), herbal (216189432990), immune-support (216189433236), joint-support (216189433371), mens-health (216188836114), multivitamin (216189433270), pediatric (216189433355), prenatal (216189433267), probiotics (216189433094), sleep (216189433007), weight-management (216188836111), womens-health (216189433092)",
+  "evidence": "work/mfg_hits.json, phrase \"we handle production\": 18 hits, e.g. \"We handle production, quality testing, and bottling.\" and on heart-health specifically also \"Choose from our catalog of ready-to-launch formulations, customize the branding, and we handle production and fulfillment.\" \"We handle production\" puts Praxera in the manufacturer's chair in the same spirit as the forbidden \"we manufacture\".",
+  "proposed_fix": "Replace with non-manufacturer framing, e.g. \"Production, quality testing, and bottling are handled for you.\" Same shared-snippet consideration as the \"we produce\" finding above \u2014 likely one edit propagates to all affected pages.",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "high",
+  "area": "website",
+  "title": "\"Our facility\" / \"our facilities\" used on About, Contact, Quality Standards, and Testing pages",
+  "where": "About (216189433476) /about ; Contact (216192983650) /contact ; Quality Standards (216186379328) /quality-standards ; Testing (216192983607) /testing",
+  "evidence": "work/mfg_hits.json, phrase \"our facility/facilities\": 7 hits \u2014 about: \"OUR FACILITY\" (section eyebrow) and \"Our facility in Williston, Vermont houses production lines for capsules, tablets, powders, softgels, chewables, liquids, and oral sprays.\"; contact: \"Our facility is at 929 Harvest Lane, Williston, VT 05495.\"; quality-standards: \"Here is what happens in our facility every day to maintain these standards.\", \"...an independent third party audits our facility to verify we actually do.\", \"Our facility is FDA-registered and has been inspected.\"; testing: \"Here's how testing works at our facility.\" \"Our facilities\" is explicitly named as forbidden in the brief (contrast: \"cGMP facility\" is allowed, \"our facility\" is not).",
+  "proposed_fix": "Reword to remove first-person facility ownership claims, e.g. \"The Williston, Vermont facility houses...\", \"The manufacturing facility is at 929 Harvest Lane...\", \"Here is what happens at the facility every day...\". Keep the address/certifications factual but drop \"our\".",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "medium",
+  "area": "website",
+  "title": "\"We formulate\" forbidden phrase on About page",
+  "where": "About page, id 216189433476, https://www.praxerasupplements.com/about",
+  "evidence": "work/mfg_hits.json, phrase \"we formulate\": \"That commitment shaped everything that came after: how we source ingredients, how we formulate, how we test, and how we label what is in the bottle.\" Listed explicitly in the brief as NOT allowed.",
+  "proposed_fix": "Reword to \"...how ingredients are sourced, formulated, tested, and labeled.\" or attribute formulation to a partner/R&D team rather than first-person \"we\".",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "low",
+  "area": "website",
+  "title": "\"Our production workflow\" on Customer Art page \u2014 borderline, context is print/label production not supplement manufacturing",
+  "where": "Customer Art page, id 216189433156, https://www.praxerasupplements.com/customer-art",
+  "evidence": "work/mfg_hits.json, phrase \"our production\": \"Those file types are not editable in our production workflow and will be rejected.\" and \"Do not send PDFs or JPEGs \u2014 those file types are not editable in our production workflow and will be rejected.\" Read in context this is about the label/artwork print production pipeline, not supplement manufacturing, but it literally matches the brief's forbidden-phrase list (\"our production\") so flagging for a human call.",
+  "proposed_fix": "If the brand rule is meant strictly (no \"our production\" anywhere), reword to \"...not editable in the production workflow...\". If the rule is only about supplement manufacturing claims, this one is likely fine to leave \u2014 recommend client/Shawn confirm intent before editing.",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "high",
+  "area": "website",
+  "title": "Organization schema (JSON-LD) on 19 pages points logo/image URLs at pettechlabs.com \u2014 a forbidden DaVinci-family domain",
+  "where": "aging, cognitive, detox, energy, fitness, health-categories, heart-health, herbal, home, immune-support, joint-support, mens-health, multivitamin, pediatric, prenatal, probiotics, sleep, weight-management, womens-health (19 of 56 published pages; ids listed above in the manufacturer-language findings). Example: home page https://www.praxerasupplements.com/",
+  "evidence": "Grepped site_html/*.html for \"pettechlabs\": found in the Organization @graph JSON-LD script on 19 pages: {\"@type\":\"Organization\",...,\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.pettechlabs.com/hubfs/Praxera/Praxera%20Logo.png\"},\"image\":\"https://www.pettechlabs.com/hubfs/Praxera/Praxera%20Logo.png\",...}. The same 19 pages also carry a leftover CSS rule from the same module family: \".cell-wrapper img[src*=\\\"pettechlabs\\\"] { height:180px !important; ... }\" inside a block commented \"<!-- DVL-PL-CAT:START/END -->\". Verified the pettechlabs.com URL itself resolves (200, image/png) via curl, confirming it is a real cross-domain reference, not a dead stub \u2014 i.e. Praxera's own structured data literally cites a DaVinci-family pet-supplement domain as the source of its logo. This is a direct violation of \"No links from Praxera assets to DaVinci properties ... pettechlabs\" (the rule doesn't carve out invisible/schema-only references). Not the already-known Hotjar/davincilabs.com item \u2014 that one is a <script> comment referencing davincilabs.com and is excluded per the brief; this is a separate, distinct bug in the Organization schema's logo/image fields.",
+  "proposed_fix": "Edit the custom module (the one whose HTML comments read \"DVL-PL-CAT\") that emits the Organization JSON-LD on these 19 templates: change both the \"logo\" and \"image\" fields' URL host from www.pettechlabs.com to www.praxerasupplements.com (same path otherwise: /hubfs/Praxera/Praxera%20Logo.png). Also remove/retarget the leftover `img[src*=\"pettechlabs\"]` CSS selector since it no longer applies to any real Praxera asset.",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "high",
+  "area": "website",
+  "title": "Literal internal placeholder copy is live on 3 published paid-traffic landing pages",
+  "where": "alp/ads-contract-mfg (216192983654) https://www.praxerasupplements.com/alp/ads-contract-mfg ; alp/ads-mfg-usa (216192983652) https://www.praxerasupplements.com/alp/ads-mfg-usa ; alp/ads-pl-mfg (216194811734) https://www.praxerasupplements.com/alp/ads-pl-mfg",
+  "evidence": "All three published pages contain, verbatim, in the body copy right under the \"What we do, in plain terms.\" heading: \"[PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]\" Confirmed in work/site_html/alp__ads-contract-mfg.html, alp__ads-mfg-usa.html, alp__ads-pl-mfg.html, and visible in the full-page screenshots (shots_site/alp__ads-contract-mfg/full_1440.png etc, and the contact sheet _sheet_full1440_0.png). These are all state PUBLISHED_OR_SCHEDULED / currentState PUBLISHED, i.e. live and (per their naming/URL pattern \"ads-*\") presumably receiving paid ad traffic right now.",
+  "proposed_fix": "Replace the placeholder paragraph on all three pages with real, keyword-specific value props/CTA copy (or remove the paragraph entirely if the section isn't needed). Get sign-off before publishing per the read-only rule; flag urgently since these look like active ad-destination pages showing internal notes to real visitors.",
+  "screenshot": "shots_site/alp__ads-contract-mfg/full_1440.png",
+  "_src": "website"
+ },
+ {
+  "severity": "high",
+  "area": "website",
+  "title": "Header: \"Quality & Trust\" nav link visually overlaps the Praxera logo wordmark from 801px to 968px viewport width (site-wide, every page)",
+  "where": "Global header module (appears on all 56 published pages) \u2014 verified on home page, https://www.praxerasupplements.com/",
+  "evidence": "Measured via work/gap.json (per-pixel sweep, 801\u20131600px, generated by rendering the localized home page offline per the brief's curl+file:// method): gapRight (distance from the visible right edge of the logo artwork to the left edge of \"Quality & Trust\") is NEGATIVE (i.e. overlapping) continuously from w=801 (\u201364px overlap) through w=968 (\u22121px), reaches 0 at w=969, and is clearly positive (74px clear) by w=1200+. Visually confirmed with shots_site/header_sweep/home_hdr_801.png and home_hdr_900.png \u2014 the text \"Quality & Trust\" is rendered directly on top of the \"praxera\" wordmark, illegible, at both widths; home_hdr_960.png still shows them touching with ~1px gap; home_hdr_970.png shows a clean, correctly-spaced header. Separately measured leftRows going from 1 to 2 (left nav wraps to two lines) somewhere between 900\u2013952px, adding a second layout problem in roughly the same band. NOTE ON PRECISION: the offline reproduction's Google Font (Open Sans) failed to download during localization (confirmed \u2014 the cached .woff2 files for fonts.googleapis.com are actually Google's 404 HTML error page, not font binaries, so Chromium fell back to the system sans-serif font for this measurement). The qualitative defect (severe, illegible overlap across a wide desktop-nav-width band) is visually unambiguous and not in doubt, but the exact 801/968/969px crossover values could shift by roughly \u00b110\u201320px on the live site with the real Open Sans font metrics loaded. Recommend the developer confirm exact breakpoints against the live production site directly (not through this proxy-blocked-Playwright environment) before implementing a fix.\nSeparately checked and RULED OUT: the \"Get Started\" CTA button itself never collides with the logo or with \"Resources\" anywhere from 801\u20131600px \u2014 direct measurement (custom sweep script, not part of the original artifacts) shows a consistent 18\u201324px clear gap between the CTA and \"Resources\" throughout that whole range, and the CTA's left edge never overlaps the logo bounding box. The reported \"Get Started button collides\" concern does not reproduce; the real collision is logo-vs-\"Quality & Trust\" as described above.",
+  "proposed_fix": "Add/adjust a CSS breakpoint for the global header so the right-nav block doesn't render inline with the logo below ~970px \u2014 either collapse to the mobile hamburger menu earlier (e.g. move the existing 800px breakpoint up to ~970px) or reduce the nav's horizontal padding/font-size in that band so \"Quality & Trust\" clears the logo. Re-verify the exact px thresholds on the live site (real fonts) before finalizing the CSS change.",
+  "screenshot": "shots_site/header_sweep/home_hdr_900.png",
+  "_src": "website"
+ },
+ {
+  "severity": "high",
+  "area": "website",
+  "title": "/get-started causes ~350px of horizontal scroll on mobile (390px viewport) due to a hardcoded inline width",
+  "where": "Get Started page, id 216194811571, https://www.praxerasupplements.com/get-started",
+  "evidence": "work/measure.json at width=390 for slug get-started: hscroll=350, overflowCount=14, document.documentElement.scrollWidth=740 vs clientWidth=390. Traced to the exact cause in the page's rich-text module source (work/render/get-started/page.html, and live site_html copy): a hand-authored inline style `<div style=\"width: 45em; color: #231f20; background-color: #ffffff;\">` wraps the \"Build Your product line from over 190 supplements\" checklist block. 45em = 720px at the default 16px root font size, a fixed width that does not shrink for mobile, so the whole block (and everything after it in that column) is forced to 720px+20px offset regardless of viewport, producing the 350px of horizontal scroll measured at 390px width. Re-verified independently with a fresh Playwright pass against the offline render (not reusing the artifact's numbers blindly): confirms scrollWidth 740 / clientWidth 390, and identifies the 7 overflowing checklist rows plus their container div as the offenders, all left=20 right=740 width=720.",
+  "proposed_fix": "In the Get Started page's rich-text module content, remove the inline `style=\"width: 45em; ...\"` on that div (or change it to `max-width: 45em; width: 100%;`) so it scales down on narrow viewports. This is a single edit inside one rich-text field.",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "medium",
+  "area": "website",
+  "title": "Resources page links to a blog post whose URL 301-redirects to a page that 404s",
+  "where": "Resources page, id 216189433440, https://www.praxerasupplements.com/resources \u2014 broken link target chain: https://www.praxerasupplements.com/blog/top-questions-consumers-have-about-private-label-supplements \u2192 (301) \u2192 https://www.praxerasupplements.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements \u2192 404",
+  "evidence": "work/link_status.json flagged this as the only non-200 among the 93 checked links: {\"href\":\".../blog/top-questions-consumers-have-about-private-label-supplements\", \"res\":\"404 https://www.praxerasupplements.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements\"}. Independently re-verified with curl -IL: first hop is HTTP/2 301 to the /private-label/... URL, and that URL returns HTTP/2 404. The link's anchor text on the Resources page (site_html/resources.html) reads \"Top Questions Consumers Have About Private Label \u203a\", a resource card meant to send visitors to a blog article.",
+  "proposed_fix": "Either fix the redirect target in HubSpot's URL redirects (point it at the blog post's current, correct slug) or update the Resources page's link to point directly at the live post URL. Coordinate with whoever owns the blog content group (blog slugs must not change per the brief, so the fix belongs on the redirect or on this link, not the blog post itself).",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "info",
+  "area": "website",
+  "title": "Confirmed: /how-to-sell-supplements STEP 04 body copy is still missing in the live HTML",
+  "where": "How to Sell Supplements page, id 216176671879, https://www.praxerasupplements.com/how-to-sell-supplements",
+  "evidence": "Re-checked per the brief's request. In work/site_html/how-to-sell-supplements.html, STEP 01\u201303 are pl-sh (section-header) modules that only carry an eyebrow label, each followed by a pl-cg card-grid module with full title/body content. STEP 04 (module_10, class pl-cs) has its eyebrow \u201cSTEP 04\u201d and headline \u201cSource high-quality supplements from a partner who can prove it.\u201d rendered, but the body/subhead fields for that module are empty (no output at all where a subhead/body paragraph would render), and the very next module (module_11, a pl-rt rich-text block) is completely empty: `<div ... data-hs-cos-field=\"content\"></div>` with no content at all. This matches the already-known issue description \u2014 confirming it is still unresolved as of this crawl.",
+  "proposed_fix": "Add the missing STEP 04 body copy (and/or the empty rich-text module content) in the page editor. No code change needed, just a missing content field.",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "info",
+  "area": "website",
+  "title": "LocaliQ capture script coverage: present on all 56/56 published Praxera pages",
+  "where": "All published Praxera site pages, e.g. https://www.praxerasupplements.com/",
+  "evidence": "grep for \"cdn.rlets.com/capture_configs/402/6f3/e04\" across work/site_html/*.html (56 files, one per published page): 56/56 matched. Confirms full, consistent coverage of the (already-known, shared-with-DaVinci) LocaliQ script \u2014 no page is missing it and none has a stray/different config id.",
+  "proposed_fix": "No action needed for this check itself; the underlying data-commingling issue is already tracked per the brief.",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "info",
+  "area": "website",
+  "title": "Could not independently verify the owner-reported \"2 broken live images\" or \"missing infographic PDF\" \u2014 unverified",
+  "where": "All 68 Praxera pages / all image and PDF references found on the 56 published pages",
+  "evidence": "Exhaustively checked: (1) work/image_status.json (148 sampled image URLs) \u2014 all 200. (2) work/assets2_status.json (332 broader asset URLs incl. srcset width variants) \u2014 all 200. (3) Independently re-crawled every <img src>, srcset entry, and CSS url(...) reference across all 56 cached published-page HTML files (389 distinct URLs total) and curl-checked every one \u2014 all 200, none zero-byte. (4) Searched all cached HTML/other artifacts for the word \"infographic\" as a filename or link \u2014 it appears only as a plain word inside one sentence on /how-to-sell-supplements (\"Create blog posts, videos, and infographics...\"), not as a link to any PDF or asset, and no PDF or asset in the crawled data has \"infographic\" in its name. All PDFs referenced from the site (Definitive Guide, Ingredients Guide, 15 product Sell Sheets on /top-sellers) return 200. Separately, the screenshot pipeline appeared to show several blank/missing product or category images (aging.html's 7-tile category grid, detox.html's guide thumbnail, top-sellers.html's \"ADK\" bottle) \u2014 investigated these directly with a fresh Playwright pass: all of the underlying image files load fine (HTTP 200, valid image data) and render correctly once the page is scrolled so the image enters the viewport (naturalWidth confirmed non-zero after scroll+decode) \u2014 these are native `loading=\"lazy\"` images that simply had not been triggered yet when the prior QA pass's full-page screenshot was taken, not actually-broken images. Given all of this, the specific \"2 broken images\"/\"missing infographic PDF\" the owner has in mind were not found by any method available in this pass.",
+  "proposed_fix": "Ask the owner for the exact page URL(s) and, if possible, the specific image filename(s)/PDF they're thinking of \u2014 recommend checking whether they're on a blog post (out of this WEBSITE-scope crawl) rather than one of the 56 site pages, or whether the asset has since been fixed.",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "low",
+  "area": "website",
+  "title": "Leftover DaVinci-internal naming in HTML comments and CSS selectors (not visible to site visitors)",
+  "where": "19 category-template pages (same set as the pettechlabs JSON-LD finding, e.g. home, aging, detox, etc.)",
+  "evidence": "HTML source contains developer comments like `<!-- DVL-PL-CAT:START -->` / `<!-- DVL-PL-CAT:END -->` and `<!-- DVL-PL-FORMS:START -->`, and CSS selectors referencing filenames such as `img[src*=\"DV_PL_AS_Capsules\"]`. These are invisible to end users (comments/selectors only) but are leftover \"DaVinci Labs \u2013 Private Label\" internal build naming that should ideally be renamed for a clean handoff, distinct from the visible pettechlabs.com URL bug reported separately above.",
+  "proposed_fix": "Low priority: rename these internal comment/selector labels to a Praxera-neutral naming convention next time the module is touched. No user-facing impact today.",
+  "screenshot": null,
+  "_src": "website"
+ },
+ {
+  "severity": "low",
+  "area": "website",
+  "title": "No og:image set on any of the 56 published pages",
+  "where": "All 56 published Praxera pages",
+  "evidence": "work/meta.json: og:image is null/empty for all 56 pages crawled. Social shares (Facebook, LinkedIn, Slack unfurls, etc.) of any Praxera page will show no preview image.",
+  "proposed_fix": "Set a default og:image (e.g. the Praxera logo or a branded share card) at the theme/template level, with page-specific overrides where a better image exists (e.g. product/category hero images).",
+  "screenshot": null,
+  "_src": "website"
+ }
+]

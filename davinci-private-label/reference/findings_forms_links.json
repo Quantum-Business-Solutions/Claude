@@ -1,0 +1,308 @@
+[
+ {
+  "severity": "blocker",
+  "area": "links",
+  "title": "Praxera 404 page serves the legacy DaVinci Laboratories template (logo, nav, shop links)",
+  "where": "www.praxerasupplements.com system 404 template (portal 4087538). Reproduce at https://www.praxerasupplements.com/this-page-does-not-exist-qa3 or any bad URL",
+  "evidence": "curl -L of https://www.praxerasupplements.com/this-page-does-not-exist-qa3 and .../blog/nope-qa3 both return HTTP 404 with a 41KB body built on template 'DaVinciLabs_February2018'. The body contains <img src=\"https://www.praxerasupplements.com/hubfs/DaVinciLabs_February2018/images/DV_2017Logo.png\" alt=\"DaVinci Laboratories: Innovative by nature.\">, the footer string 'DaVinci Laboratories of Vermont (c) 2017', http://www.facebook.com/DaVinciLabs, and 57 distinct www.davincilabs.com links including a full ecommerce catalog (index.php?l=product_list&c=*, index.php?l=page_view&p=buy, index.php?l=page_view&p=where_to_buy) plus https://www.davincilabs.com/White_Paper/PROTOCOL_GUIDE_V2.pdf. This is served on the Praxera domain to any visitor hitting a bad URL, and at least one live internal link (Resources page) reaches it.",
+  "proposed_fix": "Set the Praxera domain's 404 (and 500) template in HubSpot Settings > Website > Pages > System pages to the Praxera theme's system template, then unpublish/re-point the DaVinciLabs_February2018 system template for www.praxerasupplements.com. Do not touch the template on davincilabs.com domains.",
+  "screenshot": ""
+ },
+ {
+  "severity": "blocker",
+  "area": "forms",
+  "title": "Contact page's email card points at a misspelled domain - mailto:info@praxerasuapplements.com",
+  "where": "Page 'Contact' https://www.praxerasupplements.com/contact (site page, PUBLISHED), contact-card module <a class=\"pl-cg__card pl-cg__card--clickable\" href=\"mailto:...\">",
+  "evidence": "Live HTML of /contact contains href=\"mailto:info@praxerasuapplements.com\" (note 'suapplements'). The correct address info@praxerasupplements.com appears 7x elsewhere in the same page. Any visitor clicking the Email card composes mail to a non-existent domain and the message bounces.",
+  "proposed_fix": "Change the card href to mailto:info@praxerasupplements.com (and the visible label if it repeats the typo).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/contact_1440.png"
+ },
+ {
+  "severity": "blocker",
+  "area": "links",
+  "title": "All 11 global-footer navigation links are href=\"#\" on every published Praxera page",
+  "where": "Global Footer module 215777821974 (module_Global_Footer), rendered on all 126 live Praxera pages + blog posts",
+  "evidence": "Parsed the footer block of all 126 successfully-fetched live Praxera URLs: 1386 anchors total, every single one href='#' (Counter result: {'#': 1386}). Affected labels: Private Label Supplements, Our Process, Design Services, Resource Center, Guides, FAQ, Blog, Quality & Trust, Health Categories, Supplement Forms, Contact. The footer social container (.footer__social__container) is empty. There is no Privacy Policy or Terms link in the footer at all - /privacy and /terms are linked from nowhere on the site (0 inbound links found across 68 pages + 72 posts).",
+  "proposed_fix": "Populate the Global Footer module's link fields with the real URLs (/our-process, /design-services, /resources, /guides, /faq, /blog, /quality-standards, /health-categories, /contact, and a real target for 'Supplement Forms'), and add Privacy (/privacy) and Terms (/terms) links to the footer bottom tier.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/get-started_1440.png"
+ },
+ {
+  "severity": "blocker",
+  "area": "forms",
+  "title": "Top Sellers form redirects leads to /ty-contact, which is an unpublished DRAFT page returning 404",
+  "where": "Page 'Top Sellers' https://www.praxerasupplements.com/top-sellers (PUBLISHED), form module 218940115793, form 'Private Label (Praxera) - Schedule a Consultation' d8dfdd90-98f1-4cba-bedf-181dd9286ca1; redirect target https://www.praxerasupplements.com/ty-contact",
+  "evidence": "Module config: {\"form_id\":\"d8dfdd90-...\",\"response_type\":\"redirect\",\"redirect_url\":\"https://www.praxerasupplements.com/ty-contact\"}. curl -L -A <browser UA> https://www.praxerasupplements.com/ty-contact returns 404 (the site page with slug 'ty-contact' is state=DRAFT). The submitter lands on the DaVinci-branded 404 page described above. Every other Praxera form redirect target returns 200.",
+  "proposed_fix": "Either publish the /ty-contact page, or change the Top Sellers form module redirect_url to https://www.praxerasupplements.com/ty-consultation (which returns 200 and is what the other 23 consultation forms use).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/top-sellers_1440.png"
+ },
+ {
+  "severity": "high",
+  "area": "forms",
+  "title": "Three guide forms' GDPR privacy text links to https://www.Praxeralabs.com/... which does not resolve",
+  "where": "Forms 'Praxera - Client Onboarding Guide' 81f2906b-f93a-40b7-aa3e-f075660d4beb, 'Praxera - Ingredients & Testing Guide (page form)' 2e55f9cc-3476-4cee-b4d7-95f6bc1f5569, 'Praxera - Supplements Guide' dd7328fc-f1b0-4d3f-84ac-d762af1add57",
+  "evidence": "legalConsentOptions.privacyText on all three contains <a href=\"https://www.Praxeralabs.com/privacy-policy-cookie-restriction-mode\">Privacy Policy</a>. This is a find-and-replace artifact of davincilabs.com -> Praxeralabs.com. curl -L returns 000 (DNS does not resolve). 'Praxera - Supplements Guide' is the live form on /learning/definitive-guide; the other two are the ingredient/onboarding guide forms. The legitimate-interest consent notice therefore has a dead privacy-policy link.",
+  "proposed_fix": "Replace the href in all three forms' privacyText with https://www.praxerasupplements.com/privacy (returns 200).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/learning-definitive-guide_1440.png"
+ },
+ {
+  "severity": "high",
+  "area": "forms",
+  "title": "Two guide forms' privacy text links to the relative path /pl-demo-privacy, which 404s on the Praxera domain",
+  "where": "Forms 'Praxera - Onboarding Guide' 6d4066c8-92f5-400c-a556-4265b62ec96b (live on /learning/onboarding-guide) and 'Praxera - Ingredients, Testing & Certification Guide' 471fb48f-63c1-4bae-bc17-65edebfedcea",
+  "evidence": "privacyText contains <a href=\"/pl-demo-privacy\">Privacy Policy</a>. curl -L https://www.praxerasupplements.com/pl-demo-privacy returns 404. /pl-demo-privacy is a legacy staging slug from the pre-rebrand build.",
+  "proposed_fix": "Replace with https://www.praxerasupplements.com/privacy in both forms.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/learning-onboarding-guide_1440.png"
+ },
+ {
+  "severity": "high",
+  "area": "forms",
+  "title": "Form 471fb48f still shows the literal placeholder [BRAND_TBD] in its consent text",
+  "where": "Form 'Praxera - Ingredients, Testing & Certification Guide' 471fb48f-63c1-4bae-bc17-65edebfedcea",
+  "evidence": "legalConsentOptions.privacyText begins '<p>[BRAND_TBD] needs the contact information you provide to us to contact you about our products and services...'. The equivalent sibling forms were updated to 'Praxera'; this one was missed. Confirmed via /marketing/v3/forms and /forms/v2/forms - the placeholder is also in the live-rendered definition at https://forms.hsforms.com/embed/v3/form/4087538/471fb48f-.../json.",
+  "proposed_fix": "Replace '[BRAND_TBD]' with 'Praxera' in the form's privacy text (and fix its /pl-demo-privacy href in the same edit).",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "forms",
+  "title": "Four Praxera forms - including the main live consultation form - notify nobody on submission",
+  "where": "Forms d8dfdd90-98f1-4cba-bedf-181dd9286ca1 (on 27 Praxera page placements), c82c667f-219d-4f12-96ce-7aaff98245fa (3 ads pages), 4b8af922-efce-478b-be6a-ec150098ae8d (Contact Us), f240cb7b-4613-47dd-98df-4b334f858b19 (Request a Quote)",
+  "evidence": "/forms/v2/forms/{guid} returns no notifyRecipients key for these four, and /marketing/v3/forms shows configuration.notifyContactOwner=false for all four. The remaining Praxera forms do have recipients. d8dfdd90 is the form used in 27 of the 35 form placements across the Praxera site, so the primary lead path generates no internal notification email. No followUpId / kickbackEmail is set on any of the 12 Praxera forms either.",
+  "proposed_fix": "Add the Praxera sales owner(s) to 'Send form notifications to' on these four forms, or enable notifyContactOwner, before cutover.",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "forms",
+  "title": "Form notification recipient 4990427 is no longer a user in portal 4087538 (dead notification address)",
+  "where": "Forms 'Praxera - Ingredients & Testing Guide (page form)' 2e55f9cc, 'Praxera - Ingredients, Testing & Certification Guide' 471fb48f, 'Praxera - Supplements Guide' dd7328fc, 'Praxera - Main Lead Form (legacy field set)' e88e8d00 (notifyRecipients '3256355,4990427'); 'Praxera - Our Design Services' df8b7a41 (notifyRecipients '4990427' only)",
+  "evidence": "Resolved notifyRecipients against /settings/v3/users (125 users): 3256355 = patrick@creativesidemarketing.com, 66293956 = ncampos@creativesidemarketing.com, 4990427 = not present in the user list. 'Praxera - Our Design Services' (live on /design-team) has 4990427 as its ONLY recipient, so its submissions notify nobody. Separately, every resolvable recipient belongs to an outside agency domain (creativesidemarketing.com) rather than Praxera/FoodScience.",
+  "proposed_fix": "Remove user 4990427 from all five forms and add current Praxera owners; decide deliberately whether creativesidemarketing.com addresses should keep receiving Praxera leads after cutover.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/design-team_1440.png"
+ },
+ {
+  "severity": "high",
+  "area": "website",
+  "title": "Get Started page has a hard-coded width:45em div that forces 350px of horizontal overflow at 390px",
+  "where": "Page 'Get Started' https://www.praxerasupplements.com/get-started (PUBLISHED), rich-text module #hs_cos_wrapper_module_1, inline <div style=\"width: 45em; color: #231f20; background-color: #ffffff;\">",
+  "evidence": "Rendered the real page locally (curl'd HTML + all 11 of its real stylesheets + real logo/images) in headless Chromium at 390x844: document.documentElement.scrollWidth = 740 vs clientWidth = 390 (350px overflow), still 740 after scrolling the full page. Computed style on the offending DIV is width:720px inside a 350px-wide .pl-rt__inner. The nested 'Discuss your business goals...' flex rows add further 363-466px children. Screenshot get-started_390.png is 740px wide with ~350px of empty gutter. No other page of the 10 rendered overflows except /learning/definitive-guide (436px, 46px overflow, offending element not isolated).",
+  "proposed_fix": "In the Get Started rich-text module, change style=\"width: 45em\" to width:100%;max-width:45em (and add flex-wrap:wrap to the checklist rows).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/get-started_390.png"
+ },
+ {
+  "severity": "high",
+  "area": "links",
+  "title": "15 broken internal blog-to-blog links on live Praxera posts (legacy DaVinci slugs never remapped)",
+  "where": "Praxera blog (content group 220598739286), 14 referring posts; see the non-200 table",
+  "evidence": "Curl -L with a browser UA of every deduplicated outbound URL found in the 68 Praxera site pages, 72 Praxera blog posts and the global header/footer (546 absolute URLs). 23 praxerasupplements.com URLs returned non-200, of which 15 are /blog/* links to posts that do not exist on the Praxera blog, e.g. /blog/how-do-i-start-a-private-label-supplement-business-0 (404, linked from 7 posts), /blog/how-to-promote-your-private-label-supplements-on-social-media (404, 4 variants incl. two with stale __hstc tracking query strings), /blog/are-liquid-vitamins-better-than-pills, /blog/best-liquid-vitamins-for-kids, /blog/do-supplements-need-fda-approval, /blog/fda-and-selling-supplements-what-you-need-to-know, /blog/five-best-and-worst-foods-for-gut-health, /blog/how-dimpro-helps-support-hormone-weight-management, /blog/how-dmg-supports-mitochondrial-function, /blog/is-elderberry-good-for-the-immune-system, /blog/liquid-vitamin-benefits-and-uses, /blog/what-supplements-should-you-take-for-common-sleep-disorders. Every one of these currently lands on the DaVinci-branded 404 page.",
+  "proposed_fix": "For each, repoint to the surviving Praxera equivalent (e.g. ...-business-0 -> /blog/how-do-i-start-a-private-label-supplement-business, social-media -> /blog/dev-blog/how-to-promote-your-private-label-supplements-on-social-media) or remove the link; strip the __hstc/__hssc/__hsfp query strings. Do NOT change blog slugs.",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "links",
+  "title": "Redirect rule 208573973878 sends a Praxera blog URL to /private-label/... which 404s; the Resources page links to it",
+  "where": "URL redirect id 208573973878: /blog/top-questions-consumers-have-about-private-label-supplements -> /private-label/managing-the-top-3-risks-when-selling-private-label-supplements (301). Referrers: page 'Resources' https://www.praxerasupplements.com/resources and post /blog/managing-the-top-3-risks-when-selling-private-label-supplements",
+  "evidence": "curl -L of https://www.praxerasupplements.com/blog/top-questions-consumers-have-about-private-label-supplements: 1 redirect hop to https://www.praxerasupplements.com/private-label/managing-the-top-3-risks-when-selling-private-label-supplements, final status 404. The /private-label/ prefix is a DaVinci-era path that does not exist on the Praxera blog (the live post is at /blog/managing-the-top-3-risks-...). Separately, the source post 'Answers to Your Top Questions About Private Label Supplements' (id 220638601745) is state=DRAFT, so it is the only one of the 72 Praxera posts that 404s.",
+  "proposed_fix": "Edit redirect 208573973878's destination to /blog/managing-the-top-3-risks-when-selling-private-label-supplements, and decide whether to publish post 220638601745. Fix the /resources link either way.",
+  "screenshot": ""
+ },
+ {
+  "severity": "high",
+  "area": "links",
+  "title": "Praxera Organization JSON-LD declares its logo and image on www.pettechlabs.com (a sibling DaVinci-family domain)",
+  "where": "Homepage https://www.praxerasupplements.com/ and https://www.praxerasupplements.com/health-categories, inline application/ld+json Organization block",
+  "evidence": "Live HTML contains: \"@id\":\"https://www.praxerasupplements.com/#organization\",\"name\":\"Praxera\",\"legalName\":\"Praxera of Vermont\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.pettechlabs.com/hubfs/Praxera/Praxera%20Logo.png\"},\"image\":\"https://www.pettechlabs.com/hubfs/Praxera/Praxera%20Logo.png\". curl confirms that URL returns 200 image/png from pettechlabs.com. Search engines will therefore attribute Praxera's brand logo to a Pet Tech Labs URL. (Body <img> tags on these pages are correctly rewritten to praxerasupplements.com; only the structured data was missed.)",
+  "proposed_fix": "Change both logo and image in the Organization JSON-LD to https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Logo.png. Also review 'legalName':'Praxera of Vermont' - it mirrors 'DaVinci Laboratories of Vermont' and is probably not Praxera's legal name.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "forms",
+  "title": "Five of the twelve Praxera forms are orphans - embedded on no Praxera page",
+  "where": "Forms 'Praxera - Contact Us' 4b8af922-efce-478b-be6a-ec150098ae8d, 'Praxera - Main Lead Form' 6ae15824-5e47-4745-918b-c3406ab5e7b7, 'Praxera - Client Onboarding Guide' 81f2906b-f93a-40b7-aa3e-f075660d4beb, 'Praxera - Ingredients & Testing Guide (page form)' 2e55f9cc-3476-4cee-b4d7-95f6bc1f5569, 'Praxera - Ingredients, Testing & Certification Guide' 471fb48f-63c1-4bae-bc17-65edebfedcea",
+  "evidence": "Scanned the full layoutSections JSON of all 68 www.praxerasupplements.com site pages and all 72 Praxera blog posts for every form GUID in the portal. 35 form placements found, using only 7 distinct forms: d8dfdd90 (27 placements), c82c667f (3), e88e8d00 (1), df8b7a41 (1), dd7328fc (1), 6d4066c8 (1), f240cb7b (1, DRAFT page). The five forms above appear nowhere. Notably the live /contact page uses 'Praxera - Main Lead Form (legacy field set)' (16 fields, 8 required) instead of the purpose-built 'Praxera - Contact Us' (5 fields), and /learning/ingredients-testing uses the generic consultation form instead of either ingredients-guide form.",
+  "proposed_fix": "Decide per form: swap /contact to 4b8af922 (or confirm the 16-field legacy form is wanted), swap /learning/ingredients-testing to 2e55f9cc, and archive the three genuinely unused duplicates (471fb48f, 81f2906b, 6ae15824) so they cannot be picked by mistake.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/contact_1440.png"
+ },
+ {
+  "severity": "medium",
+  "area": "forms",
+  "title": "/learning/ingredients-testing collects the wrong form and drops the guide's consent + subscription opt-in",
+  "where": "Page https://www.praxerasupplements.com/learning/ingredients-testing (PUBLISHED), form module 1155238 with form d8dfdd90 redirecting to /learning/ty-ingredients-testing",
+  "evidence": "The Ingredients & Testing guide landing page embeds 'Private Label (Praxera) - Schedule a Consultation' (firstname, lastname, email, phone, company, message; legalConsentOptions.type='none'; submit text 'Submit') and redirects to the guide thank-you page. The two purpose-built guide forms (2e55f9cc / 471fb48f) carry the 'What best describes you?', website, employee-count and blog-subscription fields plus the legitimate-interest consent block and the 'Download The Guide' button, and are used nowhere.",
+  "proposed_fix": "Swap the module's form_id to 2e55f9cc-3476-4cee-b4d7-95f6bc1f5569 (which already has the correct redirect and consent text once its Praxeralabs.com link is fixed).",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/learning-ingredients-testing_1440.png"
+ },
+ {
+  "severity": "medium",
+  "area": "forms",
+  "title": "Praxera guide-form consent subscribes leads to the shared portal-wide 'Marketing Information 1' subscription type",
+  "where": "Forms 81f2906b, 2e55f9cc, 471fb48f, 6d4066c8, dd7328fc - legalConsentOptions.subscriptionTypeIds = [4588994]",
+  "evidence": "/email/public/v1/subscriptions resolves 4588994 to {\"name\":\"Marketing Information 1\",\"internalName\":\"MARKETING_INFORMATION\",\"businessUnitId\":0,\"portalId\":4087538} - a generic, business-unit-0 subscription shared with DaVinci, not a Praxera-specific one. Praxera guide downloaders are opted into the same marketing subscription as DaVinci Labs contacts.",
+  "proposed_fix": "Create a Praxera-specific subscription type (or business unit) and point the five guide forms' legitimate-interest consent at it.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "forms",
+  "title": "Praxera forms write to DaVinci-named CRM properties (label says Praxera, property does not)",
+  "where": "Property 'i_would_like_to_subscribe_to_the_davinci_blog' on 8 of 12 Praxera forms; dependent property 'how_did_you_hear_about_davinci___other__please_specify_' on 'Praxera - Main Lead Form' 6ae15824",
+  "evidence": "Field definitions returned by /marketing/v3/forms: {\"name\":\"i_would_like_to_subscribe_to_the_davinci_blog\",\"label\":\"I would like to subscribe to the Praxera Blog\"}. On 'Praxera - Main Lead Form' and 'Praxera - Main Lead Form (legacy field set)' this checkbox is pre-checked (defaultValue 'true'). The 'How did you hear about Praxera?' dropdown's Other field is 'how_did_you_hear_about_davinci___other__please_specify_'. Front-end labels are correctly Praxera-branded; only the internal property names are DaVinci, so Praxera and DaVinci opt-ins land in the same CRM fields.",
+  "proposed_fix": "Either accept the shared property (and document it) or create praxera_blog_subscription / how_did_you_hear_about_praxera_other properties and re-map the forms. Also confirm the pre-checked blog opt-in is intentional under legitimate interest.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "website",
+  "title": "Contact page FAQ (visible text and FAQPage schema) and Terms page publish the wrong email domain info@praxera.com",
+  "where": "https://www.praxerasupplements.com/contact (FAQ accordion + application/ld+json FAQPage) and https://www.praxerasupplements.com/terms (module_17 inline rich text)",
+  "evidence": "Live HTML: /contact FAQ answer 'Email to info@praxera.com works but is slightly slower than the form.' appears twice (once in the visible accordion, once inside the FAQPage JSON-LD). /terms: 'Questions about these Terms of Service can be sent to info@praxera.com or mailed to Praxera, 929 Harvest Lane, Williston, VT 05495.' The brief's standard is info@praxerasupplements.com, which is what the rest of the site and the Organization schema use.",
+  "proposed_fix": "Replace all three occurrences of info@praxera.com with info@praxerasupplements.com.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/contact_1440.png"
+ },
+ {
+  "severity": "medium",
+  "area": "website",
+  "title": "Contact page publishes DaVinci Laboratories' phone number as Praxera's",
+  "where": "https://www.praxerasupplements.com/contact - <a href=\"tel:1-800-325-1776\">1-800-325-1776</a>",
+  "evidence": "The only tel: link anywhere in the Praxera asset set is tel:1-800-325-1776. The same number appears as '(800) 325-1776' in the legacy DaVinciLabs_February2018 footer that the Praxera 404 page serves, alongside DaVinci's '(802) 878-0549'. So the number Praxera publishes for inbound calls is DaVinci Laboratories' published line.",
+  "proposed_fix": "Confirm with FoodScience whether 1-800-325-1776 is the intended Praxera line. If not, replace with the Praxera private-label number; if yes, note it in the cutover doc so call handling is briefed.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/contact_1440.png"
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "Live Praxera blog posts link to three Praxera asset files that 404, including a downloadable infographic PDF",
+  "where": "/blog/how-to-sell-supplements, /blog/how-to-scale-your-business-with-private-label-supplements",
+  "evidence": "curl -L with browser UA: https://www.praxerasupplements.com/hs-fs/hubfs/Praxera.LitX%20(2).png?width=750&height=400&name=Praxera.LitX%20(2).png -> 404; https://www.praxerasupplements.com/hs-fs/hubfs/Praxera_Infographic.jpg?width=6358&height=4913&name=Praxera_Infographic.jpg -> 404; https://www.praxerasupplements.com/hubfs/Praxera_Infographic%20(2).pdf -> 404. The first two are <img> sources (broken images in the post body), the third is a download link.",
+  "proposed_fix": "Re-upload the three files to the Praxera File Manager under the same paths, or repoint the img/href to the files that do exist.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "Praxera blog post links to a /shop-supplements.html purchase path (404) - conflicts with the no-ecommerce rule",
+  "where": "https://www.praxerasupplements.com/blog/supplement-dropshipping-5-best-tips-for-success",
+  "evidence": "Post body contains href to https://www.praxerasupplements.com/shop-supplements.html (curl -L -> 404) and https://www.praxerasupplements.com/private-label-get-started (404). Two more posts link to /private-label (404) and /private-labeling (404). These are legacy DaVinci-site paths; /shop-supplements.html is a direct purchase path, which the brand rules forbid on Praxera.",
+  "proposed_fix": "Replace /shop-supplements.html with /top-sellers (or remove the link), and repoint /private-label, /private-labeling and /private-label-get-started to /our-process and /get-started respectively.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "A live Praxera blog post contains a HubSpot editor preview link with an embedded preview key",
+  "where": "https://www.praxerasupplements.com/blog/tips-for-selling-private-label-supplements-for-immunity - two footnote anchors (#ftnt1 and #ftnt_ref1)",
+  "evidence": "Post body contains https://4087538.hubspotpreview-na1.com/_hcms/preview/content/76735951939?_preview=true&...&preview_key=<REDACTED>&...&hsEditorApp=blog_post. curl -L follows 2 hops to an app.hubspot.com login page. A public reader clicking a footnote is sent to a HubSpot login screen, and an internal preview key is published on a public page.",
+  "proposed_fix": "Replace both footnote anchors with the intended in-page #ftnt1 / #ftnt_ref1 fragments (or the real source URL) and remove the preview link entirely.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "Four external citations on live Praxera posts are genuinely dead or land on 'not found' pages",
+  "where": "See evidence - 4 referring blog posts",
+  "evidence": "Verified with a full browser header set (UA, Accept, Accept-Language, Sec-Fetch-*): https://healthcenter.uga.edu/protein-powder-the-what-why-how-to-choose/ -> 404 (cited by /blog/how-is-protein-powder-made and /blog/top-private-label-protein-powders-for-your-brand); https://www.sba.gov/business-guide/plan-your-business/calculate-startup-costs -> 404 (/blog/how-much-to-start-a-private-label-supplement-business); https://fimdefelice.org/about-fim/ -> connection fails, 000 (/blog/what-is-a-nutraceutical-supplement); https://www.linkedin.com/pulse/liquid-dietary-supplements-market-size-manufacturingcostanalysis-bzcwf/ -> 200 but redirects to https://www.linkedin.com/top-content/?trk=article_not_found (/blog/liquid-supplement-manufacturing-benefits-vs.-costs).",
+  "proposed_fix": "Replace each with a current source or remove the citation. sba.gov's replacement is https://www.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs.",
+  "screenshot": ""
+ },
+ {
+  "severity": "medium",
+  "area": "links",
+  "title": "Ten malformed Microsoft Word cross-reference artifacts published as links on one blog post",
+  "where": "https://www.praxerasupplements.com/blog/4-tips-to-select-the-best-gummy-vitamins-for-integrative-functional-practice",
+  "evidence": "Ten anchors with hrefs of the form l \"_enref_1\" \\o \"Cooperman, 2025 #4547 (also _enref_2,3,9,10,11,12,13,14,15). Browser-resolved these become https://l%20\"_enref_1\"%20/o%20%22Cooperman,%202025%20#4547 etc; all return 000 (host 'l' does not resolve). These are EndNote/Word field codes pasted into the body.",
+  "proposed_fix": "Delete the ten broken anchors from the post body (keep the citation text).",
+  "screenshot": ""
+ },
+ {
+  "severity": "low",
+  "area": "links",
+  "title": "One unscoped href 'eBay.com' resolves as a relative path and 404s",
+  "where": "https://www.praxerasupplements.com/how-to-sell-supplements",
+  "evidence": "Live HTML contains href=\"eBay.com\" with no scheme; a browser resolves it to https://www.praxerasupplements.com/eBay.com, which hits the DaVinci-branded 404 page.",
+  "proposed_fix": "Change to https://www.ebay.com/ or unlink the word.",
+  "screenshot": ""
+ },
+ {
+  "severity": "low",
+  "area": "links",
+  "title": "One remaining http:// outbound link that supports https",
+  "where": "https://www.praxerasupplements.com/learning/definitive-guide and /blog/how-do-i-start-a-private-label-supplement-business",
+  "evidence": "href=\"http://atulgawande.com/book/the-checklist-manifesto/\". Verified https://atulgawande.com/book/the-checklist-manifesto/ returns 200, so the link can be upgraded. This is the only http:// link in the whole deduplicated set of 546 outbound URLs.",
+  "proposed_fix": "Change the scheme to https:// in both places.",
+  "screenshot": ""
+ },
+ {
+  "severity": "low",
+  "area": "website",
+  "title": "Leftover CSS selector img[src*=\"pettechlabs\"] on 17 health-category pages no longer matches anything",
+  "where": "Inline <style> block in 17 published Praxera pages (aging, cognitive, detox, energy, fitness, heart-health, herbal, immune-support, joint-support, mens-health, multivitamin, pediatric, prenatal, probiotics, sleep, weight-management, womens-health)",
+  "evidence": "Each page carries: .hs-image-widget img, .cell-wrapper img[src*=\"pettechlabs\"] { height:180px!important; max-height:180px!important; object-fit:cover!important; }. The page source still stores the images as https://www.pettechlabs.com/hubfs/... (312 occurrences across Praxera pages) but HubSpot rewrites them to www.praxerasupplements.com/hs-fs/hubfs/... at render time, so the src*=\"pettechlabs\" half of the selector never matches. Rendered health-categories and sleep at 1440 and 390 - the card images currently look correct, so this is dormant, not visibly broken.",
+  "proposed_fix": "Change the selector to img[src*=\"hubfs\"] (or a class) so the 180px constraint actually applies, and re-save the image fields so the stored URLs point at the Praxera domain.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/health-categories_1440.png"
+ },
+ {
+  "severity": "low",
+  "area": "website",
+  "title": "Praxera image assets are named with the misspelling 'PREXERA'",
+  "where": "e.g. /hubfs/private-label/PREXERA-MENS.png, prexera-probiotic_supplements.png, sleep-prexera.png, cognitive-prexera.png, prexera-fitness_supplements.png, prexera-weight-supplements.png",
+  "evidence": "Filenames observed in the page source and in the live srcset of /mens-health, /probiotics, /sleep, /cognitive, /fitness, /weight-management. The files resolve (200) so nothing is broken; the misspelling is visible in image URLs and in alt/filename-derived SEO signals.",
+  "proposed_fix": "Optional: re-upload under correctly spelled filenames and update the modules. Cosmetic only - do not do this as part of cutover if time is short.",
+  "screenshot": ""
+ },
+ {
+  "severity": "info",
+  "area": "forms",
+  "title": "VERIFIED FIXED: the 24 page-level form redirects no longer point at google.com",
+  "where": "24 instances of HubSpot form module 1155238 across Praxera site pages",
+  "evidence": "Enumerated every form module on all 68 Praxera site pages: exactly 24 instances of module 1155238, of which 23 have response_type='redirect' and 1 (design-team) is inline - matching the reported '24 fixed, 23 had been sending leads to google.com'. All 23 redirect targets are on www.praxerasupplements.com: 22 -> /ty-consultation, 1 -> /learning/ty-ingredients-testing. Both return HTTP 200. A portal-wide scan of all 266 forms found zero postSubmitAction values containing google.com, and a scan of the full Praxera page + blog JSON found zero occurrences of 'google.com' and zero of 'bit.ly'.",
+  "proposed_fix": "No action. (The separate /ty-contact 404 is logged as its own blocker and is on a different module type, 218940115793.)",
+  "screenshot": ""
+ },
+ {
+  "severity": "info",
+  "area": "links",
+  "title": "VERIFIED: no bit.ly or other shortener remains in any Praxera asset",
+  "where": "68 Praxera site pages, 72 Praxera blog posts, global header/footer, 3 CTAs",
+  "evidence": "Searched the 661 distinct raw href/src values (and the raw page/post JSON) for bit.ly, tinyurl, ow.ly, goo.gl, buff.ly, rebrand.ly, lnkd.in, hubs.ly, hubs.la, rb.gy, cutt.ly, is.gd, shorturl: zero matches. The 5 previously repointed shorteners are gone.",
+  "proposed_fix": "No action.",
+  "screenshot": ""
+ },
+ {
+  "severity": "info",
+  "area": "links",
+  "title": "VERIFIED: no Praxera page embeds a DaVinci form GUID",
+  "where": "All 68 www.praxerasupplements.com site pages and 72 Praxera blog posts",
+  "evidence": "Extracted every GUID from the full JSON of each page/post and intersected with the 266 forms in the portal. 35 form placements, all 7 distinct forms used are Praxera-named clones (d8dfdd90, c82c667f, e88e8d00, df8b7a41, dd7328fc, 6d4066c8, f240cb7b). No DaVinci-source form GUID appears on any Praxera asset. Blog posts embed no forms at all.",
+  "proposed_fix": "No action.",
+  "screenshot": ""
+ },
+ {
+  "severity": "info",
+  "area": "links",
+  "title": "CORRECTION to the brief: there are 3 legacy HubSpot CTA objects, not 2, and they appear on all 72 Praxera posts, not 61",
+  "where": "CTAs 38860f5a-b81c-4b80-9d84-c4d10eac2ce9 (46 posts), 6589611c-3a59-4d46-bc7f-025272e9e0fb (29 posts), 73ddd763-f3ad-4b29-bb88-db669d00feb4 (12 posts); union = 72 of 72 Praxera posts",
+  "evidence": "Counted hs-cta-wrapper / cta-redirect.hubspot.com occurrences in the widgets.article_body of all 72 posts. All three destinations verified: 38860f5a and 73ddd763 -> https://www.praxerasupplements.com/learning/definitive-guide (200); 6589611c -> https://www.praxerasupplements.com/learning/ingredients-testing (200). CTA images fetched from no-cache.hubspot.com (all 200): 38860f5a and 6589611c are fully Praxera-branded (praxera wordmark, navy/green palette, 'Get The Private Label Guide Here!' / 'Show Me') with no DaVinci artwork; 73ddd763 is a plain blue underlined text CTA reading 'See the Definitive Guide To Private Label Supplements. Ungated - No Information Needed' - correct copy but unstyled default HubSpot text-CTA look, not Praxera-branded. The 'ungated' claim checks out: /learning/definitive-guide serves the full guide text in the page body.",
+  "proposed_fix": "Optional: restyle CTA 73ddd763 to match the Praxera button style used elsewhere. No destination changes needed.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/cta_38860f5a.png"
+ },
+ {
+  "severity": "info",
+  "area": "forms",
+  "title": "HubSpot forms do not render from a local file - form visuals verified by definition + live render endpoint instead",
+  "where": "All 10 screenshotted Praxera pages",
+  "evidence": "Every Praxera page loads its form via <script src=\"/_hcms/forms/v2.js\"> + hbspt.forms.create({portalId:'4087538', formId:'...', formsBaseUrl:'/_hcms/forms/'}), so no form markup exists in the served HTML and nothing renders from file://. Workaround used: (1) confirmed each embed's form_id and redirect config in the page source, (2) curl'd https://forms.hsforms.com/embed/v3/form/4087538/{guid}/json for all 12 Praxera form GUIDs - ALL 12 returned HTTP 200 with a complete field/consent/submitText definition, so every GUID resolves live, (3) rebuilt each form's real fields, labels, consent text and submit button from that JSON and injected it into the localized page before screenshotting, so the screenshots show the true field list and button text. The form STYLING in the screenshots is approximate (HubSpot's own form CSS is applied at runtime); the field list, labels, order, consent text and button text are exact. Layout of everything outside the form is the real page with its real stylesheets and real logo.",
+  "proposed_fix": "No action - methodology note.",
+  "screenshot": "/tmp/claude-0/-home-user-Claude/0f427e52-eb7f-5b23-8772-a7e122ea7371/scratchpad/qa3/shots_forms/get-started_1440.png"
+ },
+ {
+  "severity": "info",
+  "area": "links",
+  "title": "26 external links return 401/403 to a datacenter IP - almost certainly bot protection, not broken",
+  "where": "fda.gov (7 URLs, 401), nsf.org (6, 403), grandviewresearch.com (5, 403), usp.org (2), ods.od.nih.gov (3), plus canva.com, asha.org, cdc.gov, forbes.com, fortunebusinessinsights.com, researchgate.net, sciencedirect.com, tandfonline.com, and 2 doi.org links that resolve to sagepub/mdpi",
+  "evidence": "Retested with a full browser header set (UA + Accept + Accept-Language + Sec-Fetch-* + --compressed) and the codes did not change. UNVERIFIED whether they are reachable from a normal browser - I could not confirm either way from this environment. https://fonts.googleapis.com and https://fonts.gstatic.com also show 404 but are <link rel=preconnect> hints, not navigable links, and are not a defect.",
+  "proposed_fix": "Spot-check a handful from a normal browser before treating any as broken.",
+  "screenshot": ""
+ }
+]
