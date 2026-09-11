@@ -212,3 +212,45 @@ Fixed in this pass:
 | /pl-global-blocks is published and in the sitemap | It is an internal build page. Unpublishing is Justin's call |
 | Blog listing shows the byline "DaVinci Healthcare Expert" on one post | The author record may be shared with the DaVinci blog |
 | Twelve dead citation links pasted from Word on the gummy-vitamins post | Needs the real sources |
+
+## Header, tracking and bylines, 11 Sep (late)
+
+**Navigation.** The nav areas were fixed-width and could not shrink, so below about 1280px the left
+group wrapped onto two lines and "Quality & Trust" broke apart. The header now keeps its three areas on
+one row, labels never break mid-phrase, and padding steps down at 1250px and 1050px. Tested from 1600px
+down to 820px against the live page markup: the nav holds one row to 1000px, and the mobile menu takes
+over at 800px. The green button also sits further right.
+
+An earlier attempt at this used auto-width areas and broke the live header; it was reverted within
+minutes. The lesson is in the QA note below.
+
+**LocaliQ tracking.** The Capture Code LocaliQ sent on 9 September was not installed anywhere. It is now
+in the global header module, so it loads on all 127 pages including blog posts:
+
+```
+//cdn.rlets.com/capture_configs/402/6f3/e04/053492c94b2b6b8b611e1c0.js
+```
+
+It sits in the module rather than HubSpot's portal-level site header, because that setting is shared with
+DaVinci. If Justin also adds it in settings, one copy must be removed or the site will double-fire.
+
+**Blog bylines.** All 72 Praxera posts now carry a single general author, "Praxera Team". Fifteen of them
+had been bylined to DaVinci people, including "DaVinci Healthcare Expert" on 13 posts and "Dom Orlandi,
+President of DaVinci" on one; those names were being published in each post's structured data, so search
+engines read them as the author. The previous author of every post is saved in
+`backups/blog-authors/before.json`.
+
+**Email logo in dark mode.** The Praxera logo files are already transparent, so there is no white box in
+the file. What breaks is dark mode: the navy wordmark on a dark background is close to unreadable. The
+masthead had no background colour set on 68 emails, which lets a dark-mode client repaint it. Those 68
+now carry an explicit background, so clients that respect it keep the logo legible. Four emails with a
+dark masthead already use the white logo.
+
+To be bulletproof in every client, including the ones that force inversion, the masthead would need to be
+a fixed dark band with the white logo on every email. That is a brand-kit decision for Patrick, and it is
+one pass to apply once someone says yes.
+
+### QA note for this repo
+
+Render checks must include the real logo and the live stylesheets. A local render with the logo missing
+made a broken header look fine, and it went live for a few minutes before being caught.
