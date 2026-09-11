@@ -149,3 +149,36 @@ A second full visual pass over the 110 images now in the emails found no DaVinci
 | Broken images | Praxera_Infographic.jpg and one guide image | Flagged |
 
 Backups of every page changed are in `backups/page-davinci-domain/` and `backups/form-redirects/`.
+
+## QA round two, 11 Sep
+
+A second QA pass rendered the reworked emails and checked the automation. It caught problems in the
+first image swap, which have been corrected.
+
+| Problem | Scale | Fix |
+| --- | --- | --- |
+| Images paired with the wrong product copy after the swap | 10 emails, 23 images | Re-paired from each email's pre-swap revision, so every photo sits with its own product again |
+| Replacement images distorted or oversized | 12 emails | Widths capped to match their siblings, heights recomputed from the real aspect ratio |
+| Praxera logo invisible on a near-black masthead | 4 emails | Now uses the white Praxera logo already in the file manager |
+| Praxera assets served from pettechlabs.com | 6 emails, 18 references | Now served from the Praxera domain |
+| DaVinci-branded guide PDFs delivered to prospects | 4 fulfilment emails | Now deliver Praxera-Private-Label-Guide.pdf and Praxera-Client-Onboarding.pdf, which already existed |
+| Form thank-you redirects pointing at pages that do not exist | 7 forms | Repointed to the live Praxera thank-you pages |
+
+Images whose file name says DaVinci were downloaded and looked at: all are brand-neutral graphics
+(the 5Rs banners, a calendar icon, stock photography). The names are cosmetic.
+
+## Still open
+
+| Item | Who decides |
+| --- | --- |
+| 75 workflow emails are batch drafts, not automated emails. A workflow cannot send them as they stand. | Patrick — this is the first cutover blocker |
+| Four workflows enrol on davincilabs.com pageviews, four more on membership of live DaVinci workflows, one only on DVL-named lists | Patrick |
+| Sales Qualified Leads workflow routes to two owner IDs that do not exist and notifies a deleted user | Patrick |
+| Fifteen workflow branches test clicks on six deleted DaVinci emails, so they always take the default path | Patrick |
+| "Welcome to DaVinci Posts.zip" is still attached to the D4HCP intro email | Patrick |
+| Sixteen emails name catalog products (Immuno-DMG, Scale Down, Liposomal C and others). Mindy's page comments treat several as Praxera products | Mindy / Tammy |
+| FoodScience named as parent company in three emails, two linking foodsciencecorp.com | Mindy / Tammy |
+| "Custom formulation" still appears in two emails and in the name of the auto-responder | Mindy / Tammy |
+| NSF GMP-certified badge on two live pages | Regulatory |
+| DaVinci's Hotjar tracking script runs on every Praxera page | Patrick |
+| Blog post "Top questions consumers have about private label supplements" is still a draft, so one email link 404s | Justin |
