@@ -105,8 +105,11 @@ for b in sorted(pairs["blog"],key=lambda x:x["slug"] or ""):
 for e in sorted(pairs["emails"],key=lambda x:x["name"]):
     h=emailh.get(str(e["id"]),{}); i=[]
     if h.get("brand_links"): i.append(["bad",f"{len(h['brand_links'])} DaVinci link"+("s" if len(h["brand_links"])>1 else ""),"Links to: "+"; ".join(h["brand_links"][:6])])
+    if h.get("foreign_images"): i.append(["bad",f"{len(h['foreign_images'])} off-brand image"+("s" if len(h["foreign_images"])>1 else ""),"Images still hosted on another brand's domain: "+"; ".join(h["foreign_images"][:4])])
     if h.get("claims"): i.append(["warn","first-person production wording","Phrases to check: "+" | ".join(h["claims"][:6])])
-    if h.get("reply_to")=="enews@davincilabs.com": i.append(["mute","DaVinci reply-to","Reply-to stays enews@davincilabs.com until a Praxera mailbox exists (Shawn, 8 Sep)."])
+    if h.get("copy_brand"): i.append(["warn","copy names "+", ".join(h["copy_brand"][:3]),"The body copy still names another brand. Decide whether it stays."])
+    if h.get("reply_to") and h["reply_to"]!="info@praxerasupplements.com": i.append(["warn","reply-to "+h["reply_to"],"Reply-to is not the Praxera mailbox."])
+    if h.get("qa")=="2026-09-11" and not i: i.append(["mute","checked 11 Sep","Footer, reply-to, every link and image, social icons and dated wording all checked on 11 Sep 2026."])
     add("e",str(e["id"]),strip(e["name"])[:90],r=(e["source_name"] or "new for Praxera")[:80],i=i,hid=str(e["id"]),
         y=("Workflow email" if " WF" in e["name"] or "WF:" in e["name"] else "Marketing email"))
 # ---- forms ---------------------------------------------------------------

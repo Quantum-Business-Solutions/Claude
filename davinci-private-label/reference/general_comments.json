@@ -1,32 +1,32 @@
 {
- "source": "Site-wide rules and decisions: HubSpot comments (Sarah, 24 Aug), Melinda's 8 Sep email, the 8 Sep call, Patrick's 9 Sep email",
+ "source": "Site-wide rules and decisions: HubSpot comments (Sarah, 24 Aug), Melinda's 8 Sep email, the 8 Sep call, Patrick's 9 Sep email; QBS email QA 11 Sep",
  "comments": [
   {
    "id": "gen:rule:1",
    "n": "Sarah Miller",
    "at": "2026-08-24T13:23:00-04:00",
-   "src": "Rule · HubSpot comment, 24 Aug",
-   "t": "WEBSITE WIDE: Remove any instance of \"custom formulation\". Update all instances of FoodScience Corp to FoodScience LLC. Update all instances of \"private label\" with \"Praxera\". Footer: update \"Praxera is part of the FoodScience LLC family of brands…\" and remove the \"sibling brand\" sentence. Do not connect with DaVinci — remove any instance of that word."
+   "src": "Rule \u00b7 HubSpot comment, 24 Aug",
+   "t": "WEBSITE WIDE: Remove any instance of \"custom formulation\". Update all instances of FoodScience Corp to FoodScience LLC. Update all instances of \"private label\" with \"Praxera\". Footer: update \"Praxera is part of the FoodScience LLC family of brands\u2026\" and remove the \"sibling brand\" sentence. Do not connect with DaVinci \u2014 remove any instance of that word."
   },
   {
    "id": "gen:rule:2",
    "n": "Sarah Miller",
    "at": "2026-08-24T13:26:00-04:00",
-   "src": "Rule · HubSpot comment, 24 Aug",
+   "src": "Rule \u00b7 HubSpot comment, 24 Aug",
    "t": "Replace all instances of \"manufacturing\" / \"manufacturer\" with Provider language. Caveat: \"turnkey production\" and \"US manufacturing\" are OK."
   },
   {
    "id": "gen:rule:3",
    "n": "Tammy Johnson",
    "at": "2026-09-08T14:30:00-04:00",
-   "src": "Rule · call, 8 Sep",
+   "src": "Rule \u00b7 call, 8 Sep",
    "t": "No links from Praxera to DaVinci, and no purchase path / e-commerce on Praxera. Product-guide style CTAs go to Schedule a Consultation (/get-started)."
   },
   {
    "id": "gen:rule:4",
    "n": "Melinda Elmadjian",
    "at": "2026-09-08T14:30:00-04:00",
-   "src": "Rule · call, 8 Sep",
+   "src": "Rule \u00b7 call, 8 Sep",
    "t": "Praxera is never marketed as manufacturing. \"Manufactured in the U.S.\" and \"cGMP facility\" are approved; never \"we produce\", \"our facilities\", \"manufacturers\"."
   },
   {
@@ -34,7 +34,7 @@
    "n": "Melinda Elmadjian",
    "at": "2026-09-08T09:24:00-04:00",
    "src": "Email, 8 Sep",
-   "t": "FDA Disclaimer box — should have an * at the very beginning and each page reflect the same box. Throughout the pages, many claims are made where I have added * which is why it needs to connect to the FDA disclaimer box."
+   "t": "FDA Disclaimer box \u2014 should have an * at the very beginning and each page reflect the same box. Throughout the pages, many claims are made where I have added * which is why it needs to connect to the FDA disclaimer box."
   },
   {
    "id": "gen:email:2",
@@ -48,35 +48,35 @@
    "n": "Melinda Elmadjian",
    "at": "2026-09-08T09:24:00-04:00",
    "src": "Email, 8 Sep",
-   "t": "TM — on some pages Daily Best products have TM after Daily Best and some pages do not. These should be consistent."
+   "t": "TM \u2014 on some pages Daily Best products have TM after Daily Best and some pages do not. These should be consistent."
   },
   {
    "id": "gen:email:4",
    "n": "Melinda Elmadjian",
    "at": "2026-09-08T09:24:00-04:00",
    "src": "Email, 8 Sep",
-   "t": "Fish Oils & Omega Category Page — I recommend this be added as EFAs are a top category in our business along with some upcoming potential."
+   "t": "Fish Oils & Omega Category Page \u2014 I recommend this be added as EFAs are a top category in our business along with some upcoming potential."
   },
   {
    "id": "gen:email:5",
    "n": "Melinda Elmadjian",
    "at": "2026-09-08T09:24:00-04:00",
    "src": "Email, 8 Sep",
-   "t": "Subheaders — several category pages still have the same general placeholder subheader. The 8 that need to be updated: Multis, Immune, Cognitive, Pediatric, Joint, Heart, Detox & Liver, Energy. I wrote Prenatal and (I believe) Men."
+   "t": "Subheaders \u2014 several category pages still have the same general placeholder subheader. The 8 that need to be updated: Multis, Immune, Cognitive, Pediatric, Joint, Heart, Detox & Liver, Energy. I wrote Prenatal and (I believe) Men."
   },
   {
    "id": "gen:email:6",
    "n": "Melinda Elmadjian",
    "at": "2026-09-08T09:24:00-04:00",
    "src": "Email, 8 Sep",
-   "t": "Tagline — has marketing determined a tagline to have under Praxera? Taylor's options: \"Helping Practices Build More Than Patient Loyalty.\" / \"Applied Expertise. Built for Your Brand.\" / \"Expert Formulations. Your Brand.\" Essence: helping practitioners build successful supplement brands through expertise, partnership, and execution."
+   "t": "Tagline \u2014 has marketing determined a tagline to have under Praxera? Taylor's options: \"Helping Practices Build More Than Patient Loyalty.\" / \"Applied Expertise. Built for Your Brand.\" / \"Expert Formulations. Your Brand.\" Essence: helping practitioners build successful supplement brands through expertise, partnership, and execution."
   },
   {
    "id": "gen:email:7",
    "n": "Melinda Elmadjian",
    "at": "2026-09-08T09:24:00-04:00",
    "src": "Email, 8 Sep",
-   "t": "Dropshipping — we have a page for it. @Tammy Johnson please confirm whether or not this should be included."
+   "t": "Dropshipping \u2014 we have a page for it. @Tammy Johnson please confirm whether or not this should be included."
   },
   {
    "id": "gen:email:8",
@@ -89,71 +89,113 @@
    "id": "gen:call:1",
    "n": "Tammy Johnson",
    "at": "2026-09-08T14:30:00-04:00",
-   "src": "Decision · call, 8 Sep",
-   "t": "Keep the ® after Daily Best everywhere (registered mark) — do not reduce to TM. Must be consistent on every page."
+   "src": "Decision \u00b7 call, 8 Sep",
+   "t": "Keep the \u00ae after Daily Best everywhere (registered mark) \u2014 do not reduce to TM. Must be consistent on every page."
   },
   {
    "id": "gen:call:2",
    "n": "Melinda Elmadjian",
    "at": "2026-09-08T14:30:00-04:00",
-   "src": "Standard · call, 8 Sep",
-   "t": "Category-page \"formulations\" block — use Women's Health as the model on every category page: headline \"Praxera's <category> formulations available for private label\"; line 1 \"A selection of our existing <category> supplement line, available for private label today.\"; \"Schedule a consultation for the full catalog and custom options.\" on its own line. Replace the \"Our …\", \"Real Praxera …\", \"These are actual products … Browse the full catalog\" variants."
+   "src": "Standard \u00b7 call, 8 Sep",
+   "t": "Category-page \"formulations\" block \u2014 use Women's Health as the model on every category page: headline \"Praxera's <category> formulations available for private label\"; line 1 \"A selection of our existing <category> supplement line, available for private label today.\"; \"Schedule a consultation for the full catalog and custom options.\" on its own line. Replace the \"Our \u2026\", \"Real Praxera \u2026\", \"These are actual products \u2026 Browse the full catalog\" variants."
   },
   {
    "id": "gen:call:3",
    "n": "Melinda Elmadjian",
    "at": "2026-09-08T14:30:00-04:00",
-   "src": "Decision · call, 8 Sep",
-   "t": "\"Developed by Us, Made for You\" block must appear on every page with identical wording; add \"and tested ingredients\" after \"thoroughly researched\" (as on the home/pillar page). Only 43 assets use the global version and about half the pages were locked to Mindy — audit and standardise."
+   "src": "Decision \u00b7 call, 8 Sep",
+   "t": "\"Developed by Us, Made for You\" block must appear on every page with identical wording; add \"and tested ingredients\" after \"thoroughly researched\" (as on the home/pillar page). Only 43 assets use the global version and about half the pages were locked to Mindy \u2014 audit and standardise."
   },
   {
    "id": "gen:call:4",
    "n": "Tammy Johnson",
    "at": "2026-09-08T14:30:00-04:00",
-   "src": "Decision · call, 8 Sep",
+   "src": "Decision \u00b7 call, 8 Sep",
    "t": "Placeholder hero subheaders on the new category pages: lift the regulatory-approved intro copy from davincilabs.com/shop-supplements/<category>.html (Patrick's suggestion, Tammy: \"absolutely perfect, all approved by regulatory\"). Pediatric's original names Little DaVinci and cannot be reused verbatim."
   },
   {
    "id": "gen:call:5",
    "n": "Shawn Peterson",
    "at": "2026-09-08T14:30:00-04:00",
-   "src": "Decision · call, 8 Sep",
+   "src": "Decision \u00b7 call, 8 Sep",
    "t": "Navigation must stay fixed while scrolling (Tammy agreed). Sticky header shipped 8 Sep evening via Global Header module.css. Steps sections should show numbers OR icons, not both."
   },
   {
    "id": "gen:call:6",
    "n": "Tammy Johnson",
    "at": "2026-09-08T14:30:00-04:00",
-   "src": "Process · call, 8 Sep",
-   "t": "Regulatory needs ONE WEEK on the live-looking site (they have no HubSpot access — live URLs, not the editor). Soft launch ~14 Sep, nobody pointed at it; public by end of September. Friday 12 Sep touch-base added. QBS (Barb, Yelena, Patrick) checks Justin's changes before the client is asked to review again."
+   "src": "Process \u00b7 call, 8 Sep",
+   "t": "Regulatory needs ONE WEEK on the live-looking site (they have no HubSpot access \u2014 live URLs, not the editor). Soft launch ~14 Sep, nobody pointed at it; public by end of September. Friday 12 Sep touch-base added. QBS (Barb, Yelena, Patrick) checks Justin's changes before the client is asked to review again."
   },
   {
    "id": "gen:call:7",
    "n": "Shawn Peterson",
    "at": "2026-09-08T14:30:00-04:00",
-   "src": "Process · call, 8 Sep",
-   "t": "Emails & workflows: reply-to becomes info@praxerasupplements.com (Sarah confirmed the mailbox) — change at the last second, not before. Email footer is the universal DaVinci brand footer — DO NOT EDIT until Patrick builds the Praxera brand kit and re-clones. Audit CTAs/links in the 111 cloned emails; switch-over is DaVinci PL workflows off / Praxera on, same day. Barb + Justin QA the website, Yelena the other assets."
+   "src": "Process \u00b7 call, 8 Sep",
+   "t": "Emails & workflows: reply-to becomes info@praxerasupplements.com (Sarah confirmed the mailbox) \u2014 change at the last second, not before. Email footer is the universal DaVinci brand footer \u2014 DO NOT EDIT until Patrick builds the Praxera brand kit and re-clones. Audit CTAs/links in the 111 cloned emails; switch-over is DaVinci PL workflows off / Praxera on, same day. Barb + Justin QA the website, Yelena the other assets."
   },
   {
    "id": "gen:call:8",
    "n": "Tammy Johnson",
    "at": "2026-09-08T14:30:00-04:00",
-   "src": "Decision · call, 8 Sep",
-   "t": "Third-party-testing / NSF / USP passages in the Definitive Guide are long-running general educational content, not new copy — leave them alone. Dropshipping page comes out of the launch set (may return later as an educational resource)."
+   "src": "Decision \u00b7 call, 8 Sep",
+   "t": "Third-party-testing / NSF / USP passages in the Definitive Guide are long-running general educational content, not new copy \u2014 leave them alone. Dropshipping page comes out of the launch set (may return later as an educational resource)."
   },
   {
    "id": "gen:patrick:1",
    "n": "Patrick Dodge",
    "at": "2026-09-09T09:00:00-04:00",
-   "src": "Plan · email, 9 Sep",
-   "t": "Minimum viable product for the Regulatory hand-off next week: all core pages checked with label-claim asterisks in the right places; guides created and in place; menu navigation updates and links checked; blog populated (start the SEO switch). Until end of month: emails reviewed and corrected; CTAs checked and links confirmed; 301 redirects set up and Google Search Console; workflows tested. Expect an Awareness, Consideration and Decision-stage workflow, each with 6–8 emails. Progress check 4pm today."
+   "src": "Plan \u00b7 email, 9 Sep",
+   "t": "Minimum viable product for the Regulatory hand-off next week: all core pages checked with label-claim asterisks in the right places; guides created and in place; menu navigation updates and links checked; blog populated (start the SEO switch). Until end of month: emails reviewed and corrected; CTAs checked and links confirmed; 301 redirects set up and Google Search Console; workflows tested. Expect an Awareness, Consideration and Decision-stage workflow, each with 6\u20138 emails. Progress check 4pm today."
   },
   {
    "id": "gen:patrick:2",
    "n": "Patrick Dodge",
    "at": "2026-09-09T09:00:00-04:00",
-   "src": "Note · email, 9 Sep",
+   "src": "Note \u00b7 email, 9 Sep",
    "t": "We are getting mired in phrasing adjustments to copy that was already approved and published on the existing DaVinci site. Focus this week: tie up the few open pieces, then start QA on the automated emails and workflows."
+  },
+  {
+   "id": "gen:qbs:emails1",
+   "n": "Quantum (Claude)",
+   "at": "2026-09-11T10:30:00-04:00",
+   "src": "Work log \u00b7 11 Sep",
+   "t": "Email pass done on all 111 Praxera drafts: new Praxera footer address on every one, reply-to set to info@praxerasupplements.com, follow-us and social-share icons removed (social accounts are not set up yet), dead /en/pl-demo-* links repointed to the live pages, the Praxera logo now served from praxerasupplements.com, and DaVinci-labelled bottle photos replaced with Praxera-format bottles. Nothing was sent or published."
+  },
+  {
+   "id": "gen:qbs:emails2",
+   "n": "Quantum (Claude)",
+   "at": "2026-09-11T10:35:00-04:00",
+   "src": "Decision needed \u00b7 11 Sep",
+   "t": "Three emails describe FoodScience\u00ae as the parent company (Client_Onboarding_BoF_Danielle_#4 and the two DV Mission & Register emails) and two link to foodsciencecorp.com. Keep, soften, or cut? Praxera is not presented as a manufacturer anywhere else."
+  },
+  {
+   "id": "gen:qbs:emails3",
+   "n": "Quantum (Claude)",
+   "at": "2026-09-11T10:38:00-04:00",
+   "src": "Blocked \u00b7 11 Sep",
+   "t": "The email 'PL_Guide_MoF_Danielle_PL Answers' links to the blog post 'Top questions consumers have about private label supplements'. That post is still a draft on praxerasupplements.com, so the link 404s until it is published."
+  },
+  {
+   "id": "gen:qbs:emails4",
+   "n": "Quantum (Claude)",
+   "at": "2026-09-11T10:40:00-04:00",
+   "src": "Decision needed \u00b7 11 Sep",
+   "t": "Three emails used to send from the contact owner's address ({{ contact.hubspot_owner_id.email }}); they now use info@praxerasupplements.com like the rest, per Shawn on 11 Sep. Also, a meeting link in two emails books Samantha Fuller's calendar \u2014 confirm whose calendar Praxera bookings should go to."
+  },
+  {
+   "id": "gen:qbs:emails5",
+   "n": "Quantum (Claude)",
+   "at": "2026-09-11T10:42:00-04:00",
+   "src": "Work log \u00b7 11 Sep",
+   "t": "Dates made evergreen so content does not age: the 'Top Private Label Supplements for 2026' subject line and body wording, and five live blog titles (years removed, URLs left alone for SEO). A green Get Started button is now live at the top right of the site navigation, pointing at /get-started."
+  },
+  {
+   "id": "gen:qbs:emails6",
+   "n": "Quantum (Claude)",
+   "at": "2026-09-11T10:45:00-04:00",
+   "src": "Work log \u00b7 11 Sep",
+   "t": "Five bit.ly shortlinks that resolved to davincilabs.com shop pages now point at the Praxera format pages (chewables, liquids, powders, capsules, tablets). The DaVinci practitioner registration link (fsc-live.com) now points at /get-started, and 'PraxeraLabs.com' typos are corrected. No HubSpot CTA objects are used in any Praxera email or page, so there is nothing to clone: every button is a plain link and all of them were checked."
   }
  ]
 }
