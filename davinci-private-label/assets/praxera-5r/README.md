@@ -40,3 +40,26 @@ sold under Praxera.
 The original's ring is an organic composition of overlapping blobs at varying radii; the
 rebuild uses an even five-segment ring. Same information, same order, same colours,
 slightly more geometric. Flag if the client wants the looser original treatment.
+
+## v2 — ring matched to the original (13 Sep)
+The first rebuild used an even five-segment donut. v2 matches the original's composition:
+rounded "petal" wedges (corner radius 34 units, 4.2° white gaps), the original's **two**
+greens sampled from the source render (`#76BD43` for 01, `#A3D06F` for 04), and a large
+centre disc that overlaps the band and sits left of the ring centre, with a thick white
+keyline — as in the original. See `reports/praxera-5r-qa-ring.png`.
+
+Text fidelity re-verified after the rebuild: still exactly one changed word
+(DaVinci → Praxera), 6 ™ and 1 ® preserved, page size 792 × 612 pt.
+
+## Live as of 13 Sep
+- HubSpot file **221802319406**, `/Praxera/Private Label Supplements Guide/`, PUBLIC_INDEXABLE.
+- Served (verified 200, 2,738,041 bytes, text confirms Praxera / no DaVinci) at
+  `https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-5R-Gut-Health-Protocol.pdf`
+- Email **220685976492** ("Download the 5R Framework Quick Deploy Kit") repointed from the
+  DaVinci PDF to the above. Still DRAFT. Anchor text, subject, sender and all 17 widgets
+  unchanged; before-state in `backups/email-5r-pdf/`.
+
+**Note:** the Files API returns this asset's canonical `url` on **www.pettechlabs.com** —
+that is the portal's file-hosting domain setting, which we were told not to change. The
+same file also serves correctly from the Praxera domain, and that is the URL used in the
+email. Worth fixing at the portal level so Praxera assets stop defaulting to a Pet Tech URL.

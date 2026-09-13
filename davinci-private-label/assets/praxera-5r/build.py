@@ -10,29 +10,50 @@ STEPS=[("01","REMOVE","Promote a healthy microbiome and normal inflammatory resp
 ("04","REPAIR","A cornerstone for improved gut health includes strengthening intestinal barrier integrity and restoring its function. This step is critical for addressing gastrointestinal concerns while supporting digestion, bowel regularity, a calm immune response, and a healthy microbial environment.",["G.I. BENEFITS®","L-GLUTAMINE POWDER","IMMUNO BENEFITS™"]),
 ("05","REBALANCE","Engineer a healthy lifestyle to promote proper gut function for once and for all. Improve lifestyle factors such as sleep, exercise, and nutrition habits, which can all affect the gut. Persistent stress can cause damage to the gut lining, making stress management a key requirement for long-term gut health.",["CLEAR G.I."])]
 
-# SVG viewBox 600x600 rendered at 452px wide, top-right
-VB=600; CX=CY=300; RO=280; RI=150
-def wedge(a_mid,span=71.2):
-    a0=math.radians(a_mid-span/2); a1=math.radians(a_mid+span/2)
-    p=lambda r,a:(CX+r*math.cos(a), CY-r*math.sin(a))
-    x0,y0=p(RO,a0); x1,y1=p(RO,a1); x2,y2=p(RI,a1); x3,y3=p(RI,a0)
-    return (f"M{x0:.1f},{y0:.1f} A{RO},{RO} 0 0 0 {x1:.1f},{y1:.1f} "
-            f"L{x2:.1f},{y2:.1f} A{RI},{RI} 0 0 1 {x3:.1f},{y3:.1f} Z")
-def lbl(a_mid,r=(RO+RI)/2+8):
+# ---- ring: rounded "petal" wedges, matching the original composition ----
+VB=620; CX=CY=310
+RO=292; RI=138          # outer / inner radius of the annulus band
+CR=34                   # corner radius of each petal
+GAP=4.2                 # degrees of white gap between petals
+G_DARK='#76BD43'; G_LIGHT='#A3D06F'
+
+def petal(a_mid, span=72.0-GAP):
+    """annular sector inset by CR, later stroked with width 2*CR and round joins"""
+    ro=RO-CR; ri=RI+CR
+    do=math.degrees(CR/ro); di=math.degrees(CR/ri)
+    a0o=math.radians(a_mid-span/2+do); a1o=math.radians(a_mid+span/2-do)
+    a0i=math.radians(a_mid-span/2+di); a1i=math.radians(a_mid+span/2-di)
+    P=lambda r,a:(CX+r*math.cos(a), CY-r*math.sin(a))
+    x0,y0=P(ro,a0o); x1,y1=P(ro,a1o); x2,y2=P(ri,a1i); x3,y3=P(ri,a0i)
+    return (f"M{x0:.2f},{y0:.2f} A{ro:.1f},{ro:.1f} 0 0 0 {x1:.2f},{y1:.2f} "
+            f"L{x2:.2f},{y2:.2f} A{ri:.1f},{ri:.1f} 0 0 1 {x3:.2f},{y3:.2f} Z")
+
+def lbl(a_mid, r=None):
+    if r is None: r=RI+(RO-RI)*0.72
     a=math.radians(a_mid); return (CX+r*math.cos(a), CY-r*math.sin(a))
 
-SEG=[("01",90,'green'),("02",162,'caps'),("03",234,'micro'),("04",306,'green'),("05",18,'leaf')]
+# counter-clockwise: 01 top-left, 02 left, 03 bottom, 04 right, 05 top-right
+SEG=[("01",104,G_DARK,None),("02",176,None,'caps'),("03",248,None,'micro'),
+     ("04",320,G_LIGHT,None),("05",32,None,'leaf')]
 paths=[]
-for num,ang,fill in SEG:
-    f=GREEN if fill=='green' else f"url(#pat_{fill})"
-    paths.append(f'<path d="{wedge(ang)}" fill="{f}"/>')
+for num,ang,col,img in SEG:
+    fill = col if col else f"url(#pat_{img})"
+    d=petal(ang)
+    paths.append(f'<path d="{d}" fill="{fill}" stroke="{fill}" stroke-width="{2*CR}" '
+                 f'stroke-linejoin="round" stroke-linecap="round"/>')
+
+# centre product disc - large, overlapping the band, nudged left of ring centre
+PX,PY,PR = CX-30, CY+6, 176
+paths.append(f'<circle cx="{PX}" cy="{PY}" r="{PR+9}" fill="#fff"/>')
+paths.append(f'<clipPath id="pc"><circle cx="{PX}" cy="{PY}" r="{PR}"/></clipPath>')
+paths.append(f'<image href="{IMG["prod"]}" x="{PX-PR}" y="{PY-PR}" width="{2*PR}" height="{2*PR}" '
+             f'preserveAspectRatio="xMidYMid slice" clip-path="url(#pc)"/>')
+
+# numbers last so they sit above everything
+for num,ang,col,img in SEG:
     lx,ly=lbl(ang)
     paths.append(f'<text x="{lx:.1f}" y="{ly:.1f}" text-anchor="middle" dominant-baseline="central" '
-                 f'font-family="Arial Black, Arial, sans-serif" font-size="52" font-weight="900" fill="#fff">{num}</text>')
-# product disc inside the svg
-paths.append(f'<clipPath id="pc"><circle cx="{CX}" cy="{CY}" r="{RI-6}"/></clipPath>')
-paths.append(f'<image href="{IMG["prod"]}" x="{CX-RI+6}" y="{CY-RI+6}" width="{2*(RI-6)}" height="{2*(RI-6)}" '
-             f'preserveAspectRatio="xMidYMid slice" clip-path="url(#pc)"/>')
+                 f'font-family="Arial Black, Arial, sans-serif" font-size="54" font-weight="900" fill="#fff">{num}</text>')
 
 defs="".join(
  f'<pattern id="pat_{k}" patternUnits="userSpaceOnUse" width="{VB}" height="{VB}">'
@@ -56,7 +77,7 @@ body{{width:1056px;height:816px;position:relative;font-family:'Helvetica Neue',H
 h1{{font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:52px;line-height:.97;letter-spacing:-1.2px;margin:0 0 20px 0;text-transform:uppercase}}
 h1 .g{{color:{GREEN}}}
 .intro{{font-size:15.5px;line-height:1.52;color:#33434c;margin:0;width:372px}}
-.ring{{position:absolute;right:34px;top:30px;width:452px;height:452px}}
+.ring{{position:absolute;right:18px;top:14px;width:492px;height:492px}}
 .cols{{position:absolute;left:52px;right:44px;top:540px;display:flex}}
 .col{{flex:1;padding:0 13px;border-right:1px dotted #bcc6cc}}
 .col:first-child{{padding-left:0}} .col:last-child{{border-right:none;padding-right:0}}
