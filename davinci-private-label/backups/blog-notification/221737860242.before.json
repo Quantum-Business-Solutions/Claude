@@ -242,13 +242,16 @@
       "padding-right": "20px",
       "padding-top": "10px"
      },
-     "html_field": ""
+     "html_field": "",
+     "module_id": 3444502
     },
     "child_css": {},
     "css": {},
     "id": "builtin_blog_rss_module",
+    "label": null,
     "module_id": 3444502,
     "name": "builtin_blog_rss_module",
+    "order": 2,
     "smart_type": null,
     "styles": {},
     "type": "module"
@@ -280,6 +283,7 @@
        "underline": true
       }
      },
+     "module_id": 2869621,
      "parent_widget_container": null,
      "path": "@hubspot/email_footer",
      "schema_version": 2,
@@ -318,8 +322,10 @@
     "child_css": {},
     "css": {},
     "id": "builtin_footer_module",
+    "label": null,
     "module_id": 2869621,
     "name": "builtin_footer_module",
+    "order": 3,
     "smart_type": null,
     "styles": {},
     "type": "module"
@@ -337,13 +343,16 @@
       "height": 72,
       "src": "https://static.hsappstatic.net/TemplateAssets/static-1.21/img/hs_default_template_images/email_dnd_template_images/company-logo-orange.png",
       "width": 240
-     }
+     },
+     "module_id": 1367093
     },
     "child_css": {},
     "css": {},
     "id": "builtin_image_module",
+    "label": null,
     "module_id": 1367093,
     "name": "builtin_image_module",
+    "order": 1,
     "smart_type": null,
     "styles": {},
     "type": "module"
@@ -357,44 +366,45 @@
     "id": "preview_text",
     "label": "Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
     "name": "preview_text",
+    "order": 0,
     "smart_type": null,
     "styles": {},
     "type": "text"
    }
   }
  },
- "createdAt": "2026-09-13T16:08:23.431Z",
+ "createdAt": "2026-09-13T16:12:34.934Z",
  "createdById": "26261533",
  "emailTemplateMode": "DRAG_AND_DROP",
  "from": {
   "fromName": "Praxera",
   "replyTo": "info@praxerasupplements.com"
  },
- "id": "221738119527",
+ "id": "221737860242",
  "isAb": false,
  "isPublished": false,
  "isTransactional": false,
  "jitterSendTime": true,
  "language": "en",
- "name": "Praxera - Blog: Instant notification",
- "previewKey": "KEzViyoe",
- "publishDate": "2026-09-13T16:09:59Z",
+ "name": "Praxera - Blog: Daily notification",
+ "previewKey": "MREktJQQ",
+ "publishDate": "2026-09-13T16:25:03Z",
  "rssData": {
-  "blogEmailType": "instant",
+  "blogEmailType": "daily",
   "blogImageMaxWidth": 0,
   "hubspotBlogId": "220598739286",
-  "maxEntries": 1,
+  "maxEntries": 5,
   "timing": {
-   "repeats": "instant",
+   "repeats": "daily",
    "repeats_on_monthly": 1,
    "repeats_on_weekly": 1,
-   "summary": "Instant",
+   "summary": "Daily",
    "time": "9:00 am"
   }
  },
  "state": "BLOG_EMAIL_DRAFT",
  "subcategory": "blog_email",
- "subject": "New on the Praxera blog: {{ content.name }}",
+ "subject": "New posts daily for the Praxera Supplements Blog blog",
  "subscriptionDetails": {
   "officeLocationId": "221681937557",
   "subscriptionId": "3608525332",
@@ -404,12 +414,12 @@
   "suppressGraymail": true
  },
  "type": "BLOG_EMAIL",
- "updatedAt": "2026-09-13T16:09:59.649Z",
+ "updatedAt": "2026-09-13T16:25:03.243Z",
  "updatedById": "52613719",
  "webversion": {
   "domain": "info.petnaturals.com",
   "enabled": false,
   "isPageRedirected": false,
-  "slug": "-temporary-slug-b7818954-1459-4162-b719-4bc805b71ad5"
+  "slug": "-temporary-slug-e97efe35-b85d-4ee8-97f9-c8790342ff1e"
  }
 }

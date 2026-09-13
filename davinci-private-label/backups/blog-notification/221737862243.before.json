@@ -363,38 +363,38 @@
    }
   }
  },
- "createdAt": "2026-09-13T16:08:23.431Z",
+ "createdAt": "2026-09-13T16:23:07.112Z",
  "createdById": "26261533",
  "emailTemplateMode": "DRAG_AND_DROP",
  "from": {
   "fromName": "Praxera",
   "replyTo": "info@praxerasupplements.com"
  },
- "id": "221738119527",
+ "id": "221737862243",
  "isAb": false,
  "isPublished": false,
  "isTransactional": false,
  "jitterSendTime": true,
  "language": "en",
- "name": "Praxera - Blog: Instant notification",
- "previewKey": "KEzViyoe",
- "publishDate": "2026-09-13T16:09:59Z",
+ "name": "Praxera - Blog: Monthly notification",
+ "previewKey": "DEQwgTiG",
+ "publishDate": "2026-09-13T16:25:04Z",
  "rssData": {
-  "blogEmailType": "instant",
+  "blogEmailType": "monthly",
   "blogImageMaxWidth": 0,
   "hubspotBlogId": "220598739286",
-  "maxEntries": 1,
+  "maxEntries": 5,
   "timing": {
-   "repeats": "instant",
+   "repeats": "monthly",
    "repeats_on_monthly": 1,
    "repeats_on_weekly": 1,
-   "summary": "Instant",
+   "summary": "1st day of the month",
    "time": "9:00 am"
   }
  },
  "state": "BLOG_EMAIL_DRAFT",
  "subcategory": "blog_email",
- "subject": "New on the Praxera blog: {{ content.name }}",
+ "subject": "New posts monthly for the Praxera Supplements Blog blog",
  "subscriptionDetails": {
   "officeLocationId": "221681937557",
   "subscriptionId": "3608525332",
@@ -404,12 +404,12 @@
   "suppressGraymail": true
  },
  "type": "BLOG_EMAIL",
- "updatedAt": "2026-09-13T16:09:59.649Z",
+ "updatedAt": "2026-09-13T16:25:03.936Z",
  "updatedById": "52613719",
  "webversion": {
   "domain": "info.petnaturals.com",
   "enabled": false,
   "isPageRedirected": false,
-  "slug": "-temporary-slug-b7818954-1459-4162-b719-4bc805b71ad5"
+  "slug": "-temporary-slug-30a4b28d-1dd6-4431-9821-20cc52011ee6"
  }
 }
