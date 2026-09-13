@@ -1,0 +1,214 @@
+{
+ "id": "dd7328fc-f1b0-4d3f-84ac-d762af1add57",
+ "name": "Praxera - Supplements Guide",
+ "createdAt": "2026-08-30T18:43:34.517Z",
+ "updatedAt": "2026-09-11T18:19:51.791Z",
+ "archived": false,
+ "fieldGroups": [
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "firstname",
+     "label": "First name",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    },
+    {
+     "objectTypeId": "0-1",
+     "name": "lastname",
+     "label": "Last name",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "email",
+     "label": "Email",
+     "required": true,
+     "hidden": false,
+     "validation": {
+      "blockedEmailDomains": [],
+      "useDefaultBlockList": false
+     },
+     "fieldType": "email"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "what_best_describes_you_",
+     "label": "What best describes you?",
+     "required": true,
+     "hidden": false,
+     "options": [
+      {
+       "label": "Healthcare Practitioner",
+       "value": "Health Care Practitioner",
+       "description": "",
+       "displayOrder": 0
+      },
+      {
+       "label": "Pharmacist, Consultant, or Coach",
+       "value": "Pharmacist, Consultant, or Coach",
+       "description": "",
+       "displayOrder": 1
+      },
+      {
+       "label": "Other Business Owner That Sells Supplements",
+       "value": "Other Business Owner",
+       "description": "",
+       "displayOrder": 2
+      },
+      {
+       "label": "Health Conscious Consumer",
+       "value": "Consumer",
+       "description": "",
+       "displayOrder": 3
+      },
+      {
+       "label": "Health Conscious Parent",
+       "value": "Health Conscious Parent",
+       "description": "",
+       "displayOrder": 4
+      }
+     ],
+     "fieldType": "dropdown"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "i_would_like_to_subscribe_to_the_davinci_blog",
+     "label": "I would like to subscribe to the Praxera Blog",
+     "required": false,
+     "hidden": false,
+     "fieldType": "single_checkbox"
+    }
+   ]
+  },
+  {
+   "groupType": "queued",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "website",
+     "label": "Website URL",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "queued",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "how_many_employees_work_in_your_practice_work_",
+     "label": "How many employees work in your practice or business?",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "queued",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "describe_yourself",
+     "label": "How Much Experience With Supplements Do You Have?",
+     "required": false,
+     "hidden": false,
+     "options": [
+      {
+       "label": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+       "value": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+       "description": "",
+       "displayOrder": 1
+      },
+      {
+       "label": "I am somewhat new to dietary supplements and eager to learn more.",
+       "value": "I am somewhat new to dietary supplements and eager to learn more.",
+       "description": "",
+       "displayOrder": 2
+      }
+     ],
+     "fieldType": "dropdown"
+    }
+   ]
+  }
+ ],
+ "configuration": {
+  "language": "en",
+  "cloneable": true,
+  "postSubmitAction": {
+   "type": "redirect_url",
+   "value": "https://www.praxerasupplements.com/learning/definitive-guide-ty"
+  },
+  "editable": true,
+  "archivable": true,
+  "recaptchaEnabled": false,
+  "notifyContactOwner": false,
+  "notifyRecipients": [
+   "3256355",
+   "4990427"
+  ],
+  "createNewContactForNewEmail": false,
+  "prePopulateKnownValues": true,
+  "allowLinkToResetKnownValues": false,
+  "embedType": "V3"
+ },
+ "displayOptions": {
+  "renderRawHtml": false,
+  "theme": "default_style",
+  "submitButtonText": "Download The Guide",
+  "style": {
+   "fontFamily": "arial, helvetica, sans-serif",
+   "backgroundWidth": "100%",
+   "labelTextColor": "#33475b",
+   "labelTextSize": "13px",
+   "helpTextColor": "#7C98B6",
+   "helpTextSize": "11px",
+   "legalConsentTextColor": "#33475b",
+   "legalConsentTextSize": "14px",
+   "submitColor": "#ff7a59",
+   "submitAlignment": "left",
+   "submitFontColor": "#ffffff",
+   "submitSize": "12px"
+  },
+  "cssClass": "hs-form stacked"
+ },
+ "legalConsentOptions": {
+  "subscriptionTypeIds": [
+   4588994
+  ],
+  "lawfulBasis": "lead",
+  "privacyText": "<p>Praxera needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href=\"https://www.Praxeralabs.com/privacy-policy-cookie-restriction-mode\" rel=\"noopener\" target=\"_blank\">Privacy Policy</a>.</p>",
+  "type": "legitimate_interest"
+ },
+ "formType": "hubspot"
+}

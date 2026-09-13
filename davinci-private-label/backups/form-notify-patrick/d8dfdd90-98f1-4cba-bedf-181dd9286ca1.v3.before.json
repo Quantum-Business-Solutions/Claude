@@ -1,0 +1,142 @@
+{
+ "id": "d8dfdd90-98f1-4cba-bedf-181dd9286ca1",
+ "name": "Private Label (Praxera) - Schedule a Consultation ",
+ "createdAt": "2026-07-17T17:51:38.383Z",
+ "updatedAt": "2026-08-11T21:02:17.146Z",
+ "archived": false,
+ "fieldGroups": [
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "firstname",
+     "label": "First name",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "lastname",
+     "label": "Last name",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "email",
+     "label": "Email",
+     "required": true,
+     "hidden": false,
+     "validation": {
+      "blockedEmailDomains": [],
+      "useDefaultBlockList": false
+     },
+     "fieldType": "email"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "phone",
+     "label": "Phone number",
+     "required": false,
+     "hidden": false,
+     "useCountryCodeSelect": false,
+     "validation": {
+      "minAllowedDigits": 7,
+      "maxAllowedDigits": 20
+     },
+     "fieldType": "phone"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "company",
+     "label": "Company name",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "message",
+     "label": "Tell us what you are looking to launch.",
+     "required": false,
+     "hidden": false,
+     "fieldType": "multi_line_text"
+    }
+   ]
+  }
+ ],
+ "configuration": {
+  "language": "en",
+  "cloneable": true,
+  "postSubmitAction": {
+   "type": "thank_you",
+   "value": "Thanks! Our private label specialist will reach out within one business day to schedule your consultation."
+  },
+  "editable": true,
+  "archivable": true,
+  "recaptchaEnabled": false,
+  "notifyContactOwner": false,
+  "createNewContactForNewEmail": true,
+  "prePopulateKnownValues": true,
+  "allowLinkToResetKnownValues": false,
+  "embedType": "V3"
+ },
+ "displayOptions": {
+  "renderRawHtml": false,
+  "theme": "default_style",
+  "submitButtonText": "Submit",
+  "style": {
+   "fontFamily": "arial, helvetica, sans-serif",
+   "backgroundWidth": "100%",
+   "labelTextColor": "#33475b",
+   "labelTextSize": "11px",
+   "helpTextColor": "#7c98b6",
+   "helpTextSize": "11px",
+   "legalConsentTextColor": "#33475b",
+   "legalConsentTextSize": "14px",
+   "submitColor": "#012638",
+   "submitAlignment": "left",
+   "submitFontColor": "#FFFFFF",
+   "submitSize": "12px"
+  },
+  "cssClass": null
+ },
+ "legalConsentOptions": {
+  "type": "none"
+ },
+ "formType": "hubspot"
+}

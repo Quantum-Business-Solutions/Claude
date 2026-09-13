@@ -1,0 +1,1999 @@
+{
+ "2e55f9cc-3476-4cee-b4d7-95f6bc1f5569": {
+  "v3": {
+   "id": "2e55f9cc-3476-4cee-b4d7-95f6bc1f5569",
+   "name": "Praxera - Ingredients & Testing Guide (page form)",
+   "createdAt": "2026-08-30T18:43:35.708Z",
+   "updatedAt": "2026-09-11T18:19:49.157Z",
+   "archived": false,
+   "fieldGroups": [
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "firstname",
+       "label": "First name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      },
+      {
+       "objectTypeId": "0-1",
+       "name": "lastname",
+       "label": "Last name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "email",
+       "label": "Email",
+       "required": true,
+       "hidden": false,
+       "validation": {
+        "blockedEmailDomains": [],
+        "useDefaultBlockList": false
+       },
+       "fieldType": "email"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "what_best_describes_you_",
+       "label": "What best describes you?",
+       "required": true,
+       "hidden": false,
+       "options": [
+        {
+         "label": "Healthcare Practitioner",
+         "value": "Health Care Practitioner",
+         "description": "",
+         "displayOrder": 0
+        },
+        {
+         "label": "Pharmacist, Consultant, or Coach",
+         "value": "Pharmacist, Consultant, or Coach",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "Other Business Owner That Sells Supplements",
+         "value": "Other Business Owner",
+         "description": "",
+         "displayOrder": 2
+        },
+        {
+         "label": "Health Conscious Consumer",
+         "value": "Consumer",
+         "description": "",
+         "displayOrder": 3
+        },
+        {
+         "label": "Health Conscious Parent",
+         "value": "Health Conscious Parent",
+         "description": "",
+         "displayOrder": 4
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "i_would_like_to_subscribe_to_the_davinci_blog",
+       "label": "I would like to subscribe to the Praxera Blog",
+       "required": false,
+       "hidden": false,
+       "fieldType": "single_checkbox"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "website",
+       "label": "Website URL",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "how_many_employees_work_in_your_practice_work_",
+       "label": "How many employees work in your practice or business?",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "describe_yourself",
+       "label": "How Much Experience With Supplements Do You Have?",
+       "required": false,
+       "hidden": false,
+       "options": [
+        {
+         "label": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "value": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "I am somewhat new to dietary supplements and eager to learn more.",
+         "value": "I am somewhat new to dietary supplements and eager to learn more.",
+         "description": "",
+         "displayOrder": 2
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    }
+   ],
+   "configuration": {
+    "language": "en",
+    "cloneable": true,
+    "postSubmitAction": {
+     "type": "redirect_url",
+     "value": "https://www.praxerasupplements.com/learning/ty-ingredients-testing"
+    },
+    "editable": true,
+    "archivable": true,
+    "recaptchaEnabled": false,
+    "notifyContactOwner": false,
+    "notifyRecipients": [
+     "3256355",
+     "4990427"
+    ],
+    "createNewContactForNewEmail": false,
+    "prePopulateKnownValues": true,
+    "allowLinkToResetKnownValues": false,
+    "embedType": "V3"
+   },
+   "displayOptions": {
+    "renderRawHtml": false,
+    "theme": "default_style",
+    "submitButtonText": "Download The Guide",
+    "style": {
+     "fontFamily": "arial, helvetica, sans-serif",
+     "backgroundWidth": "100%",
+     "labelTextColor": "#33475b",
+     "labelTextSize": "13px",
+     "helpTextColor": "#7C98B6",
+     "helpTextSize": "11px",
+     "legalConsentTextColor": "#33475b",
+     "legalConsentTextSize": "14px",
+     "submitColor": "#ff7a59",
+     "submitAlignment": "left",
+     "submitFontColor": "#ffffff",
+     "submitSize": "12px"
+    },
+    "cssClass": "hs-form stacked"
+   },
+   "legalConsentOptions": {
+    "subscriptionTypeIds": [
+     4588994
+    ],
+    "lawfulBasis": "lead",
+    "privacyText": "<p>Praxera needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href=\"https://www.Praxeralabs.com/privacy-policy-cookie-restriction-mode\" rel=\"noopener\" target=\"_blank\">Privacy Policy</a>.</p>",
+    "type": "legitimate_interest"
+   },
+   "formType": "hubspot"
+  },
+  "v2_notifyRecipients": "3256355,4990427",
+  "name": "Praxera - Ingredients & Testing Guide (page form)"
+ },
+ "471fb48f-63c1-4bae-bc17-65edebfedcea": {
+  "v3": {
+   "id": "471fb48f-63c1-4bae-bc17-65edebfedcea",
+   "name": "Praxera - Ingredients, Testing & Certification Guide",
+   "createdAt": "2026-08-30T18:43:33.296Z",
+   "updatedAt": "2026-09-11T18:19:49.697Z",
+   "archived": false,
+   "fieldGroups": [
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "firstname",
+       "label": "First name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      },
+      {
+       "objectTypeId": "0-1",
+       "name": "lastname",
+       "label": "Last name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "email",
+       "label": "Email",
+       "required": true,
+       "hidden": false,
+       "validation": {
+        "blockedEmailDomains": [],
+        "useDefaultBlockList": false
+       },
+       "fieldType": "email"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "what_best_describes_you_",
+       "label": "What best describes you?",
+       "required": true,
+       "hidden": false,
+       "options": [
+        {
+         "label": "Healthcare Practitioner",
+         "value": "Health Care Practitioner",
+         "description": "",
+         "displayOrder": 0
+        },
+        {
+         "label": "Pharmacist, Consultant, or Coach",
+         "value": "Pharmacist, Consultant, or Coach",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "Other Business Owner That Sells Supplements",
+         "value": "Other Business Owner",
+         "description": "",
+         "displayOrder": 2
+        },
+        {
+         "label": "Health Conscious Consumer",
+         "value": "Consumer",
+         "description": "",
+         "displayOrder": 3
+        },
+        {
+         "label": "Health Conscious Parent",
+         "value": "Health Conscious Parent",
+         "description": "",
+         "displayOrder": 4
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "i_would_like_to_subscribe_to_the_davinci_blog",
+       "label": "I would like to subscribe to the Praxera Blog",
+       "required": false,
+       "hidden": false,
+       "fieldType": "single_checkbox"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "website",
+       "label": "Website URL",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "how_many_employees_work_in_your_practice_work_",
+       "label": "How many employees work in your practice or business?",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "describe_yourself",
+       "label": "How Much Experience With Supplements Do You Have?",
+       "required": false,
+       "hidden": false,
+       "options": [
+        {
+         "label": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "value": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "I am somewhat new to dietary supplements and eager to learn more.",
+         "value": "I am somewhat new to dietary supplements and eager to learn more.",
+         "description": "",
+         "displayOrder": 2
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    }
+   ],
+   "configuration": {
+    "language": "en",
+    "cloneable": true,
+    "postSubmitAction": {
+     "type": "redirect_url",
+     "value": "https://www.praxerasupplements.com/learning/ty-ingredients-testing"
+    },
+    "editable": true,
+    "archivable": true,
+    "recaptchaEnabled": false,
+    "notifyContactOwner": false,
+    "notifyRecipients": [
+     "3256355",
+     "4990427"
+    ],
+    "createNewContactForNewEmail": false,
+    "prePopulateKnownValues": true,
+    "allowLinkToResetKnownValues": false,
+    "embedType": "V3"
+   },
+   "displayOptions": {
+    "renderRawHtml": false,
+    "theme": "default_style",
+    "submitButtonText": "Download The Guide",
+    "style": {
+     "fontFamily": "arial, helvetica, sans-serif",
+     "backgroundWidth": "100%",
+     "labelTextColor": "#33475b",
+     "labelTextSize": "13px",
+     "helpTextColor": "#7C98B6",
+     "helpTextSize": "11px",
+     "legalConsentTextColor": "#33475b",
+     "legalConsentTextSize": "14px",
+     "submitColor": "#6BA644",
+     "submitAlignment": "center",
+     "submitFontColor": "#ffffff",
+     "submitSize": "12px"
+    },
+    "cssClass": "hs-form stacked"
+   },
+   "legalConsentOptions": {
+    "subscriptionTypeIds": [
+     4588994
+    ],
+    "lawfulBasis": "lead",
+    "privacyText": "<p>[BRAND_TBD] needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href=\"/pl-demo-privacy\" rel=\"noopener\" target=\"_blank\">Privacy Policy</a>.</p>",
+    "type": "legitimate_interest"
+   },
+   "formType": "hubspot"
+  },
+  "v2_notifyRecipients": "3256355,4990427",
+  "name": "Praxera - Ingredients, Testing & Certification Guide"
+ },
+ "6d4066c8-92f5-400c-a556-4265b62ec96b": {
+  "v3": {
+   "id": "6d4066c8-92f5-400c-a556-4265b62ec96b",
+   "name": "Praxera - Onboarding Guide",
+   "createdAt": "2026-08-30T18:43:30.800Z",
+   "updatedAt": "2026-09-11T18:19:50.769Z",
+   "archived": false,
+   "fieldGroups": [
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "firstname",
+       "label": "First name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      },
+      {
+       "objectTypeId": "0-1",
+       "name": "lastname",
+       "label": "Last name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "email",
+       "label": "Email",
+       "required": true,
+       "hidden": false,
+       "validation": {
+        "blockedEmailDomains": [],
+        "useDefaultBlockList": false
+       },
+       "fieldType": "email"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "what_best_describes_you_",
+       "label": "What best describes you?",
+       "required": true,
+       "hidden": false,
+       "options": [
+        {
+         "label": "Healthcare Practitioner",
+         "value": "Health Care Practitioner",
+         "description": "",
+         "displayOrder": 0
+        },
+        {
+         "label": "Pharmacist, Consultant, or Coach",
+         "value": "Pharmacist, Consultant, or Coach",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "Other Business Owner That Sells Supplements",
+         "value": "Other Business Owner",
+         "description": "",
+         "displayOrder": 2
+        },
+        {
+         "label": "Health Conscious Consumer",
+         "value": "Consumer",
+         "description": "",
+         "displayOrder": 3
+        },
+        {
+         "label": "Health Conscious Parent",
+         "value": "Health Conscious Parent",
+         "description": "",
+         "displayOrder": 4
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "i_would_like_to_subscribe_to_the_davinci_blog",
+       "label": "I would like to subscribe to the Praxera Blog",
+       "required": false,
+       "hidden": false,
+       "fieldType": "single_checkbox"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "website",
+       "label": "Website URL",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "how_many_employees_work_in_your_practice_work_",
+       "label": "How many employees work in your practice or business?",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "describe_yourself",
+       "label": "How Much Experience With Supplements Do You Have?",
+       "required": false,
+       "hidden": false,
+       "options": [
+        {
+         "label": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "value": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "I am somewhat new to dietary supplements and eager to learn more.",
+         "value": "I am somewhat new to dietary supplements and eager to learn more.",
+         "description": "",
+         "displayOrder": 2
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    }
+   ],
+   "configuration": {
+    "language": "en",
+    "cloneable": true,
+    "postSubmitAction": {
+     "type": "redirect_url",
+     "value": "https://www.praxerasupplements.com/learning/onboarding-guide-ty"
+    },
+    "editable": true,
+    "archivable": true,
+    "recaptchaEnabled": false,
+    "notifyContactOwner": false,
+    "notifyRecipients": [
+     "66293956",
+     "3256355"
+    ],
+    "createNewContactForNewEmail": false,
+    "prePopulateKnownValues": true,
+    "allowLinkToResetKnownValues": false,
+    "embedType": "V3"
+   },
+   "displayOptions": {
+    "renderRawHtml": false,
+    "theme": "default_style",
+    "submitButtonText": "Download The Guide",
+    "style": {
+     "fontFamily": "arial, helvetica, sans-serif",
+     "backgroundWidth": "100%",
+     "labelTextColor": "#33475b",
+     "labelTextSize": "13px",
+     "helpTextColor": "#7C98B6",
+     "helpTextSize": "11px",
+     "legalConsentTextColor": "#33475b",
+     "legalConsentTextSize": "14px",
+     "submitColor": "#6BA644",
+     "submitAlignment": "center",
+     "submitFontColor": "#ffffff",
+     "submitSize": "12px"
+    },
+    "cssClass": "hs-form stacked"
+   },
+   "legalConsentOptions": {
+    "subscriptionTypeIds": [
+     4588994
+    ],
+    "lawfulBasis": "lead",
+    "privacyText": "<p>Praxera needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href=\"/pl-demo-privacy\" rel=\"noopener\" target=\"_blank\">Privacy Policy</a>.</p>",
+    "type": "legitimate_interest"
+   },
+   "formType": "hubspot"
+  },
+  "v2_notifyRecipients": "66293956,3256355",
+  "name": "Praxera - Onboarding Guide"
+ },
+ "81f2906b-f93a-40b7-aa3e-f075660d4beb": {
+  "v3": {
+   "id": "81f2906b-f93a-40b7-aa3e-f075660d4beb",
+   "name": "Praxera - Client Onboarding Guide",
+   "createdAt": "2026-08-30T18:43:33.935Z",
+   "updatedAt": "2026-09-11T18:19:51.320Z",
+   "archived": false,
+   "fieldGroups": [
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "firstname",
+       "label": "First name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      },
+      {
+       "objectTypeId": "0-1",
+       "name": "lastname",
+       "label": "Last name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "email",
+       "label": "Email",
+       "required": true,
+       "hidden": false,
+       "validation": {
+        "blockedEmailDomains": [],
+        "useDefaultBlockList": false
+       },
+       "fieldType": "email"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "what_best_describes_you_",
+       "label": "What best describes you?",
+       "required": true,
+       "hidden": false,
+       "options": [
+        {
+         "label": "Healthcare Practitioner",
+         "value": "Health Care Practitioner",
+         "description": "",
+         "displayOrder": 0
+        },
+        {
+         "label": "Pharmacist, Consultant, or Coach",
+         "value": "Pharmacist, Consultant, or Coach",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "Other Business Owner That Sells Supplements",
+         "value": "Other Business Owner",
+         "description": "",
+         "displayOrder": 2
+        },
+        {
+         "label": "Health Conscious Consumer",
+         "value": "Consumer",
+         "description": "",
+         "displayOrder": 3
+        },
+        {
+         "label": "Health Conscious Parent",
+         "value": "Health Conscious Parent",
+         "description": "",
+         "displayOrder": 4
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "i_would_like_to_subscribe_to_the_davinci_blog",
+       "label": "I would like to subscribe to the Praxera Blog",
+       "required": false,
+       "hidden": false,
+       "fieldType": "single_checkbox"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "website",
+       "label": "Website URL",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "how_many_employees_work_in_your_practice_work_",
+       "label": "How many employees work in your practice or business?",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "describe_yourself",
+       "label": "How Much Experience With Supplements Do You Have?",
+       "required": false,
+       "hidden": false,
+       "options": [
+        {
+         "label": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "value": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "I am somewhat new to dietary supplements and eager to learn more.",
+         "value": "I am somewhat new to dietary supplements and eager to learn more.",
+         "description": "",
+         "displayOrder": 2
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    }
+   ],
+   "configuration": {
+    "language": "en",
+    "cloneable": true,
+    "postSubmitAction": {
+     "type": "redirect_url",
+     "value": "https://www.praxerasupplements.com/learning/onboarding-guide-ty"
+    },
+    "editable": true,
+    "archivable": true,
+    "recaptchaEnabled": false,
+    "notifyContactOwner": false,
+    "notifyRecipients": [
+     "66293956",
+     "3256355"
+    ],
+    "createNewContactForNewEmail": false,
+    "prePopulateKnownValues": true,
+    "allowLinkToResetKnownValues": false,
+    "embedType": "V3"
+   },
+   "displayOptions": {
+    "renderRawHtml": false,
+    "theme": "default_style",
+    "submitButtonText": "Download The Guide",
+    "style": {
+     "fontFamily": "arial, helvetica, sans-serif",
+     "backgroundWidth": "100%",
+     "labelTextColor": "#33475b",
+     "labelTextSize": "13px",
+     "helpTextColor": "#7C98B6",
+     "helpTextSize": "11px",
+     "legalConsentTextColor": "#33475b",
+     "legalConsentTextSize": "14px",
+     "submitColor": "#ff7a59",
+     "submitAlignment": "left",
+     "submitFontColor": "#ffffff",
+     "submitSize": "12px"
+    },
+    "cssClass": "hs-form stacked"
+   },
+   "legalConsentOptions": {
+    "subscriptionTypeIds": [
+     4588994
+    ],
+    "lawfulBasis": "lead",
+    "privacyText": "<p>Praxera needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href=\"https://www.Praxeralabs.com/privacy-policy-cookie-restriction-mode\" rel=\"noopener\" target=\"_blank\">Privacy Policy</a>.</p>",
+    "type": "legitimate_interest"
+   },
+   "formType": "hubspot"
+  },
+  "v2_notifyRecipients": "66293956,3256355",
+  "name": "Praxera - Client Onboarding Guide"
+ },
+ "dd7328fc-f1b0-4d3f-84ac-d762af1add57": {
+  "v3": {
+   "id": "dd7328fc-f1b0-4d3f-84ac-d762af1add57",
+   "name": "Praxera - Supplements Guide",
+   "createdAt": "2026-08-30T18:43:34.517Z",
+   "updatedAt": "2026-09-11T18:19:51.791Z",
+   "archived": false,
+   "fieldGroups": [
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "firstname",
+       "label": "First name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      },
+      {
+       "objectTypeId": "0-1",
+       "name": "lastname",
+       "label": "Last name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "email",
+       "label": "Email",
+       "required": true,
+       "hidden": false,
+       "validation": {
+        "blockedEmailDomains": [],
+        "useDefaultBlockList": false
+       },
+       "fieldType": "email"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "what_best_describes_you_",
+       "label": "What best describes you?",
+       "required": true,
+       "hidden": false,
+       "options": [
+        {
+         "label": "Healthcare Practitioner",
+         "value": "Health Care Practitioner",
+         "description": "",
+         "displayOrder": 0
+        },
+        {
+         "label": "Pharmacist, Consultant, or Coach",
+         "value": "Pharmacist, Consultant, or Coach",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "Other Business Owner That Sells Supplements",
+         "value": "Other Business Owner",
+         "description": "",
+         "displayOrder": 2
+        },
+        {
+         "label": "Health Conscious Consumer",
+         "value": "Consumer",
+         "description": "",
+         "displayOrder": 3
+        },
+        {
+         "label": "Health Conscious Parent",
+         "value": "Health Conscious Parent",
+         "description": "",
+         "displayOrder": 4
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "i_would_like_to_subscribe_to_the_davinci_blog",
+       "label": "I would like to subscribe to the Praxera Blog",
+       "required": false,
+       "hidden": false,
+       "fieldType": "single_checkbox"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "website",
+       "label": "Website URL",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "how_many_employees_work_in_your_practice_work_",
+       "label": "How many employees work in your practice or business?",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "describe_yourself",
+       "label": "How Much Experience With Supplements Do You Have?",
+       "required": false,
+       "hidden": false,
+       "options": [
+        {
+         "label": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "value": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "I am somewhat new to dietary supplements and eager to learn more.",
+         "value": "I am somewhat new to dietary supplements and eager to learn more.",
+         "description": "",
+         "displayOrder": 2
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    }
+   ],
+   "configuration": {
+    "language": "en",
+    "cloneable": true,
+    "postSubmitAction": {
+     "type": "redirect_url",
+     "value": "https://www.praxerasupplements.com/learning/definitive-guide-ty"
+    },
+    "editable": true,
+    "archivable": true,
+    "recaptchaEnabled": false,
+    "notifyContactOwner": false,
+    "notifyRecipients": [
+     "3256355",
+     "4990427"
+    ],
+    "createNewContactForNewEmail": false,
+    "prePopulateKnownValues": true,
+    "allowLinkToResetKnownValues": false,
+    "embedType": "V3"
+   },
+   "displayOptions": {
+    "renderRawHtml": false,
+    "theme": "default_style",
+    "submitButtonText": "Download The Guide",
+    "style": {
+     "fontFamily": "arial, helvetica, sans-serif",
+     "backgroundWidth": "100%",
+     "labelTextColor": "#33475b",
+     "labelTextSize": "13px",
+     "helpTextColor": "#7C98B6",
+     "helpTextSize": "11px",
+     "legalConsentTextColor": "#33475b",
+     "legalConsentTextSize": "14px",
+     "submitColor": "#ff7a59",
+     "submitAlignment": "left",
+     "submitFontColor": "#ffffff",
+     "submitSize": "12px"
+    },
+    "cssClass": "hs-form stacked"
+   },
+   "legalConsentOptions": {
+    "subscriptionTypeIds": [
+     4588994
+    ],
+    "lawfulBasis": "lead",
+    "privacyText": "<p>Praxera needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href=\"https://www.Praxeralabs.com/privacy-policy-cookie-restriction-mode\" rel=\"noopener\" target=\"_blank\">Privacy Policy</a>.</p>",
+    "type": "legitimate_interest"
+   },
+   "formType": "hubspot"
+  },
+  "v2_notifyRecipients": "3256355,4990427",
+  "name": "Praxera - Supplements Guide"
+ },
+ "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd": {
+  "v3": {
+   "id": "e88e8d00-a3e2-41fb-b29c-9fc856fa5bdd",
+   "name": "Praxera - Main Lead Form (legacy field set)",
+   "createdAt": "2026-08-30T18:43:35.104Z",
+   "updatedAt": "2026-09-11T18:19:52.291Z",
+   "archived": false,
+   "fieldGroups": [
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "firstname",
+       "label": "First name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "lastname",
+       "label": "Last name",
+       "required": true,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "topic",
+       "label": "What can we help you with?",
+       "required": true,
+       "hidden": false,
+       "options": [
+        {
+         "label": "Private Label",
+         "value": "Private Label",
+         "description": "",
+         "displayOrder": 0
+        },
+        {
+         "label": "Shipping/Order Status",
+         "value": "Shipping/Order Status",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "Product Question",
+         "value": "Product Question",
+         "description": "",
+         "displayOrder": 2
+        },
+        {
+         "label": "Billing",
+         "value": "Billing Issue",
+         "description": "",
+         "displayOrder": 3
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "email",
+       "label": "Email",
+       "required": true,
+       "hidden": false,
+       "validation": {
+        "blockedEmailDomains": [],
+        "useDefaultBlockList": false
+       },
+       "fieldType": "email"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "city",
+       "label": "City",
+       "required": false,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "state",
+       "label": "State/Region",
+       "required": true,
+       "hidden": false,
+       "options": [
+        {
+         "label": "Alabama",
+         "value": "Alabama",
+         "description": "",
+         "displayOrder": 161
+        },
+        {
+         "label": "Alaska",
+         "value": "Alaska",
+         "description": "",
+         "displayOrder": 162
+        },
+        {
+         "label": "Arizona",
+         "value": "Arizona",
+         "description": "",
+         "displayOrder": 163
+        },
+        {
+         "label": "Arkansas",
+         "value": "Arkansas",
+         "description": "",
+         "displayOrder": 164
+        },
+        {
+         "label": "California",
+         "value": "California",
+         "description": "",
+         "displayOrder": 165
+        },
+        {
+         "label": "Colorado",
+         "value": "Colorado",
+         "description": "",
+         "displayOrder": 166
+        },
+        {
+         "label": "Connecticut",
+         "value": "Connecticut",
+         "description": "",
+         "displayOrder": 167
+        },
+        {
+         "label": "Delaware",
+         "value": "Delaware",
+         "description": "",
+         "displayOrder": 168
+        },
+        {
+         "label": "Florida",
+         "value": "Florida",
+         "description": "",
+         "displayOrder": 169
+        },
+        {
+         "label": "Georgia",
+         "value": "Georgia",
+         "description": "",
+         "displayOrder": 170
+        },
+        {
+         "label": "Hawaii",
+         "value": "Hawaii",
+         "description": "",
+         "displayOrder": 171
+        },
+        {
+         "label": "Idaho",
+         "value": "Idaho",
+         "description": "",
+         "displayOrder": 172
+        },
+        {
+         "label": "Illinois",
+         "value": "Illinois",
+         "description": "",
+         "displayOrder": 173
+        },
+        {
+         "label": "Indiana",
+         "value": "Indiana",
+         "description": "",
+         "displayOrder": 174
+        },
+        {
+         "label": "Iowa",
+         "value": "Iowa",
+         "description": "",
+         "displayOrder": 175
+        },
+        {
+         "label": "Kansas",
+         "value": "Kansas",
+         "description": "",
+         "displayOrder": 176
+        },
+        {
+         "label": "Kentucky",
+         "value": "Kentucky",
+         "description": "",
+         "displayOrder": 177
+        },
+        {
+         "label": "Louisiana",
+         "value": "Louisiana",
+         "description": "",
+         "displayOrder": 178
+        },
+        {
+         "label": "Maine",
+         "value": "Maine",
+         "description": "",
+         "displayOrder": 179
+        },
+        {
+         "label": "Maryland",
+         "value": "Maryland",
+         "description": "",
+         "displayOrder": 180
+        },
+        {
+         "label": "Massachusetts",
+         "value": "Massachusetts",
+         "description": "",
+         "displayOrder": 181
+        },
+        {
+         "label": "Michigan",
+         "value": "Michigan",
+         "description": "",
+         "displayOrder": 182
+        },
+        {
+         "label": "Minnesota",
+         "value": "Minnesota",
+         "description": "",
+         "displayOrder": 183
+        },
+        {
+         "label": "Mississippi",
+         "value": "Mississippi",
+         "description": "",
+         "displayOrder": 184
+        },
+        {
+         "label": "Missouri",
+         "value": "Missouri",
+         "description": "",
+         "displayOrder": 185
+        },
+        {
+         "label": "Montana",
+         "value": "Montana",
+         "description": "",
+         "displayOrder": 186
+        },
+        {
+         "label": "Nebraska",
+         "value": "Nebraska",
+         "description": "",
+         "displayOrder": 187
+        },
+        {
+         "label": "Nevada",
+         "value": "Nevada",
+         "description": "",
+         "displayOrder": 188
+        },
+        {
+         "label": "New Hampshire",
+         "value": "New Hampshire",
+         "description": "",
+         "displayOrder": 189
+        },
+        {
+         "label": "New Jersey",
+         "value": "New Jersey",
+         "description": "",
+         "displayOrder": 190
+        },
+        {
+         "label": "New Mexico",
+         "value": "New Mexico",
+         "description": "",
+         "displayOrder": 191
+        },
+        {
+         "label": "New York",
+         "value": "New York",
+         "description": "",
+         "displayOrder": 192
+        },
+        {
+         "label": "North Carolina",
+         "value": "North Carolina",
+         "description": "",
+         "displayOrder": 193
+        },
+        {
+         "label": "North Dakota",
+         "value": "North Dakota",
+         "description": "",
+         "displayOrder": 194
+        },
+        {
+         "label": "Ohio",
+         "value": "Ohio",
+         "description": "",
+         "displayOrder": 195
+        },
+        {
+         "label": "Oklahoma",
+         "value": "Oklahoma",
+         "description": "",
+         "displayOrder": 196
+        },
+        {
+         "label": "Oregon",
+         "value": "Oregon",
+         "description": "",
+         "displayOrder": 197
+        },
+        {
+         "label": "Pennsylvania",
+         "value": "Pennsylvania",
+         "description": "",
+         "displayOrder": 198
+        },
+        {
+         "label": "Rhode Island",
+         "value": "Rhode Island",
+         "description": "",
+         "displayOrder": 199
+        },
+        {
+         "label": "South Carolina",
+         "value": "South Carolina",
+         "description": "",
+         "displayOrder": 200
+        },
+        {
+         "label": "South Dakota",
+         "value": "South Dakota",
+         "description": "",
+         "displayOrder": 201
+        },
+        {
+         "label": "Tennessee",
+         "value": "Tennessee",
+         "description": "",
+         "displayOrder": 202
+        },
+        {
+         "label": "Texas",
+         "value": "Texas",
+         "description": "",
+         "displayOrder": 203
+        },
+        {
+         "label": "Utah",
+         "value": "Utah",
+         "description": "",
+         "displayOrder": 204
+        },
+        {
+         "label": "Vermont",
+         "value": "Vermont",
+         "description": "",
+         "displayOrder": 205
+        },
+        {
+         "label": "Virginia",
+         "value": "Virginia",
+         "description": "",
+         "displayOrder": 206
+        },
+        {
+         "label": "Washington",
+         "value": "Washington",
+         "description": "",
+         "displayOrder": 207
+        },
+        {
+         "label": "West Virginia",
+         "value": "West Virginia",
+         "description": "",
+         "displayOrder": 208
+        },
+        {
+         "label": "Wisconsin",
+         "value": "Wisconsin",
+         "description": "",
+         "displayOrder": 209
+        },
+        {
+         "label": "Wyoming",
+         "value": "Wyoming",
+         "description": "",
+         "displayOrder": 210
+        },
+        {
+         "label": "Guam",
+         "value": "Guam",
+         "description": "",
+         "displayOrder": 211
+        },
+        {
+         "label": "Puerto Rico",
+         "value": "Puerto Rico",
+         "description": "",
+         "displayOrder": 212
+        },
+        {
+         "label": "Northern Mariana Islands",
+         "value": "Northern Mariana Islands",
+         "description": "",
+         "displayOrder": 213
+        },
+        {
+         "label": "American Samoa",
+         "value": "American Samoa",
+         "description": "",
+         "displayOrder": 214
+        },
+        {
+         "label": "US Virgin Islands",
+         "value": "US Virgin Islands",
+         "description": "",
+         "displayOrder": 215
+        },
+        {
+         "label": "US Minor Outlying Islands",
+         "value": "US Minor Outlying Islands",
+         "description": "",
+         "displayOrder": 216
+        },
+        {
+         "label": "Alberta",
+         "value": "Alberta",
+         "description": "",
+         "displayOrder": 217
+        },
+        {
+         "label": "British Columbia",
+         "value": "British Columbia",
+         "description": "",
+         "displayOrder": 218
+        },
+        {
+         "label": "Manitoba",
+         "value": "Manitoba",
+         "description": "",
+         "displayOrder": 219
+        },
+        {
+         "label": "New Brunswick",
+         "value": "New Brunswick",
+         "description": "",
+         "displayOrder": 220
+        },
+        {
+         "label": "Newfoundland",
+         "value": "Newfoundland",
+         "description": "",
+         "displayOrder": 221
+        },
+        {
+         "label": "Labrador",
+         "value": "Labrador",
+         "description": "",
+         "displayOrder": 222
+        },
+        {
+         "label": "Nova Scotia",
+         "value": "Nova Scotia",
+         "description": "",
+         "displayOrder": 223
+        },
+        {
+         "label": "Ontario",
+         "value": "Ontario",
+         "description": "",
+         "displayOrder": 224
+        },
+        {
+         "label": "Prince Edward Island",
+         "value": "Prince Edward Island",
+         "description": "",
+         "displayOrder": 225
+        },
+        {
+         "label": "Quebec",
+         "value": "Quebec",
+         "description": "",
+         "displayOrder": 226
+        },
+        {
+         "label": "Saskatchewan",
+         "value": "Saskatchewan",
+         "description": "",
+         "displayOrder": 227
+        },
+        {
+         "label": "Northwest Territories",
+         "value": "Northwest Territories",
+         "description": "",
+         "displayOrder": 228
+        },
+        {
+         "label": "Nunavut",
+         "value": "Nunavut",
+         "description": "",
+         "displayOrder": 229
+        },
+        {
+         "label": "Yukon",
+         "value": "Yukon",
+         "description": "",
+         "displayOrder": 230
+        },
+        {
+         "label": "International (other than Canada)",
+         "value": "International (other than Canada)",
+         "description": "",
+         "displayOrder": 231
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "phone",
+       "label": "Phone number",
+       "required": true,
+       "hidden": false,
+       "useCountryCodeSelect": false,
+       "validation": {
+        "minAllowedDigits": 7,
+        "maxAllowedDigits": 20
+       },
+       "fieldType": "phone"
+      }
+     ]
+    },
+    {
+     "groupType": "progressive",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "describe_yourself",
+       "label": "What level of experience do you have with supplements?",
+       "required": true,
+       "hidden": false,
+       "dependentFields": [
+        {
+         "dependentCondition": {
+          "operator": "set_any",
+          "values": [
+           "I have experience with dietary supplements and am looking for ways to grow my practice or business."
+          ]
+         },
+         "dependentField": {
+          "objectTypeId": "0-1",
+          "name": "i_am_a_",
+          "label": "How Would You Describe Yourself?",
+          "required": false,
+          "hidden": false,
+          "options": [
+           {
+            "label": "MD or ND",
+            "value": "MD or ND",
+            "description": "",
+            "displayOrder": -1
+           },
+           {
+            "label": "Chiropractor",
+            "value": "Chiropractor",
+            "description": "",
+            "displayOrder": 1
+           },
+           {
+            "label": "Other Medical Professional",
+            "value": "Other Medical Professional",
+            "description": "",
+            "displayOrder": 2
+           },
+           {
+            "label": "Business Owner",
+            "value": "Business Owner",
+            "description": "",
+            "displayOrder": 3
+           },
+           {
+            "label": "Consumer",
+            "value": "Consumer",
+            "description": "",
+            "displayOrder": 4
+           }
+          ],
+          "fieldType": "dropdown"
+         }
+        }
+       ],
+       "options": [
+        {
+         "label": "Experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "value": "I have experience with dietary supplements and am looking for ways to grow my practice or business.",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "Somewhat new to dietary supplements and eager to learn more.",
+         "value": "I am somewhat new to dietary supplements and eager to learn more.",
+         "description": "",
+         "displayOrder": 2
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "design_preference",
+       "label": "Will we be designing a label for your brand?",
+       "required": false,
+       "hidden": false,
+       "options": [
+        {
+         "label": "No- I have my own design.",
+         "value": "I have my own label.",
+         "description": "",
+         "displayOrder": 0
+        },
+        {
+         "label": "Yes- I am interested in a template.",
+         "value": "I am interested in a template.",
+         "description": "",
+         "displayOrder": 1
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "what_is_your_time_frame_for_this_growth_opportunity_",
+       "label": "What is your time frame for this growth opportunity?",
+       "required": false,
+       "hidden": false,
+       "options": [
+        {
+         "label": "1-3 months",
+         "value": "1-3 months",
+         "description": "",
+         "displayOrder": 0
+        },
+        {
+         "label": "3-6 months",
+         "value": "3-6 months",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "6-12 months",
+         "value": "6-12 months",
+         "description": "",
+         "displayOrder": 2
+        },
+        {
+         "label": "Other",
+         "value": "Other",
+         "description": "",
+         "displayOrder": 3
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "will_you_be_selling_on_a_website_other_than_your_own_",
+       "label": "Will you be selling on a website other than your own? ",
+       "required": false,
+       "hidden": false,
+       "options": [
+        {
+         "label": "Yes and I am aware that the minimum is 144",
+         "value": "Yes and I am aware that the minimum is 144",
+         "description": "",
+         "displayOrder": 0
+        },
+        {
+         "label": "No and I am aware that the minimum is 36",
+         "value": "No and I am aware that the minimum is 36",
+         "description": "",
+         "displayOrder": 1
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "what_products_are_you_interested_in_",
+       "label": "What Products are you interested in? ",
+       "required": false,
+       "hidden": false,
+       "fieldType": "multi_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "notes",
+       "label": "Notes",
+       "required": false,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "default_group",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "i_would_like_to_subscribe_to_the_davinci_blog",
+       "label": "I would like to subscribe to the Praxera Blog",
+       "required": false,
+       "hidden": false,
+       "defaultValue": "true",
+       "fieldType": "single_checkbox"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "website",
+       "label": "Website URL",
+       "required": false,
+       "hidden": false,
+       "fieldType": "single_line_text"
+      }
+     ]
+    },
+    {
+     "groupType": "queued",
+     "richTextType": "text",
+     "fields": [
+      {
+       "objectTypeId": "0-1",
+       "name": "numemployees",
+       "label": "Number of Employees",
+       "required": false,
+       "hidden": false,
+       "options": [
+        {
+         "label": "1-5",
+         "value": "1-5",
+         "description": "",
+         "displayOrder": 0
+        },
+        {
+         "label": "5-25",
+         "value": "5-25",
+         "description": "",
+         "displayOrder": 1
+        },
+        {
+         "label": "25-50",
+         "value": "25-50",
+         "description": "",
+         "displayOrder": 2
+        },
+        {
+         "label": "50-100",
+         "value": "50-100",
+         "description": "",
+         "displayOrder": 3
+        },
+        {
+         "label": "100-500",
+         "value": "100-500",
+         "description": "",
+         "displayOrder": 4
+        },
+        {
+         "label": "500-1000",
+         "value": "500-1000",
+         "description": "",
+         "displayOrder": 5
+        },
+        {
+         "label": "1000+",
+         "value": "1000+",
+         "description": "",
+         "displayOrder": 6
+        }
+       ],
+       "fieldType": "dropdown"
+      }
+     ]
+    }
+   ],
+   "configuration": {
+    "language": "en",
+    "cloneable": true,
+    "postSubmitAction": {
+     "type": "redirect_url",
+     "value": "https://www.praxerasupplements.com/ty-consultation"
+    },
+    "editable": true,
+    "archivable": true,
+    "recaptchaEnabled": true,
+    "notifyContactOwner": true,
+    "notifyRecipients": [
+     "3256355",
+     "4990427"
+    ],
+    "createNewContactForNewEmail": false,
+    "prePopulateKnownValues": true,
+    "allowLinkToResetKnownValues": false,
+    "embedType": "V3"
+   },
+   "displayOptions": {
+    "renderRawHtml": false,
+    "theme": "default_style",
+    "submitButtonText": "Submit",
+    "style": {
+     "fontFamily": "arial, helvetica, sans-serif",
+     "backgroundWidth": "100%",
+     "labelTextColor": "#33475b",
+     "labelTextSize": "14px",
+     "helpTextColor": "#537393",
+     "helpTextSize": "11px",
+     "legalConsentTextColor": "#33475b",
+     "legalConsentTextSize": "14px",
+     "submitColor": "#ff7a59",
+     "submitAlignment": "left",
+     "submitFontColor": "#ffffff",
+     "submitSize": "12px"
+    },
+    "cssClass": "hs-form stacked"
+   },
+   "legalConsentOptions": {
+    "type": "none"
+   },
+   "formType": "hubspot"
+  },
+  "v2_notifyRecipients": "3256355,4990427",
+  "name": "Praxera - Main Lead Form (legacy field set)"
+ }
+}
