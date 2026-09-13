@@ -1,85 +1,313 @@
 [
-{"kind":"email","id":"220684191815","label":"Praxera - TEST - Pulse layout draft","edits":[
- {"old":"backed by fifty years of manufacturing standards.","new":"backed by fifty years of production standards."}]},
-
-{"kind":"email","id":"220685976500","label":"Praxera - Client_Onboarding_BoF_Danielle_#3","edits":[
- {"old":"placement</span> and manufacturing process is designed to ensure","new":"placement</span> and production process is designed to ensure"}]},
-
-{"kind":"email","id":"220685976504","label":"Praxera - Client_Onboarding_BoF_Danielle_#4","edits":[
- {"old":"Praxera has lower minimum order quantities than most private label supplement manufacturers.","new":"Praxera has lower minimum order quantities than most private label supplement providers."}]},
-
-{"kind":"email","id":"220685976580","label":"Praxera - Client_Onboarding_BoF_Paul_From_MoF_#1","edits":[
- {"old":"we will teach you all about our private label supplement manufacturing services.","new":"we will teach you all about our private label supplement program."}]},
-
-{"kind":"email","id":"220688283275","label":"Praxera - Private Label: High Priority - 6 Benefits","edits":[
- {"old":"You're outsourcing manufacturing to a partner like Praxera","new":"You're outsourcing production to a partner like Praxera"}]},
-
-{"kind":"email","id":"220688283418","label":"Praxera - White_Label_World_Expo Email Did_Not_Click_Resource","edits":[
- {"old":"without the need for extensive R&amp;D and manufacturing investments.","new":"without the need for extensive R&amp;D and production investments."}]},
-
-{"kind":"email","id":"220688836176","label":"Praxera - Client_Onboarding_BoF_Danielle_#1","edits":[
- {"old":"offer turn-key manufacturing solutions.","new":"offer turn-key production solutions."}]},
-
-{"kind":"email","id":"220688836180","label":"Praxera - Client_Onboarding_BoF_Danielle_From_MoF_#1","edits":[
- {"old":"we will teach you all about our private label supplement manufacturing services.","new":"we will teach you all about our private label supplement program."}]},
-
-{"kind":"email","id":"220688836183","label":"Praxera - Client_Onboarding_BoF_Paul_#3","edits":[
- {"old":"placement</span> and manufacturing process is designed to be as effortless","new":"placement</span> and production process is designed to be as effortless"}]},
-
-{"kind":"page","id":"216189433476","label":"about","edits":[
- {"old":"a 190-plus product catalog manufactured in our FDA-registered, GMP-certified Vermont facility.","new":"a 190-plus product catalog manufactured in the FDA-registered, GMP-certified Vermont facility operated by FoodScience LLC."},
- {"old":"to extend that same manufacturing standard to a broader audience","new":"to extend that same production standard to a broader audience"},
- {"old":"The scale of FoodScience LLC gives our Praxera private label clients access to manufacturing infrastructure","new":"The scale of FoodScience LLC gives Praxera private label clients access to manufacturing infrastructure"}]},
-
-{"kind":"page","id":"216192983652","label":"alp/ads-mfg-usa","edits":[
- {"old":"access to the same doctor-formulated manufacturing that integrative healthcare professionals trust.","new":"access to the same doctor-formulated products that integrative healthcare professionals trust."}]},
-
-{"kind":"page","id":"216192983654","label":"alp/ads-contract-mfg","edits":[
- {"old":"access to the same doctor-formulated manufacturing that integrative healthcare professionals trust.","new":"access to the same doctor-formulated products that integrative healthcare professionals trust."}]},
-
-{"kind":"page","id":"216194811734","label":"alp/ads-pl-mfg","edits":[
- {"old":"access to the same doctor-formulated manufacturing that integrative healthcare professionals trust.","new":"access to the same doctor-formulated products that integrative healthcare professionals trust."}]},
-
-{"kind":"page","id":"218939556889","label":"pl-module-library","edits":[
- {"old":"We own the formulation, manufacturing, quality, compliance, and fulfillment.","new":"We own the formulation, production, quality, compliance, and fulfillment."},
- {"old":"<h2>Manufacturing</h2><p>Production runs in our FDA-registered, GMP-certified Vermont facility.","new":"<h2>Production</h2><p>Production runs in the FDA-registered, GMP-certified Vermont facility operated by FoodScience LLC."},
- {"old":"how to build your brand with our manufacturing team, download our free Definitive Guide.","new":"how to build your brand with our private label team, download our free Definitive Guide."}]},
-
-{"kind":"post","id":"220637272677","label":"blog/white-label-supplements-vs.-private-label-what-is-the-difference","edits":[
- {"old":"refer to the same service, where a product is produced by a manufacturer that can be branded and sold by another company.","new":"refer to the same service, where a ready-made product is supplied for another company to brand and sell."}]},
-
-{"kind":"post","id":"220637272688","label":"blog/must-have-private-label-probiotics-to-expand-your-product-line","edits":[
- {"old":"By partnering with a trusted and experienced supplement manufacturer like PraxeraⓇ, which guarantees","new":"By partnering with a trusted and experienced supplement provider like PraxeraⓇ, which guarantees"}]},
-
-{"kind":"post","id":"220637272707","label":"blog/how-much-to-start-a-private-label-supplement-business","edits":[
- {"old":"using a low-MOQ manufacturer like Praxera (36 units per SKU, no setup fees).","new":"using a low-MOQ private label provider like Praxera (36 units per SKU, no setup fees)."},
- {"old":"use a low-MOQ manufacturer like Praxera (36-unit minimum, no setup fees), use template label designs from the manufacturer,","new":"use a low-MOQ private label provider like Praxera (36-unit minimum, no setup fees), use template label designs from that provider,"},
- {"old":"The under-$500 launch path uses a low-MOQ manufacturer (Praxera advertises launches for under $500), pre-formulated stock products, a template label design provided by the manufacturer,","new":"The under-$500 launch path uses a low-MOQ private label provider (Praxera advertises launches for under $500), pre-formulated stock products, a template label design provided by that provider,"},
- {"old":"Reputable manufacturers like Praxera have eliminated setup fees entirely.","new":"Reputable private label providers like Praxera have eliminated setup fees entirely."}]},
-
-{"kind":"post","id":"220637279576","label":"blog/why-branded-ingredients-are-important-to-private-label-supplements","edits":[
- {"old":"has been given a name by its manufacturer—for example, Praxera'","new":"has been given a name by the company that developed it—for example, Praxera'"}]},
-
-{"kind":"post","id":"220637279586","label":"blog/custom-supplements-vs.-private-label-supplements","edits":[
- {"old":"delivery systems and are manufactured at Praxera to be GMP Certified.","new":"delivery systems and are produced for Praxera to be GMP Certified."}]},
-
-{"kind":"post","id":"220637279599","label":"blog/how-private-label-supplements-can-increase-revenue-fast","edits":[
- {"old":"With a manufacturing supplier like Praxera, you can get all the help you need","new":"With a private label provider like Praxera, you can get all the help you need"}]},
-
-{"kind":"post","id":"220637279628","label":"blog/top-private-label-protein-powders-for-your-brand","edits":[
- {"old":"lending manufacturing, formulating, and branding powder to your product","new":"lending production, formulating, and branding powder to your product"}]},
-
-{"kind":"post","id":"220637279650","label":"blog/contract-manufacturing-vs-private-labeling-supplements","edits":[
- {"old":"Some manufacturers (like Praxera) specialize in private labeling","new":"Some providers (like Praxera) specialize in private labeling"},
- {"old":"Established private label manufacturers like Praxera offer 250+ doctor-formulated products","new":"Established private label providers like Praxera offer 250+ doctor-formulated products"},
- {"old":"With a manufacturer like Praxera, you can launch your first private-label supplement line","new":"With a provider like Praxera, you can launch your first private-label supplement line"}]},
-
-{"kind":"post","id":"220638601792","label":"blog/supplement-dropshipping-5-best-tips-for-success","edits":[
- {"old":"<p>Our industry-leading manufacturing facilities produce <a href=\"https://www.praxerasupplements.com/shop-supplements.html\" style=\"color: #6bbfec;\">over 250 doctor-formulated vitamins and supplements</a>.","new":"<p>We supply <a href=\"https://www.praxerasupplements.com/shop-supplements.html\" style=\"color: #6bbfec;\">over 250 doctor-formulated vitamins and supplements</a>, produced in industry-leading U.S. facilities."}]},
-
-{"kind":"post","id":"220640208488","label":"blog/top-10-mistakes-to-avoid-with-supplement-manufacturing","edits":[
- {"old":"Praxera upholds stringent sanitation protocols across every production facility, ensuring that private-label products are manufactured in the cleanest environments possible.","new":"Praxera holds every production facility to stringent sanitation protocols, ensuring that private-label products are made in the cleanest environments possible."}]},
-
-{"kind":"post","id":"220640208499","label":"blog/healthcare-practitioner-supplement-line-guide","edits":[
- {"old":"Low-MOQ private label programs from manufacturers like Praxera now offer","new":"Low-MOQ private label programs from providers like Praxera now offer"}]}
+ {
+  "kind": "email",
+  "id": "220684191815",
+  "label": "Praxera - TEST - Pulse layout draft",
+  "edits": [
+   {
+    "old": "backed by fifty years of manufacturing standards.",
+    "new": "backed by fifty years of production standards."
+   }
+  ]
+ },
+ {
+  "kind": "email",
+  "id": "220685976500",
+  "label": "Praxera - Client_Onboarding_BoF_Danielle_#3",
+  "edits": [
+   {
+    "old": "placement</span> and manufacturing process is designed to ensure",
+    "new": "placement</span> and production process is designed to ensure"
+   }
+  ]
+ },
+ {
+  "kind": "email",
+  "id": "220685976504",
+  "label": "Praxera - Client_Onboarding_BoF_Danielle_#4",
+  "edits": [
+   {
+    "old": "Praxera has lower minimum order quantities than most private label supplement manufacturers.",
+    "new": "Praxera has lower minimum order quantities than most private label supplement providers."
+   }
+  ]
+ },
+ {
+  "kind": "email",
+  "id": "220685976580",
+  "label": "Praxera - Client_Onboarding_BoF_Paul_From_MoF_#1",
+  "edits": [
+   {
+    "old": "we will teach you all about our private label supplement manufacturing services.",
+    "new": "we will teach you all about our private label supplement program."
+   }
+  ]
+ },
+ {
+  "kind": "email",
+  "id": "220688283275",
+  "label": "Praxera - Private Label: High Priority - 6 Benefits",
+  "edits": [
+   {
+    "old": "You're outsourcing manufacturing to a partner like Praxera",
+    "new": "You're outsourcing production to a partner like Praxera"
+   }
+  ]
+ },
+ {
+  "kind": "email",
+  "id": "220688283418",
+  "label": "Praxera - White_Label_World_Expo Email Did_Not_Click_Resource",
+  "edits": [
+   {
+    "old": "without the need for extensive R&amp;D and manufacturing investments.",
+    "new": "without the need for extensive R&amp;D and production investments."
+   }
+  ]
+ },
+ {
+  "kind": "email",
+  "id": "220688836176",
+  "label": "Praxera - Client_Onboarding_BoF_Danielle_#1",
+  "edits": [
+   {
+    "old": "offer turn-key manufacturing solutions.",
+    "new": "offer turn-key production solutions."
+   }
+  ]
+ },
+ {
+  "kind": "email",
+  "id": "220688836180",
+  "label": "Praxera - Client_Onboarding_BoF_Danielle_From_MoF_#1",
+  "edits": [
+   {
+    "old": "we will teach you all about our private label supplement manufacturing services.",
+    "new": "we will teach you all about our private label supplement program."
+   }
+  ]
+ },
+ {
+  "kind": "email",
+  "id": "220688836183",
+  "label": "Praxera - Client_Onboarding_BoF_Paul_#3",
+  "edits": [
+   {
+    "old": "placement</span> and manufacturing process is designed to be as effortless",
+    "new": "placement</span> and production process is designed to be as effortless"
+   }
+  ]
+ },
+ {
+  "kind": "page",
+  "id": "216189433476",
+  "label": "about",
+  "edits": [
+   {
+    "old": "a 190-plus product catalog manufactured in our FDA-registered, GMP-certified Vermont facility.",
+    "new": "a 190-plus product catalog manufactured in the FDA-registered, GMP-certified Vermont facility operated by FoodScience LLC."
+   },
+   {
+    "old": "to extend that same manufacturing standard to a broader audience",
+    "new": "to extend that same production standard to a broader audience"
+   },
+   {
+    "old": "The scale of FoodScience LLC gives our Praxera private label clients access to manufacturing infrastructure",
+    "new": "The scale of FoodScience LLC gives Praxera private label clients access to manufacturing infrastructure"
+   }
+  ]
+ },
+ {
+  "kind": "page",
+  "id": "216192983652",
+  "label": "alp/ads-mfg-usa",
+  "edits": [
+   {
+    "old": "access to the same doctor-formulated manufacturing that integrative healthcare professionals trust.",
+    "new": "access to the same doctor-formulated products that integrative healthcare professionals trust."
+   }
+  ]
+ },
+ {
+  "kind": "page",
+  "id": "216192983654",
+  "label": "alp/ads-contract-mfg",
+  "edits": [
+   {
+    "old": "access to the same doctor-formulated manufacturing that integrative healthcare professionals trust.",
+    "new": "access to the same doctor-formulated products that integrative healthcare professionals trust."
+   }
+  ]
+ },
+ {
+  "kind": "page",
+  "id": "216194811734",
+  "label": "alp/ads-pl-mfg",
+  "edits": [
+   {
+    "old": "access to the same doctor-formulated manufacturing that integrative healthcare professionals trust.",
+    "new": "access to the same doctor-formulated products that integrative healthcare professionals trust."
+   }
+  ]
+ },
+ {
+  "kind": "page",
+  "id": "218939556889",
+  "label": "pl-module-library",
+  "edits": [
+   {
+    "old": "We own the formulation, manufacturing, quality, compliance, and fulfillment.",
+    "new": "We own the formulation, production, quality, compliance, and fulfillment."
+   },
+   {
+    "old": "<h2>Manufacturing</h2><p>Production runs in our FDA-registered, GMP-certified Vermont facility.",
+    "new": "<h2>Production</h2><p>Production runs in the FDA-registered, GMP-certified Vermont facility operated by FoodScience LLC."
+   },
+   {
+    "old": "how to build your brand with our manufacturing team, download our free Definitive Guide.",
+    "new": "how to build your brand with our private label team, download our free Definitive Guide."
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220637272677",
+  "label": "blog/white-label-supplements-vs.-private-label-what-is-the-difference",
+  "edits": [
+   {
+    "old": "refer to the same service, where a product is produced by a manufacturer that can be branded and sold by another company.",
+    "new": "refer to the same service, where a ready-made product is supplied for another company to brand and sell."
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220637272688",
+  "label": "blog/must-have-private-label-probiotics-to-expand-your-product-line",
+  "edits": [
+   {
+    "old": "By partnering with a trusted and experienced supplement manufacturer like PraxeraⓇ, which guarantees",
+    "new": "By partnering with a trusted and experienced supplement provider like PraxeraⓇ, which guarantees"
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220637272707",
+  "label": "blog/how-much-to-start-a-private-label-supplement-business",
+  "edits": [
+   {
+    "old": "using a low-MOQ manufacturer like Praxera (36 units per SKU, no setup fees).",
+    "new": "using a low-MOQ private label provider like Praxera (36 units per SKU, no setup fees)."
+   },
+   {
+    "old": "use a low-MOQ manufacturer like Praxera (36-unit minimum, no setup fees), use template label designs from the manufacturer,",
+    "new": "use a low-MOQ private label provider like Praxera (36-unit minimum, no setup fees), use template label designs from that provider,"
+   },
+   {
+    "old": "The under-$500 launch path uses a low-MOQ manufacturer (Praxera advertises launches for under $500), pre-formulated stock products, a template label design provided by the manufacturer,",
+    "new": "The under-$500 launch path uses a low-MOQ private label provider (Praxera advertises launches for under $500), pre-formulated stock products, a template label design provided by that provider,"
+   },
+   {
+    "old": "Reputable manufacturers like Praxera have eliminated setup fees entirely.",
+    "new": "Reputable private label providers like Praxera have eliminated setup fees entirely."
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220637279576",
+  "label": "blog/why-branded-ingredients-are-important-to-private-label-supplements",
+  "edits": [
+   {
+    "old": "has been given a name by its manufacturer—for example, Praxera'",
+    "new": "has been given a name by the company that developed it—for example, Praxera'"
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220637279586",
+  "label": "blog/custom-supplements-vs.-private-label-supplements",
+  "edits": [
+   {
+    "old": "delivery systems and are manufactured at Praxera to be GMP Certified.",
+    "new": "delivery systems and are produced for Praxera to be GMP Certified."
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220637279599",
+  "label": "blog/how-private-label-supplements-can-increase-revenue-fast",
+  "edits": [
+   {
+    "old": "With a manufacturing supplier like Praxera, you can get all the help you need",
+    "new": "With a private label provider like Praxera, you can get all the help you need"
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220637279628",
+  "label": "blog/top-private-label-protein-powders-for-your-brand",
+  "edits": [
+   {
+    "old": "lending manufacturing, formulating, and branding powder to your product",
+    "new": "lending production, formulating, and branding powder to your product"
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220637279650",
+  "label": "blog/contract-manufacturing-vs-private-labeling-supplements",
+  "edits": [
+   {
+    "old": "Some manufacturers (like Praxera) specialize in private labeling",
+    "new": "Some providers (like Praxera) specialize in private labeling"
+   },
+   {
+    "old": "Established private label manufacturers like Praxera offer 250+ doctor-formulated products",
+    "new": "Established private label providers like Praxera offer 250+ doctor-formulated products"
+   },
+   {
+    "old": "With a manufacturer like Praxera, you can launch your first private-label supplement line",
+    "new": "With a provider like Praxera, you can launch your first private-label supplement line"
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220638601792",
+  "label": "blog/supplement-dropshipping-5-best-tips-for-success",
+  "edits": [
+   {
+    "old": "<p>Our industry-leading manufacturing facilities produce <a href=\"https://www.praxerasupplements.com/shop-supplements.html\" style=\"color: #6bbfec;\">over 250 doctor-formulated vitamins and supplements</a>.",
+    "new": "<p>We supply <a href=\"https://www.praxerasupplements.com/shop-supplements.html\" style=\"color: #6bbfec;\">over 250 doctor-formulated vitamins and supplements</a>, produced in industry-leading U.S. facilities."
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220640208488",
+  "label": "blog/top-10-mistakes-to-avoid-with-supplement-manufacturing",
+  "edits": [
+   {
+    "old": "Praxera upholds stringent sanitation protocols across every production facility, ensuring that private-label products are manufactured in the cleanest environments possible.",
+    "new": "Praxera holds every production facility to stringent sanitation protocols, ensuring that private-label products are made in the cleanest environments possible."
+   }
+  ]
+ },
+ {
+  "kind": "post",
+  "id": "220640208499",
+  "label": "blog/healthcare-practitioner-supplement-line-guide",
+  "edits": [
+   {
+    "old": "Low-MOQ private label programs from manufacturers like Praxera now offer",
+    "new": "Low-MOQ private label programs from providers like Praxera now offer"
+   }
+  ]
+ }
 ]
