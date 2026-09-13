@@ -1,0 +1,1014 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Marko Ajder",
+ "categoryId": 1,
+ "contentTypeCategory": 4,
+ "createdAt": "2026-09-09T21:03:17.204Z",
+ "createdById": "52613719",
+ "currentState": "PUBLISHED",
+ "domain": "www.praxerasupplements.com",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "headHtml": "\n<!-- DVL-PL-RESPONSIVE:START -->\n<style>\n  /* 3-step cards */\n  .pl-steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }\n  @media (max-width: 1024px) { .pl-steps-grid { grid-template-columns: repeat(2, 1fr); } }\n  @media (max-width: 640px)  { .pl-steps-grid { grid-template-columns: 1fr; } }\n\n  /* design services: 2-col desktop, stack on mobile */\n  .pl-design-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }\n  @media (max-width: 768px)  { .pl-design-grid { grid-template-columns: 1fr; } }\n\n  /* category cards: 4-col desktop, 2-col mobile */\n  .pl-cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }\n  @media (max-width: 900px)  { .pl-cat-grid { grid-template-columns: repeat(2, 1fr); } }\n\n  /* supplement forms: 4-col desktop, 2-col mobile */\n  .pl-forms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }\n  @media (max-width: 900px)  { .pl-forms-grid { grid-template-columns: repeat(2, 1fr); } }\n\n  /* guide download: image+text side by side, stack on mobile */\n  .pl-guide-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center; }\n  @media (max-width: 768px)  { .pl-guide-grid { grid-template-columns: 1fr; } }\n</style>\n<!-- DVL-PL-RESPONSIVE:END -->\n<!-- DVL-PL-FORM:START -->\n<style>\n  .hs_cos_wrapper_type_form,\n  .hs-form-private,\n  .hbspt-form {\n    max-width: 560px !important;\n    width: 100% !important;\n    margin-left: auto !important;\n    margin-right: auto !important;\n    display: block !important;\n    padding-top: 50px !important;\n    padding-bottom: 50px !important;\n  }\n  .hs-form label {\n    color: #012638 !important; font-size: 13px !important; font-weight: 600 !important;\n    letter-spacing: .04em !important; text-transform: uppercase !important;\n    margin-bottom: 6px !important; display: block !important; text-align: left !important;\n  }\n  .hs-form fieldset { max-width: 100% !important; }\n  .hs-form input[type=\"text\"],\n  .hs-form input[type=\"email\"],\n  .hs-form input[type=\"tel\"],\n  .hs-form textarea,\n  .hs-form select {\n    width: 100% !important; background: white !important;\n    border: 1px solid #c0cdd6 !important; border-radius: 4px !important;\n    padding: 12px 14px !important; font-size: 15px !important;\n    color: #012638 !important; margin-bottom: 20px !important;\n    box-sizing: border-box !important; text-align: left !important;\n  }\n  .hs-form input:focus, .hs-form textarea:focus {\n    outline: none !important; border-color: #6BA644 !important;\n    box-shadow: 0 0 0 3px rgba(107,166,68,.15) !important;\n  }\n  .hs-form textarea { min-height: 100px !important; }\n  .hs-form input[type=\"submit\"], .hs-form .hs-button {\n    background: #6BA644 !important; color: white !important;\n    border: none !important; border-radius: 4px !important;\n    padding: 16px 40px !important; font-size: 16px !important;\n    font-weight: bold !important; letter-spacing: .5px !important;\n    cursor: pointer !important; display: block !important;\n    width: 100% !important; margin-top: 8px !important;\n  }\n  .hs-form input[type=\"submit\"]:hover, .hs-form .hs-button:hover { background: #5a9038 !important; }\n  .hs-form .hs-error-msgs { list-style: none; padding: 0; margin: 0; }\n  .hs-form .hs-error-msgs li { color: #c0392b; font-size: 12px; margin-top: -14px; margin-bottom: 8px; }\n  .hs-form-private .form-title, .hbspt-form .form-title,\n  .hs_cos_wrapper_type_form .form-title {\n    color: #012638 !important; font-size: 22px !important;\n    font-weight: bold !important; text-align: center !important;\n    display: block !important; margin-bottom: 24px !important;\n  }\n</style>\n<!-- DVL-PL-FORM:END -->\n<!-- DVL-PL-STEPS:START -->\n<style>\n  /* Step card image height lock \u2014 targets the 3 specific step images */\n  img[src*=\"vitamin-manufacturer-prexera\"],\n  img[src*=\"prexera.png\"],\n  img[src*=\"DV_PL_StartSellingFast\"],\n  img[src*=\"prexera-shipping\"] {\n    height: 260px !important;\n    width: 100% !important;\n    object-fit: cover !important;\n    display: block !important;\n    max-height: 260px !important;\n  }\n</style>\n<!-- DVL-PL-STEPS:END -->\n<!-- DVL-PL-CAT:START -->\n<style>\n  /* Force all category tile images to uniform height */\n  img[src*=\"WOMENS-CATEGORY-PREXERA\"],\n  img[src*=\"PREXERA-MENS\"],\n  img[src*=\"prexera-probiotic\"],\n  img[src*=\"sleep-prexera\"],\n  img[src*=\"prexera-fitness\"],\n  img[src*=\"prexera-weight\"],\n  img[src*=\"cognitive-prexera\"] {\n    height: 180px !important;\n    max-height: 180px !important;\n    width: 100% !important;\n    object-fit: cover !important;\n    object-position: center !important;\n    display: block !important;\n  }\n  /* Also constrain the card container so it doesn't stretch */\n  .hs-image-widget img,\n  .cell-wrapper img[src*=\"pettechlabs\"] {\n    height: 180px !important;\n    max-height: 180px !important;\n    object-fit: cover !important;\n  }\n</style>\n<!-- DVL-PL-CAT:END -->\n<!-- DVL-PL-FORMS:START -->\n<style>\n  img[src*=\"DV_PL_AS_Capsules\"],\n  img[src*=\"DV_PL_AS_Tablets\"],\n  img[src*=\"DV_PL_AS_SoftGel\"],\n  img[src*=\"DV_PL_AS_Liquid\"],\n  img[src*=\"DV_PL_AS_ChewableTablet\"],\n  img[src*=\"DV_PL_AS_Powders\"],\n  img[src*=\"DV_PL_AS_Gummies\"],\n  img[src*=\"capsule-praxera\"],\n  img[src*=\"chewable-praxera\"] {\n    object-fit: contain !important;\n    object-position: center !important;\n    height: 220px !important;\n    width: 100% !important;\n    display: block !important;\n    background: white !important;\n  }\n</style>\n<!-- DVL-PL-FORMS:END -->\n<!-- QBS-SCHEMA:START -->\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://www.praxerasupplements.com/#organization\",\"name\":\"Praxera\",\"legalName\":\"Praxera of Vermont\",\"url\":\"https://www.praxerasupplements.com/\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.pettechlabs.com/hubfs/Praxera/Praxera%20Logo.png\"},\"image\":\"https://www.pettechlabs.com/hubfs/Praxera/Praxera%20Logo.png\",\"email\":\"info@praxerasupplements.com\",\"description\":\"Praxera provides private label dietary supplements, from a catalog of over 190 products, with label design and turnkey production for brands building their own supplement lines.\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"929 Harvest Lane\",\"addressLocality\":\"Williston\",\"addressRegion\":\"VT\",\"postalCode\":\"05495\",\"addressCountry\":\"US\"},\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"FoodScience LLC\"}},{\"@type\":\"WebSite\",\"@id\":\"https://www.praxerasupplements.com/#website\",\"url\":\"https://www.praxerasupplements.com/\",\"name\":\"Praxera\",\"publisher\":{\"@id\":\"https://www.praxerasupplements.com/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"FAQPage\",\"@id\":\"https://www.praxerasupplements.com/#faq\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is a private label supplement, exactly?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A private label supplement is a pre-formulated dietary supplement produced by a manufacturer (us) and sold under your brand name. You don't formulate it, you don't manufacture it, and you don't run quality testing. You select from existing formulations, design your label, and we produce finished inventory ready to ship under your brand.\"}},{\"@type\":\"Question\",\"name\":\"What is the difference between private label and white label?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The terms are used interchangeably by most people. Technically, white label refers to generic products that anyone can rebrand identically. Private label refers to formulations and packaging that are customized for a specific brand. In our world, the practical difference is small: you get to customize the label design (and optionally the packaging) regardless of which term you use.\"}},{\"@type\":\"Question\",\"name\":\"How much does it cost to start a supplement brand with private labeling?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Most clients launch a 3-5 SKU line for under $15,000 in initial inventory, including label design. There are no setup fees, no annual contracts, no formulation fees for private label, and no minimum spend across SKUs. The cost depends on the specific SKUs, packaging choices, and quantities.\"}},{\"@type\":\"Question\",\"name\":\"What are the most important things to know before launching a private label supplement brand?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Three things matter most. First: pick a real niche and audience, not a generic 'wellness' play. Second: understand DSHEA labeling rules (structure-function claims, supplement facts panels, disclaimers) before you finalize labels. Third: plan distribution. Direct-to-consumer Shopify is the most accessible channel; retail and wholesale need additional positioning work. We help you think through all three during onboarding.\"}},{\"@type\":\"Question\",\"name\":\"How do I price my private label supplements?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Standard supplement retail pricing follows a 4-5x markup over cost-of-goods for DTC and 2-3x for wholesale. Premium positioning supports higher markups. We give you transparent SKU-level cost data so you can price intelligently for your channel and audience.\"}},{\"@type\":\"Question\",\"name\":\"Do I need any licenses or certifications to sell private label supplements?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"In the U.S., you don't need a license to sell dietary supplements, but you must comply with FDA labeling rules (DSHEA), follow good manufacturing practices on your distribution side, and register with FDA if you import or manufacture certain products. We handle the manufacturing-side compliance. Your business-side compliance (state business licenses, sales tax registration, claims review) is your responsibility, and we point you to resources.\"}},{\"@type\":\"Question\",\"name\":\"Can I sell my private label supplements on Amazon?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Many of our private label clients sell on Amazon. You will need to register your brand in Amazon Brand Registry, ensure your labels comply with Amazon's supplement category requirements (which are stricter than basic FDA rules), and meet their barcoding requirements. We help you understand these during onboarding.\"}}]}]}</script>\n<!-- QBS-SCHEMA:END -->\n<!-- DVL-PL-H1:START -->\n<style>\n  .pl-hero__h1 {\n    position: absolute;\n    width: 1px; height: 1px;\n    padding: 0; margin: -1px;\n    overflow: hidden; clip: rect(0,0,0,0);\n    white-space: nowrap; border: 0;\n  }\n</style>\n<script>\n  document.addEventListener('DOMContentLoaded', function() {\n    var eyebrow = document.querySelector('.pl-hero__eyebrow, .eyebrow');\n    if (eyebrow) {\n      var h1 = document.createElement('h1');\n      h1.className = 'pl-hero__h1';\n      h1.textContent = 'Private Label Health Supplement Categories';\n      eyebrow.parentElement.insertBefore(h1, eyebrow);\n    }\n  });\n</script>\n<!-- DVL-PL-H1:END -->",
+ "htmlTitle": "Private Label Health Supplement Categories | Praxera",
+ "id": "221518507280",
+ "language": "en",
+ "layoutSections": {
+  "main_content": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "label": "Main Content",
+   "name": "main_content",
+   "params": {},
+   "rowMetaData": [
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    }
+   ],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_0",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       },
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Tile Grid",
+         "name": "module_11",
+         "params": {
+          "columns": "4",
+          "css_class": "dnd-module",
+          "gap": 16,
+          "headline_size": 42,
+          "image_fit": "cover",
+          "image_height": 180,
+          "image_max_width": 0,
+          "image_radius": 0,
+          "label_size": 15,
+          "label_weight": "600",
+          "max_width": 1200,
+          "min_column_width": 260,
+          "module_id": 218940115743,
+          "row_gap": 0,
+          "section_headline": "Private Label Supplement Categories",
+          "section_subhead": "<p style=\"color:#555;font-size:17px;line-height:1.6;\">All 17 supplement categories available for private label today. Click any category to explore formulations, ingredients, and available formats.</p>",
+          "show_labels_over_image": false,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "subhead_color": {
+           "color": "#012638",
+           "opacity": 100
+          },
+          "subhead_size": 18,
+          "subhead_width": 680,
+          "text_color": "dark",
+          "tile_style": "card",
+          "tiles": [
+           {
+            "image": {
+             "alt": "Women's Health private label supplements",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/private-label/WOMENS-CATEGORY-PREXERA.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/womens-health",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Women's Health"
+           },
+           {
+            "image": {
+             "alt": "Men's Health private label supplements",
+             "height": 1254,
+             "loading": "lazy",
+             "max_height": 1254,
+             "max_width": 1254,
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/PREXERA-MENS.png",
+             "width": 1254
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/mens-health",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Men's Health"
+           },
+           {
+            "image": {
+             "alt": "Probiotics private label supplements",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/prexera-probiotic_supplements.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/probiotics",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Probiotics"
+           },
+           {
+            "image": {
+             "alt": "Sleep private label supplements",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/sleep-prexera.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/sleep",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Sleep"
+           },
+           {
+            "image": {
+             "alt": "Fitness private label supplements",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/prexera-fitness_supplements.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/fitness",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Fitness"
+           },
+           {
+            "image": {
+             "alt": "Weight Management private label supplements",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/prexera-weight-supplements.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/weight-management",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Weight Management"
+           },
+           {
+            "image": {
+             "alt": "Cognitive private label supplements",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.pettechlabs.com/hubfs/private-label/cognitive-prexera.png"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/cognitive",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Cognitive"
+           },
+           {
+            "image": {
+             "alt": "Healthy Aging private label supplements",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://www.praxerasupplements.com/hubfs/private-label/shutterstock_1565452774.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/aging",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Healthy Aging"
+           },
+           {
+            "image": {
+             "alt": "Herbal private label supplements",
+             "loading": "lazy",
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Top%20Private%20Label%20Herbal%20Supplements%20&%20Their%20Benefits.jpg"
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/herbal",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Herbal"
+           },
+           {
+            "image": {
+             "alt": "Immune-Bundle-Layout_08",
+             "height": 252,
+             "loading": "lazy",
+             "max_height": 252,
+             "max_width": 300,
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Immune%20Bundle%20Blast/Immune-Bundle-Layout_08.jpg",
+             "width": 300
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/immune-support",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Immune Support"
+           },
+           {
+            "image": {
+             "alt": "prenatal protocol",
+             "height": 296,
+             "loading": "lazy",
+             "max_height": 296,
+             "max_width": 510,
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Protocols/Prenatal%20Protocol/prenatal%20protocol.jpg",
+             "width": 510
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/prenatal",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Prenatal"
+           },
+           {
+            "image": {
+             "alt": "mens multivitamin",
+             "height": 500,
+             "loading": "lazy",
+             "max_height": 500,
+             "max_width": 800,
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/mens%20multivitamin.png",
+             "width": 800
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/multivitamin",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Multivitamin"
+           },
+           {
+            "image": {
+             "alt": "kids nutrition",
+             "height": 400,
+             "loading": "lazy",
+             "max_height": 400,
+             "max_width": 750,
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/kids%20nutrition.png",
+             "width": 750
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/pediatric",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Pediatric"
+           },
+           {
+            "image": {
+             "alt": "Joint-health2",
+             "height": 170,
+             "loading": "lazy",
+             "max_height": 170,
+             "max_width": 170,
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Imported_Blog_Media/Joint-health2.jpg",
+             "width": 170
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/joint-support",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Joint Support"
+           },
+           {
+            "image": {
+             "alt": "mens heart health",
+             "height": 400,
+             "loading": "lazy",
+             "max_height": 400,
+             "max_width": 750,
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/mens%20heart%20health.png",
+             "width": 750
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/heart-health",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Heart Health"
+           },
+           {
+            "image": {
+             "alt": "gut-brain-detox (1)",
+             "height": 400,
+             "loading": "lazy",
+             "max_height": 400,
+             "max_width": 750,
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/gut-brain-detox%20(1).jpg",
+             "width": 750
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/detox",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Detox & Liver"
+           },
+           {
+            "image": {
+             "alt": "energy-protocol_thumbnail",
+             "height": 296,
+             "loading": "lazy",
+             "max_height": 296,
+             "max_width": 510,
+             "size_type": "auto",
+             "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/Protocols/Energy%20Protocol/energy-protocol_thumbnail.jpg",
+             "width": 510
+            },
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/energy",
+              "type": "EXTERNAL"
+             }
+            },
+            "tile_label": "Energy"
+           }
+          ]
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 12,
+         "x": 0
+        }
+       },
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global Product Guide Link",
+         "name": "module_17889887266273",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218942529660
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 12,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_2",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Stat Band",
+         "name": "module_2",
+         "params": {
+          "align": "center",
+          "card_style": "plain",
+          "css_class": "dnd-module",
+          "gap": 40,
+          "headline_size": 32,
+          "label_size": 14,
+          "label_weight": "600",
+          "max_width": 1100,
+          "min_column_width": 180,
+          "module_id": 218940115735,
+          "section_headline": "",
+          "stats": [
+           {
+            "description": "",
+            "stat_label": "years formulating supplements",
+            "value": "50+"
+           },
+           {
+            "description": "",
+            "stat_label": "doctor-formulated products",
+            "value": "190+"
+           },
+           {
+            "description": "",
+            "stat_label": "Top-Selling wellness categories",
+            "value": "17"
+           },
+           {
+            "description": "",
+            "stat_label": "from label approval to shipping",
+            "value": "3-4 wk"
+           }
+          ],
+          "style": {
+           "background_color": {
+            "color": "#012638",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 70
+           }
+          },
+          "text_color": "light",
+          "value_size": 48
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_8",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       },
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Content Split",
+         "name": "module_8",
+         "params": {
+          "body_size": 16,
+          "buttons": [],
+          "content": "<p>Most private label clients fall into one of two camps. Either they have brand assets they want to apply to a label template, or they're building their brand from scratch and need help with everything from logo to finished design. We work with both. Your design service includes brand discovery, template selection, label iteration, and print-ready production files. All in-house, all included.</p>",
+          "css_class": "dnd-module",
+          "eyebrow": "DESIGN SERVICES",
+          "gap": 20,
+          "headline": "From logo to print-ready label, our team becomes yours.",
+          "headline_size": 32,
+          "image": {
+           "alt": "DV-PRIVATE",
+           "height": 400,
+           "loading": "lazy",
+           "max_height": 400,
+           "max_width": 400,
+           "size_type": "auto",
+           "src": "https://4087538.fs1.hubspotusercontent-na1.net/hubfs/4087538/DV-PRIVATE.png",
+           "width": 400
+          },
+          "image_radius": 0,
+          "image_shadow": false,
+          "image_side": "right",
+          "max_width": 1100,
+          "module_id": 218939846527,
+          "ratio": "1fr 1fr",
+          "style": {
+           "background_color": {
+            "color": "#012638",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "text_color": "light"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       },
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global Guide Offer",
+         "name": "module_16",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218944099153
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 12,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_10",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - CTA Band",
+         "name": "module_10",
+         "params": {
+          "background_image": {
+           "background_position": "MIDDLE_CENTER",
+           "background_size": "cover",
+           "src": ""
+          },
+          "background_screen": {
+           "color": "#012638",
+           "opacity": 0
+          },
+          "button_size": 16,
+          "buttons": [
+           {
+            "link": {
+             "no_follow": false,
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/contact",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Schedule a Consultation"
+           }
+          ],
+          "content": "<p style=\"font-size: 18px;\">Schedule a consultation. We will walk through your audience, the right formulations for them, branding options, and the timeline. No commitment.</p>",
+          "content_color": {
+           "color": "#333333",
+           "opacity": 100
+          },
+          "content_size": 17,
+          "content_weight": "",
+          "css_class": "dnd-module",
+          "eyebrow": "",
+          "headline": "Ready to start your private label supplement line?",
+          "headline_size": 28,
+          "max_width": 720,
+          "module_id": 218940115731,
+          "section_id": "get-started",
+          "style": {
+           "background_color": {
+            "color": "#c9dbe2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_16",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Form Section",
+         "name": "module_18",
+         "params": {
+          "content": "",
+          "css_class": "dnd-module",
+          "eyebrow": "",
+          "form_field": {
+           "form_id": "d8dfdd90-98f1-4cba-bedf-181dd9286ca1",
+           "form_type": "HUBSPOT",
+           "message": "<p>Thanks! We'll be in touch shortly.</p>",
+           "response_type": "inline"
+          },
+          "form_title": "Get Your Private Label Consultation Set Up Today!",
+          "form_width": 720,
+          "headline": "",
+          "image": {
+           "alt": "Private label supplement - ",
+           "loading": "lazy",
+           "src": ""
+          },
+          "layout": "centered",
+          "module_id": 218940115793,
+          "section_id": "",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 12,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_17",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Heritage (Section)",
+         "name": "module_17",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218944099156
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_19",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - FAQ",
+         "name": "module_19",
+         "params": {
+          "answer_size": 15,
+          "css_class": "dnd-module",
+          "headline_size": 32,
+          "items": [
+           {
+            "answer": "<p>A private label supplement is a pre-formulated dietary supplement produced by a manufacturer (us) and sold under your brand name. You don't formulate it, you don't manufacture it, and you don't run quality testing. You select from existing formulations, design your label, and we produce finished inventory ready to ship under your brand.</p>",
+            "question": "What is a private label supplement, exactly?"
+           },
+           {
+            "answer": "<p>The terms are used interchangeably by most people. Technically, white label refers to generic products that anyone can rebrand identically. Private label refers to formulations and packaging that are customized for a specific brand. In our world, the practical difference is small: you get to customize the label design (and optionally the packaging) regardless of which term you use.</p>",
+            "question": "What is the difference between private label and white label?"
+           },
+           {
+            "answer": "<p>Most clients launch a 3-5 SKU line for under $15,000 in initial inventory, including label design. There are no setup fees, no annual contracts, no formulation fees for private label, and no minimum spend across SKUs. The cost depends on the specific SKUs, packaging choices, and quantities.</p>",
+            "question": "How much does it cost to start a supplement brand with private labeling?"
+           },
+           {
+            "answer": "<p>Three things matter most. First: pick a real niche and audience, not a generic 'wellness' play. Second: understand DSHEA labeling rules (structure-function claims, supplement facts panels, disclaimers) before you finalize labels. Third: plan distribution. Direct-to-consumer Shopify is the most accessible channel; retail and wholesale need additional positioning work. We help you think through all three during onboarding.</p>",
+            "question": "What are the most important things to know before launching a private label supplement brand?"
+           },
+           {
+            "answer": "<p>Standard supplement retail pricing follows a 4-5x markup over cost-of-goods for DTC and 2-3x for wholesale. Premium positioning supports higher markups. We give you transparent SKU-level cost data so you can price intelligently for your channel and audience.</p>",
+            "question": "How do I price my private label supplements?"
+           },
+           {
+            "answer": "<p>In the U.S., you don't need a license to sell dietary supplements, but you must comply with FDA labeling rules (DSHEA), follow good manufacturing practices on your distribution side, and register with FDA if you import or manufacture certain products. We handle the manufacturing-side compliance. Your business-side compliance (state business licenses, sales tax registration, claims review) is your responsibility, and we point you to resources.</p>",
+            "question": "Do I need any licenses or certifications to sell private label supplements?"
+           },
+           {
+            "answer": "<p>Yes. Many of our private label clients sell on Amazon. You will need to register your brand in Amazon Brand Registry, ensure your labels comply with Amazon's supplement category requirements (which are stricter than basic FDA rules), and meet their barcoding requirements. We help you understand these during onboarding.</p>",
+            "question": "Can I sell my private label supplements on Amazon?"
+           }
+          ],
+          "max_width": 820,
+          "module_id": 218940115739,
+          "open_first": false,
+          "question_size": 17,
+          "section_eyebrow": "",
+          "section_headline": "Frequently asked questions",
+          "section_id": "",
+          "section_subhead": "",
+          "style": {
+           "background_color": {
+            "color": "#f7f7f6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_20",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "PL - Global FDA Disclaimer",
+         "name": "module_20",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218942529652
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "type": "cell",
+   "w": 0,
+   "x": 0
+  }
+ },
+ "linkRelCanonicalUrl": "",
+ "metaDescription": "Browse all 17 private label supplement categories available through Praxera. From fitness and weight management to prenatal and cognitive health.",
+ "name": "Private Label - Page - Health Categories",
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "2026-09-09T21:31:05Z",
+ "publishImmediately": true,
+ "published": true,
+ "slug": "health-categories",
+ "state": "PUBLISHED_OR_SCHEDULED",
+ "subcategory": "site_page",
+ "templatePath": "Private Label/Templates/Page - DND.html",
+ "translations": {},
+ "updatedAt": "2026-09-11T19:22:53.766Z",
+ "updatedById": "52613719",
+ "url": "https://www.praxerasupplements.com/health-categories",
+ "useFeaturedImage": false,
+ "widgetContainers": {},
+ "widgets": {}
+}
