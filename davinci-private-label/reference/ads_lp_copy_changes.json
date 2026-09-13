@@ -1,0 +1,133 @@
+{
+ "alp/ads-mfg-usa": [
+  {
+   "module": "module_0.subhead",
+   "before": "<p>50 years of providing supplements in Vermont. Doctor-formulated products, low minimums, fast turnaround. Your brand, our&nbsp;infrastructure.</p>",
+   "after": "<p>Doctor-formulated supplements manufactured in a US facility. 190-plus stock products, low minimums and fast turnaround &mdash; with your brand on the&nbsp;label.</p>"
+  },
+  {
+   "module": "module_0.button.href",
+   "before": "/contact",
+   "after": "/get-started"
+  },
+  {
+   "module": "module_1.stats",
+   "before": "[{\"stat_label\": \"years experience\", \"value\": \"50+\"}, {\"stat_label\": \"stock products\", \"value\": \"190+\"}, {\"stat_label\": \"to ship\", \"value\": \"3-4 wk\"}, {\"stat_label\": \"USA-manufactured\", \"value\": \"100%\"}]",
+   "after": "[{\"stat_label\": \"years experience\", \"value\": \"50+\"}, {\"stat_label\": \"stock products\", \"value\": \"190+\"}, {\"stat_label\": \"to ship\", \"value\": \"3-4 wk\"}, {\"stat_label\": \"made in the USA\", \"value\": \"100%\"}]"
+  },
+  {
+   "module": "module_2.content",
+   "before": "<h2 style=\"color: #012638; font-size: 32px; font-weight: bold; line-height: 1.25; margin: 0 0 26px;\">What we do, in plain terms.</h2>\n<p>Praxera's private label program gives serious brand-builders access to the same doctor-formulated products that integrative healthcare professionals trust. Pick products from our catalog. We brand and provide. You sell.</p>\n<p>[PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]</p>",
+   "after": "<h2 style=\"color: #012638; font-size: 32px; font-weight: bold; line-height: 1.25; margin: 0 0 26px;\">What we do, in plain terms.</h2>\n<p>Praxera's private label program gives brand-builders access to the same doctor-formulated supplements that integrative healthcare professionals have trusted for 50 years. You choose the products. We handle labelling, quality documentation and supply. You sell under your own brand.</p>\n<h3 style=\"color: #012638; font-size: 22px; font-weight: bold; line-height: 1.3; margin: 34px 0 14px;\">Why US-made matters for your brand</h3>\n<p>Every Praxera product is manufactured in a US facility in Vermont that is FDA-registered and GMP-certified. For your brand that means shorter lead times, fewer supply-chain surprises, and a Made in the USA claim you can substantiate on the label and in your marketing.</p>\n<ul>\n<li><strong>Manufactured in a US facility</strong> &mdash; FDA-registered and GMP certified to SQF and NSF 455-2 standards.</li>\n<li><strong>Doctor-formulated catalogue</strong> &mdash; 190-plus finished products ready to carry your label.</li>\n<li><strong>Low minimums, no set-up fees</strong> &mdash; start without committing to a warehouse full of inventory.</li>\n<li><strong>8 to 12 weeks</strong> from first conversation to product shipping; 3 to 4 weeks production once labels are approved.</li>\n</ul>\n<p>Tell us what you want to launch and we will confirm on one call whether we are the right fit.</p>"
+  },
+  {
+   "module": "module_3.cards",
+   "before": "[{\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">FDA-registered, GMP certified to SQF and NSF 455-2 standards. Manufactured in Vermont, U.S.A.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"U.S. manufacturing, FDA-registered\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">Launch your brand without massive upfront inventory commitment. Per-unit pricing improves with volume.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Low minimums, no set-up fees\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">8 to 12 weeks from first conversation to product shipping. 3 to 4 weeks production once labels are approved.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Fast turnaround\"}]",
+   "after": "[{\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">Manufactured in a Vermont facility that is FDA-registered and GMP certified to SQF and NSF 455-2 standards.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Made in a US facility\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">Launch your brand without a large upfront inventory commitment. Per-unit pricing improves with volume.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Low minimums, no set-up fees\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">8 to 12 weeks from first conversation to product shipping. 3 to 4 weeks production once labels are approved.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Fast turnaround\"}]"
+  },
+  {
+   "module": "module_5.button.href",
+   "before": "/contact",
+   "after": "/get-started"
+  },
+  {
+   "module": "module_7.items",
+   "before": "[{\"answer\": \"Three reasons. Quality: U.S. manufacturers operate under FDA oversight with consistent enforcement. Supply chain: shorter lead times, lower freight costs, less disruption risk. Marketing: 'Made in USA' resonates with significant portions of supplement buyers and is verifiable in your marketing claims.\", \"question\": \"Why does U.S. manufacturing matter for supplement brands?\"}, {\"answer\": \"Yes. Our Vermont facility has been continuously FDA-registered since the agency began requiring registration. We are also GMP-certified to NSF GMP 455-2, the most rigorous supplement-specific GMP standard.\", \"question\": \"Are you actually FDA-registered?\"}, {\"answer\": \"Per-unit it can be, depending on the formulation. Total landed cost (after shipping, duties, quality risk, and turnaround time) often makes U.S. manufacturing cost-competitive or better. Most clients who price it out side-by-side end up choosing U.S. manufacturing for reasons beyond just unit cost.\", \"question\": \"Is U.S. manufacturing more expensive than overseas?\"}, {\"answer\": \"Yes. We host facility tours for prospective and active clients. Schedule through your account manager or the contact form.\", \"question\": \"Can I tour the facility?\"}, {\"answer\": \"Most stock formulations have MOQs in the low hundreds of bottles per SKU. Specific MOQs depend on the formulation. We provide exact numbers during your consultation.\", \"question\": \"What's the minimum order size to work with you?\"}]",
+   "after": "[{\"answer\": \"Three reasons. Quality: US production sites operate under FDA oversight with consistent enforcement. Supply chain: shorter lead times, lower freight costs and less disruption risk. Marketing: Made in the USA resonates with a large share of supplement buyers and is verifiable in your claims.\", \"question\": \"Why does US manufacturing matter for supplement brands?\"}, {\"answer\": \"Yes. Praxera products are made in a Vermont facility that has been continuously FDA-registered since registration was first required, and that is GMP-certified to NSF 455-2, the most rigorous supplement-specific GMP standard.\", \"question\": \"Is the facility FDA-registered?\"}, {\"answer\": \"Per unit it can be, depending on the formulation. Total landed cost - after shipping, duties, quality risk and turnaround time - often makes US manufacturing cost-competitive or better. Most brands that price it out side by side choose US manufacturing for reasons beyond unit cost.\", \"question\": \"Is US manufacturing more expensive than overseas?\"}, {\"answer\": \"Yes. Tours can be arranged for prospective and active clients. Ask your Praxera contact, or request one using the form on this page.\", \"question\": \"Can I tour the site where my products are made?\"}, {\"answer\": \"Most stock formulations have minimums in the low hundreds of bottles per SKU. The exact number depends on the formulation and we confirm it during your consultation.\", \"question\": \"What's the minimum order size to work with you?\"}]"
+  },
+  {
+   "module": "metaDescription",
+   "before": "Made in the USA. FDA-registered, GMP-certified Vermont supplement manufacturer. 50 years of doctor-formulated production. Launch your brand.",
+   "after": "Made in the USA. Doctor-formulated supplements manufactured in an FDA-registered, GMP-certified Vermont facility. 190-plus products, low minimums. Launch your brand."
+  }
+ ],
+ "alp/ads-contract-mfg": [
+  {
+   "module": "module_0.headline",
+   "before": "<h1>Your supplement brand.&nbsp;</h1>",
+   "after": "<h1>Your supplement brand. Turnkey production behind&nbsp;it.</h1>"
+  },
+  {
+   "module": "module_0.subhead",
+   "before": "<p>Private label.&nbsp; Stock catalog of 190+ products or fully custom R&amp;D. 8 to 12 weeks from conversation to product shipping.</p>",
+   "after": "<p>Private label from a 190-plus doctor-formulated catalogue, or a custom product built with our formulators &mdash; manufactured in a US facility. 8 to 12 weeks from conversation to product&nbsp;shipping.</p>"
+  },
+  {
+   "module": "module_0.button.href",
+   "before": "/contact",
+   "after": "/get-started"
+  },
+  {
+   "module": "module_1.stats",
+   "before": "[{\"stat_label\": \"years experience\", \"value\": \"50+\"}, {\"stat_label\": \"stock products\", \"value\": \"190+\"}, {\"stat_label\": \"to ship\", \"value\": \"3-4 wk\"}, {\"stat_label\": \"USA-manufactured\", \"value\": \"100%\"}]",
+   "after": "[{\"stat_label\": \"years experience\", \"value\": \"50+\"}, {\"stat_label\": \"stock products\", \"value\": \"190+\"}, {\"stat_label\": \"to ship\", \"value\": \"3-4 wk\"}, {\"stat_label\": \"made in the USA\", \"value\": \"100%\"}]"
+  },
+  {
+   "module": "module_2.content",
+   "before": "<h2 style=\"color: #012638; font-size: 32px; font-weight: bold; line-height: 1.25; margin: 0 0 26px;\">What we do, in plain terms.</h2>\n<p>Praxera's private label program gives serious brand-builders access to the same doctor-formulated products that integrative healthcare professionals trust. Pick products from our catalog. We brand and provide. You sell.</p>\n<p>[PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]</p>",
+   "after": "<h2 style=\"color: #012638; font-size: 32px; font-weight: bold; line-height: 1.25; margin: 0 0 26px;\">Contract manufacturing or private label &mdash; what you actually need.</h2>\n<p>Most people searching for a supplement contract manufacturer want one of two things.</p>\n<p><strong>Private label</strong> means taking a proven, doctor-formulated product from the Praxera catalogue and putting your brand on it. It is the fastest route to market and the lowest risk: the formulation already exists, it is already made, and you are buying finished goods with your label on them.</p>\n<p><strong>A custom product</strong> means working with our formulators to build something to your own specification, with you owning the positioning. It takes longer and costs more up front, and it is the right call when nothing in an existing catalogue does what you need.</p>\n<p>Praxera supports both as your turnkey provider. You get one point of contact from the first consultation through to reorders, and turnkey production runs in an FDA-registered, GMP-certified US facility in Vermont.</p>\n<p>Pick products from our catalogue, or bring us a specification. We handle formulation, labelling, quality documentation and supply. You sell.</p>"
+  },
+  {
+   "module": "module_3.cards",
+   "before": "[{\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">FDA-registered, GMP certified to SQF and NSF 455-2 standards. Manufactured in Vermont, U.S.A.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"U.S. manufacturing, FDA-registered\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">Launch your brand without massive upfront inventory commitment. Per-unit pricing improves with volume.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Low minimums, no set-up fees\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">8 to 12 weeks from first conversation to product shipping. 3 to 4 weeks production once labels are approved.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Fast turnaround\"}]",
+   "after": "[{\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">Manufactured in a Vermont facility that is FDA-registered and GMP certified to SQF and NSF 455-2 standards.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Made in a US facility\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">Launch your brand without a large upfront inventory commitment. Per-unit pricing improves with volume.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Low minimums, no set-up fees\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">8 to 12 weeks from first conversation to product shipping. 3 to 4 weeks production once labels are approved.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Fast turnaround\"}]"
+  },
+  {
+   "module": "module_5.button.href",
+   "before": "/contact",
+   "after": "/get-started"
+  },
+  {
+   "module": "module_7.items",
+   "before": "[{\"answer\": \"Private label uses our existing formulations with your brand on the label. Contract manufacturing typically refers to producing to your specifications (your formulation, your packaging, your everything). We do both. Most clients start with private label and add contract manufacturing as they grow.\", \"question\": \"What's the difference between private label and contract manufacturing?\"}, {\"answer\": \"12 to 16 weeks from project kickoff to first production run. The timeline includes formulation development, ingredient sourcing, stability testing, manufacturing scale-up, and first batch production. Faster is possible for simpler formulations.\", \"question\": \"How long do contract manufacturing projects typically take?\"}]",
+   "after": "[{\"answer\": \"Private label uses an existing, doctor-formulated product from the Praxera catalogue with your brand on the label. Contract manufacturing usually means producing to your own specification - your formula, your packaging, your positioning. Praxera supports both routes. Most brands start with private label and add custom work as they grow.\", \"question\": \"What's the difference between private label and contract manufacturing?\"}, {\"answer\": \"12 to 16 weeks from project kickoff to first production run. That covers formulation work, ingredient sourcing, stability testing, production scale-up and the first batch. Simpler formulations can move faster.\", \"question\": \"How long does a custom product take?\"}, {\"answer\": \"In a US facility in Vermont that is FDA-registered and GMP certified to SQF and NSF 455-2 standards.\", \"question\": \"Where are the products made?\"}, {\"answer\": \"Most stock formulations have minimums in the low hundreds of bottles per SKU. Custom projects are quoted individually. Exact numbers come out of your consultation.\", \"question\": \"What are the minimum order quantities?\"}, {\"answer\": \"One Praxera contact, from the first consultation through to reorders, with in-house design support for labels and sell sheets.\", \"question\": \"Who do I deal with day to day?\"}]"
+  },
+  {
+   "module": "metaDescription",
+   "before": "Your supplement brand. Our contract manufacturing. Private label or custom formulation, 250-plus products, 8-12 weeks to ship.",
+   "after": "Your supplement brand, our turnkey production. Private label from a 190-plus catalogue or a custom product, manufactured in a US facility. 8-12 weeks to ship."
+  }
+ ],
+ "alp/ads-pl-mfg": [
+  {
+   "module": "module_0.subhead",
+   "before": "<p>Doctor-formulated catalog of 190+ products. Low minimums, no set-up fees, fast turnaround. Launch your supplement brand in weeks, not months.</p>",
+   "after": "<p>Doctor-formulated catalogue of 190-plus products. Low minimums, no set-up fees, fast turnaround. Launch your supplement brand in weeks, not&nbsp;months.</p>"
+  },
+  {
+   "module": "module_0.button.href",
+   "before": "/contact",
+   "after": "/get-started"
+  },
+  {
+   "module": "module_1.stats",
+   "before": "[{\"stat_label\": \"years experience\", \"value\": \"50+\"}, {\"stat_label\": \"stock products\", \"value\": \"190+\"}, {\"stat_label\": \"to ship\", \"value\": \"3-4 wk\"}, {\"stat_label\": \"USA-manufactured\", \"value\": \"100%\"}]",
+   "after": "[{\"stat_label\": \"years experience\", \"value\": \"50+\"}, {\"stat_label\": \"stock products\", \"value\": \"190+\"}, {\"stat_label\": \"to ship\", \"value\": \"3-4 wk\"}, {\"stat_label\": \"made in the USA\", \"value\": \"100%\"}]"
+  },
+  {
+   "module": "module_2.content",
+   "before": "<h2 style=\"color: #012638; font-size: 32px; font-weight: bold; line-height: 1.25; margin: 0 0 26px;\">What we do, in plain terms.</h2>\n<p>Praxera's private label program gives serious brand-builders access to the same doctor-formulated products that integrative healthcare professionals trust. Pick products from our catalog. We brand and provide. You sell.</p>\n<p>[PLACEHOLDER: This is a paid-traffic landing page. Justin should add the specific value props and CTAs that match the targeted keyword.]</p>",
+   "after": "<h2 style=\"color: #012638; font-size: 32px; font-weight: bold; line-height: 1.25; margin: 0 0 26px;\">What we do, in plain terms.</h2>\n<p>Praxera's private label program gives brand-builders access to the same doctor-formulated supplements that integrative healthcare professionals have trusted for 50 years. You choose the products. We handle labelling, quality documentation and supply. You sell under your own brand.</p>\n<h3 style=\"color: #012638; font-size: 22px; font-weight: bold; line-height: 1.3; margin: 34px 0 14px;\">Private label, start to finish</h3>\n<p>Choose from 190-plus doctor-formulated products, all manufactured in an FDA-registered, GMP-certified US facility. Our in-house design team builds your label &mdash; template or fully custom &mdash; and every order ships with certificates of analysis and sell sheets. There are no set-up fees. Most brands go from first conversation to shipped inventory in 8 to 12 weeks.</p>\n<p>You do not need an existing supplement line or a formulation chemist to start. About half the brands we work with are launching their first product.</p>"
+  },
+  {
+   "module": "module_3.cards",
+   "before": "[{\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">FDA-registered, GMP certified to SQF and NSF 455-2 standards. Manufactured in Vermont, U.S.A.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"U.S. manufacturing, FDA-registered\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">Launch your brand without massive upfront inventory commitment. Per-unit pricing improves with volume.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Low minimums, no set-up fees\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">8 to 12 weeks from first conversation to product shipping. 3 to 4 weeks production once labels are approved.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Fast turnaround\"}]",
+   "after": "[{\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">Manufactured in a Vermont facility that is FDA-registered and GMP certified to SQF and NSF 455-2 standards.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Made in a US facility\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">Launch your brand without a large upfront inventory commitment. Per-unit pricing improves with volume.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Low minimums, no set-up fees\"}, {\"content\": \"<p style=\\\"color: #555; font-size: 15px; line-height: 1.6; margin: 0;\\\">8 to 12 weeks from first conversation to product shipping. 3 to 4 weeks production once labels are approved.</p>\", \"icon\": {\"alt\": \"\", \"loading\": \"lazy\", \"src\": \"\"}, \"title\": \"Fast turnaround\"}]"
+  },
+  {
+   "module": "module_5.button.href",
+   "before": "/contact",
+   "after": "/get-started"
+  },
+  {
+   "module": "module_7.items",
+   "before": "[{\"answer\": \"From signed engagement to shipped inventory: typically 8 to 12 weeks. Fastest path uses our existing formulations and template-based label design. Custom design or formulation extends the timeline.\", \"question\": \"How fast can I launch a private label supplement brand?\"}, {\"answer\": \"Yes by industry standards. Most stock formulations have MOQs in the low hundreds of bottles per SKU. We support brands launching their first product line and scaling brands that need volume.\", \"question\": \"Do you have low minimums?\"}, {\"answer\": \"Manufacturing, quality testing, certificates of analysis, label design (template or custom), basic packaging selection, fulfillment-ready bottling. Sell sheets are included for most engagements. There are no setup fees or hidden charges.\", \"question\": \"What's included in your private label package?\"}, {\"answer\": \"Yes. About half our clients are first-time supplement brand builders. We're set up to support that path with educational resources, transparent pricing, and consultative onboarding.\", \"question\": \"Can I work with you if I'm a first-time supplement brand?\"}, {\"answer\": \"50 years of supplement-specific manufacturing experience. Doctor-formulated catalog of 190+ products. FDA-registered and NSF GMP 455-2 certified. In-house design team included. Transparent pricing with no setup fees. We're not the cheapest. We're built for brands that care about quality and long-term partnership.\", \"question\": \"Why work with Praxera over other private label manufacturers?\"}]",
+   "after": "[{\"answer\": \"From signed engagement to shipped inventory, typically 8 to 12 weeks. The fastest path uses an existing formulation and a template-based label. Custom design or a custom product extends the timeline.\", \"question\": \"How fast can I launch a private label supplement brand?\"}, {\"answer\": \"Yes by industry standards. Most stock formulations have minimums in the low hundreds of bottles per SKU. We support brands launching a first product line and scaling brands that need volume.\", \"question\": \"Do you have low minimums?\"}, {\"answer\": \"Production, quality testing, certificates of analysis, label design (template or custom), packaging selection and fulfilment-ready bottling. Sell sheets are included for most engagements. There are no set-up fees or hidden charges.\", \"question\": \"What's included in your private label package?\"}, {\"answer\": \"Yes. About half our clients are first-time supplement brand builders. We are set up for that path with educational resources, transparent pricing and consultative onboarding.\", \"question\": \"Can I work with you if I'm a first-time supplement brand?\"}, {\"answer\": \"50 years of supplement-specific experience. A doctor-formulated catalogue of 190-plus products, manufactured in an FDA-registered facility that is GMP certified to NSF 455-2. In-house design included. Transparent pricing with no set-up fees. We are not the cheapest - we are built for brands that care about quality and a long-term partnership.\", \"question\": \"Why work with Praxera over other private label providers?\"}]"
+  },
+  {
+   "module": "metaDescription",
+   "before": "Private label supplements with 50 years of expertise behind you. 250-plus products, low minimums, no setup fees, fast turnaround. Launch in weeks.",
+   "after": "Private label supplements with 50 years of expertise behind you. 190-plus products, low minimums, no set-up fees, fast turnaround. Launch in weeks."
+  }
+ ]
+}
