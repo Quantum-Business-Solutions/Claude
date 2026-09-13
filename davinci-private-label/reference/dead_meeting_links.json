@@ -1,0 +1,28 @@
+{
+ "checked": "2026-09-13",
+ "source": "/scheduler/v3/meetings/meeting-links",
+ "note": "meetings.hubspot.com answers HTTP 200 with a JavaScript shell for every slug, real or invented, so a status check on that host proves nothing. The portal API above is the only authoritative list of meeting links.",
+ "existing_candidates": [
+  "lschencker-carroll/private-label-form-round-robin",
+  "art-monaghan/private-label-chatbot-round-robin",
+  "lschencker-carroll/round-robbin-"
+ ],
+ "dead": [
+  {
+   "url": "meetings.hubspot.com/samantha-fuller/private-label-round-robin",
+   "inherited_from": "DaVinci originals 197596835644 (DV: FNCE Followup #2 (5R)) and 197916915820 (DV: FNCE Followup #3)",
+   "candidates": [
+    "lschencker-carroll/private-label-form-round-robin",
+    "art-monaghan/private-label-chatbot-round-robin"
+   ],
+   "emails": [
+    "220685976456",
+    "220685976586",
+    "220688283275",
+    "220692678021",
+    "220692678023",
+    "220692678044"
+   ]
+  }
+ ]
+}

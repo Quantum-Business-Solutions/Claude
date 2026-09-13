@@ -102,21 +102,10 @@ for b in sorted(pairs["blog"],key=lambda x:x["slug"] or ""):
     add("b",b["slug"],(b["name"] or "")[:96],r=(seg[0]+"/…/"+seg[-1]) if len(seg)>2 else src,t=src,
         i=health_chips(blogh.get(b["slug"]),"blog"),new=not b["source_url"],slug=b["slug"],hid=str(hb["id"]),y="Blog post")
 # ---- emails ---------------------------------------------------------------
-# Meeting links that the clones inherited from the DaVinci originals but that do not exist in
-# this portal. meetings.hubspot.com serves a 200 + JS shell for ANY slug, so a curl check is
-# worthless; dead_meeting_links.json records what the portal's own meeting-link list says.
-dml=R("dead_meeting_links")
-deadmeet={}
-for _d in dml["dead"]:
-    for _eid in _d["emails"]: deadmeet.setdefault(str(_eid),[]).append(_d)
 for e in sorted(pairs["emails"],key=lambda x:x["name"]):
     h=emailh.get(str(e["id"]),{}); i=[]
     if h.get("brand_links"): i.append(["bad",f"{len(h['brand_links'])} DaVinci link"+("s" if len(h["brand_links"])>1 else ""),"Links to: "+"; ".join(h["brand_links"][:6])])
     if h.get("foreign_images"): i.append(["bad",f"{len(h['foreign_images'])} off-brand image"+("s" if len(h["foreign_images"])>1 else ""),"Images still hosted on another brand's domain: "+"; ".join(h["foreign_images"][:4])])
-    for d in deadmeet.get(str(e["id"]),[]):
-        i.append(["bad","dead meeting link",
-                  f"Books {d['url']}, which does not exist in this portal (verified against {dml['source']}). "
-                  "Candidates that do exist: "+", ".join(d["candidates"])+"."])
     if h.get("claims"): i.append(["warn","first-person production wording","Phrases to check: "+" | ".join(h["claims"][:6])])
     if h.get("copy_brand"): i.append(["warn","copy names "+", ".join(h["copy_brand"][:3]),"The body copy still names another brand. Decide whether it stays."])
     if h.get("reply_to") and h["reply_to"]!="info@praxerasupplements.com": i.append(["warn","reply-to "+h["reply_to"],"Reply-to is not the Praxera mailbox."])
