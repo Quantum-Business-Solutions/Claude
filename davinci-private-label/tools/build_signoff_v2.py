@@ -131,6 +131,31 @@ for f in sorted(wf,key=lambda x:-x["sends"]):
     if f["dead_workflow_list_clauses"]: i.append(["mute",f"{f['dead_workflow_list_clauses']} dead clause"+("s" if f["dead_workflow_list_clauses"]>1 else ""),"Inherited from the DaVinci original; references a list that no longer exists."])
     i.append(["mute","off" if not en else "ON","Workflow is "+("switched off — turn on at cutover." if not en else "enabled.")])
     add("w",str(f["id"]),strip(f["name"])[:80],r=f'{f["sends"]} email sends',i=i,hid=str(f["id"]),y="Workflow")
+# ---- guides & downloads ---------------------------------------------------
+# Downloadable assets (PDFs) were not on the sheet at all until 13 Sep, so a client could
+# approve all 263 rows without a single guide or sell sheet having been looked at.
+ga=R("guide_audit")
+for g in sorted(ga["files"],key=lambda x:(0 if "Guide" in x["name"] or "5R" in x["name"] or "Onboarding" in x["name"] else 1, x["name"])):
+    i=[]
+    if g.get("brand_hits"):
+        i.append(["bad","names "+", ".join(g["brand_hits"][:2]),
+                  "The PDF text still names another brand. Found: "+", ".join(g["brand_hits"])])
+    if g.get("mfg_hits"):
+        i.append(["warn","first-person production wording","Phrases to check: "+" | ".join(g["mfg_hits"][:5])])
+    if g.get("shop_hits"):
+        i.append(["bad","purchase path","Points at a buy/checkout route: "+", ".join(g["shop_hits"][:4])])
+    if g.get("chars",0)>500 and not g.get("fda"):
+        i.append(["warn","no FDA disclaimer","Makes product claims but carries no 'not evaluated by the Food and Drug Administration' line."])
+    if not g.get("used_on"):
+        i.append(["warn","nothing links to it","No Praxera page, post or email references this file."])
+    if not i:
+        i.append(["mute","checked 13 Sep","Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."])
+    used=g.get("used_on") or []
+    r=(", ".join(used[:3])+(" +%d more"%(len(used)-3) if len(used)>3 else "")) if used else "not linked from anything"
+    add("g",g["id"],g["name"][:90],r=r,i=i,
+        y="Guide" if g.get("pages",1)>3 else ("Bottle image" if "Bottle_Image" in g["name"] else "Sell sheet"),
+        url=g["url"])
+
 # ---- meta -----------------------------------------------------------------
 META={"stamp":STAMP,"title":"Praxera asset sign-off","file":"praxera-asset-signoff",
  "brandline":"FoodScience LLC · HubSpot 4087538 · Private Label → Praxera",
@@ -140,10 +165,10 @@ META={"stamp":STAMP,"title":"Praxera asset sign-off","file":"praxera-asset-signo
  "note":"Several people can work at once — changes merge item by item and the page refreshes every 25 seconds.",
  "share":SHARE,
  "groups":[["p","Website pages","Redirects from at cutover"],["b","Blog posts","Redirects from at cutover"],
-           ["e","Emails","Replaces"],["f","Forms","Placement"],["w","Workflows","Detail"]],
- "keys":{"p":"website-pages","b":"blog-posts","e":"emails","f":"forms","w":"workflows"},
+           ["e","Emails","Replaces"],["f","Forms","Placement"],["w","Workflows","Detail"],["g","Guides & downloads","Linked from"]],
+ "keys":{"p":"website-pages","b":"blog-posts","e":"emails","f":"forms","w":"workflows","g":"guides-downloads"},
  "gc":R("general_comments")["comments"],
- "hs":{"p":hs_page("{id}"),"b":hs_post("{id}"),"e":hs_mail("{id}"),"f":hs_form("{id}"),"w":hs_flow("{id}")},
+ "hs":{"p":hs_page("{id}"),"b":hs_post("{id}"),"e":hs_mail("{id}"),"f":hs_form("{id}"),"w":hs_flow("{id}"),"g":"https://app.hubspot.com/files/%s/?search={id}"%PORTAL},
  "live":{"p":SITE+"/{slug}","b":SITE+"/{slug}"}}
 json.dump({"stamp":STAMP,"rows":rows,"groups":META["groups"],"meta":META},open("reference/ledger_rows.json","w"),indent=1)
 print("rows:",len(rows),{g:sum(1 for r in rows if r['k']==g) for g,*_ in META["groups"]},
@@ -178,7 +203,11 @@ JS=JSMIN.stdout.strip(); open("deliverables/signoff.min.js","w").write(JS)
 assert "</script" not in JS
 CSS=re.sub(r"/\*.*?\*/","",open("src/signoff.css").read(),flags=re.S); CSS=re.sub(r"\n{2,}","\n",CSS).strip()
 esc=lambda s:s.replace("<","\\u003c")
-CHUNKS=4; per=math.ceil(len(rows)/CHUNKS); parts=[rows[i*per:(i+1)*per] for i in range(CHUNKS)]
+# Guides go in their own data section so adding them does not re-chunk (and force a
+# re-upload of) the four existing data sections.
+base=[r for r in rows if r["k"]!="g"]; guides=[r for r in rows if r["k"]=="g"]
+CHUNKS=4; per=math.ceil(len(base)/CHUNKS); parts=[base[i*per:(i+1)*per] for i in range(CHUNKS)]
+if guides: parts.append(guides)
 FONTS=('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500'
        '&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">')
 secs=[("app","Sign-off",FONTS+f"\n<style>{CSS}\nsection>h2:first-child{{display:none}}</style>\n<div id=\"root\"></div>")]

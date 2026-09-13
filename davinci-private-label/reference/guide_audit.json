@@ -1,0 +1,678 @@
+{
+ "stamp": "2026-09-13",
+ "files": [
+  {
+   "id": "221206657118",
+   "name": "Praxera-Ingredients-Guide",
+   "path": "/Praxera/Private Label Supplements Guide/Praxera-Ingredients-Guide.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-Ingredients-Guide.pdf",
+   "pages": 13,
+   "bytes": 6660509,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 18341,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:learning/ty-ingredients-testing"
+   ]
+  },
+  {
+   "id": "221637586518",
+   "name": "Praxera-Client-Onboarding",
+   "path": "/Praxera/Private Label Supplements Guide/Praxera-Client-Onboarding.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-Client-Onboarding.pdf",
+   "pages": 13,
+   "bytes": 4919685,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 18701,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "email:Praxera - 1 Private_Label_Guide_ToF_Danielle",
+    "email:Praxera - 1: Private Label Guide ToF Paul_TY",
+    "email:Praxera - Client_Onboarding_BoF_Danielle_#1"
+   ]
+  },
+  {
+   "id": "221631457545",
+   "name": "Electrolyte_Drink_Mix_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/Electrolyte_Drink_Mix_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Electrolyte_Drink_Mix_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 161714,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 4320,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631449759",
+   "name": "Spectra_Greens_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/Spectra_Greens_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Spectra_Greens_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 148554,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 5219,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221645953697",
+   "name": "DIMPRO_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/DIMPRO_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/DIMPRO_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 129203,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 3078,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221645953696",
+   "name": "Mega_Probiotic_ND_50_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/Mega_Probiotic_ND_50_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Mega_Probiotic_ND_50_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 129197,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 3432,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631480972",
+   "name": "NAD_Activate_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/NAD_Activate_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/NAD_Activate_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 128383,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 3808,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631433055",
+   "name": "Prebiotic_Fiber_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/Prebiotic_Fiber_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Prebiotic_Fiber_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 126894,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 2735,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631457543",
+   "name": "Berberine_Force_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/Berberine_Force_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Berberine_Force_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 125072,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 3306,
+   "fda": true,
+   "brand_hits": [
+    "DaVinci"
+   ],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631480971",
+   "name": "ADK_Gummies_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/ADK_Gummies_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/ADK_Gummies_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 123870,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 3954,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631480970",
+   "name": "Nattokinase_Plus_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/Nattokinase_Plus_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Nattokinase_Plus_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 122067,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 3494,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631488071",
+   "name": "Tri-Mag_300_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/Tri-Mag_300_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Tri-Mag_300_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 120876,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 2545,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631440955",
+   "name": "Daily_Best_Ultra_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/Daily_Best_Ultra_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Daily_Best_Ultra_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 119098,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 3128,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631457542",
+   "name": "ADK_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/ADK_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/ADK_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 118875,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 4372,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631457540",
+   "name": "B12_MC_Liquid_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/B12_MC_Liquid_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/B12_MC_Liquid_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 115934,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 3374,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631449757",
+   "name": "Liquid_D3_10_000_IU_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/Liquid_D3_10_000_IU_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Liquid_D3_10_000_IU_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 114617,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 2751,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221631805780",
+   "name": "Electrolyte_Drink_Mix_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/Electrolyte_Drink_Mix_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Electrolyte_Drink_Mix_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 90513,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631488068",
+   "name": "Spectra_Greens_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/Spectra_Greens_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Spectra_Greens_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 79927,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631440954",
+   "name": "DIMPRO_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/DIMPRO_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/DIMPRO_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 66915,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631805779",
+   "name": "Prebiotic_Fiber_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/Prebiotic_Fiber_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Prebiotic_Fiber_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 64916,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631488067",
+   "name": "Mega_Probiotic_ND_50_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/Mega_Probiotic_ND_50_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Mega_Probiotic_ND_50_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 63132,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631488066",
+   "name": "NAD_Activate_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/NAD_Activate_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/NAD_Activate_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 62509,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631805777",
+   "name": "ADK_Gummies_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/ADK_Gummies_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/ADK_Gummies_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 61464,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631457539",
+   "name": "Tri-Mag_300_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/Tri-Mag_300_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Tri-Mag_300_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 58182,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631805776",
+   "name": "Nattokinase_Plus_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/Nattokinase_Plus_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Nattokinase_Plus_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 59834,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631488065",
+   "name": "Daily_Best_Ultra_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/Daily_Best_Ultra_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Daily_Best_Ultra_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 57143,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631480968",
+   "name": "ADK_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/ADK_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/ADK_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 56456,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631805774",
+   "name": "Berberine_Force_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/Berberine_Force_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Berberine_Force_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 56249,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631805775",
+   "name": "B12_MC_Liquid_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/B12_MC_Liquid_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/B12_MC_Liquid_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 53973,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631488064",
+   "name": "Liquid_D3_10_000_IU_Bottle_Image",
+   "path": "/Praxera/Praxera Sell Sheets/Liquid_D3_10_000_IU_Bottle_Image.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Liquid_D3_10_000_IU_Bottle_Image.pdf",
+   "pages": 1,
+   "bytes": 52992,
+   "size_pt": [
+    612,
+    612
+   ],
+   "chars": 0,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": []
+  },
+  {
+   "id": "221631805449",
+   "name": "Omega_3_HP-D_Sell_Sheet",
+   "path": "/Praxera/Praxera Sell Sheets/Omega_3_HP-D_Sell_Sheet.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Omega_3_HP-D_Sell_Sheet.pdf",
+   "pages": 1,
+   "bytes": 148937,
+   "size_pt": [
+    612,
+    792
+   ],
+   "chars": 2498,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "page:top-sellers"
+   ]
+  },
+  {
+   "id": "221206657087",
+   "name": "Praxera-Private-Label-Guide",
+   "path": "/Praxera/Private Label Supplements Guide/Praxera-Private-Label-Guide.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-Private-Label-Guide.pdf",
+   "pages": 27,
+   "bytes": 7363381,
+   "size_pt": [
+    792,
+    612
+   ],
+   "chars": 15190,
+   "fda": false,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "email:Praxera - 1 Private_Label_Guide_ToF_Danielle",
+    "email:Praxera - 1: Private Label Guide ToF Paul_TY",
+    "email:Praxera - 1: Private Label Guide: High-Prior",
+    "page:learning/definitive-guide-ty",
+    "page:ty-contact"
+   ]
+  },
+  {
+   "id": "221802319406",
+   "name": "Praxera-5R-Gut-Health-Protocol",
+   "path": "/Praxera/Private Label Supplements Guide/Praxera-5R-Gut-Health-Protocol.pdf",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-5R-Gut-Health-Protocol.pdf",
+   "pages": 1,
+   "bytes": 7469339,
+   "size_pt": [
+    792,
+    612
+   ],
+   "chars": 2041,
+   "fda": true,
+   "brand_hits": [],
+   "mfg_hits": [],
+   "shop_hits": [],
+   "status": "ok",
+   "used_on": [
+    "email:Praxera - # High Priority (Branded) 5Rs"
+   ]
+  }
+ ]
+}

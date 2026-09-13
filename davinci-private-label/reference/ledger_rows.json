@@ -1,5 +1,5 @@
 {
- "stamp": "11 September 2026",
+ "stamp": "13 September 2026",
  "rows": [
   {
    "k": "p",
@@ -4768,6 +4768,501 @@
    ],
    "hid": "1875339651",
    "y": "Workflow"
+  },
+  {
+   "k": "g",
+   "id": "221802319406",
+   "n": "Praxera-5R-Gut-Health-Protocol",
+   "r": "email:Praxera - # High Priority (Branded) 5Rs",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-5R-Gut-Health-Protocol.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221637586518",
+   "n": "Praxera-Client-Onboarding",
+   "r": "email:Praxera - 1 Private_Label_Guide_ToF_Danielle, email:Praxera - 1: Private Label Guide ToF Paul_TY, email:Praxera - Client_Onboarding_BoF_Danielle_#1",
+   "i": [
+    [
+     "warn",
+     "no FDA disclaimer",
+     "Makes product claims but carries no 'not evaluated by the Food and Drug Administration' line."
+    ]
+   ],
+   "y": "Guide",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-Client-Onboarding.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221206657118",
+   "n": "Praxera-Ingredients-Guide",
+   "r": "page:learning/ty-ingredients-testing",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Guide",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-Ingredients-Guide.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221206657087",
+   "n": "Praxera-Private-Label-Guide",
+   "r": "email:Praxera - 1 Private_Label_Guide_ToF_Danielle, email:Praxera - 1: Private Label Guide ToF Paul_TY, email:Praxera - 1: Private Label Guide: High-Prior +2 more",
+   "i": [
+    [
+     "warn",
+     "no FDA disclaimer",
+     "Makes product claims but carries no 'not evaluated by the Food and Drug Administration' line."
+    ]
+   ],
+   "y": "Guide",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Private%20Label%20Supplements%20Guide/Praxera-Private-Label-Guide.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631480968",
+   "n": "ADK_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/ADK_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631805777",
+   "n": "ADK_Gummies_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/ADK_Gummies_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631480971",
+   "n": "ADK_Gummies_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/ADK_Gummies_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631457542",
+   "n": "ADK_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/ADK_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631805775",
+   "n": "B12_MC_Liquid_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/B12_MC_Liquid_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631457540",
+   "n": "B12_MC_Liquid_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/B12_MC_Liquid_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631805774",
+   "n": "Berberine_Force_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Berberine_Force_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631457543",
+   "n": "Berberine_Force_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "bad",
+     "names DaVinci",
+     "The PDF text still names another brand. Found: DaVinci"
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Berberine_Force_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631440954",
+   "n": "DIMPRO_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/DIMPRO_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221645953697",
+   "n": "DIMPRO_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/DIMPRO_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631488065",
+   "n": "Daily_Best_Ultra_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Daily_Best_Ultra_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631440955",
+   "n": "Daily_Best_Ultra_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Daily_Best_Ultra_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631805780",
+   "n": "Electrolyte_Drink_Mix_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Electrolyte_Drink_Mix_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631457545",
+   "n": "Electrolyte_Drink_Mix_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Electrolyte_Drink_Mix_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631488064",
+   "n": "Liquid_D3_10_000_IU_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Liquid_D3_10_000_IU_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631449757",
+   "n": "Liquid_D3_10_000_IU_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Liquid_D3_10_000_IU_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631488067",
+   "n": "Mega_Probiotic_ND_50_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Mega_Probiotic_ND_50_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221645953696",
+   "n": "Mega_Probiotic_ND_50_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Mega_Probiotic_ND_50_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631488066",
+   "n": "NAD_Activate_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/NAD_Activate_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631480972",
+   "n": "NAD_Activate_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/NAD_Activate_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631805776",
+   "n": "Nattokinase_Plus_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Nattokinase_Plus_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631480970",
+   "n": "Nattokinase_Plus_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Nattokinase_Plus_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631805449",
+   "n": "Omega_3_HP-D_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Omega_3_HP-D_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631805779",
+   "n": "Prebiotic_Fiber_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Prebiotic_Fiber_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631433055",
+   "n": "Prebiotic_Fiber_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Prebiotic_Fiber_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631488068",
+   "n": "Spectra_Greens_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Spectra_Greens_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631449759",
+   "n": "Spectra_Greens_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Spectra_Greens_Sell_Sheet.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631457539",
+   "n": "Tri-Mag_300_Bottle_Image",
+   "r": "not linked from anything",
+   "i": [
+    [
+     "warn",
+     "nothing links to it",
+     "No Praxera page, post or email references this file."
+    ]
+   ],
+   "y": "Bottle image",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Tri-Mag_300_Bottle_Image.pdf"
+  },
+  {
+   "k": "g",
+   "id": "221631488071",
+   "n": "Tri-Mag_300_Sell_Sheet",
+   "r": "page:top-sellers",
+   "i": [
+    [
+     "mute",
+     "checked 13 Sep",
+     "Text and page-1 artwork checked: no other brand named, no production wording, no purchase path, FDA line present."
+    ]
+   ],
+   "y": "Sell sheet",
+   "url": "https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Sell%20Sheets/Tri-Mag_300_Sell_Sheet.pdf"
   }
  ],
  "groups": [
@@ -4795,10 +5290,15 @@
    "w",
    "Workflows",
    "Detail"
+  ],
+  [
+   "g",
+   "Guides & downloads",
+   "Linked from"
   ]
  ],
  "meta": {
-  "stamp": "11 September 2026",
+  "stamp": "13 September 2026",
   "title": "Praxera asset sign-off",
   "file": "praxera-asset-signoff",
   "brandline": "FoodScience LLC \u00b7 HubSpot 4087538 \u00b7 Private Label \u2192 Praxera",
@@ -4830,6 +5330,11 @@
     "w",
     "Workflows",
     "Detail"
+   ],
+   [
+    "g",
+    "Guides & downloads",
+    "Linked from"
    ]
   ],
   "keys": {
@@ -4837,7 +5342,8 @@
    "b": "blog-posts",
    "e": "emails",
    "f": "forms",
-   "w": "workflows"
+   "w": "workflows",
+   "g": "guides-downloads"
   },
   "gc": [
    {
@@ -5042,7 +5548,8 @@
    "b": "https://app.hubspot.com/blog/4087538/editor/{id}/content",
    "e": "https://app.hubspot.com/email/4087538/details/{id}",
    "f": "https://app.hubspot.com/forms/4087538/editor/{id}/edit/form",
-   "w": "https://app.hubspot.com/workflows/4087538/platform/flow/{id}/edit"
+   "w": "https://app.hubspot.com/workflows/4087538/platform/flow/{id}/edit",
+   "g": "https://app.hubspot.com/files/4087538/?search={id}"
   },
   "live": {
    "p": "https://www.praxerasupplements.com/{slug}",

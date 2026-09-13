@@ -2,7 +2,7 @@ import base64, math
 def b64(p): return 'data:image/png;base64,'+base64.b64encode(open(p,'rb').read()).decode()
 GREEN='#6CA843'; DARK='#092637'
 IMG={'caps':b64('src_0.png'),'leaf':b64('src_2.png'),'micro':b64('src_3.png'),
-     'prod':b64('product.png'),'logo':b64('praxera_logo.png')}
+     'prod':b64('product_logo.png'),'logo':b64('praxera_logo.png')}
 
 STEPS=[("01","REMOVE","Promote a healthy microbiome and normal inflammatory response by “weeding out” gut offenders, such as overgrown bacteria, yeast, or parasites. Many clinicians also remove inflammatory foods, such as gluten, dairy, and processed sugar products.",["VIRA-SHIELD","CANDID-AWAY™","GRAPEFRUIT SEED EXTRACT","OLIVIR™ 15"]),
 ("02","REPLACE","Give the digestive system what it needs to properly break down foods, foreign organisms, and allergens. Provide digestive factors such as enzymes, betaine hydrochloride, and bile acids.",["DIGESTIVE ENZYMES","DIGESTIVE ENZYMES PRO","ENZYME BENEFITS™"]),

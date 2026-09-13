@@ -83,3 +83,10 @@ Text fidelity re-verified: still exactly one changed word (DaVinci → Praxera),
 
 File 221802319406 replaced in place (7,432,041 bytes) and re-verified live on the Praxera
 domain. Email 220685976492 needed no further change — it already points at this URL.
+
+## v4 — "YOUR LOGO GOES HERE" on the bottles (13 Sep)
+The generated bottles had blank labels. They now carry "YOUR LOGO GOES HERE" in the same
+small letter-spaced caps used across the existing Praxera bottle renders (`px-*.png`), so
+the guide reads as part of the same private-label mockup family. The text is composited at
+4x supersample and auto-fitted to each label's real width, so it sits inside the panel at
+every size rather than overflowing.
