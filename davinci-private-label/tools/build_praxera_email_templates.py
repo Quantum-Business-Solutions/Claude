@@ -187,7 +187,9 @@ __KICKER__                </table>
               </td>
             </tr>
             <tr><td height="4" bgcolor="__GREEN__" style="background-color:__GREEN__; height:4px; line-height:4px; font-size:4px;">&nbsp;</td></tr>
-""").replace('__KICKER__', k).replace('__PADB__', '22px' if not kicker_field else '18px') \
+""").replace('__KICKER__', k) \
+    .replace('__PADT__', '10px') \
+    .replace('__PADB__', '6px' if not kicker_field else '0') \
     .replace('__LOGO_WHITE__', LOGO_WHITE).replace('__LW__', str(LOGO_W)).replace('__LH__', str(LOGO_H)) \
     .replace('__SITE__', SITE).replace('__INK__', INK).replace('__GREEN__', GREEN).replace('__FONT__', FONT) \
     .replace('__GREEN_LT__', GREEN_LT)
@@ -227,7 +229,8 @@ __BTN__                    </td>
                 </table>
               </td>
             </tr>
-""").replace('__PLATE__', plate).replace('__BG__', bg).replace('__HCOL__', hcol).replace('__BCOL__', bcol) \
+""").replace('__BTN__', btn).replace('__BODYMB__', '22px' if show_button else '0') \
+    .replace('__PLATE__', plate).replace('__BG__', bg).replace('__HCOL__', hcol).replace('__BCOL__', bcol) \
     .replace('__NAME__', name).replace('__HEADING__', heading).replace('__BODY__', body) \
     .replace('__CTA_LABEL__', CTA_LABEL).replace('__CTA_URL__', CTA_URL) \
     .replace('__FONT__', FONT).replace('__GREEN__', GREEN)
@@ -334,32 +337,37 @@ PAPER_CLOSE = """                    </td>
 
 def article_block(n, default_head, default_teaser, last=False):
     """Thumbnail-left / copy-right article row that collapses to one column
-    under 620px. mso ghost cells keep Outlook in two columns."""
+    under 620px. mso ghost cells keep Outlook in two columns.
+
+    The exported widgets are declared BEFORE the {% if %} that reads them --
+    export_to_template_context only populates widget_data at the point the tag
+    renders, so a guard placed above the declaration is always false. The copy
+    column appears exactly once so no HubSpot module name is declared twice."""
     div = '' if last else ("""                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr><td height="28" style="height:28px; line-height:28px; font-size:28px;">&nbsp;</td></tr>
                           <tr><td height="1" bgcolor="__RULE__" style="background-color:__RULE__; height:1px; line-height:1px; font-size:1px;">&nbsp;</td></tr>
                           <tr><td height="28" style="height:28px; line-height:28px; font-size:28px;">&nbsp;</td></tr>
                         </table>
 """).replace('__RULE__', RULE)
-    return ("""                      {% if widget_data.article___N___headline.value %}
-                      {% image 'article___N___image' label='Article __N__ image', src='https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Logo.png', alt='', no_wrapper=True, export_to_template_context=True %}
-                      {% text 'article___N___headline' label='Article __N__ headline', value='__DHEAD__', no_wrapper=True, export_to_template_context=True %}
+    return ("""                      {% image 'article___N___image' label='Article __N__ image', src='__THUMB__', alt='', no_wrapper=True, export_to_template_context=True %}
+                      {% text 'article___N___headline' label='Article __N__ headline <span class="help-text">Leave blank to hide this article</span>', value='__DHEAD__', no_wrapper=True, export_to_template_context=True %}
                       {% text 'article___N___url' label='Article __N__ link', value='__SITE__/blog', no_wrapper=True, export_to_template_context=True %}
                       {% text 'article___N___link_label' label='Article __N__ link text', value='Read more', no_wrapper=True, export_to_template_context=True %}
+                      {% if widget_data.article___N___headline.value %}
+                      {% set a__N___img = widget_data.article___N___image.src %}
+                      {% set a__N___copy_w = 318 if a__N___img else 520 %}
                       <div style="font-size:0; line-height:0;">
+                        {% if a__N___img %}
                         <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="520"><tr><td width="180" valign="top"><![endif]-->
-                        {% if widget_data.article___N___image.src %}
                         <div class="col" style="display:inline-block; width:100%; max-width:180px; vertical-align:top;">
                           <a href="{{ widget_data.article___N___url.value }}" style="text-decoration:none;">
-                            <img class="thumb" src="{{ widget_data.article___N___image.src }}" alt="{{ widget_data.article___N___image.alt }}" width="180" style="display:block; width:100%; max-width:180px; height:auto; border:0; border-radius:4px;" />
+                            <img class="thumb" src="{{ a__N___img }}" alt="{{ widget_data.article___N___image.alt }}" width="180" style="display:block; width:100%; max-width:180px; height:auto; border:0; border-radius:4px;" />
                           </a>
                         </div>
                         <!--[if mso]></td><td width="20" valign="top">&nbsp;</td><td width="320" valign="top"><![endif]-->
                         <div class="col-gap" style="display:inline-block; width:20px; height:1px; line-height:1px; font-size:1px;">&nbsp;</div>
-                        <div class="col" style="display:inline-block; width:100%; max-width:318px; vertical-align:top;">
-                        {% else %}
-                        <div class="col" style="display:inline-block; width:100%; max-width:520px; vertical-align:top;">
                         {% endif %}
+                        <div class="col" style="display:inline-block; width:100%; max-width:{{ a__N___copy_w }}px; vertical-align:top;">
                           <div class="h2" style="font-family:__FONT__; font-size:19px; line-height:27px; font-weight:bold; color:__INK__; margin:0 0 8px 0;">
                             <a href="{{ widget_data.article___N___url.value }}" style="color:__INK__; text-decoration:none;">{{ widget_data.article___N___headline.value }}</a>
                           </div>
@@ -370,12 +378,12 @@ def article_block(n, default_head, default_teaser, last=False):
                             <a href="{{ widget_data.article___N___url.value }}" style="color:__GREEN__; text-decoration:none;">{{ widget_data.article___N___link_label.value }} &rarr;</a>
                           </div>
                         </div>
-                        <!--[if mso]></td></tr></table><![endif]-->
+                        {% if a__N___img %}<!--[if mso]></td></tr></table><![endif]-->{% endif %}
                       </div>
 __DIV__                      {% endif %}
 """).replace('__N__', str(n)).replace('__DHEAD__', default_head).replace('__DTEASER__', default_teaser) \
     .replace('__DIV__', div).replace('__FONT__', FONT).replace('__INK__', INK).replace('__GREEN__', GREEN) \
-    .replace('__SITE__', SITE)
+    .replace('__SITE__', SITE).replace('__THUMB__', '')
 
 
 # ------------------------------------------------------------- templates ---
@@ -697,7 +705,6 @@ def to_preview(src):
     out = re.sub(r"\{%\s*text\s+'[^']+'[^%]*%\}", '', out, flags=re.S)
 
     # conditionals: keep the first branch, drop else branches for image-less variants
-    out = out.replace('{% if widget_data.article_1_image.src %}', '')
     out = re.sub(r"\{%\s*if\s+widget_data\.support_image\.src\s*%\}.*?\{%\s*endif\s*%\}", '', out, flags=re.S)
     out = re.sub(r"\{%\s*if\s+widget_data\.simple_cta_label\.value\s*%\}", '', out)
     out = re.sub(r"\{%\s*else\s*%\}.*?\{%\s*endif\s*%\}", '', out, flags=re.S)
@@ -705,6 +712,10 @@ def to_preview(src):
     out = re.sub(r"\{%\s*endif\s*%\}", '', out)
 
     # variables
+    for n in ARTICLE_SAMPLE:
+        SAMPLE['a%d_img' % n] = SAMPLE_IMG
+        SAMPLE['a%d_copy_w' % n] = '318'
+
     def _var(m):
         expr = m.group(1).strip()
         base = expr.split('|')[0].strip()

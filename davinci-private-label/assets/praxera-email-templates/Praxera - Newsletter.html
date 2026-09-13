@@ -58,7 +58,7 @@
         .logo { width:210px !important; height:auto !important; }
         .logo-sm { width:150px !important; height:auto !important; }
         .col { display:block !important; width:100% !important; max-width:100% !important; }
-        .col-gap { height:16px !important; line-height:16px !important; font-size:16px !important; }
+        .col-gap { display:block !important; width:100% !important; max-width:100% !important; height:14px !important; line-height:14px !important; font-size:14px !important; }
         .thumb { width:100% !important; max-width:100% !important; height:auto !important; }
         .h1, .px h1 { font-size:24px !important; line-height:32px !important; }
         .h2, .px h2 { font-size:19px !important; line-height:27px !important; }
@@ -92,14 +92,14 @@
               <td class="plate" bgcolor="#092637" style="background-color:#092637;">
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="plate" bgcolor="#092637" style="background-color:#092637;">
                   <tr>
-                    <td align="center" bgcolor="#092637" style="background-color:#092637; padding:30px 24px 18px 24px;">
+                    <td align="center" bgcolor="#092637" style="background-color:#092637; padding:10px 24px 0 24px;">
                       <a href="https://www.praxerasupplements.com" style="text-decoration:none;">
                         <img class="logo" src="https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Logo%20White.png" alt="Praxera" width="294" height="100" style="display:block; width:294px; max-width:100%; height:auto; border:0;" />
                       </a>
                     </td>
                   </tr>
               <tr>
-                <td class="plate plate-text" align="center" bgcolor="#092637" style="background-color:#092637; padding:0 24px 22px 24px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; line-height:16px; letter-spacing:1.6px; text-transform:uppercase; color:#A3D06F;">
+                <td class="plate plate-text" align="center" bgcolor="#092637" style="background-color:#092637; padding:0 24px 24px 24px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; line-height:16px; letter-spacing:1.6px; text-transform:uppercase; color:#A3D06F;">
                   {% text 'masthead_kicker' label='Masthead kicker', value='Practitioner Brief', no_wrapper=True %}
                 </td>
               </tr>
@@ -130,25 +130,25 @@
                         <tr><td height="1" bgcolor="#DCE3E0" style="background-color:#DCE3E0; height:1px; line-height:1px; font-size:1px;">&nbsp;</td></tr>
                         <tr><td height="28" style="height:28px; line-height:28px; font-size:28px;">&nbsp;</td></tr>
                       </table>
-                      {% if widget_data.article_1_headline.value %}
-                      {% image 'article_1_image' label='Article 1 image', src='https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Logo.png', alt='', no_wrapper=True, export_to_template_context=True %}
-                      {% text 'article_1_headline' label='Article 1 headline', value='Choosing a delivery form your patients will actually take', no_wrapper=True, export_to_template_context=True %}
+                      {% image 'article_1_image' label='Article 1 image', src='', alt='', no_wrapper=True, export_to_template_context=True %}
+                      {% text 'article_1_headline' label='Article 1 headline <span class="help-text">Leave blank to hide this article</span>', value='Choosing a delivery form your patients will actually take', no_wrapper=True, export_to_template_context=True %}
                       {% text 'article_1_url' label='Article 1 link', value='https://www.praxerasupplements.com/blog', no_wrapper=True, export_to_template_context=True %}
                       {% text 'article_1_link_label' label='Article 1 link text', value='Read more', no_wrapper=True, export_to_template_context=True %}
+                      {% if widget_data.article_1_headline.value %}
+                      {% set a1_img = widget_data.article_1_image.src %}
+                      {% set a1_copy_w = 318 if a1_img else 520 %}
                       <div style="font-size:0; line-height:0;">
+                        {% if a1_img %}
                         <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="520"><tr><td width="180" valign="top"><![endif]-->
-                        {% if widget_data.article_1_image.src %}
                         <div class="col" style="display:inline-block; width:100%; max-width:180px; vertical-align:top;">
                           <a href="{{ widget_data.article_1_url.value }}" style="text-decoration:none;">
-                            <img class="thumb" src="{{ widget_data.article_1_image.src }}" alt="{{ widget_data.article_1_image.alt }}" width="180" style="display:block; width:100%; max-width:180px; height:auto; border:0; border-radius:4px;" />
+                            <img class="thumb" src="{{ a1_img }}" alt="{{ widget_data.article_1_image.alt }}" width="180" style="display:block; width:100%; max-width:180px; height:auto; border:0; border-radius:4px;" />
                           </a>
                         </div>
                         <!--[if mso]></td><td width="20" valign="top">&nbsp;</td><td width="320" valign="top"><![endif]-->
                         <div class="col-gap" style="display:inline-block; width:20px; height:1px; line-height:1px; font-size:1px;">&nbsp;</div>
-                        <div class="col" style="display:inline-block; width:100%; max-width:318px; vertical-align:top;">
-                        {% else %}
-                        <div class="col" style="display:inline-block; width:100%; max-width:520px; vertical-align:top;">
                         {% endif %}
+                        <div class="col" style="display:inline-block; width:100%; max-width:{{ a1_copy_w }}px; vertical-align:top;">
                           <div class="h2" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:19px; line-height:27px; font-weight:bold; color:#092637; margin:0 0 8px 0;">
                             <a href="{{ widget_data.article_1_url.value }}" style="color:#092637; text-decoration:none;">{{ widget_data.article_1_headline.value }}</a>
                           </div>
@@ -159,7 +159,7 @@
                             <a href="{{ widget_data.article_1_url.value }}" style="color:#6CA843; text-decoration:none;">{{ widget_data.article_1_link_label.value }} &rarr;</a>
                           </div>
                         </div>
-                        <!--[if mso]></td></tr></table><![endif]-->
+                        {% if a1_img %}<!--[if mso]></td></tr></table><![endif]-->{% endif %}
                       </div>
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr><td height="28" style="height:28px; line-height:28px; font-size:28px;">&nbsp;</td></tr>
@@ -167,25 +167,25 @@
                           <tr><td height="28" style="height:28px; line-height:28px; font-size:28px;">&nbsp;</td></tr>
                         </table>
                       {% endif %}
-                      {% if widget_data.article_2_headline.value %}
-                      {% image 'article_2_image' label='Article 2 image', src='https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Logo.png', alt='', no_wrapper=True, export_to_template_context=True %}
-                      {% text 'article_2_headline' label='Article 2 headline', value='What a practitioner-brand label has to say (and what it cannot)', no_wrapper=True, export_to_template_context=True %}
+                      {% image 'article_2_image' label='Article 2 image', src='', alt='', no_wrapper=True, export_to_template_context=True %}
+                      {% text 'article_2_headline' label='Article 2 headline <span class="help-text">Leave blank to hide this article</span>', value='What a practitioner-brand label has to say (and what it cannot)', no_wrapper=True, export_to_template_context=True %}
                       {% text 'article_2_url' label='Article 2 link', value='https://www.praxerasupplements.com/blog', no_wrapper=True, export_to_template_context=True %}
                       {% text 'article_2_link_label' label='Article 2 link text', value='Read more', no_wrapper=True, export_to_template_context=True %}
+                      {% if widget_data.article_2_headline.value %}
+                      {% set a2_img = widget_data.article_2_image.src %}
+                      {% set a2_copy_w = 318 if a2_img else 520 %}
                       <div style="font-size:0; line-height:0;">
+                        {% if a2_img %}
                         <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="520"><tr><td width="180" valign="top"><![endif]-->
-                        {% if widget_data.article_2_image.src %}
                         <div class="col" style="display:inline-block; width:100%; max-width:180px; vertical-align:top;">
                           <a href="{{ widget_data.article_2_url.value }}" style="text-decoration:none;">
-                            <img class="thumb" src="{{ widget_data.article_2_image.src }}" alt="{{ widget_data.article_2_image.alt }}" width="180" style="display:block; width:100%; max-width:180px; height:auto; border:0; border-radius:4px;" />
+                            <img class="thumb" src="{{ a2_img }}" alt="{{ widget_data.article_2_image.alt }}" width="180" style="display:block; width:100%; max-width:180px; height:auto; border:0; border-radius:4px;" />
                           </a>
                         </div>
                         <!--[if mso]></td><td width="20" valign="top">&nbsp;</td><td width="320" valign="top"><![endif]-->
                         <div class="col-gap" style="display:inline-block; width:20px; height:1px; line-height:1px; font-size:1px;">&nbsp;</div>
-                        <div class="col" style="display:inline-block; width:100%; max-width:318px; vertical-align:top;">
-                        {% else %}
-                        <div class="col" style="display:inline-block; width:100%; max-width:520px; vertical-align:top;">
                         {% endif %}
+                        <div class="col" style="display:inline-block; width:100%; max-width:{{ a2_copy_w }}px; vertical-align:top;">
                           <div class="h2" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:19px; line-height:27px; font-weight:bold; color:#092637; margin:0 0 8px 0;">
                             <a href="{{ widget_data.article_2_url.value }}" style="color:#092637; text-decoration:none;">{{ widget_data.article_2_headline.value }}</a>
                           </div>
@@ -196,7 +196,7 @@
                             <a href="{{ widget_data.article_2_url.value }}" style="color:#6CA843; text-decoration:none;">{{ widget_data.article_2_link_label.value }} &rarr;</a>
                           </div>
                         </div>
-                        <!--[if mso]></td></tr></table><![endif]-->
+                        {% if a2_img %}<!--[if mso]></td></tr></table><![endif]-->{% endif %}
                       </div>
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr><td height="28" style="height:28px; line-height:28px; font-size:28px;">&nbsp;</td></tr>
@@ -204,25 +204,25 @@
                           <tr><td height="28" style="height:28px; line-height:28px; font-size:28px;">&nbsp;</td></tr>
                         </table>
                       {% endif %}
-                      {% if widget_data.article_3_headline.value %}
-                      {% image 'article_3_image' label='Article 3 image', src='https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Logo.png', alt='', no_wrapper=True, export_to_template_context=True %}
-                      {% text 'article_3_headline' label='Article 3 headline', value='Five questions to ask before you launch a private label line', no_wrapper=True, export_to_template_context=True %}
+                      {% image 'article_3_image' label='Article 3 image', src='', alt='', no_wrapper=True, export_to_template_context=True %}
+                      {% text 'article_3_headline' label='Article 3 headline <span class="help-text">Leave blank to hide this article</span>', value='Five questions to ask before you launch a private label line', no_wrapper=True, export_to_template_context=True %}
                       {% text 'article_3_url' label='Article 3 link', value='https://www.praxerasupplements.com/blog', no_wrapper=True, export_to_template_context=True %}
                       {% text 'article_3_link_label' label='Article 3 link text', value='Read more', no_wrapper=True, export_to_template_context=True %}
+                      {% if widget_data.article_3_headline.value %}
+                      {% set a3_img = widget_data.article_3_image.src %}
+                      {% set a3_copy_w = 318 if a3_img else 520 %}
                       <div style="font-size:0; line-height:0;">
+                        {% if a3_img %}
                         <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="520"><tr><td width="180" valign="top"><![endif]-->
-                        {% if widget_data.article_3_image.src %}
                         <div class="col" style="display:inline-block; width:100%; max-width:180px; vertical-align:top;">
                           <a href="{{ widget_data.article_3_url.value }}" style="text-decoration:none;">
-                            <img class="thumb" src="{{ widget_data.article_3_image.src }}" alt="{{ widget_data.article_3_image.alt }}" width="180" style="display:block; width:100%; max-width:180px; height:auto; border:0; border-radius:4px;" />
+                            <img class="thumb" src="{{ a3_img }}" alt="{{ widget_data.article_3_image.alt }}" width="180" style="display:block; width:100%; max-width:180px; height:auto; border:0; border-radius:4px;" />
                           </a>
                         </div>
                         <!--[if mso]></td><td width="20" valign="top">&nbsp;</td><td width="320" valign="top"><![endif]-->
                         <div class="col-gap" style="display:inline-block; width:20px; height:1px; line-height:1px; font-size:1px;">&nbsp;</div>
-                        <div class="col" style="display:inline-block; width:100%; max-width:318px; vertical-align:top;">
-                        {% else %}
-                        <div class="col" style="display:inline-block; width:100%; max-width:520px; vertical-align:top;">
                         {% endif %}
+                        <div class="col" style="display:inline-block; width:100%; max-width:{{ a3_copy_w }}px; vertical-align:top;">
                           <div class="h2" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:19px; line-height:27px; font-weight:bold; color:#092637; margin:0 0 8px 0;">
                             <a href="{{ widget_data.article_3_url.value }}" style="color:#092637; text-decoration:none;">{{ widget_data.article_3_headline.value }}</a>
                           </div>
@@ -233,7 +233,7 @@
                             <a href="{{ widget_data.article_3_url.value }}" style="color:#6CA843; text-decoration:none;">{{ widget_data.article_3_link_label.value }} &rarr;</a>
                           </div>
                         </div>
-                        <!--[if mso]></td></tr></table><![endif]-->
+                        {% if a3_img %}<!--[if mso]></td></tr></table><![endif]-->{% endif %}
                       </div>
                       {% endif %}
                       <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -276,7 +276,7 @@
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="plate" bgcolor="#092637" style="background-color:#092637;">
                   <tr><td height="4" bgcolor="#6CA843" style="background-color:#6CA843; height:4px; line-height:4px; font-size:4px;">&nbsp;</td></tr>
                   <tr>
-                    <td class="px" align="center" bgcolor="#092637" style="background-color:#092637; padding:30px 40px 10px 40px;">
+                    <td class="px" align="center" bgcolor="#092637" style="background-color:#092637; padding:16px 40px 0 40px;">
                       <img class="logo-sm" src="https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Logo%20White.png" alt="Praxera" width="197" height="67" style="display:block; width:197px; max-width:100%; height:auto; border:0; margin:0 auto;" />
                     </td>
                   </tr>
