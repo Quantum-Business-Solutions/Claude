@@ -63,3 +63,23 @@ Text fidelity re-verified after the rebuild: still exactly one changed word
 that is the portal's file-hosting domain setting, which we were told not to change. The
 same file also serves correctly from the Praxera domain, and that is the URL used in the
 email. Worth fixing at the portal level so Praxera assets stop defaulting to a Pet Tech URL.
+
+## v3 — ring is now the original artwork, not a lookalike (13 Sep)
+v2 approximated the ring with generated SVG petals. Shawn: "the petals look off... they
+arent even like the old one" — correct. The original is not a uniform segmented ring: the
+shapes are irregular hand-drawn bezier blobs of different sizes (the 01 blob is 232 x 142pt
+and bleeds off the top of the page; the 04 blob is 166 x 207pt).
+
+v3 stops approximating. It renders the original page's own vector artwork at 600 dpi,
+crops the ring region (page points 330,0 - 792,372 — above where the column headers begin),
+paints out the centre disc, and composites the Praxera product photo into it behind the
+same white keyline. The petals, the two greens, the three photographs, the numbers and
+their positions are therefore pixel-identical to the source.
+
+`ring-artwork.png` is that composited ring. Only the centre photo differs from the original.
+
+Text fidelity re-verified: still exactly one changed word (DaVinci → Praxera), 6 ™, 1 ®,
+792 x 612 pt.
+
+File 221802319406 replaced in place (7,432,041 bytes) and re-verified live on the Praxera
+domain. Email 220685976492 needed no further change — it already points at this URL.
