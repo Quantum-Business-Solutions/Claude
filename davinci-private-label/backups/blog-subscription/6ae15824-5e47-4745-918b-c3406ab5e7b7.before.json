@@ -1,0 +1,1171 @@
+{
+ "id": "6ae15824-5e47-4745-918b-c3406ab5e7b7",
+ "name": "Praxera - Main Lead Form",
+ "createdAt": "2026-08-30T18:43:32.621Z",
+ "updatedAt": "2026-09-11T18:19:50.185Z",
+ "archived": false,
+ "fieldGroups": [
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "firstname",
+     "label": "First name",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "lastname",
+     "label": "Last name",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "email",
+     "label": "Email",
+     "required": true,
+     "hidden": false,
+     "validation": {
+      "blockedEmailDomains": [],
+      "useDefaultBlockList": false
+     },
+     "fieldType": "email"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "jobtitle",
+     "label": "Job Title",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "company",
+     "label": "Company name",
+     "required": true,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "state",
+     "label": "State/Region",
+     "required": true,
+     "hidden": false,
+     "options": [
+      {
+       "label": "Alabama",
+       "value": "Alabama",
+       "description": "",
+       "displayOrder": 161
+      },
+      {
+       "label": "Alaska",
+       "value": "Alaska",
+       "description": "",
+       "displayOrder": 162
+      },
+      {
+       "label": "Arizona",
+       "value": "Arizona",
+       "description": "",
+       "displayOrder": 163
+      },
+      {
+       "label": "Arkansas",
+       "value": "Arkansas",
+       "description": "",
+       "displayOrder": 164
+      },
+      {
+       "label": "California",
+       "value": "California",
+       "description": "",
+       "displayOrder": 165
+      },
+      {
+       "label": "Colorado",
+       "value": "Colorado",
+       "description": "",
+       "displayOrder": 166
+      },
+      {
+       "label": "Connecticut",
+       "value": "Connecticut",
+       "description": "",
+       "displayOrder": 167
+      },
+      {
+       "label": "Delaware",
+       "value": "Delaware",
+       "description": "",
+       "displayOrder": 168
+      },
+      {
+       "label": "Florida",
+       "value": "Florida",
+       "description": "",
+       "displayOrder": 169
+      },
+      {
+       "label": "Georgia",
+       "value": "Georgia",
+       "description": "",
+       "displayOrder": 170
+      },
+      {
+       "label": "Hawaii",
+       "value": "Hawaii",
+       "description": "",
+       "displayOrder": 171
+      },
+      {
+       "label": "Idaho",
+       "value": "Idaho",
+       "description": "",
+       "displayOrder": 172
+      },
+      {
+       "label": "Illinois",
+       "value": "Illinois",
+       "description": "",
+       "displayOrder": 173
+      },
+      {
+       "label": "Indiana",
+       "value": "Indiana",
+       "description": "",
+       "displayOrder": 174
+      },
+      {
+       "label": "Iowa",
+       "value": "Iowa",
+       "description": "",
+       "displayOrder": 175
+      },
+      {
+       "label": "Kansas",
+       "value": "Kansas",
+       "description": "",
+       "displayOrder": 176
+      },
+      {
+       "label": "Kentucky",
+       "value": "Kentucky",
+       "description": "",
+       "displayOrder": 177
+      },
+      {
+       "label": "Louisiana",
+       "value": "Louisiana",
+       "description": "",
+       "displayOrder": 178
+      },
+      {
+       "label": "Maine",
+       "value": "Maine",
+       "description": "",
+       "displayOrder": 179
+      },
+      {
+       "label": "Maryland",
+       "value": "Maryland",
+       "description": "",
+       "displayOrder": 180
+      },
+      {
+       "label": "Massachusetts",
+       "value": "Massachusetts",
+       "description": "",
+       "displayOrder": 181
+      },
+      {
+       "label": "Michigan",
+       "value": "Michigan",
+       "description": "",
+       "displayOrder": 182
+      },
+      {
+       "label": "Minnesota",
+       "value": "Minnesota",
+       "description": "",
+       "displayOrder": 183
+      },
+      {
+       "label": "Mississippi",
+       "value": "Mississippi",
+       "description": "",
+       "displayOrder": 184
+      },
+      {
+       "label": "Missouri",
+       "value": "Missouri",
+       "description": "",
+       "displayOrder": 185
+      },
+      {
+       "label": "Montana",
+       "value": "Montana",
+       "description": "",
+       "displayOrder": 186
+      },
+      {
+       "label": "Nebraska",
+       "value": "Nebraska",
+       "description": "",
+       "displayOrder": 187
+      },
+      {
+       "label": "Nevada",
+       "value": "Nevada",
+       "description": "",
+       "displayOrder": 188
+      },
+      {
+       "label": "New Hampshire",
+       "value": "New Hampshire",
+       "description": "",
+       "displayOrder": 189
+      },
+      {
+       "label": "New Jersey",
+       "value": "New Jersey",
+       "description": "",
+       "displayOrder": 190
+      },
+      {
+       "label": "New Mexico",
+       "value": "New Mexico",
+       "description": "",
+       "displayOrder": 191
+      },
+      {
+       "label": "New York",
+       "value": "New York",
+       "description": "",
+       "displayOrder": 192
+      },
+      {
+       "label": "North Carolina",
+       "value": "North Carolina",
+       "description": "",
+       "displayOrder": 193
+      },
+      {
+       "label": "North Dakota",
+       "value": "North Dakota",
+       "description": "",
+       "displayOrder": 194
+      },
+      {
+       "label": "Ohio",
+       "value": "Ohio",
+       "description": "",
+       "displayOrder": 195
+      },
+      {
+       "label": "Oklahoma",
+       "value": "Oklahoma",
+       "description": "",
+       "displayOrder": 196
+      },
+      {
+       "label": "Oregon",
+       "value": "Oregon",
+       "description": "",
+       "displayOrder": 197
+      },
+      {
+       "label": "Pennsylvania",
+       "value": "Pennsylvania",
+       "description": "",
+       "displayOrder": 198
+      },
+      {
+       "label": "Rhode Island",
+       "value": "Rhode Island",
+       "description": "",
+       "displayOrder": 199
+      },
+      {
+       "label": "South Carolina",
+       "value": "South Carolina",
+       "description": "",
+       "displayOrder": 200
+      },
+      {
+       "label": "South Dakota",
+       "value": "South Dakota",
+       "description": "",
+       "displayOrder": 201
+      },
+      {
+       "label": "Tennessee",
+       "value": "Tennessee",
+       "description": "",
+       "displayOrder": 202
+      },
+      {
+       "label": "Texas",
+       "value": "Texas",
+       "description": "",
+       "displayOrder": 203
+      },
+      {
+       "label": "Utah",
+       "value": "Utah",
+       "description": "",
+       "displayOrder": 204
+      },
+      {
+       "label": "Vermont",
+       "value": "Vermont",
+       "description": "",
+       "displayOrder": 205
+      },
+      {
+       "label": "Virginia",
+       "value": "Virginia",
+       "description": "",
+       "displayOrder": 206
+      },
+      {
+       "label": "Washington",
+       "value": "Washington",
+       "description": "",
+       "displayOrder": 207
+      },
+      {
+       "label": "West Virginia",
+       "value": "West Virginia",
+       "description": "",
+       "displayOrder": 208
+      },
+      {
+       "label": "Wisconsin",
+       "value": "Wisconsin",
+       "description": "",
+       "displayOrder": 209
+      },
+      {
+       "label": "Wyoming",
+       "value": "Wyoming",
+       "description": "",
+       "displayOrder": 210
+      },
+      {
+       "label": "Guam",
+       "value": "Guam",
+       "description": "",
+       "displayOrder": 211
+      },
+      {
+       "label": "Puerto Rico",
+       "value": "Puerto Rico",
+       "description": "",
+       "displayOrder": 212
+      },
+      {
+       "label": "Northern Mariana Islands",
+       "value": "Northern Mariana Islands",
+       "description": "",
+       "displayOrder": 213
+      },
+      {
+       "label": "American Samoa",
+       "value": "American Samoa",
+       "description": "",
+       "displayOrder": 214
+      },
+      {
+       "label": "US Virgin Islands",
+       "value": "US Virgin Islands",
+       "description": "",
+       "displayOrder": 215
+      },
+      {
+       "label": "US Minor Outlying Islands",
+       "value": "US Minor Outlying Islands",
+       "description": "",
+       "displayOrder": 216
+      },
+      {
+       "label": "Alberta",
+       "value": "Alberta",
+       "description": "",
+       "displayOrder": 217
+      },
+      {
+       "label": "British Columbia",
+       "value": "British Columbia",
+       "description": "",
+       "displayOrder": 218
+      },
+      {
+       "label": "Manitoba",
+       "value": "Manitoba",
+       "description": "",
+       "displayOrder": 219
+      },
+      {
+       "label": "New Brunswick",
+       "value": "New Brunswick",
+       "description": "",
+       "displayOrder": 220
+      },
+      {
+       "label": "Newfoundland",
+       "value": "Newfoundland",
+       "description": "",
+       "displayOrder": 221
+      },
+      {
+       "label": "Labrador",
+       "value": "Labrador",
+       "description": "",
+       "displayOrder": 222
+      },
+      {
+       "label": "Nova Scotia",
+       "value": "Nova Scotia",
+       "description": "",
+       "displayOrder": 223
+      },
+      {
+       "label": "Ontario",
+       "value": "Ontario",
+       "description": "",
+       "displayOrder": 224
+      },
+      {
+       "label": "Prince Edward Island",
+       "value": "Prince Edward Island",
+       "description": "",
+       "displayOrder": 225
+      },
+      {
+       "label": "Quebec",
+       "value": "Quebec",
+       "description": "",
+       "displayOrder": 226
+      },
+      {
+       "label": "Saskatchewan",
+       "value": "Saskatchewan",
+       "description": "",
+       "displayOrder": 227
+      },
+      {
+       "label": "Northwest Territories",
+       "value": "Northwest Territories",
+       "description": "",
+       "displayOrder": 228
+      },
+      {
+       "label": "Nunavut",
+       "value": "Nunavut",
+       "description": "",
+       "displayOrder": 229
+      },
+      {
+       "label": "Yukon",
+       "value": "Yukon",
+       "description": "",
+       "displayOrder": 230
+      },
+      {
+       "label": "International (other than Canada)",
+       "value": "International (other than Canada)",
+       "description": "",
+       "displayOrder": 231
+      }
+     ],
+     "fieldType": "dropdown"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "phone",
+     "label": "Phone number",
+     "required": true,
+     "hidden": false,
+     "useCountryCodeSelect": false,
+     "validation": {
+      "minAllowedDigits": 7,
+      "maxAllowedDigits": 20
+     },
+     "fieldType": "phone"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "what_best_describes_what_youre_looking_for",
+     "label": "What best describes what you\u2019re looking for?",
+     "required": true,
+     "hidden": false,
+     "dependentFields": [
+      {
+       "dependentCondition": {
+        "operator": "set_any",
+        "values": [
+         "Custom Formulation (new or modified formula) \u2014 requires R&D and longer timelines"
+        ]
+       },
+       "dependentField": {
+        "objectTypeId": "0-1",
+        "name": "do_you_already_have_a_formula",
+        "label": "Do you already have a formula?",
+        "required": true,
+        "hidden": false,
+        "options": [
+         {
+          "label": "Yes \u2014 formula and specs are ready",
+          "value": "Yes \u2014 formula and specs are ready",
+          "description": "",
+          "displayOrder": 0
+         },
+         {
+          "label": "Partially \u2014 needs refinement",
+          "value": "Partially \u2014 needs refinement",
+          "description": "",
+          "displayOrder": 1
+         },
+         {
+          "label": "No \u2014 need help developing",
+          "value": "No \u2014 need help developing",
+          "description": "",
+          "displayOrder": 2
+         }
+        ],
+        "fieldType": "dropdown"
+       }
+      },
+      {
+       "dependentCondition": {
+        "operator": "set_any",
+        "values": [
+         "Custom Formulation (new or modified formula) \u2014 requires R&D and longer timelines"
+        ]
+       },
+       "dependentField": {
+        "objectTypeId": "0-1",
+        "name": "preferred_delivery_format",
+        "label": "Preferred delivery format",
+        "required": true,
+        "hidden": false,
+        "options": [
+         {
+          "label": "Capsule",
+          "value": "Capsule",
+          "description": "",
+          "displayOrder": -1
+         },
+         {
+          "label": "Tablet",
+          "value": "Tablet",
+          "description": "",
+          "displayOrder": -1
+         },
+         {
+          "label": "Powder",
+          "value": "Powder",
+          "description": "",
+          "displayOrder": -1
+         },
+         {
+          "label": "Liquid",
+          "value": "Liquid",
+          "description": "",
+          "displayOrder": -1
+         },
+         {
+          "label": "Gummy",
+          "value": "Gummy",
+          "description": "",
+          "displayOrder": -1
+         },
+         {
+          "label": "Softgel",
+          "value": "Softgel",
+          "description": "",
+          "displayOrder": -1
+         },
+         {
+          "label": "Other",
+          "value": "Other",
+          "description": "",
+          "displayOrder": -1
+         },
+         {
+          "label": "Not sure",
+          "value": "Not sure",
+          "description": "",
+          "displayOrder": -1
+         }
+        ],
+        "fieldType": "dropdown"
+       }
+      },
+      {
+       "dependentCondition": {
+        "operator": "set_any",
+        "values": [
+         "Custom Formulation (new or modified formula) \u2014 requires R&D and longer timelines"
+        ]
+       },
+       "dependentField": {
+        "objectTypeId": "0-1",
+        "name": "estimated_initial_order_quantity_first_run_for_custom_formulation",
+        "label": "Estimated initial order quantity (first run) for custom formulation",
+        "required": true,
+        "hidden": false,
+        "options": [
+         {
+          "label": "Less than 250 units",
+          "value": "Less than 250 units",
+          "description": "",
+          "displayOrder": -1
+         },
+         {
+          "label": "250-500 units",
+          "value": "250-500 units",
+          "description": "",
+          "displayOrder": -1
+         },
+         {
+          "label": "500+ units",
+          "value": "500+ units",
+          "description": "",
+          "displayOrder": -1
+         }
+        ],
+        "fieldType": "dropdown"
+       }
+      },
+      {
+       "dependentCondition": {
+        "operator": "set_any",
+        "values": [
+         "Custom Formulation (new or modified formula) \u2014 requires R&D and longer timelines"
+        ]
+       },
+       "dependentField": {
+        "objectTypeId": "0-1",
+        "name": "target_price_point_per_unit",
+        "label": "Target price point (per unit)",
+        "required": true,
+        "hidden": false,
+        "fieldType": "single_line_text"
+       }
+      }
+     ],
+     "options": [
+      {
+       "label": "Private Label (existing formula) \u2014 fastest path",
+       "value": "Private Label (existing formula) \u2014 fastest path",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "Custom Formulation (new or modified formula) \u2014 requires R&amp;D and longer timelines",
+       "value": "Custom Formulation (new or modified formula) \u2014 requires R&D and longer timelines",
+       "description": "",
+       "displayOrder": -1
+      }
+     ],
+     "fieldType": "dropdown"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "do_you_plan_to_export_the_products_to_another_country_outside_of_the_u_s__",
+     "label": "Do you plan to export the products to another country outside of the U.S.?",
+     "required": true,
+     "hidden": false,
+     "options": [
+      {
+       "label": "Yes",
+       "value": "Yes",
+       "description": "",
+       "displayOrder": 0
+      },
+      {
+       "label": "No",
+       "value": "No",
+       "description": "",
+       "displayOrder": 1
+      }
+     ],
+     "fieldType": "radio"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-2",
+     "name": "business_type",
+     "label": "Business Type",
+     "required": true,
+     "hidden": false,
+     "dependentFields": [
+      {
+       "dependentCondition": {
+        "operator": "set_any",
+        "values": [
+         "Other"
+        ]
+       },
+       "dependentField": {
+        "objectTypeId": "0-2",
+        "name": "business_type___other__please_specify_",
+        "label": "Other (please specify)",
+        "required": true,
+        "hidden": false,
+        "fieldType": "multi_line_text"
+       }
+      }
+     ],
+     "options": [
+      {
+       "label": "Healthcare Practitioner",
+       "value": "Healthcare Practitioner",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "Influencer / Affiliate Marketer",
+       "value": "Influencer",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "E-Commerce Business",
+       "value": "E-Commerce Seller",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "Brick-and-Mortar Retailer",
+       "value": "Brick-and-Mortar Retailer",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "Marketing / Advertising Agency",
+       "value": "Marketing / Advertising Agency",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "Direct Mail Business",
+       "value": "Direct Mail Business",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "Other",
+       "value": "Other",
+       "description": "",
+       "displayOrder": -1
+      }
+     ],
+     "fieldType": "dropdown"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-2",
+     "name": "do_you_currently_sell_supplements_",
+     "label": "Do you currently sell supplements?",
+     "required": true,
+     "hidden": false,
+     "options": [
+      {
+       "label": "Yes \u2013 under my own brand",
+       "value": "Yes \u2013 under my own brand",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "Yes \u2013 I carry third-party brands",
+       "value": "Yes \u2013 I carry third-party brands",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "No \u2013 but I\u2019m looking to start",
+       "value": "No \u2013 but I\u2019m looking to start",
+       "description": "",
+       "displayOrder": -1
+      }
+     ],
+     "fieldType": "dropdown"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-2",
+     "name": "estimated_order_volume",
+     "label": "Estimated Order Volume",
+     "required": true,
+     "hidden": false,
+     "options": [
+      {
+       "label": "Less than 250",
+       "value": "Less than 250",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "250-500",
+       "value": "250-500",
+       "description": "",
+       "displayOrder": -1
+      },
+      {
+       "label": "500+",
+       "value": "500+",
+       "description": "",
+       "displayOrder": -1
+      }
+     ],
+     "fieldType": "dropdown"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-2",
+     "name": "desired_delivery_date",
+     "label": "Desired Delivery Date",
+     "required": true,
+     "hidden": false,
+     "fieldType": "datepicker"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "how_did_you_hear_about_us",
+     "label": "How did you hear about Praxera?",
+     "required": true,
+     "hidden": false,
+     "dependentFields": [
+      {
+       "dependentCondition": {
+        "operator": "set_any",
+        "values": [
+         "Other"
+        ]
+       },
+       "dependentField": {
+        "objectTypeId": "0-1",
+        "name": "how_did_you_hear_about_davinci___other__please_specify_",
+        "label": "Other (please specify)",
+        "required": true,
+        "hidden": false,
+        "fieldType": "multi_line_text"
+       }
+      }
+     ],
+     "options": [
+      {
+       "label": "Referred by a colleague or friend",
+       "value": "Referred by a colleague or friend",
+       "description": "",
+       "displayOrder": 0
+      },
+      {
+       "label": "Google, Bing, Yahoo search",
+       "value": "Google, Bing, Yahoo search",
+       "description": "",
+       "displayOrder": 1
+      },
+      {
+       "label": "Social media (Instagram, Facebook, LinkedIn, etc.)",
+       "value": "Social media (Instagram, Facebook, LinkedIn, etc.)",
+       "description": "",
+       "displayOrder": 2
+      },
+      {
+       "label": "Trade show or event",
+       "value": "Trade show or event",
+       "description": "",
+       "displayOrder": 3
+      },
+      {
+       "label": "Email or newsletter",
+       "value": "Email or newsletter",
+       "description": "",
+       "displayOrder": 4
+      },
+      {
+       "label": "Online ad",
+       "value": "Online ad",
+       "description": "",
+       "displayOrder": 5
+      },
+      {
+       "label": "Sales rep outreach",
+       "value": "Sales rep outreach",
+       "description": "",
+       "displayOrder": 6
+      },
+      {
+       "label": "I've used your products before",
+       "value": "I've used your products before",
+       "description": "",
+       "displayOrder": 7
+      },
+      {
+       "label": "Other",
+       "value": "Other",
+       "description": "",
+       "displayOrder": 8
+      },
+      {
+       "label": "Google",
+       "value": "Google",
+       "description": "",
+       "displayOrder": 9
+      },
+      {
+       "label": "Bing",
+       "value": "Bing",
+       "description": "",
+       "displayOrder": 10
+      },
+      {
+       "label": "Yahoo search",
+       "value": "Yahoo search",
+       "description": "",
+       "displayOrder": 11
+      }
+     ],
+     "fieldType": "dropdown"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "notes",
+     "label": "Notes",
+     "required": false,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "default_group",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "i_would_like_to_subscribe_to_the_davinci_blog",
+     "label": "I would like to subscribe to the Praxera Blog",
+     "required": false,
+     "hidden": false,
+     "defaultValue": "true",
+     "fieldType": "single_checkbox"
+    }
+   ]
+  },
+  {
+   "groupType": "queued",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "website",
+     "label": "Website URL",
+     "required": false,
+     "hidden": false,
+     "fieldType": "single_line_text"
+    }
+   ]
+  },
+  {
+   "groupType": "queued",
+   "richTextType": "text",
+   "fields": [
+    {
+     "objectTypeId": "0-1",
+     "name": "numemployees",
+     "label": "Number of Employees",
+     "required": false,
+     "hidden": false,
+     "options": [
+      {
+       "label": "1-5",
+       "value": "1-5",
+       "description": "",
+       "displayOrder": 0
+      },
+      {
+       "label": "5-25",
+       "value": "5-25",
+       "description": "",
+       "displayOrder": 1
+      },
+      {
+       "label": "25-50",
+       "value": "25-50",
+       "description": "",
+       "displayOrder": 2
+      },
+      {
+       "label": "50-100",
+       "value": "50-100",
+       "description": "",
+       "displayOrder": 3
+      },
+      {
+       "label": "100-500",
+       "value": "100-500",
+       "description": "",
+       "displayOrder": 4
+      },
+      {
+       "label": "500-1000",
+       "value": "500-1000",
+       "description": "",
+       "displayOrder": 5
+      },
+      {
+       "label": "1000+",
+       "value": "1000+",
+       "description": "",
+       "displayOrder": 6
+      }
+     ],
+     "fieldType": "dropdown"
+    }
+   ]
+  }
+ ],
+ "configuration": {
+  "language": "en",
+  "cloneable": true,
+  "postSubmitAction": {
+   "type": "redirect_url",
+   "value": "https://www.praxerasupplements.com/ty-consultation"
+  },
+  "editable": true,
+  "archivable": true,
+  "recaptchaEnabled": true,
+  "notifyContactOwner": true,
+  "createNewContactForNewEmail": true,
+  "prePopulateKnownValues": false,
+  "allowLinkToResetKnownValues": false,
+  "lifecycleStages": [
+   {
+    "objectTypeId": "0-1",
+    "value": "salesqualifiedlead"
+   },
+   {
+    "objectTypeId": "0-2",
+    "value": "salesqualifiedlead"
+   }
+  ],
+  "embedType": "V3"
+ },
+ "displayOptions": {
+  "renderRawHtml": true,
+  "theme": "default_style",
+  "submitButtonText": "Submit",
+  "style": {
+   "fontFamily": "arial, helvetica, sans-serif",
+   "backgroundWidth": "100%",
+   "labelTextColor": "#33475b",
+   "labelTextSize": "14px",
+   "helpTextColor": "#7C98B6",
+   "helpTextSize": "11px",
+   "legalConsentTextColor": "#33475b",
+   "legalConsentTextSize": "14px",
+   "submitColor": "#ff7a59",
+   "submitAlignment": "left",
+   "submitFontColor": "#ffffff",
+   "submitSize": "12px"
+  },
+  "cssClass": "hs-form stacked"
+ },
+ "legalConsentOptions": {
+  "type": "none"
+ },
+ "formType": "hubspot"
+}

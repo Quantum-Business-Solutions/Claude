@@ -1,0 +1,415 @@
+{
+ "activeDomain": "info.petnaturals.com",
+ "archived": false,
+ "businessUnitId": "0",
+ "content": {
+  "flexAreas": {
+   "main": {
+    "boxFirstElementIndex": 0,
+    "boxLastElementIndex": 0,
+    "boxed": false,
+    "isSingleColumnFullWidth": false,
+    "sections": [
+     {
+      "columns": [
+       {
+        "id": "builtin_column_0_0",
+        "widgets": [
+         "builtin_image_module"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "builtin_section-0",
+      "path": null,
+      "style": {
+       "backgroundColor": "",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "30px",
+         "paddingTop": "10px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "30px",
+       "paddingTop": "10px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "builtin_column_1_0",
+        "widgets": [
+         "builtin_blog_rss_module"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "builtin_section-1",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "30px",
+         "paddingTop": "30px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "30px",
+         "paddingTop": "30px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "30px",
+       "paddingTop": "30px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "builtin_column_2_0",
+        "widgets": [
+         "builtin_footer_module"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "builtin_section-2",
+      "path": null,
+      "style": {
+       "backgroundColor": "",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "20px",
+         "paddingTop": "20px",
+         "verticalAlign": null
+        },
+        "mobile": {
+         "backgroundColor": "",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "20px",
+         "paddingTop": "20px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "20px",
+       "paddingTop": "20px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     }
+    ]
+   }
+  },
+  "styleSettings": {
+   "backgroundColor": "#EAF0F6",
+   "backgroundImageType": "REPEAT",
+   "bodyBorderColor": "#EAF0F6",
+   "bodyBorderColorChoice": "BORDER_MANUAL",
+   "bodyBorderWidth": 1.0,
+   "bodyColor": "#ffffff",
+   "buttonStyleSettings": {
+    "backgroundColor": "#00a4bd",
+    "cornerRadius": 8,
+    "fontStyle": {
+     "bold": false,
+     "color": "#ffffff",
+     "font": "Arial, sans-serif",
+     "italic": false,
+     "size": 16,
+     "underline": false
+    }
+   },
+   "dividerStyleSettings": {
+    "color": {
+     "color": "#23496d",
+     "opacity": 100
+    },
+    "height": 1,
+    "lineType": "solid"
+   },
+   "headingOneFont": {
+    "size": 28
+   },
+   "headingTwoFont": {
+    "size": 22
+   },
+   "linksFont": {
+    "bold": false,
+    "color": "#00a4bd",
+    "italic": false,
+    "underline": true
+   },
+   "primaryFont": "Arial, sans-serif",
+   "primaryFontColor": "#23496d",
+   "primaryFontSize": 15.0,
+   "secondaryFont": "Arial, sans-serif",
+   "secondaryFontColor": "#23496d",
+   "secondaryFontSize": 12.0
+  },
+  "templatePath": "@hubspot/email/dnd/Start_from_scratch.html",
+  "widgets": {
+   "builtin_blog_rss_module": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "html_field": ""
+    },
+    "child_css": {},
+    "css": {},
+    "id": "builtin_blog_rss_module",
+    "module_id": 3444502,
+    "name": "builtin_blog_rss_module",
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "builtin_footer_module": {
+    "body": {
+     "align": "center",
+     "css_class": "dnd-module",
+     "font": {
+      "color": "#23496d",
+      "font": "Arial, sans-serif",
+      "size": {
+       "units": "px",
+       "value": 12
+      }
+     },
+     "hs_enable_module_padding": false,
+     "lineNumber": 89,
+     "link_font": {
+      "color": "#00a4bd",
+      "font": "Helvetica,Arial,sans-serif",
+      "size": {
+       "units": "px",
+       "value": 12
+      },
+      "styles": {
+       "bold": false,
+       "italic": false,
+       "underline": true
+      }
+     },
+     "parent_widget_container": null,
+     "path": "@hubspot/email_footer",
+     "schema_version": 2,
+     "startPosition": 19,
+     "style": {
+      "align": "center",
+      "font": {
+       "color": "#23496d",
+       "font": "Arial, sans-serif",
+       "size": {
+        "units": "px",
+        "value": 12
+       },
+       "styles": {
+        "bold": false,
+        "italic": false,
+        "underline": false
+       }
+      },
+      "link_font": {
+       "color": "#00a4bd",
+       "font": "Helvetica,Arial,sans-serif",
+       "size": {
+        "units": "px",
+        "value": 12
+       },
+       "styles": {
+        "bold": false,
+        "italic": false,
+        "underline": true
+       }
+      }
+     },
+     "unsubscribe_link_type": "both"
+    },
+    "child_css": {},
+    "css": {},
+    "id": "builtin_footer_module",
+    "module_id": 2869621,
+    "name": "builtin_footer_module",
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "builtin_image_module": {
+    "body": {
+     "hs_enable_module_padding": true,
+     "hs_wrapper_css": {
+      "padding-bottom": "10px",
+      "padding-left": "20px",
+      "padding-right": "20px",
+      "padding-top": "10px"
+     },
+     "img": {
+      "height": 72,
+      "src": "https://static.hsappstatic.net/TemplateAssets/static-1.21/img/hs_default_template_images/email_dnd_template_images/company-logo-orange.png",
+      "width": 240
+     }
+    },
+    "child_css": {},
+    "css": {},
+    "id": "builtin_image_module",
+    "module_id": 1367093,
+    "name": "builtin_image_module",
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "preview_text": {
+    "body": {
+     "value": ""
+    },
+    "child_css": {},
+    "css": {},
+    "id": "preview_text",
+    "label": "Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
+    "name": "preview_text",
+    "smart_type": null,
+    "styles": {},
+    "type": "text"
+   }
+  }
+ },
+ "createdAt": "2026-09-13T16:08:23.431Z",
+ "createdById": "26261533",
+ "emailTemplateMode": "DRAG_AND_DROP",
+ "from": {
+  "fromName": "Shawn Peterson",
+  "replyTo": "shawn@thequantumleap.business"
+ },
+ "id": "221738119527",
+ "isAb": false,
+ "isPublished": false,
+ "isTransactional": false,
+ "jitterSendTime": true,
+ "language": "en",
+ "name": "New email",
+ "previewKey": "KEzViyoe",
+ "publishDate": "2026-09-13T16:08:27Z",
+ "rssData": {
+  "blogEmailType": "instant",
+  "blogImageMaxWidth": 0,
+  "hubspotBlogId": "220598739286",
+  "maxEntries": 1,
+  "timing": {
+   "repeats": "instant",
+   "repeats_on_monthly": 1,
+   "repeats_on_weekly": 1,
+   "summary": "Instant",
+   "time": "9:00 am"
+  }
+ },
+ "state": "BLOG_EMAIL_DRAFT",
+ "subcategory": "blog_email",
+ "subject": "",
+ "subscriptionDetails": {
+  "officeLocationId": "5451098384",
+  "subscriptionId": "3608525332",
+  "subscriptionName": "Praxera Supplements Blog Subscription"
+ },
+ "to": {
+  "suppressGraymail": true
+ },
+ "type": "BLOG_EMAIL",
+ "updatedAt": "2026-09-13T16:08:27.743Z",
+ "updatedById": "26261533",
+ "webversion": {
+  "domain": "info.petnaturals.com",
+  "enabled": false,
+  "isPageRedirected": false,
+  "slug": "-temporary-slug-b7818954-1459-4162-b719-4bc805b71ad5"
+ }
+}

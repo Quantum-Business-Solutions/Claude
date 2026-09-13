@@ -1,4 +1,4 @@
-# Praxera blog subscription — one toggle needed in HubSpot
+# Praxera blog subscription — DONE 13 Sep 2026
 
 **Portal 4087538 · Praxera Supplements Blog (content group 220598739286)**
 
@@ -59,3 +59,54 @@ to run at all until the toggle has been done. It only ever touches forms whose n
 ## Correction to an earlier report
 I previously said this box was **pre-checked `true`** on the two main lead forms. It is not
 — all seven have an empty `defaultValue`. The consent concern I raised does not apply.
+
+
+---
+
+# COMPLETED — 13 Sep 2026
+
+Shawn created the Instant notification email in the HubSpot UI. That provisioned the whole
+apparatus, exactly as expected:
+
+| | |
+|---|---|
+| Contact property | `blog_praxera_supplements_blog_220598739286_subscription` |
+| Property label | Praxera Supplements Blog Email Subscription (English) |
+| Options | Instant, Daily, Weekly, Monthly |
+| Subscription type | **Praxera Supplements Blog Subscription** (3608525332, active) |
+| Lists | instant 8715 (ILS) / 5297 (legacy) |
+| Subscription form | 329e29ea-eddb-4f35-95f6-b7bf0f48e7cd |
+
+## All 7 forms repointed and verified
+The old field was a `single_checkbox` bound to a boolean property; the new property is an
+`enumeration`/`radio`, so a straight name swap is invalid (HubSpot returns 400). Each field
+was rebuilt in HubSpot's own native shape — copied from the subscription form it generated —
+and then **restricted to the single `Instant` option**:
+
+> **I would like to subscribe to the Praxera Blog**
+> ○ Yes, send me new Praxera blog posts
+
+Left at HubSpot's default the radio renders all four frequencies, and Daily/Weekly/Monthly
+would be selectable but never send, because only the Instant email exists.
+
+## Consent — correcting a correction
+The original finding was right and my retraction of it was wrong. **Both Main Lead Forms
+(6ae15824, e88e8d00) had `defaultValue: "true"` — the box was pre-ticked.** I had retracted
+that after reading `/forms/v2`, which reports `''` for this field; `/marketing/v3` shows the
+real value. Check both APIs before overturning a finding.
+The rebuild cleared it: the new radio has nothing preselected, so **no Praxera form
+pre-ticks a subscription now**.
+
+## The notification email
+`221738119527`, BLOG_EMAIL, still DRAFT. **BLOG_EMAIL accepts PATCH** — verified — so it can
+be maintained from here. Scaffolded from `@hubspot/email/dnd/Start_from_scratch.html` with
+zero DaVinci mentions. Corrected: name → "Praxera - Blog: Instant notification"; subject →
+"New on the Praxera blog: {{ content.name }}"; from → Praxera; reply-to →
+info@praxerasupplements.com; footer office location → 221681937557 (the one the other 111
+Praxera emails use, was 5451098384).
+
+## The other three frequencies
+Not needed. The property already carries all four options and the apparatus is provisioned.
+Daily/Weekly/Monthly are only worth building if the client wants to *offer* those cadences —
+VetriScience runs instant-only in this same portal. To add one later: build the email, then
+add its value to the option list on the seven forms.
