@@ -1,0 +1,533 @@
+{
+ "activeDomain": "info.petnaturals.com",
+ "archived": false,
+ "businessUnitId": "0",
+ "content": {
+  "flexAreas": {
+   "main": {
+    "boxFirstElementIndex": 0,
+    "boxLastElementIndex": 7,
+    "boxed": true,
+    "isSingleColumnFullWidth": false,
+    "sections": [
+     {
+      "columns": [
+       {
+        "id": "section_mast_c0",
+        "widgets": [
+         "px_masthead"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_mast",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "20px",
+         "paddingTop": "28px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "20px",
+       "paddingTop": "28px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "section_hero_c0",
+        "widgets": [
+         "px_hero"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_hero",
+      "path": null,
+      "style": {
+       "backgroundColor": "#24501A",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#24501A",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "36px",
+         "paddingTop": "40px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "36px",
+       "paddingTop": "40px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "section_img_c0",
+        "widgets": [
+         "px_heroimg"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_img",
+      "path": null,
+      "style": {
+       "backgroundColor": "#24501A",
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": "#24501A",
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "0px",
+         "paddingTop": "0px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "0px",
+       "paddingTop": "0px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "section_body_c0",
+        "widgets": [
+         "px_body"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_body",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "6px",
+         "paddingTop": "34px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "6px",
+       "paddingTop": "34px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "section_items_c0",
+        "widgets": [
+         "px_items"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_items",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "10px",
+         "paddingTop": "10px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "10px",
+       "paddingTop": "10px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "section_cta_c0",
+        "widgets": [
+         "px_cta"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_cta",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "34px",
+         "paddingTop": "22px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "34px",
+       "paddingTop": "22px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "section_foot_c0",
+        "widgets": [
+         "px_footer"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_foot",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "14px",
+         "paddingTop": "6px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "14px",
+       "paddingTop": "6px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     },
+     {
+      "columns": [
+       {
+        "id": "section_spam_c0",
+        "widgets": [
+         "email_can_spam"
+        ],
+        "width": 12
+       }
+      ],
+      "id": "section_spam",
+      "path": null,
+      "style": {
+       "backgroundColor": null,
+       "backgroundImage": null,
+       "backgroundImageType": null,
+       "backgroundType": "CONTENT",
+       "breakpointStyles": {
+        "default": {
+         "backgroundColor": null,
+         "backgroundImage": null,
+         "backgroundImageType": null,
+         "backgroundType": "CONTENT",
+         "borderBottom": null,
+         "borderBottomLeftRadius": null,
+         "borderBottomRightRadius": null,
+         "borderLeft": null,
+         "borderRight": null,
+         "borderTop": null,
+         "borderTopLeftRadius": null,
+         "borderTopRightRadius": null,
+         "hidden": null,
+         "marginBottom": null,
+         "marginTop": null,
+         "paddingBottom": "22px",
+         "paddingTop": "4px",
+         "verticalAlign": null
+        }
+       },
+       "paddingBottom": "22px",
+       "paddingTop": "4px",
+       "stack": "LEFT_TO_RIGHT"
+      }
+     }
+    ]
+   }
+  },
+  "styleSettings": {
+   "backgroundColor": "#F4F5F2",
+   "backgroundImageType": "REPEAT",
+   "bodyBorderColor": "#cccccc",
+   "bodyBorderColorChoice": "BORDER_MANUAL",
+   "bodyBorderWidth": 1.0,
+   "bodyColor": "#FFFFFF",
+   "headingOneFont": {
+    "font": "Arial, sans-serif",
+    "size": 24
+   },
+   "headingTwoFont": {
+    "size": 22
+   },
+   "linksFont": {},
+   "primaryFont": "Arial, sans-serif",
+   "primaryFontColor": "#444444",
+   "primaryFontSize": 15.0
+  },
+  "templatePath": "@hubspot/email/dnd/Start_from_scratch.html",
+  "widgets": {
+   "email_can_spam": {
+    "body": {
+     "align": "center",
+     "hs_enable_module_padding": false,
+     "module_id": 2869621
+    },
+    "child_css": {},
+    "css": {},
+    "id": "email_can_spam",
+    "label": null,
+    "module_id": 2869621,
+    "name": "email_can_spam",
+    "order": 4,
+    "smart_type": null,
+    "styles": {},
+    "type": "module"
+   },
+   "preview_text": {
+    "body": {
+     "value": "We're excited to help you bring your own branded supplement line to life."
+    },
+    "child_css": {},
+    "css": {},
+    "id": "preview_text",
+    "label": "Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>",
+    "name": "preview_text",
+    "order": 0,
+    "smart_type": null,
+    "styles": {},
+    "type": "text",
+    "value": "Praxera template - draft, not for sending"
+   },
+   "px_body": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;\"><tr><td style=\"padding:0px 32px 0px;\"><p style=\"margin:0 0 12px;font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#76BC43;\">The short version</p><h2 style=\"margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:26px;line-height:1.22;color:#231F20;font-weight:normal;\">A new name for a programme you already know</h2><p style=\"margin:0 0 15px;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.75;color:#44483F;\">Same formulations. Same facility. Same team on the phone. What changes is the name on the programme and the standard of the experience around it &mdash; a clearer catalogue, faster quoting, and a design service that takes your label from sketch to shelf.</p><p style=\"margin:0;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.75;color:#44483F;\">Below: three questions we are asked in almost every first call.</p></td></tr></table>",
+     "module_id": 1155639
+    },
+    "type": "module"
+   },
+   "px_cta": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;\"><tr><td style=\"padding:0px 32px 0px;\"><div style=\"text-align:left;font-family:Helvetica,Arial,sans-serif;\"><a href=\"https://www.praxerasupplements.com/book-consultation\" style=\"background:#76BC43;color:#ffffff;text-decoration:none;padding:15px 34px;font-size:14px;font-weight:bold;letter-spacing:.04em;display:inline-block;border-radius:2px;\">Book a consultation</a></div></td></tr></table>",
+     "module_id": 1155639
+    },
+    "type": "module"
+   },
+   "px_footer": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;\"><tr><td style=\"padding:0px 32px 0px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td style=\"border-top:1px solid #E4E7E0;padding-top:18px;font-family:Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#7B8177;\"><strong style=\"color:#44483F;letter-spacing:.08em;\">PRAXERA</strong><br>Vermont, U.S.A.<br><span style=\"color:#9AA093;\">Draft placeholder built by Quantum Business Solutions &mdash; do not send.</span></td></tr></table></td></tr></table>",
+     "module_id": 1155639
+    },
+    "type": "module"
+   },
+   "px_hero": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;\"><tr><td style=\"padding:0px 32px 0px;\"><p style=\"margin:0 0 12px;font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#BFDF97;\">Issue 01 &nbsp;&middot;&nbsp; Your brand. Our standards.</p><h1 style=\"margin:0 0 14px;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.16;color:#ffffff;font-weight:normal;max-width:430px;\">Introducing Praxera</h1><p style=\"margin:0;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#BFDF97;max-width:430px;\">Private label supplements for the brands you&rsquo;re building &mdash; formulated in Vermont, made to your label, backed by fifty years of manufacturing standards.</p></td></tr></table>",
+     "module_id": 1155639
+    },
+    "type": "module"
+   },
+   "px_heroimg": {
+    "body": {
+     "alignment": {
+      "horizontal_align": "CENTER"
+     },
+     "hs_enable_module_padding": false,
+     "img": {
+      "alt": "Praxera private label product lineup",
+      "src": "https://www.praxerasupplements.com/hubfs/Praxera/email/praxera-product-lineup-hero.png",
+      "width": 600
+     },
+     "link": "",
+     "module_id": 1367093
+    },
+    "type": "module"
+   },
+   "px_items": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;\"><tr><td style=\"padding:0px 32px 0px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;border-top:1px solid #E4E7E0;\"><tr><td style=\"padding:18px 0 0;\"><p style=\"margin:0 0 7px;font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#76BC43;\">Costs</p><a href=\"https://www.praxerasupplements.com/blog/how-much-to-start-a-private-label-supplement-business\" style=\"text-decoration:none;\"><h3 style=\"margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.3;color:#231F20;font-weight:normal;\">How much does it cost to start a private label supplement line?</h3></a><p style=\"margin:0 0 10px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.65;color:#44483F;\">The honest ranges for minimums, tooling, label design and first production run &mdash; and where new brands usually underestimate.</p><a href=\"https://www.praxerasupplements.com/blog/how-much-to-start-a-private-label-supplement-business\" style=\"font-family:Helvetica,Arial,sans-serif;font-size:13px;font-weight:bold;color:#24501A;text-decoration:none;letter-spacing:.03em;\">Read it &rarr;</a></td></tr></table><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;border-top:1px solid #E4E7E0;\"><tr><td style=\"padding:18px 0 0;\"><p style=\"margin:0 0 7px;font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#76BC43;\">Compliance</p><a href=\"https://www.praxerasupplements.com/blog/supplement-certifications-usp-nsf-gmp-fda\" style=\"text-decoration:none;\"><h3 style=\"margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.3;color:#231F20;font-weight:normal;\">USP, NSF, GMP and FDA: which certifications actually matter</h3></a><p style=\"margin:0 0 10px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.65;color:#44483F;\">A buyer&rsquo;s guide to what each mark covers, what it does not, and which ones your retail partners will ask about.</p><a href=\"https://www.praxerasupplements.com/blog/supplement-certifications-usp-nsf-gmp-fda\" style=\"font-family:Helvetica,Arial,sans-serif;font-size:13px;font-weight:bold;color:#24501A;text-decoration:none;letter-spacing:.03em;\">Read it &rarr;</a></td></tr></table><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;border-top:1px solid #E4E7E0;\"><tr><td style=\"padding:18px 0 0;\"><p style=\"margin:0 0 7px;font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#76BC43;\">Getting started</p><a href=\"https://www.praxerasupplements.com/blog/contract-manufacturing-vs-private-labeling-supplements\" style=\"text-decoration:none;\"><h3 style=\"margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.3;color:#231F20;font-weight:normal;\">Contract manufacturing or private label &mdash; which do you need?</h3></a><p style=\"margin:0 0 10px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.65;color:#44483F;\">They are not the same service and the wrong choice costs months. A short guide to telling them apart before you request a quote.</p><a href=\"https://www.praxerasupplements.com/blog/contract-manufacturing-vs-private-labeling-supplements\" style=\"font-family:Helvetica,Arial,sans-serif;font-size:13px;font-weight:bold;color:#24501A;text-decoration:none;letter-spacing:.03em;\">Read it &rarr;</a></td></tr></table></td></tr></table>",
+     "module_id": 1155639
+    },
+    "type": "module"
+   },
+   "px_masthead": {
+    "body": {
+     "hs_enable_module_padding": false,
+     "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;\"><tr><td style=\"padding:0px 32px 0px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td align=\"left\" style=\"padding:0 0 16px;\"><img src=\"https://www.praxerasupplements.com/hubfs/Praxera/Praxera%20Logo.png\" alt=\"Praxera\" width=\"128\" style=\"display:block;max-width:128px;height:auto;\"></td><td align=\"right\" style=\"padding:0 0 16px;font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7B8177;\">The Praxera Pulse &nbsp;&middot;&nbsp; Issue 01</td></tr><tr><td colspan=\"2\" style=\"border-top:2px solid #231F20;font-size:0;line-height:0;\">&nbsp;</td></tr></table></td></tr></table>",
+     "module_id": 1155639
+    },
+    "type": "module"
+   }
+  }
+ },
+ "createdAt": "2026-08-30T18:32:48.804Z",
+ "createdById": "52613719",
+ "emailTemplateMode": "DRAG_AND_DROP",
+ "from": {
+  "fromName": "Praxera",
+  "replyTo": "info@praxerasupplements.com"
+ },
+ "id": "220684191815",
+ "isAb": false,
+ "isPublished": false,
+ "jitterSendTime": true,
+ "language": "en",
+ "name": "Praxera - TEST - Pulse layout draft (QBS, do not send)",
+ "previewKey": "LYDFRBXD",
+ "publishDate": "2026-09-11T18:23:23Z",
+ "sendOnPublish": true,
+ "state": "DRAFT",
+ "subcategory": "batch",
+ "subject": "The Praxera Pulse - brand test draft (do not send)",
+ "subscriptionDetails": {
+  "officeLocationId": "221681937557"
+ },
+ "to": {
+  "contactIds": {
+   "exclude": [],
+   "include": []
+  },
+  "contactIlsLists": {
+   "exclude": [],
+   "include": []
+  },
+  "contactLists": {
+   "exclude": [],
+   "include": []
+  },
+  "suppressGraymail": true
+ },
+ "type": "BATCH_EMAIL",
+ "updatedAt": "2026-09-11T18:23:23.050Z",
+ "updatedById": "52613719",
+ "webversion": {
+  "domain": "info.petnaturals.com",
+  "enabled": false,
+  "isPageRedirected": false,
+  "slug": "-temporary-slug-b817e98c-9c93-40f1-bae7-4d9960888e39"
+ }
+}

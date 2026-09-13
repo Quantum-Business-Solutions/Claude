@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="540" viewBox="0 0 720 540">
+  <rect width="720" height="540" fill="#092637"/>
+  <circle cx="250" cy="200" r="150" fill="#6CA843" opacity="0.55"/>
+  <circle cx="470" cy="350" r="190" fill="#A3D06F" opacity="0.35"/>
+  <text x="360" y="500" font-family="Helvetica,Arial" font-size="34" fill="#A3D06F" text-anchor="middle">article image</text>
+</svg>
