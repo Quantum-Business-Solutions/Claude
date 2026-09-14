@@ -19,13 +19,27 @@ the tooltip "Client side only". And because the host supplied a name, the sheet 
 "I am QBS / I am the client / I am Regulatory" picker — so that person had no way to switch.
 Hard blocked.
 
-## Melinda can approve right now, with no deploy
+## Shipped — the sheet now asks who is reviewing
 
-On the version live today: at the top of the sheet, **type her name and press "I am the
-client"**. The buttons then work. The prerequisite was real; it was just never made visible.
+Shawn's call: no workaround for Melinda. Instead, when she first hits the page, a box asking who
+is looking at it.
 
-Shawn's call (14 Sep) is that she should not have to do even that — **no name, no side, no
-prompt**. That is what the change below now does.
+Live on the sheet since 14 Sep 19:37 UTC as the `clientlink` section (4,054 bytes). On the
+no-login share link the sheet opens with a short box naming **Tammy Johnson, Melinda Elmadjian
+and Sarah Miller**, a free-text field for anyone else, and a Skip. One click fills the name and
+selects the client side; every approval button works from then on. Skip still leaves the sheet
+usable under a neutral client label rather than a dead end.
+
+This is better than silently preselecting the client side, which is where this started: an
+approval now carries the reviewer's actual name rather than just "not QBS".
+
+It cannot fire for QBS — a signed-in team member has no name box for it to find.
+
+**Verified against what is actually on the sheet**, not a local build: the deployed bridge, run
+against the deployed app, 20 checks passing — the box appears and names the three, one click
+credits both the row and the activity log to Melinda on the client side, and a signed-in QBS
+user is untouched. `boot` is byte-identical to before the change, and `check_signoff_sheet`
+returns `ok: true` with no new problems.
 
 ## What changed in the code
 
