@@ -1,32 +1,124 @@
 <script>
-/* Client share link — preselect the client side.
+/* Client share link — ask who is reviewing, once, on arrival.
  *
  * Tammy, Mindy and Sarah open the sign-off on the no-login share link, so the
- * portal sends the sheet no user and it has no side for them. The live app
- * refuses an approval until a side is picked, and only scrolls the identity bar
- * when you press one, which reads as a dead button.
+ * portal sends the sheet no user. With no name and no side the app refuses
+ * approvals and only scrolls the identity bar when you press one, which reads
+ * as a dead button — and even once that is fixed, an unnamed approval tells us
+ * nothing about which of them gave it.
  *
- * This fills the name with a neutral label and presses "I am the client" for
- * them, so the approval buttons work on the first click with nothing typed.
+ * So on arrival: a short prompt naming the three reviewers. One click sets the
+ * name and the client side, and every button works from then on. Closing it
+ * still leaves the sheet usable — it falls back to a neutral client label
+ * rather than a dead end.
  *
- * It is a no-op for QBS: a signed-in team member gets "Signed in as ..." and no
- * #who box, so the guard below never matches. It is also a stopgap - the real
- * fix is in src/signoff.js and belongs in ClientCommand's asset-signoff
- * template. Remove this section once that ships.
+ * No-op for QBS: a signed-in team member gets "Signed in as …" and no #who box,
+ * so `start()` returns before anything is built.
+ *
+ * Stopgap. The durable fix is in src/signoff.js and belongs in ClientCommand's
+ * asset-signoff template; drop this section once that ships.
  */
 (function () {
-  var tries = 0;
-  function go() {
+  var PEOPLE = ["Tammy Johnson", "Melinda Elmadjian", "Sarah Miller"];
+  var FALLBACK = "Praxera (client link)";
+  var tries = 0, done = false;
+
+  function apply(name) {
+    if (done) return;
+    done = true;
     var who = document.getElementById("who");
-    var btn = document.querySelector('button.sd[data-s="client"]');
-    if ((!who || !btn) && tries++ < 40) return setTimeout(go, 300);
-    if (!who || !btn) return;
-    if (!who.value) {
-      who.value = "Praxera (client link)";
+    if (who) {
+      who.value = name;
       who.dispatchEvent(new Event("input", { bubbles: true }));
     }
-    if (btn.getAttribute("aria-pressed") !== "true") btn.click();
+    var btn = document.querySelector('button.sd[data-s="client"]');
+    if (btn && btn.getAttribute("aria-pressed") !== "true") btn.click();
   }
-  setTimeout(go, 600);
+
+  function close(el, name) {
+    if (el && el.parentNode) el.parentNode.removeChild(el);
+    apply(name);
+  }
+
+  function ask() {
+    var wrap = document.createElement("div");
+    wrap.setAttribute("role", "dialog");
+    wrap.setAttribute("aria-modal", "true");
+    wrap.setAttribute("aria-label", "Who is reviewing");
+    wrap.style.cssText = "position:fixed;inset:0;z-index:9999;background:rgba(9,38,55,.55);"
+      + "display:flex;align-items:center;justify-content:center;padding:20px;"
+      + "font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif";
+
+    var card = document.createElement("div");
+    card.style.cssText = "background:#fff;border-radius:12px;max-width:420px;width:100%;"
+      + "padding:26px 26px 20px;box-shadow:0 18px 50px rgba(9,38,55,.3)";
+    wrap.appendChild(card);
+
+    var h = document.createElement("h2");
+    h.textContent = "Who is reviewing today?";
+    h.style.cssText = "margin:0 0 6px;font-size:20px;line-height:1.25;color:#092637";
+    card.appendChild(h);
+
+    var p = document.createElement("p");
+    p.textContent = "So your approvals are recorded against your name. You only need to do this once.";
+    p.style.cssText = "margin:0 0 18px;color:#5b6472;font-size:14px";
+    card.appendChild(p);
+
+    PEOPLE.forEach(function (n) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = n;
+      b.style.cssText = "display:block;width:100%;margin:0 0 8px;padding:12px 14px;text-align:left;"
+        + "border:1px solid #d9dee6;border-radius:8px;background:#fff;cursor:pointer;"
+        + "font:inherit;color:#092637";
+      b.onmouseover = function () { b.style.borderColor = "#6CA843"; b.style.background = "#f4faf0"; };
+      b.onmouseout = function () { b.style.borderColor = "#d9dee6"; b.style.background = "#fff"; };
+      b.onclick = function () { close(wrap, n); };
+      card.appendChild(b);
+    });
+
+    var row = document.createElement("div");
+    row.style.cssText = "display:flex;gap:8px;margin-top:14px";
+    card.appendChild(row);
+
+    var input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Someone else — your name";
+    input.setAttribute("aria-label", "Your name");
+    input.style.cssText = "flex:1;padding:11px 12px;border:1px solid #d9dee6;border-radius:8px;font:inherit";
+    row.appendChild(input);
+
+    var go = document.createElement("button");
+    go.type = "button";
+    go.textContent = "Start";
+    go.style.cssText = "padding:11px 18px;border:0;border-radius:8px;background:#6CA843;color:#fff;"
+      + "cursor:pointer;font:inherit;font-weight:600";
+    go.onclick = function () { close(wrap, input.value.trim() || FALLBACK); };
+    row.appendChild(go);
+
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") go.click(); });
+
+    var skip = document.createElement("button");
+    skip.type = "button";
+    skip.textContent = "Skip";
+    skip.style.cssText = "margin-top:14px;border:0;background:none;color:#5b6472;cursor:pointer;"
+      + "font:inherit;font-size:13px;text-decoration:underline;padding:0";
+    skip.onclick = function () { close(wrap, FALLBACK); };
+    card.appendChild(skip);
+
+    document.body.appendChild(wrap);
+    PEOPLE.length && card.querySelector("button").focus();
+  }
+
+  function start() {
+    var who = document.getElementById("who");
+    var btn = document.querySelector('button.sd[data-s="client"]');
+    if ((!who || !btn) && tries++ < 40) return setTimeout(start, 300);
+    if (!who || !btn) return;          /* signed in through the portal — leave alone */
+    if (who.value) return;             /* already identified */
+    ask();
+  }
+
+  setTimeout(start, 600);
 })();
 </script>

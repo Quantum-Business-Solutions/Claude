@@ -83,18 +83,41 @@ const CLIENT_TICK = 'Client ✓';
   await page.waitForTimeout(2500);          // bridge waits 600ms then polls
   const f = page.frames().find((fr) => fr !== page.mainFrame());
 
+  const box = await f.evaluate(() => {
+    const d = document.querySelector('[role="dialog"]');
+    return {
+      shown: !!d,
+      heading: d ? (d.querySelector('h2') || {}).textContent : '',
+      people: d ? [...d.querySelectorAll('button')].map((b) => b.textContent.trim()) : [],
+      hasFreeText: d ? !!d.querySelector('input[type=text]') : false,
+    };
+  });
+  check('a box appears on arrival', box.shown === true);
+  check('it asks who is reviewing', /who is reviewing/i.test(box.heading));
+  check('it names Tammy, Melinda and Sarah', ['Tammy Johnson', 'Melinda Elmadjian', 'Sarah Miller']
+    .every((n) => box.people.includes(n)));
+  check('there is a box for anyone else', box.hasFreeText === true);
+  await page.screenshot({ path: '/tmp/signoff-shots/bridge-who-box.png' });
+
+  // Melinda picks herself - one click, nothing typed
+  await f.evaluate(() => [...document.querySelectorAll('[role="dialog"] button')]
+    .find((b) => b.textContent.trim() === 'Melinda Elmadjian').click());
+  await page.waitForTimeout(900);
+
   const armed = await f.evaluate((label) => {
     const b = [...document.querySelectorAll('button')].find((x) => x.textContent.trim() === label);
     const sd = document.querySelector('button.sd[data-s="client"]');
     return {
+      boxGone: !document.querySelector('[role="dialog"]'),
       sidePicked: sd ? sd.getAttribute('aria-pressed') : null,
       name: (document.getElementById('who') || {}).value || '',
       disabled: b ? b.disabled : null,
     };
   }, CLIENT_TICK);
-  check('client side is preselected with nothing typed', armed.sidePicked === 'true');
-  check('a readable name is filled in', /client link/i.test(armed.name));
-  check('Client ✓ is enabled', armed.disabled === false);
+  check('the box closes once she picks', armed.boxGone === true);
+  check('her name is filled in for her', armed.name === 'Melinda Elmadjian');
+  check('the client side is selected for her', armed.sidePicked === 'true');
+  check('Client \u2713 is enabled', armed.disabled === false);
 
   await f.evaluate((label) => [...document.querySelectorAll('button')]
     .find((x) => x.textContent.trim() === label).click(), CLIENT_TICK);
@@ -107,22 +130,20 @@ const CLIENT_TICK = 'Client ✓';
              row: document.querySelector('tr.r td.nm').textContent,
              status: (document.getElementById('save') || {}).textContent || '' };
   }, CLIENT_TICK);
-  check('approves on the FIRST click, nothing typed  <- the ask', done.pressed === 'true');
+  check('approves on the FIRST click after picking  <- the ask', done.pressed === 'true');
   check('it saved rather than being refused', !/not saved/i.test(done.status));
-  check('the row is not credited to "unnamed"', !/unnamed/i.test(done.row));
+  check('the row is credited to Melinda', /Melinda Elmadjian/.test(done.row));
 
   const writes = await page.evaluate(() => window.__writes || []);
   const mark = writes.map((x) => x.value && x.value.home && x.value.home.c).filter(Boolean).pop();
   check('the approval reached the portal', !!mark);
-  // The LIVE app does not store a side on the mark itself - that is one of the
-  // changes waiting in src/signoff.js. It does stamp the side on the activity
-  // log entry, which is where attribution lives today.
+  check('the mark names her', !!mark && mark.by === 'Melinda Elmadjian');
   const logged = writes.filter((x) => /log$/.test(x.key))
     .flatMap((x) => (x.value && x.value.e) || [])
     .filter((e) => e.a === 'client-approve').pop();
   check('the activity log records it', !!logged);
   check('logged as the CLIENT side, not QBS', !!logged && logged.sd === 'client');
-  check('logged against a readable name', !!logged && /client link/i.test(logged.by || ''));
+  check('logged under her name', !!logged && logged.by === 'Melinda Elmadjian');
 
   // ---- QBS, signed in: the bridge must not touch them ----
   await page.goto(`http://127.0.0.1:${port}/outer.html`, { waitUntil: 'load' });
