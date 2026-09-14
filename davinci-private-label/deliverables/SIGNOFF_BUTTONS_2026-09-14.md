@@ -29,12 +29,12 @@ prompt**. That is what the change below now does.
 
 ## What changed in the code
 
-Per Shawn: anyone who has said who they are may press any button, QBS may tick on the client's
+Per Shawn: anyone may press any button, with nothing typed first. QBS may tick on the client's
 behalf, and the sheet records who did it so a QBS tick is never mistaken for the client's.
 
 | Before | After |
 |---|---|
-| `can()` gated each button on your side | `can()` only asks that you have identified yourself |
+| `can()` gated each button on your side | `can()` is unconditional; `askSide()` and `needSide` are gone |
 | `locked()` disabled the other side's button | always false — nothing renders disabled, and the bulk bar works for everyone |
 | a mark stored `by` + `at` | a mark also stores `sd`, the side that gave it |
 | a QBS-given client approval was indistinguishable from the client's | the row reads "Client · date · Name — **QBS, on their behalf**", and the activity log says so too |
