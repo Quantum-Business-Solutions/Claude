@@ -53,6 +53,7 @@ window.addEventListener('message', function (e) {
     window.__writes.push({ key: d.key, value: JSON.parse(JSON.stringify(d.value)) });
     w.postMessage({ source: 'clientcommand-host', type: 'saved', key: d.key, ok: true }, '*');
   } else if (d.type === 'whoami') {
+    if (location.search.indexOf('anon=1') >= 0) return;   // share link: no user
     w.postMessage({ source: 'clientcommand-host', type: 'whoami',
       user: { name: 'Melinda Elmadjian', email: 'm@example.com', kind: 'team' } }, '*');
   }
@@ -124,6 +125,21 @@ function check(name, cond) { (cond ? ok : fail).push(name); }
   check('the mark records the name', !!mark && mark.by === 'Melinda Elmadjian');
   check('the mark records the side that gave it (sd:"qbs")', !!mark && mark.sd === 'qbs');
   check('no script errors', errs.length === 0);
+
+  // Second scenario: the no-login share link, where the host sends NO user at
+  // all. Pressing a button used to scroll the identity bar and nothing else,
+  // which reads as "the button is broken". It must now say so out loud.
+  await page.goto(`http://127.0.0.1:${port}/outer.html?anon=1`, { waitUntil: 'load' });
+  await page.waitForTimeout(1200);
+  const f2 = page.frames().find((fr) => fr !== page.mainFrame());
+  const anon = await f2.evaluate(() => {
+    const b = [...document.querySelectorAll('button')].find((x) => x.textContent.trim() === 'Client \u2713');
+    b.click();
+    return { msg: (document.getElementById('save') || {}).textContent || '',
+             picker: !!document.querySelector('.sideg') };
+  });
+  check('anonymous viewer is told to identify themselves', /who you are/i.test(anon.msg));
+  check('anonymous viewer is offered the side picker', anon.picker === true);
 
   await browser.close();
   srv.close();

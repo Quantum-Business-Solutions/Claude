@@ -188,7 +188,14 @@ function locked(k){return false;}
 var OWNSIDE={q:"qbs",c:"client",g:"reg"};
 function behalf(k,s){return s&&s.sd&&OWNSIDE[k]&&s.sd!==OWNSIDE[k]&&!(k==="g"&&s.sd==="client");}
 var needSide=false;
-function askSide(){needSide=true;render();var el=document.getElementById("idbar");
+/* Someone pressed an approval button before saying who they are. This used to
+   only scroll the identity bar into view, so to anyone already near the top of
+   the page - or opening the sheet on the no-login share link, where the host
+   sends no user at all - the button simply appeared not to work. Say it out
+   loud in the status line as well. */
+function askSide(){needSide=true;
+  flag("Tell the sheet who you are first — type your name at the top, then pick a side","err");
+  render();var el=document.getElementById("idbar");
   if(el){el.scrollIntoView({behavior:"smooth",block:"center"});var w=document.getElementById("who");if(w)w.focus();}}
 function setStatus(g,id,k){
   var r=findRow(g,id);if(!r)return;
