@@ -1,0 +1,32 @@
+<script>
+/* Client share link — preselect the client side.
+ *
+ * Tammy, Mindy and Sarah open the sign-off on the no-login share link, so the
+ * portal sends the sheet no user and it has no side for them. The live app
+ * refuses an approval until a side is picked, and only scrolls the identity bar
+ * when you press one, which reads as a dead button.
+ *
+ * This fills the name with a neutral label and presses "I am the client" for
+ * them, so the approval buttons work on the first click with nothing typed.
+ *
+ * It is a no-op for QBS: a signed-in team member gets "Signed in as ..." and no
+ * #who box, so the guard below never matches. It is also a stopgap - the real
+ * fix is in src/signoff.js and belongs in ClientCommand's asset-signoff
+ * template. Remove this section once that ships.
+ */
+(function () {
+  var tries = 0;
+  function go() {
+    var who = document.getElementById("who");
+    var btn = document.querySelector('button.sd[data-s="client"]');
+    if ((!who || !btn) && tries++ < 40) return setTimeout(go, 300);
+    if (!who || !btn) return;
+    if (!who.value) {
+      who.value = "Praxera (client link)";
+      who.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+    if (btn.getAttribute("aria-pressed") !== "true") btn.click();
+  }
+  setTimeout(go, 600);
+})();
+</script>
