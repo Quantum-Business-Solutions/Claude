@@ -45,3 +45,35 @@ Worth knowing: the portal also has **`lschencker-carroll/private-label-form-roun
 ("Private Label Form - Round Robin"), which looks like the round robin the dead Samantha Fuller
 link was reaching for. If Praxera bookings should land on a real round robin rather than
 `/get-started`, that is the candidate — say the word and I will switch the six.
+
+---
+
+# Go-live — 14 Sep 2026
+
+Seven pages pushed from draft to live on Shawn's go. All seven were **already published**;
+this updated existing URLs and created nothing new. Rollback snapshots of each page exactly as
+it was beforehand: `backups/pre-publish-2026-09-14/`.
+
+| Page | What went live |
+|---|---|
+| `/` | schema Provider language + Organization logo repointed to the Praxera domain |
+| `/health-categories` | same |
+| `/quality-standards` | schema Provider language |
+| `/contact` | schema Provider language + corrected `mailto` (was `praxerasuapplements`) |
+| `/alp/ads-mfg-usa` | new copy, meta, `/get-started` CTAs, regenerated FAQ schema |
+| `/alp/ads-contract-mfg` | same |
+| `/alp/ads-pl-mfg` | same |
+
+Verified live, 14 of 14 checks green: the logo no longer resolves to pettechlabs.com, no
+first-person production claim survives in any of the seven schema blocks, the `mailto` is
+spelled correctly, the `[PLACEHOLDER]` text is gone from all three ad pages and every
+"Schedule" CTA on them lands on `/get-started`. All seven still return HTTP 200.
+
+Held back: `request-quote` (unpublished draft, stays that way) and the 18 category pages,
+whose drafts carry another team's in-progress `#consultation-form` anchor script.
+
+## Noticed while verifying — not caused by this
+
+`/health-categories` renders with **no `<h1>`**. Both patches only ever sent `headHtml`
+(`b={'headHtml': new}`), so the page body is untouched and this predates today's work. Worth a
+look: a page with no H1 is a real SEO/AEO problem and it is one of the site's top-level hubs.
