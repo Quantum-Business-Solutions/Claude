@@ -21,8 +21,11 @@ Hard blocked.
 
 ## Melinda can approve right now, with no deploy
 
-At the top of the sheet: **type her name, press "I am the client"**, then the buttons work.
-That prerequisite exists in the version that is live today; it was just never made obvious.
+On the version live today: at the top of the sheet, **type her name and press "I am the
+client"**. The buttons then work. The prerequisite was real; it was just never made visible.
+
+Shawn's call (14 Sep) is that she should not have to do even that — **no name, no side, no
+prompt**. That is what the change below now does.
 
 ## What changed in the code
 
@@ -35,12 +38,21 @@ behalf, and the sheet records who did it so a QBS tick is never mistaken for the
 | `locked()` disabled the other side's button | always false — nothing renders disabled, and the bulk bar works for everyone |
 | a mark stored `by` + `at` | a mark also stores `sd`, the side that gave it |
 | a QBS-given client approval was indistinguishable from the client's | the row reads "Client · date · Name — **QBS, on their behalf**", and the activity log says so too |
-| `askSide()` silently scrolled | it also writes "Tell the sheet who you are first" into the status line |
+| an unidentified click was refused and silently scrolled the identity bar | there is no prerequisite at all — the click lands, the mark saves |
+| an unnamed person showed as "unnamed" | shows as *via the client link*, on the row and in the activity log |
 
 `tools/test_signoff_buttons.js` drives the real minified build in Chromium against a stub host
 that reproduces both routes — signed in with a `team` kind, and anonymous on the share link.
-**14 checks, all passing**, including that the saved mark carries `by: "Melinda Elmadjian"` and
-`sd: "qbs"`.
+**21 checks, all passing**, including that a QBS-given client approval saves as
+`by: "Melinda Elmadjian", sd: "qbs"` and that an anonymous one saves with no side at all.
+
+### Attribution survives dropping the name requirement
+
+Shawn's condition was that we can always tell it was not our team. That still holds, and it no
+longer depends on anyone typing anything: every QBS person is signed in through the portal, so
+the host hands the sheet their name and side automatically. A mark with **no name and no side
+can only have come from the client share link**. The sheet says exactly that rather than
+"unnamed".
 
 ## Reconciled drift, which would otherwise have been reverted
 
@@ -75,8 +87,13 @@ A one-off paste into this page drifts it further and keeps the fix only until so
 re-templates the sheet. The change belongs in the `asset-signoff` template, where every client's
 sheet picks it up.
 
-**Ready to go:** `deliverables/signoff.min.js` (43,366 bytes, syntax-checked, 14/14 tests) and
-the source at `src/signoff.js`, both committed.
+**Ready to go:** `deliverables/signoff.min.js` (syntax-checked, 21/21 tests) and the source at
+`src/signoff.js`, both committed.
+
+Driving the live sheet end to end was not possible from here: Chromium rejects the agent
+proxy's certificate (`ERR_CERT_AUTHORITY_INVALID`) and disabling TLS verification is not an
+option. The tests instead run the real minified build in real Chromium against a host stub that
+reproduces both routes exactly.
 
 ## Worth deciding separately
 

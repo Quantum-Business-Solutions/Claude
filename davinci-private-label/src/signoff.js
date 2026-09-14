@@ -163,7 +163,7 @@ function statusOf(g,id){var it=state[g][id]||{};return {q:stat(it,"q"),c:stat(it
 var REVS=["r1","r2","r3"];
 function revOf(r,k){var it=state[r.k][r.id]||{};if(it[k])return it[k].x?null:it[k];
   return (r.rv||[]).indexOf(+k.slice(1))>=0?{by:"Design Approval Sheet v6",at:"2026-09-07T12:00:00-04:00",sheet:1}:null;}
-function setRev(g,id,k){var r=findRow(g,id);if(!r)return;if(!side){askSide();return;}
+function setRev(g,id,k){var r=findRow(g,id);if(!r)return;
   var it=item(g,id),on=revOf(r,k);
   it[k]=on?{at:now(),by:me(),x:1}:{at:now(),by:me()};
   logIt(on?"rev-clear":"rev-tick",g,id,r.n,"Rev "+k.slice(1));touch(gkey(g));}
@@ -175,33 +175,28 @@ function comments(r){var it=state[r.k][r.id]||{},sr=it.sr||{};
 function openCount(r){return comments(r).filter(function(c){return c.st!=="done";}).length;}
 
 /* ---- mutations ------------------------------------------------------------- */
-/* Anyone who has said who they are can press any of the approval buttons.
-   The sheet used to disable the other side's button, which meant a client whom
-   the portal had signed in as team could not press Client ✓ at all and the
-   page just looked broken. Attribution is what actually matters, so every mark
-   records the name AND the side that gave it: a Client ✓ carrying sd:"qbs" is
-   QBS ticking it on the client's behalf, and it says so on the row. */
-function can(k){return !!side;}
+/* Anyone can press any of the approval buttons - no name, no side, no prompt.
+   The sheet used to disable the other side's button and, on the no-login share
+   link, silently refuse the click until you typed a name, so to the client it
+   simply looked broken.
+   Attribution still works, because it does not depend on anyone typing: every
+   QBS person is signed in through the portal, so the host hands us their name
+   and side. A mark with neither can only have come from the client link. And
+   when someone IS identified, the mark records which side they pressed from,
+   so a Client ✓ carrying sd:"qbs" is us ticking on the client's behalf and the
+   row says so. */
+function can(k){return true;}
 var SIDE={qbs:"QBS",client:"Client",reg:"Regulatory"};function sideName(x){return SIDE[x]||x||"";}
 function locked(k){return false;}
 /* The side a mark of kind k is normally given by - used to spot an on-behalf tick. */
 var OWNSIDE={q:"qbs",c:"client",g:"reg"};
 function behalf(k,s){return s&&s.sd&&OWNSIDE[k]&&s.sd!==OWNSIDE[k]&&!(k==="g"&&s.sd==="client");}
-var needSide=false;
-/* Someone pressed an approval button before saying who they are. This used to
-   only scroll the identity bar into view, so to anyone already near the top of
-   the page - or opening the sheet on the no-login share link, where the host
-   sends no user at all - the button simply appeared not to work. Say it out
-   loud in the status line as well. */
-function askSide(){needSide=true;
-  flag("Tell the sheet who you are first — type your name at the top, then pick a side","err");
-  render();var el=document.getElementById("idbar");
-  if(el){el.scrollIntoView({behavior:"smooth",block:"center"});var w=document.getElementById("who");if(w)w.focus();}}
 function setStatus(g,id,k){
   var r=findRow(g,id);if(!r)return;
-  if(!side){askSide();return;}
   var it=item(g,id),on=stat(it,k);
-  var ob=OWNSIDE[k]&&side!==OWNSIDE[k]&&!(k==="g"&&side==="client")?" (on the "+sideName(OWNSIDE[k]).toLowerCase()+"'s behalf)":"";
+  /* only an identified person can be acting on someone else's behalf - an
+     anonymous client tick is just the client, not us standing in for them */
+  var ob=side&&OWNSIDE[k]&&side!==OWNSIDE[k]&&!(k==="g"&&side==="client")?" (on the "+sideName(OWNSIDE[k]).toLowerCase()+"'s behalf)":"";
   if(on){it[k]={at:now(),by:me(),sd:side,x:1};logIt(k==="q"?"qbs-unapprove":k==="c"?"client-unapprove":k==="g"?"reg-unapprove":"clear-flag",g,id,r.n,ob);}
   else{it[k]={at:now(),by:me(),sd:side};
     if(k==="f"){["q","c","g"].forEach(function(o){if(stat(it,o))it[o]={at:now(),by:me(),x:1};});}
@@ -220,7 +215,7 @@ function replyTo(g,id,cid,text){text=(text||"").trim();if(!text)return;
 function resolveComment(g,id,cid,done){var c=findComment(item(g,id),cid);
   c.st=done?"done":"open";c.rs={at:now(),by:me()};
   logIt(done?"resolve-comment":"reopen-comment",g,id,rowName(g,id));touch(gkey(g));}
-function makeGlobal(g,id,cid){var r=findRow(g,id);if(!r)return;if(!side){askSide();return;}
+function makeGlobal(g,id,cid){var r=findRow(g,id);if(!r)return;
   var c=comments(r).filter(function(x){return x.id===cid;})[0];if(!c)return;
   var src=findComment(item(g,id),cid);if(src.gl)return;src.gl={at:now(),by:me()};
   var gi=item("_","general");if(!gi.cm)gi.cm=[];
@@ -357,10 +352,21 @@ function commentTotals(){var o=0,d=0;GK.forEach(function(g){rowsOf(g).forEach(fu
 var COLS=[["ck",40],["nm",270],["lk",160],["ev",200],["st",210],["rvs",150],["act",380]];
 var colw={};GK.forEach(function(g){colw[g]=COLS.map(function(c){return c[1];});});
 var hostv2=false;                        /* host answered whoami → new viewer build */
+/* How a person is named anywhere on the sheet. Nobody has to type a name, so
+   `by` is often "unnamed" - but that is itself information: every QBS person is
+   signed in through the portal and arrives with a name and a side, so an
+   unnamed, sideless action can only have come from the client share link. */
+function byName(by,sd){if(by&&by!=="unnamed")return E(by);
+  return "<i>"+(sd?E(sideName(sd)):"via the client link")+"</i>";}
+
+/* Who gave a mark, said honestly.
+   Nobody has to type a name, so `by` is often "unnamed". That still tells us
+   what matters: every QBS person is signed in through the portal, so the host
+   gives us their name and side automatically. An unnamed, sideless mark can
+   therefore only have come from the client share link - it was not our team. */
 function stampHtml(lbl,s,k){if(!s)return "";
-  /* who gave it, and - when it was not their own side's button - say so */
   var ob=behalf(k,s)?' <i title="Given by '+E(sideName(s.sd))+' on the '+E(sideName(OWNSIDE[k]).toLowerCase())+"'s behalf\">"+E(sideName(s.sd))+", on their behalf</i>":"";
-  return '<span class="by '+k+'">'+lbl+" · <b>"+when(s.at)+"</b> · "+E(s.by)+ob+"</span>";}
+  return '<span class="by '+k+'">'+lbl+" · <b>"+when(s.at)+"</b> · "+byName(s.by,s.sd)+ob+"</span>";}
 function linkHtml(r){var h="";
   if(r.u)h+='<a class="lnk" href="'+E(r.u)+'" target="_blank" rel="noopener">Live ↗</a>';
   if(r.h)h+='<a class="lnk hs" href="'+E(r.h)+'" target="_blank" rel="noopener">HubSpot ↗</a>';
@@ -416,7 +422,7 @@ function threadHtml(r){
   var list=comments(r).map(function(c){return cmtHtml(r,c);}).join("");
   if(!list)list='<p class="empty">No comments on this item yet.</p>';
   var hist=log.e.filter(function(e){return e.g===r.k&&e.i===r.id;}).slice(-12).reverse().map(function(e){
-    return '<li>'+E(e.by)+" "+E(ACT[e.a]||e.a)+(e.x?': <span>'+E(e.x)+"</span>":"")+' <time>'+when(e.at)+"</time></li>";}).join("");
+    return '<li>'+byName(e.by,e.sd)+" "+E(ACT[e.a]||e.a)+(e.x?': <span>'+E(e.x)+"</span>":"")+' <time>'+when(e.at)+"</time></li>";}).join("");
   return '<tr class="th" data-g="'+r.k+'" data-i="'+E(r.id)+'"><td colspan="7"><div class="panel">'
     +'<div class="card thread"><h4>Comments · '+comments(r).length+"</h4>"+list
     +'<textarea data-a="txt" aria-label="Comment" placeholder="Add a comment about '+E(r.n)+'…"></textarea>'
@@ -476,7 +482,7 @@ function genHtml(){var cs=comments(GEN),open_=cs.filter(function(c){return c.st!
 function logHtml(){var all=histEvents(),es=showAllLog?all:all.slice(0,10);
   return '<section class="logsec" id="g-log"><div class="shead"><div class="hrow">'+chev("log")+'<h2>Activity</h2><span class="tct">'+all.length+" actions · everyone, every change</span></div>"
     +'<div class="acts">'+(all.length>10?'<button class="gh mini" data-a="alllog">'+(showAllLog?"Show latest 10":"Show all "+all.length)+"</button>":"")+"</div></div>"
-    +(!collapsed.log?(es.length?'<ul class="log">'+es.map(function(e){return "<li"+(e.d?' class="derived" title="Recovered from the saved item"':"")+"><b>"+E(e.by)+"</b>"+(e.sd?' <i>'+sideName(e.sd)+"</i>":"")+" "+E(ACT[e.a]||e.a)+" <em>"+E(e.n)+"</em>"
+    +(!collapsed.log?(es.length?'<ul class="log">'+es.map(function(e){return "<li"+(e.d?' class="derived" title="Recovered from the saved item"':"")+"><b>"+byName(e.by,e.sd)+"</b>"+(e.sd?' <i>'+sideName(e.sd)+"</i>":"")+" "+E(ACT[e.a]||e.a)+" <em>"+E(e.n)+"</em>"
       +(e.x?': <span>'+E(e.x)+"</span>":"")+"<time>"+when(e.at)+"</time></li>";}).join("")+"</ul>":'<p class="empty">Nothing recorded yet — approvals, comments, edits and resolves will show here as they happen.</p>'):"")+"</section>";}
 function headerHtml(){var all=[];GK.forEach(function(g){all=all.concat(rowsOf(g));});var t=tally(all),ct=commentTotals();
   var anyOpen=!collapsed.log||!collapsed._||GK.some(function(g){return !collapsed[g];});
@@ -493,7 +499,7 @@ function headerHtml(){var all=[];GK.forEach(function(g){all=all.concat(rowsOf(g)
     +'<div class="hrow"><h1>'+E(META.title)+'</h1><button class="gh mini" data-a="about">'+(showAbout?"Hide help":"How this works")+"</button></div>"+(META.intro&&showAbout?'<p class="lede">'+E(META.intro)+"</p>":"")
     +'<div class="stats">'+tile("a",t.both,"Fully approved")+tile("q",t.q,"QBS approved")+tile("c",t.c,"Client approved")+tile("g",t.g,"Regulatory approved")+tile("f",t.f,"Needs work")+tile("u",t.todo,"Not reviewed")+tile("o",ct.open,"Open comments")+tile("r",ct.done,"Resolved")+tile("t",t.n,"Assets")+"</div>"
     +'<div class="prog">'+barHtml(t)+"</div>"
-    +'<div class="idbar'+(hosted?"":" ro")+(needSide&&!side?" attn":"")+'" id="idbar">'+(user&&user.name?"":'<span class="step">'+(needSide&&!side?"First, tell the sheet who you are":"Who are you?")+"</span>")+ident
+    +'<div class="idbar'+(hosted?"":" ro")+'" id="idbar">'+(user&&user.name?"":'<span class="step">'+"Who are you? (optional)"+"</span>")+ident
     +(hosted?"":'<span class="dim">Not inside the portal — nothing will save.</span>')+"</div>"
     +(META.share?'<div class="share-row"><span>Client share link (no login):</span><input class="share" readonly value="'+E(META.share)+'" onclick="this.select()"></div>':"")
     +(csvShown?'<div class="csvbox"><p class="note">Your browser could not save the file from here — select all and copy this into a spreadsheet. <button class="gh mini" data-a="csvclose">Close</button></p><textarea readonly onclick="this.select()">'+E(csvText())+"</textarea></div>":"")
@@ -559,7 +565,7 @@ function fields(scope){var o={};[].forEach.call(scope.querySelectorAll("input[da
 root.addEventListener("click",function(ev){
   var b=ev.target.closest("button");if(!b)return;var a=b.dataset.a;
   if(b.classList.contains("f")){view[b.dataset.g].f=b.dataset.f;render();return;}
-  if(b.classList.contains("sd")){side=b.dataset.s;needSide=false;render();return;}
+  if(b.classList.contains("sd")){side=b.dataset.s;render();return;}
   if(a==="refresh"){refresh();flag("refreshing…");return;}
   if(a==="full"){post({type:"fullscreen"});return;}
   if(a==="csv"){exportCsv();return;}
@@ -576,7 +582,6 @@ root.addEventListener("click",function(ev){
   var sec=b.closest("section[data-g]");
   if(a&&a.charAt(0)==="b"&&sec){var g=sec.dataset.g,ids=Object.keys(sel[g]).filter(function(k){return sel[g][k];});
     if(a==="bnone"){sel[g]={};render();return;}
-    if(!side&&(a==="bq"||a==="bc"||a==="bg"||a==="bf")){askSide();return;}
     ids.forEach(function(id){var it=item(g,id),s=statusOf(g,id);
       if(a==="bq"&&!s.q&&can("q"))setStatus(g,id,"q");
       else if(a==="bc"&&!s.c&&can("c"))setStatus(g,id,"c");

@@ -127,19 +127,49 @@ function check(name, cond) { (cond ? ok : fail).push(name); }
   check('no script errors', errs.length === 0);
 
   // Second scenario: the no-login share link, where the host sends NO user at
-  // all. Pressing a button used to scroll the identity bar and nothing else,
-  // which reads as "the button is broken". It must now say so out loud.
+  // all. This is how Tammy, Mindy and Sarah actually open the sheet. They must
+  // be able to approve outright - no name, no side, no prompt - and the mark
+  // must still be attributable as "not QBS".
   await page.goto(`http://127.0.0.1:${port}/outer.html?anon=1`, { waitUntil: 'load' });
   await page.waitForTimeout(1200);
   const f2 = page.frames().find((fr) => fr !== page.mainFrame());
-  const anon = await f2.evaluate(() => {
+
+  await page.screenshot({ path: '/tmp/signoff-shots/anon-before.png' });
+
+  const anonBefore = await f2.evaluate(() => {
     const b = [...document.querySelectorAll('button')].find((x) => x.textContent.trim() === 'Client \u2713');
-    b.click();
-    return { msg: (document.getElementById('save') || {}).textContent || '',
-             picker: !!document.querySelector('.sideg') };
+    return { disabled: b ? b.disabled : null, pressed: b ? b.getAttribute('aria-pressed') : null };
   });
-  check('anonymous viewer is told to identify themselves', /who you are/i.test(anon.msg));
-  check('anonymous viewer is offered the side picker', anon.picker === true);
+  check('anonymous viewer: Client \u2713 is not disabled', anonBefore.disabled === false);
+  check('anonymous viewer: nothing approved yet', anonBefore.pressed === 'false');
+
+  await f2.evaluate(() => [...document.querySelectorAll('button')]
+    .find((x) => x.textContent.trim() === 'Client \u2713').click());
+  await page.waitForTimeout(800);
+
+  const anonAfter = await f2.evaluate(() => {
+    const b = [...document.querySelectorAll('button')].find((x) => x.textContent.trim() === 'Client \u2713');
+    return { pressed: b.getAttribute('aria-pressed'),
+             row: document.querySelector('tr.r td.nm').textContent,
+             status: (document.getElementById('save') || {}).textContent || '' };
+  });
+  check('anonymous viewer approves with no name typed  <- the ask', anonAfter.pressed === 'true');
+  check('the row credits the client link, not "unnamed"',
+    /via the client link/i.test(anonAfter.row) && !/unnamed/i.test(anonAfter.row));
+  check('an anonymous tick is NOT labelled on-behalf', !/on their behalf/i.test(anonAfter.row));
+  check('it was saved, not refused', !/not saved/i.test(anonAfter.status));
+
+  const log = await f2.evaluate(() => (document.querySelector('ul.log') || {}).textContent || '');
+  check('the activity log does not say "unnamed" either',
+    /client approved/i.test(log) && !/unnamed/i.test(log) && /via the client link/i.test(log));
+
+  await page.screenshot({ path: '/tmp/signoff-shots/anon-after-client-approve.png' });
+
+  const anonWrites = await page.evaluate(() => window.__writes || []);
+  const anonMark = anonWrites.map((x) => x.value && x.value.home && x.value.home.c).filter(Boolean).pop();
+  check('anonymous mark reached the portal', !!anonMark);
+  check('anonymous mark carries no QBS side (so it was not our team)',
+    !!anonMark && !anonMark.sd);
 
   await browser.close();
   srv.close();
