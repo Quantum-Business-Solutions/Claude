@@ -175,22 +175,31 @@ function comments(r){var it=state[r.k][r.id]||{},sr=it.sr||{};
 function openCount(r){return comments(r).filter(function(c){return c.st!=="done";}).length;}
 
 /* ---- mutations ------------------------------------------------------------- */
-function can(k){if(!side)return false;if(k==="q")return side==="qbs";if(k==="c")return side==="client";if(k==="g")return side==="reg"||side==="client";return true;}
+/* Anyone who has said who they are can press any of the approval buttons.
+   The sheet used to disable the other side's button, which meant a client whom
+   the portal had signed in as team could not press Client ✓ at all and the
+   page just looked broken. Attribution is what actually matters, so every mark
+   records the name AND the side that gave it: a Client ✓ carrying sd:"qbs" is
+   QBS ticking it on the client's behalf, and it says so on the row. */
+function can(k){return !!side;}
 var SIDE={qbs:"QBS",client:"Client",reg:"Regulatory"};function sideName(x){return SIDE[x]||x||"";}
-function locked(k){return !!side&&!can(k);}   /* the other side's button */
+function locked(k){return false;}
+/* The side a mark of kind k is normally given by - used to spot an on-behalf tick. */
+var OWNSIDE={q:"qbs",c:"client",g:"reg"};
+function behalf(k,s){return s&&s.sd&&OWNSIDE[k]&&s.sd!==OWNSIDE[k]&&!(k==="g"&&s.sd==="client");}
 var needSide=false;
 function askSide(){needSide=true;render();var el=document.getElementById("idbar");
   if(el){el.scrollIntoView({behavior:"smooth",block:"center"});var w=document.getElementById("who");if(w)w.focus();}}
 function setStatus(g,id,k){
   var r=findRow(g,id);if(!r)return;
   if(!side){askSide();return;}
-  if(!can(k)){flag(k==="q"?"only QBS can give the QBS approval":k==="c"?"only the client can give the client approval":k==="g"?"only Regulatory (or the client) can give the Regulatory approval":"","err");return;}
   var it=item(g,id),on=stat(it,k);
-  if(on){it[k]={at:now(),by:me(),x:1};logIt(k==="q"?"qbs-unapprove":k==="c"?"client-unapprove":k==="g"?"reg-unapprove":"clear-flag",g,id,r.n);}
-  else{it[k]={at:now(),by:me()};
+  var ob=OWNSIDE[k]&&side!==OWNSIDE[k]&&!(k==="g"&&side==="client")?" (on the "+sideName(OWNSIDE[k]).toLowerCase()+"'s behalf)":"";
+  if(on){it[k]={at:now(),by:me(),sd:side,x:1};logIt(k==="q"?"qbs-unapprove":k==="c"?"client-unapprove":k==="g"?"reg-unapprove":"clear-flag",g,id,r.n,ob);}
+  else{it[k]={at:now(),by:me(),sd:side};
     if(k==="f"){["q","c","g"].forEach(function(o){if(stat(it,o))it[o]={at:now(),by:me(),x:1};});}
     else if(stat(it,"f"))it.f={at:now(),by:me(),x:1};
-    logIt(k==="q"?"qbs-approve":k==="c"?"client-approve":k==="g"?"reg-approve":"needs-work",g,id,r.n);}
+    logIt(k==="q"?"qbs-approve":k==="c"?"client-approve":k==="g"?"reg-approve":"needs-work",g,id,r.n,ob);}
   touch(gkey(g));}
 function addComment(g,id,text){text=(text||"").trim();if(!text)return;
   var it=item(g,id);if(!it.cm)it.cm=[];
@@ -342,7 +351,9 @@ var COLS=[["ck",40],["nm",270],["lk",160],["ev",200],["st",210],["rvs",150],["ac
 var colw={};GK.forEach(function(g){colw[g]=COLS.map(function(c){return c[1];});});
 var hostv2=false;                        /* host answered whoami → new viewer build */
 function stampHtml(lbl,s,k){if(!s)return "";
-  return '<span class="by '+k+'">'+lbl+" · <b>"+when(s.at)+"</b> · "+E(s.by)+"</span>";}
+  /* who gave it, and - when it was not their own side's button - say so */
+  var ob=behalf(k,s)?' <i title="Given by '+E(sideName(s.sd))+' on the '+E(sideName(OWNSIDE[k]).toLowerCase())+"'s behalf\">"+E(sideName(s.sd))+", on their behalf</i>":"";
+  return '<span class="by '+k+'">'+lbl+" · <b>"+when(s.at)+"</b> · "+E(s.by)+ob+"</span>";}
 function linkHtml(r){var h="";
   if(r.u)h+='<a class="lnk" href="'+E(r.u)+'" target="_blank" rel="noopener">Live ↗</a>';
   if(r.h)h+='<a class="lnk hs" href="'+E(r.h)+'" target="_blank" rel="noopener">HubSpot ↗</a>';
@@ -485,9 +496,25 @@ function headerHtml(){var all=[];GK.forEach(function(g){all=all.concat(rowsOf(g)
 function fitPanels(){[].forEach.call(document.querySelectorAll(".tscroll"),function(sc){
   var w=sc.clientWidth-36;[].forEach.call(sc.querySelectorAll(".panel,.form"),function(p){p.style.width=w+"px";});});}
 window.addEventListener("resize",fitPanels);
+/* Re-render without moving the page under the reader: remember where every
+   horizontal table scroller sat (keyed by its section, not its index, so adding
+   or folding a group does not shuffle them), pin the root's height while the
+   innerHTML swap happens, then put both scroll positions and the caret back. */
 function render(){var y=window.scrollY,ae=document.activeElement,focusId=ae&&ae.id,pos=ae&&ae.selectionStart;
-  document.getElementById("root").innerHTML=headerHtml();window.scrollTo(0,y);fitPanels();
-  if(focusId){var el=document.getElementById(focusId);if(el){el.focus();try{el.setSelectionRange(pos,pos);}catch(e){}}}}
+  var root=document.getElementById("root"),sc={};
+  var key=function(el,i){var p=el.closest?el.closest("section[id]")||el.closest("[id]"):null;
+    return p&&p.id!=="root"?p.id:"i"+i;};
+  [].forEach.call(document.querySelectorAll(".tscroll"),function(el,i){sc[key(el,i)]=[el.scrollTop,el.scrollLeft];});
+  root.style.minHeight=root.offsetHeight+"px";
+  root.innerHTML=headerHtml();
+  [].forEach.call(document.querySelectorAll(".tscroll"),function(el,i){
+    var v=sc[key(el,i)];if(v){el.scrollTop=v[0];el.scrollLeft=v[1];}});
+  try{window.scrollTo({top:y,left:0,behavior:"instant"});}catch(e){window.scrollTo(0,y);}
+  root.style.minHeight="";fitPanels();
+  if(focusId){var el=document.getElementById(focusId);
+    if(el&&el!==document.activeElement){
+      try{el.focus({preventScroll:true});}catch(e){el.focus();}
+      try{el.setSelectionRange(pos,pos);}catch(e){}}}}
 
 var root=document.getElementById("root");
 /* ---- inline editing: double-click a value, Enter saves, Esc cancels --------- */
@@ -591,5 +618,10 @@ root.addEventListener("keydown",function(ev){
 
 /* ---- boot ---------------------------------------------------------------- */
 render();
-if(hosted){refresh();post({type:"whoami"});setInterval(function(){if(!Object.keys(dirty).length)refresh();},25000);}
+/* The 25s poll must not yank the page while someone is mid-sentence. */
+if(hosted){refresh();post({type:"whoami"});
+  setInterval(function(){if(Object.keys(dirty).length)return;
+    var a=document.activeElement;
+    if(a&&(a.tagName==="TEXTAREA"||a.tagName==="INPUT"||a.isContentEditable))return;
+    refresh();},25000);}
 })();
