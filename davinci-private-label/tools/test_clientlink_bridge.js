@@ -13,9 +13,12 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
+// usage: node test_clientlink_bridge.js [bootFile] [bridgeFile] [personToClick]
 const APP = process.argv[2] || '/tmp/live_boot.js';
-const BRIDGE = fs.readFileSync(
-  path.join(__dirname, 'signoff_clientlink_bridge.html'), 'utf8')
+const BRIDGE_FILE = process.argv[3]
+  || path.join(__dirname, 'clientlink_praxera.html');
+const PERSON = process.argv[4] || 'Melinda Elmadjian';
+const BRIDGE = fs.readFileSync(BRIDGE_FILE, 'utf8')
   .replace(/^<script>/, '').replace(/<\/script>\s*$/, '');
 
 const META = {
@@ -94,14 +97,13 @@ const CLIENT_TICK = 'Client ✓';
   });
   check('a box appears on arrival', box.shown === true);
   check('it asks who is reviewing', /who is reviewing/i.test(box.heading));
-  check('it names Tammy, Melinda and Sarah', ['Tammy Johnson', 'Melinda Elmadjian', 'Sarah Miller']
-    .every((n) => box.people.includes(n)));
+  check(`it offers ${PERSON}`, box.people.includes(PERSON));
   check('there is a box for anyone else', box.hasFreeText === true);
   await page.screenshot({ path: '/tmp/signoff-shots/bridge-who-box.png' });
 
-  // Melinda picks herself - one click, nothing typed
-  await f.evaluate(() => [...document.querySelectorAll('[role="dialog"] button')]
-    .find((b) => b.textContent.trim() === 'Melinda Elmadjian').click());
+  // the reviewer picks themselves - one click, nothing typed
+  await f.evaluate((who) => [...document.querySelectorAll('[role="dialog"] button')]
+    .find((b) => b.textContent.trim() === who).click(), PERSON);
   await page.waitForTimeout(900);
 
   const armed = await f.evaluate((label) => {
@@ -115,7 +117,7 @@ const CLIENT_TICK = 'Client ✓';
     };
   }, CLIENT_TICK);
   check('the box closes once she picks', armed.boxGone === true);
-  check('her name is filled in for her', armed.name === 'Melinda Elmadjian');
+  check('their name is filled in for them', armed.name === PERSON);
   check('the client side is selected for her', armed.sidePicked === 'true');
   check('Client \u2713 is enabled', armed.disabled === false);
 
@@ -132,18 +134,18 @@ const CLIENT_TICK = 'Client ✓';
   }, CLIENT_TICK);
   check('approves on the FIRST click after picking  <- the ask', done.pressed === 'true');
   check('it saved rather than being refused', !/not saved/i.test(done.status));
-  check('the row is credited to Melinda', /Melinda Elmadjian/.test(done.row));
+  check('the row is credited to them', done.row.includes(PERSON));
 
   const writes = await page.evaluate(() => window.__writes || []);
   const mark = writes.map((x) => x.value && x.value.home && x.value.home.c).filter(Boolean).pop();
   check('the approval reached the portal', !!mark);
-  check('the mark names her', !!mark && mark.by === 'Melinda Elmadjian');
+  check('the mark names them', !!mark && mark.by === PERSON);
   const logged = writes.filter((x) => /log$/.test(x.key))
     .flatMap((x) => (x.value && x.value.e) || [])
     .filter((e) => e.a === 'client-approve').pop();
   check('the activity log records it', !!logged);
   check('logged as the CLIENT side, not QBS', !!logged && logged.sd === 'client');
-  check('logged under her name', !!logged && logged.by === 'Melinda Elmadjian');
+  check('logged under their name', !!logged && logged.by === PERSON);
 
   // ---- QBS, signed in: the bridge must not touch them ----
   await page.goto(`http://127.0.0.1:${port}/outer.html`, { waitUntil: 'load' });
