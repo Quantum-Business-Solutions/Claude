@@ -370,6 +370,7 @@ function stampHtml(lbl,s,k){if(!s)return "";
 function linkHtml(r){var h="";
   if(r.u)h+='<a class="lnk" href="'+E(r.u)+'" target="_blank" rel="noopener">Live ↗</a>';
   if(r.h)h+='<a class="lnk hs" href="'+E(r.h)+'" target="_blank" rel="noopener">HubSpot ↗</a>';
+  if(r.w)h+='<a class="lnk wf" href="'+E(r.w)+'" target="_blank" rel="noopener" title="'+E(r.wn||"")+'">Workflow ↗</a>';
   return h||'<span class="dim">—</span>';}
 function chipsHtml(r){
   var chips=r.i.map(function(x){return '<span class="chip c-'+x[0]+'"'+(x[2]?' title="'+E(x[2])+'"':"")+'>'+E(x[1])
@@ -487,7 +488,7 @@ function logHtml(){var all=histEvents(),es=showAllLog?all:all.slice(0,10);
 function headerHtml(){var all=[];GK.forEach(function(g){all=all.concat(rowsOf(g));});var t=tally(all),ct=commentTotals();
   var anyOpen=!collapsed.log||!collapsed._||GK.some(function(g){return !collapsed[g];});
   var nav='<a href="#g-general"><i></i>Global <b>'+comments(GEN).filter(function(c){return c.st!=="done";}).length+"</b></a>"+GROUPS.map(function(g){var tt=tally(rowsOf(g[0]));var st=tt.n&&tt.both===tt.n?" done":(tt.both||tt.q||tt.c?" part":"");
-    return '<a class="'+st+'" href="#g-'+g[0]+'"><i></i>'+E(g[1])+" <b>"+tt.both+"/"+tt.n+"</b></a>";}).join("");
+    return '<a class="'+st+'" href="#g-'+g[0]+'"><i></i>'+E(g[1])+" <b>"+tt.both+"/"+tt.n+"</b>"+(tt.q?'<span class="dim"> QBS '+tt.q+"</span>":"")+"</a>";}).join("");
   var ident=user&&user.name?'<span class="me">Signed in as <b>'+E(user.name)+"</b>"+(side?'<span class="side">'+sideName(side)+"</span>":"")+"</span>"
     :'<label for="who">Your name</label><input id="who" value="'+E(who)+'" placeholder="Type your name" autocomplete="name">'
      +'<span class="sideg"><button class="sd" data-s="qbs" aria-pressed="'+(side==="qbs")+'">I am QBS</button><button class="sd" data-s="client" aria-pressed="'+(side==="client")+'">I am the client</button><button class="sd" data-s="reg" aria-pressed="'+(side==="reg")+'">I am Regulatory</button></span>';
