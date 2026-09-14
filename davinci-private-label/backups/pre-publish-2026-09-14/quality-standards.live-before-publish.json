@@ -1,0 +1,1052 @@
+{
+ "archivedAt": "1970-01-01T00:00:00Z",
+ "archivedInDashboard": false,
+ "attachedStylesheets": [],
+ "authorName": "Marko Ajder",
+ "categoryId": 1,
+ "contentTypeCategory": 4,
+ "createdAt": "2026-06-30T17:22:12.745Z",
+ "createdById": "26261533",
+ "currentState": "PUBLISHED",
+ "domain": "www.praxerasupplements.com",
+ "featuredImage": "",
+ "featuredImageAltText": "",
+ "headHtml": "<!-- QBS-SCHEMA:START -->\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"FAQPage\",\"@id\":\"https://www.praxerasupplements.com/quality-standards#faq\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Are your certifications independently audited or self-declared?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Independently audited. SQF certification is awarded by SQF International and renewed through annual third-party audits. NSF GMP 455-2 certification requires unannounced facility inspections and full documentation review by NSF auditors. None of our certifications are pay-to-list or self-declared.\"}},{\"@type\":\"Question\",\"name\":\"Can I get certificates of analysis (COA) for my products?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Every production batch generates a certificate of analysis covering identity, purity, and potency testing. COAs are available on request for any product you private label with us, and can be provided to your customers on request as well.\"}},{\"@type\":\"Question\",\"name\":\"What is the difference between FDA-registered and FDA-approved?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"FDA does not 'approve' dietary supplements before they go to market. FDA-registered means the facility is registered with the FDA as a food facility and subject to FDA inspection. The facility is FDA-registered and has been inspected. Combined with our GMP certifications, this gives a clear picture of regulatory compliance.\"}},{\"@type\":\"Question\",\"name\":\"Can you support custom testing requirements for my brand?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Beyond our standard testing protocols, we can run additional testing for specific ingredients, contaminants, or claims your brand wants to verify (heavy metals, allergens, microbials, specific actives). Custom testing requirements are scoped during the formulation phase.\"}}]}]}</script>\n<!-- QBS-SCHEMA:END -->",
+ "htmlTitle": "Our Quality Standards | Praxera Private Label",
+ "id": "216186379328",
+ "language": "en",
+ "layoutSections": {
+  "main_content": {
+   "cells": [],
+   "cssClass": "",
+   "cssId": "",
+   "cssStyle": "",
+   "name": "main_content",
+   "params": {},
+   "rowMetaData": [
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    },
+    {
+     "cssClass": "dnd-section"
+    }
+   ],
+   "rows": [
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_0",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_0",
+         "name": "module_0",
+         "params": {
+          "align": "center",
+          "background_image": {
+           "alt": "",
+           "loading": "lazy",
+           "src": "https://www.praxerasupplements.com/hubfs/private-label/DV_PL_HeroBackground_2.jpg"
+          },
+          "background_screen": {
+           "color": "#C9DBE2",
+           "opacity": 85
+          },
+          "button_padding": "16px 38px",
+          "button_size": 16,
+          "buttons": [
+           {
+            "link": {
+             "open_in_new_tab": false,
+             "url": {
+              "href": "#certifications",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "See Our Certifications"
+           }
+          ],
+          "css_class": "dnd-module",
+          "eyebrow": "QUALITY STANDARDS",
+          "eyebrow_color": "heading",
+          "eyebrow_size": 13,
+          "headline": "<h1>Doctor-formulated, scientifically reviewed and provided to the highest standards.</h1>",
+          "headline_size": 48,
+          "max_width": 900,
+          "module_id": 218939846507,
+          "style": {
+           "background_color": {
+            "color": "#C9DBE2",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "subhead": "<p>Quality is not a feature of our process. It is the entire process.</p>",
+          "subhead_size": 19,
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_1",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_1",
+         "name": "module_1",
+         "params": {
+          "align": "left",
+          "body_size": 18,
+          "content": "<h2 style=\"color: #012638; font-size: 32px; font-weight: bold; line-height: 1.25; margin: 0 0 26px;\">Quality your customers can verify, not just your sales team can claim.</h2>\n<p>Customers are more skeptical of supplement claims than ever, and they should be. The brands that earn trust are the ones whose quality is verifiable: certified facilities, third-party testing, transparent sourcing, and certificates of analysis available on request.</p>\n<p>Here is how we make sure every private label product we provide&nbsp;earns that trust on day one.</p>",
+          "css_class": "dnd-module",
+          "heading_size": 32,
+          "max_width": 810,
+          "module_id": 218940115784,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 50,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark",
+          "top_border": false
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_2",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_2",
+         "name": "module_2",
+         "params": {
+          "align": "center",
+          "card_shadow": false,
+          "card_style": "plain",
+          "css_class": "dnd-module",
+          "gap": 40,
+          "headline_lh": "1.25",
+          "headline_size": 32,
+          "label_lh": "27px",
+          "label_size": 14,
+          "label_weight": "600",
+          "max_width": 1100,
+          "min_column_width": 180,
+          "module_id": 218940115735,
+          "section_headline": "",
+          "section_subhead": "",
+          "stats": [
+           {
+            "description": "<p style=\"color: white; opacity: .7; font-size: 13px; line-height: 27px\">Dietary supplements since 1972</p>",
+            "stat_label": "Years producing",
+            "value": "50+"
+           },
+           {
+            "description": "<p style=\"color: white; opacity: .7; font-size: 13px; line-height: 27px\">Produced in Vermont</p>",
+            "stat_label": "U.S. facility",
+            "value": "100%"
+           },
+           {
+            "description": "<p style=\"color: white; opacity: .7; font-size: 13px; line-height: 27px\">Food facility, fully inspected</p>",
+            "stat_label": "Registered",
+            "value": "FDA"
+           },
+           {
+            "description": "<p style=\"color: white; opacity: .7; font-size: 13px; line-height: 27px\">Certified to highest standard</p>",
+            "stat_label": "NSF GMP",
+            "value": "455-2"
+           }
+          ],
+          "style": {
+           "background_color": {
+            "color": "#012638",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 70
+           }
+          },
+          "subhead_color": {
+           "color": "#555555",
+           "opacity": 100
+          },
+          "subhead_size": 17,
+          "subhead_width": 0,
+          "text_color": "light",
+          "value_lh": "1",
+          "value_size": 48
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_3",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_3",
+         "name": "module_3",
+         "params": {
+          "align": "center",
+          "css_class": "dnd-module",
+          "eyebrow": "CERTIFICATIONS",
+          "headline": "Independent certifications, not self-declared claims.",
+          "headline_lh": "1.2",
+          "headline_size": 34,
+          "max_width": 900,
+          "module_id": 218940115771,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 30,
+            "padding_top": 70
+           }
+          },
+          "subhead": "<p style=\"color: #333; font-size: 17px; line-height: 1.65\">Every certification we hold is awarded and audited by an independent third party. None of these are pay-to-list or self-declared.</p>",
+          "subhead_color": {
+           "color": "#333333",
+           "opacity": 100
+          },
+          "subhead_size": 17,
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_4",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_4",
+         "name": "module_4",
+         "params": {
+          "align": "center",
+          "css_class": "dnd-module",
+          "eyebrow": "THIRD-PARTY CERTIFIED",
+          "headline": "",
+          "headline_size": 34,
+          "logo_gap": 60,
+          "logos": [
+           {
+            "image": {
+             "alt": "SQF Certified",
+             "loading": "lazy",
+             "src": "https://www.praxerasupplements.com/hubfs/private-label/DV_PL_Logo_SQF.png"
+            },
+            "max_height": 80
+           },
+           {
+            "image": {
+             "alt": "NSF GMP Certified",
+             "loading": "lazy",
+             "src": "https://www.praxerasupplements.com/hubfs/private-label/NSF.png"
+            },
+            "max_height": 80
+           }
+          ],
+          "max_width": 1100,
+          "module_id": 218940115771,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 60,
+            "padding_top": 60
+           }
+          },
+          "subhead": "",
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_5",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_5",
+         "name": "module_5",
+         "params": {
+          "align": "left",
+          "card_shadow": false,
+          "card_style": "card",
+          "css_class": "dnd-module",
+          "gap": 24,
+          "headline_lh": "normal",
+          "headline_size": 32,
+          "label_lh": "27px",
+          "label_size": 14,
+          "label_weight": "700",
+          "max_width": 1200,
+          "min_column_width": 240,
+          "module_id": 218940115735,
+          "section_headline": "What our quality program actually means",
+          "section_subhead": "<p style=\"color: #555; font-size: 17px; line-height: 27px\">Certifications matter, but what matters more is what they require in practice. Here is what happens in our facility every day to maintain these standards.</p>",
+          "stats": [
+           {
+            "description": "<p style=\"color: #555; font-size: 14px; line-height: 1.55\">Every production batch undergoes identity, purity, and potency testing before release. Certificates of analysis available on request.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "src": ""
+            },
+            "stat_label": "Batch Tested",
+            "value": "100%"
+           },
+           {
+            "description": "<p style=\"color: #555; font-size: 14px; line-height: 1.55\">Current Good Manufacturing Practices govern every step from raw material receipt through finished product shipping.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "src": ""
+            },
+            "stat_label": "Compliant",
+            "value": "GMP"
+           },
+           {
+            "description": "<p style=\"color: #555; font-size: 14px; line-height: 1.55\">Our in-house formulation team includes nutritionists and doctors. Every formula is scientifically reviewed before production.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "src": ""
+            },
+            "stat_label": "Formulators",
+            "value": "PhD"
+           },
+           {
+            "description": "<p style=\"color: #555; font-size: 14px; line-height: 1.55\">We document every ingredient source. Where it comes from, what it tests at, and what its sustainability profile looks like.</p>",
+            "icon": {
+             "alt": "",
+             "loading": "lazy",
+             "src": ""
+            },
+            "stat_label": "Transparently",
+            "value": "Sourced"
+           }
+          ],
+          "style": {
+           "background_color": {
+            "color": "#F7F7F6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "subhead_color": {
+           "color": "#555555",
+           "opacity": 100
+          },
+          "subhead_size": 17,
+          "subhead_width": 760,
+          "text_color": "dark",
+          "value_lh": "1",
+          "value_size": 28
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_6",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_6",
+         "name": "module_6",
+         "params": {
+          "align": "center",
+          "css_class": "dnd-module",
+          "eyebrow": "WHAT GMP MEANS",
+          "headline": "Current Good Manufacturing Practices, in plain language.",
+          "headline_lh": "1.2",
+          "headline_size": 34,
+          "max_width": 900,
+          "module_id": 218940115771,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 30,
+            "padding_top": 70
+           }
+          },
+          "subhead": "",
+          "subhead_color": {
+           "color": "#555555",
+           "opacity": 100
+          },
+          "subhead_size": 17,
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_7",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_7",
+         "name": "module_7",
+         "params": {
+          "align": "left",
+          "body_size": 17,
+          "content": "<p><strong style='color: #012638'>GMP is the FDA's framework for supplement manufacturing.</strong> It covers every aspect of production: facility cleanliness, equipment calibration, batch record documentation, raw material verification, testing protocols, packaging integrity, and shipping conditions.</p><p>Being GMP <em>compliant</em> means we follow these practices. Being GMP <em>certified</em> by NSF and SQF means an independent third party audits our facility to verify we actually do. The difference matters: certification requires unannounced inspections, documentation review, and continuous evidence of compliance.</p><p>For private label brands, this means you can confidently tell your customers that every product you sell was manufactured under the same standards as the brands they already trust.</p>",
+          "css_class": "dnd-module",
+          "heading_size": 32,
+          "max_width": 800,
+          "module_id": 218940115784,
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 70,
+            "padding_top": 10
+           }
+          },
+          "text_color": "dark",
+          "top_border": false
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_8",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_8",
+         "name": "module_8",
+         "params": {
+          "align": "center",
+          "body_size": 24,
+          "content": "<div style=\"color: #6ba644; font-size: 72px; line-height: .8; font-family: Georgia, serif; margin: 0 0 -10px;\">\u201c</div>\n<p style=\"color: #012638; font-size: 24px; line-height: 1.45; font-weight: 500; margin: 0 0 32px; font-style: italic;\">Our customers ask hard questions about where their supplements come from. Having Praxera's certifications and certificates of analysis to point to has turned skeptical buyers into repeat customers.</p>\n<p style=\"color: #012638; font-size: 16px; font-weight: bold; margin: 0;\">Private label brand partner</p>\n<p style=\"color: #6ba644; font-size: 13px; font-weight: bold; letter-spacing: 1.5px; margin: 4px 0 0;\">WELLNESS BRAND, 5-FIGURE MONTHLY VOLUME</p>",
+          "css_class": "dnd-module",
+          "heading_size": 32,
+          "max_width": 820,
+          "module_id": 218940115784,
+          "style": {
+           "background_color": {
+            "color": "#F7F7F6",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 90,
+            "padding_top": 90
+           }
+          },
+          "text_color": "dark",
+          "top_border": false
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_9",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_9",
+         "name": "module_9",
+         "params": {
+          "answer_size": 15,
+          "css_class": "dnd-module",
+          "headline_lh": "normal",
+          "headline_size": 32,
+          "items": [
+           {
+            "answer": "Independently audited. SQF certification is awarded by SQF International and renewed through annual third-party audits. NSF GMP 455-2 certification requires unannounced facility inspections and full documentation review by NSF auditors. None of our certifications are pay-to-list or self-declared.",
+            "question": "Are your certifications independently audited or self-declared?"
+           },
+           {
+            "answer": "Yes. Every production batch generates a certificate of analysis covering identity, purity, and potency testing. COAs are available on request for any product you private label with us, and can be provided to your customers on request as well.",
+            "question": "Can I get certificates of analysis (COA) for my products?"
+           },
+           {
+            "answer": "FDA does not 'approve' dietary supplements before they go to market. FDA-registered means the facility is registered with the FDA as a food facility and subject to FDA inspection. Our facility is FDA-registered and has been inspected. Combined with our GMP certifications, this gives a clear picture of regulatory compliance.",
+            "question": "What is the difference between FDA-registered and FDA-approved?"
+           },
+           {
+            "answer": "Yes. Beyond our standard testing protocols, we can run additional testing for specific ingredients, contaminants, or claims your brand wants to verify (heavy metals, allergens, microbials, specific actives). Custom testing requirements are scoped during the formulation phase.",
+            "question": "Can you support custom testing requirements for my brand?"
+           }
+          ],
+          "max_width": 820,
+          "module_id": 218940115739,
+          "open_first": false,
+          "question_size": 17,
+          "section_eyebrow": "",
+          "section_headline": "Quality questions we get most often",
+          "section_subhead": "<p style=\"color: #555; font-size: 17px; line-height: 27px\">Direct answers to the questions buyers and brand partners ask before they commit.</p>",
+          "style": {
+           "background_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_10",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_10",
+         "name": "module_10",
+         "params": {
+          "button_padding": "16px 40px",
+          "button_size": 16,
+          "buttons": [
+           {
+            "link": {
+             "open_in_new_tab": false,
+             "url": {
+              "href": "/contact",
+              "type": "EXTERNAL"
+             }
+            },
+            "style": "primary",
+            "text": "Schedule a Consultation"
+           }
+          ],
+          "content": "<p style=\"color: #333; font-size: 17px; line-height: 1.55\">Schedule a consultation and we will walk through our quality program, your specific compliance needs, and how we make sure your brand earns customer trust on day one.</p>",
+          "content_color": {
+           "color": "#333333",
+           "opacity": 100
+          },
+          "content_size": 17,
+          "css_class": "dnd-module",
+          "eyebrow": "",
+          "headline": "Ready to private label with a quality-first manufacturer?",
+          "headline_lh": "1.25",
+          "headline_size": 32,
+          "max_width": 720,
+          "module_id": 218940115731,
+          "style": {
+           "background_color": {
+            "color": "#E6E5E3",
+            "opacity": 100
+           },
+           "padding": {
+            "padding_bottom": 80,
+            "padding_top": 80
+           }
+          },
+          "text_color": "dark"
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_11",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_11",
+         "name": "module_11",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218944099153
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_12",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_12",
+         "name": "module_12",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218944099156
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    },
+    {
+     "0": {
+      "cells": [],
+      "cssClass": "",
+      "cssId": "",
+      "cssStyle": "",
+      "name": "column_13",
+      "params": {
+       "css_class": "dnd-column"
+      },
+      "rowMetaData": [
+       {
+        "cssClass": "dnd-row"
+       }
+      ],
+      "rows": [
+       {
+        "0": {
+         "cells": [],
+         "cssClass": "",
+         "cssId": "",
+         "cssStyle": "",
+         "label": "module_13",
+         "name": "module_13",
+         "params": {
+          "css_class": "dnd-module",
+          "module_id": 218942529652
+         },
+         "rowMetaData": [],
+         "rows": [],
+         "type": "module",
+         "w": 0,
+         "x": 0
+        }
+       }
+      ],
+      "type": "cell",
+      "w": 0,
+      "x": 0
+     }
+    }
+   ],
+   "type": "cell",
+   "w": 0,
+   "x": 0
+  }
+ },
+ "linkRelCanonicalUrl": "https://www.praxerasupplements.com/quality-standards",
+ "metaDescription": "FDA-registered, GMP certified to SQF and NSF GMP 455-2 standards. Multi-stage testing from raw material to finished bottle. Truth-in-labeling commitment.",
+ "name": "Private Label - Page - Quality Standards",
+ "pageExpiryEnabled": false,
+ "pageRedirected": false,
+ "publicAccessRules": [],
+ "publicAccessRulesEnabled": false,
+ "publishDate": "2026-09-03T17:06:04Z",
+ "publishImmediately": true,
+ "published": true,
+ "slug": "quality-standards",
+ "state": "PUBLISHED_OR_SCHEDULED",
+ "subcategory": "site_page",
+ "templatePath": "Private Label/Templates/Page - DND.html",
+ "translations": {},
+ "updatedAt": "2026-09-13T19:42:26.903Z",
+ "updatedById": "52613719",
+ "url": "https://www.praxerasupplements.com/quality-standards",
+ "useFeaturedImage": false,
+ "widgetContainers": {},
+ "widgets": {}
+}
