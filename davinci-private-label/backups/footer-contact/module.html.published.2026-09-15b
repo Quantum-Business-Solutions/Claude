@@ -14,15 +14,7 @@
             <img class="footerLogoIMG" src="{{ module.footer_logo.src }}" alt="{{ module.footer_logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
           {% endif %}
         </div>
-        {# The caption is rich text pasted into the module's global content, and a
-           paste on 15 Sep arrived carrying its source colours inline -
-           color:#3a3f36 on background-color:#ecefe7 - which rendered as grey text
-           in a pale-green block against the dark footer. Inline styles beat the
-           stylesheet, and the global-content record is on no reachable API path,
-           so the style attributes are stripped here on the way out. The footer's
-           text is white on the dark band, always; nothing in this caption has ever
-           needed its own colour. #}
-        {{ module.caption|regex_replace('(?i) style="[^"]*"', '')|safe }}
+        {{ module.caption }}
       </div>
 
       {# The three link columns used to come from module.footer_menu, whose
@@ -75,27 +67,12 @@
         </div>
       </div>
 
-      {# Phone and email, per Shawn: 1-800-325-1776 and info@praxerasupplements.com,
-         tappable, directly under the street address.
-
-         They were added below the address block first, and then the same two lines
-         were typed into the module's global content as plain text - so both showed,
-         twice over. The global content is on no reachable API path, so the plain
-         "Phone:" / "E-Mail:" paragraphs are swapped for the linked pair right here,
-         in the position they already occupy. One copy each, and they are tel: and
-         mailto: rather than text you have to retype into your phone.
-
-         If those two lines are ever cleared out of the global content the swaps
-         match nothing, so the links are appended instead and cannot go missing. #}
-      {% set addr      = module.address|regex_replace('(?i) style="[^"]*"', '') %}
-      {% set tel_html  = '<p><a href="tel:+18003251776">1-800-325-1776</a></p>' %}
-      {% set mail_html = '<p><a href="mailto:info@praxerasupplements.com">info@praxerasupplements.com</a></p>' %}
-      {% set with_tel  = addr|regex_replace('(?i)<p>[^<]*Phone[^<]*</p>', tel_html) %}
-      {% set with_both = with_tel|regex_replace('(?i)<p>[^<]*Mail[^<]*</p>', mail_html) %}
       <div class="footer_phone_area">
-        {{ with_both|safe }}
-        {% if with_tel == addr %}{{ tel_html|safe }}{% endif %}
-        {% if with_both == with_tel %}{{ mail_html|safe }}{% endif %}
+        {{ module.address }}
+        <p>
+          <a href="tel:+18003251776">1-800-325-1776</a><br>
+          <a href="mailto:info@praxerasupplements.com">info@praxerasupplements.com</a>
+        </p>
       </div>
 
     </div>

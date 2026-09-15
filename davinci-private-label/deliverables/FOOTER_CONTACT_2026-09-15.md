@@ -86,3 +86,53 @@ notes on the sign-off sheet. The phone and email are a new request, not an outst
 
 Still open, unrelated to this change: **"FoodScience LLC®"** puts the ® on "LLC". The DaVinci-era
 original marked it "FoodScience®" and Sarah's written rule carries no ® at all. Her call.
+
+---
+
+## Update, 15 Sep — duplicates removed, highlight gone
+
+Two follow-ups from Shawn, both now live on all 68 pages.
+
+**The phone and email showed twice.** The tappable pair was added below the address block;
+separately, the same two lines were typed into the footer's global content as plain text
+(`Phone: 800-325-1776`, `E-Mail: Info@praxerasupplements.com`). Both rendered.
+
+The global-content record is on no reachable API path, so the plain lines could not be deleted
+there. Instead the module template now swaps them for the linked pair **in the position they
+already occupy** — directly under the street address. One copy each, and they are real `tel:`
+and `mailto:` links rather than text you have to retype into your phone. If those lines are
+ever cleared from the global content, the swap matches nothing and the links are appended
+instead, so they cannot go missing.
+
+**The pale-green highlight on the About Praxera caption is gone.** A paste on 15 Sep arrived
+carrying its source colours inline — `color:#3a3f36` on `background-color:#ecefe7` — which beat
+the stylesheet and rendered grey text in a pale-green block against the dark footer. The module
+now strips inline `style` attributes off the caption and the address on the way out. The footer
+is white on the dark band, always. `#ecefe7` and `#3a3f36` now appear **zero** times on the page.
+
+### Verified
+
+| Check | Result |
+|---|---|
+| HubL validated before upload (`/cms/v3/source-code/published/validate/`) | clean; the same call correctly rejects a deliberately broken copy |
+| `tel:` / `mailto:` count, 11 live pages | exactly 1 each (`/contact` has 2 mailto — the second is its own body link) |
+| Plain `Phone:` / `E-Mail:` lines remaining | 0 on all 11 |
+| Highlight colours on the page | 0 |
+| Caption rendered colour (Chromium, 1440 and 390) | `rgb(255,255,255)` on `rgb(50,50,50)` |
+| Position | phone and email sit under the street address, above the FoodScience sentence |
+
+Screenshots: `/tmp/shots/footer-desktop.png`, `/tmp/shots/footer-phone.png`.
+
+### Two findings — not acted on
+
+1. **Every `mailto:` on the site is rewritten to `href="javascript:void(0);"`** a few seconds
+   after load. Isolated to `cdn.rlets.com` (the NextRoll/RollWorks capture pixel): block that one
+   script and the `mailto:` survives; block Hotjar, the HubSpot loader or the cookie banner and it
+   still breaks. This is **pre-existing and site-wide** — `/contact`'s own email links, which
+   long predate this change, behave identically. The script does attach its own click handler, so
+   it may still hand off to the mail client after firing its tracking; that cannot be proven from
+   a headless browser, which blocks external protocol handlers either way. **Someone should click
+   the footer email on a real machine and confirm Outlook opens.** The `tel:` link is untouched.
+2. **The ZIP in the address looks short**: `Williston, VT 0549` — Vermont ZIPs are five digits and
+   Williston is 05495. It lives in the global content, so it is a one-field edit in the footer
+   editor. Not changed here — flagging only.

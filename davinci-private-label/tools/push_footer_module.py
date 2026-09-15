@@ -30,7 +30,7 @@ import urllib.request
 
 PATH = 'Private Label/Modules/Global Footer.module/module.html'
 LOCAL = 'modules/Global Footer.module.html'
-BEFORE = 'backups/footer-contact/module.html.published.2026-09-15'
+BEFORE = 'backups/footer-contact/module.html.published.2026-09-15b'
 API = 'https://api.hubapi.com/cms/v3/source-code/published/content/'
 
 TOKEN = re.search(r'pat-na1-[0-9a-f-]+', open('/tmp/hs.py').read()).group(0)
