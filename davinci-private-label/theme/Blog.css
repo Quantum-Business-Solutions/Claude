@@ -1,0 +1,319 @@
+/* @import url('http://example.com/example_style.css'); */
+
+/***********************************************/
+/* CSS @imports must be at the top of the file */
+/* Add them above this section                 */
+/***********************************************/
+
+/*****************************************/
+/* Start your style declarations here    */
+/*****************************************/
+
+.blog_listing_container{
+  padding-top: 45px; 
+  padding-bottom: 45px; 
+}
+
+.blog_first__wrapper{
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+  margin-left: 1%; 
+  margin-right: 1%; 
+}
+
+.blog_first_content_area{
+  flex-basis: 65%;   
+  background-color: rgb(245,245,245); 
+  border-radius: 8px; 
+  transition: .6s ease all;    
+}
+
+.featured_posts_area{
+  flex-basis: 30%;   
+}
+
+.featured_posts_headline{
+  margin-top: 0px; 
+  padding-bottom: 6px; 
+  text-transform: uppercase; 
+  border-bottom: 2px solid var(--mainBlue); 
+}
+
+@media screen and (max-width: 800px){
+  
+  .featured_posts_headline{
+    margin-top: 25px; 
+  }
+  
+  .blog_first_content_area{
+    flex-basis: 100%;   
+    background-color: rgb(245,245,245); 
+    border-radius: 8px; 
+  }
+
+  .featured_posts_area{
+    flex-basis: 100%;   
+  }
+  
+}
+
+.firstFeaturedIMG{
+  display: block; 
+  margin: 0px auto; 
+  height: auto; 
+  aspect-ratio: auto; 
+  width: 100%; 
+  max-width: 100%; 
+  border-top-right-radius: 8px; 
+  border-top-left-radius: 8px;   
+}
+
+.blog_first_content_area:hover{
+  transform: scale(1.02); 
+  transition: .6s ease all;  
+}
+
+.blog_first_inner{
+  padding: 10px 20px 20px 20px;    
+}
+
+.recent_wrapper{
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+}
+
+.recent_blog_item{
+  flex-basis: 23%; 
+  margin: 25px 1%; 
+  background-color: rgb(245,245,245); 
+  border-radius: 8px; 
+  transition: .6s ease all; 
+}
+
+.recent_blog_item:hover {
+  transition: .6s ease all; 
+  transform: scale(1.03);  
+}
+
+.recent_blog_item_recent{
+  flex-basis: 23%; 
+  margin: 25px 1%; 
+  background-color: white;  
+  border-radius: 8px; 
+}
+
+@media screen and (max-width: 1000px){
+  
+  .recent_blog_item{
+    flex-basis: 45%; 
+    margin: 25px 2%; 
+    background-color: rgb(245,245,245); 
+    border-radius: 8px; 
+  }
+  
+  .recent_blog_item_recent{
+    flex-basis: 45%; 
+    margin: 25px 2%;  
+    background-color: white;  
+    border-radius: 8px; 
+  }  
+  
+}
+
+
+@media screen and (max-width: 600px){
+  
+  .recent_blog_item{
+    flex-basis: 100%; 
+    margin: 25px 0%; 
+    background-color: rgb(245,245,245); 
+    border-radius: 8px; 
+  }
+  
+  .recent_blog_item_recent{
+    flex-basis: 100%; 
+    margin: 25px 0%;   
+    background-color: white;  
+    border-radius: 8px; 
+  }    
+  
+}
+
+.noMarginRight{
+  margin-right: 0%;     
+}
+
+.blog_listing_summary_text{
+  font-size: 15px; 
+  line-height: 23px; 
+  color: rgb(100,100,100);   
+}
+
+.blog_listing_name{
+  color: #012638;     
+}
+
+.post-title{
+  text-transform: capitalize; 
+  font-size: 20px; 
+  margin: 0px; 
+  padding-top: 10px;  
+}
+
+
+
+.featured_posts_container{
+  border-bottom: 2px solid rgb(220,220,220);  
+}
+
+.featured_posts_author_wrapper{
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  align-items: space-between; 
+}
+
+.featured_posts_author_area{
+  flex-basis: 60%;   
+}
+
+.featured_posts_date_area{
+  flex-basis: 35%;   
+  text-align: right; 
+}
+
+.popPostLink{
+  color: black; 
+  text-decoration: none;  
+}
+
+.popPostLink:hover{
+  color: var(--mainBlue);      
+}
+
+.blog-pagination{
+  text-align: center; 
+  margin-top: 35px; 
+}
+
+.blog-pagination a{
+  color: var(--mainBlue); 
+  text-decoration: none; 
+}
+
+.blog_reader__main_title{
+  text-align: center;     
+}
+
+.blog_reader__featured_image{
+  display: block; 
+  margin: 0px auto; 
+  height: auto; 
+  aspect-ratio: auto; 
+  width: 100%; 
+  max-width: 100%; 
+}
+
+.blog_reader_author_display_name{
+  text-align: center;   
+  font-weight: 600; 
+}
+
+.blog-post__tag-link{
+  display: inline-block; 
+  background-color: rgb(245,245,245); 
+  color: rgb(60,60,60);    
+  padding: 5px; 
+  text-decoration: none; 
+  border-radius: 6px;  
+  font-size: 13px;   
+}
+
+.listing_author_name{
+  text-align: right; 
+  font-size: 14px; 
+  color: rgb(100,100,100); 
+}
+
+.blog_listing_read_more_link{
+  color: var(--mainBlue); 
+  text-decoration: none; 
+  font-weight: 600;  
+}
+
+.recent_blog_listing_name{
+  text-align: center; 
+  color: #012638; 
+}
+
+.pop_posts_author_name{
+  font-size: 14px; 
+  color: rgb(100,100,100);  
+}
+
+.pop_posts_date{
+  font-size: 14px; 
+  color: rgb(100,100,100);   
+}
+
+.Blue__CTA{
+  color: var(--mainBlue);     
+  font-size: 35px;
+  font-weight: 700;   
+  line-height: 1.4em;  
+}
+
+.post_body a{
+  color: var(--mainBlue)!important;        
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Read More sits on the card floor, not wherever the title happens to end.
+
+   The listing cards are flex items in .recent_wrapper, so they already stretch
+   to the tallest card in their row - but the block inside them was a plain
+   box, so a two-line title pushed Read More up and a three-line title pushed
+   it down, and the links stepped up and down across the row.
+
+   Making the card and its inner block columns lets the last paragraph - the
+   one holding the Read More link - take the leftover space with margin-top,
+   so every Read More in a row lands on the same line. Scoped to the listing
+   cards; the featured post at the top of the page uses .blog_first_inner too
+   and is left alone. */
+.recent_blog_item,
+.recent_blog_item_recent {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent_blog_item > .blog_first_inner,
+.recent_blog_item_recent > .blog_first_inner {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.recent_blog_item > .blog_first_inner > p:last-child,
+.recent_blog_item_recent > .blog_first_inner > p:last-child {
+  margin-bottom: 0;
+  margin-top: auto;
+  padding-top: 12px;
+}
