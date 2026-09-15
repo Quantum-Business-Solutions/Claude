@@ -1,0 +1,66 @@
+
+
+<div class="moduleStyles">
+  <div class="bodyContainer">
+    <div class="footer__wrapper">
+      <div class="footer__address">
+        <div>
+          {% if module.footer_logo.src %}
+            {% set sizeAttrs = 'width="{{ module.footer_logo.width }}" height="{{ module.footer_logo.height }}"' %}
+            {% if module.footer_logo.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ module.footer_logo.width }}" height="{{ module.footer_logo.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.footer_logo.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ module.footer_logo.max_width }}" height="{{ module.footer_logo.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+             {% set loadingAttr = module.footer_logo.loading != 'disabled' ? 'loading="{{ module.footer_logo.loading }}"' : '' %}
+            <img class="footerLogoIMG" src="{{ module.footer_logo.src }}" alt="{{ module.footer_logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+        {{ module.caption }}
+      </div>
+      
+      {% for item in module.footer_menu %}
+        <div class="footer_link_list">
+          <h3 class="footer_link_headline"> {{ item.headline }} </h3>
+          <div class="footerLinkContainer">
+            {% simple_menu menu_tree="{{ item.simplemenu_field }}" %}
+          </div>
+        </div>
+      {% endfor %}
+      
+      <div class="footer_phone_area">
+        {{ module.address }}
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="footerBottom_Tier">
+  <div class="bodyContainer">
+    <div class="footer__social__container">
+      {% if module.social_urls.facebook_url.href %} 
+      <a class="footer_social_links" href="{{ module.social_urls.facebook_url.href }}"><i class="footerSocialIcons fa-brands fa-facebook-f" aria-label="Facebook"></i></a> {% endif %}
+      {% if module.social_urls.twitter_url.href %}       
+      <a class="footer_social_links" href="{{ module.social_urls.twitter_url.href }}"><i class="footerSocialIcons fa-brands fa-twitter" aria-label="Twitter"></i></a> {% endif %}
+      {% if module.social_urls.linkedin_url.href %} 
+      <a class="footer_social_links" href="{{ module.social_urls.linkedin_url.href }}"><i class="footerSocialIcons fa-brands fa-linkedin-in" aria-label="LinkedIn"></i></a> {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+{% require_css %} 
+  <style> 
+    {% scope_css %} 
+    
+      .moduleStyles{
+        padding-top: {{ module.style.padding.padding_top }}px;
+        padding-bottom: {{ module.style.padding.padding_bottom }}px;
+        background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity / 100 }}); 
+      } 
+    
+    {% end_scope_css %}     
+  </style>
+{% end_require_css %} 

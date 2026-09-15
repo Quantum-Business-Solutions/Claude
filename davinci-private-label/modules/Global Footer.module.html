@@ -1,0 +1,109 @@
+<div class="moduleStyles">
+  <div class="bodyContainer">
+    <div class="footer__wrapper">
+      <div class="footer__address">
+        <div>
+          {% if module.footer_logo.src %}
+            {% set sizeAttrs = 'width="{{ module.footer_logo.width }}" height="{{ module.footer_logo.height }}"' %}
+            {% if module.footer_logo.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ module.footer_logo.width }}" height="{{ module.footer_logo.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.footer_logo.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ module.footer_logo.max_width }}" height="{{ module.footer_logo.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+             {% set loadingAttr = module.footer_logo.loading != 'disabled' ? 'loading="{{ module.footer_logo.loading }}"' : '' %}
+            <img class="footerLogoIMG" src="{{ module.footer_logo.src }}" alt="{{ module.footer_logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+        {{ module.caption }}
+      </div>
+
+      {# The three link columns used to come from module.footer_menu, whose
+         simple-menu fields had labels typed in but no destinations - so every
+         one of the eleven links rendered href="#" on all 68 pages. Same class
+         of fault as the header menu on 3 Sep, but the simple-menu values live
+         in this module's global content, which HubSpot exposes on no API path,
+         so it could not be repaired the way the header menu was.
+
+         The columns are therefore written out here. Every destination below was
+         checked and returns 200 on www.praxerasupplements.com. Keep the
+         .footer_link_list / .footer_link_headline / .footerLinkContainer ul li a
+         structure - module.css styles the links off it. #}
+      <div class="footer_link_list">
+        <h3 class="footer_link_headline">Capabilities</h3>
+        <div class="footerLinkContainer">
+          <ul>
+            <li><a href="/">Private Label Supplements</a></li>
+            <li><a href="/our-process">Our Process</a></li>
+            <li><a href="/design-services">Design Services</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer_link_list">
+        <h3 class="footer_link_headline">Resources</h3>
+        <div class="footerLinkContainer">
+          <ul>
+            <li><a href="/resources">Resource Center</a></li>
+            <li><a href="/resources">Guides</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      {# "Supplement Forms" is deliberately absent: capsules, liquids,
+         chewables, powders and gummies are still drafts and 404, and there is
+         no published formats hub to point at. Add it back here the moment
+         those pages publish. #}
+      <div class="footer_link_list">
+        <h3 class="footer_link_headline">About</h3>
+        <div class="footerLinkContainer">
+          <ul>
+            <li><a href="/quality-standards">Quality &amp; Trust</a></li>
+            <li><a href="/health-categories">Health Categories</a></li>
+            <li><a href="/about">About Praxera</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer_phone_area">
+        {{ module.address }}
+        <p>
+          <a href="tel:+18003251776">1-800-325-1776</a><br>
+          <a href="mailto:info@praxerasupplements.com">info@praxerasupplements.com</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="footerBottom_Tier">
+  <div class="bodyContainer">
+    <div class="footer__social__container">
+      {% if module.social_urls.facebook_url.href %}
+      <a class="footer_social_links" href="{{ module.social_urls.facebook_url.href }}"><i class="footerSocialIcons fa-brands fa-facebook-f" aria-label="Facebook"></i></a> {% endif %}
+      {% if module.social_urls.twitter_url.href %}
+      <a class="footer_social_links" href="{{ module.social_urls.twitter_url.href }}"><i class="footerSocialIcons fa-brands fa-twitter" aria-label="Twitter"></i></a> {% endif %}
+      {% if module.social_urls.linkedin_url.href %}
+      <a class="footer_social_links" href="{{ module.social_urls.linkedin_url.href }}"><i class="footerSocialIcons fa-brands fa-linkedin-in" aria-label="LinkedIn"></i></a> {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+
+      .moduleStyles{
+        padding-top: {{ module.style.padding.padding_top }}px;
+        padding-bottom: {{ module.style.padding.padding_bottom }}px;
+        background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity / 100 }});
+      }
+
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
