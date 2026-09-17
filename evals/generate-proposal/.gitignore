@@ -1,0 +1,4 @@
+# Real client content (meeting transcripts, HubSpot context, drafted
+# proposals, judge rationale quoting either). Never committed — see README.
+.cache/
+results/

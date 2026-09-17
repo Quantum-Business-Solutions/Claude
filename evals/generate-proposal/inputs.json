@@ -1,0 +1,32 @@
+{
+  "description": "Real ClientCommand portal IDs selected as inputs for the generate-proposal eval. IDs only — no client names, contacts, meeting content, or deal data is stored here. The eval harness resolves each ID against the live ClientCommand DB at run time.",
+  "source": "mcp__Client_Command_-_NEW__list_portals + list_meetings(has_summary=true)",
+  "selected_at": "2026-09-17",
+  "portal_ids": [
+    "5e9d34b6-6cc9-4d4c-8964-9e3f15578020",
+    "656af1ac-7355-4a13-9bc5-74830d459f17",
+    "416c73b7-ceed-43c5-855a-a4e157a03ace",
+    "49a4b8c2-7f71-4b6d-b6de-99bda1338167",
+    "bb78078d-60a6-4fe3-a030-f84b794557c2",
+    "54e9d56d-3a97-405e-b896-17c3a657f740",
+    "6d797a44-e010-410f-b532-64ac42627d64",
+    "3bb7fb52-ec7e-468f-9fe9-99180a91175b",
+    "0278f5f5-e4e5-4fe6-92ab-acff4b01f91b",
+    "8791d13b-064a-4374-873f-9b7a90b3ebeb",
+    "87983ec3-c3fe-4ff8-b29b-88db86adc80c",
+    "5971c6cd-99c1-4541-84a1-0c99c5c40509",
+    "7d779f05-59ca-42b4-baab-a426f1334565",
+    "420afc5b-9a30-400d-aa14-ed1df4e31ed1",
+    "b266480e-0756-474a-acf2-9468d75a1cfc",
+    "5d9ab663-63e8-46dc-9239-7ca9963c203b",
+    "c57a89a3-b5eb-45f6-b789-3de63631552a",
+    "9e328418-6c9f-41b8-9564-2539eae77c3a",
+    "095b075e-1089-467e-98c1-eba8ebca670e",
+    "95fe78ff-507a-4a15-9678-42480f5594dd",
+    "13c14587-e870-48cf-9719-e714e76a2b70",
+    "f24e4ed1-6f85-4814-ba60-76de583a6a76",
+    "b07d2ca1-8284-442f-af16-43f28db87511",
+    "9c898582-15e3-41eb-aad0-98ffd24d05c1",
+    "99484e40-9f16-4cb1-a012-0cd7370d2fb8"
+  ]
+}
