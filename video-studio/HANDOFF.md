@@ -61,10 +61,18 @@ To split for chat (30 MB limit): `ffmpeg -i out/QuoteCommand-overview.mp4 -c cop
 - The public proposal link uses the token in `scenes.cjs` (`TOKEN`).
 - Flagship numbers on screen: $112,260 total, 29.1% margin, $4,119.04/mo.
 
+## Reshoot log
+
+- **v2 (Sep 26)** fixed four scenes:
+  - s01 and s07: "ZZ TEST" scrubbed from the screen.
+  - s05: split into two shots. The Northwind build sheet, then a fresh quote where the C450i is added off camera and ticking the FS-539 staple finisher adds RU-519 with the reason shown. `start2=3.5` lines up the click with the narration.
+  - s17: the orders board with the browser clock set to Sep 10 09:00 CDT.
+- Also fixed: the soundtrack was 3s short (the voice track wasn't padded, so the music ducking stopped early). `apad` was added in `edit.py`.
+
 ## Open items for the next film pass
 
 1. **Northwind fleet assessment**: s03 still shows Summit Regional Credit Union's assessment. Creating a Northwind one on the live account was blocked. Shawn can create it in the app: Assessments → New assessment → name "Northwind Orthopedics, PC" → import Northwind's fleet (7 Canon devices; volumes come from the Sep/Aug meter reads). Then re-record s03.
 2. **Per-funder rate cards**: every funder has identical rates. s08 only shows one funder, so it isn't visible. Change it only with approval, and don't touch the funder the flagship deal uses, or its totals shift.
-3. **ZZ TEST approval**: it's hidden on film by the text scrub. For good, rename or resolve the test deal "ZZ TEST - Meridian Dental Group - MFP Refresh" (owner decision).
+3. **ZZ TEST approval**: it's hidden on film by the text scrub. The deal avatar on Home still reads "ZT" (tiny). For good, rename or resolve the test deal "ZZ TEST - Meridian Dental Group - MFP Refresh" (owner decision).
 4. **ERP push row** and **HubSpot sandbox** scenes: the sandbox needs a credential from Shawn.
 5. Ideas: 60–90s cut-downs per chapter for social, a rep-view-only training cut, and a voice pick-up for any line that changes.

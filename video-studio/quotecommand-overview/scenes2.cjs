@@ -59,39 +59,43 @@ module.exports = {
     const left = 17500 - (Date.now() - t0); if (left > 0) await h.wait(left);
   }},
   s05b: { run: async (h) => {
-    // Shot 2 of 2: a fresh local quote (nothing is saved). Add a C450i, tick the FS-539 staple
-    // finisher; the RU-519 relay it needs is added for you, with the reason in words.
+    // Shot 2 of 2: a fresh local quote (nothing is saved). The C450i is added off camera; on camera
+    // we look at the rules, tick the FS-539 staple finisher, and the RU-519 relay it needs is added
+    // for us with the reason in words.
     const p = h.page;
     await h.go("/configurator");
     await p.locator("text=Search all products").first().waitFor({ timeout: 60000 });
-    await p.waitForFunction(() => /10844 rules|\d+ rules/.test(document.body.innerText) && !/loading rules/.test(document.body.innerText), null, { timeout: 90000 }).catch(() => {});
-    await h.ready(null); await tidy(h);
+    await p.waitForFunction(() => /\d{4,} rules/.test(document.body.innerText) && !/loading rules/.test(document.body.innerText), null, { timeout: 90000 }).catch(() => {});
+    await tidy(h);
+    await p.locator("text=Search all products").first().click();
+    await p.keyboard.type("C450i"); await h.wait(1200);
+    await p.locator("text=Konica Minolta bizhub C450i").first().click(); await h.wait(1000);
+    await p.getByRole("button", { name: "Add Konica Minolta bizhub C450i to the quote" }).click();
+    await p.getByText("Staple Finisher", { exact: true }).first().waitFor({ timeout: 20000 });
+    await h.wait(5000);                                                   // let the "added" toast clear
+    await p.evaluate(() => window.scrollTo(0, 0)); await h.wait(800);
+    await h.ready(null);
     const t0 = Date.now();
-    await h.hoverSel(p.getByText(/\d{4,} rules/).first(), 800); await h.wait(1100);          // "…ten thousand compatibility rules"
-    await h.click(p.locator("text=Search all products").first(), { after: 250 });
-    await p.keyboard.type("C450i", { delay: 70 }); await h.wait(700);
-    await h.hoverSel(p.locator("text=Konica Minolta bizhub C450i").first(), 600);
-    await p.evaluate(() => { const c = document.getElementById("qc-film-cursor"); if (c) { const r = c.getBoundingClientRect(); window.__qcClick && window.__qcClick(r.left + 3, r.top + 3); } });
-    await p.keyboard.press("Enter"); await h.wait(600);
-    const addBtn = p.getByRole("button", { name: "Add Konica Minolta bizhub C450i to the quote" });
-    if (!(await addBtn.isVisible().catch(() => false))) { await p.locator("text=Konica Minolta bizhub C450i").first().click().catch(() => {}); await h.wait(600); }
-    await h.click(addBtn, { after: 700 });
-    const sku = p.getByText("FS-539", { exact: true }).first();
-    await sku.waitFor({ timeout: 20000 });
-    const y = await sku.evaluate(n => n.getBoundingClientRect().top);
-    await h.scrollBy(y - 430, 1300);                                                            // "Add a staple finisher…"
-    const row = sku.locator("xpath=ancestor::*[.//button][1]");
-    await h.click(row.getByText("Staple Finisher", { exact: true }).first(), { ms: 600, after: 900 });
+    await h.hoverSel(p.getByText(/\d{4,} rules/).first(), 700); await h.wait(900);   // "…ten thousand compatibility rules"
+    const fin = p.getByText("Staple Finisher", { exact: true }).first();              // the FS-539 row
+    const y = await fin.evaluate(n => n.getBoundingClientRect().top);
+    await h.scrollBy(y - 480, 1300);
+    const compat = p.getByText(/\d+ compatible/).first();
+    if (await compat.isVisible().catch(() => false)) { await h.hoverSel(compat, 600); await h.wait(500); }
+    const finRow = fin.locator("xpath=ancestor::*[.//button][1]");
+    const need = finRow.getByText(/NEEDS RU-519/i).first();
+    if (await need.isVisible().catch(() => false)) { await h.hoverSel(need, 600); await h.wait(400); }
+    await h.click(fin, { ms: 500, after: 900 });                                      // "Add a staple finisher…"
     const toast = p.locator("[data-sonner-toast]").filter({ hasText: "RU-519" }).first();
-    if (await toast.isVisible().catch(() => false)) { await h.hoverSel(toast, 1100); }
-    await h.wait(2400);                                                                         // "…tells you in plain English…"
+    if (await toast.isVisible().catch(() => false)) await h.hoverSel(toast, 1000);
+    await h.wait(2400);                                                               // "…tells you in plain English…"
     const relay = p.getByText("Relay Unit", { exact: true }).first();
-    if (await relay.isVisible().catch(() => false)) await h.hoverSel(relay, 1100);              // "…adds it in one click"
-    await h.wait(2000);
-    const badge = p.getByText("NEEDS RU-519", { exact: false }).first();
-    if (await badge.isVisible().catch(() => false)) await h.hoverSel(badge, 1200);              // "A finisher that doesn't fit…"
+    if (await relay.isVisible().catch(() => false)) await h.hoverSel(relay, 1000);    // "…adds it in one click"
+    await h.wait(2200);
+    const badge = p.getByText(/NEEDS RU-519/i).first();
+    if (await badge.isVisible().catch(() => false)) await h.hoverSel(badge, 1100);    // "A finisher that doesn't fit…"
     await h.wait(2600);
-    await h.scrollBy(-(y - 430) - 200, 1800);                                                   // back up to the running total
+    await h.scrollBy(-(y - 480) - 300, 1800);                                         // back up to the running total
     await h.move(420, 180, 1200);
     const left = 27500 - (Date.now() - t0); if (left > 0) await h.wait(left);
   }},

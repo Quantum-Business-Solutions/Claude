@@ -73,7 +73,7 @@ TL = [
   dict(vo="s03", segs=[("rec", "s03", None)], label="Fleet assessment"),
   dict(card="ch2"),
   dict(vo="s04", segs=[("rec", "s04", None)], label="Configurator · Quick start"),
-  dict(vo="s05", segs=[("rec", "s05", 0.377), ("rec", "s05b", None)], label="Configurator · 10,844 compatibility rules"),
+  dict(vo="s05", segs=[("rec", "s05", 0.377), ("rec", "s05b", None)], start2=3.5, label="Configurator · 10,844 compatibility rules"),
   dict(card="ch3"),
   dict(vo="s06", segs=[("rec", "s06", None)], label="Margin guardrails"),
   dict(vo="s07", segs=[("rec", "s07", 0.55), ("phone", "s07p", None, "Approvals, anywhere")], label="Approvals inbox"),
@@ -131,7 +131,7 @@ def build():
                 ln = left if frac is None else (frac if kind == "card" and frac > 1 else dur * frac)
                 ln = min(ln, left) if frac is not None else left
                 f = f"{OUT}/segs/{i:02d}_{k}.mp4"
-                seg(kind, src, ln, f, start=(it.get("start", 0.0) if k == 0 else 0.0), caption=sgt[3] if len(sgt) > 3 else None); segfiles.append(f); left -= ln
+                seg(kind, src, ln, f, start=(it.get("start", 0.0) if k == 0 else it.get("start2", 0.0)), caption=sgt[3] if len(sgt) > 3 else None); segfiles.append(f); left -= ln
         body = f"{OUT}/segs/{i:02d}_body.mp4"
         concat(segfiles, body) if len(segfiles) > 1 else os.replace(segfiles[0], body)
         fades = f"fade=t=in:st=0:d=0.3,fade=t=out:st={dur-0.3:.3f}:d=0.3"
