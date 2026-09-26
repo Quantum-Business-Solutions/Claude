@@ -1,0 +1,60 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0B1F3A;--navy2:#132d52;--gold:#C9A24B;--ink:#f4f1ea}
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--navy);font-family:Poppins,sans-serif;color:var(--ink)}
+  .bg{position:absolute;inset:0;background:
+      radial-gradient(1200px 700px at 78% 18%, rgba(201,162,75,.10), transparent 60%),
+      radial-gradient(900px 600px at 10% 90%, rgba(255,255,255,.05), transparent 60%),
+      linear-gradient(160deg,var(--navy) 0%, #0a1a31 55%, #081528 100%)}
+  .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+  .wrap{position:absolute;left:180px;right:180px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}
+  .eyebrow{font-weight:600;letter-spacing:.32em;font-size:22px;color:var(--gold);text-transform:uppercase;opacity:0;transform:translateY(14px);animation:up .9s .15s cubic-bezier(.2,.8,.2,1) forwards}
+  .rule{width:0;height:3px;background:var(--gold);margin:26px 0 30px;animation:grow .9s .35s cubic-bezier(.2,.8,.2,1) forwards}
+  h1{margin:0;font-size:92px;line-height:1.06;font-weight:700;letter-spacing:-.01em;opacity:0;transform:translateY(22px);animation:up 1s .45s cubic-bezier(.2,.8,.2,1) forwards}
+  .sub{margin-top:28px;font-family:"DM Sans",sans-serif;font-size:32px;color:rgba(244,241,234,.72);max-width:1300px;opacity:0;transform:translateY(16px);animation:up 1s .75s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes up{to{opacity:1;transform:none}}
+  @keyframes grow{to{width:120px}}
+  /* relay lines for the cold open */
+  .relay{display:flex;flex-direction:column;gap:22px}
+  .relay div{font-size:64px;font-weight:600;opacity:0;transform:translateX(-24px)}
+  .relay div span{color:var(--gold)}
+  .relay div.on{animation:in .8s cubic-bezier(.2,.8,.2,1) forwards}
+  .relay div.dim{transition:opacity .8s;opacity:.28 !important}
+  @keyframes in{to{opacity:1;transform:none}}
+  .q{font-size:54px;font-weight:600;margin-top:46px;opacity:0}
+  .q.on{animation:in .9s forwards}
+  .logo{display:flex;align-items:center;gap:28px;opacity:0;transform:scale(.96);animation:pop 1.2s .2s cubic-bezier(.2,.8,.2,1) forwards}
+  .logo svg{width:120px;height:120px}
+  .logo .word{font-size:104px;font-weight:700;letter-spacing:-.015em}
+  @keyframes pop{to{opacity:1;transform:none}}
+  .tag{margin-top:34px;font-family:"DM Sans";font-size:34px;color:rgba(244,241,234,.75);opacity:0;animation:up 1s 1.0s forwards;transform:translateY(12px)}
+  .cta{margin-top:64px;display:inline-flex;align-items:center;gap:18px;background:var(--gold);color:var(--navy);font-weight:600;font-size:34px;padding:22px 38px;border-radius:14px;opacity:0;animation:up 1s 1.4s forwards;transform:translateY(12px)}
+  .url{margin-top:26px;font-family:"DM Sans";font-size:28px;color:rgba(244,241,234,.6);opacity:0;animation:up 1s 1.7s forwards}
+  .center{align-items:center;text-align:center}
+</style></head>
+<body><div class="bg"></div><div class="grid"></div><div class="wrap" id="w"></div>
+<script>
+const p = new URLSearchParams(location.search);
+const kind = p.get("k"), w = document.getElementById("w");
+const LOGO = `<img src="qlogo.png" style="width:128px;height:128px">`;
+if (kind === "chapter") {
+  w.innerHTML = `<div class="eyebrow">${p.get("n")} · ${p.get("e")}</div><div class="rule"></div><h1>${p.get("t")}</h1>${p.get("s") ? `<div class="sub">${p.get("s")}</div>` : ""}`;
+} else if (kind === "relay") {
+  // lines appear at the given ms offsets (timed to the narration)
+  const lines = [["Priced in a ", "spreadsheet."], ["Rebuilt in ", "Word."], ["Keyed into the ", "CRM."], ["Emailed to the funder as ", "version four."]];
+  w.innerHTML = `<div class="relay">${lines.map(l => `<div>${l[0]}<span>${l[1]}</span></div>`).join("")}</div><div class="q">Which version did the customer say yes to?</div>`;
+  const at = (p.get("at") || "2600,4700,6400,8400,11600").split(",").map(Number);
+  const divs = [...w.querySelectorAll(".relay div")];
+  divs.forEach((d, i) => setTimeout(() => d.classList.add("on"), at[i]));
+  setTimeout(() => { divs.forEach(d => d.classList.add("dim")); w.querySelector(".q").classList.add("on"); }, at[4]);
+} else if (kind === "promise") {
+  w.classList.add("center");
+  w.innerHTML = `<div class="logo">${LOGO}<div class="word">QuoteCommand</div></div><div class="tag">One record — from the first look at a customer's fleet to the last machine installed.</div>`;
+} else if (kind === "end") {
+  w.classList.add("center");
+  w.innerHTML = `<div class="logo">${LOGO}<div class="word">QuoteCommand</div></div><div class="tag">Book a walkthrough — we'll build your first quote on your own catalog.</div><div class="cta">Book a walkthrough →</div><div class="url">thequantumleap.business</div>`;
+}
+</script></body></html>

@@ -1,0 +1,114 @@
+[
+ {
+  "name": "relay",
+  "q": {
+   "k": "relay",
+   "at": "5300,7600,9400,13300,17900"
+  },
+  "ms": 23500
+ },
+ {
+  "name": "promise",
+  "q": {
+   "k": "promise"
+  },
+  "ms": 12500
+ },
+ {
+  "name": "ch1",
+  "q": {
+   "k": "chapter",
+   "n": "01",
+   "e": "Before the quote",
+   "t": "Know the account"
+  },
+  "ms": 3600
+ },
+ {
+  "name": "ch2",
+  "q": {
+   "k": "chapter",
+   "n": "02",
+   "e": "Configure",
+   "t": "Build it right, the first time"
+  },
+  "ms": 3600
+ },
+ {
+  "name": "ch3",
+  "q": {
+   "k": "chapter",
+   "n": "03",
+   "e": "Price",
+   "t": "Price it with guardrails"
+  },
+  "ms": 3600
+ },
+ {
+  "name": "ch4",
+  "q": {
+   "k": "chapter",
+   "n": "04",
+   "e": "Propose",
+   "t": "A proposal they actually read"
+  },
+  "ms": 3600
+ },
+ {
+  "name": "ch5",
+  "q": {
+   "k": "chapter",
+   "n": "05",
+   "e": "Paper & sign",
+   "t": "Fifteen documents. One envelope."
+  },
+  "ms": 3600
+ },
+ {
+  "name": "ch6",
+  "q": {
+   "k": "chapter",
+   "n": "06",
+   "e": "Fulfil",
+   "t": "From signature to install"
+  },
+  "ms": 3600
+ },
+ {
+  "name": "ch7",
+  "q": {
+   "k": "chapter",
+   "n": "07",
+   "e": "Connect",
+   "t": "Where your pipeline already lives"
+  },
+  "ms": 3600
+ },
+ {
+  "name": "ch8",
+  "q": {
+   "k": "chapter",
+   "n": "08",
+   "e": "Control",
+   "t": "You decide who sees what"
+  },
+  "ms": 3600
+ },
+ {
+  "name": "ch9",
+  "q": {
+   "k": "chapter",
+   "n": "09",
+   "e": "Everywhere",
+   "t": "In the field, and in Claude"
+  },
+  "ms": 3600
+ },
+ {
+  "name": "end",
+  "q": {
+   "k": "end"
+  },
+  "ms": 9000
+ }
+]

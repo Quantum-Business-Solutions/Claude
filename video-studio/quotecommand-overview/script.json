@@ -1,0 +1,173 @@
+{
+ "title": "QuoteCommand \u2014 one record from first look to last install",
+ "chapters": [
+  {
+   "id": "s00",
+   "chapter": "The relay race",
+   "shot": "Title cards over slow drift of real screens (dimmed)",
+   "vo": "Every copier dealer runs the same relay race. The quote gets priced in a spreadsheet, rebuilt in Word, keyed into the CRM, and emailed to the leasing company as a fourth version. And the day the customer says yes, nobody is quite sure which version they said yes to. QuoteCommand replaces the relay with one record, from the first look at a customer's fleet to the day the last machine is installed. Let's follow one deal all the way through."
+  },
+  {
+   "id": "s01",
+   "chapter": "Your brand",
+   "shot": "/ Home, admin, 1920",
+   "vo": "This is QuoteCommand, wearing your brand. Your colors, your logo, and your name on every screen and on every page a customer sees. A rep signs in to their own dealership: the deals in motion, the approvals waiting, and what needs them next."
+  },
+  {
+   "id": "s02",
+   "chapter": "Know the account",
+   "shot": "/fleet \u2192 search Northwind \u2192 expand sites",
+   "vo": "Our customer is Northwind Orthopedics: three clinics around Indianapolis, running seven aging Canon machines. Before anyone quotes, the fleet is already here. Every device, where it sits, and six months of meter reads. So we know Northwind prints about seventy thousand pages a month, and that their lease with GreatAmerica still has ten payments left."
+  },
+  {
+   "id": "s03",
+   "chapter": "Know the account",
+   "shot": "/assessments \u2192 Northwind assessment",
+   "vo": "A fleet assessment turns that data into a plan: what they spend today, what a right-sized fleet would cost, and which devices can be consolidated."
+  },
+  {
+   "id": "s04",
+   "chapter": "Build it right",
+   "shot": "/configurator \u2192 Quick start \u2192 answers \u2192 recommended machines",
+   "vo": "Now the rep builds the quote. Quick start asks what a customer actually knows. Pages a month, how many people, eleven by seventeen, stapling. And it answers with machines from your own catalog, already built."
+  },
+  {
+   "id": "s05",
+   "chapter": "Build it right",
+   "shot": "Configurator: Northwind build, then add FS-539 to a C450i \u2192 refusal in words \u2192 Add RU-519",
+   "vo": "Here is the full build for Northwind. Four color bizhub C450i's for the main clinic, two mono units for Zionsville, and a C750i for the Carmel print room. Every accessory is checked against more than ten thousand compatibility rules from your own catalog. Add a staple finisher, and QuoteCommand tells you in plain English what else it needs, and adds it in one click. A finisher that doesn't fit never reaches the customer. It even flags a machine being asked to print more than its class is built for."
+  },
+  {
+   "id": "s06",
+   "chapter": "Price it with guardrails",
+   "shot": "Configurator rail on the Carmel expansion deal: margin vs guardrails, 'Raise the price by $X'",
+   "vo": "On the right, the numbers move with every click. The customer's monthly payment, the deal total, and your margin, drawn against your own guardrails. Below the approval line, a manager has to sign off. Below the floor, the quote is blocked. And instead of a wall of red, it tells the rep exactly what to do: raise the price by this much, and skip the approval."
+  },
+  {
+   "id": "s07",
+   "chapter": "Price it with guardrails",
+   "shot": "/approvals desktop, then phone 390",
+   "vo": "When a deal does need a decision, the manager clears it from the approvals inbox, at a desk or on a phone, in one tap, with the reason written out in words."
+  },
+  {
+   "id": "s08",
+   "chapter": "Leasing",
+   "shot": "/leasing rate cards (one funder) \u2192 configurator Hit a number",
+   "vo": "Leasing rate cards from every funder live in the system: fair market value or dollar out, by term and by amount. Type the monthly payment the customer will accept, and QuoteCommand works the price out backward from there."
+  },
+  {
+   "id": "s09",
+   "chapter": "The takeover",
+   "shot": "Configurator Deal terms \u2192 Trade-up buyout panel",
+   "vo": "Takeovers are where quotes get sloppy. QuoteCommand rolls the incumbent's remaining payments and the return freight into the new deal, ten payments of four eighty-five plus shipping, and prints it on the customer's document. We are paying off your current lease is the sentence that wins a takeover."
+  },
+  {
+   "id": "s10",
+   "chapter": "Service",
+   "shot": "Configurator Service agreement panel: from their real fleet \u00b7 measured",
+   "vo": "Service is priced from Northwind's real meter reads. Mono and color metered separately, included pages, overage and escalators, so the base rate is built on what they actually print."
+  },
+  {
+   "id": "s11",
+   "chapter": "The proposal",
+   "shot": "/proposals \u2192 Northwind proposal \u2192 Preview",
+   "vo": "When the numbers are right, the proposal is already built. Your company's story, the build itself, and the rep's own words, rendered once, so the preview is exactly what the customer receives."
+  },
+  {
+   "id": "s12",
+   "chapter": "The proposal",
+   "shot": "/p/<token> desktop scroll \u2192 options compared; then 390 phone",
+   "vo": "And this is what Northwind opens. A link. No login, no attachment. Their cover, your story, the recommended fleet and the investment, with the options side by side, the way a committee actually argues about it. Every graphic is drawn to survive a black and white photocopy, because that is how a copier proposal really gets passed around. And on a phone, it reads just as well."
+  },
+  {
+   "id": "s13",
+   "chapter": "The proposal",
+   "shot": "Customer: Choose this option dialog (Escape) \u2192 Ask a question on Investment",
+   "vo": "Marisa can pick the option she wants, right on the page. And when she has a question, she asks it in context, on the investment section, and it lands with the rep."
+  },
+  {
+   "id": "s14",
+   "chapter": "The proposal",
+   "shot": "/deals/<d1> \u2192 Customer engagement panel + question + bell",
+   "vo": "Back at the dealership, the rep sees what happened. Who opened it, on which device, and what held their attention: more than two minutes on the investment page. The deal is marked hot, and Marisa's question is waiting in the bell."
+  },
+  {
+   "id": "s15",
+   "chapter": "Paperwork",
+   "shot": "/documents?deal=<flagship> \u2192 sidebar of document types \u2192 quote / lease / service agreement",
+   "vo": "Then the paperwork. Fifteen document types, seven for the customer and eight internal, and every one is filled in from the deal. The quote, the lease, the service agreement, the credit application, and a Schedule A that lists every location. The packet follows the deal type, and a field a rep has typed is never overwritten."
+  },
+  {
+   "id": "s16",
+   "chapter": "Signature",
+   "shot": "/signed-orders \u2192 Northwind card \u2192 audit trail (hashes, consent)",
+   "vo": "It goes out for signature as one envelope. The audit trail keeps the consent language, each signer's IP address and a fingerprint of the document, and the database itself refuses edits to the signing history. Every executed packet lands in one searchable archive, with the ones still out for signature a single click away."
+  },
+  {
+   "id": "s17",
+   "chapter": "From signature to install",
+   "shot": "/orders board",
+   "vo": "A signature starts the order. Northwind's order appears at Contract Signed with its own number, and moves through nine stages: credit, funding, equipment ordered, received, delivery and install, each with a clock your dealership sets. Amber at the warning hour. Red when it runs out."
+  },
+  {
+   "id": "s18",
+   "chapter": "From signature to install",
+   "shot": "/orders/ORD-00054 detail: stages, checklist, equipment by site, documents",
+   "vo": "Inside the order: the stage history, a checklist that comes pre-loaded for every stage, the equipment for each site with serials and tracking, and the documents still waiting to come back. Every move is recorded, and none of it can be edited after the fact."
+  },
+  {
+   "id": "s19",
+   "chapter": "From signature to install",
+   "shot": "/orders?view=erp",
+   "vo": "Pushing the order to e-automate through CEO Juice moves it to Order Submitted by itself. And it is honest about the result: accepted for import, never a promise it can't keep."
+  },
+  {
+   "id": "s20",
+   "chapter": "HubSpot",
+   "shot": "/settings/integrations \u2192 HubSpot card \u2192 field mapping",
+   "vo": "It all lives where your pipeline already lives. Deals, companies and contacts come from HubSpot, along with your synced product catalog. Quotes go back as their own records on the deal, good, better and best side by side, with the amount and the line items grouped by machine on the record your managers already report from."
+  },
+  {
+   "id": "s21",
+   "chapter": "Control",
+   "shot": "View as rep: configurator rail \u2192 cost, reserve, GP vanish",
+   "vo": "Who sees what is decided by you. Switch to a rep's view. Dealer cost, dealer margin, finance reserve and gross profit disappear. The rep sees their own margin and nothing of yours, and your cost book is withheld by the database itself, not just hidden on a screen. Every dealership is its own tenant. Reach for another dealer's catalog or customer list, and the answer is nothing, whoever is asking."
+  },
+  {
+   "id": "s22",
+   "chapter": "Control",
+   "shot": "/settings/teams",
+   "vo": "And when you want reps limited to their own book, Teams and access works the way HubSpot does. Everything, team only, or owned only, set per person and enforced in the database, and off until you turn it on."
+  },
+  {
+   "id": "s23",
+   "chapter": "Control",
+   "shot": "/commissions (leadership) \u2192 rep earnings view",
+   "vo": "Commissions are calculated from the deal that was actually sold. Reps see what they'll earn on a deal as the price moves, and a statement every month, from the same record the quote came from."
+  },
+  {
+   "id": "s24",
+   "chapter": "Control",
+   "shot": "/analytics dashboard",
+   "vo": "And leadership sees the whole picture: win rates, margin across every quote, and an audit trail of who changed what."
+  },
+  {
+   "id": "s25",
+   "chapter": "In the field",
+   "shot": "390 phone: /configurator?quick=1 quick quote",
+   "vo": "It works where reps actually are. Standing in a customer's copy room, on a phone, a rep can build a quote in about two minutes, with the monthly payment and the margin pinned under their thumb, and sending gated exactly the way it is on the desktop."
+  },
+  {
+   "id": "s26",
+   "chapter": "Ask your business",
+   "shot": "Integrations \u2192 Connect Claude (MCP) card; title card with example questions",
+   "vo": "And because every dealership's data is its own, you can ask it questions. Connect Claude to QuoteCommand and it has sixteen tools that read your business. Which leases expire in the next ninety days? What is in the pipeline, and at what margin? Answered from your own data, under that person's own permissions."
+  },
+  {
+   "id": "s27",
+   "chapter": "One record",
+   "shot": "Montage of hero frames \u2192 end card",
+   "vo": "Picture your dealership a year from now. Every quote priced from the same rate cards. Every proposal a link. Every signature audited. Every order on a board with a clock. Every commission paid from the deal that was actually sold. One record, from the first look at a customer's fleet to the last machine installed. That's QuoteCommand. Book a walkthrough, and we'll build your first quote on your own catalog."
+  }
+ ]
+}
