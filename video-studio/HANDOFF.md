@@ -38,6 +38,19 @@ python3 edit.py                             # out/QuoteCommand-overview.mp4 + .s
 ```
 To split for chat (30 MB limit): `ffmpeg -i out/QuoteCommand-overview.mp4 -c copy -f segment -segment_time 140 -reset_timestamps 1 part%d.mp4`
 
+## Where the film is published (v8, Sep 26 2026)
+
+- **File:** Quantum's HubSpot file manager (portal 20682069), folder `/quotecommand`:
+  - `quotecommand-overview-v8.mp4`: a 53 MB web encode (two-pass x264 at 540k, AAC 112k, faststart), made from the 103 MB master.
+  - `quotecommand-overview-v8-poster.jpeg`: the title card.
+  - v7 and the old poster are still there for rollback.
+- **CDN URL:** `https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/quotecommand/quotecommand-overview-v8.mp4`.
+- **quotecommand.thequantumleap.business/auth:** `src/components/marketing/copy.ts` (`OVERVIEW_VIDEO_SRC`, `OVERVIEW_VIDEO_POSTER`, `OVERVIEW_VIDEO_CAPTION`). Merged in QuoteCommand PR #98.
+- **thequantumleap.business/command-apps:** site page `207621019801`. The `<video>` sits inside the prose of `layoutSections.main.rows[2]` (the QuoteCommand block). Swap the two URLs in the draft, then `POST .../draft/push-live`.
+- **Quantum's site is on the Quantum Void theme now** (`Quantum Void/templates/mv-shell.html`), not atlas. The saved `qbs-atlas-page-builder` skill still describes atlas. For Void pages, change only content strings in place and keep the structure.
+- **Uploading video to HubSpot:** send the part as `type=video/mp4` and include `.mp4` in `fileName`. Without that, HubSpot stores it as type OTHER with no extension and serves `application/octet-stream`, which Safari won't play.
+- **To publish a new cut:** upload it as v9, point both places at it, and leave v8 in place for rollback.
+
 ## Recorder tricks worth keeping
 
 - **Film dressing** (`DRESS` in `rec.cjs`): a drawn cursor and click ripple, since headless video has no cursor.
