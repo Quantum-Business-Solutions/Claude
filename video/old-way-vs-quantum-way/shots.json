@@ -469,7 +469,9 @@
       },
       "prompt": "Close-up at a bright modern desk: the hand of the woman in the grey blazer with her hair pulled back from the reference image taps a large round glowing lime-green button on the desk; it lights up with a satisfying chime. She says, relaxed and pleased: \"Done.\" The button has no text or symbols on it.",
       "request_id": "4c6b3d48-184c-45ee-832d-5a282c0092af",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/d6cdbdd5-c8d3-458c-ba09-d8f17331c921.mp4",
+      "file": "clips/sC_done_button.mp4"
     },
     {
       "id": "sD_agents_dinner",
@@ -521,7 +523,9 @@
       },
       "prompt": "In the same sunny family kitchen, the tired man in the rumpled white shirt and loose tie from the second reference image stands up from the table to leave. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image suddenly appears beside him, grabs his arm firmly and says with a wicked grin: \"Not so fast. You're with me today.\" Then he throws his head back and lets out a big theatrical villain laugh. Comedic.",
       "request_id": "7f44958d-aae0-478f-9efb-a7f898dfdfac",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/13953f30-8aa7-446b-81b5-864168ed7c33.mp4",
+      "file": "clips/sF_manny_grab.mp4"
     },
     {
       "id": "sG_breakup",
@@ -610,7 +614,7 @@
       },
       "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Bob. Bog Down Bob. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man groans. Comedic, punchy, slight push-in.",
       "request_id": "5e69898a-868a-4b7a-9ad3-d4a140a6051d",
-      "status": "queued"
+      "status": "in_progress"
     },
     {
       "id": "sJ_leg_drag",
@@ -628,7 +632,7 @@
       },
       "prompt": "A long office corridor. the tired man in the rumpled white shirt and loose tie from the second reference image strides toward the exit with his jacket over his shoulder, determined, dragging the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image along the floor, who is lying on his stomach clinging desperately to his leg with both arms. The cardigan man wails: \"Wait! Don't go! We had something!\" The tired man keeps walking without looking down. Slapstick comedy, tracking shot.",
       "request_id": "414864f7-658f-49e2-95a4-e38a8d1cec89",
-      "status": "queued"
+      "status": "in_progress"
     },
     {
       "id": "sK_game_wife",
@@ -645,7 +649,7 @@
       },
       "prompt": "A sunny youth soccer field on a Saturday. the tired man in the rumpled white shirt and loose tie from the reference image, now relaxed in a casual polo and sunglasses on his head, arrives on the sideline next to his wife, who wears a team hoodie. She looks around behind him and asks, teasing: \"Honey... where's Bog Down Bob?\" He smiles, genuinely relaxed, and says: \"I don't think we'll be seeing much of him anymore.\" Warm golden light, families cheering in the background.",
       "request_id": "c90e45ec-301a-4298-831e-4749006e8ecf",
-      "status": "queued"
+      "status": "in_progress"
     },
     {
       "id": "sL_kid_runs",
@@ -662,7 +666,7 @@
       },
       "prompt": "A sunny youth soccer field. A joyful seven-year-old in a soccer uniform sprints across the grass toward the tired man in the rumpled white shirt and loose tie from the reference image, in a casual polo, shouting: \"Daddy! You finally made it!\" and leaps into his arms for a big hug. He laughs and spins the kid around. Heartwarming, golden hour, slow-motion ending.",
       "request_id": "899c669b-722d-453b-81ed-b9c715b271ed",
-      "status": "queued"
+      "status": "in_progress"
     }
   ],
   "reused": {
