@@ -1,0 +1,1594 @@
+<title>Leave Bob Behind</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#F5F6F1;--surface:#FFFFFF;--ink:#0E1116;--muted:#586072;--line:#DCE0D5;--lime:#B6FF3C;--lime-ink:#4F7A00;--amber:#FFB43C;--amber-ink:#9A5B00;--quote:#F0F3E8;
+--disp:'Anton',Impact,'Arial Narrow',sans-serif;--sans:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'DM Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#07080D;--surface:#10131B;--ink:#EEF1F6;--muted:#98A0B3;--line:#252A37;--lime-ink:#B6FF3C;--amber-ink:#FFB43C;--quote:#141925}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#07080D;--surface:#10131B;--ink:#EEF1F6;--muted:#98A0B3;--line:#252A37;--lime-ink:#B6FF3C;--amber-ink:#FFB43C;--quote:#141925}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);padding-inline:20px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;padding-block:40px 80px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;display:flex;flex-direction:column;gap:2px;font-size:14px}
+nav.toc .lbl{font:700 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+nav.toc a{display:flex;gap:10px;color:var(--muted);text-decoration:none;padding:6px 8px;border-radius:6px}
+nav.toc a i{font:500 12px var(--mono);font-style:normal;color:var(--lime-ink);min-width:20px;padding-top:2px}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--ink);background:var(--surface);outline:none}
+main{min-width:0;max-width:860px}
+header.hero{padding-block:8px 36px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.status{display:inline-flex;gap:8px;align-items:center;font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--amber-ink);border:1px solid currentColor;border-radius:99px;padding:5px 12px}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber)}
+h1{font:400 clamp(56px,9vw,112px)/.9 var(--disp);text-transform:uppercase;letter-spacing:.005em;margin:22px 0 14px;text-wrap:balance}
+h1 span{color:var(--lime-ink)}
+.lede{font-size:clamp(18px,2.2vw,22px);line-height:1.45;max-width:36em;margin:0 0 26px}
+dl.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px 28px;margin:0 0 30px}
+dl.meta div{border-top:2px solid var(--ink);padding-top:8px}
+dl.meta dt{font:700 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+dl.meta dd{margin:4px 0 0;font-weight:700}
+.onescreen{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.onescreen div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.onescreen b{display:block;font:700 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--lime-ink);margin-bottom:4px}
+.targets{margin-top:26px}
+.targets .tl{font:700 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tgrid div{background:var(--surface);padding:14px 16px}
+.tgrid b{display:block;font:400 34px/1 var(--disp);font-variant-numeric:tabular-nums}
+.tgrid span{font-size:13px;color:var(--muted)}
+.tgrid div:nth-child(2) b,.tgrid div:nth-child(3) b{color:var(--lime-ink)}
+section.sec{padding-block:44px 8px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+.sh{display:flex;gap:16px;align-items:baseline;margin-bottom:18px}
+.sn{font:500 14px var(--mono);color:var(--lime-ink)}
+h2{font:400 clamp(30px,4vw,44px)/1 var(--disp);text-transform:uppercase;margin:0;text-wrap:balance}
+h3{font:700 20px/1.3 var(--sans);margin:30px 0 10px;text-wrap:balance}
+p,li{max-width:68ch}
+ul,ol{padding-left:22px}
+li{margin-bottom:6px}
+strong{font-weight:700}
+code{font:500 13px var(--mono);background:var(--quote);border:1px solid var(--line);border-radius:5px;padding:1px 6px;word-break:break-word}
+a{color:var(--lime-ink)}
+blockquote{margin:14px 0;padding:14px 18px;background:var(--quote);border-left:3px solid var(--lime-ink);border-radius:0 8px 8px 0}
+blockquote p{margin:0 0 10px}blockquote p:last-child{margin-bottom:0}
+.tw{overflow-x:auto;margin:14px 0 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.45}
+th{text-align:left;font:700 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--quote);padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;min-width:90px}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:700}
+.copy{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px 6px;margin:16px 0}
+.copy .ch{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.copy .ch b{font-size:15px}
+.copy p em{color:var(--muted)}
+.copy ul{margin:8px 0 0}
+.cb{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#06070C;background:var(--lime);border:0;border-radius:99px;padding:8px 14px;cursor:pointer}
+.cb:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.cb.ok{background:var(--amber)}
+footer{padding-block:36px 0;font:400 clamp(28px,4vw,40px)/1 var(--disp);text-transform:uppercase}
+footer span{color:var(--lime-ink)}
+@media (max-width:900px){.wrap{grid-template-columns:1fr;gap:0}nav.toc{position:static;flex-direction:row;flex-wrap:wrap;gap:4px;margin-bottom:10px}nav.toc .lbl{width:100%}nav.toc a{background:var(--surface);border:1px solid var(--line)}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+<div class="wrap">
+<nav class="toc" aria-label="Sections"><div class="lbl">Campaign plan</div><a href="#top"><i>00</i>The plan in one screen</a><a href="#s1"><i>01</i>Big idea, positioning, and campaign name</a><a href="#s2"><i>02</i>Audiences</a><a href="#s3"><i>03</i>Channel plan</a><a href="#s4"><i>04</i>Cutdown library (28 clips)</a><a href="#s5"><i>05</i>Six-week content calendar</a><a href="#s6"><i>06</i>Interactive and recurring ideas</a><a href="#s7"><i>07</i>Landing page outline</a><a href="#s8"><i>08</i>Measurement</a><a href="#s9"><i>09</i>Guardrails</a><a href="#s10"><i>10</i>First 10 things to do this week (Sept 28 to Oct 2)</a></nav>
+<main>
+<header class="hero" id="top">
+<span class="status">Draft for internal review &middot; nothing scheduled, sent or published</span>
+<h1>Leave Bob <span>Behind.</span></h1>
+<p class="lede">The marketing and social campaign built on &ldquo;The Old Way vs. The Quantum Way&rdquo;. Every sales team has a Bob. This is how we get people to spot him, count him, and show him the door.</p>
+<dl class="meta">
+<div><dt>Client</dt><dd>Quantum Business Solutions</dd></div>
+<div><dt>Owner</dt><dd>Shawn Peterson, CEO</dd></div>
+<div><dt>Launch</dt><dd>ICDA Autumn keynote, Thu Oct 8, 2026</dd></div>
+<div><dt>Window</dt><dd>Oct 5 &ndash; Nov 15, 2026 (6 weeks)</dd></div>
+</dl>
+<div class="onescreen">
+<div><b>Villain</b>Busywork, played by Bog Down Bob (beige cardigan, mustard shirt, round glasses, lanyard).</div>
+<div><b>Promise</b>Same job. Same hours. Different system.</div>
+<div><b>Ask</b>Book a 30-minute Bob Audit. Lighter step: the &ldquo;Where&rsquo;s Bob in your org?&rdquo; quiz.</div>
+<div><b>Main channel</b>Shawn&rsquo;s LinkedIn, with the QBS page amplifying. Everything points to the landing page.</div>
+<div><b>Launch</b>Premiere at the ICDA keynote on Oct 8. Public release the next morning, Oct 9.</div>
+<div><b>Engine</b>One hero film, 28 cutdowns, a weekly &ldquo;Bob Sighting&rdquo;, a quiz, and a HubSpot follow-up sequence.</div>
+</div>
+<div class="targets"><div class="tl">Six-week targets</div>
+<div class="tgrid">
+<div><b>40&ndash;60K</b><span>video views</span></div>
+<div><b>250</b><span>quiz completions</span></div>
+<div><b>40</b><span>Bob Audits booked</span></div>
+<div><b>12</b><span>qualified opportunities</span></div>
+<div><b>3&ndash;5</b><span>closed within 90 days</span></div>
+</div></div>
+</header>
+</section><section id="s1" class="sec"><div class="sh"><span class="sn">01</span><h2>Big idea, positioning, and campaign name</h2></div>
+<h3>The big idea</h3>
+<p>Every sales team has a guy named Bob. Nobody hired him. He just shows up: in the voicemail queue, in the spreadsheet that's locked for editing, in the follow-up you forgot to send, in the file called Final_Final_v3. He isn't lazy. He's busy. He keeps you busy too.</p>
+<p>The campaign gives busywork a face, so owners and managers can finally talk about it. Once busywork is a person, you can do something about him: spot him, count him, and show him the door.</p>
+<p>QBS is the team that helps you leave Bob behind, one rung at a time:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Rung</th>
+<th>What it does</th>
+<th>How Bob loses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Assistant</td>
+<td>You ask, it answers</td>
+<td>Bob can't bury you in 3 hours of account research</td>
+</tr>
+<tr>
+<td>2. Automation</td>
+<td>A trigger runs it</td>
+<td>Bob can't make you type the same follow-up nine times</td>
+</tr>
+<tr>
+<td>3. Agent</td>
+<td>It decides, you approve</td>
+<td>Bob can't keep you up at night with 200 unread emails</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Positioning line</h3>
+<blockquote>
+<p><strong>QBS helps sales and service teams get their selling time back, by moving the busywork to an assistant, an automation, or an agent, one rung at a time.</strong></p>
+</blockquote>
+<p>Short version for bios and ads: <strong>"Same job. Same hours. Different system."</strong></p>
+<h3>Why it works for this audience</h3>
+<ul>
+<li>Office-technology dealers are practical, a bit skeptical of AI hype, and have seen a lot of vendors come through. Humor gets past the eye-roll. A villain they recognize gets remembered.</li>
+<li>Bob is funny, not mean. He's the old way, not the old guy. The story never makes fun of veteran reps; Rick is the hero who gets out.</li>
+<li>The film sells the outcome (time back, the kid's game) rather than the software.</li>
+</ul>
+<h3>Campaign name options</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Name</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Leave Bob Behind</strong></td>
+<td>Matches the end card; it's a verb, so it works as a CTA; easy hashtag (#LeaveBobBehind)</td>
+<td>"Bob" needs context the first time you see it</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bog Down Bob</td>
+<td>Character-first, memorable, great for the episode series</td>
+<td>Names the problem, not the fix</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Same Job, Different System</td>
+<td>Clear and business-like; good for execs</td>
+<td>Less fun; sounds like a white paper</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The Busywork Breakup</td>
+<td>Pulls from the best scene; strong emotional hook</td>
+<td>Works best on social, weaker on a sales page</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Is Bob in Your Org?</td>
+<td>A question, so it pulls people into the quiz</td>
+<td>Better as the lead magnet name than the umbrella</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Recommendation:</strong> Use <strong>Leave Bob Behind</strong> as the campaign name and hashtag. Use <strong>Bog Down Bob</strong> as the name of the recurring character series ("Bob Sightings"). Use <strong>"Where's Bob in your org?"</strong> as the quiz name. Keep <strong>"Same job. Same hours. Different system."</strong> as the positioning line on every end card.</p>
+<p>Name check: none of these use a third-party trademark. We do not call Bob a "Mayhem" character anywhere public. That's an internal creative reference only.</p>
+
+</section><section id="s2" class="sec"><div class="sh"><span class="sn">02</span><h2>Audiences</h2></div>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Audience</th>
+<th>What keeps them up</th>
+<th>What Bob means to them</th>
+<th>Message</th>
+<th>Best proof</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Owners / principals</strong></td>
+<td>Margin, rep productivity, service revenue, competitive contracts renewing, hiring costs</td>
+<td>Payroll spent on busywork</td>
+<td>"You're paying full salaries for about four hours of selling a week. Let's find where the rest goes."</td>
+<td>Pipeline visibility scene; Lead Finder contracts; Bob Audit readout with hours and dollars</td>
+</tr>
+<tr>
+<td><strong>Sales managers</strong></td>
+<td>Forecast accuracy, rep activity, pipeline that lives in reps' heads, ramp time</td>
+<td>The Monday meeting where nobody knows the number</td>
+<td>"Twelve deals, three closing this week. It's all in HubSpot."</td>
+<td>Pipeline meeting scene; sequences with 0 missed follow-ups</td>
+</tr>
+<tr>
+<td><strong>Reps</strong></td>
+<td>Quota, dials that go nowhere, admin after hours, missing their kid's game</td>
+<td>The guy in the passenger seat saying "He won't."</td>
+<td>"Get your nights back. Let the agent send the 9:02 follow-up."</td>
+<td>Parking lot, late night, Saturday and game scenes</td>
+</tr>
+<tr>
+<td><strong>Marketing / ops</strong></td>
+<td>Dirty data, CRM adoption, reporting, list quality, getting sales to use what they build</td>
+<td>The shared spreadsheet locked for editing by Bob</td>
+<td>"Your CRM is only as good as what gets into it. Make getting it in automatic."</td>
+<td>Voice-logging from the car; AI notetaker; data entry gag</td>
+</tr>
+</tbody>
+</table></div>
+
+</section><section id="s3" class="sec"><div class="sh"><span class="sn">03</span><h2>Channel plan</h2></div>
+<h3>3.1 LinkedIn (main channel)</h3>
+<p><strong>Shawn's personal profile (primary voice).</strong> People follow people. Shawn posts 4 to 5 times a week during launch week, then 3 times a week. Formats: native video (always upload natively, never a YouTube link), text posts with a single image, one carousel a week, and comments on every reply within the first 90 minutes.</p>
+<p><strong>QBS company page (amplifier).</strong> 3 posts a week: cutdowns, Bob sightings, event photos, quiz promotion. Reshare Shawn's posts with a one-line add, not a copy.</p>
+<p><strong>Rules:</strong> One CTA per post. Put the link in the first comment for text posts. Tag people only if they're in the post (ICDA, the cast if they're on LinkedIn). Reply to every comment for the first 6 weeks.</p>
+<h3>3.2 YouTube</h3>
+<ul>
+<li>Upload the full 6:17 film as "The Old Way vs. The Quantum Way | Leave Bob Behind" on Oct 9.</li>
+<li>Upload the :30 and the post-credits scene as separate videos.</li>
+<li>Build a playlist: "Bog Down Bob" for the hero film, cutdowns and future episodes.</li>
+<li>End screen: quiz link and Bob Audit link. Pinned comment: "Where's Bob hiding in your team? Take the 2-minute quiz: [link]".</li>
+<li>Upload all vertical cutdowns as YouTube Shorts.</li>
+</ul>
+<h3>3.3 Short-form vertical (Reels, TikTok, Shorts)</h3>
+<ul>
+<li>Honest take: TikTok is a stretch for B2B office-tech buyers. Post there because the cost is near zero, but don't measure the campaign on it. Instagram Reels and YouTube Shorts matter more, and LinkedIn native vertical video matters most.</li>
+<li>Cadence: 3 verticals a week across Reels and Shorts; TikTok gets the same files.</li>
+<li>Style: burned-in captions (80%+ of views are muted), hook in the first second, lime-green "Done." button as a visual signature at the end of every clip.</li>
+</ul>
+<h3>3.4 Email to the HubSpot database</h3>
+<ul>
+<li><strong>Segments:</strong> (a) current clients, (b) open opportunities, (c) office-tech dealer contacts, (d) other B2B sales and service contacts, (e) ICDA attendees (after the event, from the badge scan or sign-up list).</li>
+<li><strong>Cadence:</strong> 3 campaign emails in 6 weeks (drafts in Section 5), plus a 4-step post-event nurture for keynote attendees and quiz takers.</li>
+<li><strong>Rules:</strong> Plain-text style from Shawn. One link to the film thumbnail (a GIF of Bob waving), one CTA. Suppress anyone in an open deal from the pitch-heavy email; send them a personal note from their rep instead.</li>
+</ul>
+<h3>3.5 ICDA keynote and event follow-up</h3>
+<p><strong>Before (Oct 5 to 7):</strong> Tease on LinkedIn: "Thursday I'm introducing ICDA to someone you already know." Post a Bob silhouette. Email ICDA-registered contacts in HubSpot.</p>
+<p><strong>At the keynote (Oct 8):</strong>
+- Premiere the full 6:17 film mid-keynote, after Shawn frames the three rungs. Don't open with it; earn it.
+- After the film, run a live show of hands: "Who has a Bob on their team?" Photograph the room (with permission).
+- End on the QR code slide: "Leave Bob behind. Take the quiz, get your Bob Audit." QR goes to the landing page with <code>utm_source=icda</code>.
+- Give out "Done." buttons (pins) at the door and at the QBS table.
+- Optional live bit: a cast member (or a willing volunteer) in the Bob cardigan and lanyard walks the room with a clipboard asking people "Got any manual processes?" Clear this with ICDA first.</p>
+<p><strong>After (Oct 9 to 23):</strong>
+- Same day: LinkedIn post with the room photo.
+- Within 24 hours: email to all attendees with the film, slides, and the quiz.
+- Within 72 hours: reps personally follow up with every badge scan and QR conversion (a HubSpot task created automatically, which is the point).
+- Within 2 weeks: a "What we heard at ICDA" post summarizing the top 5 Bob sightings people shared in the room.</p>
+<h3>3.6 Website landing page</h3>
+<p><code>thequantumleap.business/leave-bob-behind</code> (outline in Section 7). Every channel points here. Also add a site-wide banner for 6 weeks: "Meet Bog Down Bob. Then leave him behind. [Watch the film]".</p>
+<h3>3.7 Paid</h3>
+<p>Keep paid small and targeted. The audience is narrow; the goal is reach into the right titles at dealers, not mass views.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>6-week spend</th>
+<th>What it buys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Starter</strong></td>
+<td>$1,500 to $2,500</td>
+<td>LinkedIn Thought Leader Ads boosting Shawn's 3 best organic posts; retargeting landing page visitors</td>
+</tr>
+<tr>
+<td><strong>Recommended</strong></td>
+<td>$4,000 to $6,000</td>
+<td>Starter, plus LinkedIn video ads (:30 and two :15s) to a matched audience of dealer companies and titles, plus YouTube pre-roll ($1,000) targeted by custom intent and placement on office-tech and sales-training channels</td>
+</tr>
+<tr>
+<td><strong>Push</strong></td>
+<td>$8,000 to $12,000</td>
+<td>Recommended, plus LinkedIn Document Ads gating the quiz results guide, plus Conversation Ads to ICDA attendees and dealer lists, plus a sponsored newsletter slot with a dealer publication</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Targeting:</strong>
+- LinkedIn matched audience: upload dealer company list from HubSpot/ZoomInfo (office tech, managed print, managed IT). Titles: Owner, President, CEO, VP Sales, Sales Manager, Director of Sales, Marketing Manager, Operations Manager. US only; Northeast weighted during the ICDA window.
+- Retargeting: 50%+ video viewers of the :30 and landing page visitors who didn't book.
+- YouTube: skippable in-stream with the :30 (the first 5 seconds must work on their own: Bob's cold open line does). Frequency cap at 3 a week.</p>
+<p><strong>Paid CTA by stage:</strong> Cold audiences get "Take the quiz." Retargeted viewers get "Book your Bob Audit."</p>
+<h3>3.8 Dealer associations and partner co-marketing</h3>
+<ul>
+<li><strong>ICDA:</strong> Offer the film for their member newsletter and social channels after the keynote. Offer a members-only webinar in November: "Bob Audit, Live" (Shawn audits a volunteer dealer's workflow in 30 minutes, with permission).</li>
+<li><strong>Other dealer groups and associations:</strong> Pitch a guest article: "The 7 places Bob hides in an office-tech dealership." Offer a keynote slot for 2027.</li>
+<li><strong>HubSpot partner network:</strong> Share in partner community channels as a case of creative B2B content. Ask your HubSpot partner manager about co-promotion. Do not use HubSpot's logo in ads without checking their partner brand guidelines.</li>
+<li><strong>ConnectAndSell and ZoomInfo:</strong> Only co-market if they approve (see Guardrails). If they do, a joint LinkedIn Live, "Rick's Monday vs. Maya's Monday," is a good fit.</li>
+<li><strong>Clients:</strong> Ask 3 happy clients to share the film with a one-line note on where Bob used to hide at their company. That's more credible than any ad.</li>
+</ul>
+
+</section><section id="s4" class="sec"><div class="sh"><span class="sn">04</span><h2>Cutdown library (28 clips)</h2></div>
+<p>Format key: <strong>H</strong> = horizontal 16:9, <strong>V</strong> = vertical 9:16, <strong>S</strong> = square 1:1. Every clip ends on the lime-green "Done." button plus the CTA card unless noted. Burn in captions on everything.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Clip name</th>
+<th>Length / format</th>
+<th>Scene</th>
+<th>Hook (first 1 to 2 seconds)</th>
+<th>On-screen text</th>
+<th>CTA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Meet Bob</td>
+<td>:06 V/H</td>
+<td>Cold open</td>
+<td>Bob to camera: "I'm Bob. Bog Down Bob."</td>
+<td>"He lives in every sales team."</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Every Sales Team</td>
+<td>:15 V</td>
+<td>Cold open</td>
+<td>"I live in every sales team."</td>
+<td>"Is he in yours?"</td>
+<td>Take the 2-min quiz</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The Voicemail</td>
+<td>:06 V</td>
+<td>Voicemail hell</td>
+<td>Bob: "I'm the voicemail you'll never hear back from."</td>
+<td>"Dial. Voicemail. Repeat."</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>11 in 66</td>
+<td>:15 V/H</td>
+<td>Voicemail vs. dialer</td>
+<td>Split screen: Rick on hold, Maya already talking</td>
+<td>"Rick: voicemail. Maya: 11 conversations in 66 minutes." (claim to confirm)</td>
+<td>See the full film</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Three Hours vs. Three Seconds</td>
+<td>:15 V</td>
+<td>Research</td>
+<td>Rick buried in tabs, a clock spinning</td>
+<td>"Rick: 3 hours on one account. Maya's assistant: 3 seconds."</td>
+<td>Rung 1: Assistant</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Locked for Editing</td>
+<td>:06 V/S</td>
+<td>Spreadsheet</td>
+<td>Close-up: "Locked for editing by Bob"</td>
+<td>"We've all met this guy."</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>It's Mostly in My Head</td>
+<td>:15 V/H</td>
+<td>Pipeline meeting</td>
+<td>Rick: "It's mostly in my head."</td>
+<td>"Where does your pipeline live?"</td>
+<td>Book a Bob Audit</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Now That's a Pipeline</td>
+<td>:30 H/V</td>
+<td>Pipeline meeting</td>
+<td>Manager's face, then Maya: "Twelve deals, three closing this week."</td>
+<td>"It's all in HubSpot."</td>
+<td>Book a Bob Audit</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Full Attention</td>
+<td>:15 V</td>
+<td>Meeting</td>
+<td>Rick typing notes, not listening</td>
+<td>"Let the notetaker take notes. You take the meeting."</td>
+<td>See the full film</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Ninth Time Today</td>
+<td>:06 V</td>
+<td>Follow-ups</td>
+<td>Rick typing "just following up on my last email..."</td>
+<td>"Ninth time today."</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Forgot to Change the Name</td>
+<td>:06 V/S</td>
+<td>Follow-ups</td>
+<td>Bob, over Rick's shoulder: "You forgot to change the name."</td>
+<td>"Oof."</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>He'll Remember. Probably.</td>
+<td>:15 V</td>
+<td>Sticky note</td>
+<td>Bob pockets the sticky note</td>
+<td>"He'll remember. Probably." Then: "0 follow-ups missed."</td>
+<td>Rung 2: Automation</td>
+</tr>
+<tr>
+<td>13</td>
+<td>9:02</td>
+<td>:15 V/H</td>
+<td>Agent follow-up</td>
+<td>Clock reads 9:02, notification pops</td>
+<td>"Follow-up sent at 9:02. Prospect already replied."</td>
+<td>Rung 3: Agent</td>
+</tr>
+<tr>
+<td>14</td>
+<td>He Won't</td>
+<td>:06 V</td>
+<td>Parking lot</td>
+<td>Rick: "I'll enter that later." Bob, passenger seat: "He won't."</td>
+<td>"He won't."</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Logged From the Car</td>
+<td>:15 V</td>
+<td>Parking lot</td>
+<td>Maya talking to her phone, car in park</td>
+<td>"Meeting logged before she left the lot."</td>
+<td>Book a Bob Audit</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Final, Final, Version 3</td>
+<td>:06 V/S</td>
+<td>Contracts</td>
+<td>Bob: "I'm the file named Final, Final, Version 3."</td>
+<td>"Every shared drive. Everywhere."</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>You're Welcome</td>
+<td>:06 V</td>
+<td>Copier</td>
+<td>Bob, hand on the copier: "I jammed it. You're welcome."</td>
+<td>"For the copier people. You know who you are."</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>The Contracts Coming Up</td>
+<td>:15 H/V</td>
+<td>Lead Finder</td>
+<td>Rick lost in folders; Maya's screen fills with a list</td>
+<td>"Every competitive contract coming up. Found for you." (number pending)</td>
+<td>Book a Bob Audit</td>
+</tr>
+<tr>
+<td>19</td>
+<td>200 Unread</td>
+<td>:06 V</td>
+<td>Late night</td>
+<td>Bob, lit by a laptop at midnight: "I'm the 200 unread emails."</td>
+<td>"It's 11:48 p.m."</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Sunset Jog</td>
+<td>:15 V</td>
+<td>Late night vs. jog</td>
+<td>Maya jogging: "I'll get my team on it right away."</td>
+<td>"Her team is an AI agent crew. She approves. They do."</td>
+<td>Rung 3: Agent</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Not So Fast</td>
+<td>:06 V</td>
+<td>Saturday</td>
+<td>Bob grabs Rick's arm: "Not so fast. You're with me today."</td>
+<td>"Saturday. Again."</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>I Knew Your Dad</td>
+<td>:30 V/H</td>
+<td>The breakup + flashback</td>
+<td>Rick: "I can't do this anymore." Bob: "But it's always been us... I knew your dad."</td>
+<td>"Some habits are generational."</td>
+<td>See the full film</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Remember the Fax Machine?</td>
+<td>:15 V</td>
+<td>Flashback</td>
+<td>90s thought-bubble, dad and little boy</td>
+<td>"Bob: 'Remember the fax machine? Good times.'"</td>
+<td>Leave Bob behind.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Where's the Done Button?</td>
+<td>:15 V/H</td>
+<td>Rick joins Maya</td>
+<td>Maya: "Welcome to the team, Rick."</td>
+<td>Rick: "So... where's the Done button?"</td>
+<td>Take the 2-min quiz</td>
+</tr>
+<tr>
+<td>25</td>
+<td>#OpenToWork</td>
+<td>:15 V/S</td>
+<td>Bob alone</td>
+<td>Bob's profile with the green banner</td>
+<td>"Senior Busywork Specialist. 40 years experience."</td>
+<td>Take the 2-min quiz</td>
+</tr>
+<tr>
+<td>26</td>
+<td>You Made It</td>
+<td>:15 V</td>
+<td>The game</td>
+<td>Kid: "Daddy, you made it!"</td>
+<td>"Same job. Same hours. Different system."</td>
+<td>See the full film</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Pass. We Use Quantum.</td>
+<td>:15 V/H</td>
+<td>Post-credits</td>
+<td>Bob: "I'm available now." Her: "Pass. We use Quantum."</td>
+<td>"Are you letting Bob hang out in your organization?"</td>
+<td>Take the 2-min quiz</td>
+</tr>
+<tr>
+<td>28</td>
+<td>I'll See Myself Out</td>
+<td>:06 V</td>
+<td>Post-credits</td>
+<td>Bob: "Got any manual processes?"</td>
+<td>"I'll see myself out."</td>
+<td>Leave Bob behind.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Also build: the official <strong>:30</strong> (H and V) as the paid workhorse, and three <strong>"rung" :30s</strong> (one per rung, pulling clips 5, 12/13, 20) for retargeting.</p>
+<p><strong>Production notes:</strong>
+- Hooks must land with the sound off; the caption appears in frame 1.
+- Keep the "Dramatization" label on any clip that shows the scoreboard numbers.
+- File naming: <code>LBB_##_ClipName_Length_Format_v1.mp4</code> (e.g., <code>LBB_14_HeWont_06_V_v1.mp4</code>).</p>
+
+</section><section id="s5" class="sec"><div class="sh"><span class="sn">05</span><h2>Six-week content calendar</h2></div>
+<h3>Week 1: Launch week (Oct 5 to 11)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Day</th>
+<th>LinkedIn: Shawn</th>
+<th>LinkedIn: QBS page</th>
+<th>Short-form / YouTube</th>
+<th>Email / other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mon Oct 5</strong></td>
+<td>Post 1: Teaser (Bob silhouette)</td>
+<td>Share teaser</td>
+<td>None</td>
+<td>Landing page soft-live (unlisted); QA quiz</td>
+</tr>
+<tr>
+<td><strong>Tue Oct 6</strong></td>
+<td>Post 2: "Why I made a comedy about busywork"</td>
+<td>Clip 6 "Locked for Editing"</td>
+<td>None</td>
+<td>Email ICDA-registered contacts (keynote reminder)</td>
+</tr>
+<tr>
+<td><strong>Wed Oct 7</strong></td>
+<td>Post 3: "Tomorrow at ICDA"</td>
+<td>Clip 1 "Meet Bob" (:06)</td>
+<td>Clip 1 as Short/Reel</td>
+<td>Print QR cards; pack "Done." buttons</td>
+</tr>
+<tr>
+<td><strong>Thu Oct 8</strong></td>
+<td>Post 4: Live-from-ICDA room photo (evening)</td>
+<td>Keynote photos</td>
+<td>Stories from the event</td>
+<td><strong>Keynote premiere.</strong> Badge scans to HubSpot same day</td>
+</tr>
+<tr>
+<td><strong>Fri Oct 9</strong></td>
+<td>Post 5: <strong>Public film release</strong> (native upload of the :30 plus link in comments to full film)</td>
+<td>Full film announcement</td>
+<td>Full film on YouTube; Clip 22 as Reel</td>
+<td><strong>Email 1</strong> to full database; attendee follow-up email; paid goes live</td>
+</tr>
+<tr>
+<td><strong>Sat Oct 10</strong></td>
+<td>None (reply to comments only)</td>
+<td>None</td>
+<td>Clip 21 "Not So Fast" (Saturday, obviously)</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Sun Oct 11</strong></td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>Review week-1 numbers Monday morning</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Weeks 2 to 6</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Theme</th>
+<th>Shawn (3 posts)</th>
+<th>QBS page (3 posts)</th>
+<th>Short-form (3/week)</th>
+<th>Email / other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wk 2: Oct 12 to 18</strong></td>
+<td>"Where does Bob hide?"</td>
+<td>Post 6 (Pipeline in my head), Post 7 (Quiz launch), ICDA recap</td>
+<td>Clips 7, 10, 14</td>
+<td>Clips 3, 11, 17</td>
+<td>Quiz goes public; reps call ICDA leads; attendee nurture step 2</td>
+</tr>
+<tr>
+<td><strong>Wk 3: Oct 19 to 25</strong></td>
+<td>Rung 1: Assistant</td>
+<td>Post 8 (Three hours vs. three seconds), Bob Sighting #1, a quiz stat</td>
+<td>Clips 5, 9, Sighting #1</td>
+<td>Clips 5, 16, 19</td>
+<td><strong>Email 2</strong> (quiz). Pitch ICDA newsletter</td>
+</tr>
+<tr>
+<td><strong>Wk 4: Oct 26 to Nov 1</strong></td>
+<td>Rung 2: Automation</td>
+<td>Post 9 (The 9:02 follow-up), Post 10 (#OpenToWork gag), Sighting #2</td>
+<td>Clips 12, 13, 25</td>
+<td>Clips 12, 15, 28</td>
+<td>Bob's #OpenToWork gag; carousel "7 places Bob hides"</td>
+</tr>
+<tr>
+<td><strong>Wk 5: Nov 2 to 8</strong></td>
+<td>Rung 3: Agent</td>
+<td>Post 11 (I approve, they do), "My Bob" UGC roundup, Sighting #3</td>
+<td>Clips 18, 20, UGC</td>
+<td>Clips 20, 23, 27</td>
+<td>Announce November webinar "Bob Audit, Live"</td>
+</tr>
+<tr>
+<td><strong>Wk 6: Nov 9 to 15</strong></td>
+<td>"Leave Bob behind" close</td>
+<td>Post 12 (What 6 weeks of Bob taught us), webinar reminder, final CTA</td>
+<td>Clips 24, 26, 8</td>
+<td>Clips 24, 26, 2</td>
+<td><strong>Email 3</strong> (last call for Bob Audits this quarter); webinar; results review</td>
+</tr>
+</tbody>
+</table></div>
+<p>After week 6: move to a steady state of one Bob Sighting episode every other week (see roadmap).</p>
+<h3>LinkedIn drafts (Shawn's voice)</h3>
+<p>Voice rules: short sentences, first person, one idea per post, a bit of self-deprecation, no hype words (no "game-changer," "revolutionize," "unlock," "supercharge," "cutting-edge," "leverage"). Links go in the first comment.</p>
+
+<div class="copy"><div class="ch"><b>Post 1: Teaser (Mon Oct 5)</b><button type="button" class="cb">Copy post</button></div><p><em>Image: Bob in silhouette, lanyard visible.</em></p><blockquote>
+<p>On Thursday I'm introducing the ICDA crowd to someone they already know.</p>
+<p>He's been at your company longer than you have. He doesn't sell anything. He's never missed a day.</p>
+<p>You've probably sat next to him in the Monday pipeline meeting.</p>
+<p>More Thursday.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 2: Why a comedy (Tue Oct 6)</b><button type="button" class="cb">Copy post</button></div><blockquote>
+<p>We made a comedy about busywork.</p>
+<p>Here's why. For two years I've given talks about AI to sales teams. Charts. Frameworks. Three rungs. People nod. Then they go back to the office and type the same follow-up email nine times.</p>
+<p>Nobody changes because of a chart. People change when they see themselves.</p>
+<p>So we gave busywork a name, a cardigan, and a lanyard. His name is Bob.</p>
+<p>Premieres Thursday at ICDA in Middletown. Public on Friday.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 3: Tomorrow at ICDA (Wed Oct 7)</b><button type="button" class="cb">Copy post</button></div><blockquote>
+<p>Tomorrow I'm speaking at ICDA Autumn in Middletown.</p>
+<p>The short version of the talk: your reps don't have a skills problem. They have a Bob problem.</p>
+<p>Bob is the voicemail that never calls back. The spreadsheet locked for editing. The meeting you'll "enter later."</p>
+<p>I'll show you how to get rid of him in three steps. And I'll show you a 6-minute film where he gets dumped.</p>
+<p>If you're there, come find me. I'll have buttons.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 4: ICDA room (Thu Oct 8, evening)</b><button type="button" class="cb">Copy post</button></div><p><em>Image: the room with hands up.</em></p><blockquote>
+<p>I asked a room full of dealer owners and sales managers today: "Who has a Bob on their team?"</p>
+<p>This is the photo.</p>
+<p>Nobody asked who Bob was. Everybody already knew.</p>
+<p>Thank you, ICDA. The film goes public tomorrow morning.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 5: Public release (Fri Oct 9)</b><button type="button" class="cb">Copy post</button></div><p><em>Native video: the :30. Full film link in first comment.</em></p><blockquote>
+<p>Meet Bog Down Bob.</p>
+<p>He's the busywork in every sales team. Rick has been stuck with him for years. Maya left him behind.</p>
+<p>Same job. Same hours. Different system.</p>
+<p>The full film is 6 minutes and there's a post-credits scene. Worth it for the fax machine flashback alone.</p>
+<p>Link in the comments. Tell me where Bob hides at your company.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 6: "It's mostly in my head" (Wk 2)</b><button type="button" class="cb">Copy post</button></div><blockquote>
+<p>The line that got the biggest groan at ICDA wasn't a joke. It was this:</p>
+<p>"It's mostly in my head."</p>
+<p>That's Rick, when his manager asks about his pipeline. Every sales manager in the room has heard it. Some of them have said it.</p>
+<p>Here's the thing. If the pipeline lives in a rep's head, it leaves when the rep does. And it can't be forecast, coached, or helped.</p>
+<p>Maya's answer: "Twelve deals, three closing this week. It's all in HubSpot."</p>
+<p>She didn't work harder. She just didn't have to remember.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 7: Quiz launch (Wk 2)</b><button type="button" class="cb">Copy post</button></div><blockquote>
+<p>We built a 2-minute quiz called "Where's Bob in your org?"</p>
+<p>12 questions. It tells you where busywork is hiding on your team: prospecting, research, follow-up, CRM, meetings, or contracts. It gives you a Bob Score out of 100.</p>
+<p>Mine was 31 when we first built it. Yes, I have a Bob too. He's mostly in my inbox.</p>
+<p>Link in the comments. Post your score if you're brave.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 8: Three hours vs. three seconds (Wk 3)</b><button type="button" class="cb">Copy post</button></div><blockquote>
+<p>Rick spends three hours researching one account. Maya's assistant answers the same question in three seconds.</p>
+<p>That's Rung 1. You ask, it answers.</p>
+<p>It's the least exciting kind of AI and the one most teams still aren't using well. Not because it's hard. Because nobody set it up with the right data or showed the team what to ask.</p>
+<p>Before you buy an agent, make sure your reps can ask a good question and get a good answer. That's where Bob starts packing.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 9: The 9:02 follow-up (Wk 4)</b><button type="button" class="cb">Copy post</button></div><blockquote>
+<p>My favorite moment in the film is small.</p>
+<p>Rick is typing "just following up on my last email" for the ninth time today. Bob leans in: "You forgot to change the name."</p>
+<p>Meanwhile Maya's follow-up went out at 9:02. The prospect already replied.</p>
+<p>That's Rung 2. A trigger runs it. Nobody has to remember.</p>
+<p>Most dealers I work with don't lose deals to competitors. They lose them to the follow-up that never went out.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 10: Bob is #OpenToWork (Wk 4)</b><button type="button" class="cb">Copy post</button></div><p><em>Image: Bob's mock profile card.</em></p><blockquote>
+<p>Some news. Bob is looking for his next opportunity.</p>
+<p>Senior Busywork Specialist. 40 years of experience in manual data entry. Skills include Reply-All, printing emails, and spreadsheets named FINAL_v3.</p>
+<p>He's a hard worker. He'll never miss a day. He'd love to join your team.</p>
+<p>Please don't hire him.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 11: I approve, they do (Wk 5)</b><button type="button" class="cb">Copy post</button></div><blockquote>
+<p>"I'll get my team on it right away."</p>
+<p>Maya says it while she's jogging at sunset. Her team is an AI agent crew. They draft, research, and prep. She approves.</p>
+<p>That's Rung 3. It decides, you approve.</p>
+<p>I want to be straight about this: agents aren't where most teams should start. If your data is messy and your process lives in people's heads, an agent just makes messy decisions faster.</p>
+<p>Assistant first. Automation second. Agent third. That's the order that works.</p>
+</blockquote></div>
+
+<div class="copy"><div class="ch"><b>Post 12: What six weeks of Bob taught us (Wk 6)</b><button type="button" class="cb">Copy post</button></div><blockquote>
+<p>Six weeks ago we released a comedy about a guy named Bob. Some things I didn't expect:</p>
+<ol>
+<li>People didn't laugh at the jokes I thought were funny. They laughed at "It's mostly in my head."</li>
+<li>The most common Bob sighting people sent us was the expense report.</li>
+<li>Nobody pushed back on the idea. Everybody pushed back on "we don't have time to fix it." Which is Bob talking.</li>
+</ol>
+<p>If you want to find out where Bob lives at your company, we're doing 30-minute Bob Audits through the end of the year. No slides. We just look.</p>
+</blockquote></div>
+
+<p><strong>Team comment starters (for launch posts):</strong> "The sticky note part hurt." / "We have a Final_Final_v3 on our drive right now." / "I'd watch a whole series of Bob."</p>
+<h3>Email drafts</h3>
+<div class="copy email"><div class="ch"><b>Email 1: Film launch (Fri Oct 9, full database minus open deals)</b><button type="button" class="cb">Copy email</button></div><ul>
+<li><strong>Subject:</strong> Meet Bob. He works for you.</li>
+<li><strong>Preview text:</strong> He's been on your payroll for years. Here's how to let him go.</li>
+</ul><blockquote>
+<p>Hi {{first name}},</p>
+<p>Yesterday at ICDA Autumn we premiered a short film. Today it's public.</p>
+<p>It's about a guy named Bog Down Bob. He's busywork with a lanyard. He lives in voicemail queues, locked spreadsheets, and follow-ups nobody remembers to send. He's in every sales team, including mine.</p>
+<p>In the film, Rick and Maya do the same job for a week. Rick does it the old way, with Bob. Maya uses an assistant, some automation, and a small AI agent crew. By Friday the scoreboard isn't close. (It's a dramatization. The feeling is real.)</p>
+<p>[Watch the film: 6 minutes, and there's a post-credits scene]</p>
+<p>If you watch it and think, "that's us," reply and tell me where Bob hides at your company. I read every reply.</p>
+<p>Shawn</p>
+<p>P.S. Same job. Same hours. Different system.</p>
+</blockquote></div>
+
+<div class="copy email"><div class="ch"><b>Email 2: Quiz (Wk 3, everyone who didn't click Email 1 plus all dealer contacts)</b><button type="button" class="cb">Copy email</button></div><ul>
+<li><strong>Subject:</strong> Where's Bob hiding on your team?</li>
+<li><strong>Preview text:</strong> A 2-minute quiz that gives you a Bob Score out of 100.</li>
+</ul><blockquote>
+<p>Hi {{first name}},</p>
+<p>Most teams know they have busywork. Few know where it lives.</p>
+<p>So we built a quiz: 12 questions, 2 minutes. It checks the six places Bob usually hides in a sales and service team: prospecting, account research, follow-up, CRM updates, meetings, and contracts and renewals.</p>
+<p>You get a Bob Score out of 100 and a short list of the first three things to fix. It's based on the same 137-task map we use when we work with clients.</p>
+<p>[Take the quiz]</p>
+<p>No sales call attached. If you want to talk about your results, there's a button for that at the end. If not, keep the list and go get him.</p>
+<p>Shawn</p>
+</blockquote></div>
+
+<div class="copy email"><div class="ch"><b>Email 3: Last call (Wk 6, quiz takers without a booking, ICDA attendees, engaged contacts)</b><button type="button" class="cb">Copy email</button></div><ul>
+<li><strong>Subject:</strong> Last Bob Audits of the year</li>
+<li><strong>Preview text:</strong> 30 minutes, no slides. We find where the hours go.</li>
+</ul><blockquote>
+<p>Hi {{first name}},</p>
+<p>We have a handful of Bob Audit slots left before the holidays.</p>
+<p>Here's what happens in 30 minutes:</p>
+<ol>
+<li>You walk us through one week of one rep, or one role on your team.</li>
+<li>We mark every task that's busywork and which rung could take it: assistant, automation, or agent.</li>
+<li>You leave with a one-page list of hours you could get back and where to start.</li>
+</ol>
+<p>No slides, no pitch deck. If there's nothing worth fixing, we'll tell you.</p>
+<p>[Book a 30-minute Bob Audit]</p>
+<p>Shawn</p>
+<p>P.S. If you haven't seen the film yet, Bob gets dumped at minute four. It's cathartic. [Watch]</p>
+</blockquote></div>
+
+</section><section id="s6" class="sec"><div class="sh"><span class="sn">06</span><h2>Interactive and recurring ideas</h2></div>
+<h3>6.1 "Bob Sightings" series</h3>
+<p>Short episodes (:15 to :45, vertical first) where Bob shows up in a new, very specific busywork moment. Same formula every time: Bob's line, the pain, a 2-second flash of the "Quantum way," the "Done." button.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Sighting</th>
+<th>Bob's line</th>
+<th>The Quantum way flash</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Expense reports</td>
+<td>"Retype it. The photo might be lying."</td>
+<td>Receipt photo, auto-filled, submitted</td>
+</tr>
+<tr>
+<td>CRM data entry</td>
+<td>"Type it in. Then type it in again over here."</td>
+<td>Voice note becomes a logged activity</td>
+</tr>
+<tr>
+<td>The meeting about the meeting</td>
+<td>"Let's set up a quick sync to plan the kickoff."</td>
+<td>Agenda and notes generated; meeting cancelled</td>
+</tr>
+<tr>
+<td>Reply-all storm</td>
+<td>"Please remove me from this thread. Reply all."</td>
+<td>Summary bot posts one line</td>
+</tr>
+<tr>
+<td>Service ticket handoff</td>
+<td>"Did anyone tell sales the lease is ending?"</td>
+<td>Automation alerts the rep 120 days out</td>
+</tr>
+<tr>
+<td>Onboarding a new rep</td>
+<td>"Here's a binder. And my cell."</td>
+<td>AI assistant trained on the playbook</td>
+</tr>
+</tbody>
+</table></div>
+<p>Invite the audience in: "Where did you see Bob this week?" Best replies become the next episode (with credit, if they agree).</p>
+<h3>6.2 Lead magnet: "Where's Bob in your org?" quiz</h3>
+<p><strong>Format:</strong> 12 questions, 2 minutes, built as a HubSpot form or a simple quiz page that writes to HubSpot. Results page shows score instantly; email gate for the full PDF report (name, email, company, role, team size).</p>
+<p><strong>Structure:</strong> 6 Bob Zones, 2 questions each. Each zone maps to a cluster in QBS's existing 137-task matrix of sales and marketing tasks, so every answer translates to named tasks and a rung.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>Maps to matrix category</th>
+<th>Sample questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Prospecting</td>
+<td>Prospecting and outreach tasks</td>
+<td>"How do reps find who to call today?" / "What share of dials reach a live person?"</td>
+</tr>
+<tr>
+<td>2. Research</td>
+<td>Account and contact research</td>
+<td>"How long does it take a rep to prep for a first meeting?" / "Where does account intel live?"</td>
+</tr>
+<tr>
+<td>3. Follow-up</td>
+<td>Sequences, tasks, reminders</td>
+<td>"How are follow-ups triggered?" (memory / sticky notes / calendar / automated sequence) / "How many follow-ups were missed last month?"</td>
+</tr>
+<tr>
+<td>4. CRM and pipeline</td>
+<td>Data entry, pipeline hygiene, reporting</td>
+<td>"When are meetings logged?" (never / end of week / same day / automatically) / "Could your manager forecast from the CRM alone?"</td>
+</tr>
+<tr>
+<td>5. Meetings</td>
+<td>Notes, recaps, internal meetings</td>
+<td>"Who takes notes in customer meetings?" / "How many internal status meetings a week?"</td>
+</tr>
+<tr>
+<td>6. Contracts and renewals</td>
+<td>Lease/contract tracking, competitive displacement</td>
+<td>"How do you know when a competitor's contract is ending?" / "Where are your contract files?"</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Scoring:</strong> Each answer scores 0 (the Quantum way) to 3 (full Bob). Maximum 36 raw, converted to a <strong>Bob Score out of 100</strong> (raw / 36 x 100). Higher is more Bob.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Bob Score</th>
+<th>Label</th>
+<th>What the results page says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 to 24</td>
+<td><strong>Bob Who?</strong></td>
+<td>"You've mostly left Bob behind. Your next step is Rung 3: agents that decide, with you approving."</td>
+</tr>
+<tr>
+<td>25 to 49</td>
+<td><strong>Bob Visits</strong></td>
+<td>"Bob drops by. Two zones need automation. Here are the first three tasks to hand off."</td>
+</tr>
+<tr>
+<td>50 to 74</td>
+<td><strong>Bob Has a Desk</strong></td>
+<td>"Bob's settled in. Start with Rung 1 and 2 in your top zone. You're likely losing 8 to 15 hours per rep per week." (Label as an estimate.)</td>
+</tr>
+<tr>
+<td>75 to 100</td>
+<td><strong>Bob Runs the Place</strong></td>
+<td>"Bob has a key to the building. Good news: the first fixes are the fastest. Book a Bob Audit."</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>The PDF report:</strong> One page per zone with the score, the top 3 tasks from the 137-task matrix for that zone, which rung handles each, and a "Bob's favorite excuse" line for fun ("We'll get to it after Q4.").</p>
+<p><strong>Follow-up:</strong> Score 50+ gets a personal email from Shawn within 1 business day (drafted by HubSpot, sent by a human). Everyone gets a 3-step nurture: result recap, one short video for their worst zone, Bob Audit invite.</p>
+<h3>6.3 Bob's #OpenToWork LinkedIn gag</h3>
+<ul>
+<li>Create a mock LinkedIn-style profile card image (do not create an actual fake LinkedIn account; that breaks LinkedIn's terms and could look like impersonation).</li>
+<li>Headline: "Senior Busywork Specialist | 40 years in manual data entry | Open to new opportunities"</li>
+<li>About: "I thrive in environments with no CRM, lots of shared drives, and a strong culture of 'I'll enter that later.'"</li>
+<li>Experience: "Every Sales Team, 1985 to present." "Fax Machine Operations, 1989 to 2004 (a golden era)."</li>
+<li>Skills: Reply-All, Printing Emails, Spreadsheets named FINAL_v3, Jamming Copiers, Voicemail.</li>
+<li>Endorsements gag: "Endorsed by Rick (formerly)."</li>
+<li>Recommendation from Rick's dad: "Bob's been with our family for two generations."</li>
+<li>Post it as Post 10, then make it a recurring bit: "Bob's job search update" every few weeks (he gets rejected: "Pass. We use Quantum.").</li>
+<li>Note: Use a generic green "open to work" style banner, not a pixel copy of LinkedIn's UI or logo.</li>
+</ul>
+<h3>6.4 User-generated "My Bob" stories</h3>
+<ul>
+<li><strong>Prompt:</strong> "Tell us about your Bob. Where does he hide at your company? Best story gets turned into a Bob Sighting episode."</li>
+<li><strong>Mechanics:</strong> Comment on Shawn's post or submit via a short form on the landing page (name, company, story, permission to use checkbox).</li>
+<li><strong>Reward:</strong> Winning stories get produced as a Sighting with a thank-you credit, plus a "Done." button box for their team. Monthly pick.</li>
+<li><strong>Ops:</strong> Log submissions in HubSpot as a form submission with a "My Bob story" property. Anyone who submits is a warm lead.</li>
+</ul>
+<h3>6.5 Merch and swag</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Use</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"Done." buttons</strong> (lime-green pins, 1.5")</td>
+<td>ICDA giveaway, mailed to audit bookers</td>
+<td>The hero item. Order 500.</td>
+</tr>
+<tr>
+<td><strong>"Done." desk button</strong> (big press button that plays a chime)</td>
+<td>Prize for UGC winners and top clients</td>
+<td>Custom text, not a copy of any retailer's button or slogan</td>
+</tr>
+<tr>
+<td><strong>Bob lanyard</strong> ("Visitor: Bog Down Bob")</td>
+<td>Booth staff wear them; conversation starter</td>
+<td>Cheap and funny</td>
+</tr>
+<tr>
+<td><strong>"Leave Bob Behind" sticker</strong></td>
+<td>Laptops, table giveaway</td>
+<td>Die-cut Bob silhouette</td>
+</tr>
+<tr>
+<td><strong>"Locked for editing by Bob" mug</strong></td>
+<td>Client gift</td>
+<td>Small batch</td>
+</tr>
+</tbody>
+</table></div>
+<h3>6.6 Sequel and episode roadmap</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Episode</th>
+<th>Premise</th>
+<th>Rung focus</th>
+<th>Suggested timing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Bob's Job Hunt</strong></td>
+<td>Bob interviews at five companies; each one already has a system. Final interview: "We use spreadsheets." Bob lights up.</td>
+<td>All three</td>
+<td>Nov 2026</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Bob Goes to Service</strong></td>
+<td>Bob moves to the service department: missed meter reads, a toner order faxed twice, a lease renewal nobody flagged.</td>
+<td>Automation</td>
+<td>Dec 2026</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Bob's Holiday Party</strong></td>
+<td>Bob organizes the office party entirely by reply-all.</td>
+<td>Assistant</td>
+<td>Dec 2026</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Bob Trains the New Hire</strong></td>
+<td>Bob onboards a new rep with a binder and a 90-minute voicemail. Maya's new hire gets an assistant trained on the playbook.</td>
+<td>Assistant</td>
+<td>Jan 2027</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>The Quarterly Business Review</strong></td>
+<td>Bob builds a QBR deck by hand overnight. Maya's is done by the agent crew and she spends the time on the customer.</td>
+<td>Agent</td>
+<td>Feb 2027</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Bob's Revenge</strong></td>
+<td>Bob sneaks back into Maya's team through a manual workaround someone set up "just for now."</td>
+<td>Automation</td>
+<td>Mar 2027</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Bob Meets the Agent</strong></td>
+<td>Bob and the AI agent share a cubicle for a day. He tries to teach it to print emails.</td>
+<td>Agent</td>
+<td>Apr 2027</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Bob's Retirement Party</strong></td>
+<td>The team throws Bob a send-off. Nobody's sad. He gives a speech about the fax machine. Cliffhanger: he's spotted at a competitor.</td>
+<td>All three</td>
+<td>ICDA Spring / mid-2027</td>
+</tr>
+</tbody>
+</table></div>
+
+</section><section id="s7" class="sec"><div class="sh"><span class="sn">07</span><h2>Landing page outline</h2></div>
+<p><strong>URL:</strong> <code>thequantumleap.business/leave-bob-behind</code>
+<strong>Title tag:</strong> Leave Bob Behind | Quantum Business Solutions
+<strong>Meta description:</strong> Meet Bog Down Bob, the busywork in every sales team. Watch the film, take the 2-minute quiz, and book a 30-minute Bob Audit.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Section</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Hero</strong></td>
+<td>Headline: <strong>"Every sales team has a Bob."</strong> Subhead: "He's the voicemail, the locked spreadsheet, and the follow-up nobody sent. Here's how to leave him behind." Embedded film (poster frame of Bob at the copier). Primary CTA: <strong>Book a 30-minute Bob Audit</strong>. Secondary: "Take the 2-minute quiz". Small print under the video: "Dramatization. Characters are fictional."</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Meet Bob</strong></td>
+<td>Bob's photo and "#OpenToWork" style résumé card. Three of his lines as pull quotes.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Same job. Same hours. Different system.</strong></td>
+<td>Side-by-side: Rick's week vs. Maya's week (voicemail vs. conversations; 3 hours vs. 3 seconds; "in my head" vs. in HubSpot; "I'll enter that later" vs. logged from the car). Scoreboard graphic labelled "Dramatization."</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>The three rungs</strong></td>
+<td>Assistant / Automation / Agent, each with one sentence, one film clip (GIF), and one real example task from the 137-task matrix.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Where's Bob in your org?</strong></td>
+<td>Quiz embed or button. "12 questions. 2 minutes. A Bob Score out of 100."</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>What a Bob Audit is</strong></td>
+<td>"30 minutes. No slides. We walk one week of one role, mark every task Bob owns, and show which rung takes it. You leave with a one-page list." What you get / what we need from you.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Proof</strong></td>
+<td>2 to 3 client quotes or short results (only with written approval and real numbers). Logos only where clients have agreed.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Built for dealers</strong></td>
+<td>Short section for office-tech and managed IT dealers: contracts coming up, service-to-sales handoffs, lease renewals. Mention the keynote at ICDA.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>FAQ</strong></td>
+<td>"Do we need HubSpot?" / "Is this going to replace my reps?" (No: it replaces Bob.) / "How long until we see time back?" / "What does it cost after the audit?" / "Was the film made with AI?" (answer honestly).</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Final CTA</strong></td>
+<td>"Leave Bob behind." Button: <strong>Book your Bob Audit</strong>. HubSpot meetings embed with Shawn's (or the team's round-robin) calendar.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Post-credits</strong></td>
+<td>Below the footer, the post-credits clip with "Are you letting Bob hang out in your organization?" A small reward for scrollers.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Form fields on the booking: first name, last name, email, company, role (dropdown: owner, sales leader, rep, marketing/ops, other), team size, "Where does Bob hide?" (optional free text).</p>
+
+</section><section id="s8" class="sec"><div class="sh"><span class="sn">08</span><h2>Measurement</h2></div>
+<h3>8.1 KPIs and six-week targets</h3>
+<p>Targets assume a Recommended paid tier and Shawn's current LinkedIn reach of a few thousand followers. Adjust once week-1 data is in.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>KPI</th>
+<th>6-week target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LinkedIn: Shawn</strong></td>
+<td>Impressions</td>
+<td>120,000</td>
+</tr>
+<tr>
+<td></td>
+<td>Avg engagement rate</td>
+<td>4%+ on video posts</td>
+</tr>
+<tr>
+<td></td>
+<td>Comments on launch post</td>
+<td>60+</td>
+</tr>
+<tr>
+<td><strong>LinkedIn: company page</strong></td>
+<td>Impressions</td>
+<td>30,000</td>
+</tr>
+<tr>
+<td></td>
+<td>Followers</td>
+<td>+200</td>
+</tr>
+<tr>
+<td><strong>LinkedIn paid</strong></td>
+<td>Video view rate (:30, 50%+ viewed)</td>
+<td>25%+</td>
+</tr>
+<tr>
+<td></td>
+<td>CTR (Thought Leader Ads)</td>
+<td>0.8%+</td>
+</tr>
+<tr>
+<td></td>
+<td>Cost per quiz completion</td>
+<td>Under $40</td>
+</tr>
+<tr>
+<td><strong>YouTube</strong></td>
+<td>Full-film views</td>
+<td>3,000</td>
+</tr>
+<tr>
+<td></td>
+<td>Avg view duration (6:17 film)</td>
+<td>45%+</td>
+</tr>
+<tr>
+<td></td>
+<td>Pre-roll view rate</td>
+<td>20%+</td>
+</tr>
+<tr>
+<td><strong>Short-form (all platforms)</strong></td>
+<td>Total views</td>
+<td>20,000</td>
+</tr>
+<tr>
+<td><strong>Email</strong></td>
+<td>Open rate (use clicks as the main signal; opens are inflated by privacy features)</td>
+<td>35%+</td>
+</tr>
+<tr>
+<td></td>
+<td>Click rate</td>
+<td>4%+ (Email 1), 5%+ (Email 2)</td>
+</tr>
+<tr>
+<td></td>
+<td>Unsubscribe rate</td>
+<td>Under 0.5%</td>
+</tr>
+<tr>
+<td><strong>ICDA keynote</strong></td>
+<td>QR scans</td>
+<td>60+ (of attendees)</td>
+</tr>
+<tr>
+<td></td>
+<td>Badge scans / conversations logged</td>
+<td>80+</td>
+</tr>
+<tr>
+<td></td>
+<td>Audits booked from ICDA</td>
+<td>12+</td>
+</tr>
+<tr>
+<td><strong>Landing page</strong></td>
+<td>Unique visitors</td>
+<td>2,500</td>
+</tr>
+<tr>
+<td></td>
+<td>Quiz start rate</td>
+<td>25% of visitors</td>
+</tr>
+<tr>
+<td></td>
+<td>Quiz completion rate</td>
+<td>70% of starters</td>
+</tr>
+<tr>
+<td></td>
+<td>Visitor to audit booking</td>
+<td>1.5%+</td>
+</tr>
+<tr>
+<td><strong>Pipeline (the ones that matter)</strong></td>
+<td>Quiz completions</td>
+<td>250</td>
+</tr>
+<tr>
+<td></td>
+<td>Bob Audits booked</td>
+<td>40</td>
+</tr>
+<tr>
+<td></td>
+<td>Audits held (show rate 75%)</td>
+<td>30</td>
+</tr>
+<tr>
+<td></td>
+<td>Qualified opportunities</td>
+<td>12</td>
+</tr>
+<tr>
+<td></td>
+<td>Closed engagements within 90 days</td>
+<td>3 to 5</td>
+</tr>
+</tbody>
+</table></div>
+<h3>8.2 UTM conventions</h3>
+<p>Format: lowercase, hyphens, no spaces.</p>
+<ul>
+<li><code>utm_campaign=leave-bob-behind-2026</code></li>
+<li><code>utm_source</code> = <code>linkedin</code>, <code>youtube</code>, <code>instagram</code>, <code>tiktok</code>, <code>hubspot-email</code>, <code>icda</code>, <code>partner-[name]</code></li>
+<li><code>utm_medium</code> = <code>organic-personal</code>, <code>organic-company</code>, <code>paid-social</code>, <code>paid-video</code>, <code>email</code>, <code>event-qr</code>, <code>referral</code></li>
+<li><code>utm_content</code> = asset ID, matching the cutdown file name: e.g. <code>lbb-14-hewont-06-v</code>, <code>email-1-launch</code>, <code>post-07-quiz</code>, <code>keynote-slide-qr</code></li>
+<li><code>utm_term</code> = paid audience name: e.g. <code>dealers-owners</code>, <code>retarget-video50</code></li>
+</ul>
+<p>Example: <code>thequantumleap.business/leave-bob-behind?utm_campaign=leave-bob-behind-2026&amp;utm_source=linkedin&amp;utm_medium=organic-personal&amp;utm_content=post-05-launch</code></p>
+<p>Keep a shared UTM sheet so the team doesn't invent new values. Use a HubSpot tracking URL builder so links show up under the campaign automatically.</p>
+<h3>8.3 HubSpot setup</h3>
+<p><strong>Campaign:</strong> Create the HubSpot campaign "Leave Bob Behind 2026," dates Oct 5 to Nov 15, 2026. Associate the landing page, quiz form, booking form, emails, social posts, ads, CTAs, and tracking URLs.</p>
+<p><strong>Properties (contact):</strong>
+- <code>bob_score</code> (number, 0 to 100)
+- <code>bob_score_label</code> (dropdown: Bob Who? / Bob Visits / Bob Has a Desk / Bob Runs the Place)
+- <code>bob_worst_zone</code> (dropdown: the 6 zones)
+- <code>bob_audit_status</code> (dropdown: Not booked / Booked / Held / No-show / Converted to opportunity)
+- <code>my_bob_story</code> (multi-line text)
+- <code>lbb_source_event</code> (single-line: e.g., ICDA Autumn 2026)</p>
+<p><strong>Lists (active):</strong>
+1. LBB: Watched film (video engagement 50%+, where trackable)
+2. LBB: Quiz completed
+3. LBB: Quiz, Bob Score 50+ (high intent)
+4. LBB: Audit booked
+5. LBB: ICDA 2026 attendees
+6. LBB: Office-tech dealers (company industry or custom dealer flag)
+7. LBB: Suppression (open deals, clients in onboarding, unsubscribes)</p>
+<p><strong>Lead scoring bumps (HubSpot score property):</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Watched 50%+ of the film (landing page or YouTube, where trackable)</td>
+<td>+5</td>
+</tr>
+<tr>
+<td>Visited landing page 2+ times</td>
+<td>+5</td>
+</tr>
+<tr>
+<td>Completed the quiz</td>
+<td><strong>+20</strong></td>
+</tr>
+<tr>
+<td>Bob Score 50 to 74</td>
+<td>+10 more</td>
+</tr>
+<tr>
+<td>Bob Score 75+</td>
+<td>+15 more</td>
+</tr>
+<tr>
+<td>Submitted a "My Bob" story</td>
+<td>+10</td>
+</tr>
+<tr>
+<td>Scanned the QR at ICDA / badge scan</td>
+<td>+15</td>
+</tr>
+<tr>
+<td>Booked a Bob Audit</td>
+<td>+30</td>
+</tr>
+<tr>
+<td>Role = Owner or Sales leader at a dealer</td>
+<td>+10</td>
+</tr>
+</tbody>
+</table></div>
+<p>Threshold: 50+ creates a task for the owner rep and moves lifecycle stage to MQL.</p>
+<p><strong>Workflows:</strong>
+1. Quiz completed: set <code>bob_score</code> and label, send results email with PDF, enroll in 3-step nurture, bump score.
+2. Bob Score 50+: create a task for Shawn or the assigned rep, "Personal note within 1 business day."
+3. Audit booked: set <code>bob_audit_status = Booked</code>, send prep email ("Bring one week of one rep's calendar"), reminder 24 hours before.
+4. Audit held: create deal in the pipeline at "Discovery" with source "Leave Bob Behind 2026."
+5. ICDA import: tag, score bump, rep follow-up task due within 72 hours.</p>
+<p><strong>Reporting dashboard ("Leave Bob Behind"):</strong> sessions by source, quiz completions by week, Bob Score distribution, audits booked and held, deals created and amount, closed-won attributed (first touch and last touch), cost per audit for paid.</p>
+<p><strong>Weekly review:</strong> Every Monday, 20 minutes. Look at the top 3 posts, the worst 3, and the funnel. Move budget to the best-performing cutdowns.</p>
+
+</section><section id="s9" class="sec"><div class="sh"><span class="sn">09</span><h2>Guardrails</h2></div>
+<h3>9.1 Claims to confirm before public use</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Claim or element</th>
+<th>Where it shows up</th>
+<th>What to do</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"11 people in 66 minutes" and "a week of prospecting in four hours" (ConnectAndSell)</td>
+<td>Voicemail scene, clip 4</td>
+<td>Confirm the numbers are real and typical, or label as an example. Get written OK from ConnectAndSell to use their name and logo in a public ad. If not approved, blur the logo and say "a dialer service" in captions.</td>
+<td>Shawn</td>
+</tr>
+<tr>
+<td>"2,500 competitive contracts coming up"</td>
+<td>Contracts scene, clip 18</td>
+<td>Confirm the number, the date range, and the data source. Make sure no client data (customer names, contract details) is visible on screen. If unconfirmed, cut the number from social clips.</td>
+<td>Shawn + product lead</td>
+</tr>
+<tr>
+<td>"AI Lead Finder" product name</td>
+<td>Contracts scene, landing page</td>
+<td>Run a basic trademark search before using it as a product name in ads. If there's a conflict, rename (e.g., "Contract Radar") before paid use.</td>
+<td>Shawn</td>
+</tr>
+<tr>
+<td>Selling-time scoreboard (Rick 4h 12m vs. Maya 42h)</td>
+<td>Throughout</td>
+<td>Keep the "Dramatization" label on every clip that shows it. Never quote 42 hours as a result in copy, ads, or sales decks.</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td>"8 to 15 hours per rep per week" (quiz results)</td>
+<td>Quiz results page</td>
+<td>Label as an estimate and cite the basis (QBS client work, the 137-task matrix). Remove if you can't back it up.</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>HubSpot name and UI</td>
+<td>Pipeline scene, sequences</td>
+<td>Follow HubSpot's partner brand guidelines. Using the name to describe your work is generally fine; using their logo in ads needs a check.</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>ZoomInfo</td>
+<td>Any mention</td>
+<td>Same rule: descriptive use only unless they approve co-marketing.</td>
+<td>Marketing</td>
+</tr>
+<tr>
+<td>Client proof</td>
+<td>Landing page</td>
+<td>Written approval for every quote, logo, and number.</td>
+<td>Shawn</td>
+</tr>
+</tbody>
+</table></div>
+<h3>9.2 AI-generated video disclosure</h3>
+<ul>
+<li>If the film or any cutdown uses AI-generated or AI-altered people, voices, or scenes that look realistic, <strong>turn on the platform's disclosure</strong>:</li>
+<li><strong>YouTube:</strong> check "Altered or synthetic content" in YouTube Studio on upload. That's required for realistic synthetic content.</li>
+<li><strong>LinkedIn:</strong> LinkedIn shows content credentials (C2PA) when files carry them; don't strip that metadata. Add a plain line in the post or first comment: "Made with the help of AI video tools."</li>
+<li><strong>Instagram / TikTok:</strong> use the "AI info" / "AI-generated" label toggles.</li>
+<li>Add a line to the YouTube description and the landing page: "This film was made with AI-assisted production. Characters are fictional. The scoreboard is a dramatization."</li>
+<li>Own it. For a company that sells AI, "we made this with AI" is a feature. Consider a short behind-the-scenes post: "How we made Bob."</li>
+<li>Do not use AI to generate likenesses of real, identifiable people (other than cast members who've signed releases).</li>
+</ul>
+<h3>9.3 Music</h3>
+<ul>
+<li>The current music bed is AI-generated. Before public release, replace it with <strong>licensed music</strong> (a stock library license that covers paid ads on all platforms), or confirm in writing that the AI music tool's terms grant commercial rights including paid advertising and that the track isn't flagged by YouTube Content ID.</li>
+<li>Test-upload the final film as unlisted on YouTube 48 hours before release to catch any Content ID claims.</li>
+<li>Keep license receipts in the campaign folder.</li>
+</ul>
+<h3>9.4 Trademarks, logos, and phrasing</h3>
+<ul>
+<li>Only show third-party logos (HubSpot, ConnectAndSell, ZoomInfo, LinkedIn) where you have permission or the brand's guidelines clearly allow it. When unsure, blur or remove.</li>
+<li>Don't use trademarked slogans. Specifically: <strong>do not use Staples' "That was easy"</strong> or any "easy button" language. The QBS button says "Done." and stays that way.</li>
+<li>Don't call Bob a "Mayhem" character, reference Allstate, or imitate their ad style in anything public.</li>
+<li>The #OpenToWork gag uses a mock-up graphic with a generic green banner, not LinkedIn's actual UI, and never a real fake profile.</li>
+<li>"Leave Bob Behind," "Bog Down Bob," and "Where's Bob in your org?" should get a quick search for conflicts before paid use.</li>
+</ul>
+<h3>9.5 Tone and people</h3>
+<ul>
+<li>Bob is busywork, not older workers. Avoid any copy that implies veteran reps are the problem. Rick is the hero; he gets out.</li>
+<li>Talent releases on file for everyone in the film, including the kid and the "wife at the game." Confirm the releases cover paid ads and 12+ months.</li>
+<li>Don't use real customer names, contract data, or email addresses on screen.</li>
+</ul>
+<h3>9.6 Privacy and email</h3>
+<ul>
+<li>Email only contacts with a lawful basis (existing relationship or opt-in). Honor unsubscribes. Include QBS's physical address.</li>
+<li>ICDA attendee data: check ICDA's rules on post-event use of attendee lists before importing and emailing.</li>
+</ul>
+
+</section><section id="s10" class="sec"><div class="sh"><span class="sn">10</span><h2>First 10 things to do this week (Sept 28 to Oct 2)</h2></div>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Task</th>
+<th>Owner</th>
+<th>Done by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Lock the claims.</strong> Get answers on the ConnectAndSell numbers and logo permission, the 2,500 contracts figure, and an "AI Lead Finder" name check. Decide what to blur or cut.</td>
+<td>Shawn</td>
+<td>Tue Sep 29</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Swap the music.</strong> License a replacement track (or confirm commercial rights in writing), re-export, and test-upload unlisted to YouTube for Content ID.</td>
+<td>Video editor</td>
+<td>Wed Sep 30</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Final film check.</strong> "Dramatization" label on the scoreboard, AI production line in end credits, talent releases on file, no client data on screen.</td>
+<td>Shawn + editor</td>
+<td>Wed Sep 30</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Cut the first 8 clips</strong> for launch week: the :30 (H and V), clips 1, 6, 7, 14, 21, 22, 25.</td>
+<td>Video editor</td>
+<td>Fri Oct 2</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Build the landing page</strong> (unlisted) with the film, quiz button, and Bob Audit booking embed.</td>
+<td>Marketing / web</td>
+<td>Fri Oct 2</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Build the quiz</strong> in HubSpot: 12 questions, scoring, results page, results email, and the new properties.</td>
+<td>Marketing ops</td>
+<td>Fri Oct 2</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Set up HubSpot:</strong> campaign, 7 lists, score bumps, 5 workflows, UTM sheet, tracking URLs.</td>
+<td>Marketing ops</td>
+<td>Fri Oct 2</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Finalize the keynote:</strong> where the film plays, the "Who has a Bob?" moment, QR slide tested from the back of a room, ICDA sign-off on any live Bob bit.</td>
+<td>Shawn</td>
+<td>Thu Oct 1</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Order swag:</strong> 500 "Done." buttons, lanyards, stickers, QR table cards. Pay for rush delivery to arrive by Oct 6.</td>
+<td>Ops</td>
+<td>Mon Sep 28</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Load week 1:</strong> approve Posts 1 to 5 and Email 1, schedule in HubSpot as drafts (not live), brief the team on comment starters, and set up paid campaigns paused until Oct 9.</td>
+<td>Shawn + marketing</td>
+<td>Fri Oct 2</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Before anything goes live:</strong> Shawn signs off on the guardrails checklist in Section 9.1.</p>
+</section>
+<footer>Same job. Same hours. Different system. <span>Leave Bob behind.</span></footer>
+</main>
+</div>
+<script>
+document.querySelectorAll('.cb').forEach(function(b){b.addEventListener('click',function(){
+ var box=b.closest('.copy'),q=box.querySelector('blockquote'),head='';
+ box.querySelectorAll('ul li').forEach(function(li){head+=li.innerText+'\n'});
+ var txt=(head?head+'\n':'')+q.innerText.trim();
+ function done(){b.textContent='Copied';b.classList.add('ok');setTimeout(function(){b.textContent=box.classList.contains('email')?'Copy email':'Copy post';b.classList.remove('ok')},1600)}
+ function fallback(){var r=document.createRange();r.selectNodeContents(q);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press Ctrl+C'}
+ try{navigator.clipboard.writeText(txt).then(done,fallback)}catch(e){fallback()}
+})});
+</script>

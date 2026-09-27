@@ -1,0 +1,114 @@
+<title>Leave Bob Behind</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#F5F6F1;--surface:#FFFFFF;--ink:#0E1116;--muted:#586072;--line:#DCE0D5;--lime:#B6FF3C;--lime-ink:#4F7A00;--amber:#FFB43C;--amber-ink:#9A5B00;--quote:#F0F3E8;
+--disp:'Anton',Impact,'Arial Narrow',sans-serif;--sans:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'DM Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#07080D;--surface:#10131B;--ink:#EEF1F6;--muted:#98A0B3;--line:#252A37;--lime-ink:#B6FF3C;--amber-ink:#FFB43C;--quote:#141925}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#07080D;--surface:#10131B;--ink:#EEF1F6;--muted:#98A0B3;--line:#252A37;--lime-ink:#B6FF3C;--amber-ink:#FFB43C;--quote:#141925}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);padding-inline:20px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;padding-block:40px 80px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;display:flex;flex-direction:column;gap:2px;font-size:14px}
+nav.toc .lbl{font:700 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+nav.toc a{display:flex;gap:10px;color:var(--muted);text-decoration:none;padding:6px 8px;border-radius:6px}
+nav.toc a i{font:500 12px var(--mono);font-style:normal;color:var(--lime-ink);min-width:20px;padding-top:2px}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--ink);background:var(--surface);outline:none}
+main{min-width:0;max-width:860px}
+header.hero{padding-block:8px 36px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.status{display:inline-flex;gap:8px;align-items:center;font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--amber-ink);border:1px solid currentColor;border-radius:99px;padding:5px 12px}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber)}
+h1{font:400 clamp(56px,9vw,112px)/.9 var(--disp);text-transform:uppercase;letter-spacing:.005em;margin:22px 0 14px;text-wrap:balance}
+h1 span{color:var(--lime-ink)}
+.lede{font-size:clamp(18px,2.2vw,22px);line-height:1.45;max-width:36em;margin:0 0 26px}
+dl.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px 28px;margin:0 0 30px}
+dl.meta div{border-top:2px solid var(--ink);padding-top:8px}
+dl.meta dt{font:700 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+dl.meta dd{margin:4px 0 0;font-weight:700}
+.onescreen{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.onescreen div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.onescreen b{display:block;font:700 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--lime-ink);margin-bottom:4px}
+.targets{margin-top:26px}
+.targets .tl{font:700 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tgrid div{background:var(--surface);padding:14px 16px}
+.tgrid b{display:block;font:400 34px/1 var(--disp);font-variant-numeric:tabular-nums}
+.tgrid span{font-size:13px;color:var(--muted)}
+.tgrid div:nth-child(2) b,.tgrid div:nth-child(3) b{color:var(--lime-ink)}
+section.sec{padding-block:44px 8px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+.sh{display:flex;gap:16px;align-items:baseline;margin-bottom:18px}
+.sn{font:500 14px var(--mono);color:var(--lime-ink)}
+h2{font:400 clamp(30px,4vw,44px)/1 var(--disp);text-transform:uppercase;margin:0;text-wrap:balance}
+h3{font:700 20px/1.3 var(--sans);margin:30px 0 10px;text-wrap:balance}
+p,li{max-width:68ch}
+ul,ol{padding-left:22px}
+li{margin-bottom:6px}
+strong{font-weight:700}
+code{font:500 13px var(--mono);background:var(--quote);border:1px solid var(--line);border-radius:5px;padding:1px 6px;word-break:break-word}
+a{color:var(--lime-ink)}
+blockquote{margin:14px 0;padding:14px 18px;background:var(--quote);border-left:3px solid var(--lime-ink);border-radius:0 8px 8px 0}
+blockquote p{margin:0 0 10px}blockquote p:last-child{margin-bottom:0}
+.tw{overflow-x:auto;margin:14px 0 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.45}
+th{text-align:left;font:700 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--quote);padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;min-width:90px}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:700}
+.copy{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px 6px;margin:16px 0}
+.copy .ch{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.copy .ch b{font-size:15px}
+.copy p em{color:var(--muted)}
+.copy ul{margin:8px 0 0}
+.cb{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#06070C;background:var(--lime);border:0;border-radius:99px;padding:8px 14px;cursor:pointer}
+.cb:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.cb.ok{background:var(--amber)}
+footer{padding-block:36px 0;font:400 clamp(28px,4vw,40px)/1 var(--disp);text-transform:uppercase}
+footer span{color:var(--lime-ink)}
+@media (max-width:900px){.wrap{grid-template-columns:1fr;gap:0}nav.toc{position:static;flex-direction:row;flex-wrap:wrap;gap:4px;margin-bottom:10px}nav.toc .lbl{width:100%}nav.toc a{background:var(--surface);border:1px solid var(--line)}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+<div class="wrap">
+<nav class="toc" aria-label="Sections"><div class="lbl">Campaign plan</div><a href="#top"><i>00</i>The plan in one screen</a>{{TOC}}</nav>
+<main>
+<header class="hero" id="top">
+<span class="status">Draft for internal review &middot; nothing scheduled, sent or published</span>
+<h1>Leave Bob <span>Behind.</span></h1>
+<p class="lede">The marketing and social campaign built on &ldquo;The Old Way vs. The Quantum Way&rdquo;. Every sales team has a Bob. This is how we get people to spot him, count him, and show him the door.</p>
+<dl class="meta">
+<div><dt>Client</dt><dd>Quantum Business Solutions</dd></div>
+<div><dt>Owner</dt><dd>Shawn Peterson, CEO</dd></div>
+<div><dt>Launch</dt><dd>ICDA Autumn keynote, Thu Oct 8, 2026</dd></div>
+<div><dt>Window</dt><dd>Oct 5 &ndash; Nov 15, 2026 (6 weeks)</dd></div>
+</dl>
+<div class="onescreen">
+<div><b>Villain</b>Busywork, played by Bog Down Bob (beige cardigan, mustard shirt, round glasses, lanyard).</div>
+<div><b>Promise</b>Same job. Same hours. Different system.</div>
+<div><b>Ask</b>Book a 30-minute Bob Audit. Lighter step: the &ldquo;Where&rsquo;s Bob in your org?&rdquo; quiz.</div>
+<div><b>Main channel</b>Shawn&rsquo;s LinkedIn, with the QBS page amplifying. Everything points to the landing page.</div>
+<div><b>Launch</b>Premiere at the ICDA keynote on Oct 8. Public release the next morning, Oct 9.</div>
+<div><b>Engine</b>One hero film, 28 cutdowns, a weekly &ldquo;Bob Sighting&rdquo;, a quiz, and a HubSpot follow-up sequence.</div>
+</div>
+<div class="targets"><div class="tl">Six-week targets</div>
+<div class="tgrid">
+<div><b>40&ndash;60K</b><span>video views</span></div>
+<div><b>250</b><span>quiz completions</span></div>
+<div><b>40</b><span>Bob Audits booked</span></div>
+<div><b>12</b><span>qualified opportunities</span></div>
+<div><b>3&ndash;5</b><span>closed within 90 days</span></div>
+</div></div>
+</header>
+{{BODY}}
+<footer>Same job. Same hours. Different system. <span>Leave Bob behind.</span></footer>
+</main>
+</div>
+<script>
+document.querySelectorAll('.cb').forEach(function(b){b.addEventListener('click',function(){
+ var box=b.closest('.copy'),q=box.querySelector('blockquote'),head='';
+ box.querySelectorAll('ul li').forEach(function(li){head+=li.innerText+'\n'});
+ var txt=(head?head+'\n':'')+q.innerText.trim();
+ function done(){b.textContent='Copied';b.classList.add('ok');setTimeout(function(){b.textContent=box.classList.contains('email')?'Copy email':'Copy post';b.classList.remove('ok')},1600)}
+ function fallback(){var r=document.createRange();r.selectNodeContents(q);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press Ctrl+C'}
+ try{navigator.clipboard.writeText(txt).then(done,fallback)}catch(e){fallback()}
+})});
+</script>
