@@ -49,26 +49,37 @@ def main(clip, insert, out, start=0.0):
     tmp = out + ".video.mp4"
     enc = subprocess.Popen([FF, "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", "%dx%d" % (w, h), "-r", str(fps), "-i", "-",
                             "-c:v", "libx264", "-crf", "16", "-pix_fmt", "yuv420p", tmp], stdin=subprocess.PIPE, stderr=subprocess.DEVNULL)
-    prev, i, hits = None, 0, 0
+    # pass 1: the camera is locked off, so find the screen once, from the frames where it is fully visible
+    quads = []
     while True:
         ok, fr = cap.read()
         if not ok:
             break
-        m = green_mask(fr)
-        q = quad(m)
+        q = quad(green_mask(fr))
         if q is not None:
-            prev = q if prev is None else 0.7 * prev + 0.3 * q
-            hits += 1
-        if prev is not None and m.sum() > 0:
+            quads.append((cv2.contourArea(q.reshape(-1, 1, 2)), q))
+    if not quads:
+        raise SystemExit("no green screen found")
+    top = max(a for a, _ in quads)
+    Q = np.median(np.array([q for a, q in quads if a >= 0.97 * top]), axis=0).astype(np.float32)
+    region = np.zeros((h, w), np.uint8)
+    cv2.fillConvexPoly(region, cv2.convexHull(Q.astype(np.int32)), 255)
+    region = cv2.dilate(region, np.ones((9, 9), np.uint8))
+    cap.release(); cap = cv2.VideoCapture(clip)
+    i = 0; hits = len(quads)
+    while True:
+        ok, fr = cap.read()
+        if not ok:
+            break
+        m = cv2.bitwise_and(green_mask(fr), region)  # only green pixels on the screen itself
+        if m.any():
             t = max(0.0, i / fps - start)
             k = min(n_ins - 1, int(t * 30))
             src = cv2.imread(os.path.join(frames_dir, "f%04d.png" % k))
             sh, sw = src.shape[:2]
-            H = cv2.getPerspectiveTransform(np.float32([[0, 0], [sw, 0], [sw, sh], [0, sh]]), prev)
+            H = cv2.getPerspectiveTransform(np.float32([[0, 0], [sw, 0], [sw, sh], [0, sh]]), Q)
             warp = cv2.warpPerspective(src, H, (w, h), flags=cv2.INTER_LINEAR)
-            # soft matte from the green pixels, grown a touch to eat green fringes
             a = cv2.GaussianBlur(cv2.dilate(m, np.ones((3, 3), np.uint8)), (5, 5), 0).astype(np.float32)[..., None] / 255.0
-            # screens glow: slight brightness lift so the UI reads as emitted light, not a sticker
             fr = (fr * (1 - a) + np.clip(warp * 1.02, 0, 255) * a).astype(np.uint8)
         enc.stdin.write(fr.tobytes())
         i += 1

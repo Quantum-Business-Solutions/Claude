@@ -1,0 +1,216 @@
+(function(){
+var PRESENTER=/presenter/i.test(location.search+location.hash);
+var HUB='https://clientcommand.thequantumleap.business/s/9fe6890271ce7f36864d298528a4ce09/';
+var SELF='https://clientcommand.thequantumleap.business/s/85afc04ff3f5e8720a00601c998ef62d/index.html';
+var ACTS=[
+ {src:'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/27605bae-bf26-4853-906d-7dea28f54099.mp4',cap:'You were taught to grind.'},
+ {src:'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/088802f7-2c87-4cce-b817-fa118cd681a0.mp4',cap:'She was taught to build systems.'},
+ {src:'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4a1aa93b-0c5a-4d86-b5ad-4369943c37fc.mp4',cap:'Same territory. Same deal.'},
+ {src:'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/9a23e2a2-1f44-4760-9412-0770eeb6c93e.mp4',cap:'Only one of them is still guessing.'},
+ {src:'https://d8j0ntlcm91z4.cloudfront.net/user_3H8QeDy6mqh5cyDHIC4nOq4e8qZ/hf_20260926_155246_b76877f2-4675-4f94-a2e0-d0fcd5a80108.mp4',cap:'The new standard starts in this room.'}];
+var REMAP={'https://cloud-cdn.higgsfield.ai/e4d416f7-7355-4276-8c8e-26821a906ac8/8b27d4be-d6aa-4d8b-b348-5104c81e94b3.mp4':'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/088802f7-2c87-4cce-b817-fa118cd681a0.mp4','https://cloud-cdn.higgsfield.ai/e4d416f7-7355-4276-8c8e-26821a906ac8/b9e05597-fb00-42a0-b94c-177c7318b1d9.mp4':'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/27605bae-bf26-4853-906d-7dea28f54099.mp4','https://cloud-cdn.higgsfield.ai/e4d416f7-7355-4276-8c8e-26821a906ac8/c4bb1e15-e5ab-4dbc-94d8-847b45a84312.mp4':'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4a1aa93b-0c5a-4d86-b5ad-4369943c37fc.mp4','https://cloud-cdn.higgsfield.ai/e4d416f7-7355-4276-8c8e-26821a906ac8/92757bf8-c1ce-4b17-bc97-0c0a1c4856e5.mp4':'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/9a23e2a2-1f44-4760-9412-0770eeb6c93e.mp4'};
+[].forEach.call(document.querySelectorAll('video.bgv[data-src]'),function(v){var r=REMAP[v.getAttribute('data-src')];if(r)v.setAttribute('data-src',r)});
+var D=[
+ {n:'Aztec Office',s:'aztec',host:1,img:'https://us.evocdn.io/dealer/1510/content/media/My_Theme/main-logo.png'},
+ {n:'Stone’s Office Equipment',s:'stones',img:'https://www.stonesoffice.com/wp-content/uploads/2021/08/soe-logo-for-reviewsArtboard-1.png'},
+ {n:'CDS Office Technologies',s:'cds',img:'https://www.cdsofficetech.com/wp-content/uploads/2017/06/CDS-Logo-Footer-01.jpg'},
+ {n:'Capital Business Machines',s:'capital',img:'https://www.cbm-wa.com/wp-content/uploads/2025/05/CBM-logo.png'},
+ {n:'Atlanta Office Machines',s:'atlanta',img:'https://aomcopy.com/wp-content/uploads/2019/08/cropped-aom-logo-favicon-270x270.png'},
+ {n:'WNY Imaging Systems',s:'wny',img:'https://www.wnyimaging.com/wp-content/uploads/2022/05/wny-imaging-logo-transparent.png'},
+ {n:'Applied Business Concepts',s:'abc',img:'https://static.wixstatic.com/media/d6f374_08e4c24bf2464babb996ac45ed5f926a~mv2_d_3714_3508_s_4_2.png/v1/fill/w_400,h_378,al_c,q_85/ABC.png'},
+ {n:'United Business Systems',s:'ubs',img:'https://www.ubswny.com/wp-content/uploads/2026/04/UBS-Logo.jpg'},
+ {n:'Connected Office Technologies',s:'connected',img:'https://connecttheoffice.com/wp-content/uploads/2026/04/cot-logo.png'},
+ {n:'Donnellon McCarthy Enterprises',s:'donnellon'},
+ {n:'OMNI Business Systems',s:'omni'}];
+var SCORES=[57,56,49,44,40,37,34,34,28,24];
+var R={
+ sales:{title:'The Sales Rep',short:'Sales rep',flowH:'A deal, <span class="grad">start to finish.</span>',flow:[
+  ['Trigger spotted','ai','CRM + news','A move, hire or funding round, caught overnight'],
+  ['Account researched','ai','CRM','A one-page brief before the first coffee'],
+  ['First touch written','ai','Email','Personalised to the trigger; rep approves'],
+  ['Discovery call','assist','Call + AI notetaker','You lead the conversation; AI briefs you, takes the notes and flags buying signals'],
+  ['Notes &amp; follow-up','ai','CRM + email','Logged and sent before the rep reaches the car'],
+  ['Fleet assessment','assist','Meter data','Volumes and cost analysed; rep interprets'],
+  ['Proposal built','assist','Quoting','Configured and branded in minutes'],
+  ['Negotiate &amp; close','assist','The deal','AI preps objections, pricing and a close plan; you ask for the business'],
+  ['Order &amp; paperwork','ai','ERP','Order entry and lease packet, no retyping'],
+  ['Renewal clock set','ai','CRM','Next conversation booked the day it closes']],
+  tasks:{ai:['Account research before calls','First-touch prospecting emails','Logging call notes to CRM','Meeting follow-up emails','Building the daily call list','Tracking lease expirations','Trigger-event monitoring','Deal-stage updates from activity','QBR deck preparation','Meeting reminders &amp; confirmations'],
+   assist:['Discovery prep &amp; live call prompts','Fleet assessment analysis','Proposals &amp; pricing','Displacement strategy','Objection-handling prep','Close plan &amp; deal-risk alerts','Forecasting'],
+   human:['Building trust in the room','Walking the building','Reading the room &amp; negotiating','The decision-maker relationship','Asking for the business']}},
+ mkt:{title:'The Marketing Person',short:'Marketing',flowH:'One install becomes <span class="grad">a month of marketing.</span>',flow:[
+  ['Install completes','ai','Service ticket','The job that just finished is the raw material'],
+  ['Case study drafted','ai','Website CMS','From the ticket, the notes and one photo'],
+  ['City page updated','ai','Website','Fresh proof on the page for that town'],
+  ['Nurture email sent','ai','Email platform','To look-alike accounts in the same vertical'],
+  ['Social scheduled','ai','LinkedIn','Owner-voice post plus short clips'],
+  ['Review requested','ai','Google Business','Asked at the happy moment; replies drafted'],
+  ['Brand approval','human','You','Ten minutes of judgement, not ten hours of writing'],
+  ['Results reported','ai','CRM','What it sourced, in pipeline dollars']],
+  tasks:{ai:['Blog posts &amp; case studies','Email nurture sequences','Social scheduling','Local service pages','Review monitoring &amp; replies','Monthly reporting','Webinars into clips &amp; posts','SEO / AEO audits','List segmentation'],
+   assist:['Campaign strategy','Event planning','Ad creative &amp; targeting','Messaging &amp; positioning'],
+   human:['OEM co-op relationships','Final brand voice','Trade shows &amp; community']}},
+ admin:{title:'The Sales Admin',short:'Sales admin',flowH:'Signed <span class="grad">to installed.</span>',flow:[
+  ['Contract signed','ai','E-signature','The signature triggers everything downstream'],
+  ['Credit app &amp; lease packet','ai','Leasing portal','Assembled and pre-filled'],
+  ['Leasing submission','assist','Funder','Submitted; exceptions flagged for you'],
+  ['Order entered','ai','ERP','Straight from the proposal, no retyping'],
+  ['Delivery &amp; install booked','ai','Scheduling','Customer confirms by text'],
+  ['Meter reads set up','ai','DCA / FMAudit','Device enrolled before it arrives'],
+  ['Commission calculated','ai','Payroll','From the deal, not a spreadsheet'],
+  ['Exceptions handled','human','You','Only the ones that need a person']],
+  tasks:{ai:['ERP order entry','Chasing paperwork &amp; credit apps','Lease document packets','Delivery &amp; install scheduling','Meter-read collection &amp; reminders','Contract renewal notices','Commission calculations','CRM cleanup &amp; dedupe','Quotes from templates'],
+   assist:['Leasing company submissions','Billing dispute research','Order status updates'],
+   human:['Credit decisions &amp; exceptions','Customer escalations','Month-end sign-off']}},
+ csr:{title:'Customer Service',short:'Customer service',flowH:'The call at <span class="grad">2am.</span>',flow:[
+  ['Customer calls','human','Phone','2am, a Saturday, or your busiest Monday'],
+  ['AI agent answers','ai','Voice agent','First ring, every time, in your company name'],
+  ['Account &amp; device found','ai','ERP','By caller ID or serial number'],
+  ['Handled on the spot','ai','ERP','Toner, meter read, invoice copy, tech ETA'],
+  ['Triage before dispatch','assist','Knowledge base','Walks through the fix that saves a truck roll'],
+  ['Ticket opened','ai','Dispatch','Right tech, right part, logged'],
+  ['Tech ETA texted','ai','SMS','No more where-is-my-tech calls'],
+  ['Escalate to a person','human','Your team','Only when it genuinely needs one']],
+  tasks:{ai:['Answering the phone 24/7','Logging service calls to dispatch','Toner &amp; supply orders','Meter-read submissions','Where-is-my-tech updates','Invoice copies &amp; billing questions','Scan-to-email &amp; password resets','Appointment scheduling'],
+   assist:['Pre-dispatch troubleshooting','Contract coverage lookup','Post-call survey &amp; sentiment'],
+   human:['Upset-customer escalations','On-site repair','Complex network issues']}}};
+var ORDER=['sales','mkt','admin','csr'];
+function badge(k){return k==='ai'?'AI does it':k==='assist'?'AI assists':'You'}
+function pad(n){return n<10?'0'+n:''+n}
+function legend(){return '<div class="legend"><span><b style="background:var(--lime)"></b>AI does it</span><span><b style="background:var(--amber)"></b>AI assists</span><span><b style="background:#3A4152"></b>Stays yours</span><span style="color:var(--cyan)">Cyan = where it happens</span></div>'}
+function counts(r){var a=r.tasks.ai.length,b=r.tasks.assist.length,c=r.tasks.human.length,t=a+b+c;return {a:a,b:b,c:c,t:t,pa:Math.round(a/t*100),pb:Math.round(b/t*100)}}
+function renderFlow(id){var r=R[id],h='<div class="kick">'+r.title+' &middot; the process</div><h2>'+r.flowH+'</h2><div class="flow'+(r.flow.length===8?' f4':'')+'">';
+ r.flow.forEach(function(n,i){h+='<div class="node k-'+n[1]+'" style="--i:'+i+'"><div class="nt-top"><span class="nn">'+pad(i+1)+'</span><span class="bd">'+badge(n[1])+'</span></div><div class="nt">'+n[0]+'</div><div class="nd">'+n[3]+'</div><div class="wh"><i>in</i>'+n[2]+'</div></div>'});
+ return h+'</div>'+legend()}
+function col(t,k,arr){return '<div class="lcol '+k+'"><h5>'+t+' &middot; '+arr.length+'</h5><ul>'+arr.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>'}
+function renderList(id){var r=R[id],c=counts(r);
+ return '<div class="kick">'+r.title+' &middot; every task, classified</div><h3>'+c.t+' tasks. <span class="lm">'+c.a+' AI can take over.</span></h3><div class="lwrap"><div class="donut" style="--a:'+c.pa+'%;--b:'+(c.pa+c.pb)+'%"><div><b>'+c.pa+'%</b><span>AI does it</span></div></div><div class="lcols">'+col('AI does it','ai',r.tasks.ai)+col('AI assists','assist',r.tasks.assist)+col('Stays yours','human',r.tasks.human)+'</div></div>'}
+function renderSummary(){var tot=0,ai=0,h='';
+ ORDER.forEach(function(id){var c=counts(R[id]);tot+=c.t;ai+=c.a;
+  h+='<div class="srow"><div class="sl">'+R[id].short+'</div><div class="sbar"><i class="sa" style="--w:'+c.pa+'%"></i><i class="sb" style="--w:'+c.pb+'%"></i><i class="sc" style="--w:'+(100-c.pa-c.pb)+'%"></i></div><div class="sv">'+c.pa+'%</div></div>'});
+ return '<div class="kick">'+tot+' tasks across four roles &middot; QBS classification</div><h2>Where the hours <span class="grad">come back.</span></h2><div class="stack">'+h+'</div>'+legend().replace('<span style="color:var(--cyan)">Cyan = where it happens</span>','')+'<p class="sub">'+ai+' of '+tot+' tasks, AI can take over today. The grey is where the relationship lives &mdash; and it stays yours.</p>'}
+[].forEach.call(document.querySelectorAll('[data-gen]'),function(s){var g=s.getAttribute('data-gen').split(':'),w=s.querySelector('.in-wrap');
+ w.innerHTML=g[0]==='summary'?renderSummary():g[0]==='flow'?renderFlow(g[1]):renderList(g[1])});
+
+(function(){var fs=document.querySelector('[data-gen="flow:sales"]');if(!fs)return;var sec=document.createElement('section');
+ sec.className='s';sec.setAttribute('data-sec','04 Time back');
+ sec.setAttribute('data-notes',"THE BRIDGE BETWEEN HUMAN AND AI. 'Notice discovery and the close went amber, not grey. AI does not have the conversation for you &mdash; it makes you better in it. You walk in knowing their fleet, their service history and who else signs. It takes the notes so you can actually listen. And when you get to the close, it has already told you the three objections this kind of buyer raises and the lease options that answer them.' Ask the room: 'Who here still takes notes on a legal pad in a discovery call?'");
+ var col=function(t,c,items){return '<div class="aic '+c+'"><div class="aih">'+t+'</div><ul>'+items.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>'};
+ sec.innerHTML='<div class="mesh"></div><div class="in-wrap"><div class="kick">The Sales Rep &middot; AI in the room</div><h2>It won&rsquo;t have the conversation. <span class="grad">It makes you better in it.</span></h2><div class="aig">'+
+  col('Before discovery','a1',['A one-page brief: fleet, service history, contract dates','Who else signs &mdash; the org chart, pre-mapped','Likely pains from their tickets and meter volumes','The three questions worth asking'])+
+  col('During the call','a2',['An AI notetaker captures every word','You keep eye contact instead of writing','Buying signals and competitor names flagged','Nothing a customer says gets lost'])+
+  col('After the call','a3',['Summary and next steps land in the CRM','Follow-up drafted in your voice, ready to send','Proposal started from what they actually said','Tasks set for everyone who owes something'])+
+  col('The close','a4',['Objections this buyer type raises, with answers','Pricing and lease scenarios on the spot','A mutual close plan both sides can see','An alert when the champion goes quiet'])+
+  '</div>'+legend()+'</div>';
+ fs.parentNode.insertBefore(sec,fs.nextSibling)})();
+(function(){var ls=document.querySelector('[data-gen="list:csr"]');if(!ls)return;var sec=document.createElement('section');
+ sec.className='s';sec.setAttribute('data-sec','04 Time back');
+ sec.setAttribute('data-notes',"THE LEAVE-BEHIND. 'Everything you just saw was four roles. Here is every task: 89 sales, 48 marketing. For each one, how it has usually been done, and what an assistant, an automation and an agent each do with it.' Open one category live: Discovery for sales, or SEO for marketing. Click a heading to open or close it; scroll inside the panel. The QR on the take-home slide gives them all of it.");
+ sec.innerHTML='<div class="mesh"></div><div class="in-wrap"><div class="kick">Every task, every rung &middot; 89 sales &middot; 48 marketing</div><h2 style="font-size:clamp(1.8rem,4.2vw,3.6rem)">137 tasks. <span class="grad">Three ways AI changes each one.</span></h2>'+
+  '<div class="mxbar"><div class="mxtabs"><button data-r="S" class="on">Sales &middot; 89</button><button data-r="M">Marketing &middot; 48</button></div><div class="mxkey"><span class="k0">Today</span><span class="k1">Assistant &middot; you ask</span><span class="k2">Automation &middot; a trigger runs it</span><span class="k3">Agent &middot; it decides, you approve</span></div><div class="mxtools"><button data-x="open">Open all</button><button data-x="close">Close all</button><a href="matrix.html" target="_blank" rel="noopener">Full page &rarr;</a></div></div><div class="acc" id="acc"><div class="mxload">Loading the task list&hellip;</div></div></div>';
+ ls.parentNode.insertBefore(sec,ls.nextSibling);
+ var ROWS=[],role='S',acc=sec.querySelector('#acc');
+ function esc(x){return String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+ function draw(){var g=[],m={};ROWS.forEach(function(r){if(r.r!==role)return;if(!m[r.c]){m[r.c]=[];g.push(r.c)}m[r.c].push(r)});
+  acc.innerHTML=g.map(function(c,i){return '<details><summary><span>'+esc(c)+'</span><em>'+m[c].length+(m[c].length===1?' task':' tasks')+'</em></summary><div class="mxh"><span>Task</span><span class="k0">Today</span><span class="k1">Assistant</span><span class="k2">Automation</span><span class="k3">Agent</span></div>'+
+   m[c].map(function(r){return '<div class="mxr"><b>'+esc(r.t)+'</b><span class="k0">'+esc(r.today)+'</span><span>'+esc(r.a)+'</span><span>'+esc(r.auto)+'</span><span class="ag">'+esc(r.agent)+'</span></div>'}).join('')+'</details>'}).join('')}
+ [].forEach.call(sec.querySelectorAll('.mxtabs button'),function(bt){bt.onclick=function(){[].forEach.call(sec.querySelectorAll('.mxtabs button'),function(x){x.classList.remove('on')});bt.classList.add('on');role=bt.getAttribute('data-r');draw();acc.scrollTop=0}});
+ [].forEach.call(sec.querySelectorAll('.mxtools button'),function(bt){bt.onclick=function(){var o=bt.getAttribute('data-x')==='open';[].forEach.call(acc.querySelectorAll('details'),function(d){d.open=o})}});
+ fetch('matrix-data.txt').then(function(r){return r.text()}).then(function(t){ROWS=t.split('\n').filter(function(l){return l.trim()&&l.charAt(0)!=='#'}).map(function(l){var q=l.split('|');return {r:q[0],c:q[1],t:q[2],today:q[3],a:q[4],auto:q[5],agent:q[6]}});draw()}).catch(function(){acc.innerHTML='<div class="mxload">Open the full page for the task list.</div>'});
+})();
+(function(){var c=document.createElement('style');c.textContent='.mxbar{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;margin-top:2.2vh}.mxtabs{display:flex;gap:6px}.mxbar button,.mxtools a{background:rgba(255,255,255,.07);border:1px solid var(--line);color:#DDE3EE;border-radius:99px;padding:8px 16px;font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;text-decoration:none}.mxtabs button.on{background:var(--amber);color:var(--ink);border-color:var(--amber)}.mxtools{display:flex;gap:6px;margin-left:auto}'+
+ '.mxkey{display:flex;gap:14px;flex-wrap:wrap;font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase}.k0{color:#9AA3BA}.k1{color:var(--cyan)}.k2{color:var(--amber)}.k3{color:var(--lime)}'+
+ '.acc{margin-top:1.8vh;max-height:56vh;overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.03)}.acc::-webkit-scrollbar{width:8px}.acc::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:8px}'+
+ '.acc details{border-bottom:1px solid var(--line)}.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;font-family:var(--disp);text-transform:uppercase;font-size:clamp(1rem,1.6vw,1.35rem);letter-spacing:.02em;position:sticky;top:0;background:#0C0E16;z-index:1}.acc summary::-webkit-details-marker{display:none}.acc summary::before{content:"+";font-family:var(--sans);font-weight:700;color:var(--amber);margin-right:12px;width:14px}.acc details[open] summary::before{content:"−"}.acc summary span{flex:1}.acc summary em{font:700 11px var(--sans);letter-spacing:.18em;color:var(--dim);font-style:normal}'+
+ '.mxh,.mxr{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr 1.15fr;gap:14px;padding:10px 20px}.mxh{font:700 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--line)}.mxr{font-size:clamp(.72rem,.95vw,.88rem);line-height:1.38;color:#C8CFDE;border-bottom:1px solid rgba(255,255,255,.05)}.mxr b{color:#fff}.mxr .k0{font-style:italic}.mxr .ag{color:#E9FFD0}.mxload{padding:24px;color:var(--dim)}'+
+ '@media(max-width:900px){.mxh{display:none}.mxr{grid-template-columns:1fr}.mxtools{margin-left:0}}';document.head.appendChild(c)})();
+(function(){var c=document.createElement('style');c.textContent='.aig{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1vw;margin-top:3vh}.aic{border:1px solid var(--line);border-radius:16px;padding:2.4vh 1.2vw;background:rgba(255,255,255,.045);position:relative;overflow:hidden}.aic::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--amber)}.aih{font-family:var(--disp);text-transform:uppercase;font-size:clamp(1rem,1.7vw,1.45rem);color:var(--amber);margin-bottom:1.4vh}.aic ul{list-style:none}.aic li{font-size:clamp(.78rem,1.1vw,.98rem);line-height:1.38;color:#C8CFDE;padding:.7vh 0;border-bottom:1px solid rgba(255,255,255,.07)}@media(max-width:1000px){.aig{grid-template-columns:repeat(2,1fr)}}'+
+ '#stk{position:fixed;inset:0;z-index:58;pointer-events:none;display:none}#stk.on{display:block}.stky{position:absolute;width:230px;min-height:120px;pointer-events:auto;color:#1d1d1f;border-radius:4px;box-shadow:0 14px 34px -10px rgba(0,0,0,.7);transform:rotate(-1.2deg);font:500 15px/1.4 "DM Sans",system-ui,sans-serif}.stky .sh{display:flex;justify-content:space-between;align-items:center;padding:5px 8px;cursor:move;background:rgba(0,0,0,.08);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;user-select:none}.stky .sh button{border:0;background:none;cursor:pointer;font:700 15px/1 system-ui;color:#1d1d1f;padding:0 3px;opacity:.65}.stky .sb{padding:9px 11px 12px;outline:none;min-height:80px;white-space:pre-wrap}.stky .sb:empty:before{content:"Type a note…";opacity:.45}'+
+ '#notes textarea{width:100%;min-height:70px;margin-top:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:10px;color:#fff;font:inherit;font-size:.95em;padding:10px 12px;resize:vertical}#notes .mn{display:block;margin-top:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:700}#notes .tools{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}#notes .tools button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#DDE3EE;border-radius:99px;padding:6px 12px;font:600 11px/1 system-ui;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}#notes .tools button:hover{background:var(--amber);color:#06070C}';
+ document.head.appendChild(c)})();
+var lb=document.getElementById('lb'),svgNS='http://www.w3.org/2000/svg';
+function st(tag,attrs,txt){var e=document.createElementNS(svgNS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(txt)e.textContent=txt;return e}
+SCORES.forEach(function(v,i){var y=10+i*34;lb.appendChild(st('text',{x:0,y:y+16,'class':'bl'},'DEALER '+String.fromCharCode(65+i)));
+ var b=st('rect',{x:190,y:y,width:Math.round(v*9.6),height:22,rx:11,fill:v>=40?'url(#g1)':'#8A3A2E','class':'bar'});b.style.animationDelay=(0.25+i*0.08)+'s';lb.appendChild(b);
+ lb.appendChild(st('text',{x:190+Math.round(v*9.6)+15,y:y+19,'class':'bn'},''+v))});
+lb.appendChild(st('text',{x:0,y:10+10*34+16,'class':'bl'},'DEALER K'));
+lb.appendChild(st('text',{x:190,y:10+10*34+17,'class':'bl'},'STILL MEASURING'));
+function cell(d,link){var el=document.createElement(link?'a':'div');el.className='lg'+(d.host?' host':'');
+ if(link){el.href=HUB+d.s+'/';el.target='_blank';el.rel='noopener'}
+ if(d.img){var i=new Image();i.alt=d.n;i.src=d.img;i.onerror=function(){var s=document.createElement('span');s.textContent=d.n;if(i.parentNode)i.parentNode.replaceChild(s,i)};el.appendChild(i)}
+ else{var s=document.createElement('span');s.textContent=d.n;el.appendChild(s)}return el}
+var mq=document.getElementById('mq1');for(var r2=0;r2<2;r2++){D.forEach(function(d){mq.appendChild(cell(d,false))})}
+var reps=document.getElementById('reps');D.forEach(function(d){reps.appendChild(cell(d,true))});
+document.getElementById('qr1').src='https://api.qrserver.com/v1/create-qr-code/?size=440x440&margin=0&data='+encodeURIComponent(SELF);
+document.getElementById('qr2').src='https://api.qrserver.com/v1/create-qr-code/?size=440x440&margin=0&data='+encodeURIComponent(HUB+'index.html');
+var tv=document.getElementById('tv'),tcap=document.getElementById('tcap'),tplay=document.getElementById('tplay'),ti=-1,tstarted=false;
+function playAct(i){if(i>=ACTS.length){tcap.innerHTML='Go-to-Market<br><span class="grad">Automation</span><br>with AI';tcap.className='tcap on end';return}
+ ti=i;tv.style.opacity=0;setTimeout(function(){tv.src=ACTS[i].src;var p=tv.play();if(p&&p.catch)p.catch(function(){});tv.style.opacity=1;
+  tcap.className='tcap';tcap.textContent=ACTS[i].cap;setTimeout(function(){if(ti===i)tcap.className='tcap on'},250);
+  setTimeout(function(){if(ti===i)tcap.className='tcap'},3800)},350)}
+tv.addEventListener('ended',function(){playAct(ti+1)});
+function startTrailer(){if(tstarted)return;tstarted=true;tplay.style.display='none';playAct(0)}
+document.getElementById('tbtn').onclick=startTrailer;
+var slides=[].slice.call(document.querySelectorAll('.s'));
+var bar=document.getElementById('bar'),cnt=document.getElementById('cnt'),secl=document.getElementById('secl'),notes=document.getElementById('notes'),menu=document.getElementById('menu'),mlist=document.getElementById('mlist'),idx=0,notesOn=false;
+if(!PRESENTER){document.getElementById('bnotes').style.display='none'}
+function countUp(el){if(el.dataset.done)return;el.dataset.done='1';var t=parseFloat(el.getAttribute('data-to')),t0=null;
+ function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1200,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
+var SK='icda26-stickies-v1',NK='icda26-mynotes-v1',COLORS=['#FFE36E','#9EF0B0','#9FD8FF','#FFB3C7'];
+function ld(k){try{return JSON.parse(localStorage.getItem(k)||'{}')||{}}catch(e){return {}}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var STK=ld(SK),MYN=ld(NK),stk=document.createElement('div');stk.id='stk';document.body.appendChild(stk);
+function skey(s){var h=s.querySelector('h1,h2,h3');return (s.getAttribute('data-sec')||'')+'|'+(h?h.textContent.replace(/\s+/g,' ').trim().slice(0,60):'#'+slides.indexOf(s))}
+function drawStickies(){stk.innerHTML='';if(!PRESENTER)return;var key=skey(slides[idx]),arr=STK[key]||[];
+ arr.forEach(function(n,i){var d=document.createElement('div');d.className='stky';d.style.left=n.x+'%';d.style.top=n.y+'%';d.style.background=n.c||COLORS[0];
+  d.innerHTML='<div class="sh"><span>Sticky</span><span><button title="Colour">&#9679;</button><button title="Delete">&times;</button></span></div><div class="sb" contenteditable="true"></div>';
+  var b=d.querySelector('.sb');b.textContent=n.t||'';
+  b.addEventListener('input',function(){n.t=b.innerText;sv(SK,STK)});
+  var bt=d.querySelectorAll('.sh button');
+  bt[0].onclick=function(){n.c=COLORS[(COLORS.indexOf(n.c)+1)%COLORS.length];d.style.background=n.c;sv(SK,STK)};
+  bt[1].onclick=function(){arr.splice(i,1);if(!arr.length)delete STK[key];sv(SK,STK);drawStickies()};
+  var h=d.querySelector('.sh');h.addEventListener('pointerdown',function(ev){if(ev.target.tagName==='BUTTON')return;ev.preventDefault();var sx=ev.clientX,sy=ev.clientY,ox=n.x,oy=n.y;
+   function mv(e2){n.x=Math.max(0,Math.min(92,ox+(e2.clientX-sx)/innerWidth*100));n.y=Math.max(0,Math.min(92,oy+(e2.clientY-sy)/innerHeight*100));d.style.left=n.x+'%';d.style.top=n.y+'%'}
+   function up(){removeEventListener('pointermove',mv);removeEventListener('pointerup',up);sv(SK,STK)}
+   addEventListener('pointermove',mv);addEventListener('pointerup',up)});
+  stk.appendChild(d)})}
+function addSticky(){if(!PRESENTER)return;if(!notesOn)tN();var key=skey(slides[idx]);(STK[key]=STK[key]||[]).push({x:62+Math.random()*8,y:10+Math.random()*8,t:'',c:COLORS[0]});sv(SK,STK);drawStickies();var all=stk.querySelectorAll('.sb');if(all.length)all[all.length-1].focus()}
+function exportNotes(){var blob=new Blob([JSON.stringify({stickies:STK,notes:MYN},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='icda-2026-my-notes.json';document.body.appendChild(a);a.click();a.remove()}
+function importNotes(){var f=document.createElement('input');f.type='file';f.accept='application/json';f.onchange=function(){var r=new FileReader();r.onload=function(){try{var d=JSON.parse(r.result);STK=d.stickies||{};MYN=d.notes||{};sv(SK,STK);sv(NK,MYN);paint()}catch(e){alert('That file could not be read.')}};r.readAsText(f.files[0])};f.click()}
+function paint(){var s=slides[idx];cnt.textContent=(idx+1)+' / '+slides.length;secl.textContent=s.getAttribute('data-sec')||'';
+ bar.style.width=(idx/(slides.length-1))*100+'%';
+ if(PRESENTER){var key=skey(s);notes.innerHTML='<span class="h">'+(s.getAttribute('data-sec')||'')+' &middot; slide '+(idx+1)+'</span>'+(s.getAttribute('data-notes')||'')+'<span class="mn">My notes for this slide</span><textarea placeholder="Anything you want to remember to say here…"></textarea><div class="tools"><button data-a="stk">+ Sticky (S)</button><button data-a="exp">Export my notes</button><button data-a="imp">Import</button></div>';
+  var ta=notes.querySelector('textarea');ta.value=MYN[key]||'';ta.addEventListener('input',function(){if(ta.value)MYN[key]=ta.value;else delete MYN[key];sv(NK,MYN)});
+  notes.querySelector('[data-a=stk]').onclick=addSticky;notes.querySelector('[data-a=exp]').onclick=exportNotes;notes.querySelector('[data-a=imp]').onclick=importNotes;drawStickies()}}
+function go(n){idx=Math.max(0,Math.min(slides.length-1,n));slides[idx].scrollIntoView({behavior:'smooth',block:'start'});paint()}
+function setVid(sec,on){[].forEach.call(sec.querySelectorAll('video.bgv'),function(v){if(on){if(!v.getAttribute('src'))v.setAttribute('src',v.getAttribute('data-src'));var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}});
+ if(!on&&sec.classList.contains('trailer')&&!tv.paused)tv.pause()}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){e.target.classList.add('in');setVid(e.target,true);[].forEach.call(e.target.querySelectorAll('[data-to]'),countUp);
+   if(e.intersectionRatio>0.55){var n=slides.indexOf(e.target);if(n>-1&&n!==idx){idx=n;paint()}}}
+  else{setVid(e.target,false)}})},{threshold:[0,0.25,0.55]});slides.forEach(function(s){io.observe(s)})}
+else{slides.forEach(function(s){s.classList.add('in')})}
+function tN(){if(!PRESENTER)return;notesOn=!notesOn;notes.className=notesOn?'on':'';stk.className=notesOn?'on':''}
+function oM(){menu.className='on'}function cM(){menu.className=''}
+function tF(){if(document.fullscreenElement){if(document.exitFullscreen)document.exitFullscreen()}else if(document.documentElement.requestFullscreen){document.documentElement.requestFullscreen()}}
+document.getElementById('bprev').onclick=function(){go(idx-1)};document.getElementById('bnext').onclick=function(){go(idx+1)};
+document.getElementById('bmenu').onclick=oM;document.getElementById('bnotes').onclick=tN;document.getElementById('bfull').onclick=tF;
+document.addEventListener('keydown',function(e){var k=e.key,t=e.target;
+ if(t&&t.closest&&t.closest('summary,button,a,.acc')&&(k===' '||k==='Enter')){return}
+ if(t&&(t.isContentEditable||t.tagName==='TEXTAREA'||t.tagName==='INPUT')){if(k==='Escape')t.blur();return}
+ if((k==='s'||k==='S')&&PRESENTER){addSticky();e.preventDefault();return}
+ if(k==='Escape'){if(menu.className==='on'){cM();e.preventDefault()}return}
+ if(menu.className==='on')return;
+ if(idx===0&&!tstarted&&(k===' '||k==='Enter'||k==='ArrowRight'||k==='ArrowDown'||k==='PageDown')){startTrailer();e.preventDefault();return}
+ if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '||k==='Enter'){go(idx+1);e.preventDefault()}
+ else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){go(idx-1);e.preventDefault()}
+ else if(k==='Home'){go(0);e.preventDefault()}else if(k==='End'){go(slides.length-1);e.preventDefault()}
+ else if(k==='n'||k==='N'){tN();e.preventDefault()}else if(k==='m'||k==='M'){oM();e.preventDefault()}else if(k==='f'||k==='F'){tF();e.preventDefault()}});
+var html='',last=null;slides.forEach(function(s,n){var sec=s.getAttribute('data-sec')||'';if(sec!==last){html+='<h4>'+sec+'</h4>';last=sec}
+ var h=s.querySelector('h1,h2,h3');var lab=h?h.textContent.replace(/\s+/g,' ').trim():(n===0?'Trailer':'Slide '+(n+1));if(lab.length>72)lab=lab.slice(0,72)+'…';
+ html+='<a href="#" data-n="'+n+'"><i>'+(n+1)+'</i><span>'+lab+'</span></a>'});
+mlist.innerHTML=html;
+mlist.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;e.preventDefault();cM();go(parseInt(a.getAttribute('data-n'),10))});
+menu.addEventListener('click',function(e){if(e.target===menu)cM()});
+slides[0].classList.add('in');paint();
+})();

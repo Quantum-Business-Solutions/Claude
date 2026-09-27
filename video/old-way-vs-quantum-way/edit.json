@@ -5,68 +5,253 @@
     {
       "id": "0-cold-open",
       "segments": [
-        {"type": "clip", "file": "clips/s0_cold_open.mp4", "in": 0, "out": 8},
-        {"type": "insert", "name": "title", "secs": 2.2, "zoom": 1.0}
+        {
+          "type": "clip",
+          "file": "clips/s0_cold_open.mp4",
+          "in": 0,
+          "out": 8
+        },
+        {
+          "type": "insert",
+          "name": "title",
+          "secs": 2.2,
+          "zoom": 1.0
+        }
       ]
     },
     {
       "id": "1-the-dial",
       "segments": [
-        {"type": "clip", "file": "clips/s1a_rick_voicemail.mp4", "in": 0, "out": 10, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
-        {"type": "clip", "file": "clips/s1e_busywork_list.mp4", "in": 0, "out": 5},
-        {"type": "clip", "file": "clips/s1b_maya_call.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
-        {"type": "clip", "file": "clips/s1f_maya_screen_comp.mp4", "in": 0, "out": 8},
-        {"type": "insert", "name": "cas_live", "secs": 3.5},
-        {"type": "clip", "file": "clips/s1c_rick_peek.mp4", "in": 2.4, "out": 8},
-        {"type": "clip", "file": "clips/s1d_maya_reply.mp4", "in": 0, "out": 8}
+        {
+          "type": "clip",
+          "file": "clips/s1a_rick_voicemail.mp4",
+          "in": 0,
+          "out": 10,
+          "tag": {
+            "text": "THE OLD WAY",
+            "color": "#FFB43C"
+          }
+        },
+        {
+          "type": "clip",
+          "file": "clips/s1e_busywork_list.mp4",
+          "in": 0,
+          "out": 5
+        },
+        {
+          "type": "clip",
+          "file": "clips/s1b_maya_call.mp4",
+          "in": 0,
+          "out": 8,
+          "tag": {
+            "text": "THE QUANTUM WAY",
+            "color": "#B6FF3C"
+          }
+        },
+        {
+          "type": "clip",
+          "file": "clips/s1f_maya_screen_comp.mp4",
+          "in": 0,
+          "out": 8
+        },
+        {
+          "type": "insert",
+          "name": "cas_live",
+          "secs": 3.5
+        },
+        {
+          "type": "clip",
+          "file": "clips/s1c_rick_peek.mp4",
+          "in": 2.4,
+          "out": 8
+        },
+        {
+          "type": "clip",
+          "file": "clips/s1d_maya_reply.mp4",
+          "in": 0,
+          "out": 8
+        }
       ]
     },
     {
       "id": "2-research",
       "segments": [
-        {"type": "clip", "file": "clips/s2a_rick_research.mp4", "in": 0, "out": 8, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
-        {"type": "clip", "file": "clips/s2b_maya_screen_comp.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
-        {"type": "insert", "name": "hs_brief", "secs": 3.2}
+        {
+          "type": "clip",
+          "file": "clips/s2a_rick_research.mp4",
+          "in": 0,
+          "out": 8,
+          "tag": {
+            "text": "THE OLD WAY",
+            "color": "#FFB43C"
+          }
+        },
+        {
+          "type": "clip",
+          "file": "clips/s2b_maya_screen_comp.mp4",
+          "in": 0,
+          "out": 8,
+          "tag": {
+            "text": "THE QUANTUM WAY",
+            "color": "#B6FF3C"
+          }
+        },
+        {
+          "type": "insert",
+          "name": "hs_brief",
+          "secs": 3.2
+        }
       ]
     },
     {
       "id": "3-the-meeting",
       "segments": [
-        {"type": "clip", "file": "clips/s3a_rick_meeting.mp4", "in": 0, "out": 8, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
-        {"type": "clip", "file": "clips/s3b_maya_meeting.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
-        {"type": "insert", "name": "notetaker", "secs": 3.6}
+        {
+          "type": "clip",
+          "file": "clips/s3a_rick_meeting.mp4",
+          "in": 0,
+          "out": 8,
+          "tag": {
+            "text": "THE OLD WAY",
+            "color": "#FFB43C"
+          }
+        },
+        {
+          "type": "clip",
+          "file": "clips/s3b_maya_meeting.mp4",
+          "in": 0,
+          "out": 8,
+          "tag": {
+            "text": "THE QUANTUM WAY",
+            "color": "#B6FF3C"
+          }
+        },
+        {
+          "type": "insert",
+          "name": "notetaker",
+          "secs": 3.6
+        }
       ]
     },
     {
       "id": "4-parking-lot",
       "segments": [
-        {"type": "clip", "file": "clips/s4a_rick_car.mp4", "in": 0, "out": 8, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
-        {"type": "clip", "file": "clips/s4b_maya_car.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
-        {"type": "insert", "name": "hs_log", "secs": 4.0}
+        {
+          "type": "clip",
+          "file": "clips/s4a1_rick_card.mp4",
+          "in": 0,
+          "out": 5,
+          "tag": {
+            "text": "THE OLD WAY",
+            "color": "#FFB43C"
+          }
+        },
+        {
+          "type": "clip",
+          "file": "clips/s4a2_busywork_seat.mp4",
+          "in": 0,
+          "out": 4
+        },
+        {
+          "type": "clip",
+          "file": "clips/s4b_maya_car.mp4",
+          "in": 0,
+          "out": 8,
+          "tag": {
+            "text": "THE QUANTUM WAY",
+            "color": "#B6FF3C"
+          }
+        },
+        {
+          "type": "insert",
+          "name": "hs_log",
+          "secs": 4.0
+        }
       ]
     },
     {
       "id": "5-contracts",
       "segments": [
-        {"type": "clip", "file": "clips/s5a_rick_contracts.mp4", "in": 0, "out": 7, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
-        {"type": "clip", "file": "clips/s5b_maya_contracts.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
-        {"type": "insert", "name": "lead_finder", "secs": 4.0, "zoom": 1.03}
+        {
+          "type": "clip",
+          "file": "clips/s5a_rick_contracts.mp4",
+          "in": 0,
+          "out": 7,
+          "tag": {
+            "text": "THE OLD WAY",
+            "color": "#FFB43C"
+          }
+        },
+        {
+          "type": "clip",
+          "file": "clips/s5b_maya_contracts.mp4",
+          "in": 0,
+          "out": 8,
+          "tag": {
+            "text": "THE QUANTUM WAY",
+            "color": "#B6FF3C"
+          }
+        },
+        {
+          "type": "insert",
+          "name": "lead_finder",
+          "secs": 4.0,
+          "zoom": 1.03
+        }
       ]
     },
     {
       "id": "6-late-night",
       "segments": [
-        {"type": "clip", "file": "clips/s6a_rick_latenight.mp4", "in": 0, "out": 8, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
-        {"type": "clip", "file": "clips/s6b_owner_jog.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
-        {"type": "insert", "name": "agent_team", "secs": 3.4, "zoom": 1.03}
+        {
+          "type": "clip",
+          "file": "clips/s6a_rick_latenight.mp4",
+          "in": 0,
+          "out": 8,
+          "tag": {
+            "text": "THE OLD WAY",
+            "color": "#FFB43C"
+          }
+        },
+        {
+          "type": "clip",
+          "file": "clips/s6b_owner_jog.mp4",
+          "in": 0,
+          "out": 8,
+          "tag": {
+            "text": "THE QUANTUM WAY",
+            "color": "#B6FF3C"
+          }
+        },
+        {
+          "type": "insert",
+          "name": "agent_team",
+          "secs": 3.4,
+          "zoom": 1.03
+        }
       ]
     },
     {
       "id": "7-finale",
       "segments": [
-        {"type": "clip", "file": "clips/s7a_busywork_finale.mp4", "in": 0, "out": 8},
-        {"type": "clip", "file": "clips/s7b_maya_tagline.mp4", "in": 0, "out": 6},
-        {"type": "insert", "name": "endcard", "secs": 4.0, "zoom": 1.0}
+        {
+          "type": "clip",
+          "file": "clips/s7a_busywork_finale.mp4",
+          "in": 0,
+          "out": 8
+        },
+        {
+          "type": "clip",
+          "file": "clips/s7b_maya_tagline.mp4",
+          "in": 0,
+          "out": 6
+        },
+        {
+          "type": "insert",
+          "name": "endcard",
+          "secs": 4.0,
+          "zoom": 1.0
+        }
       ]
     }
   ]

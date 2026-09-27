@@ -132,7 +132,9 @@
         "mode": "pro"
       },
       "request_id": "6dd84c93-ace0-471a-b985-7680efe3c595",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/c73bf9b3-430f-4a12-86ca-2ff298c4b74c.mp4",
+      "file": "clips/s1f_maya_screen.mp4"
     },
     {
       "id": "s2a_rick_research",
@@ -150,7 +152,9 @@
         "mode": "pro"
       },
       "request_id": "a18fad32-1eb5-4553-a86d-e08ee69c6c88",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/0ebe181b-9815-45ef-9b73-950891c8394f.mp4",
+      "file": "clips/s2a_rick_research.mp4"
     },
     {
       "id": "s2b_maya_screen",
@@ -167,7 +171,9 @@
         "mode": "pro"
       },
       "request_id": "30151a2c-6e2b-43b5-bb14-4a42203c8793",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/3ca0d931-e7c2-4b40-97d4-701125d07988.mp4",
+      "file": "clips/s2b_maya_screen.mp4"
     },
     {
       "id": "s3a_rick_meeting",
@@ -184,7 +190,9 @@
         "mode": "pro"
       },
       "request_id": "9b390485-19c6-404f-b30d-1884a206b7dc",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/74a85800-6347-4ba8-8bca-1ecf676ee26e.mp4",
+      "file": "clips/s3a_rick_meeting.mp4"
     },
     {
       "id": "s3b_maya_meeting",
@@ -201,7 +209,9 @@
         "mode": "pro"
       },
       "request_id": "9587d352-4eeb-4b35-95e0-a163dd6fddfa",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/2ba038a9-c42e-4b86-9c5c-e117ed7e605c.mp4",
+      "file": "clips/s3b_maya_meeting.mp4"
     },
     {
       "id": "s4a_rick_car",
@@ -219,7 +229,9 @@
         "mode": "pro"
       },
       "request_id": "f433fe5e-f316-4966-b579-176126ac693d",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/23111c15-9d91-4723-959b-cbc4b9c44980.mp4",
+      "file": "clips/s4a_rick_car.mp4"
     },
     {
       "id": "s4b_maya_car",
@@ -236,7 +248,9 @@
         "mode": "pro"
       },
       "request_id": "dd14306f-76cb-440e-94e3-076f2f2d2a90",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/6f57f14c-64f6-4706-bbd7-448b6da31916.mp4",
+      "file": "clips/s4b_maya_car.mp4"
     },
     {
       "id": "s5a_rick_contracts",
@@ -253,7 +267,9 @@
         "mode": "pro"
       },
       "request_id": "1df3f6ea-30bd-4b1e-8e7f-feb334f79f2a",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/79971621-3f30-4026-8406-45528e8e3821.mp4",
+      "file": "clips/s5a_rick_contracts.mp4"
     },
     {
       "id": "s5b_maya_contracts",
@@ -270,7 +286,9 @@
         "mode": "pro"
       },
       "request_id": "28a04436-6fe1-4253-ad95-aa6db0dadfba",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/88aa9ec9-c365-495d-b6d7-b0b1f9d39709.mp4",
+      "file": "clips/s5b_maya_contracts.mp4"
     },
     {
       "id": "s6a_rick_latenight",
@@ -288,7 +306,9 @@
         "mode": "pro"
       },
       "request_id": "fa9313b3-ff7e-4815-b279-df115b2bff0c",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/f12baaa0-0e42-4cf1-bd02-25ffae4d5057.mp4",
+      "file": "clips/s6a_rick_latenight.mp4"
     },
     {
       "id": "s6b_owner_jog",
@@ -321,7 +341,9 @@
         "mode": "pro"
       },
       "request_id": "16f98f0e-ae84-4354-bf9c-127bba6f5871",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/7b842363-0452-4a4f-a0b4-038c52964369.mp4",
+      "file": "clips/s7a_busywork_finale.mp4"
     },
     {
       "id": "s7b_maya_tagline",
@@ -338,7 +360,47 @@
         "mode": "pro"
       },
       "request_id": "5bbf9949-95a2-4ced-bcb2-da5d0b568023",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/37f07966-dba3-4176-86be-72270674f5cd.mp4",
+      "file": "clips/s7b_maya_tagline.mp4"
+    },
+    {
+      "id": "s4a1_rick_card",
+      "scene": "4-parking-lot",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "prompt": "Camera inside a car, filming from the passenger seat toward the driver. The tired man in the rumpled white shirt and loose tie from the reference image drops into the driver's seat after a sales call, sighs, and flicks a business card onto a messy pile of dozens of business cards on the passenger seat in the foreground, saying: \"I'll enter that later.\" Sunny office parking lot outside the windows.",
+      "request_id": "ae7759b9-9d76-434d-b87e-f5ffec5bccc9",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/009018b5-1ac0-4e1b-b163-30e46f97acc9.mp4",
+      "file": "clips/s4a1_rick_card.mp4"
+    },
+    {
+      "id": "s4a2_busywork_seat",
+      "scene": "4-parking-lot",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 4
+      },
+      "prompt": "Inside a car, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits in the passenger seat on top of a pile of business cards, seatbelt on. He turns slowly to the camera with a smug grin and says: \"He won't.\" Sunny parking lot outside. Comedic beat.",
+      "request_id": "d976d5d7-5298-4c05-b1a4-998ea4878d2c",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/68ef2b8f-a297-41f3-afec-d9d238a2cfa4.mp4",
+      "file": "clips/s4a2_busywork_seat.mp4"
     }
   ],
   "reused": {
