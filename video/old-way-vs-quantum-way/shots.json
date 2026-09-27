@@ -593,6 +593,76 @@
       "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Bob. Bogged Down Bob. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man groans. Comedic, punchy, slight push-in.",
       "request_id": "cd59a9ca-9801-4508-8579-5053d8a883b4",
       "status": "in_progress"
+    },
+    {
+      "id": "s0_cold_open_bogdown",
+      "scene": "0-cold-open",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Bob. Bog Down Bob. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man groans. Comedic, punchy, slight push-in.",
+      "request_id": "5e69898a-868a-4b7a-9ad3-d4a140a6051d",
+      "status": "queued"
+    },
+    {
+      "id": "sJ_leg_drag",
+      "scene": "8-the-switch",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "A long office corridor. the tired man in the rumpled white shirt and loose tie from the second reference image strides toward the exit with his jacket over his shoulder, determined, dragging the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image along the floor, who is lying on his stomach clinging desperately to his leg with both arms. The cardigan man wails: \"Wait! Don't go! We had something!\" The tired man keeps walking without looking down. Slapstick comedy, tracking shot.",
+      "request_id": "414864f7-658f-49e2-95a4-e38a8d1cec89",
+      "status": "queued"
+    },
+    {
+      "id": "sK_game_wife",
+      "scene": "9-the-game",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A sunny youth soccer field on a Saturday. the tired man in the rumpled white shirt and loose tie from the reference image, now relaxed in a casual polo and sunglasses on his head, arrives on the sideline next to his wife, who wears a team hoodie. She looks around behind him and asks, teasing: \"Honey... where's Bog Down Bob?\" He smiles, genuinely relaxed, and says: \"I don't think we'll be seeing much of him anymore.\" Warm golden light, families cheering in the background.",
+      "request_id": "c90e45ec-301a-4298-831e-4749006e8ecf",
+      "status": "queued"
+    },
+    {
+      "id": "sL_kid_runs",
+      "scene": "9-the-game",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "prompt": "A sunny youth soccer field. A joyful seven-year-old in a soccer uniform sprints across the grass toward the tired man in the rumpled white shirt and loose tie from the reference image, in a casual polo, shouting: \"Daddy! You finally made it!\" and leaps into his arms for a big hug. He laughs and spins the kid around. Heartwarming, golden hour, slow-motion ending.",
+      "request_id": "899c669b-722d-453b-81ed-b9c715b271ed",
+      "status": "queued"
     }
   ],
   "reused": {
@@ -605,6 +675,6 @@
   "characters": {
     "rick": "Rick, the old-way rep",
     "maya": "Maya, the Quantum-way rep",
-    "busywork": "Bogged Down Bob (Busywork), the Mayhem-style villain"
+    "busywork": "Bog Down Bob (ref id busywork), the Mayhem-style villain"
   }
 }

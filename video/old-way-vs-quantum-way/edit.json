@@ -7,7 +7,7 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/s0_cold_open_bob.mp4",
+          "file": "clips/s0_cold_open_bogdown.mp4",
           "in": 0,
           "out": 8
         },
@@ -335,6 +335,12 @@
         },
         {
           "type": "clip",
+          "file": "clips/sJ_leg_drag.mp4",
+          "in": 0,
+          "out": 7
+        },
+        {
+          "type": "clip",
           "file": "clips/sH_rick_joins.mp4",
           "in": 0,
           "out": 8,
@@ -358,7 +364,24 @@
       ]
     },
     {
-      "id": "9-finale",
+      "id": "9-the-game",
+      "segments": [
+        {
+          "type": "clip",
+          "file": "clips/sK_game_wife.mp4",
+          "in": 0,
+          "out": 8
+        },
+        {
+          "type": "clip",
+          "file": "clips/sL_kid_runs.mp4",
+          "in": 0,
+          "out": 5
+        }
+      ]
+    },
+    {
+      "id": "10-finale",
       "segments": [
         {
           "type": "clip",
