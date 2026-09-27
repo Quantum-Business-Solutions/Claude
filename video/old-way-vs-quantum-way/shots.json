@@ -806,7 +806,7 @@
       },
       "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Bob. Bog Down Bob. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man drops his head into his hands. Only the cardigan man speaks. Comedic, punchy, slight push-in.",
       "request_id": "ee428a25-4090-4559-8bf3-b74085ed406a",
-      "status": "queued"
+      "status": "in_progress"
     },
     {
       "id": "s1e_bob_list_fix",
@@ -824,7 +824,7 @@
       },
       "prompt": "In a grey office cubicle, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image slaps a thick printed phone list down onto the desk in front of the tired man in the rumpled white shirt and loose tie from the second reference image and says cheerfully and clearly: \"Keep dialing, buddy.\" The tired man stares at the pile in despair. Only the cardigan man speaks.",
       "request_id": "2ce49160-97b7-4cf5-8156-d9653aad6f9b",
-      "status": "queued"
+      "status": "in_progress"
     },
     {
       "id": "s3a_rick_meeting_fix",
@@ -841,7 +841,7 @@
       },
       "prompt": "In a small client conference room, a friendly female office manager in a navy cardigan says clearly: \"We have three locations, and the copiers keep going down.\" Across the table the tired man in the rumpled white shirt and loose tie from the reference image scribbles frantically on a yellow legal pad, head down. His pen runs out; he shakes it and says: \"Sorry, can you repeat that?\" Comedic, natural light.",
       "request_id": "80c0653f-ca80-408c-8a50-cdedcc504cc5",
-      "status": "queued"
+      "status": "in_progress"
     },
     {
       "id": "s3b_maya_meeting_fix",
@@ -858,7 +858,7 @@
       },
       "prompt": "In a bright client conference room, the woman in the grey blazer with her hair pulled back from the reference image sits across the table from a friendly female office manager in a navy cardigan. Maya places her phone face-down on the table and says warmly and clearly: \"Mind if I let AI take the notes, so I can give you my full attention?\" The office manager smiles and says: \"Please.\" Maya leans in, fully engaged, eye contact.",
       "request_id": "7e74b625-c603-4a8d-a222-3b9d91966626",
-      "status": "queued"
+      "status": "in_progress"
     },
     {
       "id": "sI_bob_alone_fix",
@@ -875,7 +875,7 @@
       },
       "prompt": "Night. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits alone in a dark, empty office on an overturned box of paper files, under one flickering fluorescent light. He looks around the empty room and calls out hopefully: \"Anybody? ... Anybody need some data entry?\" Nobody answers. A single sheet of paper drifts to the floor. Comedic, melancholy.",
       "request_id": "f1bee4c7-547a-4bff-bd76-4dee67db5499",
-      "status": "queued"
+      "status": "in_progress"
     },
     {
       "id": "sL_kid_runs_fix",
@@ -892,7 +892,7 @@
       },
       "prompt": "A sunny youth soccer field. A joyful seven-year-old boy in a soccer uniform sprints across the grass toward the tired man in the rumpled white shirt and loose tie from the reference image and shouts loudly and clearly in a child's voice: \"Daddy! You made it!\" He leaps into his dad's arms for a big hug; the dad laughs and spins him around. Heartwarming, golden hour.",
       "request_id": "7f360d37-8cdd-4f38-ad31-71e2fb5785cd",
-      "status": "queued"
+      "status": "in_progress"
     },
     {
       "id": "s6b_maya_jog",
@@ -909,7 +909,7 @@
       },
       "prompt": "The woman from the reference image, same face, now in running gear with her hair in a ponytail and a small wireless earbud, jogging on a scenic riverside trail at golden hour. She answers a call without stopping, smiling, and says in a relaxed, confident American female voice: \"No problem. I'll get my team on it right away.\" She keeps running, enjoying the sunset. Tracking shot.",
       "request_id": "c3269729-0b98-47fc-90fa-90c49483c909",
-      "status": "queued"
+      "status": "in_progress"
     }
   ],
   "reused": {
