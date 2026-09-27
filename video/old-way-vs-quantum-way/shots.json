@@ -8,7 +8,8 @@
     "wife": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/d32e2d82-1508-4d1b-af32-6b8b0c9be542.jpeg",
     "kid": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/0ab63855-f419-4b63-b1e0-9f94d18d5e13.jpeg",
     "exec": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/f6a44e17-3f82-4dbe-b452-f66d47daff71.jpeg",
-    "maya_face": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/436eb159-8bfa-4f93-a44c-7cb9d43c7654.jpeg"
+    "maya_face": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/436eb159-8bfa-4f93-a44c-7cb9d43c7654.jpeg",
+    "blonde": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/2c3d54d8-7f76-449c-82c6-fe2b53be381c.jpeg"
   },
   "shots": [
     {
@@ -1616,7 +1617,467 @@
       },
       "prompt": "A cluttered office. the tired man in the rumpled white shirt and loose tie from the second reference image sits at his desk typing slowly on a keyboard, the monitor facing away from camera. He reads aloud wearily as he types, in a tired American male voice: \"Hi... just following up on my last email.\" He sighs and mutters to himself: \"Ninth time today.\" the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image leans in over his shoulder and whispers smugly in an older American male voice: \"You forgot to change the name.\" The tired man freezes. Comedic. No laughing. No text, no letters, no logos, no signs.",
       "request_id": "a3db0c30-72d7-4789-b2e6-be74841ad54a",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/fb8f8e60-d35b-40e2-b2ab-6331a6dc92a1.mp4",
+      "file": "clips/sN0_rick_ninth_email.mp4"
+    },
+    {
+      "id": "sN0_rick_ninth_email_b",
+      "scene": "3b-follow-up",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A cluttered office. the tired man in the rumpled white shirt and loose tie from the second reference image sits at his desk typing slowly on a keyboard, the monitor facing away from camera. He reads aloud wearily as he types, in a tired American male voice: \"Hi... just following up on my last email.\" He sighs and mutters to himself: \"Ninth time today.\" the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image leans in over his shoulder and whispers smugly in an older American male voice: \"You forgot to change the name.\" The tired man freezes. Comedic. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "31a07667-9a8f-40c3-8034-7ae3d03173da",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/b7b4c21b-d88d-4b70-ae2a-ccd8e1fda13a.mp4",
+      "file": "clips/sN0_rick_ninth_email_b.mp4"
+    },
+    {
+      "id": "sB_conveyor_v2a",
+      "scene": "5-contracts",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A bright modern office in daylight. the woman from the reference image, same face, in a grey blazer and white blouse, dark hair pulled back sits at a clean white desk working on a laptop. Right beside her desk, a small sleek real-world white conveyor belt, like a compact mailroom conveyor, glides past at waist height delivering neat plain manila folders one after another with a soft mechanical whir. She glances over, picks up the next folder without breaking stride, and says with a confident grin in an American female voice: \"Next.\" Playful, slightly surreal, but physically real. Realistic, grounded office. No holograms, no floating screens, no glowing panels. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "609bd520-9246-417a-b250-09a637d43e7b",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4a3b9c6a-1907-42ea-b74a-613d4749785d.mp4",
+      "file": "clips/sB_conveyor_v2a.mp4"
+    },
+    {
+      "id": "sB_conveyor_v2b",
+      "scene": "5-contracts",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A bright modern office in daylight. the woman from the reference image, same face, in a grey blazer and white blouse, dark hair pulled back sits at a clean white desk working on a laptop. Right beside her desk, a small sleek real-world white conveyor belt, like a compact mailroom conveyor, glides past at waist height delivering neat plain manila folders one after another with a soft mechanical whir. She glances over, picks up the next folder without breaking stride, and says with a confident grin in an American female voice: \"Next.\" Playful, slightly surreal, but physically real. Realistic, grounded office. No holograms, no floating screens, no glowing panels. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "18dd403d-7f15-48ab-b792-99595550d0a6",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/19a6f1d2-1c68-4262-9660-a63e4077734e.mp4",
+      "file": "clips/sB_conveyor_v2b.mp4"
+    },
+    {
+      "id": "g6_conveyor_fast_v2",
+      "scene": "5-contracts",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "The same bright modern office in daylight. The small white conveyor belt beside the woman from the reference image, same face, in a grey blazer and white blouse, dark hair pulled back's desk suddenly speeds up, plain manila folders piling up faster and faster. She raises her hands, amused, and says in an American female voice: \"Okay, okay!\" One of her team members in matching charcoal polo shirts with a thin lime-green collar stripe calmly walks over and turns a dial on the side of the belt; it slows down. She says: \"Thank you.\" Realistic, grounded office. No holograms, no floating screens, no glowing panels. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "e0562ab8-79b6-4c76-b80e-9d79cc95154e",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/82d5444f-cb85-4b3a-b8e5-810e3d9b6351.mp4",
+      "file": "clips/g6_conveyor_fast_v2.mp4"
+    },
+    {
+      "id": "sD_agents_dinner_v2a",
+      "scene": "6-late-night",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 9
+      },
+      "prompt": "Locked-off static tripod shot, early evening in a bright modern open office. the woman from the reference image, same face, in a grey blazer and white blouse, dark hair pulled back sits at her desk in the foreground. Behind her, four team members in matching charcoal polo shirts with a thin lime-green collar stripe sit in a neat row at their desks, calmly working at monitors facing away from camera, heads clearly visible, staying mostly still. A friendly coworker in a denim jacket leans in from the right and asks in a casual American voice: \"Want to grab dinner?\" Maya turns and looks back over her shoulder at her busy team for a moment, then turns back, smiles and says in a confident American female voice: \"Yeah... I think they've got it from here.\" She grabs her bag and stands up. Realistic, grounded office. No holograms, no floating screens, no glowing panels. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "6d795b47-4e89-4c3c-a35a-00607442597a",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/7f3bb934-02d5-4d80-aae2-6482fb79bbdf.mp4",
+      "file": "clips/sD_agents_dinner_v2a.mp4"
+    },
+    {
+      "id": "sD_agents_dinner_v2b",
+      "scene": "6-late-night",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 9
+      },
+      "prompt": "Locked-off static tripod shot, early evening in a bright modern open office. the woman from the reference image, same face, in a grey blazer and white blouse, dark hair pulled back sits at her desk in the foreground. Behind her, four team members in matching charcoal polo shirts with a thin lime-green collar stripe sit in a neat row at their desks, calmly working at monitors facing away from camera, heads clearly visible, staying mostly still. A friendly coworker in a denim jacket leans in from the right and asks in a casual American voice: \"Want to grab dinner?\" Maya turns and looks back over her shoulder at her busy team for a moment, then turns back, smiles and says in a confident American female voice: \"Yeah... I think they've got it from here.\" She grabs her bag and stands up. Realistic, grounded office. No holograms, no floating screens, no glowing panels. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "7dfb6661-26fb-447b-80b1-3127a7193506",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/54b9cb8c-1de9-43e9-9854-ec3e85ee834f.mp4",
+      "file": "clips/sD_agents_dinner_v2b.mp4"
+    },
+    {
+      "id": "blonde_ref",
+      "model": "higgsfield-ai/soul/v2/standard",
+      "refs": null,
+      "params": {
+        "aspect_ratio": "16:9"
+      },
+      "prompt": "Photorealistic portrait of a strikingly beautiful, confident blonde businesswoman in her early thirties, sleek shoulder-length blonde hair, sharp tailored navy suit, subtle makeup, standing in a bright modern glass office lobby, looking straight into the camera with a knowing half-smile. Cinematic soft light, 50mm. No text, no letters, no logos.",
+      "request_id": "f623ec76-ec5e-4927-9ef0-4ca9750ee7a2",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/cc67e11e-0051-446c-9049-d1367b221db1.png",
+      "file": "clips/blonde_ref.png"
+    },
+    {
+      "id": "sG3_flashback_90s_c",
+      "scene": "8-the-switch",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 10
+      },
+      "prompt": "1990s home-video look, warm faded colors, a 1994 office with beige computers and a fax machine. A dad in his late thirties who looks like the man from the second reference image, with a 1990s mustache, big glasses, pleated khakis and a wide patterned tie, holds the hand of his seven-year-old son: a fair-skinned boy with tousled brown hair and a striped shirt who looks like a young version of the dad. Standing beside them is the man from the first reference image, but about thirty years younger: early forties, thick dark hair, the same round glasses, beige cardigan, mustard shirt and lanyard, smugly holding a thick binder. The little boy looks up and asks in a small curious child's voice: \"Dad, who's that?\" The dad smiles proudly and says in a friendly American male voice: \"That's our good friend, Bog Down Bob. If you're lucky, you'll get to know him as well as I have.\" The younger man in the cardigan gives the boy a slow smug wave. Comedic. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "39319840-b16f-4159-bdf5-8a860e3d9924",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/f0cfabd9-487f-4e53-971e-14b381d7d45b.mp4",
+      "file": "clips/sG3_flashback_90s_c.mp4"
+    },
+    {
+      "id": "sG3_flashback_90s_d",
+      "scene": "8-the-switch",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 10
+      },
+      "prompt": "1990s home-video look, warm faded colors, a 1994 office with beige computers and a fax machine. A dad in his late thirties who looks like the man from the second reference image, with a 1990s mustache, big glasses, pleated khakis and a wide patterned tie, holds the hand of his seven-year-old son: a fair-skinned boy with tousled brown hair and a striped shirt who looks like a young version of the dad. Standing beside them is the man from the first reference image, but about thirty years younger: early forties, thick dark hair, the same round glasses, beige cardigan, mustard shirt and lanyard, smugly holding a thick binder. The little boy looks up and asks in a small curious child's voice: \"Dad, who's that?\" The dad smiles proudly and says in a friendly American male voice: \"That's our good friend, Bog Down Bob. If you're lucky, you'll get to know him as well as I have.\" The younger man in the cardigan gives the boy a slow smug wave. Comedic. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "3c961d11-b717-4cef-9ff3-4bfd5ae5e6f7",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/c0b261c0-38d1-4c36-a788-0754a04ee004.mp4",
+      "file": "clips/sG3_flashback_90s_d.mp4"
+    },
+    {
+      "id": "g9_available_v2",
+      "scene": "11-post-credits",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "blonde"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "A bright modern office lobby. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image sits alone on a bench holding a box of paper files, looking dejected. the stunning blonde businesswoman in the navy suit from the second reference image strides past. He instantly perks up, straightens his lanyard, and says hopefully in an older American male voice: \"Hey... I'm available now.\" She stops, turns and looks straight into the camera with a flat, unimpressed expression, then says crisply in a confident American female voice: \"Pass. We use Quantum.\" She keeps walking; he deflates. Comedic final beat. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "d6039f84-c76e-4bcb-b253-70d4cc33f8a7",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/43e8c907-7530-4b87-9ba6-36760583a048.mp4",
+      "file": "clips/g9_available_v2.mp4"
+    },
+    {
+      "id": "g10_cta_v2",
+      "scene": "11-post-credits",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "blonde"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 6
+      },
+      "prompt": "the stunning blonde businesswoman in the navy suit from the  reference image stands in a bright modern office lobby, stops, and looks straight into the camera lens with a knowing half-smile. She raises one eyebrow and asks clearly in a confident American female voice: \"Are you letting Bob hang out in your organization?\" She holds the look into the camera for a beat. Crisp, confident, direct to camera, medium close-up. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "a13e87a9-d5c1-4dec-b251-85a23597ce57",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/6e4a64b5-0df3-48b7-abe5-bd1ff52e56a6.mp4",
+      "file": "clips/g10_cta_v2.mp4"
+    },
+    {
+      "id": "sG3_flashback_90s_e",
+      "scene": "8-the-switch",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 10
+      },
+      "prompt": "1990s home-video look, warm faded colors, a 1994 office with beige computers and a fax machine. On the left, a dad in his late thirties who looks like the man in the reference image: fair skin, short dark-brown hair, a 1990s mustache, a white short-sleeve dress shirt with a wide patterned tie and pleated khakis. He holds the hand of his seven-year-old son, a fair-skinned boy with tousled light-brown hair in a striped t-shirt who looks like a young version of him. On the right stands a different man: a smug man in his early forties with thick black hair, round wire glasses, a beige cardigan over a mustard-yellow shirt and an ID lanyard, holding a thick binder. The little boy looks up at the dad and asks in a small curious child's voice: \"Dad, who's that?\" The dad smiles proudly and says in a friendly American male voice: \"That's our good friend, Bog Down Bob. If you're lucky, you'll get to know him as well as I have.\" The man in the cardigan gives the boy a slow smug wave. Comedic. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "2464ab40-1f98-45b8-b550-742230f8956b",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/21fd8ea9-3449-454a-a566-412dbb4e00ff.mp4",
+      "file": "clips/sG3_flashback_90s_e.mp4"
+    },
+    {
+      "id": "sG3_flashback_90s_f",
+      "scene": "8-the-switch",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 10
+      },
+      "prompt": "1990s home-video look, warm faded colors, a 1994 office with beige computers and a fax machine. On the left, a dad in his late thirties who looks like the man in the reference image: fair skin, short dark-brown hair, a 1990s mustache, a white short-sleeve dress shirt with a wide patterned tie and pleated khakis. He holds the hand of his seven-year-old son, a fair-skinned boy with tousled light-brown hair in a striped t-shirt who looks like a young version of him. On the right stands a different man: a smug man in his early forties with thick black hair, round wire glasses, a beige cardigan over a mustard-yellow shirt and an ID lanyard, holding a thick binder. The little boy looks up at the dad and asks in a small curious child's voice: \"Dad, who's that?\" The dad smiles proudly and says in a friendly American male voice: \"That's our good friend, Bog Down Bob. If you're lucky, you'll get to know him as well as I have.\" The man in the cardigan gives the boy a slow smug wave. Comedic. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "cf7d1f60-9dda-4df2-92bc-8099a92a8eb1",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/f5ef189d-e549-4087-9ddf-820db758f054.mp4",
+      "file": "clips/sG3_flashback_90s_f.mp4"
+    },
+    {
+      "id": "n1_meeting_about_meeting",
+      "scene": "2b-pipeline",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "An empty glass conference room with a box of donuts on the table. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the  reference image sits alone at the head of the table, smugly taps a pen, looks into the camera and says in a smug older American male voice: \"I booked a pre-meeting... to plan the planning meeting.\" He takes a donut. Comedic, deadpan. Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "24bf911a-2e3b-4d40-9fff-c0967c3d2e8d",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/35d9c8fe-05cb-47ef-af74-9dd6efaf3d68.mp4",
+      "file": "clips/n1_meeting_about_meeting.mp4"
+    },
+    {
+      "id": "n2_ai_coach",
+      "scene": "2-research",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A bright modern office in daylight. the woman from the  reference image, same face, in a grey blazer and white blouse, dark hair pulled back sits at her desk wearing one earbud, practising a sales call with an AI coach on her laptop, the screen facing away from camera. A calm synthetic female voice from the laptop says: \"We're happy with our current provider.\" She smiles and replies confidently in an American female voice: \"Great. What would make you even happier?\" The calm voice says: \"Nice. That one works.\" She nods, pleased. Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "7eab53bd-8f74-439f-b028-5a4c9dfed65b",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/b7fe010d-abe0-4d0c-bf15-3c91e3804436.mp4",
+      "file": "clips/n2_ai_coach.mp4"
+    },
+    {
+      "id": "n3_reply_all",
+      "scene": "6-late-night",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "A dim office at night. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the  reference image sits at a computer, the screen facing away from camera, and dramatically presses one key with a single finger. He turns to the camera with a wicked grin and whispers in an older American male voice: \"Reply all.\" Behind him, every phone on every desk in the office starts buzzing and chiming at once. Comedic. Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "833abdf2-31da-4a88-9902-cd238e625e45",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/3383c1b9-22e2-4867-8b88-aa22002387e7.mp4",
+      "file": "clips/n3_reply_all.mp4"
+    },
+    {
+      "id": "n4_proposal_11pm",
+      "scene": "5b-proposal",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A dark cluttered office at 11pm lit by one desk lamp. the tired man in the rumpled white shirt and loose tie from the second reference image squints at his monitor, the screen facing away from camera, and groans quietly in frustration: \"Why does the logo keep moving?\" the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image leans over his shoulder, sipping from a mug, and says smugly: \"It's a feature.\" Comedic. Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "d7d6b355-edd7-4aee-91fc-e38d90b8abb0",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/0fbaf7ee-e8c8-4de4-ae13-beb37feaf4ff.mp4",
+      "file": "clips/n4_proposal_11pm.mp4"
+    },
+    {
+      "id": "n7_shoebox",
+      "scene": "7-saturday",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "A sunny family kitchen on a Saturday morning. the tired man in the rumpled white shirt and loose tie from the second reference image in a polo shirt reaches for his car keys. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image appears and plops a battered shoebox overflowing with crumpled receipts on the counter in front of him and says cheerfully in an older American male voice: \"Expense reports are due Monday. Some of these are napkins.\" Rick stares at the box. Comedic. Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "9b861b70-d1e0-428f-b7e5-bb7b1737fd48",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/abfab840-0483-4389-aa1d-8d85dbba02d6.mp4",
+      "file": "clips/n7_shoebox.mp4"
+    },
+    {
+      "id": "n8_bob_done_button",
+      "scene": "8-the-switch",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A bright modern office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image sneaks up to a desk where a large round glowing lime-green button sits, looks around, and presses it eagerly. Nothing happens. He presses it again, harder. Still nothing. the woman from the second reference image, same face, in a grey blazer and white blouse, dark hair pulled back walks past and says calmly in a confident American female voice: \"It only works when there's a system behind it.\" He sulks. Comedic. The button has no text or symbols. Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "8681ae08-4751-406d-a602-acb883dc00c6",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/fab97a83-3221-4ff5-8226-e6d6b4e97a1c.mp4",
+      "file": "clips/n8_bob_done_button.mp4"
+    },
+    {
+      "id": "n9_busywork_anonymous",
+      "scene": "11-post-credits",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 9
+      },
+      "prompt": "A church-basement support group: folding chairs in a circle, a coffee urn, fluorescent light. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the  reference image stands up nervously in front of a small circle of odd, dejected office characters: a man holding a jammed fax machine, a woman buried in printed emails, and a man wrapped in tangled phone cords. He says in a shaky older American male voice: \"Hi. I'm Bob.\" The group replies in unison, flatly: \"Hi, Bob.\" He sighs: \"It's been three days since anyone needed me.\" Comedic, deadpan. Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "e27494bc-b203-495c-9098-0c0cb6333d70",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/7764d91c-f908-4ad5-9e60-75f6bc841e7f.mp4",
+      "file": "clips/n9_busywork_anonymous.mp4"
+    },
+    {
+      "id": "n10_vacation",
+      "scene": "6-late-night",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A bright modern office on a Monday morning. the woman from the  reference image, same face, in a grey blazer and white blouse, dark hair pulled back, lightly tanned and wearing sunglasses on her head, walks in rolling a small suitcase, relaxed, and asks a team member in a charcoal polo shirt with a thin lime-green collar stripe at the nearest desk in a cheerful American female voice: \"Did I miss anything?\" He looks up calmly and says: \"Nope. Everything's handled.\" She grins and sits down. Comedic, relatable. Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "c26f5927-2cf0-4170-ad29-89bece139410",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/9a178c38-40f4-4040-90a8-70bdca3b756c.mp4",
+      "file": "clips/n10_vacation.mp4"
+    },
+    {
+      "id": "sM2_maya_pipeline_v2",
+      "scene": "2b-pipeline",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A glass conference room. A stern sales manager in a navy suit turns and asks: \"Maya?\" the woman from the  reference image, same face, in a grey blazer and white blouse, dark hair pulled back turns her laptop toward him, the screen facing away from camera, and says calmly in a confident American female voice: \"Twelve deals. Three closing this week. It's all in Hub Spot.\" The manager raises his eyebrows and says: \"Now that's a pipeline.\" Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "a7dad2f8-7b60-44b2-8295-53eed834baaa",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/77f674a0-22c0-40b9-a70d-3d0babad62c2.mp4",
+      "file": "clips/sM2_maya_pipeline_v2.mp4"
+    },
+    {
+      "id": "sN2_maya_reply_v2",
+      "scene": "3b-follow-up",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A bright modern office. the woman from the  reference image, same face, in a grey blazer and white blouse, dark hair pulled back glances at her phone and smiles, surprised, and says in a confident American female voice: \"They already replied?\" a team member in a charcoal polo shirt with a thin lime-green collar stripe walking past says casually: \"Follow-up went out at nine oh two.\" She grins. Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "a783013a-6b3a-45c9-8bed-75bd333c900f",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/8e1ffdde-5243-4bea-8943-2d67825e7046.mp4",
+      "file": "clips/sN2_maya_reply_v2.mp4"
+    },
+    {
+      "id": "sK_game_v2",
+      "scene": "9-the-game",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick",
+        "wife"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A sunny youth soccer field on a Saturday. The man from the first reference image, now relaxed in a navy polo shirt, stands on the sideline next to his wife from the second reference image. She leans over and asks playfully in an American female voice: \"Honey... where's Bog... Down... Bob?\" He smiles, watching the game, and says calmly: \"I don't think we'll be seeing much of him anymore.\" Warm, happy. Realistic, grounded office. No holograms, no floating screens. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "dba4c2cd-e90b-4f50-a484-47da727a03cf",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/a6d3446b-a773-4d66-a1e0-a98cd0e3646e.mp4",
+      "file": "clips/sK_game_v2.mp4"
     }
   ],
   "reused": {

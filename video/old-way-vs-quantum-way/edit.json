@@ -100,8 +100,8 @@
         },
         {
           "type": "insert",
-          "name": "password",
-          "secs": 3.2,
+          "name": "sheet_locked",
+          "secs": 3.6,
           "zoom": 1.0
         },
         {
@@ -215,9 +215,9 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/sN0_rick_ninth_email.mp4",
+          "file": "clips/sN0_rick_ninth_email_blur.mp4",
           "in": 0,
-          "out": 9,
+          "out": 7.9,
           "tag": {
             "text": "THE OLD WAY",
             "color": "#FFB43C"
@@ -350,9 +350,9 @@
         },
         {
           "type": "clip",
-          "file": "clips/sB_conveyor.mp4",
-          "in": 0,
-          "out": 7,
+          "file": "clips/sB_conveyor_v2a.mp4",
+          "in": 0.6,
+          "out": 7.8,
           "tag": {
             "text": "RUNG 02 \u00b7 AUTOMATION",
             "color": "dark:#FFB43C"
@@ -360,9 +360,9 @@
         },
         {
           "type": "clip",
-          "file": "clips/g6_conveyor_fast.mp4",
-          "in": 0,
-          "out": 6
+          "file": "clips/g6_conveyor_fast_v2_nl.mp4",
+          "in": 1.0,
+          "out": 6.2
         }
       ]
     },
@@ -408,9 +408,9 @@
         },
         {
           "type": "clip",
-          "file": "clips/sD_agents_dinner.mp4",
-          "in": 0,
-          "out": 8,
+          "file": "clips/sD_agents_dinner_v2a_tags.mp4",
+          "in": 2.9,
+          "out": 9.0,
           "tag": {
             "text": "RUNG 03 \u00b7 AGENTS",
             "color": "dark:#B6FF3C"
@@ -565,15 +565,15 @@
         },
         {
           "type": "clip",
-          "file": "clips/g9_available.mp4",
-          "in": 0,
-          "out": 7
+          "file": "clips/g9_available_v2.mp4",
+          "in": 0.6,
+          "out": 6.6
         },
         {
           "type": "clip",
-          "file": "clips/g10_cta.mp4",
-          "in": 0,
-          "out": 6
+          "file": "clips/g10_cta_v2.mp4",
+          "in": 0.0,
+          "out": 5.4
         },
         {
           "type": "insert",
@@ -586,18 +586,18 @@
   ],
   "music": {
     "0-cold-open": "m2_bob_theme",
-    "1-the-dial": "m1_theme",
-    "2-research": "m1_theme",
-    "3-the-meeting": "m1_theme",
-    "4-parking-lot": "m1_theme",
-    "5-contracts": "m1_theme",
-    "6-late-night": "m1_theme",
+    "1-the-dial": "m1_theme_clean",
+    "2-research": "m1_theme_clean",
+    "3-the-meeting": "m1_theme_clean",
+    "4-parking-lot": "m1_theme_clean",
+    "5-contracts": "m1_theme_clean",
+    "6-late-night": "m1_theme_clean",
     "7-saturday": "m2_bob_theme",
     "8-the-switch": "m2_bob_theme",
     "9-the-game": "m3b_finale",
     "10-finale": "m3b_finale",
     "11-post-credits": "m2_bob_theme",
-    "2b-pipeline": "m1_theme",
-    "3b-follow-up": "m1_theme"
+    "2b-pipeline": "m1_theme_clean",
+    "3b-follow-up": "m1_theme_clean"
   }
 }

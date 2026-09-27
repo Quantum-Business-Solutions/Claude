@@ -76,7 +76,7 @@
   ],
   "music": {
     "t30-bob": "m2_bob_theme",
-    "t30-lot": "m1_theme",
+    "t30-lot": "m1_theme_clean",
     "t30-end": "m2_bob_theme"
   }
 }

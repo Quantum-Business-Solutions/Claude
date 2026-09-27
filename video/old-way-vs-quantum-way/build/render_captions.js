@@ -10,7 +10,9 @@ const { chromium } = require('playwright'); const fs = require('fs'); const path
     text-shadow:0 2px 8px rgba(0,0,0,.6)}#c:empty{display:none}`;
   const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
   for (let i = -1; i < list.length; i++) {
-    await p.setContent(`<style>${css}</style><div id="c">${i < 0 ? '' : esc(list[i])}</div>`);
+    const f = path.join(dir, 'page.html');
+    fs.writeFileSync(f, `<!doctype html><meta charset="utf-8"><style>${css}</style><div id="c">${i < 0 ? '' : esc(list[i])}</div>`);
+    await p.goto('file://' + f);
     await p.evaluate(() => document.fonts.ready);
     await p.screenshot({ path: path.join(dir, i < 0 ? 'blank.png' : 'c' + String(i).padStart(3, '0') + '.png'), omitBackground: true });
   }

@@ -8,11 +8,11 @@ import json, os, re, subprocess, sys
 import imageio_ffmpeg
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FF = imageio_ffmpeg.get_ffmpeg_exe()
-CJ = os.path.join(ROOT, "build", "captions.json")
+CJ = os.path.join(ROOT, "build", os.environ.get("CAPS", "captions.json"))  # CAPS=captions_30.json for the cutdown
 PROMPT = "Bog Down Bob, Maya, Rick, Quantum, HubSpot, Connect and Sell, Dana, Riverside, Dr. Reyes."
 FIX = [(r"\bBog ?dan\b", "Bog Down"), (r"\bBogdown\b", "Bog Down"), (r"\bConnect ?(and|&) ?Sell\b", "ConnectAndSell"),
        (r"\bHub ?spot\b", "HubSpot"), (r"\bspreadshit\b", "spreadsheet"),
-       (r"\bHan\b", "hon"), (r"\b902\b", "9:02"), (r"(\d) ,(\d)", r"\1,\2"), (r" -up\b", "-up"), (r"\bAI lead finder\b", "AI Lead Finder"),
+       (r"\bHan\b", "hon"), (r"\b9 ?[.:]? ?02\b", "9:02"), (r"(\d) ,(\d)", r"\1,\2"), (r" -up\b", "-up"), (r"\bAI lead finder\b", "AI Lead Finder"),
        (r"\bdone button\b", "Done button")]
 
 
@@ -20,13 +20,20 @@ def transcribe(src):
     from faster_whisper import WhisperModel
     m = WhisperModel("small.en", compute_type="int8")
     segs, _ = m.transcribe(src, word_timestamps=True, initial_prompt=PROMPT, vad_filter=True)
-    words = [(w.start, w.end, w.word.strip()) for s in segs for w in s.words if w.word.strip()]
+    words = []
+    for s in segs:
+        for w in s.words:
+            x = w.word.strip()
+            if not x: continue
+            if words and (x.startswith("-") or re.fullmatch(r"[.,:]\d+.*", x)):  # "-up", ".02" belong to the previous word
+                a, _, y = words[-1]; words[-1] = (a, w.end, (y + x).replace(" ", "")); continue
+            words.append((w.start, w.end, x))
     chunks, cur = [], []
     for w in words:
         if cur and (len(cur) >= 7 or w[1] - cur[0][0] > 2.6 or w[0] - cur[-1][1] > 0.5):
             chunks.append(cur); cur = []
         cur.append(w)
-        if re.search(r"[.?!]$", w[2]) and len(cur) >= 2:
+        if re.search(r"[.?!]$", w[2]):
             chunks.append(cur); cur = []
     if cur: chunks.append(cur)
     out = []

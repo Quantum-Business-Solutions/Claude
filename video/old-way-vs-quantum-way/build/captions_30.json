@@ -1,0 +1,67 @@
+[
+ {
+  "start": 0.08,
+  "end": 1.13,
+  "text": "I'm Bob,"
+ },
+ {
+  "start": 1.9,
+  "end": 2.79,
+  "text": "Bog Down Bob."
+ },
+ {
+  "start": 3.7,
+  "end": 6.11,
+  "text": "I live in every sales team."
+ },
+ {
+  "start": 6.68,
+  "end": 7.69,
+  "text": "I'll enter that later."
+ },
+ {
+  "start": 8.96,
+  "end": 10.27,
+  "text": "He won't."
+ },
+ {
+  "start": 11.6,
+  "end": 13.1,
+  "text": "Claude, log my meeting with Dana,"
+ },
+ {
+  "start": 13.1,
+  "end": 15.39,
+  "text": "send her the recap and set a follow-up for Tuesday."
+ },
+ {
+  "start": 17.74,
+  "end": 18.33,
+  "text": "Done."
+ },
+ {
+  "start": 18.8,
+  "end": 19.65,
+  "text": "Wait!"
+ },
+ {
+  "start": 20.7,
+  "end": 21.63,
+  "text": "Don't go!"
+ },
+ {
+  "start": 22.2,
+  "end": 24.13,
+  "text": "Hey, I'm available now."
+ },
+ {
+  "start": 24.26,
+  "end": 24.79,
+  "text": "Pass."
+ },
+ {
+  "start": 25.16,
+  "end": 25.95,
+  "text": "We use Quantum."
+ }
+]
