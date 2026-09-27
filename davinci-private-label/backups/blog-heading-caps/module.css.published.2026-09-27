@@ -1,0 +1,258 @@
+/* PL - Rich Text
+   Prose / fine-print section.
+
+   Every colour used by this module is declared in one of the two palette
+   blocks below and consumed through a custom property. Text colour is driven
+   entirely by the text_color field, so a dark section can carry light copy
+   without anyone editing CSS or changing the background colour. */
+
+.pl-rt--dark{
+  --pl-rt-heading: #012638;
+  --pl-rt-body: #333333;
+  --pl-rt-muted: #5A6B75;
+  --pl-rt-accent: #6BA644;
+  --pl-rt-rule: rgba(1, 38, 56, .12);
+  --pl-rt-code-bg: rgba(1, 38, 56, .06);
+}
+
+.pl-rt--light{
+  --pl-rt-heading: #FFFFFF;
+  --pl-rt-body: rgba(255, 255, 255, .88);
+  --pl-rt-muted: rgba(255, 255, 255, .78);
+  --pl-rt-accent: #6BA644;
+  --pl-rt-rule: rgba(255, 255, 255, .12);
+  --pl-rt-code-bg: rgba(255, 255, 255, .10);
+}
+
+.pl-rt{
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* max-width comes from the max_width field via the scoped style block */
+.pl-rt__inner{
+  margin: 0 auto;
+}
+
+.pl-rt--left .pl-rt__inner{
+  text-align: left;
+}
+
+.pl-rt--center .pl-rt__inner{
+  text-align: center;
+}
+
+
+/* ---------- shared element rules ---------- */
+
+.pl-rt__inner h1,
+.pl-rt__inner h2,
+.pl-rt__inner h3,
+.pl-rt__inner h4,
+.pl-rt__inner h5,
+.pl-rt__inner h6{
+  color: var(--pl-rt-heading);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+.pl-rt__inner strong,
+.pl-rt__inner b{
+  color: var(--pl-rt-heading);
+  font-weight: 700;
+}
+
+.pl-rt__inner a{
+  color: var(--pl-rt-accent);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.pl-rt__inner a:hover{
+  text-decoration: none;
+}
+
+.pl-rt__inner ul,
+.pl-rt__inner ol{
+  padding-left: 22px;
+}
+
+.pl-rt--center .pl-rt__inner ul,
+.pl-rt--center .pl-rt__inner ol{
+  display: inline-block;
+  text-align: left;
+}
+
+.pl-rt__inner img{
+  max-width: 100%;
+  height: auto;
+}
+
+.pl-rt__inner hr{
+  height: 0;
+  border: 0;
+  border-top: 1px solid var(--pl-rt-rule);
+  margin: 32px 0;
+}
+
+.pl-rt__inner blockquote{
+  margin: 26px 0;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--pl-rt-accent);
+  color: var(--pl-rt-muted);
+  font-style: italic;
+}
+
+.pl-rt--center .pl-rt__inner blockquote{
+  border-left: 0;
+  padding-left: 0;
+}
+
+.pl-rt__inner code{
+  background-color: var(--pl-rt-code-bg);
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: .9em;
+}
+
+.pl-rt__inner table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 22px;
+}
+
+.pl-rt__inner th,
+.pl-rt__inner td{
+  border: 1px solid var(--pl-rt-rule);
+  padding: 10px 14px;
+  text-align: left;
+  color: var(--pl-rt-body);
+}
+
+.pl-rt__inner th{
+  color: var(--pl-rt-heading);
+  font-weight: 700;
+}
+
+/* first / last child bleed control so padding_top and padding_bottom
+   are the only things setting the section's vertical rhythm */
+.pl-rt__inner > *:first-child{
+  margin-top: 0;
+}
+
+.pl-rt__inner > *:last-child{
+  margin-bottom: 0;
+}
+
+
+/* ---------- normal (body copy) ---------- */
+
+.pl-rt--normal .pl-rt__inner h2{
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 0 0 24px;
+}
+
+.pl-rt--normal .pl-rt__inner h3{
+  font-size: 24px;
+  line-height: 1.35;
+  margin: 34px 0 14px;
+}
+
+.pl-rt--normal .pl-rt__inner h4{
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 28px 0 12px;
+}
+
+.pl-rt--normal .pl-rt__inner p{
+  color: var(--pl-rt-body);
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0 0 18px;
+}
+
+.pl-rt--normal .pl-rt__inner ul,
+.pl-rt--normal .pl-rt__inner ol{
+  margin: 0 0 18px;
+}
+
+.pl-rt--normal .pl-rt__inner li{
+  color: var(--pl-rt-body);
+  font-size: 17px;
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+
+/* ---------- small (fine print / FDA disclaimer) ---------- */
+
+.pl-rt--small .pl-rt__inner h2{
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 0 0 14px;
+}
+
+.pl-rt--small .pl-rt__inner h3{
+  font-size: 16px;
+  line-height: 1.35;
+  margin: 20px 0 10px;
+}
+
+.pl-rt--small .pl-rt__inner h4{
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 18px 0 8px;
+}
+
+.pl-rt--small .pl-rt__inner p{
+  color: var(--pl-rt-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: .2px;
+  margin: 0 0 10px;
+}
+
+.pl-rt--small .pl-rt__inner ul,
+.pl-rt--small .pl-rt__inner ol{
+  margin: 0 0 10px;
+}
+
+.pl-rt--small .pl-rt__inner li{
+  color: var(--pl-rt-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: .2px;
+  margin-bottom: 6px;
+}
+
+.pl-rt--small .pl-rt__inner blockquote{
+  margin: 14px 0;
+  font-size: 12px;
+}
+
+
+/* ---------- responsive ---------- */
+/* ---------- optional top hairline (V1's FDA disclaimer) ---------- */
+
+.pl-rt--topborder{
+  border-top: 1px solid var(--pl-rt-rule);
+}
+
+/* ---------------------------------------------------------------------------
+   V1 fidelity -- the theme's container inset.
+
+   Main.css insets .bodyContainer / .contentContainer / .smallContentContainer
+   by 35px per side below 1300 / 1000 / 880px. V1's own sections use a flat 20px
+   gutter at every width, so inheriting the theme's inset made this section
+   30px narrower than V1 on a tablet and a phone and re-wrapped its paragraphs.
+   Main.css belongs to the live site, so the inset is cancelled here instead and
+   V1's own gutter supplied in its place.
+   --------------------------------------------------------------------------- */
+.pl-rt .bodyContainer{
+  padding-left: 20px;
+  padding-right: 20px;
+  /* the module's own max_width field is the bound, not the
+     theme's 1250/950/850 -- which is declared !important. */
+  max-width: none !important;
+}
+
