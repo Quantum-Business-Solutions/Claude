@@ -5,6 +5,7 @@ python build/mix_music.py            -> build/out/<output>  (music mixed in plac
 edit.json "music" maps scene id -> music shot id (a clip in clips/ whose audio is the score).
 Adjacent scenes with the same theme share one continuous bed; beds are looped to length and
 cross-faded. The dialogue drives a sidechain compressor so the music dips whenever someone talks.
+The mix is loudness-normalized to -14 LUFS, -1.5 dB true peak (streaming / PA level).
 """
 import json, os, subprocess
 import imageio_ffmpeg
@@ -28,7 +29,7 @@ def run(cmd):
 
 
 def main():
-    e = json.load(open(os.path.join(ROOT, "edit.json")))
+    e = json.load(open(os.path.join(ROOT, os.environ.get("EDIT", "edit.json"))))
     theme = e.get("music") or {}
     runs = []  # [theme, seconds]
     for sc in e["scenes"]:
@@ -59,7 +60,7 @@ def main():
     wet = dry.replace(".mp4", "_music.mp4")
     fc = ("[0:a]asplit=2[d][key];[1:a]volume=%s[m];"
           "[m][key]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=450[md];"
-          "[d][md]amix=inputs=2:normalize=0:duration=first[a]" % MUSIC_GAIN)
+          "[d][md]amix=inputs=2:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]" % MUSIC_GAIN)
     run([FF, "-y", "-i", dry, "-i", bed, "-filter_complex", fc, "-map", "0:v", "-map", "[a]",
          "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", wet])
     print("music mixed ->", wet)

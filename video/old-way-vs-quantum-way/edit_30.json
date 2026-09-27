@@ -1,0 +1,82 @@
+{
+  "output": "old-way-vs-quantum-way-30s.mp4",
+  "notes": "30-second cutdown for social/email. Build: EDIT=edit_30.json python build/build.py && EDIT=edit_30.json python build/mix_music.py",
+  "scenes": [
+    {
+      "id": "t30-bob",
+      "segments": [
+        {
+          "type": "clip",
+          "file": "clips/s0_cold_open_fix.mp4",
+          "in": 0,
+          "out": 6.0
+        }
+      ]
+    },
+    {
+      "id": "t30-lot",
+      "segments": [
+        {
+          "type": "clip",
+          "file": "clips/s4a1_rick_door_v4.mp4",
+          "in": 2.6,
+          "out": 4.4,
+          "tag": {
+            "text": "THE OLD WAY",
+            "color": "#FFB43C"
+          }
+        },
+        {
+          "type": "clip",
+          "file": "clips/s4a2_bob_passenger_v5a.mp4",
+          "in": 0.4,
+          "out": 3.6
+        },
+        {
+          "type": "clip",
+          "file": "clips/s4b_maya_car.mp4",
+          "in": 3.2,
+          "out": 7.6,
+          "tag": {
+            "text": "THE QUANTUM WAY",
+            "color": "#B6FF3C"
+          }
+        },
+        {
+          "type": "clip",
+          "file": "clips/sC_done_button.mp4",
+          "in": 0,
+          "out": 3.0
+        }
+      ]
+    },
+    {
+      "id": "t30-end",
+      "segments": [
+        {
+          "type": "clip",
+          "file": "clips/sJ_leg_drag.mp4",
+          "in": 1.8,
+          "out": 4.9
+        },
+        {
+          "type": "clip",
+          "file": "clips/g9_available.mp4",
+          "in": 2.2,
+          "out": 6.8
+        },
+        {
+          "type": "insert",
+          "name": "logo_card",
+          "secs": 3.4,
+          "zoom": 1.0
+        }
+      ]
+    }
+  ],
+  "music": {
+    "t30-bob": "m2_bob_theme",
+    "t30-lot": "m1_theme",
+    "t30-end": "m2_bob_theme"
+  }
+}

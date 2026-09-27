@@ -1,4 +1,4 @@
-"""Assemble the ad from edit.json.
+"""Assemble the ad from edit.json (or EDIT=edit_30.json for a cutdown; give cutdown scenes their own ids).
 
 python build/build.py            -> renders every scene to build/scenes/<scene>.mp4 and joins them into build/out/<title>.mp4
 python build/build.py 1-the-dial -> renders just that scene (then re-joins everything)
@@ -93,22 +93,57 @@ def build_scene(scene):
     return out
 
 
+def vdur(path):
+    import av
+    s = av.open(path).streams.video[0]
+    return float(s.duration * s.time_base)
+
+
 def concat(parts, out):
+    """Join parts: video by stream copy, audio decoded and cut to each part's exact video length.
+    (Stream-copying AAC adds ~21 ms of padding per join, which drifted the audio ~300 ms behind by the end.)"""
     lst = out + ".txt"
     with open(lst, "w") as f:
         for p in parts:
             f.write("file '%s'\n" % p)
-    run([FF, "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", out])
+    ins, fc = ["-f", "concat", "-safe", "0", "-i", lst], []
+    for i, p in enumerate(parts):
+        ins += ["-i", p]
+        d = vdur(p)
+        fc.append("[%d:a]aresample=48000,apad,atrim=0:%.6f,asetpts=N/SR/TB[a%d]" % (i + 1, d, i))
+    fc.append("".join("[a%d]" % i for i in range(len(parts))) + "concat=n=%d:v=0:a=1[a]" % len(parts))
+    run([FF, "-y"] + ins + ["-filter_complex", ";".join(fc), "-map", "0:v", "-map", "[a]",
+                            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out])
     os.remove(lst)
 
 
+def assemble(parts, out):
+    """Final cut straight from the segment files in one encode: frames renumbered 0..N at 30 fps and
+    audio cut to each segment's exact frame length. (Stream-copy joins left ~1 frame gaps per scene;
+    by the end of the ad the picture ran 300 ms behind the sound.)"""
+    ins, fc = [], []
+    for i, p in enumerate(parts):
+        ins += ["-i", p]
+        d = vdur(p)
+        fc.append("[%d:v]setpts=PTS-STARTPTS,fps=30,trim=0:%.6f,setpts=N/30/TB[v%d]" % (i, d, i))
+        fc.append("[%d:a]aresample=48000,apad,atrim=0:%.6f,asetpts=N/SR/TB[a%d]" % (i, d, i))
+    fc.append("".join("[v%d][a%d]" % (i, i) for i in range(len(parts))) + "concat=n=%d:v=1:a=1[v][a]" % len(parts))
+    run([FF, "-y"] + ins + ["-filter_complex", ";".join(fc), "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "medium",
+                            "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out])
+
+
 if __name__ == "__main__":
-    edit = json.load(open(os.path.join(ROOT, "edit.json")))
-    only = sys.argv[1:]
+    edit = json.load(open(os.path.join(ROOT, os.environ.get("EDIT", "edit.json"))))
+    only = [a for a in sys.argv[1:] if not a.startswith("--")]
+    rejoin = "--rejoin" in sys.argv  # re-join every scene from its existing parts (no re-render)
     outs = []
     for sc in edit["scenes"]:
         path = os.path.join(B, "scenes", sc["id"] + ".mp4")
-        if not only or sc["id"] in only:
+        if rejoin and sc["id"] not in only:
+            parts = [os.path.join(B, "scenes", "parts", "%s_%02d.mp4" % (sc["id"], i)) for i in range(len(sc["segments"]))]
+            if all(os.path.exists(x) for x in parts):
+                concat(parts, path)
+        elif not only or sc["id"] in only:
             path = build_scene(sc)
         if os.path.exists(path):
             outs.append(path)
@@ -116,5 +151,10 @@ if __name__ == "__main__":
             print("skipping unbuilt scene", sc["id"])
     os.makedirs(os.path.join(B, "out"), exist_ok=True)
     final = os.path.join(B, "out", edit["output"])
-    concat(outs, final)
+    parts = []
+    for sc in edit["scenes"]:
+        ps = [os.path.join(B, "scenes", "parts", "%s_%02d.mp4" % (sc["id"], i)) for i in range(len(sc["segments"]))]
+        if all(os.path.exists(x) for x in ps):
+            parts += ps
+    assemble(parts, final)
     print("final ->", final)

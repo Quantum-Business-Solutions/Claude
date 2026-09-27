@@ -1,0 +1,47 @@
+{
+ "clips/s1b_maya_call.mp4": {
+  "laugh_windows": [
+   [
+    0.0,
+    1.5
+   ]
+  ],
+  "muted": [
+   [
+    0.0,
+    0.9700000000000004
+   ]
+  ],
+  "words": 11
+ },
+ "clips/sF_grab_fix.mp4": {
+  "laugh_windows": [
+   [
+    4.75,
+    7.0
+   ]
+  ],
+  "muted": [
+   [
+    4.87,
+    7.0
+   ]
+  ],
+  "words": 7
+ },
+ "clips/sL_kid_fix2.mp4": {
+  "laugh_windows": [
+   [
+    3.75,
+    6.0
+   ]
+  ],
+  "muted": [
+   [
+    3.75,
+    6.0
+   ]
+  ],
+  "words": 4
+ }
+}
