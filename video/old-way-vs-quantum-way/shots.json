@@ -401,6 +401,198 @@
       "status": "completed",
       "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/68ef2b8f-a297-41f3-afec-d9d238a2cfa4.mp4",
       "file": "clips/s4a2_busywork_seat.mp4"
+    },
+    {
+      "id": "s0_cold_open_v2",
+      "scene": "0-cold-open",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Manny. Manny Manual. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man groans. Comedic, punchy, slight push-in.",
+      "request_id": "735ddd15-aa6c-485a-850d-1a26bebbb902",
+      "status": "in_progress"
+    },
+    {
+      "id": "sA_assistant",
+      "scene": "2-research",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "the woman in the grey blazer with her hair pulled back from the reference image sits at a bright modern desk. Without looking away from her work she asks: \"Who signs at Riverside?\" One of her team members in matching charcoal polo shirts with a thin lime-green collar stripe, a sharp young man standing right beside her desk holding a tablet, answers instantly: \"Doctor Reyes. Dana recommends.\" She smiles: \"Perfect.\" Crisp, fast, witty.",
+      "request_id": "bb66d0ab-3140-4b36-88da-52219729c1fd",
+      "status": "in_progress"
+    },
+    {
+      "id": "sB_conveyor",
+      "scene": "5-contracts",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "the woman in the grey blazer with her hair pulled back from the reference image sits at a bright modern desk. Beside her desk a small sleek white conveyor belt glides past, delivering neat folders one after another with a soft whir. She glances over, picks up the next folder without breaking stride, and says with a grin: \"Next.\" Playful, slightly surreal, no text on the folders.",
+      "request_id": "1523b85b-5532-4ea4-95e8-f667c19e09e6",
+      "status": "in_progress"
+    },
+    {
+      "id": "sC_done_button",
+      "scene": "gag",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 4
+      },
+      "prompt": "Close-up at a bright modern desk: the hand of the woman in the grey blazer with her hair pulled back from the reference image taps a large round glowing lime-green button on the desk; it lights up with a satisfying chime. She says, relaxed and pleased: \"Done.\" The button has no text or symbols on it.",
+      "request_id": "4c6b3d48-184c-45ee-832d-5a282c0092af",
+      "status": "in_progress"
+    },
+    {
+      "id": "sD_agents_dinner",
+      "scene": "6-late-night",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "Early evening in a bright modern office. the woman in the grey blazer with her hair pulled back from the reference image sits at her desk while behind her four team members in matching charcoal polo shirts with a thin lime-green collar stripe work calmly and efficiently at screens facing away from camera. A friendly coworker in a denim jacket leans in and asks: \"Want to grab dinner?\" Maya glances back at her busy team, smiles, and says: \"Yeah... I think they've got it from here.\" She grabs her bag and stands up.",
+      "request_id": "5bd04617-6835-44ab-98f0-6821344ce21c",
+      "status": "in_progress"
+    },
+    {
+      "id": "sE_rick_saturday",
+      "scene": "7-saturday",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "Saturday morning in a sunny family kitchen. the tired man in the rumpled white shirt and loose tie from the reference image, now in a wrinkled polo shirt, hunches over a laptop and piles of paperwork at the kitchen table. His wife, in a team sports hoodie and holding car keys, stands in the doorway with two kids in soccer uniforms behind her and says: \"Honey, it's Saturday. The kids have a game today.\" He looks up guiltily: \"I know, I know. I'm coming.\"",
+      "request_id": "512879f5-7675-4254-87eb-2da069fa56ee",
+      "status": "in_progress"
+    },
+    {
+      "id": "sF_manny_grab",
+      "scene": "7-saturday",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "In the same sunny family kitchen, the tired man in the rumpled white shirt and loose tie from the second reference image stands up from the table to leave. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image suddenly appears beside him, grabs his arm firmly and says with a wicked grin: \"Not so fast. You're with me today.\" Then he throws his head back and lets out a big theatrical villain laugh. Comedic.",
+      "request_id": "7f44958d-aae0-478f-9efb-a7f898dfdfac",
+      "status": "in_progress"
+    },
+    {
+      "id": "sG_breakup",
+      "scene": "8-the-switch",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A cluttered office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image clings to the arm of the tired man in the rumpled white shirt and loose tie from the second reference image. The tired man finally pulls his arm free, stands tall and says firmly: \"I can't do this anymore.\" The cardigan man, wounded and pleading, clutches his chest and says: \"But... it's always been us.\" Comedic breakup-scene drama, soap-opera lighting.",
+      "request_id": "8f46344f-d38a-4f52-ab82-e5428e6dda4d",
+      "status": "in_progress"
+    },
+    {
+      "id": "sH_rick_joins",
+      "scene": "8-the-switch",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A bright modern open-plan office. the tired man in the rumpled white shirt and loose tie from the second reference image walks up to the desk of the woman in the grey blazer with her hair pulled back from the first reference image, a little sheepish. She smiles warmly. One of her team members in matching charcoal polo shirts with a thin lime-green collar stripe rolls a chair over for him; he sits down, relieved, and she says: \"Welcome to the team.\" He exhales and laughs. Uplifting, warm light.",
+      "request_id": "76eab648-306d-4a94-83ff-cfe0ad4c7ef8",
+      "status": "in_progress"
+    },
+    {
+      "id": "sI_manny_alone",
+      "scene": "8-the-switch",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "Night. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits alone in a dark, empty office on an overturned box of paper files, under one flickering fluorescent light. He looks around the empty room and calls out hopefully: \"Anybody? ... Anybody need a spreadsheet?\" Silence. A single sheet of paper drifts to the floor. Comedic, melancholy.",
+      "request_id": "56d50669-1dca-4630-9312-5656fab5af42",
+      "status": "in_progress"
+    },
+    {
+      "id": "s0_cold_open_bob",
+      "scene": "0-cold-open",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Bob. Bogged Down Bob. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man groans. Comedic, punchy, slight push-in.",
+      "request_id": "cd59a9ca-9801-4508-8579-5053d8a883b4",
+      "status": "in_progress"
     }
   ],
   "reused": {
@@ -409,5 +601,10 @@
   "published_cuts": {
     "v1_1080p": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/2d4edc22-fe35-47c1-82d2-17916713b9fb.mp4",
     "v1_720p": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/b86cba2f-d360-4c37-ad74-9a810c706939.mp4"
+  },
+  "characters": {
+    "rick": "Rick, the old-way rep",
+    "maya": "Maya, the Quantum-way rep",
+    "busywork": "Bogged Down Bob (Busywork), the Mayhem-style villain"
   }
 }

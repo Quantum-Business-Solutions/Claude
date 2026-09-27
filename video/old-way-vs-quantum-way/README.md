@@ -1,7 +1,10 @@
 # The Old Way vs. The Quantum Way
 
 Quantum's ad series: every scene is one real sales or marketing task, done the old way (Rick, buried by
-Busywork) and the Quantum way (Maya, calm and winning). Built to grow one scene at a time.
+Bogged Down Bob, our Mayhem-style villain, ref id `busywork`) and the Quantum way (Maya and her team: an
+assistant, a conveyor belt of leads, an AI agent crew). A selling-time scoreboard runs through the week
+(Rick 4h 12m vs Maya 42h, marked as a dramatization). v1 cut: `edit_v1.json`; current: `edit.json`.
+The running gag is Maya's glowing "Done." button (not Staples' "That was easy", which is their trademark).
 
 ## Files
 

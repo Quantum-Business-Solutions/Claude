@@ -22,7 +22,7 @@ def run(cmd):
 
 
 def tag_png(text, color):
-    out = os.path.join(B, "tmp", "tag_%s.png" % text.replace(" ", "_"))
+    out = os.path.join(B, "tmp", "tag_%s_%s.png" % (text.replace(" ", "_").replace("/", "_"), color.replace("#", "").replace(":", "")))
     if not os.path.exists(out):
         os.makedirs(os.path.dirname(out), exist_ok=True)
         subprocess.run(["node", os.path.join(B, "render_inserts.js"), "--tag", text, color, out], check=True,

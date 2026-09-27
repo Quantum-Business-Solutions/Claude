@@ -1,5 +1,5 @@
 {
-  "output": "old-way-vs-quantum-way-v2.mp4",
+  "output": "old-way-vs-quantum-way.mp4",
   "notes": "Timeline. Each scene is independent: add a scene block (or segments) and run build/build.py. Clip files come from shots.json via build/hf.py. Inserts are HTML screens in inserts/insert.html rendered frame by frame. *_comp clips are green-screen shots with a screen insert composited in by build/screen_replace.py.",
   "scenes": [
     {
@@ -7,7 +7,7 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/s0_cold_open_bob.mp4",
+          "file": "clips/s0_cold_open.mp4",
           "in": 0,
           "out": 8
         },
@@ -70,12 +70,6 @@
           "file": "clips/s1d_maya_reply.mp4",
           "in": 0,
           "out": 8
-        },
-        {
-          "type": "insert",
-          "name": "score_1",
-          "secs": 3.0,
-          "zoom": 1.0
         }
       ]
     },
@@ -106,22 +100,6 @@
           "type": "insert",
           "name": "hs_brief",
           "secs": 3.2
-        },
-        {
-          "type": "clip",
-          "file": "clips/sA_assistant.mp4",
-          "in": 0,
-          "out": 7,
-          "tag": {
-            "text": "RUNG 01 \u00b7 ASSISTANT",
-            "color": "dark:#4DE8FF"
-          }
-        },
-        {
-          "type": "insert",
-          "name": "score_2",
-          "secs": 3.0,
-          "zoom": 1.0
         }
       ]
     },
@@ -152,12 +130,6 @@
           "type": "insert",
           "name": "notetaker",
           "secs": 3.6
-        },
-        {
-          "type": "insert",
-          "name": "score_3",
-          "secs": 3.0,
-          "zoom": 1.0
         }
       ]
     },
@@ -194,18 +166,6 @@
           "type": "insert",
           "name": "hs_log",
           "secs": 4.0
-        },
-        {
-          "type": "clip",
-          "file": "clips/sC_done_button.mp4",
-          "in": 0,
-          "out": 4
-        },
-        {
-          "type": "insert",
-          "name": "score_4",
-          "secs": 3.0,
-          "zoom": 1.0
         }
       ]
     },
@@ -237,16 +197,6 @@
           "name": "lead_finder",
           "secs": 4.0,
           "zoom": 1.03
-        },
-        {
-          "type": "clip",
-          "file": "clips/sB_conveyor.mp4",
-          "in": 0,
-          "out": 7,
-          "tag": {
-            "text": "RUNG 02 \u00b7 AUTOMATION",
-            "color": "dark:#FFB43C"
-          }
         }
       ]
     },
@@ -278,88 +228,18 @@
           "name": "agent_team",
           "secs": 3.4,
           "zoom": 1.03
-        },
-        {
-          "type": "clip",
-          "file": "clips/sD_agents_dinner.mp4",
-          "in": 0,
-          "out": 8,
-          "tag": {
-            "text": "RUNG 03 \u00b7 AGENTS",
-            "color": "dark:#B6FF3C"
-          }
-        },
-        {
-          "type": "insert",
-          "name": "score_5",
-          "secs": 3.0,
-          "zoom": 1.0
         }
       ]
     },
     {
-      "id": "7-saturday",
+      "id": "7-finale",
       "segments": [
         {
           "type": "clip",
-          "file": "clips/sE_rick_saturday.mp4",
-          "in": 0,
-          "out": 8,
-          "tag": {
-            "text": "THE OLD WAY",
-            "color": "#FFB43C"
-          }
-        },
-        {
-          "type": "clip",
-          "file": "clips/sF_manny_grab.mp4",
-          "in": 0,
-          "out": 7
-        },
-        {
-          "type": "insert",
-          "name": "score_final",
-          "secs": 4.0,
-          "zoom": 1.0
-        }
-      ]
-    },
-    {
-      "id": "8-the-switch",
-      "segments": [
-        {
-          "type": "clip",
-          "file": "clips/sG_breakup.mp4",
+          "file": "clips/s7a_busywork_finale.mp4",
           "in": 0,
           "out": 8
         },
-        {
-          "type": "clip",
-          "file": "clips/sH_rick_joins.mp4",
-          "in": 0,
-          "out": 8,
-          "tag": {
-            "text": "THE QUANTUM WAY",
-            "color": "#B6FF3C"
-          }
-        },
-        {
-          "type": "clip",
-          "file": "clips/sC_done_button.mp4",
-          "in": 0,
-          "out": 4
-        },
-        {
-          "type": "clip",
-          "file": "clips/sI_manny_alone.mp4",
-          "in": 0,
-          "out": 7
-        }
-      ]
-    },
-    {
-      "id": "9-finale",
-      "segments": [
         {
           "type": "clip",
           "file": "clips/s7b_maya_tagline.mp4",
