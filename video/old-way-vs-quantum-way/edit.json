@@ -461,7 +461,7 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/g8_stinger.mp4",
+          "file": "clips/g8_stinger_fix.mp4",
           "in": 0,
           "out": 8
         },
@@ -470,6 +470,18 @@
           "file": "clips/g9_available.mp4",
           "in": 0,
           "out": 7
+        },
+        {
+          "type": "clip",
+          "file": "clips/g10_cta.mp4",
+          "in": 0,
+          "out": 6
+        },
+        {
+          "type": "insert",
+          "name": "logo_card",
+          "secs": 3.0,
+          "zoom": 1.0
         }
       ]
     }
@@ -484,8 +496,8 @@
     "6-late-night": "m1_theme",
     "7-saturday": "m2_bob_theme",
     "8-the-switch": "m2_bob_theme",
-    "9-the-game": "m3_finale",
-    "10-finale": "m3_finale",
+    "9-the-game": "m3b_finale",
+    "10-finale": "m3b_finale",
     "11-post-credits": "m2_bob_theme"
   }
 }

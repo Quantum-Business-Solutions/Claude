@@ -127,7 +127,8 @@ SCENES.title=function(t){var a=Math.min(1,t/0.25),b=Math.min(1,Math.max(0,(t-0.5
  return '<div style="position:absolute;inset:0;background:#06070C;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Anton,Impact,sans-serif;text-transform:uppercase">'+
  '<div style="font-size:190px;line-height:.95;color:#FFB43C;transform:scale('+(1.6-0.6*a)+');opacity:'+a+'">The Old Way</div>'+
  '<div style="font-size:70px;color:#8A93AB;margin:18px 0;opacity:'+c+'">vs.</div>'+
- '<div style="font-size:190px;line-height:.95;color:#B6FF3C;transform:scale('+(1.6-0.6*b)+');opacity:'+b+'">The Quantum Way</div></div>'};
+ '<div style="font-size:190px;line-height:.95;color:#B6FF3C;transform:scale('+(1.6-0.6*b)+');opacity:'+b+';display:flex;align-items:center;gap:40px"><img src="'+A+'quantum-q.png" style="height:170px">The Quantum Way</div></div>'};
+SCENES.logo_card=function(t){var a=Math.min(1,t/0.35),b=Math.min(1,Math.max(0,(t-0.6)/0.4));return '<div style="position:absolute;inset:0;background:#06070C;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px">'+'<div style="font-family:Anton;font-size:150px;text-transform:uppercase;color:#fff;opacity:'+a+'">Leave Bob <span style="color:#B6FF3C">behind.</span></div>'+'<img src="'+A+'quantum-white.png" style="height:100px;opacity:'+b+'"><div style="font:500 30px \'DM Sans\';letter-spacing:.14em;color:#B9C1D4;opacity:'+b+'">thequantumleap.business</div></div>'};
 /* Rick's old CRM locks him out (scene 2 gag) */
 SCENES.password=function(t){var tries=Math.min(3,1+Math.floor(t/1.1)),shake=(t%1.1)<0.25?Math.sin(t*90)*10:0;
  return '<div class="stage" style="background:#D9DCE1"></div><div style="position:absolute;left:560px;top:190px;width:800px;background:#fff;border:1px solid #B8BEC8;border-radius:6px;box-shadow:0 30px 80px -20px rgba(0,0,0,.45);font-family:\'DM Sans\';transform:translateX('+shake+'px)">'+

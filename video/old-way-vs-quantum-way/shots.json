@@ -6,7 +6,8 @@
     "maya": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/bf8da5ad-93b3-4ed3-a825-fba6c84440af.jpeg",
     "busywork": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/bac57b4c-8f34-43cf-9e75-e9f9c8099015.jpeg",
     "wife": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/d32e2d82-1508-4d1b-af32-6b8b0c9be542.jpeg",
-    "kid": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/0ab63855-f419-4b63-b1e0-9f94d18d5e13.jpeg"
+    "kid": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/0ab63855-f419-4b63-b1e0-9f94d18d5e13.jpeg",
+    "exec": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/f6a44e17-3f82-4dbe-b452-f66d47daff71.jpeg"
   },
   "shots": [
     {
@@ -1169,7 +1170,9 @@
       },
       "prompt": "Saturday morning in a sunny family kitchen. the man from the first reference image, now dressed casually in a plain navy polo shirt, no tie hunches over a laptop and piles of paperwork at the kitchen table. His wife, the woman from the second reference image in a plain grey hoodie, holds car keys in the doorway beside their son, the boy from the third reference image in a plain blue soccer jersey. She says: \"Honey, it's Saturday. The kids have a game today.\" He looks up guiltily: \"I know, I know. I'm coming.\" No text on clothing.",
       "request_id": "ed326fd0-5adf-46ae-8b6c-3b236cfe40fb",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/eebcabc3-0e37-454c-b2d1-67bc39197714.mp4",
+      "file": "clips/sE_saturday_fix.mp4"
     },
     {
       "id": "sF_grab_fix",
@@ -1187,7 +1190,9 @@
       },
       "prompt": "In a sunny family kitchen, the man from the second reference image, dressed casually in a plain navy polo shirt, stands up from the table to leave. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image suddenly appears beside him, grabs his arm firmly and says with a wicked grin: \"Not so fast. You're with me today.\" Then he throws his head back in a big theatrical villain laugh. Comedic.",
       "request_id": "afe26a50-f0c1-4ca1-bb40-777de8c89b7e",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/2d2bf749-6a48-4ab6-91b1-612a20f24ce8.mp4",
+      "file": "clips/sF_grab_fix.mp4"
     },
     {
       "id": "sG2_knew_your_dad",
@@ -1205,7 +1210,9 @@
       },
       "prompt": "A cluttered office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image clutches the sleeve of the tired man in the rumpled white shirt and loose tie from the second reference image and pleads earnestly: \"But I knew your dad! He's the one who introduced us. He wanted us to have the exact same relationship.\" The tired man pauses, looks torn for a moment, then shakes his head. Soap-opera comedy lighting.",
       "request_id": "8e37a4ca-3f89-4d3c-a87a-f3013dea16fc",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/2e175cf6-5906-4c59-b8c3-4c07199acfb6.mp4",
+      "file": "clips/sG2_knew_your_dad.mp4"
     },
     {
       "id": "sK_game_fix",
@@ -1223,7 +1230,9 @@
       },
       "prompt": "A sunny youth soccer field on a Saturday. the man from the first reference image, now dressed casually in a plain navy polo shirt, no tie, relaxed, arrives on the sideline beside his wife, the woman from the second reference image in a plain grey hoodie. She looks around behind him and asks, teasing: \"Honey... where's Bog Down Bob?\" He smiles and says: \"I don't think we'll be seeing much of him anymore.\" Warm golden light, families cheering in the background. No text on clothing.",
       "request_id": "63b489e1-a5f3-44f1-ade7-ab6d1096aaec",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/243a2434-99ac-4157-8b4e-ef867ef4456c.mp4",
+      "file": "clips/sK_game_fix.mp4"
     },
     {
       "id": "sL_kid_fix2",
@@ -1241,7 +1250,9 @@
       },
       "prompt": "A sunny youth soccer field. The boy from the second reference image, in a plain blue soccer jersey with no numbers, sprints across the grass toward the man from the first reference image, now dressed casually in a plain navy polo shirt, no tie and shouts loudly and clearly in a child's voice: \"Daddy! You made it!\" He leaps into his dad's arms for a big hug; the dad laughs and spins him around. Heartwarming, golden hour.",
       "request_id": "94337d3a-c35f-4eab-9ed6-e7c4d3f474a8",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4b2ab31a-688a-4117-9b2f-1176654f9a2d.mp4",
+      "file": "clips/sL_kid_fix2.mp4"
     },
     {
       "id": "g9_available",
@@ -1258,7 +1269,57 @@
       },
       "prompt": "A bright modern office lobby. The grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits alone on a bench holding a box of paper files, looking dejected. A confident, polished businesswoman in a sharp navy suit strides past. He instantly perks up, straightens his lanyard, and says hopefully: \"Hey... I'm available now.\" She barely glances at him, scoffs, and says without slowing down: \"Pass. We use Quantum.\" She keeps walking; he deflates. Comedic final beat.",
       "request_id": "767229db-bc5b-4c32-9b41-70bfc441fe5f",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/a167dc1e-2108-400d-a05e-13eb91776661.mp4",
+      "file": "clips/g9_available.mp4"
+    },
+    {
+      "id": "g10_cta",
+      "scene": "11-post-credits",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "exec"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 6
+      },
+      "prompt": "The confident businesswoman in the navy suit from the reference image stands in a bright modern office lobby, stops, turns to look straight into the camera with a knowing half-smile, raises one eyebrow and asks clearly: \"Are you letting Bob hang out in your organization?\" She holds the look for a beat. Crisp, confident, direct to camera.",
+      "request_id": "f7840e78-2f49-44ae-8487-3d2e4bc6bde0",
+      "status": "queued"
+    },
+    {
+      "id": "g8_stinger_fix",
+      "scene": "11-post-credits",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "maya"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A bright modern office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image shuffles up to the desk of the woman in the grey blazer from the second reference image and says hopefully: \"Hi, I'm Bob. Got any manual processes?\" She smiles politely and taps a large glowing lime-green button on her desk. Two team members in matching charcoal polo shirts appear at his sides and gently walk him away by the elbows as he says: \"I'll see myself out.\" Comedic button ending.",
+      "request_id": "d3be3e7c-741d-47c2-81f2-3962176a8625",
+      "status": "queued"
+    },
+    {
+      "id": "m3b_finale",
+      "scene": "music",
+      "model": "kling-video/v3.0/pro/text-to-video",
+      "params": {
+        "duration": 15,
+        "aspect_ratio": "16:9",
+        "sound": "on"
+      },
+      "prompt": "Slow abstract dark background with soft warm golden light particles drifting. No people, no text. Sound: solo piano with soft strings, warm, hopeful, heartfelt instrumental score for the end of a TV commercial. Purely instrumental: absolutely no voices, no vocals, no singing, no humming, no lyrics, no speech.",
+      "request_id": "723cae25-d4de-46b7-8513-8f1c27906b99",
+      "status": "queued"
     }
   ],
   "reused": {
