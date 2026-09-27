@@ -1,5 +1,5 @@
 {
-  "output": "old-way-vs-quantum-way-v3.mp4",
+  "output": "old-way-vs-quantum-way-v2.mp4",
   "notes": "Timeline. Each scene is independent: add a scene block (or segments) and run build/build.py. Clip files come from shots.json via build/hf.py. Inserts are HTML screens in inserts/insert.html rendered frame by frame. *_comp clips are green-screen shots with a screen insert composited in by build/screen_replace.py.",
   "scenes": [
     {
@@ -31,12 +31,6 @@
             "text": "THE OLD WAY",
             "color": "#FFB43C"
           }
-        },
-        {
-          "type": "clip",
-          "file": "clips/g1_bob_voicemail.mp4",
-          "in": 0,
-          "out": 5
         },
         {
           "type": "clip",
@@ -99,12 +93,6 @@
           }
         },
         {
-          "type": "insert",
-          "name": "password",
-          "secs": 3.2,
-          "zoom": 1.0
-        },
-        {
           "type": "clip",
           "file": "clips/s2b_maya_screen_comp.mp4",
           "in": 0,
@@ -128,12 +116,6 @@
             "text": "RUNG 01 \u00b7 ASSISTANT",
             "color": "dark:#4DE8FF"
           }
-        },
-        {
-          "type": "clip",
-          "file": "clips/g5_coffee.mp4",
-          "in": 0,
-          "out": 5
         },
         {
           "type": "insert",
@@ -242,18 +224,6 @@
         },
         {
           "type": "clip",
-          "file": "clips/g2_bob_spreadsheet.mp4",
-          "in": 0,
-          "out": 6
-        },
-        {
-          "type": "clip",
-          "file": "clips/g4_copier_jam.mp4",
-          "in": 0,
-          "out": 7
-        },
-        {
-          "type": "clip",
           "file": "clips/s5b_maya_contracts.mp4",
           "in": 0,
           "out": 8,
@@ -277,12 +247,6 @@
             "text": "RUNG 02 \u00b7 AUTOMATION",
             "color": "dark:#FFB43C"
           }
-        },
-        {
-          "type": "clip",
-          "file": "clips/g6_conveyor_fast.mp4",
-          "in": 0,
-          "out": 6
         }
       ]
     },
@@ -298,17 +262,6 @@
             "text": "THE OLD WAY",
             "color": "#FFB43C"
           }
-        },
-        {
-          "type": "clip",
-          "file": "clips/g3_bob_emails.mp4",
-          "in": 0,
-          "out": 5
-        },
-        {
-          "type": "insert",
-          "name": "inbox",
-          "secs": 3.2
         },
         {
           "type": "clip",
@@ -349,7 +302,7 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/sE_saturday_fix.mp4",
+          "file": "clips/sE_rick_saturday.mp4",
           "in": 0,
           "out": 8,
           "tag": {
@@ -359,7 +312,7 @@
         },
         {
           "type": "clip",
-          "file": "clips/sF_grab_fix.mp4",
+          "file": "clips/sF_manny_grab.mp4",
           "in": 0,
           "out": 7
         },
@@ -379,18 +332,6 @@
           "file": "clips/sG_breakup.mp4",
           "in": 0,
           "out": 8
-        },
-        {
-          "type": "clip",
-          "file": "clips/sG2_knew_your_dad.mp4",
-          "in": 0,
-          "out": 8
-        },
-        {
-          "type": "clip",
-          "file": "clips/g7_fax_photo.mp4",
-          "in": 0,
-          "out": 6
         },
         {
           "type": "clip",
@@ -427,13 +368,13 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/sK_game_fix.mp4",
+          "file": "clips/sK_game_wife.mp4",
           "in": 0,
           "out": 8
         },
         {
           "type": "clip",
-          "file": "clips/sL_kid_fix2.mp4",
+          "file": "clips/sL_kid_runs_fix.mp4",
           "in": 0,
           "out": 6
         }
@@ -455,37 +396,6 @@
           "zoom": 1.0
         }
       ]
-    },
-    {
-      "id": "11-post-credits",
-      "segments": [
-        {
-          "type": "clip",
-          "file": "clips/g8_stinger.mp4",
-          "in": 0,
-          "out": 8
-        },
-        {
-          "type": "clip",
-          "file": "clips/g9_available.mp4",
-          "in": 0,
-          "out": 7
-        }
-      ]
     }
-  ],
-  "music": {
-    "0-cold-open": "m2_bob_theme",
-    "1-the-dial": "m1_theme",
-    "2-research": "m1_theme",
-    "3-the-meeting": "m1_theme",
-    "4-parking-lot": "m1_theme",
-    "5-contracts": "m1_theme",
-    "6-late-night": "m1_theme",
-    "7-saturday": "m2_bob_theme",
-    "8-the-switch": "m2_bob_theme",
-    "9-the-game": "m3_finale",
-    "10-finale": "m3_finale",
-    "11-post-credits": "m2_bob_theme"
-  }
+  ]
 }

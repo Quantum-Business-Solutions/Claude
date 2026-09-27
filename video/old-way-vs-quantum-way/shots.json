@@ -4,7 +4,9 @@
   "refs": {
     "rick": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/9bcd5329-516a-4635-8371-3f4981e51cfb.jpeg",
     "maya": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/bf8da5ad-93b3-4ed3-a825-fba6c84440af.jpeg",
-    "busywork": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/bac57b4c-8f34-43cf-9e75-e9f9c8099015.jpeg"
+    "busywork": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/bac57b4c-8f34-43cf-9e75-e9f9c8099015.jpeg",
+    "wife": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/d32e2d82-1508-4d1b-af32-6b8b0c9be542.jpeg",
+    "kid": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/0ab63855-f419-4b63-b1e0-9f94d18d5e13.jpeg"
   },
   "shots": [
     {
@@ -806,7 +808,9 @@
       },
       "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Bob. Bog Down Bob. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man drops his head into his hands. Only the cardigan man speaks. Comedic, punchy, slight push-in.",
       "request_id": "ee428a25-4090-4559-8bf3-b74085ed406a",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/6b3129da-f8cb-47e9-b4fd-830948073a03.mp4",
+      "file": "clips/s0_cold_open_fix.mp4"
     },
     {
       "id": "s1e_bob_list_fix",
@@ -881,7 +885,9 @@
       },
       "prompt": "Night. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits alone in a dark, empty office on an overturned box of paper files, under one flickering fluorescent light. He looks around the empty room and calls out hopefully: \"Anybody? ... Anybody need some data entry?\" Nobody answers. A single sheet of paper drifts to the floor. Comedic, melancholy.",
       "request_id": "f1bee4c7-547a-4bff-bd76-4dee67db5499",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/d53076a9-fe77-483b-bc41-9459d315de57.mp4",
+      "file": "clips/sI_bob_alone_fix.mp4"
     },
     {
       "id": "sL_kid_runs_fix",
@@ -898,7 +904,9 @@
       },
       "prompt": "A sunny youth soccer field. A joyful seven-year-old boy in a soccer uniform sprints across the grass toward the tired man in the rumpled white shirt and loose tie from the reference image and shouts loudly and clearly in a child's voice: \"Daddy! You made it!\" He leaps into his dad's arms for a big hug; the dad laughs and spins him around. Heartwarming, golden hour.",
       "request_id": "7f360d37-8cdd-4f38-ad31-71e2fb5785cd",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/79e2b608-dbea-40d8-98b5-f1c3a1e2351e.mp4",
+      "file": "clips/sL_kid_runs_fix.mp4"
     },
     {
       "id": "s6b_maya_jog",
@@ -928,7 +936,9 @@
       },
       "prompt": "Photorealistic portrait of a warm, friendly American woman around forty, shoulder-length wavy brown hair, wearing a grey youth-soccer team hoodie, holding car keys, standing in a bright suburban kitchen, gentle smile, looking at the camera. Cinematic natural light, 35mm, shallow depth of field. No text, no letters, no logos.",
       "request_id": "bcb9087b-87b5-47b3-a997-7136b44a827a",
-      "status": "queued"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/a668c9ea-9e2e-4e96-acca-8dbba6b15ed3.png",
+      "file": "clips/wife_ref.png"
     },
     {
       "id": "kid_ref",
@@ -939,7 +949,9 @@
       },
       "prompt": "Photorealistic portrait of a cheerful seven-year-old American boy with messy light-brown hair and a gap-toothed grin, wearing a plain royal-blue soccer jersey with no numbers or text, standing on a sunny soccer field, looking at the camera. Cinematic golden-hour light, 35mm. No text, no letters, no logos, no numbers.",
       "request_id": "14876382-45b8-4233-a8ec-4114d0b92838",
-      "status": "queued"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/edef31c7-0178-4d75-8dd4-b7b31dc6d6d5.png",
+      "file": "clips/kid_ref.png"
     },
     {
       "id": "g1_bob_voicemail",
@@ -956,7 +968,9 @@
       },
       "prompt": "In a drab office bullpen, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image leans into the camera holding a beige desk phone receiver to his ear, grins and says smugly: \"I'm the voicemail you'll never hear back from.\" Mayhem-style comedic character monologue, direct to camera.",
       "request_id": "b2b586c7-f52b-4450-a415-e7d8a04afdd7",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/602691a1-54c4-4e41-9178-c15ae3291932.mp4",
+      "file": "clips/g1_bob_voicemail.mp4"
     },
     {
       "id": "g2_bob_spreadsheet",
@@ -973,7 +987,9 @@
       },
       "prompt": "In a cluttered office, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image holds up a thick stack of printed pages beside a monitor that faces away from camera, looks into the camera and says proudly: \"I'm the spreadsheet named final, final, version three.\" Mayhem-style comedic direct-to-camera.",
       "request_id": "0abb8a97-4c92-4519-9f89-a07903b68b7c",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/c9c8f956-a61b-4a81-a389-4a13be60ec52.mp4",
+      "file": "clips/g2_bob_spreadsheet.mp4"
     },
     {
       "id": "g3_bob_emails",
@@ -990,7 +1006,9 @@
       },
       "prompt": "Night in a dark office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image stands in a shower of falling paper envelopes, arms spread wide like a showman, and says to the camera with delight: \"I'm the two hundred unread emails.\" Mayhem-style comedic direct-to-camera.",
       "request_id": "88da611e-56df-45d4-b27f-434c4a9c5e2a",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/5046f70c-576a-46f7-958b-e0ffaef1af6c.mp4",
+      "file": "clips/g3_bob_emails.mp4"
     },
     {
       "id": "g4_copier_jam",
@@ -1008,7 +1026,9 @@
       },
       "prompt": "In an office copy room, the tired man in the rumpled white shirt and loose tie from the second reference image waits anxiously at a big office copier printing his proposal. The copier suddenly jams, grinds to a halt and its warning light blinks. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image pops up from behind the copier with a grin and says: \"I jammed it. You're welcome.\" The tired man stares in disbelief. Comedic, no text on the copier display.",
       "request_id": "69939cb7-30a4-440e-9cf6-ba8a3671fe28",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/12f4eadb-5889-4547-85ab-446b2f3c66d6.mp4",
+      "file": "clips/g4_copier_jam.mp4"
     },
     {
       "id": "g5_coffee",
@@ -1025,7 +1045,9 @@
       },
       "prompt": "At a bright modern desk, the woman in the grey blazer with her hair pulled back from the reference image reaches out her hand without looking up from her work; one of her team members in matching charcoal polo shirts with a thin lime-green collar stripe smoothly places a coffee cup into her hand and says: \"Oat milk, two shots.\" She smiles: \"You're the best.\" Crisp comedic timing.",
       "request_id": "21aaec31-c167-4b02-92aa-825082786158",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/fc20d6f2-c860-4e76-9902-2c8583e962b4.mp4",
+      "file": "clips/g5_coffee.mp4"
     },
     {
       "id": "g6_conveyor_fast",
@@ -1042,7 +1064,9 @@
       },
       "prompt": "Beside the desk of the woman in the grey blazer with her hair pulled back from the reference image, a sleek white conveyor belt suddenly speeds up, and neat folders start piling up on her desk. She laughs and says: \"Okay, okay!\" One of her team members in matching charcoal polo shirts with a thin lime-green collar stripe calmly turns a dial on the side of the belt and it slows down. She nods to him: \"Thank you.\" Playful, no text on the folders.",
       "request_id": "7429e2e5-76e4-4db5-b9f6-77331b1430ca",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/34be1c7a-2d62-49e2-8863-09fa8698aceb.mp4",
+      "file": "clips/g6_conveyor_fast.mp4"
     },
     {
       "id": "g7_fax_photo",
@@ -1059,7 +1083,9 @@
       },
       "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits on the edge of a desk, tearfully clutching a framed photograph of an old fax machine to his chest, and says wistfully: \"Remember the fax machine? ... Good times.\" He sniffles. Melodramatic comedy, soft sad lighting.",
       "request_id": "5c55181c-da54-4b74-8f99-bdc211157851",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/3a5fe494-3b3f-4dc5-90e3-4f6a226fbeab.mp4",
+      "file": "clips/g7_fax_photo.mp4"
     },
     {
       "id": "g8_stinger",
@@ -1077,7 +1103,9 @@
       },
       "prompt": "A bright modern office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image shuffles up to the desk of the woman in the grey blazer with her hair pulled back from the second reference image and says hopefully: \"Hi, I'm Bob. Got any manual processes?\" She smiles politely and taps a large glowing lime-green button on her desk. Two team members in matching charcoal polo shirts with a thin lime-green collar stripe appear at his sides and gently escort him away by the elbows as he says: \"I'll show myself out.\" Comedic button ending.",
       "request_id": "2ba37af6-a612-4015-b035-be9adcdf10c7",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4e4f5f6d-309e-4d65-adeb-589eb8fb0b97.mp4",
+      "file": "clips/g8_stinger.mp4"
     },
     {
       "id": "m1_theme",
@@ -1090,7 +1118,9 @@
       },
       "prompt": "Slow abstract dark background with soft glowing lime-green light particles drifting gently. No people, no text. Sound: Upbeat, playful, quirky comedic TV commercial instrumental music, bouncy pizzicato strings, plucky bass, light hand percussion, whistled melody, confident and fun, steady tempo. Instrumental music only, no vocals, no speech, no singing.",
       "request_id": "754c2dfd-4ede-47df-a849-b5dcf41bc813",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/c0b4aff7-3536-409c-821b-4cbcb6717880.mp4",
+      "file": "clips/m1_theme.mp4"
     },
     {
       "id": "m2_bob_theme",
@@ -1103,7 +1133,9 @@
       },
       "prompt": "Slow abstract dark background with soft glowing lime-green light particles drifting gently. No people, no text. Sound: Sneaky, mischievous comedic villain instrumental theme, tiptoeing pizzicato strings, tuba, bassoon, playful and cartoonish, steady tempo. Instrumental music only, no vocals, no speech, no singing.",
       "request_id": "9a8216c9-41a9-4c10-bccc-69ae230e1b82",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/42778b48-e9f1-4c49-a667-511a9be1d792.mp4",
+      "file": "clips/m2_bob_theme.mp4"
     },
     {
       "id": "m3_finale",
@@ -1116,6 +1148,116 @@
       },
       "prompt": "Slow abstract dark background with soft glowing lime-green light particles drifting gently. No people, no text. Sound: Warm, uplifting, heartfelt instrumental commercial music, piano and strings building to a hopeful swell. Instrumental music only, no vocals, no speech, no singing.",
       "request_id": "b187b260-79a4-46f5-b6b5-de94888aaec9",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/71f0b1ac-b73d-45b3-b70b-e533fed0e1d3.mp4",
+      "file": "clips/m3_finale.mp4"
+    },
+    {
+      "id": "sE_saturday_fix",
+      "scene": "family",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick",
+        "wife",
+        "kid"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "Saturday morning in a sunny family kitchen. the man from the first reference image, now dressed casually in a plain navy polo shirt, no tie hunches over a laptop and piles of paperwork at the kitchen table. His wife, the woman from the second reference image in a plain grey hoodie, holds car keys in the doorway beside their son, the boy from the third reference image in a plain blue soccer jersey. She says: \"Honey, it's Saturday. The kids have a game today.\" He looks up guiltily: \"I know, I know. I'm coming.\" No text on clothing.",
+      "request_id": "ed326fd0-5adf-46ae-8b6c-3b236cfe40fb",
+      "status": "in_progress"
+    },
+    {
+      "id": "sF_grab_fix",
+      "scene": "family",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "In a sunny family kitchen, the man from the second reference image, dressed casually in a plain navy polo shirt, stands up from the table to leave. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image suddenly appears beside him, grabs his arm firmly and says with a wicked grin: \"Not so fast. You're with me today.\" Then he throws his head back in a big theatrical villain laugh. Comedic.",
+      "request_id": "afe26a50-f0c1-4ca1-bb40-777de8c89b7e",
+      "status": "in_progress"
+    },
+    {
+      "id": "sG2_knew_your_dad",
+      "scene": "family",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A cluttered office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image clutches the sleeve of the tired man in the rumpled white shirt and loose tie from the second reference image and pleads earnestly: \"But I knew your dad! He's the one who introduced us. He wanted us to have the exact same relationship.\" The tired man pauses, looks torn for a moment, then shakes his head. Soap-opera comedy lighting.",
+      "request_id": "8e37a4ca-3f89-4d3c-a87a-f3013dea16fc",
+      "status": "in_progress"
+    },
+    {
+      "id": "sK_game_fix",
+      "scene": "family",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick",
+        "wife"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A sunny youth soccer field on a Saturday. the man from the first reference image, now dressed casually in a plain navy polo shirt, no tie, relaxed, arrives on the sideline beside his wife, the woman from the second reference image in a plain grey hoodie. She looks around behind him and asks, teasing: \"Honey... where's Bog Down Bob?\" He smiles and says: \"I don't think we'll be seeing much of him anymore.\" Warm golden light, families cheering in the background. No text on clothing.",
+      "request_id": "63b489e1-a5f3-44f1-ade7-ab6d1096aaec",
+      "status": "in_progress"
+    },
+    {
+      "id": "sL_kid_fix2",
+      "scene": "family",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick",
+        "kid"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 6
+      },
+      "prompt": "A sunny youth soccer field. The boy from the second reference image, in a plain blue soccer jersey with no numbers, sprints across the grass toward the man from the first reference image, now dressed casually in a plain navy polo shirt, no tie and shouts loudly and clearly in a child's voice: \"Daddy! You made it!\" He leaps into his dad's arms for a big hug; the dad laughs and spins him around. Heartwarming, golden hour.",
+      "request_id": "94337d3a-c35f-4eab-9ed6-e7c4d3f474a8",
+      "status": "in_progress"
+    },
+    {
+      "id": "g9_available",
+      "scene": "11-post-credits",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "A bright modern office lobby. The grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits alone on a bench holding a box of paper files, looking dejected. A confident, polished businesswoman in a sharp navy suit strides past. He instantly perks up, straightens his lanyard, and says hopefully: \"Hey... I'm available now.\" She barely glances at him, scoffs, and says without slowing down: \"Pass. We use Quantum.\" She keeps walking; he deflates. Comedic final beat.",
+      "request_id": "767229db-bc5b-4c32-9b41-70bfc441fe5f",
       "status": "in_progress"
     }
   ],
