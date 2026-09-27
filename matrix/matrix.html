@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The AI Task Matrix · Quantum</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#06070C;--panel:#0D0F17;--line:rgba(255,255,255,.1);--text:#E9EDF5;--dim:#8A93AB;--today:#9AA3BA;--as:#4DE8FF;--au:#FFB43C;--ag:#B6FF3C;--hot:linear-gradient(100deg,#FFC94B,#FF6B4A)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ink);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+header{padding:28px 5vw 10px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+header img{height:30px}
+header .back{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--dim);text-decoration:none;border:1px solid var(--line);padding:9px 16px;border-radius:99px}
+header .back:hover{color:var(--ink);background:var(--au);border-color:var(--au)}
+.hero{padding:4vh 5vw 2vh;max-width:1500px}
+.kick{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.1rem,2vw,1.5rem);color:var(--au);margin-bottom:12px}
+h1{font-family:'Anton',Impact,sans-serif;text-transform:uppercase;font-size:clamp(2.3rem,6vw,5.2rem);line-height:.95}
+h1 span{background:var(--hot);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{margin-top:18px;font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.55;color:#B9C1D4;max-width:48em}
+.rungs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:3vh 5vw 1vh;max-width:1500px}
+.rung{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.03);cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.rung::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--c)}
+.rung b{display:block;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.25rem;color:var(--c);letter-spacing:.02em}
+.rung span{display:block;font-size:.88rem;color:var(--dim);margin-top:4px;line-height:1.4}
+.rung.on{background:rgba(255,255,255,.08);border-color:var(--c)}
+.bar{position:sticky;top:0;z-index:5;background:rgba(6,7,12,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 5vw;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}
+.tabs button,.bar select,.bar input{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--text);border-radius:99px;padding:9px 16px;font:600 13px 'DM Sans',sans-serif;cursor:pointer}
+.tabs button.on{background:var(--au);color:var(--ink);border-color:var(--au)}
+.bar input{flex:1 1 220px;cursor:text;border-radius:12px}
+.bar select{border-radius:12px}
+.count{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:700;margin-left:auto}
+main{padding:2vh 5vw 10vh}
+.cat{margin-top:4vh}
+.cat h2{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(1.3rem,2.4vw,1.9rem);letter-spacing:.02em;margin-bottom:12px;display:flex;align-items:baseline;gap:12px}
+.cat h2 small{font:700 11px 'DM Sans',sans-serif;letter-spacing:.2em;color:var(--dim)}
+.cat h2 .role{font:700 10px 'DM Sans',sans-serif;letter-spacing:.2em;padding:4px 9px;border-radius:99px;background:rgba(255,255,255,.08);color:var(--dim)}
+table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+th{text-align:left;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:12px 14px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.03)}
+th.t{color:#fff;width:18%}th.td{color:var(--today);width:16%}th.as{color:var(--as)}th.au{color:var(--au)}th.ag{color:var(--ag)}
+td{padding:13px 14px;border-bottom:1px solid rgba(255,255,255,.06);vertical-align:top;font-size:.9rem;line-height:1.42;color:#C8CFDE}
+tr:last-child td{border-bottom:0}
+td.t{font-weight:700;color:#fff}
+td.td{color:var(--today);font-style:italic}
+td.as{border-left:2px solid rgba(77,232,255,.25)}td.au{border-left:2px solid rgba(255,180,60,.25)}td.ag{border-left:2px solid rgba(182,255,60,.25)}
+body.f-as td.as,body.f-au td.au,body.f-ag td.ag,body.f-td td.td{background:rgba(255,255,255,.06);color:#fff}
+body.f-as td:not(.as):not(.t),body.f-au td:not(.au):not(.t),body.f-ag td:not(.ag):not(.t),body.f-td td:not(.td):not(.t){opacity:.35}
+mark{background:rgba(255,180,60,.35);color:#fff;border-radius:3px;padding:0 2px}
+.empty{padding:6vh 0;text-align:center;color:var(--dim)}
+footer{padding:4vh 5vw 8vh;color:var(--dim);font-size:.85rem;line-height:1.6;border-top:1px solid var(--line)}
+@media(max-width:900px){
+ .rungs{grid-template-columns:repeat(2,1fr)}
+ table,thead,tbody,tr,td{display:block}thead{display:none}
+ tr{border-bottom:1px solid var(--line);padding:10px 0}
+ td{border:0!important;padding:6px 16px}
+ td::before{content:attr(data-l);display:block;font:700 10px 'DM Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:2px;font-style:normal}
+ td.td::before{color:var(--today)}td.as::before{color:var(--as)}td.au::before{color:var(--au)}td.ag::before{color:var(--ag)}td.t::before{display:none}
+ td.t{font-size:1rem;padding-top:10px}
+}
+</style></head><body>
+<header>
+ <img src="https://www.thequantumleap.business/hubfs/Quantum%20Logo%20White.png" alt="Quantum Business Solutions" onerror="this.outerHTML='<b style=&quot;letter-spacing:.18em&quot;>QUANTUM</b>'">
+ <a class="back" href="index.html">&larr; Back to the talk</a>
+</header>
+<section class="hero">
+ <div class="kick">The AI task matrix</div>
+ <h1>Every sales &amp; marketing task. <span>Three ways AI changes it.</span></h1>
+ <p class="lede">137 tasks your sales and marketing people do today, and what each one looks like at the three rungs: an <b style="color:var(--as)">assistant</b> you ask, an <b style="color:var(--au)">automation</b> that runs on a trigger, and an <b style="color:var(--ag)">agent</b> that decides what to do and brings it to you for approval. Tap a rung to highlight it.</p>
+</section>
+<div class="rungs">
+ <div class="rung" data-f="td" style="--c:var(--today)"><b>Today</b><span>How it has usually been done, by hand.</span></div>
+ <div class="rung" data-f="as" style="--c:var(--as)"><b>01 Assistant</b><span>You ask, it answers. You are the trigger every time.</span></div>
+ <div class="rung" data-f="au" style="--c:var(--au)"><b>02 Automation</b><span>Something else pulls the trigger. Nobody has to remember.</span></div>
+ <div class="rung" data-f="ag" style="--c:var(--ag)"><b>03 Agent</b><span>It decides what matters and acts. A human approves.</span></div>
+</div>
+<div class="bar">
+ <div class="tabs"><button data-r="" class="on">All</button><button data-r="S">Sales</button><button data-r="M">Marketing</button></div>
+ <select id="cat"><option value="">All categories</option></select>
+ <input id="q" type="search" placeholder="Search tasks, e.g. renewals, notes, LinkedIn">
+ <span class="count" id="count"></span>
+</div>
+<main id="out"></main>
+<footer>Task list: Quantum's BrandCommand sales and marketing automation matrices (89 sales, 48 marketing). The "today" column describes the typical historical approach, not any specific company. &copy; Quantum Business Solutions &middot; thequantumleap.business</footer>
+<script>
+(function(){
+var ROWS=[],role='',cat='',q='',out=document.getElementById('out'),catSel=document.getElementById('cat'),cnt=document.getElementById('count');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function hi(s){s=esc(s);if(!q)return s;var i=s.toLowerCase().indexOf(q);return i<0?s:s.slice(0,i)+'<mark>'+s.slice(i,i+q.length)+'</mark>'+s.slice(i+q.length)}
+function cats(){var seen={},h='<option value="">All categories</option>';ROWS.forEach(function(r){if(role&&r.r!==role)return;var k=r.c;if(!seen[k]){seen[k]=1;h+='<option value="'+esc(k)+'">'+esc(k)+'</option>'}});catSel.innerHTML=h;if(cat&&!seen[cat])cat='';catSel.value=cat}
+function render(){var groups=[],map={},n=0;
+ ROWS.forEach(function(r){if(role&&r.r!==role)return;if(cat&&r.c!==cat)return;
+  if(q&&[r.t,r.today,r.a,r.auto,r.agent,r.c].join(' ').toLowerCase().indexOf(q)<0)return;
+  var k=r.r+'|'+r.c;if(!map[k]){map[k]={r:r.r,c:r.c,rows:[]};groups.push(map[k])}map[k].rows.push(r);n++});
+ cnt.textContent=n+' of '+ROWS.length+' tasks';
+ if(!n){out.innerHTML='<div class="empty">No tasks match that search.</div>';return}
+ out.innerHTML=groups.map(function(g){return '<section class="cat"><h2>'+esc(g.c)+'<span class="role">'+(g.r==='S'?'Sales':'Marketing')+'</span><small>'+g.rows.length+(g.rows.length===1?' task':' tasks')+'</small></h2><table><thead><tr><th class="t">Task</th><th class="td">Today</th><th class="as">Assistant &middot; you ask</th><th class="au">Automation &middot; a trigger runs it</th><th class="ag">Agent &middot; it decides, you approve</th></tr></thead><tbody>'+
+  g.rows.map(function(r){return '<tr><td class="t">'+hi(r.t)+'</td><td class="td" data-l="Today">'+hi(r.today)+'</td><td class="as" data-l="Assistant">'+hi(r.a)+'</td><td class="au" data-l="Automation">'+hi(r.auto)+'</td><td class="ag" data-l="Agent">'+hi(r.agent)+'</td></tr>'}).join('')+'</tbody></table></section>'}).join('')}
+[].forEach.call(document.querySelectorAll('.tabs button'),function(b){b.onclick=function(){[].forEach.call(document.querySelectorAll('.tabs button'),function(x){x.classList.remove('on')});b.classList.add('on');role=b.getAttribute('data-r');cats();render()}});
+catSel.onchange=function(){cat=catSel.value;render()};
+document.getElementById('q').oninput=function(e){q=e.target.value.trim().toLowerCase();render()};
+[].forEach.call(document.querySelectorAll('.rung'),function(el){el.onclick=function(){var f=el.getAttribute('data-f'),on=el.classList.contains('on');
+ [].forEach.call(document.querySelectorAll('.rung'),function(x){x.classList.remove('on')});document.body.className='';if(!on){el.classList.add('on');document.body.className='f-'+f}}});
+fetch('matrix-data.txt').then(function(r){return r.text()}).then(function(t){
+ ROWS=t.split('\n').filter(function(l){return l.trim()&&l.charAt(0)!=='#'}).map(function(l){var p=l.split('|');return {r:p[0],c:p[1],t:p[2],today:p[3],a:p[4],auto:p[5],agent:p[6]}});
+ cats();render()}).catch(function(){out.innerHTML='<div class="empty">The task list could not be loaded. Refresh to try again.</div>'});
+})();
+</script>
+</body></html>

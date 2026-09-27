@@ -1,0 +1,124 @@
+{
+  "title": "The Old Way vs. The Quantum Way",
+  "style_suffix": "Cinematic TV commercial, photorealistic, natural lip sync, 35mm lens, shallow depth of field, punchy contrast grade, subtle film grain. No text, no letters, no logos, no signs anywhere; any screens show only soft abstract shapes. Sound: clear natural dialogue and light room ambience.",
+  "refs": {
+    "rick": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/9bcd5329-516a-4635-8371-3f4981e51cfb.jpeg",
+    "maya": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/bf8da5ad-93b3-4ed3-a825-fba6c84440af.jpeg",
+    "busywork": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/bac57b4c-8f34-43cf-9e75-e9f9c8099015.jpeg"
+  },
+  "shots": [
+    {
+      "id": "busywork_ref",
+      "scene": "cast",
+      "model": "higgsfield-ai/soul/v2/standard",
+      "params": {
+        "aspect_ratio": "16:9"
+      },
+      "prompt": "Photorealistic portrait of a cheerful, slightly smug middle-aged man called Busywork: rumpled beige cardigan over a mustard shirt, crooked brown tie, messy thinning hair, round tortoiseshell glasses, a lanyard with a blank white badge, holding a tall wobbling stack of paper files against his chest and grinning mischievously at the camera. Standing in a dim, cluttered corporate office. Cinematic lighting, 35mm, shallow depth of field. No text, no letters, no logos.",
+      "request_id": "577029e4-2376-47c3-8902-2c15f5e75b1f",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/275ee801-e0fd-4d68-b2ff-4a108f713e7b.png",
+      "file": "clips/busywork_ref.png"
+    },
+    {
+      "id": "s1b_maya_call",
+      "scene": "1-the-dial",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "prompt": "The woman from the reference image, same face, hair and grey blazer, now sits in a bright open-plan sales office cubicle in daytime, a small white wireless earbud in each ear. She laughs warmly and says clearly in a confident American female voice: \"Perfect. Tuesday at ten. See you then!\" She taps her laptop once and instantly smiles at the next person: \"Hi Mark, it's Maya.\" Energetic, upbeat, slight handheld camera.",
+      "request_id": "6842926b-1514-4f69-8fd4-327b58e3df68",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4457a247-ca2a-4697-a85d-bc1007860b2c.mp4",
+      "file": "clips/s1b_maya_call.mp4"
+    },
+    {
+      "id": "s1c_rick_peek",
+      "scene": "1-the-dial",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "prompt": "The man from the reference image, same face, messy hair, rumpled white shirt and loose tie, slowly rises and peeks over a grey office cubicle wall, bewildered and exasperated, and says in a frustrated American male voice: \"How have you talked to eleven people in sixty-six minutes? I can't get anyone on the phone!\" Camera from the neighbouring cubicle looking up at him, comedic timing.",
+      "request_id": "a9804894-da16-4006-a6d8-f3022f7e558a",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/e84e8170-8318-4165-9a9b-98825c7f8574.mp4",
+      "file": "clips/s1c_rick_peek.mp4"
+    },
+    {
+      "id": "s1d_maya_reply",
+      "scene": "1-the-dial",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "prompt": "The woman from the reference image, same face, hair and grey blazer, sitting in a bright open-plan office cubicle in daytime, pulls one small white earbud out of her ear, swivels her chair toward someone standing above her and says with a friendly, amused grin in a confident American female voice: \"You haven't heard of Connect and Sell? A week of prospecting in four hours.\" She pops the earbud back in and turns back to her laptop.",
+      "request_id": "74c5d630-b1b7-4391-bbea-9c2e1f28fbd3",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/37971966-14fb-4b89-b605-02170794b17c.mp4",
+      "file": "clips/s1d_maya_reply.mp4"
+    },
+    {
+      "id": "s0_cold_open",
+      "scene": "0-cold-open",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "prompt": "The grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk. At the desk sits the tired man in the rumpled white shirt and loose tie from the second reference image, on a desk phone. The cardigan man looks straight into the camera and says cheerfully in a smug, playful older American male voice: \"I'm Busywork. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man groans. Comedic, punchy, slight push-in.",
+      "request_id": "7ae78b8e-523e-488c-9c8c-d20118f02740",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/8a1d0748-3127-4400-9be6-253e9f219da9.mp4",
+      "file": "clips/s0_cold_open.mp4"
+    },
+    {
+      "id": "s1e_busywork_list",
+      "scene": "1-the-dial",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "duration": 5,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "prompt": "In a grey office cubicle, the grinning older man in the beige cardigan and round glasses from the first reference image slaps a thick printed phone list down onto the desk in front of the frustrated man in the white shirt and loose tie from the second reference image and says cheerfully: \"Keep dialing, champ.\" The frustrated man stares at the pile in despair. Comedic timing, loud paper thud.",
+      "request_id": "55bfdca3-e8e7-4ced-8bab-6c9c55c39ee8",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/6f8cdd51-724a-4d6c-8fee-b9a24243f5ca.mp4",
+      "file": "clips/s1e_busywork_list.mp4"
+    }
+  ],
+  "reused": {
+    "s1a_rick_voicemail": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4211659a-1d1b-43d4-b809-40896a727555.mp4"
+  }
+}

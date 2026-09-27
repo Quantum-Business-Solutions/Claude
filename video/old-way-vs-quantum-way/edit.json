@@ -1,0 +1,24 @@
+{
+  "output": "old-way-vs-quantum-way.mp4",
+  "notes": "Timeline. Each scene is independent: add a scene block (or segments) and run build/build.py. Clip files come from shots.json via build/hf.py. Inserts are HTML screens in inserts/insert.html rendered frame by frame.",
+  "scenes": [
+    {
+      "id": "0-cold-open",
+      "segments": [
+        {"type": "clip", "file": "clips/s0_cold_open.mp4", "in": 0, "out": 8},
+        {"type": "insert", "name": "title", "secs": 2.2, "zoom": 1.0}
+      ]
+    },
+    {
+      "id": "1-the-dial",
+      "segments": [
+        {"type": "clip", "file": "clips/s1a_rick_voicemail.mp4", "in": 0, "out": 10, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
+        {"type": "clip", "file": "clips/s1e_busywork_list.mp4", "in": 0, "out": 5},
+        {"type": "clip", "file": "clips/s1b_maya_call.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
+        {"type": "insert", "name": "cas_dialer", "secs": 4.5},
+        {"type": "clip", "file": "clips/s1c_rick_peek.mp4", "in": 2.4, "out": 8},
+        {"type": "clip", "file": "clips/s1d_maya_reply.mp4", "in": 0, "out": 8}
+      ]
+    }
+  ]
+}

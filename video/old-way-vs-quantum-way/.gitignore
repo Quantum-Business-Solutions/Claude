@@ -1,0 +1,6 @@
+clips/*.mp4
+clips/*.png
+build/tmp/
+build/scenes/
+build/out/
+__pycache__/
