@@ -418,7 +418,9 @@
       },
       "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Manny. Manny Manual. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man groans. Comedic, punchy, slight push-in.",
       "request_id": "735ddd15-aa6c-485a-850d-1a26bebbb902",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/0d045989-93b9-46b7-969c-638ee4197189.mp4",
+      "file": "clips/s0_cold_open_v2.mp4"
     },
     {
       "id": "sA_assistant",
@@ -488,7 +490,9 @@
       },
       "prompt": "Early evening in a bright modern office. the woman in the grey blazer with her hair pulled back from the reference image sits at her desk while behind her four team members in matching charcoal polo shirts with a thin lime-green collar stripe work calmly and efficiently at screens facing away from camera. A friendly coworker in a denim jacket leans in and asks: \"Want to grab dinner?\" Maya glances back at her busy team, smiles, and says: \"Yeah... I think they've got it from here.\" She grabs her bag and stands up.",
       "request_id": "5bd04617-6835-44ab-98f0-6821344ce21c",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/9e667603-c8bb-4b9b-8f03-adcbdb201064.mp4",
+      "file": "clips/sD_agents_dinner.mp4"
     },
     {
       "id": "sE_rick_saturday",
@@ -505,7 +509,9 @@
       },
       "prompt": "Saturday morning in a sunny family kitchen. the tired man in the rumpled white shirt and loose tie from the reference image, now in a wrinkled polo shirt, hunches over a laptop and piles of paperwork at the kitchen table. His wife, in a team sports hoodie and holding car keys, stands in the doorway with two kids in soccer uniforms behind her and says: \"Honey, it's Saturday. The kids have a game today.\" He looks up guiltily: \"I know, I know. I'm coming.\"",
       "request_id": "512879f5-7675-4254-87eb-2da069fa56ee",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/efab7b03-b7e5-4998-925d-b169b2768f0d.mp4",
+      "file": "clips/sE_rick_saturday.mp4"
     },
     {
       "id": "sF_manny_grab",
@@ -596,7 +602,9 @@
       },
       "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Bob. Bogged Down Bob. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man groans. Comedic, punchy, slight push-in.",
       "request_id": "cd59a9ca-9801-4508-8579-5053d8a883b4",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/97995a57-675b-407f-9aa0-48d7ab951539.mp4",
+      "file": "clips/s0_cold_open_bob.mp4"
     },
     {
       "id": "s0_cold_open_bogdown",

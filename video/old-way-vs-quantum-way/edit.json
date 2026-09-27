@@ -166,7 +166,7 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/s4a1_rick_card.mp4",
+          "file": "clips/s4a1_rick_card_v2.mp4",
           "in": 0,
           "out": 5,
           "tag": {
@@ -176,7 +176,7 @@
         },
         {
           "type": "clip",
-          "file": "clips/s4a2_busywork_seat.mp4",
+          "file": "clips/s4a2_bob_passenger_v2.mp4",
           "in": 0,
           "out": 4
         },
