@@ -3,11 +3,7 @@ var PRESENTER=/presenter/i.test(location.search+location.hash);
 var HUB='https://clientcommand.thequantumleap.business/s/9fe6890271ce7f36864d298528a4ce09/';
 var SELF='https://clientcommand.thequantumleap.business/s/85afc04ff3f5e8720a00601c998ef62d/index.html';
 var ACTS=[
- {src:'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/27605bae-bf26-4853-906d-7dea28f54099.mp4',cap:'You were taught to grind.'},
- {src:'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/088802f7-2c87-4cce-b817-fa118cd681a0.mp4',cap:'She was taught to build systems.'},
- {src:'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4a1aa93b-0c5a-4d86-b5ad-4369943c37fc.mp4',cap:'Same territory. Same deal.'},
- {src:'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/9a23e2a2-1f44-4760-9412-0770eeb6c93e.mp4',cap:'Only one of them is still guessing.'},
- {src:'https://d8j0ntlcm91z4.cloudfront.net/user_3H8QeDy6mqh5cyDHIC4nOq4e8qZ/hf_20260926_155246_b76877f2-4675-4f94-a2e0-d0fcd5a80108.mp4',cap:'The new standard starts in this room.'}];
+ {src:'https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/2d4edc22-fe35-47c1-82d2-17916713b9fb.mp4',cap:''}];
 var REMAP={'https://cloud-cdn.higgsfield.ai/e4d416f7-7355-4276-8c8e-26821a906ac8/8b27d4be-d6aa-4d8b-b348-5104c81e94b3.mp4':'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/088802f7-2c87-4cce-b817-fa118cd681a0.mp4','https://cloud-cdn.higgsfield.ai/e4d416f7-7355-4276-8c8e-26821a906ac8/b9e05597-fb00-42a0-b94c-177c7318b1d9.mp4':'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/27605bae-bf26-4853-906d-7dea28f54099.mp4','https://cloud-cdn.higgsfield.ai/e4d416f7-7355-4276-8c8e-26821a906ac8/c4bb1e15-e5ab-4dbc-94d8-847b45a84312.mp4':'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4a1aa93b-0c5a-4d86-b5ad-4369943c37fc.mp4','https://cloud-cdn.higgsfield.ai/e4d416f7-7355-4276-8c8e-26821a906ac8/92757bf8-c1ce-4b17-bc97-0c0a1c4856e5.mp4':'https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/9a23e2a2-1f44-4760-9412-0770eeb6c93e.mp4'};
 [].forEach.call(document.querySelectorAll('video.bgv[data-src]'),function(v){var r=REMAP[v.getAttribute('data-src')];if(r)v.setAttribute('data-src',r)});
 var D=[
@@ -146,7 +142,7 @@ document.getElementById('qr2').src='https://api.qrserver.com/v1/create-qr-code/?
 var tv=document.getElementById('tv'),tcap=document.getElementById('tcap'),tplay=document.getElementById('tplay'),ti=-1,tstarted=false;
 function playAct(i){if(i>=ACTS.length){tcap.innerHTML='Go-to-Market<br><span class="grad">Automation</span><br>with AI';tcap.className='tcap on end';return}
  ti=i;tv.style.opacity=0;setTimeout(function(){tv.src=ACTS[i].src;var p=tv.play();if(p&&p.catch)p.catch(function(){});tv.style.opacity=1;
-  tcap.className='tcap';tcap.textContent=ACTS[i].cap;setTimeout(function(){if(ti===i)tcap.className='tcap on'},250);
+  tcap.className='tcap';tcap.textContent=ACTS[i].cap;if(ACTS[i].cap)setTimeout(function(){if(ti===i)tcap.className='tcap on'},250);
   setTimeout(function(){if(ti===i)tcap.className='tcap'},3800)},350)}
 tv.addEventListener('ended',function(){playAct(ti+1)});
 function startTrailer(){if(tstarted)return;tstarted=true;tplay.style.display='none';playAct(0)}

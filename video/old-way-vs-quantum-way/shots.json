@@ -405,5 +405,9 @@
   ],
   "reused": {
     "s1a_rick_voicemail": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4211659a-1d1b-43d4-b809-40896a727555.mp4"
+  },
+  "published_cuts": {
+    "v1_1080p": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/2d4edc22-fe35-47c1-82d2-17916713b9fb.mp4",
+    "v1_720p": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/b86cba2f-d360-4c37-ad74-9a810c706939.mp4"
   }
 }
