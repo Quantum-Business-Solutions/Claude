@@ -233,7 +233,7 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/sN0_rick_ninth_email_blur.mp4",
+          "file": "clips/sN0_rick_ninth_email_screen.mp4",
           "in": 0,
           "out": 7.9,
           "tag": {
@@ -671,19 +671,19 @@
   ],
   "music": {
     "0-cold-open": "m2_bob_theme",
-    "1-the-dial": "m1_theme_clean",
-    "2-research": "m1_theme_clean",
-    "3-the-meeting": "m1_theme_clean",
-    "4-parking-lot": "m1_theme_clean",
-    "5-contracts": "m1_theme_clean",
-    "6-late-night": "m1_theme_clean",
+    "1-the-dial": "m1b_theme_a",
+    "2-research": "m1b_theme_a",
+    "3-the-meeting": "m1b_theme_a",
+    "4-parking-lot": "m1b_theme_a",
+    "5-contracts": "m1b_theme_a",
+    "6-late-night": "m1b_theme_a",
     "7-saturday": "m2_bob_theme",
     "8-the-switch": "m2_bob_theme",
     "9-the-game": "m3b_finale",
     "10-finale": "m3b_finale",
     "11-post-credits": "m2_bob_theme",
-    "2b-pipeline": "m1_theme_clean",
-    "3b-follow-up": "m1_theme_clean",
-    "5b-proposal": "m1_theme_clean"
+    "2b-pipeline": "m1b_theme_a",
+    "3b-follow-up": "m1b_theme_a",
+    "5b-proposal": "m1b_theme_a"
   }
 }

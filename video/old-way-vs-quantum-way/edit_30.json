@@ -61,9 +61,9 @@
         },
         {
           "type": "clip",
-          "file": "clips/g9_available.mp4",
-          "in": 2.2,
-          "out": 6.8
+          "file": "clips/g9_available_v2.mp4",
+          "in": 0.9,
+          "out": 6.4
         },
         {
           "type": "insert",
@@ -76,7 +76,7 @@
   ],
   "music": {
     "t30-bob": "m2_bob_theme",
-    "t30-lot": "m1_theme_clean",
+    "t30-lot": "m1b_theme_a",
     "t30-end": "m2_bob_theme"
   }
 }

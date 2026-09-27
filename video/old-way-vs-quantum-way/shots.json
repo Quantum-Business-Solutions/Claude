@@ -2078,6 +2078,36 @@
       "status": "completed",
       "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/a6d3446b-a773-4d66-a1e0-a98cd0e3646e.mp4",
       "file": "clips/sK_game_v2.mp4"
+    },
+    {
+      "id": "m1b_theme_a",
+      "scene": "music",
+      "model": "kling-video/v3.0/pro/text-to-video",
+      "params": {
+        "duration": 15,
+        "aspect_ratio": "16:9",
+        "sound": "on"
+      },
+      "prompt": "Slow abstract dark background with soft glowing lime-green light particles drifting gently. No people, no text. Sound: Upbeat, playful, quirky comedic TV commercial instrumental music, bouncy pizzicato strings, plucky upright bass, light hand percussion, marimba and glockenspiel melody, confident and fun, steady tempo. Purely instrumental: absolutely no voices, no vocals, no whistling, no humming, no singing, no laughing, no speech, no sound effects.",
+      "request_id": "9d545369-8057-4c3d-9e91-bd001e000b01",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/a480d11d-d6d3-4833-b48e-554799ddb2ab.mp4",
+      "file": "clips/m1b_theme_a.mp4"
+    },
+    {
+      "id": "m1b_theme_b",
+      "scene": "music",
+      "model": "kling-video/v3.0/pro/text-to-video",
+      "params": {
+        "duration": 15,
+        "aspect_ratio": "16:9",
+        "sound": "on"
+      },
+      "prompt": "Slow abstract dark background with soft glowing lime-green light particles drifting gently. No people, no text. Sound: Upbeat, playful, quirky comedic TV commercial instrumental music, bouncy pizzicato strings, plucky upright bass, light hand percussion, marimba and glockenspiel melody, confident and fun, steady tempo. Purely instrumental: absolutely no voices, no vocals, no whistling, no humming, no singing, no laughing, no speech, no sound effects.",
+      "request_id": "43b45fa8-d66b-4a11-83ab-c0264695752f",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/9363f117-8115-4ceb-972f-2edf51393bed.mp4",
+      "file": "clips/m1b_theme_b.mp4"
     }
   ],
   "reused": {

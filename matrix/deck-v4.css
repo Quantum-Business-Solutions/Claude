@@ -1,0 +1,19 @@
+/* v4 additions: silent preview + play overlay on the video slide, and edit mode. Loaded after deck.css. */
+.tplay{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:linear-gradient(180deg,rgba(6,7,12,.15) 40%,rgba(6,7,12,.75));pointer-events:none}
+.tplay button{pointer-events:auto;padding:0;width:clamp(88px,9vw,128px);height:clamp(88px,9vw,128px);border:0;border-radius:50%;display:grid;place-items:center;background:rgba(182,255,60,.92);color:#06070C;cursor:pointer;box-shadow:0 0 0 10px rgba(182,255,60,.18),0 24px 70px -18px rgba(182,255,60,.8);animation:pulse 2.4s ease-in-out infinite}
+.tplay button svg{width:44%;height:44%;fill:currentColor;margin-left:8%}
+.tplay button:hover{transform:scale(1.06)}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 10px rgba(182,255,60,.18),0 24px 70px -18px rgba(182,255,60,.8)}50%{box-shadow:0 0 0 22px rgba(182,255,60,.06),0 24px 70px -18px rgba(182,255,60,.8)}}
+.pmeta{position:absolute;left:5vw;bottom:7vh;display:flex;flex-direction:column;gap:8px;text-align:left}
+.pmeta b{font-family:var(--disp);text-transform:uppercase;font-size:clamp(1.5rem,3.2vw,3rem);line-height:.95;text-shadow:0 4px 30px rgba(0,0,0,.8)}
+.pmeta b i{font-style:normal;font-size:.55em;color:var(--dim);vertical-align:middle}
+.pmeta span{color:#C3CBDC;letter-spacing:.24em;text-transform:uppercase;font-size:12px;font-weight:700}
+#tv{cursor:pointer}
+/* edit mode */
+#etip{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:60;background:#B6FF3C;color:#06070C;font:700 13px/1 system-ui,sans-serif;letter-spacing:.06em;padding:10px 16px;border-radius:99px;display:none}
+body.editing #etip{display:block}
+body.editing [data-ek]{outline:1px dashed rgba(182,255,60,.55);outline-offset:4px;cursor:text}
+body.editing [data-ek]:focus{outline:2px solid #B6FF3C;background:rgba(182,255,60,.08)}
+/* captions toggle */
+#ccb{position:absolute;right:26px;top:70px;z-index:6;background:rgba(6,7,12,.6);border:1px solid rgba(255,255,255,.25);color:#DDE3EE;border-radius:8px;padding:7px 12px;font:700 12px/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;opacity:.55;transition:opacity .2s}
+#ccb:hover,#ccb.on{opacity:1}#ccb.on{background:#B6FF3C;color:#06070C;border-color:#B6FF3C}
