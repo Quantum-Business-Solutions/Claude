@@ -1,6 +1,6 @@
 {
   "output": "old-way-vs-quantum-way.mp4",
-  "notes": "Timeline. Each scene is independent: add a scene block (or segments) and run build/build.py. Clip files come from shots.json via build/hf.py. Inserts are HTML screens in inserts/insert.html rendered frame by frame.",
+  "notes": "Timeline. Each scene is independent: add a scene block (or segments) and run build/build.py. Clip files come from shots.json via build/hf.py. Inserts are HTML screens in inserts/insert.html rendered frame by frame. *_comp clips are green-screen shots with a screen insert composited in by build/screen_replace.py.",
   "scenes": [
     {
       "id": "0-cold-open",
@@ -15,9 +15,58 @@
         {"type": "clip", "file": "clips/s1a_rick_voicemail.mp4", "in": 0, "out": 10, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
         {"type": "clip", "file": "clips/s1e_busywork_list.mp4", "in": 0, "out": 5},
         {"type": "clip", "file": "clips/s1b_maya_call.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
-        {"type": "insert", "name": "cas_dialer", "secs": 4.5},
+        {"type": "clip", "file": "clips/s1f_maya_screen_comp.mp4", "in": 0, "out": 8},
+        {"type": "insert", "name": "cas_live", "secs": 3.5},
         {"type": "clip", "file": "clips/s1c_rick_peek.mp4", "in": 2.4, "out": 8},
         {"type": "clip", "file": "clips/s1d_maya_reply.mp4", "in": 0, "out": 8}
+      ]
+    },
+    {
+      "id": "2-research",
+      "segments": [
+        {"type": "clip", "file": "clips/s2a_rick_research.mp4", "in": 0, "out": 8, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
+        {"type": "clip", "file": "clips/s2b_maya_screen_comp.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
+        {"type": "insert", "name": "hs_brief", "secs": 3.2}
+      ]
+    },
+    {
+      "id": "3-the-meeting",
+      "segments": [
+        {"type": "clip", "file": "clips/s3a_rick_meeting.mp4", "in": 0, "out": 8, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
+        {"type": "clip", "file": "clips/s3b_maya_meeting.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
+        {"type": "insert", "name": "notetaker", "secs": 3.6}
+      ]
+    },
+    {
+      "id": "4-parking-lot",
+      "segments": [
+        {"type": "clip", "file": "clips/s4a_rick_car.mp4", "in": 0, "out": 8, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
+        {"type": "clip", "file": "clips/s4b_maya_car.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
+        {"type": "insert", "name": "hs_log", "secs": 4.0}
+      ]
+    },
+    {
+      "id": "5-contracts",
+      "segments": [
+        {"type": "clip", "file": "clips/s5a_rick_contracts.mp4", "in": 0, "out": 7, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
+        {"type": "clip", "file": "clips/s5b_maya_contracts.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
+        {"type": "insert", "name": "lead_finder", "secs": 4.0, "zoom": 1.03}
+      ]
+    },
+    {
+      "id": "6-late-night",
+      "segments": [
+        {"type": "clip", "file": "clips/s6a_rick_latenight.mp4", "in": 0, "out": 8, "tag": {"text": "THE OLD WAY", "color": "#FFB43C"}},
+        {"type": "clip", "file": "clips/s6b_owner_jog.mp4", "in": 0, "out": 8, "tag": {"text": "THE QUANTUM WAY", "color": "#B6FF3C"}},
+        {"type": "insert", "name": "agent_team", "secs": 3.4, "zoom": 1.03}
+      ]
+    },
+    {
+      "id": "7-finale",
+      "segments": [
+        {"type": "clip", "file": "clips/s7a_busywork_finale.mp4", "in": 0, "out": 8},
+        {"type": "clip", "file": "clips/s7b_maya_tagline.mp4", "in": 0, "out": 6},
+        {"type": "insert", "name": "endcard", "secs": 4.0, "zoom": 1.0}
       ]
     }
   ]

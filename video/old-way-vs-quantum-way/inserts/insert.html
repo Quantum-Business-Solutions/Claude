@@ -35,6 +35,26 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:transparent;font
 .act .h{display:flex;justify-content:space-between;font-size:17px;font-weight:700;color:#516F90;text-transform:uppercase;letter-spacing:.08em}
 .act .t{font-size:22px;margin-top:10px;line-height:1.45;color:#33475B}
 .tick{color:#00BDA5;font-weight:700}
+.cas{position:absolute;inset:0;background:#F4F6FA;font-family:Inter,'DM Sans',sans-serif;color:#1B2433}
+.win .cas{position:absolute;inset:0}
+.cnav{height:78px;background:#fff;border-bottom:1px solid #E3E7EE;display:flex;align-items:center;gap:40px;padding:0 34px}
+.ctabs{display:flex;gap:30px;font-size:19px;color:#4A5568;font-weight:700}.ctabs .on{color:#1A5FD0;border-bottom:3px solid #1A5FD0;padding-bottom:6px}
+.cright{margin-left:auto;display:flex;gap:16px;align-items:center;font-size:17px;font-weight:700}
+.cok{background:#E7F6EC;color:#13803A;padding:8px 14px;border-radius:99px}
+.cdt{background:#E7F6EC;color:#13803A;padding:8px 14px;border-radius:10px}.cdt b{font-size:20px;margin-left:6px}
+.cbody{display:grid;grid-template-columns:420px 1fr 560px;gap:24px;padding:26px}
+.cbody>div{background:#fff;border:1px solid #E3E7EE;border-radius:14px;padding:24px;height:920px;overflow:hidden}
+.win .cbody>div{height:700px}
+.cconn{display:inline-block;background:#1E9E4A;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;padding:7px 12px;border-radius:8px}
+.cname{font-size:32px;font-weight:700;margin-top:16px}.crole{font-size:18px;color:#5B6678;margin-top:6px}
+.cfield{border-top:1px solid #EEF1F5;margin-top:18px;padding-top:14px}.cfield span{display:block;font-size:14px;color:#7A8597;font-weight:700}.cfield b{display:block;font-size:19px;margin-top:4px}
+.chd{font-size:21px;font-weight:700;margin-bottom:16px}
+.ctiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.ctiles div{border-left:4px solid #1A5FD0;padding:6px 14px}.ctiles div:nth-child(2){border-color:#1E9E4A}.ctiles div:nth-child(3){border-color:#D93A3A}
+.ctiles span{display:block;font-size:15px;color:#5B6678;font-weight:700}.ctiles b{font-size:64px;line-height:1.1}
+.clb{display:grid;grid-template-columns:60px 1fr 190px 130px;padding:14px 6px;border-bottom:1px solid #EEF1F5;font-size:18px}.crk{font-weight:700;color:#1A5FD0}.cu{font-weight:700}
+.cl{display:flex;gap:12px;margin-bottom:14px}.ca{flex:0 0 34px;height:34px;border-radius:50%;background:#EEF1F5;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#5B6678}
+.cl b{font-size:16px}.cl p{font-size:18px;line-height:1.4;margin-top:2px}
+.csum{background:#EEF4FF;border:1px solid #CFE0FF;border-radius:12px;padding:16px 18px;margin-top:10px}.cst{font-weight:700;color:#1A5FD0;font-size:16px;margin-bottom:6px}.csum p{font-size:18px;line-height:1.45}
 </style></head><body>
 <div class="stage"></div>
 <div id="root"></div>
@@ -53,6 +73,56 @@ var SCENES={
   items.forEach(function(it){h+='<div class="act'+(t<it[2]?' hide':'')+'"><div class="h"><span>'+it[0]+'</span><span class="tick">✓ Logged</span></div><div class="t">'+it[1]+'</div></div>'});
   return h+'</div></div></div>'}
 };
+/* ConnectAndSell live-session screen, modelled on ConnectAndSell's own product screenshots
+   (session summary, "Dial Time", contact card, Transcript & Assist with CAS Assistant summary). */
+SCENES.cas_live=function(t,bare){
+ var conv=Math.min(11,8+Math.floor(Math.max(0,t-0.4)/1.1)),dial=66*60+Math.floor(t*1)+2,dials=398+Math.floor(t*6);
+ function hms(s){var h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(x<10?'0':'')+x}
+ var lines=[['Dana Price','Hi, this is Dana.',0.6],['You','Hi Dana, it’s Maya from Riverside Office Tech. Did I catch you at a bad time?',1.3],['Dana Price','No, go ahead. Honestly, our copiers are driving me crazy.',2.3],['You','Then let’s fix that. Does Tuesday at ten work for fifteen minutes?',3.2],['Dana Price','Tuesday at ten works.',4.0]];
+ var tr=lines.filter(function(l){return t>=l[2]}).map(function(l){return '<div class="cl"><span class="ca">'+(l[0]==='You'?'Y':'D')+'</span><div><b>'+l[0]+'</b><p>'+l[1]+'</p></div></div>'}).join('');
+ var sum=t>4.4?'<div class="csum"><div class="cst">✨ CAS Assistant · Call summary</div><p>Meeting booked: Tuesday 10:00 with Dana Price. Pain: copier downtime across 3 locations. Synced to HubSpot.</p></div>':'';
+ var ui='<div class="cas"><div class="cnav"><img src="'+A+'connectandsell.svg" style="height:26px;width:250px"><div class="ctabs"><span class="on">Calling Lists</span><span>Contacts</span><span>Reports</span><span>Coaching</span></div><div class="cright"><span class="cok">● Connected via Web Browser</span><span class="cdt">Dial Time <b>'+hms(dial)+'</b></span></div></div>'+
+ '<div class="cbody"><div class="ccol1"><div class="cconn">☎ CONNECTED · MOBILE</div><div class="cname">Dana Price</div><div class="crole">Office Manager · Riverside Dental Group</div><div class="cfield"><span>List name</span><b>Target Accounts — ICP Contacts</b></div><div class="cfield"><span>Status</span><b>'+(t>4.1?'Meeting booked':'In conversation')+'</b></div><div class="cfield"><span>Synced to</span><b><img src="'+A+'hubspot-wordmark.svg" style="height:22px;vertical-align:middle"></b></div></div>'+
+ '<div class="ccol2"><div class="chd">Session Summary</div><div class="ctiles"><div><span>Conversations</span><b>'+conv+'</b></div><div><span>Dials handled for you</span><b>'+dials+'</b></div><div><span>Meetings</span><b>'+(t>4.1?3:2)+'</b></div></div><div class="chd" style="margin-top:26px">Leaderboard · today</div>'+
+ [['1st','Maya R.',conv,t>4.1?3:2],['2nd','Chris L.',6,1],['3rd','Rick T.',1,0]].map(function(r){return '<div class="clb"><span class="crk">'+r[0]+'</span><span class="cu">'+r[1]+'</span><span>'+r[2]+(r[2]===1?' conversation':' conversations')+'</span><span>'+r[3]+(r[3]===1?' meeting':' meetings')+'</span></div>'}).join('')+'</div>'+
+ '<div class="ccol3"><div class="chd">✨ Transcript &amp; Assist</div>'+tr+sum+'</div></div></div>';
+ return bare?ui:'<div class="win" style="background:#fff">'+ui+'</div>'};
+SCENES.cas_screen=function(t){return SCENES.cas_live(t,true)};
+/* HubSpot company record with an AI account brief assembling (scene 2). bare=true for laptop screens. */
+SCENES.hs_brief=function(t,bare){
+ var rows=[['Company','Riverside Dental Group · 3 locations · 140 employees',0.3],['Fleet','14 devices · lease with incumbent ends March',0.7],['Decision makers','Dana Price (Office Manager) · Dr. Alan Reyes (Owner) · IT: outsourced',1.1],['Trigger','Opening a 4th location in June',1.5],['Likely pain','Service response times on 2 older devices',1.9],['Best opener','“How is the new location’s print and IT setup coming along?”',2.3]];
+ var clock=Math.min(3,Math.floor(t/0.8)+1);
+ var ui='<div class="cas" style="background:#F5F8FA"><div class="cnav"><img src="'+A+'hubspot-wordmark.svg" style="height:34px"><div class="ctabs"><span class="on">Companies</span><span>Contacts</span><span>Deals</span></div><div class="cright"><span class="cok" style="background:#FFF1EC;color:#E8590C">✨ AI account brief · '+(t>2.6?'ready in 3 sec':clock+' sec')+'</span><span class="cok" style="background:#EEF1F5;color:#33475B">Data from <img src="'+A+'zoominfo-light.png" style="height:22px;vertical-align:middle"></span></div></div>'+
+ '<div style="display:grid;grid-template-columns:420px 1fr;gap:24px;padding:26px"><div class="side" style="border:1px solid #DFE3EB;border-radius:14px;height:'+(bare?920:700)+'px"><div class="av" style="background:#0091AE">RD</div><h3>Riverside Dental Group</h3><p>riversidedental.com</p><div class="prop">Industry<b>Healthcare · Dental</b></div><div class="prop">Owner<b>Maya R.</b></div><div class="prop">Lifecycle stage<b>Sales qualified lead</b></div></div>'+
+ '<div class="feed" style="border:1px solid #DFE3EB;border-radius:14px;background:#fff;height:'+(bare?920:700)+'px"><div class="chd">✨ Account brief</div>'+
+ rows.map(function(r){return '<div class="act'+(t<r[2]?' hide':'')+'" style="padding:16px 22px;margin-bottom:12px"><div class="h"><span>'+r[0]+'</span><span class="tick">✓</span></div><div class="t" style="font-size:22px">'+r[1]+'</div></div>'}).join('')+'</div></div></div>';
+ return bare?ui:'<div class="win" style="background:#fff">'+ui+'</div>'};
+SCENES.hs_brief_screen=function(t){return SCENES.hs_brief(t,true)};
+/* In-person notetaker capturing the meeting (scene 3) */
+SCENES.notetaker=function(t){
+ var n=[['Pain','Two older copiers go down weekly; techs take 2–3 days',0.5],['Timeline','4th location opens June; wants one vendor for all sites',1.3],['Decision','Dr. Reyes signs; Dana recommends',2.1],['Next step','Walkthrough of all 3 sites next Tuesday',2.9]];
+ var rec=Math.floor(t)+742;
+ return '<div class="win" style="background:#fff"><div class="top"><div class="sync" style="color:#D93A3A"><span class="dot" style="background:#D93A3A"></span>Notetaker · recording in person · '+Math.floor(rec/60)+':'+String(rec%60).padStart(2,'0')+'</div><div class="sync">Syncs to <img src="'+A+'hubspot-wordmark.svg" style="height:30px;margin-left:6px"></div></div>'+
+ '<div style="padding:40px 60px"><div class="lbl" style="margin-bottom:22px">Captured so far · Riverside Dental Group</div>'+
+ n.map(function(x){return '<div class="act'+(t<x[2]?' hide':'')+'"><div class="h"><span>'+x[0]+'</span><span class="tick">✓ Captured</span></div><div class="t">'+x[1]+'</div></div>'}).join('')+'</div></div>'};
+/* Quantum AI Lead Finder: contracts found in past engagements (scene 5) */
+SCENES.lead_finder=function(t){
+ var n=Math.round(2500*Math.min(1,Math.pow(Math.min(1,t/2.6),0.6)));
+ var cards=[['Harbor Logistics','Competitor lease · ends Jan 2027'],['Summit Title Co.','Competitor contract · ends Mar 2027'],['Keystone Medical','Competitor lease · ends Apr 2027'],['Northgate Schools','Competitor contract · ends Jun 2027']];
+ return '<div class="stage"></div><div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-family:\'DM Sans\'">'+
+ '<img src="'+A+'quantum-white.png" style="height:56px;margin-bottom:26px"><div style="font:700 26px \'DM Sans\';letter-spacing:.24em;color:#B6FF3C;text-transform:uppercase">AI Lead Finder · past engagements scanned</div>'+
+ '<div style="font-family:Anton;font-size:250px;line-height:1;margin:16px 0">'+n.toLocaleString('en-US')+'</div><div style="font-size:34px;color:#B9C1D4">competitive contracts coming up for renewal</div>'+
+ '<div style="display:flex;gap:18px;margin-top:44px">'+cards.map(function(c,i){return '<div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 22px;min-width:330px;opacity:'+Math.min(1,Math.max(0,(t-2.2-i*0.25)/0.3))+'"><b style="font-size:22px;display:block">'+c[0]+'</b><span style="font-size:18px;color:#FFB43C">'+c[1]+'</span></div>'}).join('')+'</div></div>'};
+/* The owner's AI agent team (scene 6) */
+SCENES.agent_team=function(t){
+ var ag=[['Research agent','Pulls the account, fleet and contacts',A+'zoominfo-light.png'],['Proposal agent','Drafts the proposal and pricing',A+'hubspot-wordmark.svg'],['Outreach agent','Books the calls through',A+'connectandsell.svg'],['CRM agent','Logs everything, sets every task',A+'hubspot-wordmark.svg']];
+ return '<div class="stage"></div><div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:\'DM Sans\'"><div style="font-family:Anton;font-size:96px;color:#fff;text-transform:uppercase;margin-bottom:50px">His <span style="color:#B6FF3C">team</span></div>'+
+ '<div style="display:grid;grid-template-columns:repeat(4,380px);gap:26px">'+ag.map(function(a,i){var on=t>0.4+i*0.45;return '<div style="background:'+(on?'#fff':'rgba(255,255,255,.06)')+';border-radius:18px;padding:30px 28px;transform:scale('+(on?1:0.94)+');transition:none;box-shadow:'+(on?'0 30px 70px -20px rgba(182,255,60,.55)':'none')+'"><div style="font:700 15px \'DM Sans\';letter-spacing:.2em;text-transform:uppercase;color:'+(on?'#138A36':'#8A93AB')+'">'+(on?'● Working':'Standing by')+'</div><div style="font-family:Anton;font-size:44px;text-transform:uppercase;color:'+(on?'#0F1320':'#8A93AB')+';margin:12px 0 8px">'+a[0]+'</div><div style="font-size:20px;color:#5B6678;min-height:56px">'+a[1]+'</div><div style="margin-top:18px;height:34px;display:flex;align-items:center;background:#fff;border-radius:8px;padding:0 10px;opacity:'+(on?1:.4)+'"><img src="'+a[2]+'" style="max-height:26px;max-width:260px"></div></div>'}).join('')+'</div></div>'};
+/* End card */
+SCENES.endcard=function(t){var a=Math.min(1,t/0.4),b=Math.min(1,Math.max(0,(t-0.8)/0.4)),c=Math.min(1,Math.max(0,(t-1.6)/0.4));
+ return '<div style="position:absolute;inset:0;background:#06070C;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Anton;text-transform:uppercase;color:#fff">'+
+ '<div style="font-size:110px;line-height:1;opacity:'+a+'">Same job. Same hours.</div><div style="font-size:150px;line-height:1.05;color:#B6FF3C;opacity:'+b+'">Different system.</div>'+
+ '<div style="margin-top:60px;opacity:'+c+';display:flex;flex-direction:column;align-items:center;gap:22px"><img src="'+A+'quantum-white.png" style="height:90px"><div style="font:700 30px \'DM Sans\';letter-spacing:.2em;color:#FFB43C">We build the system.</div><div style="font:500 26px \'DM Sans\';letter-spacing:.12em;color:#B9C1D4;text-transform:none">thequantumleap.business</div></div></div>'};
 SCENES.title=function(t){var a=Math.min(1,t/0.25),b=Math.min(1,Math.max(0,(t-0.55)/0.25)),c=Math.min(1,Math.max(0,(t-0.35)/0.2));
  return '<div style="position:absolute;inset:0;background:#06070C;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Anton,Impact,sans-serif;text-transform:uppercase">'+
  '<div style="font-size:190px;line-height:.95;color:#FFB43C;transform:scale('+(1.6-0.6*a)+');opacity:'+a+'">The Old Way</div>'+

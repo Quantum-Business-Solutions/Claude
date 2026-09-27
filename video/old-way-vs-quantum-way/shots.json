@@ -116,6 +116,227 @@
       "status": "completed",
       "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/6f8cdd51-724a-4d6c-8fee-b9a24243f5ca.mp4",
       "file": "clips/s1e_busywork_list.mp4"
+    },
+    {
+      "id": "s1f_maya_screen",
+      "scene": "1-the-dial",
+      "prompt": "Over-the-shoulder shot from just behind and to the right of the woman in the grey blazer with her hair pulled back from the reference image, sitting at a bright modern office desk in daytime with a small white earbud in her ear, looking at an open laptop that fills the right half of the frame. The laptop screen is a flat, evenly lit, solid bright chroma-key green filling the entire display, with nothing on it. Camera locked off on a tripod, completely static. She speaks cheerfully: \"Tuesday at ten works. See you then!\" and taps the trackpad.",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "6dd84c93-ace0-471a-b985-7680efe3c595",
+      "status": "in_progress"
+    },
+    {
+      "id": "s2a_rick_research",
+      "scene": "2-research",
+      "prompt": "Late afternoon in a cluttered office. the tired man in the rumpled white shirt and loose tie from the second reference image squints at his monitor, surrounded by printouts and sticky notes, rubbing his temples, and mutters wearily: \"Three hours on one account, and I still don't know who signs.\" Then the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image drops a thick pile of printouts onto his lap with a thud and says brightly: \"Only three more hours, champ.\" The monitor faces away from camera.",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "a18fad32-1eb5-4553-a86d-e08ee69c6c88",
+      "status": "in_progress"
+    },
+    {
+      "id": "s2b_maya_screen",
+      "scene": "2-research",
+      "prompt": "Over-the-shoulder shot from just behind and to the right of the woman in the grey blazer with her hair pulled back from the reference image, at a bright modern office desk, looking at an open laptop that fills the right half of the frame. The laptop screen is a flat, evenly lit, solid bright chroma-key green filling the entire display, with nothing on it. Camera locked off on a tripod, completely static. She clicks once, leans back with a satisfied smile, glances back over her shoulder at the camera and says: \"Done. Three seconds.\"",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "30151a2c-6e2b-43b5-bb14-4a42203c8793",
+      "status": "in_progress"
+    },
+    {
+      "id": "s3a_rick_meeting",
+      "scene": "3-the-meeting",
+      "prompt": "In a small client conference room, the tired man in the rumpled white shirt and loose tie from the reference image scribbles frantically on a yellow legal pad, head down, while a woman across the table keeps talking. His pen runs out; he shakes it in frustration, sighs and says under his breath: \"Hang on, can you repeat that?\" Comedic, natural light.",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "9b390485-19c6-404f-b30d-1884a206b7dc",
+      "status": "in_progress"
+    },
+    {
+      "id": "s3b_maya_meeting",
+      "scene": "3-the-meeting",
+      "prompt": "In a bright client conference room, the woman in the grey blazer with her hair pulled back from the reference image sits across the table from a friendly female office manager in a navy cardigan. Maya places her phone face-down on the table and says warmly: \"Mind if I turn on my notetaker, so I can give you my full attention?\" The office manager smiles and says: \"Please.\" Maya leans in, fully engaged, eye contact.",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "9587d352-4eeb-4b35-95e0-a163dd6fddfa",
+      "status": "in_progress"
+    },
+    {
+      "id": "s4a_rick_car",
+      "scene": "4-parking-lot",
+      "prompt": "Inside a car in a sunny office parking lot. the tired man in the rumpled white shirt and loose tie from the second reference image gets into the driver's seat and tosses a business card onto a messy pile of dozens of business cards on the passenger seat, saying: \"I'll enter that later.\" Then the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image is revealed sitting in the passenger seat, seatbelt on, grinning at the camera, and says: \"He won't.\"",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "f433fe5e-f316-4966-b579-176126ac693d",
+      "status": "in_progress"
+    },
+    {
+      "id": "s4b_maya_car",
+      "scene": "4-parking-lot",
+      "prompt": "the woman in the grey blazer with her hair pulled back from the reference image walks confidently out of a glass office building to her car in a sunny parking lot, holding her phone up and speaking into it: \"Claude, log my meeting with Dana, send her the recap, and set a follow-up for Tuesday.\" She smiles as her phone chimes, and gets into her car. Tracking shot.",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "dd14306f-76cb-440e-94e3-076f2f2d2a90",
+      "status": "in_progress"
+    },
+    {
+      "id": "s5a_rick_contracts",
+      "scene": "5-contracts",
+      "prompt": "the tired man in the rumpled white shirt and loose tie from the reference image sits at his office desk beside a monitor that faces away from camera, next to a filing cabinet with its drawers hanging open and paper contracts spilling out. He turns to the camera with regret and says: \"I wish I'd done a better job tracking contract end dates.\"",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "duration": 7,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "1df3f6ea-30bd-4b1e-8e7f-feb334f79f2a",
+      "status": "in_progress"
+    },
+    {
+      "id": "s5b_maya_contracts",
+      "scene": "5-contracts",
+      "prompt": "the woman in the grey blazer with her hair pulled back from the reference image sits relaxed in a bright modern office, turns to the camera with a confident smile and says: \"I ran every past engagement through Quantum's AI Lead Finder. Twenty-five hundred competitive contracts, coming up.\"",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "28a04436-6fe1-4253-ad95-aa6db0dadfba",
+      "status": "in_progress"
+    },
+    {
+      "id": "s6a_rick_latenight",
+      "scene": "6-late-night",
+      "prompt": "Night, an empty dark office lit only by a desk lamp. the tired man in the rumpled white shirt and loose tie from the second reference image holds a cell phone to his ear, exhausted, and says softly: \"Hey hon... it's going to be another late night.\" Behind him, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image cheerfully tips a huge box of envelopes and paper mail over his head; it rains down onto his lap and desk. Comedic.",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "fa9313b3-ff7e-4815-b279-df115b2bff0c",
+      "status": "in_progress"
+    },
+    {
+      "id": "s6b_owner_jog",
+      "scene": "6-late-night",
+      "prompt": "A fit, happy man in his fifties, a business owner, jogging on a scenic riverside trail at golden hour, wearing running gear and a small wireless earbud. He answers a call without stopping, smiling, and says in a relaxed, confident American male voice: \"No problem. I'll get my team on it right away.\" He keeps running, enjoying the sunset. Tracking shot.",
+      "model": "kling-video/v3.0/pro/text-to-video",
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on"
+      },
+      "request_id": "b2bc9892-a832-4929-808a-4ff25f73a536",
+      "status": "in_progress"
+    },
+    {
+      "id": "s7a_busywork_finale",
+      "scene": "7-finale",
+      "prompt": "In a bright modern office, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image peers over the shoulder of the woman in the grey blazer with her hair pulled back from the second reference image, who is calmly finishing her work and closing her laptop. He looks at the camera, shrugs sadly and says: \"Well... nobody needs me anymore.\" He slowly shuffles out of frame.",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "maya"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "16f98f0e-ae84-4354-bf9c-127bba6f5871",
+      "status": "in_progress"
+    },
+    {
+      "id": "s7b_maya_tagline",
+      "scene": "7-finale",
+      "prompt": "the woman in the grey blazer with her hair pulled back from the reference image closes her laptop at a bright desk at the end of the day, picks up her bag, turns to the camera and says with a confident smile: \"Same job. Same hours. Different system.\" Warm golden light.",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "duration": 6,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "5bbf9949-95a2-4ced-bcb2-da5d0b568023",
+      "status": "in_progress"
     }
   ],
   "reused": {
