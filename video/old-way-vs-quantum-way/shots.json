@@ -301,7 +301,9 @@
         "sound": "on"
       },
       "request_id": "b2bc9892-a832-4929-808a-4ff25f73a536",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/b93459bf-e65e-4421-8687-7b7779c1d44f.mp4",
+      "file": "clips/s6b_owner_jog.mp4"
     },
     {
       "id": "s7a_busywork_finale",
