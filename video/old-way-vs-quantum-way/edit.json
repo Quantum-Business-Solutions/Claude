@@ -7,7 +7,7 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/s0_cold_open_bogdown.mp4",
+          "file": "clips/s0_cold_open_fix.mp4",
           "in": 0,
           "out": 8
         },
@@ -34,7 +34,7 @@
         },
         {
           "type": "clip",
-          "file": "clips/s1e_busywork_list.mp4",
+          "file": "clips/s1e_bob_list_fix.mp4",
           "in": 0,
           "out": 5
         },
@@ -51,8 +51,8 @@
         {
           "type": "clip",
           "file": "clips/s1f_maya_screen_comp.mp4",
-          "in": 0,
-          "out": 8
+          "in": 2.0,
+          "out": 4.5
         },
         {
           "type": "insert",
@@ -62,7 +62,7 @@
         {
           "type": "clip",
           "file": "clips/s1c_rick_peek.mp4",
-          "in": 2.4,
+          "in": 1.2,
           "out": 8
         },
         {
@@ -130,7 +130,7 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/s3a_rick_meeting.mp4",
+          "file": "clips/s3a_rick_meeting_fix.mp4",
           "in": 0,
           "out": 8,
           "tag": {
@@ -140,7 +140,7 @@
         },
         {
           "type": "clip",
-          "file": "clips/s3b_maya_meeting.mp4",
+          "file": "clips/s3b_maya_meeting_fix.mp4",
           "in": 0,
           "out": 8,
           "tag": {
@@ -166,7 +166,7 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/s4a1_rick_card_v2.mp4",
+          "file": "clips/s4a1_rick_door_v4.mp4",
           "in": 0,
           "out": 5,
           "tag": {
@@ -183,7 +183,7 @@
         {
           "type": "clip",
           "file": "clips/s4b_maya_car.mp4",
-          "in": 0,
+          "in": 2.4,
           "out": 8,
           "tag": {
             "text": "THE QUANTUM WAY",
@@ -265,7 +265,7 @@
         },
         {
           "type": "clip",
-          "file": "clips/s6b_owner_jog.mp4",
+          "file": "clips/s6b_maya_jog.mp4",
           "in": 0,
           "out": 8,
           "tag": {
@@ -343,7 +343,7 @@
           "type": "clip",
           "file": "clips/sH_rick_joins.mp4",
           "in": 0,
-          "out": 8,
+          "out": 4.6,
           "tag": {
             "text": "THE QUANTUM WAY",
             "color": "#B6FF3C"
@@ -357,7 +357,7 @@
         },
         {
           "type": "clip",
-          "file": "clips/sI_manny_alone.mp4",
+          "file": "clips/sI_bob_alone_fix.mp4",
           "in": 0,
           "out": 7
         }
@@ -374,9 +374,9 @@
         },
         {
           "type": "clip",
-          "file": "clips/sL_kid_runs.mp4",
+          "file": "clips/sL_kid_runs_fix.mp4",
           "in": 0,
-          "out": 5
+          "out": 6
         }
       ]
     },

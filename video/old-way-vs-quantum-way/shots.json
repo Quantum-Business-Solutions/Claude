@@ -437,7 +437,9 @@
       },
       "prompt": "the woman in the grey blazer with her hair pulled back from the reference image sits at a bright modern desk. Without looking away from her work she asks: \"Who signs at Riverside?\" One of her team members in matching charcoal polo shirts with a thin lime-green collar stripe, a sharp young man standing right beside her desk holding a tablet, answers instantly: \"Doctor Reyes. Dana recommends.\" She smiles: \"Perfect.\" Crisp, fast, witty.",
       "request_id": "bb66d0ab-3140-4b36-88da-52219729c1fd",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/d195fcab-1d31-4c5d-85c3-e1569a0da01f.mp4",
+      "file": "clips/sA_assistant.mp4"
     },
     {
       "id": "sB_conveyor",
@@ -454,7 +456,9 @@
       },
       "prompt": "the woman in the grey blazer with her hair pulled back from the reference image sits at a bright modern desk. Beside her desk a small sleek white conveyor belt glides past, delivering neat folders one after another with a soft whir. She glances over, picks up the next folder without breaking stride, and says with a grin: \"Next.\" Playful, slightly surreal, no text on the folders.",
       "request_id": "1523b85b-5532-4ea4-95e8-f667c19e09e6",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/37b0b293-4769-4381-9041-779ad1aadffa.mp4",
+      "file": "clips/sB_conveyor.mp4"
     },
     {
       "id": "sC_done_button",
@@ -549,7 +553,9 @@
       },
       "prompt": "A cluttered office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image clings to the arm of the tired man in the rumpled white shirt and loose tie from the second reference image. The tired man finally pulls his arm free, stands tall and says firmly: \"I can't do this anymore.\" The cardigan man, wounded and pleading, clutches his chest and says: \"But... it's always been us.\" Comedic breakup-scene drama, soap-opera lighting.",
       "request_id": "8f46344f-d38a-4f52-ab82-e5428e6dda4d",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4c83425a-bd39-4b57-8845-bda9ed54e10a.mp4",
+      "file": "clips/sG_breakup.mp4"
     },
     {
       "id": "sH_rick_joins",
@@ -567,7 +573,9 @@
       },
       "prompt": "A bright modern open-plan office. the tired man in the rumpled white shirt and loose tie from the second reference image walks up to the desk of the woman in the grey blazer with her hair pulled back from the first reference image, a little sheepish. She smiles warmly. One of her team members in matching charcoal polo shirts with a thin lime-green collar stripe rolls a chair over for him; he sits down, relieved, and she says: \"Welcome to the team.\" He exhales and laughs. Uplifting, warm light.",
       "request_id": "76eab648-306d-4a94-83ff-cfe0ad4c7ef8",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/46db194b-ec0a-4abf-92e1-f58d51e56301.mp4",
+      "file": "clips/sH_rick_joins.mp4"
     },
     {
       "id": "sI_manny_alone",
@@ -584,7 +592,9 @@
       },
       "prompt": "Night. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits alone in a dark, empty office on an overturned box of paper files, under one flickering fluorescent light. He looks around the empty room and calls out hopefully: \"Anybody? ... Anybody need a spreadsheet?\" Silence. A single sheet of paper drifts to the floor. Comedic, melancholy.",
       "request_id": "56d50669-1dca-4630-9312-5656fab5af42",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/d70580ff-38da-4c7c-a6e1-517c2c328a9b.mp4",
+      "file": "clips/sI_manny_alone.mp4"
     },
     {
       "id": "s0_cold_open_bob",
@@ -622,7 +632,9 @@
       },
       "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Bob. Bog Down Bob. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man groans. Comedic, punchy, slight push-in.",
       "request_id": "5e69898a-868a-4b7a-9ad3-d4a140a6051d",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/bc77afb9-d108-494a-aa2e-aec85fdf2627.mp4",
+      "file": "clips/s0_cold_open_bogdown.mp4"
     },
     {
       "id": "sJ_leg_drag",
@@ -640,7 +652,9 @@
       },
       "prompt": "A long office corridor. the tired man in the rumpled white shirt and loose tie from the second reference image strides toward the exit with his jacket over his shoulder, determined, dragging the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image along the floor, who is lying on his stomach clinging desperately to his leg with both arms. The cardigan man wails: \"Wait! Don't go! We had something!\" The tired man keeps walking without looking down. Slapstick comedy, tracking shot.",
       "request_id": "414864f7-658f-49e2-95a4-e38a8d1cec89",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/28f82351-e70c-464c-a371-bb19b37fefe0.mp4",
+      "file": "clips/sJ_leg_drag.mp4"
     },
     {
       "id": "sK_game_wife",
@@ -657,7 +671,9 @@
       },
       "prompt": "A sunny youth soccer field on a Saturday. the tired man in the rumpled white shirt and loose tie from the reference image, now relaxed in a casual polo and sunglasses on his head, arrives on the sideline next to his wife, who wears a team hoodie. She looks around behind him and asks, teasing: \"Honey... where's Bog Down Bob?\" He smiles, genuinely relaxed, and says: \"I don't think we'll be seeing much of him anymore.\" Warm golden light, families cheering in the background.",
       "request_id": "c90e45ec-301a-4298-831e-4749006e8ecf",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/e8fc67a4-bd9e-41fa-8b30-fb3067db4a35.mp4",
+      "file": "clips/sK_game_wife.mp4"
     },
     {
       "id": "sL_kid_runs",
@@ -674,7 +690,226 @@
       },
       "prompt": "A sunny youth soccer field. A joyful seven-year-old in a soccer uniform sprints across the grass toward the tired man in the rumpled white shirt and loose tie from the reference image, in a casual polo, shouting: \"Daddy! You finally made it!\" and leaps into his arms for a big hug. He laughs and spins the kid around. Heartwarming, golden hour, slow-motion ending.",
       "request_id": "899c669b-722d-453b-81ed-b9c715b271ed",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/64517eae-8ba0-40ee-b2ad-50a77c9b4ff6.mp4",
+      "file": "clips/sL_kid_runs.mp4"
+    },
+    {
+      "id": "s4a1_rick_card_v2",
+      "scene": "4-parking-lot",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "request_id": "096beee4-5158-4645-919b-d61b8cc845ed",
+      "status": "completed",
+      "prompt": "Inside an American left-hand-drive sedan in a sunny office parking lot. Camera sits in the front passenger seat looking left toward the driver's seat. The tired man in the rumpled white shirt and loose tie from the reference image drops into the DRIVER'S seat on the left, directly behind the steering wheel, sighs, and flicks a business card onto a messy pile of dozens of business cards on the passenger seat in the foreground, saying: \"I'll enter that later.\" The steering wheel is in front of him, on the left side of the car.",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/edb3f208-9cde-4842-b1b5-6bad9f655674.mp4",
+      "file": "clips/s4a1_rick_card_v2.mp4"
+    },
+    {
+      "id": "s4a2_bob_passenger_v2",
+      "scene": "4-parking-lot",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 4
+      },
+      "request_id": "8d7c7f4f-873b-4c3f-95eb-532fd252d7f8",
+      "status": "completed",
+      "prompt": "Inside an American left-hand-drive sedan in a sunny parking lot. Camera is in the driver's seat looking right. The grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits in the FRONT PASSENGER seat on the right side of the car, the glovebox and dashboard in front of him, the passenger door and window behind him, seatbelt on, sitting on top of a pile of business cards. He turns slowly to the camera with a smug grin and says: \"He won't.\" Comedic beat.",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/e6776336-ca9b-4b92-bd95-d18c10cbf098.mp4",
+      "file": "clips/s4a2_bob_passenger_v2.mp4"
+    },
+    {
+      "id": "s4a1_rick_card_v3",
+      "scene": "4-parking-lot",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "prompt": "Camera in the back seat of an American sedan, centered, looking forward through the windshield at a sunny office parking lot. On the LEFT side of the frame, the tired man in the rumpled white shirt and loose tie from the reference image sits in the driver's seat directly behind the steering wheel. On the RIGHT side of the frame the front passenger seat is buried under a messy pile of dozens of business cards. He sighs, turns his head and flicks one more business card onto the pile, saying: \"I'll enter that later.\"",
+      "request_id": "3efe8479-594b-48ed-8d8c-56a81c6f08b1",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/57560582-67c3-4197-b00c-b515a3000df4.mp4",
+      "file": "clips/s4a1_rick_card_v3.mp4"
+    },
+    {
+      "id": "s4a2_bob_passenger_v3",
+      "scene": "4-parking-lot",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 4
+      },
+      "prompt": "Camera in the back seat of an American sedan, centered, looking forward. On the LEFT the tired man in the white shirt and loose tie from the second reference image sits behind the steering wheel. On the RIGHT, in the front passenger seat on top of a pile of business cards, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image slowly turns around to face the camera with a smug grin and says: \"He won't.\" Comedic beat.",
+      "request_id": "e6cf63e1-a5fc-44a6-ac77-26767789e8a2",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/12559e9a-cb18-45ec-ae56-a4d3f3a0fe34.mp4",
+      "file": "clips/s4a2_bob_passenger_v3.mp4"
+    },
+    {
+      "id": "s4a1_rick_door_v4",
+      "scene": "4-parking-lot",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "prompt": "Exterior, a sunny office parking lot. The tired man in the rumpled white shirt and loose tie from the reference image stands at the open door of his sedan, leans in and flicks a business card onto a messy pile of dozens of business cards spilling across the car seat, sighs and says: \"I'll enter that later.\" Then he slumps down into the car. Camera outside the car at waist height, side view, no steering wheel visible.",
+      "request_id": "2a1ece84-5bb9-42d6-a284-ff5b92705e78",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/e1f28fd9-566d-400e-b15f-6931813af6b7.mp4",
+      "file": "clips/s4a1_rick_door_v4.mp4"
+    },
+    {
+      "id": "s0_cold_open_fix",
+      "scene": "fix",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image perches casually on the edge of a cluttered office desk where the tired man in the rumpled white shirt and loose tie from the second reference image sits on a desk phone. The cardigan man looks straight into the camera and says in a smug, playful older American male voice: \"I'm Bob. Bog Down Bob. I live in every sales team.\" Then he tips a huge stack of business cards onto the tired man's lap; cards scatter everywhere and the tired man drops his head into his hands. Only the cardigan man speaks. Comedic, punchy, slight push-in.",
+      "request_id": "ee428a25-4090-4559-8bf3-b74085ed406a",
+      "status": "queued"
+    },
+    {
+      "id": "s1e_bob_list_fix",
+      "scene": "fix",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "prompt": "In a grey office cubicle, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image slaps a thick printed phone list down onto the desk in front of the tired man in the rumpled white shirt and loose tie from the second reference image and says cheerfully and clearly: \"Keep dialing, buddy.\" The tired man stares at the pile in despair. Only the cardigan man speaks.",
+      "request_id": "2ce49160-97b7-4cf5-8156-d9653aad6f9b",
+      "status": "queued"
+    },
+    {
+      "id": "s3a_rick_meeting_fix",
+      "scene": "fix",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "In a small client conference room, a friendly female office manager in a navy cardigan says clearly: \"We have three locations, and the copiers keep going down.\" Across the table the tired man in the rumpled white shirt and loose tie from the reference image scribbles frantically on a yellow legal pad, head down. His pen runs out; he shakes it and says: \"Sorry, can you repeat that?\" Comedic, natural light.",
+      "request_id": "80c0653f-ca80-408c-8a50-cdedcc504cc5",
+      "status": "queued"
+    },
+    {
+      "id": "s3b_maya_meeting_fix",
+      "scene": "fix",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "In a bright client conference room, the woman in the grey blazer with her hair pulled back from the reference image sits across the table from a friendly female office manager in a navy cardigan. Maya places her phone face-down on the table and says warmly and clearly: \"Mind if I let AI take the notes, so I can give you my full attention?\" The office manager smiles and says: \"Please.\" Maya leans in, fully engaged, eye contact.",
+      "request_id": "7e74b625-c603-4a8d-a222-3b9d91966626",
+      "status": "queued"
+    },
+    {
+      "id": "sI_bob_alone_fix",
+      "scene": "fix",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "Night. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits alone in a dark, empty office on an overturned box of paper files, under one flickering fluorescent light. He looks around the empty room and calls out hopefully: \"Anybody? ... Anybody need some data entry?\" Nobody answers. A single sheet of paper drifts to the floor. Comedic, melancholy.",
+      "request_id": "f1bee4c7-547a-4bff-bd76-4dee67db5499",
+      "status": "queued"
+    },
+    {
+      "id": "sL_kid_runs_fix",
+      "scene": "fix",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 6
+      },
+      "prompt": "A sunny youth soccer field. A joyful seven-year-old boy in a soccer uniform sprints across the grass toward the tired man in the rumpled white shirt and loose tie from the reference image and shouts loudly and clearly in a child's voice: \"Daddy! You made it!\" He leaps into his dad's arms for a big hug; the dad laughs and spins him around. Heartwarming, golden hour.",
+      "request_id": "7f360d37-8cdd-4f38-ad31-71e2fb5785cd",
+      "status": "queued"
+    },
+    {
+      "id": "s6b_maya_jog",
+      "scene": "6-late-night",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "The woman from the reference image, same face, now in running gear with her hair in a ponytail and a small wireless earbud, jogging on a scenic riverside trail at golden hour. She answers a call without stopping, smiling, and says in a relaxed, confident American female voice: \"No problem. I'll get my team on it right away.\" She keeps running, enjoying the sunset. Tracking shot.",
+      "request_id": "c3269729-0b98-47fc-90fa-90c49483c909",
+      "status": "queued"
     }
   ],
   "reused": {

@@ -138,7 +138,7 @@ SCENES.score=function(t,i){var fin=i===6,e=Math.min(1,t/1.6),k=1-Math.pow(1-e,3)
  return '<div class="stage"></div><div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;font-family:\'DM Sans\';color:#fff"><style>small{font-size:.45em;color:#8A93AB;margin-left:4px}</style>'+
  '<div style="text-align:center;font:700 30px \'DM Sans\';letter-spacing:.3em;text-transform:uppercase;color:#8A93AB;margin-bottom:10px">Selling time this week</div><div style="text-align:center;font-family:Anton;font-size:'+(fin?120:90)+'px;text-transform:uppercase;margin-bottom:60px">'+(fin?'End of the week':'Through '+SCORE.days[i-1])+'</div>'+
  '<div style="display:flex;padding:0 90px">'+side('Rick','The old way',r,'#FFB43C',false)+side('Maya','The Quantum way',m,'#B6FF3C',true)+'</div>'+
- '<div style="position:absolute;right:60px;bottom:40px;font:500 18px \'DM Sans\';color:#6F7890">Dramatization</div></div>'};
+ '<div style="position:absolute;left:60px;bottom:40px;font:500 18px \'DM Sans\';color:#6F7890">Dramatization</div></div>'};
 window.setT=function(name,t){if(name.indexOf('score_')===0){var i=name.slice(6);document.getElementById('root').innerHTML=SCENES.score(t,i==='final'?6:parseInt(i,10));return}document.getElementById('root').innerHTML=SCENES[name](t)};
 </script>
 </body></html>
