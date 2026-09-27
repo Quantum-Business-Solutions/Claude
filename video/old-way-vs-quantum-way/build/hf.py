@@ -44,9 +44,35 @@ def load():
         return json.load(f)
 
 
+RANK = {None: 0, "queued": 1, "in_progress": 2, "failed": 3, "completed": 4}
+
+
+def _better(a, b):
+    """Keep whichever copy of a shot has progressed further (request id, then status)."""
+    ka = (bool(a.get("request_id")), RANK.get(a.get("status"), 0), bool(a.get("file")))
+    kb = (bool(b.get("request_id")), RANK.get(b.get("status"), 0), bool(b.get("file")))
+    return a if ka >= kb else b
+
+
 def save(d):
-    with open(SHOTS, "w") as f:
-        json.dump(d, f, indent=2)
+    # merge with what is on disk so two processes can't drop each other's shots
+    try:
+        disk = json.load(open(SHOTS))
+    except Exception:
+        disk = {"shots": []}
+    mine = {s["id"]: s for s in d["shots"]}
+    seen, merged = set(), []
+    for s in disk.get("shots", []):
+        merged.append(_better(mine[s["id"]], s) if s["id"] in mine else s)
+        seen.add(s["id"])
+    merged += [s for s in d["shots"] if s["id"] not in seen]
+    out = dict(disk)
+    out.update({k: v for k, v in d.items() if k != "shots"})
+    out["shots"] = merged
+    tmp = SHOTS + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump(out, f, indent=2)
+    os.replace(tmp, SHOTS)
 
 
 def submit(shot_id):

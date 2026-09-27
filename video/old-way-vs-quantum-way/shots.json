@@ -824,7 +824,9 @@
       },
       "prompt": "In a grey office cubicle, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image slaps a thick printed phone list down onto the desk in front of the tired man in the rumpled white shirt and loose tie from the second reference image and says cheerfully and clearly: \"Keep dialing, buddy.\" The tired man stares at the pile in despair. Only the cardigan man speaks.",
       "request_id": "2ce49160-97b7-4cf5-8156-d9653aad6f9b",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/cf5b298c-37ab-43de-9842-d6e934b9b2f7.mp4",
+      "file": "clips/s1e_bob_list_fix.mp4"
     },
     {
       "id": "s3a_rick_meeting_fix",
@@ -841,7 +843,9 @@
       },
       "prompt": "In a small client conference room, a friendly female office manager in a navy cardigan says clearly: \"We have three locations, and the copiers keep going down.\" Across the table the tired man in the rumpled white shirt and loose tie from the reference image scribbles frantically on a yellow legal pad, head down. His pen runs out; he shakes it and says: \"Sorry, can you repeat that?\" Comedic, natural light.",
       "request_id": "80c0653f-ca80-408c-8a50-cdedcc504cc5",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/db784edd-f7e9-4b28-81a8-76be2eebf108.mp4",
+      "file": "clips/s3a_rick_meeting_fix.mp4"
     },
     {
       "id": "s3b_maya_meeting_fix",
@@ -858,7 +862,9 @@
       },
       "prompt": "In a bright client conference room, the woman in the grey blazer with her hair pulled back from the reference image sits across the table from a friendly female office manager in a navy cardigan. Maya places her phone face-down on the table and says warmly and clearly: \"Mind if I let AI take the notes, so I can give you my full attention?\" The office manager smiles and says: \"Please.\" Maya leans in, fully engaged, eye contact.",
       "request_id": "7e74b625-c603-4a8d-a222-3b9d91966626",
-      "status": "in_progress"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/eab0a91d-d06a-4e7e-bfb2-9b42ab0a52c9.mp4",
+      "file": "clips/s3b_maya_meeting_fix.mp4"
     },
     {
       "id": "sI_bob_alone_fix",
@@ -909,6 +915,207 @@
       },
       "prompt": "The woman from the reference image, same face, now in running gear with her hair in a ponytail and a small wireless earbud, jogging on a scenic riverside trail at golden hour. She answers a call without stopping, smiling, and says in a relaxed, confident American female voice: \"No problem. I'll get my team on it right away.\" She keeps running, enjoying the sunset. Tracking shot.",
       "request_id": "c3269729-0b98-47fc-90fa-90c49483c909",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/5c287d1e-4bac-4dd7-931d-fd1e3ea78fa2.mp4",
+      "file": "clips/s6b_maya_jog.mp4"
+    },
+    {
+      "id": "wife_ref",
+      "scene": "cast",
+      "model": "higgsfield-ai/soul/v2/standard",
+      "params": {
+        "aspect_ratio": "16:9"
+      },
+      "prompt": "Photorealistic portrait of a warm, friendly American woman around forty, shoulder-length wavy brown hair, wearing a grey youth-soccer team hoodie, holding car keys, standing in a bright suburban kitchen, gentle smile, looking at the camera. Cinematic natural light, 35mm, shallow depth of field. No text, no letters, no logos.",
+      "request_id": "bcb9087b-87b5-47b3-a997-7136b44a827a",
+      "status": "queued"
+    },
+    {
+      "id": "kid_ref",
+      "scene": "cast",
+      "model": "higgsfield-ai/soul/v2/standard",
+      "params": {
+        "aspect_ratio": "16:9"
+      },
+      "prompt": "Photorealistic portrait of a cheerful seven-year-old American boy with messy light-brown hair and a gap-toothed grin, wearing a plain royal-blue soccer jersey with no numbers or text, standing on a sunny soccer field, looking at the camera. Cinematic golden-hour light, 35mm. No text, no letters, no logos, no numbers.",
+      "request_id": "14876382-45b8-4233-a8ec-4114d0b92838",
+      "status": "queued"
+    },
+    {
+      "id": "g1_bob_voicemail",
+      "scene": "gags",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "prompt": "In a drab office bullpen, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image leans into the camera holding a beige desk phone receiver to his ear, grins and says smugly: \"I'm the voicemail you'll never hear back from.\" Mayhem-style comedic character monologue, direct to camera.",
+      "request_id": "b2b586c7-f52b-4450-a415-e7d8a04afdd7",
+      "status": "in_progress"
+    },
+    {
+      "id": "g2_bob_spreadsheet",
+      "scene": "gags",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 6
+      },
+      "prompt": "In a cluttered office, the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image holds up a thick stack of printed pages beside a monitor that faces away from camera, looks into the camera and says proudly: \"I'm the spreadsheet named final, final, version three.\" Mayhem-style comedic direct-to-camera.",
+      "request_id": "0abb8a97-4c92-4519-9f89-a07903b68b7c",
+      "status": "in_progress"
+    },
+    {
+      "id": "g3_bob_emails",
+      "scene": "gags",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "prompt": "Night in a dark office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image stands in a shower of falling paper envelopes, arms spread wide like a showman, and says to the camera with delight: \"I'm the two hundred unread emails.\" Mayhem-style comedic direct-to-camera.",
+      "request_id": "88da611e-56df-45d4-b27f-434c4a9c5e2a",
+      "status": "in_progress"
+    },
+    {
+      "id": "g4_copier_jam",
+      "scene": "gags",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "rick"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "In an office copy room, the tired man in the rumpled white shirt and loose tie from the second reference image waits anxiously at a big office copier printing his proposal. The copier suddenly jams, grinds to a halt and its warning light blinks. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image pops up from behind the copier with a grin and says: \"I jammed it. You're welcome.\" The tired man stares in disbelief. Comedic, no text on the copier display.",
+      "request_id": "69939cb7-30a4-440e-9cf6-ba8a3671fe28",
+      "status": "in_progress"
+    },
+    {
+      "id": "g5_coffee",
+      "scene": "gags",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "prompt": "At a bright modern desk, the woman in the grey blazer with her hair pulled back from the reference image reaches out her hand without looking up from her work; one of her team members in matching charcoal polo shirts with a thin lime-green collar stripe smoothly places a coffee cup into her hand and says: \"Oat milk, two shots.\" She smiles: \"You're the best.\" Crisp comedic timing.",
+      "request_id": "21aaec31-c167-4b02-92aa-825082786158",
+      "status": "in_progress"
+    },
+    {
+      "id": "g6_conveyor_fast",
+      "scene": "gags",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 6
+      },
+      "prompt": "Beside the desk of the woman in the grey blazer with her hair pulled back from the reference image, a sleek white conveyor belt suddenly speeds up, and neat folders start piling up on her desk. She laughs and says: \"Okay, okay!\" One of her team members in matching charcoal polo shirts with a thin lime-green collar stripe calmly turns a dial on the side of the belt and it slows down. She nods to him: \"Thank you.\" Playful, no text on the folders.",
+      "request_id": "7429e2e5-76e4-4db5-b9f6-77331b1430ca",
+      "status": "in_progress"
+    },
+    {
+      "id": "g7_fax_photo",
+      "scene": "gags",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 6
+      },
+      "prompt": "the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the reference image sits on the edge of a desk, tearfully clutching a framed photograph of an old fax machine to his chest, and says wistfully: \"Remember the fax machine? ... Good times.\" He sniffles. Melodramatic comedy, soft sad lighting.",
+      "request_id": "5c55181c-da54-4b74-8f99-bdc211157851",
+      "status": "in_progress"
+    },
+    {
+      "id": "g8_stinger",
+      "scene": "gags",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "busywork",
+        "maya"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 8
+      },
+      "prompt": "A bright modern office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image shuffles up to the desk of the woman in the grey blazer with her hair pulled back from the second reference image and says hopefully: \"Hi, I'm Bob. Got any manual processes?\" She smiles politely and taps a large glowing lime-green button on her desk. Two team members in matching charcoal polo shirts with a thin lime-green collar stripe appear at his sides and gently escort him away by the elbows as he says: \"I'll show myself out.\" Comedic button ending.",
+      "request_id": "2ba37af6-a612-4015-b035-be9adcdf10c7",
+      "status": "in_progress"
+    },
+    {
+      "id": "m1_theme",
+      "scene": "music",
+      "model": "kling-video/v3.0/pro/text-to-video",
+      "params": {
+        "duration": 15,
+        "aspect_ratio": "16:9",
+        "sound": "on"
+      },
+      "prompt": "Slow abstract dark background with soft glowing lime-green light particles drifting gently. No people, no text. Sound: Upbeat, playful, quirky comedic TV commercial instrumental music, bouncy pizzicato strings, plucky bass, light hand percussion, whistled melody, confident and fun, steady tempo. Instrumental music only, no vocals, no speech, no singing.",
+      "request_id": "754c2dfd-4ede-47df-a849-b5dcf41bc813",
+      "status": "in_progress"
+    },
+    {
+      "id": "m2_bob_theme",
+      "scene": "music",
+      "model": "kling-video/v3.0/pro/text-to-video",
+      "params": {
+        "duration": 15,
+        "aspect_ratio": "16:9",
+        "sound": "on"
+      },
+      "prompt": "Slow abstract dark background with soft glowing lime-green light particles drifting gently. No people, no text. Sound: Sneaky, mischievous comedic villain instrumental theme, tiptoeing pizzicato strings, tuba, bassoon, playful and cartoonish, steady tempo. Instrumental music only, no vocals, no speech, no singing.",
+      "request_id": "9a8216c9-41a9-4c10-bccc-69ae230e1b82",
+      "status": "in_progress"
+    },
+    {
+      "id": "m3_finale",
+      "scene": "music",
+      "model": "kling-video/v3.0/pro/text-to-video",
+      "params": {
+        "duration": 15,
+        "aspect_ratio": "16:9",
+        "sound": "on"
+      },
+      "prompt": "Slow abstract dark background with soft glowing lime-green light particles drifting gently. No people, no text. Sound: Warm, uplifting, heartfelt instrumental commercial music, piano and strings building to a hopeful swell. Instrumental music only, no vocals, no speech, no singing.",
+      "request_id": "b187b260-79a4-46f5-b6b5-de94888aaec9",
       "status": "in_progress"
     }
   ],
