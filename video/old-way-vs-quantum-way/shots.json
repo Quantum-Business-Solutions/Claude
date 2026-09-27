@@ -1288,7 +1288,9 @@
       },
       "prompt": "The confident businesswoman in the navy suit from the reference image stands in a bright modern office lobby, stops, turns to look straight into the camera with a knowing half-smile, raises one eyebrow and asks clearly: \"Are you letting Bob hang out in your organization?\" She holds the look for a beat. Crisp, confident, direct to camera.",
       "request_id": "f7840e78-2f49-44ae-8487-3d2e4bc6bde0",
-      "status": "queued"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/b2740187-7893-4bf6-9122-c54bc398b858.mp4",
+      "file": "clips/g10_cta.mp4"
     },
     {
       "id": "g8_stinger_fix",
@@ -1306,7 +1308,9 @@
       },
       "prompt": "A bright modern office. the grinning older man in the beige cardigan, mustard shirt, round glasses and lanyard from the first reference image shuffles up to the desk of the woman in the grey blazer from the second reference image and says hopefully: \"Hi, I'm Bob. Got any manual processes?\" She smiles politely and taps a large glowing lime-green button on her desk. Two team members in matching charcoal polo shirts appear at his sides and gently walk him away by the elbows as he says: \"I'll see myself out.\" Comedic button ending.",
       "request_id": "d3be3e7c-741d-47c2-81f2-3962176a8625",
-      "status": "queued"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/7888b646-1481-4c4f-9503-9fa3abfa527a.mp4",
+      "file": "clips/g8_stinger_fix.mp4"
     },
     {
       "id": "m3b_finale",
@@ -1319,7 +1323,9 @@
       },
       "prompt": "Slow abstract dark background with soft warm golden light particles drifting. No people, no text. Sound: solo piano with soft strings, warm, hopeful, heartfelt instrumental score for the end of a TV commercial. Purely instrumental: absolutely no voices, no vocals, no singing, no humming, no lyrics, no speech.",
       "request_id": "723cae25-d4de-46b7-8513-8f1c27906b99",
-      "status": "queued"
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/49eee7a1-3025-4018-91ea-75f8531cef7a.mp4",
+      "file": "clips/m3b_finale.mp4"
     }
   ],
   "reused": {
@@ -1327,7 +1333,9 @@
   },
   "published_cuts": {
     "v1_1080p": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/2d4edc22-fe35-47c1-82d2-17916713b9fb.mp4",
-    "v1_720p": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/b86cba2f-d360-4c37-ad74-9a810c706939.mp4"
+    "v1_720p": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/b86cba2f-d360-4c37-ad74-9a810c706939.mp4",
+    "v3_1080p": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/764c3cad-27d9-42e7-b31a-80ccb185b3a4.mp4",
+    "v3_720p": "https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/78fe4bb7-1029-4f97-ab1b-9799ddfa1bb2.mp4"
   },
   "characters": {
     "rick": "Rick, the old-way rep",
