@@ -48,8 +48,16 @@ def segment(seg, out):
             inputs += ["-to", str(seg["out"])]
         inputs += ["-i", src]
         dur = seg["out"] - seg.get("in", 0) if "out" in seg else None
-        fc.append("[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps=30,setsar=1[v0]")
-        audio = "[0:a]aresample=48000,aformat=channel_layouts=stereo[a]"
+        # "cuts": [[a, b], ...] in clip time removes dead air inside a shot (a jump cut; keep a beat either side)
+        cuts = [(c0 - seg.get("in", 0), c1 - seg.get("in", 0)) for c0, c1 in seg.get("cuts", [])]
+        vsel = asel = ""
+        if cuts:
+            expr = "+".join("between(t,%.3f,%.3f)" % c for c in cuts)
+            vsel = ",select='not(%s)',setpts=N/FRAME_RATE/TB" % expr
+            asel = ",aselect='not(%s)',asetpts=N/SR/TB" % expr
+            dur -= sum(c1 - c0 for c0, c1 in cuts)
+        fc.append("[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps=30%s,setsar=1[v0]" % vsel)
+        audio = "[0:a]aresample=48000,aformat=channel_layouts=stereo%s[a]" % asel
     else:  # insert
         dur = seg["secs"]
         inputs += ["-framerate", "30", "-i", insert_frames(seg["name"], dur)]

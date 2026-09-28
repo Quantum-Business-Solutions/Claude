@@ -4,10 +4,10 @@ python build/tighten.py --apply  -> write the trims into edit.json
 Leaves alone clips whose payoff is visual (listed in KEEP) and gaps under the thresholds."""
 import json, os, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LEAD, TAIL = 0.9, 1.8          # trim only gaps longer than these
-PRE, POST = 0.35, 0.9          # breathing room kept around the words
+LEAD, TAIL = 0.6, 1.1          # trim only gaps longer than these
+PRE, POST = 0.3, 0.7          # breathing room kept around the words
 KEEP = ("sC_done_button", "g6_conveyor", "sI_bob_alone", "sJ_leg_drag", "g7_fax", "g9_available", "sK_game",
-        "g10_cta", "sF_grab", "s6b_maya_jog", "sH_", "s1f_maya_screen", "s2b_maya_screen", "g4_copier", "sB_conveyor", "sD_agents_dinner", "g8_stinger")
+        "g10_cta", "sF_grab", "s6b_maya_jog", "sH_", "s1f_maya_screen", "s2b_maya_screen", "g4_copier", "sB_conveyor", "sD_agents_dinner", "g8_stinger", "n3_reply_all", "n8_bob_done", "sG3_bubble", "sH_welcome", "g10_cta", "sL_kid", "sK_game")
 def main():
     from faster_whisper import WhisperModel
     wm = WhisperModel("small.en", compute_type="int8")

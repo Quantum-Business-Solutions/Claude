@@ -2108,6 +2108,101 @@
       "status": "completed",
       "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/9363f117-8115-4ceb-972f-2edf51393bed.mp4",
       "file": "clips/m1b_theme_b.mp4"
+    },
+    {
+      "id": "sA_assistant_v2",
+      "scene": "2-research",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "the woman from the reference image, same face, in a grey blazer and white blouse, dark hair pulled back. Without looking away from her work she asks: \"Who signs at Riverside?\" One of her team members in matching charcoal polo shirts with a thin lime-green collar stripe, a sharp young man standing right beside her desk holding a tablet, answers instantly: \"Doctor Reyes. Dana recommends.\" She smiles: \"Perfect.\" Crisp, fast, witty. Realistic, grounded office. Her laptop screen faces away from camera. No holograms, no floating screens, no glowing panels. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "12f3daa6-4b4b-4eec-aa45-a871b0a209fc",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/58808b75-c93c-446b-925a-f5cb1f61af52.mp4",
+      "file": "clips/sA_assistant_v2.mp4"
+    },
+    {
+      "id": "g5_coffee_v2",
+      "scene": "gags",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "prompt": "At a bright modern desk, the woman from the reference image, same face, in a grey blazer and white blouse, dark hair pulled back, two shots.\" She smiles: \"You're the best.\" Crisp comedic timing. Realistic, grounded office. Her laptop screen faces away from camera. No holograms, no floating screens, no glowing panels. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "0290fb7e-d0f6-40d3-b74e-048e185e52c0",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/ac6fe2bb-4354-43f1-b237-ec80c8796df3.mp4",
+      "file": "clips/g5_coffee_v2.mp4"
+    },
+    {
+      "id": "s5b_maya_contracts_v2",
+      "scene": "5-contracts",
+      "prompt": "the woman from the reference image, same face, in a grey blazer and white blouse, dark hair pulled back, turns to the camera with a confident smile and says: \"I ran every past engagement through Quantum's AI Lead Finder. Twenty-five hundred competitive contracts, coming up.\" Realistic, grounded office. Her laptop screen faces away from camera. No holograms, no floating screens, no glowing panels. No laughing. No text, no letters, no logos, no signs.",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "duration": 8,
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro"
+      },
+      "request_id": "b63137ac-44c8-40d6-bf78-aa945708bce5",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/ec3e111b-3a94-4fa0-9b52-99c89cbc278c.mp4",
+      "file": "clips/s5b_maya_contracts_v2.mp4"
+    },
+    {
+      "id": "sA_assistant_v3",
+      "scene": "2-research",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 7
+      },
+      "prompt": "the woman from the reference image, same face, in a grey blazer and white blouse, dark hair pulled back sits at a bright modern desk. Without looking away from her work she asks: \"Who signs at Riverside?\" One of her team members in matching charcoal polo shirts with a thin lime-green collar stripe, a sharp young man standing right beside her desk holding a tablet, answers instantly: \"Doctor Reyes. Dana recommends.\" She smiles: \"Perfect.\" Crisp, fast, witty. Realistic, grounded office. Her laptop screen faces away from camera. No holograms, no floating screens, no glowing panels. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "8e5cf101-ba23-49f6-a855-418588bf3b46",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/6740f3cc-9a04-4c6b-99f0-ac9ad4df4551.mp4",
+      "file": "clips/sA_assistant_v3.mp4"
+    },
+    {
+      "id": "g5_coffee_v3",
+      "scene": "gags",
+      "model": "kling-video/o3/image-reference",
+      "refs": [
+        "maya_face"
+      ],
+      "params": {
+        "aspect_ratio": "16:9",
+        "sound": "on",
+        "mode": "pro",
+        "duration": 5
+      },
+      "prompt": "At a bright modern desk, the woman from the reference image, same face, in a grey blazer and white blouse, dark hair pulled back reaches out her hand without looking up from her work; one of her team members in matching charcoal polo shirts with a thin lime-green collar stripe smoothly places a coffee cup into her hand and says: \"Oat milk, two shots.\" She smiles: \"You're the best.\" Crisp comedic timing. Realistic, grounded office. Her laptop screen faces away from camera. No holograms, no floating screens, no glowing panels. No laughing. No text, no letters, no logos, no signs.",
+      "request_id": "17b53f5f-59bd-4d87-9bbf-970f2f044d07",
+      "status": "completed",
+      "output_url": "https://d3u0tzju9qaucj.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4f979b0e-72e7-43e1-aafc-ecaf63f4703e.mp4",
+      "file": "clips/g5_coffee_v3.mp4"
     }
   ],
   "reused": {

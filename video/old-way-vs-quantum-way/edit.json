@@ -1,5 +1,5 @@
 {
-  "output": "old-way-vs-quantum-way-v5.1.mp4",
+  "output": "old-way-vs-quantum-way-v6.mp4",
   "notes": "Timeline. Each scene is independent: add a scene block (or segments) and run build/build.py. Clip files come from shots.json via build/hf.py. Inserts are HTML screens in inserts/insert.html rendered frame by frame. *_comp clips are green-screen shots with a screen insert composited in by build/screen_replace.py.",
   "scenes": [
     {
@@ -30,7 +30,13 @@
           "tag": {
             "text": "THE OLD WAY",
             "color": "#FFB43C"
-          }
+          },
+          "cuts": [
+            [
+              6.5,
+              8.2
+            ]
+          ]
         },
         {
           "type": "clip",
@@ -42,7 +48,7 @@
           "type": "clip",
           "file": "clips/s1e_bob_list_fix.mp4",
           "in": 1.33,
-          "out": 5
+          "out": 4.06
         },
         {
           "type": "clip",
@@ -63,7 +69,7 @@
         {
           "type": "insert",
           "name": "cas_live",
-          "secs": 3.5
+          "secs": 3.0
         },
         {
           "type": "clip",
@@ -73,14 +79,14 @@
         },
         {
           "type": "clip",
-          "file": "clips/s1d_maya_reply.mp4",
+          "file": "clips/s1d_maya_reply_scr.mp4",
           "in": 2.69,
           "out": 8
         },
         {
           "type": "insert",
           "name": "score_1",
-          "secs": 3.0,
+          "secs": 2.6,
           "zoom": 1.0
         }
       ]
@@ -91,7 +97,7 @@
         {
           "type": "clip",
           "file": "clips/s2a_rick_research.mp4",
-          "in": 0,
+          "in": 0.36,
           "out": 8,
           "tag": {
             "text": "THE OLD WAY",
@@ -117,13 +123,13 @@
         {
           "type": "insert",
           "name": "hs_brief",
-          "secs": 3.2
+          "secs": 2.8
         },
         {
           "type": "clip",
-          "file": "clips/sA_assistant.mp4",
-          "in": 0.65,
-          "out": 7,
+          "file": "clips/sA_assistant_v3.mp4",
+          "in": 0.0,
+          "out": 7.0,
           "tag": {
             "text": "RUNG 01 \u00b7 ASSISTANT",
             "color": "dark:#4DE8FF"
@@ -131,20 +137,20 @@
         },
         {
           "type": "clip",
-          "file": "clips/n2_ai_coach.mp4",
+          "file": "clips/n2_ai_coach_scr.mp4",
           "in": 0,
           "out": 7.6
         },
         {
           "type": "clip",
-          "file": "clips/g5_coffee.mp4",
-          "in": 1.07,
-          "out": 5
+          "file": "clips/g5_coffee_v3.mp4",
+          "in": 1.6,
+          "out": 5.0
         },
         {
           "type": "insert",
           "name": "score_2",
-          "secs": 3.0,
+          "secs": 2.6,
           "zoom": 1.0
         }
       ]
@@ -172,11 +178,17 @@
           "type": "clip",
           "file": "clips/sM1_rick_pipeline.mp4",
           "in": 0,
-          "out": 7.0
+          "out": 7.0,
+          "cuts": [
+            [
+              2.2,
+              3.6
+            ]
+          ]
         },
         {
           "type": "clip",
-          "file": "clips/sM2_maya_pipeline_v2.mp4",
+          "file": "clips/sM2_maya_pipeline_v2_scr.mp4",
           "in": 0.0,
           "out": 7.8,
           "tag": {
@@ -187,7 +199,7 @@
         {
           "type": "insert",
           "name": "hs_pipeline",
-          "secs": 3.6,
+          "secs": 3.2,
           "zoom": 1.03
         }
       ]
@@ -203,13 +215,19 @@
           "tag": {
             "text": "THE OLD WAY",
             "color": "#FFB43C"
-          }
+          },
+          "cuts": [
+            [
+              4.0,
+              5.8
+            ]
+          ]
         },
         {
           "type": "clip",
           "file": "clips/s3b_maya_meeting_fix.mp4",
           "in": 0,
-          "out": 8,
+          "out": 7.42,
           "tag": {
             "text": "THE QUANTUM WAY",
             "color": "#B6FF3C"
@@ -218,12 +236,12 @@
         {
           "type": "insert",
           "name": "notetaker",
-          "secs": 3.6
+          "secs": 3.2
         },
         {
           "type": "insert",
           "name": "score_3",
-          "secs": 3.0,
+          "secs": 2.6,
           "zoom": 1.0
         }
       ]
@@ -250,7 +268,7 @@
         {
           "type": "clip",
           "file": "clips/sN1_bob_sticky.mp4",
-          "in": 0.8,
+          "in": 2.2,
           "out": 7.9
         },
         {
@@ -266,13 +284,13 @@
         {
           "type": "insert",
           "name": "followup",
-          "secs": 3.4,
+          "secs": 3.0,
           "zoom": 1.03
         },
         {
           "type": "insert",
           "name": "sequence",
-          "secs": 3.8,
+          "secs": 3.2,
           "zoom": 1.03
         }
       ]
@@ -294,7 +312,7 @@
           "type": "clip",
           "file": "clips/s4a2_bob_passenger_v5a.mp4",
           "in": 0.4,
-          "out": 3.6
+          "out": 3.14
         },
         {
           "type": "clip",
@@ -309,7 +327,7 @@
         {
           "type": "insert",
           "name": "hs_log",
-          "secs": 4.0
+          "secs": 3.4
         },
         {
           "type": "clip",
@@ -320,7 +338,7 @@
         {
           "type": "insert",
           "name": "score_4",
-          "secs": 3.0,
+          "secs": 2.6,
           "zoom": 1.0
         }
       ]
@@ -352,9 +370,9 @@
         },
         {
           "type": "clip",
-          "file": "clips/s5b_maya_contracts.mp4",
-          "in": 0,
-          "out": 8,
+          "file": "clips/s5b_maya_contracts_v2.mp4",
+          "in": 0.5,
+          "out": 8.0,
           "tag": {
             "text": "THE QUANTUM WAY",
             "color": "#B6FF3C"
@@ -363,7 +381,7 @@
         {
           "type": "insert",
           "name": "lead_finder",
-          "secs": 4.0,
+          "secs": 3.4,
           "zoom": 1.03
         },
         {
@@ -395,12 +413,18 @@
           "tag": {
             "text": "THE OLD WAY",
             "color": "#FFB43C"
-          }
+          },
+          "cuts": [
+            [
+              4.2,
+              5.4
+            ]
+          ]
         },
         {
           "type": "insert",
           "name": "proposal_ready",
-          "secs": 3.4,
+          "secs": 3.0,
           "zoom": 1.03,
           "tag": {
             "text": "THE QUANTUM WAY",
@@ -410,7 +434,7 @@
         {
           "type": "insert",
           "name": "renewal_radar",
-          "secs": 3.6,
+          "secs": 3.2,
           "zoom": 1.03
         }
       ]
@@ -437,7 +461,7 @@
         {
           "type": "insert",
           "name": "inbox",
-          "secs": 3.2
+          "secs": 2.8
         },
         {
           "type": "clip",
@@ -464,7 +488,7 @@
         {
           "type": "insert",
           "name": "agent_team",
-          "secs": 3.4,
+          "secs": 3.0,
           "zoom": 1.03
         },
         {
@@ -480,13 +504,13 @@
         {
           "type": "clip",
           "file": "clips/n10_vacation.mp4",
-          "in": 1.4,
+          "in": 1.86,
           "out": 6.2
         },
         {
           "type": "insert",
           "name": "score_5",
-          "secs": 3.0,
+          "secs": 2.6,
           "zoom": 1.0
         }
       ]
@@ -507,7 +531,7 @@
         {
           "type": "clip",
           "file": "clips/n7_shoebox.mp4",
-          "in": 1.8,
+          "in": 2.3,
           "out": 7.0
         },
         {
@@ -519,7 +543,7 @@
         {
           "type": "insert",
           "name": "score_final",
-          "secs": 4.0,
+          "secs": 2.6,
           "zoom": 1.0
         }
       ]
@@ -571,7 +595,13 @@
           "tag": {
             "text": "THE QUANTUM WAY",
             "color": "#B6FF3C"
-          }
+          },
+          "cuts": [
+            [
+              3.7,
+              4.6
+            ]
+          ]
         },
         {
           "type": "clip",
@@ -604,9 +634,9 @@
       "segments": [
         {
           "type": "clip",
-          "file": "clips/sK_game_v2.mp4",
-          "in": 0.0,
-          "out": 8.0
+          "file": "clips/sK_game_fix.mp4",
+          "in": 0,
+          "out": 8
         },
         {
           "type": "clip",
@@ -640,12 +670,18 @@
           "type": "clip",
           "file": "clips/g8_stinger_fix.mp4",
           "in": 0,
-          "out": 8
+          "out": 8,
+          "cuts": [
+            [
+              3.8,
+              5.1
+            ]
+          ]
         },
         {
           "type": "clip",
           "file": "clips/n9_busywork_anonymous.mp4",
-          "in": 0.6,
+          "in": 1.16,
           "out": 9.0
         },
         {
