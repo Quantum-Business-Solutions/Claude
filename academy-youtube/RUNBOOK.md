@@ -60,9 +60,10 @@ machinery; nothing here uploads bytes itself.
    `GET /youtube/v3/videos?part=status,snippet&id=...`. It should be
    public, embeddable, and have the right title. Fix anything off with a
    PUT.
-3. **Pick today's batch** until there are 10 pending rows in total.
-   Finish `manifest_week1.json` first, then take `manifest_rest.json` →
-   `queue` in `priority` order.
+3. **Pick today's batch.** The cap is 10 new rows created in the last
+   20 hours. If that many already exist, queue nothing new and only do
+   steps 1–2. Finish `manifest_week1.json` first, then take
+   `manifest_rest.json` → `queue` in `priority` order.
 4. **Title from content, never from the Academy chapter name.** The
    Academy has files attached to the wrong chapters and courses. The
    "Attitude" course, for example, holds Patrick Metzger webinar
