@@ -1,0 +1,2113 @@
+{
+ "queue": [
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127553,
+   "file_name": "QBS_1.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_1.mp4",
+   "also_in": [
+    "Intro to Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "How to Set SMART Sales Goals",
+   "summary_hint": null,
+   "hint_duration_s": 37,
+   "hint_chapters": [],
+   "priority": 101
+  },
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127554,
+   "file_name": "QBS_2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_2.mp4",
+   "also_in": [
+    "Intro to Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "Daily Goal Setting: Break Big Goals Into Daily Steps",
+   "summary_hint": null,
+   "hint_duration_s": 95,
+   "hint_chapters": [],
+   "priority": 102
+  },
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127555,
+   "file_name": "QBS_3.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_3.mp4",
+   "also_in": [
+    "Intro to Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "The Sales Mindset: Treat Rejection as Redirection",
+   "summary_hint": null,
+   "hint_duration_s": 77,
+   "hint_chapters": [],
+   "priority": 103
+  },
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127557,
+   "file_name": "Selling Starts With Understanding.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/226502/1130213/Chapter-06.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "Consultative Selling: Don't Rush the Needs Analysis",
+   "summary_hint": null,
+   "hint_duration_s": 64,
+   "hint_chapters": [],
+   "priority": 104
+  },
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127558,
+   "file_name": "03-Train.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/03-Train.mp4",
+   "also_in": [
+    "Intro to Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "Sales Training vs. Sales Development: Fix the Front of the Funnel",
+   "summary_hint": "One sales training is an event; getting better is a lifestyle. Shawn Peterson explains how to review your own calls like game film and why a 20% gain at the front of your process lifts every step after it.",
+   "hint_duration_s": 131,
+   "hint_chapters": [
+    [
+     "0:00",
+     "Train like an athlete"
+    ],
+    [
+     "0:28",
+     "Training is an event, development is a lifestyle"
+    ],
+    [
+     "1:11",
+     "Fix the front and everything downstream improves"
+    ]
+   ],
+   "priority": 105
+  },
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127560,
+   "file_name": "QBS_4_v2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_4_v2.mp4",
+   "also_in": [
+    "Week Three - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "In-Person Cold Calling: How to Get Past the Gatekeeper",
+   "summary_hint": "How to walk into a prospect's office and leave with the decision maker's name, or a handoff to them. Shawn Peterson covers the confidence to walk in, the one line that lowers a gatekeeper's guard, getting side by side instead of across a desk, and why the more they share, the more they trust you.",
+   "hint_duration_s": 294,
+   "hint_chapters": [
+    [
+     "0:00",
+     "Walk in with authority"
+    ],
+    [
+     "0:42",
+     "Match their body language"
+    ],
+    [
+     "1:19",
+     "\"I'm hoping you can help me\""
+    ],
+    [
+     "2:09",
+     "If the decision maker isn't available"
+    ],
+    [
+     "2:19",
+     "Get side by side, not across a desk"
+    ],
+    [
+     "3:07",
+     "The more they share, the more they trust"
+    ],
+    [
+     "4:02",
+     "One last try on the way out"
+    ]
+   ],
+   "priority": 106
+  },
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127992,
+   "file_name": "QBS_5.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_5.mp4",
+   "also_in": [
+    "Week Three - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "Talking to the Decision Maker: How to Layer Your Questions",
+   "summary_hint": "You made it past the gatekeeper. Now what? Shawn Peterson shows how to lower the decision maker's guard, find out who else is involved in the decision, and use layered questions to uncover what really matters before you share anything about your offer.",
+   "hint_duration_s": 328,
+   "hint_chapters": [
+    [
+     "0:00",
+     "Back to approach mode"
+    ],
+    [
+     "0:52",
+     "Who else is part of the decision?"
+    ],
+    [
+     "1:10",
+     "What they like and what they'd change"
+    ],
+    [
+     "1:23",
+     "How to layer your questions"
+    ],
+    [
+     "3:46",
+     "Don't give away your case too early"
+    ],
+    [
+     "4:46",
+     "Recap"
+    ]
+   ],
+   "priority": 107
+  },
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127994,
+   "file_name": "QBS_5_B.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_5_B.mp4",
+   "also_in": [
+    "Week Three - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "How to Run a B2B Discovery Call With BANT (and a Trial Close)",
+   "summary_hint": "A step-by-step B2B discovery call: qualify with BANT (budget, authority, needs, timing), understand their current environment and what it costs them, layer your questions, then use the trial close \"If I could, would you?\" so the final close feels natural.",
+   "hint_duration_s": 463,
+   "hint_chapters": [
+    [
+     "0:00",
+     "The goal of a discovery call"
+    ],
+    [
+     "0:30",
+     "BANT: budget, authority, needs, timing"
+    ],
+    [
+     "1:53",
+     "Understand their current environment"
+    ],
+    [
+     "3:00",
+     "Layer questions on business impact"
+    ],
+    [
+     "3:34",
+     "What is the current situation costing?"
+    ],
+    [
+     "5:10",
+     "Capture it in your CRM"
+    ],
+    [
+     "5:50",
+     "The trial close: \"If I could, would you?\""
+    ],
+    [
+     "6:55",
+     "Accountability when objections come later"
+    ]
+   ],
+   "priority": 108
+  },
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127996,
+   "file_name": "QBS_8.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_8.mp4",
+   "also_in": [
+    "Week Five - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "The Biggest Closing Mistakes in B2B Sales",
+   "summary_hint": "The two closing mistakes Shawn Peterson sees most: never actually asking for the business, and letting an awkward silence hang after the price. Plus why the close should be set up long before the presentation.",
+   "hint_duration_s": 123,
+   "hint_chapters": [
+    [
+     "0:00",
+     "The close should feel natural"
+    ],
+    [
+     "0:46",
+     "The most common closing mistakes"
+    ],
+    [
+     "1:28",
+     "Set up the close before you present"
+    ]
+   ],
+   "priority": 109
+  },
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127997,
+   "file_name": "QBS_8_1.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_8_1.mp4",
+   "also_in": [
+    "Week Five - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "How to Handle a Stalled Deal (\"Let's Revisit Next Quarter\")",
+   "summary_hint": "A stall is neither a yes nor a no, and it kills more deals than a no. Shawn Peterson shows how to handle \"let's push this to next quarter\" on the spot: hold the prospect to what they told you, ask what will actually change, isolate the real objection, and prepare for your team's most common stalls.",
+   "hint_duration_s": 309,
+   "hint_chapters": [
+    [
+     "0:00",
+     "What a stall is and why it happens"
+    ],
+    [
+     "0:38",
+     "Hold them to what they told you"
+    ],
+    [
+     "1:10",
+     "Ask what would change by next quarter"
+    ],
+    [
+     "1:39",
+     "Isolate the objection"
+    ],
+    [
+     "2:29",
+     "Example: \"We need to hire first\""
+    ],
+    [
+     "3:21",
+     "If you can't break the stall on the spot"
+    ],
+    [
+     "4:57",
+     "Exercise: write down your top stalls"
+    ]
+   ],
+   "priority": 110
+  },
+  {
+   "course_id": 225875,
+   "course": "Quantum Sales Training",
+   "chapter_id": 1127998,
+   "file_name": "QBS_9.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_9.mp4",
+   "also_in": [
+    "Week Seven - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "B2B Sales Follow-Up: Why Big Deals Take 100 to 200 Touches",
+   "summary_hint": "All the money is made in follow-up. Shawn Peterson covers the most common follow-up mistake, building a year-long cadence, why Quantum's clients have closed six and seven figure deals after 100 to 200 touches, mixing up your channels, and using sequences and dialers so nothing slips.",
+   "hint_duration_s": 268,
+   "hint_chapters": [
+    [
+     "0:00",
+     "The money is made in follow-up"
+    ],
+    [
+     "0:28",
+     "Mistake one: no follow-up at all"
+    ],
+    [
+     "0:44",
+     "Build a 365-day cadence"
+    ],
+    [
+     "1:04",
+     "Why big deals take 100 to 200 touches"
+    ],
+    [
+     "2:01",
+     "A call only counts if you connect"
+    ],
+    [
+     "2:48",
+     "Mix up your follow-up"
+    ],
+    [
+     "3:28",
+     "Automate so nothing slips"
+    ],
+    [
+     "3:46",
+     "Recap"
+    ]
+   ],
+   "priority": 111
+  },
+  {
+   "course_id": 226212,
+   "course": "Intro to Quantum Sales Bootcamp",
+   "chapter_id": 1130308,
+   "file_name": "02-Professional-Sales.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/02-Professional-Sales.mp4",
+   "also_in": [
+    "Sales: Sales in Motion"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 112
+  },
+  {
+   "course_id": 226509,
+   "course": "Week Two - Quantum Sales Bootcamp",
+   "chapter_id": 1130281,
+   "file_name": "QBS-Outbound-Calling-Strategy.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS-Outbound-Calling-Strategy.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 113
+  },
+  {
+   "course_id": 226509,
+   "course": "Week Two - Quantum Sales Bootcamp",
+   "chapter_id": 1130285,
+   "file_name": "QBS---Shawn-Peterson---Go-to-Market-Strategy.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Go-to-Market-Strategy.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 114
+  },
+  {
+   "course_id": 226509,
+   "course": "Week Two - Quantum Sales Bootcamp",
+   "chapter_id": 1130286,
+   "file_name": "QBS---Shawn-Peterson---Client-Success.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Client-Success.mp4",
+   "also_in": [
+    "Week Nine - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 115
+  },
+  {
+   "course_id": 226509,
+   "course": "Week Two - Quantum Sales Bootcamp",
+   "chapter_id": 1133095,
+   "file_name": "Mastering-the-Six-Cs-of-Sales_-Calls-.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Mastering-the-Six-Cs-of-Sales_-Calls-.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 116
+  },
+  {
+   "course_id": 226509,
+   "course": "Week Two - Quantum Sales Bootcamp",
+   "chapter_id": 1133096,
+   "file_name": "Mastering-the-6-Cs-of-Sales_-Enhancing-Connections.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Mastering-the-6-Cs-of-Sales_-Enhancing-Connections.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 117
+  },
+  {
+   "course_id": 226509,
+   "course": "Week Two - Quantum Sales Bootcamp",
+   "chapter_id": 1133097,
+   "file_name": "Mastering-the-6-Cs-of-Sales_-Conversations-.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Mastering-the-6-Cs-of-Sales_-Conversations-.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 118
+  },
+  {
+   "course_id": 226509,
+   "course": "Week Two - Quantum Sales Bootcamp",
+   "chapter_id": 1133098,
+   "file_name": "Mastering-the-6-Cs-of-Sales_-Closes.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Mastering-the-6-Cs-of-Sales_-Closes.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 119
+  },
+  {
+   "course_id": 226509,
+   "course": "Week Two - Quantum Sales Bootcamp",
+   "chapter_id": 1133099,
+   "file_name": "Mastering-the-6-Cs-of-Sales_-Conversions.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Mastering-the-6-Cs-of-Sales_-Conversions.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 120
+  },
+  {
+   "course_id": 226509,
+   "course": "Week Two - Quantum Sales Bootcamp",
+   "chapter_id": 1133100,
+   "file_name": "Mastering-the-6-Cs-of-Sales_-Capturing-Data-.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Mastering-the-6-Cs-of-Sales_-Capturing-Data-.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 121
+  },
+  {
+   "course_id": 226527,
+   "course": "Week Four - Quantum Sales Bootcamp",
+   "chapter_id": 1130339,
+   "file_name": "QBS_6.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_6.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 122
+  },
+  {
+   "course_id": 226527,
+   "course": "Week Four - Quantum Sales Bootcamp",
+   "chapter_id": 1130341,
+   "file_name": "QBS_6_A.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_6_A.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 123
+  },
+  {
+   "course_id": 226527,
+   "course": "Week Four - Quantum Sales Bootcamp",
+   "chapter_id": 1130342,
+   "file_name": "QBS_6_B.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_6_B.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 124
+  },
+  {
+   "course_id": 226527,
+   "course": "Week Four - Quantum Sales Bootcamp",
+   "chapter_id": 1130344,
+   "file_name": "QBS_7.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_7.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 125
+  },
+  {
+   "course_id": 226534,
+   "course": "Week Six - Quantum Sales Bootcamp",
+   "chapter_id": 1130349,
+   "file_name": "QBS_8_2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_8_2.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 126
+  },
+  {
+   "course_id": 226548,
+   "course": "Week Nine - Quantum Sales Bootcamp",
+   "chapter_id": 1130359,
+   "file_name": "QBS---Shawn-Peterson---Go-to-Market-Assessment.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Go-to-Market-Assessment.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 127
+  },
+  {
+   "course_id": 226548,
+   "course": "Week Nine - Quantum Sales Bootcamp",
+   "chapter_id": 1130360,
+   "file_name": "Quantum-Business-Solutions---Attract.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Attract.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 128
+  },
+  {
+   "course_id": 226548,
+   "course": "Week Nine - Quantum Sales Bootcamp",
+   "chapter_id": 1130361,
+   "file_name": "Quantum-Business-Solutions---Nurture.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Nurture.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 129
+  },
+  {
+   "course_id": 226548,
+   "course": "Week Nine - Quantum Sales Bootcamp",
+   "chapter_id": 1130362,
+   "file_name": "Quantum-Business-Solutions---Convert.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Convert.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 130
+  },
+  {
+   "course_id": 226547,
+   "course": "Week Ten - Quantum Sales Bootcamp",
+   "chapter_id": 1130354,
+   "file_name": "Quantum-Business-Solutions---Identifying-New-Revenue-Opportunities.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Identifying-New-Revenue-Opportunities.mp4",
+   "also_in": [
+    "Week Twelve - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 131
+  },
+  {
+   "course_id": 226547,
+   "course": "Week Ten - Quantum Sales Bootcamp",
+   "chapter_id": 1130355,
+   "file_name": "Quantum-Business-Solutions---Common-Challenges.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Common-Challenges.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 132
+  },
+  {
+   "course_id": 226547,
+   "course": "Week Ten - Quantum Sales Bootcamp",
+   "chapter_id": 1130356,
+   "file_name": "QBS_9_2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_9_2.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 133
+  },
+  {
+   "course_id": 226547,
+   "course": "Week Ten - Quantum Sales Bootcamp",
+   "chapter_id": 1130357,
+   "file_name": "05-Key-Performance-Indicators.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/05-Key-Performance-Indicators.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 134
+  },
+  {
+   "course_id": 226547,
+   "course": "Week Ten - Quantum Sales Bootcamp",
+   "chapter_id": 1130358,
+   "file_name": "QBS_9_1.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_9_1.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 135
+  },
+  {
+   "course_id": 226550,
+   "course": "Week Eleven - Quantum Sales Bootcamp",
+   "chapter_id": 1130366,
+   "file_name": "Quantum-Business-Solutions---Importance-of-Sales-and-Marketing-Alignment.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Importance-of-Sales-and-Marketing-Alignment.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 136
+  },
+  {
+   "course_id": 226550,
+   "course": "Week Eleven - Quantum Sales Bootcamp",
+   "chapter_id": 1130367,
+   "file_name": "02-Techniques-for-Alignment.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/02-Techniques-for-Alignment.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 137
+  },
+  {
+   "course_id": 226552,
+   "course": "Week Twelve - Quantum Sales Bootcamp",
+   "chapter_id": 1130370,
+   "file_name": "Quantum-09-Better_Growth_Plan.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-09-Better_Growth_Plan.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 138
+  },
+  {
+   "course_id": 226552,
+   "course": "Week Twelve - Quantum Sales Bootcamp",
+   "chapter_id": 1130372,
+   "file_name": "Quantum-14-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-14-3_Steps.mp4",
+   "also_in": [
+    "Week Twelve - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 139
+  },
+  {
+   "course_id": 226552,
+   "course": "Week Twelve - Quantum Sales Bootcamp",
+   "chapter_id": 1130376,
+   "file_name": "Quantum-15-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-15-3_Steps.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 140
+  },
+  {
+   "course_id": 226552,
+   "course": "Week Twelve - Quantum Sales Bootcamp",
+   "chapter_id": 1130379,
+   "file_name": "Quantum-Business-Solutions---Developing-a-Go-To-Market-or-Revenue-Generation-Plan.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Developing-a-Go-To-Market-or-Revenue-Generation-Plan.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 141
+  },
+  {
+   "course_id": 224262,
+   "course": "Sales Blitz as a Service",
+   "chapter_id": 1120160,
+   "file_name": "QBS---Shawn-Peterson---Outbound-Sales-Strategy.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Outbound-Sales-Strategy.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 142
+  },
+  {
+   "course_id": 224262,
+   "course": "Sales Blitz as a Service",
+   "chapter_id": 1120161,
+   "file_name": "QBS---Shawn-Peterson---Messaging.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Messaging.mp4",
+   "also_in": [
+    "Week Two - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 143
+  },
+  {
+   "course_id": 224262,
+   "course": "Sales Blitz as a Service",
+   "chapter_id": 1120162,
+   "file_name": "QBS---Shawn-Peterson---Data-and-List.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Data-and-List.mp4",
+   "also_in": [
+    "Week One - Quantum Sales Bootcamp",
+    "Week Two - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 144
+  },
+  {
+   "course_id": 224262,
+   "course": "Sales Blitz as a Service",
+   "chapter_id": 1120163,
+   "file_name": "QBS---Shawn-Peterson---Rep-Performance.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Rep-Performance.mp4",
+   "also_in": [
+    "Week Two - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 145
+  },
+  {
+   "course_id": 224262,
+   "course": "Sales Blitz as a Service",
+   "chapter_id": 1120164,
+   "file_name": "QBS---Shawn-Peterson---Research-Prospect.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Research-Prospect.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 146
+  },
+  {
+   "course_id": 224262,
+   "course": "Sales Blitz as a Service",
+   "chapter_id": 1138377,
+   "file_name": "Understanding-Call-Outcomes-and-Dispositions.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Understanding-Call-Outcomes-and-Dispositions.mp4",
+   "also_in": [
+    "Week Two - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 147
+  },
+  {
+   "course_id": 224262,
+   "course": "Sales Blitz as a Service",
+   "chapter_id": 1138466,
+   "file_name": "Mining-for-Gold_-Uncovering-Hidden-Opportunities-in-Your-CRM-.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Mining-for-Gold_-Uncovering-Hidden-Opportunities-in-Your-CRM-.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 148
+  },
+  {
+   "course_id": 225858,
+   "course": "Mastering Sales &amp; Marketing Technology",
+   "chapter_id": 1127519,
+   "file_name": "QBS---Shawn-Peterson---Rev-Ops.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Rev-Ops.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 149
+  },
+  {
+   "course_id": 213867,
+   "course": "Sales Training with Shawn Peterson",
+   "chapter_id": 1070667,
+   "file_name": "Chapter-1---2023.11.13-Sales-Blitz-as-a-Service-Training.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Chapter-1---2023.11.13-Sales-Blitz-as-a-Service-Training.mp4",
+   "also_in": [
+    "Week Two - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 150
+  },
+  {
+   "course_id": 213862,
+   "course": "The Future of Sales with Shawn Peterson",
+   "chapter_id": 1070614,
+   "file_name": "Quantum-Business-Webinar-6-8-23---Chapter-7.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Webinar-6-8-23---Chapter-7.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 151
+  },
+  {
+   "course_id": 213862,
+   "course": "The Future of Sales with Shawn Peterson",
+   "chapter_id": 1070620,
+   "file_name": "Quantum-Business-Webinar-6-8-23---Chapter-12.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Webinar-6-8-23---Chapter-12.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 152
+  },
+  {
+   "course_id": 225681,
+   "course": "Lead with Heart, Manage the Results",
+   "chapter_id": 1126818,
+   "file_name": "01-Introduction.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/01-Introduction.mp4",
+   "also_in": [
+    "Quantum Sales Training",
+    "Intro to Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "title_hint": "Welcome to Quantum Academy",
+   "summary_hint": null,
+   "hint_duration_s": 29,
+   "hint_chapters": [],
+   "priority": 153
+  },
+  {
+   "course_id": 225681,
+   "course": "Lead with Heart, Manage the Results",
+   "chapter_id": 1126819,
+   "file_name": "02-Why.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/02-Why.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 154
+  },
+  {
+   "course_id": 225681,
+   "course": "Lead with Heart, Manage the Results",
+   "chapter_id": 1126820,
+   "file_name": "03-Develop-and-Execute-a-Revenue-Plan.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/03-Develop-and-Execute-a-Revenue-Plan.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 155
+  },
+  {
+   "course_id": 225681,
+   "course": "Lead with Heart, Manage the Results",
+   "chapter_id": 1126821,
+   "file_name": "03-Scheduling-Blocks.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/03-Scheduling-Blocks.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 156
+  },
+  {
+   "course_id": 225681,
+   "course": "Lead with Heart, Manage the Results",
+   "chapter_id": 1126822,
+   "file_name": "04-The-Most-Important-Sale.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/04-The-Most-Important-Sale.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 157
+  },
+  {
+   "course_id": 225681,
+   "course": "Lead with Heart, Manage the Results",
+   "chapter_id": 1126823,
+   "file_name": "05-Week-3-Client-Success.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/05-Week-3-Client-Success.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 158
+  },
+  {
+   "course_id": 213910,
+   "course": "Frame of Mind",
+   "chapter_id": 1070975,
+   "file_name": "Lead-Generation-and-Automation---Chapter-10.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Chapter-10.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 159
+  },
+  {
+   "course_id": 213910,
+   "course": "Frame of Mind",
+   "chapter_id": 1070977,
+   "file_name": "QBS_3_v2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_3_v2.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 160
+  },
+  {
+   "course_id": 213910,
+   "course": "Frame of Mind",
+   "chapter_id": 1070978,
+   "file_name": "QBS_3_1.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_3_1.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 161
+  },
+  {
+   "course_id": 213910,
+   "course": "Frame of Mind",
+   "chapter_id": 1070979,
+   "file_name": "QBS_3_2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_3_2.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 162
+  },
+  {
+   "course_id": 171260,
+   "course": "Shaping Customer Experience",
+   "chapter_id": 860079,
+   "file_name": "03.02.23_WEBINAR_Chapter_1.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/03.02.23_WEBINAR_Chapter_1.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 163
+  },
+  {
+   "course_id": 171260,
+   "course": "Shaping Customer Experience",
+   "chapter_id": 860082,
+   "file_name": "03.02.23_WEBINAR_Chapter_2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/03.02.23_WEBINAR_Chapter_2.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 164
+  },
+  {
+   "course_id": 171260,
+   "course": "Shaping Customer Experience",
+   "chapter_id": 860087,
+   "file_name": "03.02.23_WEBINAR_Chapter_3.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/03.02.23_WEBINAR_Chapter_3.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 165
+  },
+  {
+   "course_id": 171260,
+   "course": "Shaping Customer Experience",
+   "chapter_id": 860141,
+   "file_name": "03.02.23_WEBINAR_Chapter_4.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/03.02.23_WEBINAR_Chapter_4.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 166
+  },
+  {
+   "course_id": 171260,
+   "course": "Shaping Customer Experience",
+   "chapter_id": 861535,
+   "file_name": "03.02.23_WEBINAR_Chapter_5.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/03.02.23_WEBINAR_Chapter_5.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 167
+  },
+  {
+   "course_id": 171260,
+   "course": "Shaping Customer Experience",
+   "chapter_id": 861547,
+   "file_name": "03.02.23_WEBINAR_Chapter_6.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/03.02.23_WEBINAR_Chapter_6.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 168
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070585,
+   "file_name": "Quantum_Business_3_Steps_Webinar_01.12.2023.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum_Business_3_Steps_Webinar_01.12.2023.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 169
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070586,
+   "file_name": "Quantum-01-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-01-3_Steps.mp4",
+   "also_in": [
+    230356
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 170
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070587,
+   "file_name": "Quantum-02-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-02-3_Steps.mp4",
+   "also_in": [
+    230356
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 171
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070588,
+   "file_name": "Quantum-03-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-03-3_Steps.mp4",
+   "also_in": [
+    230356
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 172
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070589,
+   "file_name": "Quantum-04-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-04-3_Steps.mp4",
+   "also_in": [
+    230356
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 173
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070590,
+   "file_name": "Quantum-05-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-05-3_Steps.mp4",
+   "also_in": [
+    230356
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 174
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070591,
+   "file_name": "Quantum-06-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-06-3_Steps.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 175
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070592,
+   "file_name": "Quantum-07-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-07-3_Steps.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 176
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070593,
+   "file_name": "Quantum-08-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-08-3_Steps.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 177
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070594,
+   "file_name": "Quantum-09-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-09-3_Steps.mp4",
+   "also_in": [
+    "Week Twelve - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 178
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070595,
+   "file_name": "Quantum-10-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-10-3_Steps.mp4",
+   "also_in": [
+    "Week Twelve - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 179
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070596,
+   "file_name": "Quantum-11-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-11-3_Steps.mp4",
+   "also_in": [
+    "Week Twelve - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 180
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070597,
+   "file_name": "Quantum-12-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-12-3_Steps.mp4",
+   "also_in": [
+    "Week Twelve - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 181
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070598,
+   "file_name": "Quantum-13-3_Steps.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-13-3_Steps.mp4",
+   "also_in": [
+    "Week Twelve - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 182
+  },
+  {
+   "course_id": 213860,
+   "course": "Accelerate Your Go to Market Plan with ZoomInfo",
+   "chapter_id": 1070599,
+   "file_name": "14-3_Steps_rev.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/14-3_Steps_rev.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 183
+  },
+  {
+   "course_id": 213865,
+   "course": "Building A High-Value Business with Patrick Metzger",
+   "chapter_id": 1070643,
+   "file_name": "Building-A-High-Value-Business---Intro.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Intro.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 184
+  },
+  {
+   "course_id": 213865,
+   "course": "Building A High-Value Business with Patrick Metzger",
+   "chapter_id": 1070644,
+   "file_name": "Building-A-High-Value-Business---Chapter-1.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-1.mp4",
+   "also_in": [
+    "Attitude"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 185
+  },
+  {
+   "course_id": 213865,
+   "course": "Building A High-Value Business with Patrick Metzger",
+   "chapter_id": 1070645,
+   "file_name": "Building-A-High-Value-Business---Chapter-2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-2.mp4",
+   "also_in": [
+    "Attitude"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 186
+  },
+  {
+   "course_id": 213865,
+   "course": "Building A High-Value Business with Patrick Metzger",
+   "chapter_id": 1070646,
+   "file_name": "Building-A-High-Value-Business---Chapter-3.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-3.mp4",
+   "also_in": [
+    "Attitude"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 187
+  },
+  {
+   "course_id": 213865,
+   "course": "Building A High-Value Business with Patrick Metzger",
+   "chapter_id": 1070647,
+   "file_name": "Building-A-High-Value-Business---Chapter-4.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-4.mp4",
+   "also_in": [
+    "Attitude"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 188
+  },
+  {
+   "course_id": 213865,
+   "course": "Building A High-Value Business with Patrick Metzger",
+   "chapter_id": 1070648,
+   "file_name": "Building-A-High-Value-Business---Chapter-5.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-5.mp4",
+   "also_in": [
+    "Attitude"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 189
+  },
+  {
+   "course_id": 213865,
+   "course": "Building A High-Value Business with Patrick Metzger",
+   "chapter_id": 1070649,
+   "file_name": "Building-A-High-Value-Business---Chapter-6.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-6.mp4",
+   "also_in": [
+    "Attitude"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 190
+  },
+  {
+   "course_id": 135562,
+   "course": null,
+   "chapter_id": 699281,
+   "file_name": "Building-A-High-Value-Business---Chapter-7.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-7.mp4",
+   "also_in": [
+    "Building A High-Value Business with Patrick Metzger"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 191
+  },
+  {
+   "course_id": 135562,
+   "course": null,
+   "chapter_id": 699282,
+   "file_name": "Building-A-High-Value-Business---Chapter-8.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-8.mp4",
+   "also_in": [
+    "Building A High-Value Business with Patrick Metzger"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 192
+  },
+  {
+   "course_id": 135562,
+   "course": null,
+   "chapter_id": 699297,
+   "file_name": "Building-A-High-Value-Business---Chapter-9.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-9.mp4",
+   "also_in": [
+    "Building A High-Value Business with Patrick Metzger"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 193
+  },
+  {
+   "course_id": 135562,
+   "course": null,
+   "chapter_id": 699298,
+   "file_name": "Building-A-High-Value-Business---Chapter-10.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-10.mp4",
+   "also_in": [
+    "Building A High-Value Business with Patrick Metzger"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 194
+  },
+  {
+   "course_id": 135562,
+   "course": null,
+   "chapter_id": 700230,
+   "file_name": "Building-A-High-Value-Business---Chapter-11.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-11.mp4",
+   "also_in": [
+    "Building A High-Value Business with Patrick Metzger"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 195
+  },
+  {
+   "course_id": 135562,
+   "course": null,
+   "chapter_id": 747028,
+   "file_name": "Building-A-High-Value-Business---Chapter-11.5.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-11.5.mp4",
+   "also_in": [
+    "Building A High-Value Business with Patrick Metzger"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 196
+  },
+  {
+   "course_id": 135562,
+   "course": null,
+   "chapter_id": 1069670,
+   "file_name": "Building-A-High-Value-Business---Chapter-12.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-12.mp4",
+   "also_in": [
+    "Building A High-Value Business with Patrick Metzger"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 197
+  },
+  {
+   "course_id": 171164,
+   "course": null,
+   "chapter_id": 859480,
+   "file_name": "Building-A-High-Value-Business---Chapter-13.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-13.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 198
+  },
+  {
+   "course_id": 171164,
+   "course": null,
+   "chapter_id": 859481,
+   "file_name": "Building-A-High-Value-Business---Chapter-14.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Building-A-High-Value-Business---Chapter-14.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 199
+  },
+  {
+   "course_id": 171164,
+   "course": null,
+   "chapter_id": 860489,
+   "file_name": "Lead-Generation-and-Automation---Chapter-6.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Chapter-6.mp4",
+   "also_in": [
+    "Lead Generation &amp; Automation with Mark  Grice"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 200
+  },
+  {
+   "course_id": 171164,
+   "course": null,
+   "chapter_id": 860796,
+   "file_name": "Lead-Generation-and-Automation---Chapter-7.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Chapter-7.mp4",
+   "also_in": [
+    "Lead Generation &amp; Automation with Mark  Grice"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 201
+  },
+  {
+   "course_id": 171164,
+   "course": null,
+   "chapter_id": 961107,
+   "file_name": "Lead-Generation-and-Automation---Chapter-8.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Chapter-8.mp4",
+   "also_in": [
+    "Lead Generation &amp; Automation with Mark  Grice"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 202
+  },
+  {
+   "course_id": 213866,
+   "course": "Lead Generation &amp; Automation with Mark  Grice",
+   "chapter_id": 1070657,
+   "file_name": "Lead-Generation-and-Automation---Intro.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Intro.mp4",
+   "also_in": [
+    "Week Eight - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 203
+  },
+  {
+   "course_id": 213866,
+   "course": "Lead Generation &amp; Automation with Mark  Grice",
+   "chapter_id": 1070658,
+   "file_name": "Lead-Generation-and-Automation---Chapter-1.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Chapter-1.mp4",
+   "also_in": [
+    "Week Eight - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 204
+  },
+  {
+   "course_id": 213866,
+   "course": "Lead Generation &amp; Automation with Mark  Grice",
+   "chapter_id": 1070659,
+   "file_name": "Lead-Generation-and-Automation---Chapter-2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Chapter-2.mp4",
+   "also_in": [
+    "Week Eight - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 205
+  },
+  {
+   "course_id": 213866,
+   "course": "Lead Generation &amp; Automation with Mark  Grice",
+   "chapter_id": 1070660,
+   "file_name": "Lead-Generation-and-Automation---Chapter-3.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Chapter-3.mp4",
+   "also_in": [
+    "Week Eight - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 206
+  },
+  {
+   "course_id": 213866,
+   "course": "Lead Generation &amp; Automation with Mark  Grice",
+   "chapter_id": 1070661,
+   "file_name": "Lead-Generation-and-Automation---Chapter-4.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Chapter-4.mp4",
+   "also_in": [
+    "Week Eight - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 207
+  },
+  {
+   "course_id": 213866,
+   "course": "Lead Generation &amp; Automation with Mark  Grice",
+   "chapter_id": 1070662,
+   "file_name": "Lead-Generation-and-Automation---Chapter-5.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Chapter-5.mp4",
+   "also_in": [
+    "Week Eight - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 208
+  },
+  {
+   "course_id": 213866,
+   "course": "Lead Generation &amp; Automation with Mark  Grice",
+   "chapter_id": 1070666,
+   "file_name": "Lead-Generation-and-Automation---Chapter-9.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Chapter-9.mp4",
+   "also_in": [
+    "Frame of Mind"
+   ],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 209
+  },
+  {
+   "course_id": 226493,
+   "course": "Sales: Sales in Motion",
+   "chapter_id": 1130142,
+   "file_name": "6-Cs-of-Sales---Overview.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/6-Cs-of-Sales---Overview.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 210
+  },
+  {
+   "course_id": 213861,
+   "course": "Building a Growth Plan with Shawn Peterson",
+   "chapter_id": 1070608,
+   "file_name": "Quantum_Business_Webinar_-Build_a_Better_Growth_Plan_10-27-2022.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum_Business_Webinar_-Build_a_Better_Growth_Plan_10-27-2022.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 211
+  }
+ ],
+ "hold": [
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069340,
+   "file_name": "loom-video-1.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-1.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069342,
+   "file_name": "loom-video-2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-2.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069343,
+   "file_name": "loom-video-3.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-3.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069344,
+   "file_name": "loom-video-4.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-4.mp4",
+   "also_in": [
+    "Connect And Sell User Training"
+   ],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069347,
+   "file_name": "loom-video-6.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-6.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069348,
+   "file_name": "loom-video-7.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-7.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069349,
+   "file_name": "loom-video-8.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-8.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069350,
+   "file_name": "loom-video-9.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-9.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069351,
+   "file_name": "How-to-Record-and-Enable-a-Voicemail-.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/How-to-Record-and-Enable-a-Voicemail-.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069352,
+   "file_name": "loom-video-11.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-11.mp4",
+   "also_in": [
+    "Connect And Sell User Training"
+   ],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069354,
+   "file_name": "loom-video-12.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-12.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069355,
+   "file_name": "QBS---Shawn-Peterson---Kick-Off-Call.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Kick-Off-Call.mp4",
+   "also_in": [
+    "ConnectAndSell Manager Training"
+   ],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213256,
+   "course": "Connect And Sell User Training",
+   "chapter_id": 1069356,
+   "file_name": "loom-video-14.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-14.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069449,
+   "file_name": "loom-video-15.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-15.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069490,
+   "file_name": "loom-video-16.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-16.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069495,
+   "file_name": "loom-video-17.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-17.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069499,
+   "file_name": "loom-video-18.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-18.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069502,
+   "file_name": "loom-video-19.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-19.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069511,
+   "file_name": "loom-video-20.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-20.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069521,
+   "file_name": "loom-video-21.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-21.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069523,
+   "file_name": "loom-video-22.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-22.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069524,
+   "file_name": "loom-video-23.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-23.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069525,
+   "file_name": "loom-video-24.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-24.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069526,
+   "file_name": "loom-video-25.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-25.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069529,
+   "file_name": "loom-video-26.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-26.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069530,
+   "file_name": "loom-video-27.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-27.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069531,
+   "file_name": "loom-video-29.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-29.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069538,
+   "file_name": "loom-video-30.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-30.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213617,
+   "course": "ConnectAndSell Manager Training",
+   "chapter_id": 1069561,
+   "file_name": "loom-video-31.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/loom-video-31.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor training"
+  },
+  {
+   "course_id": 213868,
+   "course": "Welcome to Quantum Business Solutions",
+   "chapter_id": 1070668,
+   "file_name": "QBS---Shawn-Peterson---Marketing-and-Sales.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Marketing-and-Sales.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "Welcome to Quantum: internal/client onboarding (Mission already public, flagged)"
+  },
+  {
+   "course_id": 213868,
+   "course": "Welcome to Quantum Business Solutions",
+   "chapter_id": 1070670,
+   "file_name": "Quantum-Business-Solutions---Core-Values.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Core-Values.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "Welcome to Quantum: internal/client onboarding (Mission already public, flagged)"
+  },
+  {
+   "course_id": 225662,
+   "course": "Connect and Sell Product Update: New Dialing Order Options - What is the change?",
+   "chapter_id": 1126698,
+   "file_name": "New-Feature_-ConnectAndSells_-_Dialing-Order_-.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/New-Feature_-ConnectAndSells_-_Dialing-Order_-.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "hold_reason": "ConnectAndSell vendor product update"
+  }
+ ],
+ "skipped": [
+  [
+   "loom-video.mp4",
+   "already public"
+  ],
+  [
+   "Quantum-01-Better_Growth_Plan.mp4",
+   "Growth Plan part already public"
+  ],
+  [
+   "Quantum-02-Better_Growth_Plan.mp4",
+   "Growth Plan part already public"
+  ],
+  [
+   "Quantum-03-Better_Growth_Plan.mp4",
+   "Growth Plan part already public"
+  ],
+  [
+   "Quantum-04-Better_Growth_Plan.mp4",
+   "Growth Plan part already public"
+  ],
+  [
+   "Quantum-05-Better_Growth_Plan.mp4",
+   "Growth Plan part already public"
+  ],
+  [
+   "Quantum-06-Better_Growth_Plan.mp4",
+   "Growth Plan part already public"
+  ],
+  [
+   "Quantum-07-Better_Growth_Plan.mp4",
+   "Growth Plan part already public"
+  ],
+  [
+   "Quantum-08-Better_Growth_Plan.mp4",
+   "Growth Plan part already public"
+  ],
+  [
+   "Quantum-Business-Solutions---Mission.mp4",
+   "already public"
+  ],
+  [
+   "01-Selling-is-the-Way.mp4",
+   "already on YouTube as i_sjnCZF5Pc"
+  ],
+  [
+   "QBS_5_A.mp4",
+   "already on YouTube as bF3Q8iSJO7s"
+  ],
+  [
+   "QBS_5_C.mp4",
+   "already on YouTube as NgNX86BN_kA"
+  ]
+ ]
+}
