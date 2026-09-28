@@ -1,5 +1,7 @@
 # YouTube upload: The Old Way vs. The Quantum Way (v6)
 
+**Live:** https://youtu.be/GxU0919SdTA (public on @the.shawn.peterson, uploaded 2026-09-28 via Client Command `upload_video_to_youtube`)
+
 - **Video (1080p):** https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/a1c05764-f908-41c6-a2c0-4f53eced0d5f.mp4
 - **Thumbnail:** https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/QUANTUM/VIDEOS/old-way-vs-quantum-way/old-way-vs-quantum-way-poster.jpg
 - **Category:** Comedy (or Science & Technology) · **Made for kids:** no · **Language:** en
