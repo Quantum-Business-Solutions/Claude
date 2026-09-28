@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Bob Costs You</title>
+<meta name="description" content="Run your own numbers: what busywork costs your sales team every year.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+<style>
+:root{--ink:#06070C;--card:#10131B;--line:rgba(255,255,255,.12);--dim:#98A0B3;--fg:#EEF1F6;--lime:#B6FF3C;--amber:#FFB43C;--coral:#FF6B4A;
+--disp:'Anton',Impact,sans-serif;--sans:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--fg);font:400 17px/1.5 var(--sans);padding:24px 16px 48px}
+main{max-width:560px;margin:0 auto}
+.kick{font:700 12px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--lime)}
+h1{font:400 clamp(44px,12vw,68px)/.95 var(--disp);text-transform:uppercase;margin:10px 0 8px}
+h1 span{background:linear-gradient(100deg,#FFC94B,#FF6B4A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{color:var(--dim);margin:0 0 22px}
+.row{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.row label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:500}
+.row label small{display:block;color:var(--dim);font-weight:400;font-size:13px}
+.row output{font:400 30px/1 var(--disp);color:var(--fg);min-width:3.5em;text-align:right}
+input[type=range]{width:100%;margin-top:12px;accent-color:var(--lime);height:28px}
+.total{margin:22px 0 6px;font:400 clamp(52px,16vw,84px)/.95 var(--disp);background:linear-gradient(100deg,#FFC94B,#FF6B4A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--dim);margin:0 0 22px}.sub b{color:var(--fg)}
+.cta{display:block;text-align:center;background:var(--lime);color:#06070C;font:700 17px var(--sans);text-decoration:none;padding:16px 18px;border-radius:999px}
+.cta:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.note{font-size:14px;color:var(--dim);margin-top:14px;text-align:center}
+.note a{color:var(--lime)}
+.how{font-size:13px;color:var(--dim);margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+</style></head>
+<body><main>
+<div class="kick">Quantum Business Solutions &middot; ICDA 2026</div>
+<h1>What <span>Bob</span> costs you.</h1>
+<p class="lede">Bog Down Bob is busywork: the data entry, chasing and retyping that eat a salesperson's week. Put in your own numbers.</p>
+
+<div class="row"><label for="reps">Salespeople <output id="o-reps"></output></label><input id="reps" type="range" min="1" max="100" step="1" value="8"></div>
+<div class="row"><label for="hrs"><span>Hours a week each on busywork<small>data entry, chasing, retyping, follow-ups</small></span><output id="o-hrs"></output></label><input id="hrs" type="range" min="1" max="30" step="1" value="10"></div>
+<div class="row"><label for="rate">Loaded cost per hour <output id="o-rate"></output></label><input id="rate" type="range" min="20" max="150" step="5" value="55"></div>
+
+<div class="total" id="total" aria-live="polite"></div>
+<p class="sub" id="sub"></p>
+
+<a class="cta" id="book" href="https://meetings.hubspot.com/shawn-peterson?utm_source=icda2026&amp;utm_medium=cost-calculator&amp;utm_campaign=bob-audit">Book a free 30-minute Bob Audit</a>
+<p class="note">Or watch the film: <a href="https://youtu.be/GxU0919SdTA">The Old Way vs. The Quantum Way</a></p>
+<p class="how">How this is worked out: salespeople &times; hours a week on busywork &times; loaded cost per hour &times; 48 working weeks. The starting values are an example, not a benchmark. Nothing you enter here is saved or sent anywhere.</p>
+</main>
+<script>
+(function(){var ids=['reps','hrs','rate'];function money(n){return '$'+Math.round(n).toLocaleString('en-US')}
+function draw(){var r=+reps.value,h=+hrs.value,c=+rate.value;
+ document.getElementById('o-reps').textContent=r;document.getElementById('o-hrs').textContent=h;document.getElementById('o-rate').textContent='$'+c;
+ var y=r*h*c*48,wk=Math.round(r*h*48/40);
+ document.getElementById('total').textContent=money(y)+' a year';
+ document.getElementById('sub').innerHTML='That is <b>'+wk.toLocaleString('en-US')+' forty-hour weeks</b> of your team’s time going to Bob every year, before a single missed renewal or a deal that went cold.'}
+var reps=document.getElementById('reps'),hrs=document.getElementById('hrs'),rate=document.getElementById('rate');
+ids.forEach(function(i){document.getElementById(i).addEventListener('input',draw)});draw()})();
+</script>
+</body></html>

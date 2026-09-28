@@ -1,0 +1,192 @@
+{
+ "output": "old-way-vs-quantum-way-90s.mp4",
+ "notes": "~90-second keynote opener (Meet Bob). Same trimmed segments as edit.json. Build: EDIT=edit_90.json python build/build.py && EDIT=edit_90.json python build/mix_music.py",
+ "music": {
+  "o90-open": "m2_bob_theme",
+  "o90-dial": "m1b_theme_a",
+  "o90-follow": "m1b_theme_a",
+  "o90-lot": "m1b_theme_a",
+  "o90-switch": "m2_bob_theme",
+  "o90-end": "m3b_finale"
+ },
+ "scenes": [
+  {
+   "id": "o90-open",
+   "segments": [
+    {
+     "type": "clip",
+     "file": "clips/s0_cold_open_fix.mp4",
+     "in": 0,
+     "out": 6.74
+    },
+    {
+     "type": "insert",
+     "name": "title",
+     "secs": 2.2,
+     "zoom": 1.0
+    }
+   ]
+  },
+  {
+   "id": "o90-dial",
+   "segments": [
+    {
+     "type": "clip",
+     "file": "clips/s1a_rick_voicemail.mp4",
+     "in": 2.85,
+     "out": 10,
+     "tag": {
+      "text": "THE OLD WAY",
+      "color": "#FFB43C"
+     },
+     "cuts": [
+      [
+       6.5,
+       8.2
+      ]
+     ]
+    },
+    {
+     "type": "clip",
+     "file": "clips/g1_bob_voicemail.mp4",
+     "in": 1.53,
+     "out": 5
+    },
+    {
+     "type": "clip",
+     "file": "clips/s1b_maya_call_nl.mp4",
+     "in": 0.61,
+     "out": 5.4,
+     "tag": {
+      "text": "THE QUANTUM WAY",
+      "color": "#B6FF3C"
+     }
+    }
+   ]
+  },
+  {
+   "id": "o90-follow",
+   "segments": [
+    {
+     "type": "clip",
+     "file": "clips/sN0_rick_ninth_email_screen.mp4",
+     "in": 0,
+     "out": 7.9,
+     "tag": {
+      "text": "THE OLD WAY",
+      "color": "#FFB43C"
+     }
+    },
+    {
+     "type": "clip",
+     "file": "clips/sN1_bob_sticky.mp4",
+     "in": 2.2,
+     "out": 7.9
+    },
+    {
+     "type": "clip",
+     "file": "clips/sN2_maya_reply_v2.mp4",
+     "in": 1.3,
+     "out": 7.0,
+     "tag": {
+      "text": "THE QUANTUM WAY",
+      "color": "#B6FF3C"
+     }
+    }
+   ]
+  },
+  {
+   "id": "o90-lot",
+   "segments": [
+    {
+     "type": "clip",
+     "file": "clips/s4a1_rick_door_v4.mp4",
+     "in": 2.57,
+     "out": 5,
+     "tag": {
+      "text": "THE OLD WAY",
+      "color": "#FFB43C"
+     }
+    },
+    {
+     "type": "clip",
+     "file": "clips/s4a2_bob_passenger_v5a.mp4",
+     "in": 0.4,
+     "out": 3.14
+    },
+    {
+     "type": "clip",
+     "file": "clips/s4b_maya_car.mp4",
+     "in": 3.07,
+     "out": 8,
+     "tag": {
+      "text": "THE QUANTUM WAY",
+      "color": "#B6FF3C"
+     }
+    },
+    {
+     "type": "clip",
+     "file": "clips/sC_done_button.mp4",
+     "in": 0,
+     "out": 4
+    }
+   ]
+  },
+  {
+   "id": "o90-switch",
+   "segments": [
+    {
+     "type": "clip",
+     "file": "clips/sG_breakup.mp4",
+     "in": 0.61,
+     "out": 8
+    },
+    {
+     "type": "clip",
+     "file": "clips/sJ_leg_drag.mp4",
+     "in": 0,
+     "out": 7
+    },
+    {
+     "type": "clip",
+     "file": "clips/sH_welcome_v3b.mp4",
+     "in": 1.2,
+     "out": 8.6,
+     "tag": {
+      "text": "THE QUANTUM WAY",
+      "color": "#B6FF3C"
+     },
+     "cuts": [
+      [
+       3.6,
+       4.2
+      ]
+     ]
+    },
+    {
+     "type": "clip",
+     "file": "clips/sI_bob_alone_fix.mp4",
+     "in": 0,
+     "out": 7
+    }
+   ]
+  },
+  {
+   "id": "o90-end",
+   "segments": [
+    {
+     "type": "clip",
+     "file": "clips/s7b_maya_tagline.mp4",
+     "in": 0.99,
+     "out": 6
+    },
+    {
+     "type": "insert",
+     "name": "endcard",
+     "secs": 4.0,
+     "zoom": 1.0
+    }
+   ]
+  }
+ ]
+}

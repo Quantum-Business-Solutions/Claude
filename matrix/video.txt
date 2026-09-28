@@ -1,6 +1,7 @@
-https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/7ed04a1d-e137-44f6-a236-fda296b94bfe.mp4
-# Line 1 is the video the deck plays on slide 2 (v4, no captions). Swap it to change the video without touching deck.js.
+https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/d38878e6-42f1-4503-97eb-c7b21715a9bf.mp4
+# Line 1 is the video the deck plays on slide 1: the 93-second opener (Meet Bob). Swap it to change the video without touching deck.js.
 preview: https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/45b0bc02-8e8e-4842-a6ce-68aae49ed4c2.mp4
-captions: https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/52ef703a-087c-4d43-8a83-2c773e2ce77a.mp4
-# 720p fallback (lighter for weak Wi-Fi): https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/4a03ad82-0ddc-4fd3-8fcf-56a2258dfbd5.mp4
-# 30-second cut: https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/514f17ba-3bab-4c94-8253-c81dfe42d54b.mp4
+# 720p fallback (lighter for weak Wi-Fi): https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/85ac4e51-5019-4906-9ef8-572fe6b26894.mp4
+captions: https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/d38878e6-42f1-4503-97eb-c7b21715a9bf.mp4
+# full film v6 (6:55): https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/a1c05764-f908-41c6-a2c0-4f53eced0d5f.mp4  |  YouTube: https://youtu.be/GxU0919SdTA
+# 90s 720p fallback: https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/e6ef5ced-4a5e-4cb3-aea3-4321f34455a6.mp4
