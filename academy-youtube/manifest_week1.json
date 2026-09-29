@@ -17,7 +17,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "completed"
  },
  {
   "priority": 2,
@@ -37,7 +37,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "completed"
  },
  {
   "priority": 3,
@@ -57,7 +57,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "completed"
  },
  {
   "priority": 4,
@@ -77,7 +77,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "completed"
  },
  {
   "priority": 5,
@@ -97,7 +97,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "completed"
  },
  {
   "priority": 6,
@@ -117,7 +117,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "completed"
  },
  {
   "priority": 7,
@@ -137,7 +137,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "completed"
  },
  {
   "priority": 8,
@@ -157,7 +157,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "completed"
  },
  {
   "priority": 9,
@@ -177,7 +177,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "completed"
  },
  {
   "priority": 10,
@@ -197,7 +197,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "completed"
  },
  {
   "priority": 11,
@@ -217,7 +217,8 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "queued",
+  "youtube_uploads_id": "6ec1aa8a-ac6e-466e-a207-7e6e81b4fced"
  },
  {
   "priority": 12,
@@ -237,7 +238,8 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "queued",
+  "youtube_uploads_id": "286109d2-993a-4af2-bc40-854e8569fab9"
  },
  {
   "priority": 13,
@@ -257,7 +259,8 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "queued",
+  "youtube_uploads_id": "f478b3b7-6e87-4dfd-aeff-46c4fb2ea72a"
  },
  {
   "priority": 14,
@@ -277,7 +280,8 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "queued",
+  "youtube_uploads_id": "0dfd6c77-2c3c-466d-9bab-dd6d01118771"
  },
  {
   "priority": 15,
@@ -297,6 +301,7 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "ready"
+  "status": "queued",
+  "youtube_uploads_id": "7a815264-82a5-4508-a4b2-597c8842b081"
  }
 ]
