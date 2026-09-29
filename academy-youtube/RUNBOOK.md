@@ -43,6 +43,18 @@ machinery; nothing here uploads bytes itself.
 
 ## Daily run
 
+0. **Setup, if the container is fresh.** The local branch can come back
+   rebuilt from `main` without these files. If it does, run
+   `git fetch origin claude/linkedin-engagement-task-debug-5o6xu1` and
+   then `git checkout -B claude/linkedin-engagement-task-debug-5o6xu1 origin/claude/linkedin-engagement-task-debug-5o6xu1`,
+   after checking that the local branch has no commits of its own. Then
+   `pip install faster-whisper av`.
+
+   Titles from the chapter name are wrong even inside Quantum Sales
+   Training. `QBS_1`, `QBS_2` and `QBS_3` there are the Go-to-Market
+   Playbook intro and the Quantum Growth Model, not goal-setting lessons.
+   Transcribe every file.
+
 1. **Check yesterday.** List every row queued by this job:
 
    ```sql
