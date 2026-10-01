@@ -601,34 +601,22 @@
    "file_name": "QBS_6.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_6.mp4",
    "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 122
-  },
-  {
-   "course_id": 226527,
-   "course": "Week Four - Quantum Sales Bootcamp",
-   "chapter_id": 1130341,
-   "file_name": "QBS_6_A.mp4",
-   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_6_A.mp4",
-   "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 123
-  },
-  {
-   "course_id": 226527,
-   "course": "Week Four - Quantum Sales Bootcamp",
-   "chapter_id": 1130342,
-   "file_name": "QBS_6_B.mp4",
-   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_6_B.mp4",
-   "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 124
+   "title": "Systemize Your Go-to-Market: Messaging for Every Stage of the Funnel",
+   "description": "Step two of building a go-to-market strategy is systemize. Shawn Peterson covers mapping your process, a marketing plan that puts the right message in front of buyers at each stage of their journey (top, middle and bottom of funnel), segmenting by persona and behavior, and enriching your database, since 30 percent or more of CRM data decays every year.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=quantum-growth-model\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 122,
+   "tags": [
+    "go-to-market strategy",
+    "marketing plan",
+    "buyer's journey",
+    "sales funnel",
+    "data enrichment",
+    "marketing segmentation",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "4bf84504-1c63-4aa9-b494-984f24d2182c"
   },
   {
    "course_id": 226527,
@@ -637,22 +625,21 @@
    "file_name": "QBS_7.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_7.mp4",
    "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 125
-  },
-  {
-   "course_id": 226534,
-   "course": "Week Six - Quantum Sales Bootcamp",
-   "chapter_id": 1130349,
-   "file_name": "QBS_8_2.mp4",
-   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_8_2.mp4",
-   "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 126
+   "title": "Database Segmentation and Your Unique Value Proposition",
+   "description": "Segment your database on demographic attributes (ICP and buyer persona) and on behavior and engagement (actions taken, lifecycle stage, lead status). Then find your unique value proposition where what sets you apart, what competitors lack and your customers' pain points overlap.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=quantum-growth-model\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 125,
+   "tags": [
+    "database segmentation",
+    "unique value proposition",
+    "ideal client profile",
+    "buyer persona",
+    "go-to-market strategy",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "5ca43a40-0e06-49bf-a33b-e9932a06b4c3"
   },
   {
    "course_id": 226548,
@@ -661,10 +648,20 @@
    "file_name": "QBS---Shawn-Peterson---Go-to-Market-Assessment.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Go-to-Market-Assessment.mp4",
    "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 127
+   "title": "What Happens in the Quantum 30-Day Go-to-Market Assessment",
+   "description": "A quick walkthrough of the Quantum Business Solutions 30-day go-to-market assessment: organizational and data insights in week one, marketing and sales development in week two, sales and client success in week three, and in week four the biggest growth opportunities from automation, process and the right software.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=quantum-growth-model\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 127,
+   "tags": [
+    "go-to-market assessment",
+    "go-to-market strategy",
+    "sales and marketing assessment",
+    "sales automation",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "68714c7c-7ede-4843-ac4b-a5e8f14ffab9"
   },
   {
    "course_id": 226548,
@@ -673,10 +670,21 @@
    "file_name": "Quantum-Business-Solutions---Attract.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Attract.mp4",
    "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 128
+   "title": "Attract Your Ideal Buyers: Campaigns Built Around the Buyer Persona",
+   "description": "Once you know your target, attract them. Start from what the buyer persona is responsible for and the headwinds they face, align social, email, webinars and sales messaging into one campaign with strong calls to action, then track views, opens, click-throughs, registrants and meetings booked to see what's working.\n\nFrom the Quantum Growth Model series in Quantum Academy: target, attract, nurture, convert and wow.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=quantum-growth-model\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 128,
+   "tags": [
+    "Quantum Growth Model",
+    "buyer persona",
+    "marketing campaign",
+    "lead generation",
+    "go-to-market strategy",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "4891f8fa-1658-4d8b-b75c-e523ad8eb81e"
   },
   {
    "course_id": 226548,
@@ -685,10 +693,21 @@
    "file_name": "Quantum-Business-Solutions---Nurture.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Nurture.mp4",
    "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 129
+   "title": "Nurture Prospects with Automated Campaigns, Calls and Case Studies",
+   "description": "Use engagement signals to decide who to nurture. For example, a webinar attendee goes into a 12-week automated nurture with value-added content and a call to action to book a meeting. Shawn Peterson also covers bringing calling into the nurture and using case studies and white papers to move prospects out of consideration.\n\nFrom the Quantum Growth Model series in Quantum Academy: target, attract, nurture, convert and wow.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=quantum-growth-model\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 129,
+   "tags": [
+    "Quantum Growth Model",
+    "lead nurturing",
+    "marketing automation",
+    "case studies",
+    "go-to-market strategy",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "08e8b730-8966-4158-9453-cc5dbd510b72"
   },
   {
    "course_id": 226548,
@@ -697,10 +716,21 @@
    "file_name": "Quantum-Business-Solutions---Convert.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Solutions---Convert.mp4",
    "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 130
+   "title": "Convert Prospects to Clients: Discovery, Follow-Up, Easy Proposals",
+   "description": "The point of all of it is converting prospects into paying clients. How to run discovery, automate follow-up on deals that have gone quiet for 30 days, and make proposals easy to accept and payments simple to start and recur.\n\nFrom the Quantum Growth Model series in Quantum Academy: target, attract, nurture, convert and wow.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=quantum-growth-model\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 130,
+   "tags": [
+    "Quantum Growth Model",
+    "sales conversion",
+    "discovery call",
+    "sales follow-up",
+    "proposal automation",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "4399684b-577e-44e5-87c4-e641b0f50591"
   },
   {
    "course_id": 226547,
@@ -711,10 +741,20 @@
    "also_in": [
     "Week Twelve - Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 131
+   "title": "Find Hidden Revenue in Your Client Base with a Product Matrix",
+   "description": "List every client down the side of a grid and every product across the top, mark who has bought what, and you can put a number on the revenue already sitting in your customer base. Then look at your clients' needs and headwinds for new products and services that add value without much lift.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=quantum-growth-model\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "ready",
+   "priority": 131,
+   "tags": [
+    "cross-selling",
+    "upselling",
+    "account expansion",
+    "customer revenue",
+    "revenue growth",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ]
   },
   {
    "course_id": 226547,
@@ -2230,6 +2270,45 @@
   [
    "QBS_8_1.mp4",
    "shorter cut of QBS_8 (same target audience, messaging and lead scoring segment)"
-  ]
+  ],
+  {
+   "course_id": 226527,
+   "course": "Week Four - Quantum Sales Bootcamp",
+   "chapter_id": 1130341,
+   "file_name": "QBS_6_A.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_6_A.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "skipped",
+   "priority": 123,
+   "skip_reason": "Shorter cut: first ~3.5 min of QBS_6.mp4 (334 s = 6_A 212 s + 6_B 129 s); QBS_6 queued instead"
+  },
+  {
+   "course_id": 226527,
+   "course": "Week Four - Quantum Sales Bootcamp",
+   "chapter_id": 1130342,
+   "file_name": "QBS_6_B.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_6_B.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "skipped",
+   "priority": 124,
+   "skip_reason": "Shorter cut: second half of QBS_6.mp4; QBS_6 queued instead"
+  },
+  {
+   "course_id": 226534,
+   "course": "Week Six - Quantum Sales Bootcamp",
+   "chapter_id": 1130349,
+   "file_name": "QBS_8_2.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS_8_2.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "skipped",
+   "priority": 126,
+   "skip_reason": "Shorter cut: second half of QBS_8.mp4 (337 s = 8_1 181 s + 8_2 156 s), already live as ExG0wRI_8jA"
+  }
  ]
 }

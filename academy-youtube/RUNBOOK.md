@@ -64,8 +64,11 @@ machinery; nothing here uploads bytes itself.
    order by created_at;
    ```
 
-   Rows that failed on quota (`429`) with no `youtube_upload_url` are safe
-   to requeue. Set `status='pending', attempts=0, error=null` and count
+   Rows that failed on quota with no `youtube_upload_url` are safe to
+   requeue. Quota shows up as either `429` or `400 uploadLimitExceeded`
+   ("The user has exceeded the number of videos they may upload"). On
+   2026-09-30 the 10th upload of the day hit the 400 version, so treat 10
+   as the ceiling, not a target. Set `status='pending', attempts=0, error=null` and count
    them toward today's 10. Rows that failed for any other reason need a
    diagnosis first. Don't blindly retry them.
 2. **Verify completions.** For each completed row, check
@@ -96,6 +99,10 @@ machinery; nothing here uploads bytes itself.
      them only if the opening transcript confirms the topic. Use
      `hint_chapters` timestamps only if the duration is within 2 s of
      `hint_duration_s`.
+   - Watch for shorter cuts. Several lessons exist as a full file plus
+     `_A`/`_B` or `_1`/`_2` halves (QBS_6 = 6_A + 6_B, QBS_8 = 8_1 + 8_2).
+     If the durations add up and the openings match, upload only the
+     full file and move the cuts to `skipped` with a `skip_reason`.
    - Guest webinars (Metzger, Grice, the ZoomInfo webinar with Ben
      Salzman): name the guest in the title or description.
    - Anything that turns out to be client-specific, confidential, or
