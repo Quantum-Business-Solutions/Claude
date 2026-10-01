@@ -97,6 +97,26 @@
  var hon=[].filter.call(document.querySelectorAll('section.s'),function(s){return /buy the platform before naming the workflow/i.test(s.textContent)})[0];
  if(hon&&!hon.querySelector('h2')){var w2=hon.querySelector('.in-wrap'),k=document.createElement('div');k.className='kick';k.textContent='The honest part';var h=document.createElement('h2');h.innerHTML='Three ways to <span class="grad">waste the money.</span>';w2.insertBefore(h,w2.firstChild);w2.insertBefore(k,h)}
 })();
+/* v11 (figures QA): every number agrees with every other one. */
+(function(){
+ function walk(root,fn){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),n;while((n=w.nextNode()))fn(n)}
+ function rep(sec,a,b){if(!sec)return;walk(sec,function(t){if(t.nodeValue.indexOf(a)>-1)t.nodeValue=t.nodeValue.split(a).join(b)})}
+ function nrep(sec,a,b){if(sec)sec.setAttribute('data-notes',(sec.getAttribute('data-notes')||'').split(a).join(b))}
+ var all=[].slice.call(document.querySelectorAll('section.s'));
+ function find(re){return all.filter(function(s){return re.test(s.textContent)})}
+ /* scoreboard: the ten measured scores average 40.3, not 41 */
+ find(/ROOM AVERAGE 41/i).forEach(function(s){rep(s,'ROOM AVERAGE 41','ROOM AVERAGE 40');
+  [].forEach.call(s.querySelectorAll('[aria-label]'),function(e){e.setAttribute('aria-label',e.getAttribute('aria-label').replace('room average 41','room average 40'))});
+  nrep(s,'Room average 41.','Room average 40.')});
+ /* Richmond, VA to Atlanta, GA is about 470 miles, not 800 */
+ find(/800 miles apart/).forEach(function(s){rep(s,'800 miles apart','nearly 500 miles apart');nrep(s,'800 miles apart','nearly 500 miles apart')});
+ /* the 67 are core tasks per role; the 137 are the full sales and marketing library */
+ find(/67 tasks across four roles/).forEach(function(s){rep(s,'67 tasks across four roles','67 core tasks across four roles');rep(s,'of 67 tasks','of 67 core tasks');nrep(s,'Sixty-five tasks across four jobs','Sixty-seven core tasks across four jobs')});
+ [].forEach.call(document.querySelectorAll('section[data-gen^="list:"]'),function(s){rep(s,'every task, classified','core tasks, classified');[].forEach.call(s.querySelectorAll('h1,h2,h3'),function(h){walk(h,function(t){t.nodeValue=t.nodeValue.replace(/^(\d+) tasks\.(\s*)$/,'$1 core tasks.$2')})})});
+ find(/137 tasks/i).forEach(function(s){rep(s,'Every task, every rung','The full library · every task, every rung');
+  nrep(s,'Everything you just saw was four roles. Here is every task: 89 sales, 48 marketing.','Everything you just saw was the core tasks of four roles. This is the full library behind them: 89 sales tasks, 48 marketing tasks.')});
+ find(/Trigger-event monitoring/).forEach(function(s){nrep(s,'Linger on 7–12, the block no MSP can copy.','Linger on the middle column, Service: the block no MSP can copy.')});
+})();
 /* v9 (runs after deck.js via deck-extra.js, so neither index.html nor deck.js is republished): Bob comes back through the talk, "What Bob costs you" calculator slide, and a close that asks for the meeting. */
 (function(){
  var BOB='https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/cf926fd6-d099-4cd9-86f8-d4e6ade270ac.webp';
