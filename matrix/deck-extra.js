@@ -9,6 +9,94 @@
  var RUN='1:33';var sp=document.querySelector('.pmeta span');if(sp)sp.innerHTML=RUN+' &middot; sound on &middot; press space';
  var tr=document.querySelector('.s.trailer');if(tr)tr.setAttribute('data-notes',"LIGHTS DOWN, SOUND UP. The silent preview loops while people sit down. Press space (or click) to play the 93-second opener: meet Bob. Do not talk over it. When it ends it goes back to the preview; advance. The full 6:55 film is on YouTube (https://youtu.be/GxU0919SdTA); its QR is on the close slide.");
 })();
+/* v10 (look and feel): each of the five plays gets a picture of what it produces, dealer tiles carry their names, the honest-part list gets a heading. */
+(function(){
+ var st=document.createElement('style');st.textContent=
+  '.plw{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:4vw;align-items:center;text-align:left}'+
+  '.plw .pll h3{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(2rem,3.6vw,3.4rem);line-height:.98;letter-spacing:.005em;margin:1.6vh 0 .4vh}'+
+  '.plw .pll .pts{margin-top:2.4vh}.plw .pll .pts li{margin-bottom:1.7vh}'+
+  '.mock{position:relative;border-radius:20px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.02));box-shadow:0 40px 90px -40px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.03) inset;padding:2.4vh 1.6vw;font-family:var(--sans);color:#E9EDF5;opacity:0;transform:translateY(24px);transition:opacity .7s .35s,transform .7s .35s}'+
+  '.s.in .mock{opacity:1;transform:none}'+
+  '.mock .bar{display:flex;justify-content:space-between;align-items:center;font:700 clamp(10px,.8vw,12px)/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:1.8vh}'+
+  '.mock .bar i{font-style:normal;color:#06070C;background:#B6FF3C;border-radius:99px;padding:.45em .8em;letter-spacing:.1em}'+
+  '.mock .ill{position:absolute;right:1.2vw;bottom:-3.2vh;font:600 clamp(10px,.75vw,11px)/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#6F7890}'+
+  '.mock .row{display:grid;grid-template-columns:auto 1fr;gap:.9vw;padding:1.3vh 0;border-top:1px solid rgba(255,255,255,.08)}.mock .row:first-of-type{border-top:0}'+
+  '.mock .dot{width:clamp(30px,2.4vw,40px);height:clamp(30px,2.4vw,40px);border-radius:10px;display:grid;place-items:center;font:400 clamp(14px,1.2vw,19px)/1 var(--disp);color:#06070C;background:var(--hot)}'+
+  '.mock .nm{font:700 clamp(13px,1.1vw,17px)/1.25 var(--sans);color:#fff}'+
+  '.mock .chip{display:inline-block;font:700 clamp(9px,.72vw,11px)/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:.45em .7em;border-radius:99px;margin-left:.5em;vertical-align:middle;background:rgba(77,232,255,.14);color:#4DE8FF}'+
+  '.mock .chip.am{background:rgba(255,180,60,.16);color:#FFB43C}.mock .chip.li{background:rgba(182,255,60,.14);color:#B6FF3C}'+
+  '.mock .sm{font:500 clamp(11px,.92vw,14px)/1.45 var(--sans);color:#A9B2C6;margin-top:.4vh}.mock .sm b{color:#E9EDF5}'+
+  '.mock .q{font-family:var(--serif);font-style:italic;color:#FFD48A}'+
+  '.mock .tbl{width:100%;border-collapse:collapse;font:500 clamp(11px,.95vw,15px)/1.3 var(--sans)}'+
+  '.mock .tbl td{padding:1vh 0;border-top:1px solid rgba(255,255,255,.08)}.mock .tbl td:last-child{text-align:right;color:#fff;font-weight:700}'+
+  '.mock .tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:1.4vh;padding-top:1.4vh;border-top:1px solid rgba(255,255,255,.2)}'+
+  '.mock .tot>b{font:400 clamp(26px,2.5vw,40px)/1 var(--disp)}'+
+  '.mock .btns{display:flex;gap:.7vw;margin-top:2vh}.mock .btns span{flex:1;text-align:center;padding:1.1vh 0;border-radius:99px;font:700 clamp(11px,.95vw,14px)/1 var(--sans);border:1px solid rgba(255,255,255,.2)}.mock .btns span.go{background:#B6FF3C;color:#06070C;border-color:#B6FF3C}'+
+  '.mock .card{border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(6,7,12,.55);padding:1.6vh 1.1vw}'+
+  '.mock .card.hot{border-color:rgba(255,180,60,.6);background:linear-gradient(150deg,rgba(255,180,60,.18),rgba(255,107,74,.06))}'+
+  '.mock .arrow{text-align:center;font:400 clamp(20px,2vw,30px)/1 var(--disp);color:#FFB43C;margin:1vh 0}'+
+  '.mock .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:.8vw}'+
+  '.mock .grid6>div{border-radius:12px;border:1px solid rgba(255,255,255,.1);background:rgba(6,7,12,.5);padding:1.3vh .8vw;min-height:9vh}'+
+  '.mock .grid6 .d{font:700 clamp(9px,.72vw,11px)/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#6F7890}'+
+  '.mock .grid6 .t{font:700 clamp(12px,1vw,15px)/1.25 var(--sans);margin-top:.8vh}'+
+  '.mock .ask{display:flex;gap:.7vw;align-items:center;border-radius:99px;border:1px solid rgba(255,255,255,.18);padding:1.1vh 1vw;font:500 clamp(12px,1.05vw,16px)/1.2 var(--sans);color:#fff;margin-bottom:2vh}'+
+  '.mock .ask:before{content:"";width:.9em;height:.9em;border-radius:50%;border:2px solid #4DE8FF;flex:none}'+
+  '.mock .ans .row .nm{font-size:clamp(13px,1.05vw,16px)}.mock .ans .row.you{background:linear-gradient(90deg,rgba(182,255,60,.14),transparent);border-radius:10px;padding-left:.6vw;margin:0 -.6vw}'+
+  '.mock .ans .dot.g{background:rgba(255,255,255,.12);color:#A9B2C6}'+
+  '.lg{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:.5vh}'+
+  '.lg .lgn{display:block;font:700 clamp(9px,.68vw,11px)/1.15 var(--sans);color:#3A4152;text-align:center;letter-spacing:.02em}'+
+  '@media (max-width:900px){.plw{grid-template-columns:1fr}}';
+ document.head.appendChild(st);
+
+ var MOCK=[
+  /* 01 territory intelligence */
+  '<div class="mock"><div class="bar"><span>Monday &middot; 7:02 am &middot; your list</span><i>Briefed overnight</i></div>'+
+   '<div class="row"><div class="dot">1</div><div><div class="nm">Hartwell Dental Group <span class="chip">New location</span></div><div class="sm"><b>Why now:</b> opening a third office in March. Needs print, scan and IT on day one.</div><div class="sm q">&ldquo;Saw the new Glen Allen office. Who is setting up the front desk?&rdquo;</div></div></div>'+
+   '<div class="row"><div class="dot">2</div><div><div class="nm">Brightline Logistics <span class="chip am">New controller</span></div><div class="sm"><b>Why now:</b> new controller started last week. New controllers review every contract.</div></div></div>'+
+   '<div class="row"><div class="dot">3</div><div><div class="nm">St. Agnes School <span class="chip li">Lease ends in 90 days</span></div><div class="sm"><b>Why now:</b> fleet of 9 renews in June. Budget meeting is in April.</div></div></div>'+
+   '<div class="ill">Illustration &middot; example accounts</div></div>',
+  /* 02 proposal machine */
+  '<div class="mock"><div class="bar"><span>Proposal &middot; Hartwell Dental Group</span><i>Ready for sign-off</i></div>'+
+   '<table class="tbl"><tr><td>3 &times; A3 color MFP, 60-month lease</td><td>$612/mo</td></tr><tr><td>Managed print, 18,000 pages/mo</td><td>$284/mo</td></tr><tr><td>Install, network and user training</td><td>Included</td></tr><tr><td>Removal of 4 legacy devices</td><td>Included</td></tr></table>'+
+   '<div class="tot"><span class="sm">Built from walkthrough notes and the fleet scan in <b>6 minutes</b></span><b>$896/mo</b></div>'+
+   '<div class="btns"><span>Edit</span><span class="go">Approve &amp; send</span></div>'+
+   '<div class="ill">Illustration &middot; example numbers</div></div>',
+  /* 03 service-to-sales bridge */
+  '<div class="mock"><div class="bar"><span>From the service truck</span><i>Flagged automatically</i></div>'+
+   '<div class="card"><div class="nm">Ticket #4471 &middot; closed <span class="chip am">3rd jam this quarter</span></div><div class="sm">Tech note: &ldquo;Customer printing far more than the device is rated for.&rdquo; Meter read: <b>142% of contract volume</b>.</div></div>'+
+   '<div class="arrow">&darr;</div>'+
+   '<div class="card hot"><div class="nm">Sales alert &rarr; account rep</div><div class="sm"><b>Upgrade conversation.</b> Volume outgrew the device and the lease ends in five months. Talking points and the right model are attached.</div></div>'+
+   '<div class="ill">Illustration &middot; example ticket</div></div>',
+  /* 04 one-person marketing department */
+  '<div class="mock"><div class="bar"><span>One install &rarr; this month</span><i>10 min of approval</i></div>'+
+   '<div class="grid6"><div><div class="d">Mon</div><div class="t">Case study draft</div></div><div><div class="d">Tue</div><div class="t">LinkedIn: the install</div></div><div><div class="d">Wed</div><div class="t">City page updated</div></div>'+
+   '<div><div class="d">Thu</div><div class="t">Review request sent</div></div><div><div class="d">Week 2</div><div class="t">Email to look-alike accounts</div></div><div><div class="d">Week 3</div><div class="t">Owner post: the lesson</div></div></div>'+
+   '<div class="sm" style="margin-top:1.6vh">Every piece drafted from the service ticket, the photos and the install notes. A person approves; nobody writes from scratch.</div>'+
+   '<div class="ill">Illustration &middot; example calendar</div></div>',
+  /* 05 being the answer */
+  '<div class="mock"><div class="bar"><span>What your buyer sees</span><i>AI answer</i></div>'+
+   '<div class="ask">Who should we use for copiers and managed print near Richmond?</div>'+
+   '<div class="ans"><div class="row you"><div class="dot">1</div><div><div class="nm">Your company <span class="chip li">Cited</span></div><div class="sm">Named because your site lists your service area, response times and local installs.</div></div></div>'+
+   '<div class="row"><div class="dot g">2</div><div><div class="nm">A national chain</div></div></div>'+
+   '<div class="row"><div class="dot g">3</div><div><div class="nm">A four-person MSP</div></div></div></div>'+
+   '<div class="sm" style="margin-top:1.2vh">Three names. No page two.</div>'+
+   '<div class="ill">Illustration</div></div>'];
+
+ /* five plays: two columns, the text left and what the play produces on the right */
+ var plays=[].filter.call(document.querySelectorAll('section.s'),function(s){return (s.getAttribute('data-sec')||'')==='05 Five plays'&&s.querySelector('.tag')&&s.querySelector('.pts')});
+ plays.forEach(function(s,i){var w=s.querySelector('.in-wrap');if(!w||w.classList.contains('plw')||!MOCK[i])return;
+  var l=document.createElement('div');l.className='pll';while(w.firstChild)l.appendChild(w.firstChild);
+  var r=document.createElement('div');r.className='plr';r.innerHTML=MOCK[i];
+  w.appendChild(l);w.appendChild(r);w.classList.add('plw');
+  s.setAttribute('data-notes',(s.getAttribute('data-notes')||'')+' The card on the right is an illustration of the output, with made-up accounts; say so if anyone asks.')});
+
+ /* dealer tiles: every tile carries the company name, so each dealer finds their own */
+ [].forEach.call(document.querySelectorAll('.lg'),function(t){var im=t.querySelector('img');if(!im||t.querySelector('.lgn'))return;var n=document.createElement('span');n.className='lgn';n.textContent=im.getAttribute('alt')||'';if(n.textContent)t.appendChild(n)});
+
+ /* the honest-part list gets a heading */
+ var hon=[].filter.call(document.querySelectorAll('section.s'),function(s){return /buy the platform before naming the workflow/i.test(s.textContent)})[0];
+ if(hon&&!hon.querySelector('h2')){var w2=hon.querySelector('.in-wrap'),k=document.createElement('div');k.className='kick';k.textContent='The honest part';var h=document.createElement('h2');h.innerHTML='Three ways to <span class="grad">waste the money.</span>';w2.insertBefore(h,w2.firstChild);w2.insertBefore(k,h)}
+})();
 /* v9 (runs after deck.js via deck-extra.js, so neither index.html nor deck.js is republished): Bob comes back through the talk, "What Bob costs you" calculator slide, and a close that asks for the meeting. */
 (function(){
  var BOB='https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/cf926fd6-d099-4cd9-86f8-d4e6ade270ac.webp';
