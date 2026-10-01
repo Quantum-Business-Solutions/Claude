@@ -1,7 +1,9 @@
 """Nightly sync of ConnectAndSell pickup counts onto HubSpot contacts.
 
 Maintains: cas_user_not_available_count, cas_last_user_not_available_date,
-cas_conversation_count_est, last_pickup_date.
+cas_conversation_count_est, last_pickup_date, cas_pickups_total, cas_dials_total,
+cas_dials_per_conversation. (The answered-number properties come from ConnectAndSell
+exports and are loaded separately; HubSpot calls carry no phone number.)
 
 Idempotent: finds contacts touched by a pickup-type call in the last N days, then
 recounts ALL of each such contact's calls and overwrites the four properties.
@@ -84,10 +86,11 @@ def main(days):
             for x in r['results']: info[x['id']] = x['properties']
         updates = []
         for cid in ch:
-            conv = hum = una = 0; lc = lh = lu = ''
+            conv = hum = una = dials = 0; lc = lh = lu = ''
             for callid in calls_of.get(cid, []):
                 p = info.get(callid)
                 if not p: continue
+                if (p.get('hs_call_body') or '').startswith('ConnectAndSell Agent'): dials += 1
                 k = classify(p, disp); ts = (p.get('hs_timestamp') or '')[:10]
                 if k == 'conv': conv += 1; lc = max(lc, ts)
                 elif k == 'hum': hum += 1; lh = max(lh, ts)
@@ -97,6 +100,9 @@ def main(days):
             pr['cas_user_not_available_count'] = str(una)
             pr['cas_last_user_not_available_date'] = lu
             pr['last_pickup_date'] = max([x for x in (lc, lh, lu) if x] or [''])
+            pr['cas_pickups_total'] = str(max(conv, hum) + una)
+            pr['cas_dials_total'] = str(dials)
+            pr['cas_dials_per_conversation'] = str(round(dials / max(conv, hum), 1)) if dials and max(conv, hum) else ''
             updates.append({'id': cid, 'properties': pr})
         call('POST', '/crm/v3/objects/contacts/batch/update', {'inputs': updates})
         return len(updates)
