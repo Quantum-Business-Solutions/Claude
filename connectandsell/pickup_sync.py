@@ -2,7 +2,7 @@
 
 Maintains: cas_user_not_available_count, cas_last_user_not_available_date,
 cas_conversation_count_est, last_pickup_date, cas_pickups_total, cas_dials_total,
-cas_dials_per_conversation. (The answered-number properties come from ConnectAndSell
+cas_dials_per_conversation, cas_conversation_rate_pct, cas_una_per_dial_pct. (The answered-number properties come from ConnectAndSell
 exports and are loaded separately; HubSpot calls carry no phone number.)
 
 Idempotent: finds contacts touched by a pickup-type call in the last N days, then
@@ -103,6 +103,8 @@ def main(days):
             pr['cas_pickups_total'] = str(max(conv, hum) + una)
             pr['cas_dials_total'] = str(dials)
             pr['cas_dials_per_conversation'] = str(round(dials / max(conv, hum), 1)) if dials and max(conv, hum) else ''
+            pr['cas_conversation_rate_pct'] = str(round(100 * max(conv, hum) / dials, 1)) if dials else ''
+            pr['cas_una_per_dial_pct'] = str(round(100 * una / dials, 1)) if dials else ''
             updates.append({'id': cid, 'properties': pr})
         call('POST', '/crm/v3/objects/contacts/batch/update', {'inputs': updates})
         return len(updates)
