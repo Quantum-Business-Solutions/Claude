@@ -19,7 +19,7 @@ machinery; nothing here uploads bytes itself.
 - The channel has a daily **Video Uploads** quota. On 2026-09-25, about 14
   uploads succeeded and the rest got `429 Quota exceeded`. A row that hits
   429 retries on each tick and is marked `failed` after 12 attempts (about
-  36 minutes). So queue at most **10 a day**. Other tools also upload to
+  36 minutes). So queue at most **9 a day** (see step 1). Other tools also upload to
   this channel, BrandCommand among them, and they share the quota.
 - Reading or editing a live video (title, description, privacy) goes
   through the ClientCommand MCP `call_internal_api`, with
@@ -68,8 +68,9 @@ machinery; nothing here uploads bytes itself.
    requeue. Quota shows up as either `429` or `400 uploadLimitExceeded`
    ("The user has exceeded the number of videos they may upload"). The
    10th upload of the day hit the 400 version on both 2026-09-30 and
-   2026-10-01, so queue **9 a day** (requeues included). Set `status='pending', attempts=0, error=null` and count
-   them toward today's 10. Rows that failed for any other reason need a
+   2026-10-01, so queue **9 a day** (requeues included). To requeue, set
+   `status='pending', attempts=0, error=null` and count the row toward
+   today's 9. Rows that failed for any other reason need a
    diagnosis first. Don't blindly retry them.
 2. **Verify completions.** For each completed row, check
    `GET /youtube/v3/videos?part=status,snippet&id=...`. It should be
