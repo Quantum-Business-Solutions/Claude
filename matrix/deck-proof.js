@@ -7,14 +7,14 @@
   ['Call analysis','Every call, mined','Transcripts become client questions, commitments and buying signals, logged against the account.','Zoom &middot; Client Command','The promise someone made on a call and nobody wrote down.'],
   ['Meeting prep','Briefed before every meeting','Carry-forward agenda, open commitments and attention items, ready before the meeting starts.','Client Command','Walking into a QBR already knowing the three open items.'],
   ['Plans &amp; SOWs','Scope to signed SOW','A statement of work and delivery plan drafted from the discovery notes, in our format.','Claude &middot; Client Command','How long an SOW used to take versus now.'],
-  ['Proposals','Proposals that build themselves','Branded web proposals assembled from the scope, then sent for signature.','Client Command','A proposal out the same afternoon as the meeting.'],
+  ['Proposals','Out the same afternoon','Branded web proposals assembled from the scope, then sent for signature.','Client Command','A proposal out the same afternoon as the meeting.'],
   ['Client success','Churn signals before the churn','Health checks across delivery, scope drift and sentiment flag the account that is going quiet.','Client Command','The client we saved because the system noticed first.'],
   ['Client reviews','Value reviews, written for us','The quarterly review drafted from the work actually delivered, not from memory.','Client Command &middot; HubSpot','A review the client forwarded to their boss.'],
   ['Delivery QA','Tickets checked against reality','Open tickets compared with what is actually built in the client&rsquo;s HubSpot; done work gets flagged to close.','Claude &middot; HubSpot','Hours banked that would have sat open for months.'],
   ['Portal audits','HubSpot audit in an afternoon','Data health, architecture, adoption, automation and reporting scored from live data.','Claude &middot; HubSpot','The new client whose portal told us the real problem.'],
   ['Social media','Posts and carousels in our voice','LinkedIn posts and carousels drafted on brand, queued for approval.','BrandCommand','The post that came from a five-minute voice note.'],
   ['Outreach','LinkedIn outreach that checks first','Every contact&rsquo;s current employer verified before a message goes out, and every send logged to HubSpot.','Unipile &middot; HubSpot','Not pitching someone who left the company a year ago.'],
-  ['Data enrichment','Enrichment as a standard','The same 81 ZoomInfo fields deployed into every client portal, so data lands in the same place every time.','ZoomInfo &middot; HubSpot','The setup that used to take a day.'],
+  ['Data enrichment','One standard, every portal','The same 81 ZoomInfo fields deployed into every client portal, so data lands in the same place every time.','ZoomInfo &middot; HubSpot','The setup that used to take a day.'],
   ['List hygiene','Calling lists verified','Lists checked against LinkedIn so reps stop dialing people at their old company.','Client Command &middot; LinkedIn','The rep who used to burn an hour on dead numbers.'],
   ['Software','We build our own software with AI','Client Command, our operating system, built and shipped with Claude Code, change by change.','Claude Code &middot; GitHub','This week: a YouTube publisher, built and live in an afternoon.'],
   ['Video','This film','The cast, the shots and the edit, made with AI and checked by AI for lip sync and timing.','Higgsfield &middot; Claude','Bob does not exist. You still recognized him.'],
@@ -27,10 +27,10 @@
   '.px .pc{position:relative;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));padding:1.7vh .95vw 1.5vh;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}'+
   '.s.in.px .pc{opacity:1;transform:none}'+
   '.px .pc .n{position:absolute;right:.8vw;top:1.3vh;font:400 clamp(18px,1.6vw,28px)/1 var(--disp);color:rgba(255,255,255,.14)}'+
-  '.px .pc .a{font:700 clamp(9px,.7vw,11px)/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#B6FF3C}'+
-  '.px .pc .t{font:400 clamp(16px,1.45vw,25px)/1.02 var(--disp);text-transform:uppercase;color:#fff;margin:.9vh 0 .7vh;padding-right:1.6vw}'+
-  '.px .pc .d{font:500 clamp(11px,.86vw,14px)/1.4 var(--sans);color:#A9B2C6}'+
-  '.px .pc .r{margin-top:1vh;font:600 clamp(9px,.68vw,11px)/1.3 var(--sans);letter-spacing:.06em;color:#4DE8FF}'+
+  '.px .pc .a{font:700 clamp(11px,.72vw,12px)/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#B6FF3C}'+
+  '.px .pc .t{font:400 clamp(17px,1.45vw,25px)/1.02 var(--disp);text-transform:uppercase;color:#fff;margin:.9vh 0 .7vh;padding-right:1.6vw}'+
+  '.px .pc .d{font:500 clamp(12.5px,.88vw,15px)/1.4 var(--sans);color:#A9B2C6}'+
+  '.px .pc .r{margin-top:1vh;font:600 clamp(10.5px,.7vw,12px)/1.3 var(--sans);letter-spacing:.06em;color:#4DE8FF}'+
   '.px h2 .grad{white-space:nowrap}'+
   '@media (max-width:900px){.px .pxg{grid-template-columns:1fr 1fr}}';
  document.head.appendChild(st);
@@ -51,4 +51,6 @@
   var h=s.querySelector('h1,h2,h3');var lab=h?h.textContent.replace(/\s+/g,' ').trim():(s.classList.contains('trailer')?'The video: The Old Way vs. The Quantum Way':'Slide '+(n+1));if(lab.length>72)lab=lab.slice(0,72)+'…';
   html+='<a href="#" data-n="'+n+'"><i>'+(n+1)+'</i><span>'+lab+'</span></a>'});ml.innerHTML=html}
  var s0=DECK.state();DECK.go(s0.idx);
+ /* QA fixes load last, after every slide exists */
+ var fx=document.createElement('script');fx.src='deck-fixes.js';document.body.appendChild(fx);
 })();
