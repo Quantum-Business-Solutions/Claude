@@ -231,3 +231,5 @@
   html+='<a href="#" data-n="'+n+'"><i>'+(n+1)+'</i><span>'+lab+'</span></a>'});ml.innerHTML=html}
  if(window.DECK){var s0=DECK.state();DECK.go(s0.idx)}
 })();
+/* the twenty real examples live in their own file so the list can change without touching this one */
+(function(){var x=document.createElement('script');x.src='deck-proof.js';document.body.appendChild(x)})();
