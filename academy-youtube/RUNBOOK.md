@@ -66,17 +66,17 @@ machinery; nothing here uploads bytes itself.
 
    Rows that failed on quota with no `youtube_upload_url` are safe to
    requeue. Quota shows up as either `429` or `400 uploadLimitExceeded`
-   ("The user has exceeded the number of videos they may upload"). On
-   2026-09-30 the 10th upload of the day hit the 400 version, so treat 10
-   as the ceiling, not a target. Set `status='pending', attempts=0, error=null` and count
+   ("The user has exceeded the number of videos they may upload"). The
+   10th upload of the day hit the 400 version on both 2026-09-30 and
+   2026-10-01, so queue **9 a day** (requeues included). Set `status='pending', attempts=0, error=null` and count
    them toward today's 10. Rows that failed for any other reason need a
    diagnosis first. Don't blindly retry them.
 2. **Verify completions.** For each completed row, check
    `GET /youtube/v3/videos?part=status,snippet&id=...`. It should be
    public, embeddable, and have the right title. Fix anything off with a
    PUT.
-3. **Pick today's batch.** The cap is 10 new rows created in the last
-   20 hours. If that many already exist, queue nothing new and only do
+3. **Pick today's batch.** The cap is 9 rows (new or requeued) in the
+   last 20 hours. If that many already exist, queue nothing new and only do
    steps 1–2. Finish `manifest_week1.json` first, then take
    `manifest_rest.json` → `queue` in `priority` order.
 4. **Title from content, never from the Academy chapter name.** The
