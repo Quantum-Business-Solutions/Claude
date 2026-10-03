@@ -917,28 +917,28 @@
   {
    "course_id": 224262,
    "course": "Sales Blitz as a Service",
-   "chapter_id": 1120160,
-   "file_name": "QBS---Shawn-Peterson---Outbound-Sales-Strategy.mp4",
-   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Outbound-Sales-Strategy.mp4",
-   "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 142
-  },
-  {
-   "course_id": 224262,
-   "course": "Sales Blitz as a Service",
    "chapter_id": 1120161,
    "file_name": "QBS---Shawn-Peterson---Messaging.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Messaging.mp4",
    "also_in": [
     "Week Two - Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 143
+   "title": "How to Write a Cold Call Script That Books Meetings",
+   "description": "Turn your ideal client profile, buyer personas and their pain points into a simple script: my company does X for this persona in this industry, solving this challenge, here's the benefit, then ask for the meeting. Role-play it on each other instead of on live prospects, keep improving your versions, and write different scripts for different personas and industries.\n\nFrom the Sales Blitz as a Service course in Quantum Academy: target, list, messaging, rep performance and follow-through for an outbound calling campaign.\n\nLearn more: https://www.thequantumleap.business/b2bsales?utm_source=youtube&utm_medium=video&utm_campaign=sales-blitz\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 143,
+   "tags": [
+    "cold calling",
+    "cold call script",
+    "sales messaging",
+    "outbound sales",
+    "sales blitz",
+    "B2B sales",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "6a2430fd-3301-4ef0-89e4-e7c8552e0831"
   },
   {
    "course_id": 224262,
@@ -950,10 +950,22 @@
     "Week One - Quantum Sales Bootcamp",
     "Week Two - Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 144
+   "title": "Build a Better Calling List Before Your Next Sales Blitz",
+   "description": "If 30 of every 100 dials reach the wrong company, person or number, you've lost 30% of your pipeline before the first conversation. Build a list of lists (chambers, industry groups, current customers, ZoomInfo, LinkedIn Sales Navigator), find the decision makers, enrich the data, inspect each list by hand, then load it into your dialer or CRM.\n\nFrom the Sales Blitz as a Service course in Quantum Academy: target, list, messaging, rep performance and follow-through for an outbound calling campaign.\n\nLearn more: https://www.thequantumleap.business/b2bsales?utm_source=youtube&utm_medium=video&utm_campaign=sales-blitz\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 144,
+   "tags": [
+    "calling list",
+    "list building",
+    "data enrichment",
+    "outbound sales",
+    "sales blitz",
+    "B2B sales",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "f865bce0-1894-4d6c-8872-6ab136768631"
   },
   {
    "course_id": 224262,
@@ -964,10 +976,22 @@
    "also_in": [
     "Week Two - Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 145
+   "title": "Rep Performance: Energy, Role Play and Staying on the Dialer",
+   "description": "Rep performance makes or breaks an outbound campaign: the energy you bring, a clear value proposition, role-played delivery that still flows naturally, and staying in the pocket. One of the biggest mistakes is pulling off the dialer early. Plus a quick recap of the full outbound process from target to script.\n\nFrom the Sales Blitz as a Service course in Quantum Academy: target, list, messaging, rep performance and follow-through for an outbound calling campaign.\n\nLearn more: https://www.thequantumleap.business/b2bsales?utm_source=youtube&utm_medium=video&utm_campaign=sales-blitz\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 145,
+   "tags": [
+    "sales rep performance",
+    "cold calling",
+    "role play",
+    "outbound sales",
+    "sales blitz",
+    "auto dialer",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "cf41cf4b-3ea1-4646-a933-e02837882592"
   },
   {
    "course_id": 224262,
@@ -976,10 +1000,22 @@
    "file_name": "QBS---Shawn-Peterson---Research-Prospect.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Research-Prospect.mp4",
    "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 146
+   "title": "After the Sales Blitz: Prospect Research and Better Show Rates",
+   "description": "Meetings booked, now what? Research the company and the person with LinkedIn, Sales Navigator, ZoomInfo and Google, go into discovery with your key questions, listen actively, and get what you learn back into the CRM. Then add multiple calendar reminders: lifting show rates from the 55 to 62 percent industry average to 70 or 80 percent adds up fast.\n\nFrom the Sales Blitz as a Service course in Quantum Academy: target, list, messaging, rep performance and follow-through for an outbound calling campaign.\n\nLearn more: https://www.thequantumleap.business/b2bsales?utm_source=youtube&utm_medium=video&utm_campaign=sales-blitz\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 146,
+   "tags": [
+    "prospect research",
+    "discovery call",
+    "meeting show rate",
+    "sales blitz",
+    "B2B sales",
+    "LinkedIn Sales Navigator",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "c6f8139f-225e-4479-bb0b-ab6d8079481e"
   },
   {
    "course_id": 224262,
@@ -990,22 +1026,22 @@
    "also_in": [
     "Week Two - Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 147
-  },
-  {
-   "course_id": 224262,
-   "course": "Sales Blitz as a Service",
-   "chapter_id": 1138466,
-   "file_name": "Mining-for-Gold_-Uncovering-Hidden-Opportunities-in-Your-CRM-.mp4",
-   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Mining-for-Gold_-Uncovering-Hidden-Opportunities-in-Your-CRM-.mp4",
-   "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 148
+   "title": "Sales Call Dispositions: Which Outcome to Log and Why It Matters",
+   "description": "A walkthrough of standard call outcomes, from busy send information and interested call back later to referrals, blocked by gatekeeper and disqualified: what each one means, whether it counts as a conversation, and what happens to the contact next. Keep dispositions standard so your KPIs track cleanly, and use disqualified carefully, because it rules out the whole account.\n\nFrom the Sales Blitz as a Service course in Quantum Academy: target, list, messaging, rep performance and follow-through for an outbound calling campaign.\n\nLearn more: https://www.thequantumleap.business/b2bsales?utm_source=youtube&utm_medium=video&utm_campaign=sales-blitz\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 147,
+   "tags": [
+    "call dispositions",
+    "call outcomes",
+    "sales KPIs",
+    "outbound calling",
+    "sales operations",
+    "CRM data",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "8df5c7f7-d682-41b3-8190-1feec0022094"
   },
   {
    "course_id": 225858,
@@ -1014,24 +1050,21 @@
    "file_name": "QBS---Shawn-Peterson---Rev-Ops.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Rev-Ops.mp4",
    "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 149
-  },
-  {
-   "course_id": 213867,
-   "course": "Sales Training with Shawn Peterson",
-   "chapter_id": 1070667,
-   "file_name": "Chapter-1---2023.11.13-Sales-Blitz-as-a-Service-Training.mp4",
-   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Chapter-1---2023.11.13-Sales-Blitz-as-a-Service-Training.mp4",
-   "also_in": [
-    "Week Two - Quantum Sales Bootcamp"
+   "title": "What Is Revenue Operations (RevOps)?",
+   "description": "Revenue operations is the technical and operational integration of the five parts of the Quantum Growth Model: target, attract, nurture, convert and wow. Map your process, run your tech stack against it, and look for better handoffs between departments, clearer KPI insight, automation and faster sales velocity.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=quantum-growth-model\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 149,
+   "tags": [
+    "RevOps",
+    "revenue operations",
+    "Quantum Growth Model",
+    "sales operations",
+    "go-to-market strategy",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 150
+   "youtube_uploads_id": "0306a42d-f5c2-4e1d-b35a-d94d9ada7d7a"
   },
   {
    "course_id": 213862,
@@ -1043,19 +1076,8 @@
    "title": null,
    "description": null,
    "status": "needs_title",
-   "priority": 151
-  },
-  {
-   "course_id": 213862,
-   "course": "The Future of Sales with Shawn Peterson",
-   "chapter_id": 1070620,
-   "file_name": "Quantum-Business-Webinar-6-8-23---Chapter-12.mp4",
-   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Webinar-6-8-23---Chapter-12.mp4",
-   "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 152
+   "priority": 151,
+   "content_note": "Source file in storage is EMPTY (content-length 0). Find the original (HubSpot file manager or LSVT) before this can be uploaded."
   },
   {
    "course_id": 225681,
@@ -1067,14 +1089,25 @@
     "Quantum Sales Training",
     "Intro to Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
+   "title": "The Sales Hiring Playbook: Recruit, Train and Retain Sales Talent",
+   "description": "Finding and keeping great salespeople is one of the biggest challenges organizations face. An introduction to Quantum's sales hiring playbook: how to recruit, what to do in week one, how to keep training, hold people accountable, and give modern sales candidates the resources they look for so you get the full return on your hiring investment.\n\nLearn more: https://www.thequantumleap.business/b2bsales?utm_source=youtube&utm_medium=video&utm_campaign=sales-hiring\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
    "title_hint": "Welcome to Quantum Academy",
    "summary_hint": null,
    "hint_duration_s": 29,
    "hint_chapters": [],
-   "priority": 153
+   "priority": 153,
+   "tags": [
+    "sales hiring",
+    "sales recruiting",
+    "sales onboarding",
+    "sales training",
+    "sales leadership",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "e1370091-1a53-4b71-b80c-7feb54f78be6"
   },
   {
    "course_id": 225681,
@@ -1083,10 +1116,22 @@
    "file_name": "02-Why.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/02-Why.mp4",
    "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 154
+   "title": "Why Prospecting Is the Lifeblood of Predictable Revenue",
+   "description": "Inbound leads and referrals are great, but if you want predictable revenue, prospecting is the answer. Know your sales math and how much action it takes, then give reps the where, when and how so they actually do it, and build a systematic pipeline that funds the rest of your growth.\n\nLearn more: https://www.thequantumleap.business/b2bsales?utm_source=youtube&utm_medium=video&utm_campaign=b2b-sales-process\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 154,
+   "tags": [
+    "prospecting",
+    "predictable revenue",
+    "sales pipeline",
+    "sales math",
+    "outbound sales",
+    "B2B sales",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "5072219a-14b9-49d3-8797-e51e37a93001"
   },
   {
    "course_id": 225681,
@@ -1095,10 +1140,21 @@
    "file_name": "03-Develop-and-Execute-a-Revenue-Plan.mp4",
    "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/03-Develop-and-Execute-a-Revenue-Plan.mp4",
    "also_in": [],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 155
+   "title": "How Will You Hit Your Revenue Number? Five Growth Strategies",
+   "description": "A revenue plan starts with how you'll get there: take market share, lower margins to push into the market, grow wallet share with current customers, add new products and services your customers keep asking for, or scale the process you already have through better execution.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=quantum-growth-model\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "queued",
+   "priority": 155,
+   "tags": [
+    "revenue plan",
+    "growth strategy",
+    "wallet share",
+    "market share",
+    "go-to-market strategy",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "youtube_uploads_id": "a9f491b3-aad1-4a36-b6e8-8c64887cbaa5"
   },
   {
    "course_id": 225681,
@@ -1843,6 +1899,19 @@
    "priority": 209
   },
   {
+   "course_id": 213862,
+   "course": "The Future of Sales with Shawn Peterson",
+   "chapter_id": 1070620,
+   "file_name": "Quantum-Business-Webinar-6-8-23---Chapter-12.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Quantum-Business-Webinar-6-8-23---Chapter-12.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "needs_title",
+   "priority": 209.1,
+   "content_note": "Q&A end of the 2023-06-08 IBPI webinar with Mark Grice (IBPI); includes an unnamed office-equipment dealer describing their move from ACT to HubSpot. Title with the Lead Generation & Automation with Mark Grice series (items 203-209); name Mark Grice."
+  },
+  {
    "course_id": 226493,
    "course": "Sales: Sales in Motion",
    "chapter_id": 1130142,
@@ -2272,6 +2341,34 @@
    "status": "hold",
    "priority": 115,
    "hold_reason": "week intro for a client's go-to-market assessment engagement ('we appreciate your trust in Quantum to work with you'), same kind as Our Mission"
+  },
+  {
+   "course_id": 224262,
+   "course": "Sales Blitz as a Service",
+   "chapter_id": 1138466,
+   "file_name": "Mining-for-Gold_-Uncovering-Hidden-Opportunities-in-Your-CRM-.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Mining-for-Gold_-Uncovering-Hidden-Opportunities-in-Your-CRM-.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "priority": 148,
+   "hold_reason": "screen recording inside Quantum's own HubSpot calls view (page of real call records with call notes and organizations); Shawn to review for prospect data on screen before publishing"
+  },
+  {
+   "course_id": 213867,
+   "course": "Sales Training with Shawn Peterson",
+   "chapter_id": 1070667,
+   "file_name": "Chapter-1---2023.11.13-Sales-Blitz-as-a-Service-Training.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Chapter-1---2023.11.13-Sales-Blitz-as-a-Service-Training.mp4",
+   "also_in": [
+    "Week Two - Quantum Sales Bootcamp"
+   ],
+   "title": null,
+   "description": null,
+   "status": "hold",
+   "priority": 150,
+   "hold_reason": "recorded live Sales Blitz as a Service training call (906 s) with a team ('I'll have Barb change it', 'see you again in two weeks'); possibly a client's team session; Shawn to confirm before publishing"
   }
  ],
  "skipped": [
@@ -2399,6 +2496,19 @@
    "status": "skipped",
    "priority": 135,
    "skip_reason": "Shorter cut: first half of QBS_9.mp4 (330 s = 9_1 182 s + 9_2 148 s), already live as sLFD0XuN4tk"
+  },
+  {
+   "course_id": 224262,
+   "course": "Sales Blitz as a Service",
+   "chapter_id": 1120160,
+   "file_name": "QBS---Shawn-Peterson---Outbound-Sales-Strategy.mp4",
+   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/QBS---Shawn-Peterson---Outbound-Sales-Strategy.mp4",
+   "also_in": [],
+   "title": null,
+   "description": null,
+   "status": "skipped",
+   "priority": 142,
+   "skip_reason": "Full version of QBS-Outbound-Calling-Strategy.mp4 (151 s vs 128 s; same content plus a 23 s intro), already live as ojBIbUHQIhI"
   }
  ]
 }
