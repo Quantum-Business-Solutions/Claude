@@ -1,0 +1,66 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: PL - Standard Page (Drag and Drop)
+-->
+<!doctype html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e60ff1772.js" crossorigin="anonymous"></script>
+
+    <script src="{{ get_asset_url('/Private Label/Javascript/aos.js') }}"></script>
+    <link href="{{ get_asset_url('/Private Label/CSS/aos.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ get_asset_url('/Private Label/CSS/Main.css') }}">
+
+    <meta charset="utf-8">
+    {% if content.html_title %}<title>{{ content.html_title }}</title>{% endif %}
+    <meta name="description" content="{{ content.meta_description }}">
+    {% if brand_settings.primaryFavicon.src %}
+      <link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />
+    {% endif %}
+    {{ standard_header_includes }}
+    {# QBS-BREADCRUMBS:START #}
+    {% if content.slug and content.slug != "" %}
+      {% set bc_parts = content.slug.split("/") %}
+      {% set bc_title = (content.html_title or content.name).split(" | ")[0] %}
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.praxerasupplements.com/"},
+        {% if bc_parts[0] == "learning" and bc_parts|length > 1 %}
+        {"@type":"ListItem","position":2,"name":"Resources","item":"https://www.praxerasupplements.com/resources"},
+        {"@type":"ListItem","position":3,"name":{{ bc_title|tojson }},"item":"https://www.praxerasupplements.com/{{ content.slug }}"}
+        {% else %}
+        {"@type":"ListItem","position":2,"name":{{ bc_title|tojson }},"item":"https://www.praxerasupplements.com/{{ content.slug }}"}
+        {% endif %}
+      ]}
+      </script>
+    {% endif %}
+    {# QBS-BREADCRUMBS:END #}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE1XREWHCF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LE1XREWHCF');
+    </script>
+
+  </head>
+  <body>
+
+    {% module "global_header" path='/Private Label/Modules/Global Header', label="Global Header" %}
+
+    {% dnd_area "main_content" label="Main Content" %}
+    {% end_dnd_area %}
+
+    {% module "global_footer" path='/Private Label/Modules/Global Footer', label="Global Footer" %}
+
+    <script> AOS.init(); </script>
+
+    {{ standard_footer_includes }}
+  </body>
+</html>

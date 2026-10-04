@@ -1,0 +1,51 @@
+<!--
+    templateType: blog_post
+    isAvailableForNewContent: true
+    label: Praxera - Blog Post
+-->
+<!doctype html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e60ff1772.js" crossorigin="anonymous"></script>
+
+    <script src="{{ get_asset_url('/Private Label/Javascript/aos.js') }}"></script>
+    <link href="{{ get_asset_url('/Private Label/CSS/aos.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ get_asset_url('/Private Label/CSS/Main.css') }}">
+
+    <meta charset="utf-8">
+    {% if content.html_title %}<title>{{ content.html_title }}</title>{% endif %}
+    <meta name="description" content="{{ content.meta_description }}">
+    {% if brand_settings.primaryFavicon.src %}
+      <link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />
+    {% endif %}
+    {{ standard_header_includes }}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE1XREWHCF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LE1XREWHCF');
+    </script>
+
+  </head>
+  <body>
+
+    {% module "global_header" path='/Private Label/Modules/Global Header', label="Global Header" %}
+
+    {% module "hero" path='/Private Label/Modules/PL - Hero', label="Hero" %}
+    {% module "article_body" path='/Private Label/Modules/PL - Rich Text', label="Article Body" %}
+    {% module "faq" path='/Private Label/Modules/PL - FAQ', label="FAQ" %}
+    {% module "disclaimer" path='/Private Label/Modules/PL - Global FDA Disclaimer', label="FDA Disclaimer" %}
+
+    {% module "global_footer" path='/Private Label/Modules/Global Footer', label="Global Footer" %}
+
+    <script> AOS.init(); </script>
+
+    {{ standard_footer_includes }}
+  </body>
+</html>
