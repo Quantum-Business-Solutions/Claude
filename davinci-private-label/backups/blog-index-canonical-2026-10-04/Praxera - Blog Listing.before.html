@@ -1,0 +1,136 @@
+<!--
+    templateType: blog_listing
+    isAvailableForNewContent: true
+    label: Praxera - Blog Listing
+-->
+<!doctype html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e60ff1772.js" crossorigin="anonymous"></script>
+
+    <script src="{{ get_asset_url('/Private Label/Javascript/aos.js') }}"></script>
+    <link href="{{ get_asset_url('/Private Label/CSS/aos.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ get_asset_url('/Private Label/CSS/Main.css') }}">
+    <link rel="stylesheet" href="{{ get_asset_url('/Private Label/CSS/Blog.css') }}">
+
+    <meta charset="utf-8">
+    {% if content.html_title %}<title>{{ content.html_title }}</title>{% endif %}
+    <meta name="description" content="{{ content.meta_description }}">
+    {% if brand_settings.primaryFavicon.src %}
+      <link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />
+    {% endif %}
+    {{ standard_header_includes }}
+  </head>
+  <body>
+
+    {% module "global_header" path='/Private Label/Modules/Global Header', label="Global Header" %}
+
+      <div class="blog_listing_container">
+        <div class="bodyContainer">
+          <h1>
+      Praxera Supplements Blog
+    </h1>
+          <div class="blog_first__wrapper">
+              <div class="blog_first_content_area">
+                {% for content in contents %}
+                  {% if loop.first %}
+                    <a href="{{ content.absolute_url }}"><img class="firstFeaturedIMG" src="{{ content.featured_image }}"></a>
+                    <div class="blog_first_inner">
+                        <h3 class="blog_listing_name"> {{ content.name }} </h3>
+                        <p class="blog_listing_summary_text"> {{ content.post_body|striptags|truncatehtml(250, "...", false) }} </p>
+                        <p><a class="blog_listing_read_more_link" href="{{ content.absolute_url }}">Read More</a></p>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="featured_posts_area">
+                <h4 class="featured_posts_headline"> Featured Posts </h4>
+                {% set pop_posts = blog_popular_posts(group.id, 7) %}
+                {% for pop_post in pop_posts %}
+                  <div class="featured_posts_container">
+                    <h5 class="post-title"><a class="popPostLink" href="{{ pop_post.absolute_url }}"> {{ pop_post.name }}</a></h5>
+                    <div class="featured_posts_author_wrapper">
+                      <div class="featured_posts_author_area">
+                        <p class="pop_posts_author_name"> {{ pop_post.blog_author.display_name }}  </p>
+                      </div>
+                       <div class="featured_posts_date_area">
+                        <p class="pop_posts_date"> {{ pop_post.publish_date_localized }}  </p>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+        </div>
+
+        <div class="bodyContainer">
+          <div class="recent_wrapper">
+            {% for content in contents %}
+              {% if not loop.first %}
+                <div class="recent_blog_item">
+                  <a href="{{ content.absolute_url }}"><img class="firstFeaturedIMG" src="{{ content.featured_image }}"></a>
+                  <div class="blog_first_inner">
+                    <p class="listing_author_name"> {{ content.publish_date_localized }}  </p>
+                    <h3 class="recent_blog_listing_name"> {{ content.name }} </h3>
+                    <p class="blog_listing_summary_text"> {{ content.post_body|striptags|truncatehtml(100, "...", false) }} </p>
+                    <p><a class="blog_listing_read_more_link" href="{{ content.absolute_url }}">Read More</a></p>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+
+        <div class="bodyContainer">
+          {% if contents.total_page_count > 1 %}
+            <div class="blog-pagination">
+
+                {% set page_list = [-2, -1, 0, 1, 2] %}
+                {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+                {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+                {% elif current_page_num == 2 %}{% set offset = 1 %}
+                {% elif current_page_num == 1 %}{% set offset = 2 %}
+                {% else %}{% set offset = 0 %}{% endif %}
+
+                {% if current_page_num <= 0 %}
+                <span class="blog-pagination__prev-link--disabled">{% icon name="chevron-left" style="SOLID", width="7", no_wrapper=True %} Prev</span>
+                {% else %}
+
+                <a class="blog-pagination__link blog-pagination__prev-link {{ last_page_num ? "blog-pagination__prev-link--disabled" : '' }}" href="{{ blog_page_link(last_page_num) }}">
+                {% icon name="chevron-left" style="SOLID", width="7", no_wrapper=True %}
+                Prev
+                </a>
+                {% endif %}
+
+                {% for page in page_list %}
+                {% set this_page = current_page_num + page + offset %}
+                {% if this_page > 0 and this_page <= contents.total_page_count %}
+                    <a class="blog-pagination__link blog-pagination__number-link {{ "blog-pagination__link--active" if this_page == current_page_num }}" href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+                {% endif %}
+                {% endfor %}
+
+                {% if current_page_num >= contents.total_page_count %}
+                <span class="blog-pagination__next-link--disabled">Next {% icon name="chevron-right" style="SOLID", width="7", no_wrapper=True %}</span>
+                {% else %}
+                <a class="blog-pagination__link blog-pagination__next-link {{ "blog-pagination__next-link--disabled" if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
+                Next
+                {% icon name="chevron-right" style="SOLID", width="7", no_wrapper=True %}
+                </a>
+                {% endif %}
+            </div>
+          {% endif %}
+        </div>
+
+      </div>
+
+    {% module "global_footer" path='/Private Label/Modules/Global Footer', label="Global Footer" %}
+
+
+    {{ standard_footer_includes }}
+  </body>
+</html>

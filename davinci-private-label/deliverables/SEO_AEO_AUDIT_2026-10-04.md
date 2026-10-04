@@ -30,3 +30,9 @@ Earlier advice to noindex the /alp/ ad landing pages conflicts with the report's
 
 ## Open items
 301 cutover (client go-live); force HTTPS on www (HubSpot domain setting; http://www returns 404); blog index canonical + og:type; blog schema publisher "FoodScience Corporation" and generic author; alt text; H1 fixes; llms.txt (needs hosting approach + approved text); sameAs URLs; paid-search tracking/landing-page fixes.
+
+## Update 4 Oct (later)
+- Home Organization schema (telephone + contactPoint): **verified live** on the public site, JSON-LD valid.
+- Blog index canonical: added `<link rel="canonical" href="https://{{ request.domain }}{{ request.path }}">` to `Private Label/Templates/Praxera - Blog Listing.html` (published). Before/after in backups/blog-index-canonical-2026-10-04/. First attempt used `content.absolute_url` (emitted nothing); replaced. **Public /blog and /blog/page/2 did not show the tag ~1 min after the second PUT — likely page cache; recheck.** Rollback: PUT the .before.html.
+- Correction: `og:type=blog` is valid in the original Open Graph spec; no change made. Twitter card `summary` is also fine.
+- Money-page forms: audit's "no form" was wrong for 6 of 12 (/, /alp/*, /design-services, /top-sellers load a HubSpot form via script). Still no form on /ingredient-sourcing, /testing, /soft-gels, /tablets, /certifications, /quality-standards.
