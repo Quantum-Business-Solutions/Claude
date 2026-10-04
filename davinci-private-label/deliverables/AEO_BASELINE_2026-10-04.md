@@ -15,3 +15,11 @@ Praxera and davincilabs.com were cited together once.
 Most cited domains: davincilabs.com 48, wonnda 38, supliful 37, makersnutrition 35, vitaplusinter 21, smpnutra 20, matsunnutrition 19, hdnutra 18, newtropin 18, thomasnet 16.
 Source types engines cite: directories/listicles (wonnda, thomasnet, usetorg, alibaba, newtropin), supplier guides (inventoryready, atriumsci, build-your-own-brand), manufacturer sites; LinkedIn (Perplexity only), Wikipedia (Anthropic only), YouTube/Reddit (Gemini only); compliance questions cite fda.gov/nsf.org.
 Caveats: OpenAI/Anthropic timeouts (33 cells), Gemini returned citations on only 19 of 50, citation lists capped at 12 domains per cell.
+
+## Entity distinction (FoodScience = parent; DaVinci, Praxera, Pet Tech Labs, VetriScience = brands) — added same day
+Cells (of 167 answered) where each appears as a cited domain: DaVinci brand 48 · Praxera 5 · FoodScience parent (foodsciencecorp.com) 2 · Pet Tech Labs 2 · VetriScience 0.
+Named in answer text (300-char excerpts only, so a floor): DaVinci 6 · Praxera 5 · FoodScience 4 · Pet Tech 1.
+How the engines connect them:
+- Q43 (Vermont): Perplexity lists "DaVinci Laboratories and FoodScience LLC, both in Williston" as two companies and ties Pet Tech Labs to FoodScience; Gemini lists FoodScience first under "Based in Vermont".
+- OpenAI names the parent when it cites Praxera: "Praxera (FoodScience LLC)" on Q22 (/mens-health) and Q50 (/health-categories). This is the link already coming from Praxera's Organization schema (parentOrganization FoodScience LLC) and footer.
+- Engines credit FoodScience as a manufacturer; Praxera copy says "provider / turnkey production" (client rule: Praxera does not manufacture).
