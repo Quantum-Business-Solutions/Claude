@@ -25,7 +25,7 @@
     {# QBS-BREADCRUMBS:START #}
     {% if content.slug and content.slug != "" %}
       {% set bc_parts = content.slug.split("/") %}
-      {% set bc_title = (content.html_title or content.name).split(" | ")[0] %}
+      {% set bc_title = (content.html_title or content.name)|replace(" | Praxera Private Label", "")|replace(" | Praxera", "") %}
       <script type="application/ld+json">
       {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"Home","item":"https://www.praxerasupplements.com/"},
