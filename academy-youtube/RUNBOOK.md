@@ -72,6 +72,16 @@ machinery; nothing here uploads bytes itself.
    `status='pending', attempts=0, error=null` and count the row toward
    today's 9. Rows that failed for any other reason need a
    diagnosis first. Don't blindly retry them.
+
+   The limit is a **rolling 24 hours** from the previous batch's
+   uploads, not a calendar day. On 2026-10-06 a batch queued at 14:15
+   was refused because the day before's batch had uploaded at
+   15:00–15:09. A refused row retries every 3 minutes and goes
+   `failed` after 12 attempts (~36 min). So before inserting, check
+   `max(updated_at)` of yesterday's completed rows. If that is under 24h
+   ago, either wait, or insert anyway and reset `attempts=0` on rows still
+   `pending` before they reach 12, until the window clears. The routine
+   runs at 15:52 UTC for this reason.
 2. **Verify completions.** For each completed row, check
    `GET /youtube/v3/videos?part=status,snippet&id=...`. It should be
    public, embeddable, and have the right title. Fix anything off with a
