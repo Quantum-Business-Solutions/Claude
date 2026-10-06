@@ -2082,10 +2082,23 @@
    "also_in": [
     "Lead Generation &amp; Automation with Mark  Grice"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 200
+   "title": "Lead Gen and Automation, Part 6: Grow Revenue From Customers You Have",
+   "description": "The best way to grow revenue is to keep it: retain, then cross-sell and upsell, then ask for referrals. Shawn Peterson on why selling to current customers carries the least acquisition cost and the most velocity.\n\nPart 6 of Lead Generation and Automation, a Quantum Academy webinar for IBPI members hosted by Shawn Peterson with Mark Grice of IBPI.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=lead-gen-automation-webinar\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "ready",
+   "priority": 200,
+   "tags": [
+    "Mark Grice",
+    "IBPI",
+    "lead generation",
+    "sales automation",
+    "webinar",
+    "cross-sell",
+    "customer retention",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "series": "Lead Generation and Automation (Mark Grice, IBPI)"
   },
   {
    "course_id": 171164,
@@ -2096,10 +2109,23 @@
    "also_in": [
     "Lead Generation &amp; Automation with Mark  Grice"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 201
+   "title": "Lead Gen and Automation, Part 7: Sales Plans and the KPIs That Matter",
+   "description": "A good sales plan covers target, list, message, rep and belief. Shawn Peterson on tracking KPIs at every stage, including the often-missed connect rate, and why AI in sales can't wait five years.\n\nPart 7 of Lead Generation and Automation, a Quantum Academy webinar for IBPI members hosted by Shawn Peterson with Mark Grice of IBPI.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=lead-gen-automation-webinar\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "ready",
+   "priority": 201,
+   "tags": [
+    "Mark Grice",
+    "IBPI",
+    "lead generation",
+    "sales automation",
+    "webinar",
+    "sales KPIs",
+    "sales planning",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "series": "Lead Generation and Automation (Mark Grice, IBPI)"
   },
   {
    "course_id": 171164,
@@ -2110,24 +2136,23 @@
    "also_in": [
     "Lead Generation &amp; Automation with Mark  Grice"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 202
-  },
-  {
-   "course_id": 213866,
-   "course": "Lead Generation &amp; Automation with Mark  Grice",
-   "chapter_id": 1070657,
-   "file_name": "Lead-Generation-and-Automation---Intro.mp4",
-   "source_url": "https://zjtgesaiemlveuoymubo.supabase.co/storage/v1/object/public/academy-videos/lsvt-import/Lead-Generation-and-Automation---Intro.mp4",
-   "also_in": [
-    "Week Eight - Quantum Sales Bootcamp"
+   "title": "Lead Gen and Automation, Part 8: Connect Your Tech Stack in HubSpot",
+   "description": "When ConnectWise, e-automate, CEO Juice, ZoomInfo and your calling and email tools all feed HubSpot, you get a data lake you can mine. Shawn Peterson on integration and a sales blitz that booked 85 meetings in a day.\n\nPart 8 of Lead Generation and Automation, a Quantum Academy webinar for IBPI members hosted by Shawn Peterson with Mark Grice of IBPI.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=lead-gen-automation-webinar\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "ready",
+   "priority": 202,
+   "tags": [
+    "Mark Grice",
+    "IBPI",
+    "lead generation",
+    "sales automation",
+    "webinar",
+    "tech stack integration",
+    "HubSpot",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 203
+   "series": "Lead Generation and Automation (Mark Grice, IBPI)"
   },
   {
    "course_id": 213866,
@@ -2138,10 +2163,23 @@
    "also_in": [
     "Week Eight - Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 204
+   "title": "Lead Gen and Automation, Part 1: AI and Automation in Go-to-Market",
+   "description": "Mark Grice welcomes Shawn Peterson to IBPI, and Shawn sets up the session: how AI and automation are changing modern go-to-market strategy at the strategic and tactical level, and how to do a lot more with the same team.\n\nPart 1 of Lead Generation and Automation, a Quantum Academy webinar for IBPI members hosted by Shawn Peterson with Mark Grice of IBPI.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=lead-gen-automation-webinar\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "ready",
+   "priority": 204,
+   "tags": [
+    "Mark Grice",
+    "IBPI",
+    "lead generation",
+    "sales automation",
+    "webinar",
+    "go-to-market strategy",
+    "AI in sales",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "series": "Lead Generation and Automation (Mark Grice, IBPI)"
   },
   {
    "course_id": 213866,
@@ -2152,10 +2190,23 @@
    "also_in": [
     "Week Eight - Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 205
+   "title": "Lead Gen and Automation, Part 2: The Quantum Growth Model",
+   "description": "Every go-to-market strategy has five components: target, attract, nurture, convert and wow. Shawn Peterson on systemizing, optimizing and automating each one, with examples like ZoomInfo feeding HubSpot nurture into a parallel dialer.\n\nPart 2 of Lead Generation and Automation, a Quantum Academy webinar for IBPI members hosted by Shawn Peterson with Mark Grice of IBPI.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=lead-gen-automation-webinar\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "ready",
+   "priority": 205,
+   "tags": [
+    "Mark Grice",
+    "IBPI",
+    "lead generation",
+    "sales automation",
+    "webinar",
+    "Quantum Growth Model",
+    "revenue operations",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "series": "Lead Generation and Automation (Mark Grice, IBPI)"
   },
   {
    "course_id": 213866,
@@ -2166,10 +2217,23 @@
    "also_in": [
     "Week Eight - Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 206
+   "title": "Lead Gen and Automation, Part 3: Office Tech's Biggest Challenges",
+   "description": "A live poll shows most attendees aren't using HubSpot, ZoomInfo or ConnectAndSell yet. Shawn Peterson on the B2B office technology market: fewer prints, reps who don't stick, and tech stacks that don't talk to each other.\n\nPart 3 of Lead Generation and Automation, a Quantum Academy webinar for IBPI members hosted by Shawn Peterson with Mark Grice of IBPI.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=lead-gen-automation-webinar\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "ready",
+   "priority": 206,
+   "tags": [
+    "Mark Grice",
+    "IBPI",
+    "lead generation",
+    "sales automation",
+    "webinar",
+    "office technology",
+    "sales challenges",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "series": "Lead Generation and Automation (Mark Grice, IBPI)"
   },
   {
    "course_id": 213866,
@@ -2180,10 +2244,23 @@
    "also_in": [
     "Week Eight - Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 207
+   "title": "Lead Gen and Automation, Part 4: You're a Well-Funded Startup",
+   "description": "Established dealers have cash flow, infrastructure, a customer base and brand recognition, so they're the best-funded startups around. Shawn Peterson on the assess, systemize, optimize, automate and execute path to a modern go-to-market strategy.\n\nPart 4 of Lead Generation and Automation, a Quantum Academy webinar for IBPI members hosted by Shawn Peterson with Mark Grice of IBPI.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=lead-gen-automation-webinar\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "ready",
+   "priority": 207,
+   "tags": [
+    "Mark Grice",
+    "IBPI",
+    "lead generation",
+    "sales automation",
+    "webinar",
+    "business growth",
+    "process improvement",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "series": "Lead Generation and Automation (Mark Grice, IBPI)"
   },
   {
    "course_id": 213866,
@@ -2194,10 +2271,23 @@
    "also_in": [
     "Week Eight - Quantum Sales Bootcamp"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 208
+   "title": "Lead Gen and Automation, Part 5: Map the Buyer Journey",
+   "description": "Shawn Peterson walks through a buyer journey map from targeting to awareness, nurture, call outcomes and discovery, and why a playbook in HubSpot with structured properties gives you a self-healing database.\n\nPart 5 of Lead Generation and Automation, a Quantum Academy webinar for IBPI members hosted by Shawn Peterson with Mark Grice of IBPI.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=lead-gen-automation-webinar\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "ready",
+   "priority": 208,
+   "tags": [
+    "Mark Grice",
+    "IBPI",
+    "lead generation",
+    "sales automation",
+    "webinar",
+    "buyer journey",
+    "HubSpot playbooks",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "series": "Lead Generation and Automation (Mark Grice, IBPI)"
   },
   {
    "course_id": 213866,
@@ -2208,10 +2298,23 @@
    "also_in": [
     "Frame of Mind"
    ],
-   "title": null,
-   "description": null,
-   "status": "needs_title",
-   "priority": 209
+   "title": "Lead Gen and Automation, Part 9: Specialize Reps and Run Sales Blitzes",
+   "description": "Reps spend only 10 to 15 percent of their time selling. Shawn Peterson on specializing roles so closers sit in meetings, and on structured sales blitzes of four to five hours a week on a parallel dialer.\n\nPart 9 of Lead Generation and Automation, a Quantum Academy webinar for IBPI members hosted by Shawn Peterson with Mark Grice of IBPI.\n\nLearn more: https://www.thequantumleap.business/services/go-to-market-program?utm_source=youtube&utm_medium=video&utm_campaign=lead-gen-automation-webinar\n\nBook time with Shawn: https://meetings.hubspot.com/shawn-peterson\n\nShawn Peterson is CEO of Quantum Business Solutions, a HubSpot Platinum Solutions Partner that helps B2B sales teams systemize, optimize and automate revenue growth. https://www.thequantumleap.business",
+   "status": "ready",
+   "priority": 209,
+   "tags": [
+    "Mark Grice",
+    "IBPI",
+    "lead generation",
+    "sales automation",
+    "webinar",
+    "sales blitz",
+    "sales specialization",
+    "Quantum Academy",
+    "Shawn Peterson",
+    "Quantum Business Solutions"
+   ],
+   "series": "Lead Generation and Automation (Mark Grice, IBPI)"
   },
   {
    "course_id": 213862,
@@ -3007,6 +3110,10 @@
    "status": "skipped",
    "priority": 184,
    "skip_reason": "10 s intro bumper with no speech; nothing to publish on its own"
-  }
+  },
+  [
+   "Lead-Generation-and-Automation---Intro.mp4",
+   "10 s intro bumper with no spoken content"
+  ]
  ]
 }
