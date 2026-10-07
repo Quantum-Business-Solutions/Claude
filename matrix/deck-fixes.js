@@ -44,4 +44,6 @@
  var s0=DECK.state();DECK.go(s0.idx);
  /* content polish loads last */
  var px=document.createElement('script');px.src='deck-polish.js';document.body.appendChild(px);
+ /* the booking QR sits on every content slide */
+ var qx=document.createElement('script');qx.src='deck-qr.js';document.body.appendChild(qx);
 })();
