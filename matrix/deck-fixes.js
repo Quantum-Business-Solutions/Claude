@@ -2,6 +2,11 @@
    720p projector layout, readable minimum type, American spelling, no repeated heading in the honest part. */
 (function(){if(!window.DECK)return;
  var all=DECK.slides;
+ /* media that moved: Bob's cutout and the opener poster were re-uploaded on 7 Oct 2026 after the originals were deleted from the CDN;
+    four mirrored background loops are gone for good, so those slides fall back to the gradient mesh instead of requesting dead files */
+ [].forEach.call(document.querySelectorAll('img[src*="cf926fd6-d099-4cd9-86f8-d4e6ade270ac"]'),function(i){i.src='https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/6271dfc8-d3ca-4d3b-9255-505f935f82d3.webp'});
+ var tvx=document.getElementById('tv');if(tvx)tvx.poster='https://d3snorpfx4xhv8.cloudfront.net/e4d416f7-7355-4276-8c8e-26821a906ac8/8bcbc7a0-57ae-45fa-a4f2-9c908f055629.jpeg';
+ [].forEach.call(document.querySelectorAll('video.bgv'),function(v){var u=v.getAttribute('data-src')||v.getAttribute('src')||'';if(/d3u0tzju9qaucj\.cloudfront\.net/.test(u)&&v.parentNode)v.parentNode.removeChild(v)});
  /* tag the slides that need room on a short (720p) screen */
  all.forEach(function(s){if(s.querySelector('.plw'))s.classList.add('plsec');if(s.querySelector('.rem'))s.classList.add('remsec')});
  var st=document.createElement('style');st.textContent=
