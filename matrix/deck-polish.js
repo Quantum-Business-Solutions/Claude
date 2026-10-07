@@ -72,4 +72,6 @@
   var hh=s.querySelector('h1,h2,h3');var lab=hh?hh.textContent.replace(/\s+/g,' ').trim():(s.classList.contains('trailer')?'The video: The Old Way vs. The Quantum Way':'Slide '+(n+1));if(lab.length>72)lab=lab.slice(0,72)+'…';
   html+='<a href="#" data-n="'+n+'"><i>'+(n+1)+'</i><span>'+lab+'</span></a>'});ml.innerHTML=html}
  var s0=DECK.state();DECK.go(Math.min(s0.idx,SL.length-1));
+ /* real examples load last */
+ var rx=document.createElement('script');rx.src='deck-real.js';document.body.appendChild(rx);
 })();
