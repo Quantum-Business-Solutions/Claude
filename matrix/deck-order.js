@@ -67,7 +67,8 @@
  function save(){try{localStorage.setItem(LS,JSON.stringify({sig:sig,order:order,hidden:Object.keys(hid)}))}catch(e){}}
 
  /* 4. apply the order to the page */
- function title(el){var h=el.querySelector('h1,h2,h3');var t=h?h.textContent:(el.classList.contains('trailer')?'The video: The Old Way vs. The Quantum Way':el.textContent);return t.replace(/\s+/g,' ').trim().slice(0,70)}
+ function btx(x){var c=x.cloneNode(true);[].forEach.call(c.querySelectorAll('br'),function(n){n.parentNode.replaceChild(document.createTextNode(' '),n)});return c.textContent}
+ function title(el){var h=el.querySelector('h1,h2,h3');var t=h?btx(h):(el.classList.contains('trailer')?'The video: The Old Way vs. The Quantum Way':el.textContent);return t.replace(/\s+/g,' ').trim().slice(0,70)}
  function apply(keepKey){
   var cur=keepKey||(SL[DECK.state().idx]&&SL[DECK.state().idx].getAttribute('data-key'));
   var chap='',all=[],vis=[];
