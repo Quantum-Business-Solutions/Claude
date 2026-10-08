@@ -19,4 +19,6 @@
   var sec=s.getAttribute('data-sec')||'',hide=s.classList.contains('trailer')||DECK.state().idx===0||sec==='Close';
   a.classList.toggle('on',!hide)}
  setInterval(refresh,250);refresh();
+ /* flow charts, the API show of hands and the open task library build after the rest of the deck */
+ var fl=document.createElement('script');fl.src='deck-flow.js';document.body.appendChild(fl);
 })();
