@@ -1,5 +1,5 @@
 /* ICDA 2026 deck: real examples (loaded last, from deck-polish.js).
-   Cuts the MSP slide and the four repeated task lists, adds the six-places map, and five stories from Quantum's own work.
+   Cuts the MSP slide and the four repeated task lists, opens with the real Revenue Efficiency Model, and adds five stories from Quantum's own work.
    Every number below comes from the ClientCommand repo, the contact-verification repo, a HubSpot audit run on 29 Sept 2026,
    or Call Analysis on a client portal (anonymized). Edit the numbers here; nothing else needs republishing. */
 (function(){if(!window.DECK)return;
@@ -15,14 +15,9 @@
   '.rl .big{font:400 clamp(3rem,8.4vw,8rem)/.9 var(--disp);background:var(--hot);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}'+
   '.rl .cap{font:700 clamp(11px,.8vw,14px)/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#A9B2C6;margin-top:1vh}'+
   '.rl .src{margin-top:2.2vh;font:500 clamp(11px,.8vw,13px)/1.4 var(--sans);color:#8893AA}'+
-  /* six places map */
-  '.six{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.9vw;margin-top:4vh}'+
-  '.six>div{position:relative;border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:2.2vh .9vw;background:linear-gradient(170deg,rgba(255,255,255,.07),rgba(255,255,255,.015))}'+
-  '.six>div::after{content:"";position:absolute;right:-.75vw;top:50%;width:.6vw;height:.6vw;border-top:2px solid rgba(255,255,255,.3);border-right:2px solid rgba(255,255,255,.3);transform:translateY(-50%) rotate(45deg)}.six>div:last-child::after{display:none}'+
-  '.six .n{font:400 clamp(1.4rem,2.4vw,2.4rem)/1 var(--disp);color:#FFB020}.six .t{font:400 clamp(1rem,1.5vw,1.5rem)/1 var(--disp);text-transform:uppercase;color:#fff;margin:.8vh 0}'+
-  '.six .d{font:500 clamp(12px,.92vw,15px)/1.4 var(--sans);color:#A9B2C6}'+
-  '.six>div.hit{border-color:rgba(182,255,60,.7);background:linear-gradient(170deg,rgba(182,255,60,.14),rgba(182,255,60,.03))}.six>div.hit .n{color:#B6FF3C}'+
-  '.six .tag{display:inline-block;margin-top:1.2vh;font:700 clamp(11px,.7vw,12px)/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#0B0D15;background:#B6FF3C;border-radius:5px;padding:.5vh .5vw}'+
+  /* the real Revenue Efficiency Model image, cropped to its content on a white card */
+  '.rem-card{margin:2vh auto 0;background:#fff;border-radius:18px;padding:1.4vh 1.4vw;display:block;width:fit-content;box-shadow:0 18px 60px rgba(0,0,0,.45)}'+
+  '.rem-img{position:relative;overflow:hidden;height:min(66vh,calc((100vw - 320px)/1.7727));aspect-ratio:1.7727}.rem-img img{display:block;width:105.77%;max-width:none;margin-left:-3.846%;margin-top:-13.46%}'+
   /* built, not bought */
   '.bt{display:grid;grid-template-columns:1.05fr 1fr;gap:3vw;align-items:center;margin-top:3vh}'+
   '.bt .stats{display:grid;grid-template-columns:1fr 1fr;gap:1vw}.bt .stats>div{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:2vh 1.2vw;background:rgba(255,255,255,.04)}'+
@@ -46,8 +41,8 @@
   '.find{border:1px solid rgba(255,255,255,.14);border-left:4px solid #FF5A1F;border-radius:12px;padding:1.5vh 1.1vw;background:rgba(255,255,255,.04);margin-bottom:1.3vh}.find.hi{border-left-color:#FFB020}'+
   '.find .sv{font:700 clamp(11px,.7vw,12px)/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#FF8A3D}.find.hi .sv{color:#FFB020}.find .ti{font:600 clamp(13px,1.05vw,17px)/1.3 var(--sans);color:#fff;margin:.6vh 0}.find .ev{font:500 clamp(11.5px,.85vw,14px)/1.4 var(--sans);color:#A9B2C6}'+
   '.find .ev b{color:#fff}'+
-  '@media (max-height:820px){.six{margin-top:2.6vh}.rl .big{font-size:clamp(2.6rem,7vw,6.4rem)}.fnl{gap:1.4vh;margin-top:2.4vh}.mini{margin-top:2vh}.au{margin-top:2vh}.au .dim{margin-bottom:1.1vh}.find{padding:1vh .9vw;margin-bottom:.9vh}.bt{margin-top:2vh}.rl .src{margin-top:1.4vh}}'+
-  '@media (max-width:1100px){.six{grid-template-columns:repeat(3,1fr)}.bt,.au{grid-template-columns:1fr}}';
+  '@media (max-height:820px){.rem-card{margin-top:1.4vh}.rl .big{font-size:clamp(2.6rem,7vw,6.4rem)}.fnl{gap:1.4vh;margin-top:2.4vh}.mini{margin-top:2vh}.au{margin-top:2vh}.au .dim{margin-bottom:1.1vh}.find{padding:1vh .9vw;margin-bottom:.9vh}.bt{margin-top:2vh}.rl .src{margin-top:1.4vh}}'+
+  '@media (max-width:1100px){.bt,.au{grid-template-columns:1fr}.rem-card{display:block}.rem-img{height:auto;width:100%}}';
  document.head.appendChild(st);
 
  /* 1. the MSP slide goes; the scoreboard chapter stops sounding like the whole talk */
@@ -62,19 +57,15 @@
   note(s,'Everything you just saw was four roles. Here is every task: 89 sales, 48 marketing.','You just saw the process for four roles. This is the full library behind them: 89 sales tasks, 48 marketing tasks.')});
  SL.forEach(function(s){if(/67 core tasks across four roles/.test(s.textContent))note(s,'This is QBS\'s own classification, not a survey','The four task lists for each role are in the take-home library. This is QBS\'s own classification, not a survey')});
 
- /* 3. six places AI shows up, so the scoreboard reads as the opening, not the point */
+ /* 3. the real Revenue Efficiency Model opens the session, so the website reads as one input and not the point */
  var first01=null;SL.forEach(function(s){if(!first01&&s.getAttribute('data-sec')==='01 Scoreboard')first01=s});
- if(first01){put(sec('six','The map',
-  "The map for the whole session. 'A website is one of six places AI shows up in a dealership. We start with the one I can measure from here, because it is the one you can check yourself tonight. Then we go to the other five, and I show you the work behind each one.' Point left to right: Be found, Find, Win, Deliver, Keep, Grow. Highlight where the room lives: most of the money is in the last four.",
-  '<div class="kick">The whole go-to-market</div><h2>The website is one of <span class="grad">six places.</span></h2>'+
-  '<div class="six">'+
-   '<div class="hit"><div class="n">01</div><div class="t">Be found</div><div class="d">Your site, and the answers AI gives about you.</div><span class="tag">We start here</span></div>'+
-   '<div><div class="n">02</div><div class="t">Find</div><div class="d">Spot the account that is about to buy, overnight.</div></div>'+
-   '<div><div class="n">03</div><div class="t">Win</div><div class="d">Research, proposals and follow-up without the retyping.</div></div>'+
-   '<div><div class="n">04</div><div class="t">Deliver</div><div class="d">Signed to installed, and the call at 2am.</div></div>'+
-   '<div><div class="n">05</div><div class="t">Keep</div><div class="d">See the renewal that is about to walk, months early.</div></div>'+
-   '<div><div class="n">06</div><div class="t">Grow</div><div class="d">Cross-sell, referrals and the champion who changed jobs.</div></div>'+
-  '</div><p class="src">You will see all six at work before we finish.</p>'),first01)}
+ if(first01){put(sec('model','The model',
+  "THE FRAMEWORK, our real one. 'This is how every dealer makes revenue, ordered by effort. Keep what you have. Grow it with cross-sell and upsell. Multiply it through referrals. Convert the customers you already have. Only then expand into net-new business, the most expensive thing you do.' Then: 'Most dealers aim nearly all their effort at the top of this staircase, the new-business arrow. Your website mostly serves the first four steps, and AI works all five. We start with the website because it is the one thing I could measure for each of you before I flew here. Then the rest of the session works every step.' The next slides measure the website; the Revenue Efficiency slide later shows the AI play for each step.",
+  '<div class="kick">The Revenue Efficiency Model</div>'+
+  '<div class="rem-card"><div class="rem-img"><img alt="The Quantum Revenue Efficiency Model: 01 Keep, 02 Grow, 03 Multiply, 04 Convert, 05 Expand" src="https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/sales-blitz-playbook/rev-efficiency-model.png"></div></div>'+
+  '<p class="src" style="margin-top:1.6vh;text-align:center">Five ways revenue walks in the door, ordered by effort. The website is one input. AI works all five.</p>'),first01)}
+ var revm=null;SL.forEach(function(s){if(!revm&&s.getAttribute('data-sec')==='Revenue Efficiency')revm=s});
+ if(revm){var rk=revm.querySelector('.kick');if(rk)rk.textContent='The Revenue Efficiency Model · the AI play for each step'}
 
  /* 4. five stories from Quantum's own work, in front of the twenty cards */
  var p1=document.getElementById('proof1');
