@@ -10,7 +10,7 @@
  var PRES=/[?&]presenter/.test(location.search);
  var ORDER=[
   '#Welcome','title','film','n-who','room','n-trends','n-lf','n-lf2','cannata','soh1','soh2','soh3','soh4','gap',
-  '#The Triple A of AI','tripleA','rung1','flow-a1','rung2','flow-retype','rung3','flow-a3','judging','n-terms','n-lake','h-data','h-conn','n-brain',
+  '#The Triple A of AI','tripleA','rung1','flow-a1','rung2','flow-retype','rung3','flow-a3','judging','n-terms','n-lake','h-data','h-conn','h-org','n-brain',
   '#How we use AI','real-built','real-calls','real-audit','real-enrich','flow-deal','proof1','proof2',
   '#Where to begin','n-begin','model','flow-journey','flow-revgen','flow-revfull','h-process',
   '#01 Keep','n-keep','flow-call','csproc','play3',
@@ -24,7 +24,7 @@
   '#Admin and operations','n-ops','adminproc',
   '#Live build','live',
   '#The honest part','honest1','honest2',
-  '#Your next step','bobbill','h-ailist','n-matrix','days90','close'];
+  '#Your next step','bobbill','h-ailist','n-matrix','n-start','days90','close'];
  /* slides that exist but start hidden (show them with the eye in the Arrange panel) */
  var HIDDEN=['show','sbcard','revold','mirror','timeback','playscard','twentycard','twenty','flow-cycle','cannata','live'];
 
@@ -38,9 +38,9 @@
   playscard:['pre','05 Five plays|FivePlays'],play1:['pre','05 Five plays|The territory'],play2:['pre','05 Five plays|The proposal'],play3:['pre','05 Five plays|The service-to-sales'],play4:['pre','05 Five plays|The one-person'],play5:['pre','05 Five plays|Being the answer'],
   live:['pre','Live build|'],twentycard:['pre','06 Twenty|TwentyWays'],twenty:['pre','06 Twenty|#43'],'real-built':['id'],'real-calls':['id'],'real-audit':['id'],'real-enrich':['id'],proof1:['id'],proof2:['id'],
   honest1:['pre','Honest part|Three ways'],honest2:['pre','Honest part|#45'],bobbill:['id'],days90:['pre','90 days|'],close:['pre','Close|'],
-  'n-keep':['id'],'n-grow':['id'],'n-multiply':['id'],'n-convert':['id'],'n-expand':['id'],'n-field':['id'],'n-mkt':['id'],'n-ops':['id'],'n-begin':['id'],'flow-a1':['id'],'flow-a3':['id'],'h-data':['id'],'h-conn':['id'],'h-process':['id'],'h-tasks':['id'],'h-ailist':['id'],'n-matrix':['id'],'n-brain':['id'],'n-lake':['id'],'n-lf':['id'],'n-lf2':['id'],'flow-journey':['id'],'flow-cycle':['id'],'flow-revgen':['id'],'flow-revfull':['id'],'n-dept':['id']};
+  'n-keep':['id'],'n-grow':['id'],'n-multiply':['id'],'n-convert':['id'],'n-expand':['id'],'n-field':['id'],'n-mkt':['id'],'n-ops':['id'],'n-begin':['id'],'flow-a1':['id'],'flow-a3':['id'],'h-data':['id'],'h-org':['id'],'n-start':['id'],'h-conn':['id'],'h-process':['id'],'h-tasks':['id'],'h-ailist':['id'],'n-matrix':['id'],'n-brain':['id'],'n-lake':['id'],'n-lf':['id'],'n-lf2':['id'],'flow-journey':['id'],'flow-cycle':['id'],'flow-revgen':['id'],'flow-revfull':['id'],'n-dept':['id']};
 
- var tries=0;(function wait(){if(window.DECK&&document.getElementById('n-ops')&&document.getElementById('n-dept')&&document.getElementById('n-brain')&&document.getElementById('n-lake')&&document.getElementById('flow-a3')&&document.getElementById('n-matrix')&&document.getElementById('flow-revfull')&&document.getElementById('n-lf2')&&document.getElementById('flow-call')&&document.getElementById('real-enrich')){run();return}if(++tries>360)return;setTimeout(wait,150)})();
+ var tries=0;(function wait(){if(window.DECK&&document.getElementById('n-ops')&&document.getElementById('n-dept')&&document.getElementById('n-brain')&&document.getElementById('n-lake')&&document.getElementById('flow-a3')&&document.getElementById('n-matrix')&&document.getElementById('n-start')&&document.getElementById('flow-revfull')&&document.getElementById('n-lf2')&&document.getElementById('flow-call')&&document.getElementById('real-enrich')){run();return}if(++tries>360)return;setTimeout(wait,150)})();
 
  function run(){
  if(document.getElementById('arr-panel'))return;
