@@ -29,7 +29,7 @@ select{width:100%;background:#151826;color:#fff;border:1px solid var(--line);bor
  var q=new URLSearchParams(location.search),code=(q.get('c')||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
  var app=document.getElementById('app');
  if(!code){app.innerHTML='<div class="err">Open this page from the REMOTE button on the laptop (it shows a QR code).</div>';return}
- app.outerHTML='<div class="top"><span><span class="dot" id="dot"></span><span id="st">Connecting…</span></span><span class="ct" id="ct"></span></div><div class="secs" id="secs"></div><div class="chap"><b id="chap"></b><span id="cpos"></span></div><div class="bar"><i id="cbar"></i></div><h1 id="ti">&nbsp;</h1><div class="nxt"><small>Next up</small><b id="nx"></b><em id="nxc"></em></div><div id="notes">Speaker notes show here.</div><div class="mini"><select id="jump" aria-label="Jump to a slide"><option>Jump to a slide…</option></select><span class="tm" id="tm" title="Tap to reset">0:00</span></div><div class="mini"><button class="sec" id="vb" style="height:48px;font-size:15px;flex:1">Voice: off</button><span class="tm" id="vh" style="font-size:12px;text-align:left;flex:1">say “next” or “back”</span></div><div class="row"><button class="sec" id="pv">&larr; Back</button><button id="nx2">Next &rarr;</button></div>';
+ app.outerHTML='<div class="top"><span><span class="dot" id="dot"></span><span id="st">Connecting…</span></span><span class="ct" id="ct"></span></div><div class="secs" id="secs"></div><div class="chap"><b id="chap"></b><span id="cpos"></span></div><div class="bar"><i id="cbar"></i></div><h1 id="ti">&nbsp;</h1><div class="nxt"><small>Next up</small><b id="nx"></b><em id="nxc"></em></div><div id="notes">Speaker notes show here.</div><div class="mini"><select id="jump" aria-label="Jump to a slide"><option>Jump to a slide…</option></select><span class="tm" id="tm" title="Tap to reset">0:00</span></div><div class="mini"><button class="sec" id="vb" style="height:48px;font-size:15px;flex:1">Voice: off</button><span class="tm" id="vh" style="font-size:12px;text-align:left;flex:1">say “next” or “back”</span></div><div class="mini"><button class="sec" id="rt" style="height:48px;font-size:15px;flex:1;display:none">Return</button><select id="slot" style="flex:1" aria-label="Talk length"><option value="20">Slot: 20 min</option><option value="30">Slot: 30 min</option><option value="45">Slot: 45 min</option><option value="60">Slot: 60 min</option><option value="75">Slot: 75 min</option><option value="90">Slot: 90 min</option></select></div><div class="row"><button class="sec" id="pv">&larr; Back</button><button id="nx2">Next &rarr;</button></div>';
  var $=function(i){return document.getElementById(i)},last=0;
  var sb=window.supabase.createClient('https://ladhdgwedwynmdmeeena.supabase.co','sb_publishable_YP3m7RX-lI7ycGk-36G-QQ_QoifyVHE');
  var ch=sb.channel('icda26-'+code,{config:{broadcast:{self:false}}});
@@ -46,13 +46,21 @@ select{width:100%;background:#151826;color:#fff;border:1px solid var(--line);bor
   $('notes').textContent=s.notes||'(no notes on this slide)';$('notes').scrollTop=0;
   var j=$('jump');if(s.toc&&j.getAttribute('data-n')!==String(s.toc.length)){var g='',lc=null;s.toc.forEach(function(t){if(t.c!==lc){if(lc!==null)g+='</optgroup>';g+='<optgroup label="'+(t.c||'').replace(/"/g,'')+'">';lc=t.c}g+='<option value="'+t.i+'">'+(t.i+1)+'. '+t.t.replace(/</g,'&lt;')+'</option>'});g+='</optgroup>';j.innerHTML='<option value="">Jump to a slide…</option>'+g;j.setAttribute('data-n',String(s.toc.length))}
   if(j.value!==String(s.idx)&&!j.matches(':focus'))j.value=String(s.idx);
-  if(cur!==-1&&s.idx!==cur&&!started){started=true;t0=Date.now()}cur=s.idx});
- $('secs').addEventListener('click',function(e){var b=e.target.closest('button');if(b)send({a:'go',n:+b.getAttribute('data-at')})});
- $('tm').onclick=function(){started=false;t0=0;$('tm').textContent='0:00'};
+  if(cur!==-1&&s.idx!==cur&&!started){started=true;t0=Date.now()}cur=s.idx;setRet()});
+
+ var slot=45;try{slot=+(localStorage.getItem('icda26-slot')||45)||45}catch(e){}
+ $('slot').value=String(slot);
+ function tick(){var left=slot*60-(started?Math.floor((Date.now()-t0)/1000):0),el=$('tm');el.textContent=(left<0?'+':'')+fmt(Math.abs(left));el.style.color=!started?'':(left<=300?'#FF5A1F':(left<=600?'#FFB020':''))}
+ $('slot').onchange=function(){slot=+$('slot').value;try{localStorage.setItem('icda26-slot',String(slot))}catch(e){}tick();$('slot').blur()};
+ var ret=-1;
+ function setRet(){var b=$('rt');if(ret>=0&&ret!==cur){b.style.display='block';b.textContent='\u21a9 Return to slide '+(ret+1)}else b.style.display='none'}
+ $('rt').onclick=function(){if(ret<0)return;var t=ret;ret=cur;send({a:'go',n:t});setRet()};
+ $('secs').addEventListener('click',function(e){var b=e.target.closest('button');if(b){ret=cur;send({a:'go',n:+b.getAttribute('data-at')});setRet()}});
+ $('tm').onclick=function(){started=false;t0=0;tick()};
  ch.subscribe(function(st){if(st==='SUBSCRIBED'){send({a:'hello'})}});
  $('nx2').onclick=function(){send({a:'next'})};$('pv').onclick=function(){send({a:'prev'})};
- $('jump').onchange=function(e){if(e.target.value!=='')send({a:'go',n:+e.target.value});e.target.blur()};
- setInterval(function(){var ok=Date.now()-last<7000;$('dot').className='dot '+(ok?'ok':'bad');$('st').textContent=ok?'Connected to the laptop':(last?'Laptop not responding':'Waiting for the laptop…');if(started){$('tm').textContent=fmt(Math.floor((Date.now()-t0)/1000))}if(!ok&&Date.now()%5000<1000)send({a:'hello'})},1000);
+ $('jump').onchange=function(e){if(e.target.value!==''){ret=cur;send({a:'go',n:+e.target.value});setRet()}e.target.blur()};
+ setInterval(function(){var ok=Date.now()-last<7000;$('dot').className='dot '+(ok?'ok':'bad');$('st').textContent=ok?'Connected to the laptop':(last?'Laptop not responding':'Waiting for the laptop…');tick();if(!ok&&Date.now()%5000<1000)send({a:'hello'})},1000);
  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' ')send({a:'next'});if(e.key==='ArrowLeft')send({a:'prev'})});
 
  var SR=window.SpeechRecognition||window.webkitSpeechRecognition,vOn=false,vRec=null,vLast=0;
