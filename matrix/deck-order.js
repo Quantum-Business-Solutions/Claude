@@ -10,8 +10,8 @@
  var PRES=/[?&]presenter/.test(location.search);
  var ORDER=[
   '#Welcome','title','film','n-who','room','n-trends','cannata','soh1','soh2','soh3','soh4','gap',
-  '#The Triple A of AI','tripleA','rung1','rung2','rung3','judging','n-terms',
-  '#How we use AI','real-built','real-calls','real-audit','real-enrich','proof1','proof2',
+  '#The Triple A of AI','tripleA','rung1','flow-retype','rung2','rung3','judging','n-terms',
+  '#How we use AI','real-built','real-calls','real-audit','real-enrich','flow-deal','proof1','proof2',
   '#Where to begin','n-begin','model','flow-journey','flow-revgen',
   '#01 Keep','n-keep','flow-call','csproc','play3',
   '#02 Grow','n-grow',
@@ -19,14 +19,14 @@
   '#04 Convert','n-convert',
   '#05 Expand','n-expand','play1',
   '#Tasks by department','n-dept','bars26','library','twenty',
-  '#Sales: in the field','n-field','flow-deal','salesproc','salesroom','play2',
+  '#Sales: in the field','n-field','salesproc','salesroom','play2',
   '#Marketing','n-mkt','unc','bars13','looked','beat','report','play5','mktproc','play4',
-  '#Admin and operations','n-ops','flow-retype','adminproc',
+  '#Admin and operations','n-ops','adminproc',
   '#Live build','live',
   '#The honest part','honest1','honest2',
   '#Your next step','bobbill','days90','close'];
  /* slides that exist but start hidden (show them with the eye in the Arrange panel) */
- var HIDDEN=['show','sbcard','revold','mirror','timeback','playscard','twentycard','twenty','flow-cycle'];
+ var HIDDEN=['show','sbcard','revold','mirror','timeback','playscard','twentycard','twenty','flow-cycle','cannata','live'];
 
  /* how each slide is found. id, or the start of its key (data-sk), or text it contains */
  var RULES={title:['pre','Open|Go-to-Market'],film:['cls','trailer'],'n-who':['id'],room:['pre','The room|'],'n-trends':['id'],cannata:['has','hearing, from dealers'],
