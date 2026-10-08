@@ -96,7 +96,7 @@
  function fcy(){
   var A={a1:'#4DE8FF',a2:'#FFB020',a3:'#B6FF3C'};
   function bad(x,y,list){return list.map(function(k,i){var bx=x-i*36;return '<rect x=\"'+(bx-32)+'\" y=\"'+(y-14)+'\" width=\"32\" height=\"17\" rx=\"8\" fill=\"#0B0D15\" stroke=\"'+A[k]+'\" stroke-width=\"1.5\"/><text x=\"'+(bx-16)+'\" y=\"'+(y-1)+'\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"'+A[k]+'\">A'+k.charAt(1)+'</text>'}).join('')}
-  function nd(x,y,w,h,t,sub,b,hi){return '<rect x=\"'+x+'\" y=\"'+y+'\" width=\"'+w+'\" height=\"'+h+'\" rx=\"9\" fill=\"'+(hi?'rgba(182,255,60,.12)':'rgba(255,255,255,.06)')+'\" stroke=\"'+(hi?'#B6FF3C':'rgba(255,255,255,.3)')+'\" stroke-width=\"1.4\"/><text x=\"'+(x+w/2)+'\" y=\"'+(y+(sub?19:h/2+5))+'\" text-anchor=\"middle\" font-size=\"14.5\" font-weight=\"700\" fill=\"#fff\">'+t+'</text>'+(sub?'<text x=\"'+(x+w/2)+'\" y=\"'+(y+35)+'\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#A9B2C6\">'+sub+'</text>':'')+bad(x+w-6,y,b||[])}
+  function nd(x,y,w,h,t,sub,b,hi){return '<rect x=\"'+x+'\" y=\"'+y+'\" width=\"'+w+'\" height=\"'+h+'\" rx=\"9\" fill=\"'+(hi?'rgba(182,255,60,.12)':'rgba(255,255,255,.06)')+'\" stroke=\"'+(hi?'#B6FF3C':'rgba(255,255,255,.3)')+'\" stroke-width=\"1.4\"/><text x=\"'+(x+w/2)+'\" y=\"'+(y+(sub?19:h/2+5))+'\" text-anchor=\"middle\" font-size=\"'+(t.length*8.6>w-14?12.5:14.5)+'\" font-weight=\"700\" fill=\"#fff\">'+t+'</text>'+(sub?'<text x=\"'+(x+w/2)+'\" y=\"'+(y+35)+'\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#A9B2C6\">'+sub+'</text>':'')+bad(x+w-6,y,b||[])}
   function dia(cx,cy,w,h,t,b){return '<polygon points=\"'+cx+','+(cy-h/2)+' '+(cx+w/2)+','+cy+' '+cx+','+(cy+h/2)+' '+(cx-w/2)+','+cy+'\" fill=\"rgba(77,232,255,.08)\" stroke=\"#4DE8FF\" stroke-width=\"1.4\"/><text x=\"'+cx+'\" y=\"'+(cy+5)+'\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#fff\">'+t+'</text>'+bad(cx+22,cy-h/2+2,b||[])}
   function ln(d){return '<path d=\"'+d+'\" fill=\"none\" stroke=\"#8893AA\" stroke-width=\"1.6\" marker-end=\"url(#fcyh)\"/>'}
   function tx(x,y,t,c,a){return '<text x=\"'+x+'\" y=\"'+y+'\" text-anchor=\"'+(a||'middle')+'\" font-size=\"11.5\" fill=\"'+(c||'#A9B2C6')+'\">'+t+'</text>'}
@@ -116,6 +116,47 @@
  mk('flow-cycle','Where to begin',
   "THE FLOW, from the copier-dealer version of our revenue cycle. 'Left to right. You define your ideal customer, build personas, build the list, and enrich it. Then it splits: sales makes the calls, marketing sends the sequence. Both end at a booked meeting, with a form into the CRM and two reminders.' Then point at the badges: 'A1 is the assistant: you ask and it drafts, the persona, the scripts, the messages. A2 is automation: enrichment, the call queue, confirmations, reminders, nobody has to remember. A3 is the agent: it reads the replies, decides who is interested and hands you a short list. Today most dealers are doing this by hand, or not at all.'",
   '<div class=\"kick\">The flow · new business, start to meeting</div><h2>From ideal customer to <span class=\"grad\">booked meeting.</span></h2>'+fcy()+
+  '<div class=\"ask\" style=\"margin-top:1.2vh\"><b style=\"color:#4DE8FF\">A1</b><span style=\"border-color:rgba(77,232,255,.45)\">Assistant: you ask</span><b style=\"color:#FFB020\">A2</b><span style=\"border-color:rgba(255,176,32,.5);background:rgba(255,176,32,.07)\">Automation: a trigger runs it</span><b style=\"color:#B6FF3C\">A3</b><span style=\"border-color:rgba(182,255,60,.5);background:rgba(182,255,60,.07)\">Agent: it decides, you approve</span></div>');
+
+
+ function frev(){
+  var A={a1:'#4DE8FF',a2:'#FFB020',a3:'#B6FF3C'};
+  function bad(x,y,list){return list.map(function(k,i){var bx=x-i*36;return '<rect x=\"'+(bx-32)+'\" y=\"'+(y-14)+'\" width=\"32\" height=\"17\" rx=\"8\" fill=\"#0B0D15\" stroke=\"'+A[k]+'\" stroke-width=\"1.5\"/><text x=\"'+(bx-16)+'\" y=\"'+(y-1)+'\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"'+A[k]+'\">A'+k.charAt(1)+'</text>'}).join('')}
+  function nd(x,y,w,h,t,sub,b,hi){return '<rect x=\"'+x+'\" y=\"'+y+'\" width=\"'+w+'\" height=\"'+h+'\" rx=\"9\" fill=\"'+(hi?'rgba(182,255,60,.12)':'rgba(255,255,255,.06)')+'\" stroke=\"'+(hi?'#B6FF3C':'rgba(255,255,255,.3)')+'\" stroke-width=\"1.4\"/><text x=\"'+(x+w/2)+'\" y=\"'+(y+(sub?19:h/2+5))+'\" text-anchor=\"middle\" font-size=\"'+(t.length*8.6>w-14?12.5:14.5)+'\" font-weight=\"700\" fill=\"#fff\">'+t+'</text>'+(sub?'<text x=\"'+(x+w/2)+'\" y=\"'+(y+35)+'\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#A9B2C6\">'+sub+'</text>':'')+bad(x+w-6,y,b||[])}
+  function dia(cx,cy,w,h,t,b){return '<polygon points=\"'+cx+','+(cy-h/2)+' '+(cx+w/2)+','+cy+' '+cx+','+(cy+h/2)+' '+(cx-w/2)+','+cy+'\" fill=\"rgba(77,232,255,.08)\" stroke=\"#4DE8FF\" stroke-width=\"1.4\"/><text x=\"'+cx+'\" y=\"'+(cy+5)+'\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#fff\">'+t+'</text>'+bad(cx+22,cy-h/2+2,b||[])}
+  function ln(d){return '<path d=\"'+d+'\" fill=\"none\" stroke=\"#8893AA\" stroke-width=\"1.6\" marker-end=\"url(#fcyh)\"/>'}
+  function tx(x,y,t,c,a){return '<text x=\"'+x+'\" y=\"'+y+'\" text-anchor=\"'+(a||'middle')+'\" font-size=\"11.5\" fill=\"'+(c||'#A9B2C6')+'\">'+t+'</text>'}
+
+  var o='<svg class=\"fcy\" viewBox=\"0 0 1000 430\" role=\"img\" aria-label=\"Flow chart: the Quantum RevGen end to end process, from lead sources to solution determination, marked where an assistant, automation or agent helps\"><defs><marker id=\"fcyh\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#8893AA\"/></marker></defs>';
+  /* stage chevrons */
+  [['Target identified',150,150],['Awareness',300,150],['Consideration',450,150]].forEach(function(c,i){o+='<polygon points=\"'+c[1]+',8 '+(c[1]+c[2]-14)+',8 '+(c[1]+c[2])+',26 '+(c[1]+c[2]-14)+',44 '+c[1]+',44 '+(c[1]+14)+',26\" fill=\"rgba(255,255,255,'+(i===0?.16:.08)+')\" stroke=\"rgba(255,255,255,.25)\"/><text x=\"'+(c[1]+c[2]/2)+'\" y=\"31\" text-anchor=\"middle\" font-size=\"13.5\" font-weight=\"700\" fill=\"#fff\">'+c[0]+'</text>'});
+  /* lead sources */
+  o+='<rect x=\"10\" y=\"60\" width=\"120\" height=\"170\" rx=\"10\" fill=\"rgba(255,255,255,.06)\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"1.4\"/><text x=\"70\" y=\"82\" text-anchor=\"middle\" font-size=\"13.5\" font-weight=\"700\" fill=\"#fff\">Lead sources</text>';
+  ['Third party data','Paid ads','Trigger events','Organic social','Referrals','Webinar','Earned'].forEach(function(t,i){o+=tx(70,102+i*18,t,'#C3CBDC')});
+  o+=bad(124,60,['a2']);
+  o+=ln('M130 145H160');
+  /* call target, contact made */
+  o+=dia(200,145,84,66,'',[])+tx(200,141,'Call','#fff')+tx(200,157,'target?','#fff')+bad(222,115,['a3']);
+  o+=dia(330,145,92,70,'',[])+tx(330,141,'Contact','#fff')+tx(330,157,'made?','#fff');
+  o+=ln('M240 145H285')+tx(262,139,'yes')+ln('M200 177V250')+tx(212,215,'no','#A9B2C6','start')+nd(140,250,120,40,'Enter nurture','prove you are alive',['a2']);
+  /* outcomes */
+  var oc=[['Booked meeting','confirm and remind',['a2']],['Interested','send more information',['a2']],['Busy, call back','follow up in X days',['a2']],['Not decision maker','capture the right contact',['a3']],['Disqualified','remove from campaigns',[]]];
+  oc.forEach(function(c,i){var y=62+i*56;o+=nd(420,y,160,40,c[0],c[1],c[2],i===0);o+=ln('M375 145H400V'+(y+20)+'H420')});
+  o+=tx(398,138,'yes','#A9B2C6','end');
+  /* meeting to solution */
+  o+=ln('M580 82H610V145H625')+dia(660,145,70,62,'Attends?',['a2'])+ln('M695 145H725')+tx(710,139,'yes');
+  o+=nd(725,125,90,40,'Intro call','',['a1']);
+  o+=ln('M815 145H838')+dia(878,145,80,66,'A fit?',['a3']);
+  o+=ln('M878 178V212')+tx(892,200,'yes','#A9B2C6','start');
+  o+=nd(780,212,200,44,'Solution determination','the proposal',['a1'],1);
+  o+=ln('M880 256V300H630V345')+ln('M880 300H780V345')+ln('M880 300H930V345');
+  o+=nd(560,345,140,44,'GTM program','assess, playbook',['a2'])+nd(710,345,140,44,'Sales as a service','onboard, execute',['a2'])+nd(860,345,140,44,'Technology','set up, demos',['a2']);
+  o+=tx(672,196,'no','#A9B2C6','start')+nd(610,215,100,34,'Re-book','');
+  o+=ln('M660 176V215');
+  o+='</svg>';return o}
+ mk('flow-revgen','Where to begin',
+  "THE ONE YOU HAVE ALWAYS USED: our RevGen End to End. 'This is the process we put in front of every client. Leads come from seven places, they move from target identified, to aware of us, to considering us. Along the way it is a set of yes-or-no decisions: call the target, did we reach the person, did they attend, is it a fit.' Then the badges: 'A1 is the assistant, you ask. A2 is automation, nobody has to remember. A3 is the agent, it decides and you approve. Look at where the A3s are. They are the decisions: who to call, are they the decision maker, is it a fit.' 'None of this is new. What is new is that the reading and the remembering no longer have to be done by a person.' [Dealers can map their own sales process onto it; offer the Lucid file as a take-home.]",
+  '<div class=\"kick\">Our RevGen end to end · where AI helps</div><h2>The process, with <span class=\"grad\">the help marked on it.</span></h2>'+frev()+
   '<div class=\"ask\" style=\"margin-top:1.2vh\"><b style=\"color:#4DE8FF\">A1</b><span style=\"border-color:rgba(77,232,255,.45)\">Assistant: you ask</span><b style=\"color:#FFB020\">A2</b><span style=\"border-color:rgba(255,176,32,.5);background:rgba(255,176,32,.07)\">Automation: a trigger runs it</span><b style=\"color:#B6FF3C\">A3</b><span style=\"border-color:rgba(182,255,60,.5);background:rgba(182,255,60,.07)\">Agent: it decides, you approve</span></div>');
 
  /* ---- tasks by department ---- */

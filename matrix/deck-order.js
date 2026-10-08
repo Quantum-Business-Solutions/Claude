@@ -12,7 +12,7 @@
   '#Welcome','title','film','n-who','room','n-trends','cannata','soh1','soh2','soh3','soh4','gap',
   '#The Triple A of AI','tripleA','rung1','rung2','rung3','judging','n-terms',
   '#How we use AI','real-built','real-calls','real-audit','real-enrich','proof1','proof2',
-  '#Where to begin','n-begin','model','flow-journey','flow-cycle',
+  '#Where to begin','n-begin','model','flow-journey','flow-revgen',
   '#01 Keep','n-keep','flow-call','csproc','play3',
   '#02 Grow','n-grow',
   '#03 Multiply','n-multiply',
@@ -26,7 +26,7 @@
   '#The honest part','honest1','honest2',
   '#Your next step','bobbill','days90','close'];
  /* slides that exist but start hidden (show them with the eye in the Arrange panel) */
- var HIDDEN=['show','sbcard','revold','mirror','timeback','playscard','twentycard','twenty'];
+ var HIDDEN=['show','sbcard','revold','mirror','timeback','playscard','twentycard','twenty','flow-cycle'];
 
  /* how each slide is found. id, or the start of its key (data-sk), or text it contains */
  var RULES={title:['pre','Open|Go-to-Market'],film:['cls','trailer'],'n-who':['id'],room:['pre','The room|'],'n-trends':['id'],cannata:['has','hearing, from dealers'],
@@ -38,7 +38,7 @@
   playscard:['pre','05 Five plays|FivePlays'],play1:['pre','05 Five plays|The territory'],play2:['pre','05 Five plays|The proposal'],play3:['pre','05 Five plays|The service-to-sales'],play4:['pre','05 Five plays|The one-person'],play5:['pre','05 Five plays|Being the answer'],
   live:['pre','Live build|'],twentycard:['pre','06 Twenty|TwentyWays'],twenty:['pre','06 Twenty|#43'],'real-built':['id'],'real-calls':['id'],'real-audit':['id'],'real-enrich':['id'],proof1:['id'],proof2:['id'],
   honest1:['pre','Honest part|Three ways'],honest2:['pre','Honest part|#45'],bobbill:['id'],days90:['pre','90 days|'],close:['pre','Close|'],
-  'n-keep':['id'],'n-grow':['id'],'n-multiply':['id'],'n-convert':['id'],'n-expand':['id'],'n-field':['id'],'n-mkt':['id'],'n-ops':['id'],'n-begin':['id'],'flow-journey':['id'],'flow-cycle':['id'],'n-dept':['id']};
+  'n-keep':['id'],'n-grow':['id'],'n-multiply':['id'],'n-convert':['id'],'n-expand':['id'],'n-field':['id'],'n-mkt':['id'],'n-ops':['id'],'n-begin':['id'],'flow-journey':['id'],'flow-cycle':['id'],'flow-revgen':['id'],'n-dept':['id']};
 
  var tries=0;(function wait(){if(window.DECK&&document.getElementById('n-ops')&&document.getElementById('n-dept')&&document.getElementById('flow-call')&&document.getElementById('real-enrich')){run();return}if(++tries>360)return;setTimeout(wait,150)})();
 
