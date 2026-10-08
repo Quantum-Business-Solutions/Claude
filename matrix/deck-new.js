@@ -62,11 +62,75 @@
          {no:'Connector',h:'The ready-made plug',p:'A prebuilt link between the AI and an app you already use, so nobody has to wire it up.'},
          {no:'Memory',h:'Your second brain',p:'What the AI remembers about your business between conversations, so you stop starting from zero.'}],'c6'));
 
+
+ /* ---- where do I begin ---- */
+ mk('n-begin','Where to begin',
+  "PAUSE HERE. This is the turn of the whole talk. 'So where do I begin? Not with a tool. Start with the question: what is the most efficient, most effective way to grow my business? Here is the model we use.' Then click to the Revenue Efficiency Model picture. 'You start with Keep: the customers you already have. Then Grow, Multiply, Convert, Expand. For each one I will show you where AI fits, in the Triple A terms we just covered.'",
+  '<div class=\"kick\">Where do I begin?</div><h2>Begin with how a dealership <span class=\"grad\">actually grows.</span></h2>'+
+  '<p class=\"sub\" style=\"font-size:clamp(15px,1.5vw,24px);max-width:62ch\">Five ways revenue walks in the door, ordered by effort. Start with Keep, work to the right, and put AI to work at every step.</p>'+
+  '<div class=\"cds\" style=\"grid-template-columns:repeat(5,1fr);margin-top:3.4vh\">'+[['01','Keep','Retain your current customers'],['02','Grow','Grow your existing customer base'],['03','Multiply','Referral and affiliate programs'],['04','Convert','Win business from your current base'],['05','Expand','Focus on net new business']].map(function(c,i){return '<div class=\"ncd'+(i===0?' hi':'')+'\"><div class=\"no\">'+c[0]+'</div><h3>'+c[1]+'</h3><p>'+c[2]+'</p></div>'}).join('')+'</div>');
+
+
+ /* ---- processes from the Quantum RevGen chart, marked with where an assistant, automation or agent helps ---- */
+ var st2=document.createElement('style');st2.textContent=
+  '.jg{display:grid;grid-template-columns:clamp(110px,11vw,190px) repeat(3,1fr);gap:.9vh .8vw;margin-top:2.2vh;align-items:stretch}'+
+  '.jh{font:400 clamp(1.1rem,1.7vw,1.7rem)/1 var(--disp);text-transform:uppercase;color:#fff;background:linear-gradient(90deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border-radius:10px 24px 24px 10px;padding:1.2vh 1vw}'+
+  '.jt{font:italic 500 clamp(12px,1vw,16px)/1.35 var(--sans);color:#C3CBDC;padding:.4vh .5vw}.jl{font:700 clamp(10px,.8vw,13px)/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#8893AA;align-self:center}'+
+  '.jr{display:flex;flex-direction:column;justify-content:center;border-radius:12px;padding:1vh .8vw;border:1px solid rgba(255,255,255,.14)}.jr b{font:400 clamp(1.4rem,2.2vw,2.2rem)/1 var(--disp)}.jr span{font:700 clamp(11px,.85vw,14px)/1.1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-top:.3vh}.jr small{font:500 clamp(10px,.75vw,12px)/1.2 var(--sans);color:#A9B2C6}'+
+  '.jr.a1 b{color:#4DE8FF}.jr.a2 b{color:#FFB020}.jr.a3 b{color:#B6FF3C}.jr.a1{border-color:rgba(77,232,255,.4)}.jr.a2{border-color:rgba(255,176,32,.45)}.jr.a3{border-color:rgba(182,255,60,.5)}'+
+  '.jc{font:500 clamp(12px,1.02vw,16px)/1.35 var(--sans);color:#D2D9E8;border-radius:12px;padding:1vh .8vw;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}'+
+  '.fcy{width:100%;height:auto;max-height:66vh;display:block;margin-top:1.4vh}.fcy text{font-family:var(--sans)}'+
+  '@media (max-width:900px){.jg{grid-template-columns:1fr}.jl,.jt{display:none}}';
+ document.head.appendChild(st2);
+ function jrow(cls,a,name,sub,cells){return '<div class="jr '+cls+'"><b>'+a+'</b><span>'+name+'</span><small>'+sub+'</small></div>'+cells.map(function(c){return '<div class="jc">'+c+'</div>'}).join('')}
+ mk('flow-journey','Where to begin',
+  "THE BUYER JOURNEY, from our RevGen chart. 'This is the chart we build with every client: the customer moves from target identified, to aware of you, to considering you. Across the top is what they are thinking. Down the side is where AI helps at each stage, on the three rungs. The assistant is you asking. The automation is a trigger doing it without anybody remembering. The agent decides what matters and you approve.' Do not read the grid. Pick one column: 'For a copier dealer, the Target column is your list of every business with a lease coming due.' Then the flow chart on the next slide.",
+  '<div class=\"kick\">The RevGen journey · where AI helps</div><h2>Three stages. <span class=\"grad\">Three kinds of help.</span></h2>'+
+  '<div class=\"jg\"><div></div><div class=\"jh\">Target identified</div><div class=\"jh\">Awareness</div><div class=\"jh\">Consideration</div>'+
+  '<div class=\"jl\">What your customer is thinking</div><div class=\"jt\">“How do I grow my sales?”</div><div class=\"jt\">“Does this solve it? Who is this company?”</div><div class=\"jt\">“Who will implement it? How long will it take?”</div>'+
+  jrow('a1','A1','Assistant','you ask',['Draft your ideal customer profile and buyer personas.','Write messages for each vertical and decision maker.','Prepare a one-page brief before every meeting.'])+
+  jrow('a2','A2','Automation','a trigger runs it',['Enrich companies and contacts. Refresh lists as leases and data change.','Run the sequences by vertical, lease expiry and existing customer.','Book, confirm and remind. Send the pre-meeting form into your CRM.'])+
+  jrow('a3','A3','Agent','decides, you approve',['Find competitive leases and who signs. Bring a short list to the rep.','Read replies, spot who is interested and flag them, so nobody triages by hand.','Re-book no-shows, move the quiet ones to nurture, and hand hot ones to a rep.'])+
+  '</div>');
+
+ function fcy(){
+  var A={a1:'#4DE8FF',a2:'#FFB020',a3:'#B6FF3C'};
+  function bad(x,y,list){return list.map(function(k,i){var bx=x-i*36;return '<rect x=\"'+(bx-32)+'\" y=\"'+(y-14)+'\" width=\"32\" height=\"17\" rx=\"8\" fill=\"#0B0D15\" stroke=\"'+A[k]+'\" stroke-width=\"1.5\"/><text x=\"'+(bx-16)+'\" y=\"'+(y-1)+'\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"'+A[k]+'\">A'+k.charAt(1)+'</text>'}).join('')}
+  function nd(x,y,w,h,t,sub,b,hi){return '<rect x=\"'+x+'\" y=\"'+y+'\" width=\"'+w+'\" height=\"'+h+'\" rx=\"9\" fill=\"'+(hi?'rgba(182,255,60,.12)':'rgba(255,255,255,.06)')+'\" stroke=\"'+(hi?'#B6FF3C':'rgba(255,255,255,.3)')+'\" stroke-width=\"1.4\"/><text x=\"'+(x+w/2)+'\" y=\"'+(y+(sub?19:h/2+5))+'\" text-anchor=\"middle\" font-size=\"14.5\" font-weight=\"700\" fill=\"#fff\">'+t+'</text>'+(sub?'<text x=\"'+(x+w/2)+'\" y=\"'+(y+35)+'\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#A9B2C6\">'+sub+'</text>':'')+bad(x+w-6,y,b||[])}
+  function dia(cx,cy,w,h,t,b){return '<polygon points=\"'+cx+','+(cy-h/2)+' '+(cx+w/2)+','+cy+' '+cx+','+(cy+h/2)+' '+(cx-w/2)+','+cy+'\" fill=\"rgba(77,232,255,.08)\" stroke=\"#4DE8FF\" stroke-width=\"1.4\"/><text x=\"'+cx+'\" y=\"'+(cy+5)+'\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#fff\">'+t+'</text>'+bad(cx+22,cy-h/2+2,b||[])}
+  function ln(d){return '<path d=\"'+d+'\" fill=\"none\" stroke=\"#8893AA\" stroke-width=\"1.6\" marker-end=\"url(#fcyh)\"/>'}
+  function tx(x,y,t,c,a){return '<text x=\"'+x+'\" y=\"'+y+'\" text-anchor=\"'+(a||'middle')+'\" font-size=\"11.5\" fill=\"'+(c||'#A9B2C6')+'\">'+t+'</text>'}
+  var o='<svg class=\"fcy\" viewBox=\"0 0 1000 420\" role=\"img\" aria-label=\"Flow chart: from ideal customer profile to a booked meeting, with sales and marketing tracks, marked where an assistant, automation or agent helps\"><defs><marker id=\"fcyh\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#8893AA\"/></marker></defs>';
+  o+='<rect x=\"22\" y=\"98\" width=\"976\" height=\"112\" rx=\"12\" fill=\"rgba(255,176,32,.05)\"/><rect x=\"22\" y=\"216\" width=\"976\" height=\"112\" rx=\"12\" fill=\"rgba(77,232,255,.05)\"/>'+tx(30,114,'SALES TRACK','#FFB020','start')+tx(30,232,'MARKETING TRACK','#4DE8FF','start');
+  o+=nd(30,16,200,44,'1 Ideal customer profile','',['a1'])+nd(280,16,200,44,'2 Buyer personas','up to three',['a1'])+nd(530,16,200,44,'3 Build the lists','',['a1','a3'])+nd(780,16,200,44,'4 Enrich the data','contacts and companies',['a2']);
+  o+=ln('M230 38H280')+ln('M480 38H530')+ln('M730 38H780');
+  o+=ln('M880 60V82H12V150H30')+ln('M12 150V268H30');
+  o+=nd(30,128,200,44,'5a Build a call queue','',['a2'])+nd(280,128,200,44,'6a Call with scripts','',['a1'])+dia(630,150,150,70,'Connected?',[])+nd(780,128,200,44,'Appointment booked','calendar, confirmation',['a2']);
+  o+=ln('M230 150H280')+ln('M480 150H555')+ln('M705 150H780')+tx(742,142,'yes')+tx(630,200,'no: voicemail, email and text, then follow up','#A9B2C6');
+  o+=nd(30,246,200,44,'5b Create the sequence','',['a2'])+nd(280,246,200,44,'6b Segmented messages','vertical, lease, upsell',['a1','a2'])+dia(630,268,150,70,'Interested?',['a3'])+nd(780,246,200,44,'Meeting or hot lead','booked, or high-urgency queue',['a2']);
+  o+=ln('M230 268H280')+ln('M480 268H555')+ln('M705 268H780')+tx(742,260,'yes')+tx(630,318,'no: stay top of mind in the awareness queue','#A9B2C6');
+  o+=ln('M980 150H992V372H982')+ln('M980 268H992');
+  o+=nd(780,350,200,44,'8 Form into your CRM','before the meeting',['a2'])+nd(530,350,200,44,'9 Two reminders','plus a short prep video',['a2'])+nd(280,350,200,44,'The meeting','rep walks in prepared','',1);
+  o+=ln('M780 372H730')+ln('M530 372H480');
+  o+='</svg>';return o}
+ mk('flow-cycle','Where to begin',
+  "THE FLOW, from the copier-dealer version of our revenue cycle. 'Left to right. You define your ideal customer, build personas, build the list, and enrich it. Then it splits: sales makes the calls, marketing sends the sequence. Both end at a booked meeting, with a form into the CRM and two reminders.' Then point at the badges: 'A1 is the assistant: you ask and it drafts, the persona, the scripts, the messages. A2 is automation: enrichment, the call queue, confirmations, reminders, nobody has to remember. A3 is the agent: it reads the replies, decides who is interested and hands you a short list. Today most dealers are doing this by hand, or not at all.'",
+  '<div class=\"kick\">The flow · new business, start to meeting</div><h2>From ideal customer to <span class=\"grad\">booked meeting.</span></h2>'+fcy()+
+  '<div class=\"ask\" style=\"margin-top:1.2vh\"><b style=\"color:#4DE8FF\">A1</b><span style=\"border-color:rgba(77,232,255,.45)\">Assistant: you ask</span><b style=\"color:#FFB020\">A2</b><span style=\"border-color:rgba(255,176,32,.5);background:rgba(255,176,32,.07)\">Automation: a trigger runs it</span><b style=\"color:#B6FF3C\">A3</b><span style=\"border-color:rgba(182,255,60,.5);background:rgba(182,255,60,.07)\">Agent: it decides, you approve</span></div>');
+
+ /* ---- tasks by department ---- */
+ mk('n-dept','Tasks by department',
+  "TASKS BY DEPARTMENT. 'That was the model. Now let us come down a level: what can AI take off each department's plate?' Four places: sales, marketing, sales admin and operations, and customer service. Customer service you already saw under Keep. Every task in the library is rated Assistant, Automation or Agent, so you can see which rung each one sits on. Then the chart of where the hours come back, and the full library. After that we walk sales in the field, then marketing, where the website and SEO and AEO analysis lives, then admin and operations.",
+  '<div class=\"kick\">Now, by department</div><h2>What AI can take off <span class=\"grad\">each team’s plate.</span></h2>'+
+  '<div class=\"cds c4\" style=\"margin-top:3vh\">'+
+  [['01','Sales','Prospect, prepare, propose. The rep’s week with less typing.','In the field',1],['02','Marketing','Be found, publish, listen, show. Including your website, SEO and AEO.','Marketing',0],['03','Sales admin and operations','Order to install to invoice, without retyping the same deal.','Admin',0],['04','Customer service','Calls, tickets, meter reads and dispatch.','Started in Keep',0]].map(function(c){return '<div class=\"ncd'+(c[4]?' hi':'')+'\"><div class=\"no\">'+c[0]+'</div><h3>'+c[1]+'</h3><p>'+c[2]+'</p><span class=\"tg\">'+c[3]+'</span></div>'}).join('')+'</div>'+
+  '<p class=\"src\" style=\"margin-top:2vh\">Every task is rated on the Triple A: assistant, automation or agent.</p>');
+
  /* ---- the five steps ---- */
  mk('n-keep','01 Keep',
-  "KEEP. 'First things first: before we chase anything new, keep the customers we have. This is the cheapest revenue in your business.' Three things. One: an assistant so nobody waits, on the phone, by text, at 2am; toner, meter reads, invoice copies, where is my tech. Two, and this is the big one: connect AI to your ERP and your CRM through an MCP and talk to your data. Read the four questions: where have there been anomalies, where are we missing opportunities, where have we had the most service problems, where have trends changed with customers. Three: reports and automations that flag the account before it leaves. Then walk the 2am call flow chart, the service process and the service-to-sales bridge that follow.",
+  "KEEP. 'First things first: before we chase anything new, keep the customers we have. This is the cheapest revenue in your business.' Three things. One: an assistant so nobody waits, on the phone or by text, even after the office closes; toner, meter reads, invoice copies, where is my tech. Two, and this is the big one: connect AI to your ERP and your CRM through an MCP and talk to your data. Read the four questions: where have there been anomalies, where are we missing opportunities, where have we had the most service problems, where have trends changed with customers. Three: reports and automations that flag the account before it leaves. Then walk the service-call flow chart, the service process and the service-to-sales bridge that follow.",
   '<div class="kick">Revenue Efficiency Model · Retain your current customers</div><h2>Keep: <span class="grad">nobody waits.</span></h2>'+ladder(0)+
-  cards([{h:'An assistant that never makes them wait',p:'Answers on the first ring, any hour: toner, meter reads, invoice copies, where is my tech.'},
+  cards([{h:'An assistant that never makes them wait',p:'Answers on the first ring, even after hours: toner, meter reads, invoice copies, where is my tech.'},
          {h:'Talk to your data',p:'Connect AI to your ERP and CRM through an <b>MCP</b>, then ask it questions in plain English.',hi:1},
          {h:'See it before they leave',p:'Reports and automations that flag a repeat fault, a missed meter read or a quiet account, months before renewal.'}])+
   ask(['Where have there been anomalies?','Where are we missing opportunities?','Where have the most service problems been?','Where have trends changed with customers?']));
@@ -125,5 +189,14 @@
   '<div class="q">Which contracts renew next quarter with no call booked?</div><div class="a">The renewals in the next 90 days with nothing on the calendar, grouped by rep, with the last conversation for each.</div>'+
   '<div class="q">Where do our invoices disagree with the contract?</div><div class="a">The invoices that charge something the contract does not say, with both numbers side by side.</div></div>'+
   '<p class="src" style="margin-top:1.6vh">Illustration. The answers come from your own ERP and CRM, connected through an MCP.</p>');
+
+ /* ---- copier dealers do not take calls at 2 a.m.: after-hours wording across every slide ---- */
+ var FIX=[['The call at 2am, decided.','The service call, decided.'],['The call at 2am.','The call nobody picks up.'],['2am, a Saturday, or your busiest Monday','After five, at lunch, or your busiest Monday'],['2am or Monday','After hours'],['Calls at 2am, and every','After-hours calls, and every'],['the 2am calls','the after-hours calls'],['This is the call at 2am','This is the service call'],['Two in the morning, Saturday, or your busiest Monday.','After five, over lunch, or your busiest Monday.'],['the 2am call flow chart','the service-call flow chart'],['the service call at 2am,','the service call,']];
+ function fixCopy(str){FIX.forEach(function(f){str=str.split(f[0]).join(f[1])});return str}
+ [].forEach.call(host.querySelectorAll('section'),function(sec){
+  ['data-notes','aria-label'].forEach(function(a){var v=sec.getAttribute(a);if(v){var n2=fixCopy(v);if(n2!==v)sec.setAttribute(a,n2)}});
+  [].forEach.call(sec.querySelectorAll('[aria-label]'),function(e){var v=e.getAttribute('aria-label'),n2=fixCopy(v);if(n2!==v)e.setAttribute('aria-label',n2)});
+  [].forEach.call(sec.querySelectorAll('h1,h2,h3'),function(h){var v=h.innerHTML,n2=v.split('The call at 2am, <span class="grad">decided.').join('The service call, <span class="grad">decided.').split('The call at <span class="grad">2am.</span>').join('The call <span class="grad">nobody picks up.</span>');if(n2!==v)h.innerHTML=n2});
+  var tw=document.createTreeWalker(sec,NodeFilter.SHOW_TEXT,null),nd;while((nd=tw.nextNode())){var v2=fixCopy(nd.nodeValue);if(v2!==nd.nodeValue)nd.nodeValue=v2}});
  }
 })();
