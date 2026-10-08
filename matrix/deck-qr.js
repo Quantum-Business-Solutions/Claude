@@ -24,5 +24,5 @@
   a.classList.toggle('on',!hide);m.classList.toggle('on',!hide)}
  setInterval(refresh,250);refresh();
  /* flow charts, the API show of hands and the open task library build after the rest of the deck; then the new slides, then the running order */
- ['deck-flow.js','deck-new.js','deck-order.js'].forEach(function(f){var x=document.createElement('script');x.src=f;document.body.appendChild(x)});
+ ['deck-flow.js','deck-new.js','deck-order.js','deck-remote.js'].forEach(function(f){var x=document.createElement('script');x.src=f;document.body.appendChild(x)});
 })();

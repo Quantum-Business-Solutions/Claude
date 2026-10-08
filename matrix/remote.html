@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="robots" content="noindex"><title>Deck Remote</title>
+<style>
+:root{--bg:#0B0D15;--fg:#E4E9F5;--mut:#8893AA;--lime:#B6FF3C;--amber:#FFB020;--line:rgba(255,255,255,.14)}
+@media (prefers-color-scheme: light){:root{--bg:#0B0D15}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:500 16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;overscroll-behavior:none}
+body{display:flex;flex-direction:column;padding:env(safe-area-inset-top) 16px env(safe-area-inset-bottom)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:12px 0 8px;font-size:13px;color:var(--mut)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#555;margin-right:6px}.dot.ok{background:var(--lime)}.dot.bad{background:#FF5A1F}
+.ct{font:800 15px/1 inherit;color:#fff}.chap{color:var(--amber);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+h1{font-size:26px;line-height:1.15;margin:6px 0 4px}.nxt{color:var(--mut);font-size:14px;margin-bottom:8px}
+#notes{flex:1;min-height:0;overflow:auto;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:15px;color:#C3CBDC;background:rgba(255,255,255,.04);white-space:pre-wrap}
+.row{display:flex;gap:12px;padding:12px 0 14px}
+button{font-family:inherit;font-weight:800;font-size:26px;border:0;border-radius:18px;color:#0B0D15;background:var(--lime);padding:0;height:clamp(96px,17vh,150px);flex:2;touch-action:manipulation}
+button.sec{flex:1;background:rgba(255,255,255,.12);color:#fff}button:active{transform:scale(.97);filter:brightness(.9)}
+select{width:100%;background:#151826;color:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:15px}
+.mini{display:flex;gap:10px;align-items:center;padding:0 0 10px}.mini select{flex:1}.tm{font:700 15px ui-monospace,monospace;color:var(--mut)}
+.err{padding:24px;text-align:center;color:var(--mut)}
+</style></head><body>
+<div id="app"><div class="err">Connecting…</div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+(function(){
+ var q=new URLSearchParams(location.search),code=(q.get('c')||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+ var app=document.getElementById('app');
+ if(!code){app.innerHTML='<div class="err">Open this page from the REMOTE button on the laptop (it shows a QR code).</div>';return}
+ app.outerHTML='<div class="top"><span><span class="dot" id="dot"></span><span id="st">Connecting…</span></span><span class="ct" id="ct"></span></div><div class="chap" id="chap"></div><h1 id="ti">&nbsp;</h1><div class="nxt" id="nx"></div><div id="notes">Speaker notes show here.</div><div class="mini"><select id="jump" aria-label="Jump to a slide"><option>Jump to a slide…</option></select><span class="tm" id="tm">0:00</span></div><div class="row"><button class="sec" id="pv">&larr; Back</button><button id="nx2">Next &rarr;</button></div>';
+ var $=function(i){return document.getElementById(i)},last=0,t0=Date.now();
+ var sb=window.supabase.createClient('https://ladhdgwedwynmdmeeena.supabase.co','sb_publishable_YP3m7RX-lI7ycGk-36G-QQ_QoifyVHE');
+ var ch=sb.channel('icda26-'+code,{config:{broadcast:{self:false}}});
+ function send(p){ch.send({type:'broadcast',event:'cmd',payload:p});if(navigator.vibrate)navigator.vibrate(12)}
+ ch.on('broadcast',{event:'state'},function(m){var s=m.payload;last=Date.now();
+  $('ct').textContent=(s.idx+1)+' / '+s.total;$('chap').textContent=s.chap||'';$('ti').textContent=s.title||'';$('nx').textContent=s.next?'Next: '+s.next:'Last slide';
+  $('notes').textContent=s.notes||'(no notes on this slide)';$('notes').scrollTop=0;
+  var j=$('jump');if(s.toc&&j.options.length!==s.toc.length+1){j.innerHTML='<option value="">Jump to a slide…</option>'+s.toc.map(function(t){return '<option value="'+t.i+'">'+(t.i+1)+'. '+t.t.replace(/</g,'&lt;')+'</option>'}).join('')}
+  if(j.value!==String(s.idx)&&!j.matches(':focus'))j.value=String(s.idx)});
+ ch.subscribe(function(st){if(st==='SUBSCRIBED'){send({a:'hello'})}});
+ $('nx2').onclick=function(){send({a:'next'})};$('pv').onclick=function(){send({a:'prev'})};
+ $('jump').onchange=function(e){if(e.target.value!=='')send({a:'go',n:+e.target.value});e.target.blur()};
+ setInterval(function(){var ok=Date.now()-last<7000;$('dot').className='dot '+(ok?'ok':'bad');$('st').textContent=ok?'Connected to the laptop':(last?'Laptop not responding':'Waiting for the laptop…');var s=Math.floor((Date.now()-t0)/1000);$('tm').textContent=Math.floor(s/60)+':'+('0'+s%60).slice(-2);if(!ok&&Date.now()%5000<1000)send({a:'hello'})},1000);
+ document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' ')send({a:'next'});if(e.key==='ArrowLeft')send({a:'prev'})});
+ try{if(navigator.wakeLock)navigator.wakeLock.request('screen')}catch(e){}
+ document.addEventListener('visibilitychange',function(){if(!document.hidden){try{navigator.wakeLock&&navigator.wakeLock.request('screen')}catch(e){}send({a:'hello'})}});
+})();
+</script></body></html>
