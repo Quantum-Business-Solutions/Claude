@@ -159,6 +159,17 @@
   '<div class=\"kick\">Our RevGen end to end · where AI helps</div><h2>The process, with <span class=\"grad\">the help marked on it.</span></h2>'+frev()+
   '<div class=\"ask\" style=\"margin-top:1.2vh\"><b style=\"color:#4DE8FF\">A1</b><span style=\"border-color:rgba(77,232,255,.45)\">Assistant: you ask</span><b style=\"color:#FFB020\">A2</b><span style=\"border-color:rgba(255,176,32,.5);background:rgba(255,176,32,.07)\">Automation: a trigger runs it</span><b style=\"color:#B6FF3C\">A3</b><span style=\"border-color:rgba(182,255,60,.5);background:rgba(182,255,60,.07)\">Agent: it decides, you approve</span></div>');
 
+
+ /* ---- the full RevGen End to End chart, exactly as it is used with clients (click to zoom) ---- */
+ var RG='https://20682069.fs1.hubspotusercontent-na1.net/hubfs/20682069/icda-2026/revgen-end-to-end.png';
+ var st5=document.createElement('style');st5.textContent='.rgf{margin:1.6vh auto 0;background:#fff;border-radius:16px;padding:1vh 1vw;width:fit-content;max-width:100%;cursor:zoom-in;box-shadow:0 20px 60px rgba(0,0,0,.45)}.rgf img{display:block;height:min(66vh,calc((100vw - 260px)/1.768));width:auto;max-width:100%}.rgf+.src{text-align:center}#rg-zoom{position:fixed;inset:0;z-index:85;background:#fff;overflow:auto;display:none;cursor:zoom-out}#rg-zoom.on{display:block}#rg-zoom img{display:block;width:max(100vw,1900px);height:auto}#rg-hint{position:fixed;right:18px;bottom:18px;z-index:86;background:#0B0D15;color:#fff;font:700 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;border-radius:999px;display:none}#rg-zoom.on+#rg-hint{display:block}';document.head.appendChild(st5);
+ var rz=document.createElement('div');rz.id='rg-zoom';rz.innerHTML='<img alt=\"Quantum Business Solutions RevGen End to End process map\" src=\"'+RG+'\">';document.body.appendChild(rz);var rh=document.createElement('div');rh.id='rg-hint';rh.textContent='Click or press Esc to close';document.body.appendChild(rh);
+ rz.onclick=function(){rz.classList.remove('on')};document.addEventListener('keydown',function(e){if(e.key==='Escape')rz.classList.remove('on')});
+ mk('flow-revfull','Where to begin',
+  "THE FULL CHART. 'This is the one I have used with clients for years: our RevGen End to End. Everything on the last slide, with the whole thing underneath it.' Read the structure left to right: seven lead sources, three stages across the top (Target identified, Awareness, Consideration), and under each stage what the customer is thinking, feeling and needs, and what marketing, the SDR and sales do. Then the yes-or-no decisions, and Solution determination on the right. 'You do not need to read it from here. Click the chart and it fills the screen, and the PDF and the take-home page have it too.' Click the image to zoom. Press Escape or click again to close.",
+  '<div class=\"kick\">Our RevGen End to End · the full chart</div><h2>The whole process, <span class=\"grad\">on one page.</span></h2><div class=\"rgf\" id=\"rgf\" title=\"Click to zoom\"><img alt=\"Quantum Business Solutions RevGen End to End process map\" src=\"'+RG+'\"></div><p class=\"src\" style=\"margin-top:1.2vh\">Click the chart to zoom in. Press Esc to close.</p>');
+ document.getElementById('rgf').onclick=function(){rz.classList.add('on')};
+
  /* ---- tasks by department ---- */
  mk('n-dept','Tasks by department',
   "TASKS BY DEPARTMENT. 'That was the model. Now let us come down a level: what can AI take off each department's plate?' Four places: sales, marketing, sales admin and operations, and customer service. Customer service you already saw under Keep. Every task in the library is rated Assistant, Automation or Agent, so you can see which rung each one sits on. Then the chart of where the hours come back, and the full library. After that we walk sales in the field, then marketing, where the website and SEO and AEO analysis lives, then admin and operations.",
@@ -278,7 +289,7 @@
   '<div class=\"ar2\">&rarr;</div>'+
   '<div class=\"lfc out\"><div class=\"cap\">Connected · one place the AI can reach</div>'+
   '<div class=\"srcs\" style=\"margin-top:0\"><span>ERP</span><span>CRM</span><span>Email</span><span>Calls</span><span>Documents</span><span>Service tickets</span></div>'+
-  '<div style=\"text-align:center;font:400 clamp(1.4rem,2.3vw,2.6rem)/1 var(--disp);color:#B6FF3C;margin:1.6vh 0\">&darr; connected once, readable together &darr;</div>'+
+  '<div style=\"text-align:center;font:400 clamp(1.3rem,2vw,2.3rem)/1.1 var(--disp);color:#B6FF3C;margin:1.6vh 0;white-space:nowrap\">&darr; connected once, read together &darr;</div>'+
   '<div class=\"lfr\"><span>Ask</span><b>Real answers, from all of it</b></div><div class=\"lfr\"><span>Build</span><b>Lists, reports, automations, apps</b></div><div class=\"lfr\"><span>Result</span><b>Built once. Used by every team.</b></div></div></div>'+
   '<div class=\"mon\"><b>Start small</b><span>It does not all have to sit in one lake. It has to be connected. Pick the three systems that matter most and connect them, or land a copy in one place. Then connect the AI to it.</span></div>');
 
