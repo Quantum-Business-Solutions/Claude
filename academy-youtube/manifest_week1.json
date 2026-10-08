@@ -217,8 +217,9 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "queued",
-  "youtube_uploads_id": "6ec1aa8a-ac6e-466e-a207-7e6e81b4fced"
+  "status": "completed",
+  "youtube_uploads_id": "6ec1aa8a-ac6e-466e-a207-7e6e81b4fced",
+  "youtube_video_id": "JADj2V30TKA"
  },
  {
   "priority": 12,
@@ -238,8 +239,9 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "queued",
-  "youtube_uploads_id": "286109d2-993a-4af2-bc40-854e8569fab9"
+  "status": "completed",
+  "youtube_uploads_id": "286109d2-993a-4af2-bc40-854e8569fab9",
+  "youtube_video_id": "EuohEYjzW74"
  },
  {
   "priority": 13,
@@ -259,8 +261,9 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "queued",
-  "youtube_uploads_id": "f478b3b7-6e87-4dfd-aeff-46c4fb2ea72a"
+  "status": "completed",
+  "youtube_uploads_id": "f478b3b7-6e87-4dfd-aeff-46c4fb2ea72a",
+  "youtube_video_id": "P_MnCQlEHBQ"
  },
  {
   "priority": 14,
@@ -280,8 +283,9 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "queued",
-  "youtube_uploads_id": "0dfd6c77-2c3c-466d-9bab-dd6d01118771"
+  "status": "completed",
+  "youtube_uploads_id": "0dfd6c77-2c3c-466d-9bab-dd6d01118771",
+  "youtube_video_id": "rBcGcVvpc7s"
  },
  {
   "priority": 15,
@@ -301,7 +305,8 @@
    "Shawn Peterson",
    "Quantum Business Solutions"
   ],
-  "status": "queued",
-  "youtube_uploads_id": "7a815264-82a5-4508-a4b2-597c8842b081"
+  "status": "completed",
+  "youtube_uploads_id": "7a815264-82a5-4508-a4b2-597c8842b081",
+  "youtube_video_id": "kq8PCwP5UZI"
  }
 ]

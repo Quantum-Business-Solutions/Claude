@@ -128,3 +128,13 @@ machinery; nothing here uploads bytes itself.
 
 When `queue` is empty and every row is completed, say so, list whatever is
 still on `hold` for Shawn to decide, and delete the daily routine.
+
+## Status: done (2026-10-08)
+
+Every uploadable Academy video is live. The daily job uploaded 97 videos
+between 2026-09-28 and 2026-10-08 (15 in `manifest_week1.json`, 82 in
+`manifest_rest.json`), all public, embeddable and titled from their content.
+31 files were skipped (already public, shorter cuts, duplicates or
+fragments, each with a `skip_reason`). 43 are on `hold` waiting for
+Shawn's call, and the daily routine has been deleted. To upload any held
+item later, move it back into `queue` with a title and run the daily steps once.
