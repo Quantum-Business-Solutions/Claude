@@ -24,7 +24,7 @@ select{width:100%;background:#151826;color:#fff;border:1px solid var(--line);bor
  var q=new URLSearchParams(location.search),code=(q.get('c')||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
  var app=document.getElementById('app');
  if(!code){app.innerHTML='<div class="err">Open this page from the REMOTE button on the laptop (it shows a QR code).</div>';return}
- app.outerHTML='<div class="top"><span><span class="dot" id="dot"></span><span id="st">Connecting…</span></span><span class="ct" id="ct"></span></div><div class="chap" id="chap"></div><h1 id="ti">&nbsp;</h1><div class="nxt" id="nx"></div><div id="notes">Speaker notes show here.</div><div class="mini"><select id="jump" aria-label="Jump to a slide"><option>Jump to a slide…</option></select><span class="tm" id="tm">0:00</span></div><div class="row"><button class="sec" id="pv">&larr; Back</button><button id="nx2">Next &rarr;</button></div>';
+ app.outerHTML='<div class="top"><span><span class="dot" id="dot"></span><span id="st">Connecting…</span></span><span class="ct" id="ct"></span></div><div class="chap" id="chap"></div><h1 id="ti">&nbsp;</h1><div class="nxt" id="nx"></div><div id="notes">Speaker notes show here.</div><div class="mini"><select id="jump" aria-label="Jump to a slide"><option>Jump to a slide…</option></select><span class="tm" id="tm">0:00</span></div><div class="mini"><button class="sec" id="vb" style="height:52px;font-size:16px;flex:1">Voice: off</button><span class="tm" id="vh" style="font-size:12px">say “next” or “back”</span></div><div class="row"><button class="sec" id="pv">&larr; Back</button><button id="nx2">Next &rarr;</button></div>';
  var $=function(i){return document.getElementById(i)},last=0,t0=Date.now();
  var sb=window.supabase.createClient('https://ladhdgwedwynmdmeeena.supabase.co','sb_publishable_YP3m7RX-lI7ycGk-36G-QQ_QoifyVHE');
  var ch=sb.channel('icda26-'+code,{config:{broadcast:{self:false}}});
@@ -39,6 +39,18 @@ select{width:100%;background:#151826;color:#fff;border:1px solid var(--line);bor
  $('jump').onchange=function(e){if(e.target.value!=='')send({a:'go',n:+e.target.value});e.target.blur()};
  setInterval(function(){var ok=Date.now()-last<7000;$('dot').className='dot '+(ok?'ok':'bad');$('st').textContent=ok?'Connected to the laptop':(last?'Laptop not responding':'Waiting for the laptop…');var s=Math.floor((Date.now()-t0)/1000);$('tm').textContent=Math.floor(s/60)+':'+('0'+s%60).slice(-2);if(!ok&&Date.now()%5000<1000)send({a:'hello'})},1000);
  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' ')send({a:'next'});if(e.key==='ArrowLeft')send({a:'prev'})});
+
+ var SR=window.SpeechRecognition||window.webkitSpeechRecognition,vOn=false,vRec=null,vLast=0;
+ function vmatch(t){t=(t||'').toLowerCase().replace(/[^a-z ]/g,' ').replace(/\s+/g,' ').trim().replace(/^(hey |ok |okay )?(quantum|deck|slides?) /,'');
+  if(/^(next|next slide|next one|forward|advance|go next|go forward|continue)$/.test(t))return 'next';
+  if(/^(back|go back|previous|previous slide|last slide|go previous|back one)$/.test(t))return 'prev';return ''}
+ $('vb').onclick=function(){if(!SR){$('vh').textContent='Voice needs Chrome (Android) or Safari 14.1+';return}
+  if(vOn){vOn=false;try{vRec.stop()}catch(x){}$('vb').textContent='Voice: off';$('vh').textContent='say \u201cnext\u201d or \u201cback\u201d';return}
+  vRec=new SR();vRec.continuous=true;vRec.interimResults=false;vRec.lang='en-US';
+  vRec.onresult=function(e){for(var k=e.resultIndex;k<e.results.length;k++){if(!e.results[k].isFinal)continue;var a=vmatch(e.results[k][0].transcript);if(a&&Date.now()-vLast>900){vLast=Date.now();send({a:a});$('vh').textContent='Heard: '+a}}};
+  vRec.onerror=function(e){if(e.error==='not-allowed'||e.error==='service-not-allowed'){vOn=false;$('vb').textContent='Voice: off';$('vh').textContent='Allow the microphone'}};
+  vRec.onend=function(){if(vOn){try{vRec.start()}catch(x){}}};
+  try{vRec.start();vOn=true;$('vb').textContent='Voice: ON';$('vh').textContent='listening'}catch(x){}};
  try{if(navigator.wakeLock)navigator.wakeLock.request('screen')}catch(e){}
  document.addEventListener('visibilitychange',function(){if(!document.hidden){try{navigator.wakeLock&&navigator.wakeLock.request('screen')}catch(e){}send({a:'hello'})}});
 })();

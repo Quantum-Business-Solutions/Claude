@@ -10,6 +10,8 @@
   '#mqr b{display:block;font:700 clamp(11px,.78vw,14px)/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#B6FF3C}'+
   '#mlink{position:fixed;left:50%;bottom:1.6vh;transform:translateX(-50%);z-index:39;display:flex;gap:.6vw;align-items:center;padding:.7vh 1.1vw;border-radius:999px;background:rgba(11,13,21,.82);border:1px solid rgba(255,255,255,.16);text-decoration:none;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .35s;font:600 clamp(11px,.9vw,15px)/1 var(--sans);color:#C3CBDC}'+
   '#mlink.on{opacity:1;pointer-events:auto}#mlink b{color:#B6FF3C;letter-spacing:.1em;text-transform:uppercase;font-size:.85em}#mlink u{color:#fff;text-decoration:none}'+
+  /* in presenter view the control bar sits where the booking link does, so the link rides above it */
+  'body.pres #mlink{left:auto;right:1.2vw;transform:none;bottom:7vh}'+
   /* the Revenue Efficiency headline runs the full width, so it leaves room for the code */
   '.remsec h2{padding-right:max(130px,10vw)}'+
   /* on a phone the person is already holding the link, and the code would sit on the headline */
