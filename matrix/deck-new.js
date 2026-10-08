@@ -190,6 +190,41 @@
   '<div class=\"mtx\"><div class=\"yl\">Payoff &rarr;</div><div class=\"qd q1\"><b>Plan it</b><i>High payoff · high effort</i><p>Connect your ERP and CRM. The AI Lead Finder across your history. The proposal machine.</p></div><div class=\"qd q2\"><b>Do first</b><i>High payoff · low effort</i><p>Ask your CRM a question. Find lease dates in old notes. A past-due orders answer.</p></div><div class=\"qd q3\"><b>Skip for now</b><i>Low payoff · high effort</i><p>A custom-built app for one rare task.</p></div><div class=\"qd q4\"><b>Fill-ins</b><i>Low payoff · low effort</i><p>Meeting summaries. A draft case study. Tidy-up automations.</p></div><div class=\"xl\">Effort &rarr;</div></div>'+
   '<p class=\"src\" style=\"margin-top:1.2vh\">Examples to start your list. Score every idea 1 to 5 on effort and on payoff.</p>');
 
+
+ /* ---- one flow per rung: Assistant, Automation (the retyping chart), Agent ---- */
+ function frm(vb,build,label){
+  var A={a1:'#4DE8FF',a2:'#FFB020',a3:'#B6FF3C'};
+  function bad(x,y,list){return list.map(function(k,i){var bx=x-i*36;return '<rect x=\"'+(bx-32)+'\" y=\"'+(y-14)+'\" width=\"32\" height=\"17\" rx=\"8\" fill=\"#0B0D15\" stroke=\"'+A[k]+'\" stroke-width=\"1.5\"/><text x=\"'+(bx-16)+'\" y=\"'+(y-1)+'\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"'+A[k]+'\">A'+k.charAt(1)+'</text>'}).join('')}
+  function nd(x,y,w,h,t,sub,b,hi){return '<rect x=\"'+x+'\" y=\"'+y+'\" width=\"'+w+'\" height=\"'+h+'\" rx=\"9\" fill=\"'+(hi?'rgba(182,255,60,.12)':'rgba(255,255,255,.06)')+'\" stroke=\"'+(hi?'#B6FF3C':'rgba(255,255,255,.3)')+'\" stroke-width=\"1.4\"/><text x=\"'+(x+w/2)+'\" y=\"'+(y+(sub?19:h/2+5))+'\" text-anchor=\"middle\" font-size=\"'+(t.length*8.6>w-14?12.5:14.5)+'\" font-weight=\"700\" fill=\"#fff\">'+t+'</text>'+(sub?'<text x=\"'+(x+w/2)+'\" y=\"'+(y+35)+'\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#A9B2C6\">'+sub+'</text>':'')+bad(x+w-6,y,b||[])}
+  function dia(cx,cy,w,h,t,b){return '<polygon points=\"'+cx+','+(cy-h/2)+' '+(cx+w/2)+','+cy+' '+cx+','+(cy+h/2)+' '+(cx-w/2)+','+cy+'\" fill=\"rgba(77,232,255,.08)\" stroke=\"#4DE8FF\" stroke-width=\"1.4\"/><text x=\"'+cx+'\" y=\"'+(cy+5)+'\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#fff\">'+t+'</text>'+bad(cx+22,cy-h/2+2,b||[])}
+  function ln(d){return '<path d=\"'+d+'\" fill=\"none\" stroke=\"#8893AA\" stroke-width=\"1.6\" marker-end=\"url(#fcyh)\"/>'}
+  function tx(x,y,t,c,a){return '<text x=\"'+x+'\" y=\"'+y+'\" text-anchor=\"'+(a||'middle')+'\" font-size=\"11.5\" fill=\"'+(c||'#A9B2C6')+'\">'+t+'</text>'}
+
+
+  var o='<svg class=\"fcy\" viewBox=\"'+vb+'\" role=\"img\" aria-label=\"'+label+'\"><defs><marker id=\"fcyh\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#8893AA\"/></marker></defs>';
+  o+=build({nd:nd,dia:dia,ln:ln,tx:tx,bad:bad});o+='</svg>';return o}
+ function trio(a){return '<div class=\"cds\" style=\"margin-top:1.6vh\">'+a.map(function(c,i){return '<div class=\"ncd\" style=\"padding:1.6vh 1.1vw\"><div class=\"no\" style=\"font-size:clamp(1.2rem,1.8vw,2.1rem)\">'+(i+1)+'</div><h3 style=\"font-size:clamp(1rem,1.5vw,1.8rem);margin:.4vh 0 .5vh\">'+c[0]+'</h3><p style=\"font-size:clamp(12.5px,1vw,18px)\">'+c[1]+'</p></div>'}).join('')+'</div>'}
+ var fa1=frm('0 0 1000 270',function(k){var o='';
+  o+=k.tx(95,108,'YOU','#FFB020')+k.tx(300,108,'YOU','#FFB020')+k.tx(515,108,'AI','#B6FF3C')+k.tx(890,108,'YOU','#FFB020');
+  o+=k.nd(20,120,150,56,'You think of it','a question or task',[])+k.nd(215,120,170,56,'You open a chat','and type or paste',['a1'])+k.nd(430,120,170,56,'AI answers','from what you gave it',['a1'],1);
+  o+=k.dia(700,148,120,80,'',[])+k.tx(700,144,'Is it','#fff')+k.tx(700,160,'right?','#fff');
+  o+=k.nd(800,120,180,56,'You copy it over','into your system, by hand',[]);
+  o+=k.ln('M170 148H215')+k.ln('M385 148H430')+k.ln('M600 148H640')+k.ln('M760 148H800')+k.tx(780,140,'yes')+k.ln('M700 188V240H300V178')+k.tx(500,232,'no: ask again, again','#A9B2C6');
+  o+=k.tx(890,205,'Tomorrow, you start over.','#A9B2C6');return o},'Flow chart: with an assistant you think of a task, open a chat, ask, and copy the answer over by hand, every time');
+ mk('flow-a1','The Triple A of AI',
+  "ASSISTANT, as a flow. 'Look at who does the work. You think of it. You open the chat. You type or paste. The AI answers. You decide if it is right, you copy it into your system by hand, and tomorrow you start over.' The three points under the chart: you are the trigger, so nothing happens unless somebody asks; it only knows what you give it; and it does not remember tomorrow. 'This is still enormously useful. It is just not a system.' Then Rung two.",
+  '<div class=\"kick\">Rung 01 · Assistant · how it works</div><h2>You are <span class=\"grad\">the trigger, every time.</span></h2>'+fa1+trio([['You are the trigger','Nothing happens unless somebody asks. Every time.'],['It knows what you give it','Paste in a note and it can help. It cannot see your CRM or your ERP.'],['It forgets tomorrow','No memory. The same question gets asked again next week.']]));
+ var fa3=frm('0 0 1000 330',function(k){var o='';
+  o+=k.nd(20,120,150,56,'A signal or a goal','lease at 11 months',['a2'])+k.nd(205,120,175,56,'It reads everything','CRM, ERP, service, email',['a3'],1);
+  o+=k.dia(500,148,120,80,'',['a3'])+k.tx(500,144,'Worth','#fff')+k.tx(500,160,'acting?','#fff');
+  o+=k.nd(590,120,170,56,'It drafts the action','email, quote or task',['a3'])+k.nd(795,120,185,56,'You approve','one tap, or edit it',[],1);
+  o+=k.nd(795,235,185,56,'It acts','sends, books, updates',['a2'])+k.nd(540,235,200,56,'It learns what worked','so next time is better',['a3'])+k.nd(250,235,200,56,'It logs it and waits','watches for a change',['a2']);
+  o+=k.ln('M170 148H205')+k.ln('M380 148H440')+k.ln('M560 148H590')+k.tx(575,140,'yes')+k.ln('M760 148H795')+k.ln('M887 176V235')+k.ln('M795 263H740')+k.ln('M500 188V212H350V235')+k.tx(425,206,'no','#A9B2C6');
+  o+=k.tx(887,112,'THE HUMAN STAYS IN CHARGE','#B6FF3C');return o},'Flow chart: an agent reads your systems, decides whether to act, drafts the action, a person approves, then it acts and learns');
+ mk('flow-a3','The Triple A of AI',
+  "AGENT, as a flow. 'Now look at who does the work. A signal arrives, a lease at eleven months, a ticket that closed with a fault code. The agent reads everything it needs: the CRM, the ERP, the service history, the email. It decides whether this is worth acting on. If not, it logs it and keeps watching. If it is, it drafts the action: the email, the quote, the task. Then a person approves, one tap or an edit, and only then does it act, and it learns what worked.' The point is the green box: the human stays in charge. 'This is not a robot replacing your people. It is a very fast assistant that does the reading and the drafting and asks you to decide.' [Be honest: this is where the tools are going, and where the early adopters are now.] Then 'judging AI by ChatGPT'.",
+  '<div class=\"kick\">Rung 03 · Agent · how it works</div><h2>It decides what matters. <span class=\"grad\">You approve.</span></h2>'+fa3+trio([['It does the reading','Every account, every ticket, every email, in the time it takes you to open one.'],['It decides what is worth acting on','Most signals are noise. It logs them and keeps watching.'],['A person approves','One tap, or an edit. Nothing goes out without you.']]));
+
  /* ---- tasks by department ---- */
  mk('n-dept','Tasks by department',
   "TASKS BY DEPARTMENT. 'That was the model. Now let us come down a level: what can AI take off each department's plate?' Four places: sales, marketing, sales admin and operations, and customer service. Customer service you already saw under Keep. Every task in the library is rated Assistant, Automation or Agent, so you can see which rung each one sits on. Then the chart of where the hours come back, and the full library. After that we walk sales in the field, then marketing, where the website and SEO and AEO analysis lives, then admin and operations.",
