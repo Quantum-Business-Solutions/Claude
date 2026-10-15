@@ -107,6 +107,11 @@ print('contacts', report['contacts'], report.get('contract_windows'), flush=True
 
 # 4 stats for the Call Analysis page ---------------------------------------------------------
 if not a.skip_stats:
-    s = stats.build(); json.dump(s, open(a.out, 'w'))
+    owners = {o['id']: ('%s %s' % (o.get('firstName') or '', o.get('lastName') or '')).strip()
+              for o in hs('GET', '/crm/v3/owners?limit=500').get('results', [])}
+    s = stats.build(owner_names=owners); json.dump(s, open(a.out, 'w'))
+    if APPLY and os.environ.get('CLIENTCOMMAND_URL'):
+        import publish
+        report['page'] = publish.publish(s, apply=True); print('page', report['page'], flush=True)
     report['stats_file'] = a.out; print('stats written', a.out, flush=True)
 print('SUMMARY ' + json.dumps(report))
