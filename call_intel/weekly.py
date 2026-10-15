@@ -87,6 +87,8 @@ for i in range(0, len(scored), 100):
 if APPLY and companies:
     time.sleep(5)    # let HubSpot index the new call properties
     report['rollup'] = rollup.run(companies, apply=True)
+elif APPLY:
+    report['rollup'] = {'companies_touched': 0, 'note': 'nothing new to roll up'}
 else:
     report['rollup'] = {'companies_touched': len(companies), 'note': 'dry run - roll-up not applied'}
 print('rollup', report['rollup'], flush=True)
