@@ -34,6 +34,35 @@ def _merge_jev(sig, co, a):
     return n
 
 
+def _tokens(t): return re.sub(r'[^a-z0-9 ]+', ' ', (t or '').lower()).split()
+
+
+def quote_supported(quote, transcript, threshold=0.6):
+    """True if most 3-word runs of the quote occur in the transcript (tolerates removed filler words)."""
+    q = _tokens(quote)
+    if len(q) < 4: return True
+    T = ' '.join(_tokens(transcript))
+    sh = [' '.join(q[i:i + 3]) for i in range(len(q) - 2)]
+    return sum(s in T for s in sh) / len(sh) >= threshold
+
+
+def _sanity(sig, co, transcript):
+    """Self-consistency and evidence checks, applied before anything is written."""
+    # a definite HubSpot verdict must be backed by a quote that really is in the transcript
+    st = sig.get('hubspot_status')
+    if st in ('active', 'considering', 'churned', 'never'):
+        q = ((sig.get('rationale') or {}).get('hubspot_status') or '').split(' | ')[0].strip().strip('"')
+        if not q or not quote_supported(q, transcript): sig['hubspot_status'] = 'unconfirmed'
+    ob = [o for o in (co.get('objections') or []) if o != 'none']
+    co['objections'] = ob
+    if ob and co.get('objection_handling') == 'no_objection': co.pop('objection_handling')
+    stage = (co.get('stage_reached') or '')[:3]
+    booked = stage in ('s10', 's11', 's12')
+    if stage in ('s11', 's12') and co.get('asked_for_meeting') == 'no': co['asked_for_meeting'] = 'yes'
+    if co.get('invite_confirmed') == 'yes' and not booked: co['invite_confirmed'] = 'no'
+    if sig.get('budget_status') == 'stated' and not sig.get('budget_amount'): sig['budget_status'] = 'discussed_no_figure'
+
+
 def score_transcript(transcript, call_date):
     """Returns (properties, model_name) or (None, None) on failure."""
     with cf.ThreadPoolExecutor(2) as ex:
@@ -44,6 +73,7 @@ def score_transcript(transcript, call_date):
     sig, co = o['signals'], o['coaching']
     try: _merge_jev(sig, co, a)
     except Exception: pass
+    _sanity(sig, co, transcript)
     p = props.signal_props(sig); p.update(props.coach_props(co))
     return p, model
 

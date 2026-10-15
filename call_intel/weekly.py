@@ -9,7 +9,7 @@ Steps: (1) sync dialer transcripts to call records, (2) score new calls (transcr
 """
 import argparse, datetime, json, os, sys, time, concurrent.futures as cf
 from clients import hs
-import cas_sync, scoring, rollup, stats, props
+import cas_sync, scoring, rollup, contacts, stats, props
 
 ap = argparse.ArgumentParser()
 ap.add_argument('--days', type=int, default=7)
@@ -90,6 +90,20 @@ if APPLY and companies:
 else:
     report['rollup'] = {'companies_touched': len(companies), 'note': 'dry run - roll-up not applied'}
 print('rollup', report['rollup'], flush=True)
+
+# 3b contacts those calls involve, and the weekly refresh of the 'contract window' dropdowns the lists use ---------------
+people = set()
+for i in range(0, len(scored), 100):
+    b = hs('POST', '/crm/v4/associations/calls/contacts/batch/read', {'inputs': [{'id': c} for c in scored[i:i + 100]]})
+    for r in b.get('results', []):
+        for x in r['to']: people.add(str(x['toObjectId']))
+if APPLY:
+    report['contacts'] = contacts.run(people, apply=True)
+    report['contract_windows'] = rollup.refresh_contract_windows(apply=True)
+else:
+    report['contacts'] = {'contacts_touched': len(people), 'note': 'dry run'}
+print('contacts', report['contacts'], report.get('contract_windows'), flush=True)
+
 
 # 4 stats for the Call Analysis page ---------------------------------------------------------
 if not a.skip_stats:

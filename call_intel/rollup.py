@@ -143,3 +143,38 @@ def run(company_ids, apply=True):
             hs('POST', '/crm/v3/objects/companies/batch/update', {'inputs': [{'id': c, 'properties': p} for c, p in items[i:i + 100]]})
     tasks = create_tasks(events, apply)
     return {'companies_updated': len(plans), 'manual_values': prot, 'considering_events': len(events), 'tasks_created': len(tasks)}
+
+
+WINDOWS = ['crm', 'marketing_agency', 'seo_agency', 'data_tool', 'dialer', 'appt_setting', 'equipment_lease']
+
+
+def _window(end, today):
+    d = (datetime.date.fromisoformat(end[:10]) - today).days
+    return 'past_due' if d < 0 else 'next_30' if d <= 30 else 'next_90' if d <= 90 else 'next_180' if d <= 180 else 'later'
+
+
+def refresh_contract_windows(apply=True):
+    """Recompute every company's 'contract window' dropdowns from the stored end dates (HubSpot lists can't do 'in the next N days')."""
+    today = datetime.date.today(); plans = {}
+    props = ['ai__signal_%s_contract_end' % v for v in WINDOWS] + ['ai__signal_%s_contract_window' % v for v in WINDOWS]
+    for chunk in (WINDOWS[:5], WINDOWS[5:]):          # HubSpot allows at most 5 filter groups per search
+        filt = [{'filters': [{'propertyName': 'ai__signal_%s_contract_end' % v, 'operator': 'HAS_PROPERTY'}]} for v in chunk]
+        after = 0
+        while True:
+            r = hs('POST', '/crm/v3/objects/companies/search', {'filterGroups': filt, 'limit': 100, 'after': after, 'properties': props})
+            for c in r['results']:
+                upd = plans.setdefault(c['id'], {})
+                for v in WINDOWS:
+                    e = c['properties'].get('ai__signal_%s_contract_end' % v)
+                    if e:
+                        w = _window(e, today)
+                        if c['properties'].get('ai__signal_%s_contract_window' % v) != w: upd['ai__signal_%s_contract_window' % v] = w
+            nx = (r.get('paging') or {}).get('next', {}).get('after')
+            if not nx or int(nx) >= 9900: break
+            after = nx
+    plans = {c: p for c, p in plans.items() if p}
+    if apply:
+        items = list(plans.items())
+        for i in range(0, len(items), 100):
+            hs('POST', '/crm/v3/objects/companies/batch/update', {'inputs': [{'id': c, 'properties': p} for c, p in items[i:i + 100]]})
+    return {'windows_refreshed': len(plans)}
