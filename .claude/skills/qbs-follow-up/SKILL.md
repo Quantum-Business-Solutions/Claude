@@ -40,8 +40,7 @@ and never lose track of a follow-up. Shawn reviews and sends; this skill drafts.
 - Refer to a specific thing that happened (their reply, the proposal, the missed call, the contract window).
   Only claim what the record supports; flag shaky details to Shawn instead of stating them.
 - One low-pressure question, an easy way to say no, no pitch dump. Short.
-- Someone who already got several emails with no reply (3+ in ~6 weeks): do not add a sales-style ask; write
-  a "stepping back / how are things" note, or hold for LinkedIn.
+- Keep it calm and warm. Do not lead with "I have sent several emails" or anything that sounds like a complaint or pressure; for a contact who has had several unanswered emails, write a friendly catch-up and ask when a short call to talk through next year's initiatives would suit them.
 - Someone who asked to be left alone, or whose notes say we call too much: email only, brief, no mention of
   calls, follow their lead; or hold. Ask Shawn.
 - Former clients: warm, refer to the relationship, no re-pitch.
