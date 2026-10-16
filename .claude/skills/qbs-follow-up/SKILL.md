@@ -42,7 +42,8 @@ and never lose track of a follow-up. Shawn reviews and sends; this skill drafts.
 - One low-pressure question, an easy way to say no, no pitch dump. Short.
 - Keep it calm and warm. Do not lead with "I have sent several emails" or anything that sounds like a complaint or pressure; for a contact who has had several unanswered emails, write a friendly catch-up and ask when a short call to talk through next year's initiatives would suit them.
 - Someone who asked to be left alone, or whose notes say we call too much: email only, brief, no mention of
-  calls, follow their lead; or hold. Ask Shawn.
+  calls, follow their lead; or hold. Ask Shawn. Never quote the request back to them ("you asked us to give you
+  some room" reads as accusatory); just write a normal, light email.
 - Former clients: warm, refer to the relationship, no re-pitch.
 - Sign `Shawn` / `Quantum Business Solutions`. Subject lines differ per email.
 
