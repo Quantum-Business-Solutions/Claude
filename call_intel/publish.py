@@ -8,6 +8,7 @@ from clients import CTX, hs
 
 PROPOSAL_ID = os.environ.get('CI_PAGE_PROPOSAL_ID', '7b447e84-1ea0-41a0-abcd-b1e6518f6410')
 START, END = '<!-- CALL-INTEL:START -->', '<!-- CALL-INTEL:END -->'
+AUDIT_URL = os.environ.get('CI_AUDIT_URL', 'https://clientcommand.thequantumleap.business/web-proposal/share/5c336e6ad4814b858617b9010a7f0d3d')
 STAGES = [('s01_no_live_answer', 'No live answer'), ('s02_gatekeeper', 'Stopped at gatekeeper'), ('s03_hung_up_in_opener', 'Hung up in the opener'),
           ('s04_refused_to_listen', 'Refused right after opener'), ('s05_pitch_given', 'Heard the pitch, disengaged'), ('s06_discovery', 'Real conversation'),
           ('s07_objection_unhandled', 'Objection, not overcome'), ('s08_objection_overcome', 'Objection overcome, no ask'),
@@ -73,7 +74,7 @@ def section_html(s):
     soon = co['contracts_ending_next_90_days']
     c.append('<div class="card"><h3>Contracts ending in the next 90 days</h3>%s</div>' % _table(['Vendor', 'Companies'], [[VEND[k], v] for k, v in soon.items()]))
     body = ''.join('<div class="row">%s</div>' % x for x in c)
-    return (START + '<section id="callintel"><h2>Call Intel: what the call transcripts tell us (updated %s)</h2><p class="lede">%s</p>%s'
+    return (START + '<section id="callintel"><h2>Call Intel: what the call transcripts tell us (updated %s)</h2><p class="lede">%s</p><p><a href="' + AUDIT_URL + '" style="display:inline-block;padding:8px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600">Open the meetings audit: where we lose meetings, by week, month and all-time history</a></p>%s'
             '<p style="font-size:12px;color:var(--mute)">Totals and percentages only. Refreshed every Monday from the last week of calls; scores come from the call transcripts.</p></section>' % (
                 html.escape(s['generated']), html.escape(lede), body) + END)
 

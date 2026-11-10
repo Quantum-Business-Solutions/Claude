@@ -116,4 +116,10 @@ if not a.skip_stats:
         import publish
         report['page'] = publish.publish(s, apply=True); print('page', report['page'], flush=True)
     report['stats_file'] = a.out; print('stats written', a.out, flush=True)
+    if APPLY and os.environ.get('CLIENTCOMMAND_URL'):
+        try:
+            import meetings_analysis
+            report['audit_page'] = meetings_analysis.publish_report(); print('audit page', report['audit_page'], flush=True)
+        except Exception as ex:                       # never let the audit page break the weekly run
+            report['audit_page'] = 'failed: %s' % str(ex)[:120]; print('audit page failed', ex, flush=True)
 print('SUMMARY ' + json.dumps(report))

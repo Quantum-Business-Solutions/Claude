@@ -382,8 +382,8 @@ def page(M, since, C, until=None, HC=None):
              '<tr><td><b>Patrick</b></td><td>Quantum\'s own seat, the "Quantum" block in the daily report.</td></tr></table>'
              '<p class="note">The match is on counts: Patrick has 124 conversations in October and the report shows 124 transfers; the Mackenzie seat has 449 and the report shows 450, with 4 meetings each way.</p></div></section>')
     # ---------------- where calls get lost
-    fp = [('Dials', DP['dials']), ('Transfers', DP['transfers']), ('Real conversations', DP['convs']), ('Meetings set', DP['meetings'])]
-    fm = [('Dials', DM['dials']), ('Transfers', DM['transfers']), ('Real conversations', DM['convs']), ('Meetings set', DM['meetings'])]
+    fp = [('Dials', DP['dials']), ('Transfers', DP['transfers']), ('Real conversations', DP['convs']), ('Meetings set', DP['meetings'])] if has_h else []
+    fm = [('Dials', DM['dials']), ('Transfers', DM['transfers']), ('Real conversations', DM['convs']), ('Meetings set', DM['meetings'])] if has_h else []
     series = [('Mackenzie seat', 'var(--warn)'), ('Patrick Dodge', 'var(--accent)')]
     rows_ = [(lab, [M['stage']['Kenzie Braun seat'][i], M['stage']['Patrick Dodge'][i]]) for i, (_, lab) in enumerate(STAGES)]
     h.append('<section id="lost"><h2>Where calls get lost</h2><p class="lede">The same journey for each caller, from the first dial to the meeting.</p>')
@@ -652,8 +652,24 @@ def report(windows=None):
 
 
 
+AUDIT_PROPOSAL_ID = os.environ.get('CI_AUDIT_PROPOSAL_ID', 'ce0087c8-a1fc-4e50-abd2-e9ab9dbfa71b')
+
+
+def publish_report(proposal_id=None):
+    """Rebuild every tab and write it to the ClientCommand audit page."""
+    import ssl, urllib.request
+    doc = report()
+    ctx = ssl.create_default_context(cafile=os.environ.get('SSL_CERT_FILE') or '/root/.ccr/ca-bundle.crt')
+    req = urllib.request.Request(os.environ['CLIENTCOMMAND_URL'], json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call', 'params': {'name': 'set_web_proposal_custom_html',
+        'arguments': {'proposal_id': proposal_id or AUDIT_PROPOSAL_ID, 'html': doc}}}).encode(), {'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream'}, method='POST')
+    raw = urllib.request.urlopen(req, context=ctx, timeout=180).read().decode()
+    return {'published': 'custom' in raw, 'chars': len(doc)}
+
+
 if __name__ == '__main__':
     since = sys.argv[sys.argv.index('--since') + 1] if '--since' in sys.argv else '2026-09-28'
+    if '--publish' in sys.argv:
+        print(publish_report()); sys.exit(0)
     if '--report' in sys.argv:
         doc = report()
     else:
