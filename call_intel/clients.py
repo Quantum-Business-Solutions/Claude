@@ -70,7 +70,7 @@ def jev(state, questions):
 # ---------------- ConnectAndSell Reporting API (read-only) ----------------
 _tok = {'t': None, 'exp': 0}
 _last = [0]
-CAS = 'https://api.connectandsell.com'
+CAS = (os.environ.get('CAS_BASE_URL') or 'https://api.connectandsell.com').rstrip('/')  # set CAS_BASE_URL if CAS moves the API to a new host
 
 
 def _cas_auth():
