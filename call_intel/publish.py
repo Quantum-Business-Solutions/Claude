@@ -74,9 +74,9 @@ def section_html(s):
     soon = co['contracts_ending_next_90_days']
     c.append('<div class="card"><h3>Contracts ending in the next 90 days</h3>%s</div>' % _table(['Vendor', 'Companies'], [[VEND[k], v] for k, v in soon.items()]))
     body = ''.join('<div class="row">%s</div>' % x for x in c)
-    return (START + '<section id="callintel"><h2>Call Intel: what the call transcripts tell us (updated %s)</h2><p class="lede">%s</p><p><a href="' + AUDIT_URL + '" style="display:inline-block;padding:8px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600">Open the meetings audit: where we lose meetings, by week, month and all-time history</a></p>%s'
+    return (START + '<section id="callintel"><h2>Call Intel: what the call transcripts tell us (updated %s)</h2><p class="lede">%s</p><p><a href="@@AUDIT@@" style="display:inline-block;padding:8px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600">Open the meetings audit: where we lose meetings, by week, month and all-time history</a></p>%s'
             '<p style="font-size:12px;color:var(--mute)">Totals and percentages only. Refreshed every Monday from the last week of calls; scores come from the call transcripts.</p></section>' % (
-                html.escape(s['generated']), html.escape(lede), body) + END)
+                html.escape(s['generated']), html.escape(lede), body) + END).replace('@@AUDIT@@', AUDIT_URL)
 
 
 # ---- ClientCommand MCP endpoint (HTTP JSON-RPC) ----
