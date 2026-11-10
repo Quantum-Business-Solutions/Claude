@@ -96,6 +96,9 @@ def cas_metrics(since):
         g_ = collections.defaultdict(list)
         for x in cv: g_[f(x)].append(x)
         C[key] = {k: (len(v), sum(map(ms, v))) for k, v in g_.items()}
+    st_ = collections.defaultdict(list)
+    for x in cv: st_[('Patrick Dodge' if x['UserName'].startswith('Patrick') else 'Kenzie Braun seat', tag(x))].append(x)
+    C['seat_temp'] = {k: (len(v), sum(map(ms, v))) for k, v in st_.items()}
     C['talk_order'] = order
     L = collections.defaultdict(list)
     for x in cv: L[x['ListName']].append(x)
@@ -133,7 +136,7 @@ CSS = """:root{--bg:#f4f3ee;--panel:#fffefb;--ink:#1a2320;--mute:#5f6b66;--line:
 .kpi b{display:block;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:#fff}.kpi span{font-size:12.5px;color:#a9c8be}
 main{max-width:1100px;margin:0 auto;padding:24px 20px 80px}section{margin-bottom:38px}h2{font-size:22px;margin:0 0 6px;letter-spacing:-.01em}h3{margin:0 0 8px;font-size:15px}
 .lede{color:var(--mute);margin:0 0 14px;max-width:80ch}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow);min-width:0}.card+.card{margin-top:14px}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.two{align-items:start;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
 .br{display:grid;grid-template-columns:minmax(110px,200px) minmax(60px,1fr) 100px;gap:10px;align-items:center;margin:5px 0;font-size:13px}.tr{background:var(--line2);border-radius:4px;height:14px;display:block}.fl{display:block;height:14px;border-radius:4px}.nm{text-align:right;color:var(--mute);white-space:nowrap}
 table{border-collapse:collapse;width:100%;font-size:13.5px;display:block;overflow-x:auto;max-width:100%}.card{overflow-x:auto}th{text-align:left;color:var(--mute);font-weight:600;padding:5px 10px 5px 0}td{padding:6px 10px 6px 0;border-top:1px solid var(--line2)}td.n{font-variant-numeric:tabular-nums}td.n i{color:var(--mute);font-style:normal;font-size:12px}
 .big{font-size:30px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}.good{color:var(--good)}.bad{color:var(--bad)}.warn{color:var(--warn)}
@@ -141,6 +144,16 @@ blockquote{margin:8px 0;padding:8px 12px;border-left:3px solid var(--accent);bac
 .fix{counter-reset:f;list-style:none;padding:0;margin:0}.fix li{counter-increment:f;padding:12px 14px 12px 48px;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
 .fix li:before{content:counter(f);position:absolute;left:14px;top:12px;width:24px;height:24px;border-radius:99px;background:var(--accent);color:#fff;text-align:center;font-weight:700;font-size:13px;line-height:24px}
 .note{color:var(--mute);font-size:12.5px;margin-top:8px}"""
+
+
+def matrix(C):
+    rows = []
+    for seat in ('Kenzie Braun seat', 'Patrick Dodge'):
+        cells = []
+        for tmp in ('warm', 'cold'):
+            n, m = C['seat_temp'].get((seat, tmp), (0, 0)); cells.append('<td class="n">%d of %d <i>%.1f%%</i></td>' % (m, n, pc(m, n)))
+        rows.append('<tr><td>%s</td>%s</tr>' % (seat, ''.join(cells)))
+    return '<table><tr><th>Meetings per conversation</th><th>Warm lists</th><th>Cold lists</th></tr>%s</table>' % ''.join(rows)
 
 
 def page(M, since, C):
@@ -152,47 +165,49 @@ def page(M, since, C):
             K['weeks'], Pt['weeks'] + [('', [0, 0, 0])] * (len(K['weeks']) - len(Pt['weeks']))))
     kask = K['funnel'][4][1]; kpitch = K['funnel'][3][1]
     h = ['<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Why we are not booking more meetings</title><style>%s</style></head><body>' % CSS]
-    h.append('<div class="top"><div class="in"><h1>Why we are not booking more meetings</h1><p>Every call with a transcript since %s (%d calls, read end to end): what Kenzie Braun\'s seat and Patrick Dodge say, where each conversation ends, and what is different about the calls that booked. Updated %s.</p>' % (s, T['n'], today))
-    h.append('<div class="kpis"><div class="kpi"><b>%d</b><span>meetings booked from %d calls (%.1f%%)</span></div><div class="kpi"><b>%.1f%%</b><span>Patrick: %d of %d calls booked</span></div><div class="kpi"><b>%.1f%%</b><span>Kenzie seat: %d of %d calls booked</span></div><div class="kpi"><b>%d of %d</b><span>booked meetings had the invite confirmed</span></div></div></div></div><main>' % (
-        T['booked'], T['n'], pc(T['booked'], T['n']), pc(pb, Pt['n']), pb, Pt['n'], pc(kb, K['n']), kb, K['n'], T['confirmed'], T['booked']))
+    h.append('<div class="top"><div class="in"><h1>Why we are not booking more meetings</h1><p>Every ConnectAndSell conversation since %s, plus an AI read of the %d that have a full transcript: what Kenzie Braun\'s seat and Patrick Dodge say, where conversations end, and what is different about the ones that booked. Updated %s.</p>' % (s, T['n'], today))
+    cs, ct = C['seat'], C['temp']
+    ks, kp = cs.get('Kenzie Braun seat', (0, 0)), cs.get('Patrick Dodge', (0, 0))
+    h.append('<div class="kpis"><div class="kpi"><b>%d</b><span>conversations logged by ConnectAndSell since %s</span></div><div class="kpi"><b>%d</b><span>meetings scheduled (%.1f%%)</span></div><div class="kpi"><b>%.1f%%</b><span>Patrick: %d of %d conversations</span></div><div class="kpi"><b>%.1f%%</b><span>Kenzie seat: %d of %d conversations</span></div><div class="kpi"><b>%d of %d</b><span>booked meetings with the invite confirmed</span></div></div></div></div><main>' % (
+        C['n'], s, C['meet'], pc(C['meet'], C['n']), pc(kp[1], kp[0]), kp[1], kp[0], pc(ks[1], ks[0]), ks[1], ks[0], T['confirmed'], T['booked']))
     pr = lambda a, b: pc(a, b)
     tk = C['talk']; to = C['talk_order']
     short = sum(tk[k][0] for k in to[:2]); longc, longm = tk['Over 90 seconds']
     h.append('<section><h2>What ConnectAndSell itself shows</h2><p class="lede">Before the AI read of the calls: ConnectAndSell logged <b>%d conversations</b> since %s and <b>%d "Meeting scheduled"</b> (%.1f%%). Two things stand out, and neither is about the script.</p>'
              '<div class="two"><div class="card"><h3>Conversations get nowhere because most are over in seconds</h3><table><tr><th>Talk time</th><th>Conversations</th><th>Meetings</th></tr>%s</table>'
-             '<p class="note">%d of %d conversations (%.0f%%) lasted 20 seconds or less, and none of them booked. Conversations past 90 seconds booked %d of %d (%.0f%%): a 1-in-5 rate once someone actually stays on.</p></div>'
-             '<div class="card"><h3>Cold lists book at a fraction of warm lists</h3><table><tr><th></th><th>Conversations</th><th>Meetings</th><th>Rate</th></tr>%s</table>'
+             '<p class="note">%d of %d conversations (%.0f%%) lasted 20 seconds or less, and none of them booked. Conversations past 90 seconds booked %d of %d (%.0f%%): a 1-in-5 rate once someone actually stays on. (Part of that is simply that booking takes time, so read it as "short calls never get a chance", not "long calls cause meetings".)</p></div>'
+             '<div class="card"><h3>Cold lists book at a fraction of warm lists</h3><table><tr><th>List type</th><th>Conversations</th><th>Meetings</th><th>Rate</th></tr>%s</table>'
              '<p class="note">"Warm" = lists of people we already know: Deal Follow-Up, All Time Meetings, Hot List, No-Shows, Hubspot Follow Up. The Kenzie seat spent %d of %d conversations on cold lists, mostly one list ("Callable - Best Bets").</p></div></div>'
-             '<div class="card" style="margin-top:14px"><h3>How the conversations ended (ConnectAndSell disposition)</h3>%s</div>'
-             '<div class="card" style="margin-top:14px"><h3>Biggest lists</h3><table><tr><th>List</th><th>Conversations</th><th>Meetings</th></tr>%s</table></div></section>' % (
+             '<div class="card" style="margin-top:14px"><h3>Is it the lists or the rep? Both.</h3>%s<p class="note">Same list type, different rep: Patrick books about three times as often on cold lists and about nine times on warm ones. Same rep, different list: Patrick books about three times as often on warm lists as on cold ones. The Kenzie seat had too few warm conversations to compare.</p></div><div class="card" style="margin-top:14px"><h3>How the conversations ended (ConnectAndSell disposition)</h3>%s</div>'
+             '<div class="card" style="margin-top:14px"><h3>Biggest lists</h3><table><tr><th>List</th><th>Conversations</th><th>Meetings</th><th>Rate</th></tr>%s</table></div></section>' % (
                  C['n'], s, C['meet'], pr(C['meet'], C['n']),
                  ''.join('<tr><td>%s</td><td class="n">%d</td><td class="n">%d</td></tr>' % (k, tk[k][0], tk[k][1]) for k in to),
                  short, C['n'], pr(short, C['n']), longm, longc, pr(longm, longc),
-                 ''.join('<tr><td>%s</td><td class="n">%d</td><td class="n">%d</td><td class="n">%.1f%%</td></tr>' % (n, C['temp'][n][0], C['temp'][n][1], pr(C['temp'][n][1], C['temp'][n][0])) for n in ('warm', 'cold') if n in C['temp']),
-                 C['k_cold'][0], C['k_cold'][1],
+                 ''.join('<tr><td>%s</td><td class="n">%d</td><td class="n">%d</td><td class="n">%.1f%%</td></tr>' % (n.title() + ' lists', C['temp'][n][0], C['temp'][n][1], pr(C['temp'][n][1], C['temp'][n][0])) for n in ('warm', 'cold') if n in C['temp']),
+                 C['k_cold'][0], C['k_cold'][1], matrix(C),
                  bars([(k, v) for k, v in C['disp'].most_common(10)], C['n'], 'var(--c3)'),
-                 ''.join('<tr><td>%s</td><td class="n">%d</td><td class="n">%d</td></tr>' % (k, n, m) for k, n, m in C['lists'])))
+                 ''.join('<tr><td>%s</td><td class="n">%d</td><td class="n">%d</td><td class="n">%.1f%%</td></tr>' % (e(k), n, m, pr(m, n)) for k, n, m in C['lists'])))
     h.append('<section><h2>The short version</h2><p class="lede">There is no single villain. The biggest leaks are how short the conversations are, which lists we call, and what is said at the ask.</p><div class="card"><ol class="fix" style="margin:0">'
              '<li><b>Half of all conversations are over in 20 seconds, and the Kenzie seat is working cold lists.</b> Nothing under 40 seconds booked; once past 90 seconds, about 1 in 5 do. Warm lists book several times better than cold ones. (See the section above.)</li><li><b>The meeting is almost never asked for on the Kenzie seat.</b> %d asks across %d calls (%.0f%%). %d calls got as far as the pitch; only %d of those included an ask. %.0f%% of calls never ask at all.</li>'
              '<li><b>When Patrick asks without closing language, it never books.</b> Plain asks: %d, booked %d. Asks that used an alternative or assumptive close ("mornings or afternoons?", "what if I sent an invite for 15 minutes?"): %d, booked %d. Every one of his %d bookings used one.</li>'
-             '<li><b>The opener loses about a third of the people we reach.</b> %.0f%% of live conversations on the Kenzie seat end in the opener, median call %d seconds (Patrick: %.0f%%, %d seconds).</li>'
+             '<li><b>The opener loses about 4 in 10 of the people we reach.</b> %.0f%% of live conversations on the Kenzie seat end in the opener, median call %d seconds (Patrick: %.0f%%, %d seconds).</li>'
              '<li><b>Objections are mostly not answered.</b> %.0f%% of objections on the Kenzie seat get no real response ("Not interested? Okay, then."). Patrick answers well on %.0f%%, and those calls book %d of %d times.</li></ol></div></section>' % (
                  K['asks'], K['n'], pc(K['asks'], K['n']), kpitch, kask, pc(K['never'], K['n']),
                  Pt['asks_plain'], Pt['booked_plain'], Pt['asks_close'], Pt['booked_close'], Pt['booked_close'],
                  pc(K['hung'], K['live']), K['dur'], pc(Pt['hung'], Pt['live']), Pt['dur'],
                  pc(K['ob_not'], K['ob']), pc(Pt['ob_good'], Pt['ob']), 10, 22))
-    h.append('<section><h2>The funnel, side by side</h2><p class="lede">Percentages are of all calls with a transcript for that rep.</p><div class="card">%s</div><div class="card"><h3>By week</h3><table><tr><th></th><th>Kenzie calls</th><th>reached a person</th><th>booked</th><th>Patrick calls</th><th>reached a person</th><th>booked</th></tr>%s</table><p class="note">The most recent week is partial.</p></div></section>' % (funnel_table(M), wk))
+    h.append('<section><h2>The funnel, side by side</h2><p class="lede">Percentages are of all calls with a transcript for that rep. This is the AI read, so its booking counts (5 and 13) differ slightly from ConnectAndSell\'s own (6 and 13) for the same period.</p><div class="card">%s</div><div class="card"><h3>By week</h3><table><tr><th></th><th>Kenzie calls</th><th>reached a person</th><th>booked</th><th>Patrick calls</th><th>reached a person</th><th>booked</th></tr>%s</table><p class="note">The most recent week is partial.</p></div></section>' % (funnel_table(M), wk))
     h.append('<section><h2>Finding 1: the ask is missing</h2><p class="lede">Of the people who stay on the line through the pitch, almost none are asked for a meeting on the Kenzie seat.</p><div class="two"><div class="card"><h3>Kenzie seat: when the ask comes</h3>%s</div><div class="card"><h3>Patrick: when the ask comes</h3>%s</div></div></section>' % (
         bars([('Never asked', K['never']), ('Asked (any point)', K['asks'])], K['n'], 'var(--bad)'), bars([('Never asked', Pt['never']), ('Asked (any point)', Pt['asks'])], Pt['n'], 'var(--c3)')))
-    h.append('<section><h2>Finding 2: only closing language books meetings</h2><p class="lede">The same person, the same list, the same week: what Patrick says at the ask decides the result.</p><div class="two"><div class="card"><div class="big bad">0 of %d</div><p>plain asks booked (for example "would you be open to a call?").</p></div><div class="card"><div class="big good">%d of %d</div><p>asks with an alternative or assumptive close booked.</p></div></div>'
+    h.append('<section><h2>Finding 2: only closing language books meetings</h2><p class="lede">Same rep, same kind of calls: what he says at the ask decides the result.</p><div class="two"><div class="card"><div class="big bad">0 of %d</div><p>plain asks booked (for example "would you be open to a call?").</p></div><div class="card"><div class="big good">%d of %d</div><p>asks with an alternative or assumptive close booked.</p></div></div>'
              '<div class="card" style="margin-top:14px"><h3>What the booking calls sound like (Patrick)</h3>'
              '<blockquote>"Would it make sense to just put a placeholder on the calendar in mid-November and then I could just follow up the week before and confirm the time?"<small>Assumptive close on a "not now" answer</small></blockquote>'
              '<blockquote>"Are mornings or afternoons typically better for you? ... You are central time, right? How about 10:00?"<small>Alternative close, then a specific time</small></blockquote>'
              '<blockquote>"What if I sent you an invite to connect for like 15 minutes and we could kind of talk through it then? Would that work?"<small>Small ask, then "how is 1:00 for you?"</small></blockquote>'
-             '<p class="note">He uses a close on %d of his %d asks (%.0f%%) and on %.0f%% of all his calls. The Kenzie seat used one on %d call(s) in %d.</p></div></section>' % (
+             '<p class="note">He uses a close on %d of his %d asks (%.0f%%) and on %.0f%% of all his calls. The Kenzie seat used one on %d of %d calls. Quotes are lightly cleaned from the transcripts.</p></div></section>' % (
                  Pt['asks_plain'], Pt['booked_close'], Pt['asks_close'], Pt['asks_close'], Pt['asks'], pc(Pt['asks_close'], Pt['asks']), pc(Pt['asks_close'], Pt['n']), K['asks_close'], K['n']))
     ob = lambda R: bars([(OBJ.get(k, k), v) for k, v in R['objs'].most_common(7)], sum(R['objs'].values()), 'var(--warn)')
-    h.append('<section><h2>Finding 3: the opener and the objections</h2><p class="lede">Half of what goes wrong happens in the first fifteen seconds.</p><div class="two"><div class="card"><h3>Where live conversations end (Kenzie seat)</h3>%s<p class="note">Hung up in the opener: %d. Refused right after: %d. Of %d people reached.</p></div>'
+    h.append('<section><h2>Finding 3: the opener and the objections</h2><p class="lede">The opener is where most of the transcribed conversations are lost.</p><div class="two"><div class="card"><h3>Where live conversations end (Kenzie seat)</h3>%s<p class="note">Hung up in the opener: %d. Refused right after: %d. Of %d people reached.</p></div>'
              '<div class="card"><h3>Opener quality (AI-scored)</h3>%s</div></div>'
              '<div class="card" style="margin-top:14px"><h3>What the opener sounds like</h3><blockquote>"I\'m calling with Quantum Business Solutions ... I know I\'m an interruption here, but mind if I grab half a minute to let you know why I called?" ... "we help companies improve their sales process through CRM solutions and lead generation."<small>Typical Kenzie-seat opener: polite, but generic. Nothing in it says why this person should stay on.</small></blockquote>'
              '<p>Openers that acknowledge the interruption are associated with fewer immediate hang-ups (%.0f%% vs %.0f%%), but this has to be read carefully: calls that end early never get to say the line, so it is a hint to test, not proof.</p></div>'
@@ -206,6 +221,11 @@ def page(M, since, C):
     h.append('<section><h2>Finding 4: who we reach, and what happens after a booking</h2><p class="lede">List quality matters less than the call, but it is not nothing.</p><div class="two"><div class="card"><h3>Decision maker identified</h3><table><tr><th></th><th>Kenzie seat</th><th>Patrick</th></tr><tr><td>Yes</td><td class="n">%d</td><td class="n">%d</td></tr><tr><td>No</td><td class="n">%d</td><td class="n">%d</td></tr><tr><td>Never established</td><td class="n">%d</td><td class="n">%d</td></tr></table><p class="note">The decision maker is rarely established, so we do not know who we are talking to on most calls.</p></div>'
              '<div class="card"><h3>Bookings that stick</h3><div class="big warn">%d of %d</div><p>booked meetings have a confirmed invite. The rest rely on a prospect remembering a verbal agreement.</p></div></div></section>' % (
                  dm(K), dm(Pt), K['dm']['no'], Pt['dm']['no'], K['dm']['unclear'], Pt['dm']['unclear'], T['confirmed'], T['booked']))
+    h.append('<section><h2>What to try, built from the calls that worked</h2><p class="lede">Drafts to test, not scripts to read word for word. Change one thing at a time and watch the numbers on this page.</p><div class="two">'
+             '<div class="card"><h3>The ask (use on every conversation past the opener)</h3><blockquote>"The reason I am calling is to set up 15 minutes to talk through your sales and marketing priorities. Are mornings or afternoons usually better for you?"</blockquote><blockquote>"I will send a quick invite. Does Tuesday at 10 or Thursday at 2 work better?"</blockquote><p class="note">Both are the alternative-close pattern behind every booking in this data.</p></div>'
+             '<div class="card"><h3>When they say "no time" or "call me back"</h3><blockquote>"Totally understand. That is exactly why I am asking for 15 minutes next week. Would Tuesday or Thursday be better?"</blockquote><p class="note">Today these are usually answered with "I will send you some information", which books nothing.</p></div>'
+             '<div class="card"><h3>When they say "not interested"</h3><blockquote>"Fair enough. Can I ask what you are using today for your CRM? I will not take more than a minute."</blockquote><p class="note">One question before the call ends. Today the call usually ends at the first no.</p></div>'
+             '<div class="card"><h3>The opener</h3><p>Start with something specific to them (their CRM, a recent change, a prior conversation) in the first sentence, then the permission line. Test two or three versions and compare the share that hang up in the opener (now %.0f%% on the Kenzie seat).</p></div></div></section>' % pc(K['hung'], K['live']))
     h.append('<section><h2>What to change, in order</h2><ol class="fix">'
              '<li><b>Spend the dialing time on warm lists first.</b> Deal Follow-Up, All Time Meetings, Hot List and No-Shows book at about 8%% of conversations versus about 1%% on the cold lists. The Kenzie seat is almost entirely on the cold ones.</li>'
              '<li><b>Make the ask mandatory on every call that gets past the opener.</b> Today it is under 5%% on the Kenzie seat and 42%% for Patrick. Target 50%%+ of conversations, with the ask coming right after the first reason they would care.</li>'
@@ -216,6 +236,9 @@ def page(M, since, C):
              '<li><b>Fix who is on the other end.</b> Establish the decision maker early, and when it is someone else, ask for a warm transfer or the right name instead of settling for an email address.</li></ol></section>' % (
                  Pt['asks_plain'] + K['asks_plain'], pc(K['hung'], K['live']), T['confirmed'], T['booked']))
     h.append('<section><h2>How this was measured</h2><div class="card"><p>Every call since %s with a ConnectAndSell transcript in HubSpot, scored by an AI reading the full transcript for the stage reached, the opener, whether and how a meeting was asked for, the objections and how they were handled. "Booked" means the call reached a meeting agreed, a time set or an invite confirmed. Parts of many transcripts are masked for dual-consent reasons, so the prospect side is incomplete. The Kenzie seat is the HubSpot call owner; the transcripts label the caller with that seat\'s name, but the caller introduces themselves with other first names on some calls, which is worth confirming. Percentages are shares of calls, not of people.</p></div></section></main></body></html>' % s)
+    ia = next(i for i, s_ in enumerate(h) if s_.startswith('<section><h2>What ConnectAndSell itself shows'))
+    ib = next(i for i, s_ in enumerate(h) if s_.startswith('<section><h2>The short version'))
+    if ia < ib: h.insert(ia, h.pop(ib))
     return ''.join(h)
 
 
