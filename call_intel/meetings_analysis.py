@@ -287,7 +287,7 @@ def svg_cols(pairs, color='var(--accent)', width=520, height=190, ylab=''):
         hgt = (height - 56) * v / mx; x = 30 + i * bw
         o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="4" fill="%s"/>' % (x + 6, height - 30 - hgt, bw - 12, hgt, color))
         o.append('<text x="%.1f" y="%.1f" text-anchor="middle" font-size="12" font-weight="600" fill="var(--ink)">%s</text>' % (x + bw / 2, height - 34 - hgt, v))
-        o.append('<text x="%.1f" y="%d" text-anchor="middle" font-size="11.5" fill="var(--mute)">%s</text>' % (x + bw / 2, height - 10, e(lab)))
+        if n <= 14 or i % 2 == (n - 1) % 2: o.append('<text x="%.1f" y="%d" text-anchor="middle" font-size="11.5" fill="var(--mute)">%s</text>' % (x + bw / 2, height - 10, e(lab)))
     o.append('</svg>')
     return ''.join(o)
 
@@ -619,6 +619,13 @@ def history_html(H):
     o.append('<div class="kpis"><div class="kpi"><b>%s</b><span>calls scored</span></div><div class="kpi"><b>%.1f%%</b><span>asked for a meeting</span></div><div class="kpi"><b>%.1f%%</b><span>reached a booked meeting</span></div><div class="kpi"><b>%d of %d</b><span>booked meetings with the invite confirmed</span></div></div></div></div><main>' % (format(n, ','), pc(asked, n), pc(bk, n), inv, bk))
     o.append('<section><h2>Trend by month</h2><p class="lede">Months with at least 20 scored calls.</p><div class="two"><div class="card"><h3>Meeting asked for (%% of calls)</h3>%s</div><div class="card"><h3>Reached a booked meeting (%% of calls)</h3>%s</div></div></section>' % (
         svg_cols(rate(lambda p: g(p, 'asked_for_meeting') == 'yes'), 'var(--c3)', 980, 200), svg_cols(rate(booked), 'var(--good)', 980, 200)))
+    def mshare(ms_):
+        v = [p for m_ in ms_ for p in mo.get(m_, [])]; return (pc(sum(g(p, 'asked_for_meeting') == 'yes' for p in v), len(v)), pc(sum(booked(p) for p in v), len(v)), pc(sum(p['rep'] == 'Kenzie Braun' for p in v), len(v)), len(v))
+    full = [m_ for m_ in months if len(mo[m_]) >= 20]
+    if len(full) >= 8:
+        recent, prior = full[-2:], full[-8:-2]; ra, rb, rk, rn = mshare(recent); pa, pb, pk, pn = mshare(prior)
+        o.append('<section><h2>What changed</h2><div class="card"><p>In the last two months (%s) a meeting was asked for on <b>%.0f%%</b> of scored calls and <b>%.1f%%</b> reached a booked meeting. In the six months before (%s to %s) those were <b>%.0f%%</b> and <b>%.1f%%</b>. The Mackenzie seat made up %.0f%% of scored calls recently, against %.0f%% before, so the mix of callers explains much of the drop: that seat rarely asks, and Patrick\'s own calls are a smaller share of the total.</p></div></section>' % (
+            ', '.join(datetime.datetime.strptime(x, '%Y-%m').strftime("%b '%y") for x in recent), ra, rb, datetime.datetime.strptime(prior[0], '%Y-%m').strftime("%b '%y"), datetime.datetime.strptime(prior[-1], '%Y-%m').strftime("%b '%y"), pa, pb, rk, pk))
     o.append('<section><h2>Where calls ended, by rep (all time)</h2><div class="card">%s</div><div class="card" style="margin-top:14px"><table><tr><th>Rep</th><th>Calls scored</th><th>Asked</th><th>Closing language used</th><th>Booked</th></tr>%s</table></div></section>' % (svg_grouped(rows_, series), rep_rows))
     o.append('<section><h2>Objections, all time</h2><div class="two"><div class="card"><h3>What they say</h3>%s</div><div class="card"><h3>How they were handled</h3>%s</div></div></section></main>' % (
         bars([(OBJ.get(k, k), v) for k, v in ob.most_common(9)], sum(ob.values()) or 1, 'var(--warn)'), bars([(k.replace('_', ' ').title(), v) for k, v in hd.most_common()], sum(hd.values()) or 1, 'var(--accent)')))
