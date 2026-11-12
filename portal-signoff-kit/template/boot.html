@@ -1,0 +1,98 @@
+<script>
+(function(){
+var D=[];document.querySelectorAll('script.faqdata').forEach(function(s){try{D=D.concat(JSON.parse(s.textContent))}catch(e){}});
+var M={};try{M=JSON.parse(document.getElementById('meta').textContent)}catch(e){}
+var Q=M.questions||[];
+var inHost=window.parent&&window.parent!==window;
+var S={},QA={},me={name:'',kind:''},filter='all',term='',saveEl=null,timers={},OPEN={},lastSig='',SUB=null,armed=false;window._qopen=true;
+function P(m){m.source='clientcommand-page';try{window.parent.postMessage(m,'*')}catch(e){}}
+function key(id){return 'faq:'+id}
+var pending={},queue=[],busy=false,timer=null;
+function set(k,v){queue=queue.filter(function(x){return x.k!==k});queue.push({k:k,v:v});pump()}
+function pump(){if(busy||!queue.length)return;var x=queue.shift();busy=true;pending[x.k]=function(ok,err){busy=false;clearTimeout(timer);status(ok?'saved to the portal':'not saved'+(err?' - '+err:''),ok?'on':'err');pump()};P({type:'state:set',key:x.k,value:x.v});timer=setTimeout(function(){busy=false;pump()},2500)}
+function status(t,c){if(saveEl){saveEl.textContent=t;saveEl.className='save '+(c||'')}}
+function now(){return new Date().toISOString()}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function row(id){return S[id]||(S[id]={})}
+function stamp(v){try{return new Date(v).toLocaleString([], {month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}catch(e){return ''}}
+function hasEdit(r){var s=S[r.id];return !!(s&&s.qa&&Object.keys(s.qa).length)}
+function stateOf(r){return (S[r.id]&&S[r.id].s)||''}
+function nConf(r){return r.qa.filter(function(x){return /\[CONFIRM/.test(x[1])}).length}
+function rows(){return D.filter(function(r){
+ if(filter==='w'&&r.g!=='w')return false;if(filter==='b'&&r.g!=='b')return false;
+ if(filter==='todo'&&stateOf(r))return false;if(filter==='edt'&&!hasEdit(r))return false;if(filter==='fr'&&!(r.f&&!/^evergreen/i.test(r.f)))return false;
+ if(filter==='ed'&&stateOf(r)!=='ed')return false;
+ if(filter==='cf'&&!nConf(r))return false;
+ if(term){var t=(r.n+' '+r.u+' '+r.qa.map(function(x){return x.join(' ')}).join(' ')).toLowerCase();if(t.indexOf(term)<0)return false}
+ return true})}
+function counts(){var ok=0,ed=0,sk=0;D.forEach(function(r){var s=stateOf(r);if(s==='ok')ok++;else if(s==='ed')ed++;else if(s==='sk')sk++});return{ok:ok,ed:ed,sk:sk,pn:D.length-ok-ed-sk,n:D.length}}
+function qdone(){return Object.keys(QA).filter(function(i){return QA[i]&&QA[i].t}).length}
+function confHtml(a,r,i){var m=a.match(/\[CONFIRM:?([^\]]*)\]/);if(!m)return '';var v=S[r.id]&&S[r.id].cf&&S[r.id].cf[i]||'';return '<div class="cf"><b>CCi to confirm:</b> '+esc(m[1].trim()||'please verify this answer')+'<input class="cfa" data-cf="'+i+'" aria-label="Your answer to the confirmation note" placeholder="Type your answer or correction here" value="'+esc(v)+'"></div>'}
+function cleanA(a){return a.replace(/\s*\[CONFIRM:?[^\]]*\]/g,'')}
+function qa(r,i){var o=r.qa[i],e=S[r.id]&&S[r.id].qa&&S[r.id].qa[i],q=e?e.q:o[0],a=e?e.a:cleanA(o[1]);var mod=!!e;
+ return '<div class="faq'+(mod?' mod':'')+'" data-r="'+esc(r.id)+'" data-i="'+i+'"><div class="lab">Question '+(i+1)+(mod?' &middot; edited':'')+'</div><textarea class="fq" rows="1" data-f="q" aria-label="Question '+(i+1)+' for '+esc(r.n)+'">'+esc(q)+'</textarea><div class="lab">Answer</div><textarea class="fa" rows="2" data-f="a" aria-label="Answer '+(i+1)+' for '+esc(r.n)+'">'+esc(a)+'</textarea>'+confHtml(o[1],r,i)+(mod?'<button class="rv" data-rv="'+i+'">Restore original</button>':'')+'</div>'}
+function card(r,k){var s=stateOf(r),st=s==='ok'?'<span class="tag t-ok">Approved</span>':s==='ed'?'<span class="tag t-ed">Needs edits</span>':s==='sk'?'<span class="tag t-sk">Skipped</span>':'<span class="tag t-pn">Awaiting review</span>';
+ var nc=nConf(r),x=S[r.id]||{};
+ var cm=(x.c||[]).map(function(c){return '<div>'+esc(c.t)+' <span>'+esc(c.by)+' &middot; '+stamp(c.at)+'</span></div>'}).join('');
+ return '<details class="card" id="c-'+esc(r.id)+'" data-id="'+esc(r.id)+'"'+(OPEN[r.id]?' open':'')+'><summary><span class="num">'+k+'</span><div class="ttl"><h3>'+esc(r.n)+'</h3>'+(r.u?'<small class="u">'+esc(r.u.replace('https://www.ccivoice.com',''))+'</small>':'')+'</div>'+(r.f&&!/^evergreen/i.test(r.f)?'<span class="tag t-fr">Check freshness</span>':'')+(nc?'<span class="tag t-cf">'+nc+' to confirm</span>':'')+st+'<span class="chev">&#9656;</span></summary><div class="body">'+(r.f&&!/^evergreen/i.test(r.f)?'<div class="fresh"><b>May be out of date.</b> '+esc(r.f)+'</div>':'')+r.qa.map(function(_,i){return qa(r,i)}).join('')+'<div class="act"><button class="ab '+(s==='ok'?'':'ab-ok')+(s==='ok'?' off':'')+'" data-a="ok" aria-pressed="'+(s==='ok')+'">'+(s==='ok'?'Approved - undo':'Approve')+'</button><button class="ab ab-ed'+(s==='ed'?' off':'')+'" data-a="ed" aria-pressed="'+(s==='ed')+'">Needs edits</button><button class="ab ab-sk'+(s==='sk'?' off':'')+'" data-a="sk" aria-pressed="'+(s==='sk')+'" title="Do not add FAQs to this page">'+(s==='sk'?'Skipped - undo':'Skip')+'</button><button class="btn nx" data-a="nx">Next to review &rarr;</button>'+(x.by&&s?'<span class="who">'+esc(x.by)+' &middot; '+stamp(x.at)+'</span>':'')+'</div><div class="cl">'+cm+'</div><textarea class="cm" placeholder="Add a comment for the QBS team (Enter then Cmd/Ctrl+Enter to post)" data-cm="1"></textarea></div></details>'}
+function qsec(){var g='',out='';Q.forEach(function(q,i){if(q.g!==g){g=q.g;out+='<div class="qg">'+esc(g)+'</div>'}var a=QA[i]&&QA[i].t||'';out+='<div class="qrow"><p><b>'+(i+1)+'.</b> '+esc(q.t)+'</p><textarea class="qa" data-q="'+i+'" placeholder="Type your answer (one line is enough)">'+esc(a)+'</textarea>'+(QA[i]&&QA[i].by?'<div class="who" style="margin-top:4px">'+esc(QA[i].by)+' &middot; '+stamp(QA[i].at)+'</div>':'')+'</div>'});
+ var done=qdone();
+ return '<details class="card" id="qcard"'+(window._qopen?' open':'')+'><summary><span class="num">?</span><div class="ttl"><h3>Questions for CCi</h3><small>Facts we could not confirm from the website. A one-line answer is enough.</small></div><span class="tag '+(done===Q.length?'t-ok':'t-cf')+'" id="qtag">'+done+' of '+Q.length+' answered</span><span class="chev">&#9656;</span></summary>'+out+'</details>'}
+function render(keepFocus){var c=counts(),list=rows(),root=document.getElementById('root');
+ var pct=function(n){return(c.n?n/c.n*100:0).toFixed(1)+'%'};
+ var ae=document.activeElement,fid=ae&&ae.closest&&ae.closest('[data-r]'),fpos=ae&&ae.selectionStart,ftype=ae&&ae.dataset&&ae.dataset.f,fi=fid&&fid.dataset.i,fr=fid&&fid.dataset.r,qf=ae&&ae.dataset&&ae.dataset.q;
+ var h='<div class="wrap"><div class="hero"><div class="brand">'+esc(M.brand||'')+'</div><h1>'+esc(M.title||'FAQ sign-off')+'</h1><p class="lead">'+esc(M.intro||'')+'</p></div>'+steps()+
+ '<div class="bar"><div class="prog"><i class="p-ok" style="width:'+pct(c.ok)+'"></i><i class="p-ed" style="width:'+pct(c.ed)+'"></i><i class="p-sk" style="width:'+pct(c.sk)+'"></i></div><div class="stats"><span><span class="dot" style="background:var(--ok)"></span><b>'+c.ok+'</b> approved</span><span><span class="dot" style="background:var(--warn)"></span><b>'+c.ed+'</b> need edits</span><span><span class="dot" style="background:var(--line2)"></span><b>'+c.sk+'</b> skipped</span><span><span class="dot" style="background:var(--muted)"></span><b>'+c.pn+'</b> awaiting review</span><span>of '+c.n+' pages and posts</span></div><div class="tools"><div class="pills">'+[['all','All'],['w','Website pages'],['b','Blog posts'],['todo','To do'],['ed','Needs edits'],['edt','Edited by you'],['cf','To confirm'],['fr','Check freshness']].map(function(p){return '<button class="pill'+(filter===p[0]?' on':'')+'" data-fl="'+p[0]+'">'+p[1]+'</button>'}).join('')+'</div><input class="search" id="q" placeholder="Search pages, posts, FAQs" value="'+esc(term)+'"><button class="btn" id="all">'+(armed?'Click again to approve '+rows().filter(function(r){return !stateOf(r)}).length:'Approve all shown')+'</button><button class="btn" id="csv">Status CSV</button><button class="btn" id="csve">Edits CSV</button><span class="save" id="save">'+(inHost?'loading':'not saved - open inside the portal')+'</span></div></div>'+
+ qsec();
+ var gs=[['w','Website pages'],['b','Blog posts']],k=0;
+ gs.forEach(function(g){var l=list.filter(function(r){return r.g===g[0]});if(!l.length)return;h+='<div class="sec">'+g[1]+'<small>'+l.length+' shown</small></div>';l.forEach(function(r){k++;h+=card(r,k)})});
+ if(!list.length)h+='<div class="empty">Nothing matches.</div>';
+ h+=subPanel();h+='<div class="foot">Edits, approvals and comments save automatically to the CCi portal. Nothing changes on ccivoice.com until you approve.</div></div>';
+ var sy=window.pageYOffset;root.innerHTML=h;window.scrollTo(0,sy);saveEl=document.getElementById('save');status(lastStatus[0],lastStatus[1]);
+ root.querySelectorAll('textarea.fq,textarea.fa').forEach(grow);
+ if(keepFocus){var el=null;if(fr)el=root.querySelector('[data-r="'+CSS.escape(fr)+'"][data-i="'+fi+'"] [data-f="'+ftype+'"]');else if(qf)el=root.querySelector('[data-q="'+qf+'"]');if(el){el.focus();try{el.setSelectionRange(fpos,fpos)}catch(e){}}}}
+var lastStatus=['',''];var _st=status;status=function(t,c){lastStatus=[t,c||''];_st(t,c)};
+function steps(){var c=counts(),qd=qdone(),rev=c.ok+c.ed+c.sk,dn=[qd>=Q.length,rev>=c.n,!!SUB],cur=dn.indexOf(false)+1;
+ function st(n,t,d){var x=dn[n-1];return '<div class="step'+(x?' done':n===cur?' now':'')+'"><i>Step '+n+(x?' &middot; done':'')+'</i><b>'+t+'</b><span>'+d+'</span></div>'}
+ return '<div class="steps">'+st(1,'Answer our questions',qd+' of '+Q.length+' answered')+st(2,'Review each page and post',rev+' of '+c.n+' reviewed')+st(3,'Submit to QBS',SUB?'Submitted '+stamp(SUB.at):'When you are done')+'</div>'}
+function subPanel(){var c=counts(),qd=qdone();return '<div class="sub'+(SUB?' sent':'')+'" id="sub"><h2>'+(SUB?'Review submitted':'Ready to send?')+'</h2><p style="margin:0 0 12px">'+c.ok+' approved, '+c.ed+' need edits, '+c.sk+' skipped, '+c.pn+' not yet reviewed. '+qd+' of '+Q.length+' questions answered.'+(SUB?' Submitted by '+esc(SUB.by)+' on '+stamp(SUB.at)+'. You can keep editing and submit again.':' Submitting tells QBS your review is ready. You can still make changes afterwards.')+'</p><button class="ab ab-go" id="submit">'+(SUB?'Submit again':'Submit review to QBS')+'</button></div>'}
+function gotoNext(c){var l=rows(),i=l.map(function(r){return r.id}).indexOf(c),n=null,k;for(k=1;k<=l.length;k++){var r=l[(i+k)%l.length];if(!stateOf(r)&&r.id!==c){n=r;break}}
+ OPEN[c]=0;if(!n){render(true);var s=document.getElementById('sub');if(s)s.scrollIntoView({block:'center'});return}OPEN[n.id]=1;render(true);var el=document.getElementById('c-'+n.id);if(el)el.scrollIntoView({block:'start'})}
+function grow(t){t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px'}
+function me_(){return me.name||(localStorage.getItem('faq_name')||'')||'Reviewer'}
+function save(id){var r=S[id];r.at=r.at||now();set(key(id),r)}
+document.addEventListener('click',function(e){var t=e.target;
+ var a=t.closest&&t.closest('[data-a]');if(a){var c=a.closest('details').dataset.id,v=a.dataset.a;if(v==='nx'){gotoNext(c);return}var r=row(c);r.s=(r.s===v)?'':v;r.by=me_();r.at=now();save(c);OPEN[c]=r.s?0:1;render(true);if(r.s)gotoNext(c);return}
+ if(t.dataset&&t.dataset.fl){filter=t.dataset.fl;render();return}
+ if(t.dataset&&t.dataset.rv!==undefined){var c2=t.closest('[data-r]').dataset.r;var r2=row(c2);delete r2.qa[t.dataset.rv];r2.at=now();OPEN[c2]=1;save(c2);render(true);return}
+ if(t.id==='all'){var l=rows().filter(function(r){return !stateOf(r)});if(!l.length)return;if(!armed){armed=true;render(true);setTimeout(function(){armed=false;render(true)},5000);return}armed=false;l.forEach(function(r){var x=row(r.id);x.s='ok';x.by=me_();x.at=now();save(r.id)});render(true);return}
+ if(t.id==='submit'){var c3=counts();SUB={by:me_(),at:now(),ok:c3.ok,ed:c3.ed,sk:c3.sk,pn:c3.pn,q:qdone()};set(key('_submit'),SUB);render(true);var s2=document.getElementById('sub');if(s2)s2.scrollIntoView({block:'center'});return}
+ if(t.id==='csve'){csvEdits();return}
+ if(t.id==='csv'){csv();return}
+});
+document.addEventListener('toggle',function(e){var d=e.target;if(d.id==='qcard')window._qopen=d.open;else if(d.dataset&&d.dataset.id){OPEN[d.dataset.id]=d.open?1:0;d.querySelectorAll('textarea.fq,textarea.fa').forEach(grow)}},true);
+document.addEventListener('input',function(e){var t=e.target;
+ if(t.id==='q'){term=t.value.toLowerCase();render();var q=document.getElementById('q');q.focus();q.setSelectionRange(q.value.length,q.value.length);return}
+ if(t.dataset.cf!==undefined){var f0=t.closest('[data-r]'),id0=f0.dataset.r,x0=row(id0);x0.cf=x0.cf||{};x0.cf[t.dataset.cf]=t.value;x0.by=x0.by||me_();x0.at=now();clearTimeout(timers['c'+id0]);timers['c'+id0]=setTimeout(function(){save(id0)},900);return}
+ if(t.dataset.f){grow(t);var f=t.closest('[data-r]'),id=f.dataset.r,i=+f.dataset.i,r=D.filter(function(x){return x.id===id})[0],o=r.qa[i];
+  var q=f.querySelector('[data-f=q]').value,a=f.querySelector('[data-f=a]').value,x=row(id);x.qa=x.qa||{};
+  if(q===o[0]&&a===cleanA(o[1]))delete x.qa[i];else x.qa[i]={q:q,a:a};x.by=x.by||me_();x.at=now();f.classList.toggle('mod',!!x.qa[i]);clearTimeout(timers[id]);timers[id]=setTimeout(function(){save(id);render(true)},900);return}
+ if(t.dataset.q!==undefined){var i2=t.dataset.q;QA[i2]={t:t.value,by:me_(),at:now()};var tg=document.getElementById('qtag');if(tg){var dn=qdone();tg.textContent=dn+' of '+Q.length+' answered';tg.className='tag '+(dn===Q.length?'t-ok':'t-cf')}clearTimeout(timers.qa);timers.qa=setTimeout(function(){set(key('_answers'),QA)},900)}
+});
+document.addEventListener('keydown',function(e){var t=e.target;if(t.dataset&&t.dataset.cm&&e.key==='Enter'&&(e.metaKey||e.ctrlKey)&&t.value.trim()){var id=t.closest('details').dataset.id,r=row(id);r.c=(r.c||[]).concat([{t:t.value.trim(),by:me_(),at:now()}]);r.at=now();OPEN[id]=1;save(id);render(true)}});
+function dl(L,name){var txt=L.map(function(a){return a.map(function(v){return '"'+String(v==null?'':v).replace(/"/g,'""')+'"'}).join(',')}).join('\n');
+ if(inHost)P({type:'download',name:name+'-'+now().slice(0,10)+'.csv',mime:'text/csv',text:txt});else{var bl=new Blob([txt],{type:'text/csv'}),a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download=name+'.csv';a.click()}}
+function csv(){var L=[['Group','Name','URL','Status','By','When','Edited FAQs','Confirmation answers','Comments']];D.forEach(function(r){var x=S[r.id]||{};L.push([r.g==='w'?'Website page':'Blog post',r.n,r.u,x.s==='ok'?'Approved':x.s==='ed'?'Needs edits':x.s==='sk'?'Skipped':'Awaiting',x.by||'',x.at||'',x.qa?Object.keys(x.qa).length:0,x.cf?Object.keys(x.cf).filter(function(k){return x.cf[k]}).length:0,(x.c||[]).map(function(c){return c.by+': '+c.t}).join(' | ')])});dl(L,'faq-signoff-status')}
+function csvEdits(){var L=[['Group','Page or post','URL','FAQ #','Original question','Original answer','Edited question','Edited answer','CCi confirmation answer']];D.forEach(function(r){var x=S[r.id]||{};r.qa.forEach(function(o,i){var e=x.qa&&x.qa[i],cf=x.cf&&x.cf[i];if(e||cf)L.push([r.g==='w'?'Website page':'Blog post',r.n,r.u,i+1,o[0],cleanA(o[1]),e?e.q:'',e?e.a:'',cf||''])})});
+ L.push([]);L.push(['Questions for CCi','Question','','','','','','Answer']);Q.forEach(function(q,i){L.push(['#'+(i+1)+' '+q.g,q.t,'','','','','',QA[i]&&QA[i].t||''])});dl(L,'faq-signoff-edits')}
+window.addEventListener('message',function(e){var m=e.data;if(!m||m.source!=='clientcommand-host')return;
+ if(m.type==='state'){var k=m.key,v=m.value;if(k==='faq:_answers'){if(v&&typeof v==='object'){Object.keys(v).forEach(function(i){if(!QA[i]||(v[i].at||'')>(QA[i].at||''))QA[i]=v[i]})}}
+  else if(k==='faq:_submit'){if(v&&typeof v==='object'&&(!SUB||(v.at||'')>(SUB.at||'')))SUB=v}else if(k.indexOf('faq:')===0){var id=k.slice(4);if(v&&typeof v==='object'&&(!S[id]||(v.at||'')>(S[id].at||'')))S[id]=v}
+  loaded++;status('up to date','on');clearTimeout(timers.r);timers.r=setTimeout(function(){var a=document.activeElement,sig=JSON.stringify([S,QA,SUB]);if(sig===lastSig)return;if(a&&/TEXTAREA|INPUT/.test(a.tagName))return;lastSig=sig;render(true)},250)}
+ else if(m.type==='saved'){var cb=pending[m.key];if(cb){delete pending[m.key];cb(m.ok,m.error)}}
+ else if(m.type==='whoami'&&m.user){me={name:String(m.user.name||''),kind:String(m.user.kind||'')};if(me.name)try{localStorage.setItem('faq_name',me.name)}catch(e){}}});
+var loaded=0;
+function pull(){if(!inHost)return;D.forEach(function(r){P({type:'ready',key:key(r.id)})});P({type:'ready',key:'faq:_answers'});P({type:'ready',key:'faq:_submit'})}
+render();if(inHost){P({type:'whoami'});pull();setInterval(function(){var a=document.activeElement;if(!a||!/TEXTAREA|INPUT/.test(a.tagName))pull()},25000)}
+})();
+</script>

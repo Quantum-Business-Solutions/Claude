@@ -1,0 +1,5 @@
+<!doctype html><body style=margin:0><iframe id=f sandbox="allow-scripts allow-forms allow-popups" src="full.html" style="width:100vw;height:100vh;border:0"></iframe><script>
+var store={};window.addEventListener("message",function(e){var m=e.data;if(!m||m.source!=="clientcommand-page")return;var w=document.getElementById("f").contentWindow;
+if(m.type==="ready")w.postMessage({source:"clientcommand-host",type:"state",key:m.key,value:store[m.key]},"*");
+if(m.type==="state:set"){store[m.key]=m.value;window.__store=store;w.postMessage({source:"clientcommand-host",type:"saved",key:m.key,ok:true},"*")}
+if(m.type==="whoami")w.postMessage({source:"clientcommand-host",type:"whoami",user:{name:"Lydia Walter",kind:"client"}},"*")});</script>
