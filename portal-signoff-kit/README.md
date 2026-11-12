@@ -33,7 +33,7 @@ Client Command portal and can be read back with `get_page_state` / exported as C
 - The portal's `check_signoff_sheet` does not recognise this custom page; ignore its warning but verify section order manually.
 - Tool results over ~60 KB are saved to a file: read with Python, do not paste.
 
-## Top 10 features in the template
+## Top features in the template
 1. 3-step guide with live status (answer questions, review, submit)
 2. Questions for CCi, open by default, one-line answers, live count
 3. Inline editable question and answer boxes with Restore original and an "edited" marker
@@ -42,5 +42,6 @@ Client Command portal and can be read back with `get_page_state` / exported as C
 6. Filters: All, type, To do, Needs edits, Edited by you, To confirm, Check freshness; plus search
 7. Comments on every item
 8. Submit review (recorded with name and time) and re-submit
-9. Two-step "Approve all shown", status CSV and edits CSV (original vs edited) for QBS
-10. Phone layout, dark mode, keyboard focus rings, aria labels, autosave status
+9. Per-question Keep or Remove plus a note on every individual FAQ (approve only some questions on a page)
+10. Two-step "Approve all shown", status CSV and edits CSV (original vs edited) for QBS
+11. Phone layout, dark mode, keyboard focus rings, aria labels, autosave status
