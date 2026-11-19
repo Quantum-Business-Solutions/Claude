@@ -56,21 +56,43 @@ def gemini(prompt):
 CLAUDE_MODELS = (os.environ.get('CI_CLAUDE_MODELS') or 'claude-sonnet-5-5,claude-haiku-5-5').split(',')
 
 
+def _cc_messages(body):
+    """Call the Anthropic API through ClientCommand's stored team key (env CLIENTCOMMAND_URL). The key never leaves ClientCommand."""
+    req = urllib.request.Request(os.environ['CLIENTCOMMAND_URL'], json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call', 'params': {
+        'name': 'call_internal_api', 'arguments': {'service': 'anthropic', 'method': 'POST', 'path': '/v1/messages',
+                                                   'reason': 'Call Intel weekly scoring (transcript -> structured fields)', 'body': body}}}).encode(),
+        {'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream'}, method='POST')
+    raw = urllib.request.urlopen(req, context=CTX, timeout=300).read().decode()
+    if raw.lstrip().startswith('event') or 'data:' in raw[:20]:
+        raw = [l[5:].strip() for l in raw.splitlines() if l.startswith('data:')][-1]
+    r = json.loads(raw)
+    if r.get('error'): raise RuntimeError(str(r['error'])[:200])
+    out = json.loads(r['result']['content'][0]['text'])
+    if not out.get('ok', out.get('status') == 200): raise RuntimeError('anthropic via ClientCommand: %s' % str(out)[:200])
+    return out['data']
+
+
+def claude_available():
+    return bool(os.environ.get('ANTHROPIC_API_KEY') or os.environ.get('CLIENTCOMMAND_URL'))
+
+
 def claude(prompt):
     key = os.environ.get('ANTHROPIC_API_KEY')
-    if not key:
-        return {'error': 'ANTHROPIC_API_KEY not set'}, None
+    if not key and not os.environ.get('CLIENTCOMMAND_URL'):
+        return {'error': 'no Anthropic key or ClientCommand endpoint configured'}, None
     last = None
     for m in CLAUDE_MODELS:
         for i in range(3):
+            body = {'model': m, 'max_tokens': 4096,
+                    'system': 'Reply with a single JSON object only, no prose, no code fences.',
+                    'messages': [{'role': 'user', 'content': prompt}]}
             try:
-                req = urllib.request.Request(
-                    'https://api.anthropic.com/v1/messages',
-                    json.dumps({'model': m, 'max_tokens': 4096, 'temperature': 0,
-                                'system': 'Reply with a single JSON object only, no prose, no code fences.',
-                                'messages': [{'role': 'user', 'content': prompt}]}).encode(),
-                    {'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01'})
-                d = json.load(urllib.request.urlopen(req, context=CTX, timeout=120))
+                if key:
+                    req = urllib.request.Request('https://api.anthropic.com/v1/messages', json.dumps(body).encode(),
+                                                 {'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01'})
+                    d = json.load(urllib.request.urlopen(req, context=CTX, timeout=120))
+                else:
+                    d = _cc_messages(body)
                 t = ''.join(b.get('text', '') for b in d['content'] if b.get('type') == 'text').strip()
                 t = t[t.index('{'):t.rindex('}') + 1]
                 return json.loads(t), m
@@ -85,7 +107,7 @@ def claude(prompt):
 
 def llm(prompt):
     """Claude first (if a key is configured), then Gemini. Returns (json, model)."""
-    if os.environ.get('ANTHROPIC_API_KEY') and os.environ.get('CI_SCORER', 'claude') != 'gemini':
+    if claude_available() and os.environ.get('CI_SCORER', 'claude') != 'gemini':
         o, m = claude(prompt)
         if 'error' not in o:
             return o, m

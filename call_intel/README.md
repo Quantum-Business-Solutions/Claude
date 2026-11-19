@@ -20,7 +20,7 @@ python3 weekly.py --days 3 --apply
 HubSpot search lags behind writes by minutes, so the job lists a window's call ids with search and then *reads* their properties.
 
 ## Environment (no secrets in the repo)
-`HUBSPOT_TOKEN` (or `QBS_HUBSPOT_TOKEN`), `ANTHROPIC_API_KEY` (optional: scores with Claude first; `CI_SCORER=gemini` forces Gemini; `CI_CLAUDE_MODELS` overrides the model list), `GOOGLE_GEMINI_KEY` (fallback), `JEV_API_KEY`, `CAS_USER_ID`, `CAS_PASSWORD`, `CAS_API_KEY`, `CAS_SECRET_KEY`,
+`HUBSPOT_TOKEN` (or `QBS_HUBSPOT_TOKEN`), `ANTHROPIC_API_KEY` (optional; if unset, Claude is called through ClientCommand's stored Anthropic key using `CLIENTCOMMAND_URL`; scores with Claude first; `CI_SCORER=gemini` forces Gemini; `CI_CLAUDE_MODELS` overrides the model list), `GOOGLE_GEMINI_KEY` (fallback), `JEV_API_KEY`, `CAS_USER_ID`, `CAS_PASSWORD`, `CAS_API_KEY`, `CAS_SECRET_KEY`,
 `HUBSPOT_PORTAL_ID`, `CI_TASK_OWNER_ID` (owner id that receives tasks). Optional: `CI_COACH_PREFIX` (default `cas_coach_`), `CI_TRANSCRIPT_PROP` (default `cas_transcript`), `CI_AI_NOTES_PROP`.
 
 ## Notes
