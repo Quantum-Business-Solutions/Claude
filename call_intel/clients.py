@@ -52,6 +52,45 @@ def gemini(prompt):
                 last = str(e); time.sleep(2 * (i + 1))
     return {'error': last}, None
 
+# ---------------- Claude (Anthropic API). Used first when ANTHROPIC_API_KEY is set, Gemini is the fallback ----------------
+CLAUDE_MODELS = (os.environ.get('CI_CLAUDE_MODELS') or 'claude-sonnet-5-5,claude-haiku-5-5').split(',')
+
+
+def claude(prompt):
+    key = os.environ.get('ANTHROPIC_API_KEY')
+    if not key:
+        return {'error': 'ANTHROPIC_API_KEY not set'}, None
+    last = None
+    for m in CLAUDE_MODELS:
+        for i in range(3):
+            try:
+                req = urllib.request.Request(
+                    'https://api.anthropic.com/v1/messages',
+                    json.dumps({'model': m, 'max_tokens': 4096, 'temperature': 0,
+                                'system': 'Reply with a single JSON object only, no prose, no code fences.',
+                                'messages': [{'role': 'user', 'content': prompt}]}).encode(),
+                    {'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01'})
+                d = json.load(urllib.request.urlopen(req, context=CTX, timeout=120))
+                t = ''.join(b.get('text', '') for b in d['content'] if b.get('type') == 'text').strip()
+                t = t[t.index('{'):t.rindex('}') + 1]
+                return json.loads(t), m
+            except urllib.error.HTTPError as e:
+                last = 'HTTP %s %s' % (e.code, e.read()[:200])
+                if e.code in (401, 402, 403): break   # key/billing problem: try the next provider
+                time.sleep(2 * (i + 1))
+            except Exception as e:
+                last = str(e); time.sleep(2 * (i + 1))
+    return {'error': last}, None
+
+
+def llm(prompt):
+    """Claude first (if a key is configured), then Gemini. Returns (json, model)."""
+    if os.environ.get('ANTHROPIC_API_KEY') and os.environ.get('CI_SCORER', 'claude') != 'gemini':
+        o, m = claude(prompt)
+        if 'error' not in o:
+            return o, m
+    return gemini(prompt)
+
 
 # ---------------- TypeSafe Jev (typed decisions with calibrated probabilities) ----------------
 def jev(state, questions):

@@ -1,6 +1,6 @@
 """Hybrid scoring: Jev for typed facts (confidence-routed) + one LLM call for text/judgment fields."""
 import re, datetime, concurrent.futures as cf
-from clients import gemini, jev
+from clients import llm, jev
 import prompts, props
 
 BOILERPLATE = re.compile(r'ConnectAndSell Agent Attempt.*?(<br>)?\s*Agent Disposition:[^\n<]*', re.I)
@@ -67,7 +67,7 @@ def score_transcript(transcript, call_date):
     """Returns (properties, model_name) or (None, None) on failure."""
     with cf.ThreadPoolExecutor(2) as ex:
         fj = ex.submit(jev, transcript, prompts.JEV_QUESTIONS)
-        fg = ex.submit(gemini, prompts.HYBRID_PROMPT % (call_date, transcript[:30000]))
+        fg = ex.submit(llm, prompts.HYBRID_PROMPT % (call_date, transcript[:30000]))
         a = fj.result(); o, model = fg.result()
     if 'error' in o or 'signals' not in o or 'coaching' not in o: return None, None
     sig, co = o['signals'], o['coaching']
@@ -92,6 +92,6 @@ def notes_text(p):
 
 def score_notes(text, call_date):
     """Signals only (no coaching), marked source=call_summary."""
-    o, model = gemini(prompts.SUMMARY_PROMPT % (call_date, text[:12000]))
+    o, model = llm(prompts.SUMMARY_PROMPT % (call_date, text[:12000]))
     if 'error' in o: return None, None
     return props.signal_props(o, source='call_summary'), model
