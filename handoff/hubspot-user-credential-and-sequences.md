@@ -12,11 +12,13 @@ Repo: `Quantum-Business-Solutions/clientcommand` (Supabase project `zjtgesaiemlv
 
 - One shared app registration, `hubspot_user_app`, sits in `qbs_internal_services`. The Client ID and secret are entered in Settings → Internal Services, like Canva. It uses OAuth with no PKCE and sends the client secret in the request body.
 - Requested scopes:
+  - `oauth` (needed in the authorize URL when the app lists it as required)
   - `automation.email_templates.read` and `.write`
   - `automation.sequences.read`, `.create`, `.edit` and `.delete`
   - There is no enrollments scope.
 - Each client portal gets one `client_credentials` row (service `hubspot_user`). It holds the person's encrypted access and refresh tokens, plus the HubSpot account ID and who approved it. One person can connect many portals, one row each.
-- Connect flow: the `start_hubspot_user_connect` tool (or the `oauth_start_portal` action in `manage-credentials`) returns a link. It lands on the existing `/settings/oauth/callback` page. The callback asks HubSpot which account the token is for and **stores nothing if it isn't the portal the connection was started for**.
+- Connect flow: the `start_hubspot_user_connect` tool returns a link. HubSpot sends the browser back to this connection's **own page**, `/settings/hubspot-user/callback`, which calls its **own edge function**, `hubspot-user-oauth`, and uses its **own state table**, `hubspot_user_oauth_states`. The callback asks HubSpot which account the token is for and **stores nothing if it isn't the portal the connection was started for**.
+- **The seven existing OAuth sign-ins are not touched** (Canva, Google Analytics, Google Business Profile, Search Console, Tag Manager, YouTube, Microsoft mailbox). They share `/settings/oauth/callback` → `manage-credentials`, and `manage-credentials/index.ts`, `_shared/oauth-token.ts` and `src/pages/OAuthCallback.tsx` are byte-identical to `main`. A test pins that none of them mentions this connection. (An earlier version of this PR edited that shared callback; the user said no, so it was removed.)
 - Tools:
   - `start_hubspot_user_connect`
   - `hubspot_user_connections` (lists connected portals, never shows a token)
@@ -24,8 +26,8 @@ Repo: `Quantum-Business-Solutions/clientcommand` (Supabase project `zjtgesaiemlv
 - Review fixes:
   - Percent-encoded dots such as `%2e%2e` are refused, because `fetch` turns them into real `..` and could leave the allowed paths.
   - The "enabled" switch on the app and on its credential is now checked on every connect and call.
-- Migration `20261130294500_hubspot_user_app.sql` adds a nullable `portal_id` column to `qbs_oauth_states` and the registry row.
-- Key files: `supabase/functions/_shared/hubspot-user-token.ts`, `supabase/functions/_shared/hubspot-user-tools.ts`, `supabase/functions/manage-credentials/index.ts`, `src/test/hubspot-user-credential.test.ts`.
+- Migration `20261130294500_hubspot_user_app.sql` adds the `hubspot_user_oauth_states` table and the registry row. It changes no existing table.
+- Key files: `supabase/functions/_shared/hubspot-user-token.ts`, `supabase/functions/_shared/hubspot-user-tools.ts`, `supabase/functions/hubspot-user-oauth/index.ts`, `src/pages/HubSpotUserCallback.tsx` (route in `src/App.tsx`), `src/test/hubspot-user-credential.test.ts`.
 
 ### #638: packages (branch `claude/package-user-assets`, stacked on #637)
 
@@ -51,9 +53,10 @@ Retarget it to `main` after #637 merges.
 ## Status at last look
 
 - All 30 package tests pass, and so do the credential tests.
-- CI was green on the earlier heads, and all review threads are resolved. The CI and Vercel review for the newest #638 head (`a33633b3`) were still running at last look.
+- Full suite: 7938 tests pass (one pre-existing, unrelated suite fails on a missing local package and fails on `main` too). CI was green on the earlier heads and all review threads are resolved; the newest heads (#637 `1fcaea3f`, #638 `cdeaa0d3`) had been pushed and CI was re-running at last look.
 - **Merging is the user's call.** Merging #637 triggers the Deploy Supabase backend Action. The migrations must ship only through that Action, never applied directly to the database.
 - A follow-up check-in was scheduled for about 14:28 UTC on 2026-11-24.
+- Allowlist only Q Squared Demo (47404459) in the HubSpot app for the first test. Do not install it in the live Quantum portal 20682069.
 
 ## Not verified
 
@@ -66,8 +69,8 @@ Retarget it to `main` after #637 merges.
 ## What the user needs to do
 
 1. Create a **user-level, private + OAuth** developer-platform app. It needs:
-   - the redirect URL `https://clientcommand.thequantumleap.business/settings/oauth/callback`
-   - the six scopes above, including the template scopes, since sequence steps point at templates
+   - the redirect URL **`https://clientcommand.thequantumleap.business/settings/hubspot-user/callback`** (not the shared `/settings/oauth/callback`)
+   - the scopes above as **required** scopes (including `oauth` and the template scopes, since sequence steps point at templates). The app file the user drafted needs `isUserLevel: true`, these scopes and this redirect URL; hold the upload until the URL is final.
    - Q Squared and each client account on its allowlist
    - The user says they built an app "just for sequences", so its scopes must be checked.
 2. After the PRs merge and deploy, save the app's Client ID and secret in Settings → Internal Services → "HubSpot (user-level app)". The secret should never go in chat.
