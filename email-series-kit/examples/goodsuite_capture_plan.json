@@ -1,0 +1,990 @@
+[
+ {
+  "id": "431261791960",
+  "series": "Lane L1",
+  "n": 1,
+  "title": "Copier Lease Renewal (Prospects) | Email 1 | Before you renew your copier lease",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-renewal-prospects",
+   "stage:prospect",
+   "managed-print",
+   "copier-lease",
+   "office-technology"
+  ],
+  "summary": "Email 1 of 10 in \"Copier Lease Renewal (Prospects)\" for prospects whose copier lease with another provider ends within 24 months. Subject: \"Before you renew your copier lease\". A free price check first. It takes one short conversation.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830674",
+  "series": "Lane L1",
+  "n": 2,
+  "title": "Copier Lease Renewal (Prospects) | Email 2 | Renew, return or upgrade",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-renewal-prospects",
+   "stage:prospect",
+   "managed-print",
+   "copier-lease",
+   "office-technology"
+  ],
+  "summary": "Email 2 of 10 in \"Copier Lease Renewal (Prospects)\" for prospects whose copier lease with another provider ends within 24 months. Subject: \"Renew, return or upgrade your copier?\". Three different decisions, and they are not priced the same way.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830680",
+  "series": "Lane L1",
+  "n": 3,
+  "title": "Copier Lease Renewal (Prospects) | Email 3 | The notice window",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-renewal-prospects",
+   "stage:prospect",
+   "managed-print",
+   "copier-lease",
+   "office-technology"
+  ],
+  "summary": "Email 3 of 10 in \"Copier Lease Renewal (Prospects)\" for prospects whose copier lease with another provider ends within 24 months. Subject: \"The copier lease date that matters most\". It is often earlier than the end date. Here is where to look.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431278232265",
+  "series": "Lane L1",
+  "n": 4,
+  "title": "Copier Lease Renewal (Prospects) | Email 4 | Read a copier lease in 5 minutes",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-renewal-prospects",
+   "stage:prospect",
+   "managed-print",
+   "copier-lease",
+   "office-technology"
+  ],
+  "summary": "Email 4 of 10 in \"Copier Lease Renewal (Prospects)\" for prospects whose copier lease with another provider ends within 24 months. Subject: \"Read your copier lease in 5 minutes\". A short checklist for the paperwork nobody enjoys reading.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630325",
+  "series": "Lane L1",
+  "n": 5,
+  "title": "Copier Lease Renewal (Prospects) | Email 5 | What a page should cost",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-renewal-prospects",
+   "stage:prospect",
+   "managed-print",
+   "copier-lease",
+   "office-technology"
+  ],
+  "summary": "Email 5 of 10 in \"Copier Lease Renewal (Prospects)\" for prospects whose copier lease with another provider ends within 24 months. Subject: \"What should a printed page cost you?\". Three questions that make cost per page easy to compare.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630328",
+  "series": "Lane L1",
+  "n": 6,
+  "title": "Copier Lease Renewal (Prospects) | Email 6 | Right-sizing the fleet",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-renewal-prospects",
+   "stage:prospect",
+   "managed-print",
+   "copier-lease",
+   "office-technology"
+  ],
+  "summary": "Email 6 of 10 in \"Copier Lease Renewal (Prospects)\" for prospects whose copier lease with another provider ends within 24 months. Subject: \"Do you have the right number of copiers?\". Offices change. Your copier fleet may not have kept up.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227631291",
+  "series": "Lane L1",
+  "n": 7,
+  "title": "Copier Lease Renewal (Prospects) | Email 7 | Service response",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-renewal-prospects",
+   "stage:prospect",
+   "managed-print",
+   "copier-lease",
+   "office-technology"
+  ],
+  "summary": "Email 7 of 10 in \"Copier Lease Renewal (Prospects)\" for prospects whose copier lease with another provider ends within 24 months. Subject: \"How fast should copier service be?\". What to ask your provider before your next renewal.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830688",
+  "series": "Lane L1",
+  "n": 8,
+  "title": "Copier Lease Renewal (Prospects) | Email 8 | 12 9 6 3 month countdown",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-renewal-prospects",
+   "stage:prospect",
+   "managed-print",
+   "copier-lease",
+   "office-technology"
+  ],
+  "summary": "Email 8 of 10 in \"Copier Lease Renewal (Prospects)\" for prospects whose copier lease with another provider ends within 24 months. Subject: \"A 12, 9, 6, 3 month lease countdown\". A simple timeline so renewal never sneaks up on you.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431301215968",
+  "series": "Lane L1",
+  "n": 9,
+  "title": "Copier Lease Renewal (Prospects) | Email 9 | What a price check covers",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-renewal-prospects",
+   "stage:prospect",
+   "managed-print",
+   "copier-lease",
+   "office-technology"
+  ],
+  "summary": "Email 9 of 10 in \"Copier Lease Renewal (Prospects)\" for prospects whose copier lease with another provider ends within 24 months. Subject: \"What a copier price check covers\". A plain look at what happens, and what you get back.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830692",
+  "series": "Lane L1",
+  "n": 10,
+  "title": "Copier Lease Renewal (Prospects) | Email 10 | Last call, price it out",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-renewal-prospects",
+   "stage:prospect",
+   "managed-print",
+   "copier-lease",
+   "office-technology"
+  ],
+  "summary": "Email 10 of 10 in \"Copier Lease Renewal (Prospects)\" for prospects whose copier lease with another provider ends within 24 months. Subject: \"Want us to price it out before you sign?\". One last note, and an easy next step if the timing fits.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261791945",
+  "series": "Lane L2",
+  "n": 1,
+  "title": "Copier Lease End (Customers) | Email 1 | Lease end in 12 months (account review)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-end-customers",
+   "stage:customer-expansion",
+   "managed-print",
+   "copier-lease",
+   "account-review",
+   "office-technology"
+  ],
+  "summary": "Email 1 of 4 in \"Copier Lease End (Customers)\" for customers whose lease ends in 12, 9, 6 and 3 months. Subject: \"Your lease ends in about a year\". A short account review now keeps every option open.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630306",
+  "series": "Lane L2",
+  "n": 2,
+  "title": "Copier Lease End (Customers) | Email 2 | Lease end in 9 months (account review)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-end-customers",
+   "stage:customer-expansion",
+   "managed-print",
+   "copier-lease",
+   "account-review",
+   "office-technology"
+  ],
+  "summary": "Email 2 of 4 in \"Copier Lease End (Customers)\" for customers whose lease ends in 12, 9, 6 and 3 months. Subject: \"Nine months left: is your setup still right?\". A quick look at how your team prints and scans today.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261791955",
+  "series": "Lane L2",
+  "n": 3,
+  "title": "Copier Lease End (Customers) | Email 3 | Lease end in 6 months (account review)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-end-customers",
+   "stage:customer-expansion",
+   "managed-print",
+   "copier-lease",
+   "account-review",
+   "office-technology"
+  ],
+  "summary": "Email 3 of 4 in \"Copier Lease End (Customers)\" for customers whose lease ends in 12, 9, 6 and 3 months. Subject: \"Six months to go: what will it cost next?\". Put the numbers in front of you early, with no obligation.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630316",
+  "series": "Lane L2",
+  "n": 4,
+  "title": "Copier Lease End (Customers) | Email 4 | Lease end in 3 months (account review)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:copier-lease-end-customers",
+   "stage:customer-expansion",
+   "managed-print",
+   "copier-lease",
+   "account-review",
+   "office-technology"
+  ],
+  "summary": "Email 4 of 4 in \"Copier Lease End (Customers)\" for customers whose lease ends in 12, 9, 6 and 3 months. Subject: \"Three months left on your lease\". Let us plan the next step together, calmly.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830653",
+  "series": "Lane L3",
+  "n": 1,
+  "title": "Managed IT Cross-Sell (Print Customers) | Email 1 | One team for print and IT",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:managed-it-cross-sell-print-customers",
+   "stage:customer-expansion",
+   "managed-it",
+   "managed-print",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 1 of 8 in \"Managed IT Cross-Sell (Print Customers)\" for print customers with no managed IT yet. Subject: \"One team for your printers and IT\". A short note from the team you already know for print.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830656",
+  "series": "Lane L3",
+  "n": 2,
+  "title": "Managed IT Cross-Sell (Print Customers) | Email 2 | A predictable monthly cost",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:managed-it-cross-sell-print-customers",
+   "stage:customer-expansion",
+   "managed-it",
+   "managed-print",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 2 of 8 in \"Managed IT Cross-Sell (Print Customers)\" for print customers with no managed IT yet. Subject: \"A predictable monthly cost for IT\". Three things to ask about any IT cost before the next budget.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630297",
+  "series": "Lane L3",
+  "n": 3,
+  "title": "Managed IT Cross-Sell (Print Customers) | Email 3 | One number to call",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:managed-it-cross-sell-print-customers",
+   "stage:customer-expansion",
+   "managed-it",
+   "managed-print",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 3 of 8 in \"Managed IT Cross-Sell (Print Customers)\" for print customers with no managed IT yet. Subject: \"One number to call for print and IT\". For the person who ends up fixing everything.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830659",
+  "series": "Lane L3",
+  "n": 4,
+  "title": "Managed IT Cross-Sell (Print Customers) | Email 4 | How many vendors",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:managed-it-cross-sell-print-customers",
+   "stage:customer-expansion",
+   "managed-it",
+   "managed-print",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 4 of 8 in \"Managed IT Cross-Sell (Print Customers)\" for print customers with no managed IT yet. Subject: \"How many vendors does your office juggle?\". A five-minute exercise that shows what could be simpler.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830662",
+  "series": "Lane L3",
+  "n": 5,
+  "title": "Managed IT Cross-Sell (Print Customers) | Email 5 | Three questions about IT spend",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:managed-it-cross-sell-print-customers",
+   "stage:customer-expansion",
+   "managed-it",
+   "managed-print",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 5 of 8 in \"Managed IT Cross-Sell (Print Customers)\" for print customers with no managed IT yet. Subject: \"Three questions about your IT spend\". Bring these to your next budget review meeting.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830665",
+  "series": "Lane L3",
+  "n": 6,
+  "title": "Managed IT Cross-Sell (Print Customers) | Email 6 | What an IT review looks like",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:managed-it-cross-sell-print-customers",
+   "stage:customer-expansion",
+   "managed-it",
+   "managed-print",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 6 of 8 in \"Managed IT Cross-Sell (Print Customers)\" for print customers with no managed IT yet. Subject: \"What a first IT review looks like\". Short, practical, and no homework needed on your side.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830668",
+  "series": "Lane L3",
+  "n": 7,
+  "title": "Managed IT Cross-Sell (Print Customers) | Email 7 | Fewer vendors, fewer calls",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:managed-it-cross-sell-print-customers",
+   "stage:customer-expansion",
+   "managed-it",
+   "managed-print",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 7 of 8 in \"Managed IT Cross-Sell (Print Customers)\" for print customers with no managed IT yet. Subject: \"Fewer vendors, fewer calls: a simple test\". Try it for a month and see what the list shows.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431280829127",
+  "series": "Lane L3",
+  "n": 8,
+  "title": "Managed IT Cross-Sell (Print Customers) | Email 8 | A simple next step",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:managed-it-cross-sell-print-customers",
+   "stage:customer-expansion",
+   "managed-it",
+   "managed-print",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 8 of 8 in \"Managed IT Cross-Sell (Print Customers)\" for print customers with no managed IT yet. Subject: \"A simple next step for print and IT\". The last note in this series, with three easy ways to reply.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630300",
+  "series": "Lane L4",
+  "n": 1,
+  "title": "Cybersecurity Cross-Sell (Customers) | Email 1 | Security check-up for customers",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:cybersecurity-cross-sell-customers",
+   "stage:customer-expansion",
+   "cybersecurity",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 1 of 8 in \"Cybersecurity Cross-Sell (Customers)\" for customers with no cybersecurity service yet, one email per buyer role. Subject: \"A security check-up for GoodSuite customers\". Your setup is already familiar to us, so it starts quickly.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431280829124",
+  "series": "Lane L4",
+  "n": 2,
+  "title": "Cybersecurity Cross-Sell (Customers) | Email 2 | Who can use your printers (head of IT)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:cybersecurity-cross-sell-customers",
+   "stage:customer-expansion",
+   "cybersecurity",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 2 of 8 in \"Cybersecurity Cross-Sell (Customers)\" for customers with no cybersecurity service yet, one email per buyer role. Subject: \"Who can use the printers on your network?\". Three access questions for the printers and copiers you already have.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261791942",
+  "series": "Lane L4",
+  "n": 3,
+  "title": "Cybersecurity Cross-Sell (Customers) | Email 3 | Cyber insurance questionnaire (CFO)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:cybersecurity-cross-sell-customers",
+   "stage:customer-expansion",
+   "cybersecurity",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 3 of 8 in \"Cybersecurity Cross-Sell (Customers)\" for customers with no cybersecurity service yet, one email per buyer role. Subject: \"Who answers the cyber insurance questionnaire?\". A one-page answer file makes the next renewal calmer.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630303",
+  "series": "Lane L4",
+  "n": 4,
+  "title": "Cybersecurity Cross-Sell (Customers) | Email 4 | Client security questionnaires (head of IT)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:cybersecurity-cross-sell-customers",
+   "stage:customer-expansion",
+   "cybersecurity",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 4 of 8 in \"Cybersecurity Cross-Sell (Customers)\" for customers with no cybersecurity service yet, one email per buyer role. Subject: \"A client sent a security questionnaire. Now what?\". Keep your policies, access lists, and backup tests ready to show.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431280829130",
+  "series": "Lane L4",
+  "n": 5,
+  "title": "Cybersecurity Cross-Sell (Customers) | Email 5 | Who to call first (CEO or owner)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:cybersecurity-cross-sell-customers",
+   "stage:customer-expansion",
+   "cybersecurity",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 5 of 8 in \"Cybersecurity Cross-Sell (Customers)\" for customers with no cybersecurity service yet, one email per buyer role. Subject: \"If something broke tonight, who would you call?\". A one-page sheet of names, numbers, and first steps.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261791963",
+  "series": "Lane L4",
+  "n": 6,
+  "title": "Cybersecurity Cross-Sell (Customers) | Email 6 | Security priorities and budget (CFO)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:cybersecurity-cross-sell-customers",
+   "stage:customer-expansion",
+   "cybersecurity",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 6 of 8 in \"Cybersecurity Cross-Sell (Customers)\" for customers with no cybersecurity service yet, one email per buyer role. Subject: \"Plan security spending by priority, not panic\". A ranked list turns a worry into a line in the budget.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630319",
+  "series": "Lane L4",
+  "n": 7,
+  "title": "Cybersecurity Cross-Sell (Customers) | Email 7 | New hires and leavers (head of IT)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:cybersecurity-cross-sell-customers",
+   "stage:customer-expansion",
+   "cybersecurity",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 7 of 8 in \"Cybersecurity Cross-Sell (Customers)\" for customers with no cybersecurity service yet, one email per buyer role. Subject: \"When someone leaves, how fast does access end?\". A short checklist for new hires and departures, printers included.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830677",
+  "series": "Lane L4",
+  "n": 8,
+  "title": "Cybersecurity Cross-Sell (Customers) | Email 8 | Your check-up is still open (CEO or owner)",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:cybersecurity-cross-sell-customers",
+   "stage:customer-expansion",
+   "cybersecurity",
+   "cross-sell",
+   "office-technology"
+  ],
+  "summary": "Email 8 of 8 in \"Cybersecurity Cross-Sell (Customers)\" for customers with no cybersecurity service yet, one email per buyer role. Subject: \"Your security check-up is still open\". Pick one of three, and we will take it from there.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630284",
+  "series": "Lane L5",
+  "n": 1,
+  "title": "Net New Managed Print | Email 1 | Who handles your printers",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-print",
+   "stage:prospect",
+   "managed-print",
+   "fleet-review",
+   "office-technology"
+  ],
+  "summary": "Email 1 of 10 in \"Net New Managed Print\" for prospects not yet buying managed print. Subject: \"Who handles your printers when they stall?\". A short fleet review for offices with 10 or more devices.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240829668",
+  "series": "Lane L5",
+  "n": 2,
+  "title": "Net New Managed Print | Email 2 | Predictable cost per page",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-print",
+   "stage:prospect",
+   "managed-print",
+   "fleet-review",
+   "office-technology"
+  ],
+  "summary": "Email 2 of 10 in \"Net New Managed Print\" for prospects not yet buying managed print. Subject: \"A predictable cost per page for 10+ devices\". One number to budget, instead of a pile of print invoices.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261790969",
+  "series": "Lane L5",
+  "n": 3,
+  "title": "Net New Managed Print | Email 3 | Print is not a leadership topic",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-print",
+   "stage:prospect",
+   "managed-print",
+   "fleet-review",
+   "office-technology"
+  ],
+  "summary": "Email 3 of 10 in \"Net New Managed Print\" for prospects not yet buying managed print. Subject: \"Print should not be a leadership topic\". One accountable partner for printers, supplies and service.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630290",
+  "series": "Lane L5",
+  "n": 4,
+  "title": "Net New Managed Print | Email 4 | Supplies handled",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-print",
+   "stage:prospect",
+   "managed-print",
+   "fleet-review",
+   "office-technology"
+  ],
+  "summary": "Email 4 of 10 in \"Net New Managed Print\" for prospects not yet buying managed print. Subject: \"Running out of toner is a solved problem\". How supplies get handled before anyone has to ask.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431278232260",
+  "series": "Lane L5",
+  "n": 5,
+  "title": "Net New Managed Print | Email 5 | What a fleet review covers",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-print",
+   "stage:prospect",
+   "managed-print",
+   "fleet-review",
+   "office-technology"
+  ],
+  "summary": "Email 5 of 10 in \"Net New Managed Print\" for prospects not yet buying managed print. Subject: \"What a print fleet review actually covers\". Three things we look at, and what you get back.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240829674",
+  "series": "Lane L5",
+  "n": 6,
+  "title": "Net New Managed Print | Email 6 | Service levels",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-print",
+   "stage:prospect",
+   "managed-print",
+   "fleet-review",
+   "office-technology"
+  ],
+  "summary": "Email 6 of 10 in \"Net New Managed Print\" for prospects not yet buying managed print. Subject: \"What good print service looks like\". Response times, monitoring and who to call.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630293",
+  "series": "Lane L5",
+  "n": 7,
+  "title": "Net New Managed Print | Email 7 | Fewer vendors",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-print",
+   "stage:prospect",
+   "managed-print",
+   "fleet-review",
+   "office-technology"
+  ],
+  "summary": "Email 7 of 10 in \"Net New Managed Print\" for prospects not yet buying managed print. Subject: \"Fewer vendors, fewer headaches\". Bringing print under one accountable team.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240829683",
+  "series": "Lane L5",
+  "n": 8,
+  "title": "Net New Managed Print | Email 8 | Contract end date",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-print",
+   "stage:prospect",
+   "managed-print",
+   "fleet-review",
+   "office-technology"
+  ],
+  "summary": "Email 8 of 10 in \"Net New Managed Print\" for prospects not yet buying managed print. Subject: \"When does your print contract end?\". Timing gives you more options than most people expect.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240830650",
+  "series": "Lane L5",
+  "n": 9,
+  "title": "Net New Managed Print | Email 9 | Three questions",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-print",
+   "stage:prospect",
+   "managed-print",
+   "fleet-review",
+   "office-technology"
+  ],
+  "summary": "Email 9 of 10 in \"Net New Managed Print\" for prospects not yet buying managed print. Subject: \"Three questions about your print fleet\". A quick self-check you can do in ten minutes.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261791939",
+  "series": "Lane L5",
+  "n": 10,
+  "title": "Net New Managed Print | Email 10 | Yearly check",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-print",
+   "stage:prospect",
+   "managed-print",
+   "fleet-review",
+   "office-technology"
+  ],
+  "summary": "Email 10 of 10 in \"Net New Managed Print\" for prospects not yet buying managed print. Subject: \"A yearly check on your print fleet\". Still worth a conversation, whenever you are ready.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630281",
+  "series": "Lane L6",
+  "n": 1,
+  "title": "Net New Managed IT | Email 1 | Who do you call when IT breaks",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-it",
+   "stage:prospect",
+   "managed-it",
+   "office-technology"
+  ],
+  "summary": "Email 1 of 10 in \"Net New Managed IT\" for prospects not yet buying managed IT. Subject: \"Who do you call when the network goes down?\". A short note on having a team to call for IT.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261790957",
+  "series": "Lane L6",
+  "n": 2,
+  "title": "Net New Managed IT | Email 2 | Fewer surprises on the IT invoice",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-it",
+   "stage:prospect",
+   "managed-it",
+   "office-technology"
+  ],
+  "summary": "Email 2 of 10 in \"Net New Managed IT\" for prospects not yet buying managed IT. Subject: \"Fewer surprises on the IT invoice\". Why a flat monthly fee is easier to plan around.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261790960",
+  "series": "Lane L6",
+  "n": 3,
+  "title": "Net New Managed IT | Email 3 | What is in a monthly IT plan",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-it",
+   "stage:prospect",
+   "managed-it",
+   "office-technology"
+  ],
+  "summary": "Email 3 of 10 in \"Net New Managed IT\" for prospects not yet buying managed IT. Subject: \"What does a monthly IT plan include?\". Help desk, updates and monitoring, explained simply.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261790963",
+  "series": "Lane L6",
+  "n": 4,
+  "title": "Net New Managed IT | Email 4 | Inside a free IT review",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-it",
+   "stage:prospect",
+   "managed-it",
+   "office-technology"
+  ],
+  "summary": "Email 4 of 10 in \"Net New Managed IT\" for prospects not yet buying managed IT. Subject: \"Inside an IT review: what to expect\". A short conversation, then a plain-English summary.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261790966",
+  "series": "Lane L6",
+  "n": 5,
+  "title": "Net New Managed IT | Email 5 | New hire laptop ready",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-it",
+   "stage:prospect",
+   "managed-it",
+   "office-technology"
+  ],
+  "summary": "Email 5 of 10 in \"Net New Managed IT\" for prospects not yet buying managed IT. Subject: \"Is the new hire's laptop ready for Monday?\". A simple routine for hires, leavers and role changes.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240829671",
+  "series": "Lane L6",
+  "n": 6,
+  "title": "Net New Managed IT | Email 6 | Security basics built into IT support",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-it",
+   "stage:prospect",
+   "managed-it",
+   "office-technology"
+  ],
+  "summary": "Email 6 of 10 in \"Net New Managed IT\" for prospects not yet buying managed IT. Subject: \"Security basics, built into your IT support\". Why security works better as part of everyday IT.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630287",
+  "series": "Lane L6",
+  "n": 7,
+  "title": "Net New Managed IT | Email 7 | The one person who knows IT",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-it",
+   "stage:prospect",
+   "managed-it",
+   "office-technology"
+  ],
+  "summary": "Email 7 of 10 in \"Net New Managed IT\" for prospects not yet buying managed IT. Subject: \"What if the one person who knows IT leaves?\". A common single point of failure, and a simple fix.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261791932",
+  "series": "Lane L6",
+  "n": 8,
+  "title": "Net New Managed IT | Email 8 | A simple IT plan for the year",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-it",
+   "stage:prospect",
+   "managed-it",
+   "office-technology"
+  ],
+  "summary": "Email 8 of 10 in \"Net New Managed IT\" for prospects not yet buying managed IT. Subject: \"A simple IT plan for the year ahead\". Equipment age, renewals and one page to budget from.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240829677",
+  "series": "Lane L6",
+  "n": 9,
+  "title": "Net New Managed IT | Email 9 | Pay-per-fix or monthly plan",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-it",
+   "stage:prospect",
+   "managed-it",
+   "office-technology"
+  ],
+  "summary": "Email 9 of 10 in \"Net New Managed IT\" for prospects not yet buying managed IT. Subject: \"Pay-per-fix IT or a flat monthly plan?\". An honest look at when each one makes sense.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431240829680",
+  "series": "Lane L6",
+  "n": 10,
+  "title": "Net New Managed IT | Email 10 | A second opinion on your IT",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-managed-it",
+   "stage:prospect",
+   "managed-it",
+   "office-technology"
+  ],
+  "summary": "Email 10 of 10 in \"Net New Managed IT\" for prospects not yet buying managed IT. Subject: \"A second opinion on your IT, any time\". Our door is open if the timing was not right before.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227629299",
+  "series": "Net New Cyber",
+  "n": 1,
+  "title": "Net New Cybersecurity | Email 1 | Why small businesses are targeted",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-cybersecurity",
+   "stage:prospect",
+   "cybersecurity",
+   "security-check-up",
+   "office-technology"
+  ],
+  "summary": "Email 1 of 8 in \"Net New Cybersecurity\" for prospects not yet buying cybersecurity. Subject: \"Why smaller businesses get targeted\". Three plain-English reasons, and one easy next step.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261790949",
+  "series": "Net New Cyber",
+  "n": 2,
+  "title": "Net New Cybersecurity | Email 2 | Printers and copiers are computers",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-cybersecurity",
+   "stage:prospect",
+   "cybersecurity",
+   "security-check-up",
+   "office-technology"
+  ],
+  "summary": "Email 2 of 8 in \"Net New Cybersecurity\" for prospects not yet buying cybersecurity. Subject: \"Your copier is a computer on your network\". Three quick checks for the machine in the hallway.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227629302",
+  "series": "Net New Cyber",
+  "n": 3,
+  "title": "Net New Cybersecurity | Email 3 | What cyber insurance asks for",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-cybersecurity",
+   "stage:prospect",
+   "cybersecurity",
+   "security-check-up",
+   "office-technology"
+  ],
+  "summary": "Email 3 of 8 in \"Net New Cybersecurity\" for prospects not yet buying cybersecurity. Subject: \"What cyber insurance asks about now\". The safeguards that often come up on applications, in plain English.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227629305",
+  "series": "Net New Cyber",
+  "n": 4,
+  "title": "Net New Cybersecurity | Email 4 | Passwords and MFA in plain English",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-cybersecurity",
+   "stage:prospect",
+   "cybersecurity",
+   "security-check-up",
+   "office-technology"
+  ],
+  "summary": "Email 4 of 8 in \"Net New Cybersecurity\" for prospects not yet buying cybersecurity. Subject: \"Passwords and MFA, without the jargon\". Two small habits, and the one account to start with.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431278272203",
+  "series": "Net New Cyber",
+  "n": 5,
+  "title": "Net New Cybersecurity | Email 5 | Backups and Monday morning",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-cybersecurity",
+   "stage:prospect",
+   "cybersecurity",
+   "security-check-up",
+   "office-technology"
+  ],
+  "summary": "Email 5 of 8 in \"Net New Cybersecurity\" for prospects not yet buying cybersecurity. Subject: \"Could you restore from backup on Monday?\". Three questions that show whether your backups would really help.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431278232257",
+  "series": "Net New Cyber",
+  "n": 6,
+  "title": "Net New Cybersecurity | Email 6 | What a security check-up covers",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-cybersecurity",
+   "stage:prospect",
+   "cybersecurity",
+   "security-check-up",
+   "office-technology"
+  ],
+  "summary": "Email 6 of 8 in \"Net New Cybersecurity\" for prospects not yet buying cybersecurity. Subject: \"What a security check-up actually covers\". A plain checklist of what we look at, and what you get back.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431261790953",
+  "series": "Net New Cyber",
+  "n": 7,
+  "title": "Net New Cybersecurity | Email 7 | Spotting phishing",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-cybersecurity",
+   "stage:prospect",
+   "cybersecurity",
+   "security-check-up",
+   "office-technology"
+  ],
+  "summary": "Email 7 of 8 in \"Net New Cybersecurity\" for prospects not yet buying cybersecurity. Subject: \"How to spot a phishing email in 3 steps\". A calm habit your whole team can use.",
+  "audience": "office-technology"
+ },
+ {
+  "id": "431227630277",
+  "series": "Net New Cyber",
+  "n": 8,
+  "title": "Net New Cybersecurity | Email 8 | Year-end next step",
+  "tags": [
+   "goodsuite",
+   "type:nurture",
+   "series:net-new-cybersecurity",
+   "stage:prospect",
+   "cybersecurity",
+   "security-check-up",
+   "office-technology"
+  ],
+  "summary": "Email 8 of 8 in \"Net New Cybersecurity\" for prospects not yet buying cybersecurity. Subject: \"One small security step before year-end\". Pick one of three, and we will help you with it.",
+  "audience": "office-technology"
+ }
+]
